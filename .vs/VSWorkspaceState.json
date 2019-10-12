@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "\\community\\configuration",
+    "\\community\\configuration\\src",
+    "\\community\\configuration\\src\\main",
+    "\\community\\configuration\\src\\main\\java\\org",
+    "\\community\\configuration\\src\\main\\java\\org\\neo4j",
+    "\\community\\configuration\\src\\main\\java\\org\\neo4j\\configuration",
+    "\\community\\configuration\\src\\test",
+    "\\community\\configuration\\src\\test\\java",
+    "\\community\\configuration\\src\\test\\java\\org",
+    "\\community\\configuration\\src\\test\\java\\org\\neo4j",
+    "\\community\\configuration\\src\\test\\java\\org\\neo4j\\configuration"
+  ],
+  "PreviewInSolutionExplorer": false
+}
