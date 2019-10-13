@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using After = org.junit.After;
 	using Before = org.junit.Before;
@@ -27,9 +27,9 @@ namespace Neo4Net.Commandline.dbms
 	using Test = org.junit.Test;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;

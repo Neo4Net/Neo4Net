@@ -17,16 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using Dumper = Neo4Net.Dbms.archive.Dumper;
 
-	public class DumpCommandProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class DumpCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 		 public DumpCommandProvider() : base("dump")
 		 {

@@ -17,12 +17,12 @@
 namespace Neo4Net.Pushtocloud
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 
-	public class PushToCloudCommandProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class PushToCloudCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 		 public PushToCloudCommandProvider() : base("push-to-cloud")
 		 {

@@ -22,15 +22,15 @@
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
 	using ClusterStateDirectory = Neo4Net.causalclustering.core.state.ClusterStateDirectory;
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using StoreLayout = Neo4Net.Io.layout.StoreLayout;

@@ -21,15 +21,15 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Args
+namespace Neo4Net.CommandLine.Args
 {
 	using WordUtils = org.apache.commons.text.WordUtils;
 
 
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Database = Neo4Net.Commandline.Args.Common.Database;
-	using MandatoryCanonicalPath = Neo4Net.Commandline.Args.Common.MandatoryCanonicalPath;
-	using OptionalCanonicalPath = Neo4Net.Commandline.Args.Common.OptionalCanonicalPath;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Database = Neo4Net.CommandLine.Args.Common.Database;
+	using MandatoryCanonicalPath = Neo4Net.CommandLine.Args.Common.MandatoryCanonicalPath;
+	using OptionalCanonicalPath = Neo4Net.CommandLine.Args.Common.OptionalCanonicalPath;
 	using Args = Neo4Net.Helpers.Args;
 
 	/// <summary>

@@ -26,8 +26,8 @@ namespace Neo4Net.Pushtocloud
 	using ObjectMapper = org.codehaus.jackson.map.ObjectMapper;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 

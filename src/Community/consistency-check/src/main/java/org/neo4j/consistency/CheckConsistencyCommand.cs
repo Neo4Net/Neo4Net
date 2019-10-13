@@ -22,12 +22,12 @@
 namespace Neo4Net.Consistency
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using OptionalBooleanArg = Neo4Net.Commandline.Args.OptionalBooleanArg;
-	using OptionalCanonicalPath = Neo4Net.Commandline.Args.Common.OptionalCanonicalPath;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
+	using OptionalCanonicalPath = Neo4Net.CommandLine.Args.Common.OptionalCanonicalPath;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

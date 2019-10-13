@@ -23,7 +23,7 @@
 namespace Neo4Net.backup.impl
 {
 	using StoreCopyClientMonitor = Neo4Net.com.storecopy.StoreCopyClientMonitor;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

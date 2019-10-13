@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel
 
 
 	using OnlineBackup = Neo4Net.backup.OnlineBackup;
-	using AdminTool = Neo4Net.Commandline.Admin.AdminTool;
-	using BlockerLocator = Neo4Net.Commandline.Admin.BlockerLocator;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
+	using AdminTool = Neo4Net.CommandLine.Admin.AdminTool;
+	using BlockerLocator = Neo4Net.CommandLine.Admin.BlockerLocator;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
 	using UdcSettings = Neo4Net.Ext.Udc.UdcSettings;
 	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

@@ -19,7 +19,7 @@
 namespace Neo4Net.Pushtocloud
 {
 
-	using NullOutsideWorld = Neo4Net.Commandline.Admin.NullOutsideWorld;
+	using NullOutsideWorld = Neo4Net.CommandLine.Admin.NullOutsideWorld;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

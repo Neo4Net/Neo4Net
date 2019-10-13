@@ -20,10 +20,10 @@
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
 
 	public class ClusteringCommandSection : AdminCommandSection
 	{

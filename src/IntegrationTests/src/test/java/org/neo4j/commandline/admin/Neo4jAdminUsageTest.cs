@@ -22,7 +22,7 @@
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Commandline.Admin
+namespace Neo4Net.CommandLine.Admin
 {
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;

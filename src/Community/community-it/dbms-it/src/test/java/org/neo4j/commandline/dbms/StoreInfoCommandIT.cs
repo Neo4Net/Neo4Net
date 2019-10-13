@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
 	using StoreLockException = Neo4Net.Kernel.StoreLockException;

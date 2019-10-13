@@ -1,19 +1,20 @@
 {
   "ExpandedNodes": [
     "",
-    "\\community",
-    "\\community\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline",
-    "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline"
+    "\\src",
+    "\\src\\community",
+    "\\src\\community\\common\\src",
+    "\\src\\community\\common\\src\\main",
+    "\\src\\community\\common\\src\\main\\java",
+    "\\src\\community\\common\\src\\main\\java\\org",
+    "\\src\\community\\common\\src\\main\\java\\org\\neo4j",
+    "\\src\\community\\common\\src\\main\\java\\org\\neo4j\\cursor",
+    "\\src\\community\\io\\src",
+    "\\src\\community\\io\\src\\main",
+    "\\src\\community\\io\\src\\main\\java",
+    "\\src\\community\\io\\src\\main\\java\\org",
+    "\\src\\community\\io\\src\\main\\java\\org\\neo4j",
+    "\\src\\community\\io\\src\\main\\java\\org\\neo4j\\io"
   ],
-  "SelectedNode": "\\community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline\\Neo4Net.Commandline\\Commandline",
   "PreviewInSolutionExplorer": false
 }

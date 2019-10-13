@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel
 			 }
 		 }
 
-		 private class RealOutsideWorldAnonymousInnerClass : Neo4Net.Commandline.Admin.RealOutsideWorld
+		 private class RealOutsideWorldAnonymousInnerClass : Neo4Net.CommandLine.Admin.RealOutsideWorld
 		 {
 			 private readonly PageCacheWarmupEnterpriseEditionIT outerInstance;
 

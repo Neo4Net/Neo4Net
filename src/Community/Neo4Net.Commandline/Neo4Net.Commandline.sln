@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Commandline", "Neo4Net.Commandline\Neo4Net.Commandline.csproj", "{8249DADB-105D-40D9-AFA0-F411FAAC0C12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.CommandLine", "Neo4Net.CommandLine\Neo4Net.CommandLine.csproj", "{8249DADB-105D-40D9-AFA0-F411FAAC0C12}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Commandline.Tests", "Neo4Net.Commandline.Tests\Neo4Net.Commandline.Tests.csproj", "{0747479D-339E-4E82-9A25-D95775EB204B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.CommandLine.Tests", "Neo4Net.CommandLine.Tests\Neo4Net.CommandLine.Tests.csproj", "{0747479D-339E-4E82-9A25-D95775EB204B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

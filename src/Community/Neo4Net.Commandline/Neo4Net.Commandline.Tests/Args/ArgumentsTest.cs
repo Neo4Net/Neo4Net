@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Args
+namespace Neo4Net.CommandLine.Args
 {
 	using BeforeEach = org.junit.jupiter.api.BeforeEach;
 	using Test = org.junit.jupiter.api.Test;
 
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -31,7 +31,7 @@ namespace Neo4Net.backup.impl
 	using Mockito = org.mockito.Mockito;
 
 
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

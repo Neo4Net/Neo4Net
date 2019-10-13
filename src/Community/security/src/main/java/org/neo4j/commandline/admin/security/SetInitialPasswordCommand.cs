@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin.security
+namespace Neo4Net.CommandLine.Admin.security
 {
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LegacyCredential = Neo4Net.Server.Security.Auth.LegacyCredential;

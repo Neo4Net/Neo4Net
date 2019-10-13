@@ -19,13 +19,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using Config = Neo4Net.Kernel.configuration.Config;

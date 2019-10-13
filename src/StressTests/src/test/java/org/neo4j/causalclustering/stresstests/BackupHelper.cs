@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.stresstests
 
 	using OnlineBackupCommandBuilder = Neo4Net.backup.impl.OnlineBackupCommandBuilder;
 	using Neo4Net.causalclustering.discovery;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using Log = Neo4Net.Logging.Log;
 

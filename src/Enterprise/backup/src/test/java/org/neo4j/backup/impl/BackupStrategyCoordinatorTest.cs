@@ -30,8 +30,8 @@ namespace Neo4Net.backup.impl
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;

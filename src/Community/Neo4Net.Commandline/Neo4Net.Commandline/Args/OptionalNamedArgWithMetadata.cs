@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Args
+namespace Neo4Net.CommandLine.Args
 {
 
 	using Args = Neo4Net.Helpers.Args;

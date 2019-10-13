@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;
@@ -26,8 +26,8 @@ namespace Neo4Net.Commandline.dbms
 	using ArgumentCaptor = org.mockito.ArgumentCaptor;
 
 
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;

@@ -23,10 +23,10 @@ namespace Neo4Net.Consistency
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

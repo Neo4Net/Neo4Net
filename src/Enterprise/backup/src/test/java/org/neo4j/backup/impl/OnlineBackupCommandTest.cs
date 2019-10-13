@@ -31,12 +31,12 @@ namespace Neo4Net.backup.impl
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using ParameterisedOutsideWorld = Neo4Net.Commandline.Admin.ParameterisedOutsideWorld;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using ParameterisedOutsideWorld = Neo4Net.CommandLine.Admin.ParameterisedOutsideWorld;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

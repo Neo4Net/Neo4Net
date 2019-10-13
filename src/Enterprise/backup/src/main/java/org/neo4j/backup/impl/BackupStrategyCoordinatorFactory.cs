@@ -27,7 +27,7 @@ namespace Neo4Net.backup.impl
 
 	using StoreFiles = Neo4Net.causalclustering.catchup.storecopy.StoreFiles;
 	using FileMoveProvider = Neo4Net.com.storecopy.FileMoveProvider;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

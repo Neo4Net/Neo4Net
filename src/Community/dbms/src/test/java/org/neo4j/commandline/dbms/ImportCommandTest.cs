@@ -17,19 +17,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using NullOutsideWorld = Neo4Net.Commandline.Admin.NullOutsideWorld;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using NullOutsideWorld = Neo4Net.CommandLine.Admin.NullOutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

@@ -17,15 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin.security
+namespace Neo4Net.CommandLine.Admin.security
 {
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.api.security.UserManager_Fields.INITIAL_USER_NAME;
 
-	public class SetInitialPasswordCommandProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class SetInitialPasswordCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 
 		 public SetInitialPasswordCommandProvider() : base("set-initial-password")

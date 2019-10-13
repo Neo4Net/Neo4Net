@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using Args = Neo4Net.Helpers.Args;
 	using Config = Neo4Net.Kernel.configuration.Config;
 

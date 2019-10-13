@@ -20,13 +20,13 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin
+namespace Neo4Net.CommandLine.Admin
 {
 	using Test = org.junit.jupiter.api.Test;
 	using InOrder = org.mockito.InOrder;
 
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using Iterables = Neo4Net.Helpers.Collection.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -320,9 +320,9 @@ namespace Neo4Net.Commandline.Admin
 
 		 private class AdminCommand_ProviderAnonymousInnerClass : AdminCommand_Provider
 		 {
-			 private Neo4Net.Commandline.Admin.AdminCommand _command;
+			 private Neo4Net.CommandLine.Admin.AdminCommand _command;
 
-			 public AdminCommand_ProviderAnonymousInnerClass( string name, Neo4Net.Commandline.Admin.AdminCommand command ) : base( name )
+			 public AdminCommand_ProviderAnonymousInnerClass( string name, Neo4Net.CommandLine.Admin.AdminCommand command ) : base( name )
 			 {
 				 this._command = command;
 			 }

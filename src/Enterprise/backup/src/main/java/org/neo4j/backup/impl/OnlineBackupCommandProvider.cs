@@ -23,10 +23,10 @@
 namespace Neo4Net.backup.impl
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
 	using Level = Neo4Net.Logging.Level;
@@ -35,7 +35,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.backup.impl.BackupSupportingClassesFactoryProvider.getProvidersByPriority;
 
-	public class OnlineBackupCommandProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class OnlineBackupCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 		 public OnlineBackupCommandProvider() : base("backup")
 		 {

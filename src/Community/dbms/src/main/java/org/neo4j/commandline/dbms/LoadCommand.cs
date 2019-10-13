@@ -17,15 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using OptionalBooleanArg = Neo4Net.Commandline.Args.OptionalBooleanArg;
-	using MandatoryCanonicalPath = Neo4Net.Commandline.Args.Common.MandatoryCanonicalPath;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
+	using MandatoryCanonicalPath = Neo4Net.CommandLine.Args.Common.MandatoryCanonicalPath;
 	using IncorrectFormat = Neo4Net.Dbms.archive.IncorrectFormat;
 	using Loader = Neo4Net.Dbms.archive.Loader;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms.config
+namespace Neo4Net.CommandLine.dbms.config
 {
 	using Test = org.junit.jupiter.api.Test;
 

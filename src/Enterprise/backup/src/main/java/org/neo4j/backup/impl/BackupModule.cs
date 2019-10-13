@@ -24,7 +24,7 @@ namespace Neo4Net.backup.impl
 {
 
 	using TransactionLogCatchUpFactory = Neo4Net.causalclustering.catchup.tx.TransactionLogCatchUpFactory;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;

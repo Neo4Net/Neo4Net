@@ -24,14 +24,14 @@
 namespace Neo4Net.backup.impl
 {
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using MandatoryNamedArg = Neo4Net.Commandline.Args.MandatoryNamedArg;
-	using OptionalBooleanArg = Neo4Net.Commandline.Args.OptionalBooleanArg;
-	using OptionalNamedArg = Neo4Net.Commandline.Args.OptionalNamedArg;
-	using MandatoryCanonicalPath = Neo4Net.Commandline.Args.Common.MandatoryCanonicalPath;
-	using OptionalCanonicalPath = Neo4Net.Commandline.Args.Common.OptionalCanonicalPath;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using MandatoryNamedArg = Neo4Net.CommandLine.Args.MandatoryNamedArg;
+	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
+	using OptionalNamedArg = Neo4Net.CommandLine.Args.OptionalNamedArg;
+	using MandatoryCanonicalPath = Neo4Net.CommandLine.Args.Common.MandatoryCanonicalPath;
+	using OptionalCanonicalPath = Neo4Net.CommandLine.Args.Common.OptionalCanonicalPath;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using Neo4Net.Graphdb.config;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

@@ -19,14 +19,14 @@
 namespace Neo4Net.Pushtocloud
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using MandatoryNamedArg = Neo4Net.Commandline.Args.MandatoryNamedArg;
-	using OptionalNamedArg = Neo4Net.Commandline.Args.OptionalNamedArg;
-	using Database = Neo4Net.Commandline.Args.Common.Database;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using MandatoryNamedArg = Neo4Net.CommandLine.Args.MandatoryNamedArg;
+	using OptionalNamedArg = Neo4Net.CommandLine.Args.OptionalNamedArg;
+	using Database = Neo4Net.CommandLine.Args.Common.Database;
 	using Args = Neo4Net.Helpers.Args;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

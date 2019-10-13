@@ -32,7 +32,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using SetDefaultAdminCommand = Neo4Net.Commandline.Admin.security.SetDefaultAdminCommand;
+	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using AuthSubject = Neo4Net.@internal.Kernel.Api.security.AuthSubject;
 	using AuthenticationResult = Neo4Net.@internal.Kernel.Api.security.AuthenticationResult;

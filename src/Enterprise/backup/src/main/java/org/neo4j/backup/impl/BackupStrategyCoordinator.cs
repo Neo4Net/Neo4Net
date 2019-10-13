@@ -26,8 +26,8 @@ using System.Collections.Generic;
 namespace Neo4Net.backup.impl
 {
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;

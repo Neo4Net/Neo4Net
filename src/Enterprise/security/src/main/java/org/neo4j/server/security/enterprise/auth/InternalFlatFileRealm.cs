@@ -42,7 +42,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using SimplePrincipalCollection = org.apache.shiro.subject.SimplePrincipalCollection;
 
 
-	using SetDefaultAdminCommand = Neo4Net.Commandline.Admin.security.SetDefaultAdminCommand;
+	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
 	using AuthenticationResult = Neo4Net.@internal.Kernel.Api.security.AuthenticationResult;

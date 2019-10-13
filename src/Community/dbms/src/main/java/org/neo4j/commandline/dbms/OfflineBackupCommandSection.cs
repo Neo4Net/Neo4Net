@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
 
 	public class OfflineBackupCommandSection : AdminCommandSection
 	{

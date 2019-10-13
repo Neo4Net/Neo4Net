@@ -21,7 +21,7 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using MutableLong = org.apache.commons.lang3.mutable.MutableLong;
 	using Matcher = org.hamcrest.Matcher;
@@ -29,8 +29,8 @@ namespace Neo4Net.Commandline.dbms
 	using Test = org.junit.Test;
 
 
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Label = Neo4Net.Graphdb.Label;
 	using Transaction = Neo4Net.Graphdb.Transaction;

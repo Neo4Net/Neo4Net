@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin
+namespace Neo4Net.CommandLine.Admin
 {
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 	using Service = Neo4Net.Helpers.Service;
 	using Iterables = Neo4Net.Helpers.Collection.Iterables;
 

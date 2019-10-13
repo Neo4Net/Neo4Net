@@ -17,18 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using MandatoryNamedArg = Neo4Net.Commandline.Args.MandatoryNamedArg;
-	using OptionalBooleanArg = Neo4Net.Commandline.Args.OptionalBooleanArg;
-	using OptionalNamedArg = Neo4Net.Commandline.Args.OptionalNamedArg;
-	using OptionalNamedArgWithMetadata = Neo4Net.Commandline.Args.OptionalNamedArgWithMetadata;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using MandatoryNamedArg = Neo4Net.CommandLine.Args.MandatoryNamedArg;
+	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
+	using OptionalNamedArg = Neo4Net.CommandLine.Args.OptionalNamedArg;
+	using OptionalNamedArgWithMetadata = Neo4Net.CommandLine.Args.OptionalNamedArgWithMetadata;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using Config = Neo4Net.Kernel.configuration.Config;

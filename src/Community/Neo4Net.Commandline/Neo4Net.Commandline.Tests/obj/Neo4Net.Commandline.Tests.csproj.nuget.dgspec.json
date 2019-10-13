@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline.Tests\\Neo4Net.Commandline.Tests.csproj": {}
+    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine.Tests\\Neo4Net.CommandLine.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline.Tests\\Neo4Net.Commandline.Tests.csproj": {
+    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine.Tests\\Neo4Net.CommandLine.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline.Tests\\Neo4Net.Commandline.Tests.csproj",
-        "projectName": "Neo4Net.Commandline.Tests",
-        "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline.Tests\\Neo4Net.Commandline.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine.Tests\\Neo4Net.CommandLine.Tests.csproj",
+        "projectName": "Neo4Net.CommandLine.Tests",
+        "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine.Tests\\Neo4Net.CommandLine.Tests.csproj",
         "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline.Tests\\obj\\",
+        "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

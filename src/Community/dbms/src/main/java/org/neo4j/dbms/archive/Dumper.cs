@@ -26,7 +26,7 @@ namespace Neo4Net.Dbms.archive
 	using TarArchiveOutputStream = org.apache.commons.compress.archivers.tar.TarArchiveOutputStream;
 
 
-	using Util = Neo4Net.Commandline.Util;
+	using Util = Neo4Net.CommandLine.Util;
 	using Neo4Net.Function;
 	using Resource = Neo4Net.Graphdb.Resource;
 	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;

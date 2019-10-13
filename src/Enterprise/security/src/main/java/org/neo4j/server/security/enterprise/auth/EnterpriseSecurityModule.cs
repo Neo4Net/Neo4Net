@@ -30,7 +30,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Realm = org.apache.shiro.realm.Realm;
 
 
-	using SetDefaultAdminCommand = Neo4Net.Commandline.Admin.security.SetDefaultAdminCommand;
+	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
 	using DatabaseManagementSystemSettings = Neo4Net.Dbms.DatabaseManagementSystemSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.@internal.Kernel.Api.exceptions.KernelException;

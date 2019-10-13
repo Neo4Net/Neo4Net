@@ -25,7 +25,7 @@
 namespace Neo4Net.Util
 {
 
-	using AdminTool = Neo4Net.Commandline.Admin.AdminTool;
+	using AdminTool = Neo4Net.CommandLine.Admin.AdminTool;
 	using ProcessStreamHandler = Neo4Net.Test.ProcessStreamHandler;
 	using StreamConsumer = Neo4Net.Test.StreamConsumer;
 

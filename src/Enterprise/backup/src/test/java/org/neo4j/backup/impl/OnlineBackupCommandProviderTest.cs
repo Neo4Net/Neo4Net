@@ -26,7 +26,7 @@ namespace Neo4Net.backup.impl
 
 	using PipelineWrapper = Neo4Net.causalclustering.handlers.PipelineWrapper;
 	using SecureClientPipelineWrapper = Neo4Net.causalclustering.handlers.SecureClientPipelineWrapper;
-	using RealOutsideWorld = Neo4Net.Commandline.Admin.RealOutsideWorld;
+	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;

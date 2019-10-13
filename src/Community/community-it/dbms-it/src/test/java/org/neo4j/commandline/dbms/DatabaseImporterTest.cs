@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using BaseMatcher = org.hamcrest.BaseMatcher;
 	using Description = org.hamcrest.Description;
@@ -29,8 +29,8 @@ namespace Neo4Net.Commandline.dbms
 	using Test = org.junit.Test;
 
 
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using NullOutsideWorld = Neo4Net.Commandline.Admin.NullOutsideWorld;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using NullOutsideWorld = Neo4Net.CommandLine.Admin.NullOutsideWorld;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;

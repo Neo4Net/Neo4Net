@@ -25,10 +25,10 @@ namespace Neo4Net.Pushtocloud
 	using InOrder = org.mockito.InOrder;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Database = Neo4Net.Commandline.Args.Common.Database;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Database = Neo4Net.CommandLine.Args.Common.Database;
 	using Neo4Net.Graphdb.config;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Copier = Neo4Net.Pushtocloud.PushToCloudCommand.Copier;

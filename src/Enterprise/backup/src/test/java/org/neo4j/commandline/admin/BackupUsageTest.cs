@@ -23,7 +23,7 @@ using System.Collections.Generic;
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Commandline.Admin
+namespace Neo4Net.CommandLine.Admin
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;

@@ -29,10 +29,10 @@ namespace Neo4Net.backup.impl
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using ParameterisedOutsideWorld = Neo4Net.Commandline.Admin.ParameterisedOutsideWorld;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using ParameterisedOutsideWorld = Neo4Net.CommandLine.Admin.ParameterisedOutsideWorld;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 

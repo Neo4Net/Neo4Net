@@ -29,9 +29,9 @@ namespace Neo4Net.restore
 	using Mockito = org.mockito.Mockito;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Node = Neo4Net.Graphdb.Node;
 	using Relationship = Neo4Net.Graphdb.Relationship;

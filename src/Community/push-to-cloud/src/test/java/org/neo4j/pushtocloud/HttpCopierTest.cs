@@ -29,7 +29,7 @@ namespace Neo4Net.Pushtocloud
 	using Mockito = org.mockito.Mockito;
 
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

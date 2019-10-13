@@ -20,7 +20,7 @@
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Commandline.dbms
+namespace Neo4Net.CommandLine.dbms
 {
 	using After = org.junit.After;
 	using Before = org.junit.Before;
@@ -31,10 +31,10 @@ namespace Neo4Net.Commandline.dbms
 
 	using ClusterStateDirectory = Neo4Net.causalclustering.core.state.ClusterStateDirectory;
 	using ClusterStateException = Neo4Net.causalclustering.core.state.ClusterStateException;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using CommandLocator = Neo4Net.Commandline.Admin.CommandLocator;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Usage = Neo4Net.Commandline.Admin.Usage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Usage = Neo4Net.CommandLine.Admin.Usage;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;

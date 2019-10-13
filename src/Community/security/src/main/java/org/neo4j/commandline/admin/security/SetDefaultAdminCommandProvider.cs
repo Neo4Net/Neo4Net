@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin.security
+namespace Neo4Net.CommandLine.Admin.security
 {
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 
-	public class SetDefaultAdminCommandProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class SetDefaultAdminCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 		 public SetDefaultAdminCommandProvider() : base(SetDefaultAdminCommand.COMMAND_NAME)
 		 {

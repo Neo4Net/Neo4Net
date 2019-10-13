@@ -23,7 +23,7 @@
 namespace Neo4Net
 {
 
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
 
 	public class OnlineBackupCommandSection : AdminCommandSection
 	{

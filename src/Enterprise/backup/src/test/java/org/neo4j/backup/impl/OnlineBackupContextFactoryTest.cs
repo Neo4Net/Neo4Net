@@ -32,8 +32,8 @@ namespace Neo4Net.backup.impl
 
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;

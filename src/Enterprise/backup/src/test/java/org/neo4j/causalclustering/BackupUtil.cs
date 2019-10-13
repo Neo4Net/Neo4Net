@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering
 
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;

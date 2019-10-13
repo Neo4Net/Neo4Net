@@ -23,7 +23,7 @@
 namespace Neo4Net.restore
 {
 
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

@@ -23,13 +23,13 @@
 namespace Neo4Net.restore
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using CommandFailed = Neo4Net.Commandline.Admin.CommandFailed;
-	using IncorrectUsage = Neo4Net.Commandline.Admin.IncorrectUsage;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
-	using MandatoryNamedArg = Neo4Net.Commandline.Args.MandatoryNamedArg;
-	using OptionalBooleanArg = Neo4Net.Commandline.Args.OptionalBooleanArg;
-	using Database = Neo4Net.Commandline.Args.Common.Database;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
+	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using MandatoryNamedArg = Neo4Net.CommandLine.Args.MandatoryNamedArg;
+	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
+	using Database = Neo4Net.CommandLine.Args.Common.Database;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

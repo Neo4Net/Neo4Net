@@ -27,8 +27,8 @@ namespace Neo4Net.backup.impl
 	using Test = org.junit.Test;
 
 	using StoreCopyClientMonitor = Neo4Net.com.storecopy.StoreCopyClientMonitor;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using ParameterisedOutsideWorld = Neo4Net.Commandline.Admin.ParameterisedOutsideWorld;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using ParameterisedOutsideWorld = Neo4Net.CommandLine.Admin.ParameterisedOutsideWorld;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;

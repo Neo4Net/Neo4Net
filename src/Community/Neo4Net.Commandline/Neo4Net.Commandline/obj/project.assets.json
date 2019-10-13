@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline.csproj",
-      "projectName": "Neo4Net.Commandline",
-      "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline\\Neo4Net.Commandline.csproj",
+      "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine\\Neo4Net.CommandLine.csproj",
+      "projectName": "Neo4Net.CommandLine",
+      "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine\\Neo4Net.CommandLine.csproj",
       "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.Commandline\\Neo4Net.Commandline\\obj\\",
+      "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\Community\\Neo4Net.CommandLine\\Neo4Net.CommandLine\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"

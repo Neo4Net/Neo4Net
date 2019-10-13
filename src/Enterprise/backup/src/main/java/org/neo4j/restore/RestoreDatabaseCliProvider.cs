@@ -23,12 +23,12 @@
 namespace Neo4Net.restore
 {
 
-	using AdminCommand = Neo4Net.Commandline.Admin.AdminCommand;
-	using AdminCommandSection = Neo4Net.Commandline.Admin.AdminCommandSection;
-	using OutsideWorld = Neo4Net.Commandline.Admin.OutsideWorld;
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
+	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 
-	public class RestoreDatabaseCliProvider : Neo4Net.Commandline.Admin.AdminCommand_Provider
+	public class RestoreDatabaseCliProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
 		 public RestoreDatabaseCliProvider() : base("restore")
 		 {

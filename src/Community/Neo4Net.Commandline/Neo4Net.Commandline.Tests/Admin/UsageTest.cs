@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Commandline.Admin
+namespace Neo4Net.CommandLine.Admin
 {
 	using BeforeEach = org.junit.jupiter.api.BeforeEach;
 	using Test = org.junit.jupiter.api.Test;
@@ -26,7 +26,7 @@ namespace Neo4Net.Commandline.Admin
 	using MockitoAnnotations = org.mockito.MockitoAnnotations;
 
 
-	using Arguments = Neo4Net.Commandline.Args.Arguments;
+	using Arguments = Neo4Net.CommandLine.Args.Arguments;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.inOrder;
