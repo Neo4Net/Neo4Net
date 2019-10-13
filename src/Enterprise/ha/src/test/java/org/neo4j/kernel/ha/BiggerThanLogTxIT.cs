@@ -3,7 +3,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.ha
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using TransactionTemplate = Neo4Net.Helpers.TransactionTemplate;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 

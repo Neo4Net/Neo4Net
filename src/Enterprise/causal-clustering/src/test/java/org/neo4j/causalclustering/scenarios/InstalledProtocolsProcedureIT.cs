@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using InstalledProtocolsProcedure = Neo4Net.causalclustering.discovery.procedures.InstalledProtocolsProcedure;
 	using InstalledProtocolsProcedureTest = Neo4Net.causalclustering.discovery.procedures.InstalledProtocolsProcedureTest;
-	using Neo4Net.Collection;
+	using Neo4Net.Collections;
 	using Kernel = Neo4Net.@internal.Kernel.Api.Kernel;
 	using Transaction = Neo4Net.@internal.Kernel.Api.Transaction;
 	using ProcedureException = Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException;

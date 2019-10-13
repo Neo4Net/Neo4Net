@@ -2,12 +2,12 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
 	using Schema = Neo4Net.Graphdb.schema.Schema;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IndexReference = Neo4Net.@internal.Kernel.Api.IndexReference;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;

@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.ha.transaction
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using ComException = Neo4Net.com.ComException;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using SlavePriorities = Neo4Net.Kernel.ha.com.master.SlavePriorities;

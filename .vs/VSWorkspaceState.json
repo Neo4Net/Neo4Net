@@ -2,19 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\community",
-    "\\src\\community\\common\\src",
-    "\\src\\community\\common\\src\\main",
-    "\\src\\community\\common\\src\\main\\java",
-    "\\src\\community\\common\\src\\main\\java\\org",
-    "\\src\\community\\common\\src\\main\\java\\org\\neo4j",
-    "\\src\\community\\common\\src\\main\\java\\org\\neo4j\\cursor",
-    "\\src\\community\\io\\src",
-    "\\src\\community\\io\\src\\main",
-    "\\src\\community\\io\\src\\main\\java",
-    "\\src\\community\\io\\src\\main\\java\\org",
-    "\\src\\community\\io\\src\\main\\java\\org\\neo4j",
-    "\\src\\community\\io\\src\\main\\java\\org\\neo4j\\io"
+    "\\src\\Community",
+    "\\src\\Community\\dbms",
+    "\\src\\Community\\dbms\\src",
+    "\\src\\Community\\dbms\\src\\main",
+    "\\src\\Community\\dbms\\src\\main\\java",
+    "\\src\\Community\\dbms\\src\\main\\java\\org",
+    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j",
+    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline",
+    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline\\dbms",
+    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline\\dbms\\config"
   ],
   "PreviewInSolutionExplorer": false
 }

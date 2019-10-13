@@ -1,12 +1,12 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Kernel.Api.Index;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
 	using EntityType = Neo4Net.Storageengine.Api.EntityType;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
-	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;
+	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

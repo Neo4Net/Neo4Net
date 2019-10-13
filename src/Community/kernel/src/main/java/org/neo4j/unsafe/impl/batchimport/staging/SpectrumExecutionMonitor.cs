@@ -2,12 +2,12 @@
 using System.Text;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -23,7 +23,7 @@ using System.Text;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using DetailLevel = Neo4Net.@unsafe.Impl.Batchimport.stats.DetailLevel;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;

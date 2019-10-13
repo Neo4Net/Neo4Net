@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 	using ConsecutiveInFlightCache = Neo4Net.causalclustering.core.consensus.log.cache.ConsecutiveInFlightCache;
 	using TimerService = Neo4Net.causalclustering.core.consensus.schedule.TimerService;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

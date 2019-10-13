@@ -3,7 +3,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using Cluster = Neo4Net.cluster.protocol.cluster.Cluster;
 	using ClusterConfiguration = Neo4Net.cluster.protocol.cluster.ClusterConfiguration;
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
-	using Suppliers = Neo4Net.Function.Suppliers;
+	using Suppliers = Neo4Net.Functions.Suppliers;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
 	using DefaultSlaveFactory = Neo4Net.Kernel.ha.com.master.DefaultSlaveFactory;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;

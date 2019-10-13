@@ -5,7 +5,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -40,8 +40,8 @@ namespace Neo4Net.net
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
 	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
-	using Predicates = Neo4Net.Function.Predicates;
-	using Neo4Net.Function;
+	using Predicates = Neo4Net.Functions.Predicates;
+	using Neo4Net.Functions;
 	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Lock = Neo4Net.Graphdb.Lock;

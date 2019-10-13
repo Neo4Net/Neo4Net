@@ -5,7 +5,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 	using LongIntHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongIntHashMap;
 
 
-	using Neo4Net.Collection.pool;
+	using Neo4Net.Collections.Pooling;
 	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using DeadlockResolutionStrategy = Neo4Net.Kernel.impl.enterprise.@lock.forseti.ForsetiLockManager.DeadlockResolutionStrategy;

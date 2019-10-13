@@ -1,10 +1,10 @@
 ﻿/*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -17,25 +17,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive
+namespace Neo4Net.Collections.primitive
 {
-	using IntKeyLongValueTable = Neo4Net.Collection.primitive.hopscotch.IntKeyLongValueTable;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using LongKeyIntValueTable = Neo4Net.Collection.primitive.hopscotch.LongKeyIntValueTable;
-	using LongKeyLongValueTable = Neo4Net.Collection.primitive.hopscotch.LongKeyLongValueTable;
-	using LongKeyLongValueUnsafeTable = Neo4Net.Collection.primitive.hopscotch.LongKeyLongValueUnsafeTable;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using PrimitiveIntHashSet = Neo4Net.Collection.primitive.hopscotch.PrimitiveIntHashSet;
-	using PrimitiveIntLongHashMap = Neo4Net.Collection.primitive.hopscotch.PrimitiveIntLongHashMap;
-	using Neo4Net.Collection.primitive.hopscotch;
-	using PrimitiveLongHashSet = Neo4Net.Collection.primitive.hopscotch.PrimitiveLongHashSet;
-	using PrimitiveLongIntHashMap = Neo4Net.Collection.primitive.hopscotch.PrimitiveLongIntHashMap;
-	using PrimitiveLongLongHashMap = Neo4Net.Collection.primitive.hopscotch.PrimitiveLongLongHashMap;
-	using Neo4Net.Collection.primitive.hopscotch;
+	using IntKeyLongValueTable = Neo4Net.Collections.primitive.hopscotch.IntKeyLongValueTable;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using LongKeyIntValueTable = Neo4Net.Collections.primitive.hopscotch.LongKeyIntValueTable;
+	using LongKeyLongValueTable = Neo4Net.Collections.primitive.hopscotch.LongKeyLongValueTable;
+	using LongKeyLongValueUnsafeTable = Neo4Net.Collections.primitive.hopscotch.LongKeyLongValueUnsafeTable;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using PrimitiveIntHashSet = Neo4Net.Collections.primitive.hopscotch.PrimitiveIntHashSet;
+	using PrimitiveIntLongHashMap = Neo4Net.Collections.primitive.hopscotch.PrimitiveIntLongHashMap;
+	using Neo4Net.Collections.primitive.hopscotch;
+	using PrimitiveLongHashSet = Neo4Net.Collections.primitive.hopscotch.PrimitiveLongHashSet;
+	using PrimitiveLongIntHashMap = Neo4Net.Collections.primitive.hopscotch.PrimitiveLongIntHashMap;
+	using PrimitiveLongLongHashMap = Neo4Net.Collections.primitive.hopscotch.PrimitiveLongLongHashMap;
+	using Neo4Net.Collections.primitive.hopscotch;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
 	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
 

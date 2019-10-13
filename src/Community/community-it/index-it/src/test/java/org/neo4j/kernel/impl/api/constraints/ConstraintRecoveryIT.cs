@@ -1,10 +1,10 @@
 ﻿/*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using GraphDatabaseAPI = Neo4Net.Kernel.@internal.GraphDatabaseAPI;

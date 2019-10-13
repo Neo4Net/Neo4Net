@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -27,8 +27,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 {
 
-	using Neo4Net.Collection.pool;
-	using Neo4Net.Collection.pool;
+	using Neo4Net.Collections.Pooling;
+	using Neo4Net.Collections.Pooling;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;

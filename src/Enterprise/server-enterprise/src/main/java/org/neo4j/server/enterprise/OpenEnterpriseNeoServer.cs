@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2018-2019 "GraphFoundation" [https://graphfoundation.org]
  *
@@ -35,7 +35,7 @@ namespace Neo4Net.Server.enterprise
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;

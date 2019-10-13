@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Label = Neo4Net.Graphdb.Label;
 	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using ConstraintDescriptor = Neo4Net.@internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;

@@ -1,10 +1,10 @@
 ﻿/*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Schema
 {
 
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;

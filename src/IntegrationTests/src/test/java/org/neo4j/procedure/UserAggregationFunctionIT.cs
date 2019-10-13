@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -44,7 +44,7 @@ namespace Neo4Net.Procedure
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using JarBuilder = Neo4Net.Kernel.impl.proc.JarBuilder;
 	using Log = Neo4Net.Logging.Log;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

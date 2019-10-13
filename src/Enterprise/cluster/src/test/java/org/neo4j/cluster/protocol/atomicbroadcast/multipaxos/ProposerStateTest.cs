@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -35,7 +35,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	using TrackingMessageHolder = Neo4Net.cluster.com.message.TrackingMessageHolder;
 	using Neo4Net.cluster.protocol;
 	using State = Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.PaxosInstance.State;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NullLog = Neo4Net.Logging.NullLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

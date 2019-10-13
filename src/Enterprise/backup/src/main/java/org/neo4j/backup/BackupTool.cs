@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -35,7 +35,7 @@ namespace Neo4Net.backup
 	using Args = Neo4Net.Helpers.Args;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Service = Neo4Net.Helpers.Service;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using MismatchingStoreIdException = Neo4Net.Kernel.impl.store.MismatchingStoreIdException;

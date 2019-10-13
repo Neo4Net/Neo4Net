@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core
 	using Neo4Net.causalclustering.protocol;
 	using ApplicationSupportedProtocols = Neo4Net.causalclustering.protocol.handshake.ApplicationSupportedProtocols;
 	using ModifierSupportedProtocols = Neo4Net.causalclustering.protocol.handshake.ModifierSupportedProtocols;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

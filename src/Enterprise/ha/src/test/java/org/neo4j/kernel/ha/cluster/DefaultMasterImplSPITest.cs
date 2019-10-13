@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Test = org.junit.Test;
 
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;

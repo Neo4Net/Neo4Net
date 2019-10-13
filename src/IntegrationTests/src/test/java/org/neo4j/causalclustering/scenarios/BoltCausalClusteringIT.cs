@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using SessionExpiredException = Neo4Net.driver.v1.exceptions.SessionExpiredException;
 	using ServerInfo = Neo4Net.driver.v1.summary.ServerInfo;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 

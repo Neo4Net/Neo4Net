@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using BinaryLatch = Neo4Net.Util.concurrent.BinaryLatch;
+	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;

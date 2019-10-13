@@ -4,7 +4,7 @@ using System.Text;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Server = Neo4Net.causalclustering.net.Server;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;

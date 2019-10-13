@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -37,7 +37,7 @@ namespace Recovery
 	using Neo4Net.Graphdb.config;
 	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;

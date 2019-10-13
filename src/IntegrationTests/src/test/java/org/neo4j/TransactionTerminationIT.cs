@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -35,7 +35,7 @@ namespace Neo4Net
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Label = Neo4Net.Graphdb.Label;

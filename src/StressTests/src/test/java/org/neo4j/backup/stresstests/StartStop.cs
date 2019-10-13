@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -24,7 +24,7 @@ namespace Neo4Net.backup.stresstests
 {
 
 	using Control = Neo4Net.causalclustering.stresstests.Control;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Workload = Neo4Net.helper.Workload;
 

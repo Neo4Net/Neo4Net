@@ -1,12 +1,12 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -25,7 +25,7 @@ namespace Neo4Net.Graphdb
 	using Test = org.junit.Test;
 
 
-	using PrimitiveLongCollections = Neo4Net.Collection.PrimitiveLongCollections;
+	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using GroupingRecoveryCleanupWorkCollector = Neo4Net.Index.@internal.gbptree.GroupingRecoveryCleanupWorkCollector;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;

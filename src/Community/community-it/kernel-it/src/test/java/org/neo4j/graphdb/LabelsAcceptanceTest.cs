@@ -2,12 +2,12 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -33,7 +33,7 @@ namespace Neo4Net.Graphdb
 	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
 	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
 	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using LabelSet = Neo4Net.@internal.Kernel.Api.LabelSet;
 	using NodeCursor = Neo4Net.@internal.Kernel.Api.NodeCursor;
 	using PropertyCursor = Neo4Net.@internal.Kernel.Api.PropertyCursor;
@@ -54,7 +54,7 @@ namespace Neo4Net.Graphdb
 	using EphemeralIdGenerator = Neo4Net.Test.impl.EphemeralIdGenerator;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
-	using BinaryLatch = Neo4Net.Util.concurrent.BinaryLatch;
+	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasItems;

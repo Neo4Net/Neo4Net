@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -32,7 +32,7 @@ namespace Neo4Net.Server.enterprise
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
 	using ClusterClientModule = Neo4Net.cluster.client.ClusterClientModule;
 	using NotElectableElectionCredentialsProvider = Neo4Net.cluster.protocol.election.NotElectableElectionCredentialsProvider;
-	using Predicates = Neo4Net.Function.Predicates;
+	using Predicates = Neo4Net.Functions.Predicates;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

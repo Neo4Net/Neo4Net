@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 	using CoreServerInfo = Neo4Net.causalclustering.discovery.CoreServerInfo;
 	using CoreTopology = Neo4Net.causalclustering.discovery.CoreTopology;
 	using TopologyService = Neo4Net.causalclustering.discovery.TopologyService;
-	using Neo4Net.Collection;
+	using Neo4Net.Collections;
 	using ProcedureException = Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException;
 	using Neo4jTypes = Neo4Net.@internal.Kernel.Api.procs.Neo4jTypes;
 	using ProcedureSignature = Neo4Net.@internal.Kernel.Api.procs.ProcedureSignature;

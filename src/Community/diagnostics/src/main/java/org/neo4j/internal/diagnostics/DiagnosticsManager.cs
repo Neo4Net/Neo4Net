@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -24,7 +24,7 @@ namespace Neo4Net.@internal.Diagnostics
 {
 
 	using Neo4Net.@internal.Diagnostics;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using Logger = Neo4Net.Logging.Logger;
@@ -83,7 +83,7 @@ namespace Neo4Net.@internal.Diagnostics
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //ORIGINAL LINE: org.neo4j.helpers.collection.Visitor<? super DiagnosticsProvider, ? extends RuntimeException> target = org.neo4j.helpers.collection.Visitor_SafeGenerics.castOrNull(DiagnosticsProvider.class, RuntimeException.class, visitor);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-				  Visitor<object, ? extends Exception> target = Neo4Net.Helpers.Collection.Visitor_SafeGenerics.CastOrNull( typeof( DiagnosticsProvider ), typeof( Exception ), visitor );
+				  Visitor<object, ? extends Exception> target = Neo4Net.Helpers.Collections.Visitor_SafeGenerics.CastOrNull( typeof( DiagnosticsProvider ), typeof( Exception ), visitor );
 				  if ( target != null )
 				  {
 						foreach ( DiagnosticsProvider provider in _outerInstance.providers )

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.web
 	using Sort = org.apache.lucene.search.Sort;
 
 
-	using Predicates = Neo4Net.Function.Predicates;
+	using Predicates = Neo4Net.Functions.Predicates;
 	using CommonEvaluators = Neo4Net.Graphalgo.CommonEvaluators;
 	using Neo4Net.Graphalgo;
 	using GraphAlgoFactory = Neo4Net.Graphalgo.GraphAlgoFactory;
@@ -59,9 +59,9 @@ namespace Neo4Net.Server.rest.web
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
 	using Neo4Net.Graphdb.traversal;
 	using Paths = Neo4Net.Graphdb.traversal.Paths;
-	using Neo4Net.Helpers.Collection;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Helpers.Collections;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using GraphDatabaseAPI = Neo4Net.Kernel.@internal.GraphDatabaseAPI;
 	using Neo4Net.Server.database;

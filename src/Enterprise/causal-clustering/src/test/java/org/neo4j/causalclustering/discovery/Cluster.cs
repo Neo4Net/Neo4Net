@@ -5,7 +5,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.discovery
 	using LeaderOnlyLockManager = Neo4Net.causalclustering.core.state.machines.locks.LeaderOnlyLockManager;
 	using ErrorHandler = Neo4Net.causalclustering.helper.ErrorHandler;
 	using ReadReplicaGraphDatabase = Neo4Net.causalclustering.readreplica.ReadReplicaGraphDatabase;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;

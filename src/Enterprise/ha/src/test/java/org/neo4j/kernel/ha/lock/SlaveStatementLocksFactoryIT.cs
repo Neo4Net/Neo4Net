@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using Node = Neo4Net.Graphdb.Node;
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using LockRecord = Neo4Net.Kernel.ha.@lock.trace.LockRecord;
 	using RecordingLockTracer = Neo4Net.Kernel.ha.@lock.trace.RecordingLockTracer;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;

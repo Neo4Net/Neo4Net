@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -41,7 +41,7 @@ namespace Neo4Net.cluster.member.paxos
 	using SnapshotProvider = Neo4Net.cluster.protocol.snapshot.SnapshotProvider;
 	using Neo4Net.Helpers;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;

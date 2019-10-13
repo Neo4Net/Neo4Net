@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.api
 	using Test = org.junit.Test;
 
 
-	using Predicates = Neo4Net.Function.Predicates;
+	using Predicates = Neo4Net.Functions.Predicates;
 	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Label = Neo4Net.Graphdb.Label;

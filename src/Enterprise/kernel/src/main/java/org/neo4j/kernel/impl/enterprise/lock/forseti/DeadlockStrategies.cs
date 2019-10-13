@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 {
-	using FeatureToggles = Neo4Net.Util.FeatureToggles;
+	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 	public abstract class DeadlockStrategies : ForsetiLockManager.DeadlockResolutionStrategy
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// <summary>
 		 /// To aid in experimental testing of strategies on different real workloads, allow toggling which strategy to use.
 		 /// </summary>
-		 public static readonly ForsetiLockManager.DeadlockResolutionStrategy DEFAULT = Neo4Net.Util.FeatureToggles.flag( DeadlockStrategies.class, "strategy", ABORT_YOUNG );
+		 public static readonly ForsetiLockManager.DeadlockResolutionStrategy DEFAULT = Neo4Net.Utils.FeatureToggles.flag( DeadlockStrategies.class, "strategy", ABORT_YOUNG );
 
 		 public static readonly DeadlockStrategies private static boolean isSameClient( ForsetiClient a, ForsetiClient b ) { return a.id() == b.id(); } = new DeadlockStrategies("private static boolean isSameClient(ForsetiClient a, ForsetiClient b) { return a.id() == b.id(); }", InnerEnum.private static boolean isSameClient(ForsetiClient a, ForsetiClient b) { return a.id() == b.id(); });
 

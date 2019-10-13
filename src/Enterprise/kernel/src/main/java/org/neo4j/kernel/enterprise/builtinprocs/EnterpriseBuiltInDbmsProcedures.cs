@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -26,11 +26,11 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
-	using UncaughtCheckedException = Neo4Net.Function.UncaughtCheckedException;
+	using UncaughtCheckedException = Neo4Net.Functions.UncaughtCheckedException;
 	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using ProcedureSignature = Neo4Net.@internal.Kernel.Api.procs.ProcedureSignature;
 	using UserFunctionSignature = Neo4Net.@internal.Kernel.Api.procs.UserFunctionSignature;
 	using SecurityContext = Neo4Net.@internal.Kernel.Api.security.SecurityContext;

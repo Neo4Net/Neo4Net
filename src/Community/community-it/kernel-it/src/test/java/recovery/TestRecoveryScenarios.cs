@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -34,7 +34,7 @@ namespace Recovery
 	using Node = Neo4Net.Graphdb.Node;
 	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
 	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Kernel = Neo4Net.@internal.Kernel.Api.Kernel;
 	using LoginContext = Neo4Net.@internal.Kernel.Api.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

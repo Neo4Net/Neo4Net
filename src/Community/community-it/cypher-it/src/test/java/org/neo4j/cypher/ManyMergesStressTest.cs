@@ -2,12 +2,12 @@
 using System.Text;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher
 	using Label = Neo4Net.Graphdb.Label;
 	using Result = Neo4Net.Graphdb.Result;
 	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using LoginContext = Neo4Net.@internal.Kernel.Api.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using ArgumentMatchers = org.mockito.ArgumentMatchers;
 
 
-	using Neo4Net.Helpers.Collection;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Neo4Net.Helpers.Collections;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
@@ -489,7 +489,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 
 					// then
 					BoundedIterable<long> fusionAllEntriesReader = _fusionIndexAccessor.newAllEntriesReader();
-					assertThat( fusionAllEntriesReader.MaxCount(), @is(Neo4Net.Helpers.Collection.BoundedIterable_Fields.UNKNOWN_MAX_COUNT) );
+					assertThat( fusionAllEntriesReader.MaxCount(), @is(Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT) );
 			  }
 		 }
 
@@ -650,7 +650,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 private static BoundedIterable<long> MockedAllEntriesReader( bool knownMaxCount, IList<long> entries )
 		 {
 			  BoundedIterable<long> mockedAllEntriesReader = mock( typeof( BoundedIterable ) );
-			  when( mockedAllEntriesReader.MaxCount() ).thenReturn(knownMaxCount ? entries.Count : Neo4Net.Helpers.Collection.BoundedIterable_Fields.UNKNOWN_MAX_COUNT);
+			  when( mockedAllEntriesReader.MaxCount() ).thenReturn(knownMaxCount ? entries.Count : Neo4Net.Helpers.Collections.BoundedIterable_Fields.UNKNOWN_MAX_COUNT);
 			  when( mockedAllEntriesReader.GetEnumerator() ).thenReturn(entries.GetEnumerator());
 			  return mockedAllEntriesReader;
 		 }

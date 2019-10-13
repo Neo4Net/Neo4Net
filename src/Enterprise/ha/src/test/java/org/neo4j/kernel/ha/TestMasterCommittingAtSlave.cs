@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha
 	using Neo4Net.com;
 	using TransactionStream = Neo4Net.com.TransactionStream;
 	using Neo4Net.com;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using SlavePriorities = Neo4Net.Kernel.ha.com.master.SlavePriorities;

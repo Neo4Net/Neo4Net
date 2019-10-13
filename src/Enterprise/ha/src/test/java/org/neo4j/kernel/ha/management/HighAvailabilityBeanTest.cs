@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.ha.management
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using Format = Neo4Net.Helpers.Format;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
 	using ManagementSupport = Neo4Net.Jmx.impl.ManagementSupport;

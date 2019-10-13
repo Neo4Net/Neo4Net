@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -79,18 +79,18 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		public abstract Neo4Net.Values.AnyValue FunctionCallOverride( int id, Neo4Net.Values.AnyValue[] arguments );
 		public abstract Neo4Net.Values.AnyValue FunctionCall( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, Neo4Net.Values.AnyValue[] arguments );
 		public abstract Neo4Net.Values.AnyValue FunctionCall( int id, Neo4Net.Values.AnyValue[] arguments );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collection.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( int id, object[] arguments, Neo4Net.@internal.Kernel.Api.procs.ProcedureCallContext context );
 		public abstract ISet<Neo4Net.@internal.Kernel.Api.procs.ProcedureSignature> ProceduresGetAll();
 		public abstract Neo4Net.@internal.Kernel.Api.procs.ProcedureHandle ProcedureGet( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name );
 		public abstract Neo4Net.@internal.Kernel.Api.procs.UserFunctionHandle AggregationFunctionGet( Neo4Net.@internal.Kernel.Api.procs.QualifiedName name );

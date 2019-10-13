@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using Neo4Net.Graphdb;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryId = Neo4Net.Kernel.enterprise.builtinprocs.QueryId;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

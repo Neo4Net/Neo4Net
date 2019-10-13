@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -25,7 +25,7 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.causalclustering.helper
 {
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 	internal class SuspendableLifecycleStateTestHelpers
@@ -73,9 +73,9 @@ namespace Neo4Net.causalclustering.helper
 			  private readonly int ordinalValue;
 			  private static int nextOrdinal = 0;
 
-			  internal readonly Neo4Net.Function.ThrowingConsumer<Neo4Net.Kernel.Lifecycle.Lifecycle, Exception> operation;
+			  internal readonly Neo4Net.Functions.ThrowingConsumer<Neo4Net.Kernel.Lifecycle.Lifecycle, Exception> operation;
 
-			  internal LifeCycleState( string name, InnerEnum innerEnum, Neo4Net.Function.ThrowingConsumer<Neo4Net.Kernel.Lifecycle.Lifecycle, Exception> operation )
+			  internal LifeCycleState( string name, InnerEnum innerEnum, Neo4Net.Functions.ThrowingConsumer<Neo4Net.Kernel.Lifecycle.Lifecycle, Exception> operation )
 			  {
 					this._operation = operation;
 
@@ -147,9 +147,9 @@ namespace Neo4Net.causalclustering.helper
 			  private readonly int ordinalValue;
 			  private static int nextOrdinal = 0;
 
-			  internal readonly Neo4Net.Function.ThrowingConsumer<Suspendable, Exception> consumer;
+			  internal readonly Neo4Net.Functions.ThrowingConsumer<Suspendable, Exception> consumer;
 
-			  internal SuspendedState( string name, InnerEnum innerEnum, Neo4Net.Function.ThrowingConsumer<Suspendable, Exception> consumer )
+			  internal SuspendedState( string name, InnerEnum innerEnum, Neo4Net.Functions.ThrowingConsumer<Suspendable, Exception> consumer )
 			  {
 					this._consumer = consumer;
 

@@ -1,12 +1,12 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using EntityNotFoundException = Neo4Net.@internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Register = Neo4Net.Register.Register;
 	using EntityType = Neo4Net.Storageengine.Api.EntityType;
-	using FeatureToggles = Neo4Net.Util.FeatureToggles;
+	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>

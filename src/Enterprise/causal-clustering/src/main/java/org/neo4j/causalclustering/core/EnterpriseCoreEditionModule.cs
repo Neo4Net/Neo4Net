@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.core
 	using UpstreamDatabaseStrategySelector = Neo4Net.causalclustering.upstream.UpstreamDatabaseStrategySelector;
 	using TypicallyConnectToRandomReadReplicaStrategy = Neo4Net.causalclustering.upstream.strategies.TypicallyConnectToRandomReadReplicaStrategy;
 	using StoreUtil = Neo4Net.com.storecopy.StoreUtil;
-	using Predicates = Neo4Net.Function.Predicates;
+	using Predicates = Neo4Net.Functions.Predicates;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
 	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.core
 	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using KernelException = Neo4Net.@internal.Kernel.Api.exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

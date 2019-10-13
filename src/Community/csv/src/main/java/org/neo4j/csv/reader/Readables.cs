@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -24,9 +24,9 @@ using System.IO;
 namespace Neo4Net.Csv.Reader
 {
 
-	using Neo4Net.Collection;
-	using Neo4Net.Function;
-	using Neo4Net.Function;
+	using Neo4Net.Collections;
+	using Neo4Net.Functions;
+	using Neo4Net.Functions;
 
 	/// <summary>
 	/// Means of instantiating common <seealso cref="CharReadable"/> instances.

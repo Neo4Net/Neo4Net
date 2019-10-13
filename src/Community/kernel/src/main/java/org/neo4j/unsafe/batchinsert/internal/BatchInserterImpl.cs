@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -24,7 +24,7 @@ using System.Threading;
 namespace Neo4Net.@unsafe.Batchinsert.@internal
 {
 
-	using PrimitiveLongCollections = Neo4Net.Collection.PrimitiveLongCollections;
+	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
 	using Label = Neo4Net.Graphdb.Label;
 	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
@@ -35,8 +35,8 @@ namespace Neo4Net.@unsafe.Batchinsert.@internal
 	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
-	using Neo4Net.Helpers.Collection;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Neo4Net.Helpers.Collections;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.@internal.gbptree.RecoveryCleanupWorkCollector;
 	using IndexReference = Neo4Net.@internal.Kernel.Api.IndexReference;
 	using InternalIndexState = Neo4Net.@internal.Kernel.Api.InternalIndexState;
@@ -152,7 +152,7 @@ namespace Neo4Net.@unsafe.Batchinsert.@internal
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
-	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;
+	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -41,7 +41,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	using ServerIdElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ServerIdElectionCredentialsProvider;
 	using FixedTimeoutStrategy = Neo4Net.cluster.timeout.FixedTimeoutStrategy;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;

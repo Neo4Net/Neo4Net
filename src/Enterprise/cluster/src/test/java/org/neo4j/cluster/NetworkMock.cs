@@ -3,7 +3,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -35,7 +35,7 @@ namespace Neo4Net.cluster
 	using ServerIdElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ServerIdElectionCredentialsProvider;
 	using StateTransitionLogger = Neo4Net.cluster.statemachine.StateTransitionLogger;
 	using MessageTimeoutStrategy = Neo4Net.cluster.timeout.MessageTimeoutStrategy;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.@internal.LogService;

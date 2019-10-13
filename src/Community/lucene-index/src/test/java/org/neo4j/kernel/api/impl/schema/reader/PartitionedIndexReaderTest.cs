@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using MockitoJUnitRunner = org.mockito.junit.MockitoJUnitRunner;
 
 
-	using PrimitiveLongCollections = Neo4Net.Collection.PrimitiveLongCollections;
-	using PrimitiveLongResourceCollections = Neo4Net.Collection.PrimitiveLongResourceCollections;
+	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
+	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
 	using IndexQuery = Neo4Net.@internal.Kernel.Api.IndexQuery;
 	using IndexNotFoundKernelException = Neo4Net.@internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;

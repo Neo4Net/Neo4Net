@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel
 	using EnterpriseDatabaseRule = Neo4Net.Test.rule.EnterpriseDatabaseRule;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
-	using BinaryLatch = Neo4Net.Util.concurrent.BinaryLatch;
+	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;

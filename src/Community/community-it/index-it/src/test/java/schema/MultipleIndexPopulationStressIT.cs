@@ -2,12 +2,12 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -37,7 +37,7 @@ namespace Schema
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using BatchingMultipleIndexPopulator = Neo4Net.Kernel.Impl.Api.index.BatchingMultipleIndexPopulator;
@@ -66,7 +66,7 @@ namespace Schema
 	using Collector = Neo4Net.@unsafe.Impl.Batchimport.input.Collector;
 	using Input = Neo4Net.@unsafe.Impl.Batchimport.input.Input;
 	using ExecutionMonitors = Neo4Net.@unsafe.Impl.Batchimport.staging.ExecutionMonitors;
-	using FeatureToggles = Neo4Net.Util.FeatureToggles;
+	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;
 

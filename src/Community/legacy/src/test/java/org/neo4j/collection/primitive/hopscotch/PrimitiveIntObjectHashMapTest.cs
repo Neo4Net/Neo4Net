@@ -1,12 +1,12 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive.hopscotch
+namespace Neo4Net.Collections.primitive.hopscotch
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4Net.Collection.primitive;
+	using Neo4Net.Collections.primitive;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -40,7 +40,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			  assertEquals( "a", intObjectMap.ComputeIfAbsent( 1, value => "b" ) );
 		 }
 
-		 private class ValueAnonymousInnerClass : Value<Neo4Net.Collection.primitive.PrimitiveIntSet>
+		 private class ValueAnonymousInnerClass : Value<Neo4Net.Collections.primitive.PrimitiveIntSet>
 		 {
 			 private readonly ValueProducerAnonymousInnerClass outerInstance;
 
@@ -63,7 +63,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			 }
 		 }
 
-		 private class ValueProducerAnonymousInnerClass : ValueProducer<Neo4Net.Collection.primitive.PrimitiveLongSet>
+		 private class ValueProducerAnonymousInnerClass : ValueProducer<Neo4Net.Collections.primitive.PrimitiveLongSet>
 		 {
 			 private readonly PrimitiveCollectionEqualityTest outerInstance;
 
@@ -91,7 +91,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			 }
 		 }
 
-		 private static class ValueProducerAnonymousInnerClass2 extends ValueProducer<Neo4Net.Collection.primitive.PrimitiveIntLongMap>
+		 private static class ValueProducerAnonymousInnerClass2 extends ValueProducer<Neo4Net.Collections.primitive.PrimitiveIntLongMap>
 		 {
 			 private final PrimitiveCollectionEqualityTest outerInstance;
 
@@ -113,7 +113,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			 }
 		 }
 
-		 private static class ValueProducerAnonymousInnerClass3 extends ValueProducer<Neo4Net.Collection.primitive.PrimitiveLongIntMap>
+		 private static class ValueProducerAnonymousInnerClass3 extends ValueProducer<Neo4Net.Collections.primitive.PrimitiveLongIntMap>
 		 {
 			 private final PrimitiveCollectionEqualityTest _outerInstance;
 
@@ -135,7 +135,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			 }
 		 }
 
-		 private static class ValueProducerAnonymousInnerClass4 extends ValueProducer<Neo4Net.Collection.primitive.PrimitiveLongLongMap>
+		 private static class ValueProducerAnonymousInnerClass4 extends ValueProducer<Neo4Net.Collections.primitive.PrimitiveLongLongMap>
 		 {
 			 private final PrimitiveCollectionEqualityTest _outerInstance;
 
@@ -179,7 +179,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			 }
 		 }
 
-		 private static class ValueProducerAnonymousInnerClass6 extends ValueProducer<Neo4Net.Collection.primitive.PrimitiveLongObjectMap>
+		 private static class ValueProducerAnonymousInnerClass6 extends ValueProducer<Neo4Net.Collections.primitive.PrimitiveLongObjectMap>
 		 {
 			 private final PrimitiveCollectionEqualityTest _outerInstance;
 

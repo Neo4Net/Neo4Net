@@ -1,12 +1,12 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive.hopscotch
+namespace Neo4Net.Collections.primitive.hopscotch
 {
-	using PrimitiveIntBaseIterator = Neo4Net.Collection.primitive.PrimitiveIntCollections.PrimitiveIntBaseIterator;
-	using Neo4Net.Collection.primitive;
+	using PrimitiveIntBaseIterator = Neo4Net.Collections.primitive.PrimitiveIntCollections.PrimitiveIntBaseIterator;
+	using Neo4Net.Collections.primitive;
 
 	public abstract class AbstractIntHopScotchCollection<VALUE> : AbstractHopScotchCollection<VALUE>, PrimitiveIntCollection
 	{
@@ -42,9 +42,9 @@ namespace Neo4Net.Collection.primitive.hopscotch
 		 {
 			 private readonly AbstractIntHopScotchCollection<VALUE> _outerInstance;
 
-			 private Neo4Net.Collection.primitive.hopscotch.TableKeyIterator<VALUE> _longIterator;
+			 private Neo4Net.Collections.primitive.hopscotch.TableKeyIterator<VALUE> _longIterator;
 
-			 public PrimitiveIntBaseIteratorAnonymousInnerClass( AbstractIntHopScotchCollection<VALUE> outerInstance, Neo4Net.Collection.primitive.hopscotch.TableKeyIterator<VALUE> longIterator )
+			 public PrimitiveIntBaseIteratorAnonymousInnerClass( AbstractIntHopScotchCollection<VALUE> outerInstance, Neo4Net.Collections.primitive.hopscotch.TableKeyIterator<VALUE> longIterator )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._longIterator = longIterator;

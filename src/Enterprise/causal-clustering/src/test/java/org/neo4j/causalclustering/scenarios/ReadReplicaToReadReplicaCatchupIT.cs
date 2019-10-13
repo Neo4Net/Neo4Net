@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -34,12 +34,12 @@ namespace Neo4Net.causalclustering.scenarios
 	using ReadReplica = Neo4Net.causalclustering.discovery.ReadReplica;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using UpstreamDatabaseSelectionStrategy = Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Node = Neo4Net.Graphdb.Node;
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using Service = Neo4Net.Helpers.Service;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 

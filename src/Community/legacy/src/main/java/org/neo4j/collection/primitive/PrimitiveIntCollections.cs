@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive
+namespace Neo4Net.Collections.primitive
 {
 
-	using Empty = Neo4Net.Collection.primitive.@base.Empty;
+	using Empty = Neo4Net.Collections.primitive.@base.Empty;
 
 	/// <summary>
 	/// Basic and common primitive int collection utils and manipulations.
@@ -168,7 +168,7 @@ namespace Neo4Net.Collection.primitive
 		 {
 			 private System.Func<int, bool> _filter;
 
-			 public PrimitiveIntFilteringIteratorAnonymousInnerClass( Neo4Net.Collection.primitive.PrimitiveIntIterator source, System.Func<int, bool> filter ) : base( source )
+			 public PrimitiveIntFilteringIteratorAnonymousInnerClass( Neo4Net.Collections.primitive.PrimitiveIntIterator source, System.Func<int, bool> filter ) : base( source )
 			 {
 				 this._filter = filter;
 			 }
@@ -186,7 +186,7 @@ namespace Neo4Net.Collection.primitive
 
 		 private class PrimitiveIntFilteringIteratorAnonymousInnerClass2 : PrimitiveIntFilteringIterator
 		 {
-			 public PrimitiveIntFilteringIteratorAnonymousInnerClass2( Neo4Net.Collection.primitive.PrimitiveIntIterator source ) : base( source )
+			 public PrimitiveIntFilteringIteratorAnonymousInnerClass2( Neo4Net.Collections.primitive.PrimitiveIntIterator source ) : base( source )
 			 {
 			 }
 
@@ -312,9 +312,9 @@ namespace Neo4Net.Collection.primitive
 		 private class IteratorAnonymousInnerClass : IEnumerator<T>
 		 {
 			 private System.Func<int, T> _mapFunction;
-			 private Neo4Net.Collection.primitive.PrimitiveIntIterator _source;
+			 private Neo4Net.Collections.primitive.PrimitiveIntIterator _source;
 
-			 public IteratorAnonymousInnerClass( System.Func<int, T> mapFunction, Neo4Net.Collection.primitive.PrimitiveIntIterator source )
+			 public IteratorAnonymousInnerClass( System.Func<int, T> mapFunction, Neo4Net.Collections.primitive.PrimitiveIntIterator source )
 			 {
 				 this._mapFunction = mapFunction;
 				 this._source = source;

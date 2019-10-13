@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -38,7 +38,7 @@ namespace Neo4Net.com.storecopy
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using Service = Neo4Net.Helpers.Service;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

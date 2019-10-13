@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -38,7 +38,7 @@ namespace Neo4Net.tools.rebuild
 	using Node = Neo4Net.Graphdb.Node;
 	using Neo4Net.Graphdb;
 	using Neo4Net.Graphdb;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

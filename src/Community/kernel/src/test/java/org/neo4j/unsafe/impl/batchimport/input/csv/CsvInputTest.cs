@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -30,14 +30,14 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using Neo4Net.Collection;
+	using Neo4Net.Collections;
 	using CharReadable = Neo4Net.Csv.Reader.CharReadable;
 	using CharSeeker = Neo4Net.Csv.Reader.CharSeeker;
 	using Neo4Net.Csv.Reader;
 	using Extractors = Neo4Net.Csv.Reader.Extractors;
 	using Readables = Neo4Net.Csv.Reader.Readables;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

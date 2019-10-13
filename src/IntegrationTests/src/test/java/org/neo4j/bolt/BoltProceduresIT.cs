@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -41,8 +41,8 @@ namespace Neo4Net.Bolt
 	using Node = Neo4Net.Graphdb.Node;
 	using Result = Neo4Net.Graphdb.Result;
 	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Settings = Neo4Net.Kernel.configuration.Settings;

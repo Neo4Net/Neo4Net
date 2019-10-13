@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -32,7 +32,7 @@ namespace Neo4Net.tools.dump
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using PrimitiveLongArrayQueue = Neo4Net.Collection.PrimitiveLongArrayQueue;
+	using PrimitiveLongArrayQueue = Neo4Net.Collections.PrimitiveLongArrayQueue;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using NodeRecord = Neo4Net.Kernel.impl.store.record.NodeRecord;
 	using SimpleLogVersionRepository = Neo4Net.Kernel.impl.transaction.SimpleLogVersionRepository;

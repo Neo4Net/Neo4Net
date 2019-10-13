@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive.hopscotch
+namespace Neo4Net.Collections.primitive.hopscotch
 {
 	using DataPoint = org.junit.experimental.theories.DataPoint;
 	using Theories = org.junit.experimental.theories.Theories;
@@ -28,9 +28,9 @@ namespace Neo4Net.Collection.primitive.hopscotch
 	using RunWith = org.junit.runner.RunWith;
 
 
-	using Neo4Net.Collection.primitive;
-	using Neo4Net.Collection.primitive;
-	using Neo4Net.Function;
+	using Neo4Net.Collections.primitive;
+	using Neo4Net.Collections.primitive;
+	using Neo4Net.Functions;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -52,7 +52,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 //ORIGINAL LINE: @SuppressWarnings("unchecked") @RunWith(Theories.class) public class PrimitiveCollectionEqualityTest
 	public class PrimitiveCollectionEqualityTest
 	{
-		 private interface Value<T> where T : Neo4Net.Collection.primitive.PrimitiveCollection
+		 private interface Value<T> where T : Neo4Net.Collections.primitive.PrimitiveCollection
 		 {
 			  void Add( T coll );
 
@@ -60,7 +60,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 			  bool Remove( T coll );
 		 }
 
-		 private abstract class ValueProducer<T> where T : Neo4Net.Collection.primitive.PrimitiveCollection
+		 private abstract class ValueProducer<T> where T : Neo4Net.Collections.primitive.PrimitiveCollection
 		 {
 			  internal readonly Type<T> ApplicableType;
 
@@ -70,7 +70,7 @@ namespace Neo4Net.Collection.primitive.hopscotch
 					this.ApplicableType = applicableType;
 			  }
 
-			  public virtual bool IsApplicable<T1>( Factory<T1> factory ) where T1 : Neo4Net.Collection.primitive.PrimitiveCollection
+			  public virtual bool IsApplicable<T1>( Factory<T1> factory ) where T1 : Neo4Net.Collections.primitive.PrimitiveCollection
 			  {
 					using ( PrimitiveCollection coll = factory.NewInstance() )
 					{

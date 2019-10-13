@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.identity
 	using CoreTopology = Neo4Net.causalclustering.discovery.CoreTopology;
 	using CoreTopologyService = Neo4Net.causalclustering.discovery.CoreTopologyService;
 	using TestTopology = Neo4Net.causalclustering.discovery.TestTopology;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Clocks = Neo4Net.Time.Clocks;

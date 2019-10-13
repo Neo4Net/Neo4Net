@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -45,10 +45,10 @@ namespace Neo4Net.causalclustering.scenarios
 	using Policies = Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.Policies;
 	using ParameterNames = Neo4Net.causalclustering.routing.load_balancing.procedure.ParameterNames;
 	using ResultFormatV1 = Neo4Net.causalclustering.routing.load_balancing.procedure.ResultFormatV1;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using Result = Neo4Net.Graphdb.Result;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

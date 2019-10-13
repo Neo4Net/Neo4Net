@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -30,7 +30,7 @@ namespace Neo4Net.Server.rest
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
 	using Node = Neo4Net.Graphdb.Node;
 	using Transaction = Neo4Net.Graphdb.Transaction;

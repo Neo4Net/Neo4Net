@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -41,8 +41,8 @@ namespace Neo4Net.causalclustering.discovery
 	using CausalClusteringTestHelpers = Neo4Net.causalclustering.helpers.CausalClusteringTestHelpers;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using CollectorsUtil = Neo4Net.Helpers.Collection.CollectorsUtil;
-	using Neo4Net.Helpers.Collection;
+	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
+	using Neo4Net.Helpers.Collections;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;

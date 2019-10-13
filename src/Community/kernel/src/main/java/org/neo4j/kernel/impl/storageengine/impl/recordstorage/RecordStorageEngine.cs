@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.@internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.@internal.Diagnostics.DiagnosticsManager;
 	using TokenNameLookup = Neo4Net.@internal.Kernel.Api.TokenNameLookup;
@@ -109,8 +109,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
 	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
-	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;
-	using Neo4Net.Util.concurrent;
+	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
+	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.locking.LockService.NO_LOCK_SERVICE;

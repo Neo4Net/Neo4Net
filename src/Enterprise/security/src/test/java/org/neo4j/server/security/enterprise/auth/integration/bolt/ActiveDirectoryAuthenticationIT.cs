@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SecureSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureSocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using Neo4Net.Graphdb.config;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;

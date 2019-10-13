@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using ThresholdConfigParser = Neo4Net.Kernel.impl.transaction.log.pruning.ThresholdConfigParser;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using Neo4Net.Test.subprocess;

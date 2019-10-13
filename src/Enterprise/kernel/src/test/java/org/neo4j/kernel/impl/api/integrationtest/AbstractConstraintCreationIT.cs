@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
 	using Schema = Neo4Net.Graphdb.schema.Schema;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using SchemaWrite = Neo4Net.@internal.Kernel.Api.SchemaWrite;
 	using TokenWrite = Neo4Net.@internal.Kernel.Api.TokenWrite;
 	using Transaction = Neo4Net.@internal.Kernel.Api.Transaction;

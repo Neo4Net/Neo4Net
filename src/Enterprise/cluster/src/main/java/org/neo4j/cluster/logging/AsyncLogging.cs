@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -31,8 +31,8 @@ namespace Neo4Net.cluster.logging
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using AsyncLogEvent = Neo4Net.Logging.async.AsyncLogEvent;
 	using AsyncLogProvider = Neo4Net.Logging.async.AsyncLogProvider;
-	using Neo4Net.Util.concurrent;
-	using Neo4Net.Util.concurrent;
+	using Neo4Net.Utils.Concurrent;
+	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.util.FeatureToggles.flag;

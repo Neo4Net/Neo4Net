@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.messaging
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
 	using TestProtocols_TestApplicationProtocols = Neo4Net.causalclustering.protocol.handshake.TestProtocols_TestApplicationProtocols;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static co.unruly.matchers.StreamMatchers.contains;

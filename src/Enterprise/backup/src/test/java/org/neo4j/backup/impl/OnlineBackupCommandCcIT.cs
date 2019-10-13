@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -71,7 +71,7 @@ namespace Neo4Net.backup.impl
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
-	using TestHelpers = Neo4Net.Util.TestHelpers;
+	using TestHelpers = Neo4Net.Utils.TestHelpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

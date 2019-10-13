@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -36,7 +36,7 @@ namespace Neo4Net
 	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
 	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TransactionFailureException = Neo4Net.@internal.Kernel.Api.exceptions.TransactionFailureException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;

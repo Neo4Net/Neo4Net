@@ -4,7 +4,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.protocol
 
 
 	using MessageGate = Neo4Net.causalclustering.messaging.MessageGate;
-	using Neo4Net.Function;
+	using Neo4Net.Functions;
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

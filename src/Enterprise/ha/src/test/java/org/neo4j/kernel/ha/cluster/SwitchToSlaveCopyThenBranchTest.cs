@@ -3,7 +3,7 @@ using System.Threading;
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StoreCopyClient = Neo4Net.com.storecopy.StoreCopyClient;
 	using TransactionCommittingResponseUnpacker = Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker;
 	using TransactionObligationFulfiller = Neo4Net.com.storecopy.TransactionObligationFulfiller;
-	using Suppliers = Neo4Net.Function.Suppliers;
+	using Suppliers = Neo4Net.Functions.Suppliers;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

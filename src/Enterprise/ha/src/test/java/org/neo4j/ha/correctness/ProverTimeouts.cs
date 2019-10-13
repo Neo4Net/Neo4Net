@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -30,7 +30,7 @@ namespace Neo4Net.ha.correctness
 	using MessageType = Neo4Net.cluster.com.message.MessageType;
 	using FixedTimeoutStrategy = Neo4Net.cluster.timeout.FixedTimeoutStrategy;
 	using Timeouts = Neo4Net.cluster.timeout.Timeouts;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 
 	internal class ProverTimeouts : Timeouts
 	{

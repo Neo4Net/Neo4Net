@@ -3,12 +3,12 @@ using System.Text;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using Timeout = org.junit.rules.Timeout;
 
 
-	using Neo4Net.Function;
-	using Neo4Net.Function;
-	using Neo4Net.Function;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Functions;
+	using Neo4Net.Functions;
+	using Neo4Net.Functions;
+	using Neo4Net.Helpers.Collections;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using FileIsNotMappedException = Neo4Net.Io.pagecache.impl.FileIsNotMappedException;

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using ObjectLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap;
 
 
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ConstraintValidationException = Neo4Net.@internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
 	using CreateConstraintFailureException = Neo4Net.@internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
 	using SchemaDescriptor = Neo4Net.@internal.Kernel.Api.schema.SchemaDescriptor;
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using NodeState = Neo4Net.Storageengine.Api.txstate.NodeState;
 	using RelationshipState = Neo4Net.Storageengine.Api.txstate.RelationshipState;
 	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
-	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;
+	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 

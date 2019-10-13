@@ -1,6 +1,6 @@
 ﻿/*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.ha
 	using Test = org.junit.Test;
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using Suppliers = Neo4Net.Function.Suppliers;
+	using Suppliers = Neo4Net.Functions.Suppliers;
 	using HighAvailabilityMemberChangeEvent = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberChangeEvent;
 	using HighAvailabilityMemberListener = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberListener;
 	using HighAvailabilityMemberStateMachine = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberStateMachine;

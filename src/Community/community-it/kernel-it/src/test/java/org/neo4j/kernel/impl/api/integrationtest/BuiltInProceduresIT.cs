@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using Neo4Net.Collection;
+	using Neo4Net.Collections;
 	using Resource = Neo4Net.Graphdb.Resource;
 	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using MapUtil = Neo4Net.Helpers.Collection.MapUtil;
+	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using SchemaWrite = Neo4Net.@internal.Kernel.Api.SchemaWrite;
 	using TokenWrite = Neo4Net.@internal.Kernel.Api.TokenWrite;
 	using Transaction = Neo4Net.@internal.Kernel.Api.Transaction;

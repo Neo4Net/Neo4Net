@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -28,11 +28,11 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using Neo4Net.causalclustering.protocol;
 	using Neo4Net.causalclustering.protocol;
 	using ProtocolStack = Neo4Net.causalclustering.protocol.handshake.ProtocolStack;
-	using Neo4Net.Collection;
+	using Neo4Net.Collections;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
-	using Iterators = Neo4Net.Helpers.Collection.Iterators;
-	using Neo4Net.Helpers.Collection;
+	using Iterators = Neo4Net.Helpers.Collections.Iterators;
+	using Neo4Net.Helpers.Collections;
 	using ProcedureException = Neo4Net.@internal.Kernel.Api.exceptions.ProcedureException;
 	using Neo4jTypes = Neo4Net.@internal.Kernel.Api.procs.Neo4jTypes;
 	using ProcedureSignature = Neo4Net.@internal.Kernel.Api.procs.ProcedureSignature;

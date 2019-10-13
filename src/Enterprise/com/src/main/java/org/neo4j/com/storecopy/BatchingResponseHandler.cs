@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -27,7 +27,7 @@ namespace Neo4Net.com.storecopy
 
 	using Neo4Net.com;
 	using Handler = Neo4Net.com.Response.Handler;
-	using Neo4Net.Helpers.Collection;
+	using Neo4Net.Helpers.Collections;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using TransactionQueue = Neo4Net.Kernel.Impl.Api.TransactionQueue;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;

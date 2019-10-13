@@ -2,7 +2,7 @@
 
 /*
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * This file is part of Neo4j Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.pruning
 
 
 	using RaftLogPruner = Neo4Net.causalclustering.core.state.RaftLogPruner;
-	using Predicates = Neo4Net.Function.Predicates;
+	using Predicates = Neo4Net.Functions.Predicates;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;

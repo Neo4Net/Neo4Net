@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Collection.primitive
+namespace Neo4Net.Collections.primitive
 {
 
-	using Empty = Neo4Net.Collection.primitive.@base.Empty;
+	using Empty = Neo4Net.Collections.primitive.@base.Empty;
 	using Resource = Neo4Net.Graphdb.Resource;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -98,7 +98,7 @@ namespace Neo4Net.Collection.primitive
 		 {
 			 private System.Func<long, bool> _filter;
 
-			 public PrimitiveLongFilteringIteratorAnonymousInnerClass( Neo4Net.Collection.primitive.PrimitiveLongIterator source, System.Func<long, bool> filter ) : base( source )
+			 public PrimitiveLongFilteringIteratorAnonymousInnerClass( Neo4Net.Collections.primitive.PrimitiveLongIterator source, System.Func<long, bool> filter ) : base( source )
 			 {
 				 this._filter = filter;
 			 }
@@ -120,7 +120,7 @@ namespace Neo4Net.Collection.primitive
 		 {
 			 private System.Func<long, bool> _filter;
 
-			 public PrimitiveLongResourceFilteringIteratorAnonymousInnerClass( Neo4Net.Collection.PrimitiveLongResourceIterator source, System.Func<long, bool> filter ) : base( source )
+			 public PrimitiveLongResourceFilteringIteratorAnonymousInnerClass( Neo4Net.Collections.PrimitiveLongResourceIterator source, System.Func<long, bool> filter ) : base( source )
 			 {
 				 this._filter = filter;
 			 }
@@ -345,9 +345,9 @@ namespace Neo4Net.Collection.primitive
 		 private class IteratorAnonymousInnerClass : IEnumerator<T>
 		 {
 			 private System.Func<long, T> _mapFunction;
-			 private Neo4Net.Collection.primitive.PrimitiveLongIterator _source;
+			 private Neo4Net.Collections.primitive.PrimitiveLongIterator _source;
 
-			 public IteratorAnonymousInnerClass( System.Func<long, T> mapFunction, Neo4Net.Collection.primitive.PrimitiveLongIterator source )
+			 public IteratorAnonymousInnerClass( System.Func<long, T> mapFunction, Neo4Net.Collections.primitive.PrimitiveLongIterator source )
 			 {
 				 this._mapFunction = mapFunction;
 				 this._source = source;
@@ -393,9 +393,9 @@ namespace Neo4Net.Collection.primitive
 
 		 private class IteratorAnonymousInnerClass2 : IEnumerator<long>
 		 {
-			 private Neo4Net.Collection.primitive.PrimitiveLongIterator _primIterator;
+			 private Neo4Net.Collections.primitive.PrimitiveLongIterator _primIterator;
 
-			 public IteratorAnonymousInnerClass2( Neo4Net.Collection.primitive.PrimitiveLongIterator primIterator )
+			 public IteratorAnonymousInnerClass2( Neo4Net.Collections.primitive.PrimitiveLongIterator primIterator )
 			 {
 				 this._primIterator = primIterator;
 			 }
@@ -432,10 +432,10 @@ namespace Neo4Net.Collection.primitive
 
 		 private class PrimitiveLongResourceIteratorAnonymousInnerClass : PrimitiveLongResourceIterator
 		 {
-			 private Neo4Net.Collection.primitive.PrimitiveLongIterator _iterator;
+			 private Neo4Net.Collections.primitive.PrimitiveLongIterator _iterator;
 			 private Resource _resource;
 
-			 public PrimitiveLongResourceIteratorAnonymousInnerClass( Neo4Net.Collection.primitive.PrimitiveLongIterator iterator, Resource resource )
+			 public PrimitiveLongResourceIteratorAnonymousInnerClass( Neo4Net.Collections.primitive.PrimitiveLongIterator iterator, Resource resource )
 			 {
 				 this._iterator = iterator;
 				 this._resource = resource;

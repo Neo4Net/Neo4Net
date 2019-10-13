@@ -4,7 +4,7 @@ using System.Collections.Generic;
 /*
  *
  * Copyright (c) 2002-2018 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2019 "GraphFoundation" [https://graphfoundation.org]
  *

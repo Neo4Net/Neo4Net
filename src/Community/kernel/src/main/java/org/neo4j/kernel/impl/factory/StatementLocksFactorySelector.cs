@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j.
+ * This file is part of Neo4Net.
  *
- * Neo4j is free software: you can redistribute it and/or modify
+ * Neo4Net is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.impl.factory
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using Iterables = Neo4Net.Helpers.Collection.Iterables;
+	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using SimpleStatementLocksFactory = Neo4Net.Kernel.impl.locking.SimpleStatementLocksFactory;
 	using StatementLocksFactory = Neo4Net.Kernel.impl.locking.StatementLocksFactory;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.@internal.LogService;
-	using VisibleForTesting = Neo4Net.Util.VisibleForTesting;
+	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 	public class StatementLocksFactorySelector
 	{
