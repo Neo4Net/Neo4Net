@@ -8,25 +8,24 @@
     ".NETCoreApp,Version=v3.0": []
   },
   "packageFolders": {
-    "C:\\Users\\tcorv\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\tcorvin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Neo4Net.csproj",
+      "projectUniqueName": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Neo4Net.csproj",
       "projectName": "Neo4Net",
-      "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Neo4Net.csproj",
-      "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\obj\\",
+      "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Neo4Net.csproj",
+      "packagesPath": "C:\\Users\\tcorvin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tcorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\tcorvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.0"
@@ -49,21 +48,10 @@
     "frameworks": {
       "netcoreapp3.0": {
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

@@ -1,0 +1,4 @@
+C:\Users\tcorvin\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common.Tests\obj\Debug\netcoreapp2.2\Neo4Net.Common.Tests.csprojAssemblyReference.cache
+C:\Users\tcorvin\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common.Tests\obj\Debug\netcoreapp2.2\Neo4Net.Common.Tests.csproj.CoreCompileInputs.cache
+C:\Users\tcorvin\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common.Tests\obj\Debug\netcoreapp2.2\Neo4Net.Common.Tests.AssemblyInfoInputs.cache
+C:\Users\tcorvin\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common.Tests\obj\Debug\netcoreapp2.2\Neo4Net.Common.Tests.AssemblyInfo.cs
