@@ -1,0 +1,52 @@
+﻿/*
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
+ *
+ * This file is part of Neo4Net.
+ *
+ * Neo4Net is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+namespace Neo4Net.Graphdb
+{
+	/// <summary>
+	/// The string search mode is used together with a value template to find nodes of interest.
+	/// The search mode can be one of:
+	/// <ul>
+	///   <li>EXACT: The value has to match the template exactly.</li>
+	///   <li>PREFIX: The value must have a prefix matching the template.</li>
+	///   <li>SUFFIX: The value must have a suffix matching the template.</li>
+	///   <li>CONTAINS: The value must contain the template. Only exact matches are supported.</li>
+	/// </ul>
+	/// </summary>
+	public enum StringSearchMode
+	{
+		 /// <summary>
+		 /// The value has to match the template exactly.
+		 /// </summary>
+		 Exact,
+		 /// <summary>
+		 /// The value must have a prefix matching the template.
+		 /// </summary>
+		 Prefix,
+		 /// <summary>
+		 /// The value must have a suffix matching the template.
+		 /// </summary>
+		 Suffix,
+		 /// <summary>
+		 /// The value must contain the template exactly. Regular expressions are not supported.
+		 /// </summary>
+		 Contains
+	}
+
+}

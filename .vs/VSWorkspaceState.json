@@ -1,17 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\src",
-    "\\src\\community",
-    "\\src\\community\\common\\Neo4Net.Common",
-    "\\src\\community\\common\\Neo4Net.Common.Tests",
-    "\\src\\community\\common\\Neo4Net.Common.Tests\\Functions",
-    "\\src\\community\\common\\Neo4Net.Common\\Hashing",
-    "\\src\\community\\configuration\\src",
-    "\\src\\community\\configuration\\src\\main",
-    "\\src\\community\\configuration\\src\\main\\java",
-    "\\src\\community\\configuration\\src\\main\\java\\org",
-    "\\src\\community\\configuration\\src\\main\\java\\org\\neo4j"
+    ""
   ],
   "PreviewInSolutionExplorer": false
 }

@@ -1,0 +1,66 @@
+﻿using System.Collections.Generic;
+
+/*
+ * Copyright © 2018-2020 "Neo4Net,"
+ * Team NeoN [http://neo4net.com]. All Rights Reserved.
+ *
+ * This file is part of Neo4Net.
+ *
+ * Neo4Net is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+namespace Neo4Net.Kernel.Api.Index
+{
+	using Test = org.junit.jupiter.api.Test;
+
+
+	using Value = Neo4Net.Values.Storable.Value;
+	using Values = Neo4Net.Values.Storable.Values;
+
+//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
+//	import static org.junit.jupiter.api.Assertions.assertEquals;
+//JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
+//	import static org.junit.jupiter.api.Assertions.assertThrows;
+
+	internal class IndexConfigProviderTest
+	{
+//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+//ORIGINAL LINE: @Test void putAllNoOverwriteMustAddToSource()
+		 internal virtual void PutAllNoOverwriteMustAddToSource()
+		 {
+			  IDictionary<string, Value> target = new Dictionary<string, Value>();
+			  IDictionary<string, Value> source = new Dictionary<string, Value>();
+			  target["a"] = Values.intValue( 1 );
+			  source["b"] = Values.intValue( 2 );
+			  IndexConfigProvider.putAllNoOverwrite( target, source );
+			  assertEquals( 2, target.Count );
+			  assertEquals( Values.intValue( 1 ), target["a"] );
+			  assertEquals( Values.intValue( 2 ), target["b"] );
+			  assertEquals( 1, source.Count );
+			  assertEquals( Values.intValue( 2 ), source["b"] );
+		 }
+
+//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+//ORIGINAL LINE: @Test void putAllNoOverwriteMustThrowOnConflict()
+		 internal virtual void PutAllNoOverwriteMustThrowOnConflict()
+		 {
+			  IDictionary<string, Value> target = new Dictionary<string, Value>();
+			  IDictionary<string, Value> source = new Dictionary<string, Value>();
+			  target["a"] = Values.intValue( 1 );
+			  source["a"] = Values.intValue( 2 );
+			  System.InvalidOperationException e = assertThrows( typeof( System.InvalidOperationException ), () => IndexConfigProvider.putAllNoOverwrite(target, source) );
+			  assertEquals( "Adding config would overwrite existing value: key=a, newValue=Int(2), oldValue=Int(1)", e.Message );
+		 }
+	}
+
+}

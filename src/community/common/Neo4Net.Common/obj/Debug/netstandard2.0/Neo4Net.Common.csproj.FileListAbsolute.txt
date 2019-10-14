@@ -1,3 +1,0 @@
-C:\Users\tcorv\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.csprojAssemblyReference.cache
-C:\Users\tcorv\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.AssemblyInfoInputs.cache
-C:\Users\tcorv\source\repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.AssemblyInfo.cs
