@@ -175,8 +175,8 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 // Flag for when page cache is closed - writes guarded by synchronized(this), reads can be unsynchronized
 		 private volatile bool _closed;
 
-		 // Only used by ensureThreadsInitialised while holding the monitor lock on this MuninnPageCache instance.
-		 private bool _threadsInitialised;
+		 // Only used by ensureThreadsInitialized while holding the monitor lock on this MuninnPageCache instance.
+		 private bool _threadsInitialized;
 
 		 // 'true' (the default) if we should print any exceptions we get when unmapping a file.
 		 private bool _printExceptionsOnClose;
@@ -284,7 +284,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			 lock ( this )
 			 {
 				  AssertHealthy();
-				  EnsureThreadsInitialised();
+				  EnsureThreadsInitialized();
 				  if ( filePageSize > _cachePageSize )
 				  {
 						throw new System.ArgumentException( "Cannot map files with a filePageSize (" + filePageSize + ") that is greater than the " + "cachePageSize (" + _cachePageSize + ")" );
@@ -375,7 +375,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			 lock ( this )
 			 {
 				  AssertHealthy();
-				  EnsureThreadsInitialised();
+				  EnsureThreadsInitialized();
       
 				  file = file.CanonicalFile;
 				  MuninnPagedFile pagedFile = TryGetMappingOrNull( file );
@@ -413,7 +413,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			 lock ( this )
 			 {
 				  AssertNotClosed();
-				  EnsureThreadsInitialised();
+				  EnsureThreadsInitialized();
       
 				  IList<PagedFile> list = new List<PagedFile>();
 				  FileMapping current = _mappedFiles;
@@ -434,14 +434,14 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// Note: Must be called while synchronizing on the MuninnPageCache instance.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureThreadsInitialised() throws java.io.IOException
-		 private void EnsureThreadsInitialised()
+//ORIGINAL LINE: private void ensureThreadsInitialized() throws java.io.IOException
+		 private void EnsureThreadsInitialized()
 		 {
-			  if ( _threadsInitialised )
+			  if ( _threadsInitialized )
 			  {
 					return;
 			  }
-			  _threadsInitialised = true;
+			  _threadsInitialized = true;
 
 			  try
 			  {

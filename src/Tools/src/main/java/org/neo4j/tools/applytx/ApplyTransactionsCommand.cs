@@ -53,7 +53,7 @@ namespace Neo4Net.tools.applytx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.helpers.progress.ProgressMonitorFactory.textual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -111,7 +111,7 @@ namespace Neo4Net.tools.applytx
 			  LifeSupport life = new LifeSupport();
 			  try
 			  {
-					  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
+					  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
 					  {
 						LogicalTransactionStore source = life.Add( new ReadOnlyTransactionStore( pageCache, fileSystem, DatabaseLayout.of( fromPath ), Config.defaults(), new Monitors() ) );
 						life.Start();

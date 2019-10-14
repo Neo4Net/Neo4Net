@@ -45,12 +45,12 @@ namespace Neo4Net.Io.pagecache.tracing.cursor.context
 	public interface VersionContext
 	{
 		 /// <summary>
-		 /// Initialise read context with latest closed transaction id as it current version.
+		 /// Initialize read context with latest closed transaction id as it current version.
 		 /// </summary>
 		 void InitRead();
 
 		 /// <summary>
-		 /// Initialise write context with committingTxId as modification version. </summary>
+		 /// Initialize write context with committingTxId as modification version. </summary>
 		 /// <param name="committingTxId"> currently committing transaction id </param>
 		 void InitWrite( long committingTxId );
 

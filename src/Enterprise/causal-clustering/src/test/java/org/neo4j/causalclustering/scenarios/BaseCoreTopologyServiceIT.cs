@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public abstract class BaseCoreTopologyServiceIT
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  config.augment( initial_discovery_members, initialHosts );
 			  config.Augment( CausalClusteringSettings.discovery_listen_address, "localhost:" + PortAuthority.allocatePort() );
 
-			  JobScheduler jobScheduler = createInitialisedScheduler();
+			  JobScheduler jobScheduler = createInitializedScheduler();
 			  InitialDiscoveryMembersResolver initialDiscoveryMemberResolver = new InitialDiscoveryMembersResolver( new NoOpHostnameResolver(), config );
 
 			  CoreTopologyService service = _discoveryServiceType.createFactory().coreTopologyService(config, new MemberId(System.Guid.randomUUID()), jobScheduler, NullLogProvider.Instance, NullLogProvider.Instance, initialDiscoveryMemberResolver, new TopologyServiceNoRetriesStrategy(), new Monitors());

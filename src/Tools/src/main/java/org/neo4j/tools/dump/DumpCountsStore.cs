@@ -58,7 +58,7 @@ namespace Neo4Net.tools.dump
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	/// Tool that will dump content of count store content into a simple string representation for further analysis.
@@ -85,7 +85,7 @@ namespace Neo4Net.tools.dump
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 		 public static void DumpCountsStoreConflict( FileSystemAbstraction fs, File path, PrintStream @out )
 		 {
-			  using ( JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pages = createPageCache(fs, jobScheduler), Lifespan life = new Lifespan() )
+			  using ( JobScheduler jobScheduler = createInitializedScheduler(), PageCache pages = createPageCache(fs, jobScheduler), Lifespan life = new Lifespan() )
 			  {
 					NullLogProvider logProvider = NullLogProvider.Instance;
 					Config config = Config.defaults();

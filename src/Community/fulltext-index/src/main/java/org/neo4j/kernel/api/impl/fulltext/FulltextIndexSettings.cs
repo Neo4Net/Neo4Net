@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 private const string INDEX_CONFIG_FILE = "fulltext-index.properties";
 		 private const string INDEX_CONFIG_PROPERTY_NAMES = "propertyNames";
 
-		 internal static FulltextIndexDescriptor ReadOrInitialiseDescriptor( StoreIndexDescriptor descriptor, string defaultAnalyzerName, TokenHolder propertyKeyTokenHolder, File indexFolder, FileSystemAbstraction fileSystem )
+		 internal static FulltextIndexDescriptor ReadOrInitializeDescriptor( StoreIndexDescriptor descriptor, string defaultAnalyzerName, TokenHolder propertyKeyTokenHolder, File indexFolder, FileSystemAbstraction fileSystem )
 		 {
 			  Properties indexConfiguration = new Properties();
 			  if ( descriptor.Schema() is FulltextSchemaDescriptor )

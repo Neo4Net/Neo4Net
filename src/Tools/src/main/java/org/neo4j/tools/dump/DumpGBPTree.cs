@@ -30,7 +30,7 @@ namespace Neo4Net.tools.dump
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	/// For now only dumps header, could be made more useful over time.
@@ -54,7 +54,7 @@ namespace Neo4Net.tools.dump
 			  Console.WriteLine( " Deprecated tool. You should no longer use this utility." );
 			  //File file = new File( args[0] );
 			  //System.out.println( "Dumping " + file.getAbsolutePath() );
-			  // TreePrinter.printHeader( new DefaultFileSystemAbstraction(), createInitialisedScheduler(), file, System.out );
+			  // TreePrinter.printHeader( new DefaultFileSystemAbstraction(), createInitializedScheduler(), file, System.out );
 
 		 }
 	}

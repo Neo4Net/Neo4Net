@@ -88,8 +88,8 @@ namespace Neo4Net.Test.extension
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testDirectoryInitialisedForUsage()
-		 internal virtual void TestDirectoryInitialisedForUsage()
+//ORIGINAL LINE: @Test void testDirectoryInitializedForUsage()
+		 internal virtual void TestDirectoryInitializedForUsage()
 		 {
 			  File directory = TestDirectory.directory();
 			  assertNotNull( directory );

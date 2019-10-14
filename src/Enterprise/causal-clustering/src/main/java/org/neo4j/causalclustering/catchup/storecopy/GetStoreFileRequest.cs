@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using StoreIdMarshal = Neo4Net.causalclustering.messaging.marshalling.storeid.StoreIdMarshal;
 	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
 	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public class GetStoreFileRequest : StoreCopyRequest
 	{

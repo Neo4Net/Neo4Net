@@ -39,7 +39,7 @@ namespace Neo4Net.Server.Security.Auth
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using GraphDatabaseAPI = Neo4Net.Kernel.@internal.GraphDatabaseAPI;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using TestGraphDatabaseBuilder = Neo4Net.Test.TestGraphDatabaseBuilder;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 

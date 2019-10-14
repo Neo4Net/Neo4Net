@@ -73,7 +73,7 @@ namespace Neo4Net.tools.rebuild
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -159,7 +159,7 @@ namespace Neo4Net.tools.rebuild
 //ORIGINAL LINE: public void rebuild(java.io.File source, java.io.File target, long txId) throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
 		 public virtual void Rebuild( File source, File target, long txId )
 		 {
-			  using ( PageCache pageCache = StandalonePageCacheFactory.createPageCache( _fs, createInitialisedScheduler() ) )
+			  using ( PageCache pageCache = StandalonePageCacheFactory.createPageCache( _fs, createInitializedScheduler() ) )
 			  {
 					LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( source, _fs ).build();
 					long highestVersion = logFiles.HighestLogVersion;

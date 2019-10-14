@@ -41,14 +41,14 @@ namespace Neo4Net.causalclustering.core.consensus.election
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.helpers.collection.Iterables.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class Fixture
 	{
 		 private readonly ISet<MemberId> _members = new HashSet<MemberId>();
 		 private readonly ISet<BootstrapWaiter> _bootstrapWaiters = new HashSet<BootstrapWaiter>();
 		 private readonly IList<TimerService> _timerServices = new List<TimerService>();
-		 private readonly JobScheduler _scheduler = createInitialisedScheduler();
+		 private readonly JobScheduler _scheduler = createInitializedScheduler();
 		 internal readonly ISet<RaftFixture> Rafts = new HashSet<RaftFixture>();
 		 internal readonly TestNetwork Net;
 

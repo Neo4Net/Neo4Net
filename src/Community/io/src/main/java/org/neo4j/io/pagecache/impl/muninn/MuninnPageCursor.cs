@@ -89,7 +89,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			  this.VersionContextSupplier = versionContextSupplier;
 		 }
 
-		 internal void Initialise( MuninnPagedFile pagedFile, long pageId, int pfFlags )
+		 internal void Initialize( MuninnPagedFile pagedFile, long pageId, int pfFlags )
 		 {
 			  this.Swapper = pagedFile.Swapper;
 			  this.SwapperId = pagedFile.SwapperId;

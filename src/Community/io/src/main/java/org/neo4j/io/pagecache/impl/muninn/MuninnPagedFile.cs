@@ -148,7 +148,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			  }
 			  TranslationTable = tt;
 
-			  InitialiseLastPageId( lastPageId );
+			  InitializeLastPageId( lastPageId );
 			  this.SwapperId = Swappers.allocate( Swapper );
 		 }
 
@@ -563,7 +563,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			  return ( long )( ( ulong )( state & HEADER_STATE_REF_COUNT_MASK ) >> HEADER_STATE_REF_COUNT_SHIFT );
 		 }
 
-		 private void InitialiseLastPageId( long lastPageIdFromFile )
+		 private void InitializeLastPageId( long lastPageIdFromFile )
 		 {
 			  if ( lastPageIdFromFile < 0 )
 			  {

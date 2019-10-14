@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogTailScanner = Neo4Net.Kernel.recovery.LogTailScanner;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using Unzip = Neo4Net.Test.Unzip;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

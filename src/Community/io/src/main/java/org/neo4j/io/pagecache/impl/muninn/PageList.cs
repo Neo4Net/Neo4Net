@@ -146,7 +146,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 
 		 private void ClearMemoryFast( long baseAddress, long pageCount, long memcpyChunkSize, long metaDataEntriesPerChunk )
 		 {
-			  // Initialise one chunk worth of data.
+			  // Initialize one chunk worth of data.
 			  ClearMemorySimple( baseAddress, metaDataEntriesPerChunk );
 			  // Since all entries contain the same data, we can now copy this chunk over and over.
 			  long chunkCopies = pageCount / metaDataEntriesPerChunk - 1;

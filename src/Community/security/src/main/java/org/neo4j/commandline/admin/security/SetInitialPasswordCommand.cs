@@ -32,7 +32,7 @@ namespace Neo4Net.CommandLine.Admin.security
 	using CommunitySecurityModule = Neo4Net.Server.Security.Auth.CommunitySecurityModule;
 	using FileUserRepository = Neo4Net.Server.Security.Auth.FileUserRepository;
 	using Neo4Net.Server.Security.Auth;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.api.security.UserManager_Fields.INITIAL_PASSWORD;

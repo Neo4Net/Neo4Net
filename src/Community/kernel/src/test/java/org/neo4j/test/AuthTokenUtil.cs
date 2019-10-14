@@ -28,7 +28,7 @@ namespace Neo4Net.Test
 
 
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -39,7 +39,7 @@ namespace Neo4Net.CommandLine.dbms
 	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.store.format.RecordFormatSelector.findSuccessor;
 
@@ -67,7 +67,7 @@ namespace Neo4Net.CommandLine.dbms
 			  DatabaseLayout databaseLayout = DatabaseLayout.of( databaseDirectory.toFile() );
 			  try
 			  {
-					  using ( System.IDisposable ignored = StoreLockChecker.Check( databaseLayout.StoreLayout ), DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
+					  using ( System.IDisposable ignored = StoreLockChecker.Check( databaseLayout.StoreLayout ), DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
 					  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final String storeVersion = new org.neo4j.kernel.impl.storemigration.StoreVersionCheck(pageCache).getVersion(databaseLayout.metadataStore()).orElseThrow(() -> new org.neo4j.commandline.admin.CommandFailed(String.format("Could not find version metadata in store '%s'", databaseDirectory)));

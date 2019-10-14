@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.ha.com.master
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.ha.HaSettings.lock_read_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	///  Current test will try to emulate client master conversation lifecycle
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.ha.com.master
 
 		private void InitializeInstanceFields()
 		{
-			_scheduler = _life.add( createInitialisedScheduler() );
+			_scheduler = _life.add( createInitializedScheduler() );
 			Timeout = VerboseTimeout.builder().withTimeout(50, TimeUnit.SECONDS).describeOnFailure(_locks, MasterImplConversationStopFuzzIT.getLocksDescriptionFunction).build();
 		}
 

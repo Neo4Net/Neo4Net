@@ -35,7 +35,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.logging.FormattedLogProvider.toOutputStream;
 
@@ -53,7 +53,7 @@ namespace Neo4Net.backup.impl
 
 		 public static BackupProtocolService BackupProtocolService( Stream logDestination )
 		 {
-			  JobScheduler scheduler = createInitialisedScheduler();
+			  JobScheduler scheduler = createInitializedScheduler();
 			  PageCache pageCache = createPageCache( new DefaultFileSystemAbstraction(), scheduler );
 			  BackupPageCacheContainer pageCacheContainer = of( pageCache, scheduler );
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:

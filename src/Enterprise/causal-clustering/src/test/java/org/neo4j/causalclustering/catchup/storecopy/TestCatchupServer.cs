@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	internal class TestCatchupServer : Server
 	{
@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  Neo4Net.Storageengine.Api.StoreId kernelStoreId = dataSource().StoreId;
 			  StoreId storeId = new StoreId( kernelStoreId.CreationTime, kernelStoreId.RandomId, kernelStoreId.UpgradeTime, kernelStoreId.UpgradeId );
 
-			  CheckPointerService checkPointerService = new CheckPointerService( checkPointer, createInitialisedScheduler(), Group.CHECKPOINT );
+			  CheckPointerService checkPointerService = new CheckPointerService( checkPointer, createInitializedScheduler(), Group.CHECKPOINT );
 			  RegularCatchupServerHandler catchupServerHandler = new RegularCatchupServerHandler( new Monitors(), logProvider, () => storeId, dataSource, availability, fileSystem, null, checkPointerService );
 
 			  NettyPipelineBuilderFactory pipelineBuilder = new NettyPipelineBuilderFactory( VoidPipelineWrapperFactory.VOID_WRAPPER );

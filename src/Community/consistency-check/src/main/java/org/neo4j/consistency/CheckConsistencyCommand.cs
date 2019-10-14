@@ -50,7 +50,7 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class CheckConsistencyCommand : AdminCommand
 	{
@@ -239,7 +239,7 @@ namespace Neo4Net.Consistency
 		 {
 			  try
 			  {
-					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(fileSystem, additionalConfiguration, jobScheduler) )
+					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(fileSystem, additionalConfiguration, jobScheduler) )
 					  {
 						assertRecoveryIsNotRequired( fileSystem, pageCache, additionalConfiguration, databaseLayout, new Monitors() );
 					  }

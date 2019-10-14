@@ -31,7 +31,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Description = Neo4Net.Procedure.Description;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.procedure.Mode.DBMS;

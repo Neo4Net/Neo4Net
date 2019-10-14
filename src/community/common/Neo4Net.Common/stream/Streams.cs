@@ -22,8 +22,6 @@ namespace Neo4Net.Stream
 
 	public class Streams
 	{
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") public static <T> java.util.stream.Stream<T> ofOptional(java.util.Optional<T> opt)
 		 public static Stream<T> OfOptional<T>( Optional<T> opt )
 		 {
 			  return opt.map( Stream.of ).orElse( Stream.empty() );

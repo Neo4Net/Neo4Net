@@ -32,7 +32,7 @@ namespace Neo4Net.Helpers
 	internal class TextUtilTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldReplaceVariablesWithValuesInTemplateString()
+[Fact] //ORIGINAL LINE: @Test void shouldReplaceVariablesWithValuesInTemplateString()
 		 internal virtual void ShouldReplaceVariablesWithValuesInTemplateString()
 		 {
 			  // given
@@ -50,7 +50,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldTokenizeStringWithWithoutQuotes()
+[Fact] //ORIGINAL LINE: @Test void shouldTokenizeStringWithWithoutQuotes()
 		 internal virtual void ShouldTokenizeStringWithWithoutQuotes()
 		 {
 			  // given
@@ -64,7 +64,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldTokenizeStringWithQuotes()
+[Fact] //ORIGINAL LINE: @Test void shouldTokenizeStringWithQuotes()
 		 internal virtual void ShouldTokenizeStringWithQuotes()
 		 {
 			  // given
@@ -78,7 +78,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldTokenStringWithWithQuotesAndEscapedSpaces()
+[Fact] //ORIGINAL LINE: @Test void shouldTokenStringWithWithQuotesAndEscapedSpaces()
 		 internal virtual void ShouldTokenStringWithWithQuotesAndEscapedSpaces()
 		 {
 			  // given
@@ -92,7 +92,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldPreserveBackslashes()
+[Fact] //ORIGINAL LINE: @Test void shouldPreserveBackslashes()
 		 internal virtual void ShouldPreserveBackslashes()
 		 {
 			  // given
@@ -106,7 +106,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void preserveOnlyPathBackslashes()
+[Fact] //ORIGINAL LINE: @Test void preserveOnlyPathBackslashes()
 		 internal virtual void PreserveOnlyPathBackslashes()
 		 {
 			  // given

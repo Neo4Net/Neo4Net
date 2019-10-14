@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using Neo4Net.Values.Storable;

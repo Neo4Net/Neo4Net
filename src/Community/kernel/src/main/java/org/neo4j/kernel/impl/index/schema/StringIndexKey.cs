@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using Neo4Net.Index.@internal.gbptree;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using TextValue = Neo4Net.Values.Storable.TextValue;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;

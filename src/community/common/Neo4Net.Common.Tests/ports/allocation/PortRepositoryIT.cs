@@ -47,7 +47,7 @@ namespace Neo4Net.Ports.Allocation
 		 public readonly TemporaryFolder TemporaryFolder = new TemporaryFolder();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldReservePorts() throws Exception
+[Fact] //ORIGINAL LINE: @Test void shouldReservePorts() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldReservePorts()
 		 {
@@ -61,7 +61,7 @@ namespace Neo4Net.Ports.Allocation
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldCoordinateUsingFileSystem() throws Exception
+[Fact] //ORIGINAL LINE: @Test void shouldCoordinateUsingFileSystem() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldCoordinateUsingFileSystem()
 		 {
@@ -80,7 +80,7 @@ namespace Neo4Net.Ports.Allocation
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldNotOverrun() throws Exception
+[Fact] //ORIGINAL LINE: @Test void shouldNotOverrun() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldNotOverrun()
 		 {

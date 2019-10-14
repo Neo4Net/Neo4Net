@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.scheduler
 			  return CreateCentralScheduler();
 		 }
 
-		 public static JobScheduler CreateInitialisedScheduler()
+		 public static JobScheduler CreateInitializedScheduler()
 		 {
 			  CentralJobScheduler scheduler = CreateCentralScheduler();
 			  scheduler.Init();

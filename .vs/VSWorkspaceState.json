@@ -2,16 +2,16 @@
   "ExpandedNodes": [
     "",
     "\\src",
-    "\\src\\Community",
-    "\\src\\Community\\dbms",
-    "\\src\\Community\\dbms\\src",
-    "\\src\\Community\\dbms\\src\\main",
-    "\\src\\Community\\dbms\\src\\main\\java",
-    "\\src\\Community\\dbms\\src\\main\\java\\org",
-    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j",
-    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline",
-    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline\\dbms",
-    "\\src\\Community\\dbms\\src\\main\\java\\org\\neo4j\\commandline\\dbms\\config"
+    "\\src\\community",
+    "\\src\\community\\common\\Neo4Net.Common",
+    "\\src\\community\\common\\Neo4Net.Common.Tests",
+    "\\src\\community\\common\\Neo4Net.Common.Tests\\Functions",
+    "\\src\\community\\common\\Neo4Net.Common\\Hashing",
+    "\\src\\community\\configuration\\src",
+    "\\src\\community\\configuration\\src\\main",
+    "\\src\\community\\configuration\\src\\main\\java",
+    "\\src\\community\\configuration\\src\\main\\java\\org",
+    "\\src\\community\\configuration\\src\\main\\java\\org\\neo4j"
   ],
   "PreviewInSolutionExplorer": false
 }

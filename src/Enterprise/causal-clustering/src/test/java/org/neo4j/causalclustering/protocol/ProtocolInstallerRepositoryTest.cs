@@ -205,15 +205,15 @@ namespace Neo4Net.causalclustering.protocol
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = IllegalArgumentException.class) public void shouldNotInitialiseIfMultipleInstallersForSameProtocolForServer()
-		 public virtual void ShouldNotInitialiseIfMultipleInstallersForSameProtocolForServer()
+//ORIGINAL LINE: @Test(expected = IllegalArgumentException.class) public void shouldNotInitializeIfMultipleInstallersForSameProtocolForServer()
+		 public virtual void ShouldNotInitializeIfMultipleInstallersForSameProtocolForServer()
 		 {
 			  new ProtocolInstallerRepository<>( asList( _raftProtocolServerInstaller, _raftProtocolServerInstaller ), emptyList() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = IllegalArgumentException.class) public void shouldNotInitialiseIfMultipleInstallersForSameProtocolForClient()
-		 public virtual void ShouldNotInitialiseIfMultipleInstallersForSameProtocolForClient()
+//ORIGINAL LINE: @Test(expected = IllegalArgumentException.class) public void shouldNotInitializeIfMultipleInstallersForSameProtocolForClient()
+		 public virtual void ShouldNotInitializeIfMultipleInstallersForSameProtocolForClient()
 		 {
 			  new ProtocolInstallerRepository<>( asList( _raftProtocolClientInstaller, _raftProtocolClientInstaller ), emptyList() );
 		 }

@@ -60,7 +60,7 @@ namespace Neo4Net.tools.applytx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.tools.console.input.ConsoleUtil.NULL_PRINT_STREAM;
 
@@ -196,7 +196,7 @@ namespace Neo4Net.tools.applytx
 		 {
 			  try
 			  {
-					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler scheduler = createInitialisedScheduler(), PageCache pageCache = createPageCache(fileSystem, scheduler) )
+					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler scheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, scheduler) )
 					  {
 						return MetaDataStore.getRecord( pageCache, databaseLayout.MetadataStore(), MetaDataStore.Position.LAST_TRANSACTION_ID );
 					  }

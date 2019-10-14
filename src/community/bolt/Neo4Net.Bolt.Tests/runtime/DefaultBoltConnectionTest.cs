@@ -162,8 +162,8 @@ namespace Neo4Net.Bolt.runtime
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void hasPendingJobsShouldReportFalseWhenInitialised()
-		 public virtual void HasPendingJobsShouldReportFalseWhenInitialised()
+//ORIGINAL LINE: @Test public void hasPendingJobsShouldReportFalseWhenInitialized()
+		 public virtual void HasPendingJobsShouldReportFalseWhenInitialized()
 		 {
 			  BoltConnection connection = NewConnection();
 

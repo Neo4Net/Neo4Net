@@ -51,14 +51,14 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 internal MuninnReadPageCursor TakeReadCursor( long pageId, int pfFlags )
 		 {
 			  MuninnReadPageCursor cursor = new MuninnReadPageCursor( _victimPage, PageCursorTracer, _versionContextSupplier );
-			  cursor.Initialise( _pagedFile, pageId, pfFlags );
+			  cursor.Initialize( _pagedFile, pageId, pfFlags );
 			  return cursor;
 		 }
 
 		 internal MuninnWritePageCursor TakeWriteCursor( long pageId, int pfFlags )
 		 {
 			  MuninnWritePageCursor cursor = new MuninnWritePageCursor( _victimPage, PageCursorTracer, _versionContextSupplier );
-			  cursor.Initialise( _pagedFile, pageId, pfFlags );
+			  cursor.Initialize( _pagedFile, pageId, pfFlags );
 			  return cursor;
 		 }
 

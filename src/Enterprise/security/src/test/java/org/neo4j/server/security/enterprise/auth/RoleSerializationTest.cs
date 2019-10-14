@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Test = org.junit.Test;
 
 
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

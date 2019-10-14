@@ -50,7 +50,7 @@ namespace Neo4Net.Server.rest.web
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
 	using RelationshipDirection = Neo4Net.Server.rest.web.DatabaseActions.RelationshipDirection;
 	using AmpersandSeparatedCollection = Neo4Net.Server.rest.web.RestfulGraphDatabase.AmpersandSeparatedCollection;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
 

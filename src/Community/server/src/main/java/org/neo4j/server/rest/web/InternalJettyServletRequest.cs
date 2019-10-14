@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.web
 	using Response = org.eclipse.jetty.server.Response;
 
 
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public class InternalJettyServletRequest : Request
 	{

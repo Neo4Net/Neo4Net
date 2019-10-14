@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurve = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurve;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PrimitiveArrayWriting = Neo4Net.Values.Storable.PrimitiveArrayWriting;
 	using TextValue = Neo4Net.Values.Storable.TextValue;

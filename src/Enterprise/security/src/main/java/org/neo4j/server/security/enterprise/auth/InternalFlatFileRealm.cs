@@ -59,7 +59,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
 	using PredefinedRoles = Neo4Net.Server.security.enterprise.auth.plugin.api.PredefinedRoles;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 
 	/// <summary>

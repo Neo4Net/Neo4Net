@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 public override int GetHashCode()
 		 {
 			  HashFunction hf = HashFunction.incrementalXXH64();
-			  long hash = hf.Initialise( 31 );
+			  long hash = hf.Initialize( 31 );
 			  hash = hf.UpdateWithArray( hash, _labels, label => label.name().GetHashCode() );
 			  hash = hf.UpdateWithArray( hash, _relTypes, relType => relType.name().GetHashCode() );
 			  hash = hf.UpdateWithArray( hash, _propertyKeys, string.hashCode );

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using FolderLayout = Neo4Net.Kernel.Api.Impl.Index.storage.layout.FolderLayout;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	/// <summary>
 	/// Helper class for storing a failure message that happens during an OutOfDisk situation in

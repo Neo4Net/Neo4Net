@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldPerformSuccessfulTransitionsCorrectly() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void shouldPerformSuccessfulTransitionsCorrectly() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldPerformSuccessfulTransitionsCorrectly()
 		 {
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldPerformFailedTransitionsCorrectly() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void shouldPerformFailedTransitionsCorrectly() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldPerformFailedTransitionsCorrectly()
 		 {

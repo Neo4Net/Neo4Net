@@ -41,15 +41,15 @@ namespace Neo4Net.Test.extension
 		 internal RandomRule Random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void randomInjectionsInitialiseField()
-		 internal virtual void RandomInjectionsInitialiseField()
+//ORIGINAL LINE: @Test void randomInjectionsInitializeField()
+		 internal virtual void RandomInjectionsInitializeField()
 		 {
 			  assertNotNull( Random );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void randomIsInitialised()
-		 internal virtual void RandomIsInitialised()
+//ORIGINAL LINE: @Test void randomIsInitialized()
+		 internal virtual void RandomIsInitialized()
 		 {
 			  assertNotNull( Random.nextAlphaNumericString() );
 		 }

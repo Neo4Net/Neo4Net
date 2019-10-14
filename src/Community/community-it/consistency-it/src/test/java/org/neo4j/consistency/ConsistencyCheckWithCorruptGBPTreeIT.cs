@@ -69,7 +69,7 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class ConsistencyCheckWithCorruptGBPTreeIT
 	{
@@ -739,7 +739,7 @@ namespace Neo4Net.Consistency
 		 private IList<File> CorruptIndexes( bool readOnly, CorruptionInject corruptionInject, params File[] targetFiles )
 		 {
 			  IList<File> treeFiles = new List<File>();
-			  using ( JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pageCache = createPageCache(_testDirectory.FileSystem, jobScheduler) )
+			  using ( JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(_testDirectory.FileSystem, jobScheduler) )
 			  {
 					SchemaLayouts schemaLayouts = new SchemaLayouts();
 					GBPTreeBootstrapper bootstrapper = new GBPTreeBootstrapper( pageCache, schemaLayouts, readOnly );

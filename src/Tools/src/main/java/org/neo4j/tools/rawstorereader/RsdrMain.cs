@@ -46,13 +46,13 @@ namespace Neo4Net.tools.rawstorereader
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using HexString = Neo4Net.@string.HexString;
+	using HexString = Neo4Net.Strings.HexString;
 	using TransactionLogUtils = Neo4Net.tools.util.TransactionLogUtils;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.store.record.RecordLoad.CHECK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -89,7 +89,7 @@ namespace Neo4Net.tools.rawstorereader
 					DatabaseLayout databaseLayout = DatabaseLayout.of( databaseDirectory );
 
 					Config config = BuildConfig();
-					JobScheduler jobScheduler = createInitialisedScheduler();
+					JobScheduler jobScheduler = createInitializedScheduler();
 					using ( PageCache pageCache = createPageCache( fileSystem, config, jobScheduler ) )
 					{
 						 File neoStore = databaseLayout.MetadataStore();

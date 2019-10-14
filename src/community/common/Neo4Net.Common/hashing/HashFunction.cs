@@ -38,15 +38,15 @@ namespace Neo4Net.Hashing
 	public interface HashFunction
 	{
 		 /// <summary>
-		 /// Initialise the hash function with the given seed.
+		 /// Initialize the hash function with the given seed.
 		 /// <para>
 		 /// Different seeds should produce different final hash values.
 		 /// 
 		 /// </para>
 		 /// </summary>
-		 /// <param name="seed"> The initialisation seed for the hash function. </param>
+		 /// <param name="seed"> The initialization seed for the hash function. </param>
 		 /// <returns> An initialised intermediate hash state. </returns>
-		 long Initialise( long seed );
+		 long Initialize( long seed );
 
 		 /// <summary>
 		 /// Update the hash state by mixing the given value into the given intermediate hash state.
@@ -62,7 +62,7 @@ namespace Neo4Net.Hashing
 		 /// </summary>
 		 /// <param name="intermediateHash"> the intermediate hash state from which to produce a final hash value. </param>
 		 /// <returns> the final hash value. </returns>
-		 long Finalise( long intermediateHash );
+		 long Finalize( long intermediateHash );
 
 		 /// <summary>
 		 /// Reduce the given 64-bit hash value to a 32-bit value.

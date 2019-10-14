@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 
 	using FlushableChannel = Neo4Net.Kernel.impl.transaction.log.FlushableChannel;
 	using ReadableClosableChannel = Neo4Net.Kernel.impl.transaction.log.ReadableClosableChannel;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using DurationValue = Neo4Net.Values.Storable.DurationValue;
 	using PointValue = Neo4Net.Values.Storable.PointValue;

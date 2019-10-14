@@ -56,7 +56,7 @@ namespace Neo4Net.tools.dump
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
 
@@ -101,7 +101,7 @@ namespace Neo4Net.tools.dump
 					return;
 			  }
 
-			  using ( DefaultFileSystemAbstraction fs = new DefaultFileSystemAbstraction(), PageCache pageCache = createPageCache(fs, createInitialisedScheduler()) )
+			  using ( DefaultFileSystemAbstraction fs = new DefaultFileSystemAbstraction(), PageCache pageCache = createPageCache(fs, createInitializedScheduler()) )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.kernel.impl.store.id.DefaultIdGeneratorFactory idGeneratorFactory = new org.neo4j.kernel.impl.store.id.DefaultIdGeneratorFactory(fs);

@@ -224,7 +224,7 @@ namespace Neo4Net.Values.Storable
 		 {
 			  HashFunction xxh64 = HashFunction.incrementalXXH64();
 			  long seed = 1; // Arbitrary seed, but it must always be the same or hash values will change.
-			  return xxh64.Finalise( UpdateHash( xxh64, xxh64.Initialise( seed ) ) );
+			  return xxh64.Finalize( UpdateHash( xxh64, xxh64.Initialize( seed ) ) );
 		 }
 
 		 public abstract long UpdateHash( HashFunction hashFunction, long hash );

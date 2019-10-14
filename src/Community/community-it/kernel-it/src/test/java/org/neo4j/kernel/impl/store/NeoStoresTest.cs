@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.store
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
 	using StorageRelationshipTraversalCursor = Neo4Net.Storageengine.Api.StorageRelationshipTraversalCursor;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using ThreadTestUtils = Neo4Net.Test.ThreadTestUtils;
 	using ConfigurablePageCacheRule = Neo4Net.Test.rule.ConfigurablePageCacheRule;

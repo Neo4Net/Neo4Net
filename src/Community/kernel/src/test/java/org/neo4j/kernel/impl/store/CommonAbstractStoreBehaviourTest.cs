@@ -178,9 +178,9 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void writingOfHeaderRecordDuringInitialiseNewStoreFileMustThrowOnPageOverflow() throws Exception
+//ORIGINAL LINE: @Test public void writingOfHeaderRecordDuringInitializeNewStoreFileMustThrowOnPageOverflow() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void WritingOfHeaderRecordDuringInitialiseNewStoreFileMustThrowOnPageOverflow()
+		 public virtual void WritingOfHeaderRecordDuringInitializeNewStoreFileMustThrowOnPageOverflow()
 		 {
 			  // 16-byte header will overflow an 8-byte page size
 			  PageCacheRule.PageCacheConfig pageCacheConfig = PageCacheRule.config();
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void ExtractHeaderRecordDuringLoadStorageMustThrowOnPageOverflow()
 		 {
 			  MyStore first = new MyStore( this, _config, _pageCacheRule.getPageCache( _fs.get(), _config ), 8 );
-			  first.Initialise( true );
+			  first.Initialize( true );
 			  first.Close();
 
 			  PageCacheRule.PageCacheConfig pageCacheConfig = PageCacheRule.config();

@@ -123,7 +123,7 @@ namespace Neo4Net.tools.migration
 			  DefaultExplicitIndexProvider migrationIndexProvider = new DefaultExplicitIndexProvider();
 
 			  Log log = userLogProvider.GetLog( typeof( StoreMigration ) );
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitialisedScheduler();
+			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
 			  try
 			  {
 					  using ( PageCache pageCache = createPageCache( fs, config, jobScheduler ) )

@@ -36,7 +36,7 @@ namespace Neo4Net.Resources
 		 private const int COMPUTE_WORK_MILLIS = 1000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void profilerMustNoticeWhereTimeGoes() throws Exception
+[Fact] //ORIGINAL LINE: @Test void profilerMustNoticeWhereTimeGoes() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ProfilerMustNoticeWhereTimeGoes()
 		 {
@@ -50,7 +50,7 @@ namespace Neo4Net.Resources
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void profilerMustLimitItselfToProfiledRegion() throws Exception
+[Fact] //ORIGINAL LINE: @Test void profilerMustLimitItselfToProfiledRegion() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ProfilerMustLimitItselfToProfiledRegion()
 		 {
@@ -65,7 +65,7 @@ namespace Neo4Net.Resources
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void profilerMustWaitUntilAfterAnInitialDelay() throws Exception
+[Fact] //ORIGINAL LINE: @Test void profilerMustWaitUntilAfterAnInitialDelay() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ProfilerMustWaitUntilAfterAnInitialDelay()
 		 {

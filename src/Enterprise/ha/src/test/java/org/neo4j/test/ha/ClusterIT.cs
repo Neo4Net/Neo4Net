@@ -83,7 +83,7 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
 
@@ -391,7 +391,7 @@ namespace Neo4Net.Test.ha
 //ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private static void ClearLastTransactionCommitTimestampField( DatabaseLayout databaseLayout )
 		 {
-			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitialisedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )
+			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )
 			  {
 					File neoStore = databaseLayout.MetadataStore();
 					MetaDataStore.setRecord( pageCache, neoStore, LAST_TRANSACTION_COMMIT_TIMESTAMP, MetaDataStore.BASE_TX_COMMIT_TIMESTAMP );

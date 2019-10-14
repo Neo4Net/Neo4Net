@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class DefaultFileSystemWatcherServiceTest
 	{
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.util
 //ORIGINAL LINE: @BeforeClass public static void setUp()
 		 public static void SetUp()
 		 {
-			  _jobScheduler = createInitialisedScheduler();
+			  _jobScheduler = createInitializedScheduler();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

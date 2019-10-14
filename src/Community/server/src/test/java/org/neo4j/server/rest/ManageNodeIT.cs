@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest
 	using ScriptSession = Neo4Net.Server.rest.management.console.ScriptSession;
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using Neo4Net.Test;
 	using EntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;

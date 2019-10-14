@@ -167,7 +167,7 @@ namespace Neo4Net.Graphdb.facade
 		 /// <param name="storeDir"> the directory where the Neo4j data store is located </param>
 		 /// <param name="params"> configuration parameters </param>
 		 /// <param name="dependencies"> the dependencies required to construct the <seealso cref="GraphDatabaseFacade"/> </param>
-		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialisation </param>
+		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialization </param>
 		 /// <returns> the initialised <seealso cref="GraphDatabaseFacade"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public org.neo4j.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, java.util.Map<String,String> params, final Dependencies dependencies, final org.neo4j.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)
@@ -183,7 +183,7 @@ namespace Neo4Net.Graphdb.facade
 		 /// <param name="storeDir"> the directory where the Neo4j data store is located </param>
 		 /// <param name="config"> configuration </param>
 		 /// <param name="dependencies"> the dependencies required to construct the <seealso cref="GraphDatabaseFacade"/> </param>
-		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialisation </param>
+		 /// <param name="graphDatabaseFacade"> the already created facade which needs initialization </param>
 		 /// <returns> the initialised <seealso cref="GraphDatabaseFacade"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public org.neo4j.kernel.impl.factory.GraphDatabaseFacade initFacade(java.io.File storeDir, org.neo4j.kernel.configuration.Config config, final Dependencies dependencies, final org.neo4j.kernel.impl.factory.GraphDatabaseFacade graphDatabaseFacade)

@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.impl.store
 
 			  DynamicArrayStore labelStore = mock( typeof( DynamicArrayStore ) );
 			  NodeStore store = new NodeStore( storeFile, idFile, config, new DefaultIdGeneratorFactory( _fs ), PageCacheRule.getPageCache( _fs ), NullLogProvider.Instance, labelStore, RecordFormatSelector.defaultFormat() );
-			  store.Initialise( true );
+			  store.Initialize( true );
 			  store.MakeStoreOk();
 
 			  // ... that contain a number of records ...
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.impl.store
 
 			  DynamicArrayStore labelStore = mock( typeof( DynamicArrayStore ) );
 			  NodeStore store = new NodeStore( storeFile, idFile, config, new DefaultIdGeneratorFactory( _fs ), PageCacheRule.getPageCache( _fs ), NullLogProvider.Instance, labelStore, RecordFormatSelector.defaultFormat() );
-			  store.Initialise( true );
+			  store.Initialize( true );
 			  store.MakeStoreOk();
 
 			  // ... that contain enough records to fill several file pages ...

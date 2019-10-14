@@ -20,7 +20,7 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CodeGen.source
+namespace Neo4Net.CodeGen.Source
 {
 
 	using Neo4Net.CodeGen;

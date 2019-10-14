@@ -35,7 +35,7 @@ namespace Neo4Net.Server.Security.Auth
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using User = Neo4Net.Kernel.impl.security.User;
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.api.security.AuthToken.invalidToken;

@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using NetworkReadableClosableChannelNetty4 = Neo4Net.causalclustering.messaging.NetworkReadableClosableChannelNetty4;
 	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
 	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public class PrepareStoreCopyResponse
 	{

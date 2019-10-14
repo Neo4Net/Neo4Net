@@ -26,7 +26,7 @@ namespace Neo4Net.Server.Security.Auth
 
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FormatException = Neo4Net.Server.Security.Auth.exception.FormatException;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 
 	public abstract class FileRepositorySerializer<S>

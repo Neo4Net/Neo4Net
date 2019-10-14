@@ -42,35 +42,35 @@ namespace Neo4Net.Kernel.Lifecycle
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMakeNoneToStoppedIntoHumanReadableInitMessage()
+[Fact] //ORIGINAL LINE: @Test void shouldMakeNoneToStoppedIntoHumanReadableInitMessage()
 		 internal virtual void ShouldMakeNoneToStoppedIntoHumanReadableInitMessage()
 		 {
 			  assertThat( ExceptionFor( NONE, STOPPED ).Message, @is( "Component 'SomeComponent' failed to initialize." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMakeStoppedToStartedIntoHumanReadableStartingMessage()
+[Fact] //ORIGINAL LINE: @Test void shouldMakeStoppedToStartedIntoHumanReadableStartingMessage()
 		 internal virtual void ShouldMakeStoppedToStartedIntoHumanReadableStartingMessage()
 		 {
 			  assertThat( ExceptionFor( STOPPED, STARTED ).Message, @is( "Component 'SomeComponent' was successfully initialized, but failed to start." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMakeStartedToStoppedIntoHumanReadableStoppingMessage()
+[Fact] //ORIGINAL LINE: @Test void shouldMakeStartedToStoppedIntoHumanReadableStoppingMessage()
 		 internal virtual void ShouldMakeStartedToStoppedIntoHumanReadableStoppingMessage()
 		 {
 			  assertThat( ExceptionFor( STARTED, STOPPED ).Message, @is( "Component 'SomeComponent' failed to stop." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMakeShutdownIntoHumanReadableShutdownMessage()
+[Fact] //ORIGINAL LINE: @Test void shouldMakeShutdownIntoHumanReadableShutdownMessage()
 		 internal virtual void ShouldMakeShutdownIntoHumanReadableShutdownMessage()
 		 {
 			  assertThat( ExceptionFor( STOPPED, SHUTDOWN ).Message, @is( "Component 'SomeComponent' failed to shut down." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldIncludeRootCauseMessageInExceptionMessage()
+[Fact] //ORIGINAL LINE: @Test void shouldIncludeRootCauseMessageInExceptionMessage()
 		 internal virtual void ShouldIncludeRootCauseMessageInExceptionMessage()
 		 {
 			  Exception root = new Exception( "big bad root cause" );

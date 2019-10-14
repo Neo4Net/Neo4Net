@@ -49,7 +49,7 @@ namespace Neo4Net.Helpers
 		 public ExpectedException ExpectedException = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failSafeCastLongToInt()
+[Fact] //ORIGINAL LINE: @Test void failSafeCastLongToInt()
 		 internal virtual void FailSafeCastLongToInt()
 		 {
 			  ExpectedException.expect( typeof( ArithmeticException ) );
@@ -59,7 +59,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failSafeCastLongToShort()
+[Fact] //ORIGINAL LINE: @Test void failSafeCastLongToShort()
 		 internal virtual void FailSafeCastLongToShort()
 		 {
 			  ExpectedException.expect( typeof( ArithmeticException ) );
@@ -69,7 +69,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failSafeCastIntToUnsignedShort()
+[Fact] //ORIGINAL LINE: @Test void failSafeCastIntToUnsignedShort()
 		 internal virtual void FailSafeCastIntToUnsignedShort()
 		 {
 			  ExpectedException.expect( typeof( ArithmeticException ) );
@@ -79,7 +79,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failSafeCastLongToByte()
+[Fact] //ORIGINAL LINE: @Test void failSafeCastLongToByte()
 		 internal virtual void FailSafeCastLongToByte()
 		 {
 			  ExpectedException.expect( typeof( ArithmeticException ) );
@@ -89,7 +89,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failSafeCastIntToShort()
+[Fact] //ORIGINAL LINE: @Test void failSafeCastIntToShort()
 		 internal virtual void FailSafeCastIntToShort()
 		 {
 			  ExpectedException.expect( typeof( ArithmeticException ) );
@@ -99,7 +99,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castLongToInt()
+[Fact] //ORIGINAL LINE: @Test void castLongToInt()
 		 internal virtual void CastLongToInt()
 		 {
 			  assertEquals( 1, safeCastLongToInt( 1L ) );
@@ -110,7 +110,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castLongToShort()
+[Fact] //ORIGINAL LINE: @Test void castLongToShort()
 		 internal virtual void CastLongToShort()
 		 {
 			  assertEquals( 1, safeCastLongToShort( 1L ) );
@@ -121,7 +121,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castIntToUnsignedShort()
+[Fact] //ORIGINAL LINE: @Test void castIntToUnsignedShort()
 		 internal virtual void CastIntToUnsignedShort()
 		 {
 			  assertEquals( 1, safeCastIntToUnsignedShort( 1 ) );
@@ -130,7 +130,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castIntToShort()
+[Fact] //ORIGINAL LINE: @Test void castIntToShort()
 		 internal virtual void CastIntToShort()
 		 {
 			  assertEquals( 1, safeCastIntToShort( 1 ) );
@@ -140,7 +140,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castLongToByte()
+[Fact] //ORIGINAL LINE: @Test void castLongToByte()
 		 internal virtual void CastLongToByte()
 		 {
 			  assertEquals( 1, safeCastLongToByte( 1L ) );
@@ -151,7 +151,7 @@ namespace Neo4Net.Helpers
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void castUnsignedShortToInt()
+[Fact] //ORIGINAL LINE: @Test void castUnsignedShortToInt()
 		 internal virtual void CastUnsignedShortToInt()
 		 {
 			  assertEquals( 1, unsignedShortToInt( ( short ) 1 ) );

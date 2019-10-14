@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.impl.store
 			  this.Log = logProvider.getLog( this.GetType() );
 		 }
 
-		 internal virtual void Initialise( bool createIfNotExists )
+		 internal virtual void Initialize( bool createIfNotExists )
 		 {
 			  try
 			  {
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  using ( PagedFile file = PageCache.map( StorageFileConflict, pageSize, StandardOpenOption.CREATE ) )
 			  {
-					InitialiseNewStoreFile( file );
+					InitializeNewStoreFile( file );
 			  }
 			  CheckAndLoadStorage( false );
 		 }
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.impl.store
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: protected void initialiseNewStoreFile(org.neo4j.io.pagecache.PagedFile file) throws java.io.IOException
-		 protected internal virtual void InitialiseNewStoreFile( PagedFile file )
+		 protected internal virtual void InitializeNewStoreFile( PagedFile file )
 		 {
 			  if ( NumberOfReservedLowIds > 0 )
 			  {

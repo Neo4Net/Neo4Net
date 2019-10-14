@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.logging.AssertableLogProvider.inLog;
 
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.ha
 
 		private void InitializeInstanceFields()
 		{
-			_jobScheduler = new CountingJobScheduler( _scheduledJobs, createInitialisedScheduler() );
+			_jobScheduler = new CountingJobScheduler( _scheduledJobs, createInitializedScheduler() );
 			_updatePuller = new SlaveUpdatePuller( _requestContextFactory, _master, _lastUpdateTime, _logProvider, _instanceId, _databaseAvailabilityGuard, _invalidEpochHandler, _jobScheduler, _monitor );
 		}
 
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void initialisationMustBeIdempotent()
+//ORIGINAL LINE: @Test public void initializationMustBeIdempotent()
 		 public virtual void InitialisationMustBeIdempotent()
 		 {
 			  _updatePuller.start();

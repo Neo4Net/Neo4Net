@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

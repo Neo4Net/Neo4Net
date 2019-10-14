@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.discovery
 			  @params[neo4j_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitialisedScheduler();
+			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
 			  PlatformModule platformModule = new PlatformModule( TestDirectory.storeDir(), Config.defaults(), ENTERPRISE, newDependencies() );
 			  AbstractEditionModule editionModule = new EnterpriseEditionModule( platformModule );
 			  // Random members that does not exists, discovery will never succeed

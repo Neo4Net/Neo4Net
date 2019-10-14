@@ -20,7 +20,7 @@
 namespace Neo4Net.Utils.Concurrent
 {
 
-	using HexString = Neo4Net.@string.HexString;
+	using HexString = Neo4Net.Strings.HexString;
 
 	/// <summary>
 	/// This is a concurrent data structure used to track

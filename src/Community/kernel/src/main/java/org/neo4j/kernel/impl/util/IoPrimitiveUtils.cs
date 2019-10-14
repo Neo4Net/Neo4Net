@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.util
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
 	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public abstract class IoPrimitiveUtils
 	{

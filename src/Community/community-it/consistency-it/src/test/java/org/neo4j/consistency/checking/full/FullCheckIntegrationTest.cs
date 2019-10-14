@@ -100,7 +100,7 @@ namespace Neo4Net.Consistency.checking.full
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;

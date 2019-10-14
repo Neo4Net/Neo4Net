@@ -136,7 +136,7 @@ namespace Neo4Net.backup.impl
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void initialiseBackupDirectory()
-		 public virtual void InitialiseBackupDirectory()
+		 public virtual void InitializeBackupDirectory()
 		 {
 			  _backupStoreDir = _testDirectory.directory( "backupStore" );
 			  _backupDatabaseDir = new File( _backupStoreDir, DATABASE_NAME );

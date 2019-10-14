@@ -181,7 +181,7 @@ namespace Neo4Net.Consistency.checking
 			  if ( _directStoreAccess == null )
 			  {
 					_life.start();
-					JobScheduler scheduler = _life.add( JobSchedulerFactory.createInitialisedScheduler() );
+					JobScheduler scheduler = _life.add( JobSchedulerFactory.createInitializedScheduler() );
 					_fileSystem = new DefaultFileSystemAbstraction();
 					PageCache pageCache = GetPageCache( _fileSystem );
 					LogProvider logProvider = NullLogProvider.Instance;

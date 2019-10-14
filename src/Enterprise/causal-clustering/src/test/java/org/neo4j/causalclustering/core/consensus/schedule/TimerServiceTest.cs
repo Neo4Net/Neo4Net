@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.consensus.schedule.TimerServiceTest.Timers.TIMER_B;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class TimerServiceTest
 	{
@@ -285,7 +285,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 public virtual void ShouldAwaitCancellationUnderRealScheduler()
 		 {
 			  // given
-			  JobScheduler scheduler = createInitialisedScheduler();
+			  JobScheduler scheduler = createInitializedScheduler();
 			  scheduler.Start();
 
 			  TimerService timerService = new TimerService( scheduler, FormattedLogProvider.toOutputStream( System.out ) );
@@ -325,7 +325,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 public virtual void ShouldBeAbleToCancelBeforeHandlingWithRealScheduler()
 		 {
 			  // given
-			  JobScheduler scheduler = createInitialisedScheduler();
+			  JobScheduler scheduler = createInitializedScheduler();
 			  scheduler.Start();
 
 			  TimerService timerService = new TimerService( scheduler, FormattedLogProvider.toOutputStream( System.out ) );

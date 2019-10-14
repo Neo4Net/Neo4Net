@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Lifecycle
 	internal class LifeSupportTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testOkLifecycle() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testOkLifecycle() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestOkLifecycle()
 		 {
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testFailingInit()
+[Fact] //ORIGINAL LINE: @Test void testFailingInit()
 		 internal virtual void TestFailingInit()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testFailingStart()
+[Fact] //ORIGINAL LINE: @Test void testFailingStart()
 		 internal virtual void TestFailingStart()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testFailingStartAndFailingStop()
+[Fact] //ORIGINAL LINE: @Test void testFailingStartAndFailingStop()
 		 internal virtual void TestFailingStartAndFailingStop()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testFailingStop() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testFailingStop() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestFailingStop()
 		 {
@@ -220,7 +220,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testFailingShutdown() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testFailingShutdown() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestFailingShutdown()
 		 {
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testAddInstanceWhenInitInitsInstance() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testAddInstanceWhenInitInitsInstance() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestAddInstanceWhenInitInitsInstance()
 		 {
@@ -271,7 +271,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testAddInstanceWhenStartedStartsInstance() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testAddInstanceWhenStartedStartsInstance() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestAddInstanceWhenStartedStartsInstance()
 		 {
@@ -293,7 +293,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testAddInstanceWhenStoppedInitsInstance() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testAddInstanceWhenStoppedInitsInstance() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestAddInstanceWhenStoppedInitsInstance()
 		 {
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testAddInstanceWhenShutdownDoesNotAffectInstance() throws LifecycleException
+[Fact] //ORIGINAL LINE: @Test void testAddInstanceWhenShutdownDoesNotAffectInstance() throws LifecycleException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestAddInstanceWhenShutdownDoesNotAffectInstance()
 		 {
@@ -337,7 +337,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testInitFailsShutdownWorks() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testInitFailsShutdownWorks() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestInitFailsShutdownWorks()
 		 {
@@ -363,7 +363,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testInitFailsShutdownFails() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testInitFailsShutdownFails() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestInitFailsShutdownFails()
 		 {
@@ -392,7 +392,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testStartFailsStopWorks() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testStartFailsStopWorks() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestStartFailsStopWorks()
 		 {
@@ -415,7 +415,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testStartFailsStopFails() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testStartFailsStopFails() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestStartFailsStopFails()
 		 {
@@ -444,7 +444,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testStopFailsShutdownWorks() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testStopFailsShutdownWorks() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestStopFailsShutdownWorks()
 		 {
@@ -468,7 +468,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void testStopFailsShutdownFails() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void testStopFailsShutdownFails() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TestStopFailsShutdownFails()
 		 {
@@ -498,7 +498,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void tryToStopComponentOnStartFailure() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void tryToStopComponentOnStartFailure() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TryToStopComponentOnStartFailure()
 		 {
@@ -524,7 +524,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void tryToShutdownComponentOnInitFailure() throws Throwable
+[Fact] //ORIGINAL LINE: @Test void tryToShutdownComponentOnInitFailure() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void TryToShutdownComponentOnInitFailure()
 		 {
@@ -550,7 +550,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void addLastComponentBeforeChain()
+[Fact] //ORIGINAL LINE: @Test void addLastComponentBeforeChain()
 		 internal virtual void AddLastComponentBeforeChain()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -577,7 +577,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void addLastComponentSomewhereInAChain()
+[Fact] //ORIGINAL LINE: @Test void addLastComponentSomewhereInAChain()
 		 internal virtual void AddLastComponentSomewhereInAChain()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -604,7 +604,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void addOnlyLastComponent()
+[Fact] //ORIGINAL LINE: @Test void addOnlyLastComponent()
 		 internal virtual void AddOnlyLastComponent()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();
@@ -618,7 +618,7 @@ namespace Neo4Net.Kernel.Lifecycle
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void failToAddSeveralLastComponents()
+[Fact] //ORIGINAL LINE: @Test void failToAddSeveralLastComponents()
 		 internal virtual void FailToAddSeveralLastComponents()
 		 {
 			  LifeSupport lifeSupport = NewLifeSupport();

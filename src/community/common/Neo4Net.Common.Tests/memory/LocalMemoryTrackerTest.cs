@@ -27,7 +27,7 @@ namespace Neo4Net.Memory
 	internal class LocalMemoryTrackerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void trackMemoryAllocations()
+[Fact] //ORIGINAL LINE: @Test void trackMemoryAllocations()
 		 internal virtual void TrackMemoryAllocations()
 		 {
 			  LocalMemoryTracker memoryTracker = new LocalMemoryTracker();
@@ -38,7 +38,7 @@ namespace Neo4Net.Memory
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void trackMemoryDeallocations()
+[Fact] //ORIGINAL LINE: @Test void trackMemoryDeallocations()
 		 internal virtual void TrackMemoryDeallocations()
 		 {
 			  LocalMemoryTracker memoryTracker = new LocalMemoryTracker();

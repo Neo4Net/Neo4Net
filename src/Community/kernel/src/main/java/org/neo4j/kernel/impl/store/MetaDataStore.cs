@@ -230,9 +230,9 @@ namespace Neo4Net.Kernel.impl.store
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: protected void initialiseNewStoreFile(org.neo4j.io.pagecache.PagedFile file) throws java.io.IOException
-		 protected internal override void InitialiseNewStoreFile( PagedFile file )
+		 protected internal override void InitializeNewStoreFile( PagedFile file )
 		 {
-			  base.InitialiseNewStoreFile( file );
+			  base.InitializeNewStoreFile( file );
 
 			  long storeVersionAsLong = MetaDataStore.VersionStringToLong( StoreVersion );
 			  StoreId storeId = new StoreId( storeVersionAsLong );

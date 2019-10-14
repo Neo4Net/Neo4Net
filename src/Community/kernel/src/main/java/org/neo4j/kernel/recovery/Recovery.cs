@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.recovery
 					_monitor.reverseStoreRecoveryCompleted( lowestRecoveredTxId );
 
 					// We cannot initialise the schema (tokens, schema cache, indexing service, etc.) until we have returned the store to a consistent state.
-					// We need to be able to read the store before we can even figure out what indexes, tokens, etc. we have. Hence we defer the initialisation
+					// We need to be able to read the store before we can even figure out what indexes, tokens, etc. we have. Hence we defer the initialization
 					// of the schema life until after we've done the reverse recovery.
 					_schemaLife.init();
 

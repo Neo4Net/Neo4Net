@@ -22,7 +22,7 @@
  * More information is also available at:
  * https://neo4j.com/licensing/
  */
-namespace Neo4Net.Util
+namespace Neo4Net.Utils
 {
 
 	using AdminTool = Neo4Net.CommandLine.Admin.AdminTool;

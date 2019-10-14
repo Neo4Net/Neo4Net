@@ -153,7 +153,7 @@ namespace Neo4Net.Consistency
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose, File reportDir, ConsistencyFlags consistencyFlags )
 		 {
 			  Log log = logProvider.getLog( this.GetType() );
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitialisedScheduler();
+			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
 			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fileSystem, config, PageCacheTracer.NULL, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, logProvider.GetLog( typeof( PageCache ) ), EmptyVersionContextSupplier.EMPTY, jobScheduler );
 			  PageCache pageCache = pageCacheFactory.OrCreatePageCache;
 
@@ -230,7 +230,7 @@ namespace Neo4Net.Consistency
 			  // Bootstrap kernel extensions
 			  Monitors monitors = new Monitors();
 			  LifeSupport life = new LifeSupport();
-			  JobScheduler jobScheduler = life.Add( JobSchedulerFactory.createInitialisedScheduler() );
+			  JobScheduler jobScheduler = life.Add( JobSchedulerFactory.createInitializedScheduler() );
 			  TokenHolders tokenHolders = new TokenHolders( new DelegatingTokenHolder( new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY ), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_LABEL), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_RELATIONSHIP_TYPE) );
 			  DatabaseKernelExtensions extensions = life.Add( instantiateKernelExtensions( databaseLayout.DatabaseDirectory(), fileSystem, config, new SimpleLogService(logProvider, logProvider), pageCache, jobScheduler, RecoveryCleanupWorkCollector.ignore(), TOOL, monitors, tokenHolders ) );
 			  DefaultIndexProviderMap indexes = life.Add( new DefaultIndexProviderMap( extensions, config ) );
@@ -272,7 +272,7 @@ namespace Neo4Net.Consistency
 			  finally
 			  {
 					life.Shutdown();
-					if ( reportWriterSupplier.Initialised )
+					if ( reportWriterSupplier.Initialized )
 					{
 						 reportWriterSupplier.get().close();
 					}

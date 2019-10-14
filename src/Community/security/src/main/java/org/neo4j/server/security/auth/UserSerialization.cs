@@ -21,7 +21,7 @@ namespace Neo4Net.Server.Security.Auth
 {
 	using User = Neo4Net.Kernel.impl.security.User;
 	using FormatException = Neo4Net.Server.Security.Auth.exception.FormatException;
-	using HexString = Neo4Net.@string.HexString;
+	using HexString = Neo4Net.Strings.HexString;
 
 	/// <summary>
 	/// Serializes user authorization and authentication data to a format similar to unix passwd files.

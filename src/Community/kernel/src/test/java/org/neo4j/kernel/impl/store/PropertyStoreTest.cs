@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final PropertyStore store = new PropertyStore(storeFile, idFile, config, new org.neo4j.kernel.impl.core.JumpingIdGeneratorFactory(1), pageCache, org.neo4j.logging.NullLogProvider.getInstance(), stringPropertyStore, mock(PropertyKeyTokenStore.class), mock(DynamicArrayStore.class), org.neo4j.kernel.impl.store.format.RecordFormatSelector.defaultFormat());
 			  PropertyStore store = new PropertyStore( _storeFile, _idFile, config, new JumpingIdGeneratorFactory( 1 ), pageCache, NullLogProvider.Instance, stringPropertyStore, mock( typeof( PropertyKeyTokenStore ) ), mock( typeof( DynamicArrayStore ) ), RecordFormatSelector.defaultFormat() );
-			  store.Initialise( true );
+			  store.Initialize( true );
 
 			  try
 			  {

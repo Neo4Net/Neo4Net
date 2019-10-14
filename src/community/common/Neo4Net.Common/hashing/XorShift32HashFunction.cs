@@ -28,7 +28,7 @@ namespace Neo4Net.Hashing
 		 {
 		 }
 
-		 public override long Initialise( long seed )
+		 public override long Initialize( long seed )
 		 {
 			  return 0;
 		 }
@@ -38,7 +38,7 @@ namespace Neo4Net.Hashing
 			  return HashSingleValueToInt( intermediateHash + value );
 		 }
 
-		 public override long Finalise( long intermediateHash )
+		 public override long Finalize( long intermediateHash )
 		 {
 			  return intermediateHash;
 		 }

@@ -31,7 +31,7 @@ namespace Neo4Net.backup.impl
 	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class BackupModule
 	{
@@ -57,7 +57,7 @@ namespace Neo4Net.backup.impl
 			  this._clock = Clock.systemDefaultZone();
 			  this._transactionLogCatchUpFactory = new TransactionLogCatchUpFactory();
 			  this._fileSystemAbstraction = outsideWorld.FileSystem();
-			  this._jobScheduler = createInitialisedScheduler();
+			  this._jobScheduler = createInitializedScheduler();
 		 }
 
 		 public virtual LogProvider LogProvider

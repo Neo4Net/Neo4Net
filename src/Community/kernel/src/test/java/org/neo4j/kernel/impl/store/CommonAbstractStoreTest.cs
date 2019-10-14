@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.impl.store
 
 			  using ( DynamicArrayStore dynamicArrayStore = new DynamicArrayStore( storeFile, idFile, _config, IdType.NODE_LABELS, _idGeneratorFactory, pageCache, NullLogProvider.Instance, Settings.INTEGER.apply( GraphDatabaseSettings.label_block_size.DefaultValue ), recordFormats ) )
 			  {
-					dynamicArrayStore.Initialise( false );
+					dynamicArrayStore.Initialize( false );
 			  }
 		 }
 
@@ -238,7 +238,7 @@ namespace Neo4Net.Kernel.impl.store
 			  FileSystemAbstraction fs = _fileSystemRule.get();
 			  PageCache pageCache = _pageCacheRule.getPageCache( fs, Config.defaults() );
 			  TheStore store = new TheStore( nodeStore, databaseLayout.IdNodeStore(), _config, _idType, new DefaultIdGeneratorFactory(fs), pageCache, NullLogProvider.Instance, _recordFormat, DELETE_ON_CLOSE );
-			  store.Initialise( true );
+			  store.Initialize( true );
 			  store.MakeStoreOk();
 			  assertTrue( fs.FileExists( nodeStore ) );
 			  assertTrue( fs.FileExists( idFile ) );
@@ -255,7 +255,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  LogProvider log = NullLogProvider.Instance;
 			  TheStore store = new TheStore( _storeFile, _idStoreFile, _config, _idType, _idGeneratorFactory, _pageCache, log, _recordFormat );
-			  store.Initialise( false );
+			  store.Initialize( false );
 			  return store;
 		 }
 
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.impl.store
 			  {
 			  }
 
-			  protected internal override void InitialiseNewStoreFile( PagedFile file )
+			  protected internal override void InitializeNewStoreFile( PagedFile file )
 			  {
 			  }
 

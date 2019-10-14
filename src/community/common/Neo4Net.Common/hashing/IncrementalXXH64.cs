@@ -34,7 +34,7 @@ namespace Neo4Net.Hashing
 		 {
 		 }
 
-		 public override long Initialise( long seed )
+		 public override long Initialize( long seed )
 		 {
 			  return seed + PRIME5;
 		 }
@@ -50,7 +50,7 @@ namespace Neo4Net.Hashing
 			  return hash;
 		 }
 
-		 public override long Finalise( long hash )
+		 public override long Finalize( long hash )
 		 {
 			  hash ^= ( long )( ( ulong )hash >> 33 );
 			  hash *= PRIME2;

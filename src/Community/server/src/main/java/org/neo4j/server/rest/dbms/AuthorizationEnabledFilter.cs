@@ -35,7 +35,7 @@ namespace Neo4Net.Server.rest.dbms
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using JettyHttpConnection = Neo4Net.Server.web.JettyHttpConnection;
 	using XForwardUtil = Neo4Net.Server.web.XForwardUtil;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.helpers.collection.MapUtil.map;

@@ -37,7 +37,7 @@ namespace Neo4Net.Ports.Allocation
 	internal class CoordinatingPortProviderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldProvideUniquePorts()
+[Fact] //ORIGINAL LINE: @Test void shouldProvideUniquePorts()
 		 internal virtual void ShouldProvideUniquePorts()
 		 {
 			  PortRepository portRepository = mock( typeof( PortRepository ) );
@@ -51,7 +51,7 @@ namespace Neo4Net.Ports.Allocation
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldSkipReservedPorts()
+[Fact] //ORIGINAL LINE: @Test void shouldSkipReservedPorts()
 		 internal virtual void ShouldSkipReservedPorts()
 		 {
 			  PortRepository portRepository = mock( typeof( PortRepository ) );
@@ -64,7 +64,7 @@ namespace Neo4Net.Ports.Allocation
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldSkipOccupiedPorts()
+[Fact] //ORIGINAL LINE: @Test void shouldSkipOccupiedPorts()
 		 internal virtual void ShouldSkipOccupiedPorts()
 		 {
 			  PortRepository portRepository = mock( typeof( PortRepository ) );

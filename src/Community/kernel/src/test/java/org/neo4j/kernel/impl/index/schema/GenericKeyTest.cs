@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using RandomExtension = Neo4Net.Test.extension.RandomExtension;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;

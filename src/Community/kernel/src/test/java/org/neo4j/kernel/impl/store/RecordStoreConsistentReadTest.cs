@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.store
 	using RecordLoad = Neo4Net.Kernel.impl.store.record.RecordLoad;
 	using RelationshipRecord = Neo4Net.Kernel.impl.store.record.RelationshipRecord;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -99,14 +99,14 @@ namespace Neo4Net.Kernel.impl.store
 			  PageCache pageCache = PageCacheRule.getPageCache( _fs, config().withInconsistentReads(_nextReadIsInconsistent) );
 			  StoreFactory factory = new StoreFactory( TestDirectory.databaseLayout(), Config.defaults(), new DefaultIdGeneratorFactory(_fs), pageCache, _fs, NullLogProvider.Instance, EmptyVersionContextSupplier.EMPTY );
 			  NeoStores neoStores = factory.OpenAllNeoStores( true );
-			  S store = InitialiseStore( neoStores );
+			  S store = InitializeStore( neoStores );
 
 			  CommonAbstractStore commonAbstractStore = ( CommonAbstractStore ) store;
 			  commonAbstractStore.rebuildIdGenerator();
 			  return neoStores;
 		 }
 
-		 protected internal virtual S InitialiseStore( NeoStores neoStores )
+		 protected internal virtual S InitializeStore( NeoStores neoStores )
 		 {
 			  S store = GetStore( neoStores );
 			  store.updateRecord( CreateExistingRecord( false ) );
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.store
 					return neoStores.LabelTokenStore;
 			  }
 
-			  protected internal override LabelTokenStore InitialiseStore( NeoStores neoStores )
+			  protected internal override LabelTokenStore InitializeStore( NeoStores neoStores )
 			  {
 					LabelTokenStore store = GetStore( neoStores );
 					LabelTokenRecord record = CreateExistingRecord( false );

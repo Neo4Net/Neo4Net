@@ -53,7 +53,7 @@ namespace Neo4Net.backup.impl
 //	import static org.neo4j.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 
 	/// <summary>
-	/// The dependencies for the backup strategies require a valid configuration for initialisation.
+	/// The dependencies for the backup strategies require a valid configuration for initialization.
 	/// By having this factory we can wait until the configuration has been loaded and the provide all the classes required
 	/// for backups that are dependant on the config.
 	/// </summary>

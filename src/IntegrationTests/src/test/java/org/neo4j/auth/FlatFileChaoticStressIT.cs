@@ -29,7 +29,7 @@ namespace Neo4Net.auth
 
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
 	public class FlatFileChaoticStressIT : FlatFileStressBase

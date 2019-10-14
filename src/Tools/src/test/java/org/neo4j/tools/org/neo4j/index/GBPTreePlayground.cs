@@ -45,7 +45,7 @@ namespace Neo4Net.tools.org.neo4j.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.index.@internal.gbptree.GBPTree.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.tools.console.input.ConsoleUtil.staticPrompt;
 
@@ -63,7 +63,7 @@ namespace Neo4Net.tools.org.neo4j.index
 		 {
 			  this._indexFile = indexFile;
 			  this._layout = SimpleLongLayout.LongLayout().build();
-			  this._pageCache = StandalonePageCacheFactory.createPageCache( fs, createInitialisedScheduler() );
+			  this._pageCache = StandalonePageCacheFactory.createPageCache( fs, createInitializedScheduler() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

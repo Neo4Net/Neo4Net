@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt.runtime
 		 bool HasPendingJobs();
 
 		 /// <summary>
-		 /// Executes extra initialisation routines before taking this connection into use
+		 /// Executes extra initialization routines before taking this connection into use
 		 /// </summary>
 		 void Start();
 

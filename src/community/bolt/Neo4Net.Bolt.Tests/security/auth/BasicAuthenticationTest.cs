@@ -34,7 +34,7 @@ namespace Neo4Net.Bolt.security.auth
 	using BasicAuthManager = Neo4Net.Server.Security.Auth.BasicAuthManager;
 	using InMemoryUserRepository = Neo4Net.Server.Security.Auth.InMemoryUserRepository;
 	using UserRepository = Neo4Net.Server.Security.Auth.UserRepository;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

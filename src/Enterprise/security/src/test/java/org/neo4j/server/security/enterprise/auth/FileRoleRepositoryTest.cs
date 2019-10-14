@@ -40,7 +40,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Neo4Net.Server.Security.Auth;
 	using Neo4Net.Server.Security.Auth;
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using ThreadingRule = Neo4Net.Test.rule.concurrent.ThreadingRule;

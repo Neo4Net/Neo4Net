@@ -6567,7 +6567,7 @@ namespace Neo4Net.Io.pagecache
 			  // by reporting into a throw-away cache tracer.
 			  cursorTracer.Init( new DefaultPageCacheTracer() );
 			  cursorTracer.ReportEvents();
-			  // Initialise it for real.
+			  // Initialize it for real.
 			  cursorTracer.Init( cacheTracer );
 			  return cursorTracerSupplier;
 		 }

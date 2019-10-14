@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.store
 	using RecordLoad = Neo4Net.Kernel.impl.store.record.RecordLoad;
 	using Bits = Neo4Net.Kernel.impl.util.Bits;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using ArrayValue = Neo4Net.Values.Storable.ArrayValue;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;

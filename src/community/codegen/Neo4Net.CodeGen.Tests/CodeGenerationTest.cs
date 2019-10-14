@@ -31,8 +31,8 @@ namespace Neo4Net.CodeGen
 	using InOrder = org.mockito.InOrder;
 
 
-	using ByteCode = Neo4Net.CodeGen.bytecode.ByteCode;
-	using SourceCode = Neo4Net.CodeGen.source.SourceCode;
+	using ByteCode = Neo4Net.CodeGen.ByteCode.ByteCode;
+	using SourceCode = Neo4Net.CodeGen.Source.SourceCode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;

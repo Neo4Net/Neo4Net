@@ -62,9 +62,9 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void cleanTheDatabaseAndInitialiseTheNodeUri() throws Exception
+//ORIGINAL LINE: @Before public void cleanTheDatabaseAndInitializeTheNodeUri() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void CleanTheDatabaseAndInitialiseTheNodeUri()
+		 public virtual void CleanTheDatabaseAndInitializeTheNodeUri()
 		 {
 			  _helper = new GraphDbHelper( Server().Database );
 			  _nodeUri = new URI( _functionalTestHelper.nodeUri() + "/" + _helper.createNode() );

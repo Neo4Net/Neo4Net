@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 		 /// <summary>
-		 /// Initialise collector for unknown number of entries that are suspected to be duplicates.
+		 /// Initialize collector for unknown number of entries that are suspected to be duplicates.
 		 /// </summary>
 		 public virtual void Init()
 		 {

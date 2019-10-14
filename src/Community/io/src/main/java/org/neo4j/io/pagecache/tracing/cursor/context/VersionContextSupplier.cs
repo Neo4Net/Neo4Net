@@ -26,7 +26,7 @@ namespace Neo4Net.Io.pagecache.tracing.cursor.context
 	public interface VersionContextSupplier
 	{
 		 /// <summary>
-		 /// Initialise current supplier with provider of last closed transaction ids
+		 /// Initialize current supplier with provider of last closed transaction ids
 		 /// for future version context to be able to get version ids </summary>
 		 /// <param name="lastClosedTransactionIdSupplier"> closed transaction id supplier. </param>
 		 void Init( System.Func<long> lastClosedTransactionIdSupplier );

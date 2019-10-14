@@ -324,7 +324,7 @@ namespace Neo4Net.Graphdb.factory.module
 
 		 protected internal virtual JobScheduler CreateJobScheduler()
 		 {
-			  return JobSchedulerFactory.createInitialisedScheduler();
+			  return JobSchedulerFactory.createInitializedScheduler();
 		 }
 
 		 protected internal virtual PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )

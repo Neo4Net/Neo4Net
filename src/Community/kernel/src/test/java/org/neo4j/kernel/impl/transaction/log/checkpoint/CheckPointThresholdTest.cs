@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 public virtual void MustCreateThresholdThatTriggersAfterTransactionCount()
 		 {
 			  CheckPointThreshold threshold = CreateThreshold();
-			  threshold.Initialize( 1 ); // Initialise at transaction id offset by 1.
+			  threshold.Initialize( 1 ); // Initialize at transaction id offset by 1.
 
 			  // False because we're not yet at threshold.
 			  assertFalse( threshold.IsCheckPointingNeeded( IntervalTx - 1, NotTriggered ) );

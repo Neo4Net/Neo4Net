@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.@internal.kernel.api.schema.IndexProviderDescriptor.UNDECIDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitialiseDescriptor;
+//	import static org.neo4j.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
 
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  StoreIndexDescriptor storeIndexDescriptor = StoreIndexDescriptorFromSchema( fulltextSchemaDescriptor );
 			  TokenRegistry tokenRegistry = SimpleTokenHolder.CreatePopulatedTokenRegistry( Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY, propertyIds );
 			  SimpleTokenHolder tokenHolder = new SimpleTokenHolder( tokenRegistry );
-			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitialiseDescriptor( storeIndexDescriptor, defaultAnalyzer, tokenHolder, indexFolder, Fs );
+			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitializeDescriptor( storeIndexDescriptor, defaultAnalyzer, tokenHolder, indexFolder, Fs );
 			  assertEquals( analyzerName, fulltextIndexDescriptor.AnalyzerName() );
 			  assertEquals( bool.Parse( eventuallyConsistency ), fulltextIndexDescriptor.EventuallyConsistent );
 
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 			  // Then we should be able to load it back with settings being the same
 			  StoreIndexDescriptor loadingIndexDescriptor = StoreIndexDescriptorFromSchema( schema );
-			  FulltextIndexDescriptor loadedDescriptor = readOrInitialiseDescriptor( loadingIndexDescriptor, defaultAnalyzer, tokenHolder, indexFolder, Fs );
+			  FulltextIndexDescriptor loadedDescriptor = readOrInitializeDescriptor( loadingIndexDescriptor, defaultAnalyzer, tokenHolder, indexFolder, Fs );
 			  assertEquals( fulltextIndexDescriptor.AnalyzerName(), loadedDescriptor.AnalyzerName() );
 			  assertEquals( fulltextIndexDescriptor.EventuallyConsistent, loadedDescriptor.EventuallyConsistent );
 		 }

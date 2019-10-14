@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CodeGen.bytecode
+namespace Neo4Net.CodeGen.ByteCode
 {
 	using ClassReader = org.objectweb.asm.ClassReader;
 	using Opcodes = org.objectweb.asm.Opcodes;

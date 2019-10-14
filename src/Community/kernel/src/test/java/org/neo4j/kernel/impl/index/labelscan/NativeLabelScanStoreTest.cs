@@ -90,9 +90,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shutdownNonInitialisedNativeScanStoreWithoutException() throws java.io.IOException
+//ORIGINAL LINE: @Test public void shutdownNonInitializedNativeScanStoreWithoutException() throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShutdownNonInitialisedNativeScanStoreWithoutException()
+		 public virtual void ShutdownNonInitializedNativeScanStoreWithoutException()
 		 {
 			  string expectedMessage = "Expected exception message";
 			  Monitors monitors = mock( typeof( Monitors ) );

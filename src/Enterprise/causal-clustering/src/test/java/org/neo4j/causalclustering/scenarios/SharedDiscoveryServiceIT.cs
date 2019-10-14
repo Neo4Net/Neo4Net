@@ -58,7 +58,7 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.test.assertion.Assert.assertEventually;
 
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 		 private Callable<Void> CreateDiscoveryJob( MemberId member, DiscoveryServiceFactory discoveryServiceFactory, ISet<MemberId> expectedTargetSet )
 		 {
-			  JobScheduler jobScheduler = createInitialisedScheduler();
+			  JobScheduler jobScheduler = createInitializedScheduler();
 			  Config config = config();
 			  InitialDiscoveryMembersResolver remoteMemberResolver = new InitialDiscoveryMembersResolver( new NoOpHostnameResolver(), config );
 

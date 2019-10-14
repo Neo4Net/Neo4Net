@@ -249,7 +249,7 @@ namespace Neo4Net.@unsafe.Batchinsert.@internal
 
 			  _life = new LifeSupport();
 			  this._databaseLayout = DatabaseLayout.of( databaseDirectory );
-			  this._jobScheduler = JobSchedulerFactory.createInitialisedScheduler();
+			  this._jobScheduler = JobSchedulerFactory.createInitializedScheduler();
 			  _life.add( _jobScheduler );
 
 			  _storeLocker = TryLockStore( fileSystem );

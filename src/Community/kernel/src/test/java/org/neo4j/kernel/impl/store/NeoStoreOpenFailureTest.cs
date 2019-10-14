@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.impl.store
 			  File schemaStore = neoStores.SchemaStore.StorageFile;
 			  neoStores.Close();
 
-			  // Make the schema store inaccessible, to sabotage the next initialisation we'll do.
+			  // Make the schema store inaccessible, to sabotage the next initialization we'll do.
 			  assumeTrue( schemaStore.setReadable( false ) );
 			  assumeTrue( schemaStore.setWritable( false ) );
 

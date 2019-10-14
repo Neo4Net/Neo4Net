@@ -28,7 +28,7 @@ namespace Neo4Net.Memory
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void trackMemoryAllocations()
+[Fact] //ORIGINAL LINE: @Test void trackMemoryAllocations()
 		 internal virtual void TrackMemoryAllocations()
 		 {
 			  long initialUsedMemory = GlobalMemoryTracker.Instance.usedDirectMemory();
@@ -39,7 +39,7 @@ namespace Neo4Net.Memory
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void trackMemoryDeallocations()
+[Fact] //ORIGINAL LINE: @Test void trackMemoryDeallocations()
 		 internal virtual void TrackMemoryDeallocations()
 		 {
 			  long initialUsedMemory = GlobalMemoryTracker.Instance.usedDirectMemory();

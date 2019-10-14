@@ -150,14 +150,14 @@ namespace Neo4Net.Test.rule
 			  Life initialLifecycle = description.getAnnotation( typeof( Life ) );
 			  if ( initialLifecycle != null )
 			  {
-					@base = Initialise( @base, initialLifecycle.value() );
+					@base = Initialize( @base, initialLifecycle.value() );
 			  }
 			  return _life.apply( @base, description );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: private org.junit.runners.model.Statement initialise(final org.junit.runners.model.Statement super, final InitialLifecycle initialLifecycle)
-		 private Statement Initialise( Statement @base, InitialLifecycle initialLifecycle )
+		 private Statement Initialize( Statement @base, InitialLifecycle initialLifecycle )
 		 {
 			  return new StatementAnonymousInnerClass( this, @base, initialLifecycle );
 		 }

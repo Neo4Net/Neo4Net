@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RecordLoad = Neo4Net.Kernel.impl.store.record.RecordLoad;
 	using Bits = Neo4Net.Kernel.impl.util.Bits;
 	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using ArrayValue = Neo4Net.Values.Storable.ArrayValue;
 	using BooleanValue = Neo4Net.Values.Storable.BooleanValue;
 	using ByteValue = Neo4Net.Values.Storable.ByteValue;

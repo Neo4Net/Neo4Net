@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using ChannelHandlerContext = io.netty.channel.ChannelHandlerContext;
 	using MessageToByteEncoder = io.netty.handler.codec.MessageToByteEncoder;
 
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public class FileHeaderEncoder : MessageToByteEncoder<FileHeader>
 	{

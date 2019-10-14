@@ -39,12 +39,12 @@ namespace Neo4Net.causalclustering.core.consensus
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class ContinuousJobTest
 	{
 		 private const long DEFAULT_TIMEOUT_MS = 15_000;
-		 private readonly JobScheduler _scheduler = createInitialisedScheduler();
+		 private readonly JobScheduler _scheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldRunJobContinuously() throws Throwable

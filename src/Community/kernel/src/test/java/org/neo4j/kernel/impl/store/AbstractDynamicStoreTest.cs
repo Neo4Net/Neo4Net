@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  DefaultIdGeneratorFactory idGeneratorFactory = new DefaultIdGeneratorFactory( _fs );
 			  AbstractDynamicStore store = new AbstractDynamicStoreAnonymousInnerClass( this, _storeFile, _idFile, Config.defaults(), idGeneratorFactory, _pageCache, NullLogProvider.Instance, _formats.dynamic(), _formats.storeVersion() );
-			  store.Initialise( true );
+			  store.Initialize( true );
 			  return store;
 		 }
 

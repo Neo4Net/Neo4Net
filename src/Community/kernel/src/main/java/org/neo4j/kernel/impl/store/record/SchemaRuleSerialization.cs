@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.store.record
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.@string.UTF8.getDecodedStringFrom;

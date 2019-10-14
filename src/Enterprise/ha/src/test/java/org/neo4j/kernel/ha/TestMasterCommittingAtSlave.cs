@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.ha.com.master.SlavePriorities.roundRobin;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.logging.AssertableLogProvider.Level.ERROR;
 
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.ha
 			  _slaves = InstantiateSlaves( slaveCount, failingSlaves );
 
 			  Config config = Config.defaults( MapUtil.stringMap( HaSettings.TxPushFactor.name(), "" + replication, ClusterSettings.server_id.name(), "" + MASTER_SERVER_ID ) );
-			  JobScheduler scheduler = Cleanup.add( createInitialisedScheduler() );
+			  JobScheduler scheduler = Cleanup.add( createInitializedScheduler() );
 			  TransactionPropagator result = new TransactionPropagator( TransactionPropagator.from( config, slavePriority ), NullLog.Instance, () => _slaves, new CommitPusher(scheduler) );
 			  // Life
 			  try

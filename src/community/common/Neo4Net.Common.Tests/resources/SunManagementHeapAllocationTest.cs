@@ -53,7 +53,7 @@ namespace Neo4Net.Resources
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldLoadHeapAllocation()
+[Fact] //ORIGINAL LINE: @Test void shouldLoadHeapAllocation()
 		 internal virtual void ShouldLoadHeapAllocation()
 		 {
 			  assertNotSame( NOT_AVAILABLE, HEAP_ALLOCATION );
@@ -61,7 +61,7 @@ namespace Neo4Net.Resources
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldMeasureAllocation()
+[Fact] //ORIGINAL LINE: @Test void shouldMeasureAllocation()
 		 internal virtual void ShouldMeasureAllocation()
 		 {
 			  // given

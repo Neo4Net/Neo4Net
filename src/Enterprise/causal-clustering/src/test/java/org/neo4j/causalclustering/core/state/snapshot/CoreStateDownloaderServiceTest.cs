@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitialisedScheduler;
+//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class CoreStateDownloaderServiceTest
 	{
@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 //ORIGINAL LINE: @Before public void create()
 		 public virtual void Create()
 		 {
-			  _centralJobScheduler = createInitialisedScheduler();
+			  _centralJobScheduler = createInitializedScheduler();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

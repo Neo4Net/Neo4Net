@@ -23,8 +23,8 @@ namespace Neo4Net.Server.Security.Auth
 {
 
 	using Credential = Neo4Net.Kernel.impl.security.Credential;
-	using HexString = Neo4Net.@string.HexString;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using HexString = Neo4Net.Strings.HexString;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	/// <summary>
 	/// This class is used for community security, InternalFlatFile, SetDefaultAdminCommand and SetInitialPasswordCommand

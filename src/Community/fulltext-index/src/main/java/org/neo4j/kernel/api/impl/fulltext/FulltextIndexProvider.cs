@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.api.exceptions.Status_General.InvalidArguments;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitialiseDescriptor;
+//	import static org.neo4j.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
 
 	internal class FulltextIndexProvider : IndexProvider, FulltextAdapter, AuxiliaryTransactionStateProvider
 	{
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  // All of the above has failed, so we need to load the settings in from the storage directory of the index.
 			  // This situation happens during recovery.
 			  PartitionedIndexStorage indexStorage = GetIndexStorage( descriptor.Id );
-			  fulltextIndexDescriptor = readOrInitialiseDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
+			  fulltextIndexDescriptor = readOrInitializeDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
 			  return new FulltextIndexCapability( fulltextIndexDescriptor.EventuallyConsistent );
 		 }
 
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 public override IndexPopulator GetPopulator( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig, ByteBufferFactory bufferFactory )
 		 {
 			  PartitionedIndexStorage indexStorage = GetIndexStorage( descriptor.Id );
-			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitialiseDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
+			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitializeDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
 			  DatabaseIndex<FulltextIndexReader> fulltextIndex = FulltextIndexBuilder.Create( fulltextIndexDescriptor, _config, _tokenHolders.propertyKeyTokens() ).withFileSystem(_fileSystem).withOperationalMode(_operationalMode).withIndexStorage(indexStorage).withPopulatingMode(true).build();
 			  if ( fulltextIndex.ReadOnly )
 			  {
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 {
 			  PartitionedIndexStorage indexStorage = GetIndexStorage( descriptor.Id );
 
-			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitialiseDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
+			  FulltextIndexDescriptor fulltextIndexDescriptor = readOrInitializeDescriptor( descriptor, _defaultAnalyzerName, _tokenHolders.propertyKeyTokens(), indexStorage.IndexFolder, _fileSystem );
 			  FulltextIndexBuilder fulltextIndexBuilder = FulltextIndexBuilder.Create( fulltextIndexDescriptor, _config, _tokenHolders.propertyKeyTokens() ).withFileSystem(_fileSystem).withOperationalMode(_operationalMode).withIndexStorage(indexStorage).withPopulatingMode(false);
 			  if ( fulltextIndexDescriptor.EventuallyConsistent )
 			  {

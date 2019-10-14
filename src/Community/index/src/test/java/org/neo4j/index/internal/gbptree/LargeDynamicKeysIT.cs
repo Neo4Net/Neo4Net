@@ -28,7 +28,7 @@ namespace Neo4Net.Index.@internal.gbptree
 	using Neo4Net.Cursors;
 	using Neo4Net.Helpers.Collections;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

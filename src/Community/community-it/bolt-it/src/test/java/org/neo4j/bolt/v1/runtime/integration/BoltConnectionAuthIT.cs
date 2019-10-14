@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Version = Neo4Net.Kernel.@internal.Version;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;

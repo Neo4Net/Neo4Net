@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.repr
 	using NodeNotFoundException = Neo4Net.Server.rest.web.NodeNotFoundException;
 	using RelationshipNotFoundException = Neo4Net.Server.rest.web.RelationshipNotFoundException;
 	using HttpHeaderUtils = Neo4Net.Server.web.HttpHeaderUtils;
-	using UTF8 = Neo4Net.@string.UTF8;
+	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public class OutputFormat
 	{
