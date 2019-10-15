@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// <summary>
 	/// A trace event that represents a transaction with the database, and its lifetime.
 	/// </summary>
-	public interface TransactionEvent : AutoCloseable
+	public interface TransactionEvent : IDisposable
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 TransactionEvent NULL = new TransactionEvent()

@@ -58,7 +58,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	/// }
 	/// </pre>
 	/// </summary>
-	public interface Transaction : AutoCloseable
+	public interface Transaction : IDisposable
 	{
 
 		 /// <summary>

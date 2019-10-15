@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using IndexingServiceFactory = Neo4Net.Kernel.Impl.Api.index.IndexingServiceFactory;
 	using PropertyPhysicalToLogicalConverter = Neo4Net.Kernel.Impl.Api.index.PropertyPhysicalToLogicalConverter;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using Loaders = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.Loaders;
 	using PropertyCreator = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyCreator;
 	using PropertyTraverser = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyTraverser;
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using Neo4Net.@unsafe.Batchinsert.Internal;
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  _nodeStore = _neoStores.NodeStore;
 			  _relationshipStore = _neoStores.RelationshipStore;
 			  PropertyStore propertyStore = _neoStores.PropertyStore;
-			  JobScheduler scheduler = JobSchedulerFactory.createScheduler();
+			  IJobScheduler scheduler = IJobSchedulerFactory.createScheduler();
 			  Dependencies dependencies = new Dependencies();
 			  dependencies.SatisfyDependency( EMPTY );
 			  DefaultIndexProviderMap providerMap = new DefaultIndexProviderMap( dependencies, config );

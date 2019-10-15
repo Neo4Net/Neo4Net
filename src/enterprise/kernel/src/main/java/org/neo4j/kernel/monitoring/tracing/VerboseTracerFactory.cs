@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using Service = Neo4Net.Helpers.Service;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 			 }
 		 }
 
-		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, JobScheduler jobScheduler, SystemNanoClock clock, Log msgLog )
+		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, IJobScheduler jobScheduler, SystemNanoClock clock, Log msgLog )
 		 {
 			  return new VerbosePageCacheTracer( msgLog, clock );
 		 }

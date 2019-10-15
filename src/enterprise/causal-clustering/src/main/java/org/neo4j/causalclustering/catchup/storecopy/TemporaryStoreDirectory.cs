@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
 
-	public class TemporaryStoreDirectory : AutoCloseable
+	public class TemporaryStoreDirectory : IDisposable
 	{
 		 private const string TEMP_COPY_DIRECTORY_NAME = "temp-copy";
 

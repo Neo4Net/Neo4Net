@@ -37,7 +37,7 @@ namespace Neo4Net.Tooling
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using BatchImporter = Neo4Net.@unsafe.Impl.Batchimport.BatchImporter;
 	using BatchImporterFactory = Neo4Net.@unsafe.Impl.Batchimport.BatchImporterFactory;
 	using ParallelBatchImporter = Neo4Net.@unsafe.Impl.Batchimport.ParallelBatchImporter;
@@ -137,7 +137,7 @@ namespace Neo4Net.Tooling
 						 Console.WriteLine( "Seed " + randomSeed );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
-						 JobScheduler jobScheduler = life.Add( createScheduler() );
+						 IJobScheduler jobScheduler = life.Add( createScheduler() );
 						 consumer = BatchImporterFactory.withHighestPriority().instantiate(DatabaseLayout.of(dir), fileSystem, null, importConfig, new SimpleLogService(logging, logging), defaultVisible(jobScheduler), EMPTY, dbConfig, RecordFormatSelector.selectForConfig(dbConfig, logging), NO_MONITOR, jobScheduler);
 						 ImportTool.PrintOverview( dir, Collections.emptyList(), Collections.emptyList(), importConfig, System.out );
 					}

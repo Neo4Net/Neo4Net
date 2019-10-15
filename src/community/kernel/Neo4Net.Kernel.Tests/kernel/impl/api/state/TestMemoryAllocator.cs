@@ -23,20 +23,20 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Memory = Neo4Net.Kernel.impl.util.collection.Memory;
 	using MemoryAllocator = Neo4Net.Kernel.impl.util.collection.MemoryAllocator;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 
 	internal class TestMemoryAllocator : MemoryAllocator
 	{
-		 internal readonly MemoryAllocationTracker Tracker;
+		 internal readonly IMemoryAllocationTracker Tracker;
 
 		 internal TestMemoryAllocator() : this(new LocalMemoryTracker())
 		 {
 		 }
 
-		 internal TestMemoryAllocator( MemoryAllocationTracker tracker )
+		 internal TestMemoryAllocator( IMemoryAllocationTracker tracker )
 		 {
 			  this.Tracker = tracker;
 		 }

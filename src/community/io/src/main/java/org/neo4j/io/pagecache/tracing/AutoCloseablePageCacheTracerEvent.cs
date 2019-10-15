@@ -22,9 +22,9 @@ namespace Neo4Net.Io.pagecache.tracing
 	/// <summary>
 	/// Some events are desirable to make AutoClosable, but monitoring is not
 	/// allowed to introduce new failure modes. Thus, this interface overrides
-	/// the AutoCloseable#close method to not throw any checked exceptions.
+	/// the IDisposable#close method to not throw any checked exceptions.
 	/// </summary>
-	public interface AutoCloseablePageCacheTracerEvent : AutoCloseable
+	public interface IDisposablePageCacheTracerEvent : IDisposable
 	{
 		 void Close();
 	}

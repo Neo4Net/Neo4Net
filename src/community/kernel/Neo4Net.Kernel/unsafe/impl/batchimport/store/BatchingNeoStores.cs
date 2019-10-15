@@ -56,7 +56,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using MemoryStatsVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor;
 	using Input_Estimates = Neo4Net.@unsafe.Impl.Batchimport.input.Input_Estimates;
 	using BatchingLabelTokenRepository = Neo4Net.@unsafe.Impl.Batchimport.store.BatchingTokenRepository.BatchingLabelTokenRepository;
@@ -91,7 +91,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	/// Creator and accessor of <seealso cref="NeoStores"/> with some logic to provide very batch friendly services to the
 	/// <seealso cref="NeoStores"/> when instantiating it. Different services for specific purposes.
 	/// </summary>
-	public class BatchingNeoStores : AutoCloseable, Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable
+	public class BatchingNeoStores : IDisposable, Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable
 	{
 		 private const string TEMP_STORE_NAME = "temp.db";
 		 // Empirical and slightly defensive threshold where relationship records seem to start requiring double record units.
@@ -260,7 +260,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 }
 
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
-		 public static BatchingNeoStores BatchingNeoStoresConflict( FileSystemAbstraction fileSystem, File storeDir, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds initialIds, Config dbConfig, JobScheduler jobScheduler )
+		 public static BatchingNeoStores BatchingNeoStoresConflict( FileSystemAbstraction fileSystem, File storeDir, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds initialIds, Config dbConfig, IJobScheduler jobScheduler )
 		 {
 			  Config neo4jConfig = GetNeo4jConfig( config, dbConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -284,7 +284,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 			  return dbConfig;
 		 }
 
-		 private static PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, LogProvider log, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, JobScheduler jobScheduler )
+		 private static PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, LogProvider log, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, IJobScheduler jobScheduler )
 		 {
 			  return ( new ConfiguringPageCacheFactory( fileSystem, config, tracer, cursorTracerSupplier, log.GetLog( typeof( BatchingNeoStores ) ), contextSupplier, jobScheduler ) ).OrCreatePageCache;
 		 }

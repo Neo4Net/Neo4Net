@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// <summary>
 	/// Represents the process of appending a check point to the transaction log.
 	/// </summary>
-	public interface LogCheckPointEvent : LogForceEvents, AutoCloseable
+	public interface LogCheckPointEvent : LogForceEvents, IDisposable
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 LogCheckPointEvent NULL = new LogCheckPointEvent()

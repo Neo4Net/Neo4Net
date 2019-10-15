@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.election
 	using Neo4Net.causalclustering.messaging;
 	using Predicates = Neo4Net.Functions.Predicates;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.helpers.collection.Iterables.asSet;
@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.core.consensus.election
 		 private readonly ISet<MemberId> _members = new HashSet<MemberId>();
 		 private readonly ISet<BootstrapWaiter> _bootstrapWaiters = new HashSet<BootstrapWaiter>();
 		 private readonly IList<TimerService> _timerServices = new List<TimerService>();
-		 private readonly JobScheduler _scheduler = createInitializedScheduler();
+		 private readonly IJobScheduler _scheduler = createInitializedScheduler();
 		 internal readonly ISet<RaftFixture> Rafts = new HashSet<RaftFixture>();
 		 internal readonly TestNetwork Net;
 

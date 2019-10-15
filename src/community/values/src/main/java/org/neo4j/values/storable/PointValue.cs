@@ -26,7 +26,7 @@ namespace Neo4Net.Values.Storable
 	using CRS = Neo4Net.Graphdb.spatial.CRS;
 	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
 	using Point = Neo4Net.Graphdb.spatial.Point;
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
 	using PrettyPrinter = Neo4Net.Values.utils.PrettyPrinter;
@@ -243,7 +243,7 @@ namespace Neo4Net.Values.Storable
 			  return result;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  hash = hashFunction.Update( hash, _crs.Code );
 			  foreach ( double v in _coordinate )

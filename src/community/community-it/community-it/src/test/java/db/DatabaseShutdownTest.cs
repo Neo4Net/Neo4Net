@@ -39,7 +39,7 @@ namespace Db
 	using LifecycleStatus = Neo4Net.Kernel.Lifecycle.LifecycleStatus;
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -115,7 +115,7 @@ namespace Db
 						  this._config = config;
 					  }
 
-					  protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+					  protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 					  {
 							PageCache pageCache = base.createPageCache( fileSystem, config, logging, tracers, versionContextSupplier, jobScheduler );
 							return new DelegatingPageCacheAnonymousInnerClass( this, pageCache );

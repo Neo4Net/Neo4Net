@@ -36,7 +36,7 @@ namespace Neo4Net.Test
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class AdversarialPageCacheGraphDatabaseFactory
 	{
@@ -109,7 +109,7 @@ namespace Neo4Net.Test
 						  return _outerInstance.outerInstance.fs;
 					 }
 
-					 protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+					 protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 					 {
 						  PageCache pageCache = base.createPageCache( fileSystem, config, logging, tracers, versionContextSupplier, jobScheduler );
 						  return new AdversarialPageCache( pageCache, _outerInstance.outerInstance.adversary );

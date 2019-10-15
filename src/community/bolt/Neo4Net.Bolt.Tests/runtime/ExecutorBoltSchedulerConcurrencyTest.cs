@@ -33,7 +33,7 @@ namespace Neo4Net.Bolt.runtime
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -81,7 +81,7 @@ namespace Neo4Net.Bolt.runtime
 		 private readonly AssertableLogProvider _logProvider = new AssertableLogProvider();
 		 private LogService _logService;
 		 private ExecutorFactory _executorFactory;
-		 private readonly JobScheduler _jobScheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );
 		 private ExecutorBoltScheduler _boltScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

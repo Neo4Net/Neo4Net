@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 
 	using Neo4Net.Helpers.Collections;
 
-	public class InvocationTracer<C> : InvocationHandler, AutoCloseable
+	public class InvocationTracer<C> : InvocationHandler, IDisposable
 	{
 		 private readonly string _generatorInfo;
 

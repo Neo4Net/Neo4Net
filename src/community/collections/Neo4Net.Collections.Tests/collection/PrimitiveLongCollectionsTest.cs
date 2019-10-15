@@ -80,7 +80,7 @@ namespace Neo4Net.Collections
 			  AssertItems( filtered, 1, 3 );
 		 }
 
-		 private sealed class CountingPrimitiveLongIteratorResource : LongIterator, AutoCloseable
+		 private sealed class CountingPrimitiveLongIteratorResource : LongIterator, IDisposable
 		 {
 			  internal readonly LongIterator Delegate;
 			  internal readonly AtomicInteger CloseCounter;

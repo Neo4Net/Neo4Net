@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.discovery
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static com.hazelcast.spi.properties.GroupProperty.INITIAL_MIN_CLUSTER_SIZE;
@@ -118,7 +118,7 @@ namespace Neo4Net.causalclustering.discovery
 		 private Thread _startingThread;
 		 private volatile bool _stopped;
 
-		 public HazelcastCoreTopologyService( Config config, MemberId myself, JobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors ) : base( config, myself, logProvider, userLogProvider )
+		 public HazelcastCoreTopologyService( Config config, MemberId myself, IJobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors ) : base( config, myself, logProvider, userLogProvider )
 		 {
 			  this._localDBName = config.Get( CausalClusteringSettings.database );
 			  this._scheduler = new RobustJobSchedulerWrapper( jobScheduler, Log );

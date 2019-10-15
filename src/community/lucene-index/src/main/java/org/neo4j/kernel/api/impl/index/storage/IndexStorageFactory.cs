@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 
-	public class IndexStorageFactory : AutoCloseable
+	public class IndexStorageFactory : IDisposable
 	{
 		 private readonly DirectoryFactory _dirFactory;
 		 private readonly FileSystemAbstraction _fileSystem;

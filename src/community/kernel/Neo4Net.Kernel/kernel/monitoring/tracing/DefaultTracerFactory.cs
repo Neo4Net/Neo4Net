@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using DefaultCheckPointerTracer = Neo4Net.Kernel.impl.transaction.log.checkpoint.DefaultCheckPointerTracer;
 	using CheckPointTracer = Neo4Net.Kernel.impl.transaction.tracing.CheckPointTracer;
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Log = Neo4Net.Logging.Log;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -42,18 +42,18 @@ namespace Neo4Net.Kernel.monitoring.tracing
 			 }
 		 }
 
-		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, JobScheduler jobScheduler, SystemNanoClock clock, Log log )
+		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, IJobScheduler jobScheduler, SystemNanoClock clock, Log log )
 		 {
 			  return new DefaultPageCacheTracer();
 		 }
 
-		 public override TransactionTracer CreateTransactionTracer( Monitors monitors, JobScheduler jobScheduler )
+		 public override TransactionTracer CreateTransactionTracer( Monitors monitors, IJobScheduler jobScheduler )
 		 {
 			  DefaultTransactionTracer.Monitor monitor = monitors.NewMonitor( typeof( DefaultTransactionTracer.Monitor ) );
 			  return new DefaultTransactionTracer( monitor, jobScheduler );
 		 }
 
-		 public override CheckPointTracer CreateCheckPointTracer( Monitors monitors, JobScheduler jobScheduler )
+		 public override CheckPointTracer CreateCheckPointTracer( Monitors monitors, IJobScheduler jobScheduler )
 		 {
 			  DefaultCheckPointerTracer.Monitor monitor = monitors.NewMonitor( typeof( DefaultCheckPointerTracer.Monitor ) );
 			  return new DefaultCheckPointerTracer( monitor, jobScheduler );

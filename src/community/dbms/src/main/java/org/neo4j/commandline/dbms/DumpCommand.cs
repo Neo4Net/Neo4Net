@@ -40,7 +40,7 @@ namespace Neo4Net.CommandLine.dbms
 	using RecoveryRequiredException = Neo4Net.Kernel.impl.recovery.RecoveryRequiredException;
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.commandline.Util.canonicalPath;
@@ -166,7 +166,7 @@ namespace Neo4Net.CommandLine.dbms
 		 {
 			  try
 			  {
-					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(fileSystem, additionalConfiguration, jobScheduler) )
+					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(fileSystem, additionalConfiguration, jobScheduler) )
 					  {
 						RecoveryRequiredChecker.assertRecoveryIsNotRequired( fileSystem, pageCache, additionalConfiguration, databaseLayout, new Monitors() );
 					  }

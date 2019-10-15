@@ -25,7 +25,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Runs cleanup work as they're added in <seealso cref="add(CleanupJob)"/>, but the thread that calls <seealso cref="add(CleanupJob)"/> will not execute them itself.
@@ -33,12 +33,12 @@ namespace Neo4Net.Index.Internal.gbptree
 	public class GroupingRecoveryCleanupWorkCollector : RecoveryCleanupWorkCollector
 	{
 		 private readonly BlockingQueue<CleanupJob> _jobs = new LinkedBlockingQueue<CleanupJob>();
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private volatile bool _started;
 		 private JobHandle _handle;
 
 		 /// <param name="jobScheduler"> <seealso cref="JobScheduler"/> to queue <seealso cref="CleanupJob"/> into. </param>
-		 public GroupingRecoveryCleanupWorkCollector( JobScheduler jobScheduler )
+		 public GroupingRecoveryCleanupWorkCollector( IJobScheduler jobScheduler )
 		 {
 			  this._jobScheduler = jobScheduler;
 		 }

@@ -57,7 +57,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  }
 		 }
 
-		 private class NodeVisitor : NodeRelationshipCache.NodeChangeVisitor, AutoCloseable
+		 private class NodeVisitor : NodeRelationshipCache.NodeChangeVisitor, IDisposable
 		 {
 			 internal bool InstanceFieldsInitialized = false;
 

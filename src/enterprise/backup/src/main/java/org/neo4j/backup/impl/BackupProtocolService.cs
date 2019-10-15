@@ -83,7 +83,7 @@ namespace Neo4Net.backup.impl
 	/// <summary>
 	/// Client-side convenience service for doing backups from a running database instance.
 	/// </summary>
-	public class BackupProtocolService : AutoCloseable
+	public class BackupProtocolService : IDisposable
 	{
 		 internal static readonly string TooOldBackup = "It's been too long since this backup was last updated, and it has " +
 					"fallen too far behind the database transaction stream for incremental backup to be possible. You need to" +

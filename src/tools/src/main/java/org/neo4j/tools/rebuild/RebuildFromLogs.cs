@@ -204,7 +204,7 @@ namespace Neo4Net.tools.rebuild
 			  Console.Error.WriteLine( "         -tx       --  to rebuild the store up to a given transaction" );
 		 }
 
-		 private class TransactionApplier : AutoCloseable
+		 private class TransactionApplier : IDisposable
 		 {
 			  internal readonly GraphDatabaseAPI Graphdb;
 			  internal readonly FileSystemAbstraction Fs;
@@ -252,7 +252,7 @@ namespace Neo4Net.tools.rebuild
 			  }
 		 }
 
-		 private class ConsistencyChecker : AutoCloseable
+		 private class ConsistencyChecker : IDisposable
 		 {
 			  internal readonly GraphDatabaseAPI Graphdb;
 			  internal readonly LabelScanStore LabelScanStore;

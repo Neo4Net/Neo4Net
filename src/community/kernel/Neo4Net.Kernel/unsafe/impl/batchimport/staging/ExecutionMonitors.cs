@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.@unsafe.impl.batchimport.staging.HumanUnderstandableExecutionMonitor.NO_MONITOR;
@@ -35,12 +35,12 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 			  throw new AssertionError( "No instances allowed" );
 		 }
 
-		 public static ExecutionMonitor DefaultVisible( JobScheduler jobScheduler )
+		 public static ExecutionMonitor DefaultVisible( IJobScheduler jobScheduler )
 		 {
 			  return DefaultVisible( System.in, jobScheduler );
 		 }
 
-		 public static ExecutionMonitor DefaultVisible( Stream @in, JobScheduler jobScheduler )
+		 public static ExecutionMonitor DefaultVisible( Stream @in, IJobScheduler jobScheduler )
 		 {
 			  ProgressRestoringMonitor monitor = new ProgressRestoringMonitor();
 			  return new MultiExecutionMonitor( new HumanUnderstandableExecutionMonitor( NO_MONITOR, monitor ), new OnDemandDetailsExecutionMonitor( System.out, @in, monitor, jobScheduler ) );

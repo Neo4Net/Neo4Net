@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	internal class FulltextIndexTransactionState : System.IDisposable
 	{
 		 private readonly FulltextIndexDescriptor _descriptor;
-		 private readonly IList<AutoCloseable> _toCloseLater;
+		 private readonly IList<IDisposable> _toCloseLater;
 		 private readonly MutableLongSet _modifiedEntityIdsInThisTransaction;
 		 private readonly TransactionStateLuceneIndexWriter _writer;
 		 private readonly FulltextIndexTransactionStateVisitor _txStateVisitor;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  log.Debug( "Acquired online fulltext schema index accessor, as base accessor for transaction state: %s", accessor );
 			  _descriptor = accessor.Descriptor;
 			  SchemaDescriptor schema = _descriptor.schema();
-			  _toCloseLater = new List<AutoCloseable>();
+			  _toCloseLater = new List<IDisposable>();
 			  _writer = accessor.TransactionStateIndexWriter;
 			  _modifiedEntityIdsInThisTransaction = new LongHashSet();
 			  _visitingNodes = Schema.entityType() == EntityType.NODE;

@@ -277,7 +277,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 			  fail( "Method " + expectedMethodName + " was not part of the failure stack trace." );
 		 }
 
-		 private class LongState : AutoCloseable
+		 private class LongState : IDisposable
 		 {
 			  internal const string FILENAME = "long";
 			  internal readonly DurableStateStorage<long> StateStorage;

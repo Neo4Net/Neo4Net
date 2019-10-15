@@ -46,7 +46,7 @@ namespace Neo4Net.Storageengine.Api
 	/// <para>
 	/// </para>
 	/// </summary>
-	public interface StorageReader : AutoCloseable, StorageSchemaReader
+	public interface StorageReader : IDisposable, StorageSchemaReader
 	{
 		 /// <summary>
 		 /// Acquires this statement so that it can be used, should later be <seealso cref="release() released"/>.

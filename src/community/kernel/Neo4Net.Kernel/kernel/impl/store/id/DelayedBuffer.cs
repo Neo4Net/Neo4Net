@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 /// Closes this buffer, releasing all <seealso cref="offer(long)"/> values into the <seealso cref="Consumer"/>.
 		 /// 
 		 /// This class is typically not used in a scenario suitable for try-with-resource
-		 /// and so having it implement AutoCloseable would be more annoying
+		 /// and so having it implement IDisposable would be more annoying
 		 /// </summary>
 		 public virtual void Close()
 		 {

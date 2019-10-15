@@ -22,7 +22,7 @@
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //ORIGINAL LINE: public abstract class NonPrimitiveArray<T extends Comparable<? super T>> extends ArrayValue
@@ -103,7 +103,7 @@ namespace Neo4Net.Values.Storable
 			  return Arrays.GetHashCode( Value() );
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  hash = hashFunction.Update( hash, Length() );
 			  foreach ( T obj in Value() )

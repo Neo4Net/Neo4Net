@@ -51,7 +51,7 @@ namespace Neo4Net.tools.dump
 	using Lifespan = Neo4Net.Kernel.Lifecycle.Lifespan;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
@@ -85,7 +85,7 @@ namespace Neo4Net.tools.dump
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 		 public static void DumpCountsStoreConflict( FileSystemAbstraction fs, File path, PrintStream @out )
 		 {
-			  using ( JobScheduler jobScheduler = createInitializedScheduler(), PageCache pages = createPageCache(fs, jobScheduler), Lifespan life = new Lifespan() )
+			  using ( IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pages = createPageCache(fs, jobScheduler), Lifespan life = new Lifespan() )
 			  {
 					NullLogProvider logProvider = NullLogProvider.Instance;
 					Config config = Config.defaults();

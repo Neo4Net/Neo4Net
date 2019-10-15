@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.Cypher.Internal.runtime.compiled.codegen
 {
-	public interface QueryExecutionEvent : AutoCloseable
+	public interface QueryExecutionEvent : IDisposable
 	{
 		 void DbHit();
 

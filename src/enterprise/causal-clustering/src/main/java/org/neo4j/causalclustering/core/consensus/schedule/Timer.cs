@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	using Log = Neo4Net.Logging.Log;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// A timer which can be set to go off at a future point in time.
@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	public class Timer
 	{
 		 private readonly TimerName _name;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Log _log;
 		 private readonly Group _group;
 		 private readonly TimeoutHandler _handler;
@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 /// <param name="scheduler"> The underlying scheduler used. </param>
 		 /// <param name="group"> The scheduler group used. </param>
 		 /// <param name="handler"> The timeout handler. </param>
-		 internal Timer( TimerName name, JobScheduler scheduler, Log log, Group group, TimeoutHandler handler )
+		 internal Timer( TimerName name, IJobScheduler scheduler, Log log, Group group, TimeoutHandler handler )
 		 {
 			  this._name = name;
 			  this._scheduler = scheduler;

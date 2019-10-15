@@ -31,12 +31,12 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
 
 	public class CoreStateDownloaderService : LifecycleAdapter
 	{
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly CoreStateDownloader _downloader;
 		 private readonly CommandApplicationProcess _applicationProcess;
 		 private readonly Log _log;
@@ -47,7 +47,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 		 private System.Func<DatabaseHealth> _dbHealth;
 		 private readonly Monitors _monitors;
 
-		 public CoreStateDownloaderService( JobScheduler jobScheduler, CoreStateDownloader downloader, CommandApplicationProcess applicationProcess, LogProvider logProvider, Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout downloaderPauseStrategy, System.Func<DatabaseHealth> dbHealth, Monitors monitors )
+		 public CoreStateDownloaderService( IJobScheduler jobScheduler, CoreStateDownloader downloader, CommandApplicationProcess applicationProcess, LogProvider logProvider, Neo4Net.causalclustering.helper.TimeoutStrategy_Timeout downloaderPauseStrategy, System.Func<DatabaseHealth> dbHealth, Monitors monitors )
 		 {
 			  this._jobScheduler = jobScheduler;
 			  this._downloader = downloader;

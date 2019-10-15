@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel
 		 private readonly SchemaWriteGuard _schemaWriteGuard;
 		 private readonly TransactionEventHandlers _transactionEventHandlers;
 		 private readonly IdGeneratorFactory _idGeneratorFactory;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Config _config;
 		 private readonly LockService _lockService;
 		 private readonly IndexingService.Monitor _indexingServiceMonitor;
@@ -486,7 +486,7 @@ namespace Neo4Net.Kernel
 			  return _life.add( storageEngine );
 		 }
 
-		 private NeoStoreTransactionLogModule BuildTransactionLogs( LogFiles logFiles, Config config, LogProvider logProvider, JobScheduler scheduler, StorageEngine storageEngine, LogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader, SynchronizedArrayIdOrderingQueue explicitIndexTransactionOrdering, TransactionIdStore transactionIdStore )
+		 private NeoStoreTransactionLogModule BuildTransactionLogs( LogFiles logFiles, Config config, LogProvider logProvider, IJobScheduler scheduler, StorageEngine storageEngine, LogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader, SynchronizedArrayIdOrderingQueue explicitIndexTransactionOrdering, TransactionIdStore transactionIdStore )
 		 {
 			  TransactionMetadataCache transactionMetadataCache = new TransactionMetadataCache();
 			  if ( config.Get( GraphDatabaseSettings.ephemeral ) )

@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.discovery
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SslPolicy = Neo4Net.Ssl.SslPolicy;
 
 	internal class SecureHazelcastCoreTopologyService : HazelcastCoreTopologyService
@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// <param name="remoteMembersResolver"> </param>
 		 /// <param name="topologyServiceRetryStrategy"> </param>
 		 /// <param name="monitors"> </param>
-		 internal SecureHazelcastCoreTopologyService( Config config, SslPolicy sslPolicy, MemberId myself, JobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors ) : base( config, myself, jobScheduler, logProvider, userLogProvider, remoteMembersResolver, topologyServiceRetryStrategy, monitors )
+		 internal SecureHazelcastCoreTopologyService( Config config, SslPolicy sslPolicy, MemberId myself, IJobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors ) : base( config, myself, jobScheduler, logProvider, userLogProvider, remoteMembersResolver, topologyServiceRetryStrategy, monitors )
 		 {
 			  this._sslPolicy = sslPolicy;
 		 }

@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.store
 	/// <summary>
 	/// Contains common implementation of <seealso cref="RecordStore"/>.
 	/// </summary>
-	public abstract class CommonAbstractStore<RECORD, HEADER> : RecordStore<RECORD>, AutoCloseable where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where HEADER : StoreHeader
+	public abstract class CommonAbstractStore<RECORD, HEADER> : RecordStore<RECORD>, IDisposable where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where HEADER : StoreHeader
 	{
 		public abstract R GetRecord( RecordStore<R> store, long id );
 		public abstract R GetRecord( RecordStore<R> store, long id, record.RecordLoad mode );

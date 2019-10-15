@@ -173,11 +173,11 @@ namespace Neo4Net.Helpers.Collections
 			  }
 			  finally
 			  {
-					if ( iterator is AutoCloseable )
+					if ( iterator is IDisposable )
 					{
 						 try
 						 {
-							  ( ( AutoCloseable ) iterator ).close();
+							  ( ( IDisposable ) iterator ).close();
 						 }
 						 catch ( Exception )
 						 {

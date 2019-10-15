@@ -661,7 +661,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			  throw new AssertionError( "query not active: " + query );
 		 }
 
-		 private class Resource<T> : AutoCloseable
+		 private class Resource<T> : IDisposable
 		 {
 			  internal readonly System.Threading.CountdownEvent Latch;
 			  internal readonly System.Threading.CountdownEvent FinishLatch;

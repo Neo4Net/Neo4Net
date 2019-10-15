@@ -43,7 +43,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 			  return new Fixture( pageCache, fileSystem, dir, scheduler );
 		 }
 
-		 public class Fixture : AutoCloseable
+		 public class Fixture : IDisposable
 		 {
 			  public readonly PageCache PageCache;
 			  public readonly FileSystemAbstraction FileSystem;

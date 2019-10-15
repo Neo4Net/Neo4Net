@@ -25,7 +25,7 @@ namespace Neo4Net.Udc
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// An in-memory storage location for usage metadata.
@@ -38,10 +38,10 @@ namespace Neo4Net.Udc
 	public class UsageData : LifecycleAdapter
 	{
 		 private readonly ConcurrentDictionary<UsageDataKey, object> _store = new ConcurrentDictionary<UsageDataKey, object>();
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private JobHandle _featureDecayJob;
 
-		 public UsageData( JobScheduler scheduler )
+		 public UsageData( IJobScheduler scheduler )
 		 {
 			  this._scheduler = scheduler;
 		 }

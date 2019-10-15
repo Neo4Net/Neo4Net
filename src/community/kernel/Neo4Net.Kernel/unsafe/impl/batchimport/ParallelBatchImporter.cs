@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordFormats = Neo4Net.Kernel.impl.store.format.RecordFormats;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Input = Neo4Net.@unsafe.Impl.Batchimport.input.Input;
 	using ExecutionMonitor = Neo4Net.@unsafe.Impl.Batchimport.staging.ExecutionMonitor;
 	using BatchingNeoStores = Neo4Net.@unsafe.Impl.Batchimport.store.BatchingNeoStores;
@@ -57,9 +57,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 private readonly ExecutionMonitor _executionMonitor;
 		 private readonly AdditionalInitialIds _additionalInitialIds;
 		 private readonly ImportLogic.Monitor _monitor;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
-		 public ParallelBatchImporter( DatabaseLayout directoryStructure, FileSystemAbstraction fileSystem, PageCache externalPageCache, Configuration config, LogService logService, ExecutionMonitor executionMonitor, AdditionalInitialIds additionalInitialIds, Config dbConfig, RecordFormats recordFormats, ImportLogic.Monitor monitor, JobScheduler jobScheduler )
+		 public ParallelBatchImporter( DatabaseLayout directoryStructure, FileSystemAbstraction fileSystem, PageCache externalPageCache, Configuration config, LogService logService, ExecutionMonitor executionMonitor, AdditionalInitialIds additionalInitialIds, Config dbConfig, RecordFormats recordFormats, ImportLogic.Monitor monitor, IJobScheduler jobScheduler )
 		 {
 			  this._externalPageCache = externalPageCache;
 			  this._directoryStructure = directoryStructure;

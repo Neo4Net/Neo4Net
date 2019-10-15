@@ -141,7 +141,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 //ORIGINAL LINE: public boolean visited(int key, T value) throws RuntimeException
 			  public override bool Visited( int key, T value )
 			  {
-					Hash += DEFAULT_HASHING.hashSingleValueToInt( key + value.GetHashCode() );
+					Hash += DEFAULT_HASHING.HashSingleValueToInt( key + value.GetHashCode() );
 					return false;
 			  }
 

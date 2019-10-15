@@ -40,7 +40,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 	using LinearTracers = Neo4Net.Io.pagecache.tracing.linear.LinearTracers;
 	using Profiler = Neo4Net.Resources.Profiler;
 	using DaemonThreadFactory = Neo4Net.Scheduler.DaemonThreadFactory;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -447,7 +447,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 
 			  PageSwapperFactory swapperFactory = new SingleFilePageSwapperFactory();
 			  swapperFactory.Open( fs, Configuration.EMPTY );
-			  JobScheduler jobScheduler = new ThreadPoolJobScheduler();
+			  IJobScheduler jobScheduler = new ThreadPoolJobScheduler();
 			  MuninnPageCache cache = new MuninnPageCache( swapperFactory, _cachePageCount, _tracer, _cursorTracerSupplier, EmptyVersionContextSupplier.EMPTY, jobScheduler );
 			  if ( _filePageSize == 0 )
 			  {

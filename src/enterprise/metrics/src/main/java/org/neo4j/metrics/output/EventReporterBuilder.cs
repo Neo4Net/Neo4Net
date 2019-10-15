@@ -32,7 +32,7 @@ namespace Neo4Net.metrics.output
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.metrics.MetricsSettings.csvEnabled;
@@ -56,9 +56,9 @@ namespace Neo4Net.metrics.output
 		 private readonly LifeSupport _life;
 		 private readonly ConnectorPortRegister _portRegister;
 		 private FileSystemAbstraction _fileSystem;
-		 private JobScheduler _scheduler;
+		 private IJobScheduler _scheduler;
 
-		 public EventReporterBuilder( Config config, MetricRegistry registry, Log logger, KernelContext kernelContext, LifeSupport life, FileSystemAbstraction fileSystem, JobScheduler scheduler, ConnectorPortRegister portRegister )
+		 public EventReporterBuilder( Config config, MetricRegistry registry, Log logger, KernelContext kernelContext, LifeSupport life, FileSystemAbstraction fileSystem, IJobScheduler scheduler, ConnectorPortRegister portRegister )
 		 {
 			  this._config = config;
 			  this._registry = registry;

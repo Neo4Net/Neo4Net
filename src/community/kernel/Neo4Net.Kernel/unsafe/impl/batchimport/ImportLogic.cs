@@ -41,7 +41,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using RelationshipTypeCount = Neo4Net.@unsafe.Impl.Batchimport.DataStatistics.RelationshipTypeCount;
 	using GatheringMemoryStatsVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.GatheringMemoryStatsVisitor;
 	using MemoryStatsVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor;
@@ -497,7 +497,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  _peakMemoryUsage = max( _peakMemoryUsage, TotalMemoryUsageOf( _nodeRelationshipCache, _idMapper, _neoStore ) );
 		 }
 
-		 public static BatchingNeoStores InstantiateNeoStores( FileSystemAbstraction fileSystem, File storeDir, PageCache externalPageCache, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds additionalInitialIds, Config dbConfig, JobScheduler scheduler )
+		 public static BatchingNeoStores InstantiateNeoStores( FileSystemAbstraction fileSystem, File storeDir, PageCache externalPageCache, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds additionalInitialIds, Config dbConfig, IJobScheduler scheduler )
 		 {
 			  if ( externalPageCache == null )
 			  {

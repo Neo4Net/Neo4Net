@@ -168,7 +168,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  }
 		 }
 
-		 public class Client : AutoCloseable
+		 public class Client : IDisposable
 		 {
 			 private readonly DataStatistics _outerInstance;
 

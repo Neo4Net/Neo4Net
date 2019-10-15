@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Values.Storable
 {
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 	public abstract class FloatingPointArray : NumberArray
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Values.Storable
 			  return NumberType.FloatingPoint;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  int len = Length();
 			  hash = hashFunction.Update( hash, len );

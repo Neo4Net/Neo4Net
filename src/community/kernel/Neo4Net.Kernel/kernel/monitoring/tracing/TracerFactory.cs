@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using CheckPointTracer = Neo4Net.Kernel.impl.transaction.tracing.CheckPointTracer;
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="clock"> system nano clock </param>
 		 /// <param name="log"> log </param>
 		 /// <returns> The created instance. </returns>
-		 PageCacheTracer CreatePageCacheTracer( Monitors monitors, JobScheduler jobScheduler, SystemNanoClock clock, Log log );
+		 PageCacheTracer CreatePageCacheTracer( Monitors monitors, IJobScheduler jobScheduler, SystemNanoClock clock, Log log );
 
 		 /// <summary>
 		 /// Create a new TransactionTracer instance.
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="monitors"> the monitoring manager </param>
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
 		 /// <returns> The created instance. </returns>
-		 TransactionTracer CreateTransactionTracer( Monitors monitors, JobScheduler jobScheduler );
+		 TransactionTracer CreateTransactionTracer( Monitors monitors, IJobScheduler jobScheduler );
 
 		 /// <summary>
 		 /// Create a new CheckPointTracer instance.
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="monitors"> the monitoring manager </param>
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
 		 /// <returns> The created instance. </returns>
-		 CheckPointTracer CreateCheckPointTracer( Monitors monitors, JobScheduler jobScheduler );
+		 CheckPointTracer CreateCheckPointTracer( Monitors monitors, IJobScheduler jobScheduler );
 
 		 /// <summary>
 		 /// Create a new LockTracer instance.

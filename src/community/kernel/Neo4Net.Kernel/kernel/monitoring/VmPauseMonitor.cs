@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.monitoring
 
 	using Log = Neo4Net.Logging.Log;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
@@ -46,11 +46,11 @@ namespace Neo4Net.Kernel.monitoring
 		 private readonly long _measurementDurationNs;
 		 private readonly long _stallAlertThresholdNs;
 		 private readonly Log _log;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly System.Action<VmPauseInfo> _listener;
 		 private JobHandle _job;
 
-		 public VmPauseMonitor( Duration measureInterval, Duration stallAlertThreshold, Log log, JobScheduler jobScheduler, System.Action<VmPauseInfo> listener )
+		 public VmPauseMonitor( Duration measureInterval, Duration stallAlertThreshold, Log log, IJobScheduler jobScheduler, System.Action<VmPauseInfo> listener )
 		 {
 			  this._measurementDurationNs = requirePositive( measureInterval.toNanos() );
 			  this._stallAlertThresholdNs = requireNonNegative( stallAlertThreshold.toNanos() );

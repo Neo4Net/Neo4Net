@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.runtime
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
@@ -97,7 +97,7 @@ namespace Neo4Net.Bolt.runtime
 		 private LogService _logService;
 		 private readonly Config _config = Config.defaults();
 		 private readonly ExecutorFactory _executorFactory = new CachedThreadPoolExecutorFactory( NullLog.Instance );
-		 private readonly JobScheduler _jobScheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );
 		 private ExecutorBoltScheduler _boltScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

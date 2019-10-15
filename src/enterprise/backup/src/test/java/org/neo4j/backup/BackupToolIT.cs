@@ -45,7 +45,7 @@ namespace Neo4Net.backup
 	using StandardV2_3 = Neo4Net.Kernel.impl.store.format.standard.StandardV2_3;
 	using StandardV3_4 = Neo4Net.Kernel.impl.store.format.standard.StandardV3_4;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
@@ -75,7 +75,7 @@ namespace Neo4Net.backup
 		 private Path _backupDir;
 		 private BackupTool _backupTool;
 		 private DatabaseLayout _backupLayout;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 		 private BackupProtocolService _backupProtocolService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

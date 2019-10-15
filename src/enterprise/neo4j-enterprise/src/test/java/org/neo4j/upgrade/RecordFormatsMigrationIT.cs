@@ -46,7 +46,7 @@ namespace Neo4Net.upgrade
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
 	using UnexpectedUpgradingStoreFormatException = Neo4Net.Kernel.impl.storemigration.StoreUpgrader.UnexpectedUpgradingStoreFormatException;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -190,7 +190,7 @@ namespace Neo4Net.upgrade
 		 private void AssertStoreFormat( RecordFormats expected )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.pagecache_memory, "8m" );
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(_fileSystemRule.get(), config, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = ConfigurableStandalonePageCacheFactory.createPageCache(_fileSystemRule.get(), config, jobScheduler) )
 			  {
 					RecordFormats actual = RecordFormatSelector.selectForStoreOrConfig( config, _testDirectory.databaseLayout(), _fileSystemRule, pageCache, NullLogProvider.Instance );
 					assertNotNull( actual );

@@ -946,7 +946,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  UpdateAndCommit( asList( add( 1, Descriptor.schema(), o0 ), add(1, Descriptor.schema(), o5), add(1, Descriptor.schema(), o1), add(1, Descriptor.schema(), o4), add(1, Descriptor.schema(), o2), add(1, Descriptor.schema(), o3) ) );
 
 			  SimpleNodeValueClient client = new SimpleNodeValueClient();
-			  using ( AutoCloseable ignored = Query( client, order, range ) )
+			  using ( IDisposable ignored = Query( client, order, range ) )
 			  {
 					IList<long> seenIds = AssertClientReturnValuesInOrder( client, order );
 					assertThat( seenIds.Count, equalTo( 6 ) );

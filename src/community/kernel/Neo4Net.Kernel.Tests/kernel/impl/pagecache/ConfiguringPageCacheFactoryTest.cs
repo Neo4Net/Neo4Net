@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using NullLog = Neo4Net.Logging.NullLog;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 //ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp()

@@ -54,7 +54,7 @@ namespace Neo4Net.Test.ha
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LoggerRule = Neo4Net.Test.rule.LoggerRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -391,7 +391,7 @@ namespace Neo4Net.Test.ha
 //ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private static void ClearLastTransactionCommitTimestampField( DatabaseLayout databaseLayout )
 		 {
-			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )
+			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )
 			  {
 					File neoStore = databaseLayout.MetadataStore();
 					MetaDataStore.setRecord( pageCache, neoStore, LAST_TRANSACTION_COMMIT_TIMESTAMP, MetaDataStore.BASE_TX_COMMIT_TIMESTAMP );

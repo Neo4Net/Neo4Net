@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustAutomaticallyStartEvictionThread()
 		 {
-			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					File file = ( new File( TestDirectory.directory(), "a" ) ).CanonicalFile;
 					fs.Create( file ).close();

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 private readonly IndexSamplingJobQueue<long> _jobQueue;
 		 private readonly IndexSamplingJobTracker _jobTracker;
 		 private readonly IndexMapSnapshotProvider _indexMapSnapshotProvider;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly RecoveryCondition _indexRecoveryCondition;
 		 private readonly bool _backgroundSampling;
 		 private readonly Lock _samplingLock = new ReentrantLock();
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 private JobHandle _backgroundSamplingHandle;
 
 		 // use IndexSamplingControllerFactory.create do not instantiate directly
-		 internal IndexSamplingController( IndexSamplingConfig config, IndexSamplingJobFactory jobFactory, IndexSamplingJobQueue<long> jobQueue, IndexSamplingJobTracker jobTracker, IndexMapSnapshotProvider indexMapSnapshotProvider, JobScheduler scheduler, RecoveryCondition indexRecoveryCondition )
+		 internal IndexSamplingController( IndexSamplingConfig config, IndexSamplingJobFactory jobFactory, IndexSamplingJobQueue<long> jobQueue, IndexSamplingJobTracker jobTracker, IndexMapSnapshotProvider indexMapSnapshotProvider, IJobScheduler scheduler, RecoveryCondition indexRecoveryCondition )
 		 {
 			  this._backgroundSampling = config.BackgroundSampling();
 			  this._jobFactory = jobFactory;

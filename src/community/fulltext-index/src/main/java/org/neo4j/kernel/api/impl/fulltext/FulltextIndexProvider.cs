@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
 	using SchemaIndexMigrator = Neo4Net.Kernel.impl.storemigration.participant.SchemaIndexMigrator;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using EntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 private readonly ConcurrentMap<StoreIndexDescriptor, FulltextIndexAccessor> _openOnlineAccessors;
 		 private readonly IndexStorageFactory _indexStorageFactory;
 
-		 internal FulltextIndexProvider( IndexProviderDescriptor descriptor, IndexDirectoryStructure.Factory directoryStructureFactory, FileSystemAbstraction fileSystem, Config config, TokenHolders tokenHolders, DirectoryFactory directoryFactory, OperationalMode operationalMode, JobScheduler scheduler, AuxiliaryTransactionStateManager auxiliaryTransactionStateManager, Log log ) : base( descriptor, directoryStructureFactory )
+		 internal FulltextIndexProvider( IndexProviderDescriptor descriptor, IndexDirectoryStructure.Factory directoryStructureFactory, FileSystemAbstraction fileSystem, Config config, TokenHolders tokenHolders, DirectoryFactory directoryFactory, OperationalMode operationalMode, IJobScheduler scheduler, AuxiliaryTransactionStateManager auxiliaryTransactionStateManager, Log log ) : base( descriptor, directoryStructureFactory )
 		 {
 			  this._fileSystem = fileSystem;
 			  this._config = config;

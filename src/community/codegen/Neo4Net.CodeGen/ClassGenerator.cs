@@ -36,7 +36,7 @@ namespace Neo4Net.CodeGen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.codegen.TypeReference.typeReference;
 
-	public class ClassGenerator : AutoCloseable
+	public class ClassGenerator : IDisposable
 	{
 		 private readonly ClassHandle _handle;
 		 private ClassEmitter _emitter;

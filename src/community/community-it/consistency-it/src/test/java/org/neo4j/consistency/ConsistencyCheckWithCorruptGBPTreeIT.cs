@@ -55,7 +55,7 @@ namespace Neo4Net.Consistency
 	using SchemaLayouts = Neo4Net.Kernel.Impl.Index.Schema.SchemaLayouts;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -739,7 +739,7 @@ namespace Neo4Net.Consistency
 		 private IList<File> CorruptIndexes( bool readOnly, CorruptionInject corruptionInject, params File[] targetFiles )
 		 {
 			  IList<File> treeFiles = new List<File>();
-			  using ( JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(_testDirectory.FileSystem, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(_testDirectory.FileSystem, jobScheduler) )
 			  {
 					SchemaLayouts schemaLayouts = new SchemaLayouts();
 					GBPTreeBootstrapper bootstrapper = new GBPTreeBootstrapper( pageCache, schemaLayouts, readOnly );

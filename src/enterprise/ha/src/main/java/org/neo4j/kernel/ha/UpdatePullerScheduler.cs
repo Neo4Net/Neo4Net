@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.ha
 
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -37,13 +37,13 @@ namespace Neo4Net.Kernel.ha
 	/// <seealso cref= UpdatePuller </seealso>
 	public class UpdatePullerScheduler : LifecycleAdapter
 	{
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Log _log;
 		 private readonly UpdatePuller _updatePuller;
 		 private readonly long _pullIntervalMillis;
 		 private JobHandle _intervalJobHandle;
 
-		 public UpdatePullerScheduler( JobScheduler scheduler, LogProvider logProvider, UpdatePuller updatePullingThread, long pullIntervalMillis )
+		 public UpdatePullerScheduler( IJobScheduler scheduler, LogProvider logProvider, UpdatePuller updatePullingThread, long pullIntervalMillis )
 		 {
 			  this._scheduler = scheduler;
 			  this._log = logProvider.getLog( this.GetType() );

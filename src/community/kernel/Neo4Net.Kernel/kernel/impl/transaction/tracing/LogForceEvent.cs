@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// system call latency that we experience. Force calls are batched, so a single one might cause multiple transactions
 	/// to be considered forced.
 	/// </summary>
-	public interface LogForceEvent : AutoCloseable
+	public interface LogForceEvent : IDisposable
 	{
 
 		 /// <summary>

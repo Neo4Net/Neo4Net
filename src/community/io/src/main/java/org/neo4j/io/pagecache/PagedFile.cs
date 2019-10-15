@@ -23,7 +23,7 @@ namespace Neo4Net.Io.pagecache
 	/// <summary>
 	/// The representation of a file that has been mapped into the associated page cache.
 	/// </summary>
-	public interface PagedFile : AutoCloseable
+	public interface PagedFile : IDisposable
 	{
 		 /// <summary>
 		 /// Pin the pages with a shared lock.
@@ -96,7 +96,7 @@ namespace Neo4Net.Io.pagecache
 		 ///         }
 		 ///     }
 		 /// </code></pre>
-		 /// <seealso cref="org.neo4j.io.pagecache.PageCursor PageCursors"/> are <seealso cref="AutoCloseable"/>, so interacting with them
+		 /// <seealso cref="org.neo4j.io.pagecache.PageCursor PageCursors"/> are <seealso cref="IDisposable"/>, so interacting with them
 		 /// using <em>try-with-resources</em> is recommended.
 		 /// </para>
 		 /// <para>
@@ -200,8 +200,8 @@ namespace Neo4Net.Io.pagecache
 		 /// 
 		 /// </para>
 		 /// </summary>
-		 /// <exception cref="IOException"> instead of the Exception superclass as defined in AutoCloseable, if . </exception>
-		 /// <seealso cref= AutoCloseable#close() </seealso>
+		 /// <exception cref="IOException"> instead of the Exception superclass as defined in IDisposable, if . </exception>
+		 /// <seealso cref= IDisposable#close() </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void close() throws java.io.IOException;
 		 void Close();

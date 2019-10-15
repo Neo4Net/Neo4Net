@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.query
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class QueryLoggerKernelExtension extends org.neo4j.kernel.extension.KernelExtensionFactory<QueryLoggerKernelExtension.Dependencies>
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.query
 
 			  LogService Logger();
 
-			  JobScheduler JobScheduler();
+			  IJobScheduler IJobScheduler();
 		 }
 
 		 public QueryLoggerKernelExtension() : base(ExtensionType.DATABASE, "query-logging")
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.query
 			  Config config = dependencies.Config();
 			  Monitors monitoring = dependencies.Monitoring();
 			  LogService logService = dependencies.Logger();
-			  JobScheduler jobScheduler = dependencies.JobScheduler();
+			  IJobScheduler jobScheduler = dependencies.JobScheduler();
 
 			  return new LifecycleAdapterAnonymousInnerClass( this, fileSystem, config, monitoring, logService, jobScheduler );
 		 }
@@ -78,9 +78,9 @@ namespace Neo4Net.Kernel.impl.query
 			 private Config _config;
 			 private Monitors _monitoring;
 			 private LogService _logService;
-			 private JobScheduler _jobScheduler;
+			 private IJobScheduler _jobScheduler;
 
-			 public LifecycleAdapterAnonymousInnerClass( QueryLoggerKernelExtension outerInstance, FileSystemAbstraction fileSystem, Config config, Monitors monitoring, LogService logService, JobScheduler jobScheduler )
+			 public LifecycleAdapterAnonymousInnerClass( QueryLoggerKernelExtension outerInstance, FileSystemAbstraction fileSystem, Config config, Monitors monitoring, LogService logService, IJobScheduler jobScheduler )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._fileSystem = fileSystem;

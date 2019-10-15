@@ -35,7 +35,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using StandardV3_0 = Neo4Net.Kernel.impl.store.format.standard.StandardV3_0;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -105,7 +105,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  try
 			  {
-					  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+					  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 					  {
 						BatchImporter importer = new ParallelBatchImporter( _directory.databaseLayout(), _fs, null, Configuration.DEFAULT, NullLogService.Instance, ExecutionMonitors.invisible(), AdditionalInitialIds.EMPTY, Config.defaults(), StandardV3_0.RECORD_FORMATS, NO_MONITOR, jobScheduler );
 						IEnumerable<DataFactory> nodeData = datas( data( NO_DECORATOR, FileAsCharReadable( NodeCsvFileWithBrokenEntries() ) ) );

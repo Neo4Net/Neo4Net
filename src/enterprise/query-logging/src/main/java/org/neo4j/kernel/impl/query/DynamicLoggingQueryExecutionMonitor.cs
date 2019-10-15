@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.query
 	using Log = Neo4Net.Logging.Log;
 	using RotatingFileOutputStreamSupplier = Neo4Net.Logging.RotatingFileOutputStreamSupplier;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.file.Files.createOrOpenAsOutputStream;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.query
 	{
 		 private readonly Config _config;
 		 private readonly FileSystemAbstraction _fileSystem;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Log _debugLog;
 
 		 /// <summary>
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.query
 		 private Log _log;
 		 private System.IDisposable _closable;
 
-		 internal DynamicLoggingQueryExecutionMonitor( Config config, FileSystemAbstraction fileSystem, JobScheduler scheduler, Log debugLog )
+		 internal DynamicLoggingQueryExecutionMonitor( Config config, FileSystemAbstraction fileSystem, IJobScheduler scheduler, Log debugLog )
 		 {
 			  this._config = config;
 			  this._fileSystem = fileSystem;

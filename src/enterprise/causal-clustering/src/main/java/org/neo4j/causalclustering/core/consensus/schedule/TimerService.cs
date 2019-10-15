@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// A timer service allowing the creation of timers which can be set to expire
@@ -36,11 +36,11 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	/// </summary>
 	public class TimerService
 	{
-		 protected internal readonly JobScheduler Scheduler;
+		 protected internal readonly IJobScheduler Scheduler;
 		 private readonly ICollection<Timer> _timers = new List<Timer>();
 		 private readonly Log _log;
 
-		 public TimerService( JobScheduler scheduler, LogProvider logProvider )
+		 public TimerService( IJobScheduler scheduler, LogProvider logProvider )
 		 {
 			  this.Scheduler = scheduler;
 			  this._log = logProvider.getLog( this.GetType() );

@@ -27,20 +27,20 @@ namespace Neo4Net.Bolt.runtime
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class ExecutorBoltSchedulerProvider : LifecycleAdapter, BoltSchedulerProvider
 	{
 		 private readonly Config _config;
 		 private readonly ExecutorFactory _executorFactory;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly LogService _logService;
 		 private readonly Log _internalLog;
 		 private readonly ConcurrentDictionary<string, BoltScheduler> _boltSchedulers;
 
 		 private ExecutorService _forkJoinThreadPool;
 
-		 public ExecutorBoltSchedulerProvider( Config config, ExecutorFactory executorFactory, JobScheduler scheduler, LogService logService )
+		 public ExecutorBoltSchedulerProvider( Config config, ExecutorFactory executorFactory, IJobScheduler scheduler, LogService logService )
 		 {
 			  this._config = config;
 			  this._executorFactory = executorFactory;

@@ -24,16 +24,16 @@ namespace Neo4Net.Kernel.impl.cache
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using VmPauseMonitor = Neo4Net.Kernel.monitoring.VmPauseMonitor;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class VmPauseMonitorComponent : LifecycleAdapter
 	{
 		 private readonly Config _config;
 		 private readonly Log _log;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private volatile VmPauseMonitor _vmPauseMonitor;
 
-		 public VmPauseMonitorComponent( Config config, Log log, JobScheduler jobScheduler )
+		 public VmPauseMonitorComponent( Config config, Log log, IJobScheduler jobScheduler )
 		 {
 			  this._config = config;
 			  this._log = log;

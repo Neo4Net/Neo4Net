@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Collections.primitive.hopscotch
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	public abstract class UnsafeTable<VALUE> : PowerOfTwoQuantizedTable<VALUE>
@@ -35,9 +35,9 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 // address which should be used to access the table, the address where the table actually starts at
 		 private readonly long _address;
 		 protected internal readonly VALUE ValueMarker;
-		 protected internal readonly MemoryAllocationTracker AllocationTracker;
+		 protected internal readonly IMemoryAllocationTracker AllocationTracker;
 
-		 protected internal UnsafeTable( int capacity, int bytesPerKey, VALUE valueMarker, MemoryAllocationTracker allocationTracker ) : base( capacity, 32 )
+		 protected internal UnsafeTable( int capacity, int bytesPerKey, VALUE valueMarker, IMemoryAllocationTracker allocationTracker ) : base( capacity, 32 )
 		 {
 			  UnsafeUtil.assertHasUnsafe();
 			  this.AllocationTracker = allocationTracker;

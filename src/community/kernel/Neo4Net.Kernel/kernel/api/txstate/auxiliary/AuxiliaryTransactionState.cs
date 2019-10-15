@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.api.txstate.auxiliary
 	/// <seealso cref="AuxiliaryTransactionStateProvider"/> that created it.
 	/// </para>
 	/// </summary>
-	public interface AuxiliaryTransactionState : RecordState, AutoCloseable
+	public interface AuxiliaryTransactionState : RecordState, IDisposable
 	{
 
 	}

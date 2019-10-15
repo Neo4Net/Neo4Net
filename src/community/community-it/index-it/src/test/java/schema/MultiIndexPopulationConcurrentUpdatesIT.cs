@@ -76,7 +76,7 @@ namespace Schema
 	using Neo4Net.Kernel.impl.transaction.state.storeview;
 	using NeoStoreIndexStoreView = Neo4Net.Kernel.impl.transaction.state.storeview.NeoStoreIndexStoreView;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using EntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
@@ -313,7 +313,7 @@ namespace Schema
 					DynamicIndexStoreView storeView = DynamicIndexStoreViewWrapper( customAction, neoStores, labelScanStore );
 
 					IndexProviderMap providerMap = IndexProviderMap;
-					JobScheduler scheduler = JobScheduler;
+					JobScheduler scheduler = IJobScheduler;
 					TokenNameLookup tokenNameLookup = new SilentTokenNameLookup( ktx.TokenRead() );
 
 					NullLogProvider nullLogProvider = NullLogProvider.Instance;
@@ -495,11 +495,11 @@ namespace Schema
 			 }
 		 }
 
-		 private JobScheduler JobScheduler
+		 private IJobScheduler IJobScheduler
 		 {
 			 get
 			 {
-				  return EmbeddedDatabase.resolveDependency( typeof( JobScheduler ) );
+				  return EmbeddedDatabase.resolveDependency( typeof( IJobScheduler ) );
 			 }
 		 }
 

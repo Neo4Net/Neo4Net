@@ -26,7 +26,7 @@ namespace Neo4Net.Harness
 	/// <summary>
 	/// Control panel for a Neo4j test instance.
 	/// </summary>
-	public interface ServerControls : AutoCloseable
+	public interface ServerControls : IDisposable
 	{
 		 /// <summary>
 		 /// Returns the URI to the Bolt Protocol connector of the instance. </summary>

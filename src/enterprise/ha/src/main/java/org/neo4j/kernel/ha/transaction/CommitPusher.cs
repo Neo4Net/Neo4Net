@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha.transaction
 	using Neo4Net.com;
 	using Slave = Neo4Net.Kernel.ha.com.master.Slave;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class CommitPusher
 	{
@@ -81,9 +81,9 @@ namespace Neo4Net.Kernel.ha.transaction
 		 private const int PULL_UPDATES_QUEUE_SIZE = 100;
 
 		 private readonly IDictionary<int, BlockingQueue<PullUpdateFuture>> _pullUpdateQueues = new Dictionary<int, BlockingQueue<PullUpdateFuture>>();
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 
-		 public CommitPusher( JobScheduler scheduler )
+		 public CommitPusher( IJobScheduler scheduler )
 		 {
 			  this._scheduler = scheduler;
 		 }

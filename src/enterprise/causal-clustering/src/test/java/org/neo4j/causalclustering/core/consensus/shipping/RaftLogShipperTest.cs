@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Matchers = Neo4Net.Test.matchers.Matchers;
 	using Clocks = Neo4Net.Time.Clocks;
 
@@ -86,7 +86,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.neo4j.kernel.lifecycle.LifeRule life = new org.neo4j.kernel.lifecycle.LifeRule(true);
 		 public LifeRule Life = new LifeRule( true );
-		 private JobScheduler _scheduler;
+		 private IJobScheduler _scheduler;
 
 		 private OutboundMessageCollector _outbound;
 		 private RaftLog _raftLog;

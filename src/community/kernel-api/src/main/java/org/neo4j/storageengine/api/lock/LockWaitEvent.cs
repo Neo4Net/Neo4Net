@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Storageengine.Api.@lock
 {
-	public interface LockWaitEvent : AutoCloseable
+	public interface LockWaitEvent : IDisposable
 	{
 		 void Close();
 	}

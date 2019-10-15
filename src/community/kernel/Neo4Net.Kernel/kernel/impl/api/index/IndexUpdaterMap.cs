@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// All updaters retrieved from this map must be either closed manually or handle duplicate calls to close
 	/// or must all be closed indirectly by calling close on this updater map.
 	/// </summary>
-	internal class IndexUpdaterMap : AutoCloseable, IEnumerable<IndexUpdater>
+	internal class IndexUpdaterMap : IDisposable, IEnumerable<IndexUpdater>
 	{
 		 private readonly IndexUpdateMode _indexUpdateMode;
 		 private readonly IndexMap _indexMap;

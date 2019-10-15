@@ -27,7 +27,7 @@ namespace Neo4Net.Cypher.result
 	/// <summary>
 	/// The result API of a Cypher runtime
 	/// </summary>
-	public interface RuntimeResult : AutoCloseable
+	public interface RuntimeResult : IDisposable
 	{
 
 		 /// <summary>

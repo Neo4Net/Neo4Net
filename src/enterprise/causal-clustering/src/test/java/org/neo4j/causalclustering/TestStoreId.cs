@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using StandalonePageCacheFactory = Neo4Net.Io.pagecache.impl.muninn.StandalonePageCacheFactory;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -64,7 +64,7 @@ namespace Neo4Net.causalclustering
 		 public static ISet<StoreId> GetStoreIds( IList<File> coreStoreDirs, FileSystemAbstraction fs )
 		 {
 			  ISet<StoreId> storeIds = new HashSet<StoreId>();
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fs, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fs, jobScheduler) )
 			  {
 					foreach ( File coreStoreDir in coreStoreDirs )
 					{

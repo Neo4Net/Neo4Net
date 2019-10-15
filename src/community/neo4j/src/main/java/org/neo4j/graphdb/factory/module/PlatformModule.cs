@@ -49,7 +49,7 @@ namespace Neo4Net.Graphdb.factory.module
 	using ConfiguringPageCacheFactory = Neo4Net.Kernel.impl.pagecache.ConfiguringPageCacheFactory;
 	using PageCacheLifecycle = Neo4Net.Kernel.impl.pagecache.PageCacheLifecycle;
 	using QueryEngineProvider = Neo4Net.Kernel.impl.query.QueryEngineProvider;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using URLAccessRules = Neo4Net.Kernel.impl.security.URLAccessRules;
 	using SimpleKernelContext = Neo4Net.Kernel.impl.spi.SimpleKernelContext;
 	using CheckPointerMonitor = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointerMonitor;
@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb.factory.module
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 	using DeferredExecutor = Neo4Net.Scheduler.DeferredExecutor;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Clocks = Neo4Net.Time.Clocks;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 	using UsageData = Neo4Net.Udc.UsageData;
@@ -134,7 +134,7 @@ namespace Neo4Net.Graphdb.factory.module
 
 		 public readonly URLAccessRule UrlAccessRule;
 
-		 public readonly JobScheduler JobScheduler;
+		 public readonly IJobScheduler IJobScheduler;
 
 		 public readonly SystemNanoClock Clock;
 
@@ -170,15 +170,15 @@ namespace Neo4Net.Graphdb.factory.module
 			  Monitors = externalDependencies.Monitors() == null ? new Monitors() : externalDependencies.Monitors();
 			  Dependencies.satisfyDependency( Monitors );
 
-			  JobScheduler = Life.add( Dependencies.satisfyDependency( CreateJobScheduler() ) );
-			  StartDeferredExecutors( JobScheduler, externalDependencies.DeferredExecutors() );
+			  IJobScheduler = Life.add( Dependencies.satisfyDependency( CreateJobScheduler() ) );
+			  StartDeferredExecutors( IJobScheduler, externalDependencies.DeferredExecutors() );
 
 			  // Cleanup after recovery, used by GBPTree, added to life in NeoStoreDataSource
-			  RecoveryCleanupWorkCollector = new GroupingRecoveryCleanupWorkCollector( JobScheduler );
+			  RecoveryCleanupWorkCollector = new GroupingRecoveryCleanupWorkCollector( IJobScheduler );
 			  Dependencies.satisfyDependency( RecoveryCleanupWorkCollector );
 
 			  // Database system information, used by UDC
-			  UsageData = new UsageData( JobScheduler );
+			  UsageData = new UsageData( IJobScheduler );
 			  Dependencies.satisfyDependency( Life.add( UsageData ) );
 
 			  // If no logging was passed in from the outside then create logging and register
@@ -192,7 +192,7 @@ namespace Neo4Net.Graphdb.factory.module
 			  ( new JvmChecker( Logging.getInternalLog( typeof( JvmChecker ) ), new JvmMetadataRepository() ) ).checkJvmCompatibilityAndIssueWarning();
 
 			  string desiredImplementationName = config.Get( GraphDatabaseSettings.tracer );
-			  Tracers = Dependencies.satisfyDependency( new Tracers( desiredImplementationName, Logging.getInternalLog( typeof( Tracers ) ), Monitors, JobScheduler, Clock ) );
+			  Tracers = Dependencies.satisfyDependency( new Tracers( desiredImplementationName, Logging.getInternalLog( typeof( Tracers ) ), Monitors, IJobScheduler, Clock ) );
 			  Dependencies.satisfyDependency( Tracers.pageCacheTracer );
 			  Dependencies.satisfyDependency( FirstImplementor( typeof( LogRotationMonitor ), Tracers.transactionTracer, LogRotationMonitor.NULL ) );
 			  Dependencies.satisfyDependency( FirstImplementor( typeof( CheckPointerMonitor ), Tracers.checkPointTracer, CheckPointerMonitor.NULL ) );
@@ -202,7 +202,7 @@ namespace Neo4Net.Graphdb.factory.module
 			  CollectionsFactorySupplier = CreateCollectionsFactorySupplier( config, Life );
 
 			  Dependencies.satisfyDependency( VersionContextSupplier );
-			  PageCache = Dependencies.satisfyDependency( CreatePageCache( FileSystem, config, Logging, Tracers, VersionContextSupplier, JobScheduler ) );
+			  PageCache = Dependencies.satisfyDependency( CreatePageCache( FileSystem, config, Logging, Tracers, VersionContextSupplier, IJobScheduler ) );
 
 			  Life.add( new PageCacheLifecycle( PageCache ) );
 
@@ -226,7 +226,7 @@ namespace Neo4Net.Graphdb.factory.module
 			  PublishPlatformInfo( Dependencies.resolveDependency( typeof( UsageData ) ) );
 		 }
 
-		 private void StartDeferredExecutors( JobScheduler jobScheduler, IEnumerable<Pair<DeferredExecutor, Group>> deferredExecutors )
+		 private void StartDeferredExecutors( IJobScheduler jobScheduler, IEnumerable<Pair<DeferredExecutor, Group>> deferredExecutors )
 		 {
 			  foreach ( Pair<DeferredExecutor, Group> executorGroupPair in deferredExecutors )
 			  {
@@ -290,7 +290,7 @@ namespace Neo4Net.Graphdb.factory.module
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.logging.internal.StoreLogService.Builder builder = org.neo4j.logging.internal.StoreLogService.withRotation(internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, jobScheduler);
-			  StoreLogService.Builder builder = StoreLogService.withRotation( internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, JobScheduler );
+			  StoreLogService.Builder builder = StoreLogService.withRotation( internalLogRotationThreshold, internalLogRotationDelay, internalLogMaxArchives, IJobScheduler );
 
 			  if ( userLogProvider != null )
 			  {
@@ -322,12 +322,12 @@ namespace Neo4Net.Graphdb.factory.module
 			  return Life.add( logService );
 		 }
 
-		 protected internal virtual JobScheduler CreateJobScheduler()
+		 protected internal virtual IJobScheduler CreateJobScheduler()
 		 {
-			  return JobSchedulerFactory.createInitializedScheduler();
+			  return IJobSchedulerFactory.createInitializedScheduler();
 		 }
 
-		 protected internal virtual PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+		 protected internal virtual PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 		 {
 			  Log pageCacheLog = logging.GetInternalLog( typeof( PageCache ) );
 			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fileSystem, config, tracers.PageCacheTracer, tracers.PageCursorTracerSupplier, pageCacheLog, versionContextSupplier, jobScheduler );

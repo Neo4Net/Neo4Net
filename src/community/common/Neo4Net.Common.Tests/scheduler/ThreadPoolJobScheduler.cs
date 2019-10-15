@@ -26,7 +26,7 @@ namespace Neo4Net.Scheduler
    /// Simple test scheduler implementation that is based on a cached thread pool.
    /// All threads created by this scheduler can be identified by <i>ThreadPoolScheduler</i> prefix.
    /// </summary>
-   public class ThreadPoolJobScheduler : LifecycleAdapter, JobScheduler
+   public class ThreadPoolJobScheduler : LifecycleAdapter, IJobScheduler
    {
       private readonly ExecutorService _executor = newCachedThreadPool(new DaemonThreadFactory("ThreadPoolScheduler"));
 

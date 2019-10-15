@@ -28,7 +28,7 @@ namespace Neo4Net.backup.impl
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
@@ -41,7 +41,7 @@ namespace Neo4Net.backup.impl
 		 private readonly Monitors _monitors;
 		 private readonly Clock _clock;
 		 private readonly TransactionLogCatchUpFactory _transactionLogCatchUpFactory;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
 		 /// <summary>
 		 /// Dependencies that can be resolved immediately after launching the backup tool
@@ -108,7 +108,7 @@ namespace Neo4Net.backup.impl
 			 }
 		 }
 
-		 public virtual JobScheduler JobScheduler()
+		 public virtual IJobScheduler IJobScheduler()
 		 {
 			  return _jobScheduler;
 		 }

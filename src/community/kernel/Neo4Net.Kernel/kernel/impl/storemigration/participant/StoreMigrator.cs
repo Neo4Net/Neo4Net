@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using SilentProgressReporter = Neo4Net.Kernel.impl.util.monitoring.SilentProgressReporter;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
 	using AdditionalInitialIds = Neo4Net.@unsafe.Impl.Batchimport.AdditionalInitialIds;
 	using BatchImporter = Neo4Net.@unsafe.Impl.Batchimport.BatchImporter;
@@ -127,9 +127,9 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 private readonly LogService _logService;
 		 private readonly FileSystemAbstraction _fileSystem;
 		 private readonly PageCache _pageCache;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
-		 public StoreMigrator( FileSystemAbstraction fileSystem, PageCache pageCache, Config config, LogService logService, JobScheduler jobScheduler ) : base( "Store files" )
+		 public StoreMigrator( FileSystemAbstraction fileSystem, PageCache pageCache, Config config, LogService logService, IJobScheduler jobScheduler ) : base( "Store files" )
 		 {
 			  this._fileSystem = fileSystem;
 			  this._pageCache = pageCache;

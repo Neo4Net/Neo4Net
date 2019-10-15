@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.storage
 
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
-	public interface DirectoryFactory : AutoCloseable
+	public interface DirectoryFactory : IDisposable
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
 //		 static DirectoryFactory directoryFactory(boolean ephemeral)

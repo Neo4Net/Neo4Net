@@ -26,7 +26,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using DependencySatisfier = Neo4Net.Kernel.impl.util.DependencySatisfier;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	internal class SecurityModuleDependenciesDependencies : SecurityModule.Dependencies
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 			  return _procedures;
 		 }
 
-		 public override JobScheduler Scheduler()
+		 public override IJobScheduler Scheduler()
 		 {
 			  return _platformModule.jobScheduler;
 		 }

@@ -23,7 +23,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	/// Abstraction over primitive arrays.
 	/// </summary>
 	/// <seealso cref= NumberArrayFactory </seealso>
-	public interface NumberArray<N> : MemoryStatsVisitor_Visitable, AutoCloseable where N : NumberArray<N>
+	public interface NumberArray<N> : MemoryStatsVisitor_Visitable, IDisposable where N : NumberArray<N>
 	{
 		 /// <returns> length of the array, i.e. the capacity. </returns>
 		 long Length();

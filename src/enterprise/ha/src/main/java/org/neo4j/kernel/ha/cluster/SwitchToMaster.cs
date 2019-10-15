@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 
-	public class SwitchToMaster : AutoCloseable
+	public class SwitchToMaster : IDisposable
 	{
 		 internal System.Func<Locks, ConversationManager> ConversationManagerFactory;
 		 internal System.Func<ConversationManager, LifeSupport, Master> MasterFactory;

@@ -41,7 +41,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using InMemoryUserRepository = Neo4Net.Server.Security.Auth.InMemoryUserRepository;
 	using RateLimitedAuthenticationStrategy = Neo4Net.Server.Security.Auth.RateLimitedAuthenticationStrategy;

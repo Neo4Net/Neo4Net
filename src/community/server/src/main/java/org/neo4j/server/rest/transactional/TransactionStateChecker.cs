@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 
-	public class TransactionStateChecker : AutoCloseable
+	public class TransactionStateChecker : IDisposable
 	{
 		 private readonly Statement _statement;
 		 private readonly IsNodeDeletedInCurrentTx _nodeCheck;

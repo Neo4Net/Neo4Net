@@ -23,11 +23,11 @@ namespace Neo4Net.Helpers
 {
 	/// <summary>
 	/// Represents a control handle passed to a child task which allows the creator to cancel it. The child task can
-	/// use the <seealso cref="AutoCloseable"/> interface and call <seealso cref="close()"/> to signal completion of the task, regardless if
+	/// use the <seealso cref="IDisposable"/> interface and call <seealso cref="close()"/> to signal completion of the task, regardless if
 	/// it was cancelled or completed successfully.
 	/// </summary>
 	[Obsolete]
-	public interface TaskControl : CancellationRequest, AutoCloseable
+	public interface TaskControl : CancellationRequest, IDisposable
 	{
 		 void Close();
 	}

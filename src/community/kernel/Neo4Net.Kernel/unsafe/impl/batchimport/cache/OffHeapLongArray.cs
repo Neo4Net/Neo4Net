@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	/// <summary>
@@ -30,7 +30,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	{
 		 private readonly long _defaultValue;
 
-		 public OffHeapLongArray( long length, long defaultValue, long @base, MemoryAllocationTracker allocationTracker ) : base( length, 3, @base, allocationTracker )
+		 public OffHeapLongArray( long length, long defaultValue, long @base, IMemoryAllocationTracker allocationTracker ) : base( length, 3, @base, allocationTracker )
 		 {
 			  this._defaultValue = defaultValue;
 			  Clear();

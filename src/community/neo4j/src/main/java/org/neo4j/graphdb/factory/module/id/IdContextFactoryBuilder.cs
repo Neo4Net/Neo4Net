@@ -26,14 +26,14 @@ namespace Neo4Net.Graphdb.factory.module.id
 	using IdReuseEligibility = Neo4Net.Kernel.impl.store.id.IdReuseEligibility;
 	using CommunityIdTypeConfigurationProvider = Neo4Net.Kernel.impl.store.id.configuration.CommunityIdTypeConfigurationProvider;
 	using IdTypeConfigurationProvider = Neo4Net.Kernel.impl.store.id.configuration.IdTypeConfigurationProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 
 	public class IdContextFactoryBuilder
 	{
 		 private IdReuseEligibility _idReuseEligibility = Neo4Net.Kernel.impl.store.id.IdReuseEligibility_Fields.Always;
 		 private FileSystemAbstraction _fileSystemAbstraction;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 		 private System.Func<string, IdGeneratorFactory> _idGeneratorFactoryProvider;
 		 private IdTypeConfigurationProvider _idTypeConfigurationProvider;
 		 private System.Func<IdGeneratorFactory, IdGeneratorFactory> _factoryWrapper;
@@ -42,7 +42,7 @@ namespace Neo4Net.Graphdb.factory.module.id
 		 {
 		 }
 
-		 public static IdContextFactoryBuilder Of( IdTypeConfigurationProvider configurationProvider, JobScheduler jobScheduler )
+		 public static IdContextFactoryBuilder Of( IdTypeConfigurationProvider configurationProvider, IJobScheduler jobScheduler )
 		 {
 			  IdContextFactoryBuilder builder = new IdContextFactoryBuilder();
 			  builder._idTypeConfigurationProvider = configurationProvider;
@@ -50,7 +50,7 @@ namespace Neo4Net.Graphdb.factory.module.id
 			  return builder;
 		 }
 
-		 public static IdContextFactoryBuilder Of( FileSystemAbstraction fileSystemAbstraction, JobScheduler jobScheduler )
+		 public static IdContextFactoryBuilder Of( FileSystemAbstraction fileSystemAbstraction, IJobScheduler jobScheduler )
 		 {
 			  IdContextFactoryBuilder builder = new IdContextFactoryBuilder();
 			  builder._fileSystemAbstraction = fileSystemAbstraction;

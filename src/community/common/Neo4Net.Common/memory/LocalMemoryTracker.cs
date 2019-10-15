@@ -24,7 +24,7 @@ namespace Neo4Net.Memory
    /// Memory allocation tracker that can be used in local context that required
    /// tracking of memory that is independent from global.
    /// </summary>
-   public class LocalMemoryTracker : MemoryAllocationTracker
+   public class LocalMemoryTracker : IMemoryAllocationTracker
    {
       private long _allocatedBytes;
 

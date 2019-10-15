@@ -30,7 +30,7 @@ namespace Neo4Net.metrics
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using Neo4jMetricsBuilder = Neo4Net.metrics.source.Neo4jMetricsBuilder;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class MetricsKernelExtensionFactory : KernelExtensionFactory<MetricsKernelExtensionFactory.Dependencies>
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.metrics
 
 			  FileSystemAbstraction FileSystemAbstraction();
 
-			  JobScheduler Scheduler();
+			  IJobScheduler Scheduler();
 
 			  ConnectorPortRegister PortRegister();
 		 }

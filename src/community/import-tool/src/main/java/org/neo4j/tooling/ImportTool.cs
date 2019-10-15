@@ -48,7 +48,7 @@ namespace Neo4Net.Tooling
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using BatchImporter = Neo4Net.@unsafe.Impl.Batchimport.BatchImporter;
 	using BatchImporterFactory = Neo4Net.@unsafe.Impl.Batchimport.BatchImporterFactory;
 	using DuplicateInputIdException = Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string.DuplicateInputIdException;
@@ -562,7 +562,7 @@ namespace Neo4Net.Tooling
 			  LogService logService = life.Add( StoreLogService.withInternalLog( internalLogFile ).build( fs ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
-			  JobScheduler jobScheduler = life.Add( createScheduler() );
+			  IJobScheduler jobScheduler = life.Add( createScheduler() );
 
 			  life.Start();
 			  ExecutionMonitor executionMonitor = detailedProgress ? new SpectrumExecutionMonitor( 2, TimeUnit.SECONDS, @out, SpectrumExecutionMonitor.DEFAULT_WIDTH ) : ExecutionMonitors.defaultVisible( @in, jobScheduler );

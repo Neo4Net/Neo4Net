@@ -64,7 +64,7 @@ namespace Neo4Net.Io.pagecache
 	/// pages you need in a non-linear fashion.
 	/// </para>
 	/// </summary>
-	public abstract class PageCursor : AutoCloseable
+	public abstract class PageCursor : IDisposable
 	{
 		 public const long UNBOUND_PAGE_ID = -1;
 		 public const int UNBOUND_PAGE_SIZE = -1;
@@ -275,7 +275,7 @@ namespace Neo4Net.Io.pagecache
 		 /// Relinquishes all resources associated with this cursor, including the
 		 /// cursor itself, and any linked cursors opened through it. The cursor cannot be used after this call.
 		 /// </summary>
-		 /// <seealso cref= AutoCloseable#close() </seealso>
+		 /// <seealso cref= IDisposable#close() </seealso>
 		 public override abstract void Close();
 
 		 /// <summary>

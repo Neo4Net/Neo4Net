@@ -23,7 +23,7 @@ namespace Neo4Net.Memory
    /// <summary>
    /// Memory allocation tracker that tracks bytes allocation and de-allocation
    /// </summary>
-   public interface MemoryAllocationTracker : MemoryTracker
+   public interface IMemoryAllocationTracker : IMemoryTracker
    {
       /// <summary>
       /// Record allocation of bytes </summary>

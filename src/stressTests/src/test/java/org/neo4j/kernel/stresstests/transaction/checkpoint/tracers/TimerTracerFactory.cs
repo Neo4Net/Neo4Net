@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint.tracers
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using CheckPointTracer = Neo4Net.Kernel.impl.transaction.tracing.CheckPointTracer;
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using TracerFactory = Neo4Net.Kernel.monitoring.tracing.TracerFactory;
 	using Log = Neo4Net.Logging.Log;
@@ -43,17 +43,17 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint.tracers
 			 }
 		 }
 
-		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, JobScheduler jobScheduler, SystemNanoClock clock, Log log )
+		 public override PageCacheTracer CreatePageCacheTracer( Monitors monitors, IJobScheduler jobScheduler, SystemNanoClock clock, Log log )
 		 {
 			  return PageCacheTracer.NULL;
 		 }
 
-		 public override TransactionTracer CreateTransactionTracer( Monitors monitors, JobScheduler jobScheduler )
+		 public override TransactionTracer CreateTransactionTracer( Monitors monitors, IJobScheduler jobScheduler )
 		 {
 			  return _timerTransactionTracer;
 		 }
 
-		 public override CheckPointTracer CreateCheckPointTracer( Monitors monitors, JobScheduler jobScheduler )
+		 public override CheckPointTracer CreateCheckPointTracer( Monitors monitors, IJobScheduler jobScheduler )
 		 {
 			  return _timerTransactionTracer;
 		 }

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using KernelTransactionMonitor = Neo4Net.Kernel.Impl.Api.transaciton.monitor.KernelTransactionMonitor;
 	using KernelTransactionMonitorScheduler = Neo4Net.Kernel.Impl.Api.transaciton.monitor.KernelTransactionMonitorScheduler;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	internal class KernelTransactionMonitorSchedulerTest
 	{
-		 private readonly JobScheduler _scheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _scheduler = mock( typeof( IJobScheduler ) );
 		 private readonly KernelTransactionMonitor _transactionTimeoutMonitor = mock( typeof( KernelTransactionMonitor ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

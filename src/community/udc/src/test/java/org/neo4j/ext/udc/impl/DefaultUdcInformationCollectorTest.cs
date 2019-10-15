@@ -40,7 +40,7 @@ namespace Neo4Net.Ext.Udc.impl
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -90,7 +90,7 @@ namespace Neo4Net.Ext.Udc.impl
 //ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
-		 private readonly UsageData _usageData = new UsageData( mock( typeof( JobScheduler ) ) );
+		 private readonly UsageData _usageData = new UsageData( mock( typeof( IJobScheduler ) ) );
 
 		 private readonly DataSourceManager _dataSourceManager = new DataSourceManager( Config.defaults() );
 		 private readonly NeoStoreDataSource _dataSource = mock( typeof( NeoStoreDataSource ) );

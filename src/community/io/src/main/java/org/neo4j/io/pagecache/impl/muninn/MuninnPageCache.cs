@@ -34,10 +34,10 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -128,7 +128,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 private static readonly AtomicInteger _pageCacheIdCounter = new AtomicInteger();
 
 		 // Scheduler that runs all the background jobs for page cache.
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 
 		 private static readonly IList<OpenOption> _ignoredOpenOptions = Arrays.asList( StandardOpenOption.APPEND, StandardOpenOption.READ, StandardOpenOption.WRITE, StandardOpenOption.SPARSE );
 
@@ -199,7 +199,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// thread local page cache statistics </param>
 		 /// <param name="versionContextSupplier"> supplier of thread local (transaction local) version context that will provide
 		 /// access to thread local version context </param>
-		 public MuninnPageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler ) : this( swapperFactory, MemoryAllocator.createAllocator( "" + MemoryRequiredForPages( maxPages ), GlobalMemoryTracker.INSTANCE ), org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
+		 public MuninnPageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, MemoryAllocator.createAllocator( "" + MemoryRequiredForPages( maxPages ), GlobalMemoryTracker.INSTANCE ), org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
 		 {
 		 }
 
@@ -212,7 +212,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 /// thread local page cache statistics </param>
 		 /// <param name="versionContextSupplier"> supplier of thread local (transaction local) version context that will provide
 		 ///        access to thread local version context </param>
-		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler ) : this( swapperFactory, memoryAllocator, org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
+		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler ) : this( swapperFactory, memoryAllocator, org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE, pageCacheTracer, pageCursorTracerSupplier, versionContextSupplier, jobScheduler )
 		 {
 		 }
 
@@ -223,7 +223,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("DeprecatedIsStillUsed") @Deprecated public MuninnPageCache(org.neo4j.io.pagecache.PageSwapperFactory swapperFactory, org.neo4j.io.mem.MemoryAllocator memoryAllocator, int cachePageSize, org.neo4j.io.pagecache.tracing.PageCacheTracer pageCacheTracer, org.neo4j.io.pagecache.tracing.cursor.PageCursorTracerSupplier pageCursorTracerSupplier, org.neo4j.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier, org.neo4j.scheduler.JobScheduler jobScheduler)
 		 [Obsolete]
-		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, int cachePageSize, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+		 public MuninnPageCache( PageSwapperFactory swapperFactory, MemoryAllocator memoryAllocator, int cachePageSize, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 		 {
 			  VerifyHacks();
 			  VerifyCachePageSizeIsPowerOfTwo( cachePageSize );
@@ -231,7 +231,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 
 			  // Expose the total number of pages
 			  pageCacheTracer.MaxPages( maxPages );
-			  MemoryAllocationTracker memoryTracker = GlobalMemoryTracker.INSTANCE;
+			  IMemoryAllocationTracker memoryTracker = GlobalMemoryTracker.INSTANCE;
 
 			  this._pageCacheId = _pageCacheIdCounter.incrementAndGet();
 			  this._swapperFactory = swapperFactory;

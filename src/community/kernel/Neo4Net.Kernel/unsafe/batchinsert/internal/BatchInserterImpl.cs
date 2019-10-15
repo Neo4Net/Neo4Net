@@ -92,7 +92,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using NoOpClient = Neo4Net.Kernel.impl.locking.NoOpClient;
 	using ConfiguringPageCacheFactory = Neo4Net.Kernel.impl.pagecache.ConfiguringPageCacheFactory;
 	using PageCacheLifecycle = Neo4Net.Kernel.impl.pagecache.PageCacheLifecycle;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using SimpleKernelContext = Neo4Net.Kernel.impl.spi.SimpleKernelContext;
 	using PropertyCreator = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyCreator;
 	using PropertyDeleter = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.PropertyDeleter;
@@ -147,7 +147,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
@@ -199,7 +199,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 private readonly StoreLogService _logService;
 		 private readonly FileSystemAbstraction _fileSystem;
 		 private readonly Monitors _monitors;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private bool _labelsTouched;
 		 private bool _isShutdown;
 
@@ -249,7 +249,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 
 			  _life = new LifeSupport();
 			  this._databaseLayout = DatabaseLayout.of( databaseDirectory );
-			  this._jobScheduler = JobSchedulerFactory.createInitializedScheduler();
+			  this._jobScheduler = IJobSchedulerFactory.createInitializedScheduler();
 			  _life.add( _jobScheduler );
 
 			  _storeLocker = TryLockStore( fileSystem );

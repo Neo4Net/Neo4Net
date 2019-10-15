@@ -33,25 +33,25 @@ namespace Neo4Net.Internal
 	using DefaultValueMapper = Neo4Net.Kernel.impl.util.DefaultValueMapper;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class DataCollectorManager : LifecycleAdapter
 	{
 		 private readonly DataSourceManager _dataSourceManager;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly Procedures _procedures;
 		 private readonly Monitors _monitors;
 		 private readonly Config _config;
-		 private readonly IList<AutoCloseable> _dataCollectors;
+		 private readonly IList<IDisposable> _dataCollectors;
 
-		 public DataCollectorManager( DataSourceManager dataSourceManager, JobScheduler jobScheduler, Procedures procedures, Monitors monitors, Config config )
+		 public DataCollectorManager( DataSourceManager dataSourceManager, IJobScheduler jobScheduler, Procedures procedures, Monitors monitors, Config config )
 		 {
 			  this._dataSourceManager = dataSourceManager;
 			  this._jobScheduler = jobScheduler;
 			  this._procedures = procedures;
 			  this._monitors = monitors;
 			  this._config = config;
-			  this._dataCollectors = new List<AutoCloseable>();
+			  this._dataCollectors = new List<IDisposable>();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

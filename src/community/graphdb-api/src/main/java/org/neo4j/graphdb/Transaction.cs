@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb
 	/// possible if you don't intend to exhaust the iterator.
 	/// </para>
 	/// </summary>
-	public interface Transaction : AutoCloseable
+	public interface Transaction : IDisposable
 	{
 		 /// <summary>
 		 /// Marks this transaction as terminated, which means that it will be, much like in the case of failure,
@@ -119,7 +119,7 @@ namespace Neo4Net.Graphdb
 		 /// All <seealso cref="ResourceIterable ResourceIterables"/> that where returned from operations executed inside this
 		 /// transaction will be automatically closed by this method.
 		 /// 
-		 /// This method comes from <seealso cref="AutoCloseable"/> so that a <seealso cref="Transaction"/> can participate
+		 /// This method comes from <seealso cref="IDisposable"/> so that a <seealso cref="Transaction"/> can participate
 		 /// in try-with-resource statements. It will not throw any declared exception.
 		 /// 
 		 /// Invoking this method (which is unnecessary when in try-with-resource statement).

@@ -32,11 +32,11 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using Log = Neo4Net.Logging.Log;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	internal class WarmupAvailabilityListener : AvailabilityListener
 	{
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly PageCacheWarmer _pageCacheWarmer;
 		 private readonly Config _config;
 		 private readonly Log _log;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 private volatile bool _available;
 		 private JobHandle _jobHandle; // Guarded by `this`.
 
-		 internal WarmupAvailabilityListener( JobScheduler scheduler, PageCacheWarmer pageCacheWarmer, Config config, Log log, PageCacheWarmerMonitor monitor )
+		 internal WarmupAvailabilityListener( IJobScheduler scheduler, PageCacheWarmer pageCacheWarmer, Config config, Log log, PageCacheWarmerMonitor monitor )
 		 {
 			  this._scheduler = scheduler;
 			  this._pageCacheWarmer = pageCacheWarmer;

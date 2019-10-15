@@ -41,7 +41,7 @@ namespace Neo4Net.Test.rule
 	using Log = Neo4Net.Logging.Log;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -60,7 +60,7 @@ namespace Neo4Net.Test.rule
 		 // Custom components which are managed by this rule if user doesn't supply them
 		 private EphemeralFileSystemAbstraction _ruleFs;
 		 private PageCache _rulePageCache;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 		 private readonly StoreType[] _stores;
 
@@ -180,7 +180,7 @@ namespace Neo4Net.Test.rule
 			  }
 		 }
 
-		 private PageCache RulePageCache( Config dbConfig, FileSystemAbstraction fs, JobScheduler scheduler )
+		 private PageCache RulePageCache( Config dbConfig, FileSystemAbstraction fs, IJobScheduler scheduler )
 		 {
 			  return _rulePageCache = GetOrCreatePageCache( dbConfig, fs, scheduler );
 		 }
@@ -190,7 +190,7 @@ namespace Neo4Net.Test.rule
 			  return _ruleFs = new EphemeralFileSystemAbstraction();
 		 }
 
-		 private static PageCache GetOrCreatePageCache( Config config, FileSystemAbstraction fs, JobScheduler jobScheduler )
+		 private static PageCache GetOrCreatePageCache( Config config, FileSystemAbstraction fs, IJobScheduler jobScheduler )
 		 {
 			  Log log = NullLog.Instance;
 			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fs, config, NULL, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, log, EmptyVersionContextSupplier.EMPTY, jobScheduler );

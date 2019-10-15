@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.util
 {
 	using Log = Neo4Net.Logging.Log;
 
-	public class DurationLogger : AutoCloseable
+	public class DurationLogger : IDisposable
 	{
 		 private readonly Log _log;
 		 private readonly string _tag;

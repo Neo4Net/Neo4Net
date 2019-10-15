@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.helper
 	using Log = Neo4Net.Logging.Log;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// A robust job catches and logs any exceptions, but keeps running if the job
@@ -39,10 +39,10 @@ namespace Neo4Net.causalclustering.helper
 	/// </summary>
 	public class RobustJobSchedulerWrapper
 	{
-		 private readonly JobScheduler @delegate;
+		 private readonly IJobScheduler @delegate;
 		 private readonly Log _log;
 
-		 public RobustJobSchedulerWrapper( JobScheduler @delegate, Log log )
+		 public RobustJobSchedulerWrapper( IJobScheduler @delegate, Log log )
 		 {
 			  this.@delegate = @delegate;
 			  this._log = log;

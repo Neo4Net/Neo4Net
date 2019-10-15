@@ -26,7 +26,7 @@ namespace Neo4Net.Logging.Internal
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.file.Files.createOrOpenAsOutputStream;
@@ -58,7 +58,7 @@ namespace Neo4Net.Logging.Internal
 					return this;
 			  }
 
-			  public virtual Builder WithRotation( long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, JobScheduler jobScheduler )
+			  public virtual Builder WithRotation( long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, IJobScheduler jobScheduler )
 			  {
 					return WithRotation( internalLogRotationThreshold, internalLogRotationDelay, maxInternalLogArchives, jobScheduler.Executor( Group.LOG_ROTATION ) );
 			  }
@@ -119,7 +119,7 @@ namespace Neo4Net.Logging.Internal
 			  return ( new Builder() ).WithUserLogProvider(userLogProvider);
 		 }
 
-		 public static Builder WithRotation( long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, JobScheduler jobScheduler )
+		 public static Builder WithRotation( long internalLogRotationThreshold, long internalLogRotationDelay, int maxInternalLogArchives, IJobScheduler jobScheduler )
 		 {
 			  return ( new Builder() ).WithRotation(internalLogRotationThreshold, internalLogRotationDelay, maxInternalLogArchives, jobScheduler);
 		 }

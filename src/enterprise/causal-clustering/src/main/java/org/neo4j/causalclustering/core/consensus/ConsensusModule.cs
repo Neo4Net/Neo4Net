@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.CausalClusteringSettings.catchup_batch_size;
@@ -163,7 +163,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  return new LeaderAvailabilityTimers( electionTimeout, electionTimeout.dividedBy( 3 ), systemClock(), timerService, logProvider );
 		 }
 
-		 private RaftLog CreateRaftLog( Config config, LifeSupport life, FileSystemAbstraction fileSystem, File clusterStateDirectory, ChannelMarshal<ReplicatedContent> marshal, LogProvider logProvider, JobScheduler scheduler )
+		 private RaftLog CreateRaftLog( Config config, LifeSupport life, FileSystemAbstraction fileSystem, File clusterStateDirectory, ChannelMarshal<ReplicatedContent> marshal, LogProvider logProvider, IJobScheduler scheduler )
 		 {
 			  EnterpriseCoreEditionModule.RaftLogImplementation raftLogImplementation = Enum.Parse( typeof( EnterpriseCoreEditionModule.RaftLogImplementation ), config.Get( CausalClusteringSettings.raft_log_implementation ) );
 			  switch ( raftLogImplementation )

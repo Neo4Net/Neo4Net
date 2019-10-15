@@ -47,7 +47,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AuthenticationStrategy = Neo4Net.Server.Security.Auth.AuthenticationStrategy;
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using CommunitySecurityModule = Neo4Net.Server.Security.Auth.CommunitySecurityModule;
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  Config config = dependencies.Config();
 			  Procedures procedures = dependencies.Procedures();
 			  LogProvider logProvider = dependencies.LogService().UserLogProvider;
-			  JobScheduler jobScheduler = dependencies.Scheduler();
+			  IJobScheduler jobScheduler = dependencies.Scheduler();
 			  FileSystemAbstraction fileSystem = dependencies.FileSystem();
 			  AccessCapability accessCapability = dependencies.AccessCapability();
 
@@ -146,7 +146,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  throw new Exception( "Expected EnterpriseSecurityContext, got " + securityContext.GetType().FullName );
 		 }
 
-		 public virtual EnterpriseAuthAndUserManager NewAuthManager( Config config, LogProvider logProvider, SecurityLog securityLog, FileSystemAbstraction fileSystem, JobScheduler jobScheduler, AccessCapability accessCapability )
+		 public virtual EnterpriseAuthAndUserManager NewAuthManager( Config config, LogProvider logProvider, SecurityLog securityLog, FileSystemAbstraction fileSystem, IJobScheduler jobScheduler, AccessCapability accessCapability )
 		 {
 			  SecurityConfig = GetValidatedSecurityConfig( config );
 
@@ -204,7 +204,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  return orderedActiveRealms;
 		 }
 
-		 protected internal virtual EnterpriseUserManager CreateInternalRealm( Config config, LogProvider logProvider, FileSystemAbstraction fileSystem, JobScheduler jobScheduler, SecurityLog securityLog, AccessCapability accessCapability )
+		 protected internal virtual EnterpriseUserManager CreateInternalRealm( Config config, LogProvider logProvider, FileSystemAbstraction fileSystem, IJobScheduler jobScheduler, SecurityLog securityLog, AccessCapability accessCapability )
 		 {
 			  EnterpriseUserManager internalRealm = null;
 			  if ( SecurityConfig.hasNativeProvider )
@@ -214,7 +214,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  return internalRealm;
 		 }
 
-		 protected internal static InternalFlatFileRealm CreateInternalFlatFileRealm( Config config, LogProvider logProvider, FileSystemAbstraction fileSystem, JobScheduler jobScheduler )
+		 protected internal static InternalFlatFileRealm CreateInternalFlatFileRealm( Config config, LogProvider logProvider, FileSystemAbstraction fileSystem, IJobScheduler jobScheduler )
 		 {
 			  return new InternalFlatFileRealm( CommunitySecurityModule.getUserRepository( config, logProvider, fileSystem ), GetRoleRepository( config, logProvider, fileSystem ), new BasicPasswordPolicy(), CreateAuthenticationStrategy(config), config.Get(SecuritySettings.native_authentication_enabled), config.Get(SecuritySettings.native_authorization_enabled), jobScheduler, CommunitySecurityModule.getInitialUserRepository(config, logProvider, fileSystem), GetDefaultAdminRepository(config, logProvider, fileSystem) );
 		 }

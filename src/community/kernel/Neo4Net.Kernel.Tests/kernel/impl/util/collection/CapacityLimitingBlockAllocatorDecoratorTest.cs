@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
@@ -47,12 +47,12 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void MaxMemoryLimit()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.memory.MemoryAllocationTracker tracker = mock(org.neo4j.memory.MemoryAllocationTracker.class);
-			  MemoryAllocationTracker tracker = mock( typeof( MemoryAllocationTracker ) );
+//ORIGINAL LINE: final org.neo4j.memory.IMemoryAllocationTracker tracker = mock(org.neo4j.memory.IMemoryAllocationTracker.class);
+			  IMemoryAllocationTracker tracker = mock( typeof( IMemoryAllocationTracker ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final OffHeapBlockAllocator allocator = mock(OffHeapBlockAllocator.class);
 			  OffHeapBlockAllocator allocator = mock( typeof( OffHeapBlockAllocator ) );
-			  when( allocator.Allocate( anyLong(), any(typeof(MemoryAllocationTracker)) ) ).then(invocation =>
+			  when( allocator.Allocate( anyLong(), any(typeof(IMemoryAllocationTracker)) ) ).then(invocation =>
 			  {
 				long size = invocation.getArgument<long>( 0 );
 				return new MemoryBlock( 0, size, 0, size );

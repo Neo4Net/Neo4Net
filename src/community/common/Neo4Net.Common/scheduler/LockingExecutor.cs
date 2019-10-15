@@ -24,7 +24,7 @@ namespace Neo4Net.Scheduler
 {
    public class LockingExecutor : Executor
    {
-      private readonly JobScheduler _jobScheduler;
+      private readonly IJobScheduler _jobScheduler;
       private readonly Group _group;
       private readonly AtomicBoolean _latch = new AtomicBoolean(false);
 

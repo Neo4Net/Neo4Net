@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
@@ -37,10 +37,10 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	/// </summary>
 	public class IndexUpdateSink
 	{
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Semaphore _updateQueueLimit;
 
-		 internal IndexUpdateSink( JobScheduler scheduler, int eventuallyConsistentUpdateQueueLimit )
+		 internal IndexUpdateSink( IJobScheduler scheduler, int eventuallyConsistentUpdateQueueLimit )
 		 {
 			  this._scheduler = scheduler;
 			  _updateQueueLimit = new Semaphore( eventuallyConsistentUpdateQueueLimit );

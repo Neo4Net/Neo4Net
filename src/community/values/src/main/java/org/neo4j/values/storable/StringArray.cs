@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 
 	public class StringArray : TextArray
@@ -66,7 +66,7 @@ namespace Neo4Net.Values.Storable
 			  return Arrays.GetHashCode( _value );
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  hash = hashFunction.Update( hash, _value.Length );
 			  foreach ( string s in _value )

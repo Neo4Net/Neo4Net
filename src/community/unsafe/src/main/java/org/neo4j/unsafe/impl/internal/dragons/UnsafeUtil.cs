@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 
 
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.compareUnsigned;
@@ -48,7 +48,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 	{
 		 /// <summary>
 		 /// Whether or not to explicitly dirty the allocated memory. This is off by default.
-		 /// The <seealso cref="UnsafeUtil.allocateMemory(long, MemoryAllocationTracker)"/> method is not guaranteed to allocate
+		 /// The <seealso cref="UnsafeUtil.allocateMemory(long, IMemoryAllocationTracker)"/> method is not guaranteed to allocate
 		 /// zeroed out memory, but might often do so by pure chance.
 		 /// <para>
 		 /// Enabling this feature will make sure that the allocated memory is full of random data, such that we can test
@@ -414,8 +414,8 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 		 /// </summary>
 		 /// <returns> a pointer to the allocated memory </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static long allocateMemory(long bytes, org.neo4j.memory.MemoryAllocationTracker allocationTracker) throws NativeMemoryAllocationRefusedError
-		 public static long AllocateMemory( long bytes, MemoryAllocationTracker allocationTracker )
+//ORIGINAL LINE: public static long allocateMemory(long bytes, org.neo4j.memory.IMemoryAllocationTracker allocationTracker) throws NativeMemoryAllocationRefusedError
+		 public static long AllocateMemory( long bytes, IMemoryAllocationTracker allocationTracker )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long pointer = allocateMemory(bytes);
@@ -440,7 +440,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 		 /// 
 		 /// </para>
 		 /// </summary>
-		 /// <param name="pointer"> pointer to allocated memory from <seealso cref="allocateMemory(long, MemoryAllocationTracker)"/> )}. </param>
+		 /// <param name="pointer"> pointer to allocated memory from <seealso cref="allocateMemory(long, IMemoryAllocationTracker)"/> )}. </param>
 		 /// <param name="alignBy"> power-of-two size to align to, e.g. 4 or 8. </param>
 		 /// <returns> pointer to place inside the allocated memory to consider the effective start of the
 		 /// memory, which from that point is aligned by {@code alignBy}. </returns>
@@ -455,7 +455,7 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 		 /// <summary>
 		 /// Free the memory that was allocated with <seealso cref="allocateMemory"/> and update memory allocation tracker accordingly.
 		 /// </summary>
-		 public static void Free( long pointer, long bytes, MemoryAllocationTracker allocationTracker )
+		 public static void Free( long pointer, long bytes, IMemoryAllocationTracker allocationTracker )
 		 {
 			  Free( pointer, bytes );
 			  allocationTracker.Deallocated( bytes );

@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -307,7 +307,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  SwitchToSlaveCopyThenBranch switchToSlave = NewSwitchToSlaveSpy();
 
 			  when( _fs.fileExists( any( typeof( File ) ) ) ).thenReturn( true );
-			  JobScheduler jobScheduler = mock( typeof( JobScheduler ) );
+			  IJobScheduler jobScheduler = mock( typeof( IJobScheduler ) );
 			  LifeSupport communicationLife = mock( typeof( LifeSupport ) );
 			  URI localhost = LocalhostUri;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

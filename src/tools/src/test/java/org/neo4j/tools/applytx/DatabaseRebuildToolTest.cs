@@ -41,7 +41,7 @@ namespace Neo4Net.tools.applytx
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using DbRepresentation = Neo4Net.Test.DbRepresentation;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
@@ -196,7 +196,7 @@ namespace Neo4Net.tools.applytx
 		 {
 			  try
 			  {
-					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler scheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, scheduler) )
+					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler scheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, scheduler) )
 					  {
 						return MetaDataStore.getRecord( pageCache, databaseLayout.MetadataStore(), MetaDataStore.Position.LAST_TRANSACTION_ID );
 					  }

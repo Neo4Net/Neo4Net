@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using DefaultPageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.DefaultPageCursorTracerSupplier;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 public RuleChain Rules;
 
 		 private LifeSupport _life;
-		 private JobScheduler _scheduler;
+		 private IJobScheduler _scheduler;
 		 private DefaultPageCacheTracer _cacheTracer;
 		 private DefaultPageCursorTracerSupplier _cursorTracer;
 		 private PageCacheRule.PageCacheConfig _cfg;

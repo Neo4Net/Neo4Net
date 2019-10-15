@@ -38,7 +38,7 @@ namespace Neo4Net.Io.pagecache
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -76,7 +76,7 @@ namespace Neo4Net.Io.pagecache
 		 protected internal int FilePageSize;
 		 protected internal ByteBuffer BufA;
 		 protected internal FileSystemAbstraction Fs;
-		 protected internal JobScheduler JobScheduler;
+		 protected internal IJobScheduler IJobScheduler;
 		 protected internal T PageCache;
 
 		 private Fixture<T> _fixture;
@@ -91,7 +91,7 @@ namespace Neo4Net.Io.pagecache
 			  _fixture = CreateFixture();
 			  Thread.interrupted(); // Clear stray interrupts
 			  Fs = CreateFileSystemAbstraction();
-			  JobScheduler = new ThreadPoolJobScheduler();
+			  IJobScheduler = new ThreadPoolJobScheduler();
 			  EnsureExists( File( "a" ) );
 		 }
 
@@ -106,13 +106,13 @@ namespace Neo4Net.Io.pagecache
 			  {
 					TearDownPageCache( PageCache );
 			  }
-			  JobScheduler.close();
+			  IJobScheduler.close();
 			  Fs.Dispose();
 		 }
 
 		 protected internal T CreatePageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier versionContextSupplier )
 		 {
-			  T pageCache = _fixture.createPageCache( swapperFactory, maxPages, tracer, cursorTracerSupplier, versionContextSupplier, JobScheduler );
+			  T pageCache = _fixture.createPageCache( swapperFactory, maxPages, tracer, cursorTracerSupplier, versionContextSupplier, IJobScheduler );
 			  PageCachePageSize = pageCache.PageSize();
 			  RecordsPerFilePage = PageCachePageSize / RecordSize;
 			  RecordCount = 5 * maxPages * RecordsPerFilePage;
@@ -356,7 +356,7 @@ namespace Neo4Net.Io.pagecache
 
 		 public abstract class Fixture<T> where T : PageCache
 		 {
-			  public abstract T CreatePageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, JobScheduler jobScheduler );
+			  public abstract T CreatePageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, IJobScheduler jobScheduler );
 
 			  public abstract void TearDownPageCache( T pageCache );
 

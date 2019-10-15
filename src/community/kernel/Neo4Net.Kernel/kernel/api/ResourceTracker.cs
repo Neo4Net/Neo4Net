@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.api
 		 /// If the given resource can be closed elsewhere, e.g. by exhausting an iterator,
 		 /// the close() method of the resource should be idempotent.
 		 /// </summary>
-		 void RegisterCloseableResource( AutoCloseable closeableResource );
+		 void RegisterCloseableResource( IDisposable closeableResource );
 
 		 /// <seealso cref= #registerCloseableResource </seealso>
-		 void UnregisterCloseableResource( AutoCloseable closeableResource );
+		 void UnregisterCloseableResource( IDisposable closeableResource );
 	}
 
 }

@@ -23,7 +23,7 @@ namespace Neo4Net.Values.Storable
 {
 
 	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
 
@@ -222,12 +222,12 @@ namespace Neo4Net.Values.Storable
 
 		 public long HashCode64()
 		 {
-			  HashFunction xxh64 = HashFunction.incrementalXXH64();
+			  IHashFunction xxh64 = HashFunctionHelper.IncrementalXXH64();
 			  long seed = 1; // Arbitrary seed, but it must always be the same or hash values will change.
 			  return xxh64.Finalize( UpdateHash( xxh64, xxh64.Initialize( seed ) ) );
 		 }
 
-		 public abstract long UpdateHash( HashFunction hashFunction, long hash );
+		 public abstract long UpdateHash( IHashFunction hashFunction, long hash );
 
 		 public virtual bool NaN
 		 {

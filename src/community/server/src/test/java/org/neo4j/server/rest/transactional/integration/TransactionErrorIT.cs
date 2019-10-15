@@ -113,7 +113,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 					@out.close();
 
 					string url = file.toURI().toURL().ToString().Replace("\\", "\\\\");
-					string query = "USING PERIODIC COMMIT 1 LOAD CSV FROM \\\"" + url + "\\\" AS line CREATE ({name: 1/toInt(line[0])});";
+					string query = "USING PERIODIC COMMIT 1 LOAD CSV FROM \\\"" + url + "\\\" AS line CREATE ({name: 1/ToInt(line[0])});";
 
 					// begin and execute and commit
 					HTTP.RawPayload payload = quotedJson( "{ 'statements': [ { 'statement': '" + query + "' } ] }" );

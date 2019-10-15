@@ -28,7 +28,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
+	using IJobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -209,7 +209,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			 ));
 		 }
 
-		 private class SingleBackgroundThreadJobScheduler : JobSchedulerAdapter
+		 private class SingleBackgroundThreadJobScheduler : IJobSchedulerAdapter
 		 {
 			 private readonly GroupingRecoveryCleanupWorkCollectorTest _outerInstance;
 

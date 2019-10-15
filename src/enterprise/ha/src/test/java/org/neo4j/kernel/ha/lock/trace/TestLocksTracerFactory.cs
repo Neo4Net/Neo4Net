@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.ha.@lock.trace
 {
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using DefaultTracerFactory = Neo4Net.Kernel.monitoring.tracing.DefaultTracerFactory;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
 
 	public class TestLocksTracerFactory : DefaultTracerFactory
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.ha.@lock.trace
 			 }
 		 }
 
-		 public override LockTracer CreateLockTracer( Monitors monitors, JobScheduler jobScheduler )
+		 public override LockTracer CreateLockTracer( Monitors monitors, IJobScheduler jobScheduler )
 		 {
 			  return new RecordingLockTracer();
 		 }

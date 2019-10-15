@@ -132,8 +132,8 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected AutoCloseable query(org.neo4j.storageengine.api.schema.SimpleNodeValueClient client, org.neo4j.internal.kernel.api.IndexOrder order, org.neo4j.internal.kernel.api.IndexQuery... predicates) throws Exception
-		 protected internal virtual AutoCloseable Query( SimpleNodeValueClient client, IndexOrder order, params IndexQuery[] predicates )
+//ORIGINAL LINE: protected IDisposable query(org.neo4j.storageengine.api.schema.SimpleNodeValueClient client, org.neo4j.internal.kernel.api.IndexOrder order, org.neo4j.internal.kernel.api.IndexQuery... predicates) throws Exception
+		 protected internal virtual IDisposable Query( SimpleNodeValueClient client, IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IndexReader reader = Accessor.newReader();
 			  reader.Query( client, order, false, predicates );
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  else
 			  {
 					SimpleNodeValueClient client = new SimpleNodeValueClient();
-					using ( AutoCloseable ignore = Query( client, order, predicates ) )
+					using ( IDisposable ignore = Query( client, order, predicates ) )
 					{
 						 actualIds = AssertClientReturnValuesInOrder( client, order );
 					}

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.jupiter.api.Test;
 
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal virtual void ShouldAllocateBuffer()
 		 {
 			  // given
-			  MemoryAllocationTracker tracker = new LocalMemoryTracker();
+			  IMemoryAllocationTracker tracker = new LocalMemoryTracker();
 			  using ( UnsafeDirectByteBufferAllocator factory = new UnsafeDirectByteBufferAllocator( tracker ) )
 			  {
 					// when
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal virtual void ShouldFreeOnClose()
 		 {
 			  // given
-			  MemoryAllocationTracker tracker = new LocalMemoryTracker();
+			  IMemoryAllocationTracker tracker = new LocalMemoryTracker();
 			  using ( UnsafeDirectByteBufferAllocator factory = new UnsafeDirectByteBufferAllocator( tracker ) )
 			  {
 					// when
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal virtual void ShouldHandleMultipleClose()
 		 {
 			  // given
-			  MemoryAllocationTracker tracker = new LocalMemoryTracker();
+			  IMemoryAllocationTracker tracker = new LocalMemoryTracker();
 			  UnsafeDirectByteBufferAllocator factory = new UnsafeDirectByteBufferAllocator( tracker );
 
 			  // when

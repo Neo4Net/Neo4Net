@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// <summary>
 	/// Represents the event of a log rotation.
 	/// </summary>
-	public interface LogRotateEvent : AutoCloseable
+	public interface LogRotateEvent : IDisposable
 	{
 
 		 /// <summary>

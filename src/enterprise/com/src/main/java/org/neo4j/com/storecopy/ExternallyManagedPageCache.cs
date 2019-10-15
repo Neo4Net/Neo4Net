@@ -42,7 +42,7 @@ namespace Neo4Net.com.storecopy
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// A PageCache implementation that delegates to another page cache, whose life cycle is managed elsewhere.
@@ -178,7 +178,7 @@ namespace Neo4Net.com.storecopy
 						  this._config = config;
 					  }
 
-					  protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+					  protected internal override PageCache createPageCache( FileSystemAbstraction fileSystem, Config config, LogService logging, Tracers tracers, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 					  {
 							return new ExternallyManagedPageCache( _outerInstance.outerInstance.delegatePageCache );
 					  }

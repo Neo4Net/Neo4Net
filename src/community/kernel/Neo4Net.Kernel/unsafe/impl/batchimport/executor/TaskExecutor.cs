@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.executor
 	/// </summary>
 	/// @param <LOCAL> object/state local to each thread, that submitted <seealso cref="Task tasks"/> can get access to
 	/// when <seealso cref="Task.run(object) running"/>. </param>
-	public interface TaskExecutor<LOCAL> : Parallelizable, AutoCloseable, Panicable
+	public interface TaskExecutor<LOCAL> : Parallelizable, IDisposable, Panicable
 	{
 		 /// <summary>
 		 /// Submits a task to be executed by one of the processors in this <seealso cref="TaskExecutor"/>. Tasks will be

@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.discovery
 {
 
-	public class SecurePassword : AutoCloseable
+	public class SecurePassword : IDisposable
 	{
 		 private readonly char[] _password;
 		 private const int LOWER_BOUND = ' ';

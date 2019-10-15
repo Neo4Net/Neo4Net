@@ -51,7 +51,7 @@ namespace Neo4Net.Test.rule
 			  config.AugmentDefaults( GraphDatabaseSettings.pagecache_memory, "8M" );
 			  FormattedLogProvider logProvider = FormattedLogProvider.toOutputStream( System.err );
 			  InitializeJobScheduler();
-			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fs, config, tracer, cursorTracerSupplier, logProvider.GetLog( typeof( PageCache ) ), EmptyVersionContextSupplier.EMPTY, JobScheduler );
+			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fs, config, tracer, cursorTracerSupplier, logProvider.GetLog( typeof( PageCache ) ), EmptyVersionContextSupplier.EMPTY, IJobScheduler );
 			  return pageCacheFactory.OrCreatePageCache;
 		 }
 	}

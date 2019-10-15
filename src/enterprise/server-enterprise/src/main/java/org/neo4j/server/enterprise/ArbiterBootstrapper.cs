@@ -53,7 +53,7 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 
-	public class ArbiterBootstrapper : Bootstrapper, AutoCloseable
+	public class ArbiterBootstrapper : Bootstrapper, IDisposable
 	{
 		 private readonly LifeSupport _life = new LifeSupport();
 		 private readonly Timer _timer = new Timer( true );

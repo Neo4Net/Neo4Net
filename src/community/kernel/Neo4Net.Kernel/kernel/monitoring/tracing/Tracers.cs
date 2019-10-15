@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using CheckPointTracer = Neo4Net.Kernel.impl.transaction.tracing.CheckPointTracer;
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="msgLog"> A <seealso cref="Log"/> for logging when the desired implementation cannot be created. </param>
 		 /// <param name="monitors"> the monitoring manager </param>
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
-		 public Tracers( string desiredImplementationName, Log msgLog, Monitors monitors, JobScheduler jobScheduler, SystemNanoClock clock )
+		 public Tracers( string desiredImplementationName, Log msgLog, Monitors monitors, IJobScheduler jobScheduler, SystemNanoClock clock )
 		 {
 			  if ( "null".Equals( desiredImplementationName, StringComparison.OrdinalIgnoreCase ) )
 			  {

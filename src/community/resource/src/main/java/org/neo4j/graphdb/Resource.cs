@@ -20,10 +20,10 @@
 namespace Neo4Net.Graphdb
 {
 	/// <summary>
-	/// Resource that should be closed when not needed anymore. Extends <seealso cref="AutoCloseable"/>
+	/// Resource that should be closed when not needed anymore. Extends <seealso cref="IDisposable"/>
 	/// with <seealso cref="close()"/> not throwing any checked exception.
 	/// </summary>
-	public interface Resource : AutoCloseable
+	public interface Resource : IDisposable
 	{
 		 void Close();
 

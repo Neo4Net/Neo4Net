@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.ha
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogMatcher = Neo4Net.Logging.AssertableLogProvider.LogMatcher;
 	using NullLog = Neo4Net.Logging.NullLog;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.ha
 			  _slaves = InstantiateSlaves( slaveCount, failingSlaves );
 
 			  Config config = Config.defaults( MapUtil.stringMap( HaSettings.TxPushFactor.name(), "" + replication, ClusterSettings.server_id.name(), "" + MASTER_SERVER_ID ) );
-			  JobScheduler scheduler = Cleanup.add( createInitializedScheduler() );
+			  IJobScheduler scheduler = Cleanup.add( createInitializedScheduler() );
 			  TransactionPropagator result = new TransactionPropagator( TransactionPropagator.from( config, slavePriority ), NullLog.Instance, () => _slaves, new CommitPusher(scheduler) );
 			  // Life
 			  try

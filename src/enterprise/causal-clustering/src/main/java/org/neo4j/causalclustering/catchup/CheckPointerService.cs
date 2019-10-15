@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.catchup
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LockingExecutor = Neo4Net.Scheduler.LockingExecutor;
 
 	public class CheckPointerService
@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.catchup
 		 private readonly System.Func<CheckPointer> _checkPointerSupplier;
 		 private readonly Executor _lockingCheckpointExecutor;
 
-		 public CheckPointerService( System.Func<CheckPointer> checkPointerSupplier, JobScheduler jobScheduler, Group group )
+		 public CheckPointerService( System.Func<CheckPointer> checkPointerSupplier, IJobScheduler jobScheduler, Group group )
 		 {
 			  this._checkPointerSupplier = checkPointerSupplier;
 			  this._lockingCheckpointExecutor = new LockingExecutor( jobScheduler, group );

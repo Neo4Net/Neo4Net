@@ -40,7 +40,7 @@ namespace Neo4Net.metrics.output
 	using Log = Neo4Net.Logging.Log;
 	using RotatingFileOutputStreamSupplier = Neo4Net.Logging.RotatingFileOutputStreamSupplier;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.metrics.MetricsSettings.csvEnabled;
@@ -56,11 +56,11 @@ namespace Neo4Net.metrics.output
 		 private readonly Log _logger;
 		 private readonly KernelContext _kernelContext;
 		 private readonly FileSystemAbstraction _fileSystem;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private RotatableCsvReporter _csvReporter;
 		 private File _outputPath;
 
-		 internal CsvOutput( Config config, MetricRegistry registry, Log logger, KernelContext kernelContext, FileSystemAbstraction fileSystem, JobScheduler scheduler )
+		 internal CsvOutput( Config config, MetricRegistry registry, Log logger, KernelContext kernelContext, FileSystemAbstraction fileSystem, IJobScheduler scheduler )
 		 {
 			  this._config = config;
 			  this._registry = registry;

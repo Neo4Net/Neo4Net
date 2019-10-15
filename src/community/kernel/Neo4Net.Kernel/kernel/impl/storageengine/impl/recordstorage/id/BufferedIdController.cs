@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage.id
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Storage id controller that provide buffering possibilities to be able so safely free and reuse ids.
@@ -34,10 +34,10 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage.id
 	public class BufferedIdController : LifecycleAdapter, IdController
 	{
 		 private readonly BufferingIdGeneratorFactory _bufferingIdGeneratorFactory;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private JobHandle _jobHandle;
 
-		 public BufferedIdController( BufferingIdGeneratorFactory bufferingIdGeneratorFactory, JobScheduler scheduler )
+		 public BufferedIdController( BufferingIdGeneratorFactory bufferingIdGeneratorFactory, IJobScheduler scheduler )
 		 {
 			  this._bufferingIdGeneratorFactory = bufferingIdGeneratorFactory;
 			  this._scheduler = scheduler;

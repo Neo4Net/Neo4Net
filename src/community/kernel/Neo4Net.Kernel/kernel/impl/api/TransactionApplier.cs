@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	/// }
 	/// </pre>
 	/// </summary>
-	public interface TransactionApplier : Visitor<StorageCommand, IOException>, CommandVisitor, AutoCloseable
+	public interface TransactionApplier : Visitor<StorageCommand, IOException>, CommandVisitor, IDisposable
 	{
 		 /// <summary>
 		 /// A <seealso cref="TransactionApplier"/> which does nothing.

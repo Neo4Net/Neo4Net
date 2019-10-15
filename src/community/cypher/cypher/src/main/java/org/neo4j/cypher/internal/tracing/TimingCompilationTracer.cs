@@ -84,7 +84,7 @@ namespace Neo4Net.Cypher.Internal.Tracing
 			  return new Query( _clock, query, _listener );
 		 }
 
-		 private abstract class Event : AutoCloseable
+		 private abstract class Event : IDisposable
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal Clock ClockConflict;

@@ -38,7 +38,7 @@ namespace Neo4Net.Test.rule
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 	public class PageCacheRule : ExternalResource
@@ -150,7 +150,7 @@ namespace Neo4Net.Test.rule
 			  return new PageCacheConfig();
 		 }
 
-		 protected internal JobScheduler JobScheduler;
+		 protected internal IJobScheduler IJobScheduler;
 		 protected internal PageCache PageCache;
 		 internal readonly PageCacheConfig BaseConfig;
 
@@ -189,11 +189,11 @@ namespace Neo4Net.Test.rule
 			  InitializeJobScheduler();
 			  if ( pageSize != null )
 			  {
-					PageCache = new MuninnPageCache( factory, mman, pageSize.Value, cacheTracer, cursorTracerSupplier, contextSupplier, JobScheduler );
+					PageCache = new MuninnPageCache( factory, mman, pageSize.Value, cacheTracer, cursorTracerSupplier, contextSupplier, IJobScheduler );
 			  }
 			  else
 			  {
-					PageCache = new MuninnPageCache( factory, mman, cacheTracer, cursorTracerSupplier, contextSupplier, JobScheduler );
+					PageCache = new MuninnPageCache( factory, mman, cacheTracer, cursorTracerSupplier, contextSupplier, IJobScheduler );
 			  }
 			  PageCachePostConstruct( overriddenConfig );
 			  return PageCache;
@@ -201,7 +201,7 @@ namespace Neo4Net.Test.rule
 
 		 protected internal virtual void InitializeJobScheduler()
 		 {
-			  JobScheduler = new ThreadPoolJobScheduler();
+			  IJobScheduler = new ThreadPoolJobScheduler();
 		 }
 
 		 protected internal static T SelectConfig<T>( T @base, T overridden, T defaultValue )
@@ -237,11 +237,11 @@ namespace Neo4Net.Test.rule
 
 		 private void CloseJobScheduler( string errorMessage )
 		 {
-			  if ( JobScheduler != null )
+			  if ( IJobScheduler != null )
 			  {
 					try
 					{
-						 JobScheduler.close();
+						 IJobScheduler.close();
 					}
 					catch ( Exception e )
 					{

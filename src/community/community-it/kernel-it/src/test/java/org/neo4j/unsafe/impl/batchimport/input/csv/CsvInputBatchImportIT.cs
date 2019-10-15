@@ -45,7 +45,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using LogTimeZone = Neo4Net.Logging.LogTimeZone;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -116,7 +116,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 {
 			  // GIVEN
 			  Config dbConfig = Config.builder().withSetting(db_timezone, LogTimeZone.SYSTEM.name()).build();
-			  using ( JobScheduler scheduler = new ThreadPoolJobScheduler() )
+			  using ( IJobScheduler scheduler = new ThreadPoolJobScheduler() )
 			  {
 					BatchImporter importer = new ParallelBatchImporter( Directory.databaseLayout(), FileSystemRule.get(), null, SmallBatchSizeConfig(), NullLogService.Instance, invisible(), AdditionalInitialIds.EMPTY, dbConfig, RecordFormatSelector.defaultFormat(), NO_MONITOR, scheduler );
 					IList<InputEntity> nodeData = RandomNodeData();

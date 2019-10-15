@@ -34,7 +34,7 @@ namespace Neo4Net.Storageengine.Api.txstate
 	/// <summary>
 	/// A visitor for visiting the changes that have been made in a transaction.
 	/// </summary>
-	public interface TxStateVisitor : AutoCloseable
+	public interface TxStateVisitor : IDisposable
 	{
 		 void VisitCreatedNode( long id );
 

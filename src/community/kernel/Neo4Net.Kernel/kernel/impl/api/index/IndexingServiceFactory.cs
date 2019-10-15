@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexSamplingController = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingController;
 	using IndexSamplingControllerFactory = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingControllerFactory;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 
 	/// <summary>
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 		 }
 
-		 public static IndexingService CreateIndexingService( Config config, JobScheduler scheduler, IndexProviderMap providerMap, IndexStoreView storeView, TokenNameLookup tokenNameLookup, IEnumerable<SchemaRule> schemaRules, LogProvider internalLogProvider, LogProvider userLogProvider, IndexingService.Monitor monitor, SchemaState schemaState, bool readOnly )
+		 public static IndexingService CreateIndexingService( Config config, IJobScheduler scheduler, IndexProviderMap providerMap, IndexStoreView storeView, TokenNameLookup tokenNameLookup, IEnumerable<SchemaRule> schemaRules, LogProvider internalLogProvider, LogProvider userLogProvider, IndexingService.Monitor monitor, SchemaState schemaState, bool readOnly )
 		 {
 			  IndexSamplingConfig samplingConfig = new IndexSamplingConfig( config );
 			  MultiPopulatorFactory multiPopulatorFactory = MultiPopulatorFactory.ForConfig( config );

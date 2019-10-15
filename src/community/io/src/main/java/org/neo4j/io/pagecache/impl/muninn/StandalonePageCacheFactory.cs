@@ -27,7 +27,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/*
 	 * This class is an helper to allow to construct properly a page cache in the few places we need it without all
@@ -42,7 +42,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 		 {
 		 }
 
-		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, JobScheduler jobScheduler )
+		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, IJobScheduler jobScheduler )
 		 {
 			  SingleFilePageSwapperFactory factory = new SingleFilePageSwapperFactory();
 			  factory.Open( fileSystem, Configuration.EMPTY );

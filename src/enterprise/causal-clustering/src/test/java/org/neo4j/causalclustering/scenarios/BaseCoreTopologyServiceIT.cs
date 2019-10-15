@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
@@ -61,7 +61,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  config.augment( initial_discovery_members, initialHosts );
 			  config.Augment( CausalClusteringSettings.discovery_listen_address, "localhost:" + PortAuthority.allocatePort() );
 
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 			  InitialDiscoveryMembersResolver initialDiscoveryMemberResolver = new InitialDiscoveryMembersResolver( new NoOpHostnameResolver(), config );
 
 			  CoreTopologyService service = _discoveryServiceType.createFactory().coreTopologyService(config, new MemberId(System.Guid.randomUUID()), jobScheduler, NullLogProvider.Instance, NullLogProvider.Instance, initialDiscoveryMemberResolver, new TopologyServiceNoRetriesStrategy(), new Monitors());

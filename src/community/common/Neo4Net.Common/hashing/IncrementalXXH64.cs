@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Hashing
 {
-   /// <seealso cref= HashFunction#incrementalXXH64() </seealso>
+   /// <seealso cref= HashFunctionHelper#IncrementalXXH64() </seealso>
    internal class IncrementalXXH64 : HashFunction
    {
       internal static readonly HashFunction Instance = new IncrementalXXH64();
@@ -44,7 +44,7 @@ namespace Neo4Net.Hashing
       {
          hash += 8;
          block *= PRIME2;
-         block = Long.rotateLeft(block, 31);
+         block = long.rotateLeft(block, 31);
          block *= PRIME1;
          hash ^= block;
          hash = Long.rotateLeft(hash, 27) * PRIME1 + PRIME4;

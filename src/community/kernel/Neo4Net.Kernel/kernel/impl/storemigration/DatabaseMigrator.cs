@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using LogTailScanner = Neo4Net.Kernel.recovery.LogTailScanner;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// DatabaseMigrator collects all dependencies required for store migration,
@@ -53,9 +53,9 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 private readonly PageCache _pageCache;
 		 private readonly RecordFormats _format;
 		 private readonly LogTailScanner _tailScanner;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
-		 public DatabaseMigrator( MigrationProgressMonitor progressMonitor, FileSystemAbstraction fs, Config config, LogService logService, IndexProviderMap indexProviderMap, ExplicitIndexProvider indexProvider, PageCache pageCache, RecordFormats format, LogTailScanner tailScanner, JobScheduler jobScheduler )
+		 public DatabaseMigrator( MigrationProgressMonitor progressMonitor, FileSystemAbstraction fs, Config config, LogService logService, IndexProviderMap indexProviderMap, ExplicitIndexProvider indexProvider, PageCache pageCache, RecordFormats format, LogTailScanner tailScanner, IJobScheduler jobScheduler )
 		 {
 			  this._progressMonitor = progressMonitor;
 			  this._fs = fs;

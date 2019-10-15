@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.ha
 	using InvalidEpochExceptionHandler = Neo4Net.Kernel.ha.com.slave.InvalidEpochExceptionHandler;
 	using CountingJobScheduler = Neo4Net.Kernel.impl.util.CountingJobScheduler;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.ha
 		 private readonly RequestContextFactory _requestContextFactory = mock( typeof( RequestContextFactory ) );
 		 private readonly InvalidEpochExceptionHandler _invalidEpochHandler = mock( typeof( InvalidEpochExceptionHandler ) );
 		 private readonly SlaveUpdatePuller.Monitor _monitor = mock( typeof( SlaveUpdatePuller.Monitor ) );
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 		 private SlaveUpdatePuller _updatePuller;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

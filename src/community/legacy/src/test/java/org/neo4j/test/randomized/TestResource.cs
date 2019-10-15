@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Test.randomized
 {
-	public interface TestResource : AutoCloseable
+	public interface TestResource : IDisposable
 	{
 		 void Close();
 	}

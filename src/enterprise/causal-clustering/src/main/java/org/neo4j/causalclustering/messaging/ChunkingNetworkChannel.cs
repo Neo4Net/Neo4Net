@@ -38,7 +38,7 @@ namespace Neo4Net.causalclustering.messaging
 	/// Uses provided allocator to create <seealso cref="ByteBuf"/>. The buffers will be split if maximum size is reached. The full buffer is then added
 	/// to the provided output and a new buffer is allocated. If the output queue is bounded then writing to this channel may block!
 	/// </summary>
-	public class ChunkingNetworkChannel : WritableChannel, AutoCloseable
+	public class ChunkingNetworkChannel : WritableChannel, IDisposable
 	{
 		 private const int DEFAULT_INIT_CHUNK_SIZE = 512;
 		 private readonly ByteBufAllocator _allocator;

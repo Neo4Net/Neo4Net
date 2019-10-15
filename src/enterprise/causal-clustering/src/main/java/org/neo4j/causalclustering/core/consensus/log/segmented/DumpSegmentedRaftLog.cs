@@ -119,7 +119,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 			  return toFile ? new DumpSegmentedRaftLog.FilePrinter() : SYSTEM_OUT_PRINTER;
 		 }
 
-		 internal interface Printer : AutoCloseable
+		 internal interface Printer : IDisposable
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: java.io.PrintStream getFor(String file) throws java.io.FileNotFoundException;

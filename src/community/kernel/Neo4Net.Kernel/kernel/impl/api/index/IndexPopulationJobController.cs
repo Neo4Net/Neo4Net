@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	internal class IndexPopulationJobController
 	{
 		 private readonly ISet<IndexPopulationJob> _populationJobs = Collections.newSetFromMap( new ConcurrentDictionary<IndexPopulationJob>() );
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 
-		 internal IndexPopulationJobController( JobScheduler scheduler )
+		 internal IndexPopulationJobController( IJobScheduler scheduler )
 		 {
 			  this._scheduler = scheduler;
 		 }

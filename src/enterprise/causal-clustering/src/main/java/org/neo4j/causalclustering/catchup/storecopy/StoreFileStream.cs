@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
 
-	public interface StoreFileStream : AutoCloseable
+	public interface StoreFileStream : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void write(byte[] data) throws java.io.IOException;

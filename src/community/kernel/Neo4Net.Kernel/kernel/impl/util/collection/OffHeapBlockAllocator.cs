@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.impl.util.collection
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 	public interface OffHeapBlockAllocator
 	{
 		 /// <returns> memory block of requested size; there's no guarantee whether allocated memory is zero-filled or dirty </returns>
-		 OffHeapBlockAllocator_MemoryBlock Allocate( long size, MemoryAllocationTracker tracker );
+		 OffHeapBlockAllocator_MemoryBlock Allocate( long size, IMemoryAllocationTracker tracker );
 
-		 void Free( OffHeapBlockAllocator_MemoryBlock block, MemoryAllocationTracker tracker );
+		 void Free( OffHeapBlockAllocator_MemoryBlock block, IMemoryAllocationTracker tracker );
 
 		 void Release();
 	}

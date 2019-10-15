@@ -62,7 +62,7 @@ namespace Neo4Net.Test.rule
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 	using EphemeralIdGenerator = Neo4Net.Test.impl.EphemeralIdGenerator;
 
@@ -108,7 +108,7 @@ namespace Neo4Net.Test.rule
 			  ExplicitIndexProvider explicitIndexProviderLookup = mock( typeof( ExplicitIndexProvider ) );
 			  when( explicitIndexProviderLookup.AllIndexProviders() ).thenReturn(Iterables.empty());
 			  IndexConfigStore indexConfigStore = new IndexConfigStore( databaseLayout, fs );
-			  JobScheduler scheduler = _life.add( createScheduler() );
+			  IJobScheduler scheduler = _life.add( createScheduler() );
 			  Config config = Config.defaults( GraphDatabaseSettings.default_schema_provider, indexProvider.ProviderDescriptor.name() );
 
 			  Dependencies dependencies = new Dependencies();
@@ -195,7 +195,7 @@ namespace Neo4Net.Test.rule
 		 {
 			  internal readonly System.Func<BatchTransactionApplierFacade, BatchTransactionApplierFacade> TransactionApplierTransformer;
 
-			  internal ExtendedRecordStorageEngine( DatabaseLayout databaseLayout, Config config, PageCache pageCache, FileSystemAbstraction fs, LogProvider logProvider, LogProvider userLogProvider, TokenHolders tokenHolders, SchemaState schemaState, ConstraintSemantics constraintSemantics, JobScheduler scheduler, TokenNameLookup tokenNameLookup, LockService lockService, IndexProviderMap indexProviderMap, IndexingService.Monitor indexingServiceMonitor, DatabaseHealth databaseHealth, ExplicitIndexProvider explicitIndexProviderLookup, IndexConfigStore indexConfigStore, IdOrderingQueue explicitIndexTransactionOrdering, IdGeneratorFactory idGeneratorFactory, IdController idController, System.Func<BatchTransactionApplierFacade, BatchTransactionApplierFacade> transactionApplierTransformer, Monitors monitors, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, OperationalMode operationalMode ) : base( databaseLayout, config, pageCache, fs, logProvider, userLogProvider, tokenHolders, schemaState, constraintSemantics, scheduler, tokenNameLookup, lockService, indexProviderMap, indexingServiceMonitor, databaseHealth, explicitIndexProviderLookup, indexConfigStore, explicitIndexTransactionOrdering, idGeneratorFactory, idController, monitors, recoveryCleanupWorkCollector, operationalMode, EmptyVersionContextSupplier.EMPTY )
+			  internal ExtendedRecordStorageEngine( DatabaseLayout databaseLayout, Config config, PageCache pageCache, FileSystemAbstraction fs, LogProvider logProvider, LogProvider userLogProvider, TokenHolders tokenHolders, SchemaState schemaState, ConstraintSemantics constraintSemantics, IJobScheduler scheduler, TokenNameLookup tokenNameLookup, LockService lockService, IndexProviderMap indexProviderMap, IndexingService.Monitor indexingServiceMonitor, DatabaseHealth databaseHealth, ExplicitIndexProvider explicitIndexProviderLookup, IndexConfigStore indexConfigStore, IdOrderingQueue explicitIndexTransactionOrdering, IdGeneratorFactory idGeneratorFactory, IdController idController, System.Func<BatchTransactionApplierFacade, BatchTransactionApplierFacade> transactionApplierTransformer, Monitors monitors, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, OperationalMode operationalMode ) : base( databaseLayout, config, pageCache, fs, logProvider, userLogProvider, tokenHolders, schemaState, constraintSemantics, scheduler, tokenNameLookup, lockService, indexProviderMap, indexingServiceMonitor, databaseHealth, explicitIndexProviderLookup, indexConfigStore, explicitIndexTransactionOrdering, idGeneratorFactory, idController, monitors, recoveryCleanupWorkCollector, operationalMode, EmptyVersionContextSupplier.EMPTY )
 			  {
 					this.TransactionApplierTransformer = transactionApplierTransformer;
 			  }

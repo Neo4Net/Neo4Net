@@ -364,7 +364,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 		 //-------------------------------------------------------------------------
 		 // TLS helper
-		 internal class EmbeddedTestCertificates : AutoCloseable
+		 internal class EmbeddedTestCertificates : IDisposable
 		 {
 			  internal const string KEY_STORE = "javax.net.ssl.keyStore";
 			  internal const string KEY_STORE_PASSWORD = "javax.net.ssl.keyStorePassword";

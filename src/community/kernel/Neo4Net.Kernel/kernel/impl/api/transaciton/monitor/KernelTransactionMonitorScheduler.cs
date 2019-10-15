@@ -23,16 +23,16 @@ namespace Neo4Net.Kernel.Impl.Api.transaciton.monitor
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class KernelTransactionMonitorScheduler : LifecycleAdapter
 	{
 		 private readonly KernelTransactionMonitor _kernelTransactionMonitor;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly long _checkIntervalMillis;
 		 private JobHandle _monitorJobHandle;
 
-		 public KernelTransactionMonitorScheduler( KernelTransactionMonitor kernelTransactionMonitor, JobScheduler scheduler, long checkIntervalMillis )
+		 public KernelTransactionMonitorScheduler( KernelTransactionMonitor kernelTransactionMonitor, IJobScheduler scheduler, long checkIntervalMillis )
 		 {
 			  this._kernelTransactionMonitor = kernelTransactionMonitor;
 			  this._scheduler = scheduler;

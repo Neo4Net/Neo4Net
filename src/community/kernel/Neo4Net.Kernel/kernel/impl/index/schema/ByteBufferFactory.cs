@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// 
 	/// These scopes together allows for efficient allocation, de-allocation and sharing of buffers.
 	/// </summary>
-	public class ByteBufferFactory : AutoCloseable
+	public class ByteBufferFactory : IDisposable
 	{
 		 private readonly Allocator _globalAllocator;
 		 private readonly int _threadLocalBufferSize;
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <summary>
 		 /// Allocator of <seealso cref="ByteBuffer"/> instances. Also is responsible for freeing memory of allocated buffers on <seealso cref="close()"/>.
 		 /// </summary>
-		 public interface Allocator : AutoCloseable
+		 public interface Allocator : IDisposable
 		 {
 			  ByteBuffer Allocate( int bufferSize );
 

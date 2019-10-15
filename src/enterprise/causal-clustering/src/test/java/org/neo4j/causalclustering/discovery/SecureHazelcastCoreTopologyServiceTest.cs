@@ -36,11 +36,11 @@ namespace Neo4Net.causalclustering.discovery
 	using SslPolicyConfig = Neo4Net.Kernel.configuration.ssl.SslPolicyConfig;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using EnterpriseEditionModule = Neo4Net.Kernel.impl.enterprise.EnterpriseEditionModule;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using PkiUtils = Neo4Net.Ssl.PkiUtils;
 	using SslPolicy = Neo4Net.Ssl.SslPolicy;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.discovery
 			  @params[neo4j_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
+			  IJobScheduler jobScheduler = IJobSchedulerFactory.createInitializedScheduler();
 			  PlatformModule platformModule = new PlatformModule( TestDirectory.storeDir(), Config.defaults(), ENTERPRISE, newDependencies() );
 			  AbstractEditionModule editionModule = new EnterpriseEditionModule( platformModule );
 			  // Random members that does not exists, discovery will never succeed

@@ -41,7 +41,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 	/// Versioning helps iterating over a constant set of entries at the same time as modifying the table.
 	/// </para>
 	/// </summary>
-	public interface Table<VALUE> : AutoCloseable
+	public interface Table<VALUE> : IDisposable
 	{
 		 /// <returns> {@code H} as defined by the hop-scotch algorithm, i.e. how many entries can share the same
 		 /// table index, i.e. how many conflicts there can be at most for any given table index. </returns>

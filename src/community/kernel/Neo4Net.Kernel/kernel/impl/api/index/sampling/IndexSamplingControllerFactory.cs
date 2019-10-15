@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -36,11 +36,11 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	{
 		 private readonly IndexSamplingConfig _config;
 		 private readonly IndexStoreView _storeView;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly TokenNameLookup _tokenNameLookup;
 		 private readonly LogProvider _logProvider;
 
-		 public IndexSamplingControllerFactory( IndexSamplingConfig config, IndexStoreView storeView, JobScheduler scheduler, TokenNameLookup tokenNameLookup, LogProvider logProvider )
+		 public IndexSamplingControllerFactory( IndexSamplingConfig config, IndexStoreView storeView, IJobScheduler scheduler, TokenNameLookup tokenNameLookup, LogProvider logProvider )
 		 {
 			  this._config = config;
 			  this._storeView = storeView;

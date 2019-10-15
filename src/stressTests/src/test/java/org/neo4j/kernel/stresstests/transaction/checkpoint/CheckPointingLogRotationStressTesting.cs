@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 	using Workload = Neo4Net.Kernel.stresstests.transaction.checkpoint.workload.Workload;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using ParallelBatchImporter = Neo4Net.@unsafe.Impl.Batchimport.ParallelBatchImporter;
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 			  string pageCacheMemory = fromEnv( "CHECK_POINT_LOG_ROTATION_PAGE_CACHE_MEMORY", DEFAULT_PAGE_CACHE_MEMORY );
 
 			  Console.WriteLine( "1/6\tBuilding initial store..." );
-			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					Config dbConfig = Config.defaults();
 					( new ParallelBatchImporter( DatabaseLayout.of( ensureExistsAndEmpty( storeDir ) ), fileSystem, null, DEFAULT, NullLogService.Instance, ExecutionMonitors.defaultVisible( jobScheduler ), EMPTY, dbConfig, RecordFormatSelector.selectForConfig( dbConfig, NullLogProvider.Instance ), NO_MONITOR, jobScheduler ) ).doImport( new NodeCountInputs( nodeCount ) );

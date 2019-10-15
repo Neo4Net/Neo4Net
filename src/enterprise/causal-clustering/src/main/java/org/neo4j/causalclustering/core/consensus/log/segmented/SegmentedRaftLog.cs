@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// The segmented RAFT log is an append only log supporting the operations required to support
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private readonly long _rotateAtSize;
 		 private readonly ChannelMarshal<ReplicatedContent> _contentMarshal;
 		 private readonly FileNames _fileNames;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Log _log;
 
 		 private bool _needsRecovery;
@@ -77,7 +77,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private readonly ReaderPool _readerPool;
 		 private JobHandle _readerPoolPruner;
 
-		 public SegmentedRaftLog( FileSystemAbstraction fileSystem, File directory, long rotateAtSize, ChannelMarshal<ReplicatedContent> contentMarshal, LogProvider logProvider, int readerPoolSize, Clock clock, JobScheduler scheduler, CoreLogPruningStrategy pruningStrategy )
+		 public SegmentedRaftLog( FileSystemAbstraction fileSystem, File directory, long rotateAtSize, ChannelMarshal<ReplicatedContent> contentMarshal, LogProvider logProvider, int readerPoolSize, Clock clock, IJobScheduler scheduler, CoreLogPruningStrategy pruningStrategy )
 		 {
 			  this._fileSystem = fileSystem;
 			  this._directory = directory;

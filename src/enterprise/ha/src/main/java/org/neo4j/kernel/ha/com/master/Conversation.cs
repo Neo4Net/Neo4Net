@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	/// <summary>
 	/// Abstraction to hold all client related info on master side.
 	/// </summary>
-	public class Conversation : AutoCloseable
+	public class Conversation : IDisposable
 	{
 		 private Neo4Net.Kernel.impl.locking.Locks_Client _locks;
 		 private volatile bool _active = true;

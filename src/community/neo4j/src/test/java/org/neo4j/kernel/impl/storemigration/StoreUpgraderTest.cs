@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 
 		 private DatabaseLayout _databaseLayout;
 		 private FileSystemAbstraction _fileSystem;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 		 private readonly RecordFormats _formats;
 
 		 private readonly Config _allowMigrateConfig = Config.defaults( GraphDatabaseSettings.allow_upgrade, Settings.TRUE );

@@ -27,20 +27,20 @@ namespace Neo4Net.Graphdb.factory.module.id
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdReuseEligibility = Neo4Net.Kernel.impl.store.id.IdReuseEligibility;
 	using IdTypeConfigurationProvider = Neo4Net.Kernel.impl.store.id.configuration.IdTypeConfigurationProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 	public class IdContextFactory
 	{
 		  private static readonly bool _idBufferingFlag = FeatureToggles.flag( typeof( IdContextFactory ), "safeIdBuffering", true );
 
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly System.Func<string, IdGeneratorFactory> _idFactoryProvider;
 		 private readonly IdTypeConfigurationProvider _idTypeConfigurationProvider;
 		 private readonly IdReuseEligibility _eligibleForIdReuse;
 		 private readonly System.Func<IdGeneratorFactory, IdGeneratorFactory> _factoryWrapper;
 
-		 internal IdContextFactory( JobScheduler jobScheduler, System.Func<string, IdGeneratorFactory> idFactoryProvider, IdTypeConfigurationProvider idTypeConfigurationProvider, IdReuseEligibility eligibleForIdReuse, System.Func<IdGeneratorFactory, IdGeneratorFactory> factoryWrapper )
+		 internal IdContextFactory( IJobScheduler jobScheduler, System.Func<string, IdGeneratorFactory> idFactoryProvider, IdTypeConfigurationProvider idTypeConfigurationProvider, IdReuseEligibility eligibleForIdReuse, System.Func<IdGeneratorFactory, IdGeneratorFactory> factoryWrapper )
 		 {
 			  this._jobScheduler = jobScheduler;
 			  this._idFactoryProvider = idFactoryProvider;
@@ -59,7 +59,7 @@ namespace Neo4Net.Graphdb.factory.module.id
 			  return CreateIdContext( idGeneratorFactoryProvider( databaseName ), CreateDefaultIdController() );
 		 }
 
-		 private DatabaseIdContext CreateBufferingIdContext<T1>( System.Func<T1> idGeneratorFactoryProvider, JobScheduler jobScheduler, string databaseName ) where T1 : Neo4Net.Kernel.impl.store.id.IdGeneratorFactory
+		 private DatabaseIdContext CreateBufferingIdContext<T1>( System.Func<T1> idGeneratorFactoryProvider, IJobScheduler jobScheduler, string databaseName ) where T1 : Neo4Net.Kernel.impl.store.id.IdGeneratorFactory
 		 {
 			  IdGeneratorFactory idGeneratorFactory = idGeneratorFactoryProvider( databaseName );
 			  BufferingIdGeneratorFactory bufferingIdGeneratorFactory = new BufferingIdGeneratorFactory( idGeneratorFactory, _eligibleForIdReuse, _idTypeConfigurationProvider );
@@ -72,7 +72,7 @@ namespace Neo4Net.Graphdb.factory.module.id
 			  return new DatabaseIdContext( _factoryWrapper.apply( idGeneratorFactory ), idController );
 		 }
 
-		 private static BufferedIdController CreateBufferedIdController( BufferingIdGeneratorFactory idGeneratorFactory, JobScheduler scheduler )
+		 private static BufferedIdController CreateBufferedIdController( BufferingIdGeneratorFactory idGeneratorFactory, IJobScheduler scheduler )
 		 {
 			  return new BufferedIdController( idGeneratorFactory, scheduler );
 		 }

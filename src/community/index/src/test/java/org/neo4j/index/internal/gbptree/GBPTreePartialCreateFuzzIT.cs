@@ -34,7 +34,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
@@ -111,7 +111,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 {
 			  // Just start and immediately close. The process spawning this subprocess will kill it in the middle of all this
 			  File file = new File( args[0] );
-			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					SingleFilePageSwapperFactory swapper = new SingleFilePageSwapperFactory();
 					swapper.Open( fs, EMPTY );

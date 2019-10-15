@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.ha.cluster
 
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 private Locks _locks;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Mock private org.neo4j.scheduler.JobScheduler jobScheduler;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @InjectMocks private DefaultConversationSPI conversationSpi;
 		 private DefaultConversationSPI _conversationSpi;

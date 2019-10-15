@@ -23,7 +23,7 @@ using System.Threading;
 namespace Neo4Net.Io.mem
 {
 
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -51,7 +51,7 @@ namespace Neo4Net.Io.mem
 		 /// <param name="expectedMaxMemory"> The maximum amount of memory that this memory manager is expected to allocate. The
 		 /// actual amount of memory used can end up greater than this value, if some of it gets wasted on alignment padding. </param>
 		 /// <param name="memoryTracker"> memory usage tracker </param>
-		 internal GrabAllocator( long expectedMaxMemory, MemoryAllocationTracker memoryTracker )
+		 internal GrabAllocator( long expectedMaxMemory, IMemoryAllocationTracker memoryTracker )
 		 {
 			  this._grabs = new Grabs( expectedMaxMemory, memoryTracker );
 			  try
@@ -108,10 +108,10 @@ namespace Neo4Net.Io.mem
 			  public readonly Grab NextConflict;
 			  internal readonly long Address;
 			  internal readonly long Limit;
-			  internal readonly MemoryAllocationTracker MemoryTracker;
+			  internal readonly IMemoryAllocationTracker MemoryTracker;
 			  internal long NextPointer;
 
-			  internal Grab( Grab next, long size, MemoryAllocationTracker memoryTracker )
+			  internal Grab( Grab next, long size, IMemoryAllocationTracker memoryTracker )
 			  {
 					this.NextConflict = next;
 					this.Address = UnsafeUtil.allocateMemory( size, memoryTracker );
@@ -120,7 +120,7 @@ namespace Neo4Net.Io.mem
 					NextPointer = Address;
 			  }
 
-			  internal Grab( Grab next, long address, long limit, long nextPointer, MemoryAllocationTracker memoryTracker )
+			  internal Grab( Grab next, long address, long limit, long nextPointer, IMemoryAllocationTracker memoryTracker )
 			  {
 					this.NextConflict = next;
 					this.Address = address;
@@ -181,11 +181,11 @@ namespace Neo4Net.Io.mem
 			  /// </summary>
 			  internal static readonly long GrabSize = getInteger( typeof( GrabAllocator ), "GRAB_SIZE", ( int ) kibiBytes( 512 ) );
 
-			  internal readonly MemoryAllocationTracker MemoryTracker;
+			  internal readonly IMemoryAllocationTracker MemoryTracker;
 			  internal long ExpectedMaxMemory;
 			  internal Grab Head;
 
-			  internal Grabs( long expectedMaxMemory, MemoryAllocationTracker memoryTracker )
+			  internal Grabs( long expectedMaxMemory, IMemoryAllocationTracker memoryTracker )
 			  {
 					this.ExpectedMaxMemory = expectedMaxMemory;
 					this.MemoryTracker = memoryTracker;

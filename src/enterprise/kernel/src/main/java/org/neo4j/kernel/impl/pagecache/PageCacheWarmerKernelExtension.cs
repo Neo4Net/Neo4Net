@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using NeoStoreFileListing = Neo4Net.Kernel.impl.transaction.state.NeoStoreFileListing;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	internal class PageCacheWarmerKernelExtension : LifecycleAdapter
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 private readonly WarmupAvailabilityListener _availabilityListener;
 		 private volatile bool _started;
 
-		 internal PageCacheWarmerKernelExtension( JobScheduler scheduler, DatabaseAvailabilityGuard databaseAvailabilityGuard, PageCache pageCache, FileSystemAbstraction fs, NeoStoreDataSource dataSource, Log log, PageCacheWarmerMonitor monitor, Config config )
+		 internal PageCacheWarmerKernelExtension( IJobScheduler scheduler, DatabaseAvailabilityGuard databaseAvailabilityGuard, PageCache pageCache, FileSystemAbstraction fs, NeoStoreDataSource dataSource, Log log, PageCacheWarmerMonitor monitor, Config config )
 		 {
 			  this._databaseAvailabilityGuard = databaseAvailabilityGuard;
 			  this._dataSource = dataSource;

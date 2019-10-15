@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 {
 
 	using Neo4Net.Functions;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;

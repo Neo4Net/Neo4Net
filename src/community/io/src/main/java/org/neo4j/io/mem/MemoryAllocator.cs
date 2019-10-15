@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Io.mem
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 	/// <summary>
 	/// A MemoryAllocator is simple: it only allocates memory, until it is closed and frees it all in one go.
@@ -27,7 +27,7 @@ namespace Neo4Net.Io.mem
 	public interface MemoryAllocator
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static MemoryAllocator createAllocator(String expectedMemory, org.neo4j.memory.MemoryAllocationTracker memoryTracker)
+//		 static MemoryAllocator createAllocator(String expectedMemory, org.neo4j.memory.IMemoryAllocationTracker memoryTracker)
 	//	 {
 	//		  return new GrabAllocator(ByteUnit.parse(expectedMemory), memoryTracker);
 	//	 }

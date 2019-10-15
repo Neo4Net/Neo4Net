@@ -35,7 +35,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 	using Log = Neo4Net.Logging.Log;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AuthenticationStrategy = Neo4Net.Server.Security.Auth.AuthenticationStrategy;
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using InMemoryUserRepository = Neo4Net.Server.Security.Auth.InMemoryUserRepository;

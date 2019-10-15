@@ -23,24 +23,24 @@
 namespace Neo4Net.backup.impl
 {
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
-	internal class BackupPageCacheContainer : AutoCloseable
+	internal class BackupPageCacheContainer : IDisposable
 	{
 		 private readonly PageCache _pageCache;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
 		 public static BackupPageCacheContainer Of( PageCache pageCache )
 		 {
 			  return Of( pageCache, null );
 		 }
 
-		 public static BackupPageCacheContainer Of( PageCache pageCache, JobScheduler jobScheduler )
+		 public static BackupPageCacheContainer Of( PageCache pageCache, IJobScheduler jobScheduler )
 		 {
 			  return new BackupPageCacheContainer( pageCache, jobScheduler );
 		 }
 
-		 private BackupPageCacheContainer( PageCache pageCache, JobScheduler jobScheduler )
+		 private BackupPageCacheContainer( PageCache pageCache, IJobScheduler jobScheduler )
 		 {
 			  this._pageCache = pageCache;
 			  this._jobScheduler = jobScheduler;

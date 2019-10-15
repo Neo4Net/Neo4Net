@@ -48,7 +48,7 @@ namespace Neo4Net.Storageengine.Api.schema
 	///                 client <--------------
 	///   <-----------
 	/// </summary>
-	public interface IndexProgressor : AutoCloseable
+	public interface IndexProgressor : IDisposable
 	{
 		 /// <summary>
 		 /// Progress through the index until the next accepted entry. Entries are feed to a Client, which

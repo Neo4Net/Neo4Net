@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using ListValue = Neo4Net.Values.@virtual.ListValue;
 
@@ -66,12 +66,12 @@ namespace Neo4Net.Values.Storable
 			  return 31 + ValueConflict;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  return UpdateHash( hashFunction, hash, ValueConflict );
 		 }
 
-		 public static long UpdateHash( HashFunction hashFunction, long hash, char value )
+		 public static long UpdateHash( IHashFunction hashFunction, long hash, char value )
 		 {
 			  hash = hashFunction.Update( hash, value );
 			  return hashFunction.Update( hash, 1 ); // Pretend we're a string of length 1.

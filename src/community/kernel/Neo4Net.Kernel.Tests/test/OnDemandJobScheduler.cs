@@ -25,9 +25,9 @@ namespace Neo4Net.Test
 
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
+	using IJobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
 
-	public class OnDemandJobScheduler : JobSchedulerAdapter
+	public class OnDemandJobScheduler : IJobSchedulerAdapter
 	{
 		 private IList<ThreadStart> _jobs = new CopyOnWriteArrayList<ThreadStart>();
 

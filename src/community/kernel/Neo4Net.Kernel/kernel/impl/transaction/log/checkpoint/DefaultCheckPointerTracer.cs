@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using LogForceEvent = Neo4Net.Kernel.impl.transaction.tracing.LogForceEvent;
 	using LogForceWaitEvent = Neo4Net.Kernel.impl.transaction.tracing.LogForceWaitEvent;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Clocks = Neo4Net.Time.Clocks;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 
 		 private readonly SystemNanoClock _clock;
 		 private readonly Monitor _monitor;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
 		 private readonly AtomicLong _counter = new AtomicLong();
 		 private readonly AtomicLong _accumulatedTotalTimeNanos = new AtomicLong();
@@ -65,11 +65,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			 }
 		 }
 
-		 public DefaultCheckPointerTracer( Monitor monitor, JobScheduler jobScheduler ) : this( Clocks.nanoClock(), monitor, jobScheduler )
+		 public DefaultCheckPointerTracer( Monitor monitor, IJobScheduler jobScheduler ) : this( Clocks.nanoClock(), monitor, jobScheduler )
 		 {
 		 }
 
-		 public DefaultCheckPointerTracer( SystemNanoClock clock, Monitor monitor, JobScheduler jobScheduler )
+		 public DefaultCheckPointerTracer( SystemNanoClock clock, Monitor monitor, IJobScheduler jobScheduler )
 		 {
 			  this._clock = clock;
 			  this._monitor = monitor;

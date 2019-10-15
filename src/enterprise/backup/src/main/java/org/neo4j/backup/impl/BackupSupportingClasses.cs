@@ -28,7 +28,7 @@ namespace Neo4Net.backup.impl
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using CloseableResourceManager = Neo4Net.Kernel.Impl.Api.CloseableResourceManager;
 
-	internal class BackupSupportingClasses : AutoCloseable
+	internal class BackupSupportingClasses : IDisposable
 	{
 		 // Strategies
 		 private readonly BackupDelegator _backupDelegator;
@@ -38,7 +38,7 @@ namespace Neo4Net.backup.impl
 		 // Dependency Helpers
 		 private readonly PageCache _pageCache;
 
-		 internal BackupSupportingClasses( BackupDelegator backupDelegator, BackupProtocolService backupProtocolService, PageCache pageCache, ICollection<AutoCloseable> closeables )
+		 internal BackupSupportingClasses( BackupDelegator backupDelegator, BackupProtocolService backupProtocolService, PageCache pageCache, ICollection<IDisposable> closeables )
 		 {
 			  this._backupDelegator = backupDelegator;
 			  this._backupProtocolService = backupProtocolService;

@@ -26,14 +26,14 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class MuninnPageCacheFixture : PageCacheTestSupport.Fixture<MuninnPageCache>
 	{
 		 internal System.Threading.CountdownEvent BackgroundFlushLatch;
 		 private MemoryAllocator _allocator;
 
-		 public override MuninnPageCache CreatePageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, JobScheduler jobScheduler )
+		 public override MuninnPageCache CreatePageCache( PageSwapperFactory swapperFactory, int maxPages, PageCacheTracer tracer, PageCursorTracerSupplier cursorTracerSupplier, VersionContextSupplier contextSupplier, IJobScheduler jobScheduler )
 		 {
 			  long memory = MuninnPageCache.MemoryRequiredForPages( maxPages );
 			  _allocator = MemoryAllocator.createAllocator( memory.ToString(), new LocalMemoryTracker() );

@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	/// <summary>
 	/// Default implementation of <seealso cref="StageControl"/>
 	/// </summary>
-	public class StageExecution : StageControl, AutoCloseable
+	public class StageExecution : StageControl, IDisposable
 	{
 		 private readonly string _stageName;
 		 private readonly string _part;

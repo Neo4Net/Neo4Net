@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using Test = org.junit.Test;
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
@@ -427,7 +427,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 private readonly IndexSamplingJobFactory _jobFactory = mock( typeof( IndexSamplingJobFactory ) );
 		 private readonly IndexSamplingJobQueue<long> _jobQueue = new IndexSamplingJobQueue<long>( Predicates.alwaysTrue() );
 		 private readonly IndexSamplingJobTracker _tracker = mock( typeof( IndexSamplingJobTracker ) );
-		 private readonly JobScheduler _scheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _scheduler = mock( typeof( IJobScheduler ) );
 		 private readonly IndexMapSnapshotProvider _snapshotProvider = mock( typeof( IndexMapSnapshotProvider ) );
 		 private readonly IndexMap _indexMap = new IndexMap();
 		 private readonly long _indexId = 2;

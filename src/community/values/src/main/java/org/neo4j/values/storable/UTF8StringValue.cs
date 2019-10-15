@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.values.storable.Values.utf8Value;
@@ -154,7 +154,7 @@ namespace Neo4Net.Values.Storable
 			  return hash;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  CodePointCursor cpc = new CodePointCursor( _bytes, _offset );
 			  int len = _offset + _byteLength;

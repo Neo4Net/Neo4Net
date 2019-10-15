@@ -29,7 +29,7 @@ namespace Neo4Net.Memory
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertEquals;
 
-   internal class ThreadSafePeakMemoryAllocationTrackerTest
+   internal class ThreadSafePeakIMemoryAllocationTrackerTest
    {
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void shouldRegisterConcurrentAllocationsAndDeallocations() throws Throwable
@@ -37,7 +37,7 @@ namespace Neo4Net.Memory
       internal virtual void ShouldRegisterConcurrentAllocationsAndDeallocations()
       {
          // given
-         ThreadSafePeakMemoryAllocationTracker tracker = new ThreadSafePeakMemoryAllocationTracker(GlobalMemoryTracker.Instance);
+         ThreadSafePeakIMemoryAllocationTracker tracker = new ThreadSafePeakIMemoryAllocationTracker(GlobalMemoryTracker.Instance);
          Race race = new Race();
          race.AddContestants(10, () =>
          {
@@ -66,7 +66,7 @@ namespace Neo4Net.Memory
       internal virtual void ShouldRegisterPeakMemoryUsage()
       {
          // given
-         ThreadSafePeakMemoryAllocationTracker tracker = new ThreadSafePeakMemoryAllocationTracker(GlobalMemoryTracker.Instance);
+         ThreadSafePeakIMemoryAllocationTracker tracker = new ThreadSafePeakIMemoryAllocationTracker(GlobalMemoryTracker.Instance);
          int threads = 200;
          long[] allocations = new long[threads];
          ThreadLocalRandom random = ThreadLocalRandom.current();

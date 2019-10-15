@@ -22,7 +22,7 @@ namespace Neo4Net.Scheduler
 {
    using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
-   public class JobSchedulerAdapter : LifecycleAdapter, JobScheduler
+   public class IJobSchedulerAdapter : LifecycleAdapter, IJobScheduler
    {
       public virtual string TopLevelGroupName
       {

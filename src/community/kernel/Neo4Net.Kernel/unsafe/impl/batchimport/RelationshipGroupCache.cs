@@ -49,7 +49,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	/// This will go on until the entire node range have been visited.
 	/// </summary>
 	/// <seealso cref= RelationshipGroupDefragmenter </seealso>
-	public class RelationshipGroupCache : IEnumerable<RelationshipGroupRecord>, AutoCloseable, Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable
+	public class RelationshipGroupCache : IEnumerable<RelationshipGroupRecord>, IDisposable, Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable
 	{
 		 public const int GROUP_ENTRY_SIZE = 1 + 3 + 6 * 3;
 

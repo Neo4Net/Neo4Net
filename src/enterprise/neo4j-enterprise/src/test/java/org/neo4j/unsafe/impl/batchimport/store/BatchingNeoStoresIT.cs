@@ -38,7 +38,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
 	using MetricsExtension = Neo4Net.metrics.MetricsExtension;
 	using MetricsSettings = Neo4Net.metrics.MetricsSettings;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
@@ -76,7 +76,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 public virtual void StartBatchingNeoStoreWithMetricsPluginEnabled()
 		 {
 			  Config config = Config.defaults( MetricsSettings.metricsEnabled, "true" );
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores batchingNeoStores = BatchingNeoStores.BatchingNeoStoresConflict(_fileSystem, _databaseDirectory, RecordFormatSelector.defaultFormat(), Configuration.DEFAULT, _logService, AdditionalInitialIds.EMPTY, config, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores batchingNeoStores = BatchingNeoStores.BatchingNeoStoresConflict(_fileSystem, _databaseDirectory, RecordFormatSelector.defaultFormat(), Configuration.DEFAULT, _logService, AdditionalInitialIds.EMPTY, config, jobScheduler) )
 			  {
 					batchingNeoStores.CreateNew();
 			  }
@@ -88,7 +88,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CreateStoreWithNotEmptyInitialIds()
 		 {
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores batchingNeoStores = BatchingNeoStores.BatchingNeoStoresConflict(_fileSystem, _databaseDirectory, RecordFormatSelector.defaultFormat(), Configuration.DEFAULT, _logService, new TestAdditionalInitialIds(), Config.defaults(), jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores batchingNeoStores = BatchingNeoStores.BatchingNeoStoresConflict(_fileSystem, _databaseDirectory, RecordFormatSelector.defaultFormat(), Configuration.DEFAULT, _logService, new TestAdditionalInitialIds(), Config.defaults(), jobScheduler) )
 			  {
 					batchingNeoStores.CreateNew();
 			  }

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Collections.primitive
 {
-	public interface PrimitiveCollection : AutoCloseable
+	public interface PrimitiveCollection : IDisposable
 	{
 		 bool Empty { get; }
 

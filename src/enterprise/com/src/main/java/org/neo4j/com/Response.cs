@@ -34,7 +34,7 @@ namespace Neo4Net.com
 	/// which contains a response value (T), and optionally some sort of side-effect,
 	/// like <seealso cref="TransactionStreamResponse transaction stream"/> or <seealso cref="TransactionObligationResponse transaction obligation"/>.
 	/// </summary>
-	public abstract class Response<T> : AutoCloseable
+	public abstract class Response<T> : IDisposable
 	{
 		 private readonly T _response;
 		 private readonly StoreId _storeId;

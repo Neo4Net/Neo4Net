@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 
 
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 private const int CACHE_SIZE = 4;
 		 private const int MAX_CACHEABLE_BLOCK_SIZE = 128;
 
-		 private readonly MemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
+		 private readonly IMemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
 		 private readonly CachingOffHeapBlockAllocator _allocator = spy( new CachingOffHeapBlockAllocator( MAX_CACHEABLE_BLOCK_SIZE, CACHE_SIZE ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

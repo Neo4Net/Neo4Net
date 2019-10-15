@@ -25,7 +25,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	/// Generic processor of <seealso cref="AbstractBaseRecord"/> from a store.
 	/// </summary>
 	/// @param <T> </param>
-	public interface RecordProcessor<T> : AutoCloseable where T : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
+	public interface RecordProcessor<T> : IDisposable where T : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{
 		 /// <summary>
 		 /// Processes an item.

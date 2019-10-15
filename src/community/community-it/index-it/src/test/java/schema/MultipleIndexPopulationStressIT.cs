@@ -46,7 +46,7 @@ namespace Schema
 	using RecordFormats = Neo4Net.Kernel.impl.store.format.RecordFormats;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
@@ -341,7 +341,7 @@ namespace Schema
 		 {
 			  Config config = Config.defaults();
 			  RecordFormats recordFormats = RecordFormatSelector.selectForConfig( config, NullLogProvider.Instance );
-			  using ( RandomDataInput input = new RandomDataInput( this, count ), JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( RandomDataInput input = new RandomDataInput( this, count ), IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					BatchImporter importer = new ParallelBatchImporter( _directory.databaseLayout(), _fileSystemRule.get(), null, DEFAULT, NullLogService.Instance, ExecutionMonitors.invisible(), EMPTY, config, recordFormats, NO_MONITOR, jobScheduler );
 					importer.DoImport( input );
@@ -358,7 +358,7 @@ namespace Schema
 			  }
 		 }
 
-		 private class RandomDataInput : Input, AutoCloseable
+		 private class RandomDataInput : Input, IDisposable
 		 {
 			 private readonly MultipleIndexPopulationStressIT _outerInstance;
 

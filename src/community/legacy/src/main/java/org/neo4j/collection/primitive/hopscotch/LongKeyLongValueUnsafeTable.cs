@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Collections.primitive.hopscotch
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 	public class LongKeyLongValueUnsafeTable : UnsafeTable<long[]>
 	{
-		 public LongKeyLongValueUnsafeTable( int capacity, MemoryAllocationTracker allocationTracker ) : base( capacity, 16, new long[1], allocationTracker )
+		 public LongKeyLongValueUnsafeTable( int capacity, IMemoryAllocationTracker allocationTracker ) : base( capacity, 16, new long[1], allocationTracker )
 		 {
 		 }
 

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.ha
 	using Test = org.junit.Test;
 
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using OnDemandJobScheduler = Neo4Net.Test.OnDemandJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.ha
 //ORIGINAL LINE: @Test public void skipUpdatePullingSchedulingWithZeroInterval()
 		 public virtual void SkipUpdatePullingSchedulingWithZeroInterval()
 		 {
-			  JobScheduler jobScheduler = mock( typeof( JobScheduler ) );
+			  IJobScheduler jobScheduler = mock( typeof( IJobScheduler ) );
 			  UpdatePullerScheduler pullerScheduler = new UpdatePullerScheduler( jobScheduler, NullLogProvider.Instance, _updatePuller, 0 );
 
 			  // when start puller scheduler - nothing should be scheduled

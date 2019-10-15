@@ -45,8 +45,8 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using JobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private FakeCheckPointer _checkPointer;
 		 private EmbeddedChannel _embeddedChannel;
 		 private CatchupServerProtocol _catchupServerProtocol;
-		 private JobScheduler _jobScheduler = new FakeSingleThreadedJobScheduler();
+		 private IJobScheduler _jobScheduler = new FakeSingleThreadedJobScheduler();
 		 private CheckPointerService _checkPointerService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -288,7 +288,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  }
 		 }
 
-		 internal class FakeSingleThreadedJobScheduler : JobSchedulerAdapter
+		 internal class FakeSingleThreadedJobScheduler : IJobSchedulerAdapter
 		 {
 			  public override JobHandle Schedule( Group group, ThreadStart job )
 			  {

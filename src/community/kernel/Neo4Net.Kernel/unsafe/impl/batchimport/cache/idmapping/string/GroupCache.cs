@@ -33,7 +33,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	/// <summary>
 	/// Cache for keeping nodeId --> groupId mapping.
 	/// </summary>
-	public interface GroupCache : AutoCloseable
+	public interface GroupCache : IDisposable
 	{
 		 void Set( long nodeId, int groupId );
 

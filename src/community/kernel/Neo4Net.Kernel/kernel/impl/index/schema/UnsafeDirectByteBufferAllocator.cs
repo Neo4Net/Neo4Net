@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using NativeMemoryAllocationRefusedError = Neo4Net.@unsafe.Impl.Internal.Dragons.NativeMemoryAllocationRefusedError;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 	using Preconditions = Neo4Net.Utils.Preconditions;
@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// </summary>
 	public class UnsafeDirectByteBufferAllocator : ByteBufferFactory.Allocator
 	{
-		 private readonly MemoryAllocationTracker _memoryAllocationTracker;
+		 private readonly IMemoryAllocationTracker _memoryAllocationTracker;
 		 private readonly IList<Allocation> _allocations = new List<Allocation>();
 		 private bool _closed;
 
-		 public UnsafeDirectByteBufferAllocator( MemoryAllocationTracker memoryAllocationTracker )
+		 public UnsafeDirectByteBufferAllocator( IMemoryAllocationTracker memoryAllocationTracker )
 		 {
 			  this._memoryAllocationTracker = memoryAllocationTracker;
 		 }

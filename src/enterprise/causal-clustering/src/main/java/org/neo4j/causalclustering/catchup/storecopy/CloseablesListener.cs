@@ -31,11 +31,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 	using IOUtils = Neo4Net.Io.IOUtils;
 
-	internal class CloseablesListener : AutoCloseable, GenericFutureListener<Future<Void>>
+	internal class CloseablesListener : IDisposable, GenericFutureListener<Future<Void>>
 	{
-		 private readonly IList<AutoCloseable> _closeables = new List<AutoCloseable>();
+		 private readonly IList<IDisposable> _closeables = new List<IDisposable>();
 
-		 internal virtual T Add<T>( T closeable ) where T : AutoCloseable
+		 internal virtual T Add<T>( T closeable ) where T : IDisposable
 		 {
 			  if ( closeable == null )
 			  {

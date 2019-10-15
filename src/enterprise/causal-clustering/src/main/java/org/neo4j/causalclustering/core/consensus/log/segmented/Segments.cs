@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	/// <summary>
 	/// Keeps track of all the segments that the RAFT log consists of.
 	/// </summary>
-	internal class Segments : AutoCloseable
+	internal class Segments : IDisposable
 	{
 		 private readonly OpenEndRangeMap<long, SegmentFile> _rangeMap = new OpenEndRangeMap<long, SegmentFile>();
 		 private readonly IList<SegmentFile> _allSegments;

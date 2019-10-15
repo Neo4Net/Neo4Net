@@ -55,7 +55,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 	using Log = Neo4Net.Logging.Log;
 	using Logger = Neo4Net.Logging.Logger;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using UsageData = Neo4Net.Udc.UsageData;
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
@@ -93,7 +93,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 
 		 public abstract DatabaseEditionContext CreateDatabaseContext( string databaseName );
 
-		 protected internal virtual FileSystemWatcherService CreateFileSystemWatcherService( FileSystemAbstraction fileSystem, File databaseDirectory, LogService logging, JobScheduler jobScheduler, Config config, System.Predicate<string> fileNameFilter )
+		 protected internal virtual FileSystemWatcherService CreateFileSystemWatcherService( FileSystemAbstraction fileSystem, File databaseDirectory, LogService logging, IJobScheduler jobScheduler, Config config, System.Predicate<string> fileNameFilter )
 		 {
 			  if ( !config.Get( GraphDatabaseSettings.filewatcher_enabled ) )
 			  {

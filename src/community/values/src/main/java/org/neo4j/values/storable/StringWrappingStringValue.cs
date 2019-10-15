@@ -24,7 +24,7 @@ using System.Text;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 	/// <summary>
 	/// Implementation of StringValue that wraps a `java.lang.String` and
@@ -66,12 +66,12 @@ namespace Neo4Net.Values.Storable
 			  return h;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  return UpdateHash( hashFunction, hash, _value );
 		 }
 
-		 public static long UpdateHash( HashFunction hashFunction, long hash, string value )
+		 public static long UpdateHash( IHashFunction hashFunction, long hash, string value )
 		 {
 			  //NOTE that we are basing the hash code on code points instead of char[] values.
 			  int length = value.Length;

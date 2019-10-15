@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 
 		 private readonly Monitors _monitors = new Monitors();
 		 private FileSystemAbstraction _fs;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(0) public String version;

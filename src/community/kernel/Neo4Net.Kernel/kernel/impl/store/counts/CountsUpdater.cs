@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 
-	internal sealed class CountsUpdater : Neo4Net.Kernel.Impl.Api.CountsAccessor_Updater, Neo4Net.Kernel.Impl.Api.CountsAccessor_IndexStatsUpdater, AutoCloseable
+	internal sealed class CountsUpdater : Neo4Net.Kernel.Impl.Api.CountsAccessor_Updater, Neo4Net.Kernel.Impl.Api.CountsAccessor_IndexStatsUpdater, IDisposable
 	{
 		 private readonly EntryUpdater<CountsKey> _updater;
 

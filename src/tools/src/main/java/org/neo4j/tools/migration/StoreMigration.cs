@@ -38,7 +38,7 @@ namespace Neo4Net.tools.migration
 	using DatabaseKernelExtensions = Neo4Net.Kernel.extension.DatabaseKernelExtensions;
 	using DefaultExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.DefaultExplicitIndexProvider;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
 	using SimpleKernelContext = Neo4Net.Kernel.impl.spi.SimpleKernelContext;
 	using RecordFormatSelector = Neo4Net.Kernel.impl.store.format.RecordFormatSelector;
@@ -62,7 +62,7 @@ namespace Neo4Net.tools.migration
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using KernelExtensionFailureStrategies = Neo4Net.Kernel.extension.KernelExtensionFailureStrategies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
@@ -123,7 +123,7 @@ namespace Neo4Net.tools.migration
 			  DefaultExplicitIndexProvider migrationIndexProvider = new DefaultExplicitIndexProvider();
 
 			  Log log = userLogProvider.GetLog( typeof( StoreMigration ) );
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
+			  IJobScheduler jobScheduler = IJobSchedulerFactory.createInitializedScheduler();
 			  try
 			  {
 					  using ( PageCache pageCache = createPageCache( fs, config, jobScheduler ) )

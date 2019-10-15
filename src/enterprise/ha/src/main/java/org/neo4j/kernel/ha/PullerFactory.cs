@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.ha
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Helper factory that provide more convenient way of construction and dependency management for update pulling
@@ -51,14 +51,14 @@ namespace Neo4Net.Kernel.ha
 		 private readonly InstanceId _serverId;
 		 private readonly InvalidEpochExceptionHandler _invalidEpochHandler;
 		 private readonly long _pullInterval;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly DependencyResolver _dependencyResolver;
 		 private readonly AvailabilityGuard _availabilityGuard;
 		 private readonly HighAvailabilityMemberStateMachine _memberStateMachine;
 		 private readonly Monitors _monitors;
 		 private readonly string _activeDatabaseName;
 
-		 public PullerFactory( RequestContextFactory requestContextFactory, Master master, LastUpdateTime lastUpdateTime, LogProvider logging, InstanceId serverId, InvalidEpochExceptionHandler invalidEpochHandler, long pullInterval, JobScheduler jobScheduler, DependencyResolver dependencyResolver, AvailabilityGuard availabilityGuard, HighAvailabilityMemberStateMachine memberStateMachine, Monitors monitors, Config config )
+		 public PullerFactory( RequestContextFactory requestContextFactory, Master master, LastUpdateTime lastUpdateTime, LogProvider logging, InstanceId serverId, InvalidEpochExceptionHandler invalidEpochHandler, long pullInterval, IJobScheduler jobScheduler, DependencyResolver dependencyResolver, AvailabilityGuard availabilityGuard, HighAvailabilityMemberStateMachine memberStateMachine, Monitors monitors, Config config )
 		 {
 
 			  this._requestContextFactory = requestContextFactory;

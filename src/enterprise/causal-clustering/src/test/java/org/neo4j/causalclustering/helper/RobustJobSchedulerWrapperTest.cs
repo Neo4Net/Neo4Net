@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.helper
 	using Log = Neo4Net.Logging.Log;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.helper
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.neo4j.kernel.lifecycle.LifeRule schedulerLife = new org.neo4j.kernel.lifecycle.LifeRule(true);
 		 public LifeRule SchedulerLife = new LifeRule( true );
-		 private readonly JobScheduler _actualScheduler = createInitializedScheduler();
+		 private readonly IJobScheduler _actualScheduler = createInitializedScheduler();
 
 		 private readonly Log _log = mock( typeof( Log ) );
 

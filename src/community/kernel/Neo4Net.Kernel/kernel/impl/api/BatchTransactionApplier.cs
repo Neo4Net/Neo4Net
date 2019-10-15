@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	/// }
 	/// </pre>
 	/// </summary>
-	public interface BatchTransactionApplier : AutoCloseable
+	public interface BatchTransactionApplier : IDisposable
 	{
 		 /// <summary>
 		 /// Get the suitable <seealso cref="TransactionApplier"/> for a given transaction, and the store which this {@link

@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
 	using Registers = Neo4Net.Register.Registers;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using EntityType = Neo4Net.Storageengine.Api.EntityType;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private volatile State _state = State.NotStarted;
 
-		 internal IndexingService( IndexProxyCreator indexProxyCreator, IndexProviderMap providerMap, IndexMapReference indexMapRef, IndexStoreView storeView, IEnumerable<SchemaRule> schemaRules, IndexSamplingController samplingController, TokenNameLookup tokenNameLookup, JobScheduler scheduler, SchemaState schemaState, MultiPopulatorFactory multiPopulatorFactory, LogProvider internalLogProvider, LogProvider userLogProvider, Monitor monitor, bool readOnly )
+		 internal IndexingService( IndexProxyCreator indexProxyCreator, IndexProviderMap providerMap, IndexMapReference indexMapRef, IndexStoreView storeView, IEnumerable<SchemaRule> schemaRules, IndexSamplingController samplingController, TokenNameLookup tokenNameLookup, IJobScheduler scheduler, SchemaState schemaState, MultiPopulatorFactory multiPopulatorFactory, LogProvider internalLogProvider, LogProvider userLogProvider, Monitor monitor, bool readOnly )
 		 {
 			  this._indexProxyCreator = indexProxyCreator;
 			  this._providerMap = providerMap;

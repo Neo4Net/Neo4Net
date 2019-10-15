@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 	public class CheckPointScheduler : LifecycleAdapter
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 
 		 private readonly CheckPointer _checkPointer;
 		 private readonly IOLimiter _ioLimiter;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly long _recurringPeriodMillis;
 		 private readonly DatabaseHealth _health;
 		 private readonly Exception[] _failures = new Exception[MaxConsecutiveFailuresTolerance];
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			return !_checkPointing;
 		 };
 
-		 public CheckPointScheduler( CheckPointer checkPointer, IOLimiter ioLimiter, JobScheduler scheduler, long recurringPeriodMillis, DatabaseHealth health )
+		 public CheckPointScheduler( CheckPointer checkPointer, IOLimiter ioLimiter, IJobScheduler scheduler, long recurringPeriodMillis, DatabaseHealth health )
 		 {
 			  this._checkPointer = checkPointer;
 			  this._ioLimiter = ioLimiter;

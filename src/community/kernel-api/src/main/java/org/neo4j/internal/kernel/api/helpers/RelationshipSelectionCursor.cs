@@ -22,7 +22,7 @@ namespace Neo4Net.Internal.Kernel.Api.helpers
 	/// <summary>
 	/// Helper cursor for traversing specific types and directions.
 	/// </summary>
-	public interface RelationshipSelectionCursor : AutoCloseable
+	public interface RelationshipSelectionCursor : IDisposable
 	{
 		 bool Next();
 

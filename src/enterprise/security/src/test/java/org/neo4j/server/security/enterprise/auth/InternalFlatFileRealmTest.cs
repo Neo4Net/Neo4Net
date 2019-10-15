@@ -46,7 +46,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using User = Neo4Net.Kernel.impl.security.User;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AuthenticationStrategy = Neo4Net.Server.Security.Auth.AuthenticationStrategy;
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using InMemoryUserRepository = Neo4Net.Server.Security.Auth.InMemoryUserRepository;
@@ -368,7 +368,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  internal bool AuthenticationFlag;
 			  internal bool AuthorizationFlag;
 
-			  internal TestRealm( InternalFlatFileRealmTest outerInstance, UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, JobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : base( userRepository, roleRepository, passwordPolicy, authenticationStrategy, jobScheduler, initialUserRepository, defaultAdminRepository )
+			  internal TestRealm( InternalFlatFileRealmTest outerInstance, UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, IJobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : base( userRepository, roleRepository, passwordPolicy, authenticationStrategy, jobScheduler, initialUserRepository, defaultAdminRepository )
 			  {
 				  this._outerInstance = outerInstance;
 			  }

@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using NullLog = Neo4Net.Logging.NullLog;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
 	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;

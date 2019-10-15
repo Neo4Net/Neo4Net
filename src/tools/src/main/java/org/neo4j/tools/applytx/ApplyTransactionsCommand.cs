@@ -46,7 +46,7 @@ namespace Neo4Net.tools.applytx
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
 	using ArgsCommand = Neo4Net.tools.console.input.ArgsCommand;
 
@@ -111,7 +111,7 @@ namespace Neo4Net.tools.applytx
 			  LifeSupport life = new LifeSupport();
 			  try
 			  {
-					  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
+					  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fileSystem, jobScheduler) )
 					  {
 						LogicalTransactionStore source = life.Add( new ReadOnlyTransactionStore( pageCache, fileSystem, DatabaseLayout.of( fromPath ), Config.defaults(), new Monitors() ) );
 						life.Start();

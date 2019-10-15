@@ -166,8 +166,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void verifyOtherIsClosedOnSingleThrow(AutoCloseable failingCloseable, AutoCloseable fusionCloseable, AutoCloseable... successfulCloseables) throws Exception
-		 internal static void VerifyOtherIsClosedOnSingleThrow( AutoCloseable failingCloseable, AutoCloseable fusionCloseable, params AutoCloseable[] successfulCloseables )
+//ORIGINAL LINE: static void verifyOtherIsClosedOnSingleThrow(IDisposable failingCloseable, IDisposable fusionCloseable, IDisposable... successfulCloseables) throws Exception
+		 internal static void VerifyOtherIsClosedOnSingleThrow( IDisposable failingCloseable, IDisposable fusionCloseable, params IDisposable[] successfulCloseables )
 		 {
 			  UncheckedIOException failure = new UncheckedIOException( new IOException( "fail" ) );
 			  doThrow( failure ).when( failingCloseable ).close();
@@ -183,15 +183,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 			  }
 
 			  // then
-			  foreach ( AutoCloseable successfulCloseable in successfulCloseables )
+			  foreach ( IDisposable successfulCloseable in successfulCloseables )
 			  {
 					verify( successfulCloseable, Mockito.times( 1 ) ).close();
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void verifyFusionCloseThrowOnSingleCloseThrow(AutoCloseable failingCloseable, AutoCloseable fusionCloseable) throws Exception
-		 internal static void VerifyFusionCloseThrowOnSingleCloseThrow( AutoCloseable failingCloseable, AutoCloseable fusionCloseable )
+//ORIGINAL LINE: static void verifyFusionCloseThrowOnSingleCloseThrow(IDisposable failingCloseable, IDisposable fusionCloseable) throws Exception
+		 internal static void VerifyFusionCloseThrowOnSingleCloseThrow( IDisposable failingCloseable, IDisposable fusionCloseable )
 		 {
 			  UncheckedIOException expectedFailure = new UncheckedIOException( new IOException( "fail" ) );
 			  doThrow( expectedFailure ).when( failingCloseable ).close();
@@ -207,8 +207,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void verifyFusionCloseThrowIfAllThrow(AutoCloseable fusionCloseable, AutoCloseable... autoCloseables) throws Exception
-		 internal static void VerifyFusionCloseThrowIfAllThrow( AutoCloseable fusionCloseable, params AutoCloseable[] autoCloseables )
+//ORIGINAL LINE: static void verifyFusionCloseThrowIfAllThrow(IDisposable fusionCloseable, IDisposable... autoCloseables) throws Exception
+		 internal static void VerifyFusionCloseThrowIfAllThrow( IDisposable fusionCloseable, params IDisposable[] autoCloseables )
 		 {
 			  // given
 			  UncheckedIOException[] failures = new UncheckedIOException[autoCloseables.Length];

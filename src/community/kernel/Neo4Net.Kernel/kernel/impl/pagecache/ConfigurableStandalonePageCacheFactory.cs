@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/*
 	 * This class is an helper to allow to construct properly a page cache in the few places we need it without all
@@ -45,12 +45,12 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 {
 		 }
 
-		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, JobScheduler jobScheduler )
+		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, IJobScheduler jobScheduler )
 		 {
 			  return CreatePageCache( fileSystem, PageCacheTracer.NULL, DefaultPageCursorTracerSupplier.INSTANCE, Config.defaults(), EmptyVersionContextSupplier.EMPTY, jobScheduler );
 		 }
 
-		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, JobScheduler jobScheduler )
+		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, Config config, IJobScheduler jobScheduler )
 		 {
 			  return CreatePageCache( fileSystem, PageCacheTracer.NULL, DefaultPageCursorTracerSupplier.INSTANCE, config, EmptyVersionContextSupplier.EMPTY, jobScheduler );
 		 }
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 /// <param name="versionContextSupplier"> version context supplier </param>
 		 /// <param name="jobScheduler"> page cache job scheduler </param>
 		 /// <returns> created page cache instance </returns>
-		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, Config config, VersionContextSupplier versionContextSupplier, JobScheduler jobScheduler )
+		 public static PageCache CreatePageCache( FileSystemAbstraction fileSystem, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, Config config, VersionContextSupplier versionContextSupplier, IJobScheduler jobScheduler )
 		 {
 			  config.AugmentDefaults( GraphDatabaseSettings.pagecache_memory, "8M" );
 			  ZoneId logTimeZone = config.Get( GraphDatabaseSettings.db_timezone ).ZoneId;

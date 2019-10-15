@@ -45,7 +45,7 @@ namespace Neo4Net.tools.rawstorereader
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using HexString = Neo4Net.Strings.HexString;
 	using TransactionLogUtils = Neo4Net.tools.util.TransactionLogUtils;
 

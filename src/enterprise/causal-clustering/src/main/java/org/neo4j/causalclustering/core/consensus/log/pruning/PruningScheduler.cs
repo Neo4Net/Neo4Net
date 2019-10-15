@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.pruning
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.pruning
 	public class PruningScheduler : LifecycleAdapter
 	{
 		 private readonly RaftLogPruner _logPruner;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly long _recurringPeriodMillis;
 		 private readonly ThreadStart job = () =>
 		 {
@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.pruning
 			return !_checkPointing;
 		 };
 
-		 public PruningScheduler( RaftLogPruner logPruner, JobScheduler scheduler, long recurringPeriodMillis, LogProvider logProvider )
+		 public PruningScheduler( RaftLogPruner logPruner, IJobScheduler scheduler, long recurringPeriodMillis, LogProvider logProvider )
 		 {
 			  this._logPruner = logPruner;
 			  this._scheduler = scheduler;

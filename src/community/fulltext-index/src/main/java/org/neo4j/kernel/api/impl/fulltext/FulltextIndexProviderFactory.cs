@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Log = Neo4Net.Logging.Log;
 	using Logger = Neo4Net.Logging.Logger;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 			  FileSystemAbstraction FileSystem();
 
-			  JobScheduler Scheduler();
+			  IJobScheduler Scheduler();
 
 			  TokenHolders TokenHolders();
 
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  FileSystemAbstraction fileSystemAbstraction = dependencies.FileSystem();
 			  DirectoryFactory directoryFactory = directoryFactory( ephemeral );
 			  OperationalMode operationalMode = context.DatabaseInfo().OperationalMode;
-			  JobScheduler scheduler = dependencies.Scheduler();
+			  IJobScheduler scheduler = dependencies.Scheduler();
 			  IndexDirectoryStructure.Factory directoryStructureFactory = SubProviderDirectoryStructure( context.Directory() );
 			  TokenHolders tokenHolders = dependencies.TokenHolders();
 			  Log log = dependencies.LogService.getInternalLog( typeof( FulltextIndexProvider ) );

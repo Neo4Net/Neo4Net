@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// Component used by <seealso cref="KernelStatement"/> to acquire <seealso cref="pessimistic() pessimistic"/> and
 	/// <seealso cref="optimistic() optimistic"/> locks.
 	/// </summary>
-	public interface StatementLocks : AutoCloseable
+	public interface StatementLocks : IDisposable
 	{
 		 /// <summary>
 		 /// Get <seealso cref="Locks.Client"/> responsible for pessimistic locks. Such locks will be grabbed right away.

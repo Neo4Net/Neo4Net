@@ -20,10 +20,10 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 	/// <summary>
-	/// Enriches AutoCloseable with isClosed(). This method can be used to query whether a resource was closed or
+	/// Enriches IDisposable with isClosed(). This method can be used to query whether a resource was closed or
 	/// to make sure that it is only closed once.
 	/// </summary>
-	public interface AutoCloseablePlus : AutoCloseable
+	public interface IDisposablePlus : IDisposable
 	{
 		 void Close();
 

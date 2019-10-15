@@ -57,7 +57,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	/// a phase of making changes using <seealso cref="getAndPutRelationship(long, int, Direction, long, bool)"/> and e.g
 	/// <seealso cref="visitChangedNodes(NodeChangeVisitor, int)"/>.
 	/// </summary>
-	public class NodeRelationshipCache : MemoryStatsVisitor_Visitable, AutoCloseable
+	public class NodeRelationshipCache : MemoryStatsVisitor_Visitable, IDisposable
 	{
 		 private const int CHUNK_SIZE = 1_000_000;
 		 private const long EMPTY = -1;
@@ -538,7 +538,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 
 		 public static readonly GroupVisitor NoGroupVisitor = ( nodeId, typeId, @out, @in, loop ) => -1;
 
-		 private class RelGroupCache : AutoCloseable, MemoryStatsVisitor_Visitable
+		 private class RelGroupCache : IDisposable, MemoryStatsVisitor_Visitable
 		 {
 			 private readonly NodeRelationshipCache _outerInstance;
 

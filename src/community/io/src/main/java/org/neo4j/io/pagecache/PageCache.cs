@@ -31,7 +31,7 @@ namespace Neo4Net.Io.pagecache
 	/// eviction strategies, trying to keep "hot" pages in RAM.
 	/// </para>
 	/// </summary>
-	public interface PageCache : AutoCloseable
+	public interface PageCache : IDisposable
 	{
 		 /// <summary>
 		 /// The default <seealso cref="pageSize()"/>.

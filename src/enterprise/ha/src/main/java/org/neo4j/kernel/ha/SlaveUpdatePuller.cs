@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.ha
 	using CancelListener = Neo4Net.Scheduler.CancelListener;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -152,11 +152,11 @@ namespace Neo4Net.Kernel.ha
 		 private readonly AvailabilityGuard _availabilityGuard;
 		 private readonly InvalidEpochExceptionHandler _invalidEpochHandler;
 		 private readonly Monitor _monitor;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private volatile Thread _updatePullingThread;
 		 private volatile BinaryLatch _shutdownLatch; // Store under synchronised(this), load in update puller thread
 
-		 internal SlaveUpdatePuller( RequestContextFactory requestContextFactory, Master master, LastUpdateTime lastUpdateTime, LogProvider logging, InstanceId instanceId, AvailabilityGuard availabilityGuard, InvalidEpochExceptionHandler invalidEpochHandler, JobScheduler jobScheduler, Monitor monitor )
+		 internal SlaveUpdatePuller( RequestContextFactory requestContextFactory, Master master, LastUpdateTime lastUpdateTime, LogProvider logging, InstanceId instanceId, AvailabilityGuard availabilityGuard, InvalidEpochExceptionHandler invalidEpochHandler, IJobScheduler jobScheduler, Monitor monitor )
 		 {
 			  this._requestContextFactory = requestContextFactory;
 			  this._master = master;

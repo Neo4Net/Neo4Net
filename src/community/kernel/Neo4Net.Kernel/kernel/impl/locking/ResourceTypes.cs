@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using MutableIntObjectMap = org.eclipse.collections.api.map.primitive.MutableIntObjectMap;
 	using IntObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap;
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Strings = Neo4Net.Helpers.Strings;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using LockWaitStrategies = Neo4Net.Kernel.impl.util.concurrent.LockWaitStrategies;
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.impl.locking
 
 		 private static int Hash( long value )
 		 {
-			  return _indexEntryHash_2_2_0.hashSingleValueToInt( value );
+			  return _indexEntryHash_2_2_0.HashSingleValueToInt( value );
 		 }
 
 		 public static long GraphPropertyResource()
@@ -196,7 +196,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 /// future release, where we will also upgrade the HA protocol version. Currently this is indicated by the "4_x"
 		 /// name suffix, but any version where the HA protocol version changes anyway would be just as good an opportunity.
 		 /// </summary>
-		 /// <seealso cref= HashFunction#incrementalXXH64() </seealso>
+		 /// <seealso cref= HashFunctionHelper#IncrementalXXH64() </seealso>
 		 internal static long IndexEntryResourceId_4X( long labelId, Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate[] predicates )
 		 {
 			  long hash = _indexEntryHash_4X.initialise( 0x0123456789abcdefL );

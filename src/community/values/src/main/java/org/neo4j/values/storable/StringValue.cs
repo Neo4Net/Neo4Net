@@ -24,7 +24,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using ListValue = Neo4Net.Values.@virtual.ListValue;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
@@ -173,7 +173,7 @@ namespace Neo4Net.Values.Storable
 				  return 0;
 			 }
 
-			 public override long updateHash( HashFunction hashFunction, long hash )
+			 public override long updateHash( IHashFunction hashFunction, long hash )
 			 {
 				  return hashFunction.Update( hash, 0 ); // Mix in our length; a single zero.
 			 }

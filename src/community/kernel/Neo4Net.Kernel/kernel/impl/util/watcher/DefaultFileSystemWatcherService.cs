@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util.watcher
 
 	using FileWatcher = Neo4Net.Io.fs.watcher.FileWatcher;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Factory used for construction of proper adaptor for available <seealso cref="FileWatcher"/>.
@@ -34,13 +34,13 @@ namespace Neo4Net.Kernel.impl.util.watcher
 	/// </summary>
 	public class DefaultFileSystemWatcherService : FileSystemWatcherService
 	{
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly FileWatcher _fileWatcher;
 		 private readonly FileSystemEventWatcher _eventWatcher;
 		 private ThreadFactory _fileWatchers;
 		 private Thread _watcher;
 
-		 public DefaultFileSystemWatcherService( JobScheduler jobScheduler, FileWatcher fileWatcher )
+		 public DefaultFileSystemWatcherService( IJobScheduler jobScheduler, FileWatcher fileWatcher )
 		 {
 			  this._jobScheduler = jobScheduler;
 			  this._fileWatcher = fileWatcher;

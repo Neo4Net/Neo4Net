@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// Represents the process of turning the state of a committing transaction into a sequence of commands, and appending
 	/// them to the transaction log.
 	/// </summary>
-	public interface LogAppendEvent : LogForceEvents, AutoCloseable
+	public interface LogAppendEvent : LogForceEvents, IDisposable
 	{
 
 		 /// <summary>

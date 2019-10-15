@@ -32,7 +32,7 @@ namespace Neo4Net.Bolt.runtime
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.util.concurrent.Futures.failedFuture;
@@ -41,7 +41,7 @@ namespace Neo4Net.Bolt.runtime
 	{
 		 private readonly string _connector;
 		 private readonly ExecutorFactory _executorFactory;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly Log _log;
 		 private readonly ConcurrentDictionary<string, BoltConnection> _activeConnections = new ConcurrentDictionary<string, BoltConnection>();
 		 private readonly ConcurrentDictionary<string, CompletableFuture<bool>> _activeWorkItems = new ConcurrentDictionary<string, CompletableFuture<bool>>();
@@ -53,7 +53,7 @@ namespace Neo4Net.Bolt.runtime
 
 		 private ExecutorService _threadPool;
 
-		 public ExecutorBoltScheduler( string connector, ExecutorFactory executorFactory, JobScheduler scheduler, LogService logService, int corePoolSize, int maxPoolSize, Duration keepAlive, int queueSize, ExecutorService forkJoinPool )
+		 public ExecutorBoltScheduler( string connector, ExecutorFactory executorFactory, IJobScheduler scheduler, LogService logService, int corePoolSize, int maxPoolSize, Duration keepAlive, int queueSize, ExecutorService forkJoinPool )
 		 {
 			  this._connector = connector;
 			  this._executorFactory = executorFactory;

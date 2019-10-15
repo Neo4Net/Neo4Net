@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.monitoring
 	using VmPauseInfo = Neo4Net.Kernel.monitoring.VmPauseMonitor.VmPauseInfo;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.monitoring
 //ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Action<org.neo4j.kernel.monitoring.VmPauseMonitor.VmPauseInfo> listener = mock(System.Action.class);
 		 private readonly System.Action<VmPauseInfo> _listener = mock( typeof( System.Action ) );
 		 private readonly JobHandle _jobHandle = mock( typeof( JobHandle ) );
-		 private readonly JobScheduler _jobScheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );
 		 private VmPauseMonitor _monitor;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

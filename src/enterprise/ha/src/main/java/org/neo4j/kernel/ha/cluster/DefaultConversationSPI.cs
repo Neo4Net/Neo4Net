@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Default implementation of <seealso cref="ConversationSPI"/> used on master in HA setup.
@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.ha.cluster
 	public class DefaultConversationSPI : ConversationSPI
 	{
 		 private readonly Locks _locks;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
-		 public DefaultConversationSPI( Locks locks, JobScheduler jobScheduler )
+		 public DefaultConversationSPI( Locks locks, IJobScheduler jobScheduler )
 		 {
 			  this._locks = locks;
 			  this._jobScheduler = jobScheduler;

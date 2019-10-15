@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.runtime
 	/// Streams contains nominally uniform records meaning each record has the same set of named fields.
 	/// However, the contents of these fields may vary by both type and value and may be null.
 	/// </summary>
-	public interface BoltResult : AutoCloseable
+	public interface BoltResult : IDisposable
 	{
 		 /// <summary>
 		 /// Positional names for all fields in every record of this stream. </summary>

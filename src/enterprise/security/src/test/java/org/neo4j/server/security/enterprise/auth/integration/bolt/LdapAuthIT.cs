@@ -599,7 +599,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  ModifyLDAPAttribute( username, credentials, "gidnumber", gid );
 		 }
 
-		 private class DirectoryServiceWaitOnSearch : AutoCloseable
+		 private class DirectoryServiceWaitOnSearch : IDisposable
 		 {
 			 private readonly LdapAuthIT _outerInstance;
 
@@ -663,7 +663,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  }
 		 }
 
-		 private class DirectoryServiceFailOnSearch : AutoCloseable
+		 private class DirectoryServiceFailOnSearch : IDisposable
 		 {
 			 private readonly LdapAuthIT _outerInstance;
 

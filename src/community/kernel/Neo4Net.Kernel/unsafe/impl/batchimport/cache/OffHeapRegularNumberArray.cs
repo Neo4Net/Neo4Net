@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 	/// <summary>
 	/// Base class for common functionality for any <seealso cref="NumberArray"/> where the data lives off-heap.
@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	{
 		 protected internal readonly int Shift;
 
-		 protected internal OffHeapRegularNumberArray( long length, int shift, long @base, MemoryAllocationTracker allocationTracker ) : base( length, 1 << shift, @base, allocationTracker )
+		 protected internal OffHeapRegularNumberArray( long length, int shift, long @base, IMemoryAllocationTracker allocationTracker ) : base( length, 1 << shift, @base, allocationTracker )
 		 {
 			  this.Shift = shift;
 		 }

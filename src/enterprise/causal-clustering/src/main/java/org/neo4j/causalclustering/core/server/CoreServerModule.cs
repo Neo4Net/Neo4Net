@@ -75,7 +75,7 @@ namespace Neo4Net.causalclustering.core.server
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.core.CausalClusteringSettings.transaction_listen_address;
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.core.server
 		 private readonly CoreSnapshotService _snapshotService;
 		 private readonly CoreStateDownloaderService _downloadService;
 		 private readonly Config _config;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly LogProvider _logProvider;
 		 private readonly LogProvider _userLogProvider;
 		 private readonly PlatformModule _platformModule;

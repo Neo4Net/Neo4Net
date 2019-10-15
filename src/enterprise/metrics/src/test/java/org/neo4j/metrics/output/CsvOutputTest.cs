@@ -39,7 +39,7 @@ namespace Neo4Net.metrics.output
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using NullLog = Neo4Net.Logging.NullLog;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using OnDemandJobScheduler = Neo4Net.Test.OnDemandJobScheduler;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
@@ -72,7 +72,7 @@ namespace Neo4Net.metrics.output
 		 private readonly LifeRule _life = new LifeRule();
 		 private readonly TestDirectory _directory = TestDirectory.testDirectory();
 		 private readonly DefaultFileSystemRule _fileSystemRule = new DefaultFileSystemRule();
-		 private readonly JobScheduler _jobScheduler = new OnDemandJobScheduler();
+		 private readonly IJobScheduler _jobScheduler = new OnDemandJobScheduler();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(directory).around(fileSystemRule).around(life);

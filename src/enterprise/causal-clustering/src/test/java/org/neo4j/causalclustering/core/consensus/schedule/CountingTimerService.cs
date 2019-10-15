@@ -27,13 +27,13 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class CountingTimerService : TimerService
 	{
 		 private readonly IDictionary<string, long> _counts = new Dictionary<string, long>();
 
-		 public CountingTimerService( JobScheduler scheduler, LogProvider logProvider ) : base( scheduler, logProvider )
+		 public CountingTimerService( IJobScheduler scheduler, LogProvider logProvider ) : base( scheduler, logProvider )
 		 {
 		 }
 

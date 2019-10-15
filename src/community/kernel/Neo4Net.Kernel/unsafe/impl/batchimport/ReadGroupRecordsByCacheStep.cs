@@ -58,7 +58,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  }
 		 }
 
-		 private class NodeVisitor : NodeRelationshipCache.NodeChangeVisitor, AutoCloseable, NodeRelationshipCache.GroupVisitor, System.Func<RelationshipGroupRecord[]>
+		 private class NodeVisitor : NodeRelationshipCache.NodeChangeVisitor, IDisposable, NodeRelationshipCache.GroupVisitor, System.Func<RelationshipGroupRecord[]>
 		 {
 			 internal bool InstanceFieldsInitialized = false;
 

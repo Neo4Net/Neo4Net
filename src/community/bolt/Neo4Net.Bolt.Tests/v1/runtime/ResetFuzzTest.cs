@@ -55,7 +55,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -117,7 +117,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 /// We track the number of un-closed transactions, and fail if we ever leak one </summary>
 		 private readonly AtomicLong _liveTransactions = new AtomicLong();
 		 private readonly Monitors _monitors = new Monitors();
-		 private JobScheduler _scheduler;
+		 private IJobScheduler _scheduler;
 		 private readonly Config _config = CreateConfig();
 		 private BoltSchedulerProvider _boltSchedulerProvider;
 		 private readonly Clock _clock = Clock.systemUTC();

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.util
 	using FileWatcher = Neo4Net.Io.fs.watcher.FileWatcher;
 	using SilentFileWatcher = Neo4Net.Io.fs.watcher.SilentFileWatcher;
 	using DefaultFileSystemWatcherService = Neo4Net.Kernel.impl.util.watcher.DefaultFileSystemWatcherService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.util
 	public class DefaultFileSystemWatcherServiceTest
 	{
 
-		 private static JobScheduler _jobScheduler;
+		 private static IJobScheduler _jobScheduler;
 		 private readonly FileWatcher _fileWatcher = Mockito.mock( typeof( FileWatcher ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

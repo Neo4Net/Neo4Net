@@ -23,7 +23,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 	/// Collects items and is <seealso cref="close() closed"/> after any and all items have been collected.
 	/// The <seealso cref="Collector"/> is responsible for closing whatever closeable resource received from the importer.
 	/// </summary>
-	public interface Collector : AutoCloseable
+	public interface Collector : IDisposable
 	{
 		 void CollectBadRelationship( object startId, string startIdGroup, string type, object endId, string endIdGroup, object specificValue );
 

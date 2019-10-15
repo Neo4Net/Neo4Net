@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.api
 		  void Notify( long txId );
 	 }
 
-	 public interface KernelTransaction_Revertable : AutoCloseable
+	 public interface KernelTransaction_Revertable : IDisposable
 	 {
 		  void Close();
 	 }

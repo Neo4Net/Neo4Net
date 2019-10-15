@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Values.Storable
 {
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 
 	/// <summary>
@@ -57,7 +57,7 @@ namespace Neo4Net.Values.Storable
 			  return NumberType.NoNumber;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  return hashFunction.Update( hash, GetHashCode() );
 		 }

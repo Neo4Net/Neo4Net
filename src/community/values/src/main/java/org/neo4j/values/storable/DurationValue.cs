@@ -24,7 +24,7 @@ using System.Text;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
@@ -655,7 +655,7 @@ namespace Neo4Net.Values.Storable
 			  return result;
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  hash = hashFunction.Update( hash, _months );
 			  hash = hashFunction.Update( hash, _days );

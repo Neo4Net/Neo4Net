@@ -23,7 +23,7 @@ namespace Neo4Net.Io.pagecache.tracing
 	/// <summary>
 	/// The eviction of a page has begun.
 	/// </summary>
-	public interface EvictionEvent : AutoCloseablePageCacheTracerEvent
+	public interface EvictionEvent : IDisposablePageCacheTracerEvent
 	{
 		 /// <summary>
 		 /// An EvictionEvent that does nothing other than return the FlushEventOpportunity.NULL.

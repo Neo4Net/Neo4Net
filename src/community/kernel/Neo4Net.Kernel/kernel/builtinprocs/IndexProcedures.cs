@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
 
-	public class IndexProcedures : AutoCloseable
+	public class IndexProcedures : IDisposable
 	{
 		 private readonly KernelTransaction _ktx;
 		 private readonly Statement _statement;

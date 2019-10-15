@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class PageCacheWarmerKernelExtensionFactory extends org.neo4j.kernel.extension.KernelExtensionFactory<PageCacheWarmerKernelExtensionFactory.Dependencies>
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	{
 		 public interface Dependencies
 		 {
-			  JobScheduler JobScheduler();
+			  IJobScheduler IJobScheduler();
 
 			  DatabaseAvailabilityGuard AvailabilityGuard();
 
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 
 		 public override Lifecycle NewInstance( KernelContext context, Dependencies deps )
 		 {
-			  JobScheduler scheduler = deps.JobScheduler();
+			  IJobScheduler scheduler = deps.JobScheduler();
 			  DatabaseAvailabilityGuard databaseAvailabilityGuard = deps.AvailabilityGuard();
 			  PageCache pageCache = deps.PageCache();
 			  FileSystemAbstraction fs = deps.FileSystemAbstraction();

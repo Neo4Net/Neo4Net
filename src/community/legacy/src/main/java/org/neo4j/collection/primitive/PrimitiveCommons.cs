@@ -31,7 +31,7 @@ namespace Neo4Net.Collections.primitive
 		 }
 
 		 /// <summary>
-		 /// If the given obj is AutoCloseable, then close it.
+		 /// If the given obj is IDisposable, then close it.
 		 /// Any exceptions thrown from the close method will be wrapped in RuntimeExceptions.
 		 /// </summary>
 		 internal static void CloseSafely( object obj )
@@ -40,7 +40,7 @@ namespace Neo4Net.Collections.primitive
 		 }
 
 		 /// <summary>
-		 /// If the given obj is AutoCloseable, then close it.
+		 /// If the given obj is IDisposable, then close it.
 		 /// Any exceptions thrown from the close method will be wrapped in RuntimeExceptions.
 		 /// These RuntimeExceptions can get the given suppressedException attached to them, if any.
 		 /// If the given suppressedException argument is null, then it will not be added to the
@@ -48,9 +48,9 @@ namespace Neo4Net.Collections.primitive
 		 /// </summary>
 		 internal static void CloseSafely( object obj, Exception suppressedException )
 		 {
-			  if ( obj is AutoCloseable )
+			  if ( obj is IDisposable )
 			  {
-					AutoCloseable closeable = ( AutoCloseable ) obj;
+					IDisposable closeable = ( IDisposable ) obj;
 					try
 					{
 						 closeable.close();

@@ -69,7 +69,7 @@ namespace Neo4Net.Graphdb.factory.module
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 	public class ModularDatabaseCreationContext : DatabaseCreationContext
@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb.factory.module
 		 private readonly Config _config;
 		 private readonly IdGeneratorFactory _idGeneratorFactory;
 		 private readonly LogService _logService;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly TokenNameLookup _tokenNameLookup;
 		 private readonly DependencyResolver _globalDependencies;
 		 private readonly TokenHolders _tokenHolders;
@@ -210,7 +210,7 @@ namespace Neo4Net.Graphdb.factory.module
 			 }
 		 }
 
-		 public virtual JobScheduler Scheduler
+		 public virtual IJobScheduler Scheduler
 		 {
 			 get
 			 {

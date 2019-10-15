@@ -28,7 +28,7 @@ namespace Neo4Net.Internal.Collector
 	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
 	using QueryExecutionMonitor = Neo4Net.Kernel.impl.query.QueryExecutionMonitor;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Thread-safe query collector.
@@ -39,10 +39,10 @@ namespace Neo4Net.Internal.Collector
 	{
 		 private volatile bool _isCollecting;
 		 private readonly RingRecentBuffer<TruncatedQuerySnapshot> _queries;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly int _maxQueryTextSize;
 
-		 internal QueryCollector( JobScheduler jobScheduler, int maxRecentQueryCount, int maxQueryTextSize ) : base( true )
+		 internal QueryCollector( IJobScheduler jobScheduler, int maxRecentQueryCount, int maxQueryTextSize ) : base( true )
 		 {
 			  this._jobScheduler = jobScheduler;
 			  this._maxQueryTextSize = maxQueryTextSize;

@@ -42,14 +42,14 @@ namespace Neo4Net.Io
 		 public ExpectedException ExpectedException = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private AutoCloseable faultyClosable;
-		 private AutoCloseable _faultyClosable;
+//ORIGINAL LINE: @Mock private IDisposable faultyClosable;
+		 private IDisposable _faultyClosable;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private AutoCloseable goodClosable1;
-		 private AutoCloseable _goodClosable1;
+//ORIGINAL LINE: @Mock private IDisposable goodClosable1;
+		 private IDisposable _goodClosable1;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private AutoCloseable goodClosable2;
-		 private AutoCloseable _goodClosable2;
+//ORIGINAL LINE: @Mock private IDisposable goodClosable2;
+		 private IDisposable _goodClosable2;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void closeAllSilently() throws Exception
@@ -82,11 +82,11 @@ namespace Neo4Net.Io
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CloseMustIgnoreNullResources()
 		 {
-			  AutoCloseable a = () =>
+			  IDisposable a = () =>
 			  {
 			  };
-			  AutoCloseable b = null;
-			  AutoCloseable c = () =>
+			  IDisposable b = null;
+			  IDisposable c = () =>
 			  {
 			  };
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:

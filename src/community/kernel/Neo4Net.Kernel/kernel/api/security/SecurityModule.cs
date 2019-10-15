@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.api.security
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public abstract class SecurityModule : Service, Lifecycle, SecurityProvider
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.api.security
 
 			  Procedures Procedures();
 
-			  JobScheduler Scheduler();
+			  IJobScheduler Scheduler();
 
 			  FileSystemAbstraction FileSystem();
 

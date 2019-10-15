@@ -52,7 +52,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using User = Neo4Net.Kernel.impl.security.User;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AuthenticationStrategy = Neo4Net.Server.Security.Auth.AuthenticationStrategy;
 	using Neo4Net.Server.Security.Auth;
 	using UserRepository = Neo4Net.Server.Security.Auth.UserRepository;
@@ -84,15 +84,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 private readonly AuthenticationStrategy _authenticationStrategy;
 		 private readonly bool _authenticationEnabled;
 		 private readonly bool _authorizationEnabled;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private volatile JobHandle _reloadJobHandle;
 
 		 [Obsolete]
-		 public InternalFlatFileRealm( UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, JobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : this( userRepository,roleRepository, passwordPolicy, authenticationStrategy, true, true, jobScheduler, initialUserRepository, defaultAdminRepository )
+		 public InternalFlatFileRealm( UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, IJobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : this( userRepository,roleRepository, passwordPolicy, authenticationStrategy, true, true, jobScheduler, initialUserRepository, defaultAdminRepository )
 		 {
 		 }
 
-		 internal InternalFlatFileRealm( UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, bool authenticationEnabled, bool authorizationEnabled, JobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : base()
+		 internal InternalFlatFileRealm( UserRepository userRepository, RoleRepository roleRepository, PasswordPolicy passwordPolicy, AuthenticationStrategy authenticationStrategy, bool authenticationEnabled, bool authorizationEnabled, IJobScheduler jobScheduler, UserRepository initialUserRepository, UserRepository defaultAdminRepository ) : base()
 		 {
 
 			  Name = SecuritySettings.NATIVE_REALM_NAME;

@@ -60,7 +60,7 @@ namespace Upgrade
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
@@ -120,7 +120,7 @@ namespace Upgrade
 		 }
 
 		 private FileSystemAbstraction _fs;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 		 private DatabaseLayout _workingDatabaseLayout;
 		 private File _prepareDirectory;
 
@@ -181,7 +181,7 @@ namespace Upgrade
 		 {
 			 private readonly StoreUpgraderInterruptionTestIT _outerInstance;
 
-			 public StoreMigratorAnonymousInnerClass( StoreUpgraderInterruptionTestIT outerInstance, FileSystemAbstraction fs, PageCache pageCache, Config config, LogService logService, JobScheduler jobScheduler ) : base( fs, pageCache, config, logService, jobScheduler )
+			 public StoreMigratorAnonymousInnerClass( StoreUpgraderInterruptionTestIT outerInstance, FileSystemAbstraction fs, PageCache pageCache, Config config, LogService logService, IJobScheduler jobScheduler ) : base( fs, pageCache, config, logService, jobScheduler )
 			 {
 				 this.outerInstance = outerInstance;
 			 }
@@ -252,7 +252,7 @@ namespace Upgrade
 		 {
 			 private readonly StoreUpgraderInterruptionTestIT _outerInstance;
 
-			 public StoreMigratorAnonymousInnerClass2( StoreUpgraderInterruptionTestIT outerInstance, FileSystemAbstraction fs, PageCache pageCache, Config config, LogService logService, JobScheduler jobScheduler ) : base( fs, pageCache, config, logService, jobScheduler )
+			 public StoreMigratorAnonymousInnerClass2( StoreUpgraderInterruptionTestIT outerInstance, FileSystemAbstraction fs, PageCache pageCache, Config config, LogService logService, IJobScheduler jobScheduler ) : base( fs, pageCache, config, logService, jobScheduler )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

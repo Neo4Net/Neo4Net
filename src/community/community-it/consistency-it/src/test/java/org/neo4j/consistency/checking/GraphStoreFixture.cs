@@ -59,7 +59,7 @@ namespace Neo4Net.Consistency.checking
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using NativeLabelScanStore = Neo4Net.Kernel.impl.index.labelscan.NativeLabelScanStore;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using NodeLabelsField = Neo4Net.Kernel.impl.store.NodeLabelsField;
@@ -87,7 +87,7 @@ namespace Neo4Net.Consistency.checking
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
@@ -181,7 +181,7 @@ namespace Neo4Net.Consistency.checking
 			  if ( _directStoreAccess == null )
 			  {
 					_life.start();
-					JobScheduler scheduler = _life.add( JobSchedulerFactory.createInitializedScheduler() );
+					JobScheduler scheduler = _life.add( IJobSchedulerFactory.createInitializedScheduler() );
 					_fileSystem = new DefaultFileSystemAbstraction();
 					PageCache pageCache = GetPageCache( _fileSystem );
 					LogProvider logProvider = NullLogProvider.Instance;
@@ -232,7 +232,7 @@ namespace Neo4Net.Consistency.checking
 			  return labelScanStore;
 		 }
 
-		 private IndexProviderMap CreateIndexes( PageCache pageCache, FileSystemAbstraction fileSystem, File storeDir, Config config, JobScheduler scheduler, LogProvider logProvider, Monitors monitors )
+		 private IndexProviderMap CreateIndexes( PageCache pageCache, FileSystemAbstraction fileSystem, File storeDir, Config config, IJobScheduler scheduler, LogProvider logProvider, Monitors monitors )
 		 {
 			  LogService logService = new SimpleLogService( logProvider, logProvider );
 			  TokenHolders tokenHolders = new TokenHolders( new DelegatingTokenHolder( new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY ), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_LABEL), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_RELATIONSHIP_TYPE) );
@@ -499,7 +499,7 @@ namespace Neo4Net.Consistency.checking
 			  return -1;
 		 }
 
-		 public class Applier : AutoCloseable
+		 public class Applier : IDisposable
 		 {
 			 private readonly GraphStoreFixture _outerInstance;
 

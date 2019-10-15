@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.state
 	using RaftLogEntry = Neo4Net.causalclustering.core.consensus.log.RaftLogEntry;
 	using ReadableRaftLog = Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog;
 
-	public class InFlightLogEntryReader : AutoCloseable
+	public class InFlightLogEntryReader : IDisposable
 	{
 		 private readonly ReadableRaftLog _raftLog;
 		 private readonly InFlightCache _inFlightCache;

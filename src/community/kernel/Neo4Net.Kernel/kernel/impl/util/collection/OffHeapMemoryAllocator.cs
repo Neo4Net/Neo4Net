@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.util.collection
 {
 
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
@@ -41,10 +41,10 @@ namespace Neo4Net.Kernel.impl.util.collection
 
 	public class OffHeapMemoryAllocator : MemoryAllocator
 	{
-		 private readonly MemoryAllocationTracker _tracker;
+		 private readonly IMemoryAllocationTracker _tracker;
 		 private readonly OffHeapBlockAllocator _blockAllocator;
 
-		 public OffHeapMemoryAllocator( MemoryAllocationTracker tracker, OffHeapBlockAllocator blockAllocator )
+		 public OffHeapMemoryAllocator( IMemoryAllocationTracker tracker, OffHeapBlockAllocator blockAllocator )
 		 {
 			  this._tracker = requireNonNull( tracker );
 			  this._blockAllocator = requireNonNull( blockAllocator );

@@ -59,7 +59,7 @@ namespace Neo4Net.Bolt
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using UsageData = Neo4Net.Udc.UsageData;
 
 
@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt
 	{
 		 // platform dependencies
 		 private readonly DatabaseManager _databaseManager;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly ConnectorPortRegister _connectorPortRegister;
 		 private readonly NetworkConnectionTracker _connectionTracker;
 		 private readonly UsageData _usageData;
@@ -81,7 +81,7 @@ namespace Neo4Net.Bolt
 
 		 private readonly LifeSupport _life = new LifeSupport();
 
-		 public BoltServer( DatabaseManager databaseManager, JobScheduler jobScheduler, ConnectorPortRegister connectorPortRegister, NetworkConnectionTracker connectionTracker, UsageData usageData, Config config, Clock clock, Monitors monitors, LogService logService, DependencyResolver dependencyResolver )
+		 public BoltServer( DatabaseManager databaseManager, IJobScheduler jobScheduler, ConnectorPortRegister connectorPortRegister, NetworkConnectionTracker connectionTracker, UsageData usageData, Config config, Clock clock, Monitors monitors, LogService logService, DependencyResolver dependencyResolver )
 		 {
 			  this._databaseManager = databaseManager;
 			  this._jobScheduler = jobScheduler;

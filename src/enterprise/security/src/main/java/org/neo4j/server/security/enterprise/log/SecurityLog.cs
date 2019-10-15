@@ -35,7 +35,7 @@ namespace Neo4Net.Server.security.enterprise.log
 	using Logger = Neo4Net.Logging.Logger;
 	using RotatingFileOutputStreamSupplier = Neo4Net.Logging.RotatingFileOutputStreamSupplier;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -192,7 +192,7 @@ namespace Neo4Net.Server.security.enterprise.log
 			  _inner.bulk( consumer );
 		 }
 
-		 public static SecurityLog Create( Config config, Log log, FileSystemAbstraction fileSystem, JobScheduler jobScheduler )
+		 public static SecurityLog Create( Config config, Log log, FileSystemAbstraction fileSystem, IJobScheduler jobScheduler )
 		 {
 			  try
 			  {

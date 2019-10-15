@@ -37,7 +37,7 @@ namespace Neo4Net.Collections.primitive
 	using PrimitiveLongLongHashMap = Neo4Net.Collections.primitive.hopscotch.PrimitiveLongLongHashMap;
 	using Neo4Net.Collections.primitive.hopscotch;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.collection.primitive.hopscotch.HopScotchHashingAlgorithm.NO_MONITOR;
@@ -88,12 +88,12 @@ namespace Neo4Net.Collections.primitive
 			  return OffHeapLongSet( GlobalMemoryTracker.INSTANCE );
 		 }
 
-		 public static PrimitiveLongSet OffHeapLongSet( MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveLongSet OffHeapLongSet( IMemoryAllocationTracker allocationTracker )
 		 {
 			  return OffHeapLongSet( DefaultOffheapCapacity, allocationTracker );
 		 }
 
-		 public static PrimitiveLongSet OffHeapLongSet( int initialCapacity, MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveLongSet OffHeapLongSet( int initialCapacity, IMemoryAllocationTracker allocationTracker )
 		 {
 			  return new PrimitiveLongHashSet( new LongKeyUnsafeTable<object>( initialCapacity, ValueMarker, allocationTracker ), ValueMarker, NO_MONITOR );
 		 }
@@ -123,12 +123,12 @@ namespace Neo4Net.Collections.primitive
 			  return OffHeapLongLongMap( GlobalMemoryTracker.INSTANCE );
 		 }
 
-		 public static PrimitiveLongLongMap OffHeapLongLongMap( MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveLongLongMap OffHeapLongLongMap( IMemoryAllocationTracker allocationTracker )
 		 {
 			  return OffHeapLongLongMap( DefaultOffheapCapacity, allocationTracker );
 		 }
 
-		 public static PrimitiveLongLongMap OffHeapLongLongMap( int initialCapacity, MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveLongLongMap OffHeapLongLongMap( int initialCapacity, IMemoryAllocationTracker allocationTracker )
 		 {
 			  return new PrimitiveLongLongHashMap( new LongKeyLongValueUnsafeTable( initialCapacity, allocationTracker ), NO_MONITOR );
 		 }
@@ -158,12 +158,12 @@ namespace Neo4Net.Collections.primitive
 			  return OffHeapIntSet( GlobalMemoryTracker.INSTANCE );
 		 }
 
-		 public static PrimitiveIntSet OffHeapIntSet( MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveIntSet OffHeapIntSet( IMemoryAllocationTracker allocationTracker )
 		 {
 			  return new PrimitiveIntHashSet( new IntKeyUnsafeTable<object>( DefaultOffheapCapacity, ValueMarker, allocationTracker ), ValueMarker, NO_MONITOR );
 		 }
 
-		 public static PrimitiveIntSet OffHeapIntSet( int initialCapacity, MemoryAllocationTracker allocationTracker )
+		 public static PrimitiveIntSet OffHeapIntSet( int initialCapacity, IMemoryAllocationTracker allocationTracker )
 		 {
 			  return new PrimitiveIntHashSet( new IntKeyUnsafeTable<object>( initialCapacity, ValueMarker, allocationTracker ), ValueMarker, NO_MONITOR );
 		 }

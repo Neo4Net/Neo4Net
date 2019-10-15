@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using ValuesMap = Neo4Net.Kernel.Impl.Api.state.ValuesMap;
 	using MutableLongDiffSetsImpl = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSetsImpl;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using MemoryTracker = Neo4Net.Memory.MemoryTracker;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class OffHeapCollectionsFactory : CollectionsFactory
 	{
-		 private readonly MemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
+		 private readonly IMemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
 		 private readonly MemoryAllocator _allocator;
 
 		 private readonly ICollection<Resource> _resources = new List<Resource>();

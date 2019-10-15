@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	/// Caches labels for each node. Tries to keep memory as 8b (a long) per node. If a particular node has many labels
 	/// it will spill over into two or more longs in a separate array.
 	/// </summary>
-	public class NodeLabelsCache : MemoryStatsVisitor_Visitable, AutoCloseable
+	public class NodeLabelsCache : MemoryStatsVisitor_Visitable, IDisposable
 	{
 		 public class Client
 		 {

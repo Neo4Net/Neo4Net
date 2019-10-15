@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
 	using Clocks = Neo4Net.Time.Clocks;
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.ha.com.master
 
 		 private readonly LifeSupport _life = new LifeSupport();
 		 private readonly ExecutorService _executor = Executors.newFixedThreadPool( NUMBER_OF_WORKERS + 1 );
-		 private JobScheduler _scheduler;
+		 private IJobScheduler _scheduler;
 		 private readonly Config _config = Config.defaults( stringMap( server_id.name(), "0", lock_read_timeout.name(), "1" ) );
 		 private readonly Locks _locks = new ForsetiLockManager( Config.defaults(), Clocks.systemClock(), ResourceTypes.NODE, ResourceTypes.LABEL );
 

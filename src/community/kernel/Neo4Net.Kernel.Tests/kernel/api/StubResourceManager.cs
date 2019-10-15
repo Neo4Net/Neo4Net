@@ -21,11 +21,11 @@ namespace Neo4Net.Kernel.api
 {
 	public class StubResourceManager : ResourceManager
 	{
-		 public override void RegisterCloseableResource( AutoCloseable closeable )
+		 public override void RegisterCloseableResource( IDisposable closeable )
 		 {
 		 }
 
-		 public override void UnregisterCloseableResource( AutoCloseable closeable )
+		 public override void UnregisterCloseableResource( IDisposable closeable )
 		 {
 		 }
 

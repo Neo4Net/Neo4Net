@@ -23,7 +23,7 @@ using System.Threading;
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using AutoCloseablePlus = Neo4Net.Internal.Kernel.Api.AutoCloseablePlus;
+	using IDisposablePlus = Neo4Net.Internal.Kernel.Api.IDisposablePlus;
 	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 
@@ -334,7 +334,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 		 }
 
-		 private T Trace<T>( T closeable ) where T : Neo4Net.Internal.Kernel.Api.AutoCloseablePlus
+		 private T Trace<T>( T closeable ) where T : Neo4Net.Internal.Kernel.Api.IDisposablePlus
 		 {
 			  if ( _debugClosing )
 			  {
@@ -358,10 +358,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 		 internal class CloseableStacktrace
 		 {
-			  internal readonly AutoCloseablePlus C;
+			  internal readonly IDisposablePlus C;
 			  internal readonly StackTraceElement[] StackTrace;
 
-			  internal CloseableStacktrace( AutoCloseablePlus c, StackTraceElement[] stackTrace )
+			  internal CloseableStacktrace( IDisposablePlus c, StackTraceElement[] stackTrace )
 			  {
 					this.C = c;
 					this.StackTrace = stackTrace;

@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 {
 
 	using ByteUnit = Neo4Net.Io.ByteUnit;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  }
 		 }
 
-		 public override OffHeapBlockAllocator_MemoryBlock Allocate( long size, MemoryAllocationTracker tracker )
+		 public override OffHeapBlockAllocator_MemoryBlock Allocate( long size, IMemoryAllocationTracker tracker )
 		 {
 			  requirePositive( size );
 			  checkState( !_released, "Allocator is already released" );
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  return block;
 		 }
 
-		 public override void Free( OffHeapBlockAllocator_MemoryBlock block, MemoryAllocationTracker tracker )
+		 public override void Free( OffHeapBlockAllocator_MemoryBlock block, IMemoryAllocationTracker tracker )
 		 {
 			  if ( _released || !IsCacheable( block.Size ) )
 			  {
@@ -147,15 +147,15 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting void doFree(OffHeapBlockAllocator_MemoryBlock block, org.neo4j.memory.MemoryAllocationTracker tracker)
-		 internal virtual void DoFree( OffHeapBlockAllocator_MemoryBlock block, MemoryAllocationTracker tracker )
+//ORIGINAL LINE: @VisibleForTesting void doFree(OffHeapBlockAllocator_MemoryBlock block, org.neo4j.memory.IMemoryAllocationTracker tracker)
+		 internal virtual void DoFree( OffHeapBlockAllocator_MemoryBlock block, IMemoryAllocationTracker tracker )
 		 {
 			  UnsafeUtil.free( block.UnalignedAddr, block.UnalignedSize, tracker );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting MemoryBlock allocateNew(long size, org.neo4j.memory.MemoryAllocationTracker tracker)
-		 internal virtual MemoryBlock AllocateNew( long size, MemoryAllocationTracker tracker )
+//ORIGINAL LINE: @VisibleForTesting MemoryBlock allocateNew(long size, org.neo4j.memory.IMemoryAllocationTracker tracker)
+		 internal virtual MemoryBlock AllocateNew( long size, IMemoryAllocationTracker tracker )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long unalignedSize = requirePositive(size) + Long.BYTES - 1;

@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.discovery
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.READ_REPLICAS_DB_NAME_MAP;
@@ -83,7 +83,7 @@ namespace Neo4Net.causalclustering.discovery
 		 private volatile IDictionary<MemberId, AdvertisedSocketAddress> _catchupAddressMap = new Dictionary<MemberId, AdvertisedSocketAddress>();
 		 private volatile IDictionary<MemberId, RoleInfo> _coreRoles;
 
-		 public HazelcastClient( HazelcastConnector connector, JobScheduler scheduler, LogProvider logProvider, Config config, MemberId myself )
+		 public HazelcastClient( HazelcastConnector connector, IJobScheduler scheduler, LogProvider logProvider, Config config, MemberId myself )
 		 {
 			  this._hzInstance = new RobustHazelcastWrapper( connector );
 			  this._config = config;

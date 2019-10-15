@@ -47,7 +47,7 @@ namespace Neo4Net.Cypher.Internal.Tracing
 	//	 };
 	}
 
-	 public interface CompilationTracer_QueryCompilationEvent : AutoCloseable, CompilationPhaseTracer
+	 public interface CompilationTracer_QueryCompilationEvent : IDisposable, CompilationPhaseTracer
 	 {
 		  void Close();
 	 }

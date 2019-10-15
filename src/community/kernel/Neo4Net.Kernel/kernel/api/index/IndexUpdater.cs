@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Index
 	/// 
 	/// Each IndexUpdater is not thread-safe, and is assumed to be instantiated per transaction.
 	/// </summary>
-	public interface IndexUpdater : AutoCloseable
+	public interface IndexUpdater : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void process(IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;

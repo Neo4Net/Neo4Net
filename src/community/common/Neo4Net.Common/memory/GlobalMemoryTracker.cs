@@ -23,9 +23,9 @@ namespace Neo4Net.Memory
    /// <summary>
    /// Global memory tracker that can be used in a global multi threaded context to record
    /// allocation and de-allocation of native memory. </summary>
-   /// <seealso cref= org.neo4j.memory.MemoryAllocationTracker </seealso>
+   /// <seealso cref= org.neo4j.memory.IMemoryAllocationTracker </seealso>
    /// <seealso cref= MemoryTracker </seealso>
-   public class GlobalMemoryTracker : MemoryAllocationTracker
+   public class GlobalMemoryTracker : IMemoryAllocationTracker
    {
       public static readonly GlobalMemoryTracker Instance = new GlobalMemoryTracker();
 

@@ -89,7 +89,7 @@ namespace Neo4Net.Test.rule
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Clocks = Neo4Net.Time.Clocks;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
@@ -132,7 +132,7 @@ namespace Neo4Net.Test.rule
 			  when( statementLocks.Pessimistic() ).thenReturn(locks);
 			  when( locksFactory.NewInstance() ).thenReturn(statementLocks);
 
-			  JobScheduler jobScheduler = mock( typeof( JobScheduler ), RETURNS_MOCKS );
+			  IJobScheduler jobScheduler = mock( typeof( IJobScheduler ), RETURNS_MOCKS );
 			  Monitors monitors = new Monitors();
 
 			  Dependencies mutableDependencies = new Dependencies( otherCustomOverriddenDependencies );
@@ -150,7 +150,7 @@ namespace Neo4Net.Test.rule
 			  Dependency( mutableDependencies, typeof( DiagnosticsManager ), deps => new DiagnosticsManager( NullLog.Instance ) );
 			  Dependency( mutableDependencies, typeof( IndexProvider ), deps => EMPTY );
 
-			  _dataSource = new NeoStoreDataSource( new TestDatabaseCreationContext( DEFAULT_DATABASE_NAME, databaseLayout, config, idGeneratorFactory, logService, mock( typeof( JobScheduler ), RETURNS_MOCKS ), mock( typeof( TokenNameLookup ) ), mutableDependencies, mockedTokenHolders(), locksFactory, mock(typeof(SchemaWriteGuard)), mock(typeof(TransactionEventHandlers)), IndexingService.NO_MONITOR, fs, transactionMonitor, databaseHealth, mock(typeof(LogFileCreationMonitor)), TransactionHeaderInformationFactory.DEFAULT, new CommunityCommitProcessFactory(), mock(typeof(InternalAutoIndexing)), mock(typeof(IndexConfigStore)), mock(typeof(ExplicitIndexProvider)), pageCache, new StandardConstraintSemantics(), monitors, new Tracers("null", NullLog.Instance, monitors, jobScheduler, clock), mock(typeof(Procedures)), Neo4Net.Io.pagecache.IOLimiter_Fields.Unlimited, databaseAvailabilityGuard, clock, new CanWrite(), new StoreCopyCheckPointMutex(), RecoveryCleanupWorkCollector.immediate(), new BufferedIdController(new BufferingIdGeneratorFactory(idGeneratorFactory, Neo4Net.Kernel.impl.store.id.IdReuseEligibility_Fields.Always, idConfigurationProvider), jobScheduler), DatabaseInfo.COMMUNITY, new TransactionVersionContextSupplier(), ON_HEAP, Collections.emptyList(), file => EMPTY_WATCHER, new GraphDatabaseFacade(), Iterables.empty() ) );
+			  _dataSource = new NeoStoreDataSource( new TestDatabaseCreationContext( DEFAULT_DATABASE_NAME, databaseLayout, config, idGeneratorFactory, logService, mock( typeof( IJobScheduler ), RETURNS_MOCKS ), mock( typeof( TokenNameLookup ) ), mutableDependencies, mockedTokenHolders(), locksFactory, mock(typeof(SchemaWriteGuard)), mock(typeof(TransactionEventHandlers)), IndexingService.NO_MONITOR, fs, transactionMonitor, databaseHealth, mock(typeof(LogFileCreationMonitor)), TransactionHeaderInformationFactory.DEFAULT, new CommunityCommitProcessFactory(), mock(typeof(InternalAutoIndexing)), mock(typeof(IndexConfigStore)), mock(typeof(ExplicitIndexProvider)), pageCache, new StandardConstraintSemantics(), monitors, new Tracers("null", NullLog.Instance, monitors, jobScheduler, clock), mock(typeof(Procedures)), Neo4Net.Io.pagecache.IOLimiter_Fields.Unlimited, databaseAvailabilityGuard, clock, new CanWrite(), new StoreCopyCheckPointMutex(), RecoveryCleanupWorkCollector.immediate(), new BufferedIdController(new BufferingIdGeneratorFactory(idGeneratorFactory, Neo4Net.Kernel.impl.store.id.IdReuseEligibility_Fields.Always, idConfigurationProvider), jobScheduler), DatabaseInfo.COMMUNITY, new TransactionVersionContextSupplier(), ON_HEAP, Collections.emptyList(), file => EMPTY_WATCHER, new GraphDatabaseFacade(), Iterables.empty() ) );
 			  return _dataSource;
 		 }
 
@@ -193,7 +193,7 @@ namespace Neo4Net.Test.rule
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly LogService LogServiceConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly JobScheduler SchedulerConflict;
+			  internal readonly IJobScheduler SchedulerConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly TokenNameLookup TokenNameLookupConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -271,7 +271,7 @@ namespace Neo4Net.Test.rule
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly CoreAPIAvailabilityGuard CoreAPIAvailabilityGuardConflict;
 
-			  internal TestDatabaseCreationContext<T1>( string databaseName, DatabaseLayout databaseLayout, Config config, IdGeneratorFactory idGeneratorFactory, LogService logService, JobScheduler scheduler, TokenNameLookup tokenNameLookup, DependencyResolver dependencyResolver, TokenHolders tokenHolders, StatementLocksFactory statementLocksFactory, SchemaWriteGuard schemaWriteGuard, TransactionEventHandlers transactionEventHandlers, IndexingService.Monitor indexingServiceMonitor, FileSystemAbstraction fs, TransactionMonitor transactionMonitor, DatabaseHealth databaseHealth, LogFileCreationMonitor physicalLogMonitor, TransactionHeaderInformationFactory transactionHeaderInformationFactory, CommitProcessFactory commitProcessFactory, AutoIndexing autoIndexing, IndexConfigStore indexConfigStore, ExplicitIndexProvider explicitIndexProvider, PageCache pageCache, ConstraintSemantics constraintSemantics, Monitors monitors, Tracers tracers, Procedures procedures, IOLimiter ioLimiter, DatabaseAvailabilityGuard databaseAvailabilityGuard, SystemNanoClock clock, AccessCapability accessCapability, StoreCopyCheckPointMutex storeCopyCheckPointMutex, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IdController idController, DatabaseInfo databaseInfo, VersionContextSupplier versionContextSupplier, CollectionsFactorySupplier collectionsFactorySupplier, IEnumerable<T1> kernelExtensionFactories, System.Func<File, FileSystemWatcherService> watcherServiceFactory, GraphDatabaseFacade facade, IEnumerable<QueryEngineProvider> engineProviders )
+			  internal TestDatabaseCreationContext<T1>( string databaseName, DatabaseLayout databaseLayout, Config config, IdGeneratorFactory idGeneratorFactory, LogService logService, IJobScheduler scheduler, TokenNameLookup tokenNameLookup, DependencyResolver dependencyResolver, TokenHolders tokenHolders, StatementLocksFactory statementLocksFactory, SchemaWriteGuard schemaWriteGuard, TransactionEventHandlers transactionEventHandlers, IndexingService.Monitor indexingServiceMonitor, FileSystemAbstraction fs, TransactionMonitor transactionMonitor, DatabaseHealth databaseHealth, LogFileCreationMonitor physicalLogMonitor, TransactionHeaderInformationFactory transactionHeaderInformationFactory, CommitProcessFactory commitProcessFactory, AutoIndexing autoIndexing, IndexConfigStore indexConfigStore, ExplicitIndexProvider explicitIndexProvider, PageCache pageCache, ConstraintSemantics constraintSemantics, Monitors monitors, Tracers tracers, Procedures procedures, IOLimiter ioLimiter, DatabaseAvailabilityGuard databaseAvailabilityGuard, SystemNanoClock clock, AccessCapability accessCapability, StoreCopyCheckPointMutex storeCopyCheckPointMutex, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IdController idController, DatabaseInfo databaseInfo, VersionContextSupplier versionContextSupplier, CollectionsFactorySupplier collectionsFactorySupplier, IEnumerable<T1> kernelExtensionFactories, System.Func<File, FileSystemWatcherService> watcherServiceFactory, GraphDatabaseFacade facade, IEnumerable<QueryEngineProvider> engineProviders )
 			  {
 					this.DatabaseNameConflict = databaseName;
 					this.DatabaseLayoutConflict = databaseLayout;
@@ -358,7 +358,7 @@ namespace Neo4Net.Test.rule
 				  }
 			  }
 
-			  public virtual JobScheduler Scheduler
+			  public virtual IJobScheduler Scheduler
 			  {
 				  get
 				  {

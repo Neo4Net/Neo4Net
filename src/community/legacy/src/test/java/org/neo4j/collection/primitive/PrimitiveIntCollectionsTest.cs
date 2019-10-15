@@ -110,7 +110,7 @@ namespace Neo4Net.Collections.primitive
 			  AssertItems( deduped, 1, 2, 3 );
 		 }
 
-		 private sealed class CountingPrimitiveIntIteratorResource : PrimitiveIntIterator, AutoCloseable
+		 private sealed class CountingPrimitiveIntIteratorResource : PrimitiveIntIterator, IDisposable
 		 {
 			  internal readonly PrimitiveIntIterator Delegate;
 			  internal readonly AtomicInteger CloseCounter;

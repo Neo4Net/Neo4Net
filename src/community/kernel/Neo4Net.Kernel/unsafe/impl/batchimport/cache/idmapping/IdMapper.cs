@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping
 	/// <summary>
 	/// Maps input node ids as specified by data read into <seealso cref="InputEntityVisitor"/> into actual node ids.
 	/// </summary>
-	public interface IdMapper : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, AutoCloseable
+	public interface IdMapper : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, IDisposable
 	{
 
 		 /// <summary>

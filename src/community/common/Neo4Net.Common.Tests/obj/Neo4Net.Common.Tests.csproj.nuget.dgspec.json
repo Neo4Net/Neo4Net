@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj": {}
+    "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj": {}
   },
   "projects": {
-    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj": {
+    "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+        "projectUniqueName": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
         "projectName": "Neo4Net.Common.Tests",
-        "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+        "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
         "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common.Tests\\obj\\",
+        "outputPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
@@ -22,17 +22,17 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp3.0"
+          "netcoreapp2.2"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netcoreapp3.0": {
+          "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
-                "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
+              "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
+                "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
               }
             }
           }
@@ -44,7 +44,7 @@
         }
       },
       "frameworks": {
-        "netcoreapp3.0": {
+        "netcoreapp2.2": {
           "dependencies": {
             "FluentAssertions": {
               "target": "Package",
@@ -53,6 +53,12 @@
             "Microsoft.NET.Test.Sdk": {
               "target": "Package",
               "version": "[16.3.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
             },
             "NSubstitute": {
               "target": "Package",
@@ -85,23 +91,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
+    "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+        "projectUniqueName": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
         "projectName": "Neo4Net.Common",
-        "projectPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+        "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
         "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\tcorv\\source\\repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\obj\\",
+        "outputPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

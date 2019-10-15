@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using IndexSamplingController = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingController;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using LogMatcherBuilder = Neo4Net.Logging.AssertableLogProvider.LogMatcherBuilder;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
@@ -487,7 +487,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  StoreIndexDescriptor populatingIndex = StoreIndex( 2, 1, 2, PROVIDER_DESCRIPTOR );
 			  StoreIndexDescriptor failedIndex = StoreIndex( 3, 2, 2, PROVIDER_DESCRIPTOR );
 
-			  Life.add( IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, mock( typeof( IndexStoreView ) ), mockLookup, asList( onlineIndex, populatingIndex, failedIndex ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false ) );
+			  Life.add( IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, mock( typeof( IndexStoreView ) ), mockLookup, asList( onlineIndex, populatingIndex, failedIndex ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false ) );
 
 			  when( provider.GetInitialState( onlineIndex ) ).thenReturn( ONLINE );
 			  when( provider.GetInitialState( populatingIndex ) ).thenReturn( InternalIndexState.POPULATING );
@@ -521,7 +521,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  StoreIndexDescriptor populatingIndex = StoreIndex( 2, 1, 2, PROVIDER_DESCRIPTOR );
 			  StoreIndexDescriptor failedIndex = StoreIndex( 3, 2, 2, PROVIDER_DESCRIPTOR );
 
-			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, _storeView, mockLookup, asList( onlineIndex, populatingIndex, failedIndex ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
+			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, _storeView, mockLookup, asList( onlineIndex, populatingIndex, failedIndex ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
 
 			  when( provider.GetInitialState( onlineIndex ) ).thenReturn( ONLINE );
 			  when( provider.GetInitialState( populatingIndex ) ).thenReturn( InternalIndexState.POPULATING );
@@ -569,7 +569,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  providerMap.Init();
 			  TokenNameLookup mockLookup = mock( typeof( TokenNameLookup ) );
 
-			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, _storeView, mockLookup, Collections.singletonList( nativeBtree10Index ),_internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
+			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, _storeView, mockLookup, Collections.singletonList( nativeBtree10Index ),_internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
 
 			  // when
 			  indexingService.Init();
@@ -604,7 +604,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  providerMap.Init();
 			  TokenNameLookup mockLookup = mock( typeof( TokenNameLookup ) );
 
-			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, _storeView, mockLookup, Collections.singletonList( nativeBtree10Index ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
+			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, _storeView, mockLookup, Collections.singletonList( nativeBtree10Index ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
 
 			  // when
 			  indexingService.Init();
@@ -650,7 +650,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  providerMap.Init();
 			  TokenNameLookup mockLookup = mock( typeof( TokenNameLookup ) );
 
-			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, _storeView, mockLookup, asList( lucene10Index, native10Index, native20Index1, native20Index2, nativeBtree10Index ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
+			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, _storeView, mockLookup, asList( lucene10Index, native10Index, native20Index1, native20Index2, nativeBtree10Index ), _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
 
 			  // when
 			  indexingService.Init();
@@ -1262,7 +1262,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					when( mockLookup.LabelGetName( i ) ).thenReturn( "Label" + i );
 			  }
 
-			  Life.add( IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, mock( typeof( IndexStoreView ) ), mockLookup, indexes, _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false ) );
+			  Life.add( IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, mock( typeof( IndexStoreView ) ), mockLookup, indexes, _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false ) );
 
 			  when( mockLookup.PropertyKeyGetName( 1 ) ).thenReturn( "prop" );
 
@@ -1305,7 +1305,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					when( mockLookup.LabelGetName( i ) ).thenReturn( "Label" + i );
 			  }
 
-			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( JobScheduler ) ), providerMap, _storeView, mockLookup, indexes, _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
+			  IndexingService indexingService = IndexingServiceFactory.CreateIndexingService( config, mock( typeof( IJobScheduler ) ), providerMap, _storeView, mockLookup, indexes, _internalLogProvider, _userLogProvider, IndexingService.NoMonitor, _schemaState, false );
 			  when( _storeView.indexSample( anyLong(), any(typeof(Register_DoubleLongRegister)) ) ).thenReturn(newDoubleLongRegister(32L, 32L));
 			  when( mockLookup.PropertyKeyGetName( 1 ) ).thenReturn( "prop" );
 
@@ -1455,7 +1455,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( indexProxyCreator.CreateRecoveringIndexProxy( any() ) ).thenReturn(indexProxy);
 			  when( indexProxyCreator.CreatePopulatingIndexProxy( any(), anyBoolean(), any(), any() ) ).thenReturn(indexProxy);
 			  MultiPopulatorFactory multiPopulatorFactory = forConfig( Config.defaults( multi_threaded_schema_index_population_enabled, "false" ) );
-			  JobScheduler scheduler = mock( typeof( JobScheduler ) );
+			  IJobScheduler scheduler = mock( typeof( IJobScheduler ) );
 			  IndexSamplingController samplingController = mock( typeof( IndexSamplingController ) );
 			  IndexingService.Monitor monitor = mock( typeof( IndexingService.Monitor ) );
 			  IndexingService indexingService = new IndexingService( indexProxyCreator, indexProviderMap, indexMapReference, null, schemaRules, samplingController, idTokenNameLookup, scheduler, null, multiPopulatorFactory, logProvider, logProvider, monitor, false );
@@ -1607,7 +1607,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  config.augment( GraphDatabaseSettings.default_schema_provider, PROVIDER_DESCRIPTOR.name() );
 
 			  DefaultIndexProviderMap providerMap = Life.add( new DefaultIndexProviderMap( BuildIndexDependencies( _indexProvider ), config ) );
-			  return Life.add( IndexingServiceFactory.CreateIndexingService( config, Life.add( JobSchedulerFactory.createScheduler() ), providerMap, _storeView, _nameLookup, loop(iterator(rules)), _internalLogProvider, _userLogProvider, monitor, _schemaState, false ) );
+			  return Life.add( IndexingServiceFactory.CreateIndexingService( config, Life.add( IJobSchedulerFactory.createScheduler() ), providerMap, _storeView, _nameLookup, loop(iterator(rules)), _internalLogProvider, _userLogProvider, monitor, _schemaState, false ) );
 		 }
 
 		 private static DataUpdates WithData( params EntityUpdates[] updates )

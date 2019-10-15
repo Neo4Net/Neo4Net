@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 private readonly PageCacheRule _pageCacheRule = new PageCacheRule();
 		 private readonly RandomRule _random = new RandomRule();
 		 private PageCache _pageCache;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(directory).around(fileSystemRule).around(pageCacheRule).around(random);

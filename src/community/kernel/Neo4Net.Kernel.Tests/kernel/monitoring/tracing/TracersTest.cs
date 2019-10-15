@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using DefaultTransactionTracer = Neo4Net.Kernel.Impl.Api.DefaultTransactionTracer;
 	using DefaultCheckPointerTracer = Neo4Net.Kernel.impl.transaction.log.checkpoint.DefaultCheckPointerTracer;
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using Clocks = Neo4Net.Time.Clocks;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	public class TracersTest
 	{
 		 private readonly AssertableLogProvider _logProvider = new AssertableLogProvider();
-		 private readonly JobScheduler _jobScheduler = mock( typeof( JobScheduler ) );
+		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );
 		 private readonly SystemNanoClock _clock = Clocks.nanoClock();
 		 private readonly Monitors _monitors = new Monitors();
 

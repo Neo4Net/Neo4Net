@@ -54,7 +54,7 @@ namespace Neo4Net.Consistency
 	using NativeLabelScanStore = Neo4Net.Kernel.impl.index.labelscan.NativeLabelScanStore;
 	using ConfiguringPageCacheFactory = Neo4Net.Kernel.impl.pagecache.ConfiguringPageCacheFactory;
 	using RecoveryRequiredException = Neo4Net.Kernel.impl.recovery.RecoveryRequiredException;
-	using JobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
+	using IJobSchedulerFactory = Neo4Net.Kernel.impl.scheduler.JobSchedulerFactory;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
 	using StoreFactory = Neo4Net.Kernel.impl.store.StoreFactory;
@@ -66,7 +66,7 @@ namespace Neo4Net.Consistency
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.consistency.Internal.SchemaIndexExtensionLoader.instantiateKernelExtensions;
@@ -153,7 +153,7 @@ namespace Neo4Net.Consistency
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose, File reportDir, ConsistencyFlags consistencyFlags )
 		 {
 			  Log log = logProvider.getLog( this.GetType() );
-			  JobScheduler jobScheduler = JobSchedulerFactory.createInitializedScheduler();
+			  IJobScheduler jobScheduler = IJobSchedulerFactory.createInitializedScheduler();
 			  ConfiguringPageCacheFactory pageCacheFactory = new ConfiguringPageCacheFactory( fileSystem, config, PageCacheTracer.NULL, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, logProvider.GetLog( typeof( PageCache ) ), EmptyVersionContextSupplier.EMPTY, jobScheduler );
 			  PageCache pageCache = pageCacheFactory.OrCreatePageCache;
 
@@ -230,7 +230,7 @@ namespace Neo4Net.Consistency
 			  // Bootstrap kernel extensions
 			  Monitors monitors = new Monitors();
 			  LifeSupport life = new LifeSupport();
-			  JobScheduler jobScheduler = life.Add( JobSchedulerFactory.createInitializedScheduler() );
+			  IJobScheduler jobScheduler = life.Add( IJobSchedulerFactory.createInitializedScheduler() );
 			  TokenHolders tokenHolders = new TokenHolders( new DelegatingTokenHolder( new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY ), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_LABEL), new DelegatingTokenHolder(new ReadOnlyTokenCreator(), Neo4Net.Kernel.impl.core.TokenHolder_Fields.TYPE_RELATIONSHIP_TYPE) );
 			  DatabaseKernelExtensions extensions = life.Add( instantiateKernelExtensions( databaseLayout.DatabaseDirectory(), fileSystem, config, new SimpleLogService(logProvider, logProvider), pageCache, jobScheduler, RecoveryCleanupWorkCollector.ignore(), TOOL, monitors, tokenHolders ) );
 			  DefaultIndexProviderMap indexes = life.Add( new DefaultIndexProviderMap( extensions, config ) );

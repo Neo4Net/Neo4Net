@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 public virtual void ShouldHandleConcurrentResetAndInvocationOfHandler()
 		 {
 			  // given
-			  JobScheduler scheduler = LifeRule.add( createScheduler() );
+			  IJobScheduler scheduler = LifeRule.add( createScheduler() );
 
 			  BinaryLatch invoked = new BinaryLatch();
 			  BinaryLatch done = new BinaryLatch();

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	/// that wants to be activated inside an applier, to be activated right after the low-level locks have been released for the batch
 	/// of transactions currently applying.
 	/// </summary>
-	public class IndexActivator : AutoCloseable
+	public class IndexActivator : IDisposable
 	{
 		 private readonly IndexingService _indexingService;
 		 private ISet<long> _indexesToActivate;

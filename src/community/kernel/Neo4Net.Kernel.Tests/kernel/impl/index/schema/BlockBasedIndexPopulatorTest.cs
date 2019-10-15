@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using ThreadSafePeakMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakMemoryAllocationTracker;
+	using ThreadSafePeakIMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakIMemoryAllocationTracker;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 public virtual void ShouldDeallocateAllAllocatedMemoryOnClose()
 		 {
 			  // given
-			  ThreadSafePeakMemoryAllocationTracker memoryTracker = new ThreadSafePeakMemoryAllocationTracker( new LocalMemoryTracker() );
+			  ThreadSafePeakIMemoryAllocationTracker memoryTracker = new ThreadSafePeakIMemoryAllocationTracker( new LocalMemoryTracker() );
 			  ByteBufferFactory bufferFactory = new ByteBufferFactory( () => new UnsafeDirectByteBufferAllocator(memoryTracker), 100 );
 			  BlockBasedIndexPopulator<GenericKey, NativeIndexValue> populator = InstantiatePopulator( NO_MONITOR, bufferFactory );
 			  bool closed = false;
@@ -330,7 +330,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 public virtual void ShouldDeallocateAllAllocatedMemoryOnDrop()
 		 {
 			  // given
-			  ThreadSafePeakMemoryAllocationTracker memoryTracker = new ThreadSafePeakMemoryAllocationTracker( new LocalMemoryTracker() );
+			  ThreadSafePeakIMemoryAllocationTracker memoryTracker = new ThreadSafePeakIMemoryAllocationTracker( new LocalMemoryTracker() );
 			  ByteBufferFactory bufferFactory = new ByteBufferFactory( () => new UnsafeDirectByteBufferAllocator(memoryTracker), 100 );
 			  BlockBasedIndexPopulator<GenericKey, NativeIndexValue> populator = InstantiatePopulator( NO_MONITOR, bufferFactory );
 			  bool closed = false;

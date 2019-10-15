@@ -63,7 +63,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 internal File UserStoreFile;
 		 internal File RoleStoreFile;
 
-		 internal TestJobScheduler JobScheduler = new TestJobScheduler();
+		 internal TestJobScheduler IJobScheduler = new TestJobScheduler();
 		 internal LogProvider LogProvider = NullLogProvider.Instance;
 		 internal InternalFlatFileRealm Realm;
 		 internal EvilFileSystem Fs;
@@ -95,7 +95,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  AuthenticationStrategy authenticationStrategy = new RateLimitedAuthenticationStrategy( Clocks.systemClock(), Config.defaults() );
 
-			  Realm = new InternalFlatFileRealm( userRepository, roleRepository, passwordPolicy, authenticationStrategy, true, true, JobScheduler, initialUserRepository, defaultAdminRepository );
+			  Realm = new InternalFlatFileRealm( userRepository, roleRepository, passwordPolicy, authenticationStrategy, true, true, IJobScheduler, initialUserRepository, defaultAdminRepository );
 			  Realm.init();
 			  Realm.start();
 		 }
@@ -116,7 +116,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:Mia\n" + "publisher:Hanna,Carol\n" );
 
-			  JobScheduler.scheduledRunnable.run();
+			  IJobScheduler.scheduledRunnable.run();
 
 			  assertThat( Realm.AllUsernames, containsInAnyOrder( "Hanna", "Carol", "Mia" ) );
 			  assertThat( Realm.getUsernamesForRole( "admin" ), containsInAnyOrder( "Mia" ) );
@@ -137,7 +137,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  // finally valid files
 			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:Mia\n" + "publisher:Hanna,Carol\n" );
 
-			  JobScheduler.scheduledRunnable.run();
+			  IJobScheduler.scheduledRunnable.run();
 
 			  assertThat( Realm.AllUsernames, containsInAnyOrder( "Hanna", "Carol", "Mia" ) );
 			  assertThat( Realm.getUsernamesForRole( "admin" ), containsInAnyOrder( "Mia" ) );

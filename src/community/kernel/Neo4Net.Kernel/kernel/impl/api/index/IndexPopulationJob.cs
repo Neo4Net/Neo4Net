@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ByteBufferFactory = Neo4Net.Kernel.Impl.Index.Schema.ByteBufferFactory;
 	using UnsafeDirectByteBufferAllocator = Neo4Net.Kernel.Impl.Index.Schema.UnsafeDirectByteBufferAllocator;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using ThreadSafePeakMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakMemoryAllocationTracker;
+	using ThreadSafePeakIMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakIMemoryAllocationTracker;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
 	using Runnables = Neo4Net.Utils.Concurrent.Runnables;
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly IndexingService.Monitor _monitor;
 		 private readonly bool _verifyBeforeFlipping;
 		 private readonly ByteBufferFactory _bufferFactory;
-		 private readonly ThreadSafePeakMemoryAllocationTracker _memoryAllocationTracker;
+		 private readonly ThreadSafePeakIMemoryAllocationTracker _memoryAllocationTracker;
 		 private readonly MultipleIndexPopulator _multiPopulator;
 		 private readonly System.Threading.CountdownEvent _doneSignal = new System.Threading.CountdownEvent( 1 );
 
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  this._multiPopulator = multiPopulator;
 			  this._monitor = monitor;
 			  this._verifyBeforeFlipping = verifyBeforeFlipping;
-			  this._memoryAllocationTracker = new ThreadSafePeakMemoryAllocationTracker( GlobalMemoryTracker.INSTANCE );
+			  this._memoryAllocationTracker = new ThreadSafePeakIMemoryAllocationTracker( GlobalMemoryTracker.INSTANCE );
 			  this._bufferFactory = new ByteBufferFactory( () => new UnsafeDirectByteBufferAllocator(_memoryAllocationTracker), parseBlockSize() );
 		 }
 

@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 
 /*
  * Copyright © 2018-2020 "Neo4Net,"
@@ -28,7 +29,7 @@ namespace Neo4Net.Scheduler
    /// To be expanded, the idea here is to have a database-global service for running jobs, handling jobs crashing and so
    /// on.
    /// </summary>
-   public interface JobScheduler : ILifecycle, AutoCloseable
+   public interface IJobScheduler : ILifecycle, IDisposable
    {
       /// <summary>
       /// Assign a specific name to the top-most scheduler group.
@@ -61,7 +62,7 @@ namespace Neo4Net.Scheduler
       /// This is a lower-level alternative than <seealso cref="executor(Group)"/>, where you are in control of when to spin
       /// up new threads for your jobs.
       /// <para>
-      /// The lifecycle of the threads you get out of here are not managed by the JobScheduler, you own the lifecycle and
+      /// The lifecycle of the threads you get out of here are not managed by the IJobScheduler, you own the lifecycle and
       /// must start the thread before it can be used.
       /// </para>
       /// <para>

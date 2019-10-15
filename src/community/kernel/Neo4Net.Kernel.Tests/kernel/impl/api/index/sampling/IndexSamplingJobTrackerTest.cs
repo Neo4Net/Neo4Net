@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using Test = org.junit.Test;
 
 
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 {
 			  // given
 			  when( _config.jobLimit() ).thenReturn(2);
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, jobScheduler );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch();
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 {
 			  // given
 			  when( _config.jobLimit() ).thenReturn(1);
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker(config, jobScheduler);
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			  // Given
 			  when( _config.jobLimit() ).thenReturn(1);
 
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker(config, jobScheduler);
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 public virtual void ShouldDoNothingWhenUsedAfterBeingStopped()
 		 {
 			  // Given
-			  JobScheduler scheduler = mock( typeof( JobScheduler ) );
+			  IJobScheduler scheduler = mock( typeof( IJobScheduler ) );
 			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, scheduler );
 			  jobTracker.StopAndAwaitAllJobs();
 
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 		 public virtual void ShouldNotAllowNewJobsAfterBeingStopped()
 		 {
 			  // Given
-			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, mock( typeof( JobScheduler ) ) );
+			  IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker( _config, mock( typeof( IJobScheduler ) ) );
 
 			  // When
 			  jobTracker.StopAndAwaitAllJobs();
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			  // Given
 			  when( _config.jobLimit() ).thenReturn(2);
 
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker(config, jobScheduler);
@@ -364,7 +364,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			  // Given
 			  when( _config.jobLimit() ).thenReturn(2);
 
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexSamplingJobTracker jobTracker = new IndexSamplingJobTracker(config, jobScheduler);

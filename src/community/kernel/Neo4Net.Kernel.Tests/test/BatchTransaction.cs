@@ -23,7 +23,7 @@ namespace Neo4Net.Test
 	using Transaction = Neo4Net.Graphdb.Transaction;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 
-	public class BatchTransaction : AutoCloseable
+	public class BatchTransaction : IDisposable
 	{
 		 private const int DEFAULT_INTERMEDIARY_SIZE = 10000;
 

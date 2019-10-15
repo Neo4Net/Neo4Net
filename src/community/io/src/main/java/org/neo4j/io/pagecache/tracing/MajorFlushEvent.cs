@@ -22,7 +22,7 @@ namespace Neo4Net.Io.pagecache.tracing
 	/// <summary>
 	/// Begin a mass-flushing of pages.
 	/// </summary>
-	public interface MajorFlushEvent : AutoCloseablePageCacheTracerEvent
+	public interface MajorFlushEvent : IDisposablePageCacheTracerEvent
 	{
 		 /// <summary>
 		 /// A MajorFlushEvent that only returns the FlushEventOpportunity.NULL.

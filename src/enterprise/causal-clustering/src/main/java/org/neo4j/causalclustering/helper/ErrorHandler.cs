@@ -26,7 +26,7 @@ using System.Collections.Generic;
 namespace Neo4Net.causalclustering.helper
 {
 
-	public class ErrorHandler : AutoCloseable
+	public class ErrorHandler : IDisposable
 	{
 		 private readonly IList<Exception> _throwables = new List<Exception>();
 		 private readonly string _message;

@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.impl.scheduler
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Clocks = Neo4Net.Time.Clocks;
 
-	public class CentralJobScheduler : LifecycleAdapter, JobScheduler, AutoCloseable
+	public class CentralJobScheduler : LifecycleAdapter, IJobScheduler, IDisposable
 	{
 		 private static readonly AtomicInteger _instanceCounter = new AtomicInteger();
 

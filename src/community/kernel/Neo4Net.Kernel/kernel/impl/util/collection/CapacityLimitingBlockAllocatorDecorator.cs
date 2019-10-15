@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.util.collection
 {
 
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.util.Preconditions.requirePositive;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  this._maxMemory = requirePositive( maxMemory );
 		 }
 
-		 public override OffHeapBlockAllocator_MemoryBlock Allocate( long size, MemoryAllocationTracker tracker )
+		 public override OffHeapBlockAllocator_MemoryBlock Allocate( long size, IMemoryAllocationTracker tracker )
 		 {
 			  while ( true )
 			  {
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  }
 		 }
 
-		 public override void Free( OffHeapBlockAllocator_MemoryBlock block, MemoryAllocationTracker tracker )
+		 public override void Free( OffHeapBlockAllocator_MemoryBlock block, IMemoryAllocationTracker tracker )
 		 {
 			  try
 			  {

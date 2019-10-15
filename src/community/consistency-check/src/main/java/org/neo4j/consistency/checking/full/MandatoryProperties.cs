@@ -157,7 +157,7 @@ namespace Neo4Net.Consistency.checking.full
 			  storage.put( labelOrRelType, propertyKeys );
 		 }
 
-		 public interface Check<RECORD, REPORT> : AutoCloseable where RECORD : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_PrimitiveConsistencyReport
+		 public interface Check<RECORD, REPORT> : IDisposable where RECORD : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_PrimitiveConsistencyReport
 		 {
 			  void Receive( int[] keys );
 

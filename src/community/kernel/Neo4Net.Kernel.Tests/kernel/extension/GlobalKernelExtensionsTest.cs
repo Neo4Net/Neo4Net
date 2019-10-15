@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.extension
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.extension
 		 private interface TestingDependencies
 		 {
 			  // Just some dependency
-			  JobScheduler JobScheduler();
+			  IJobScheduler IJobScheduler();
 		 }
 
 		 private class TestingExtensionFactory : KernelExtensionFactory<TestingDependencies>
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.extension
 
 		 private class TestingExtension : LifecycleAdapter
 		 {
-			  internal TestingExtension( JobScheduler jobScheduler )
+			  internal TestingExtension( IJobScheduler jobScheduler )
 			  {
 					// We don't need it right now
 			  }

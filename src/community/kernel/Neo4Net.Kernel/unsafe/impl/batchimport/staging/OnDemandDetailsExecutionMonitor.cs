@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	using VmPauseMonitor = Neo4Net.Kernel.monitoring.VmPauseMonitor;
 	using VmPauseInfo = Neo4Net.Kernel.monitoring.VmPauseMonitor.VmPauseInfo;
 	using NullLog = Neo4Net.Logging.NullLog;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using DetailLevel = Neo4Net.@unsafe.Impl.Batchimport.stats.DetailLevel;
 	using Keys = Neo4Net.@unsafe.Impl.Batchimport.stats.Keys;
 	using Stat = Neo4Net.@unsafe.Impl.Batchimport.stats.Stat;
@@ -84,7 +84,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 private StageDetails _current;
 		 private bool _printDetailsOnDone;
 
-		 public OnDemandDetailsExecutionMonitor( PrintStream @out, Stream @in, Monitor monitor, JobScheduler jobScheduler )
+		 public OnDemandDetailsExecutionMonitor( PrintStream @out, Stream @in, Monitor monitor, IJobScheduler jobScheduler )
 		 {
 			  this.@out = @out;
 			  this.@in = @in;

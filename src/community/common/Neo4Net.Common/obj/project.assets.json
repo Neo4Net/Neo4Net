@@ -30,7 +30,7 @@
   },
   "libraries": {
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "a/iSwnRZb+LHFk49hQOyThh/ZNC3vsbZsF65XwQIb863qF6msmhdQtxGXFL28Ob2NsCz/drEj28BJd/YPpLRBg==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -180,24 +180,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tcorvin\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\tcorv\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+      "projectUniqueName": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
       "projectName": "Neo4Net.Common",
-      "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
-      "packagesPath": "C:\\Users\\tcorvin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\community\\common\\Neo4Net.Common\\obj\\",
+      "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj",
+      "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\tcorvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\tcorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netstandard2.0"
@@ -228,10 +229,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

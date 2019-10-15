@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 		 private Callable<Void> CreateDiscoveryJob( MemberId member, DiscoveryServiceFactory discoveryServiceFactory, ISet<MemberId> expectedTargetSet )
 		 {
-			  JobScheduler jobScheduler = createInitializedScheduler();
+			  IJobScheduler jobScheduler = createInitializedScheduler();
 			  Config config = config();
 			  InitialDiscoveryMembersResolver remoteMemberResolver = new InitialDiscoveryMembersResolver( new NoOpHostnameResolver(), config );
 

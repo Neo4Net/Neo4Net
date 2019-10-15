@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.discovery
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SslPolicy = Neo4Net.Ssl.SslPolicy;
 
 	public class SecureHazelcastDiscoveryServiceFactory : HazelcastDiscoveryServiceFactory, SecureDiscoveryServiceFactory
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// <param name="topologyServiceRetryStrategy"> </param>
 		 /// <param name="monitors">
 		 /// @return </param>
-		 public virtual CoreTopologyService CoreTopologyService( Config config, MemberId myself, JobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors )
+		 public virtual CoreTopologyService CoreTopologyService( Config config, MemberId myself, IJobScheduler jobScheduler, LogProvider logProvider, LogProvider userLogProvider, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy, Monitors monitors )
 		 {
 			  ConfigureHazelcast( config, logProvider );
 			  return new SecureHazelcastCoreTopologyService( config, this._sslPolicy, myself, jobScheduler, logProvider, userLogProvider, remoteMembersResolver, topologyServiceRetryStrategy, monitors );
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.discovery
 		 /// <param name="remoteMembersResolver"> </param>
 		 /// <param name="topologyServiceRetryStrategy">
 		 /// @return </param>
-		 public virtual TopologyService TopologyService( Config config, LogProvider logProvider, JobScheduler jobScheduler, MemberId myself, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy )
+		 public virtual TopologyService TopologyService( Config config, LogProvider logProvider, IJobScheduler jobScheduler, MemberId myself, RemoteMembersResolver remoteMembersResolver, TopologyServiceRetryStrategy topologyServiceRetryStrategy )
 		 {
 			  ConfigureHazelcast( config, logProvider );
 

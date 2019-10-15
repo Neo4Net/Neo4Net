@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 	using StoreMigrator = Neo4Net.Kernel.impl.storemigration.participant.StoreMigrator;
 	using ProgressReporter = Neo4Net.Kernel.impl.util.monitoring.ProgressReporter;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 {
 			  FileSystemAbstraction fileSystem = _fileSystemRule.get();
 			  PageCache pageCache = _pageCacheRule.getPageCache( fileSystem );
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					StoreMigrator migrator = new StoreMigrator( fileSystem, pageCache, Config.defaults(), NullLogService.Instance, jobScheduler );
 

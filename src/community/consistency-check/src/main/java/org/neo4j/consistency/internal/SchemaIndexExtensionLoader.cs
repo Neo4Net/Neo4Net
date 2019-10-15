@@ -36,7 +36,7 @@ namespace Neo4Net.Consistency.Internal
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	/// <summary>
 	/// Utility for loading <seealso cref="IndexProvider"/> instances from <seealso cref="DatabaseKernelExtensions"/>.
@@ -46,7 +46,7 @@ namespace Neo4Net.Consistency.Internal
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.neo4j.kernel.extension.DatabaseKernelExtensions instantiateKernelExtensions(java.io.File databaseDirectory, org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.kernel.configuration.Config config, org.neo4j.logging.internal.LogService logService, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.scheduler.JobScheduler jobScheduler, org.neo4j.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCollector, org.neo4j.kernel.impl.factory.DatabaseInfo databaseInfo, org.neo4j.kernel.monitoring.Monitors monitors, org.neo4j.kernel.impl.core.TokenHolders tokenHolders)
-		 public static DatabaseKernelExtensions InstantiateKernelExtensions( File databaseDirectory, FileSystemAbstraction fileSystem, Config config, LogService logService, PageCache pageCache, JobScheduler jobScheduler, RecoveryCleanupWorkCollector recoveryCollector, DatabaseInfo databaseInfo, Monitors monitors, TokenHolders tokenHolders )
+		 public static DatabaseKernelExtensions InstantiateKernelExtensions( File databaseDirectory, FileSystemAbstraction fileSystem, Config config, LogService logService, PageCache pageCache, IJobScheduler jobScheduler, RecoveryCleanupWorkCollector recoveryCollector, DatabaseInfo databaseInfo, Monitors monitors, TokenHolders tokenHolders )
 		 {
 			  Dependencies deps = new Dependencies();
 			  deps.SatisfyDependencies( fileSystem, config, logService, pageCache, recoveryCollector, monitors, jobScheduler, tokenHolders );

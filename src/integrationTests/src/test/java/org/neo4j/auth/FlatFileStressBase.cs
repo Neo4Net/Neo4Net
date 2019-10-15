@@ -37,8 +37,8 @@ namespace Neo4Net.auth
 	using User = Neo4Net.Kernel.impl.security.User;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using JobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using CommunitySecurityModule = Neo4Net.Server.Security.Auth.CommunitySecurityModule;
 	using Neo4Net.Server.Security.Auth;
@@ -77,7 +77,7 @@ namespace Neo4Net.auth
 		 {
 			  Config config = Config.defaults();
 			  LogProvider logProvider = NullLogProvider.Instance;
-			  JobScheduler jobScheduler = new JobSchedulerAdapter();
+			  IJobScheduler jobScheduler = new IJobSchedulerAdapter();
 
 			  _userRepository = CommunitySecurityModule.getUserRepository( config, logProvider, FileSystem );
 			  _roleRepository = EnterpriseSecurityModule.getRoleRepository( config, logProvider, FileSystem );

@@ -34,10 +34,10 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
-	internal class SimpleCatchupClient : AutoCloseable
+	internal class SimpleCatchupClient : IDisposable
 	{
 		 private readonly GraphDatabaseAPI _graphDb;
 		 private readonly FileSystemAbstraction _fsa;
@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private readonly StoreId _correctStoreId;
 		 private readonly StreamToDiskProvider _streamToDiskProvider;
 		 private readonly PageCache _clientPageCache;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly Log _log;
 		 private readonly LogProvider _logProvider;
 

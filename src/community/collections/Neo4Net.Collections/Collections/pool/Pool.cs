@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Collections.Pooling
 {
-	public interface Pool<T> : AutoCloseable
+	public interface Pool<T> : IDisposable
 	{
 		 T Acquire();
 

@@ -19,12 +19,12 @@
  */
 namespace Neo4Net.Collections.primitive.hopscotch
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	public class IntKeyUnsafeTable<VALUE> : UnsafeTable<VALUE>
 	{
-		 public IntKeyUnsafeTable( int capacity, VALUE valueMarker, MemoryAllocationTracker allocationTracker ) : base( capacity, 4, valueMarker, allocationTracker )
+		 public IntKeyUnsafeTable( int capacity, VALUE valueMarker, IMemoryAllocationTracker allocationTracker ) : base( capacity, 4, valueMarker, allocationTracker )
 		 {
 		 }
 

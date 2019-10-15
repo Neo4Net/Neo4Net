@@ -221,9 +221,9 @@ namespace Neo4Net.Test.rule
 			  {
 					lifecycle = ( Lifecycle ) service;
 			  }
-			  else if ( service is AutoCloseable )
+			  else if ( service is IDisposable )
 			  {
-					lifecycle = new Closer( ( AutoCloseable ) service );
+					lifecycle = new Closer( ( IDisposable ) service );
 			  }
 			  _life.add( lifecycle );
 			  return service;
@@ -236,9 +236,9 @@ namespace Neo4Net.Test.rule
 
 		 private class Closer : LifecycleAdapter
 		 {
-			  internal readonly AutoCloseable Closeable;
+			  internal readonly IDisposable Closeable;
 
-			  internal Closer( AutoCloseable closeable )
+			  internal Closer( IDisposable closeable )
 			  {
 					this.Closeable = closeable;
 			  }

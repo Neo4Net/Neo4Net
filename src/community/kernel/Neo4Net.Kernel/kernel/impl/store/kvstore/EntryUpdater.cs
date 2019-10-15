@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.store.kvstore
 {
 
-	public abstract class EntryUpdater<Key> : AutoCloseable
+	public abstract class EntryUpdater<Key> : IDisposable
 	{
 		 private readonly Lock @lock;
 		 private Thread _thread;

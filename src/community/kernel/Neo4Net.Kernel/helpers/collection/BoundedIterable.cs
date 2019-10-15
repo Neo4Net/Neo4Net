@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Helpers.Collections
 {
 	[Obsolete]
-	public interface BoundedIterable<RECORD> : IEnumerable<RECORD>, AutoCloseable
+	public interface BoundedIterable<RECORD> : IEnumerable<RECORD>, IDisposable
 	{
 
 		 long MaxCount();

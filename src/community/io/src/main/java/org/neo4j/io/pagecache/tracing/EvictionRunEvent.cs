@@ -24,7 +24,7 @@ namespace Neo4Net.Io.pagecache.tracing
 	/// needs to evict a batch of pages. The dedicated eviction thread is
 	/// mostly sleeping when it is not performing an eviction run.
 	/// </summary>
-	public interface EvictionRunEvent : AutoCloseablePageCacheTracerEvent, EvictionEventOpportunity
+	public interface EvictionRunEvent : IDisposablePageCacheTracerEvent, EvictionEventOpportunity
 	{
 		 /// <summary>
 		 /// An EvictionRunEvent that does nothing other than return the EvictionEvent.NULL.

@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.mapped_memory_page_size;
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 private readonly VersionContextSupplier _versionContextSupplier;
 		 private PageCache _pageCache;
 		 private readonly PageCursorTracerSupplier _pageCursorTracerSupplier;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 
 		 /// <summary>
 		 /// Construct configuring page cache factory </summary>
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 /// <param name="log"> page cache factory log </param>
 		 /// <param name="versionContextSupplier"> cursor context factory </param>
 		 /// <param name="scheduler"> job scheduler to execute page cache jobs </param>
-		 public ConfiguringPageCacheFactory( FileSystemAbstraction fs, Config config, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, Log log, VersionContextSupplier versionContextSupplier, JobScheduler scheduler )
+		 public ConfiguringPageCacheFactory( FileSystemAbstraction fs, Config config, PageCacheTracer pageCacheTracer, PageCursorTracerSupplier pageCursorTracerSupplier, Log log, VersionContextSupplier versionContextSupplier, IJobScheduler scheduler )
 		 {
 			  this._fs = fs;
 			  this._versionContextSupplier = versionContextSupplier;

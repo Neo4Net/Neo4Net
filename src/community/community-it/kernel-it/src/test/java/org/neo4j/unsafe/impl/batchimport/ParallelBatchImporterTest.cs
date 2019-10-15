@@ -51,7 +51,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -209,7 +209,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  IdGroupDistribution groupDistribution = new IdGroupDistribution( NODE_COUNT, NUMBER_OF_ID_GROUPS, _random.random(), groups );
 			  long nodeRandomSeed = _random.nextLong();
 			  long relationshipRandomSeed = _random.nextLong();
-			  JobScheduler jobScheduler = new ThreadPoolJobScheduler();
+			  IJobScheduler jobScheduler = new ThreadPoolJobScheduler();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final BatchImporter inserter = new ParallelBatchImporter(databaseLayout, fileSystemRule.get(), null, config, org.neo4j.logging.internal.NullLogService.getInstance(), monitor, EMPTY, org.neo4j.kernel.configuration.Config.defaults(), getFormat(), NO_MONITOR, jobScheduler);
 			  BatchImporter inserter = new ParallelBatchImporter( databaseLayout, _fileSystemRule.get(), null, config, NullLogService.Instance, monitor, EMPTY, Config.defaults(), Format, NO_MONITOR, jobScheduler );

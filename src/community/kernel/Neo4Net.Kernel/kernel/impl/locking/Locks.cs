@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.impl.locking
 		  void Visit( ResourceType resourceType, long resourceId, string description, long estimatedWaitTime, long lockIdentityHashCode );
 	 }
 
-	 public interface Locks_Client : ResourceLocker, AutoCloseable
+	 public interface Locks_Client : ResourceLocker, IDisposable
 	 {
 		  /// <summary>
 		  /// Represents the fact that no lock session is used because no locks are taken.

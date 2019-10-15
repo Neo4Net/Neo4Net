@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.locking
 {
-	public abstract class Lock : AutoCloseable
+	public abstract class Lock : IDisposable
 	{
 		 public abstract void Release();
 

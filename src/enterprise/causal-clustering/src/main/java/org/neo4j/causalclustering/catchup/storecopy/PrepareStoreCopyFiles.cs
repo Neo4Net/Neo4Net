@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.io.fs.FileUtils.relativePath;
 
-	public class PrepareStoreCopyFiles : AutoCloseable
+	public class PrepareStoreCopyFiles : IDisposable
 	{
 		 private readonly NeoStoreDataSource _neoStoreDataSource;
 		 private readonly FileSystemAbstraction _fileSystemAbstraction;

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	/// <summary>
 	/// Generic single-threaded <seealso cref="NodePropertyAccessor"/> given a <seealso cref="NodeCursor"/> and <seealso cref="PropertyCursor"/>.
 	/// </summary>
-	internal class CursorPropertyAccessor : NodePropertyAccessor, AutoCloseable
+	internal class CursorPropertyAccessor : NodePropertyAccessor, IDisposable
 	{
 		 private readonly NodeCursor _nodeCursor;
 		 private readonly PropertyCursor _propertyCursor;

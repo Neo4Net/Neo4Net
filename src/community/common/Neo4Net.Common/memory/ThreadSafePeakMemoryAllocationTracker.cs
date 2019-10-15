@@ -24,10 +24,10 @@ namespace Neo4Net.Memory
    //	import static Long.max;
 
    /// <summary>
-   /// A <seealso cref="MemoryAllocationTracker"/> which is thread-safe, forwards allocations and deallocations to another <seealso cref="MemoryAllocationTracker"/>
+   /// A <seealso cref="IMemoryAllocationTracker"/> which is thread-safe, forwards allocations and deallocations to another <seealso cref="IMemoryAllocationTracker"/>
    /// and will register peak memory usage during its lifetime.
    /// </summary>
-   public class ThreadSafePeakMemoryAllocationTracker : MemoryAllocationTracker
+   public class ThreadSafePeakIMemoryAllocationTracker : IMemoryAllocationTracker
    {
       // Why AtomicLong instead of LongAdder? AtomicLong fits this use case due to:
       // - Having much faster "sum", this is used in every call to allocate/deallocate
@@ -35,9 +35,9 @@ namespace Neo4Net.Memory
       private readonly AtomicLong _allocated = new AtomicLong();
 
       private readonly AtomicLong _peak = new AtomicLong();
-      private readonly MemoryAllocationTracker _alsoReportTo;
+      private readonly IMemoryAllocationTracker _alsoReportTo;
 
-      public ThreadSafePeakMemoryAllocationTracker(MemoryAllocationTracker alsoReportTo)
+      public ThreadSafePeakIMemoryAllocationTracker(IMemoryAllocationTracker alsoReportTo)
       {
          this._alsoReportTo = alsoReportTo;
       }

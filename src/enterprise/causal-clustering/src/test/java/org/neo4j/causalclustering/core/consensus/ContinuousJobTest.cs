@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	using Lifespan = Neo4Net.Kernel.Lifecycle.Lifespan;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.lessThan;
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	public class ContinuousJobTest
 	{
 		 private const long DEFAULT_TIMEOUT_MS = 15_000;
-		 private readonly JobScheduler _scheduler = createInitializedScheduler();
+		 private readonly IJobScheduler _scheduler = createInitializedScheduler();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldRunJobContinuously() throws Throwable

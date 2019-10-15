@@ -39,13 +39,13 @@ namespace Neo4Net.Metatest
 	public class TestCleanupRule
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCleanupAutoCloseable() throws Throwable
+//ORIGINAL LINE: @Test public void shouldCleanupIDisposable() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShouldCleanupAutoCloseable()
+		 public virtual void ShouldCleanupIDisposable()
 		 {
 			  // GIVEN
 			  CleanupRule rule = new CleanupRule();
-			  AutoCloseable toClose = rule.Add( mock( typeof( AutoCloseable ) ) );
+			  IDisposable toClose = rule.Add( mock( typeof( IDisposable ) ) );
 
 			  // WHEN
 			  SimulateTestExecution( rule );
@@ -77,7 +77,7 @@ namespace Neo4Net.Metatest
 		 {
 			  // GIVEN
 			  CleanupRule rule = new CleanupRule();
-			  AutoCloseable closeable = rule.Add( mock( typeof( AutoCloseable ) ) );
+			  IDisposable closeable = rule.Add( mock( typeof( IDisposable ) ) );
 			  Dirt dirt = rule.Add( mock( typeof( Dirt ) ) );
 
 			  // WHEN

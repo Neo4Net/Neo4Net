@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	public class StreamToDisk : StoreFileStream
 	{
 		 private WritableByteChannel _writableByteChannel;
-		 private IList<AutoCloseable> _closeables;
+		 private IList<IDisposable> _closeables;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: static StreamToDisk fromFile(org.neo4j.io.fs.FileSystemAbstraction fsa, java.io.File file) throws java.io.IOException
@@ -43,12 +43,12 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  return new StreamToDisk( fsa.Open( file, OpenMode.READ_WRITE ) );
 		 }
 
-		 private StreamToDisk( WritableByteChannel writableByteChannel, params AutoCloseable[] closeables )
+		 private StreamToDisk( WritableByteChannel writableByteChannel, params IDisposable[] closeables )
 		 {
 			  this._writableByteChannel = writableByteChannel;
-			  this._closeables = new List<AutoCloseable>();
+			  this._closeables = new List<IDisposable>();
 			  this._closeables.Add( writableByteChannel );
-			  ( ( IList<AutoCloseable> )this._closeables ).AddRange( Arrays.asList( closeables ) );
+			  ( ( IList<IDisposable> )this._closeables ).AddRange( Arrays.asList( closeables ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

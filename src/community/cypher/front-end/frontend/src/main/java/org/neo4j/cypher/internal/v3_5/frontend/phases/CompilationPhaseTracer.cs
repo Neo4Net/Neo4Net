@@ -50,7 +50,7 @@ namespace Neo4Net.Cypher.Internal.v3_5.frontend.phases
 		  PipeBuilding,
 	 }
 
-	 public interface CompilationPhaseTracer_CompilationPhaseEvent : AutoCloseable
+	 public interface CompilationPhaseTracer_CompilationPhaseEvent : IDisposable
 	 {
 		  void Close();
 	 }

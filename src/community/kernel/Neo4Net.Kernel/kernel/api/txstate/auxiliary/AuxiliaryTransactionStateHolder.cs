@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.api.txstate.auxiliary
 	/// Instances of this interface are obtained from the <seealso cref="AuxiliaryTransactionStateManager.openStateHolder()"/> method.
 	/// </para>
 	/// </summary>
-	public interface AuxiliaryTransactionStateHolder : AutoCloseable
+	public interface AuxiliaryTransactionStateHolder : IDisposable
 	{
 		 /// <summary>
 		 /// Get the auxiliary transaction state identified by the given <seealso cref="AuxiliaryTransactionStateProvider.getIdentityKey() provider identity key"/>.

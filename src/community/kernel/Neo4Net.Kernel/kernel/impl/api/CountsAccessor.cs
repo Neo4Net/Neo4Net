@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 Register_DoubleLongRegister IndexSample( long indexId, Register_DoubleLongRegister target );
 	}
 
-	 public interface CountsAccessor_Updater : AutoCloseable
+	 public interface CountsAccessor_Updater : IDisposable
 	 {
 		  void IncrementNodeCount( long labelId, long delta );
 
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		  void Close();
 	 }
 
-	 public interface CountsAccessor_IndexStatsUpdater : AutoCloseable
+	 public interface CountsAccessor_IndexStatsUpdater : IDisposable
 	 {
 		  void ReplaceIndexUpdateAndSize( long indexId, long updates, long size );
 

@@ -32,8 +32,7 @@ namespace Neo4Net.Functions
       /// Apply the action for some or all of its side-effects to take place, possibly throwing an exception.
       /// </summary>
       /// <exception cref="E"> the exception that performing this action may throw. </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: void apply() throws E;
+
       void Apply();
 
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:

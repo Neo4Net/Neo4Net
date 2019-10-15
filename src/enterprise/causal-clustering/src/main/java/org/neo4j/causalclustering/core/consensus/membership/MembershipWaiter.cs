@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 
 	/// <summary>
@@ -65,14 +65,14 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 }
 
 		 private readonly MemberId _myself;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly System.Func<DatabaseHealth> _dbHealthSupplier;
 		 private readonly long _maxCatchupLag;
 		 private long _currentCatchupDelayInMs;
 		 private readonly Log _log;
 		 private readonly Monitor _monitor;
 
-		 public MembershipWaiter( MemberId myself, JobScheduler jobScheduler, System.Func<DatabaseHealth> dbHealthSupplier, long maxCatchupLag, LogProvider logProvider, Monitors monitors )
+		 public MembershipWaiter( MemberId myself, IJobScheduler jobScheduler, System.Func<DatabaseHealth> dbHealthSupplier, long maxCatchupLag, LogProvider logProvider, Monitors monitors )
 		 {
 			  this._myself = myself;
 			  this._jobScheduler = jobScheduler;

@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 
 		 private int MaxValue()
 		 {
-			  return java.util.elements.Select( value => NumberUtils.toInt( value, 0 ) ).Max().AsInt;
+			  return java.util.elements.Select( value => NumberUtils.ToInt( value, 0 ) ).Max().AsInt;
 		 }
 	}
 

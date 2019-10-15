@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using FakeClockJobScheduler = Neo4Net.Test.FakeClockJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -285,7 +285,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 public virtual void ShouldAwaitCancellationUnderRealScheduler()
 		 {
 			  // given
-			  JobScheduler scheduler = createInitializedScheduler();
+			  IJobScheduler scheduler = createInitializedScheduler();
 			  scheduler.Start();
 
 			  TimerService timerService = new TimerService( scheduler, FormattedLogProvider.toOutputStream( System.out ) );
@@ -325,7 +325,7 @@ namespace Neo4Net.causalclustering.core.consensus.schedule
 		 public virtual void ShouldBeAbleToCancelBeforeHandlingWithRealScheduler()
 		 {
 			  // given
-			  JobScheduler scheduler = createInitializedScheduler();
+			  IJobScheduler scheduler = createInitializedScheduler();
 			  scheduler.Start();
 
 			  TimerService timerService = new TimerService( scheduler, FormattedLogProvider.toOutputStream( System.out ) );

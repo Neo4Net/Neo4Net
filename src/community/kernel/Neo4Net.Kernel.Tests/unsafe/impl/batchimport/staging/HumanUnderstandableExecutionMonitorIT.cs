@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 
 	using Extractors = Neo4Net.Csv.Reader.Extractors;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -90,7 +90,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 			  Input input = new DataGeneratorInput( NODE_COUNT, RELATIONSHIP_COUNT, idType, Collector.EMPTY, Random.seed(), 0, bareboneNodeHeader(idType, new Extractors(';')), bareboneRelationshipHeader(idType, new Extractors(';')), 1, 1, 0, 0 );
 
 			  // when
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					( new ParallelBatchImporter( Storage.directory().databaseLayout(), Storage.fileSystem(), Storage.pageCache(), DEFAULT, NullLogService.Instance, monitor, EMPTY, defaults(), LATEST_RECORD_FORMATS, NO_MONITOR, jobScheduler ) ).doImport(input);
 

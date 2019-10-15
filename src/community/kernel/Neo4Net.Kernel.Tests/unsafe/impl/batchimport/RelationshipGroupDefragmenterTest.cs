@@ -44,7 +44,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -117,7 +117,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 public int Units;
 
 		 private BatchingNeoStores _stores;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void start() throws java.io.IOException

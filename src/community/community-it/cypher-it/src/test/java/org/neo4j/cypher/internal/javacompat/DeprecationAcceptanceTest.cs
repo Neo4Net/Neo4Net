@@ -101,7 +101,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //ORIGINAL LINE: @Test public void deprecatedToInt()
 		 public virtual void DeprecatedToInt()
 		 {
-			  Stream.of( "CYPHER 3.1", "CYPHER 3.5" ).forEach( version => assertNotifications( version + " EXPLAIN RETURN toInt('1') AS one", ContainsItem( _deprecatedFeatureWarning ) ) );
+			  Stream.of( "CYPHER 3.1", "CYPHER 3.5" ).forEach( version => assertNotifications( version + " EXPLAIN RETURN ToInt('1') AS one", ContainsItem( _deprecatedFeatureWarning ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

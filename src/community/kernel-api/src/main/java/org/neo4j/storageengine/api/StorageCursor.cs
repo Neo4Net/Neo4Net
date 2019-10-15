@@ -22,7 +22,7 @@ namespace Neo4Net.Storageengine.Api
 	/// <summary>
 	/// Base interface for a cursor accessing and reading data as part of <seealso cref="StorageReader"/>.
 	/// </summary>
-	public interface StorageCursor : AutoCloseable
+	public interface StorageCursor : IDisposable
 	{
 		 /// <summary>
 		 /// Positions this cursor and reads the next item that it has been designated to read. </summary>

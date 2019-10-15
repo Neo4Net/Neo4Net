@@ -294,7 +294,7 @@ namespace Neo4Net.tools.dump
 			  return toFile ? new FilePrinter() : SYSTEM_OUT_PRINTER;
 		 }
 
-		 public interface Printer : AutoCloseable
+		 public interface Printer : IDisposable
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: java.io.PrintStream getFor(String file) throws java.io.FileNotFoundException;

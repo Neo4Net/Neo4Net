@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using Logger = Neo4Net.Logging.Logger;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
-	public class LockWrapper : AutoCloseable
+	public class LockWrapper : IDisposable
 	{
 		 private static readonly bool _debugLocking = FeatureToggles.flag( typeof( AbstractKeyValueStore ), "debugLocking", false );
 

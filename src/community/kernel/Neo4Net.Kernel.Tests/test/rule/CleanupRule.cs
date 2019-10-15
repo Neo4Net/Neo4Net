@@ -42,18 +42,18 @@ namespace Neo4Net.Test.rule
 	/// }
 	/// </code></pre>
 	/// 
-	/// It accepts <seealso cref="AutoCloseable"/> objects, since it's the lowest denominator for closeables.
+	/// It accepts <seealso cref="IDisposable"/> objects, since it's the lowest denominator for closeables.
 	/// And it accepts just about any object, where it tries to spot an appropriate close method, like "close" or "shutdown"
 	/// and calls it via reflection.
 	/// </summary>
 	public class CleanupRule : ExternalResource
 	{
 		 private static readonly string[] _commonCloseMethodNames = new string[] { "close", "stop", "shutdown", "shutDown" };
-		 private readonly LinkedList<AutoCloseable> _toCloseAfterwards = new LinkedList<AutoCloseable>();
+		 private readonly LinkedList<IDisposable> _toCloseAfterwards = new LinkedList<IDisposable>();
 
 		 protected internal override void After()
 		 {
-			  foreach ( AutoCloseable toClose in _toCloseAfterwards )
+			  foreach ( IDisposable toClose in _toCloseAfterwards )
 			  {
 					try
 					{
@@ -66,7 +66,7 @@ namespace Neo4Net.Test.rule
 			  }
 		 }
 
-		 public virtual T Add<T>( T toClose ) where T : AutoCloseable
+		 public virtual T Add<T>( T toClose ) where T : IDisposable
 		 {
 			  _toCloseAfterwards.AddFirst( toClose );
 			  return toClose;
@@ -97,8 +97,8 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static AutoCloseable closeable(final Method method, final Object target)
-		 private static AutoCloseable Closeable( System.Reflection.MethodInfo method, object target )
+//ORIGINAL LINE: private static IDisposable closeable(final Method method, final Object target)
+		 private static IDisposable Closeable( System.Reflection.MethodInfo method, object target )
 		 {
 			  return () =>
 			  {

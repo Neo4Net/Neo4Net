@@ -35,7 +35,7 @@ namespace Neo4Net.Cursors
    /// IllegalStateException}.
    /// </para>
    /// </summary>
-   public class RawCursor<T, EXCEPTION> : System.Func<T>, AutoCloseable where EXCEPTION : Exception
+   public class RawCursor<T, EXCEPTION> : System.Func<T>, IDisposable where EXCEPTION : Exception
    {
       /// <summary>
       /// Move the cursor to the next row.

@@ -48,7 +48,7 @@ namespace Neo4Net.Server
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;
 	using CypherExecutorProvider = Neo4Net.Server.database.CypherExecutorProvider;
@@ -219,7 +219,7 @@ namespace Neo4Net.Server
 			  // ensure that this is > 0
 			  long runEvery = round( timeoutMillis / 2.0 );
 
-			  ResolveDependency( typeof( JobScheduler ) ).scheduleRecurring(Group.SERVER_TRANSACTION_TIMEOUT, () =>
+			  ResolveDependency( typeof( IJobScheduler ) ).scheduleRecurring(Group.SERVER_TRANSACTION_TIMEOUT, () =>
 			  {
 				long maxAge = clock.millis() - timeoutMillis;
 				_transactionRegistry.rollbackSuspendedTransactionsIdleSince( maxAge );

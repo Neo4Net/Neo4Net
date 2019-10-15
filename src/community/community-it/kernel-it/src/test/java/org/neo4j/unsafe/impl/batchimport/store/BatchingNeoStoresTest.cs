@@ -45,7 +45,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
@@ -97,7 +97,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 			  // WHEN
 			  try
 			  {
-					  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+					  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 					  {
 						RecordFormats recordFormats = RecordFormatSelector.selectForConfig( Config.defaults(), NullLogProvider.Instance );
 						using ( BatchingNeoStores store = BatchingNeoStores.BatchingNeoStoresConflict( Storage.fileSystem(), Storage.directory().databaseDir(), recordFormats, DEFAULT, NullLogService.Instance, EMPTY, Config.defaults(), jobScheduler ) )
@@ -126,7 +126,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 			  // WHEN
 			  RecordFormats recordFormats = LATEST_RECORD_FORMATS;
 			  int headerSize = recordFormats.Dynamic().RecordHeaderSize;
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores store = BatchingNeoStores.BatchingNeoStoresConflict(Storage.fileSystem(), Storage.directory().absolutePath(), recordFormats, DEFAULT, NullLogService.Instance, EMPTY, config, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), BatchingNeoStores store = BatchingNeoStores.BatchingNeoStoresConflict(Storage.fileSystem(), Storage.directory().absolutePath(), recordFormats, DEFAULT, NullLogService.Instance, EMPTY, config, jobScheduler) )
 			  {
 					store.CreateNew();
 

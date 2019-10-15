@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.impl.util
 
 	using Group = Neo4Net.Scheduler.Group;
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
-	public class CountingJobScheduler : JobScheduler
+	public class CountingJobScheduler : IJobScheduler
 	{
 		 private readonly AtomicInteger _counter;
-		 private readonly JobScheduler @delegate;
+		 private readonly IJobScheduler @delegate;
 
-		 public CountingJobScheduler( AtomicInteger counter, JobScheduler @delegate )
+		 public CountingJobScheduler( AtomicInteger counter, IJobScheduler @delegate )
 		 {
 			  this._counter = counter;
 			  this.@delegate = @delegate;

@@ -24,7 +24,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
@@ -93,7 +93,7 @@ namespace Neo4Net.Values.Storable
 			  return Temporal();
 		 }
 
-		 public override long UpdateHash( HashFunction hashFunction, long hash )
+		 public override long UpdateHash( IHashFunction hashFunction, long hash )
 		 {
 			  // todo Good enough? Or do subclasses need to implement each their own?
 			  return hashFunction.Update( hash, GetHashCode() );

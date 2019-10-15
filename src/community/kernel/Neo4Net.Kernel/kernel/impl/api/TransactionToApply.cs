@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	/// <li>Data about the commit can now also be accessed using f.ex <seealso cref="commitment()"/> or <seealso cref="transactionId()"/></li>
 	/// </ol>
 	/// </summary>
-	public class TransactionToApply : CommandsToApply, AutoCloseable
+	public class TransactionToApply : CommandsToApply, IDisposable
 	{
 		 public const long TRANSACTION_ID_NOT_SPECIFIED = 0;
 

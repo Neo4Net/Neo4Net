@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 	public interface DatabaseCreationContext
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel
 
 		 LogService LogService { get; }
 
-		 JobScheduler Scheduler { get; }
+		 IJobScheduler Scheduler { get; }
 
 		 TokenNameLookup TokenNameLookup { get; }
 

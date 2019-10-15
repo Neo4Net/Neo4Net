@@ -136,7 +136,7 @@ namespace Neo4Net.Helpers
 			  Validator<int> validator = mock( typeof( Validator ) );
 
 			  // WHEN
-			  int value = args.InterpretOption( "arg", mandatory(), toInt(), validator );
+			  int value = args.InterpretOption( "arg", mandatory(), ToInt(), validator );
 
 			  // THEN
 			  assertEquals( expectedValue, value );
@@ -155,7 +155,7 @@ namespace Neo4Net.Helpers
 			  Validator<int> validator = mock( typeof( Validator ) );
 
 			  // WHEN
-			  int value = args.InterpretOrphan( 0, mandatory(), toInt(), validator );
+			  int value = args.InterpretOrphan( 0, mandatory(), ToInt(), validator );
 
 			  // THEN
 			  assertEquals( expectedValue, value );
@@ -179,7 +179,7 @@ namespace Neo4Net.Helpers
 
 			  // WHEN
 			  assertThrows( typeof( System.ArgumentException ), () => args.Get(key) );
-			  ICollection<int> numbers = args.InterpretOptions( key, optional(), toInt() );
+			  ICollection<int> numbers = args.InterpretOptions( key, optional(), ToInt() );
 
 			  // THEN
 			  assertEquals( expectedValues, numbers );

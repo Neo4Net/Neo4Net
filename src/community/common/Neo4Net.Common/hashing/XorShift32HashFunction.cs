@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Hashing
 {
-   /// <seealso cref= HashFunction#xorShift32() </seealso>
+   /// <seealso cref= HashFunctionHelper#XorShift32() </seealso>
    internal class XorShift32HashFunction : HashFunction
    {
       internal static readonly XorShift32HashFunction Instance = new XorShift32HashFunction();

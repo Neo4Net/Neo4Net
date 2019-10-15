@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using ProgressReporter = Neo4Net.Kernel.impl.util.monitoring.ProgressReporter;
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 			  ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(databaseLayout.DatabaseDirectory()).setConfig(GraphDatabaseSettings.record_format, HighLimitV3_0_0.NAME).newGraphDatabase().shutdown();
 			  Config config = Config.defaults( pagecache_memory, "8m" );
 
-			  try (FileSystemAbstraction fs = new DefaultFileSystemAbstraction(); JobScheduler _jobScheduler = new ThreadPoolJobScheduler(); PageCache _pageCache = new ConfiguringPageCacheFactory(fs, config, NULL, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, NullLog.Instance, EmptyVersionContextSupplier.EMPTY, _jobScheduler)
+			  try (FileSystemAbstraction fs = new DefaultFileSystemAbstraction(); IJobScheduler _jobScheduler = new ThreadPoolJobScheduler(); PageCache _pageCache = new ConfiguringPageCacheFactory(fs, config, NULL, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, NullLog.Instance, EmptyVersionContextSupplier.EMPTY, _jobScheduler)
 								.OrCreatePageCache)
 								{
 					// For test code sanity

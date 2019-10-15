@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// to the log. This transaction might not actually end up performing the force itself, but could be included in a
 	/// force batch performed by another thread. This is the total force latency that this thread experienced.
 	/// </summary>
-	public interface LogForceWaitEvent : AutoCloseable
+	public interface LogForceWaitEvent : IDisposable
 	{
 
 		 /// <summary>

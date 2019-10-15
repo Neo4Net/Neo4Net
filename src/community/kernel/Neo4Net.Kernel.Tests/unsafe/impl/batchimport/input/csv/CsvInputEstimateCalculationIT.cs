@@ -50,7 +50,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -121,7 +121,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 			  DatabaseLayout databaseLayout = Directory.databaseLayout();
 			  Config config = Config.defaults();
 			  FileSystemAbstraction fs = new DefaultFileSystemAbstraction();
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					( new ParallelBatchImporter( databaseLayout, fs, null, Configuration.DEFAULT, NullLogService.Instance, ExecutionMonitors.invisible(), AdditionalInitialIds.EMPTY, config, format, NO_MONITOR, jobScheduler ) ).doImport(input);
 

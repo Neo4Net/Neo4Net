@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.runtime
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 
-	public interface BoltStateMachine : AutoCloseable
+	public interface BoltStateMachine : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void process(org.neo4j.bolt.messaging.RequestMessage message, BoltResponseHandler handler) throws BoltConnectionFatality;

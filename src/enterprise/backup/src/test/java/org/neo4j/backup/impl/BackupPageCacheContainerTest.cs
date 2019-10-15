@@ -26,7 +26,7 @@ namespace Neo4Net.backup.impl
 	using Test = org.junit.jupiter.api.Test;
 
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -38,14 +38,14 @@ namespace Neo4Net.backup.impl
 	internal class BackupPageCacheContainerTest
 	{
 		 private PageCache _pageCache;
-		 private JobScheduler _jobScheduler;
+		 private IJobScheduler _jobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @BeforeEach void setUp()
 		 internal virtual void SetUp()
 		 {
 			  _pageCache = mock( typeof( PageCache ) );
-			  _jobScheduler = mock( typeof( JobScheduler ) );
+			  _jobScheduler = mock( typeof( IJobScheduler ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

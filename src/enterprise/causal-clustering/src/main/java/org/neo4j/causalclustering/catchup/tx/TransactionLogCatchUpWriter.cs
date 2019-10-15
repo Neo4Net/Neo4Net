@@ -58,7 +58,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
-	public class TransactionLogCatchUpWriter : TxPullResponseListener, AutoCloseable
+	public class TransactionLogCatchUpWriter : TxPullResponseListener, IDisposable
 	{
 		 private readonly Lifespan _lifespan = new Lifespan();
 		 private readonly PageCache _pageCache;

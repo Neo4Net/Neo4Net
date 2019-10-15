@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using FileIsNotMappedException = Neo4Net.Io.pagecache.impl.FileIsNotMappedException;
 	using NeoStoreFileListing = Neo4Net.Kernel.impl.transaction.state.NeoStoreFileListing;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -67,14 +67,14 @@ namespace Neo4Net.Kernel.impl.pagecache
 
 		 private readonly FileSystemAbstraction _fs;
 		 private readonly PageCache _pageCache;
-		 private readonly JobScheduler _scheduler;
+		 private readonly IJobScheduler _scheduler;
 		 private readonly File _databaseDirectory;
 		 private readonly ProfileRefCounts _refCounts;
 		 private volatile bool _stopped;
 		 private ExecutorService _executor;
 		 private PageLoaderFactory _pageLoaderFactory;
 
-		 internal PageCacheWarmer( FileSystemAbstraction fs, PageCache pageCache, JobScheduler scheduler, File databaseDirectory )
+		 internal PageCacheWarmer( FileSystemAbstraction fs, PageCache pageCache, IJobScheduler scheduler, File databaseDirectory )
 		 {
 			  this._fs = fs;
 			  this._pageCache = pageCache;
@@ -309,7 +309,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 			  return pagesInMemory;
 		 }
 
-		 private static ExecutorService BuildExecutorService( JobScheduler scheduler )
+		 private static ExecutorService BuildExecutorService( IJobScheduler scheduler )
 		 {
 			  BlockingQueue<ThreadStart> workQueue = new LinkedBlockingQueue<ThreadStart>( _ioParallelism * 4 );
 			  RejectedExecutionHandler rejectionPolicy = new ThreadPoolExecutor.CallerRunsPolicy();

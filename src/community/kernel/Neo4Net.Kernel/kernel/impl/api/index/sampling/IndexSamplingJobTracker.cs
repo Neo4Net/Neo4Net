@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
 
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class IndexSamplingJobTracker
 	{
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			_allJobsFinished = @lock.newCondition();
 		}
 
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 		 private readonly int _jobLimit;
 		 private readonly ISet<long> _executingJobs;
 		 private readonly Lock @lock = new ReentrantLock( true );
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 
 		 private bool _stopped;
 
-		 public IndexSamplingJobTracker( IndexSamplingConfig config, JobScheduler jobScheduler )
+		 public IndexSamplingJobTracker( IndexSamplingConfig config, IJobScheduler jobScheduler )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {

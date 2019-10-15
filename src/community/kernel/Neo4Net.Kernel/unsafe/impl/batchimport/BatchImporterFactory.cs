@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordFormats = Neo4Net.Kernel.impl.store.format.RecordFormats;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ExecutionMonitor = Neo4Net.@unsafe.Impl.Batchimport.staging.ExecutionMonitor;
 
 	public abstract class BatchImporterFactory : Service
@@ -41,7 +41,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  this._priority = priority;
 		 }
 
-		 public abstract BatchImporter Instantiate( DatabaseLayout directoryStructure, FileSystemAbstraction fileSystem, PageCache externalPageCache, Configuration config, LogService logService, ExecutionMonitor executionMonitor, AdditionalInitialIds additionalInitialIds, Config dbConfig, RecordFormats recordFormats, ImportLogic.Monitor monitor, JobScheduler jobScheduler );
+		 public abstract BatchImporter Instantiate( DatabaseLayout directoryStructure, FileSystemAbstraction fileSystem, PageCache externalPageCache, Configuration config, LogService logService, ExecutionMonitor executionMonitor, AdditionalInitialIds additionalInitialIds, Config dbConfig, RecordFormats recordFormats, ImportLogic.Monitor monitor, IJobScheduler jobScheduler );
 
 		 public static BatchImporterFactory WithHighestPriority()
 		 {

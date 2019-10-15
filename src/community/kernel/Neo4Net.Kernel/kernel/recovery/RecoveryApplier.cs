@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.recovery
 	/// <summary>
 	/// Recovery transaction applier that will apply all recovered transaction to underlying store.
 	/// </summary>
-	public interface RecoveryApplier : Visitor<CommittedTransactionRepresentation, Exception>, AutoCloseable
+	public interface RecoveryApplier : Visitor<CommittedTransactionRepresentation, Exception>, IDisposable
 	{
 	}
 

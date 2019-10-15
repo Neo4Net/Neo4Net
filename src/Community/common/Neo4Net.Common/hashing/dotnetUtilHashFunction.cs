@@ -20,15 +20,15 @@
 
 namespace Neo4Net.Hashing
 {
-   /// <seealso cref= HashFunction#javaUtilHashing() </seealso>
-   internal class JavaUtilHashFunction : HashFunction
+   /// <seealso cref= HashFunctionHelper#dotnetUtilHashing() </seealso>
+   internal class dotnetUtilHashFunction : HashFunction
    {
-      internal static readonly HashFunction Instance = new JavaUtilHashFunction();
+      internal static readonly IHashFunction _instance = new dotnetUtilHashFunction();
 
-      private JavaUtilHashFunction()
+      private dotnetUtilHashFunction()
       {
       }
-
+      public static IHashFunction Instance { get { return _instance; } }
       public override long Initialize(long seed)
       {
          return seed;

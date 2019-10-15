@@ -29,7 +29,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using MuninnPageCache = Neo4Net.Io.pagecache.impl.muninn.MuninnPageCache;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.graphdb.config.Configuration.EMPTY;
@@ -89,7 +89,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  }
 		 }
 
-		 internal static PageCache PageCache( JobScheduler jobScheduler )
+		 internal static PageCache PageCache( IJobScheduler jobScheduler )
 		 {
 			  SingleFilePageSwapperFactory swapper = new SingleFilePageSwapperFactory();
 			  DefaultFileSystemAbstraction fs = new DefaultFileSystemAbstraction();

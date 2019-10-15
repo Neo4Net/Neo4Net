@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using LifecycleException = Neo4Net.Kernel.Lifecycle.LifecycleException;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
@@ -319,7 +319,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 private void ChangeStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(_fs, jobScheduler) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(_fs, jobScheduler) )
 			  {
 					MetaDataStore.setRecord( pageCache, neoStoreFile, RANDOM_NUMBER, DateTimeHelper.CurrentUnixTimeMillis() );
 			  }

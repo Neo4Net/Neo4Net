@@ -23,7 +23,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	/// This interface should not be used generically in hot paths, but instead these use cases should use the explicit cursor
 	/// types.
 	/// </summary>
-	public interface Cursor : AutoCloseablePlus
+	public interface Cursor : IDisposablePlus
 	{
 		 bool Next();
 	}

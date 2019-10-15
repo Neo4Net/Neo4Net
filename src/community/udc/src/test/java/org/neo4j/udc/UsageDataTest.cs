@@ -21,7 +21,7 @@ namespace Neo4Net.Udc
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -39,7 +39,7 @@ namespace Neo4Net.Udc
 		 internal virtual void ShouldPutAndRetrieve()
 		 {
 			  // Given
-			  UsageData ms = new UsageData( mock( typeof( JobScheduler ) ) );
+			  UsageData ms = new UsageData( mock( typeof( IJobScheduler ) ) );
 			  UsageDataKey<string> key = key( "hello" );
 
 			  // When

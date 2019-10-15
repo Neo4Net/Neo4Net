@@ -64,7 +64,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  assertTrue( kindCloseable2.WasClosed );
 		 }
 
-		 internal class CloseTrackingCloseable : AutoCloseable
+		 internal class CloseTrackingCloseable : IDisposable
 		 {
 			 private readonly CloseablesListenerTest _outerInstance;
 

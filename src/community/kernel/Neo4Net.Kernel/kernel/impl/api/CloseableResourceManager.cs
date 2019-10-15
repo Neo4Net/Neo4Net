@@ -28,20 +28,20 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	public class CloseableResourceManager : ResourceManager
 	{
-		 private ICollection<AutoCloseable> _closeableResources;
+		 private ICollection<IDisposable> _closeableResources;
 
 		 // ResourceTracker
 
-		 public override void RegisterCloseableResource( AutoCloseable closeable )
+		 public override void RegisterCloseableResource( IDisposable closeable )
 		 {
 			  if ( _closeableResources == null )
 			  {
-					_closeableResources = new List<AutoCloseable>( 8 );
+					_closeableResources = new List<IDisposable>( 8 );
 			  }
 			  _closeableResources.Add( closeable );
 		 }
 
-		 public override void UnregisterCloseableResource( AutoCloseable closeable )
+		 public override void UnregisterCloseableResource( IDisposable closeable )
 		 {
 			  if ( _closeableResources != null )
 			  {
@@ -57,11 +57,11 @@ namespace Neo4Net.Kernel.Impl.Api
 			  {
 					// Make sure we reset closeableResource before doing anything which may throw an exception that
 					// _may_ result in a recursive call to this close-method
-					ICollection<AutoCloseable> resourcesToClose = _closeableResources;
+					ICollection<IDisposable> resourcesToClose = _closeableResources;
 					_closeableResources = null;
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-					IOUtils.close( ResourceCloseFailureException::new, resourcesToClose.toArray( new AutoCloseable[0] ) );
+					IOUtils.close( ResourceCloseFailureException::new, resourcesToClose.toArray( new IDisposable[0] ) );
 			  }
 		 }
 	}

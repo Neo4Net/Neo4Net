@@ -28,7 +28,7 @@ namespace Neo4Net.Io.pagecache.stress
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -88,7 +88,7 @@ namespace Neo4Net.Io.pagecache.stress
 //ORIGINAL LINE: public void run() throws Exception
 		 public virtual void Run()
 		 {
-			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), JobScheduler jobScheduler = new ThreadPoolJobScheduler() )
+			  using ( FileSystemAbstraction fs = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = new ThreadPoolJobScheduler() )
 			  {
 					PageSwapperFactory swapperFactory = new SingleFilePageSwapperFactory();
 					swapperFactory.Open( fs, Configuration.EMPTY );

@@ -25,17 +25,17 @@ namespace Neo4Net.Internal.Collector
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using Neo4Net.Values;
 
-	public class DataCollector : AutoCloseable
+	public class DataCollector : IDisposable
 	{
 		 internal readonly Kernel Kernel;
-		 internal readonly JobScheduler JobScheduler;
+		 internal readonly IJobScheduler IJobScheduler;
 		 internal readonly Neo4Net.Values.ValueMapper_JavaMapper ValueMapper;
 		 internal readonly QueryCollector QueryCollector;
 
-		 internal DataCollector( Kernel kernel, JobScheduler jobScheduler, Monitors monitors, Neo4Net.Values.ValueMapper_JavaMapper valueMapper, Config config )
+		 internal DataCollector( Kernel kernel, IJobScheduler jobScheduler, Monitors monitors, Neo4Net.Values.ValueMapper_JavaMapper valueMapper, Config config )
 		 {
 			  this.Kernel = kernel;
 			  this.JobScheduler = jobScheduler;

@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	/// (i.e. calling <seealso cref="receive(long, object)"/> on its downstream step) ordered by ticket.
 	/// </summary>
 	/// @param <T> the type of batch objects received from upstream. </param>
-	public interface Step<T> : Parallelizable, AutoCloseable, Panicable
+	public interface Step<T> : Parallelizable, IDisposable, Panicable
 	{
 		 /// <summary>
 		 /// Whether or not tickets arrive in <seealso cref="receive(long, object)"/> ordered by ticket number.

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Io.pagecache.impl.muninn
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	internal class VictimPageReference
@@ -32,7 +32,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 			  // All state is static
 		 }
 
-		 internal static long GetVictimPage( int pageSize, MemoryAllocationTracker allocationTracker )
+		 internal static long GetVictimPage( int pageSize, IMemoryAllocationTracker allocationTracker )
 		 {
 			 lock ( typeof( VictimPageReference ) )
 			 {

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	public abstract class OffHeapNumberArray<N> : BaseNumberArray<N> where N : NumberArray<N>
@@ -28,11 +28,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 protected internal readonly long Address;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 protected internal readonly long LengthConflict;
-		 protected internal readonly MemoryAllocationTracker AllocationTracker;
+		 protected internal readonly IMemoryAllocationTracker AllocationTracker;
 		 private readonly long _allocatedBytes;
 		 private bool _closed;
 
-		 protected internal OffHeapNumberArray( long length, int itemSize, long @base, MemoryAllocationTracker allocationTracker ) : base( itemSize, @base )
+		 protected internal OffHeapNumberArray( long length, int itemSize, long @base, IMemoryAllocationTracker allocationTracker ) : base( itemSize, @base )
 		 {
 			  UnsafeUtil.assertHasUnsafe();
 			  this.LengthConflict = length;

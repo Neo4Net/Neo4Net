@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadTestUtils = Neo4Net.Test.ThreadTestUtils;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -726,7 +726,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 			  // Prevent index updates from being applied to eventually consistent indexes.
 			  BinaryLatch indexUpdateBlocker = new BinaryLatch();
-			  _db.DependencyResolver.resolveDependency( typeof( JobScheduler ), ONLY ).schedule( Group.INDEX_UPDATING, indexUpdateBlocker.await );
+			  _db.DependencyResolver.resolveDependency( typeof( IJobScheduler ), ONLY ).schedule( Group.INDEX_UPDATING, indexUpdateBlocker.await );
 
 			  LongHashSet nodeIds = new LongHashSet();
 			  long relId;

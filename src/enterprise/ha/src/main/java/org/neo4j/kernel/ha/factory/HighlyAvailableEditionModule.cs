@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.ha.factory
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 	using UsageData = Neo4Net.Udc.UsageData;
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
@@ -535,7 +535,7 @@ namespace Neo4Net.Kernel.ha.factory
 			 }
 		 }
 
-		 private static CommitProcessFactory CreateCommitProcessFactory( Dependencies dependencies, LogService logging, Monitors monitors, Config config, LifeSupport paxosLife, ClusterClient clusterClient, ClusterMembers members, JobScheduler jobScheduler, Master master, RequestContextFactory requestContextFactory, ComponentSwitcherContainer componentSwitcherContainer, System.Func<LogEntryReader<ReadableClosablePositionAwareChannel>> logEntryReader )
+		 private static CommitProcessFactory CreateCommitProcessFactory( Dependencies dependencies, LogService logging, Monitors monitors, Config config, LifeSupport paxosLife, ClusterClient clusterClient, ClusterMembers members, IJobScheduler jobScheduler, Master master, RequestContextFactory requestContextFactory, ComponentSwitcherContainer componentSwitcherContainer, System.Func<LogEntryReader<ReadableClosablePositionAwareChannel>> logEntryReader )
 		 {
 			  DefaultSlaveFactory slaveFactory = dependencies.SatisfyDependency( new DefaultSlaveFactory( logging.InternalLogProvider, monitors, config.Get( HaSettings.com_chunk_size ).intValue(), logEntryReader ) );
 

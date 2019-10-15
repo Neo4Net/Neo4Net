@@ -887,7 +887,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 					})).Start();
 			  }
 
-			  protected internal class LatchedRunnables : AutoCloseable
+			  protected internal class LatchedRunnables : IDisposable
 			  {
 					internal DoubleLatch DoubleLatch;
 					internal ThreadStart RunBefore;

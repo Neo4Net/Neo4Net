@@ -26,7 +26,7 @@ namespace Neo4Net.Server.modules
 
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	usingIJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using WebServer = Neo4Net.Server.web.WebServer;
 	using UsageData = Neo4Net.Udc.UsageData;

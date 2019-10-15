@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.locking
 {
 
-	public class LockGroup : AutoCloseable
+	public class LockGroup : IDisposable
 	{
 		 private readonly IList<Lock> _locks = new List<Lock>();
 

@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using IndexImplementation = Neo4Net.Kernel.spi.explicitindex.IndexImplementation;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using CommandReaderFactory = Neo4Net.Storageengine.Api.CommandReaderFactory;
 	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
 	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 private readonly int _denseNodeThreshold;
 		 private readonly int _recordIdBatchSize;
 
-		 public RecordStorageEngine( DatabaseLayout databaseLayout, Config config, PageCache pageCache, FileSystemAbstraction fs, LogProvider logProvider, LogProvider userLogProvider, TokenHolders tokenHolders, SchemaState schemaState, ConstraintSemantics constraintSemantics, JobScheduler scheduler, TokenNameLookup tokenNameLookup, LockService lockService, IndexProviderMap indexProviderMap, IndexingService.Monitor indexingServiceMonitor, DatabaseHealth databaseHealth, ExplicitIndexProvider explicitIndexProvider, IndexConfigStore indexConfigStore, IdOrderingQueue explicitIndexTransactionOrdering, IdGeneratorFactory idGeneratorFactory, IdController idController, Monitors monitors, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, OperationalMode operationalMode, VersionContextSupplier versionContextSupplier )
+		 public RecordStorageEngine( DatabaseLayout databaseLayout, Config config, PageCache pageCache, FileSystemAbstraction fs, LogProvider logProvider, LogProvider userLogProvider, TokenHolders tokenHolders, SchemaState schemaState, ConstraintSemantics constraintSemantics, IJobScheduler scheduler, TokenNameLookup tokenNameLookup, LockService lockService, IndexProviderMap indexProviderMap, IndexingService.Monitor indexingServiceMonitor, DatabaseHealth databaseHealth, ExplicitIndexProvider explicitIndexProvider, IndexConfigStore indexConfigStore, IdOrderingQueue explicitIndexTransactionOrdering, IdGeneratorFactory idGeneratorFactory, IdController idController, Monitors monitors, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, OperationalMode operationalMode, VersionContextSupplier versionContextSupplier )
 		 {
 			  this._tokenHolders = tokenHolders;
 			  this._schemaState = schemaState;

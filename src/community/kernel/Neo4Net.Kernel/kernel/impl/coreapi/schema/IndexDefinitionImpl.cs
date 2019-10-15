@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using Label = Neo4Net.Graphdb.Label;
 	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
 	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 
 		 public override int GetHashCode()
 		 {
-			  HashFunction hf = HashFunction.incrementalXXH64();
+			  IHashFunction hf = HashFunctionHelper.IncrementalXXH64();
 			  long hash = hf.Initialize( 31 );
 			  hash = hf.UpdateWithArray( hash, _labels, label => label.name().GetHashCode() );
 			  hash = hf.UpdateWithArray( hash, _relTypes, relType => relType.name().GetHashCode() );

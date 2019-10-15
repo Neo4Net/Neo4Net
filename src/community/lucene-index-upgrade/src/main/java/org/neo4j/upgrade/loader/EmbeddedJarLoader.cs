@@ -36,7 +36,7 @@ namespace Neo4Net.Upgrade.Loader
 	/// example)
 	/// </para>
 	/// </summary>
-	public class EmbeddedJarLoader : AutoCloseable
+	public class EmbeddedJarLoader : IDisposable
 	{
 		 private string[] _jars;
 		 private ICollection<File> _extractedFiles = new List<File>();

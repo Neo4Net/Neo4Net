@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.stresstests
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using StandalonePageCacheFactory = Neo4Net.Io.pagecache.impl.muninn.StandalonePageCacheFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal static void AssertStoreConsistent( FileSystemAbstraction fs, File storeDir )
 		 {
 			  File parent = storeDir.ParentFile;
-			  using ( JobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fs, jobScheduler), TemporaryStoreDirectory tempStore = new TemporaryStoreDirectory(fs, pageCache, parent) )
+			  using ( IJobScheduler jobScheduler = new ThreadPoolJobScheduler(), PageCache pageCache = StandalonePageCacheFactory.createPageCache(fs, jobScheduler), TemporaryStoreDirectory tempStore = new TemporaryStoreDirectory(fs, pageCache, parent) )
 			  {
 					fs.CopyRecursively( storeDir, tempStore.StoreDir() );
 

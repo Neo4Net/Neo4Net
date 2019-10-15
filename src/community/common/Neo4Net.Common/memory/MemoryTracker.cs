@@ -22,8 +22,8 @@ namespace Neo4Net.Memory
 {
    /// <summary>
    /// Tracker that capable to report number of allocated bytes. </summary>
-   /// <seealso cref= MemoryAllocationTracker </seealso>
-   public interface MemoryTracker
+   /// <seealso cref= IMemoryAllocationTracker </seealso>
+   public interface IMemoryTracker
    {
       /// <returns> number of bytes of direct memory that are used </returns>
       long UsedDirectMemory();
@@ -31,6 +31,6 @@ namespace Neo4Net.Memory
 
    public static class MemoryTracker_Fields
    {
-      public static readonly MemoryTracker None = () => 0;
+      public static readonly IMemoryTracker None = () => 0;
    }
 }

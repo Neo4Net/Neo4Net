@@ -19,20 +19,20 @@
  */
 namespace Neo4Net.Kernel.impl.scheduler
 {
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
-	public sealed class JobSchedulerFactory
+	public sealed class IJobSchedulerFactory
 	{
-		 private JobSchedulerFactory()
+		 private IJobSchedulerFactory()
 		 {
 		 }
 
-		 public static JobScheduler CreateScheduler()
+		 public static IJobScheduler CreateScheduler()
 		 {
 			  return CreateCentralScheduler();
 		 }
 
-		 public static JobScheduler CreateInitializedScheduler()
+		 public static IJobScheduler CreateInitializedScheduler()
 		 {
 			  CentralJobScheduler scheduler = CreateCentralScheduler();
 			  scheduler.Init();

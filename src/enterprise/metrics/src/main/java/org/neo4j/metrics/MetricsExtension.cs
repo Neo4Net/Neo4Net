@@ -34,7 +34,7 @@ namespace Neo4Net.metrics
 	using CompositeEventReporter = Neo4Net.metrics.output.CompositeEventReporter;
 	using EventReporterBuilder = Neo4Net.metrics.output.EventReporterBuilder;
 	using Neo4jMetricsBuilder = Neo4Net.metrics.source.Neo4jMetricsBuilder;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 	public class MetricsExtension : Lifecycle
 	{
@@ -48,7 +48,7 @@ namespace Neo4Net.metrics
 			  LogService logService = dependencies.LogService();
 			  Config configuration = dependencies.Configuration();
 			  FileSystemAbstraction fileSystem = dependencies.FileSystemAbstraction();
-			  JobScheduler scheduler = dependencies.Scheduler();
+			  IJobScheduler scheduler = dependencies.Scheduler();
 			  _logger = logService.GetUserLog( this.GetType() );
 
 			  MetricRegistry registry = new MetricRegistry();

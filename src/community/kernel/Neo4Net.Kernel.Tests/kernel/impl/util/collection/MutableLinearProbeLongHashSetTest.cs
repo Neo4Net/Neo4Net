@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 
 
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
-	using MemoryAllocationTracker = Neo4Net.Memory.MemoryAllocationTracker;
+	using IMemoryAllocationTracker = Neo4Net.Memory.IMemoryAllocationTracker;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using RandomExtension = Neo4Net.Test.extension.RandomExtension;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 private RandomRule _rnd;
 
 		 private readonly CachingOffHeapBlockAllocator _blockAllocator = new CachingOffHeapBlockAllocator();
-		 private readonly MemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
+		 private readonly IMemoryAllocationTracker _memoryTracker = new LocalMemoryTracker();
 		 private MemoryAllocator _memoryAllocator;
 
 		 private MutableLinearProbeLongHashSet _set;
@@ -271,8 +271,8 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void AllocateFreeMemory()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.memory.MemoryAllocationTracker memoryTrackerSpy = spy(new org.neo4j.memory.LocalMemoryTracker());
-			  MemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
+//ORIGINAL LINE: final org.neo4j.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new org.neo4j.memory.LocalMemoryTracker());
+			  IMemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet(new OffHeapMemoryAllocator(memoryTrackerSpy, blockAllocator));
 			  MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet( new OffHeapMemoryAllocator( memoryTrackerSpy, _blockAllocator ) );
@@ -295,8 +295,8 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void FreeFrozenMemory()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.memory.MemoryAllocationTracker memoryTrackerSpy = spy(new org.neo4j.memory.LocalMemoryTracker());
-			  MemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
+//ORIGINAL LINE: final org.neo4j.memory.IMemoryAllocationTracker memoryTrackerSpy = spy(new org.neo4j.memory.LocalMemoryTracker());
+			  IMemoryAllocationTracker memoryTrackerSpy = spy( new LocalMemoryTracker() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet(new OffHeapMemoryAllocator(memoryTrackerSpy, blockAllocator));
 			  MutableLinearProbeLongHashSet set2 = new MutableLinearProbeLongHashSet( new OffHeapMemoryAllocator( memoryTrackerSpy, _blockAllocator ) );

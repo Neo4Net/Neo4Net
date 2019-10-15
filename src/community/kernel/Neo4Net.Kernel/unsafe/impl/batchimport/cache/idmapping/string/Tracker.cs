@@ -38,7 +38,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	/// That's why this abstraction exists so that the best suited implementation can be picked for every import.
 	/// </para>
 	/// </summary>
-	public interface Tracker : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, AutoCloseable
+	public interface Tracker : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, IDisposable
 	{
 		 /// <param name="index"> data index to get the value for. </param>
 		 /// <returns> value previously <seealso cref="set(long, long)"/>. </returns>

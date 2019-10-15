@@ -131,7 +131,7 @@ namespace Neo4Net.Resources
       /// </summary>
    }
 
-   public interface Profiler_ProfiledInterval : AutoCloseable
+   public interface Profiler_ProfiledInterval : IDisposable
    {
       void Close();
    }

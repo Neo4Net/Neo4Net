@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Collections.primitive.hopscotch
 {
-	using HashFunction = Neo4Net.Hashing.HashFunction;
+	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.numberOfLeadingZeros;
@@ -58,8 +58,8 @@ namespace Neo4Net.Collections.primitive.hopscotch
 	/// </para>
 	/// 
 	/// <para>
-	/// Why are these methods (like <seealso cref="put(Table, Monitor, HashFunction, long, object, ResizeMonitor)"/>,
-	/// <seealso cref="get(Table, Monitor, HashFunction, long)"/> a.s.o. static? To reduce garbage and also reduce overhead of each
+	/// Why are these methods (like <seealso cref="put(Table, Monitor, IHashFunction, long, object, ResizeMonitor)"/>,
+	/// <seealso cref="get(Table, Monitor, IHashFunction, long)"/> a.s.o. static? To reduce garbage and also reduce overhead of each
 	/// set or map object making use of hop-scotch hashing where they won't need to have a reference to an algorithm
 	/// object, merely use its static methods. Also, all essential state is managed by <seealso cref="Table"/>.
 	/// </para>
@@ -75,7 +75,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 {
 		 }
 
-		 public static VALUE Get<VALUE>( Table<VALUE> table, Monitor monitor, HashFunction hashFunction, long key )
+		 public static VALUE Get<VALUE>( Table<VALUE> table, Monitor monitor, IHashFunction hashFunction, long key )
 		 {
 			  int tableMask = table.Mask();
 			  int index = IndexOf( hashFunction, key, tableMask );
@@ -100,7 +100,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 			  return default( VALUE );
 		 }
 
-		 public static VALUE Remove<VALUE>( Table<VALUE> table, Monitor monitor, HashFunction hashFunction, long key )
+		 public static VALUE Remove<VALUE>( Table<VALUE> table, Monitor monitor, IHashFunction hashFunction, long key )
 		 {
 			  int tableMask = table.Mask();
 			  int index = IndexOf( hashFunction, key, tableMask );
@@ -152,7 +152,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 			  return result;
 		 }
 
-		 public static VALUE Put<VALUE>( Table<VALUE> table, Monitor monitor, HashFunction hashFunction, long key, VALUE value, ResizeMonitor<VALUE> resizeMonitor )
+		 public static VALUE Put<VALUE>( Table<VALUE> table, Monitor monitor, IHashFunction hashFunction, long key, VALUE value, ResizeMonitor<VALUE> resizeMonitor )
 		 {
 			  long nullKey = table.NullKey();
 			  Debug.Assert( key != nullKey );
@@ -197,7 +197,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 			  return Put( resizedTable, monitor, hashFunction, key, value, resizeMonitor );
 		 }
 
-		 private static bool HopScotchPut<VALUE>( Table<VALUE> table, Monitor monitor, HashFunction hashFunction, long key, VALUE value, int index, int tableMask, long nullKey )
+		 private static bool HopScotchPut<VALUE>( Table<VALUE> table, Monitor monitor, IHashFunction hashFunction, long key, VALUE value, int index, int tableMask, long nullKey )
 		 {
 			  int freeIndex = NextIndex( index, 1, tableMask );
 			  int h = table.H();
@@ -283,12 +283,12 @@ namespace Neo4Net.Collections.primitive.hopscotch
 			  return ( index + delta ) & mask;
 		 }
 
-		 private static int IndexOf( HashFunction hashFunction, long key, int tableMask )
+		 private static int IndexOf( IHashFunction hashFunction, long key, int tableMask )
 		 {
 			  return hashFunction.HashSingleValueToInt( key ) & tableMask;
 		 }
 
-		 private static void GrowTable<VALUE>( Table<VALUE> oldTable, Monitor monitor, HashFunction hashFunction, ResizeMonitor<VALUE> resizeMonitor )
+		 private static void GrowTable<VALUE>( Table<VALUE> oldTable, Monitor monitor, IHashFunction hashFunction, ResizeMonitor<VALUE> resizeMonitor )
 		 {
 			  Debug.Assert( monitor.TableGrowing( oldTable.Capacity(), oldTable.Size() ) );
 			  Table<VALUE> newTable = oldTable.Grow();
@@ -389,8 +389,8 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 /// The default hash function for primitive collections. This hash function is quite fast but has mediocre
 		 /// statistics.
 		 /// </summary>
-		 /// <seealso cref= HashFunction#xorShift32() </seealso>
-		 internal static readonly HashFunction DefaultHashing = HashFunction.xorShift32();
+		 /// <seealso cref= HashFunctionHelper#XorShift32() </seealso>
+		 internal static readonly IHashFunction DefaultHashing = HashFunctionHelper.XorShift32();
 
 		 public interface ResizeMonitor<VALUE>
 		 {

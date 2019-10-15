@@ -47,7 +47,7 @@ namespace Neo4Net.backup.impl
 	using ConfigurableStandalonePageCacheFactory = Neo4Net.Kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
@@ -66,7 +66,7 @@ namespace Neo4Net.backup.impl
 		 protected internal readonly TransactionLogCatchUpFactory TransactionLogCatchUpFactory;
 		 protected internal readonly Stream LogDestination;
 		 protected internal readonly OutsideWorld OutsideWorld;
-		 private readonly JobScheduler _jobScheduler;
+		 private readonly IJobScheduler _jobScheduler;
 
 		 protected internal BackupSupportingClassesFactory( BackupModule backupModule )
 		 {
@@ -132,7 +132,7 @@ namespace Neo4Net.backup.impl
 			  return new BackupDelegator( remoteStore, catchUpClient, storeCopyClient );
 		 }
 
-		 private static PageCache CreatePageCache( FileSystemAbstraction fileSystemAbstraction, Config config, JobScheduler jobScheduler )
+		 private static PageCache CreatePageCache( FileSystemAbstraction fileSystemAbstraction, Config config, IJobScheduler jobScheduler )
 		 {
 			  return ConfigurableStandalonePageCacheFactory.createPageCache( fileSystemAbstraction, config, jobScheduler );
 		 }

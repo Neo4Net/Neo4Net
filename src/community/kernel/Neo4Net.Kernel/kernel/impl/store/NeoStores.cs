@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.impl.store
 	/// anything but extends the AbstractStore for the "type and version" validation
 	/// performed in there.
 	/// </summary>
-	public class NeoStores : AutoCloseable
+	public class NeoStores : IDisposable
 	{
 		 private const string STORE_ALREADY_CLOSED_MESSAGE = "Specified store was already closed.";
 		 private static readonly string _storeNotInitializedTemplate = "Specified store was not initialized. Please specify" +

@@ -33,43 +33,43 @@ namespace Neo4Net.Io
 		 }
 
 		 /// <summary>
-		 /// Closes given <seealso cref="System.Collections.ICollection collection"/> of <seealso cref="AutoCloseable closeables"/>.
+		 /// Closes given <seealso cref="System.Collections.ICollection collection"/> of <seealso cref="IDisposable closeables"/>.
 		 /// </summary>
 		 /// <param name="closeables"> the closeables to close </param>
 		 /// @param <T> the type of closeable </param>
 		 /// <exception cref="IOException"> if an exception was thrown by one of the close methods. </exception>
-		 /// <seealso cref= #closeAll(AutoCloseable[]) </seealso>
+		 /// <seealso cref= #closeAll(IDisposable[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T extends AutoCloseable> void closeAll(java.util.Collection<T> closeables) throws java.io.IOException
-		 public static void CloseAll<T>( ICollection<T> closeables ) where T : AutoCloseable
+//ORIGINAL LINE: public static <T extends IDisposable> void closeAll(java.util.Collection<T> closeables) throws java.io.IOException
+		 public static void CloseAll<T>( ICollection<T> closeables ) where T : IDisposable
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-			  Close( IOException::new, closeables.toArray( new AutoCloseable[0] ) );
+			  Close( IOException::new, closeables.toArray( new IDisposable[0] ) );
 		 }
 
 		 /// <summary>
-		 /// Close all the provided <seealso cref="AutoCloseable closeables"/>, chaining exceptions, if any, into a single <seealso cref="UncheckedIOException"/>.
+		 /// Close all the provided <seealso cref="IDisposable closeables"/>, chaining exceptions, if any, into a single <seealso cref="UncheckedIOException"/>.
 		 /// </summary>
 		 /// <param name="closeables"> to call close on. </param>
 		 /// @param <T> the type of closeable. </param>
 		 /// <exception cref="UncheckedIOException"> if any exception is thrown from any of the {@code closeables}. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T extends AutoCloseable> void closeAllUnchecked(java.util.Collection<T> closeables) throws java.io.UncheckedIOException
-		 public static void CloseAllUnchecked<T>( ICollection<T> closeables ) where T : AutoCloseable
+//ORIGINAL LINE: public static <T extends IDisposable> void closeAllUnchecked(java.util.Collection<T> closeables) throws java.io.UncheckedIOException
+		 public static void CloseAllUnchecked<T>( ICollection<T> closeables ) where T : IDisposable
 		 {
-			  CloseAllUnchecked( closeables.toArray( new AutoCloseable[0] ) );
+			  CloseAllUnchecked( closeables.toArray( new IDisposable[0] ) );
 		 }
 
 		 /// <summary>
-		 /// Close all the provided <seealso cref="AutoCloseable closeables"/>, chaining exceptions, if any, into a single <seealso cref="UncheckedIOException"/>.
+		 /// Close all the provided <seealso cref="IDisposable closeables"/>, chaining exceptions, if any, into a single <seealso cref="UncheckedIOException"/>.
 		 /// </summary>
 		 /// <param name="closeables"> to call close on. </param>
 		 /// @param <T> the type of closeable. </param>
 		 /// <exception cref="UncheckedIOException"> if any exception is thrown from any of the {@code closeables}. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends AutoCloseable> void closeAllUnchecked(T... closeables) throws java.io.UncheckedIOException
+//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable> void closeAllUnchecked(T... closeables) throws java.io.UncheckedIOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public static void CloseAllUnchecked<T>( params T[] closeables ) where T : AutoCloseable
+		 public static void CloseAllUnchecked<T>( params T[] closeables ) where T : IDisposable
 		 {
 			  try
 			  {
@@ -82,42 +82,42 @@ namespace Neo4Net.Io
 		 }
 
 		 /// <summary>
-		 /// Closes given <seealso cref="System.Collections.ICollection collection"/> of <seealso cref="AutoCloseable closeables"/> ignoring all exceptions.
+		 /// Closes given <seealso cref="System.Collections.ICollection collection"/> of <seealso cref="IDisposable closeables"/> ignoring all exceptions.
 		 /// </summary>
 		 /// <param name="closeables"> the closeables to close </param>
 		 /// @param <T> the type of closeable </param>
-		 /// <seealso cref= #closeAll(AutoCloseable[]) </seealso>
-		 public static void CloseAllSilently<T>( ICollection<T> closeables ) where T : AutoCloseable
+		 /// <seealso cref= #closeAll(IDisposable[]) </seealso>
+		 public static void CloseAllSilently<T>( ICollection<T> closeables ) where T : IDisposable
 		 {
-			  Close( ( msg, cause ) => null, closeables.toArray( new AutoCloseable[0] ) );
+			  Close( ( msg, cause ) => null, closeables.toArray( new IDisposable[0] ) );
 		 }
 
 		 /// <summary>
-		 /// Closes given array of <seealso cref="AutoCloseable closeables"/>. If any <seealso cref="AutoCloseable.close()"/> call throws
-		 /// <seealso cref="IOException"/> than it will be rethrown to the caller after calling <seealso cref="AutoCloseable.close()"/>
-		 /// on other given resources. If more than one <seealso cref="AutoCloseable.close()"/> throw than resulting exception will
+		 /// Closes given array of <seealso cref="IDisposable closeables"/>. If any <seealso cref="IDisposable.close()"/> call throws
+		 /// <seealso cref="IOException"/> than it will be rethrown to the caller after calling <seealso cref="IDisposable.close()"/>
+		 /// on other given resources. If more than one <seealso cref="IDisposable.close()"/> throw than resulting exception will
 		 /// have suppressed exceptions. See <seealso cref="Exception.addSuppressed(System.Exception)"/>
 		 /// </summary>
 		 /// <param name="closeables"> the closeables to close </param>
 		 /// @param <T> the type of closeable </param>
 		 /// <exception cref="IOException"> if an exception was thrown by one of the close methods. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends AutoCloseable> void closeAll(T... closeables) throws java.io.IOException
+//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable> void closeAll(T... closeables) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public static void CloseAll<T>( params T[] closeables ) where T : AutoCloseable
+		 public static void CloseAll<T>( params T[] closeables ) where T : IDisposable
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 			  Close( IOException::new, closeables );
 		 }
 
 		 /// <summary>
-		 /// Closes given array of <seealso cref="AutoCloseable closeables"/> ignoring all exceptions.
+		 /// Closes given array of <seealso cref="IDisposable closeables"/> ignoring all exceptions.
 		 /// </summary>
 		 /// <param name="closeables"> the closeables to close </param>
 		 /// @param <T> the type of closeable </param>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends AutoCloseable> void closeAllSilently(T... closeables)
-		 public static void CloseAllSilently<T>( params T[] closeables ) where T : AutoCloseable
+//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable> void closeAllSilently(T... closeables)
+		 public static void CloseAllSilently<T>( params T[] closeables ) where T : IDisposable
 		 {
 			  Close( ( msg, cause ) => null, closeables );
 		 }
@@ -132,12 +132,12 @@ namespace Neo4Net.Io
 		 /// <param name="closeables"> an iterator of all the things to close, in order. </param>
 		 /// @param <T> the type of things to close. </param>
 		 /// @param <E> the type of the parent exception. </param>
-		 /// <exception cref="E"> when any <seealso cref="AutoCloseable.close()"/> throws exception </exception>
+		 /// <exception cref="E"> when any <seealso cref="IDisposable.close()"/> throws exception </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T extends AutoCloseable, E extends Throwable> void close(System.Func<String,Throwable,E> constructor, java.util.Collection<T> closeables) throws E
-		 public static void Close<T, E>( System.Func<string, Exception, E> constructor, ICollection<T> closeables ) where T : AutoCloseable where E : Exception
+//ORIGINAL LINE: public static <T extends IDisposable, E extends Throwable> void close(System.Func<String,Throwable,E> constructor, java.util.Collection<T> closeables) throws E
+		 public static void Close<T, E>( System.Func<string, Exception, E> constructor, ICollection<T> closeables ) where T : IDisposable where E : Exception
 		 {
-			  Close( constructor, closeables.toArray( new AutoCloseable[0] ) );
+			  Close( constructor, closeables.toArray( new IDisposable[0] ) );
 		 }
 
 		 /// <summary>
@@ -150,11 +150,11 @@ namespace Neo4Net.Io
 		 /// <param name="closeables"> all the things to close, in order. </param>
 		 /// @param <T> the type of things to close. </param>
 		 /// @param <E> the type of the parent exception. </param>
-		 /// <exception cref="E"> when any <seealso cref="AutoCloseable.close()"/> throws exception </exception>
+		 /// <exception cref="E"> when any <seealso cref="IDisposable.close()"/> throws exception </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <T extends AutoCloseable, E extends Throwable> void close(System.Func<String,Throwable,E> constructor, T... closeables) throws E
+//ORIGINAL LINE: @SafeVarargs public static <T extends IDisposable, E extends Throwable> void close(System.Func<String,Throwable,E> constructor, T... closeables) throws E
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public static void Close<T, E>( System.Func<string, Exception, E> constructor, params T[] closeables ) where T : AutoCloseable where E : Exception
+		 public static void Close<T, E>( System.Func<string, Exception, E> constructor, params T[] closeables ) where T : IDisposable where E : Exception
 		 {
 			  E closeThrowable = null;
 			  foreach ( T closeable in closeables )

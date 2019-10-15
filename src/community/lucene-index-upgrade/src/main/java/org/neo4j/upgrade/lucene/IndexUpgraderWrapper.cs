@@ -35,7 +35,7 @@ namespace Neo4Net.Upgrade.Lucene
 	/// </para>
 	/// </summary>
 	/// <seealso cref= EmbeddedJarLoader </seealso>
-	internal class IndexUpgraderWrapper : AutoCloseable
+	internal class IndexUpgraderWrapper : IDisposable
 	{
 		 private const string LUCENE_INDEX_UPGRADER_CLASS_NAME = "org.apache.lucene.index.IndexUpgrader";
 

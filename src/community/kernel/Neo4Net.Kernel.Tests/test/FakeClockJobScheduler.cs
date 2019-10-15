@@ -24,13 +24,13 @@ namespace Neo4Net.Test
 {
 
 	using Group = Neo4Net.Scheduler.Group;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using FakeClock = Neo4Net.Time.FakeClock;
 
 	/// <summary>
 	/// N.B - Do not use this with time resolutions of less than 1 ms!
 	/// </summary>
-	public class FakeClockJobScheduler : FakeClock, JobScheduler
+	public class FakeClockJobScheduler : FakeClock, IJobScheduler
 	{
 		 private readonly AtomicLong _jobIdGen = new AtomicLong();
 		 private readonly ICollection<JobHandle> _jobs = new CopyOnWriteArrayList<JobHandle>();

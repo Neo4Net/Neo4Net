@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 
 		 private readonly AdvertisedSocketAddress _someMemberAddress = new AdvertisedSocketAddress( "localhost", 1234 );
 		 private CatchupAddressProvider _catchupAddressProvider;
-		 private JobScheduler _centralJobScheduler;
+		 private IJobScheduler _centralJobScheduler;
 		 private DatabaseHealth _dbHealth = mock( typeof( DatabaseHealth ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

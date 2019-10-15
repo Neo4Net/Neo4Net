@@ -604,7 +604,7 @@ namespace Neo4Net.Procedure
 			  string url = CreateCsvFile( lines );
 
 			  //WHEN
-			  Result result = _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CREATE (n {prop: org.neo4j.procedure.simpleArgument(toInt(line[0]))}) " + "RETURN n.prop" );
+			  Result result = _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CREATE (n {prop: org.neo4j.procedure.simpleArgument(ToInt(line[0]))}) " + "RETURN n.prop" );
 			  // THEN
 			  for ( long i = 1; i <= 100L; i++ )
 			  {
@@ -631,7 +631,7 @@ namespace Neo4Net.Procedure
 			  Exception.expectMessage( "Cannot use periodic commit in a non-updating query (line 1, column 1 (offset: 0))" );
 
 			  //WHEN
-			  _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "WITH org.neo4j.procedure.simpleArgument(toInt(line[0])) AS val " + "RETURN val" );
+			  _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "WITH org.neo4j.procedure.simpleArgument(ToInt(line[0])) AS val " + "RETURN val" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -40,7 +40,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 	/// Keeps track of a segment of the RAFT log, i.e. a consecutive set of entries.
 	/// Concurrent reading is thread-safe.
 	/// </summary>
-	internal class SegmentFile : AutoCloseable
+	internal class SegmentFile : IDisposable
 	{
 		 private static readonly SegmentHeader.Marshal _headerMarshal = new SegmentHeader.Marshal();
 

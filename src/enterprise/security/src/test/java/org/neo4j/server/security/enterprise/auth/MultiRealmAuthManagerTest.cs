@@ -48,7 +48,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using JobScheduler = Neo4Net.Scheduler.JobScheduler;
+	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using AuthenticationStrategy = Neo4Net.Server.Security.Auth.AuthenticationStrategy;
 	using CommunitySecurityModule = Neo4Net.Server.Security.Auth.CommunitySecurityModule;
 	using InitialUserTest = Neo4Net.Server.Security.Auth.InitialUserTest;
