@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 internal class PartFactory : Factory<WorkSyncedNativeIndexPopulator<SpatialIndexKey, NativeIndexValue>>
+		 internal class PartFactory : IFactory<WorkSyncedNativeIndexPopulator<SpatialIndexKey, NativeIndexValue>>
 		 {
 			  internal readonly PageCache PageCache;
 			  internal readonly FileSystemAbstraction Fs;

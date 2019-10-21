@@ -151,7 +151,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					// then
 					foreach ( Pair<RawBytes, RawBytes> entry in entries )
 					{
-						 using ( RawCursor<Hit<RawBytes, RawBytes>, IOException> seek = tree.Seek( entry.First(), entry.First() ) )
+						 using ( IRawCursor<Hit<RawBytes, RawBytes>, IOException> seek = tree.Seek( entry.First(), entry.First() ) )
 						 {
 							  assertTrue( seek.Next() );
 							  assertArrayEquals( entry.First().Bytes, seek.get().key().bytes );

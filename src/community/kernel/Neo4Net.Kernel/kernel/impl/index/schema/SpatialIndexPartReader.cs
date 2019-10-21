@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			 private NodePropertyAccessor _propertyAccessor;
 
-			 public NativeDistinctValuesProgressorAnonymousInnerClass( SpatialIndexPartReader<VALUE> outerInstance, RawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, UnknownType openSeekers, UnknownType layout, IComparer<SpatialIndexKey> comparator, NodePropertyAccessor propertyAccessor ) : base( seeker, client, openSeekers, layout, comparator )
+			 public NativeDistinctValuesProgressorAnonymousInnerClass( SpatialIndexPartReader<VALUE> outerInstance, IRawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, UnknownType openSeekers, UnknownType layout, IComparer<SpatialIndexKey> comparator, NodePropertyAccessor propertyAccessor ) : base( seeker, client, openSeekers, layout, comparator )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._propertyAccessor = propertyAccessor;
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 						 InitializeKeys( treeKeyFrom, treeKeyTo );
 						 treeKeyFrom.FromDerivedValue( long.MinValue, range.Min );
 						 treeKeyTo.FromDerivedValue( long.MaxValue, range.Max + 1 );
-						 RawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker = makeIndexSeeker( treeKeyFrom, treeKeyTo, IndexOrder.NONE );
+						 IRawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker = makeIndexSeeker( treeKeyFrom, treeKeyTo, IndexOrder.NONE );
 						 IndexProgressor hitProgressor = new NativeHitIndexProgressor<>( seeker, client, openSeekers );
 						 multiProgressor.Initialize( descriptor, hitProgressor, query, IndexOrder.NONE, false );
 					}

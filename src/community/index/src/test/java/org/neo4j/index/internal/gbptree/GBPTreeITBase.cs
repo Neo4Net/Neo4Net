@@ -158,7 +158,7 @@ namespace Neo4Net.Index.Internal.gbptree
 									to = first;
 							  }
 							  IDictionary<KEY, VALUE> expectedHits = expectedHits( data, from, to, keyComparator );
-							  using ( RawCursor<Hit<KEY, VALUE>, IOException> result = index.Seek( from, to ) )
+							  using ( IRawCursor<Hit<KEY, VALUE>, IOException> result = index.Seek( from, to ) )
 							  {
 									while ( result.Next() )
 									{
@@ -236,7 +236,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					}
 
 					// then
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> seek = index.Seek( Key( 0 ), Key( numberOfNodes ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> seek = index.Seek( Key( 0 ), Key( numberOfNodes ) ) )
 					{
 						 assertFalse( seek.Next() );
 					}
@@ -268,7 +268,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 					KEY from = _layout.key( 3 );
 					KEY to = _layout.key( 1 );
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> seek = index.Seek( from, to ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> seek = index.Seek( from, to ) )
 					{
 						 assertFalse( seek.Next() );
 					}

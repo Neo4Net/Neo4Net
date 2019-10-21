@@ -33,10 +33,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	public abstract class Radix
 	{
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 public static readonly Factory<Radix> Long = long?::new;
+		 public static readonly IFactory<Radix> Long = long?::new;
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 public static readonly Factory<Radix> String = String::new;
+		 public static readonly IFactory<Radix> String = String::new;
 
 		 internal readonly int[] RadixIndexCount = new int[( int ) pow( 2, RadixCalculator.RADIX_BITS - 1 )];
 

@@ -50,16 +50,16 @@ namespace Neo4Net.backup.impl
 	/// </summary>
 	internal class BufferReusingChunkingChannelBuffer : ChunkingChannelBuffer
 	{
-		 private static readonly Factory<ChannelBuffer> _defaultChannelBufferFactory = ChannelBuffers.dynamicBuffer;
+		 private static readonly IFactory<ChannelBuffer> _defaultChannelBufferFactory = ChannelBuffers.dynamicBuffer;
 
-		 private readonly Factory<ChannelBuffer> _bufferFactory;
+		 private readonly IFactory<ChannelBuffer> _bufferFactory;
 		 private readonly LinkedList<ChannelBuffer> _freeBuffers = new LinkedBlockingQueue<ChannelBuffer>( MAX_WRITE_AHEAD_CHUNKS );
 
 		 internal BufferReusingChunkingChannelBuffer( ChannelBuffer initialBuffer, Channel channel, int capacity, sbyte internalProtocolVersion, sbyte applicationProtocolVersion ) : this( initialBuffer, _defaultChannelBufferFactory, channel, capacity, internalProtocolVersion, applicationProtocolVersion )
 		 {
 		 }
 
-		 internal BufferReusingChunkingChannelBuffer( ChannelBuffer initialBuffer, Factory<ChannelBuffer> bufferFactory, Channel channel, int capacity, sbyte internalProtocolVersion, sbyte applicationProtocolVersion ) : base( initialBuffer, channel, capacity, internalProtocolVersion, applicationProtocolVersion )
+		 internal BufferReusingChunkingChannelBuffer( ChannelBuffer initialBuffer, IFactory<ChannelBuffer> bufferFactory, Channel channel, int capacity, sbyte internalProtocolVersion, sbyte applicationProtocolVersion ) : base( initialBuffer, channel, capacity, internalProtocolVersion, applicationProtocolVersion )
 		 {
 			  this._bufferFactory = bufferFactory;
 		 }

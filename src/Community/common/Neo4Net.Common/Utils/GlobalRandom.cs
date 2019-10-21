@@ -4,18 +4,22 @@
 //
 //	This class is used to replace calls to the static java.lang.Math.random method.
 //---------------------------------------------------------------------------------------------------------
-internal static class GlobalRandom
+
+namespace Neo4Net.Utils
 {
-	private static System.Random randomInstance = null;
+   internal static class GlobalRandom
+   {
+      private static System.Random randomInstance = null;
 
-	public static double NextDouble
-	{
-		get
-		{
-			if (randomInstance == null)
-				randomInstance = new System.Random();
+      public static double NextDouble
+      {
+         get
+         {
+            if (randomInstance == null)
+               randomInstance = new System.Random();
 
-			return randomInstance.NextDouble();
-		}
-	}
+            return randomInstance.NextDouble();
+         }
+      }
+   }
 }

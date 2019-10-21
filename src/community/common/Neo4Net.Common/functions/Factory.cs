@@ -26,7 +26,7 @@ namespace Neo4Net.Functions
    /// <seealso cref="System.Func"/>.
    /// </summary>
    /// @param <T> a new instance </param>
-   public interface Factory<T>
+   public interface IFactory<T>
    {
       T NewInstance();
    }

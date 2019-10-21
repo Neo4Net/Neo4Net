@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.impl.util
 
 	public class Cursors
 	{
-		 private static Cursor<object> EMPTY = new CursorAnonymousInnerClass();
+		 private static ICursor<object> EMPTY = new CursorAnonymousInnerClass();
 
-		 private class CursorAnonymousInnerClass : Cursor<object>
+		 private class CursorAnonymousInnerClass : ICursor<object>
 		 {
 			 public bool next()
 			 {
@@ -56,14 +56,14 @@ namespace Neo4Net.Kernel.impl.util
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> org.neo4j.cursor.Cursor<T> empty()
-		 public static Cursor<T> Empty<T>()
+		 public static ICursor<T> Empty<T>()
 		 {
-			  return ( Cursor<T> ) EMPTY;
+			  return ( ICursor<T> ) EMPTY;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: public static <E extends Exception> int count(org.neo4j.cursor.RawCursor<?,E> cursor) throws E
-		 public static int Count<E, T1>( RawCursor<T1> cursor ) where E : Exception
+		 public static int Count<E, T1>( IRawCursor<T1> cursor ) where E : Exception
 		 {
 			  try
 			  {
@@ -80,12 +80,12 @@ namespace Neo4Net.Kernel.impl.util
 			  }
 		 }
 
-		 public static RawCursor<T, EX> RawCursorOf<T, EX>( params T[] values ) where EX : Exception
+		 public static IRawCursor<T, EX> RawCursorOf<T, EX>( params T[] values ) where EX : Exception
 		 {
 			  return new RawCursorAnonymousInnerClass( values );
 		 }
 
-		 private class RawCursorAnonymousInnerClass : RawCursor<T, EX>
+		 private class RawCursorAnonymousInnerClass : IRawCursor<T, EX>
 		 {
 			 private T[] _values;
 
@@ -127,12 +127,12 @@ namespace Neo4Net.Kernel.impl.util
 			 }
 		 }
 
-		 public static RawCursor<T, EX> RawCursorOf<T, EX>( IEnumerable<T> iterable ) where EX : Exception
+		 public static IRawCursor<T, EX> RawCursorOf<T, EX>( IEnumerable<T> iterable ) where EX : Exception
 		 {
 			  return new RawCursorAnonymousInnerClass2( iterable );
 		 }
 
-		 private class RawCursorAnonymousInnerClass2 : RawCursor<T, EX>
+		 private class RawCursorAnonymousInnerClass2 : IRawCursor<T, EX>
 		 {
 			 private IEnumerable<T> _iterable;
 

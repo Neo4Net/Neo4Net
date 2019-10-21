@@ -35,15 +35,14 @@ namespace Neo4Net.Cursors
    /// IllegalStateException}.
    /// </para>
    /// </summary>
-   public class RawCursor<T, EXCEPTION> : System.Func<T>, IDisposable where EXCEPTION : Exception
+   public interface IRawCursor<T, EXCEPTION> : System.Func<T>, IDisposable where EXCEPTION : Exception
    {
       /// <summary>
       /// Move the cursor to the next row.
       /// Return false if there are no more valid positions, generally indicating that the end of the data structure
       /// has been reached.
       /// </summary>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: boolean next() throws EXCEPTION;
+
       bool Next();
 
       /// <summary>

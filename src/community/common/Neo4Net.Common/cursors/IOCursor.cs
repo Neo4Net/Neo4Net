@@ -22,7 +22,7 @@ using System.IO;
 
 namespace Neo4Net.Cursors
 {
-   public interface IOCursor<T> : RawCursor<T, IOException>
+   public interface IOCursor<T> : IRawCursor<T, IOException>
    {
       //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
       //		 static <M> IOCursor<M> getEmpty()

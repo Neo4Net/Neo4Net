@@ -30,12 +30,12 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	internal abstract class NativeIndexProgressor<KEY, VALUE> : IndexProgressor where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
 		public abstract bool Next();
-		 internal readonly RawCursor<Hit<KEY, VALUE>, IOException> Seeker;
+		 internal readonly IRawCursor<Hit<KEY, VALUE>, IOException> Seeker;
 		 internal readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient Client;
 		 private readonly ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> _toRemoveFromOnClose;
 		 private bool _closed;
 
-		 internal NativeIndexProgressor( RawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose )
+		 internal NativeIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose )
 		 {
 			  this.Seeker = seeker;
 			  this.Client = client;

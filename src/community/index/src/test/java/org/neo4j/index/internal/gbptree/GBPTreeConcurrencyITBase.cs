@@ -566,7 +566,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					long start = readerInstruction.Start();
 					long end = readerInstruction.End();
 					bool forward = start <= end;
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = outerInstance.index.Seek( outerInstance.key( start ), outerInstance.key( end ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = outerInstance.index.Seek( outerInstance.key( start ), outerInstance.key( end ) ) )
 					{
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						 if ( expectToSee.hasNext() )

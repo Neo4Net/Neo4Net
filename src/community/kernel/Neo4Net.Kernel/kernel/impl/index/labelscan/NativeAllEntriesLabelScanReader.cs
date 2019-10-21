@@ -55,11 +55,11 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	/// </summary>
 	internal class NativeAllEntriesLabelScanReader : AllEntriesLabelScanReader
 	{
-		 private readonly System.Func<int, RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> _seekProvider;
+		 private readonly System.Func<int, IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> _seekProvider;
 		 private readonly IList<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> _cursors = new List<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>>();
 		 private readonly int _highestLabelId;
 
-		 internal NativeAllEntriesLabelScanReader( System.Func<int, RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> seekProvider, int highestLabelId )
+		 internal NativeAllEntriesLabelScanReader( System.Func<int, IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> seekProvider, int highestLabelId )
 		 {
 			  this._seekProvider = seekProvider;
 			  this._highestLabelId = highestLabelId;
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 					CloseCursors();
 					for ( int labelId = 0; labelId <= _highestLabelId; labelId++ )
 					{
-						 RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _seekProvider.apply( labelId );
+						 IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _seekProvider.apply( labelId );
 
 						 // Bootstrap the cursor, which also provides a great opportunity to exclude if empty
 						 if ( cursor.Next() )
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //ORIGINAL LINE: private void closeCursors() throws java.io.IOException
 		 private void CloseCursors()
 		 {
-			  foreach ( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in _cursors )
+			  foreach ( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in _cursors )
 			  {
 					cursor.Close();
 			  }
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 					try
 					{
 						 // One "rangeSize" range at a time
-						 foreach ( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in outerInstance.cursors )
+						 foreach ( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in outerInstance.cursors )
 						 {
 							  long idRange = cursor.get().key().idRange;
 							  if ( idRange < CurrentRange )

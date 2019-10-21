@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 private readonly DelegateInvocationHandler<Master> _master;
 		 private readonly RequestContextFactory _requestContextFactory;
 		 private readonly AvailabilityGuard _availabilityGuard;
-		 private readonly Factory<Locks> _locksFactory;
+		 private readonly IFactory<Locks> _locksFactory;
 		 private readonly LogProvider _logProvider;
 		 private readonly Config _config;
 
-		 public LockManagerSwitcher( DelegateInvocationHandler<Locks> @delegate, DelegateInvocationHandler<Master> master, RequestContextFactory requestContextFactory, AvailabilityGuard availabilityGuard, Factory<Locks> locksFactory, LogProvider logProvider, Config config ) : base( @delegate )
+		 public LockManagerSwitcher( DelegateInvocationHandler<Locks> @delegate, DelegateInvocationHandler<Master> master, RequestContextFactory requestContextFactory, AvailabilityGuard availabilityGuard, IFactory<Locks> locksFactory, LogProvider logProvider, Config config ) : base( @delegate )
 		 {
 			  this._master = master;
 			  this._requestContextFactory = requestContextFactory;

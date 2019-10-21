@@ -91,9 +91,9 @@ namespace Neo4Net.Kernel.impl.util
 	/// </summary>
 	public class AutoCreatingHashMap<K, V> : Dictionary<K, V>
 	{
-		 private readonly Factory<V> _valueCreator;
+		 private readonly IFactory<V> _valueCreator;
 
-		 public AutoCreatingHashMap( Factory<V> valueCreator ) : base()
+		 public AutoCreatingHashMap( IFactory<V> valueCreator ) : base()
 		 {
 			  this._valueCreator = valueCreator;
 		 }
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.impl.util
 		 /// assuming zero-argument constructor. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public static <V> org.neo4j.function.Factory<V> values(final Class<V> valueType)
-		 public static Factory<V> Values<V>( Type valueType )
+		 public static IFactory<V> Values<V>( Type valueType )
 		 {
 				 valueType = typeof( V );
 			  return () =>
@@ -134,18 +134,18 @@ namespace Neo4Net.Kernel.impl.util
 		 /// created maps have the supplied {@code nested} <seealso cref="Factory"/> as value factory. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public static <K,V> org.neo4j.function.Factory<java.util.Map<K,V>> nested(Class<K> keyClass, final org.neo4j.function.Factory<V> nested)
-		 public static Factory<IDictionary<K, V>> Nested<K, V>( Type keyClass, Factory<V> nested )
+		 public static IFactory<IDictionary<K, V>> Nested<K, V>( Type keyClass, IFactory<V> nested )
 		 {
 				 keyClass = typeof( K );
 			  return () => new AutoCreatingHashMap<IDictionary<K, V>>(nested);
 		 }
 
-		 public static Factory<V> DontCreate<V>()
+		 public static IFactory<V> DontCreate<V>()
 		 {
 			  return () => null;
 		 }
 
-		 public static Factory<ISet<V>> ValuesOfTypeHashSet<V>()
+		 public static IFactory<ISet<V>> ValuesOfTypeHashSet<V>()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 			  return HashSet<object>::new;

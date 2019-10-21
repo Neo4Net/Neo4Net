@@ -90,7 +90,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	{
 		 private readonly TransportTestUtil _util = new TransportTestUtil( new Neo4jPackV1() );
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 private readonly Factory<TransportConnection> _connectionFactory = SocketConnection::new;
+		 private readonly IFactory<TransportConnection> _connectionFactory = SocketConnection::new;
 		 private readonly Neo4jWithSocket _server;
 		 private IDictionary<string, BoltSubject> _subjects = new Dictionary<string, BoltSubject>();
 		 private FileSystemAbstraction _fileSystem;

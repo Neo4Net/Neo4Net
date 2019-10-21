@@ -106,4 +106,4 @@ public interface Register_Object_Out<T>
 {
    void Write(T value);
 }
-}
+}}

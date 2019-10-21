@@ -147,12 +147,12 @@ namespace Neo4Net.storeupgrade
 		 private static void CheckIndexData( GraphDatabaseService db )
 		 {
 			  System.Func<int, string> keyFactory = BasicKeyFactory();
-			  Factory<Node> readNodes = readNodes( db );
+			  IFactory<Node> readNodes = readNodes( db );
 			  ReadIndex( db, NodeIndex( db, "node-1", EXACT_CONFIG ), readNodes, keyFactory, StringValues() );
 			  ReadIndex( db, NodeIndex( db, "node-2", EXACT_CONFIG ), readNodes, keyFactory, IntValues() );
 			  ReadIndex( db, NodeIndex( db, "node-3", FULLTEXT_CONFIG ), readNodes, keyFactory, StringValues() );
 			  ReadIndex( db, NodeIndex( db, "node-4", FULLTEXT_CONFIG ), readNodes, keyFactory, LongValues() );
-			  Factory<Relationship> relationships = ReadRelationships( db );
+			  IFactory<Relationship> relationships = ReadRelationships( db );
 			  ReadIndex( db, RelationshipIndex( db, "rel-1", EXACT_CONFIG ), relationships, keyFactory, StringValues() );
 			  ReadIndex( db, RelationshipIndex( db, "rel-2", EXACT_CONFIG ), relationships, keyFactory, FloatValues() );
 			  ReadIndex( db, RelationshipIndex( db, "rel-3", FULLTEXT_CONFIG ), relationships, keyFactory, StringValues() );
@@ -193,12 +193,12 @@ namespace Neo4Net.storeupgrade
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: private static org.neo4j.function.Factory<org.neo4j.graphdb.Node> readNodes(final org.neo4j.graphdb.GraphDatabaseService db)
-		 private static Factory<Node> ReadNodes( GraphDatabaseService db )
+		 private static IFactory<Node> ReadNodes( GraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass( db );
 		 }
 
-		 private class FactoryAnonymousInnerClass : Factory<Node>
+		 private class FactoryAnonymousInnerClass : IFactory<Node>
 		 {
 			 private GraphDatabaseService _db;
 
@@ -217,12 +217,12 @@ namespace Neo4Net.storeupgrade
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: private static org.neo4j.function.Factory<org.neo4j.graphdb.Relationship> readRelationships(final org.neo4j.graphdb.GraphDatabaseService db)
-		 private static Factory<Relationship> ReadRelationships( GraphDatabaseService db )
+		 private static IFactory<Relationship> ReadRelationships( GraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass2( db );
 		 }
 
-		 private class FactoryAnonymousInnerClass2 : Factory<Relationship>
+		 private class FactoryAnonymousInnerClass2 : IFactory<Relationship>
 		 {
 			 private GraphDatabaseService _db;
 
@@ -259,7 +259,7 @@ namespace Neo4Net.storeupgrade
 			  }
 		 }
 
-		 private static void ReadIndex<ENTITY>( GraphDatabaseService db, Index<ENTITY> index, Factory<ENTITY> entityFactory, System.Func<int, string> keyFactory, System.Func<int, object> valueFactory ) where ENTITY : Neo4Net.Graphdb.PropertyContainer
+		 private static void ReadIndex<ENTITY>( GraphDatabaseService db, Index<ENTITY> index, IFactory<ENTITY> entityFactory, System.Func<int, string> keyFactory, System.Func<int, object> valueFactory ) where ENTITY : Neo4Net.Graphdb.PropertyContainer
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

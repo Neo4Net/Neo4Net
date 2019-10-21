@@ -863,7 +863,7 @@ namespace Neo4Net.Server.rest
 			  return results;
 		 }
 
-		 private readonly Factory<string> _indexes = UniqueStrings.WithPrefix( "index" );
+		 private readonly IFactory<string> _indexes = UniqueStrings.WithPrefix( "index" );
 	}
 
 }

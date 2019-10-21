@@ -45,7 +45,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: org.neo4j.cursor.RawCursor<StoreResource,java.io.IOException> create() throws java.io.IOException
-		 internal virtual RawCursor<StoreResource, IOException> Create()
+		 internal virtual IRawCursor<StoreResource, IOException> Create()
 		 {
 			  NeoStoreDataSource dataSource = _dataSourceSupplier.get();
 
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  return new RawCursorAnonymousInnerClass( this, databaseDirectory, files );
 		 }
 
-		 private class RawCursorAnonymousInnerClass : RawCursor<StoreResource, IOException>
+		 private class RawCursorAnonymousInnerClass : IRawCursor<StoreResource, IOException>
 		 {
 			 private readonly StoreResourceStreamFactory _outerInstance;
 

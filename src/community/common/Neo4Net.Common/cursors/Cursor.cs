@@ -35,7 +35,7 @@ namespace Neo4Net.Cursors
    /// IllegalStateException}.
    /// </para>
    /// </summary>
-   public interface Cursor<T> : RawCursor<T, Exception>
+   public interface ICursor<T> : IRawCursor<T, Exception>
    {
       bool Next();
 

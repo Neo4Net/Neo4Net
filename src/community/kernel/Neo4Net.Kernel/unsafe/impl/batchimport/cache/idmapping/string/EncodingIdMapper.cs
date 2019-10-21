@@ -110,7 +110,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 // the long value representing the length of the id.
 		 private const long GAP_VALUE = 0;
 
-		 private readonly Factory<Radix> _radixFactory;
+		 private readonly IFactory<Radix> _radixFactory;
 		 private readonly NumberArrayFactory _cacheFactory;
 		 private readonly TrackerFactory _trackerFactory;
 		 // Encoded values added in #put, in the order in which they are put. Indexes in the array are the actual node ids,
@@ -146,11 +146,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 private readonly System.Func<long, CollisionValues> _collisionValuesFactory;
 		 private CollisionValues _collisionValues;
 
-		 public EncodingIdMapper( NumberArrayFactory cacheFactory, Encoder encoder, Factory<Radix> radixFactory, Monitor monitor, TrackerFactory trackerFactory, Groups groups, System.Func<long, CollisionValues> collisionValuesFactory ) : this( cacheFactory, encoder, radixFactory, monitor, trackerFactory, groups, collisionValuesFactory, DEFAULT_CACHE_CHUNK_SIZE, Runtime.Runtime.availableProcessors() - 1, DEFAULT )
+		 public EncodingIdMapper( NumberArrayFactory cacheFactory, Encoder encoder, IFactory<Radix> radixFactory, Monitor monitor, TrackerFactory trackerFactory, Groups groups, System.Func<long, CollisionValues> collisionValuesFactory ) : this( cacheFactory, encoder, radixFactory, monitor, trackerFactory, groups, collisionValuesFactory, DEFAULT_CACHE_CHUNK_SIZE, Runtime.Runtime.availableProcessors() - 1, DEFAULT )
 		 {
 		 }
 
-		 internal EncodingIdMapper( NumberArrayFactory cacheFactory, Encoder encoder, Factory<Radix> radixFactory, Monitor monitor, TrackerFactory trackerFactory, Groups groups, System.Func<long, CollisionValues> collisionValuesFactory, int chunkSize, int processorsForParallelWork, Comparator comparator )
+		 internal EncodingIdMapper( NumberArrayFactory cacheFactory, Encoder encoder, IFactory<Radix> radixFactory, Monitor monitor, TrackerFactory trackerFactory, Groups groups, System.Func<long, CollisionValues> collisionValuesFactory, int chunkSize, int processorsForParallelWork, Comparator comparator )
 		 {
 			  this._radixFactory = radixFactory;
 			  this._monitor = monitor;

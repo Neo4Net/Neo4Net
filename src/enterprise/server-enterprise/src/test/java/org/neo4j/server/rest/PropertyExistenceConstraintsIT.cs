@@ -80,9 +80,9 @@ namespace Neo4Net.Server.rest
 			Data = TestData.producedThrough( GraphDescription.createGraphFor( this, true ) );
 		}
 
-		 private readonly Factory<string> _labels = UniqueStrings.WithPrefix( "label" );
-		 private readonly Factory<string> _properties = UniqueStrings.WithPrefix( "property" );
-		 private readonly Factory<string> _relationshipTypes = UniqueStrings.WithPrefix( "relationshipType" );
+		 private readonly IFactory<string> _labels = UniqueStrings.WithPrefix( "label" );
+		 private readonly IFactory<string> _properties = UniqueStrings.WithPrefix( "property" );
+		 private readonly IFactory<string> _relationshipTypes = UniqueStrings.WithPrefix( "relationshipType" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.neo4j.test.TestData<java.util.Map<String,org.neo4j.graphdb.Node>> data = org.neo4j.test.TestData.producedThrough(org.neo4j.test.GraphDescription.createGraphFor(this, true));

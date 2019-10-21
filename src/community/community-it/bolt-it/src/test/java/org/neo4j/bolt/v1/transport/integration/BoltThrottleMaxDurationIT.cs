@@ -106,7 +106,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public OtherThreadRule<Void> OtherThread = new OtherThreadRule<Void>( 5, TimeUnit.MINUTES );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.function.Factory<org.neo4j.bolt.v1.transport.socket.client.TransportConnection> cf;
-		 public Factory<TransportConnection> Cf;
+		 public IFactory<TransportConnection> Cf;
 
 		 private HostnamePort _address;
 		 private TransportConnection _client;

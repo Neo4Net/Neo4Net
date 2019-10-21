@@ -75,7 +75,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  {
 					resourceList.Add( CreateResource( new File( file ), ThreadLocalRandom.current().Next(1, 4096) ) );
 			  }
-			  RawCursor<StoreResource, IOException> resources = rawCursorOf( resourceList );
+			  IRawCursor<StoreResource, IOException> resources = rawCursorOf( resourceList );
 
 			  // when
 			  while ( resources.Next() )

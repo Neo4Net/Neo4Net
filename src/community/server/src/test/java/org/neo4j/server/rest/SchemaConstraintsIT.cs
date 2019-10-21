@@ -258,8 +258,8 @@ namespace Neo4Net.Server.rest
 			  }
 		 }
 
-		 private readonly Factory<string> _labels = UniqueStrings.WithPrefix( "label" );
-		 private readonly Factory<string> _properties = UniqueStrings.WithPrefix( "property" );
+		 private readonly IFactory<string> _labels = UniqueStrings.WithPrefix( "label" );
+		 private readonly IFactory<string> _properties = UniqueStrings.WithPrefix( "property" );
 	}
 
 }

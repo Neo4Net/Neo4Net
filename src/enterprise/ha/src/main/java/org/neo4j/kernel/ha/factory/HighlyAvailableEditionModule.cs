@@ -357,7 +357,7 @@ namespace Neo4Net.Kernel.ha.factory
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.neo4j.function.Factory<org.neo4j.kernel.ha.com.master.MasterImpl.SPI> masterSPIFactory = () -> new org.neo4j.kernel.ha.cluster.DefaultMasterImplSPI(resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.factory.GraphDatabaseFacade.class), platformModule.fileSystem, platformModule.monitors, tokenHolders, idContext.getIdGeneratorFactory(), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.api.TransactionCommitProcess.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointer.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.TransactionIdStore.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.LogicalTransactionStore.class), platformModule.dataSourceManager.getDataSource(), logging.getInternalLogProvider());
-			  Factory<MasterImpl.SPI> masterSPIFactory = () => new DefaultMasterImplSPI(ResolveDatabaseDependency(platformModule, typeof(GraphDatabaseFacade)), platformModule.FileSystem, platformModule.Monitors, _tokenHolders, idContext.IdGeneratorFactory, ResolveDatabaseDependency(platformModule, typeof(TransactionCommitProcess)), ResolveDatabaseDependency(platformModule, typeof(CheckPointer)), ResolveDatabaseDependency(platformModule, typeof(TransactionIdStore)), ResolveDatabaseDependency(platformModule, typeof(LogicalTransactionStore)), platformModule.DataSourceManager.DataSource, logging.InternalLogProvider);
+			  IFactory<MasterImpl.SPI> masterSPIFactory = () => new DefaultMasterImplSPI(ResolveDatabaseDependency(platformModule, typeof(GraphDatabaseFacade)), platformModule.FileSystem, platformModule.Monitors, _tokenHolders, idContext.IdGeneratorFactory, ResolveDatabaseDependency(platformModule, typeof(TransactionCommitProcess)), ResolveDatabaseDependency(platformModule, typeof(CheckPointer)), ResolveDatabaseDependency(platformModule, typeof(TransactionIdStore)), ResolveDatabaseDependency(platformModule, typeof(LogicalTransactionStore)), platformModule.DataSourceManager.DataSource, logging.InternalLogProvider);
 
 			  System.Func<Locks, ConversationSPI> conversationSPIFactory = locks => new DefaultConversationSPI( locks, platformModule.JobScheduler );
 			  System.Func<Locks, ConversationManager> conversationManagerFactory = locks => new ConversationManager( conversationSPIFactory( locks ), config );
@@ -570,7 +570,7 @@ namespace Neo4Net.Kernel.ha.factory
 			  DelegateInvocationHandler<Locks> lockManagerDelegate = new DelegateInvocationHandler<Locks>( typeof( Locks ) );
 			  Locks lockManager = ( Locks ) newProxyInstance( typeof( Locks ).ClassLoader, new Type[]{ typeof( Locks ) }, lockManagerDelegate );
 
-			  Factory<Locks> locksFactory = () => EditionLocksFactories.createLockManager(lockFactory, config, clock);
+			  IFactory<Locks> locksFactory = () => EditionLocksFactories.createLockManager(lockFactory, config, clock);
 
 			  LockManagerSwitcher lockManagerModeSwitcher = new LockManagerSwitcher( lockManagerDelegate, masterDelegateInvocationHandler, requestContextFactory, availabilityGuard, locksFactory, logService.InternalLogProvider, config );
 

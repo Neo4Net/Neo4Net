@@ -28,18 +28,18 @@ namespace Neo4Net.Memory
    {
       private long _allocatedBytes;
 
-      public override void Allocated(long bytes)
+      public void Allocated(long bytes)
       {
-         this._allocatedBytes += bytes;
+         _allocatedBytes += bytes;
       }
 
-      public override void Deallocated(long bytes)
+      public void Deallocated(long bytes)
       {
-         this._allocatedBytes -= bytes;
+         _allocatedBytes -= bytes;
       }
 
       /// <returns> number of used bytes. </returns>
-      public override long UsedDirectMemory()
+      public long UsedDirectMemory()
       {
          return _allocatedBytes;
       }

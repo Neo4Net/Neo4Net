@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 {
 			  System.setProperty( "luceneSchemaIndex.maxPartitionSize", _docsPerPartition.ToString() );
 
-			  Factory<IndexWriterConfig> configFactory = new TestConfigFactory();
+			  IFactory<IndexWriterConfig> configFactory = new TestConfigFactory();
 			  _index = LuceneSchemaIndexBuilder.create( _descriptor, Config.defaults() ).withFileSystem(_fileSystem).withIndexRootFolder(new File(_testDir.directory("uniquenessVerification"), "index")).withWriterConfig(configFactory).withDirectoryFactory(DirectoryFactory.PERSISTENT).build();
 
 			  _index.create();
@@ -450,7 +450,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 			  }
 		 }
 
-		 private class TestConfigFactory : Factory<IndexWriterConfig>
+		 private class TestConfigFactory : IFactory<IndexWriterConfig>
 		 {
 
 			  public override IndexWriterConfig NewInstance()

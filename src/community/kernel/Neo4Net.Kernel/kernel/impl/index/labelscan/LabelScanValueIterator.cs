@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 /// <param name="fromId"> entity to start from (exclusive). The cursor gives entries that are effectively small bit-sets and the fromId may
 		 /// be somewhere inside a bit-set range. </param>
-		 internal LabelScanValueIterator( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, long fromId ) : base( toRemoveFromWhenClosed, cursor )
+		 internal LabelScanValueIterator( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, long fromId ) : base( toRemoveFromWhenClosed, cursor )
 		 {
 			  this._fromId = fromId;
 		 }

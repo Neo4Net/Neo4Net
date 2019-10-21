@@ -34,9 +34,9 @@ namespace Neo4Net.backup.stresstests
 	internal class StartStop : Workload
 	{
 		 private readonly AtomicReference<GraphDatabaseService> _dbRef;
-		 private readonly Factory<GraphDatabaseService> _factory;
+		 private readonly IFactory<GraphDatabaseService> _factory;
 
-		 internal StartStop( Control control, Factory<GraphDatabaseService> factory, AtomicReference<GraphDatabaseService> dbRef ) : base( control )
+		 internal StartStop( Control control, IFactory<GraphDatabaseService> factory, AtomicReference<GraphDatabaseService> dbRef ) : base( control )
 		 {
 			  this._factory = factory;
 			  this._dbRef = dbRef;

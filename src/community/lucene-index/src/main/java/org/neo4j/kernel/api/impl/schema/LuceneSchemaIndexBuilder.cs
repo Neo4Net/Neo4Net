@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	{
 		 private readonly IndexDescriptor _descriptor;
 		 private IndexSamplingConfig _samplingConfig;
-		 private Factory<IndexWriterConfig> _writerConfigFactory = IndexWriterConfigs.standard;
+		 private IFactory<IndexWriterConfig> _writerConfigFactory = IndexWriterConfigs.standard;
 
 		 private LuceneSchemaIndexBuilder( IndexDescriptor descriptor, Config config ) : base( config )
 		 {
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// </summary>
 		 /// <param name="writerConfigFactory"> the supplier of writer configs </param>
 		 /// <returns> index builder </returns>
-		 public virtual LuceneSchemaIndexBuilder WithWriterConfig( Factory<IndexWriterConfig> writerConfigFactory )
+		 public virtual LuceneSchemaIndexBuilder WithWriterConfig( IFactory<IndexWriterConfig> writerConfigFactory )
 		 {
 			  this._writerConfigFactory = writerConfigFactory;
 			  return this;

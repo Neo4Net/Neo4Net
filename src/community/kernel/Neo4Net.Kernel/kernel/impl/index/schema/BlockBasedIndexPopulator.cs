@@ -389,7 +389,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private void verifyUniqueSeek(org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> seek) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
-		 private void VerifyUniqueSeek( RawCursor<Hit<KEY, VALUE>, IOException> seek )
+		 private void VerifyUniqueSeek( IRawCursor<Hit<KEY, VALUE>, IOException> seek )
 		 {
 			  if ( seek != null )
 			  {

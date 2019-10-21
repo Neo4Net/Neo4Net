@@ -59,8 +59,11 @@ namespace Neo4Net.Strings
          sbyte[] data = new sbyte[len / 2];
          for (int i = 0, j = 0; i < len; i += 2, j++)
          {
-            int highByte = Character.digit(hexString[i], 16) << 4;
+            int highByte = int.Parse(hexString[i]);
             int lowByte = Character.digit(hexString[i + 1], 16);
+
+            //$!!$int highByte = Character.digit(hexString[i], 16) << 4;
+            //$!!$int lowByte = Character.digit(hexString[i + 1], 16);
             if (highByte < 0 || lowByte < 0)
             {
                return null;

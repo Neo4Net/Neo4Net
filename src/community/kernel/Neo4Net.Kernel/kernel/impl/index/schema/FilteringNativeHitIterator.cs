@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	{
 		 private readonly IndexQuery[] _filters;
 
-		 internal FilteringNativeHitIterator( RawCursor<Hit<KEY, VALUE>, IOException> seeker, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromWhenExhausted, IndexQuery[] filters ) : base( seeker, toRemoveFromWhenExhausted )
+		 internal FilteringNativeHitIterator( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromWhenExhausted, IndexQuery[] filters ) : base( seeker, toRemoveFromWhenExhausted )
 		 {
 			  this._filters = filters;
 		 }

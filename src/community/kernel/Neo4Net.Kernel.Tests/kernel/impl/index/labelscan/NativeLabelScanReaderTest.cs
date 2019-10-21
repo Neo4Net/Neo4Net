@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			  // GIVEN
 			  GBPTree<LabelScanKey, LabelScanValue> index = mock( typeof( GBPTree ) );
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
 			  when( cursor.Next() ).thenReturn(true, true, true, false);
 			  when( cursor.get() ).thenReturn(Hit(0, 0b1000_1000__1100_0010L), Hit(1, 0b0000_0010__0000_1000L), Hit(3, 0b0010_0000__1010_0001L), null);
 			  when( index.Seek( any( typeof( LabelScanKey ) ), any( typeof( LabelScanKey ) ) ) ).thenReturn( cursor );
@@ -76,9 +76,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			  // GIVEN
 			  GBPTree<LabelScanKey, LabelScanValue> index = mock( typeof( GBPTree ) );
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor1 = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor1 = mock( typeof( RawCursor ) );
 			  when( cursor1.Next() ).thenReturn(false);
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor2 = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor2 = mock( typeof( RawCursor ) );
 			  when( cursor2.Next() ).thenReturn(false);
 			  when( index.Seek( any( typeof( LabelScanKey ) ), any( typeof( LabelScanKey ) ) ) ).thenReturn( cursor1, cursor2 );
 
@@ -114,9 +114,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			  // GIVEN
 			  GBPTree<LabelScanKey, LabelScanValue> index = mock( typeof( GBPTree ) );
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor1 = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor1 = mock( typeof( RawCursor ) );
 			  when( cursor1.Next() ).thenReturn(false);
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor2 = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor2 = mock( typeof( RawCursor ) );
 			  when( cursor2.Next() ).thenReturn(false);
 			  when( index.Seek( any( typeof( LabelScanKey ) ), any( typeof( LabelScanKey ) ) ) ).thenReturn( cursor1, cursor2 );
 
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			  // given
 			  GBPTree<LabelScanKey, LabelScanValue> index = mock( typeof( GBPTree ) );
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
 			  when( cursor.Next() ).thenReturn(true, true, false);
 			  when( cursor.get() ).thenReturn(Hit(1, 0b0001_1000__0101_1110L), Hit(3, 0b0010_0000__1010_0001L), null);
 			  when( index.Seek( any( typeof( LabelScanKey ) ), any( typeof( LabelScanKey ) ) ) ).thenReturn( cursor );

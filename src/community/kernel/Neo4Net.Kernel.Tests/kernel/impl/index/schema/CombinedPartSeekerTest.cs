@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  assertFalse( combinedSeeker.Next() );
 		 }
 
-		 private class SimpleSeeker : RawCursor<Hit<MutableLong, MutableLong>, IOException>
+		 private class SimpleSeeker : IRawCursor<Hit<MutableLong, MutableLong>, IOException>
 		 {
 			  internal readonly IEnumerator<Hit<MutableLong, MutableLong>> Data;
 			  internal Hit<MutableLong, MutableLong> Current;

@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 			  try
 			  {
-					  using ( RawCursor<Hit<KEY, VALUE>, IOException> seeker = Tree.seek( treeKeyFrom, treeKeyTo ) )
+					  using ( IRawCursor<Hit<KEY, VALUE>, IOException> seeker = Tree.seek( treeKeyFrom, treeKeyTo ) )
 					  {
 						long count = 0;
 						while ( seeker.Next() )
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> makeIndexSeeker(KEY treeKeyFrom, KEY treeKeyTo, org.neo4j.internal.kernel.api.IndexOrder indexOrder) throws java.io.IOException
-		 internal virtual RawCursor<Hit<KEY, VALUE>, IOException> MakeIndexSeeker( KEY treeKeyFrom, KEY treeKeyTo, IndexOrder indexOrder )
+		 internal virtual IRawCursor<Hit<KEY, VALUE>, IOException> MakeIndexSeeker( KEY treeKeyFrom, KEY treeKeyTo, IndexOrder indexOrder )
 		 {
 			  if ( indexOrder == IndexOrder.DESCENDING )
 			  {
@@ -185,12 +185,12 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					treeKeyFrom = treeKeyTo;
 					treeKeyTo = tmpKey;
 			  }
-			  RawCursor<Hit<KEY, VALUE>, IOException> seeker = Tree.seek( treeKeyFrom, treeKeyTo );
+			  IRawCursor<Hit<KEY, VALUE>, IOException> seeker = Tree.seek( treeKeyFrom, treeKeyTo );
 			  OpenSeekers.Add( seeker );
 			  return seeker;
 		 }
 
-		 private IndexProgressor GetIndexProgressor( RawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, bool needFilter, IndexQuery[] query )
+		 private IndexProgressor GetIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, bool needFilter, IndexQuery[] query )
 		 {
 			  return needFilter ? new FilteringNativeHitIndexProgressor<>( seeker, client, OpenSeekers, query ) : new NativeHitIndexProgressor<>( seeker, client, OpenSeekers );
 		 }

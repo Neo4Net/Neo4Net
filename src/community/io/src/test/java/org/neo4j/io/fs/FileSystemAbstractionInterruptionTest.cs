@@ -48,9 +48,9 @@ namespace Neo4Net.Io.fs
 	public class FileSystemAbstractionInterruptionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 private static readonly Factory<FileSystemAbstraction> _ephemeral = EphemeralFileSystemAbstraction::new;
+		 private static readonly IFactory<FileSystemAbstraction> _ephemeral = EphemeralFileSystemAbstraction::new;
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 private static readonly Factory<FileSystemAbstraction> _real = DefaultFileSystemAbstraction::new;
+		 private static readonly IFactory<FileSystemAbstraction> _real = DefaultFileSystemAbstraction::new;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static Iterable<Object[]> dataPoints()
@@ -72,7 +72,7 @@ namespace Neo4Net.Io.fs
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: public FileSystemAbstractionInterruptionTest(@SuppressWarnings("UnusedParameters") String name, org.neo4j.function.Factory<FileSystemAbstraction> factory)
-		 public FileSystemAbstractionInterruptionTest( string name, Factory<FileSystemAbstraction> factory )
+		 public FileSystemAbstractionInterruptionTest( string name, IFactory<FileSystemAbstraction> factory )
 		 {
 			  _fs = factory.NewInstance();
 		 }

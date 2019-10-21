@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	{
 		 private readonly GBPTree<KEY, VALUE> _tree;
 		 private readonly Layout<KEY, VALUE> _layout;
-		 private RawCursor<Hit<KEY, VALUE>, IOException> _seeker;
+		 private IRawCursor<Hit<KEY, VALUE>, IOException> _seeker;
 
 		 internal NativeAllEntriesReader( GBPTree<KEY, VALUE> tree, Layout<KEY, VALUE> layout )
 		 {

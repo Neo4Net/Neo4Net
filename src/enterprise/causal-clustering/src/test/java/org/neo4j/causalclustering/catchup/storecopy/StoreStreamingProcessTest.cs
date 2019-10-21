@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  ImmediateEventExecutor eventExecutor = ImmediateEventExecutor.INSTANCE;
 			  Promise<Void> completionPromise = eventExecutor.newPromise();
 			  long lastCheckpointedTxId = 1000L;
-			  RawCursor<StoreResource, IOException> resources = rawCursorOf();
+			  IRawCursor<StoreResource, IOException> resources = rawCursorOf();
 
 			  when( _checkPointer.tryCheckPoint( any() ) ).thenReturn(lastCheckpointedTxId);
 			  when( _checkPointer.lastCheckPointedTransactionId() ).thenReturn(lastCheckpointedTxId);

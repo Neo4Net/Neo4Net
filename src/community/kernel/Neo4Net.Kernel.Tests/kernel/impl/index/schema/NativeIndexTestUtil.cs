@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  Hit<KEY, VALUE>[] expectedHits = ConvertToHits( updates, Layout );
 			  IList<Hit<KEY, VALUE>> actualHits = new List<Hit<KEY, VALUE>>();
-			  using ( GBPTree<KEY, VALUE> tree = Tree, RawCursor<Hit<KEY, VALUE>, IOException> scan = scan( tree ) )
+			  using ( GBPTree<KEY, VALUE> tree = Tree, IRawCursor<Hit<KEY, VALUE>, IOException> scan = scan( tree ) )
 			  {
 					while ( scan.Next() )
 					{
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<KEY,VALUE>, java.io.IOException> scan(org.neo4j.index.internal.gbptree.GBPTree<KEY,VALUE> tree) throws java.io.IOException
-		 private RawCursor<Hit<KEY, VALUE>, IOException> Scan( GBPTree<KEY, VALUE> tree )
+		 private IRawCursor<Hit<KEY, VALUE>, IOException> Scan( GBPTree<KEY, VALUE> tree )
 		 {
 			  KEY lowest = Layout.newKey();
 			  lowest.initialize( long.MinValue );

@@ -606,17 +606,17 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 			  return value => values[toIntExact( value )];
 		 }
 
-		 private IdMapper Mapper( Encoder encoder, Factory<Radix> radix, Monitor monitor )
+		 private IdMapper Mapper( Encoder encoder, IFactory<Radix> radix, Monitor monitor )
 		 {
 			  return Mapper( encoder, radix, monitor, ParallelSort.DEFAULT );
 		 }
 
-		 private IdMapper Mapper( Encoder encoder, Factory<Radix> radix, Monitor monitor, Comparator comparator )
+		 private IdMapper Mapper( Encoder encoder, IFactory<Radix> radix, Monitor monitor, Comparator comparator )
 		 {
 			  return Mapper( encoder, radix, monitor, comparator, AutoDetect( encoder ) );
 		 }
 
-		 private IdMapper Mapper( Encoder encoder, Factory<Radix> radix, Monitor monitor, Comparator comparator, System.Func<long, CollisionValues> collisionValuesFactory )
+		 private IdMapper Mapper( Encoder encoder, IFactory<Radix> radix, Monitor monitor, Comparator comparator, System.Func<long, CollisionValues> collisionValuesFactory )
 		 {
 			  return new EncodingIdMapper( NumberArrayFactory.HEAP, encoder, radix, monitor, _randomTrackerFactory, _groups, collisionValuesFactory, 1_000, _processors, comparator );
 		 }
@@ -633,11 +633,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 {
 			 private readonly EncodingIdMapperTest _outerInstance;
 
-			  internal readonly Factory<object> Generator;
+			  internal readonly IFactory<object> Generator;
 			  internal readonly IList<object> Values = new List<object>();
 			  internal readonly ISet<object> Deduper = new HashSet<object>();
 
-			  internal ValueGenerator( EncodingIdMapperTest outerInstance, Factory<object> generator )
+			  internal ValueGenerator( EncodingIdMapperTest outerInstance, IFactory<object> generator )
 			  {
 				  this._outerInstance = outerInstance;
 					this.Generator = generator;
@@ -660,11 +660,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 private abstract class ValueType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           LONGS { Encoder encoder() { return new LongEncoder(); } Factory<Radix> radix() { return Radix.LONG; } Factory<Object> data(final java.util.Random random) { return() -> random.nextInt(1_000_000_000); } },
+//           LONGS { Encoder encoder() { return new LongEncoder(); } IFactory<Radix> radix() { return Radix.LONG; } IFactory<Object> data(final java.util.Random random) { return() -> random.nextInt(1_000_000_000); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           LONGS_AS_STRINGS { Encoder encoder() { return new StringEncoder(); } Factory<Radix> radix() { return Radix.STRING; } Factory<Object> data(final java.util.Random random) { return() -> String.valueOf(random.nextInt(1_000_000_000)); } },
+//           LONGS_AS_STRINGS { Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return() -> String.valueOf(random.nextInt(1_000_000_000)); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           VERY_LONG_STRINGS { char[] CHARS = "½!\"#¤%&/()=?`´;:,._-<>".toCharArray(); Encoder encoder() { return new StringEncoder(); } Factory<Radix> radix() { return Radix.STRING; } Factory<Object> data(final java.util.Random random) { return new org.neo4j.function.Factory<Object>() { public Object newInstance() { int length = 1500; for(int i = 0; i < 4; i++) { length = random.nextInt(length) + 20; } char[] chars = new char[length]; for(int i = 0; i < length; i++) { char ch; if(random.nextBoolean()) { ch = randomLetter(random); } else { ch = CHARS[random.nextInt(CHARS.length)]; } chars[i] = ch; } return new String(chars); } private char randomLetter(java.util.Random random) { int super; if(random.nextBoolean()) { super = 'a'; } else { super = 'A'; } int size = 'z' - 'a'; return(char)(super + random.nextInt(size)); } }; } };
+//           VERY_LONG_STRINGS { char[] CHARS = "½!\"#¤%&/()=?`´;:,._-<>".toCharArray(); Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return new org.neo4j.function.Factory<Object>() { public Object newInstance() { int length = 1500; for(int i = 0; i < 4; i++) { length = random.nextInt(length) + 20; } char[] chars = new char[length]; for(int i = 0; i < length; i++) { char ch; if(random.nextBoolean()) { ch = randomLetter(random); } else { ch = CHARS[random.nextInt(CHARS.length)]; } chars[i] = ch; } return new String(chars); } private char randomLetter(java.util.Random random) { int super; if(random.nextBoolean()) { super = 'a'; } else { super = 'A'; } int size = 'z' - 'a'; return(char)(super + random.nextInt(size)); } }; } };
 
 			  private static readonly IList<ValueType> valueList = new List<ValueType>();
 

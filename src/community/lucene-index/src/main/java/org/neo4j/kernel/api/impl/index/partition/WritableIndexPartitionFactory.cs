@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 	/// </summary>
 	public class WritableIndexPartitionFactory : IndexPartitionFactory
 	{
-		 private Factory<IndexWriterConfig> _writerConfigFactory;
+		 private IFactory<IndexWriterConfig> _writerConfigFactory;
 
-		 public WritableIndexPartitionFactory( Factory<IndexWriterConfig> writerConfigFactory )
+		 public WritableIndexPartitionFactory( IFactory<IndexWriterConfig> writerConfigFactory )
 		 {
 			  this._writerConfigFactory = writerConfigFactory;
 		 }

@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  return highest;
 		 }
 
-		 private static System.Func<int, RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> Store( params Labels[] labels )
+		 private static System.Func<int, IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> Store( params Labels[] labels )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableIntObjectMap<Labels> labelsMap = new org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<>(labels.length);
@@ -248,12 +248,12 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 					this.Entries = entries;
 			  }
 
-			  internal virtual RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> Cursor()
+			  internal virtual IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> Cursor()
 			  {
 					return new RawCursorAnonymousInnerClass( this );
 			  }
 
-			  private class RawCursorAnonymousInnerClass : RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
+			  private class RawCursorAnonymousInnerClass : IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
 			  {
 				  private readonly Labels _outerInstance;
 
@@ -288,9 +288,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  }
 		 }
 
-		 private static readonly RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> EMPTY_CURSOR = new RawCursorAnonymousInnerClass();
+		 private static readonly IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> EMPTY_CURSOR = new RawCursorAnonymousInnerClass();
 
-		 private class RawCursorAnonymousInnerClass : RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
+		 private class RawCursorAnonymousInnerClass : IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
 		 {
 			 public Hit<LabelScanKey, LabelScanValue> get()
 			 {

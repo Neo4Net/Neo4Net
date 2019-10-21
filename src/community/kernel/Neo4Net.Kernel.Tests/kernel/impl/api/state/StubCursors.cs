@@ -46,19 +46,19 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SafeVarargs public static <T> org.neo4j.cursor.Cursor<T> cursor(final T... items)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-		 public static Cursor<T> Cursor<T>( params T[] items )
+		 public static ICursor<T> ICursor<T>( params T[] items )
 		 {
 			  return Cursor( Iterables.asIterable( items ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public static <T> org.neo4j.cursor.Cursor<T> cursor(final Iterable<T> items)
-		 public static Cursor<T> Cursor<T>( IEnumerable<T> items )
+		 public static ICursor<T> ICursor<T>( IEnumerable<T> items )
 		 {
 			  return new CursorAnonymousInnerClass( items );
 		 }
 
-		 private class CursorAnonymousInnerClass : Cursor<T>
+		 private class CursorAnonymousInnerClass : ICursor<T>
 		 {
 			 private IEnumerable<T> _items;
 

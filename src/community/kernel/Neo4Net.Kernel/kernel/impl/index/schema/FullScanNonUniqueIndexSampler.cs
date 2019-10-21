@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  KEY prev = _layout.newKey();
 			  try
 			  {
-					  using ( RawCursor<Hit<KEY, VALUE>, IOException> seek = _gbpTree.seek( lowest, highest ) )
+					  using ( IRawCursor<Hit<KEY, VALUE>, IOException> seek = _gbpTree.seek( lowest, highest ) )
 					  {
 						long sampledValues = 0;
 						long uniqueValues = 0;

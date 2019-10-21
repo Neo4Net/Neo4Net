@@ -55,9 +55,9 @@ namespace Neo4Net.Kernel.ha.com.master
 		 private readonly int _lockTimeoutAddition;
 		 private readonly Config _config;
 		 private readonly ConversationSPI _spi;
-		 private readonly Factory<Conversation> conversationFactory = new FactoryAnonymousInnerClass();
+		 private readonly IFactory<Conversation> conversationFactory = new FactoryAnonymousInnerClass();
 
-		 private class FactoryAnonymousInnerClass : Factory<Conversation>
+		 private class FactoryAnonymousInnerClass : IFactory<Conversation>
 		 {
 			 public Conversation newInstance()
 			 {
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.ha.com.master
 			 }
 		 }
 
-		 protected internal virtual Factory<Conversation> ConversationFactory
+		 protected internal virtual IFactory<Conversation> ConversationFactory
 		 {
 			 get
 			 {

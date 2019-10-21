@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 internal class PartFactory : Factory<IndexUpdater>
+		 internal class PartFactory : IFactory<IndexUpdater>
 		 {
 			  internal readonly SpatialIndexPopulator Populator;
 			  internal NodePropertyAccessor NodePropertyAccessor;

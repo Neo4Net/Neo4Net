@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 /// <summary>
 		 /// <seealso cref="RawCursor"/> to lazily read new <seealso cref="LabelScanValue"/> from.
 		 /// </summary>
-		 protected internal readonly RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> Cursor;
+		 protected internal readonly IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> Cursor;
 		 /// <summary>
 		 /// Remove provided cursor from this collection when iterator is exhausted.
 		 /// </summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 /// </summary>
 		 protected internal bool Closed;
 
-		 internal LabelScanValueIndexAccessor( ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor )
+		 internal LabelScanValueIndexAccessor( ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor )
 		 {
 			  this._toRemoveFromWhenClosed = toRemoveFromWhenClosed;
 			  this.Cursor = cursor;

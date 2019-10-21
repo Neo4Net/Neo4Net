@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 public virtual void ShouldCloseExhaustedCursors()
 		 {
 			  // GIVEN
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
 			  when( cursor.Next() ).thenReturn(false);
 			  ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFrom = new HashSet<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>>();
 			  LabelScanValueIterator iterator = new LabelScanValueIterator( cursor, toRemoveFrom, NO_ID );

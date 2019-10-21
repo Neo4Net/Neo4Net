@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	{
 		 private readonly IndexQuery[] _filter;
 
-		 internal FilteringNativeHitIndexProgressor( RawCursor<Hit<KEY, VALUE>, IOException> seeker, NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose, IndexQuery[] filter ) : base( seeker, client, toRemoveFromOnClose )
+		 internal FilteringNativeHitIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose, IndexQuery[] filter ) : base( seeker, client, toRemoveFromOnClose )
 		 {
 			  this._filter = filter;
 		 }

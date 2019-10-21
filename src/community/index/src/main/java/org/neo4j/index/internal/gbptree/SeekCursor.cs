@@ -154,7 +154,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	/// he find the place where he left off, K4.
 	/// </para>
 	/// </summary>
-	internal class SeekCursor<KEY, VALUE> : RawCursor<Hit<KEY, VALUE>, IOException>, Hit<KEY, VALUE>
+	internal class SeekCursor<KEY, VALUE> : IRawCursor<Hit<KEY, VALUE>, IOException>, Hit<KEY, VALUE>
 	{
 		 internal const int DEFAULT_MAX_READ_AHEAD = 20;
 

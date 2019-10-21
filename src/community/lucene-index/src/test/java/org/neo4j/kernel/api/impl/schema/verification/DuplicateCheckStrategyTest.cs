@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.function.Factory<DuplicateCheckStrategy> duplicateCheckStrategyFactory;
-		 public Factory<DuplicateCheckStrategy> DuplicateCheckStrategyFactory;
+		 public IFactory<DuplicateCheckStrategy> DuplicateCheckStrategyFactory;
 		 private DuplicateCheckStrategy _checkStrategy;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

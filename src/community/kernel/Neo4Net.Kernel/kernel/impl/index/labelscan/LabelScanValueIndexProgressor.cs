@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient _client;
 
-		 internal LabelScanValueIndexProgressor( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client ) : base( toRemoveFromWhenClosed, cursor )
+		 internal LabelScanValueIndexProgressor( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client ) : base( toRemoveFromWhenClosed, cursor )
 		 {
 			  this._client = client;
 		 }

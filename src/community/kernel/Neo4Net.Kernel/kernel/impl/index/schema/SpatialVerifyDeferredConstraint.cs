@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  InitializeKeys( from, to );
 			  try
 			  {
-					  using ( RawCursor<Hit<SpatialIndexKey, NativeIndexValue>, IOException> seek = tree.Seek( from, to ) )
+					  using ( IRawCursor<Hit<SpatialIndexKey, NativeIndexValue>, IOException> seek = tree.Seek( from, to ) )
 					  {
 						ScanAndVerifyDuplicates( nodePropertyAccessor, descriptor, seek );
 					  }
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private static void scanAndVerifyDuplicates(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor, org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<SpatialIndexKey,NativeIndexValue>,java.io.IOException> seek) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
-		 private static void ScanAndVerifyDuplicates( NodePropertyAccessor nodePropertyAccessor, StoreIndexDescriptor descriptor, RawCursor<Hit<SpatialIndexKey, NativeIndexValue>, IOException> seek )
+		 private static void ScanAndVerifyDuplicates( NodePropertyAccessor nodePropertyAccessor, StoreIndexDescriptor descriptor, IRawCursor<Hit<SpatialIndexKey, NativeIndexValue>, IOException> seek )
 		 {
 			  LongArrayList nodesWithCollidingPoints = new LongArrayList();
 			  long prevRawBits = long.MinValue;

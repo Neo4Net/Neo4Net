@@ -142,7 +142,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					index.ConsistencyCheck();
 
 					// ... containing all the stuff load says
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( key( long.MinValue ), key( long.MaxValue ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( key( long.MinValue ), key( long.MaxValue ) ) )
 					{
 						 assertTrue( cursor.Next() );
 						 Hit<KEY, VALUE> hit = cursor.get();
@@ -270,7 +270,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					// we should end up with a consistent index containing all the stuff load says
 					index.ConsistencyCheck();
 					long[] aggregate = ExpectedSortedAggregatedDataFromGeneratedLoad( load );
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( long.MinValue ), Key( long.MaxValue ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( long.MinValue ), Key( long.MaxValue ) ) )
 					{
 						 for ( int i = 0; i < aggregate.Length; )
 						 {

@@ -1348,7 +1348,7 @@
   },
   "libraries": {
     "Castle.Core/4.4.0": {
-      "sha512": "b5rRL5zeaau1y/5hIbI+6mGw3cwun16YjkHZnV9RRT5UyUIFsgLmNXJ0YnIN9p8Hw7K7AbG1q1UclQVU3DinAQ==",
+      "sha512": "dibDR/ggOLwpsLKuOZk3BHrq0mDthf+MEH02rb6QHXKb5ZzYml+Y70XaLRiDyDdLbyhsgcBEpaK2mrS13enOmA==",
       "type": "package",
       "path": "castle.core/4.4.0",
       "files": [
@@ -1373,7 +1373,7 @@
       ]
     },
     "coverlet.collector/1.1.0": {
-      "sha512": "OBxWQ4vNm+kVvKy8NTk6skRNMQCeQLqSqJ0xq19S0GLovHYTnVTcsjYgV54t6LnjjQ6mDADMcFvHMQHLoNQhIg==",
+      "sha512": "BMtP3D3No3VNvr7HOGEfUqO6v/KRCGQXRyHegvYHIbUDYnS2WycXoAqirqm/fRd7LZzJ2fVjS5rhzLfzrtIzzA==",
       "type": "package",
       "path": "coverlet.collector/1.1.0",
       "files": [
@@ -1402,7 +1402,7 @@
       ]
     },
     "FluentAssertions/5.9.0": {
-      "sha512": "JZxb5DuspmuH4A5p9bfj060evQnwIUkxxfFMG9F/pa7gl1Ry2r2nuQbu5G4UWGQQTtpTxPpVowqNDdBkA0G2Mw==",
+      "sha512": "OXLNffjNuUvIT/eFSX9XfqK/rTiJYKDmmibH46YLczzo891FibPZdxaV5N7PHcrRt5LvOdSrCXsEsEeuqTQszg==",
       "type": "package",
       "path": "fluentassertions/5.9.0",
       "files": [
@@ -1431,7 +1431,7 @@
       ]
     },
     "Microsoft.CodeCoverage/16.3.0": {
-      "sha512": "CVEzOQp+2Y/VdUEbvtziOd41QJ3tGGvqI14to5blM0Glr4P9uasORK4SaSF4bvlRQaiMeqS2iGoCfVIggdymmw==",
+      "sha512": "nOCczaTXwgfn/Sbht15cQFBrNj4GbDN3bZVyv5xXjKjDnzR8lawRh1cTc3juTVKcMP9ulm4RMJ23tzTPXZlfpw==",
       "type": "package",
       "path": "microsoft.codecoverage/16.3.0",
       "files": [
@@ -1467,12 +1467,11 @@
       ]
     },
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
+      "sha512": "9bKywOr7Y0TP5U6sLUcQyRx4GoeQg63AT955JYjh7AvxXsvUgmS1y4+3gGa3M3+NbZTApCmJ39u8Nzk+yGtDmQ==",
       "type": "package",
       "path": "microsoft.csharp/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -1526,7 +1525,7 @@
       ]
     },
     "Microsoft.NET.Test.Sdk/16.3.0": {
-      "sha512": "Drk/adJoZYuMx3MuhcpEqfXDrAOwv56tjq9SlqeO20+oTlNfGEebw2dmMRTl17EwlUYctdmZv5VzTZVncU1aVw==",
+      "sha512": "nv/hF5cAXdp8EvjzAwfZo1tQQJ+3cxA68s8Zo3rrI9v6XfbaSjZRjt3QvGbG3XNVrrgB6yfs2vAk27ir8wW4/g==",
       "type": "package",
       "path": "microsoft.net.test.sdk/16.3.0",
       "files": [
@@ -1546,7 +1545,7 @@
       ]
     },
     "Microsoft.NETCore.App/2.2.0": {
-      "sha512": "7z5l8Jp324S8bU8+yyWeYHXUFYvKyiI5lqS1dXgTzOx1H69Qbf6df12kCKlNX45LpMfCMd4U3M6p7Rl5Zk7SLA==",
+      "sha512": "QU8taCyeyePwatrj+h+750lMnsPCq3YPaGmsdtSHXPCjDyjto2KT7QDNVet0oRliX4PjaINpyg0Yzd9DnQ/Wkw==",
       "type": "package",
       "path": "microsoft.netcore.app/2.2.0",
       "files": [
@@ -1811,7 +1810,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetAppHost/2.2.0": {
-      "sha512": "DrhaKInRKKvN6Ns2VNIlC7ZffLOp9THf8cO6X4fytPRJovJUbF49/zzx4WfgX9E44FMsw9hT8hrKiIqDSHvGvA==",
+      "sha512": "qIrVLupwT2NYTrf7KM7Nh+mJr36V5MITVRjyGOByVVCwGmQgQmI/6bjZYQv+QdExi4Cm87eCKJX9FdT6nc00Xg==",
       "type": "package",
       "path": "microsoft.netcore.dotnetapphost/2.2.0",
       "files": [
@@ -1825,7 +1824,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostPolicy/2.2.0": {
-      "sha512": "FJie7IoPZFaPgNDxhZGmDBQP/Bs5vPdfca/G2Wf9gd6LIvMYkZcibtmJwB4tcf4KXkaOYfIOo4Cl9sEPMsSzkw==",
+      "sha512": "5Xvh/3bDr6YAl6TKfeONvRDZ9QOmvVmzFzA0M6g8uubWdf5/o6qdVOqByFBT/fhjVb6okP0E5+v1oxh1Pk+c+w==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostpolicy/2.2.0",
       "files": [
@@ -1839,7 +1838,7 @@
       ]
     },
     "Microsoft.NETCore.DotNetHostResolver/2.2.0": {
-      "sha512": "spDm3AJYmebthDNhzY17YLPtvbc+Y1lCLVeiIH1uLJ/hZaM+40pBiPefFR8J1u66Ndkqi8ipR2tEbqPnYnjRhw==",
+      "sha512": "Q3j3KC2ugqIVasf7pO4NRDEn7GysZX3ZH6fAHfbjrP8cYXY9cmHeFcbaniw36q8kFhsPt2EnRHzSsLBpbG6l2Q==",
       "type": "package",
       "path": "microsoft.netcore.dotnethostresolver/2.2.0",
       "files": [
@@ -1853,7 +1852,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/2.2.0": {
-      "sha512": "T/J+XZo+YheFTJh8/4uoeJDdz5qOmOMkjg6/VL8mHJ9AnP8+fmV/kcbxeXsob0irRNiChf+V0ig1MCRLp/+Kog==",
+      "sha512": "39+GVHdbm+cmoOjdvm+fhiMbddnuVyUlBdYS8Yhn5xsNaBoTXpgBsxQQlI2Sv9EjIP0F+itG6yrDaOM2OEGupQ==",
       "type": "package",
       "path": "microsoft.netcore.platforms/2.2.0",
       "files": [
@@ -1887,7 +1886,7 @@
       ]
     },
     "Microsoft.TestPlatform.ObjectModel/16.3.0": {
-      "sha512": "F4ZZ1c6J6VqeFhfPPBZNk+jr7VU5qYgxoClWK+VOJMRwGYc5edYY5q9CGtNgT93VcVGQ/ie6Gn8J9HDoST1fAg==",
+      "sha512": "+p+9HaaI64AK6uNQ+qp7GtitlzKacoUNODnAxl5nz4MuKU2HnDjcnyJ38HMBCpvehNPBStpi1LTn+94/OWhVAQ==",
       "type": "package",
       "path": "microsoft.testplatform.objectmodel/16.3.0",
       "files": [
@@ -1956,7 +1955,7 @@
       ]
     },
     "Microsoft.TestPlatform.TestHost/16.3.0": {
-      "sha512": "N44oK5yrJw70tJh/f5XrDT9ibywsz/t9hm9f59DojtfJphYG55oXf/2ht9h0iNMyzpuh7lFAWPdRcZ9v0Oj82w==",
+      "sha512": "cZfOmnNWn8JFuunxt/AER7Qupk0MSM35tG8/P26FXoeNEU8Mm6PEtcw+E2y/YApjf4qH6wsf+aEihovz/zy0ew==",
       "type": "package",
       "path": "microsoft.testplatform.testhost/16.3.0",
       "files": [
@@ -2262,7 +2261,7 @@
       ]
     },
     "NSubstitute/4.2.1": {
-      "sha512": "CqQuOU06ftAKrTV7Op/s0hdSII4RP6SNjP/XT1+2oEC6EqwYLXOfek/p+SEuHgaH8WNwEHWIYjsrUV9oSOIOXw==",
+      "sha512": "jU3piQuU8MliS8IWfAGP8FQn7uaa07Ubn1kbTEIwtbu8ZL13N1Y9mdNMdGQKQ1UCUT6v9wzEympfMXz+dkR5Fw==",
       "type": "package",
       "path": "nsubstitute/4.2.1",
       "files": [
@@ -2281,7 +2280,7 @@
       ]
     },
     "NuGet.Frameworks/5.0.0": {
-      "sha512": "c5JVjuVAm4f7E9Vj+v09Z9s2ZsqFDjBpcsyS3M9xRo0bEdm/LVZSzLxxNvfvAwRiiE8nwe1h2G4OwiwlzFKXlA==",
+      "sha512": "67lESztGBjUi47QyxnrK/olD2jnIZpeBRviHV/G+VXG/QOnfIIgkRA76QRawtH0A+XCKcnZ6IoeKeKylqYh2UA==",
       "type": "package",
       "path": "nuget.frameworks/5.0.0",
       "files": [
@@ -2550,12 +2549,11 @@
       ]
     },
     "System.ComponentModel.TypeConverter/4.3.0": {
-      "sha512": "16pQ6P+EdhcXzPiEK4kbA953Fu0MNG2ovxTZU81/qsCd1zPRsKc3uif5NgvllCY598k6bI0KUyKW8fanlfaDQg==",
+      "sha512": "HZiP0DwTHJ+C+rdFqP47nBYUh5283kcwXIGY2zOVVhsJmVI/2tYiX2zNRdjRQRHsTox58Ydkec6h0pWSh8wAsw==",
       "type": "package",
       "path": "system.componentmodel.typeconverter/4.3.0",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4066,12 +4064,11 @@
       ]
     },
     "System.Runtime.Serialization.Primitives/4.1.1": {
-      "sha512": "HZ6Du5QrTG8MNJbf4e4qMO3JRAkIboGT5Fk804uZtg3Gq516S7hAqTm2UZKUHa7/6HUGdVy3AqMQKbns06G/cg==",
+      "sha512": "eHOEkp1xnrK+kf6LcJgeUOY/2dS6ws4W2IvoxCCOa9DXUIMsIdoH9KROvufFGwD0LcaoexKDVmvibPLeg36d4w==",
       "type": "package",
       "path": "system.runtime.serialization.primitives/4.1.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4879,25 +4876,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tcorv\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\tcorvin\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+      "projectUniqueName": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
       "projectName": "Neo4Net.Common.Tests",
-      "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
-      "packagesPath": "C:\\Users\\tcorv\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\obj\\",
+      "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\Neo4Net.Common.Tests.csproj",
+      "packagesPath": "C:\\Users\\tcorvin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\tcorv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\tcorvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.2"
@@ -4909,8 +4905,8 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
-              "projectPath": "C:\\Users\\tcorv\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
+            "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj": {
+              "projectPath": "C:\\Users\\tcorvin\\Source\\Repos\\Neo4Net\\Neo4Net\\src\\Community\\common\\Neo4Net.Common\\Neo4Net.Common.csproj"
             }
           }
         }
@@ -4943,7 +4939,7 @@
             "version": "[4.2.1, )"
           },
           "coverlet.collector": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
             "suppressParent": "All",
             "target": "Package",
             "version": "[1.1.0, )"
@@ -4953,23 +4949,17 @@
             "version": "[2.4.1, )"
           },
           "xunit.runner.visualstudio": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+            "include": "Runtime, Build, Native, ContentFiles, Analyzers",
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.4.1, )"
           }
         },
         "imports": [
-          "net461",
-          "net462",
-          "net47",
-          "net471",
-          "net472",
-          "net48"
+          "net461"
         ],
         "assetTargetFallback": true,
-        "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        "warn": true
       }
     }
   }

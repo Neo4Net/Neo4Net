@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// @param <T> Type of parts </param>
 	internal class SpatialIndexCache<T> : IndexPartsCache<CoordinateReferenceSystem, T>
 	{
-		 private readonly Factory<T> _factory;
+		 private readonly IFactory<T> _factory;
 
-		 internal SpatialIndexCache( Factory<T> factory )
+		 internal SpatialIndexCache( IFactory<T> factory )
 		 {
 			  this._factory = factory;
 		 }
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Factory used by the SpatialIndexCache to create parts.
 		 /// </summary>
 		 /// @param <T> Type of parts </param>
-		 internal interface Factory<T>
+		 internal interface IFactory<T>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: T newSpatial(org.neo4j.values.storable.CoordinateReferenceSystem crs) throws java.io.IOException;

@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 internal class PartFactory : Factory<PartAccessor>
+		 internal class PartFactory : IFactory<PartAccessor>
 		 {
 			  internal readonly PageCache PageCache;
 			  internal readonly FileSystemAbstraction Fs;

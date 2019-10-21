@@ -32,7 +32,7 @@ namespace Neo4Net.Helpers
    {
       public static readonly Thread.UncaughtExceptionHandler SilentUncaughtExceptionHandler = (t, e) =>
       { // Don't print about it
-       };
+      };
 
       private const string UNEXPECTED_MESSAGE = "Unexpected Exception";
 

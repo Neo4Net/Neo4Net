@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	/// <seealso cref="Cursor"/> which moves over one or more arrays, automatically transitioning to the next
 	/// array when one runs out of items.
 	/// </summary>
-	public class ContinuableArrayCursor<T> : Cursor<T>
+	public class ContinuableArrayCursor<T> : ICursor<T>
 	{
 		 private readonly System.Func<T[]> _supplier;
 		 private T[] _current;

@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  Future<Void> completion = null;
 			  try
 			  {
-					  using ( RawCursor<StoreResource, IOException> resources = _resourceStreamFactory.create() )
+					  using ( IRawCursor<StoreResource, IOException> resources = _resourceStreamFactory.create() )
 					  {
 						while ( resources.Next() )
 						{

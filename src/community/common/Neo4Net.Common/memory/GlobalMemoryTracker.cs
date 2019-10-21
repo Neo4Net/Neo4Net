@@ -17,35 +17,35 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+using Neo4Net.Concurrency;
 namespace Neo4Net.Memory
 {
    /// <summary>
    /// Global memory tracker that can be used in a global multi threaded context to record
    /// allocation and de-allocation of native memory. </summary>
-   /// <seealso cref= org.neo4j.memory.IMemoryAllocationTracker </seealso>
+   /// <seealso cref= Neo4Net.Memory.IMemoryAllocationTracker </seealso>
    /// <seealso cref= MemoryTracker </seealso>
    public class GlobalMemoryTracker : IMemoryAllocationTracker
    {
       public static readonly GlobalMemoryTracker Instance = new GlobalMemoryTracker();
 
-      private readonly LongAdder _allocatedBytes = new LongAdder();
+      private readonly StripedLongAdder _allocatedBytes = new StripedLongAdder();
 
       private GlobalMemoryTracker()
       {
       }
 
-      public override long UsedDirectMemory()
+      public long UsedDirectMemory()
       {
          return _allocatedBytes.sum();
       }
 
-      public override void Allocated(long bytes)
+      public void Allocated(long bytes)
       {
          _allocatedBytes.add(bytes);
       }
 
-      public override void Deallocated(long bytes)
+      public void Deallocated(long bytes)
       {
          _allocatedBytes.add(-bytes);
       }

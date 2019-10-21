@@ -39,10 +39,10 @@ namespace Neo4Net.Memory
 
       public ThreadSafePeakIMemoryAllocationTracker(IMemoryAllocationTracker alsoReportTo)
       {
-         this._alsoReportTo = alsoReportTo;
+         _alsoReportTo = alsoReportTo;
       }
 
-      public override void Allocated(long bytes)
+      public  void Allocated(long bytes)
       {
          // Update allocated
          long total = _allocated.addAndGet(bytes);
@@ -63,13 +63,13 @@ namespace Neo4Net.Memory
          _alsoReportTo.allocated(bytes);
       }
 
-      public override void Deallocated(long bytes)
+      public  void Deallocated(long bytes)
       {
          _allocated.addAndGet(-bytes);
          _alsoReportTo.deallocated(bytes);
       }
 
-      public override long UsedDirectMemory()
+      public  long UsedDirectMemory()
       {
          return _allocated.get();
       }

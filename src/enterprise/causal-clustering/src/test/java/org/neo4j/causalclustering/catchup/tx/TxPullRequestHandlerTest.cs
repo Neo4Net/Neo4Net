@@ -193,16 +193,16 @@ namespace Neo4Net.causalclustering.catchup.tx
 			  return new CommittedTransactionRepresentation( new LogEntryStart( id, id, id, id - 1, new sbyte[]{}, LogPosition.UNSPECIFIED ), Commands.transactionRepresentation( createNode( 0 ) ), new LogEntryCommit( id, id ) );
 		 }
 
-		 private static TransactionCursor TxCursor( Cursor<CommittedTransactionRepresentation> cursor )
+		 private static TransactionCursor TxCursor( ICursor<CommittedTransactionRepresentation> cursor )
 		 {
 			  return new TransactionCursorAnonymousInnerClass( cursor );
 		 }
 
 		 private class TransactionCursorAnonymousInnerClass : TransactionCursor
 		 {
-			 private Cursor<CommittedTransactionRepresentation> _cursor;
+			 private ICursor<CommittedTransactionRepresentation> _cursor;
 
-			 public TransactionCursorAnonymousInnerClass( Cursor<CommittedTransactionRepresentation> cursor )
+			 public TransactionCursorAnonymousInnerClass( ICursor<CommittedTransactionRepresentation> cursor )
 			 {
 				 this._cursor = cursor;
 			 }

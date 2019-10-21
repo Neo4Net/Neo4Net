@@ -94,7 +94,7 @@ namespace Neo4Net.Index.Internal.gbptree
 						 }
 					}
 
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( 0 ), Key( long.MaxValue ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( 0 ), Key( long.MaxValue ) ) )
 					{
 						 for ( int i = 0; i < count; i++ )
 						 {
@@ -124,7 +124,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 					for ( int i = 0; i < count; i++ )
 					{
-						 using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( i ), Key( i ) ) )
+						 using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( i ), Key( i ) ) )
 						 {
 							  assertTrue( cursor.Next() );
 							  AssertEqualsKey( Key( i ), cursor.get().key() );
@@ -163,7 +163,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					}
 
 					// THEN
-					using ( RawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( 0 ), Key( long.MaxValue ) ) )
+					using ( IRawCursor<Hit<KEY, VALUE>, IOException> cursor = index.Seek( Key( 0 ), Key( long.MaxValue ) ) )
 					{
 						 long prev = -1;
 						 while ( cursor.Next() )

@@ -390,7 +390,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  {
 					MutableLong fromInclusive = new MutableLong( 0L );
 					MutableLong toExclusive = new MutableLong( 200L );
-					using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( fromInclusive, toExclusive ) )
+					using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( fromInclusive, toExclusive ) )
 					{
 						 int i = 0;
 						 while ( seek.Next() )
@@ -1508,7 +1508,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  {
 					MutableLong from = new MutableLong( long.MinValue );
 					MutableLong to = new MutableLong( MAX_VALUE );
-					using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( from, to ) )
+					using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( from, to ) )
 					{
 						 assertFalse( seek.Next() );
 					}
@@ -1536,7 +1536,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			  {
 					MutableLong from = new MutableLong( long.MinValue );
 					MutableLong to = new MutableLong( MAX_VALUE );
-					using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( from, to ) )
+					using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = index.Seek( from, to ) )
 					{
 						 assertTrue( seek.Next() );
 						 assertEquals( key, seek.get().key().longValue() );
@@ -1867,7 +1867,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					// when seek end up in this corrupt child we should eventually fail with a tree inconsistency exception
 					try
 					{
-							using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
+							using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
 							{
 							 seek.Next();
 							 fail( "Expected to throw" );
@@ -1914,7 +1914,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					{
 					 go.Signal();
 					 go.await();
-					 using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
+					 using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
 					 {
 						  seek.next();
 					 }
@@ -1925,7 +1925,7 @@ namespace Neo4Net.Index.Internal.gbptree
 					{
 					 go.Signal();
 					 go.await();
-					 using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( MAX_VALUE ), new MutableLong( MAX_VALUE ) ) )
+					 using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( MAX_VALUE ), new MutableLong( MAX_VALUE ) ) )
 					 {
 						  seek.next();
 					 }
@@ -2101,14 +2101,14 @@ namespace Neo4Net.Index.Internal.gbptree
 						 count++;
 					}
 					trace.Clear();
-					using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
+					using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( 0 ) ) )
 					{
 						 seek.Next();
 					}
 			  } while ( trace.Count <= 1 );
 
 			  trace.Clear();
-			  using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( MAX_VALUE ) ) )
+			  using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> seek = tree.Seek( new MutableLong( 0 ), new MutableLong( MAX_VALUE ) ) )
 			  {
 					//noinspection StatementWithEmptyBody
 					while ( seek.Next() )

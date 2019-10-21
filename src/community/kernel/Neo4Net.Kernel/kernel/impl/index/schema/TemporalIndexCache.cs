@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// @param <T> Type of parts </param>
 	internal class TemporalIndexCache<T> : IndexPartsCache<TemporalIndexCache.Offset, T>
 	{
-		 private readonly Factory<T> _factory;
+		 private readonly IFactory<T> _factory;
 
 		 internal enum Offset
 		 {
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  Duration
 		 }
 
-		 internal TemporalIndexCache( Factory<T> factory )
+		 internal TemporalIndexCache( IFactory<T> factory )
 		 {
 			  this._factory = factory;
 		 }
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Factory used by the TemporalIndexCache to create parts.
 		 /// </summary>
 		 /// @param <T> Type of parts </param>
-		 internal interface Factory<T>
+		 internal interface IFactory<T>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: T newDate() throws java.io.IOException;

@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(0) public org.neo4j.function.Factory<org.neo4j.bolt.v1.transport.socket.client.TransportConnection> cf;
-		 public Factory<TransportConnection> Cf;
+		 public IFactory<TransportConnection> Cf;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(1) public Exception expected;
@@ -80,7 +80,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public static ICollection<object[]> Transports()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-			  return asList( new object[]{ ( Factory<TransportConnection> ) SecureWebSocketConnection::new, new IOException( "Failed to connect to the server within 10 seconds" ) }, new object[]{ ( Factory<TransportConnection> ) SecureSocketConnection::new, new IOException( isJavaVersionAtLeast( JAVA_9 ) ? "Remote host terminated the handshake" : "Remote host closed connection during handshake" ) } );
+			  return asList( new object[]{ ( IFactory<TransportConnection> ) SecureWebSocketConnection::new, new IOException( "Failed to connect to the server within 10 seconds" ) }, new object[]{ ( IFactory<TransportConnection> ) SecureSocketConnection::new, new IOException( isJavaVersionAtLeast( JAVA_9 ) ? "Remote host terminated the handshake" : "Remote host closed connection during handshake" ) } );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  forAll( NativeIndexUpdater.close, this );
 		 }
 
-		 internal class PartFactory : Factory<NativeIndexUpdater<JavaToDotNetGenericWildcard, NativeIndexValue>>
+		 internal class PartFactory : IFactory<NativeIndexUpdater<JavaToDotNetGenericWildcard, NativeIndexValue>>
 		 {
 
 			  internal readonly SpatialIndexAccessor Accessor;

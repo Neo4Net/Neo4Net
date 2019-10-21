@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 public override AllEntriesLabelScanReader AllNodeLabelRanges()
 		 {
-			  System.Func<int, RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> seekProvider = labelId =>
+			  System.Func<int, IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> seekProvider = labelId =>
 			  {
 				try
 				{
@@ -272,7 +272,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  int highestLabelId = -1;
 			  try
 			  {
-					  using ( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _index.seek( ( new LabelScanKey() ).Set(int.MaxValue, long.MaxValue), (new LabelScanKey()).Set(0, -1) ) )
+					  using ( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _index.seek( ( new LabelScanKey() ).Set(int.MaxValue, long.MaxValue), (new LabelScanKey()).Set(0, -1) ) )
 					  {
 						if ( cursor.Next() )
 						{
@@ -435,7 +435,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 {
 			 get
 			 {
-				  using ( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _index.seek( new LabelScanKey( 0, 0 ), new LabelScanKey( int.MaxValue, long.MaxValue ) ) )
+				  using ( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = _index.seek( new LabelScanKey( 0, 0 ), new LabelScanKey( int.MaxValue, long.MaxValue ) ) )
 				  {
 						return !cursor.Next();
 				  }

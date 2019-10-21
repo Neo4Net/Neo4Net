@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.values.storable.Values.stringValue;
 
-	internal class ResultCursor : RawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException>
+	internal class ResultCursor : IRawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException>
 	{
 		 private readonly IEnumerator<string> _iterator;
 		 private string _current;

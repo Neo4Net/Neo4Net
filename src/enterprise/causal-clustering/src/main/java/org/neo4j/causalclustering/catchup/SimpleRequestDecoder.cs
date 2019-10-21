@@ -40,9 +40,9 @@ namespace Neo4Net.causalclustering.catchup
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: private org.neo4j.function.Factory<? extends org.neo4j.causalclustering.messaging.Message> factory;
-		 private Factory<Message> _factory;
+		 private IFactory<Message> _factory;
 
-		 public SimpleRequestDecoder<T1>( Factory<T1> factory ) where T1 : Neo4Net.causalclustering.messaging.Message
+		 public SimpleRequestDecoder<T1>( IFactory<T1> factory ) where T1 : Neo4Net.causalclustering.messaging.Message
 		 {
 			  this._factory = factory;
 		 }

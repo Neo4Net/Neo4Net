@@ -1,22 +1,12 @@
 {
   "ExpandedNodes": [
     "",
-    "\\src\\community",
-    "\\src\\community\\common\\Neo4Net.Common",
-    "\\src\\community\\common\\Neo4Net.Common.Tests",
-    "\\src\\community\\common\\Neo4Net.Common.Tests\\functions",
-    "\\src\\community\\common\\Neo4Net.Common\\kernel",
-    "\\src\\community\\common\\Neo4Net.Common\\kernel\\lifecycle",
-    "\\src\\community\\common\\Neo4Net.Common\\obj",
-    "\\src\\community\\common\\Neo4Net.Common\\register",
-    "\\src\\community\\community-it",
-    "\\src\\community\\community-it\\algo-it",
-    "\\src\\community\\community-it\\algo-it\\src",
-    "\\src\\community\\community-it\\algo-it\\src\\test",
-    "\\src\\community\\community-it\\algo-it\\src\\test\\java",
-    "\\src\\community\\community-it\\algo-it\\src\\test\\java\\org",
-    "\\src\\community\\community-it\\algo-it\\src\\test\\java\\org\\neo4j",
-    "\\src\\community\\community-it\\algo-it\\src\\test\\java\\org\\neo4j\\graphalgo"
+    "\\community",
+    "\\enterprise",
+    "\\integrationtests",
+    "\\stresstests",
+    "\\tools"
   ],
+  "SelectedNode": "\\.gitignore",
   "PreviewInSolutionExplorer": false
 }

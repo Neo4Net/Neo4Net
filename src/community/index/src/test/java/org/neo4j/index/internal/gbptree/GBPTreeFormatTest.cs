@@ -175,7 +175,7 @@ namespace Neo4Net.Index.Internal.gbptree
 						 // WHEN reading from the tree
 						 // THEN initial keys should be there
 						 tree.ConsistencyCheck();
-						 using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( long.MaxValue ) ) )
+						 using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( long.MaxValue ) ) )
 						 {
 							  foreach ( long? expectedKey in _initialKeys )
 							  {
@@ -203,7 +203,7 @@ namespace Neo4Net.Index.Internal.gbptree
 						 // WHEN reading from the tree again
 						 // THEN all keys including newly added should be there
 						 tree.ConsistencyCheck();
-						 using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( 2 * INITIAL_KEY_COUNT ) ) )
+						 using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( 2 * INITIAL_KEY_COUNT ) ) )
 						 {
 							  foreach ( long? expectedKey in _allKeys )
 							  {
@@ -233,7 +233,7 @@ namespace Neo4Net.Index.Internal.gbptree
 						 // WHEN reading from the tree after remove
 						 // THEN we should see everything that is left in the tree
 						 tree.ConsistencyCheck();
-						 using ( RawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( 2 * INITIAL_KEY_COUNT ) ) )
+						 using ( IRawCursor<Hit<MutableLong, MutableLong>, IOException> cursor = tree.Seek( Layout.key( 0 ), Layout.key( 2 * INITIAL_KEY_COUNT ) ) )
 						 {
 							  foreach ( long? expectedKey in _allKeys )
 							  {
@@ -272,7 +272,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private static void assertHit(org.neo4j.cursor.RawCursor<Hit<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>,java.io.IOException> cursor, System.Nullable<long> expectedKey) throws java.io.IOException
-		 private static void AssertHit( RawCursor<Hit<MutableLong, MutableLong>, IOException> cursor, long? expectedKey )
+		 private static void AssertHit( IRawCursor<Hit<MutableLong, MutableLong>, IOException> cursor, long? expectedKey )
 		 {
 			  assertTrue( "Had no next when expecting key " + expectedKey, cursor.Next() );
 			  Hit<MutableLong, MutableLong> hit = cursor.get();

@@ -113,7 +113,7 @@ namespace Neo4Net.backup.impl
 			  return reusedBuffer;
 		 }
 
-		 private class CountingChannelBufferFactory : Factory<ChannelBuffer>
+		 private class CountingChannelBufferFactory : IFactory<ChannelBuffer>
 		 {
 			  internal int InstancesCreated;
 

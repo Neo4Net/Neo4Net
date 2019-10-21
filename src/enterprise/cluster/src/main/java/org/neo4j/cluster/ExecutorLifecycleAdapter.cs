@@ -32,9 +32,9 @@ namespace Neo4Net.cluster
 	{
 		 private ExecutorService _executor;
 
-		 private Factory<ExecutorService> _executorServiceFactory;
+		 private IFactory<ExecutorService> _executorServiceFactory;
 
-		 public ExecutorLifecycleAdapter( Factory<ExecutorService> executorServiceFactory )
+		 public ExecutorLifecycleAdapter( IFactory<ExecutorService> executorServiceFactory )
 		 {
 			  this._executorServiceFactory = executorServiceFactory;
 

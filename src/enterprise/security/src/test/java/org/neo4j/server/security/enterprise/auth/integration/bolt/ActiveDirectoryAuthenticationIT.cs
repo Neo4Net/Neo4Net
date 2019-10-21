@@ -153,7 +153,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 };
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-		 public Factory<TransportConnection> Cf = ( Factory<TransportConnection> ) SecureSocketConnection::new;
+		 public IFactory<TransportConnection> Cf = ( IFactory<TransportConnection> ) SecureSocketConnection::new;
 
 		 private HostnamePort _address;
 		 private TransportConnection _client;

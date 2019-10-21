@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	public class TimedRepository<KEY, VALUE> : ThreadStart
 	{
 		 private readonly ConcurrentMap<KEY, Entry> _repo = new ConcurrentDictionary<KEY, Entry>();
-		 private readonly Factory<VALUE> _factory;
+		 private readonly IFactory<VALUE> _factory;
 		 private readonly System.Action<VALUE> _reaper;
 		 private readonly long _timeout;
 		 private readonly Clock _clock;
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  }
 		 }
 
-		 public TimedRepository( Factory<VALUE> provider, System.Action<VALUE> reaper, long timeout, Clock clock )
+		 public TimedRepository( IFactory<VALUE> provider, System.Action<VALUE> reaper, long timeout, Clock clock )
 		 {
 			  this._factory = provider;
 			  this._reaper = reaper;

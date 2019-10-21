@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return data;
 		 }
 
-		 private class DataCursor : RawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException>
+		 private class DataCursor : IRawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException>
 		 {
 			  internal readonly IEnumerator<Hit<StringIndexKey, NativeIndexValue>> Iterator;
 			  internal Hit<StringIndexKey, NativeIndexValue> Current;

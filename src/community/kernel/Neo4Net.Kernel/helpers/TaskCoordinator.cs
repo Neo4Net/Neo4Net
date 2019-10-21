@@ -30,7 +30,7 @@ namespace Neo4Net.Helpers
 	/// notified of cancellation with the semantics of <seealso cref="CancellationRequest"/>.
 	/// </summary>
 	[Obsolete]
-	public class TaskCoordinator : Cancelable, Factory<TaskControl>
+	public class TaskCoordinator : Cancelable, IFactory<TaskControl>
 	{
 		 private static readonly AtomicIntegerFieldUpdater<TaskCoordinator> _tasksUpdater = AtomicIntegerFieldUpdater.newUpdater( typeof( TaskCoordinator ), "tasks" );
 		 private volatile bool _cancelled;

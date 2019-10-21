@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					keys.Add( Random.nextAlphaNumericString() );
 			  }
 
-			  RawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException> cursor = new ResultCursor( keys.GetEnumerator() );
+			  IRawCursor<Hit<StringIndexKey, NativeIndexValue>, IOException> cursor = new ResultCursor( keys.GetEnumerator() );
 			  IndexQuery[] predicates = new IndexQuery[]{ mock( typeof( IndexQuery ) ) };
 			  System.Predicate<string> filter = @string => @string.contains( "a" );
 			  when( predicates[0].AcceptsValue( any( typeof( Value ) ) ) ).then( invocation => filter( ( ( TextValue )invocation.getArgument( 0 ) ).stringValue() ) );

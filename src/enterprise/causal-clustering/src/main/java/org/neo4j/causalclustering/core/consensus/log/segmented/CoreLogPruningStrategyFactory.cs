@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.neo4j.kernel.impl.transaction.log.pruning.ThresholdConfigParser.parse;
 
-	public class CoreLogPruningStrategyFactory : Factory<CoreLogPruningStrategy>
+	public class CoreLogPruningStrategyFactory : IFactory<CoreLogPruningStrategy>
 	{
 		 private readonly string _pruningStrategyConfig;
 		 private readonly LogProvider _logProvider;

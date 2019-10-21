@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private long _countForCurrentValue;
 		 private bool _last;
 
-		 internal NativeDistinctValuesProgressor( RawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose, IndexLayout<KEY, VALUE> layout, IComparer<KEY> comparator ) : base( seeker, client, toRemoveFromOnClose )
+		 internal NativeDistinctValuesProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose, IndexLayout<KEY, VALUE> layout, IComparer<KEY> comparator ) : base( seeker, client, toRemoveFromOnClose )
 		 {
 			  this._layout = layout;
 			  _prev = layout.newKey();

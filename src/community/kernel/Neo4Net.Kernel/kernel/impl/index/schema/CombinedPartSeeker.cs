@@ -36,10 +36,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// </summary>
 	/// @param <KEY> type of key </param>
 	/// @param <VALUE> type of value </param>
-	internal class CombinedPartSeeker<KEY, VALUE> : RawCursor<Hit<KEY, VALUE>, IOException>, Hit<KEY, VALUE>
+	internal class CombinedPartSeeker<KEY, VALUE> : IRawCursor<Hit<KEY, VALUE>, IOException>, Hit<KEY, VALUE>
 	{
 		 private readonly KEY _end;
-		 private readonly RawCursor<Hit<KEY, VALUE>, IOException>[] _partCursors;
+		 private readonly IRawCursor<Hit<KEY, VALUE>, IOException>[] _partCursors;
 		 private readonly object[] _partHeads;
 		 private readonly Layout<KEY, VALUE> _layout;
 		 private KEY _nextKey;

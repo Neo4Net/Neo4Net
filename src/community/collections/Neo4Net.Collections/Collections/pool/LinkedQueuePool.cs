@@ -111,7 +111,7 @@ namespace Neo4Net.Collections.Pooling
         private readonly LinkedList<R> _unused = new ConcurrentLinkedQueue<R>();
         private readonly Monitor<R> _monitor;
         private readonly int _minSize;
-        private readonly Factory<R> _factory;
+        private readonly IFactory<R> _factory;
         private readonly CheckStrategy _checkStrategy;
         // Guarded by nothing. Those are estimates, losing some values doesn't matter much
         private readonly AtomicInteger _allocated = new AtomicInteger(0);
@@ -119,11 +119,11 @@ namespace Neo4Net.Collections.Pooling
         private int _currentPeakSize;
         private int _targetSize;
 
-        public LinkedQueuePool(int minSize, Factory<R> factory) : this(minSize, factory, new CheckStrategy_TimeoutCheckStrategy(this, DEFAULT_CHECK_INTERVAL), new Monitor_Adapter<>(this))
+        public LinkedQueuePool(int minSize, IFactory<R> factory) : this(minSize, factory, new CheckStrategy_TimeoutCheckStrategy(this, DEFAULT_CHECK_INTERVAL), new Monitor_Adapter<>(this))
         {
         }
 
-        public LinkedQueuePool(int minSize, Factory<R> factory, CheckStrategy strategy, Monitor<R> monitor)
+        public LinkedQueuePool(int minSize, IFactory<R> factory, CheckStrategy strategy, Monitor<R> monitor)
         {
             this._minSize = minSize;
             this._factory = factory;

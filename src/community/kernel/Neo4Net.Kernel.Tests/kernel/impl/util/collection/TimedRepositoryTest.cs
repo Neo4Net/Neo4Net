@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 private readonly AtomicLong _valueGenerator = new AtomicLong();
 		 private readonly IList<long> _reapedValues = new List<long>();
 
-		 private Factory<long> _provider;
+		 private IFactory<long> _provider;
 		 private System.Action<long> _consumer;
 
 		 private readonly long _timeout = 100;

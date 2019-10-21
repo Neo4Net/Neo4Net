@@ -162,7 +162,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// To create TemporalIndexPartReaders on demand, the PartFactory maintains a reference to the parent TemporalIndexAccessor.
 		 /// The creation of a part reader can then be delegated to the correct PartAccessor.
 		 /// </summary>
-		 internal class PartFactory : Factory<SpatialIndexPartReader<NativeIndexValue>>
+		 internal class PartFactory : IFactory<SpatialIndexPartReader<NativeIndexValue>>
 		 {
 			  internal readonly SpatialIndexAccessor Accessor;
 

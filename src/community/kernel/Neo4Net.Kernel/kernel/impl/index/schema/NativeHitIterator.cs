@@ -37,11 +37,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// @param <VALUE> type of <seealso cref="NativeIndexValue"/>. </param>
 	public class NativeHitIterator<KEY, VALUE> : PrimitiveLongCollections.PrimitiveLongBaseIterator, PrimitiveLongResourceIterator where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
-		 private readonly RawCursor<Hit<KEY, VALUE>, IOException> _seeker;
+		 private readonly IRawCursor<Hit<KEY, VALUE>, IOException> _seeker;
 		 private readonly ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> _toRemoveFromWhenExhausted;
 		 private bool _closed;
 
-		 internal NativeHitIterator( RawCursor<Hit<KEY, VALUE>, IOException> seeker, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromWhenExhausted )
+		 internal NativeHitIterator( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromWhenExhausted )
 		 {
 			  this._seeker = seeker;
 			  this._toRemoveFromWhenExhausted = toRemoveFromWhenExhausted;

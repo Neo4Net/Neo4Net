@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.impl.traversal
 
 	public class DefaultTraverser : Traverser
 	{
-		 private readonly Factory<TraverserIterator> _traverserIteratorFactory;
+		 private readonly IFactory<TraverserIterator> _traverserIteratorFactory;
 
 		 private TraversalMetadata _lastIterator;
 
-		 internal DefaultTraverser( Factory<TraverserIterator> traverserIteratorFactory )
+		 internal DefaultTraverser( IFactory<TraverserIterator> traverserIteratorFactory )
 		 {
 			  this._traverserIteratorFactory = traverserIteratorFactory;
 		 }

@@ -527,7 +527,7 @@ namespace Neo4Net.Server.rest
 						+ relationshipName + "\", " + "\"data\" : {\"" + key + "\" : \"" + value + "\"}}";
 		 }
 
-		 private readonly Factory<string> _indexes = UniqueStrings.WithPrefix( "index" );
+		 private readonly IFactory<string> _indexes = UniqueStrings.WithPrefix( "index" );
 	}
 
 }

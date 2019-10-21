@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private readonly ISet<KernelTransactionImplementation> _allTransactions = newSetFromMap( new ConcurrentDictionary<KernelTransactionImplementation>() );
 
 		 // This is the factory that actually builds brand-new instances.
-		 private Factory<KernelTransactionImplementation> _factory;
+		 private IFactory<KernelTransactionImplementation> _factory;
 		 // Global pool of transactions, wrapped by the thread-local marshland pool and so is not used directly.
 		 private GlobalKernelTransactionPool _globalTxPool;
 		 // Pool of unused transactions.
@@ -347,7 +347,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 		 }
 
-		 private class KernelTransactionImplementationFactory : Factory<KernelTransactionImplementation>
+		 private class KernelTransactionImplementationFactory : IFactory<KernelTransactionImplementation>
 		 {
 			 private readonly KernelTransactions _outerInstance;
 
@@ -371,7 +371,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  internal readonly ISet<KernelTransactionImplementation> Transactions;
 
-			  internal GlobalKernelTransactionPool( ISet<KernelTransactionImplementation> transactions, Factory<KernelTransactionImplementation> factory ) : base( 8, factory )
+			  internal GlobalKernelTransactionPool( ISet<KernelTransactionImplementation> transactions, IFactory<KernelTransactionImplementation> factory ) : base( 8, factory )
 			  {
 					this.Transactions = transactions;
 			  }

@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> nodesFor(int labelId)
-			  internal virtual RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> NodesFor( int labelId )
+			  internal virtual IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> NodesFor( int labelId )
 			  {
 					IDictionary<LabelScanKey, LabelScanValue> forLabel = Data[labelId];
 					if ( forLabel == null )
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 					return new RawCursorAnonymousInnerClass( this, entries );
 			  }
 
-			  private class RawCursorAnonymousInnerClass : RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
+			  private class RawCursorAnonymousInnerClass : IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>
 			  {
 				  private readonly ControlledInserter _outerInstance;
 

@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 public override PrimitiveLongResourceIterator NodesWithLabel( int labelId )
 		 {
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor;
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor;
 			  try
 			  {
 					cursor = SeekerForLabel( 0, labelId );
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 public override void NodesWithLabel( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client, int labelId )
 		 {
-			  RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor;
+			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor;
 			  try
 			  {
 					cursor = SeekerForLabel( 0, labelId );
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  {
 					foreach ( int labelId in labelIds )
 					{
-						 RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = SeekerForLabel( fromId, labelId );
+						 IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = SeekerForLabel( fromId, labelId );
 						 _openCursors.Add( cursor );
 						 iterators.Add( new LabelScanValueIterator( cursor, _openCursors, fromId ) );
 					}
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> seekerForLabel(long startId, int labelId) throws java.io.IOException
-		 private RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> SeekerForLabel( long startId, int labelId )
+		 private IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> SeekerForLabel( long startId, int labelId )
 		 {
 			  LabelScanKey from = new LabelScanKey( labelId, rangeOf( startId ) );
 			  LabelScanKey to = new LabelScanKey( labelId, long.MaxValue );
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //ORIGINAL LINE: private void ensureOpenCursorsClosed() throws java.io.IOException
 		 private void EnsureOpenCursorsClosed()
 		 {
-			  foreach ( RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in _openCursors )
+			  foreach ( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor in _openCursors )
 			  {
 					cursor.Close();
 			  }

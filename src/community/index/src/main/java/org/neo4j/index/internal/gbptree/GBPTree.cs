@@ -933,7 +933,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <exception cref="IOException"> on error reading from index. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: public org.neo4j.cursor.RawCursor<Hit<KEY,VALUE>,java.io.IOException> seek(KEY fromInclusive, KEY toExclusive) throws java.io.IOException
-		 public virtual RawCursor<Hit<KEY, VALUE>, IOException> Seek( KEY fromInclusive, KEY toExclusive )
+		 public virtual IRawCursor<Hit<KEY, VALUE>, IOException> Seek( KEY fromInclusive, KEY toExclusive )
 		 {
 			  long generation = this._generation;
 			  long stableGeneration = stableGeneration( generation );

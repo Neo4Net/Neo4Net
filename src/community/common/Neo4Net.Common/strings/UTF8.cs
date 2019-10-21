@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using Neo4Net.Utils;
+using System.Text;
 
 /*
  * Copyright © 2018-2020 "Neo4Net,"

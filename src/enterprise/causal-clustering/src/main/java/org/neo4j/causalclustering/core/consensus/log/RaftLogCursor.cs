@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 
 	using Neo4Net.Cursors;
 
-	public interface RaftLogCursor : RawCursor<RaftLogEntry, Exception>
+	public interface RaftLogCursor : IRawCursor<RaftLogEntry, Exception>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: boolean next() throws java.io.IOException;
