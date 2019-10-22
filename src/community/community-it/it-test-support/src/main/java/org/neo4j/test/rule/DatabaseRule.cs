@@ -23,28 +23,28 @@ using System.Collections.Generic;
 namespace Neo4Net.Test.rule
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using StringSearchMode = Neo4Net.Graphdb.StringSearchMode;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.config;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
-	using Neo4Net.Graphdb.@event;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
-	using BidirectionalTraversalDescription = Neo4Net.Graphdb.traversal.BidirectionalTraversalDescription;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using StringSearchMode = Neo4Net.GraphDb.StringSearchMode;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.config;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
+	using Neo4Net.GraphDb.Events;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -57,7 +57,7 @@ namespace Neo4Net.Test.rule
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public abstract class DatabaseRule : ExternalResource, GraphDatabaseAPI
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.Test.rule
 		 private System.Func<Statement> _statementSupplier;
 		 private bool _startEagerly = true;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.neo4j.graphdb.config.Setting<?>, String> globalConfig = new java.util.HashMap<>();
+//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> globalConfig = new java.util.HashMap<>();
 		 private readonly IDictionary<Setting<object>, string> _globalConfig = new Dictionary<Setting<object>, string>();
 		 private readonly Monitors _monitors = new Monitors();
 
@@ -88,11 +88,11 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public void executeAndCommit(System.Action<? super org.neo4j.graphdb.GraphDatabaseService> consumer)
+//ORIGINAL LINE: public void executeAndCommit(System.Action<? super org.Neo4Net.graphdb.GraphDatabaseService> consumer)
 		 public virtual void ExecuteAndCommit<T1>( System.Action<T1> consumer )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: transaction((System.Func<? super org.neo4j.graphdb.GraphDatabaseService,Void>) t ->
+//ORIGINAL LINE: transaction((System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService,Void>) t ->
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  Transaction((System.Func<object, Void>) t =>
 			  {
@@ -102,14 +102,14 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <T> T executeAndCommit(System.Func<? super org.neo4j.graphdb.GraphDatabaseService, T> function)
+//ORIGINAL LINE: public <T> T executeAndCommit(System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService, T> function)
 		 public virtual T ExecuteAndCommit<T, T1>( System.Func<T1> function )
 		 {
 			  return Transaction( function, true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <T> T executeAndRollback(System.Func<? super org.neo4j.graphdb.GraphDatabaseService, T> function)
+//ORIGINAL LINE: public <T> T executeAndRollback(System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService, T> function)
 		 public virtual T ExecuteAndRollback<T, T1>( System.Func<T1> function )
 		 {
 			  return Transaction( function, false );
@@ -125,7 +125,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private <T> T transaction(System.Func<? super org.neo4j.graphdb.GraphDatabaseService, T> function, boolean commit)
+//ORIGINAL LINE: private <T> T transaction(System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService, T> function, boolean commit)
 		 private T Transaction<T, T1>( System.Func<T1> function, bool commit )
 		 {
 			  return Tx( GraphDatabaseAPI, commit, RetryHandler_Fields.NoRetry, function );
@@ -138,11 +138,11 @@ namespace Neo4Net.Test.rule
 		 /// <param name="retry"> <seealso cref="RetryHandler"/> deciding what type of failures to retry on. </param>
 		 /// <param name="transaction"> <seealso cref="Consumer"/> containing the transaction logic. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static void tx(org.neo4j.graphdb.GraphDatabaseService db, RetryHandler retry, System.Action<? super org.neo4j.graphdb.GraphDatabaseService> transaction)
-		 public static void Tx<T1>( GraphDatabaseService db, RetryHandler retry, System.Action<T1> transaction )
+//ORIGINAL LINE: public static void tx(org.Neo4Net.graphdb.GraphDatabaseService db, RetryHandler retry, System.Action<? super org.Neo4Net.graphdb.GraphDatabaseService> transaction)
+		 public static void Tx<T1>( IGraphDatabaseService db, RetryHandler retry, System.Action<T1> transaction )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: System.Func<? super org.neo4j.graphdb.GraphDatabaseService,Void> voidFunction = _db ->
+//ORIGINAL LINE: System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService,Void> voidFunction = _db ->
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  System.Func<object, Void> voidFunction = _db =>
 			  {
@@ -162,8 +162,8 @@ namespace Neo4Net.Test.rule
 		 /// <param name="transaction"> <seealso cref="Function"/> containing the transaction logic and returning a result. </param>
 		 /// <returns> result from transaction <seealso cref="Function"/>. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T> T tx(org.neo4j.graphdb.GraphDatabaseService db, boolean commit, RetryHandler retry, System.Func<? super org.neo4j.graphdb.GraphDatabaseService, T> transaction)
-		 public static T Tx<T, T1>( GraphDatabaseService db, bool commit, RetryHandler retry, System.Func<T1> transaction )
+//ORIGINAL LINE: public static <T> T tx(org.Neo4Net.graphdb.GraphDatabaseService db, boolean commit, RetryHandler retry, System.Func<? super org.Neo4Net.graphdb.GraphDatabaseService, T> transaction)
+		 public static T Tx<T, T1>( IGraphDatabaseService db, bool commit, RetryHandler retry, System.Func<T1> transaction )
 		 {
 			  while ( true )
 			  {
@@ -191,28 +191,28 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query )
 		 {
 			  return GraphDatabaseAPI.execute( query );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, long timeout, TimeUnit unit )
 		 {
 			  return GraphDatabaseAPI.execute( query, timeout, unit );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, java.util.Map<String, Object> parameters) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String, Object> parameters) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters )
 		 {
 			  return GraphDatabaseAPI.execute( query, parameters );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters, long timeout, TimeUnit unit )
 		 {
 			  return GraphDatabaseAPI.execute( query, parameters, timeout, unit );
@@ -391,7 +391,7 @@ namespace Neo4Net.Test.rule
 		 public interface RestartAction
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void run(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException;
+//ORIGINAL LINE: void run(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException;
 			  void Run( FileSystemAbstraction fs, DatabaseLayout databaseLayout );
 		 }
 
@@ -412,14 +412,14 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.internal.GraphDatabaseAPI restartDatabase(String... configChanges) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.internal.GraphDatabaseAPI restartDatabase(String... configChanges) throws java.io.IOException
 		 public virtual GraphDatabaseAPI RestartDatabase( params string[] configChanges )
 		 {
 			  return RestartDatabase( RestartAction_Fields.Empty, configChanges );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.internal.GraphDatabaseAPI restartDatabase(RestartAction action, String... configChanges) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.internal.GraphDatabaseAPI restartDatabase(RestartAction action, String... configChanges) throws java.io.IOException
 		 public virtual GraphDatabaseAPI RestartDatabase( RestartAction action, params string[] configChanges )
 		 {
 			  FileSystemAbstraction fs = ResolveDependency( typeof( FileSystemAbstraction ) );
@@ -507,7 +507,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _database.validateURLAccess( url );

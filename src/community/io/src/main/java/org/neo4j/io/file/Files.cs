@@ -39,7 +39,7 @@ namespace Neo4Net.Io.file
 		 /// <returns> An output stream </returns>
 		 /// <exception cref="IOException"> If an error occurs creating directories or opening the file </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.io.OutputStream createOrOpenAsOutputStream(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, boolean append) throws java.io.IOException
+//ORIGINAL LINE: public static java.io.OutputStream createOrOpenAsOutputStream(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, boolean append) throws java.io.IOException
 		 public static Stream CreateOrOpenAsOutputStream( FileSystemAbstraction fileSystem, File file, bool append )
 		 {
 			  if ( file.ParentFile != null )

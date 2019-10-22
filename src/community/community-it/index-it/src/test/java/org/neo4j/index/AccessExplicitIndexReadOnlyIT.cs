@@ -22,14 +22,14 @@ namespace Neo4Net.Index
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4Net.Graphdb.index;
-	using WriteOperationsNotAllowedException = Neo4Net.Graphdb.security.WriteOperationsNotAllowedException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.index;
+	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -45,7 +45,7 @@ namespace Neo4Net.Index
 	public class AccessExplicitIndexReadOnlyIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -93,11 +93,11 @@ namespace Neo4Net.Index
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.layout.DatabaseLayout databaseLayout = db.databaseLayout();
+//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout databaseLayout = db.databaseLayout();
 			  DatabaseLayout databaseLayout = Db.databaseLayout();
 			  // Make sure we have database to start on
 			  Db.shutdown();
-			  GraphDatabaseService db = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(databaseLayout.DatabaseDirectory()).setConfig(GraphDatabaseSettings.read_only, TRUE.ToString()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(databaseLayout.DatabaseDirectory()).setConfig(GraphDatabaseSettings.read_only, TRUE.ToString()).newGraphDatabase();
 			  try
 			  {
 					// when

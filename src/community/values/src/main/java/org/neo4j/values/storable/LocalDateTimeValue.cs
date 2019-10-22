@@ -30,17 +30,17 @@ namespace Neo4Net.Values.Storable
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.parseZoneName;
+//	import static org.Neo4Net.values.storable.DateTimeValue.parseZoneName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.DATE_PATTERN;
+//	import static org.Neo4Net.values.storable.DateValue.DATE_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.parseDate;
+//	import static org.Neo4Net.values.storable.DateValue.parseDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.IntegralValue.safeCastIntegral;
+//	import static org.Neo4Net.values.storable.IntegralValue.safeCastIntegral;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.TIME_PATTERN;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.TIME_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.parseTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.parseTime;
 
 	public sealed class LocalDateTimeValue : TemporalValue<DateTime, LocalDateTimeValue>
 	{

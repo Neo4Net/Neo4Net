@@ -37,7 +37,7 @@ namespace Neo4Net.Consistency.checking.full
 	public class PropertyReaderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.NeoStoresRule storesRule = new org.neo4j.test.rule.NeoStoresRule(PropertyReaderTest.class, org.neo4j.kernel.impl.store.StoreType.NODE, org.neo4j.kernel.impl.store.StoreType.COUNTS, org.neo4j.kernel.impl.store.StoreType.PROPERTY, org.neo4j.kernel.impl.store.StoreType.PROPERTY_ARRAY, org.neo4j.kernel.impl.store.StoreType.PROPERTY_STRING);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.NeoStoresRule storesRule = new org.Neo4Net.test.rule.NeoStoresRule(PropertyReaderTest.class, org.Neo4Net.kernel.impl.store.StoreType.NODE, org.Neo4Net.kernel.impl.store.StoreType.COUNTS, org.Neo4Net.kernel.impl.store.StoreType.PROPERTY, org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_ARRAY, org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_STRING);
 		 public readonly NeoStoresRule StoresRule = new NeoStoresRule( typeof( PropertyReaderTest ), StoreType.NODE, StoreType.COUNTS, StoreType.PROPERTY, StoreType.PROPERTY_ARRAY, StoreType.PROPERTY_STRING );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

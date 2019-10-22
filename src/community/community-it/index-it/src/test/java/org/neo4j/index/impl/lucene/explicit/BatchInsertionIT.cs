@@ -23,8 +23,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IdGeneratorImpl = Neo4Net.Kernel.impl.store.id.IdGeneratorImpl;
 	using ReservedIdException = Neo4Net.Kernel.impl.store.id.validation.ReservedIdException;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
@@ -37,19 +37,19 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class BatchInsertionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public readonly EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule().startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -70,7 +70,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  inserter.Shutdown();
 
 			  // Then
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )
@@ -102,7 +102,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  inserter.Shutdown();
 
 			  // Then
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )
@@ -134,7 +134,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  inserter.SetNodeProperty( nodeId, "a", finalValue );
 			  inserter.Shutdown();
 
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  try
 			  {
 					  using ( Transaction ignored = Db.beginTx() )
@@ -167,7 +167,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  inserter.SetNodeProperty( nodeId, "a", finalValue1 );
 			  inserter.Shutdown();
 
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  try
 			  {
 					  using ( Transaction ignored = Db.beginTx() )
@@ -183,7 +183,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.kernel.impl.store.id.validation.ReservedIdException.class) public void makeSureCantCreateNodeWithMagicNumber() throws java.io.IOException
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.id.validation.ReservedIdException.class) public void makeSureCantCreateNodeWithMagicNumber() throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MakeSureCantCreateNodeWithMagicNumber()
 		 {

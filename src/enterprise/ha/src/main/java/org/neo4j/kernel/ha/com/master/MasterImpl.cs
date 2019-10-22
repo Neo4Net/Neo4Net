@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.com.master
 {
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.ha.com.master
 
 	/// <summary>
 	/// This is the real master code that executes on a master. The actual
-	/// communication over network happens in <seealso cref="org.neo4j.kernel.ha.com.slave.MasterClient"/> and
+	/// communication over network happens in <seealso cref="org.Neo4Net.kernel.ha.com.slave.MasterClient"/> and
 	/// <seealso cref="MasterServer"/>.
 	/// </summary>
 	public class MasterImpl : LifecycleAdapter, Master
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.ha.com.master
 			  StoreId StoreId();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long applyPreparedTransaction(org.neo4j.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 			  long ApplyPreparedTransaction( TransactionRepresentation preparedTransaction );
 
 			  int? CreateRelationshipType( string name );
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.com.Response<long> commit(org.neo4j.com.RequestContext context, org.neo4j.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override Response<long> Commit( RequestContext context, TransactionRepresentation preparedTransaction )
 		 {
 			  AssertCorrectEpoch( context );
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.com.Response<long> commit0(org.neo4j.com.RequestContext context, org.neo4j.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.com.Response<long> commit0(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private Response<long> Commit0( RequestContext context, TransactionRepresentation preparedTransaction )
 		 {
 			  long txId = _spi.applyPreparedTransaction( preparedTransaction );
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.com.Response<Void> newLockSession(org.neo4j.com.RequestContext context) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override Response<Void> NewLockSession( RequestContext context )
 		 {
 			  _monitor.initializeTx( context );

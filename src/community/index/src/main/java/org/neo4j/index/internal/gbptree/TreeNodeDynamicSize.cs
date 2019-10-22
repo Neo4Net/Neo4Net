@@ -30,39 +30,39 @@ namespace Neo4Net.Index.Internal.gbptree
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.SIZE_KEY_SIZE;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.SIZE_KEY_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.SIZE_OFFSET;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.SIZE_OFFSET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.SIZE_TOTAL_OVERHEAD;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.SIZE_TOTAL_OVERHEAD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.SIZE_VALUE_SIZE;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.SIZE_VALUE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractTombstone;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractTombstone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.getOverhead;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.getOverhead;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putKeyOffset;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putKeyOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putKeySize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putKeySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putTombstone;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putTombstone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.readKeyOffset;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.readKeyOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PageCursorUtil.putUnsignedShort;
+//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.putUnsignedShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// # = empty space
@@ -1157,7 +1157,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting void setAllocOffset(org.neo4j.io.pagecache.PageCursor cursor, int allocOffset)
+//ORIGINAL LINE: @VisibleForTesting void setAllocOffset(org.Neo4Net.io.pagecache.PageCursor cursor, int allocOffset)
 		 internal virtual void SetAllocOffset( PageCursor cursor, int allocOffset )
 		 {
 			  PageCursorUtil.PutUnsignedShort( cursor, _bytePosAllocoffset, allocOffset );
@@ -1169,14 +1169,14 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting void setDeadSpace(org.neo4j.io.pagecache.PageCursor cursor, int deadSpace)
+//ORIGINAL LINE: @VisibleForTesting void setDeadSpace(org.Neo4Net.io.pagecache.PageCursor cursor, int deadSpace)
 		 internal virtual void SetDeadSpace( PageCursor cursor, int deadSpace )
 		 {
 			  putUnsignedShort( cursor, _bytePosDeadspace, deadSpace );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting int getDeadSpace(org.neo4j.io.pagecache.PageCursor cursor)
+//ORIGINAL LINE: @VisibleForTesting int getDeadSpace(org.Neo4Net.io.pagecache.PageCursor cursor)
 		 internal virtual int GetDeadSpace( PageCursor cursor )
 		 {
 			  return PageCursorUtil.GetUnsignedShort( cursor, _bytePosDeadspace );
@@ -1331,7 +1331,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") @Override void printNode(org.neo4j.io.pagecache.PageCursor cursor, boolean includeValue, boolean includeAllocSpace, long stableGeneration, long unstableGeneration)
+//ORIGINAL LINE: @SuppressWarnings("unused") @Override void printNode(org.Neo4Net.io.pagecache.PageCursor cursor, boolean includeValue, boolean includeAllocSpace, long stableGeneration, long unstableGeneration)
 		 internal override void PrintNode( PageCursor cursor, bool includeValue, bool includeAllocSpace, long stableGeneration, long unstableGeneration )
 		 {
 			  Console.WriteLine( AsString( cursor, includeValue, includeAllocSpace, stableGeneration, unstableGeneration ) );

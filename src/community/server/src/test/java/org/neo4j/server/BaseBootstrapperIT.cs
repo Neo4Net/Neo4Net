@@ -28,10 +28,10 @@ namespace Neo4Net.Server
 	using TemporaryFolder = org.junit.rules.TemporaryFolder;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.config;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.config;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
@@ -45,21 +45,21 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.data_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.store;
+//	import static org.Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.verifyConnector;
+//	import static org.Neo4Net.server.ServerTestUtils.verifyConnector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public abstract class BaseBootstrapperIT : ExclusiveServerTestBase
 	{

@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Harness.Internal
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 
 	/// <summary>
@@ -83,7 +83,7 @@ namespace Neo4Net.Harness.Internal
 
 		 public virtual void ApplyTo( InProcessServerControls controls )
 		 {
-			  GraphDatabaseService db = controls.Graph();
+			  IGraphDatabaseService db = controls.Graph();
 			  foreach ( string fixtureStatement in _fixtureStatements )
 			  {
 					using ( Transaction tx = Db.beginTx() )

@@ -23,13 +23,13 @@ namespace Neo4Net.Harness
 	using InProcessServerBuilder = Neo4Net.Harness.Internal.InProcessServerBuilder;
 
 	/// <summary>
-	/// Factories for creating <seealso cref="org.neo4j.harness.TestServerBuilder"/> instances.
+	/// Factories for creating <seealso cref="org.Neo4Net.harness.TestServerBuilder"/> instances.
 	/// </summary>
 	public sealed class TestServerBuilders
 	{
 		 /// <summary>
-		 /// Create a builder capable of starting an in-process Neo4j instance. This builder will use the standard java temp
-		 /// directory (configured via the 'java.io.tmpdir' system property) as the location for the temporary Neo4j directory.
+		 /// Create a builder capable of starting an in-process Neo4Net instance. This builder will use the standard java temp
+		 /// directory (configured via the 'java.io.tmpdir' system property) as the location for the temporary Neo4Net directory.
 		 /// </summary>
 		 public static TestServerBuilder NewInProcessBuilder()
 		 {
@@ -37,7 +37,7 @@ namespace Neo4Net.Harness
 		 }
 
 		 /// <summary>
-		 /// Create a builder capable of starting an in-process Neo4j instance, running in a subdirectory of the specified directory.
+		 /// Create a builder capable of starting an in-process Neo4Net instance, running in a subdirectory of the specified directory.
 		 /// </summary>
 		 public static TestServerBuilder NewInProcessBuilder( File workingDirectory )
 		 {

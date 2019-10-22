@@ -29,24 +29,24 @@ namespace Neo4Net.Graphalgo.impl.path
 	using Neo4Net.Graphalgo.impl.util;
 	using PathInterestFactory = Neo4Net.Graphalgo.impl.util.PathInterestFactory;
 	using WeightedPathIterator = Neo4Net.Graphalgo.impl.util.WeightedPathIterator;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.InitialBranchState.NO_STATE;
+//	import static org.Neo4Net.graphdb.traversal.InitialBranchState.NO_STATE;
 
 	/// <summary>
 	/// Implementation of A* algorithm, see <seealso cref="AStar"/>, but using the traversal
@@ -63,7 +63,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 private bool _stopAfterLowestWeight;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.neo4j.graphdb.PathExpander<T> expander, org.neo4j.graphalgo.CostEvaluator<double> costEvaluator, org.neo4j.graphalgo.EstimateEvaluator<double> estimateEvaluator)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.Neo4Net.graphdb.PathExpander<T> expander, org.Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, org.Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator)
 		 public TraversalAStar<T>( PathExpander<T> expander, CostEvaluator<double> costEvaluator, EstimateEvaluator<double> estimateEvaluator ) : this( expander, NO_STATE, costEvaluator, estimateEvaluator, true )
 		 {
 		 }
@@ -73,7 +73,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.neo4j.graphdb.PathExpander<T> expander, org.neo4j.graphalgo.CostEvaluator<double> costEvaluator, org.neo4j.graphalgo.EstimateEvaluator<double> estimateEvaluator, boolean stopAfterLowestWeight)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public <T> TraversalAStar(org.Neo4Net.graphdb.PathExpander<T> expander, org.Neo4Net.graphalgo.CostEvaluator<double> costEvaluator, org.Neo4Net.graphalgo.EstimateEvaluator<double> estimateEvaluator, boolean stopAfterLowestWeight)
 		 public TraversalAStar<T>( PathExpander<T> expander, CostEvaluator<double> costEvaluator, EstimateEvaluator<double> estimateEvaluator, bool stopAfterLowestWeight ) : this( expander, NO_STATE, costEvaluator, estimateEvaluator, stopAfterLowestWeight )
 		 {
 		 }
@@ -88,7 +88,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.graphalgo.WeightedPath> findAllPaths(org.neo4j.graphdb.Node start, final org.neo4j.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node start, Node end )
 		 {
 			  return Iterables.asIterable( FindSinglePath( start, end ) );
@@ -111,7 +111,7 @@ namespace Neo4Net.Graphalgo.impl.path
 					interest = PathInterestFactory.single();
 			  }
 
-			  GraphDatabaseService db = start.GraphDatabase;
+			  IGraphDatabaseService db = start.GraphDatabase;
 			  TraversalDescription traversalDescription = Db.traversalDescription().uniqueness(Uniqueness.NONE).expand(_expander, _initialState);
 
 			  _lastTraverser = traversalDescription.Order( new SelectorFactory( this, end, interest ) ).evaluator( includeWhereEndNodeIs( end ) ).traverse( start );

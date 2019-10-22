@@ -28,7 +28,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Label = Neo4Net.Graphdb.Label;
+	using Label = Neo4Net.GraphDb.Label;
 	using Neo4Net.Helpers.Collections;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -40,7 +40,7 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class NodeIndexOrderTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -176,20 +176,20 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void CreateIndex()
 		 {
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					graphDb.schema().indexFor(Label.label("Node")).on("prop").create();
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					graphDb.schema().awaitIndexesOnline(1, TimeUnit.MINUTES);
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.helpers.collection.Pair<long,org.neo4j.values.storable.Value> nodeWithProp(Transaction tx, Object value) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<long,org.Neo4Net.values.storable.Value> nodeWithProp(Transaction tx, Object value) throws Exception
 		 private Pair<long, Value> NodeWithProp( Transaction tx, object value )
 		 {
 			  Write write = tx.DataWrite();

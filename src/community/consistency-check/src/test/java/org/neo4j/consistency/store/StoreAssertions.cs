@@ -20,7 +20,7 @@
 namespace Neo4Net.Consistency.store
 {
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -37,7 +37,7 @@ namespace Neo4Net.Consistency.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void assertConsistentStore(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public static void assertConsistentStore(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 public static void AssertConsistentStore( DatabaseLayout databaseLayout )
 		 {
 			  Config configuration = Config.defaults( GraphDatabaseSettings.pagecache_memory, "8m" );

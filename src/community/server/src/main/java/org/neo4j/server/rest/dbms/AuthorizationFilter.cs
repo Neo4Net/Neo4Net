@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.dbms
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public abstract class AuthorizationFilter : Filter
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected static org.neo4j.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> unauthorizedAccess(final String message)
+//ORIGINAL LINE: protected static org.Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> unauthorizedAccess(final String message)
 		 protected internal static ThrowingConsumer<HttpServletResponse, IOException> UnauthorizedAccess( string message )
 		 {
 			  return Error( 403, map( "errors", singletonList( map( "code", Neo4Net.Kernel.Api.Exceptions.Status_Security.Forbidden.code().serialize(), "message", string.Format("Unauthorized access violation: {0}.", message) ) ) ) );

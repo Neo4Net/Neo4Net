@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.api.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ExecutingQueryTest
 	{
@@ -79,10 +79,10 @@ namespace Neo4Net.Kernel.api.query
 
 		 private readonly FakeClock _clock = Clocks.fakeClock( ZonedDateTime.parse( "2016-12-03T15:10:00+01:00" ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.FakeCpuClock cpuClock = new org.neo4j.test.FakeCpuClock().add(randomLong(0x1_0000_0000L));
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeCpuClock cpuClock = new org.Neo4Net.test.FakeCpuClock().add(randomLong(0x1_0000_0000L));
 		 public readonly FakeCpuClock CpuClock = new FakeCpuClock().add(RandomLong(0x1_0000_0000L));
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.FakeHeapAllocation heapAllocation = new org.neo4j.test.FakeHeapAllocation().add(randomLong(0x1_0000_0000L));
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.FakeHeapAllocation heapAllocation = new org.Neo4Net.test.FakeHeapAllocation().add(randomLong(0x1_0000_0000L));
 		 public readonly FakeHeapAllocation HeapAllocation = new FakeHeapAllocation().add(RandomLong(0x1_0000_0000L));
 		 private readonly PageCursorCountersStub _page = new PageCursorCountersStub();
 		 private long _lockCount;
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.api.query
 		 public virtual void ShouldNotReportCpuTimeIfUnavailable()
 		 {
 			  // given
-			  ExecutingQuery query = new ExecutingQuery( 17, ClientConnectionInfo.EMBEDDED_CONNECTION, "neo4j", "hello world", EMPTY_MAP, Collections.emptyMap(), () => _lockCount, PageCursorTracer.NULL, Thread.CurrentThread.Id, Thread.CurrentThread.Name, _clock, FakeCpuClock.NOT_AVAILABLE, HeapAllocation.NOT_AVAILABLE );
+			  ExecutingQuery query = new ExecutingQuery( 17, ClientConnectionInfo.EMBEDDED_CONNECTION, "Neo4Net", "hello world", EMPTY_MAP, Collections.emptyMap(), () => _lockCount, PageCursorTracer.NULL, Thread.CurrentThread.Id, Thread.CurrentThread.Name, _clock, FakeCpuClock.NOT_AVAILABLE, HeapAllocation.NOT_AVAILABLE );
 
 			  // when
 			  QuerySnapshot snapshot = query.Snapshot();
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.api.query
 		 public virtual void ShouldNotReportHeapAllocationIfUnavailable()
 		 {
 			  // given
-			  ExecutingQuery query = new ExecutingQuery( 17, ClientConnectionInfo.EMBEDDED_CONNECTION, "neo4j", "hello world", EMPTY_MAP, Collections.emptyMap(), () => _lockCount, PageCursorTracer.NULL, Thread.CurrentThread.Id, Thread.CurrentThread.Name, _clock, FakeCpuClock.NOT_AVAILABLE, HeapAllocation.NOT_AVAILABLE );
+			  ExecutingQuery query = new ExecutingQuery( 17, ClientConnectionInfo.EMBEDDED_CONNECTION, "Neo4Net", "hello world", EMPTY_MAP, Collections.emptyMap(), () => _lockCount, PageCursorTracer.NULL, Thread.CurrentThread.Id, Thread.CurrentThread.Name, _clock, FakeCpuClock.NOT_AVAILABLE, HeapAllocation.NOT_AVAILABLE );
 
 			  // when
 			  QuerySnapshot snapshot = query.Snapshot();
@@ -421,7 +421,7 @@ namespace Neo4Net.Kernel.api.query
 
 		 private ExecutingQuery CreateExecutingquery( int queryId, string helloWorld, PageCursorCountersStub page, FakeClock clock, FakeCpuClock cpuClock, FakeHeapAllocation heapAllocation )
 		 {
-			  return new ExecutingQuery( queryId, ClientConnectionInfo.EMBEDDED_CONNECTION, "neo4j", helloWorld, EMPTY_MAP, Collections.emptyMap(), () => _lockCount, page, Thread.CurrentThread.Id, Thread.CurrentThread.Name, clock, cpuClock, heapAllocation );
+			  return new ExecutingQuery( queryId, ClientConnectionInfo.EMBEDDED_CONNECTION, "Neo4Net", helloWorld, EMPTY_MAP, Collections.emptyMap(), () => _lockCount, page, Thread.CurrentThread.Id, Thread.CurrentThread.Name, clock, cpuClock, heapAllocation );
 		 }
 
 		 private class PageCursorCountersStub : PageCursorCounters

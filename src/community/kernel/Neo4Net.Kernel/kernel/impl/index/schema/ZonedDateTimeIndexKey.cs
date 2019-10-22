@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="DateTimeValue"/>.
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="DateTimeValue"/>.
 	/// <para>
 	/// With these keys the DateTimeValues are sorted
 	/// 1. by epochSecond
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// </summary>
 	internal class ZonedDateTimeIndexKey : NativeIndexSingleValueKey<ZonedDateTimeIndexKey>
 	{
-		 internal static readonly int Size = Long.BYTES + Integer.BYTES + Integer.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + Integer.BYTES + Integer.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal long EpochSecondUTC;
 		 internal int NanoOfSecond;
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,epochSecond=%d,nanoOfSecond=%d,zoneId=%d,zoneOffset=%d", AsValue(), EntityId, EpochSecondUTC, NanoOfSecond, ZoneId, ZoneOffsetSeconds );
+			  return format( "value=%s,entityId=%d,epochSecond=%d,nanoOfSecond=%d,zoneId=%d,zoneOffset=%d", AsValue(), IEntityId, EpochSecondUTC, NanoOfSecond, ZoneId, ZoneOffsetSeconds );
 		 }
 
 		 public override void WriteDateTime( long epochSecondUTC, int nano, int offsetSeconds )

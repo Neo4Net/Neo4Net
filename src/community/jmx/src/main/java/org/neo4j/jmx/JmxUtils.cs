@@ -22,7 +22,7 @@
 namespace Neo4Net.Jmx
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using JmxKernelExtension = Neo4Net.Jmx.impl.JmxKernelExtension;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 
@@ -31,11 +31,11 @@ namespace Neo4Net.Jmx
 	{
 		 private static readonly MBeanServer _mbeanServer = ManagementFactory.PlatformMBeanServer;
 
-		 public static ObjectName GetObjectName( GraphDatabaseService db, string name )
+		 public static ObjectName GetObjectName( IGraphDatabaseService db, string name )
 		 {
 			  if ( !( db is GraphDatabaseAPI ) )
 			  {
-					throw new System.ArgumentException( "Can only resolve object names for embedded Neo4j database " + "instances, eg. instances created by GraphDatabaseFactory or HighlyAvailableGraphDatabaseFactory." );
+					throw new System.ArgumentException( "Can only resolve object names for embedded Neo4Net database " + "instances, eg. instances created by GraphDatabaseFactory or HighlyAvailableGraphDatabaseFactory." );
 			  }
 			  ObjectName neoQuery = ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( JmxKernelExtension ) ).getSingleManagementBean( typeof( Kernel ) ).MBeanQuery;
 

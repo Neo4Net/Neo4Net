@@ -22,8 +22,8 @@ namespace Neo4Net.CommandLine.Admin.security
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using LegacyCredential = Neo4Net.Server.Security.Auth.LegacyCredential;
 	using User = Neo4Net.Kernel.impl.security.User;
@@ -153,15 +153,15 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  verify( @out ).stdErrLine( "not enough arguments" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
-			  verify( @out ).stdErrLine( "usage: neo4j-admin set-default-admin <username>" );
+			  verify( @out ).stdErrLine( "usage: Neo4Net-admin set-default-admin <username>" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
 			  verify( @out ).stdErrLine( string.Format( "environment variables:" ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_CONF    Path to directory which contains neo4j.conf." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_DEBUG   Set to anything to enable debug output." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_HOME    Neo4j home directory." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_DEBUG   Set to anything to enable debug output." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_HOME    Neo4Net home directory." ) );
 			  verify( @out ).stdErrLine( string.Format( "    HEAP_SIZE     Set JVM maximum heap size during command execution." ) );
 			  verify( @out ).stdErrLine( string.Format( "                  Takes a number and a unit, for example 512m." ) );
-			  verify( @out ).stdErrLine( string.Format( "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to neo4j 3.1 enterprise." ) );
+			  verify( @out ).stdErrLine( string.Format( "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to Neo4Net 3.1 enterprise." ) );
 			  verify( @out ).exit( 1 );
 			  verifyNoMoreInteractions( @out );
 			  verify( @out, never() ).stdOutLine(anyString());
@@ -176,15 +176,15 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  verify( @out ).stdErrLine( "unrecognized arguments: 'bar'" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
-			  verify( @out ).stdErrLine( "usage: neo4j-admin set-default-admin <username>" );
+			  verify( @out ).stdErrLine( "usage: Neo4Net-admin set-default-admin <username>" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
 			  verify( @out ).stdErrLine( string.Format( "environment variables:" ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_CONF    Path to directory which contains neo4j.conf." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_DEBUG   Set to anything to enable debug output." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_HOME    Neo4j home directory." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_DEBUG   Set to anything to enable debug output." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_HOME    Neo4Net home directory." ) );
 			  verify( @out ).stdErrLine( string.Format( "    HEAP_SIZE     Set JVM maximum heap size during command execution." ) );
 			  verify( @out ).stdErrLine( string.Format( "                  Takes a number and a unit, for example 512m." ) );
-			  verify( @out ).stdErrLine( string.Format( "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to neo4j 3.1 enterprise." ) );
+			  verify( @out ).stdErrLine( string.Format( "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to Neo4Net 3.1 enterprise." ) );
 			  verify( @out ).exit( 1 );
 			  verifyNoMoreInteractions( @out );
 			  verify( @out, never() ).stdOutLine(anyString());

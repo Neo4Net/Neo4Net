@@ -43,33 +43,33 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatString()
 		 public virtual void CanFormatString()
 		 {
-			  string entity = _json.assemble( ValueRepresentation.@string( "expected value" ) );
-			  assertEquals( entity, "\"expected value\"" );
+			  string IEntity = _json.assemble( ValueRepresentation.@string( "expected value" ) );
+			  assertEquals( IEntity, "\"expected value\"" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatListOfStrings()
 		 public virtual void CanFormatListOfStrings()
 		 {
-			  string entity = _json.assemble( ListRepresentation.strings( "hello", "world" ) );
+			  string IEntity = _json.assemble( ListRepresentation.strings( "hello", "world" ) );
 			  string expectedString = JsonHelper.createJsonFrom( Arrays.asList( "hello", "world" ) );
-			  assertEquals( expectedString, entity );
+			  assertEquals( expectedString, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatInteger()
 		 public virtual void CanFormatInteger()
 		 {
-			  string entity = _json.assemble( ValueRepresentation.number( 10 ) );
-			  assertEquals( "10", entity );
+			  string IEntity = _json.assemble( ValueRepresentation.number( 10 ) );
+			  assertEquals( "10", IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatObjectWithStringField()
 		 public virtual void CanFormatObjectWithStringField()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass( this ) );
-			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "key", "expected string" ) ), entity );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass( this ) );
+			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "key", "expected string" ) ), IEntity );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass : MappingRepresentation

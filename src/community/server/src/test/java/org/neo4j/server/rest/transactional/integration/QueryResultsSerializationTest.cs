@@ -28,10 +28,10 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using GeometryType = Neo4Net.Kernel.impl.store.GeometryType;
@@ -48,35 +48,35 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.graphContainsDeletedNodes;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.graphContainsDeletedNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.graphContainsDeletedRelationships;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.graphContainsDeletedRelationships;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.graphContainsNoDeletedEntities;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.graphContainsNoDeletedEntities;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.matches;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.restContainsDeletedEntities;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.restContainsDeletedEntities;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.restContainsNoDeletedEntities;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.restContainsNoDeletedEntities;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsDeletedEntities;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsDeletedEntities;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsDeletedEntitiesInPath;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsDeletedEntitiesInPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsNoDeletedEntities;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsNoDeletedEntities;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 
 	public class QueryResultsSerializationTest : AbstractRestFunctionalTestBase
 	{
@@ -880,7 +880,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 /// deleted node mapped to the key `someKey`.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> restContainsNestedDeleted()
+//ORIGINAL LINE: private static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> restContainsNestedDeleted()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private static Matcher<object> RestContainsNestedDeleted()
 		 {

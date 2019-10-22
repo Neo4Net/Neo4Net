@@ -22,11 +22,11 @@
 namespace Neo4Net.Kernel.impl.util.dbstructure
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
@@ -47,22 +47,22 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.loop;
+//	import static org.Neo4Net.helpers.collection.Iterators.loop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexReference.sortByType;
+//	import static org.Neo4Net.Internal.kernel.api.IndexReference.sortByType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 
 	public class GraphDbStructureGuide : Visitable<DbStructureVisitor>
 	{
 		 private static RelationshipType _wildcardRelType = () => "";
 
-		 private readonly GraphDatabaseService _db;
+		 private readonly IGraphDatabaseService _db;
 		 private readonly ThreadToStatementContextBridge _bridge;
 
-		 public GraphDbStructureGuide( GraphDatabaseService graph )
+		 public GraphDbStructureGuide( IGraphDatabaseService graph )
 		 {
 			  this._db = graph;
 			  DependencyResolver dependencies = ( ( GraphDatabaseAPI ) graph ).DependencyResolver;
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void showSchema(DbStructureVisitor visitor, org.neo4j.kernel.api.KernelTransaction ktx) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void showSchema(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void ShowSchema( DbStructureVisitor visitor, KernelTransaction ktx )
 		 {
 			  TokenNameLookup nameLookup = new SilentTokenNameLookup( ktx.TokenRead() );
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void showIndices(DbStructureVisitor visitor, org.neo4j.kernel.api.KernelTransaction ktx, org.neo4j.internal.kernel.api.TokenNameLookup nameLookup) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void showIndices(DbStructureVisitor visitor, org.Neo4Net.kernel.api.KernelTransaction ktx, org.Neo4Net.internal.kernel.api.TokenNameLookup nameLookup) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void ShowIndices( DbStructureVisitor visitor, KernelTransaction ktx, TokenNameLookup nameLookup )
 		 {
 			  SchemaRead schemaRead = ktx.SchemaRead();

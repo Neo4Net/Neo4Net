@@ -45,11 +45,11 @@ namespace Neo4Net.Csv.Reader
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.CharSeekers.charSeeker;
+//	import static org.Neo4Net.csv.reader.CharSeekers.charSeeker;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.Readables.wrap;
+//	import static org.Neo4Net.csv.reader.Readables.wrap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.array;
+//	import static org.Neo4Net.helpers.collection.Iterators.array;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BufferedCharSeekerTest

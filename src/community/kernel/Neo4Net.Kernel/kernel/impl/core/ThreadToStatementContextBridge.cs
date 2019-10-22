@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

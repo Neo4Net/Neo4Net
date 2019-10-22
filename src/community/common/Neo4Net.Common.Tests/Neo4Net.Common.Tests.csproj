@@ -7,10 +7,54 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="concurrency\Tests\**" />
+    <Compile Remove="functions\**" />
+    <Compile Remove="helpers\**" />
+    <Compile Remove="kernel\**" />
+    <Compile Remove="ports\**" />
+    <Compile Remove="resources\**" />
+    <Compile Remove="scheduler\**" />
+    <Compile Remove="Strings\**" />
+    <Compile Remove="Tests\extensions\**" />
+    <Compile Remove="Tests\matchers\**" />
+    <Compile Remove="Tests\rule\**" />
+    <Compile Remove="Utils\**" />
+    <EmbeddedResource Remove="concurrency\Tests\**" />
+    <EmbeddedResource Remove="functions\**" />
+    <EmbeddedResource Remove="helpers\**" />
+    <EmbeddedResource Remove="kernel\**" />
+    <EmbeddedResource Remove="ports\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <EmbeddedResource Remove="scheduler\**" />
+    <EmbeddedResource Remove="Strings\**" />
+    <EmbeddedResource Remove="Tests\**" />
+    <EmbeddedResource Remove="Utils\**" />
+    <None Remove="concurrency\Tests\**" />
+    <None Remove="functions\**" />
+    <None Remove="helpers\**" />
+    <None Remove="kernel\**" />
+    <None Remove="ports\**" />
+    <None Remove="resources\**" />
+    <None Remove="scheduler\**" />
+    <None Remove="Strings\**" />
+    <None Remove="Tests\extensions\**" />
+    <None Remove="Tests\matchers\**" />
+    <None Remove="Tests\rule\**" />
+    
+    <None Remove="Utils\**" />
+  </ItemGroup>
+
+
+
+  <ItemGroup>
     <PackageReference Include="FluentAssertions" Version="5.9.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.3.0" />
     <PackageReference Include="NSubstitute" Version="4.2.1" />
     <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.abstractions" Version="2.0.3" />
+    <PackageReference Include="xunit.assert" Version="2.4.1" />
+    <PackageReference Include="xunit.core" Version="2.4.1" />
+    <PackageReference Include="xunit.extensibility.core" Version="2.4.1" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,6 +67,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Neo4Net.Common\Neo4Net.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="concurrency\" />
   </ItemGroup>
 
 </Project>

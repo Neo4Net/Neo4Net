@@ -25,9 +25,9 @@ namespace Neo4Net.Server.rest
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
@@ -60,13 +60,13 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToMap;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 
 	public class CypherIT : AbstractRestFunctionalTestBase
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Send a query") @Documented("A simple query returning all nodes connected to some node, returning the node and the name " + "property, if it exists, otherwise `NULL`:") @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.neo4j.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testPropertyColumn()
+//ORIGINAL LINE: @Test @Title("Send a query") @Documented("A simple query returning all nodes connected to some node, returning the node and the name " + "property, if it exists, otherwise `NULL`:") @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.Neo4Net.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testPropertyColumn()
 		 [Title("Send a query"), Documented("A simple query returning all nodes connected to some node, returning the node and the name " + "property, if it exists, otherwise `NULL`:"), Graph(nodes : {@NODE(name : "I", setNameProperty : true), @NODE(name : "you", setNameProperty : true), @NODE(name : "him", setNameProperty : true, properties : { @PROP(key : "age", value : "25", type : Neo4Net.Test.GraphDescription.PropType.INTEGER)})}, relationships : { @REL(start : "I", end : "him", type : "know", properties : {}), @REL(start : "I", end : "you", type : "know", properties : {})})]
 		 public virtual void TestPropertyColumn()
 		 {
@@ -81,7 +81,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Retrieve query metadata") @Documented("By passing in an additional GET parameter when you execute Cypher queries, metadata about the " + "query will be returned, such as how many labels were added or removed by the query.") @Graph(nodes = {@NODE(name = "I", setNameProperty = true, labels = {@LABEL("Director")})}) public void testQueryStatistics() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Title("Retrieve query metadata") @Documented("By passing in an additional GET parameter when you execute Cypher queries, metadata about the " + "query will be returned, such as how many labels were added or removed by the query.") @Graph(nodes = {@NODE(name = "I", setNameProperty = true, labels = {@LABEL("Director")})}) public void testQueryStatistics() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Title("Retrieve query metadata"), Documented("By passing in an additional GET parameter when you execute Cypher queries, metadata about the " + "query will be returned, such as how many labels were added or removed by the query."), Graph(nodes : {@NODE(name : "I", setNameProperty : true, labels : {@LABEL("Director")})})]
 		 public virtual void TestQueryStatistics()
@@ -112,7 +112,7 @@ namespace Neo4Net.Server.rest
 		 /// Ensure that order of data and column is ok.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.neo4j.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testDataColumnOrder()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.Neo4Net.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testDataColumnOrder()
 		 [Graph(nodes : {@NODE(name : "I", setNameProperty : true), @NODE(name : "you", setNameProperty : true), @NODE(name : "him", setNameProperty : true, properties : { @PROP(key : "age", value : "25", type : Neo4Net.Test.GraphDescription.PropType.INTEGER)})}, relationships : { @REL(start : "I", end : "him", type : "know", properties : {}), @REL(start : "I", end : "you", type : "know", properties : {})})]
 		 public virtual void TestDataColumnOrder()
 		 {
@@ -225,7 +225,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "I", properties = { @PROP(key = "prop", value = "Hello", type = org.neo4j.test.GraphDescription.PropType.STRING)}), @NODE(name = "you")}, relationships = {@REL(start = "I", end = "him", type = "know", properties = { @PROP(key = "prop", value = "World", type = org.neo4j.test.GraphDescription.PropType.STRING)})}) public void nodes_are_represented_as_nodes()
+//ORIGINAL LINE: @Test @Graph(nodes = {@NODE(name = "I", properties = { @PROP(key = "prop", value = "Hello", type = org.Neo4Net.test.GraphDescription.PropType.STRING)}), @NODE(name = "you")}, relationships = {@REL(start = "I", end = "him", type = "know", properties = { @PROP(key = "prop", value = "World", type = org.Neo4Net.test.GraphDescription.PropType.STRING)})}) public void nodes_are_represented_as_nodes()
 		 [Graph(nodes : {@NODE(name : "I", properties : { @PROP(key : "prop", value : "Hello", type : Neo4Net.Test.GraphDescription.PropType.STRING)}), @NODE(name : "you")}, relationships : {@REL(start : "I", end : "him", type : "know", properties : { @PROP(key : "prop", value : "World", type : Neo4Net.Test.GraphDescription.PropType.STRING)})})]
 		 public virtual void NodesAreRepresentedAsNodes()
 		 {
@@ -270,7 +270,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Title("Profile a query") @Documented("By passing in an extra parameter, you can ask the cypher executor to return a profile of the " + "query as it is executed. This can help in locating bottlenecks.") @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.neo4j.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testProfiling() throws Exception
+//ORIGINAL LINE: @Test @Title("Profile a query") @Documented("By passing in an extra parameter, you can ask the cypher executor to return a profile of the " + "query as it is executed. This can help in locating bottlenecks.") @Graph(nodes = {@NODE(name = "I", setNameProperty = true), @NODE(name = "you", setNameProperty = true), @NODE(name = "him", setNameProperty = true, properties = { @PROP(key = "age", value = "25", type = org.Neo4Net.test.GraphDescription.PropType.INTEGER)})}, relationships = { @REL(start = "I", end = "him", type = "know", properties = {}), @REL(start = "I", end = "you", type = "know", properties = {})}) public void testProfiling() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Title("Profile a query"), Documented("By passing in an extra parameter, you can ask the cypher executor to return a profile of the " + "query as it is executed. This can help in locating bottlenecks."), Graph(nodes : {@NODE(name : "I", setNameProperty : true), @NODE(name : "you", setNameProperty : true), @NODE(name : "him", setNameProperty : true, properties : { @PROP(key : "age", value : "25", type : Neo4Net.Test.GraphDescription.PropType.INTEGER)})}, relationships : { @REL(start : "I", end : "him", type : "know", properties : {}), @REL(start : "I", end : "you", type : "know", properties : {})})]
 		 public virtual void TestProfiling()
@@ -311,7 +311,7 @@ namespace Neo4Net.Server.rest
 		 internal virtual void SetProperty( string nodeName, string propertyName, object propertyValue )
 		 {
 			  Node i = this.GetNode( nodeName );
-			  GraphDatabaseService db = i.GraphDatabase;
+			  IGraphDatabaseService db = i.GraphDatabase;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -338,7 +338,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final String cypherRestCall(String script, javax.ws.rs.core.Response.Status status, org.neo4j.helpers.collection.Pair<String,String>... params)
+//ORIGINAL LINE: @SafeVarargs private final String cypherRestCall(String script, javax.ws.rs.core.Response.Status status, org.Neo4Net.helpers.collection.Pair<String,String>... params)
 		 private string CypherRestCall( string script, Status status, params Pair<string, string>[] @params )
 		 {
 			  return DoCypherRestCall( CypherUri(), script, status, @params );

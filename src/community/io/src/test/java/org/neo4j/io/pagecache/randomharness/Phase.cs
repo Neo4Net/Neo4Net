@@ -27,7 +27,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 	public interface Phase
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void run(org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.io.fs.FileSystemAbstraction fs, java.util.Set<java.io.File> filesTouched) throws Exception;
+//ORIGINAL LINE: void run(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Set<java.io.File> filesTouched) throws Exception;
 		 void Run( PageCache pageCache, FileSystemAbstraction fs, ISet<File> filesTouched );
 	}
 

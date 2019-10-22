@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.messaging
 
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
 	using SynchronousBoltConnection = Neo4Net.Bolt.runtime.SynchronousBoltConnection;
@@ -46,13 +46,13 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.map;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
 
 	public class BoltRequestMessageReaderV1Test
 	{
@@ -105,16 +105,16 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMessageDecoding(org.neo4j.bolt.messaging.RequestMessage message) throws Exception
+//ORIGINAL LINE: private static void testMessageDecoding(org.Neo4Net.bolt.messaging.RequestMessage message) throws Exception
 		 private static void TestMessageDecoding( RequestMessage message )
 		 {
-			  Neo4jPack neo4jPack = new Neo4jPackV1();
+			  Neo4NetPack Neo4NetPack = new Neo4NetPackV1();
 
 			  BoltStateMachine stateMachine = mock( typeof( BoltStateMachine ) );
 			  BoltRequestMessageReader reader = NewReader( stateMachine );
 
-			  PackedInputArray innput = new PackedInputArray( serialize( neo4jPack, message ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = neo4jPack.NewUnpacker( innput );
+			  PackedInputArray innput = new PackedInputArray( serialize( Neo4NetPack, message ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = Neo4NetPack.NewUnpacker( innput );
 
 			  reader.Read( unpacker );
 

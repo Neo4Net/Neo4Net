@@ -27,11 +27,11 @@ namespace Neo4Net.Consistency.repair
 	using Test = org.junit.Test;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Neo4Net.Kernel.impl.store;
@@ -45,9 +45,9 @@ namespace Neo4Net.Consistency.repair
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class RelationshipChainExplorerTest
 	{
@@ -73,7 +73,7 @@ namespace Neo4Net.Consistency.repair
 		 private readonly DefaultFileSystemRule _fileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static PageCacheRule PageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(testDirectory).around(fileSystemRule);
@@ -148,7 +148,7 @@ namespace Neo4Net.Consistency.repair
 		 private StoreAccess CreateStoreWithOneHighDegreeNodeAndSeveralDegreeTwoNodes( int nDegreeTwoNodes )
 		 {
 			  File storeDirectory = _testDirectory.databaseDir();
-			  GraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDirectory).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).setConfig("dbms.backup.enabled", "false").newGraphDatabase();
+			  IGraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDirectory).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).setConfig("dbms.backup.enabled", "false").newGraphDatabase();
 
 			  using ( Transaction transaction = database.BeginTx() )
 			  {

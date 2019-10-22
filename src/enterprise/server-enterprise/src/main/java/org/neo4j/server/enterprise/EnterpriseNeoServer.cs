@@ -17,14 +17,14 @@
 
 namespace Neo4Net.Server.enterprise
 {
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;
 
 	/// <summary>
 	/// See
-	/// https://github.com/neo4j/neo4j/blob/3.2/enterprise/server-enterprise/src/main/java/org/neo4j/server/enterprise/EnterpriseNeoServer.java
-	/// https://github.com/neo4j/neo4j/blob/625e26f3f0a46a52085b5d65600c5521ca80a34d/community/server/src/main/java/org/neo4j/server/rest/management/VersionAndEditionService.java
+	/// https://github.com/Neo4Net/Neo4Net/blob/3.2/enterprise/server-enterprise/src/main/java/org/Neo4Net/server/enterprise/EnterpriseNeoServer.java
+	/// https://github.com/Neo4Net/Neo4Net/blob/625e26f3f0a46a52085b5d65600c5521ca80a34d/community/server/src/main/java/org/Neo4Net/server/rest/management/VersionAndEditionService.java
 	/// </summary>
 	public class EnterpriseNeoServer : OpenEnterpriseNeoServer
 	{

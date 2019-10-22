@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api.dbms
 {
 	using Neo4Net.Collections;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
@@ -32,13 +32,13 @@ namespace Neo4Net.Kernel.Impl.Api.dbms
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Context_Fields.DATABASE_API;
+//	import static org.Neo4Net.kernel.api.proc.Context_Fields.DATABASE_API;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Context_Fields.DEPENDENCY_RESOLVER;
+//	import static org.Neo4Net.kernel.api.proc.Context_Fields.DEPENDENCY_RESOLVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Context_Fields.PROCEDURE_CALL_CONTEXT;
+//	import static org.Neo4Net.kernel.api.proc.Context_Fields.PROCEDURE_CALL_CONTEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
+//	import static org.Neo4Net.kernel.api.proc.Context_Fields.SECURITY_CONTEXT;
 
 	public class NonTransactionalDbmsOperations : DbmsOperations
 	{
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Api.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] input, org.neo4j.graphdb.DependencyResolver dependencyResolver, org.neo4j.internal.kernel.api.security.SecurityContext securityContext, org.neo4j.kernel.api.ResourceTracker resourceTracker, org.neo4j.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallDbms( QualifiedName name, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext procedureCallContext )
 		 {
 			  BasicContext ctx = CreateContext( securityContext, dependencyResolver, procedureCallContext );
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Api.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.neo4j.graphdb.DependencyResolver dependencyResolver, org.neo4j.internal.kernel.api.security.SecurityContext securityContext, org.neo4j.kernel.api.ResourceTracker resourceTracker, org.neo4j.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallDbms( int id, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext procedureCallContext )
 		 {
 			  BasicContext ctx = CreateContext( securityContext, dependencyResolver, procedureCallContext );

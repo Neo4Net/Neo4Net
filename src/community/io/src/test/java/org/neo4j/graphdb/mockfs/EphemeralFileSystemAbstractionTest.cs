@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.mockfs
+namespace Neo4Net.GraphDb.mockfs
 {
 	using AfterEach = org.junit.jupiter.api.AfterEach;
 	using BeforeEach = org.junit.jupiter.api.BeforeEach;
@@ -310,7 +310,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static ByteBuffer readLong(org.neo4j.io.fs.StoreChannel readChannel) throws java.io.IOException
+//ORIGINAL LINE: private static ByteBuffer readLong(org.Neo4Net.io.fs.StoreChannel readChannel) throws java.io.IOException
 		 private static ByteBuffer ReadLong( StoreChannel readChannel )
 		 {
 			  ByteBuffer readBuffer = allocate( 8 );
@@ -320,7 +320,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeLong(org.neo4j.io.fs.StoreChannel channel, long value) throws java.io.IOException
+//ORIGINAL LINE: private static void writeLong(org.Neo4Net.io.fs.StoreChannel channel, long value) throws java.io.IOException
 		 private static void WriteLong( StoreChannel channel, long value )
 		 {
 			  ByteBuffer buffer = allocate( 8 );

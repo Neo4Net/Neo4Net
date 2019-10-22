@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Storageengine.Api.txstate
 {
-	public interface GraphState : PropertyContainerState
+	public interface GraphState : IPropertyContainerState
 	{
 	}
 

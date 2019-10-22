@@ -33,13 +33,13 @@ namespace Neo4Net.Values.@virtual
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
+//	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.ArrayHelpers.containsNull;
+//	import static org.Neo4Net.values.@virtual.ArrayHelpers.containsNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_LIST;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_LIST;
 
 	public abstract class ListValue : VirtualValue, SequenceValue, IEnumerable<AnyValue>
 	{
@@ -787,7 +787,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void writeTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void writeTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  switch ( IterationPreference() )
@@ -908,7 +908,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <E extends Exception> void randomAccessWriteTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: private <E extends Exception> void randomAccessWriteTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 private void RandomAccessWriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  writer.BeginList( Size() );
@@ -920,7 +920,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <E extends Exception> void iterationWriteTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: private <E extends Exception> void iterationWriteTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 private void IterationWriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  writer.BeginList( Size() );

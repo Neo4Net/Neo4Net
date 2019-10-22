@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,21 +16,21 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
 	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
@@ -41,11 +41,11 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatInterval;
+//	import static org.Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatInterval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatTime;
+//	import static org.Neo4Net.kernel.enterprise.builtinprocs.ProceduresTimeFormatHelper.formatTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
+//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
 
 	public class QueryStatusResult
 	{
@@ -55,13 +55,13 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public readonly string Query;
 		 public readonly IDictionary<string, object> Parameters;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string Planner;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string Runtime;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly IList<IDictionary<string, string>> Indexes;
 		 public readonly string StartTime;
 		 [Obsolete]
@@ -69,56 +69,56 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 [Obsolete]
 		 public readonly string ConnectionDetails;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string Protocol;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string ClientAddress;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string RequestUri;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly string Status;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly IDictionary<string, object> ResourceInformation;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long ActiveLockCount;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long ElapsedTimeMillis; // TODO: this field should be of a Duration type (when Cypher supports that)
 		 /// <summary>
-		 /// @since Neo4j 3.2, will be {@code null} if measuring CPU time is not supported. </summary>
+		 /// @since Neo4Net 3.2, will be {@code null} if measuring CPU time is not supported. </summary>
 		 public readonly long? CpuTimeMillis; // TODO: we want this field to be of a Duration type (when Cypher supports that)
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long WaitTimeMillis; // TODO: we want this field to be of a Duration type (when Cypher supports that)
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long? IdleTimeMillis; // TODO: we want this field to be of a Duration type (when Cypher supports that)
 		 /// <summary>
-		 /// @since Neo4j 3.2, will be {@code null} if measuring allocation is not supported. </summary>
+		 /// @since Neo4Net 3.2, will be {@code null} if measuring allocation is not supported. </summary>
 		 public readonly long? AllocatedBytes;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long PageHits;
 		 /// <summary>
-		 /// @since Neo4j 3.2 </summary>
+		 /// @since Neo4Net 3.2 </summary>
 		 public readonly long PageFaults;
 		 /// <summary>
-		 /// @since Neo4j 3.5 </summary>
+		 /// @since Neo4Net 3.5 </summary>
 		 public readonly string ConnectionId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: QueryStatusResult(org.neo4j.kernel.api.query.ExecutingQuery query, org.neo4j.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: QueryStatusResult(org.Neo4Net.kernel.api.query.ExecutingQuery query, org.Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal QueryStatusResult( ExecutingQuery query, EmbeddedProxySPI manager, ZoneId zoneId ) : this( query.Snapshot(), manager, zoneId )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private QueryStatusResult(org.neo4j.kernel.api.query.QuerySnapshot query, org.neo4j.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: private QueryStatusResult(org.Neo4Net.kernel.api.query.QuerySnapshot query, org.Neo4Net.kernel.impl.core.EmbeddedProxySPI manager, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 private QueryStatusResult( QuerySnapshot query, EmbeddedProxySPI manager, ZoneId zoneId )
 		 {
 			  this.QueryId = ofInternalId( query.InternalQueryId() ).ToString();

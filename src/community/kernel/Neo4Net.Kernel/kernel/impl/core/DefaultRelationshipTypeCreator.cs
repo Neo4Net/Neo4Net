@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected int createKey(org.neo4j.internal.kernel.api.Transaction transaction, String name) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: protected int createKey(org.Neo4Net.internal.kernel.api.Transaction transaction, String name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
 		 protected internal override int CreateKey( Transaction transaction, string name )
 		 {
 			  return transaction.TokenWrite().relationshipTypeCreateForName(name);

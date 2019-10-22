@@ -7,7 +7,7 @@
 
 namespace Neo4Net.Utils
 {
-   internal static class GlobalRandom
+   public static class GlobalRandom
    {
       private static System.Random randomInstance = null;
 

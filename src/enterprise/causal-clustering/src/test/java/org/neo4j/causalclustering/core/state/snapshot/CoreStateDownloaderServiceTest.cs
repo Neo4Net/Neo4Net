@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.snapshot
 {
@@ -54,9 +54,9 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Internal.verification.VerificationModeFactory.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
+//	import static org.Neo4Net.causalclustering.core.state.snapshot.PersistentSnapshotDownloader.OPERATION_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class CoreStateDownloaderServiceTest
 	{
@@ -104,11 +104,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  CoreStateDownloader coreStateDownloader = mock( typeof( CoreStateDownloader ) );
 			  when( coreStateDownloader.DownloadSnapshot( any() ) ).thenReturn(true);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.neo4j.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.logging.Log log = mock(org.neo4j.logging.Log.class);
+//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  CoreStateDownloaderService coreStateDownloaderService = new CoreStateDownloaderService( _centralJobScheduler, coreStateDownloader, applicationProcess, LogProvider( log ), new NoTimeout(), () => _dbHealth, new Monitors() );
 			  coreStateDownloaderService.ScheduleDownload( _catchupAddressProvider );
@@ -129,11 +129,11 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  Semaphore blockDownloader = new Semaphore( 0 );
 			  CoreStateDownloader coreStateDownloader = new BlockingCoreStateDownloader( blockDownloader );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.neo4j.causalclustering.core.state.CommandApplicationProcess.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess = mock(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess.class);
 			  CommandApplicationProcess applicationProcess = mock( typeof( CommandApplicationProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.logging.Log log = mock(org.neo4j.logging.Log.class);
+//ORIGINAL LINE: final org.Neo4Net.logging.Log log = mock(org.Neo4Net.logging.Log.class);
 			  Log log = mock( typeof( Log ) );
 			  CoreStateDownloaderService coreStateDownloaderService = new CoreStateDownloaderService( countingJobScheduler, coreStateDownloader, applicationProcess, LogProvider( log ), new NoTimeout(), () => _dbHealth, new Monitors() );
 
@@ -164,7 +164,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitForApplierToResume(org.neo4j.causalclustering.core.state.CommandApplicationProcess applicationProcess) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private void waitForApplierToResume(org.Neo4Net.causalclustering.core.state.CommandApplicationProcess applicationProcess) throws java.util.concurrent.TimeoutException
 		 private void WaitForApplierToResume( CommandApplicationProcess applicationProcess )
 		 {
 			  Predicates.await(() =>

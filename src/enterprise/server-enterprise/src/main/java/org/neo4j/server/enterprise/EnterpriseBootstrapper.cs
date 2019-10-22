@@ -22,13 +22,13 @@ namespace Neo4Net.Server.enterprise
 
 	using CausalClusterConfigurationValidator = Neo4Net.causalclustering.core.CausalClusterConfigurationValidator;
 	using HaConfigurationValidator = Neo4Net.Configuration.HaConfigurationValidator;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfigurationValidator = Neo4Net.Kernel.configuration.ConfigurationValidator;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;
 
 	/// <summary>
-	/// See https://github.com/neo4j/neo4j/blob/3.2/enterprise/server-enterprise/src/main/java/org/neo4j/server/enterprise/EnterpriseBootstrapper.java
+	/// See https://github.com/Neo4Net/Neo4Net/blob/3.2/enterprise/server-enterprise/src/main/java/org/Neo4Net/server/enterprise/EnterpriseBootstrapper.java
 	/// </summary>
 	public class EnterpriseBootstrapper : CommunityBootstrapper
 	{
@@ -54,7 +54,7 @@ namespace Neo4Net.Server.enterprise
 		 /// @return
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull protected java.util.Collection<org.neo4j.kernel.configuration.ConfigurationValidator> configurationValidators()
+//ORIGINAL LINE: @Nonnull protected java.util.Collection<org.Neo4Net.kernel.configuration.ConfigurationValidator> configurationValidators()
 		 protected internal virtual ICollection<ConfigurationValidator> ConfigurationValidators()
 		 {
 			  IList<ConfigurationValidator> validators = new List<object>( base.ConfigurationValidators() );

@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.neo4j.kernel.impl.store.UnderlyingStorageException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.impl.store.UnderlyingStorageException
 		 public override void Close()
 		 {
 			  ISet<Pair<SchemaDescriptor, UnderlyingStorageException>> exceptions = null;

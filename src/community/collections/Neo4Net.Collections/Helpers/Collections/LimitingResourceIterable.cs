@@ -21,8 +21,8 @@
  */
 namespace Neo4Net.Helpers.Collections
 {
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// Limits the amount of items returned by an <seealso cref="ResourceIterable"/>, or rather

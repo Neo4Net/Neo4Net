@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexes.deleteIndex;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexes.deleteIndex;
 
 	public class GenericNativeIndexPopulator : NativeIndexPopulator<GenericKey, NativeIndexValue>
 	{

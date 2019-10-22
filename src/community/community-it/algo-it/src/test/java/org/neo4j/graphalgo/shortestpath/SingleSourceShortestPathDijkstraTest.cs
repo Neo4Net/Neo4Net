@@ -22,9 +22,9 @@ namespace Neo4Net.Graphalgo.shortestpath
 	using Neo4Net.Graphalgo.impl.shortestpath;
 	using Neo4Net.Graphalgo.impl.shortestpath;
 	using IntegerAdder = Neo4Net.Graphalgo.impl.util.IntegerAdder;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	public class SingleSourceShortestPathDijkstraTest : SingleSourceShortestPathTest
 	{

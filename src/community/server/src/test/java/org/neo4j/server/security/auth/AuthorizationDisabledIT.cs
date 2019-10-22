@@ -22,7 +22,7 @@ namespace Neo4Net.Server.Security.Auth
 	using After = org.junit.After;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
 	using HTTP = Neo4Net.Test.server.HTTP;
@@ -32,7 +32,7 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class AuthorizationDisabledIT : ExclusiveServerTestBase
 	{

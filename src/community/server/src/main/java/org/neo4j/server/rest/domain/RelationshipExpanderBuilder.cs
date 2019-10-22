@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.domain
 {
 
-	using Neo4Net.Graphdb;
-	using PathExpanderBuilder = Neo4Net.Graphdb.PathExpanderBuilder;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using PathExpanderBuilder = Neo4Net.GraphDb.PathExpanderBuilder;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	public class RelationshipExpanderBuilder
 	{
@@ -34,7 +34,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.neo4j.graphdb.PathExpander describeRelationships(java.util.Map<String, Object> description)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.graphdb.PathExpander describeRelationships(java.util.Map<String, Object> description)
 		 public static PathExpander DescribeRelationships( IDictionary<string, object> description )
 		 {
 			  PathExpanderBuilder expander = PathExpanderBuilder.allTypesAndDirections();

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.store
 	public interface SchemaRuleAccess
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.storageengine.api.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException;
+//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException;
 		 SchemaRule LoadSingleSchemaRule( long ruleId );
 	}
 

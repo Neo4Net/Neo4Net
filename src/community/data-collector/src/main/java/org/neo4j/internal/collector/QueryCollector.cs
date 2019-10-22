@@ -61,7 +61,7 @@ namespace Neo4Net.Internal.Collector
 		 // CollectorStateMachine
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Result doCollect(java.util.Map<String,Object> config, long collectionId) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: protected Result doCollect(java.util.Map<String,Object> config, long collectionId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 protected internal override Result DoCollect( IDictionary<string, object> config, long collectionId )
 		 {
 			  int collectSeconds = QueryCollectorConfig.Of( config ).CollectSeconds;

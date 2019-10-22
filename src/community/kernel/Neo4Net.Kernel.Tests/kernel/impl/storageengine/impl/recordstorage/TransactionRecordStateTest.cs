@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using Neo4Net.Kernel.Impl.Api.index;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexingUpdateService = Neo4Net.Kernel.Impl.Api.index.IndexingUpdateService;
 	using PropertyCommandsExtractor = Neo4Net.Kernel.Impl.Api.index.PropertyCommandsExtractor;
 	using PropertyPhysicalToLogicalConverter = Neo4Net.Kernel.Impl.Api.index.PropertyPhysicalToLogicalConverter;
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using PrepareTrackingRecordFormats = Neo4Net.Kernel.impl.transaction.state.PrepareTrackingRecordFormats;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using RecordChangeSet = Neo4Net.Kernel.impl.transaction.state.RecordChangeSet;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using NeoStoresRule = Neo4Net.Test.rule.NeoStoresRule;
@@ -117,34 +117,34 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.filter;
+//	import static org.Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forRelType;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.constraints.ConstraintDescriptorFactory.uniqueForLabel;
+//	import static org.Neo4Net.kernel.api.schema.constraints.ConstraintDescriptorFactory.uniqueForLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.ConstraintRule.constraintRule;
+//	import static org.Neo4Net.kernel.impl.store.record.ConstraintRule.constraintRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 
 	public class TransactionRecordStateTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.NeoStoresRule neoStoresRule = new org.neo4j.test.rule.NeoStoresRule(getClass());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.NeoStoresRule neoStoresRule = new org.Neo4Net.test.rule.NeoStoresRule(getClass());
 		 public readonly NeoStoresRule NeoStoresRule = new NeoStoresRule( this.GetType() );
 
 		 private const string LONG_STRING = "string value long enough not to be stored as a short string";
@@ -263,12 +263,12 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  // -- later recovering that tx, there should be only one update for each type
 			  assertTrue( extractor.ContainsAnyEntityOrPropertyUpdate() );
 			  MutableLongSet recoveredNodeIds = new LongHashSet();
-			  recoveredNodeIds.addAll( EntityIds( extractor.NodeCommands ) );
+			  recoveredNodeIds.addAll( IEntityIds( extractor.NodeCommands ) );
 			  assertEquals( 1, recoveredNodeIds.size() );
 			  assertEquals( nodeId, recoveredNodeIds.longIterator().next() );
 
 			  MutableLongSet recoveredRelIds = new LongHashSet();
-			  recoveredRelIds.addAll( EntityIds( extractor.RelationshipCommands ) );
+			  recoveredRelIds.addAll( IEntityIds( extractor.RelationshipCommands ) );
 			  assertEquals( 1, recoveredRelIds.size() );
 			  assertEquals( relId, recoveredRelIds.longIterator().next() );
 		 }
@@ -363,7 +363,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _noLabels ).withTokensAfter( _oneLabelId ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _noLabels ).withTokensAfter( _oneLabelId ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -388,7 +388,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _oneLabelId ).withTokensAfter( _bothLabelIds ).added( PROPERTY_ID2, _value2 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _oneLabelId ).withTokensAfter( _bothLabelIds ).added( PROPERTY_ID2, _value2 ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -413,7 +413,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _oneLabelId ).withTokensAfter( _noLabels ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _oneLabelId ).withTokensAfter( _noLabels ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -438,7 +438,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _bothLabelIds ).withTokensAfter( _oneLabelId ).removed( PROPERTY_ID1, _value1 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _bothLabelIds ).withTokensAfter( _oneLabelId ).removed( PROPERTY_ID1, _value1 ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -463,7 +463,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _bothLabelIds ).withTokensAfter( _oneLabelId ).added( PROPERTY_ID2, _value2 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _bothLabelIds ).withTokensAfter( _oneLabelId ).added( PROPERTY_ID2, _value2 ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -490,7 +490,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).changed( PROPERTY_ID1, _value1, newValue1 ).changed( PROPERTY_ID2, _value2, newValue2 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).changed( PROPERTY_ID1, _value1, newValue1 ).changed( PROPERTY_ID2, _value2, newValue2 ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -516,7 +516,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> indexUpdates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( ( long ) nodeId, false ).withTokens( _oneLabelId ).removed( PROPERTY_ID1, _value1 ).removed( PROPERTY_ID2, _value2 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( ( long ) nodeId, false ).withTokens( _oneLabelId ).removed( PROPERTY_ID1, _value1 ).removed( PROPERTY_ID2, _value2 ).build();
 			  assertEquals( expected, Iterables.single( indexUpdates ) );
 		 }
 
@@ -820,7 +820,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  IEnumerable<EntityUpdates> updates = IndexUpdatesOf( neoStores, recordState );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.forEntity( nodeId, false ).withTokens( _noLabels ).withTokensAfter( _oneLabelId ).added( PROPERTY_ID1, _value1 ).added( PROPERTY_ID2, _value2 ).build();
+			  IEntityUpdates expected = IEntityUpdates.forEntity( nodeId, false ).withTokens( _noLabels ).withTokensAfter( _oneLabelId ).added( PROPERTY_ID1, _value1 ).added( PROPERTY_ID2, _value2 ).build();
 			  assertEquals( expected, Iterables.single( updates ) );
 		 }
 
@@ -1331,14 +1331,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Iterable<org.neo4j.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.neo4j.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private Iterable<org.Neo4Net.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.Neo4Net.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private IEnumerable<EntityUpdates> IndexUpdatesOf( NeoStores neoStores, TransactionRecordState state )
 		 {
 			  return IndexUpdatesOf( neoStores, TransactionRepresentationOf( state ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Iterable<org.neo4j.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.neo4j.kernel.impl.store.NeoStores neoStores, org.neo4j.kernel.impl.transaction.TransactionRepresentation transaction) throws java.io.IOException
+//ORIGINAL LINE: private Iterable<org.Neo4Net.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.Neo4Net.kernel.impl.store.NeoStores neoStores, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction) throws java.io.IOException
 		 private IEnumerable<EntityUpdates> IndexUpdatesOf( NeoStores neoStores, TransactionRepresentation transaction )
 		 {
 			  PropertyCommandsExtractor extractor = new PropertyCommandsExtractor();
@@ -1351,7 +1351,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState writeTransaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState writeTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private PhysicalTransactionRepresentation TransactionRepresentationOf( TransactionRecordState writeTransaction )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();
@@ -1367,7 +1367,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation readFromChannel(org.neo4j.kernel.impl.transaction.log.ReadableLogChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation readFromChannel(org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel channel) throws java.io.IOException
 		 private CommittedTransactionRepresentation ReadFromChannel( ReadableLogChannel channel )
 		 {
 			  LogEntryReader<ReadableLogChannel> logEntryReader = new VersionAwareLogEntryReader<ReadableLogChannel>();
@@ -1379,7 +1379,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeToChannel(org.neo4j.kernel.impl.transaction.TransactionRepresentation transaction, org.neo4j.kernel.impl.transaction.log.FlushableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private void writeToChannel(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction, org.Neo4Net.kernel.impl.transaction.log.FlushableChannel channel) throws java.io.IOException
 		 private void WriteToChannel( TransactionRepresentation transaction, FlushableChannel channel )
 		 {
 			  TransactionLogWriter writer = new TransactionLogWriter( new LogEntryWriter( channel ) );
@@ -1419,14 +1419,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void apply(org.neo4j.kernel.impl.api.BatchTransactionApplier applier, org.neo4j.kernel.impl.transaction.TransactionRepresentation transaction) throws Exception
+//ORIGINAL LINE: private void apply(org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction) throws Exception
 		 private void Apply( BatchTransactionApplier applier, TransactionRepresentation transaction )
 		 {
 			  CommandHandlerContract.apply( applier, new TransactionToApply( transaction ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void apply(org.neo4j.kernel.impl.store.NeoStores neoStores, org.neo4j.kernel.impl.transaction.TransactionRepresentation transaction) throws Exception
+//ORIGINAL LINE: private void apply(org.Neo4Net.kernel.impl.store.NeoStores neoStores, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction) throws Exception
 		 private void Apply( NeoStores neoStores, TransactionRepresentation transaction )
 		 {
 			  BatchTransactionApplier applier = new NeoStoreBatchTransactionApplier( neoStores, mock( typeof( CacheAccessBackDoor ) ), LockService.NO_LOCK_SERVICE );
@@ -1434,7 +1434,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void apply(org.neo4j.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws Exception
+//ORIGINAL LINE: private void apply(org.Neo4Net.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws Exception
 		 private void Apply( NeoStores neoStores, TransactionRecordState state )
 		 {
 			  BatchTransactionApplier applier = new NeoStoreBatchTransactionApplier( neoStores, mock( typeof( CacheAccessBackDoor ) ), LockService.NO_LOCK_SERVICE );
@@ -1452,7 +1452,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.TransactionRepresentation transaction(TransactionRecordState recordState) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction(TransactionRecordState recordState) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private TransactionRepresentation Transaction( TransactionRecordState recordState )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();
@@ -1490,7 +1490,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  return ( Command.RelationshipGroupCommand ) Iterables.single( filter( t => t is Command.RelationshipGroupCommand, commands ) );
 		 }
 
-		 public virtual LongIterable EntityIds( EntityCommandGrouper.Cursor cursor )
+		 public virtual LongIterable IEntityIds( IEntityCommandGrouper.Cursor cursor )
 		 {
 			  LongArrayList list = new LongArrayList();
 			  if ( cursor.NextEntity() )
@@ -1513,15 +1513,15 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 				 this._outerInstance = outerInstance;
 			 }
 
-			  internal readonly IList<EntityUpdates> EntityUpdatesList = new List<EntityUpdates>();
+			  internal readonly IList<EntityUpdates> IEntityUpdatesList = new List<EntityUpdates>();
 
 			  public override void Apply( IndexUpdates updates )
 			  {
 			  }
 
-			  public override IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( EntityUpdates entityUpdates, EntityType type )
+			  public override IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, IEntityType type )
 			  {
-					EntityUpdatesList.Add( entityUpdates );
+					EntityUpdatesList.Add( IEntityUpdates );
 					return Iterables.empty();
 			  }
 		 }

@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.Internal
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -39,12 +39,12 @@ namespace Neo4Net.Kernel.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class StoreLockerLifecycleAdapterTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.Internal
 
 		 private void ShouldNotAllowDatabasesToUseFilesetsConcurrently( IDictionary<string, string> config )
 		 {
-			  GraphDatabaseService db = NewDb();
+			  IGraphDatabaseService db = NewDb();
 			  try
 			  {
 					( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(StoreDir()).setConfig(config).newGraphDatabase();
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Internal
 			  }
 		 }
 
-		 private GraphDatabaseService NewDb()
+		 private IGraphDatabaseService NewDb()
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(StoreDir());
 		 }

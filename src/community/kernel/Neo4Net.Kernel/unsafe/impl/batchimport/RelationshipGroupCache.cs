@@ -33,7 +33,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 
 	/// <summary>
 	/// Holds information vital for making <seealso cref="RelationshipGroupDefragmenter"/> work the way it does.

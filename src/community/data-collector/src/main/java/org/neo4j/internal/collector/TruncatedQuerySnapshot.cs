@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using SequenceValue = Neo4Net.Values.SequenceValue;
 	using Neo4Net.Values;

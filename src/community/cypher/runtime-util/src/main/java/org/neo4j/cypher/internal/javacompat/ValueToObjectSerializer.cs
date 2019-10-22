@@ -21,9 +21,9 @@
  */
 namespace Neo4Net.Cypher.Internal.javacompat
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using Neo4Net.Kernel.impl.util;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

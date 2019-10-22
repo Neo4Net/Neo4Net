@@ -25,8 +25,8 @@ namespace Neo4Net.Cypher.Internal.compiler.v3_5.common
 
 	using IncomparableValuesException = Neo4Net.Cypher.Internal.v3_5.util.IncomparableValuesException;
 	using UnorderableValueException = Neo4Net.Cypher.Internal.v3_5.util.UnorderableValueException;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using MathUtil = Neo4Net.Helpers.MathUtil;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using AnyValue = Neo4Net.Values.AnyValue;

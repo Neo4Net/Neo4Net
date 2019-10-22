@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using MutableLongSet = org.eclipse.collections.api.set.primitive.MutableLongSet;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using AppendOnlyValuesContainer = Neo4Net.Kernel.Impl.Api.state.AppendOnlyValuesContainer;
 	using ValuesContainer = Neo4Net.Kernel.Impl.Api.state.ValuesContainer;
 	using ValuesMap = Neo4Net.Kernel.Impl.Api.state.ValuesMap;

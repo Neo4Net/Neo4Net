@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.extension
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using DependenciesProxy = Neo4Net.Kernel.impl.util.DependenciesProxy;
@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.extension
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.stream;
+//	import static org.Neo4Net.helpers.collection.Iterables.stream;
 
-	public abstract class AbstractKernelExtensions : Neo4Net.Graphdb.DependencyResolver_Adapter, Lifecycle
+	public abstract class AbstractKernelExtensions : Neo4Net.GraphDb.DependencyResolver_Adapter, Lifecycle
 	{
 		 private readonly KernelContext _kernelContext;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.extension
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T> org.neo4j.kernel.lifecycle.Lifecycle newInstance(org.neo4j.kernel.impl.spi.KernelContext kernelContext, KernelExtensionFactory<T> factory, Object dependencies)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static <T> org.Neo4Net.kernel.lifecycle.Lifecycle newInstance(org.Neo4Net.kernel.impl.spi.KernelContext kernelContext, KernelExtensionFactory<T> factory, Object dependencies)
 		 private static Lifecycle NewInstance<T>( KernelContext kernelContext, KernelExtensionFactory<T> factory, object dependencies )
 		 {
 			  return factory.NewInstance( kernelContext, ( T )dependencies );

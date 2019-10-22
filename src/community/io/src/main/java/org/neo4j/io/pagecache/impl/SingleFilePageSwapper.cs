@@ -55,10 +55,10 @@ namespace Neo4Net.Io.pagecache.impl
 		 }
 
 		 // Exponent of 2 of how many channels we open per file:
-		 private static readonly int _globalChannelStripePower = Integer.getInteger( "org.neo4j.io.pagecache.implSingleFilePageSwapper.channelStripePower", DefaultChannelStripePower() );
+		 private static readonly int _globalChannelStripePower = Integer.getInteger( "org.Neo4Net.io.pagecache.implSingleFilePageSwapper.channelStripePower", DefaultChannelStripePower() );
 
 		 // Exponent of 2 of how many consecutive pages go to the same stripe
-		 private static readonly int _channelStripeShift = Integer.getInteger( "org.neo4j.io.pagecache.implSingleFilePageSwapper.channelStripeShift", 4 );
+		 private static readonly int _channelStripeShift = Integer.getInteger( "org.Neo4Net.io.pagecache.implSingleFilePageSwapper.channelStripeShift", 4 );
 
 		 private static readonly int _globalChannelStripeCount = 1 << _globalChannelStripePower;
 		 private static readonly int _globalChannelStripeMask = StripeMask( _globalChannelStripeCount );
@@ -143,7 +143,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 private volatile long _fileSize;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SingleFilePageSwapper(java.io.File file, org.neo4j.io.fs.FileSystemAbstraction fs, int filePageSize, org.neo4j.io.pagecache.PageEvictionCallback onEviction, boolean noChannelStriping) throws java.io.IOException
+//ORIGINAL LINE: public SingleFilePageSwapper(java.io.File file, org.Neo4Net.io.fs.FileSystemAbstraction fs, int filePageSize, org.Neo4Net.io.pagecache.PageEvictionCallback onEviction, boolean noChannelStriping) throws java.io.IOException
 		 public SingleFilePageSwapper( File file, FileSystemAbstraction fs, int filePageSize, PageEvictionCallback onEviction, bool noChannelStriping )
 		 {
 			  this._fs = fs;
@@ -241,7 +241,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int swapIn(org.neo4j.io.fs.StoreChannel channel, long bufferAddress, int bufferSize, long fileOffset, int filePageSize) throws java.io.IOException
+//ORIGINAL LINE: private int swapIn(org.Neo4Net.io.fs.StoreChannel channel, long bufferAddress, int bufferSize, long fileOffset, int filePageSize) throws java.io.IOException
 		 private int SwapIn( StoreChannel channel, long bufferAddress, int bufferSize, long fileOffset, int filePageSize )
 		 {
 			  int readTotal = 0;
@@ -271,7 +271,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int swapOut(long bufferAddress, long fileOffset, org.neo4j.io.fs.StoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private int swapOut(long bufferAddress, long fileOffset, org.Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
 		 private int SwapOut( long bufferAddress, long fileOffset, StoreChannel channel )
 		 {
 			  try

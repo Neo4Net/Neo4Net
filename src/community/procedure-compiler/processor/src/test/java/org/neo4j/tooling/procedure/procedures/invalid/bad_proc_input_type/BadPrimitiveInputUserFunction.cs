@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_proc_input_type
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Name = Neo4Net.Procedure.Name;
 	using UserFunction = Neo4Net.Procedure.UserFunction;
 
@@ -99,21 +99,21 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_proc_input_type
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String works10(@Name("test") org.neo4j.graphdb.Node supported)
+//ORIGINAL LINE: @UserFunction public String works10(@Name("test") org.Neo4Net.graphdb.Node supported)
 		 public virtual string Works10( Node supported )
 		 {
 			  return "42";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String works11(@Name("test") org.neo4j.graphdb.Relationship supported)
+//ORIGINAL LINE: @UserFunction public String works11(@Name("test") org.Neo4Net.graphdb.Relationship supported)
 		 public virtual string Works11( Relationship supported )
 		 {
 			  return "42";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction public String works12(@Name("test") org.neo4j.graphdb.Path supported)
+//ORIGINAL LINE: @UserFunction public String works12(@Name("test") org.Neo4Net.graphdb.Path supported)
 		 public virtual string Works12( Path supported )
 		 {
 			  return "42";

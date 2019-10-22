@@ -36,7 +36,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 
 
 	/// <summary>
-	/// Utility for reading and writing property values from/into a channel. Supports neo4j property types,
+	/// Utility for reading and writing property values from/into a channel. Supports Neo4Net property types,
 	/// including arrays.
 	/// </summary>
 	public abstract class ValueType

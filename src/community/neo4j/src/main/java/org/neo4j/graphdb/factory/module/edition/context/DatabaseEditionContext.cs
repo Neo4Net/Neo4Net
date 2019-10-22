@@ -17,10 +17,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.edition.context
+namespace Neo4Net.GraphDb.factory.module.edition.context
 {
 
-	using DatabaseIdContext = Neo4Net.Graphdb.factory.module.id.DatabaseIdContext;
+	using DatabaseIdContext = Neo4Net.GraphDb.factory.module.id.DatabaseIdContext;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;

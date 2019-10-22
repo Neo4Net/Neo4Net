@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 
 	internal class GenericNativeIndexReader : NativeIndexReader<GenericKey, NativeIndexValue>
 	{
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 						 else
 						 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> rangePredicate = (org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?>) predicate;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?>) predicate;
 							  IndexQuery.RangePredicate<object> rangePredicate = ( IndexQuery.RangePredicate<object> ) predicate;
 							  InitFromForRange( i, rangePredicate, treeKeyFrom );
 							  InitToForRange( i, rangePredicate, treeKeyTo );

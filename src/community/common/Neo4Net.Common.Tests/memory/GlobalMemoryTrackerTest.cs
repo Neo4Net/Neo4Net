@@ -18,37 +18,34 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Xunit;
+
 namespace Neo4Net.Memory
 {
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.junit.jupiter.api.Assertions.assertEquals;
-
-   internal class GlobalMemoryTrackerTest
+   public class GlobalMemoryTrackerTest
    {
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      [Fact] //ORIGINAL LINE: @Test void trackMemoryAllocations()
-      internal virtual void TrackMemoryAllocations()
+      [Fact]
+      public void TrackMemoryAllocations()
       {
-         long initialUsedMemory = GlobalMemoryTracker.Instance.usedDirectMemory();
-         GlobalMemoryTracker.Instance.allocated(10);
-         GlobalMemoryTracker.Instance.allocated(20);
-         GlobalMemoryTracker.Instance.allocated(40);
-         assertEquals(70, GlobalMemoryTracker.Instance.usedDirectMemory() - initialUsedMemory);
+         long initialUsedMemory = GlobalMemoryTracker.Instance.UsedDirectMemory();
+         GlobalMemoryTracker.Instance.Allocated(10);
+         GlobalMemoryTracker.Instance.Allocated(20);
+         GlobalMemoryTracker.Instance.Allocated(40);
+         Assert.Equal(70, GlobalMemoryTracker.Instance.UsedDirectMemory() - initialUsedMemory);
       }
 
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      [Fact] //ORIGINAL LINE: @Test void trackMemoryDeallocations()
-      internal virtual void TrackMemoryDeallocations()
+      [Fact]
+      public void TrackMemoryDeallocations()
       {
-         long initialUsedMemory = GlobalMemoryTracker.Instance.usedDirectMemory();
-         GlobalMemoryTracker.Instance.allocated(100);
-         assertEquals(100, GlobalMemoryTracker.Instance.usedDirectMemory() - initialUsedMemory);
+         long initialUsedMemory = GlobalMemoryTracker.Instance.UsedDirectMemory();
+         GlobalMemoryTracker.Instance.Allocated(100);
+         Assert.Equal(100, GlobalMemoryTracker.Instance.UsedDirectMemory() - initialUsedMemory);
 
-         GlobalMemoryTracker.Instance.deallocated(20);
-         assertEquals(80, GlobalMemoryTracker.Instance.usedDirectMemory() - initialUsedMemory);
+         GlobalMemoryTracker.Instance.Deallocated(20);
+         Assert.Equal(80, GlobalMemoryTracker.Instance.UsedDirectMemory() - initialUsedMemory);
 
-         GlobalMemoryTracker.Instance.deallocated(40);
-         assertEquals(40, GlobalMemoryTracker.Instance.usedDirectMemory() - initialUsedMemory);
+         GlobalMemoryTracker.Instance.Deallocated(40);
+         Assert.Equal(40, GlobalMemoryTracker.Instance.UsedDirectMemory() - initialUsedMemory);
       }
    }
 }

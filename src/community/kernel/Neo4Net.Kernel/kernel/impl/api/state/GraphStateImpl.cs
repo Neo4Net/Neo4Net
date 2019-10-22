@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
 	using GraphState = Neo4Net.Storageengine.Api.txstate.GraphState;
 
-	public class GraphStateImpl : PropertyContainerStateImpl, GraphState
+	public class GraphStateImpl : IPropertyContainerStateImpl, GraphState
 	{
 		 internal GraphStateImpl( CollectionsFactory collectionsFactory ) : base( -1, collectionsFactory )
 		 {

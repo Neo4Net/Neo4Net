@@ -22,9 +22,9 @@ namespace Neo4Net.Index.lucene
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using UnableToValidateConstraintException = Neo4Net.Kernel.Api.Exceptions.schema.UnableToValidateConstraintException;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -44,22 +44,22 @@ namespace Neo4Net.Index.lucene
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.INITIAL_STATE;
+//	import static org.Neo4Net.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.INITIAL_STATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.INITIAL_STATE_FAILURE_MESSAGE;
+//	import static org.Neo4Net.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.INITIAL_STATE_FAILURE_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
+//	import static org.Neo4Net.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
 
 	public class ConstraintIndexFailureIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -69,7 +69,7 @@ namespace Neo4Net.Index.lucene
 		 {
 			  // given a perfectly normal constraint
 			  File dir = Directory.databaseDir();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(dir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(dir);
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )

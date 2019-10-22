@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -34,11 +34,11 @@ namespace Neo4Net.causalclustering.scenarios
 	using CoreGraphDatabase = Neo4Net.causalclustering.core.CoreGraphDatabase;
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
-	using ClassicNeo4jStore = Neo4Net.causalclustering.helpers.ClassicNeo4jStore;
+	using ClassicNeo4NetStore = Neo4Net.causalclustering.helpers.ClassicNeo4NetStore;
 	using Neo4Net.Functions;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HighLimit = Neo4Net.Kernel.impl.store.format.highlimit.HighLimit;
@@ -52,20 +52,20 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.raft_advertised_address;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.raft_advertised_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class ConvertNonCausalClusteringStoreIT
 	public class ConvertNonCausalClusteringStoreIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -88,17 +88,17 @@ namespace Neo4Net.causalclustering.scenarios
 			  TestDirectory testDirectory = ClusterRule.testDirectory();
 			  File dbDir = testDirectory.CleanDirectory( "classic-db-" + RecordFormat );
 			  int classicNodeCount = 1024;
-			  File classicNeo4jStore = CreateNeoStore( dbDir, classicNodeCount );
+			  File classicNeo4NetStore = CreateNeoStore( dbDir, classicNodeCount );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = this.clusterRule.withRecordFormat(recordFormat).createCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = this.clusterRule.withRecordFormat(recordFormat).createCluster();
 			  Cluster<object> cluster = this.ClusterRule.withRecordFormat( RecordFormat ).createCluster();
 
 			  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction() )
 			  {
 					foreach ( CoreClusterMember core in cluster.CoreMembers() )
 					{
-						 ( new RestoreDatabaseCommand( fileSystem, classicNeo4jStore, core.Config(), core.SettingValue(GraphDatabaseSettings.active_database.name()), true ) ).execute();
+						 ( new RestoreDatabaseCommand( fileSystem, classicNeo4NetStore, core.Config(), core.SettingValue(GraphDatabaseSettings.active_database.name()), true ) ).execute();
 					}
 			  }
 
@@ -140,7 +140,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction() )
 			  {
-					return ClassicNeo4jStore.builder( dbDir, fileSystem ).amountOfNodes( classicNodeCount ).recordFormats( RecordFormat ).build().StoreDir;
+					return ClassicNeo4NetStore.builder( dbDir, fileSystem ).amountOfNodes( classicNodeCount ).recordFormats( RecordFormat ).build().StoreDir;
 			  }
 		 }
 	}

@@ -22,14 +22,14 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.Helpers.Collections;
 	using TransactionStateChecker = Neo4Net.Server.rest.transactional.TransactionStateChecker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
-	public sealed class RelationshipRepresentation : ObjectRepresentation, ExtensibleRepresentation, EntityRepresentation
+	public sealed class RelationshipRepresentation : ObjectRepresentation, ExtensibleRepresentation, IEntityRepresentation
 	{
 		 private readonly Relationship _rel;
 		 private TransactionStateChecker _checker;

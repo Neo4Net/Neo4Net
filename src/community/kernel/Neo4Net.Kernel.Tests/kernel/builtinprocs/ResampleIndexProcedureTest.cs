@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException, org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException, org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexDoesNotExist() throws org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldThrowAnExceptionIfTheIndexDoesNotExist() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowAnExceptionIfTheIndexDoesNotExist()
 
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.neo4j.internal.kernel.api.exceptions.ProcedureException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTriggerResampling()
 		 {

@@ -23,19 +23,19 @@ namespace Neo4Net.Server.exception
 {
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using UpgradeNotAllowedByConfigurationException = Neo4Net.Kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException;
 	using LifecycleException = Neo4Net.Kernel.Lifecycle.LifecycleException;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.lifecycle.LifecycleStatus.STARTED;
+//	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STARTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.lifecycle.LifecycleStatus.STARTING;
+//	import static org.Neo4Net.kernel.lifecycle.LifecycleStatus.STARTING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public class ServerStartupErrorsTest
 	{
@@ -45,13 +45,13 @@ namespace Neo4Net.Server.exception
 		 {
 			  // given
 			  AssertableLogProvider logging = new AssertableLogProvider();
-			  LifecycleException error = new LifecycleException( new object(), STARTING, STARTED, new Exception("Error starting org.neo4j.kernel.ha.factory.EnterpriseFacadeFactory", new LifecycleException(new object(), STARTING, STARTED, new LifecycleException(new object(), STARTING, STARTED, new UpgradeNotAllowedByConfigurationException()))) );
+			  LifecycleException error = new LifecycleException( new object(), STARTING, STARTED, new Exception("Error starting org.Neo4Net.kernel.ha.factory.EnterpriseFacadeFactory", new LifecycleException(new object(), STARTING, STARTED, new LifecycleException(new object(), STARTING, STARTED, new UpgradeNotAllowedByConfigurationException()))) );
 
 			  // when
 			  translateToServerStartupError( error ).describeTo( logging.GetLog( "console" ) );
 
 			  // then
-			  logging.AssertExactly( inLog( "console" ).error( "Neo4j cannot be started because the database files require upgrading and upgrades are disabled " + "in the configuration. Please set '" + GraphDatabaseSettings.allow_upgrade.name() + "' to 'true' " + "in your configuration file and try again." ) );
+			  logging.AssertExactly( inLog( "console" ).error( "Neo4Net cannot be started because the database files require upgrading and upgrades are disabled " + "in the configuration. Please set '" + GraphDatabaseSettings.allow_upgrade.name() + "' to 'true' " + "in your configuration file and try again." ) );
 		 }
 	}
 

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -65,17 +65,17 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.not;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.RoleInfo.FOLLOWER;
+//	import static org.Neo4Net.causalclustering.discovery.RoleInfo.FOLLOWER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.RoleInfo.LEADER;
+//	import static org.Neo4Net.causalclustering.discovery.RoleInfo.LEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.RoleInfo.READ_REPLICA;
+//	import static org.Neo4Net.causalclustering.discovery.RoleInfo.READ_REPLICA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class BaseClusterOverviewIT
@@ -83,7 +83,7 @@ namespace Neo4Net.causalclustering.scenarios
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.middleware_logging_level, "0");
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedCoreParam(CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedReadReplicaParam(CausalClusteringSettings.cluster_topology_refresh, "5s").withSharedCoreParam(CausalClusteringSettings.disable_middleware_logging, "false").withSharedReadReplicaParam(CausalClusteringSettings.disable_middleware_logging, "false").withSharedCoreParam(CausalClusteringSettings.middleware_logging_level, "0").withSharedReadReplicaParam(CausalClusteringSettings.middleware_logging_level, "0");
 
 		 protected internal BaseClusterOverviewIT( DiscoveryServiceType discoveryServiceType )
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  Matcher<IList<MemberInfo>> expected = allOf( ContainsMemberAddresses( cluster.CoreMembers() ), ContainsRole(LEADER, 1), ContainsRole(FOLLOWER, coreMembers - 1), DoesNotContainRole(READ_REPLICA) );
@@ -125,7 +125,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  Matcher<IList<MemberInfo>> expected = allOf( ContainsAllMemberAddresses( cluster.CoreMembers(), cluster.ReadReplicas() ), ContainsRole(LEADER, 1), ContainsRole(FOLLOWER, 2), ContainsRole(READ_REPLICA, replicaCount) );
@@ -147,7 +147,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  cluster.ShutdownCoreMembers();
 			  cluster.StartCoreMembers();
@@ -169,7 +169,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfReadReplicas( 0 );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  // when
@@ -195,7 +195,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfReadReplicas( initialReadReplicas );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  // when
@@ -220,7 +220,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfReadReplicas( initialReadReplicas );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  AssertAllEventualOverviews( cluster, ContainsRole( READ_REPLICA, initialReadReplicas ) );
@@ -244,7 +244,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfReadReplicas( 0 );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 
 			  AssertAllEventualOverviews( cluster, allOf( ContainsRole( LEADER, 1 ), ContainsRole( FOLLOWER, coreMembers - 1 ) ) );
@@ -266,7 +266,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfReadReplicas( 0 );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  IList<CoreClusterMember> followers = cluster.GetAllMembersWithRole( Role.FOLLOWER );
 			  CoreClusterMember leader = cluster.GetMemberWithRole( Role.LEADER );
@@ -284,7 +284,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ClusterRule.withNumberOfCoreMembers( originalCoreMembers ).withNumberOfReadReplicas( 0 );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  CoreClusterMember leader = cluster.AwaitLeader();
 			  leader.Config().augment(CausalClusteringSettings.refuse_to_be_leader, Settings.TRUE);
@@ -298,14 +298,14 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAllEventualOverviews(org.neo4j.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected) throws org.neo4j.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
 		 private void AssertAllEventualOverviews<T1>( Cluster<T1> cluster, Matcher<IList<MemberInfo>> expected )
 		 {
 			  AssertAllEventualOverviews( cluster, expected, Collections.emptySet(), Collections.emptySet() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAllEventualOverviews(org.neo4j.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, java.util.Set<int> excludedCores, java.util.Set<int> excludedRRs) throws org.neo4j.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, java.util.Set<int> excludedCores, java.util.Set<int> excludedRRs) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
 		 private void AssertAllEventualOverviews<T1>( Cluster<T1> cluster, Matcher<IList<MemberInfo>> expected, ISet<int> excludedCores, ISet<int> excludedRRs )
 		 {
 			  foreach ( CoreClusterMember core in cluster.CoreMembers() )
@@ -327,7 +327,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertEventualOverview(org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, org.neo4j.causalclustering.discovery.ClusterMember<? extends org.neo4j.kernel.impl.factory.GraphDatabaseFacade> member, String role) throws org.neo4j.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertEventualOverview(org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, org.Neo4Net.causalclustering.discovery.ClusterMember<? extends org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade> member, String role) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
 		 private void AssertEventualOverview<T1>( Matcher<IList<MemberInfo>> expected, ClusterMember<T1> member, string role ) where T1 : Neo4Net.Kernel.impl.factory.GraphDatabaseFacade
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -339,7 +339,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final org.hamcrest.Matcher<Iterable<? extends MemberInfo>> containsAllMemberAddresses(java.util.Collection<? extends org.neo4j.causalclustering.discovery.ClusterMember>... members)
+//ORIGINAL LINE: @SafeVarargs private final org.hamcrest.Matcher<Iterable<? extends MemberInfo>> containsAllMemberAddresses(java.util.Collection<? extends org.Neo4Net.causalclustering.discovery.ClusterMember>... members)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Matcher<IEnumerable<MemberInfo>> ContainsAllMemberAddresses( params ICollection<ClusterMember>[] members )
 		 {
@@ -347,7 +347,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.hamcrest.Matcher<Iterable<? extends MemberInfo>> containsMemberAddresses(java.util.Collection<? extends org.neo4j.causalclustering.discovery.ClusterMember> members)
+//ORIGINAL LINE: private org.hamcrest.Matcher<Iterable<? extends MemberInfo>> containsMemberAddresses(java.util.Collection<? extends org.Neo4Net.causalclustering.discovery.ClusterMember> members)
 		 private Matcher<IEnumerable<MemberInfo>> ContainsMemberAddresses<T1>( ICollection<T1> members ) where T1 : Neo4Net.causalclustering.discovery.ClusterMember
 		 {
 			  return containsInAnyOrder( members.Select( coreClusterMember => new TypeSafeMatcherAnonymousInnerClass( this ) ).ToList() );
@@ -410,7 +410,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<MemberInfo> clusterOverview(org.neo4j.kernel.impl.factory.GraphDatabaseFacade db) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<MemberInfo> clusterOverview(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<MemberInfo> ClusterOverview( GraphDatabaseFacade db )
 		 {

@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Test = org.junit.Test;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class RecordStorageReaderSchemaTest : RecordStorageReaderTestBase
 	{

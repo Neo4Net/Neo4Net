@@ -26,7 +26,7 @@ namespace Neo4Net.Udc
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKey.key;
+//	import static org.Neo4Net.udc.UsageDataKey.key;
 
 	/// <summary>
 	/// Inventory of common keys. This list is not exhaustive, and all items listed may not be available.
@@ -36,28 +36,28 @@ namespace Neo4Net.Udc
 	public class UsageDataKeys
 	{
 		 /// <summary>
-		 /// Edition of Neo4j running, eg 'community' or 'enterprise' </summary>
-		 public static readonly UsageDataKey<Edition> Edition = key( "neo4j.edition", Edition.unknown );
+		 /// Edition of Neo4Net running, eg 'community' or 'enterprise' </summary>
+		 public static readonly UsageDataKey<Edition> Edition = key( "Neo4Net.edition", Edition.unknown );
 
 		 /// <summary>
-		 /// Version of Neo4j running, eg. 1.2.3-RC1 </summary>
-		 public static readonly UsageDataKey<string> Version = key( "neo4j.version", "N/A" );
+		 /// Version of Neo4Net running, eg. 1.2.3-RC1 </summary>
+		 public static readonly UsageDataKey<string> Version = key( "Neo4Net.version", "N/A" );
 
 		 /// <summary>
-		 /// Revision of Neo4j running, a link back to source control revision ids. </summary>
-		 public static readonly UsageDataKey<string> Revision = key( "neo4j.revision", "N/A" );
+		 /// Revision of Neo4Net running, a link back to source control revision ids. </summary>
+		 public static readonly UsageDataKey<string> Revision = key( "Neo4Net.revision", "N/A" );
 
 		 /// <summary>
 		 /// Operational mode of the database </summary>
-		 public static readonly UsageDataKey<OperationalMode> OperationalMode = key( "neo4j.opMode", OperationalMode.unknown );
+		 public static readonly UsageDataKey<OperationalMode> OperationalMode = key( "Neo4Net.opMode", OperationalMode.unknown );
 
 		 /// <summary>
 		 /// Self-reported names of clients connecting to us. </summary>
-		 public static readonly UsageDataKey<RecentK<string>> ClientNames = key( "neo4j.clientNames", () => new RecentK<RecentK<string>>(10) );
+		 public static readonly UsageDataKey<RecentK<string>> ClientNames = key( "Neo4Net.clientNames", () => new RecentK<RecentK<string>>(10) );
 
 		 /// <summary>
 		 /// Cluster server ID </summary>
-		 public static readonly UsageDataKey<string> ServerId = key( "neo4j.serverId" );
+		 public static readonly UsageDataKey<string> ServerId = key( "Neo4Net.serverId" );
 
 		 /// <summary>
 		 /// Tracks features in use, including decay such that features that are not
@@ -66,7 +66,7 @@ namespace Neo4Net.Udc
 		 /// Decay is handled by an external mechanism invoking a 'sweep' method on this
 		 /// DecayingFlags instance. See usages of this field to find where that happens.
 		 /// </summary>
-		 public static readonly UsageDataKey<DecayingFlags> Features = key( "neo4j.features", () => new DecayingFlags(7) );
+		 public static readonly UsageDataKey<DecayingFlags> Features = key( "Neo4Net.features", () => new DecayingFlags(7) );
 
 		 public interface Features
 		 {

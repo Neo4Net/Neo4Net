@@ -22,7 +22,7 @@
 namespace Neo4Net.Test.limited
 {
 
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -38,7 +38,7 @@ namespace Neo4Net.Test.limited
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 		 public override StoreChannel Open( File fileName, OpenMode openMode )
 		 {
 			  return new LimitedFileChannel( base.Open( fileName, openMode ), this );
@@ -73,7 +73,7 @@ namespace Neo4Net.Test.limited
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
 		 public override StoreChannel Create( File fileName )
 		 {
 			  EnsureHasSpace();

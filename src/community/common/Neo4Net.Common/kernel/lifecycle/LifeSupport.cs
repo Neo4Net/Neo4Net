@@ -102,8 +102,6 @@ namespace Neo4Net.Kernel.Lifecycle
       /// </para>
       /// </summary>
       /// <exception cref="LifecycleException"> </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public synchronized void start() throws LifecycleException
       public void Start()
       {
          lock (this)
@@ -147,8 +145,7 @@ namespace Neo4Net.Kernel.Lifecycle
       /// so that the overall status is STOPPED.
       /// </para>
       /// </summary>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public synchronized void stop() throws LifecycleException
+
       public void Stop()
       {
          lock (this)
@@ -174,8 +171,7 @@ namespace Neo4Net.Kernel.Lifecycle
       /// so that the overall status is SHUTDOWN.
       /// </para>
       /// </summary>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public synchronized void shutdown() throws LifecycleException
+
       public void Shutdown()
       {
          lock (this)
@@ -224,8 +220,7 @@ namespace Neo4Net.Kernel.Lifecycle
       /// @param <T> type of the instance </param>
       /// <returns> the instance itself </returns>
       /// <exception cref="LifecycleException"> if the instance could not be transitioned properly </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public synchronized <T extends Lifecycle> T add(T instance) throws LifecycleException
+
       public virtual T Add<T>(T instance) where T : ILifecycle
       {
          lock (this)
@@ -350,8 +345,7 @@ namespace Neo4Net.Kernel.Lifecycle
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: private void bringToState(LifecycleInstance instance) throws LifecycleException
+
       private void BringToState(LifecycleInstance instance)
       {
          switch (_status)

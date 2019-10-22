@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  * ******************************************
- * Portions Copyright (c) 2002-2019 "Neo4j,"
- * Neo4j Sweden AB [http://neo4j.com]
+ * Portions Copyright (c) 2002-2019 "Neo4Net,"
+ * Neo4Net Sweden AB [http://Neo4Net.com]
  * ******************************************
  */
 

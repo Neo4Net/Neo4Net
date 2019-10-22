@@ -23,7 +23,7 @@ namespace Neo4Net.Test.extension
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertNotNull;

@@ -23,10 +23,10 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Batchinsert
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 
 	/// <summary>
 	/// The <seealso cref="BatchInserter"/> version of <seealso cref="Index"/>. Additions/updates to a
@@ -45,11 +45,11 @@ namespace Neo4Net.@unsafe.Batchinsert
 	public interface BatchInserterIndex
 	{
 		 /// <summary>
-		 /// Adds key/value pairs for {@code entity} to the index. If there's a
-		 /// previous index for {@code entity} it will co-exist with this new one.
+		 /// Adds key/value pairs for {@code IEntity} to the index. If there's a
+		 /// previous index for {@code IEntity} it will co-exist with this new one.
 		 /// This behavior is because of performance reasons, to not being forced to
-		 /// check if indexing for {@code entity} already exists or not. If you need
-		 /// to update indexing for {@code entity} and it's ok with a slower indexing
+		 /// check if indexing for {@code IEntity} already exists or not. If you need
+		 /// to update indexing for {@code IEntity} and it's ok with a slower indexing
 		 /// process use <seealso cref="updateOrAdd(long, System.Collections.IDictionary)"/> instead.
 		 /// 
 		 /// Entries added to the index aren't necessarily written to the index and to
@@ -59,19 +59,19 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 /// <seealso cref="query(string, object)"/> and <seealso cref="query(object)"/> until a call to
 		 /// <seealso cref="flush()"/> has been made.
 		 /// </summary>
-		 /// <param name="entityId"> the entity (i.e id of <seealso cref="Node"/> or
+		 /// <param name="entityId"> the IEntity (i.e id of <seealso cref="Node"/> or
 		 ///            <seealso cref="Relationship"/>) to associate the key/value pairs with. </param>
-		 /// <param name="properties"> key/value pairs to index for {@code entity}. </param>
+		 /// <param name="properties"> key/value pairs to index for {@code IEntity}. </param>
 		 [Obsolete]
-		 void Add( long entityId, IDictionary<string, object> properties );
+		 void Add( long IEntityId, IDictionary<string, object> properties );
 
 		 /// <summary>
-		 /// Adds key/value pairs for {@code entity} to the index. If there's any
-		 /// previous index for {@code entity} all such indexed key/value pairs will
+		 /// Adds key/value pairs for {@code IEntity} to the index. If there's any
+		 /// previous index for {@code IEntity} all such indexed key/value pairs will
 		 /// be deleted first. This method can be considerably slower than
 		 /// <seealso cref="add(long, System.Collections.IDictionary)"/> because it must check if there are properties
-		 /// already indexed for {@code entity}. So if you know that there's no
-		 /// previous indexing for {@code entity} use <seealso cref="add(long, System.Collections.IDictionary)"/> instead.
+		 /// already indexed for {@code IEntity}. So if you know that there's no
+		 /// previous indexing for {@code IEntity} use <seealso cref="add(long, System.Collections.IDictionary)"/> instead.
 		 /// 
 		 /// Entries added to the index aren't necessarily written to the index and to
 		 /// disk until <seealso cref="BatchInserterIndexProvider.shutdown()"/> has been called.
@@ -81,11 +81,11 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 /// <seealso cref="flush()"/> has been made. So only entries added before the most
 		 /// recent <seealso cref="flush()"/> are guaranteed to be found by this method.
 		 /// </summary>
-		 /// <param name="entityId"> the entity (i.e id of <seealso cref="Node"/> or
+		 /// <param name="entityId"> the IEntity (i.e id of <seealso cref="Node"/> or
 		 ///            <seealso cref="Relationship"/>) to associate the key/value pairs with. </param>
-		 /// <param name="properties"> key/value pairs to index for {@code entity}. </param>
+		 /// <param name="properties"> key/value pairs to index for {@code IEntity}. </param>
 		 [Obsolete]
-		 void UpdateOrAdd( long entityId, IDictionary<string, object> properties );
+		 void UpdateOrAdd( long IEntityId, IDictionary<string, object> properties );
 
 		 /// <summary>
 		 /// Returns exact matches from this index, given the key/value pair. Matches

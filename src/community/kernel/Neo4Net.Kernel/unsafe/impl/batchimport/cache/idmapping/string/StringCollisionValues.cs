@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 
 	/// <summary>
 	/// Stores <seealso cref="string strings"/> in a <seealso cref="ByteArray"/> provided by <seealso cref="NumberArrayFactory"/>. Each string can have different

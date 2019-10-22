@@ -30,7 +30,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToMap;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 
 	public class GetIndexRootIT : AbstractRestFunctionalTestBase
 	{
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertResponseContainsNoIndexesOtherThanAutoIndexes(JaxRsResponse response) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void assertResponseContainsNoIndexesOtherThanAutoIndexes(JaxRsResponse response) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private void AssertResponseContainsNoIndexesOtherThanAutoIndexes( JaxRsResponse response )
 		 {
 			  switch ( response.Status )

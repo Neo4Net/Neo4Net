@@ -28,7 +28,7 @@ namespace Neo4Net.Consistency.checking.labelscan
 	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 	public class LabelScanCheck : RecordCheck<LabelScanDocument, Neo4Net.Consistency.report.ConsistencyReport_LabelScanConsistencyReport>
 	{
@@ -39,7 +39,7 @@ namespace Neo4Net.Consistency.checking.labelscan
 			  {
 					long[] labels = record.NodeLabelRange.labels( nodeId );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: engine.comparativeCheck(records.node(nodeId), new org.neo4j.consistency.checking.full.NodeInUseWithCorrectLabelsCheck<>(labels, COMPLETE_ALL_TOKENS, true));
+//ORIGINAL LINE: engine.comparativeCheck(records.node(nodeId), new org.Neo4Net.consistency.checking.full.NodeInUseWithCorrectLabelsCheck<>(labels, COMPLETE_ALL_TOKENS, true));
 					engine.ComparativeCheck( records.Node( nodeId ), new NodeInUseWithCorrectLabelsCheck<RECORD, ?, REPORT>( labels, COMPLETE_ALL_TOKENS, true ) );
 			  }
 		 }

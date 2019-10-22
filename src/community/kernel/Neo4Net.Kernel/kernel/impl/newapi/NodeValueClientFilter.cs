@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// This class filters acceptNode() calls from an index progressor, to assert that exact entries returned from the
-	/// progressor really match the exact property values. See also org.neo4j.kernel.impl.api.LookupFilter.
+	/// progressor really match the exact property values. See also org.Neo4Net.kernel.impl.api.LookupFilter.
 	/// <para>
 	/// It works by acting as a man-in-the-middle between outer <seealso cref="NodeValueClient client"/> and inner <seealso cref="IndexProgressor"/>.
 	/// Interaction goes like:

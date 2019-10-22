@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.api.labelscan
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 
 	/// <summary>
 	/// Logs about important events about <seealso cref="LabelScanStore"/> <seealso cref="Monitor"/>.

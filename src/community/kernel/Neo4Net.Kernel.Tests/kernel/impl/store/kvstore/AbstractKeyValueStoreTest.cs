@@ -63,9 +63,9 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.kvstore.DataProvider.EMPTY_DATA_PROVIDER;
+//	import static org.Neo4Net.kernel.impl.store.kvstore.DataProvider.EMPTY_DATA_PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.Resources.InitialLifecycle.STARTED;
+//	import static org.Neo4Net.test.rule.Resources.InitialLifecycle.STARTED;
 
 	public class AbstractKeyValueStoreTest
 	{
@@ -650,7 +650,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ProgressiveState<String> stateWithLookup(org.neo4j.function.ThrowingSupplier<bool, java.io.IOException> valueSupplier) throws java.io.IOException
+//ORIGINAL LINE: private ProgressiveState<String> stateWithLookup(org.Neo4Net.function.ThrowingSupplier<bool, java.io.IOException> valueSupplier) throws java.io.IOException
 		 private ProgressiveState<string> StateWithLookup( ThrowingSupplier<bool, IOException> valueSupplier )
 		 {
 			  ProgressiveState<string> state = mock( typeof( ProgressiveState ) );

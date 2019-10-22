@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.impl.core
 	using IntHashSet = org.eclipse.collections.impl.set.mutable.primitive.IntHashSet;
 
 
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ReadOnlyDbException = Neo4Net.Kernel.Api.Exceptions.ReadOnlyDbException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.ALWAYS_TRUE_INT;
+//	import static org.Neo4Net.function.Predicates.ALWAYS_TRUE_INT;
 
 	/// <summary>
 	/// Keeps a registry of tokens using <seealso cref="TokenRegistry"/>.
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.core
 		 /// <returns> newly created token id </returns>
 		 /// <exception cref="KernelException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected synchronized int createToken(String name) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: protected synchronized int createToken(String name) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 protected internal override int CreateToken( string name )
 		 {
 			 lock ( this )

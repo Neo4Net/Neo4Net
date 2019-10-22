@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,14 +15,14 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
@@ -36,9 +36,9 @@ namespace Neo4Net.Graphdb.factory
 //	import static Arrays.asList;
 
 	/// <summary>
-	/// Factory for Neo4j database instances with Enterprise Edition and High-Availability features.
+	/// Factory for Neo4Net database instances with Enterprise Edition and High-Availability features.
 	/// </summary>
-	/// <seealso cref= org.neo4j.graphdb.factory.GraphDatabaseFactory </seealso>
+	/// <seealso cref= org.Neo4Net.graphdb.factory.GraphDatabaseFactory </seealso>
 	/// @deprecated high availability database/edition is deprecated in favour of causal clustering. It will be removed in next major release. 
 	[Obsolete("high availability database/edition is deprecated in favour of causal clustering. It will be removed in next major release.")]
 	public class HighlyAvailableGraphDatabaseFactory : GraphDatabaseFactory
@@ -66,16 +66,16 @@ namespace Neo4Net.Graphdb.factory
 			 private readonly HighlyAvailableGraphDatabaseFactory _outerInstance;
 
 			 private File _storeDir;
-			 private Neo4Net.Graphdb.factory.GraphDatabaseFactoryState _state;
+			 private Neo4Net.GraphDb.factory.GraphDatabaseFactoryState _state;
 
-			 public DatabaseCreatorAnonymousInnerClass( HighlyAvailableGraphDatabaseFactory outerInstance, File storeDir, Neo4Net.Graphdb.factory.GraphDatabaseFactoryState state )
+			 public DatabaseCreatorAnonymousInnerClass( HighlyAvailableGraphDatabaseFactory outerInstance, File storeDir, Neo4Net.GraphDb.factory.GraphDatabaseFactoryState state )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._storeDir = storeDir;
 				 this._state = state;
 			 }
 
-			 public GraphDatabaseService newDatabase( Config config )
+			 public IGraphDatabaseService newDatabase( Config config )
 			 {
 				  File absoluteStoreDir = _storeDir.AbsoluteFile;
 				  File databasesRoot = absoluteStoreDir.ParentFile;

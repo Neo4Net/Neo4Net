@@ -26,8 +26,8 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 
 
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
@@ -44,31 +44,31 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTestSupport.assertCounts;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTestSupport.assertCounts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTestSupport.computeKey;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTestSupport.computeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTestSupport.count;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTestSupport.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTestSupport.sparse;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTestSupport.sparse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.IN;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.IN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.LOOP;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.OUT;
+//	import static org.Neo4Net.Internal.kernel.api.RelationshipTransactionStateTestBase.RelationshipDirection.OUT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class RelationshipTransactionStateTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -460,7 +460,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( propKey ), equalTo( "hello" ) );
 			  }
@@ -521,7 +521,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					Relationship relationship = graphDb.getRelationshipById( relationshipId );
 					assertThat( relationship.getProperty( propKey1 ), equalTo( "hello" ) );
@@ -569,7 +569,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( propKey ), equalTo( "world" ) );
 			  }
@@ -610,7 +610,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getRelationshipById( relationshipId ).hasProperty( propKey ) );
 			  }
@@ -656,7 +656,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( propKey ), equalTo( "world" ) );
 			  }
@@ -1261,7 +1261,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String,int> modifyStartNodeRelationships(RelationshipTestSupport.StartNode start, Transaction tx) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.Map<String,int> modifyStartNodeRelationships(RelationshipTestSupport.StartNode start, Transaction tx) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private IDictionary<string, int> ModifyStartNodeRelationships( RelationshipTestSupport.StartNode start, Transaction tx )
 		 {
 			  IDictionary<string, int> expectedCounts = new Dictionary<string, int>();
@@ -1272,15 +1272,15 @@ namespace Neo4Net.Internal.Kernel.Api
 					int type = tx.Token().relationshipType(head.Type.name());
 					switch ( head.Direction.innerEnumValue )
 					{
-					case Neo4Net.Graphdb.Direction.InnerEnum.INCOMING:
+					case Neo4Net.GraphDb.Direction.InnerEnum.INCOMING:
 						 tx.DataWrite().relationshipCreate(tx.DataWrite().nodeCreate(), type, start.Id);
 						 tx.DataWrite().relationshipCreate(tx.DataWrite().nodeCreate(), type, start.Id);
 						 break;
-					case Neo4Net.Graphdb.Direction.InnerEnum.OUTGOING:
+					case Neo4Net.GraphDb.Direction.InnerEnum.OUTGOING:
 						 tx.DataWrite().relationshipCreate(start.Id, type, tx.DataWrite().nodeCreate());
 						 tx.DataWrite().relationshipCreate(start.Id, type, tx.DataWrite().nodeCreate());
 						 break;
-					case Neo4Net.Graphdb.Direction.InnerEnum.BOTH:
+					case Neo4Net.GraphDb.Direction.InnerEnum.BOTH:
 						 tx.DataWrite().relationshipCreate(start.Id, type, start.Id);
 						 tx.DataWrite().relationshipCreate(start.Id, type, start.Id);
 						 break;
@@ -1438,7 +1438,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void relateNTimes(int nRelationshipsInStore, int type, long n1, long n2, Transaction tx) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void relateNTimes(int nRelationshipsInStore, int type, long n1, long n2, Transaction tx) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void RelateNTimes( int nRelationshipsInStore, int type, long n1, long n2, Transaction tx )
 		 {
 			  for ( int i = 0; i < nRelationshipsInStore; i++ )
@@ -1502,7 +1502,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createRelationship(RelationshipDirection direction, long start, int type, Write write) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void createRelationship(RelationshipDirection direction, long start, int type, Write write) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private void CreateRelationship( RelationshipDirection direction, long start, int type, Write write )
 		 {
 			  switch ( direction )

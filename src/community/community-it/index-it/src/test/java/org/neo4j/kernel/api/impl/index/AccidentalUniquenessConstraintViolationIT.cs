@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.array;
+//	import static org.Neo4Net.helpers.ArrayUtil.array;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class AccidentalUniquenessConstraintViolationIT
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 public object Value2;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

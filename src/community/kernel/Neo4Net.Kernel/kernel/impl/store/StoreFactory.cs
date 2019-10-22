@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.store
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
+//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
 
 	/// <summary>
 	/// Factory for Store implementations. Can also be used to create empty stores.

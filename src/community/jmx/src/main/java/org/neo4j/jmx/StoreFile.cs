@@ -21,14 +21,14 @@
  */
 namespace Neo4Net.Jmx
 {
-	[ManagementInterface(name : StoreFile_Fields.NAME), Description("This bean is deprecated, use StoreSize bean instead; " + "Information about the sizes of the different parts of the Neo4j graph store"), Obsolete]
+	[ManagementInterface(name : StoreFile_Fields.NAME), Description("This bean is deprecated, use StoreSize bean instead; " + "Information about the sizes of the different parts of the Neo4Net graph store"), Obsolete]
 	public interface StoreFile
 	{
 
-		 [Description("The amount of disk space used by the current Neo4j logical log, in bytes.")]
+		 [Description("The amount of disk space used by the current Neo4Net logical log, in bytes.")]
 		 long LogicalLogSize { get; }
 
-		 [Description("The total disk space used by this Neo4j instance, in bytes.")]
+		 [Description("The total disk space used by this Neo4Net instance, in bytes.")]
 		 long TotalStoreSize { get; }
 
 		 [Description("The amount of disk space used to store nodes, in bytes.")]

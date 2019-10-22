@@ -25,13 +25,13 @@ namespace Neo4Net.Cypher.Internal.javacompat
 {
 
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -156,8 +156,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.neo4j.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
-		 public override void Accept<VisitationException>( Neo4Net.Graphdb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
+//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
+		 public override void Accept<VisitationException>( Neo4Net.GraphDb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
 		 {
 			  try
 			  {
@@ -242,7 +242,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void accept(org.neo4j.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void accept(org.Neo4Net.cypher.result.QueryResult_QueryResultVisitor<E> visitor) throws E
 			  public override void Accept<E>( Neo4Net.Cypher.result.QueryResult_QueryResultVisitor<E> visitor ) where E : Exception
 			  {
 					while ( outerInstance.HasNext() )

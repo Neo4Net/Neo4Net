@@ -59,15 +59,15 @@ namespace Neo4Net.Test.extension
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.platform.engine.discovery.DiscoverySelectors.selectMethod;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.DirectoryExtensionLifecycleVerificationTest.ConfigurationParameterCondition.TEST_TOGGLE;
+//	import static org.Neo4Net.test.extension.DirectoryExtensionLifecycleVerificationTest.ConfigurationParameterCondition.TEST_TOGGLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.CONTEXT;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.FAILED_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.FAILED_TEST_FILE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.LOCKED_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.LOCKED_TEST_FILE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.SUCCESSFUL_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.SUCCESSFUL_TEST_FILE_KEY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({DefaultFileSystemExtension.class, TestDirectoryExtension.class}) class TestDirectoryExtensionTest

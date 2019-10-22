@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.pagecache
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;

@@ -21,12 +21,12 @@ namespace Neo4Net.Kernel.impl.traversal
 {
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Evaluator = Neo4Net.Graphdb.traversal.Evaluator;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 	public class TestTraversalWithLoops : TraversalTestBase
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					Node a = GetNodeWithName( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node e = getNodeWithName("e");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node e = getNodeWithName("e");
 					Node e = GetNodeWithName( "e" );
 					Evaluator onlyEndNode = path => Evaluation.ofIncludes( path.endNode().Equals(e) );
 					TraversalDescription basicTraverser = GraphDb.traversalDescription().evaluator(onlyEndNode);

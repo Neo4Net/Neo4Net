@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.recovery
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;
 	using TransactionCursor = Neo4Net.Kernel.impl.transaction.log.TransactionCursor;
@@ -33,13 +33,13 @@ namespace Neo4Net.Kernel.recovery
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.RECOVERY;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.REVERSE_RECOVERY;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.REVERSE_RECOVERY;
 
 	/// <summary>
 	/// This is the process of doing a recovery on the transaction log and store, and is executed
-	/// at startup of <seealso cref="org.neo4j.kernel.NeoStoreDataSource"/>.
+	/// at startup of <seealso cref="org.Neo4Net.kernel.NeoStoreDataSource"/>.
 	/// </summary>
 	public class Recovery : LifecycleAdapter
 	{

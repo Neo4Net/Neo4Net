@@ -18,8 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /// <summary>
-/// Scalable graph algorithms like shortest path and others for Neo4j which
-/// can be easily accessed via <seealso cref="org.neo4j.graphalgo.GraphAlgoFactory"/>.
+/// Scalable graph algorithms like shortest path and others for Neo4Net which
+/// can be easily accessed via <seealso cref="org.Neo4Net.graphalgo.GraphAlgoFactory"/>.
 /// </summary>
 namespace Neo4Net.Graphalgo
 {

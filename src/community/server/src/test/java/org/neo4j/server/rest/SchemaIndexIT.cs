@@ -25,12 +25,12 @@ namespace Neo4Net.Server.rest
 
 
 	using Neo4Net.Functions;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using GraphDescription = Neo4Net.Test.GraphDescription;
-	using Neo4jMatchers = Neo4Net.Test.mockito.matcher.Neo4jMatchers;
+	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -47,22 +47,22 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToList;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToMap;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 
 	public class SchemaIndexIT : AbstractRestFunctionalTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Create index.\n" + "\n" + "This will start a background job in the database that will create and populate the index.\n" + "You can check the status of your index by listing all the indexes for the relevant label.") @Test @GraphDescription.Graph(nodes = {}) public void create_index() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Create index.\n" + "\n" + "This will start a background job in the database that will create and populate the index.\n" + "You can check the status of your index by listing all the indexes for the relevant label.") @Test @GraphDescription.Graph(nodes = {}) public void create_index() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Create index.\n" + "\n" + "This will start a background job in the database that will create and populate the index.\n" + "You can check the status of your index by listing all the indexes for the relevant label.")]
 		 public virtual void CreateIndex()
@@ -183,11 +183,11 @@ namespace Neo4Net.Server.rest
 			  string labelName = _labels.newInstance();
 			  string propertyKey = _properties.newInstance();
 			  IndexDefinition schemaIndex = CreateIndex( labelName, propertyKey );
-			  assertThat( Neo4jMatchers.getIndexes( Graphdb(), label(labelName) ), containsOnly(schemaIndex) );
+			  assertThat( Neo4NetMatchers.getIndexes( Graphdb(), label(labelName) ), containsOnly(schemaIndex) );
 
 			  GenConflict.get().expectedStatus(204).delete(GetSchemaIndexLabelPropertyUri(labelName, propertyKey)).entity();
 
-			  assertThat( Neo4jMatchers.getIndexes( Graphdb(), label(labelName) ), not(containsOnly(schemaIndex)) );
+			  assertThat( Neo4NetMatchers.getIndexes( Graphdb(), label(labelName) ), not(containsOnly(schemaIndex)) );
 		 }
 
 		 /// <summary>

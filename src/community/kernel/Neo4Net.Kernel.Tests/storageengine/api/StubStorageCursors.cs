@@ -26,7 +26,7 @@ namespace Neo4Net.Storageengine.Api
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
 	using DelegatingTokenHolder = Neo4Net.Kernel.impl.core.DelegatingTokenHolder;
@@ -45,7 +45,7 @@ namespace Neo4Net.Storageengine.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.commons.lang3.ArrayUtils.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY;
+//	import static org.Neo4Net.kernel.impl.core.TokenHolder_Fields.TYPE_PROPERTY_KEY;
 
 	/// <summary>
 	/// Implementation of <seealso cref="StorageReader"/> with focus on making testing the storage read cursors easy without resorting to mocking.
@@ -275,13 +275,13 @@ namespace Neo4Net.Storageengine.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, EXCEPTION
 		 public override void RelationshipVisit<EXCEPTION>( long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor ) where EXCEPTION : Exception
 		 {
 			  RelationshipData data = this._relationshipData[relationshipId];
 			  if ( data == null )
 			  {
-					throw new EntityNotFoundException( EntityType.Relationship, relationshipId );
+					throw new IEntityNotFoundException( IEntityType.Relationship, relationshipId );
 			  }
 			  relationshipVisitor.Visit( relationshipId, data.Type, data.StartNode, data.EndNode );
 		 }
@@ -467,7 +467,7 @@ namespace Neo4Net.Storageengine.Api
 					this.NextConflict = reference;
 			  }
 
-			  public override long EntityReference()
+			  public override long IEntityReference()
 			  {
 					return CurrentConflict.id;
 			  }
@@ -582,7 +582,7 @@ namespace Neo4Net.Storageengine.Api
 					NextConflict = reference;
 			  }
 
-			  public override long EntityReference()
+			  public override long IEntityReference()
 			  {
 					return Current.id;
 			  }

@@ -34,7 +34,7 @@ namespace Neo4Net.Io.fs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileVisitors.throwExceptions;
+//	import static org.Neo4Net.io.fs.FileVisitors.throwExceptions;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(MockitoJUnitRunner.class) public class ThrowExceptionsFileVisitorTest

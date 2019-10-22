@@ -21,7 +21,7 @@
 namespace Neo4Net.Utils
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.isPowerOfTwo;
+   //	import static org.Neo4Net.helpers.Numbers.isPowerOfTwo;
 
    /// <summary>
    /// A set of static convenience methods for checking ctor/method parameters or state.

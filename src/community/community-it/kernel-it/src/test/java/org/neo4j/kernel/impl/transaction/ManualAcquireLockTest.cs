@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.impl.transaction
 	using RuleChain = org.junit.rules.RuleChain;
 	using TestRule = org.junit.rules.TestRule;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Lock = Neo4Net.Graphdb.Lock;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Test;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using GraphTransactionRule = Neo4Net.Test.rule.GraphTransactionRule;
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  }
 		 }
 
-		 private GraphDatabaseService GraphDb
+		 private IGraphDatabaseService GraphDb
 		 {
 			 get
 			 {
@@ -183,10 +183,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			 private readonly ManualAcquireLockTest _outerInstance;
 
-			  internal readonly GraphDatabaseService GraphDb;
+			  internal readonly IGraphDatabaseService GraphDb;
 			  internal Transaction Tx;
 
-			  internal State( ManualAcquireLockTest outerInstance, GraphDatabaseService graphDb )
+			  internal State( ManualAcquireLockTest outerInstance, IGraphDatabaseService graphDb )
 			  {
 				  this._outerInstance = outerInstance;
 					this.GraphDb = graphDb;
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setProperty(final org.neo4j.graphdb.Node node, final String key, final Object value) throws Exception
+//ORIGINAL LINE: void setProperty(final org.Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  internal virtual void SetProperty( Node node, string key, object value )
 			  {

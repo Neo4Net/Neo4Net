@@ -22,21 +22,21 @@
 namespace Neo4Net.Kernel.impl.traversal
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.traversal;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.traversal;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	internal class TraversalBranchImpl : TraversalBranch
 	{
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void initialize(final org.neo4j.graphdb.PathExpander expander, org.neo4j.graphdb.traversal.TraversalContext metadata)
+//ORIGINAL LINE: public void initialize(final org.Neo4Net.graphdb.PathExpander expander, org.Neo4Net.graphdb.traversal.TraversalContext metadata)
 		 public override void Initialize( PathExpander expander, TraversalContext metadata )
 		 {
 			  Evaluate( metadata );

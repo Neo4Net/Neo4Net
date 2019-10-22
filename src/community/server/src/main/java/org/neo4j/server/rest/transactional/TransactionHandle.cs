@@ -25,9 +25,9 @@ namespace Neo4Net.Server.rest.transactional
 
 	using CypherException = Neo4Net.Cypher.CypherException;
 	using InvalidSemanticsException = Neo4Net.Cypher.InvalidSemanticsException;
-	using Result = Neo4Net.Graphdb.Result;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
-	using WriteOperationsNotAllowedException = Neo4Net.Graphdb.security.WriteOperationsNotAllowedException;
+	using Result = Neo4Net.GraphDb.Result;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
+	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -41,20 +41,20 @@ namespace Neo4Net.Server.rest.transactional
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using InternalBeginTransactionError = Neo4Net.Server.rest.transactional.error.InternalBeginTransactionError;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 	using TransactionUriScheme = Neo4Net.Server.rest.web.TransactionUriScheme;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.addToCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.addToCollection;
 
 	/// <summary>
 	/// Encapsulates executing statements in a transaction, committing the transaction, or rolling it back.
 	/// 
 	/// Constructing a <seealso cref="TransactionHandle"/> does not immediately ask the kernel to create a
-	/// <seealso cref="org.neo4j.kernel.api.KernelTransaction"/>; instead a <seealso cref="org.neo4j.kernel.api.KernelTransaction"/> is
+	/// <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/>; instead a <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/> is
 	/// only created when the first statements need to be executed.
 	/// 
-	/// At the end of each statement-executing method, the <seealso cref="org.neo4j.kernel.api.KernelTransaction"/> is either
+	/// At the end of each statement-executing method, the <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/> is either
 	/// suspended (ready to be resumed by a later operation), or committed, or rolled back.
 	/// 
 	/// If you acquire instances of this class from <seealso cref="TransactionHandleRegistry"/>, it will prevent concurrent access to
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.rest.transactional
 
 		 public virtual void Execute( StatementDeserializer statements, ExecutionResultSerializer output, HttpServletRequest request )
 		 {
-			  IList<Neo4jError> errors = new LinkedList<Neo4jError>();
+			  IList<Neo4NetError> errors = new LinkedList<Neo4NetError>();
 			  try
 			  {
 					output.TransactionCommitUri( _uriScheme.txCommitUri( _id ) );
@@ -118,7 +118,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( InternalBeginTransactionError e )
 			  {
-					errors.Add( e.ToNeo4jError() );
+					errors.Add( e.ToNeo4NetError() );
 			  }
 			  finally
 			  {
@@ -138,7 +138,7 @@ namespace Neo4Net.Server.rest.transactional
 
 		 public virtual void Commit( StatementDeserializer statements, ExecutionResultSerializer output, HttpServletRequest request )
 		 {
-			  IList<Neo4jError> errors = new LinkedList<Neo4jError>();
+			  IList<Neo4NetError> errors = new LinkedList<Neo4NetError>();
 			  try
 			  {
 					try
@@ -162,11 +162,11 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( InternalBeginTransactionError e )
 			  {
-					errors.Add( e.ToNeo4jError() );
+					errors.Add( e.ToNeo4NetError() );
 			  }
 			  catch ( CypherException e )
 			  {
-					errors.Add( new Neo4jError( e.status(), e ) );
+					errors.Add( new Neo4NetError( e.status(), e ) );
 					throw e;
 			  }
 			  finally
@@ -178,7 +178,7 @@ namespace Neo4Net.Server.rest.transactional
 
 		 public virtual void Rollback( ExecutionResultSerializer output )
 		 {
-			  IList<Neo4jError> errors = new LinkedList<Neo4jError>();
+			  IList<Neo4NetError> errors = new LinkedList<Neo4NetError>();
 			  try
 			  {
 					EnsureActiveTransaction();
@@ -186,7 +186,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( InternalBeginTransactionError e )
 			  {
-					errors.Add( e.ToNeo4jError() );
+					errors.Add( e.ToNeo4NetError() );
 			  }
 			  finally
 			  {
@@ -202,7 +202,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureActiveTransaction() throws org.neo4j.server.rest.transactional.error.InternalBeginTransactionError
+//ORIGINAL LINE: private void ensureActiveTransaction() throws org.Neo4Net.server.rest.transactional.error.InternalBeginTransactionError
 		 private void EnsureActiveTransaction()
 		 {
 			  if ( _context == null )
@@ -223,11 +223,11 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 		 }
 
-		 private void Execute( StatementDeserializer statements, ExecutionResultSerializer output, IList<Neo4jError> errors, HttpServletRequest request )
+		 private void Execute( StatementDeserializer statements, ExecutionResultSerializer output, IList<Neo4NetError> errors, HttpServletRequest request )
 		 {
 			  ExecuteStatements( statements, output, errors, request );
 
-			  if ( Neo4jError.shouldRollBackOn( errors ) )
+			  if ( Neo4NetError.shouldRollBackOn( errors ) )
 			  {
 					Rollback( errors );
 			  }
@@ -239,7 +239,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 		 }
 
-		 private void CloseContextAndCollectErrors( IList<Neo4jError> errors )
+		 private void CloseContextAndCollectErrors( IList<Neo4NetError> errors )
 		 {
 			  if ( errors.Count == 0 )
 			  {
@@ -251,12 +251,12 @@ namespace Neo4Net.Server.rest.transactional
 					{
 						 if ( e.InnerException is Neo4Net.Kernel.Api.Exceptions.Status_HasStatus )
 						 {
-							  errors.Add( new Neo4jError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) e.InnerException ).Status(), e ) );
+							  errors.Add( new Neo4NetError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) e.InnerException ).Status(), e ) );
 						 }
 						 else
 						 {
 							  _log.error( "Failed to commit transaction.", e );
-							  errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionCommitFailed, e ) );
+							  errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionCommitFailed, e ) );
 						 }
 					}
 			  }
@@ -269,12 +269,12 @@ namespace Neo4Net.Server.rest.transactional
 					catch ( Exception e )
 					{
 						 _log.error( "Failed to rollback transaction.", e );
-						 errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionRollbackFailed, e ) );
+						 errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionRollbackFailed, e ) );
 					}
 			  }
 		 }
 
-		 private void Rollback( IList<Neo4jError> errors )
+		 private void Rollback( IList<Neo4NetError> errors )
 		 {
 			  try
 			  {
@@ -283,7 +283,7 @@ namespace Neo4Net.Server.rest.transactional
 			  catch ( Exception e )
 			  {
 					_log.error( "Failed to rollback transaction.", e );
-					errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionRollbackFailed, e ) );
+					errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.TransactionRollbackFailed, e ) );
 			  }
 			  finally
 			  {
@@ -291,7 +291,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 		 }
 
-		 private void ExecuteStatements( StatementDeserializer statements, ExecutionResultSerializer output, IList<Neo4jError> errors, HttpServletRequest request )
+		 private void ExecuteStatements( StatementDeserializer statements, ExecutionResultSerializer output, IList<Neo4NetError> errors, HttpServletRequest request )
 		 {
 			  try
 			  {
@@ -321,16 +321,16 @@ namespace Neo4Net.Server.rest.transactional
 						 }
 						 catch ( Exception e ) when ( e is KernelException || e is CypherException || e is AuthorizationViolationException || e is WriteOperationsNotAllowedException )
 						 {
-							  errors.Add( new Neo4jError( e.status(), e ) );
+							  errors.Add( new Neo4NetError( e.status(), e ) );
 							  break;
 						 }
 						 catch ( DeadlockDetectedException e )
 						 {
-							  errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.DeadlockDetected, e ) );
+							  errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.DeadlockDetected, e ) );
 						 }
 						 catch ( IOException e )
 						 {
-							  errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Network.CommunicationError, e ) );
+							  errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Network.CommunicationError, e ) );
 							  break;
 						 }
 						 catch ( Exception e )
@@ -338,11 +338,11 @@ namespace Neo4Net.Server.rest.transactional
 							  Exception cause = e.InnerException;
 							  if ( cause is Neo4Net.Kernel.Api.Exceptions.Status_HasStatus )
 							  {
-									errors.Add( new Neo4jError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) cause ).Status(), cause ) );
+									errors.Add( new Neo4NetError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) cause ).Status(), cause ) );
 							  }
 							  else
 							  {
-									errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) );
+									errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) );
 							  }
 
 							  break;
@@ -353,12 +353,12 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( Exception e )
 			  {
-					errors.Add( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, e ) );
+					errors.Add( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, e ) );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.Result safelyExecute(Statement statement, boolean hasPeriodicCommit, org.neo4j.kernel.impl.query.TransactionalContext tc) throws org.neo4j.kernel.impl.query.QueryExecutionKernelException, java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Result safelyExecute(Statement statement, boolean hasPeriodicCommit, org.Neo4Net.kernel.impl.query.TransactionalContext tc) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException, java.io.IOException
 		 private Result SafelyExecute( Statement statement, bool hasPeriodicCommit, TransactionalContext tc )
 		 {
 			  try

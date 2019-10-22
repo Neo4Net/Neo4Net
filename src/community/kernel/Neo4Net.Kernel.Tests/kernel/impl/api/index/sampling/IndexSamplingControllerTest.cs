@@ -44,21 +44,21 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.sampling.IndexSamplingMode.BACKGROUND_REBUILD_UPDATED;
+//	import static org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode.BACKGROUND_REBUILD_UPDATED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.sampling.IndexSamplingMode.TRIGGER_REBUILD_UPDATED;
+//	import static org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode.TRIGGER_REBUILD_UPDATED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 
 	public class IndexSamplingControllerTest
 	{
@@ -152,10 +152,10 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger concurrentCount = new java.util.concurrent.atomic.AtomicInteger(0);
 			  AtomicInteger concurrentCount = new AtomicInteger( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch jobLatch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch jobLatch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch jobLatch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch testLatch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch testLatch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch testLatch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final ThreadLocal<bool> hasRun = ThreadLocal.withInitial(() -> false);
@@ -272,10 +272,10 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger concurrentCount = new java.util.concurrent.atomic.AtomicInteger(0);
 			  AtomicInteger concurrentCount = new AtomicInteger( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch jobLatch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch jobLatch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch jobLatch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch testLatch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch testLatch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch testLatch = new DoubleLatch();
 
 			  IndexSamplingJobFactory jobFactory = ( _indexId, proxy ) =>

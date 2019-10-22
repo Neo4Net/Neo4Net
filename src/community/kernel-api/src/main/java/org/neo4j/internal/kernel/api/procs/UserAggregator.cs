@@ -24,11 +24,11 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 	public interface UserAggregator
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void update(Object[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void update(Object[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 void Update( object[] input );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object result() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: Object result() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 object Result();
 	}
 

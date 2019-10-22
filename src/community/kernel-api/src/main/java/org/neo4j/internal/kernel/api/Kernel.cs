@@ -28,7 +28,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	public interface Kernel
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T extends Transaction> T beginTransaction(Transaction_Type type, org.neo4j.internal.kernel.api.security.LoginContext loginContext) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: <T extends Transaction> T beginTransaction(Transaction_Type type, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 T beginTransaction<T>( Transaction_Type type, LoginContext loginContext );
 	}
 

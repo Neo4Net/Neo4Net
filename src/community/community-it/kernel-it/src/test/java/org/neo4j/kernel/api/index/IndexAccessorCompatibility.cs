@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 
 	public abstract class IndexAccessorCompatibility : IndexProviderCompatibilityTestSuite.Compatibility
 	{
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.util.List<long> query(org.neo4j.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected java.util.List<long> query(org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
 		 protected internal virtual IList<long> Query( params IndexQuery[] predicates )
 		 {
 			  using ( IndexReader reader = Accessor.newReader(), )
@@ -120,10 +120,10 @@ namespace Neo4Net.Kernel.Api.Index
 					IList<long> list = new LinkedList<long>();
 					while ( nodeValueClient.Next() )
 					{
-						 long entityId = nodeValueClient.Reference;
-						 if ( PassesFilter( entityId, predicates ) )
+						 long IEntityId = nodeValueClient.Reference;
+						 if ( PassesFilter( IEntityId, predicates ) )
 						 {
-							  list.Add( entityId );
+							  list.Add( IEntityId );
 						 }
 					}
 					list.Sort();
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected IDisposable query(org.neo4j.storageengine.api.schema.SimpleNodeValueClient client, org.neo4j.internal.kernel.api.IndexOrder order, org.neo4j.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected IDisposable query(org.Neo4Net.storageengine.api.schema.SimpleNodeValueClient client, org.Neo4Net.internal.kernel.api.IndexOrder order, org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
 		 protected internal virtual IDisposable Query( SimpleNodeValueClient client, IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IndexReader reader = Accessor.newReader();
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<long> assertInOrder(org.neo4j.internal.kernel.api.IndexOrder order, org.neo4j.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: java.util.List<long> assertInOrder(org.Neo4Net.internal.kernel.api.IndexOrder order, org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
 		 internal virtual IList<long> AssertInOrder( IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IList<long> actualIds;
@@ -217,9 +217,9 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 		 /// <summary>
-		 /// Run the Value[] from a particular entityId through the list of IndexQuery[] predicates to see if they all accept the value.
+		 /// Run the Value[] from a particular IEntityId through the list of IndexQuery[] predicates to see if they all accept the value.
 		 /// </summary>
-		 private bool PassesFilter( long entityId, IndexQuery[] predicates )
+		 private bool PassesFilter( long IEntityId, IndexQuery[] predicates )
 		 {
 			  if ( predicates.Length == 1 && predicates[0] is IndexQuery.ExistsPredicate )
 			  {
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// so therefore it's done explicitly here so that we can filter on them later.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void updateAndCommit(java.util.Collection<IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void updateAndCommit(java.util.Collection<IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 internal virtual void UpdateAndCommit<T1>( ICollection<T1> updates )
 		 {
 			  using ( IndexUpdater updater = Accessor.newUpdater( IndexUpdateMode.ONLINE ) )

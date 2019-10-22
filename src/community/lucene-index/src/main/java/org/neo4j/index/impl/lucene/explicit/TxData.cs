@@ -35,9 +35,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  this.Index = index;
 		 }
 
-		 internal abstract void Add( TxDataHolder holder, EntityId entityId, string key, object value );
+		 internal abstract void Add( TxDataHolder holder, IEntityId IEntityId, string key, object value );
 
-		 internal abstract void Remove( TxDataHolder holder, EntityId entityId, string key, object value );
+		 internal abstract void Remove( TxDataHolder holder, IEntityId IEntityId, string key, object value );
 
 		 internal abstract ICollection<EntityId> Query( TxDataHolder holder, Query query, QueryContext contextOrNull );
 

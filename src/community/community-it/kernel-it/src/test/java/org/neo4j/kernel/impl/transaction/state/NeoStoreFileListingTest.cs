@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.Test;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
@@ -58,17 +58,17 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.IndexConfigStore.INDEX_DB_FILE_NAME;
+//	import static org.Neo4Net.kernel.impl.index.IndexConfigStore.INDEX_DB_FILE_NAME;
 
 	public class NeoStoreFileListingTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private NeoStoreDataSource _neoStoreDataSource;
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.graphdb.ResourceIterator<java.io.File> indexFilesAre(org.neo4j.kernel.impl.api.index.IndexingService indexingService, String[] fileNames) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.ResourceIterator<java.io.File> indexFilesAre(org.Neo4Net.kernel.impl.api.index.IndexingService indexingService, String[] fileNames) throws java.io.IOException
 		 private static ResourceIterator<File> IndexFilesAre( IndexingService indexingService, string[] fileNames )
 		 {
 			  List<File> files = new List<File>();
@@ -272,7 +272,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  public override Resource AddFilesTo( ICollection<StoreFileMetadata> fileMetadataCollection )
 			  {
 					fileMetadataCollection.Add( new StoreFileMetadata( new File( "marker" ), 0 ) );
-					return Neo4Net.Graphdb.Resource_Fields.Empty;
+					return Neo4Net.GraphDb.Resource_Fields.Empty;
 			  }
 		 }
 	}

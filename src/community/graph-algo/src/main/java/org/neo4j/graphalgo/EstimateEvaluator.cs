@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Graphalgo
 {
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 
 	/// <summary>
 	/// Evaluator used to estimate the weight of the remaining path from one node to

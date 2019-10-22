@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.discovery.procedures
 {
@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using Neo4Net.Collections;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
@@ -37,13 +37,13 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asRawIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.map;
+//	import static org.Neo4Net.helpers.collection.Iterators.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 	/// <summary>
 	/// Overview procedure with added support for server groups.
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 		 private readonly TopologyService _topologyService;
 		 private readonly Log _log;
 
-		 public ClusterOverviewProcedure( TopologyService topologyService, LogProvider logProvider ) : base( procedureSignature( new QualifiedName( _procedureNamespace, PROCEDURE_NAME ) ).@out( "id", Neo4jTypes.NTString ).@out( "addresses", Neo4jTypes.NTList( Neo4jTypes.NTString ) ).@out( "role", Neo4jTypes.NTString ).@out( "groups", Neo4jTypes.NTList( Neo4jTypes.NTString ) ).@out( "database", Neo4jTypes.NTString ).description( "Overview of all currently accessible cluster members and their roles." ).build() )
+		 public ClusterOverviewProcedure( TopologyService topologyService, LogProvider logProvider ) : base( procedureSignature( new QualifiedName( _procedureNamespace, PROCEDURE_NAME ) ).@out( "id", Neo4NetTypes.NTString ).@out( "addresses", Neo4NetTypes.NTList( Neo4NetTypes.NTString ) ).@out( "role", Neo4NetTypes.NTString ).@out( "groups", Neo4NetTypes.NTList( Neo4NetTypes.NTString ) ).@out( "database", Neo4NetTypes.NTString ).description( "Overview of all currently accessible cluster members and their roles." ).build() )
 		 {
 			  this._topologyService = topologyService;
 			  this._log = logProvider.getLog( this.GetType() );

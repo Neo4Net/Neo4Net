@@ -27,7 +27,7 @@ namespace Neo4Net.Jmx.impl
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -60,19 +60,19 @@ namespace Neo4Net.Jmx.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.iterable;
+//	import static org.Neo4Net.helpers.collection.Iterables.iterable;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({EphemeralFileSystemExtension.class, TestDirectoryExtension.class}) class StoreSizeBeanTest
 	internal class StoreSizeBeanTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
 		 private EphemeralFileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 		 private readonly ExplicitIndexProvider _explicitIndexProviderLookup = mock( typeof( ExplicitIndexProvider ) );
 		 private readonly IndexProvider _indexProvider = MockedIndexProvider( "provider1" );

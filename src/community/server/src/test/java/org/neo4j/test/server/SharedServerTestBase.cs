@@ -23,14 +23,14 @@ namespace Neo4Net.Test.server
 	using BeforeClass = org.junit.BeforeClass;
 	using Rule = org.junit.Rule;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using NeoServer = Neo4Net.Server.NeoServer;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using ServerHelper = Neo4Net.Server.helpers.ServerHelper;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppressAll;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class SharedServerTestBase
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Test.server
 		 private static NeoServer _server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public SuppressOutput SuppressOutput = suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -50,7 +50,7 @@ namespace Neo4Net.Test.server
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void AllocateServer()
 		 {
-			  System.setProperty( "org.neo4j.useInsecureCertificateGeneration", "true" );
+			  System.setProperty( "org.Neo4Net.useInsecureCertificateGeneration", "true" );
 			  suppressAll().call((Callable<Void>)() =>
 			  {
 				ServerHolder.SetServerBuilderProperty( GraphDatabaseSettings.cypher_hints_error.name(), "true" );

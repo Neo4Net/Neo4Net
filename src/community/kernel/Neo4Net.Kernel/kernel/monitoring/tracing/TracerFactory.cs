@@ -32,12 +32,12 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	/// <summary>
 	/// A TracerFactory determines the implementation of the tracers, that a database should use. Each implementation has
 	/// a particular name, which is given by the getImplementationName method, and is used for identifying it in the
-	/// <seealso cref="org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.Configuration.tracer"/> setting.
+	/// <seealso cref="org.Neo4Net.kernel.impl.factory.GraphDatabaseFacadeFactory.Configuration.tracer"/> setting.
 	/// </summary>
 	public interface TracerFactory
 	{
 		 /// <returns> The name this implementation is identified by in the
-		 /// <seealso cref="org.neo4j.kernel.impl.factory.GraphDatabaseFacadeFactory.Configuration.tracer"/> setting. </returns>
+		 /// <seealso cref="org.Neo4Net.kernel.impl.factory.GraphDatabaseFacadeFactory.Configuration.tracer"/> setting. </returns>
 		 string ImplementationName { get; }
 
 		 /// <summary>
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
 		 /// <returns> The created instance. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.neo4j.storageengine.api.@lock.LockTracer createLockTracer(org.neo4j.kernel.monitoring.Monitors monitors, org.neo4j.scheduler.JobScheduler jobScheduler)
+//		 default org.Neo4Net.storageengine.api.@lock.LockTracer createLockTracer(org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.scheduler.JobScheduler jobScheduler)
 	//	 {
 	//		  return LockTracer.NONE;
 	//	 }
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
 		 /// <returns> The created instance. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.neo4j.io.pagecache.tracing.cursor.PageCursorTracerSupplier createPageCursorTracerSupplier(org.neo4j.kernel.monitoring.Monitors monitors, org.neo4j.scheduler.JobScheduler jobScheduler)
+//		 default org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier createPageCursorTracerSupplier(org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.scheduler.JobScheduler jobScheduler)
 	//	 {
 	//		  return DefaultPageCursorTracerSupplier.INSTANCE;
 	//	 }

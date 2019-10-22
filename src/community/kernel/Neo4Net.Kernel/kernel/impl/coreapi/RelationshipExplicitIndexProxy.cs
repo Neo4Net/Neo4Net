@@ -20,23 +20,23 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using RelationshipExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.RelationshipExplicitIndexCursor;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_NODE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_NODE;
 
 	public class RelationshipExplicitIndexProxy : ExplicitIndexProxy<Relationship>, RelationshipIndex
 	{
-		 public RelationshipExplicitIndexProxy( string name, GraphDatabaseService gds, System.Func<KernelTransaction> txBridge ) : base( name, RELATIONSHIP, gds, txBridge )
+		 public RelationshipExplicitIndexProxy( string name, IGraphDatabaseService gds, System.Func<KernelTransaction> txBridge ) : base( name, RELATIONSHIP, gds, txBridge )
 		 {
 		 }
 

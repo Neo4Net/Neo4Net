@@ -24,8 +24,8 @@ using System.IO;
 namespace Neo4Net.Harness.Internal
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -168,7 +168,7 @@ namespace Neo4Net.Harness.Internal
 			  return name.Length == 32;
 		 }
 
-		 public override GraphDatabaseService Graph()
+		 public override IGraphDatabaseService Graph()
 		 {
 			  return _server.Database.Graph;
 		 }

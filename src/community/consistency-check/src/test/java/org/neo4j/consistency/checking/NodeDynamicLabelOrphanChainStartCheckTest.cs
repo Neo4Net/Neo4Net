@@ -33,9 +33,9 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
+//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
+//	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
 
 	internal class NodeDynamicLabelOrphanChainStartCheckTest : RecordCheckTestBase<DynamicRecord, ConsistencyReport_DynamicLabelConsistencyReport, NodeDynamicLabelOrphanChainStartCheck>
 	{

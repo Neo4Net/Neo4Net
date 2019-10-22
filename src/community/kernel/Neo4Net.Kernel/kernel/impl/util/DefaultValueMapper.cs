@@ -22,11 +22,11 @@
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.util
 	using VirtualRelationshipValue = Neo4Net.Values.@virtual.VirtualRelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iteratorsEqual;
+//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	public class DefaultValueMapper : Neo4Net.Values.ValueMapper_JavaMapper
 	{
@@ -262,19 +262,19 @@ namespace Neo4Net.Kernel.impl.util
 						return index < size;
 				  }
 
-				  public PropertyContainer next()
+				  public IPropertyContainer next()
 				  {
-						PropertyContainer propertyContainer;
+						PropertyContainer IPropertyContainer;
 						if ( ( index & 1 ) == 0 )
 						{
-							 propertyContainer = outerInstance.outerInstance.MapNode( nodes[index >> 1] );
+							 IPropertyContainer = outerInstance.outerInstance.MapNode( nodes[index >> 1] );
 						}
 						else
 						{
-							 propertyContainer = outerInstance.outerInstance.MapRelationship( relationships[index >> 1] );
+							 IPropertyContainer = outerInstance.outerInstance.MapRelationship( relationships[index >> 1] );
 						}
 						index++;
-						return propertyContainer;
+						return IPropertyContainer;
 				  }
 			  }
 		 }

@@ -47,10 +47,10 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class GBPTreeFormatTest extends org.neo4j.test.FormatCompatibilityVerifier
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class GBPTreeFormatTest extends org.Neo4Net.test.FormatCompatibilityVerifier
 	public class GBPTreeFormatTest : FormatCompatibilityVerifier
 	{
 		private bool InstanceFieldsInitialized = false;
@@ -271,7 +271,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertHit(org.neo4j.cursor.RawCursor<Hit<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>,java.io.IOException> cursor, System.Nullable<long> expectedKey) throws java.io.IOException
+//ORIGINAL LINE: private static void assertHit(org.Neo4Net.cursor.RawCursor<Hit<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>,java.io.IOException> cursor, System.Nullable<long> expectedKey) throws java.io.IOException
 		 private static void AssertHit( IRawCursor<Hit<MutableLong, MutableLong>, IOException> cursor, long? expectedKey )
 		 {
 			  assertTrue( "Had no next when expecting key " + expectedKey, cursor.Next() );

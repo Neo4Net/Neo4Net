@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.replication.session
 {
@@ -140,12 +140,12 @@ namespace Neo4Net.causalclustering.core.replication.session
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(GlobalSessionTrackerState target, org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(GlobalSessionTrackerState target, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( GlobalSessionTrackerState target, WritableChannel channel )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.neo4j.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
+//ORIGINAL LINE: final java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
 					IDictionary<MemberId, LocalSessionTracker> sessionTrackers = target.sessionTrackers;
 
 					channel.PutLong( target._logIndex );
@@ -179,7 +179,7 @@ namespace Neo4Net.causalclustering.core.replication.session
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public GlobalSessionTrackerState unmarshal0(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.neo4j.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public GlobalSessionTrackerState unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override GlobalSessionTrackerState Unmarshal0( ReadableChannel channel )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -189,13 +189,13 @@ namespace Neo4Net.causalclustering.core.replication.session
 //ORIGINAL LINE: final int sessionTrackerSize = channel.getInt();
 					int sessionTrackerSize = channel.Int;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.neo4j.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<org.Neo4Net.causalclustering.identity.MemberId, LocalSessionTracker> sessionTrackers = new java.util.HashMap<>();
 					IDictionary<MemberId, LocalSessionTracker> sessionTrackers = new Dictionary<MemberId, LocalSessionTracker>();
 
 					for ( int i = 0; i < sessionTrackerSize; i++ )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId member = memberMarshal.unmarshal(channel);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId member = memberMarshal.unmarshal(channel);
 						 MemberId member = MemberMarshal.unmarshal( channel );
 						 if ( member == null )
 						 {

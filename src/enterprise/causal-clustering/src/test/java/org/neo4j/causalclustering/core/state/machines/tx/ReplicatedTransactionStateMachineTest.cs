@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.machines.tx
 {
@@ -107,7 +107,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 			  TransactionCommitProcess localCommitProcess = mock( typeof( TransactionCommitProcess ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine(commandIndexTracker, lockState(currentLockSessionId), batchSize, logProvider, org.neo4j.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.NULL, org.neo4j.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
+//ORIGINAL LINE: final ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine(commandIndexTracker, lockState(currentLockSessionId), batchSize, logProvider, org.Neo4Net.io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.NULL, org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
 			  ReplicatedTransactionStateMachine stateMachine = new ReplicatedTransactionStateMachine( _commandIndexTracker, LockState( currentLockSessionId ), _batchSize, _logProvider, Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier_Fields.Null, EmptyVersionContextSupplier.EMPTY );
 			  stateMachine.InstallCommitProcess( localCommitProcess, -1L );
 
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RaftIndexIsRecorded()
 		 {
@@ -210,7 +210,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private TransactionCommitProcess CreateFakeTransactionCommitProcess( long txId )
 		 {
 			  TransactionCommitProcess localCommitProcess = mock( typeof( TransactionCommitProcess ) );
@@ -236,7 +236,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 private ReplicatedLockTokenStateMachine LockState( int lockSessionId )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine lockState = mock(org.neo4j.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine lockState = mock(org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine.class);
 			  ReplicatedLockTokenStateMachine lockState = mock( typeof( ReplicatedLockTokenStateMachine ) );
 			  when( lockState.CurrentToken() ).thenReturn(new ReplicatedLockTokenRequest(null, lockSessionId));
 			  return lockState;

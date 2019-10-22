@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.helpers
 {
 
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Neo4Net.Helpers.Collections;
 
 	/*
@@ -45,9 +45,9 @@ namespace Neo4Net.Server.helpers
 			  public abstract Type Type { get; }
 		 }
 
-		 public static void ConsumeProperties( PropertyTypeDispatcher<string, Void> dispatcher, PropertyContainer entity )
+		 public static void ConsumeProperties( PropertyTypeDispatcher<string, Void> dispatcher, IPropertyContainer IEntity )
 		 {
-			  foreach ( KeyValuePair<string, object> property in entity.AllProperties.SetOfKeyValuePairs() )
+			  foreach ( KeyValuePair<string, object> property in IEntity.AllProperties.SetOfKeyValuePairs() )
 			  {
 					dispatcher.Dispatch( property.Value, property.Key );
 			  }
@@ -1015,7 +1015,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected T dispatchPointArrayProperty(final org.neo4j.graphdb.spatial.Point[] property, K param)
+//ORIGINAL LINE: protected T dispatchPointArrayProperty(final org.Neo4Net.graphdb.spatial.Point[] property, K param)
 		 protected internal virtual T DispatchPointArrayProperty( Point[] property, K param )
 		 {
 			  return dispatchPointArrayProperty(new BoxedArrayAnonymousInnerClass10(this, property)

@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	public abstract class ScoredEntityRepresentation<E> : ObjectRepresentation, ExtensibleRepresentation, EntityRepresentation where E : ObjectRepresentation, ExtensibleRepresentation, EntityRepresentation
+	public abstract class ScoredEntityRepresentation<E> : ObjectRepresentation, ExtensibleRepresentation, IEntityRepresentation where E : ObjectRepresentation, ExtensibleRepresentation, IEntityRepresentation
 	{
 		 private readonly E @delegate;
 		 private readonly float _score;

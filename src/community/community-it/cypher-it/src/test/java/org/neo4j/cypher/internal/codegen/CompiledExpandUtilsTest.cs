@@ -22,8 +22,8 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
@@ -41,24 +41,24 @@ namespace Neo4Net.Cypher.Internal.codegen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cypher.Internal.codegen.CompiledExpandUtils.nodeGetDegreeIfDense;
+//	import static org.Neo4Net.cypher.Internal.codegen.CompiledExpandUtils.nodeGetDegreeIfDense;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
 
 	public class CompiledExpandUtilsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, "1");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, "1");
 		 public DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, "1");
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.Transaction transaction() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.Transaction transaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private Transaction Transaction()
 		 {
 			  DependencyResolver resolver = this.Db.DependencyResolver;

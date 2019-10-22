@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using Neo4Net.Kernel.Api.Index;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.daemon;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// A <seealso cref="MultipleIndexPopulator"/> that gathers all incoming updates from the <seealso cref="IndexStoreView"/> in batches of
@@ -80,9 +80,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// Creates a new multi-threaded populator for the given store view. </summary>
 		 ///  <param name="storeView"> the view of the store as a visitable of nodes </param>
 		 /// <param name="logProvider"> the log provider </param>
-		 /// <param name="type"> entity type to populate </param>
+		 /// <param name="type"> IEntity type to populate </param>
 		 /// <param name="schemaState"> the schema state </param>
-		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
+		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="executor"> the thread pool to use for batched index insertions </param>
 		 /// <param name="logProvider"> the log provider </param>
 		 /// <param name="schemaState"> the schema state </param>
-		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, ExecutorService executor, LogProvider logProvider, SchemaState schemaState ) : base( storeView, logProvider, EntityType.NODE, schemaState )
+		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, ExecutorService executor, LogProvider logProvider, SchemaState schemaState ) : base( storeView, logProvider, IEntityType.NODE, schemaState )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  _activeTasks.incrementAndGet();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batch = population.takeCurrentBatch();
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = population.takeCurrentBatch();
 			  IList<IndexEntryUpdate<object>> batch = population.TakeCurrentBatch();
 
 			  _executor.execute(() =>

@@ -22,15 +22,15 @@
 namespace Neo4Net.Server.rest.transactional
 {
 
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 
 	public class StubStatementDeserializer : StatementDeserializer
 	{
 		 private readonly IEnumerator<Statement> _statements;
-		 private readonly IEnumerator<Neo4jError> _errors;
+		 private readonly IEnumerator<Neo4NetError> _errors;
 
 		 private bool _hasNext;
 		 private Statement _next;
@@ -40,7 +40,7 @@ namespace Neo4Net.Server.rest.transactional
 			  return new StubStatementDeserializer( emptyIterator(), iterator(statements) );
 		 }
 
-		 public StubStatementDeserializer( IEnumerator<Neo4jError> errors, IEnumerator<Statement> statements ) : base( new System.IO.MemoryStream_Input( new sbyte[]{} ) )
+		 public StubStatementDeserializer( IEnumerator<Neo4NetError> errors, IEnumerator<Statement> statements ) : base( new System.IO.MemoryStream_Input( new sbyte[]{} ) )
 		 {
 			  this._statements = statements;
 			  this._errors = errors;
@@ -87,7 +87,7 @@ namespace Neo4Net.Server.rest.transactional
 			  return result;
 		 }
 
-		 public override IEnumerator<Neo4jError> Errors()
+		 public override IEnumerator<Neo4NetError> Errors()
 		 {
 			  return _errors;
 		 }

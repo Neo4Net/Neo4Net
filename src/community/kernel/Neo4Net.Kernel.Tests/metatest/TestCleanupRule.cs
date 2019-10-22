@@ -106,7 +106,7 @@ namespace Neo4Net.Metatest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void simulateTestExecution(org.neo4j.test.rule.CleanupRule rule) throws Throwable
+//ORIGINAL LINE: private void simulateTestExecution(org.Neo4Net.test.rule.CleanupRule rule) throws Throwable
 		 private void SimulateTestExecution( CleanupRule rule )
 		 {
 			  rule.apply(new StatementAnonymousInnerClass(this)

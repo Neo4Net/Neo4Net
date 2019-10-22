@@ -23,8 +23,8 @@ using System.Diagnostics;
 namespace Neo4Net.Server.rest.transactional
 {
 
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;

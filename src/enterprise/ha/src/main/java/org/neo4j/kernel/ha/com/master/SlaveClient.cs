@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.com.master
 {
@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.ha.com.master
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.VOID_SERIALIZER;
+//	import static org.Neo4Net.com.Protocol.VOID_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.readString;
+//	import static org.Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.writeString;
+//	import static org.Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
+//	import static org.Neo4Net.com.storecopy.ResponseUnpacker_Fields.NO_OP_RESPONSE_UNPACKER;
 
 	public class SlaveClient : Client<Slave>, Slave
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<Void> pullUpdates(final long upToAndIncludingTxId)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> pullUpdates(final long upToAndIncludingTxId)
 		 public override Response<Void> PullUpdates( long upToAndIncludingTxId )
 		 {
 			  return SendRequest(SlaveRequestType.PullUpdates, RequestContext.EMPTY, buffer =>
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 public sealed class SlaveRequestType : RequestType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           PULL_UPDATES((org.neo4j.com.TargetCaller<Slave, Void>)(master, context, input, target) ->{readString(input);
+//           PULL_UPDATES((org.Neo4Net.com.TargetCaller<Slave, Void>)(master, context, input, target) ->{readString(input);
 
 			  private static readonly IList<SlaveRequestType> valueList = new List<SlaveRequestType>();
 

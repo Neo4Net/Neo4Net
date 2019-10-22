@@ -19,16 +19,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
 
 	public sealed class ConstraintCreatorFacadeMethods : Consumer<ConstraintCreator>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       UNIQUE(new FacadeMethod<>("ConstraintCreator assertPropertyIsUnique()", self -> self.assertPropertyIsUnique("property"))),
-		 public static readonly ConstraintCreatorFacadeMethods Create = new ConstraintCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "ConstraintDefinition create()", Neo4Net.Graphdb.schema.ConstraintCreator::create ) );
+		 public static readonly ConstraintCreatorFacadeMethods Create = new ConstraintCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "ConstraintDefinition create()", Neo4Net.GraphDb.schema.ConstraintCreator::create ) );
 
 		 private static readonly IList<ConstraintCreatorFacadeMethods> valueList = new List<ConstraintCreatorFacadeMethods>();
 
@@ -51,7 +51,7 @@ namespace Neo4Net.Graphdb
 
 		 internal Private readonly;
 
-		 internal ConstraintCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.Graphdb.schema.ConstraintCreator> facadeMethod )
+		 internal ConstraintCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.ConstraintCreator> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -60,7 +60,7 @@ namespace Neo4Net.Graphdb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.Graphdb.schema.ConstraintCreator constraintCreator )
+		 public void Accept( Neo4Net.GraphDb.schema.ConstraintCreator constraintCreator )
 		 {
 			  _facadeMethod.accept( constraintCreator );
 		 }

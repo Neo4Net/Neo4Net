@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.api.proc
 {
 	using Test = org.junit.Test;
 
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.api.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.ntString;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.outputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.outputField;
 
 	public class FieldSignatureTest
 	{
@@ -42,17 +42,17 @@ namespace Neo4Net.Kernel.api.proc
 //ORIGINAL LINE: @Test public void equalsShouldConsiderName()
 		 public virtual void EqualsShouldConsiderName()
 		 {
-			  assertEquals( "input without default", inputField( "name", Neo4jTypes.NTString ), inputField( "name", Neo4jTypes.NTString ) );
-			  assertNotEquals( "input without default", inputField( "name", Neo4jTypes.NTString ), inputField( "other", Neo4jTypes.NTString ) );
+			  assertEquals( "input without default", inputField( "name", Neo4NetTypes.NTString ), inputField( "name", Neo4NetTypes.NTString ) );
+			  assertNotEquals( "input without default", inputField( "name", Neo4NetTypes.NTString ), inputField( "other", Neo4NetTypes.NTString ) );
 
-			  assertEquals( "input with default", inputField( "name", Neo4jTypes.NTString, ntString( "hello" ) ), inputField( "name", Neo4jTypes.NTString, ntString( "hello" ) ) );
-			  assertNotEquals( "input with default", inputField( "name", Neo4jTypes.NTString, ntString( "hello" ) ), inputField( "other", Neo4jTypes.NTString, ntString( "hello" ) ) );
+			  assertEquals( "input with default", inputField( "name", Neo4NetTypes.NTString, ntString( "hello" ) ), inputField( "name", Neo4NetTypes.NTString, ntString( "hello" ) ) );
+			  assertNotEquals( "input with default", inputField( "name", Neo4NetTypes.NTString, ntString( "hello" ) ), inputField( "other", Neo4NetTypes.NTString, ntString( "hello" ) ) );
 
-			  assertEquals( "output", outputField( "name", Neo4jTypes.NTString, false ), outputField( "name", Neo4jTypes.NTString, false ) );
-			  assertNotEquals( "output", outputField( "name", Neo4jTypes.NTString, false ), outputField( "other", Neo4jTypes.NTString, false ) );
+			  assertEquals( "output", outputField( "name", Neo4NetTypes.NTString, false ), outputField( "name", Neo4NetTypes.NTString, false ) );
+			  assertNotEquals( "output", outputField( "name", Neo4NetTypes.NTString, false ), outputField( "other", Neo4NetTypes.NTString, false ) );
 
-			  assertEquals( "deprecated output", outputField( "name", Neo4jTypes.NTString, true ), outputField( "name", Neo4jTypes.NTString, true ) );
-			  assertNotEquals( "deprecated output", outputField( "name", Neo4jTypes.NTString, true ), outputField( "other", Neo4jTypes.NTString, true ) );
+			  assertEquals( "deprecated output", outputField( "name", Neo4NetTypes.NTString, true ), outputField( "name", Neo4NetTypes.NTString, true ) );
+			  assertNotEquals( "deprecated output", outputField( "name", Neo4NetTypes.NTString, true ), outputField( "other", Neo4NetTypes.NTString, true ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.api.proc
 			  // when
 			  try
 			  {
-					inputField( "name", Neo4jTypes.NTInteger, ntString( "bad" ) );
+					inputField( "name", Neo4NetTypes.NTInteger, ntString( "bad" ) );
 					fail( "expected exception" );
 			  }
 			  // then
@@ -76,31 +76,31 @@ namespace Neo4Net.Kernel.api.proc
 //ORIGINAL LINE: @Test public void equalsShouldConsiderType()
 		 public virtual void EqualsShouldConsiderType()
 		 {
-			  assertEquals( "input without default", inputField( "name", Neo4jTypes.NTString ), inputField( "name", Neo4jTypes.NTString ) );
-			  assertNotEquals( "input without default", inputField( "name", Neo4jTypes.NTString ), inputField( "name", Neo4jTypes.NTInteger ) );
+			  assertEquals( "input without default", inputField( "name", Neo4NetTypes.NTString ), inputField( "name", Neo4NetTypes.NTString ) );
+			  assertNotEquals( "input without default", inputField( "name", Neo4NetTypes.NTString ), inputField( "name", Neo4NetTypes.NTInteger ) );
 
-			  assertEquals( "output", outputField( "name", Neo4jTypes.NTString, false ), outputField( "name", Neo4jTypes.NTString, false ) );
-			  assertNotEquals( "output", outputField( "name", Neo4jTypes.NTString, false ), outputField( "name", Neo4jTypes.NTInteger, false ) );
+			  assertEquals( "output", outputField( "name", Neo4NetTypes.NTString, false ), outputField( "name", Neo4NetTypes.NTString, false ) );
+			  assertNotEquals( "output", outputField( "name", Neo4NetTypes.NTString, false ), outputField( "name", Neo4NetTypes.NTInteger, false ) );
 
-			  assertEquals( "deprecated output", outputField( "name", Neo4jTypes.NTString, true ), outputField( "name", Neo4jTypes.NTString, true ) );
-			  assertNotEquals( "deprecated output", outputField( "name", Neo4jTypes.NTString, true ), outputField( "name", Neo4jTypes.NTInteger, true ) );
+			  assertEquals( "deprecated output", outputField( "name", Neo4NetTypes.NTString, true ), outputField( "name", Neo4NetTypes.NTString, true ) );
+			  assertNotEquals( "deprecated output", outputField( "name", Neo4NetTypes.NTString, true ), outputField( "name", Neo4NetTypes.NTInteger, true ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void equalsShouldConsiderDefaultValue()
 		 public virtual void EqualsShouldConsiderDefaultValue()
 		 {
-			  assertEquals( inputField( "name", Neo4jTypes.NTString, ntString( "foo" ) ), inputField( "name", Neo4jTypes.NTString, ntString( "foo" ) ) );
-			  assertNotEquals( inputField( "name", Neo4jTypes.NTString, ntString( "bar" ) ), inputField( "name", Neo4jTypes.NTString, ntString( "baz" ) ) );
+			  assertEquals( inputField( "name", Neo4NetTypes.NTString, ntString( "foo" ) ), inputField( "name", Neo4NetTypes.NTString, ntString( "foo" ) ) );
+			  assertNotEquals( inputField( "name", Neo4NetTypes.NTString, ntString( "bar" ) ), inputField( "name", Neo4NetTypes.NTString, ntString( "baz" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void equalsShouldConsiderDeprecation()
 		 public virtual void EqualsShouldConsiderDeprecation()
 		 {
-			  assertEquals( outputField( "name", Neo4jTypes.NTString, true ), outputField( "name", Neo4jTypes.NTString, true ) );
-			  assertEquals( outputField( "name", Neo4jTypes.NTString, false ), outputField( "name", Neo4jTypes.NTString, false ) );
-			  assertNotEquals( outputField( "name", Neo4jTypes.NTString, true ), outputField( "name", Neo4jTypes.NTString, false ) );
+			  assertEquals( outputField( "name", Neo4NetTypes.NTString, true ), outputField( "name", Neo4NetTypes.NTString, true ) );
+			  assertEquals( outputField( "name", Neo4NetTypes.NTString, false ), outputField( "name", Neo4NetTypes.NTString, false ) );
+			  assertNotEquals( outputField( "name", Neo4NetTypes.NTString, true ), outputField( "name", Neo4NetTypes.NTString, false ) );
 		 }
 	}
 

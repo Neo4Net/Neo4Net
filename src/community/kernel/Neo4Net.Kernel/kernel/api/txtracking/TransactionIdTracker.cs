@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.api.txtracking
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// Facility to allow a user to run a query on different members of the cluster and ensure that a member is at least as
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api.txtracking
 		 /// <param name="timeout"> maximum duration to wait for OAT to be applied </param>
 		 /// <exception cref="TransactionFailureException"> when OAT did not get applied within the given duration </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public virtual void AwaitUpToDate( long oldestAcceptableTxId, Duration timeout )
 		 {
 			  if ( oldestAcceptableTxId <= BASE_TX_ID )

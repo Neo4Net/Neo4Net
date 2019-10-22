@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Kernel.impl.transaction.log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.IOUtils.closeAllUnchecked;
+//	import static org.Neo4Net.io.IOUtils.closeAllUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.concurrent.Runnables.runAll;
+//	import static org.Neo4Net.util.concurrent.Runnables.runAll;
 
 	/// <summary>
 	/// Not thread safe, except for <seealso cref="count()"/> which does not support calls concurrent with <seealso cref="add(object)"/>.
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Write entry to pageCursor. Implementor of this method is responsible for calling <seealso cref="prepareWrite(int)"/> before actually start writing.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void add(ENTRY entry, org.neo4j.io.pagecache.PageCursor pageCursor) throws java.io.IOException;
+//ORIGINAL LINE: abstract void add(ENTRY entry, org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException;
 		 internal abstract void Add( ENTRY entry, PageCursor pageCursor );
 
 		 /// <summary>
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Return <seealso cref="CURSOR"/> responsible for deserializing wrapping provided <seealso cref="PageCursor"/>, pointing to head of file.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract CURSOR reader(org.neo4j.io.pagecache.PageCursor pageCursor) throws java.io.IOException;
+//ORIGINAL LINE: abstract CURSOR reader(org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException;
 		 internal abstract CURSOR Reader( PageCursor pageCursor );
 
 		 /// <summary>

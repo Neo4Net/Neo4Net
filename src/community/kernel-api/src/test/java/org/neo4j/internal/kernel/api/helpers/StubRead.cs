@@ -36,7 +36,7 @@ namespace Neo4Net.Internal.Kernel.Api.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.neo4j.internal.kernel.api.IndexReference index, org.neo4j.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override long LockingNodeUniqueIndexSeek( IndexReference index, params IndexQuery.ExactPredicate[] predicates )
 		 {
 			  throw new System.NotSupportedException();

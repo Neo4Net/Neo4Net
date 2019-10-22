@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 
 	public class NodeIndexRootRepresentation : MappingRepresentation
 	{

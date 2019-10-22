@@ -39,19 +39,19 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
-	using Neo4Net.Graphdb.index;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using Neo4Net.GraphDb.index;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
@@ -86,31 +86,31 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Neo4jTestCase.assertContains;
+//	import static org.Neo4Net.index.Neo4NetTestCase.assertContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Neo4jTestCase.assertContainsInOrder;
+//	import static org.Neo4Net.index.Neo4NetTestCase.assertContainsInOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.lucene.QueryContext.numericRange;
+//	import static org.Neo4Net.index.lucene.QueryContext.numericRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.lucene.ValueContext.numeric;
+//	import static org.Neo4Net.index.lucene.ValueContext.numeric;
 
 	public class TestLuceneIndex : AbstractLuceneIndexTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void makeSureAdditionsCanBeRead(org.neo4j.graphdb.index.Index<T> index, EntityCreator<T> entityCreator)
-		 private void MakeSureAdditionsCanBeRead<T>( Index<T> index, EntityCreator<T> entityCreator ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void makeSureAdditionsCanBeRead(org.Neo4Net.graphdb.index.Index<T> index, IEntityCreator<T> IEntityCreator)
+		 private void MakeSureAdditionsCanBeRead<T>( Index<T> index, IEntityCreator<T> IEntityCreator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key = "name";
 			  string value = "Mattias";
@@ -119,23 +119,23 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 			  assertThat( index.query( key, "*" ), emptyIterable() );
 
-			  T entity1 = entityCreator.Create();
-			  T entity2 = entityCreator.Create();
-			  index.Add( entity1, key, value );
+			  T IEntity1 = IEntityCreator.Create();
+			  T IEntity2 = IEntityCreator.Create();
+			  index.Add( IEntity1, key, value );
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertThat( index.get( key, value ), Contains.ContainsConflict( entity1 ) );
-					assertThat( index.query( key, "*" ), Contains.ContainsConflict( entity1 ) );
-					assertThat( index.get( key, value ), Contains.ContainsConflict( entity1 ) );
+					assertThat( index.get( key, value ), Contains.ContainsConflict( IEntity1 ) );
+					assertThat( index.query( key, "*" ), Contains.ContainsConflict( IEntity1 ) );
+					assertThat( index.get( key, value ), Contains.ContainsConflict( IEntity1 ) );
 
 					RestartTx();
 			  }
 
-			  index.Add( entity2, key, value );
-			  assertThat( index.get( key, value ), Contains.ContainsConflict( entity1, entity2 ) );
+			  index.Add( IEntity2, key, value );
+			  assertThat( index.get( key, value ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
 
 			  RestartTx();
-			  assertThat( index.get( key, value ), Contains.ContainsConflict( entity1, entity2 ) );
+			  assertThat( index.get( key, value ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
 			  index.Delete();
 		 }
 
@@ -642,7 +642,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  Index<Node> index = NodeIndex( LuceneIndexImplementation.ExactConfig );
 			  string key = "name";
-			  string value1 = "neo4j";
+			  string value1 = "Neo4Net";
 			  string value2 = "nescafe";
 			  Node node1 = GraphDb.createNode();
 			  Node node2 = GraphDb.createNode();
@@ -654,7 +654,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					assertThat( index.query( key, "neo*" ), Contains.ContainsConflict( node1 ) );
 					assertThat( index.query( key, "n?o4j" ), Contains.ContainsConflict( node1 ) );
 					assertThat( index.query( key, "ne*" ), Contains.ContainsConflict( node1, node2 ) );
-					assertThat( index.query( key + ":neo4j" ), Contains.ContainsConflict( node1 ) );
+					assertThat( index.query( key + ":Neo4Net" ), Contains.ContainsConflict( node1 ) );
 					assertThat( index.query( key + ":neo*" ), Contains.ContainsConflict( node1 ) );
 					assertThat( index.query( key + ":n?o4j" ), Contains.ContainsConflict( node1 ) );
 					assertThat( index.query( key + ":ne*" ), Contains.ContainsConflict( node1, node2 ) );
@@ -689,8 +689,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void doSomeRandomUseCaseTestingWithExactIndex(org.neo4j.graphdb.index.Index<T> index, EntityCreator<T> creator)
-		 private void DoSomeRandomUseCaseTestingWithExactIndex<T>( Index<T> index, EntityCreator<T> creator ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void doSomeRandomUseCaseTestingWithExactIndex(org.Neo4Net.graphdb.index.Index<T> index, IEntityCreator<T> creator)
+		 private void DoSomeRandomUseCaseTestingWithExactIndex<T>( Index<T> index, IEntityCreator<T> creator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string name = "name";
 			  string mattias = "Mattias Persson";
@@ -699,65 +699,65 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 			  assertThat( index.get( name, mattias ), emptyIterable() );
 
-			  T entity1 = creator.Create();
-			  T entity2 = creator.Create();
+			  T IEntity1 = creator.Create();
+			  T IEntity2 = creator.Create();
 
 			  assertNull( index.get( name, mattias ).Single );
-			  index.Add( entity1, name, mattias );
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
+			  index.Add( IEntity1, name, mattias );
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
 
-			  assertContains( index.query( name, "\"" + mattias + "\"" ), entity1 );
-			  assertContains( index.query( "name:\"" + mattias + "\"" ), entity1 );
+			  assertContains( index.query( name, "\"" + mattias + "\"" ), IEntity1 );
+			  assertContains( index.query( "name:\"" + mattias + "\"" ), IEntity1 );
 
-			  assertEquals( entity1, index.get( name, mattias ).Single );
+			  assertEquals( IEntity1, index.get( name, mattias ).Single );
 
-			  assertContains( index.query( "name", "Mattias*" ), entity1 );
-
-			  CommitTx();
-
-			  BeginTx();
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.query( name, "\"" + mattias + "\"" ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.query( "name:\"" + mattias + "\"" ), Contains.ContainsConflict( entity1 ) );
-			  assertEquals( entity1, index.get( name, mattias ).Single );
-			  assertThat( index.query( "name", "Mattias*" ), Contains.ContainsConflict( entity1 ) );
-			  CommitTx();
-
-			  BeginTx();
-			  index.Add( entity2, title, hacker );
-			  index.Add( entity1, title, hacker );
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( entity1, entity2 ) );
-
-			  assertContains( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), entity1, entity2 );
+			  assertContains( index.query( "name", "Mattias*" ), IEntity1 );
 
 			  CommitTx();
 
 			  BeginTx();
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( entity1, entity2 ) );
-			  assertThat( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), Contains.ContainsConflict( entity1, entity2 ) );
-			  assertThat( index.query( "name:\"" + mattias + "\" AND title:\"" + hacker + "\"" ), Contains.ContainsConflict( entity1 ) );
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.query( name, "\"" + mattias + "\"" ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.query( "name:\"" + mattias + "\"" ), Contains.ContainsConflict( IEntity1 ) );
+			  assertEquals( IEntity1, index.get( name, mattias ).Single );
+			  assertThat( index.query( "name", "Mattias*" ), Contains.ContainsConflict( IEntity1 ) );
 			  CommitTx();
 
 			  BeginTx();
-			  index.Remove( entity2, title, hacker );
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( entity1 ) );
+			  index.Add( IEntity2, title, hacker );
+			  index.Add( IEntity1, title, hacker );
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
 
-			  assertContains( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), entity1 );
+			  assertContains( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), IEntity1, IEntity2 );
 
 			  CommitTx();
 
 			  BeginTx();
-			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( entity1 ) );
-			  assertThat( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), Contains.ContainsConflict( entity1 ) );
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
+			  assertThat( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
+			  assertThat( index.query( "name:\"" + mattias + "\" AND title:\"" + hacker + "\"" ), Contains.ContainsConflict( IEntity1 ) );
 			  CommitTx();
 
 			  BeginTx();
-			  index.Remove( entity1, title, hacker );
-			  index.Remove( entity1, name, mattias );
+			  index.Remove( IEntity2, title, hacker );
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( IEntity1 ) );
+
+			  assertContains( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), IEntity1 );
+
+			  CommitTx();
+
+			  BeginTx();
+			  assertThat( index.get( name, mattias ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.get( title, hacker ), Contains.ContainsConflict( IEntity1 ) );
+			  assertThat( index.query( "name:\"" + mattias + "\" OR title:\"" + hacker + "\"" ), Contains.ContainsConflict( IEntity1 ) );
+			  CommitTx();
+
+			  BeginTx();
+			  index.Remove( IEntity1, title, hacker );
+			  index.Remove( IEntity1, name, mattias );
 			  index.Delete();
 			  CommitTx();
 		 }
@@ -777,24 +777,24 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void doSomeRandomTestingWithFulltextIndex(org.neo4j.graphdb.index.Index<T> index, EntityCreator<T> creator)
-		 private void DoSomeRandomTestingWithFulltextIndex<T>( Index<T> index, EntityCreator<T> creator ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void doSomeRandomTestingWithFulltextIndex(org.Neo4Net.graphdb.index.Index<T> index, IEntityCreator<T> creator)
+		 private void DoSomeRandomTestingWithFulltextIndex<T>( Index<T> index, IEntityCreator<T> creator ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  T entity1 = creator.Create();
-			  T entity2 = creator.Create();
+			  T IEntity1 = creator.Create();
+			  T IEntity2 = creator.Create();
 
 			  string key = "name";
-			  index.Add( entity1, key, "The quick brown fox" );
-			  index.Add( entity2, key, "brown fox jumped over" );
+			  index.Add( IEntity1, key, "The quick brown fox" );
+			  index.Add( IEntity2, key, "brown fox jumped over" );
 
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertThat( index.get( key, "The quick brown fox" ), Contains.ContainsConflict( entity1 ) );
-					assertThat( index.get( key, "brown fox jumped over" ), Contains.ContainsConflict( entity2 ) );
-					assertThat( index.query( key, "quick" ), Contains.ContainsConflict( entity1 ) );
-					assertThat( index.query( key, "brown" ), Contains.ContainsConflict( entity1, entity2 ) );
-					assertThat( index.query( key, "quick OR jumped" ), Contains.ContainsConflict( entity1, entity2 ) );
-					assertThat( index.query( key, "brown AND fox" ), Contains.ContainsConflict( entity1, entity2 ) );
+					assertThat( index.get( key, "The quick brown fox" ), Contains.ContainsConflict( IEntity1 ) );
+					assertThat( index.get( key, "brown fox jumped over" ), Contains.ContainsConflict( IEntity2 ) );
+					assertThat( index.query( key, "quick" ), Contains.ContainsConflict( IEntity1 ) );
+					assertThat( index.query( key, "brown" ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
+					assertThat( index.query( key, "quick OR jumped" ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
+					assertThat( index.query( key, "brown AND fox" ), Contains.ContainsConflict( IEntity1, IEntity2 ) );
 
 					RestartTx();
 			  }
@@ -1131,7 +1131,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  CustomAnalyzer.Called = false;
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-			  Index<Node> index = NodeIndex( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "analyzer", typeof( CustomAnalyzer ).FullName, "to_lower_case", "true" ) );
+			  Index<Node> index = NodeIndex( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "analyzer", typeof( CustomAnalyzer ).FullName, "to_lower_case", "true" ) );
 			  Node node = GraphDb.createNode();
 			  string key = "name";
 			  string value = "The value";
@@ -1147,7 +1147,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  CustomAnalyzer.Called = false;
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-			  Index<Node> index = NodeIndex( "w-custom-analyzer-2", MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "analyzer", typeof( CustomAnalyzer ).FullName, "to_lower_case", "true", "type", "fulltext" ) );
+			  Index<Node> index = NodeIndex( "w-custom-analyzer-2", MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "analyzer", typeof( CustomAnalyzer ).FullName, "to_lower_case", "true", "type", "fulltext" ) );
 			  Node node = GraphDb.createNode();
 			  string key = "name";
 			  string value = "The value";
@@ -1190,8 +1190,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void testAbandonedIds(EntityCreator<T> creator, org.neo4j.graphdb.index.Index<T> index)
-		 private void TestAbandonedIds<T>( EntityCreator<T> creator, Index<T> index ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testAbandonedIds(EntityCreator<T> creator, org.Neo4Net.graphdb.index.Index<T> index)
+		 private void TestAbandonedIds<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  // TODO This doesn't actually test that they are deleted, it just triggers it
 			  // so that you manually can inspect what's going on
@@ -1270,8 +1270,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //ORIGINAL LINE: @Test public void makeSureYouCanGetEntityTypeFromIndex()
 		 public virtual void MakeSureYouCanGetEntityTypeFromIndex()
 		 {
-			  Index<Node> nodeIndex = nodeIndex( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "exact" ) );
-			  Index<Relationship> relIndex = RelationshipIndex( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "exact" ) );
+			  Index<Node> nodeIndex = nodeIndex( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "exact" ) );
+			  Index<Relationship> relIndex = RelationshipIndex( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "exact" ) );
 			  assertEquals( typeof( Node ), nodeIndex.EntityType );
 			  assertEquals( typeof( Relationship ), relIndex.EntityType );
 		 }
@@ -1283,7 +1283,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  Index<Node> index = NodeIndex( LuceneIndexImplementation.ExactConfig );
 			  try
 			  {
-					GraphDb.index().setConfiguration(index, Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "something");
+					GraphDb.index().setConfiguration(index, Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "something");
 					fail( "Shouldn't be able to modify provider" );
 			  }
 			  catch ( System.ArgumentException )
@@ -1291,7 +1291,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 			  try
 			  {
-					GraphDb.index().removeConfiguration(index, Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER);
+					GraphDb.index().removeConfiguration(index, Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER);
 					fail( "Shouldn't be able to modify provider" );
 			  }
 			  catch ( System.ArgumentException )
@@ -1313,7 +1313,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //ORIGINAL LINE: @Test public void makeSureSlightDifferencesInIndexConfigCanBeSupplied()
 		 public virtual void MakeSureSlightDifferencesInIndexConfigCanBeSupplied()
 		 {
-			  IDictionary<string, string> config = MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" );
+			  IDictionary<string, string> config = MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" );
 			  string name = CurrentIndexName();
 			  NodeIndex( name, config );
 			  NodeIndex( name, MapUtil.stringMap( new Dictionary<>( config ), "to_lower_case", "true" ) );
@@ -1361,7 +1361,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 public virtual void TestTopHits()
 		 {
 			  Index<Relationship> index = RelationshipIndex( LuceneIndexImplementation.FulltextConfig );
-			  EntityCreator<Relationship> creator = RELATIONSHIP_CREATOR;
+			  IEntityCreator<Relationship> creator = RELATIONSHIP_CREATOR;
 			  string key = "text";
 			  Relationship rel1 = creator.Create( key, "one two three four five six seven eight nine ten" );
 			  Relationship rel2 = creator.Create( key, "one two three four five six seven eight other things" );
@@ -1391,7 +1391,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 public virtual void TestSimilarity()
 		 {
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-			  Index<Node> index = NodeIndex( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext", "similarity", typeof( DefaultSimilarity ).FullName ) );
+			  Index<Node> index = NodeIndex( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext", "similarity", typeof( DefaultSimilarity ).FullName ) );
 			  Node node = GraphDb.createNode();
 			  index.Add( node, "key", "value" );
 			  RestartTx();
@@ -1419,31 +1419,31 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void testRemoveWithoutKey(EntityCreator<T> creator, org.neo4j.graphdb.index.Index<T> index)
-		 private void TestRemoveWithoutKey<T>( EntityCreator<T> creator, Index<T> index ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKey(EntityCreator<T> creator, org.Neo4Net.graphdb.index.Index<T> index)
+		 private void TestRemoveWithoutKey<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
 			  string key2 = "key2";
 			  string value = "value";
 
-			  T entity1 = creator.Create();
-			  index.Add( entity1, key1, value );
-			  index.Add( entity1, key2, value );
-			  T entity2 = creator.Create();
-			  index.Add( entity2, key1, value );
-			  index.Add( entity2, key2, value );
+			  T IEntity1 = creator.Create();
+			  index.Add( IEntity1, key1, value );
+			  index.Add( IEntity1, key2, value );
+			  T IEntity2 = creator.Create();
+			  index.Add( IEntity2, key1, value );
+			  index.Add( IEntity2, key2, value );
 			  RestartTx();
 
-			  assertContains( index.get( key1, value ), entity1, entity2 );
-			  assertContains( index.get( key2, value ), entity1, entity2 );
-			  index.Remove( entity1, key2 );
-			  assertContains( index.get( key1, value ), entity1, entity2 );
-			  assertContains( index.get( key2, value ), entity2 );
-			  index.Add( entity1, key2, value );
+			  assertContains( index.get( key1, value ), IEntity1, IEntity2 );
+			  assertContains( index.get( key2, value ), IEntity1, IEntity2 );
+			  index.Remove( IEntity1, key2 );
+			  assertContains( index.get( key1, value ), IEntity1, IEntity2 );
+			  assertContains( index.get( key2, value ), IEntity2 );
+			  index.Add( IEntity1, key2, value );
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertContains( index.get( key1, value ), entity1, entity2 );
-					assertContains( index.get( key2, value ), entity1, entity2 );
+					assertContains( index.get( key1, value ), IEntity1, IEntity2 );
+					assertContains( index.get( key2, value ), IEntity1, IEntity2 );
 					RestartTx();
 			  }
 		 }
@@ -1463,33 +1463,33 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void testRemoveWithoutKeyValue(EntityCreator<T> creator, org.neo4j.graphdb.index.Index<T> index)
-		 private void TestRemoveWithoutKeyValue<T>( EntityCreator<T> creator, Index<T> index ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValue(EntityCreator<T> creator, org.Neo4Net.graphdb.index.Index<T> index)
+		 private void TestRemoveWithoutKeyValue<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
 			  string value1 = "value1";
 			  string key2 = "key2";
 			  string value2 = "value2";
 
-			  T entity1 = creator.Create();
-			  index.Add( entity1, key1, value1 );
-			  index.Add( entity1, key2, value2 );
-			  T entity2 = creator.Create();
-			  index.Add( entity2, key1, value1 );
-			  index.Add( entity2, key2, value2 );
+			  T IEntity1 = creator.Create();
+			  index.Add( IEntity1, key1, value1 );
+			  index.Add( IEntity1, key2, value2 );
+			  T IEntity2 = creator.Create();
+			  index.Add( IEntity2, key1, value1 );
+			  index.Add( IEntity2, key2, value2 );
 			  RestartTx();
 
-			  assertContains( index.get( key1, value1 ), entity1, entity2 );
-			  assertContains( index.get( key2, value2 ), entity1, entity2 );
-			  index.Remove( entity1 );
-			  assertContains( index.get( key1, value1 ), entity2 );
-			  assertContains( index.get( key2, value2 ), entity2 );
-			  index.Add( entity1, key1, value1 );
+			  assertContains( index.get( key1, value1 ), IEntity1, IEntity2 );
+			  assertContains( index.get( key2, value2 ), IEntity1, IEntity2 );
+			  index.Remove( IEntity1 );
+			  assertContains( index.get( key1, value1 ), IEntity2 );
+			  assertContains( index.get( key2, value2 ), IEntity2 );
+			  index.Add( IEntity1, key1, value1 );
 
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertContains( index.get( key1, value1 ), entity1, entity2 );
-					assertContains( index.get( key2, value2 ), entity2 );
+					assertContains( index.get( key1, value1 ), IEntity1, IEntity2 );
+					assertContains( index.get( key2, value2 ), IEntity2 );
 					RestartTx();
 			  }
 		 }
@@ -1509,8 +1509,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void testRemoveWithoutKeyFulltext(EntityCreator<T> creator, org.neo4j.graphdb.index.Index<T> index)
-		 private void TestRemoveWithoutKeyFulltext<T>( EntityCreator<T> creator, Index<T> index ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyFulltext(EntityCreator<T> creator, org.Neo4Net.graphdb.index.Index<T> index)
+		 private void TestRemoveWithoutKeyFulltext<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string key1 = "key1";
 			  string key2 = "key2";
@@ -1518,26 +1518,26 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  string value2 = "other value";
 			  string value = "value";
 
-			  T entity1 = creator.Create();
-			  index.Add( entity1, key1, value1 );
-			  index.Add( entity1, key2, value1 );
-			  index.Add( entity1, key2, value2 );
-			  T entity2 = creator.Create();
-			  index.Add( entity2, key1, value1 );
-			  index.Add( entity2, key2, value1 );
-			  index.Add( entity2, key2, value2 );
+			  T IEntity1 = creator.Create();
+			  index.Add( IEntity1, key1, value1 );
+			  index.Add( IEntity1, key2, value1 );
+			  index.Add( IEntity1, key2, value2 );
+			  T IEntity2 = creator.Create();
+			  index.Add( IEntity2, key1, value1 );
+			  index.Add( IEntity2, key2, value1 );
+			  index.Add( IEntity2, key2, value2 );
 			  RestartTx();
 
-			  assertContains( index.query( key1, value ), entity1, entity2 );
-			  assertContains( index.query( key2, value ), entity1, entity2 );
-			  index.Remove( entity1, key2 );
-			  assertContains( index.query( key1, value ), entity1, entity2 );
-			  assertContains( index.query( key2, value ), entity2 );
-			  index.Add( entity1, key2, value1 );
+			  assertContains( index.query( key1, value ), IEntity1, IEntity2 );
+			  assertContains( index.query( key2, value ), IEntity1, IEntity2 );
+			  index.Remove( IEntity1, key2 );
+			  assertContains( index.query( key1, value ), IEntity1, IEntity2 );
+			  assertContains( index.query( key2, value ), IEntity2 );
+			  index.Add( IEntity1, key2, value1 );
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertContains( index.query( key1, value ), entity1, entity2 );
-					assertContains( index.query( key2, value ), entity1, entity2 );
+					assertContains( index.query( key1, value ), IEntity1, IEntity2 );
+					assertContains( index.query( key2, value ), IEntity1, IEntity2 );
 					RestartTx();
 			  }
 		 }
@@ -1557,8 +1557,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.graphdb.PropertyContainer> void testRemoveWithoutKeyValueFulltext(EntityCreator<T> creator, org.neo4j.graphdb.index.Index<T> index)
-		 private void TestRemoveWithoutKeyValueFulltext<T>( EntityCreator<T> creator, Index<T> index ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.graphdb.PropertyContainer> void testRemoveWithoutKeyValueFulltext(EntityCreator<T> creator, org.Neo4Net.graphdb.index.Index<T> index)
+		 private void TestRemoveWithoutKeyValueFulltext<T>( IEntityCreator<T> creator, Index<T> index ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  string value = "value";
 			  string key1 = "key1";
@@ -1566,24 +1566,24 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  string key2 = "key2";
 			  string value2 = value + " two";
 
-			  T entity1 = creator.Create();
-			  index.Add( entity1, key1, value1 );
-			  index.Add( entity1, key2, value2 );
-			  T entity2 = creator.Create();
-			  index.Add( entity2, key1, value1 );
-			  index.Add( entity2, key2, value2 );
+			  T IEntity1 = creator.Create();
+			  index.Add( IEntity1, key1, value1 );
+			  index.Add( IEntity1, key2, value2 );
+			  T IEntity2 = creator.Create();
+			  index.Add( IEntity2, key1, value1 );
+			  index.Add( IEntity2, key2, value2 );
 			  RestartTx();
 
-			  assertContains( index.query( key1, value ), entity1, entity2 );
-			  assertContains( index.query( key2, value ), entity1, entity2 );
-			  index.Remove( entity1 );
-			  assertContains( index.query( key1, value ), entity2 );
-			  assertContains( index.query( key2, value ), entity2 );
-			  index.Add( entity1, key1, value1 );
+			  assertContains( index.query( key1, value ), IEntity1, IEntity2 );
+			  assertContains( index.query( key2, value ), IEntity1, IEntity2 );
+			  index.Remove( IEntity1 );
+			  assertContains( index.query( key1, value ), IEntity2 );
+			  assertContains( index.query( key2, value ), IEntity2 );
+			  index.Add( IEntity1, key1, value1 );
 			  for ( int i = 0; i < 2; i++ )
 			  {
-					assertContains( index.query( key1, value ), entity1, entity2 );
-					assertContains( index.query( key2, value ), entity2 );
+					assertContains( index.query( key1, value ), IEntity1, IEntity2 );
+					assertContains( index.query( key2, value ), IEntity2 );
 					RestartTx();
 			  }
 		 }
@@ -1946,7 +1946,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  const string property = "counter";
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.Index<org.neo4j.graphdb.Node> index = nodeIndex(LuceneIndexImplementation.EXACT_CONFIG);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index = nodeIndex(LuceneIndexImplementation.EXACT_CONFIG);
 			  Index<Node> index = NodeIndex( LuceneIndexImplementation.ExactConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger counter = new java.util.concurrent.atomic.AtomicInteger();
@@ -1998,13 +1998,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  const string value = "Mattias";
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node root = graphDb.createNode();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node root = graphDb.createNode();
 			  Node root = GraphDb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.Index<org.neo4j.graphdb.Relationship> index = relationshipIndex(LuceneIndexImplementation.EXACT_CONFIG);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Relationship> index = relationshipIndex(LuceneIndexImplementation.EXACT_CONFIG);
 			  Index<Relationship> index = RelationshipIndex( LuceneIndexImplementation.ExactConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.RelationshipType type = withName("SINGLE");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.RelationshipType type = withName("SINGLE");
 			  RelationshipType type = withName( "SINGLE" );
 			  UniqueFactory<Relationship> factory = new UniqueRelationshipFactoryAnonymousInnerClass( this, index, key, value, root, type );
 

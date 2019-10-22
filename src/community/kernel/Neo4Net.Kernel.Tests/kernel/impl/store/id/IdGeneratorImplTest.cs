@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.store.id
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IdCapacityExceededException = Neo4Net.Kernel.impl.store.id.validation.IdCapacityExceededException;
 	using NegativeIdException = Neo4Net.Kernel.impl.store.id.validation.NegativeIdException;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.store.id
 	public class IdGeneratorImplTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsr = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsr = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fsr = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();

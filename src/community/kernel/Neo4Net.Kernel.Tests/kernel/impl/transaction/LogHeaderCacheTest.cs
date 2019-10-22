@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogHeaderCache cache = new org.neo4j.kernel.impl.transaction.log.LogHeaderCache(2);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache cache = new org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache(2);
 			  LogHeaderCache cache = new LogHeaderCache( 2 );
 
 			  // when
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogHeaderCache cache = new org.neo4j.kernel.impl.transaction.log.LogHeaderCache(2);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache cache = new org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache(2);
 			  LogHeaderCache cache = new LogHeaderCache( 2 );
 
 			  // when
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogHeaderCache cache = new org.neo4j.kernel.impl.transaction.log.LogHeaderCache(2);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache cache = new org.Neo4Net.kernel.impl.transaction.log.LogHeaderCache(2);
 			  LogHeaderCache cache = new LogHeaderCache( 2 );
 
 			  // when

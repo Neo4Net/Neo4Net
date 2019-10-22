@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class FailoverWithAdditionalSlaveFailuresIT
@@ -57,10 +57,10 @@ namespace Neo4Net.Kernel.ha
 		 public TestName Name = new TestName();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.LoggerRule logger = new org.neo4j.test.rule.LoggerRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule();
 		 public LoggerRule Logger = new LoggerRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Dir = TestDirectory.testDirectory();
 
 		 // parameters

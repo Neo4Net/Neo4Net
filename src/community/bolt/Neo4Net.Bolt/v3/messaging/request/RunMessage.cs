@@ -29,9 +29,9 @@ namespace Neo4Net.Bolt.v3.messaging.request
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
+//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
+//	import static org.Neo4Net.bolt.v3.messaging.request.MessageMetadataParser.parseTransactionTimeout;
 
 	public class RunMessage : RequestMessage
 	{
@@ -46,19 +46,19 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 private readonly IDictionary<string, object> _txMetadata;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RunMessage(String statement) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: public RunMessage(String statement) throws org.Neo4Net.bolt.messaging.BoltIOException
 		 public RunMessage( string statement ) : this( statement, VirtualValues.EMPTY_MAP )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RunMessage(String statement, org.neo4j.values.virtual.MapValue params) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: public RunMessage(String statement, org.Neo4Net.values.virtual.MapValue params) throws org.Neo4Net.bolt.messaging.BoltIOException
 		 public RunMessage( string statement, MapValue @params ) : this( statement, @params, VirtualValues.EMPTY_MAP )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RunMessage(String statement, org.neo4j.values.virtual.MapValue params, org.neo4j.values.virtual.MapValue meta) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: public RunMessage(String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
 		 public RunMessage( string statement, MapValue @params, MapValue meta )
 		 {
 			  this._statement = requireNonNull( statement );

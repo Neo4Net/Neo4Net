@@ -26,11 +26,11 @@ namespace Neo4Net.CodeGen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Parameter.param;
+//	import static org.Neo4Net.codegen.Parameter.param;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.NO_TYPES;
+//	import static org.Neo4Net.codegen.TypeReference.NO_TYPES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeReference;
+//	import static org.Neo4Net.codegen.TypeReference.typeReference;
 
 	public abstract class MethodDeclaration
 	{

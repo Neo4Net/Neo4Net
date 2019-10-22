@@ -35,9 +35,9 @@ namespace Neo4Net.CodeGen.Source
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.source.ClasspathHelper.fullClasspathFor;
+//	import static org.Neo4Net.codegen.source.ClasspathHelper.fullClasspathFor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.source.ClasspathHelper.fullClasspathStringFor;
+//	import static org.Neo4Net.codegen.source.ClasspathHelper.fullClasspathStringFor;
 
 	public class ClasspathHelperTest
 	{

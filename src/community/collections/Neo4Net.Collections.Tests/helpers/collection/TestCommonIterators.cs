@@ -24,9 +24,9 @@ namespace Neo4Net.Helpers.Collections
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.member.paxos
 {
@@ -47,14 +47,14 @@ namespace Neo4Net.cluster.member.paxos
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.@in;
+//	import static org.Neo4Net.function.Predicates.@in;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.filter;
+//	import static org.Neo4Net.helpers.collection.Iterables.filter;
 
 	/// <summary>
-	/// Paxos based implementation of <seealso cref="org.neo4j.cluster.member.ClusterMemberEvents"/>
+	/// Paxos based implementation of <seealso cref="org.Neo4Net.cluster.member.ClusterMemberEvents"/>
 	/// </summary>
 	public class PaxosClusterMemberEvents : ClusterMemberEvents, Lifecycle
 	{
@@ -76,7 +76,7 @@ namespace Neo4Net.cluster.member.paxos
 		 private readonly NamedThreadFactory.Monitor _namedThreadFactoryMonitor;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public PaxosClusterMemberEvents(final org.neo4j.cluster.protocol.snapshot.Snapshot snapshot, org.neo4j.cluster.protocol.cluster.Cluster cluster, org.neo4j.cluster.protocol.heartbeat.Heartbeat heartbeat, org.neo4j.cluster.protocol.atomicbroadcast.AtomicBroadcast atomicBroadcast, org.neo4j.logging.LogProvider logProvider, System.Predicate<ClusterMembersSnapshot> validator, System.Func<Iterable<MemberIsAvailable>, MemberIsAvailable, Iterable<MemberIsAvailable>> snapshotFilter, org.neo4j.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory lenientObjectInputStream, org.neo4j.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory lenientObjectOutputStream, org.neo4j.helpers.NamedThreadFactory.Monitor namedThreadFactoryMonitor)
+//ORIGINAL LINE: public PaxosClusterMemberEvents(final org.Neo4Net.cluster.protocol.snapshot.Snapshot snapshot, org.Neo4Net.cluster.protocol.cluster.Cluster cluster, org.Neo4Net.cluster.protocol.heartbeat.Heartbeat heartbeat, org.Neo4Net.cluster.protocol.atomicbroadcast.AtomicBroadcast atomicBroadcast, org.Neo4Net.logging.LogProvider logProvider, System.Predicate<ClusterMembersSnapshot> validator, System.Func<Iterable<MemberIsAvailable>, MemberIsAvailable, Iterable<MemberIsAvailable>> snapshotFilter, org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory lenientObjectInputStream, org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory lenientObjectOutputStream, org.Neo4Net.helpers.NamedThreadFactory.Monitor namedThreadFactoryMonitor)
 		 public PaxosClusterMemberEvents( Snapshot snapshot, Cluster cluster, Heartbeat heartbeat, AtomicBroadcast atomicBroadcast, LogProvider logProvider, System.Predicate<ClusterMembersSnapshot> validator, System.Func<IEnumerable<MemberIsAvailable>, MemberIsAvailable, IEnumerable<MemberIsAvailable>> snapshotFilter, ObjectInputStreamFactory lenientObjectInputStream, ObjectOutputStreamFactory lenientObjectOutputStream, NamedThreadFactory.Monitor namedThreadFactoryMonitor )
 		 {
 			  this._snapshot = snapshot;
@@ -220,14 +220,14 @@ namespace Neo4Net.cluster.member.paxos
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void unavailableMember(final org.neo4j.cluster.InstanceId member)
+//ORIGINAL LINE: public void unavailableMember(final org.Neo4Net.cluster.InstanceId member)
 			  public virtual void UnavailableMember( InstanceId member )
 			  {
 					AvailableMembers = asList( filter( item => !item.InstanceId.Equals( member ), AvailableMembers ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void unavailableMember(final java.net.URI member, final org.neo4j.cluster.InstanceId id, final String role)
+//ORIGINAL LINE: public void unavailableMember(final java.net.URI member, final org.Neo4Net.cluster.InstanceId id, final String role)
 			  public virtual void UnavailableMember( URI member, InstanceId id, string role )
 			  {
 					AvailableMembers = asList(filter(item =>
@@ -248,7 +248,7 @@ namespace Neo4Net.cluster.member.paxos
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<MemberIsAvailable> getCurrentAvailable(final org.neo4j.cluster.InstanceId memberId)
+//ORIGINAL LINE: public Iterable<MemberIsAvailable> getCurrentAvailable(final org.Neo4Net.cluster.InstanceId memberId)
 			  public virtual IEnumerable<MemberIsAvailable> GetCurrentAvailable( InstanceId memberId )
 			  {
 					return asList( Iterables.filter( item => item.InstanceId.Equals( memberId ), AvailableMembers ) );

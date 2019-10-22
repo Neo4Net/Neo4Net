@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 
 	/// <summary>
 	/// Base class for common functionality for any <seealso cref="NumberArray"/> where the data lives inside heap.

@@ -23,10 +23,10 @@ namespace Neo4Net.Internal.Kernel.Api
 {
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb.index;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb.index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;
@@ -63,7 +63,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					assertTrue( graphDb.index().existsForNodes(INDEX_NAME) );
 					ctx.Success();
@@ -87,7 +87,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					assertTrue( graphDb.index().existsForNodes(INDEX_NAME) );
 					ctx.Success();
@@ -109,7 +109,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Node> hits = graphDb.index().forNodes(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -136,7 +136,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Node> hits = graphDb.index().forNodes(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -170,7 +170,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Node> hits = graphDb.index().forNodes(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -197,7 +197,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Node> hits = graphDb.index().forNodes(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -226,7 +226,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					assertTrue( graphDb.index().existsForRelationships(INDEX_NAME) );
 					ctx.Success();
@@ -250,7 +250,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					assertTrue( graphDb.index().existsForRelationships(INDEX_NAME) );
 					ctx.Success();
@@ -283,7 +283,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					assertTrue( graphDb.index().existsForNodes(INDEX_NAME) );
 					ctx.Success();
@@ -296,7 +296,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldAddRelationshipToExplicitIndex()
 		 {
 			  long relId;
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					relId = graphDb.createNode().createRelationshipTo(graphDb.createNode(), RelationshipType.withName("R")).Id;
 					ctx.Success();
@@ -310,7 +310,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Relationship> hits = graphDb.index().forRelationships(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -337,7 +337,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Node> hits = graphDb.index().forNodes(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -371,7 +371,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Relationship> hits = graphDb.index().forRelationships(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -398,7 +398,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					IndexHits<Relationship> hits = graphDb.index().forRelationships(INDEX_NAME).get(KEY, VALUE);
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -432,7 +432,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 private long AddRelationshipToExplicitIndex()
 		 {
 			  long relId;
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					Relationship rel = graphDb.createNode().createRelationshipTo(graphDb.createNode(), RelationshipType.withName("R"));
 					relId = rel.Id;

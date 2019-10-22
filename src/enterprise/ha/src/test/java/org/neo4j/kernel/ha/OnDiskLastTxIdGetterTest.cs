@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -44,10 +44,10 @@ namespace Neo4Net.Kernel.ha
 	public class OnDiskLastTxIdGetterTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -65,10 +65,10 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void LastTransactionIdIsBaseTxIdWhileNeoStoresAreStopped()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.StoreFactory storeFactory = new org.neo4j.kernel.impl.store.StoreFactory(org.neo4j.io.layout.DatabaseLayout.of(new java.io.File("store")), org.neo4j.kernel.configuration.Config.defaults(), new org.neo4j.kernel.impl.store.id.DefaultIdGeneratorFactory(fs.get()), pageCacheRule.getPageCache(fs.get()), fs.get(), org.neo4j.logging.NullLogProvider.getInstance(), org.neo4j.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.StoreFactory storeFactory = new org.Neo4Net.kernel.impl.store.StoreFactory(org.Neo4Net.io.layout.DatabaseLayout.of(new java.io.File("store")), org.Neo4Net.kernel.configuration.Config.defaults(), new org.Neo4Net.kernel.impl.store.id.DefaultIdGeneratorFactory(fs.get()), pageCacheRule.getPageCache(fs.get()), fs.get(), org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY);
 			  StoreFactory storeFactory = new StoreFactory( DatabaseLayout.of( new File( "store" ) ), Config.defaults(), new DefaultIdGeneratorFactory(Fs.get()), PageCacheRule.getPageCache(Fs.get()), Fs.get(), NullLogProvider.Instance, EmptyVersionContextSupplier.EMPTY );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.NeoStores neoStores = storeFactory.openAllNeoStores(true);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.NeoStores neoStores = storeFactory.openAllNeoStores(true);
 			  NeoStores neoStores = storeFactory.OpenAllNeoStores( true );
 			  neoStores.Close();
 

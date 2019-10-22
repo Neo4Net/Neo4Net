@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_NODE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_NODE;
 
 	/// <summary>
 	/// TODO why isn't this a <seealso cref="KernelException"/>?
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 		 }
 
 		 /// <summary>
-		 /// Use this method in cases where <seealso cref="org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException"/>
+		 /// Use this method in cases where <seealso cref="org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException"/>
 		 /// was caught but it should not have been allowed to be thrown in the first place.
 		 /// Typically where the index we performed an operation on is not a unique index.
 		 /// </summary>

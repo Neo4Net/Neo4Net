@@ -31,7 +31,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //	import static System.nanoTime;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.iterator;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.iterator;
 
 	/// <summary>
 	/// Using the <seealso cref="NodeRelationshipCache"/> efficiently looks for changed nodes and reads those

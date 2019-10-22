@@ -56,23 +56,23 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
+//	import static org.Neo4Net.kernel.impl.api.index.PhaseTracker_Fields.nullInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexPopulator.BYTE_ONLINE;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexPopulator.BYTE_POPULATING;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ValueCreatorUtil.countUniqueValues;
+//	import static org.Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.countUniqueValues;
 
 	public abstract class NativeIndexPopulatorTests<KEY, VALUE> : NativeIndexTestUtil<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // given
 			  Populator.create();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Collections.emptyList();
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Collections.emptyList();
 			  IList<IndexEntryUpdate<object>> updates = Collections.emptyList();
 
 			  // when
@@ -187,7 +187,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // given
 			  Populator.create();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>[] updates = valueCreatorUtil.someUpdates(random);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates = valueCreatorUtil.someUpdates(random);
 			  IndexEntryUpdate<IndexDescriptor>[] updates = valueCreatorUtil.someUpdates( random );
 
 			  // when
@@ -255,7 +255,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // given
 			  Populator.create();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>[] updates = valueCreatorUtil.someUpdates(random);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates = valueCreatorUtil.someUpdates(random);
 			  IndexEntryUpdate<IndexDescriptor>[] updates = valueCreatorUtil.someUpdates( random );
 
 			  // when
@@ -738,7 +738,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int interleaveLargeAmountOfUpdates(java.util.Random updaterRandom, java.util.Iterator<org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private int interleaveLargeAmountOfUpdates(java.util.Random updaterRandom, java.util.Iterator<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private int InterleaveLargeAmountOfUpdates( Random updaterRandom, IEnumerator<IndexEntryUpdate<IndexDescriptor>> updates )
 		 {
 			  int count = 0;
@@ -765,7 +765,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHeader(org.neo4j.internal.kernel.api.InternalIndexState expectedState, String failureMessage, boolean messageTruncated) throws java.io.IOException
+//ORIGINAL LINE: private void assertHeader(org.Neo4Net.internal.kernel.api.InternalIndexState expectedState, String failureMessage, boolean messageTruncated) throws java.io.IOException
 		 private void AssertHeader( InternalIndexState expectedState, string failureMessage, bool messageTruncated )
 		 {
 			  NativeIndexHeaderReader headerReader = new NativeIndexHeaderReader( NO_HEADER_READER );
@@ -805,7 +805,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyInterleaved(org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>[] updates, NativeIndexPopulator<KEY,VALUE> populator) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void applyInterleaved(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates, NativeIndexPopulator<KEY,VALUE> populator) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ApplyInterleaved( IndexEntryUpdate<IndexDescriptor>[] updates, NativeIndexPopulator<KEY, VALUE> populator )
 		 {
 			  bool useUpdater = true;
@@ -847,11 +847,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyUpdates(java.util.Iterator<org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>> indexEntryUpdateIterator, int count) throws java.io.IOException
+//ORIGINAL LINE: private void verifyUpdates(java.util.Iterator<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>> indexEntryUpdateIterator, int count) throws java.io.IOException
 		 private void VerifyUpdates( IEnumerator<IndexEntryUpdate<IndexDescriptor>> indexEntryUpdateIterator, int count )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.storageengine.api.schema.IndexDescriptor>[] updates = new org.neo4j.kernel.api.index.IndexEntryUpdate[count];
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates = new org.Neo4Net.kernel.api.index.IndexEntryUpdate[count];
 			  IndexEntryUpdate<IndexDescriptor>[] updates = new IndexEntryUpdate[count];
 			  for ( int i = 0; i < count; i++ )
 			  {

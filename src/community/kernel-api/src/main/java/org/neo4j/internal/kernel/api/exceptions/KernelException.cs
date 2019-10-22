@@ -46,7 +46,7 @@ namespace Neo4Net.Internal.Kernel.Api.exceptions
 		 }
 
 		 /// <summary>
-		 /// The Neo4j status code associated with this exception type. </summary>
+		 /// The Neo4Net status code associated with this exception type. </summary>
 		 public override Status Status()
 		 {
 			  return _statusCode;

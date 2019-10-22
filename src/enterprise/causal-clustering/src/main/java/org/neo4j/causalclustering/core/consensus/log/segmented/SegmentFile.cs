@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static SegmentFile create(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, ReaderPool readerPool, long version, org.neo4j.causalclustering.messaging.marshalling.ChannelMarshal<org.neo4j.causalclustering.core.replication.ReplicatedContent> contentMarshal, org.neo4j.logging.LogProvider logProvider, SegmentHeader header) throws java.io.IOException
+//ORIGINAL LINE: static SegmentFile create(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, ReaderPool readerPool, long version, org.Neo4Net.causalclustering.messaging.marshalling.ChannelMarshal<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> contentMarshal, org.Neo4Net.logging.LogProvider logProvider, SegmentHeader header) throws java.io.IOException
 		 internal static SegmentFile Create( FileSystemAbstraction fileSystem, File file, ReaderPool readerPool, long version, ChannelMarshal<ReplicatedContent> contentMarshal, LogProvider logProvider, SegmentHeader header )
 		 {
 			  if ( fileSystem.FileExists( file ) )
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 /// Channels must be closed when no longer used, so that they are released back to the pool of readers.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.cursor.IOCursor<org.neo4j.causalclustering.core.consensus.log.EntryRecord> getCursor(long logIndex) throws java.io.IOException, DisposedException
+//ORIGINAL LINE: org.Neo4Net.cursor.IOCursor<org.Neo4Net.causalclustering.core.consensus.log.EntryRecord> getCursor(long logIndex) throws java.io.IOException, DisposedException
 		 internal virtual IOCursor<EntryRecord> GetCursor( long logIndex )
 		 {
 			  Debug.Assert( logIndex > _header.prevIndex() );
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized org.neo4j.kernel.impl.transaction.log.PhysicalFlushableChannel getOrCreateWriter() throws java.io.IOException
+//ORIGINAL LINE: private synchronized org.Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel getOrCreateWriter() throws java.io.IOException
 		 private PhysicalFlushableChannel OrCreateWriter
 		 {
 			 get
@@ -188,7 +188,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void write(long logIndex, org.neo4j.causalclustering.core.consensus.log.RaftLogEntry entry) throws java.io.IOException
+//ORIGINAL LINE: public synchronized void write(long logIndex, org.Neo4Net.causalclustering.core.consensus.log.RaftLogEntry entry) throws java.io.IOException
 		 public virtual void Write( long logIndex, RaftLogEntry entry )
 		 {
 			 lock ( this )

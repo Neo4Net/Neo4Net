@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class CommitStateHelper
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CommitState getStoreState(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: CommitState getStoreState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 internal virtual CommitState GetStoreState( DatabaseLayout databaseLayout )
 		 {
 			  ReadOnlyTransactionIdStore metaDataStore = new ReadOnlyTransactionIdStore( _pageCache, databaseLayout );
@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Optional<long> getLatestTransactionLogIndex(long startTxId, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private java.util.Optional<long> getLatestTransactionLogIndex(long startTxId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private long? GetLatestTransactionLogIndex( long startTxId, DatabaseLayout databaseLayout )
 		 {
 			  if ( !HasTxLogs( databaseLayout ) )
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean hasTxLogs(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public boolean hasTxLogs(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public virtual bool HasTxLogs( DatabaseLayout databaseLayout )
 		 {
 			  return LogFilesBuilder.activeFilesBuilder( databaseLayout, _fs, _pageCache ).withConfig( _config ).build().logFiles().Length > 0;

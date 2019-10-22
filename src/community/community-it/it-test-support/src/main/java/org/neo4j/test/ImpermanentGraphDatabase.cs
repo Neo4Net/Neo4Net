@@ -24,12 +24,12 @@ using System.Collections.Generic;
 namespace Neo4Net.Test
 {
 
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
-	using EmbeddedGraphDatabase = Neo4Net.Graphdb.facade.embedded.EmbeddedGraphDatabase;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using EmbeddedGraphDatabase = Neo4Net.GraphDb.facade.embedded.EmbeddedGraphDatabase;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Service = Neo4Net.Helpers.Service;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -43,13 +43,13 @@ namespace Neo4Net.Test
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.ephemeral;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.ephemeral;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 	/// <summary>
 	/// A database meant to be used in unit tests. It will always be empty on start.

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.api.impl.labelscan
 {
@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.TestHighlyAvailableGraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
@@ -46,16 +46,16 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allAvailabilityGuardsReleased;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allAvailabilityGuardsReleased;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 
 	public class NativeLabelScanStoreHaIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private readonly LifeSupport _life = new LifeSupport();
 		 private ClusterManager.ManagedCluster _cluster;
@@ -122,14 +122,14 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 
 			  // THEN
 			  assertEquals( "Expected none to build their label scan store index.", 0, _monitor.timesRebuiltWithData.get() );
-			  foreach ( GraphDatabaseService db in _cluster.AllMembers )
+			  foreach ( IGraphDatabaseService db in _cluster.AllMembers )
 			  {
 					assertEquals( 2, NumberOfNodesHavingLabel( db, Labels.First ) );
 					assertEquals( 2, NumberOfNodesHavingLabel( db, Labels.First ) );
 			  }
 		 }
 
-		 private static long NumberOfNodesHavingLabel( GraphDatabaseService db, Label label )
+		 private static long NumberOfNodesHavingLabel( IGraphDatabaseService db, Label label )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 			  }
 		 }
 
-		 private static void CreateSomeLabeledNodes( GraphDatabaseService db, params Label[][] labelArrays )
+		 private static void CreateSomeLabeledNodes( IGraphDatabaseService db, params Label[][] labelArrays )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

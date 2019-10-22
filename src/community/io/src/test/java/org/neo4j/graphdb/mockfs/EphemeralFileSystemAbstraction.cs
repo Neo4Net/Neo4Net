@@ -23,7 +23,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.mockfs
+namespace Neo4Net.GraphDb.mockfs
 {
 
 	using ByteUnit = Neo4Net.Io.ByteUnit;
@@ -220,7 +220,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 		 public override StoreChannel Open( File fileName, OpenMode openMode )
 		 {
 			 lock ( this )
@@ -263,7 +263,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.neo4j.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
 		 public override StoreChannel Create( File fileName )
 		 {
 			 lock ( this )
@@ -534,7 +534,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copyRecursivelyFromOtherFs(java.io.File from, org.neo4j.io.fs.FileSystemAbstraction fromFs, java.io.File to) throws java.io.IOException
+//ORIGINAL LINE: public void copyRecursivelyFromOtherFs(java.io.File from, org.Neo4Net.io.fs.FileSystemAbstraction fromFs, java.io.File to) throws java.io.IOException
 		 public virtual void CopyRecursivelyFromOtherFs( File from, FileSystemAbstraction fromFs, File to )
 		 {
 			  CopyRecursivelyFromOtherFs( from, fromFs, to, NewCopyBuffer() );
@@ -572,7 +572,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyRecursivelyFromOtherFs(java.io.File from, org.neo4j.io.fs.FileSystemAbstraction fromFs, java.io.File to, ByteBuffer buffer) throws java.io.IOException
+//ORIGINAL LINE: private void copyRecursivelyFromOtherFs(java.io.File from, org.Neo4Net.io.fs.FileSystemAbstraction fromFs, java.io.File to, ByteBuffer buffer) throws java.io.IOException
 		 private void CopyRecursivelyFromOtherFs( File from, FileSystemAbstraction fromFs, File to, ByteBuffer buffer )
 		 {
 			  this.Mkdirs( to );
@@ -591,7 +591,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyFile(java.io.File from, org.neo4j.io.fs.FileSystemAbstraction fromFs, java.io.File to, ByteBuffer buffer) throws java.io.IOException
+//ORIGINAL LINE: private void copyFile(java.io.File from, org.Neo4Net.io.fs.FileSystemAbstraction fromFs, java.io.File to, ByteBuffer buffer) throws java.io.IOException
 		 private void CopyFile( File from, FileSystemAbstraction fromFs, File to, ByteBuffer buffer )
 		 {
 			  using ( StoreChannel source = fromFs.Open( from, OpenMode.READ ), StoreChannel sink = this.Open( to, OpenMode.READ_WRITE ) )
@@ -646,7 +646,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<org.neo4j.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
+//ORIGINAL LINE: public java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
 		 public override Stream<FileHandle> StreamFilesRecursive( File directory )
 		 {
 			  return StreamFilesRecursive.streamFilesRecursive( directory, this );

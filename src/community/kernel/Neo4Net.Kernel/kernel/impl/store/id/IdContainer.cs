@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long readAndValidate(org.neo4j.io.fs.StoreChannel channel, java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: private static long readAndValidate(org.Neo4Net.io.fs.StoreChannel channel, java.io.File fileName) throws java.io.IOException
 		 private static long ReadAndValidate( StoreChannel channel, File fileName )
 		 {
 			  ByteBuffer buffer = ByteBuffer.allocate( HeaderSize );
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static long readHighId(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: static long readHighId(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 internal static long ReadHighId( FileSystemAbstraction fileSystem, File file )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ ) )
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static long readDefragCount(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: static long readDefragCount(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 internal static long ReadDefragCount( FileSystemAbstraction fileSystem, File file )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ ) )
@@ -337,7 +337,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void readHeader(java.io.File file, org.neo4j.io.fs.StoreChannel channel, ByteBuffer buffer) throws java.io.IOException
+//ORIGINAL LINE: private static void readHeader(java.io.File file, org.Neo4Net.io.fs.StoreChannel channel, ByteBuffer buffer) throws java.io.IOException
 		 private static void ReadHeader( File file, StoreChannel channel, ByteBuffer buffer )
 		 {
 			  try

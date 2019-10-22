@@ -28,7 +28,7 @@ namespace Neo4Net.Internal.Collector
 
 	/// <summary>
 	/// Data collector section that contains meta data about the System,
-	/// Neo4j deployment, graph token counts, and retrieval.
+	/// Neo4Net deployment, graph token counts, and retrieval.
 	/// </summary>
 	internal sealed class MetaSection
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(String graphToken, org.neo4j.internal.kernel.api.Kernel kernel, long numSilentQueryDrops) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(String graphToken, org.Neo4Net.internal.kernel.api.Kernel kernel, long numSilentQueryDrops) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 internal static Stream<RetrieveResult> Retrieve( string graphToken, Kernel kernel, long numSilentQueryDrops )
 		 {
 			  IDictionary<string, object> systemData = new Dictionary<string, object>();

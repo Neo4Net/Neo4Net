@@ -35,7 +35,7 @@ namespace Neo4Net.Pushtocloud
 
 		 public override string Summary()
 		 {
-			  return "Push database to Neo4j cloud";
+			  return "Push database to Neo4Net cloud";
 		 }
 
 		 public override AdminCommandSection CommandSection()
@@ -46,8 +46,8 @@ namespace Neo4Net.Pushtocloud
 
 		 public override string Description()
 		 {
-			  return "Push database to Neo4j cloud. The database can either be a running database or a snapshot in the form of a dump or backup. " +
-						 "Target location is... well, some neo4j cloud service somewhere, right?";
+			  return "Push database to Neo4Net cloud. The database can either be a running database or a snapshot in the form of a dump or backup. " +
+						 "Target location is... well, some Neo4Net cloud service somewhere, right?";
 		 }
 
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )

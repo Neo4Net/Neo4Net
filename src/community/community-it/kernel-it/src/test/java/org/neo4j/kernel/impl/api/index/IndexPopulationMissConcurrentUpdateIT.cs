@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
@@ -72,21 +72,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.filter;
+//	import static org.Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.MultipleIndexPopulator.BATCH_SIZE_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.BATCH_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storemigration.StoreMigrationParticipant_Fields.NOT_PARTICIPATING;
+//	import static org.Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant_Fields.NOT_PARTICIPATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestLabels.LABEL_ONE;
+//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
 
 	public class IndexPopulationMissConcurrentUpdateIT
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly ControlledSchemaIndexProvider _index = new ControlledSchemaIndexProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule()
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule()
 		 public final DatabaseRule db = new ImpermanentDatabaseRuleAnonymousInnerClass()
 		 .withSetting( GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, Settings.FALSE ).withSetting( GraphDatabaseSettings.default_schema_provider, ControlledSchemaIndexProvider.IndexProvider.name() );
 		 // The single-threaded setting makes the test deterministic. The multi-threaded variant has the same problem tested below.
@@ -125,10 +125,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 /// <summary>
 		 /// Tests an issue where the <seealso cref="MultipleIndexPopulator"/> had a condition when applying external concurrent updates that any given
-		 /// update would only be applied if the entity id was lower than the highest entity id the scan had seen (i.e. where the scan was currently at).
+		 /// update would only be applied if the IEntity id was lower than the highest IEntity id the scan had seen (i.e. where the scan was currently at).
 		 /// This would be a problem because of how the <seealso cref="LabelScanReader"/> works internally, which is that it reads one bit-set of node ids
 		 /// at the time, effectively caching a small range of ids. If a concurrent creation would happen right in front of where the scan was
-		 /// after it had read and cached that bit-set it would not apply the update and miss that entity in the scan and would end up with an index
+		 /// after it had read and cached that bit-set it would not apply the update and miss that IEntity in the scan and would end up with an index
 		 /// that was inconsistent with the store.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

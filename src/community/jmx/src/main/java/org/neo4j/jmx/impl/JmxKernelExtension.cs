@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Jmx.impl
 {
 
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Service = Neo4Net.Helpers.Service;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using KernelData = Neo4Net.Kernel.Internal.KernelData;
@@ -37,7 +37,7 @@ namespace Neo4Net.Jmx.impl
 		 private readonly KernelData _kernelData;
 		 private readonly DataSourceManager _dataSourceManager;
 		 private readonly Log _log;
-		 private IList<Neo4jMBean> _beans;
+		 private IList<Neo4NetMBean> _beans;
 		 private MBeanServer _mbs;
 		 private ManagementSupport _support;
 
@@ -52,10 +52,10 @@ namespace Neo4Net.Jmx.impl
 		 {
 			  _support = ManagementSupport.Load();
 			  _mbs = _support.MBeanServer;
-			  _beans = new LinkedList<Neo4jMBean>();
+			  _beans = new LinkedList<Neo4NetMBean>();
 			  try
 			  {
-					Neo4jMBean bean = new KernelBean( _kernelData, _dataSourceManager, _support );
+					Neo4NetMBean bean = new KernelBean( _kernelData, _dataSourceManager, _support );
 					_mbs.registerMBean( bean, bean.ObjectName );
 					_beans.Add( bean );
 			  }
@@ -68,7 +68,7 @@ namespace Neo4Net.Jmx.impl
 			  {
 					try
 					{
-						 foreach ( Neo4jMBean bean in provider.LoadBeans( _kernelData, _support ) )
+						 foreach ( Neo4NetMBean bean in provider.LoadBeans( _kernelData, _support ) )
 						 {
 							  _mbs.registerMBean( bean, bean.ObjectName );
 							  _beans.Add( bean );
@@ -81,7 +81,7 @@ namespace Neo4Net.Jmx.impl
 			  }
 			  try
 			  {
-					Neo4jMBean bean = new ConfigurationBean( _kernelData, _support );
+					Neo4NetMBean bean = new ConfigurationBean( _kernelData, _support );
 					_mbs.registerMBean( bean, bean.ObjectName );
 					_beans.Add( bean );
 			  }
@@ -93,7 +93,7 @@ namespace Neo4Net.Jmx.impl
 
 		 public override void Stop()
 		 {
-			  foreach ( Neo4jMBean bean in _beans )
+			  foreach ( Neo4NetMBean bean in _beans )
 			  {
 					try
 					{
@@ -146,7 +146,7 @@ namespace Neo4Net.Jmx.impl
 			  {
 					// Fall back: if we cannot create proxy, we can search for instances
 					result = new List<T>();
-					foreach ( Neo4jMBean bean in _beans )
+					foreach ( Neo4NetMBean bean in _beans )
 					{
 						 if ( beanInterface.IsInstanceOfType( bean ) )
 						 {

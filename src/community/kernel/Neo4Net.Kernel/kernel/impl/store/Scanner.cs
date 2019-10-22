@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.impl.store
 {
 	using LongIterator = org.eclipse.collections.api.iterator.LongIterator;
 
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> org.neo4j.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final System.Predicate<? super R>... filters)
+//ORIGINAL LINE: @SafeVarargs public static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final System.Predicate<? super R>... filters)
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> org.neo4j.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final boolean forward, final System.Predicate<? super R>... filters)
+//ORIGINAL LINE: @SafeVarargs public static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> org.Neo4Net.graphdb.ResourceIterable<R> scan(final RecordStore<R> store, final boolean forward, final System.Predicate<? super R>... filters)
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

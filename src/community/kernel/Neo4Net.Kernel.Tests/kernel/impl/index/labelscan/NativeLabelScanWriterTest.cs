@@ -41,17 +41,17 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.asArray;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanStoreIT.flipRandom;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStoreIT.flipRandom;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanStoreIT.getLabels;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStoreIT.getLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanStoreIT.nodesWithLabel;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStoreIT.nodesWithLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.LabelScanReader_Fields.NO_ID;
+//	import static org.Neo4Net.storageengine.api.schema.LabelScanReader_Fields.NO_ID;
 
 	public class NativeLabelScanWriterTest
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 private static readonly IComparer<LabelScanKey> _keyComparator = new LabelScanLayout();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> nodesFor(int labelId)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> nodesFor(int labelId)
 			  internal virtual IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> NodesFor( int labelId )
 			  {
 					IDictionary<LabelScanKey, LabelScanValue> forLabel = Data[labelId];

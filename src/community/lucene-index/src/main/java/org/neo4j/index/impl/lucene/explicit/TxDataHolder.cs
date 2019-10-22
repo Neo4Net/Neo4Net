@@ -38,14 +38,14 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  this._data = initialData;
 		 }
 
-		 internal virtual void Add( EntityId entityId, string key, object value )
+		 internal virtual void Add( IEntityId IEntityId, string key, object value )
 		 {
-			  this._data.add( this, entityId, key, value );
+			  this._data.add( this, IEntityId, key, value );
 		 }
 
-		 internal virtual void Remove( EntityId entityId, string key, object value )
+		 internal virtual void Remove( IEntityId IEntityId, string key, object value )
 		 {
-			  this._data.remove( this, entityId, key, value );
+			  this._data.remove( this, IEntityId, key, value );
 		 }
 
 		 internal virtual ICollection<EntityId> Query( Query query, QueryContext contextOrNull )

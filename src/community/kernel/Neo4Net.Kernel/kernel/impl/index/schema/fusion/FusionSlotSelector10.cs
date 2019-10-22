@@ -24,13 +24,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 
 	/// <summary>
 	/// Selector for "lucene+native-1.x".

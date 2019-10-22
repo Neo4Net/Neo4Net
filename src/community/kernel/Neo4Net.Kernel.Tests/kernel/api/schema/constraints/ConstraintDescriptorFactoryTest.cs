@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.api.schema.constraints
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaTestUtil.assertEquality;
+//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.assertEquality;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
+//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
 
 	public class ConstraintDescriptorFactoryTest
 	{

@@ -24,10 +24,10 @@ namespace Neo4Net.Server.rest
 {
 	using Test = org.junit.Test;
 
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
@@ -266,7 +266,7 @@ namespace Neo4Net.Server.rest
 		 /// Lookup list of properties being autoindexed.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listAutoIndexingPropertiesForNodes() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void listAutoIndexingPropertiesForNodes() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListAutoIndexingPropertiesForNodes()
 		 {
@@ -311,7 +311,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForNodes() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForNodes() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoIndexedPropertyForNodes()
 		 {
@@ -319,7 +319,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForRelationships() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void addRemoveAutoIndexedPropertyForRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AddRemoveAutoIndexedPropertyForRelationships()
 		 {
@@ -332,7 +332,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addRemoveAutoIndexedPropertyForType(String uriPartForType) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void addRemoveAutoIndexedPropertyForType(String uriPartForType) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private void AddRemoveAutoIndexedPropertyForType( string uriPartForType )
 		 {
 			  int initialPropertiesSize = GetAutoIndexedPropertiesForType( uriPartForType ).Count;
@@ -357,7 +357,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<String> getAutoIndexedPropertiesForType(String uriPartForType) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<String> getAutoIndexedPropertiesForType(String uriPartForType) throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<string> GetAutoIndexedPropertiesForType( string uriPartForType )
 		 {

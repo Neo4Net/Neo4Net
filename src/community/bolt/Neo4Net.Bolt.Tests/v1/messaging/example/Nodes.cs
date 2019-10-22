@@ -25,11 +25,11 @@ namespace Neo4Net.Bolt.v1.messaging.example
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringArray;
+//	import static org.Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.nodeValue;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.nodeValue;
 
 	public class Nodes
 	{

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.context
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// Transactional version context that used by read transaction to read data of specific version.

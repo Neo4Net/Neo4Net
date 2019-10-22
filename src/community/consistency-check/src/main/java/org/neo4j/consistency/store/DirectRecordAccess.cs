@@ -40,7 +40,7 @@ namespace Neo4Net.Consistency.store
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	public class DirectRecordAccess : RecordAccess
 	{
@@ -80,7 +80,7 @@ namespace Neo4Net.Consistency.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.neo4j.kernel.impl.store.record.PropertyRecord> rawPropertyChain(final long firstId)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.kernel.impl.store.record.PropertyRecord> rawPropertyChain(final long firstId)
 		 public override IEnumerator<PropertyRecord> RawPropertyChain( long firstId )
 		 {
 			  return new PrefetchingIteratorAnonymousInnerClass( this, firstId );

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.stresstests
 {
@@ -29,11 +29,11 @@ namespace Neo4Net.causalclustering.stresstests
 	using Neo4Net.causalclustering.discovery;
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using WriteOperationsNotAllowedException = Neo4Net.Graphdb.security.WriteOperationsNotAllowedException;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using Workload = Neo4Net.helper.Workload;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -42,9 +42,9 @@ namespace Neo4Net.causalclustering.stresstests
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.stresstests.TxHelp.isInterrupted;
+//	import static org.Neo4Net.causalclustering.stresstests.TxHelp.isInterrupted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.stresstests.TxHelp.isTransient;
+//	import static org.Neo4Net.causalclustering.stresstests.TxHelp.isTransient;
 
 	/// <summary>
 	/// Resources for stress testing ID-reuse scenarios.
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class UniqueFreeIds : Validation
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal readonly Cluster<object> Cluster;
 			  internal readonly FileSystemAbstraction Fs;
 			  internal readonly Log Log;
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class IdReuseSetup : Preparation
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal readonly Cluster<object> Cluster;
 
 			  internal IdReuseSetup( Resources resources ) : base()
@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.stresstests
 		 internal class InsertionWorkload : Workload
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal InsertionWorkload( Control control, Resources resources ) : base( control )
@@ -205,7 +205,7 @@ namespace Neo4Net.causalclustering.stresstests
 			  internal readonly long ReelectIntervalSeconds;
 			  internal readonly Log Log;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal ReelectionWorkload( Control control, Resources resources, Config config ) : base( control )
@@ -243,7 +243,7 @@ namespace Neo4Net.causalclustering.stresstests
 			  internal readonly SecureRandom Rnd = new SecureRandom();
 			  internal readonly int IdHighRange;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal Cluster<object> Cluster;
 
 			  internal DeletionWorkload( Control control, Resources resources ) : base( control )

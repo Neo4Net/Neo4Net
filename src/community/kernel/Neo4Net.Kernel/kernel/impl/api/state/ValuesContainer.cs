@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api.state
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>

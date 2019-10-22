@@ -22,11 +22,11 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 	public class IndexProviderImpl : IndexProvider
 	{
 		 private readonly System.Func<KernelTransaction> _transactionBridge;
-		 private readonly GraphDatabaseService _gds;
+		 private readonly IGraphDatabaseService _gds;
 
-		 public IndexProviderImpl( GraphDatabaseService gds, System.Func<KernelTransaction> transactionBridge )
+		 public IndexProviderImpl( IGraphDatabaseService gds, System.Func<KernelTransaction> transactionBridge )
 		 {
 			  this._gds = gds;
 			  this._transactionBridge = transactionBridge;

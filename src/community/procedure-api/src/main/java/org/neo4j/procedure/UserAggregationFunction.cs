@@ -40,9 +40,9 @@ namespace Neo4Net.Procedure
 	/// <para>
 	/// Resources supported by default are as follows:
 	/// <ul>
-	///     <li><seealso cref="org.neo4j.graphdb.GraphDatabaseService"/></li>
-	///     <li><seealso cref="org.neo4j.logging.Log"/></li>
-	///     <li><seealso cref="org.neo4j.procedure.TerminationGuard"/></li>
+	///     <li><seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/></li>
+	///     <li><seealso cref="org.Neo4Net.logging.Log"/></li>
+	///     <li><seealso cref="org.Neo4Net.procedure.TerminationGuard"/></li>
 	/// </ul>
 	/// 
 	/// <h2>Lifecycle and state</h2>

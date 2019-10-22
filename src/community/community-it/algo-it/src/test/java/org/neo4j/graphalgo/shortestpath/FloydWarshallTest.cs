@@ -21,17 +21,17 @@
  */
 namespace Neo4Net.Graphalgo.shortestpath
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo.impl.shortestpath;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class FloydWarshallTest : Neo4jAlgoTestCase
+	public class FloydWarshallTest : Neo4NetAlgoTestCase
 	{
 		 /// <summary>
 		 /// Test case for paths of length 0 and 1, and an impossible path

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.register.Registers.newDoubleLongRegister;
+//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
 
 	public class CountsOracle
 	{
@@ -83,12 +83,12 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <Tracker extends org.neo4j.kernel.impl.api.CountsVisitor.Visitable & org.neo4j.kernel.impl.api.CountsAccessor> void verify(final Tracker tracker)
+//ORIGINAL LINE: public <Tracker extends org.Neo4Net.kernel.impl.api.CountsVisitor.Visitable & org.Neo4Net.kernel.impl.api.CountsAccessor> void verify(final Tracker tracker)
 		 public virtual void Verify<Tracker>( Tracker tracker ) where Tracker : Neo4Net.Kernel.Impl.Api.CountsVisitor.Visitable, Neo4Net.Kernel.Impl.Api.CountsAccessor
 		 {
 			  CountsRecordState seenState = new CountsRecordState();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.api.CountsAccessor_Initializer initializer = new org.neo4j.kernel.impl.api.CountsAccessor_Initializer(seenState, seenState);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.CountsAccessor_Initializer initializer = new org.Neo4Net.kernel.impl.api.CountsAccessor_Initializer(seenState, seenState);
 			  Neo4Net.Kernel.Impl.Api.CountsAccessor_Initializer initializer = new Neo4Net.Kernel.Impl.Api.CountsAccessor_Initializer( seenState, seenState );
 			  IList<CountsRecordState.Difference> differences = _state.verify( verifier => tracker.accept( Neo4Net.Kernel.Impl.Api.CountsVisitor_Adapter.Multiplex( initializer, verifier ) ) );
 			  seenState.Accept( new CountsVisitorAnonymousInnerClass( this, tracker ) );

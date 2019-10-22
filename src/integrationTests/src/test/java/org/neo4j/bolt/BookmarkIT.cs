@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Bolt
 {
@@ -33,11 +33,11 @@ namespace Neo4Net.Bolt
 	using GraphDatabase = Neo4Net.driver.v1.GraphDatabase;
 	using Session = Neo4Net.driver.v1.Session;
 	using Transaction = Neo4Net.driver.v1.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -65,14 +65,14 @@ namespace Neo4Net.Bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class BookmarkIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory(getClass());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(getClass());
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory( this.GetType() );
 
 		 private Driver _driver;
@@ -195,7 +195,7 @@ namespace Neo4Net.Bolt
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void applyToStore(org.neo4j.kernel.impl.api.TransactionToApply batch, org.neo4j.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.neo4j.storageengine.api.TransactionApplicationMode mode) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void applyToStore(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 			  protected internal override void ApplyToStore( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 			  {
 					CommitBlocker.blockWhileWritingToStoreIfNeeded();

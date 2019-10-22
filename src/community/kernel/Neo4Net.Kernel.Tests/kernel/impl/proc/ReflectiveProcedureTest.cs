@@ -32,10 +32,10 @@ namespace Neo4Net.Kernel.impl.proc
 
 
 	using Neo4Net.Collections;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using ResourceCloseFailureException = Neo4Net.Kernel.Api.Exceptions.ResourceCloseFailureException;
@@ -72,11 +72,11 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.procedure_whitelist;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_whitelist;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class ReflectiveProcedureTest
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInjectLogging()
 		 {
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Then
 			  assertEquals( 1, procedures.Count );
-			  assertThat( procedures[0].Signature(), Matchers.equalTo(procedureSignature("org", "neo4j", "kernel", "impl", "proc", "listCoolPeople").@out("name", Neo4jTypes.NTString).build()) );
+			  assertThat( procedures[0].Signature(), Matchers.equalTo(procedureSignature("org", "Neo4Net", "kernel", "impl", "proc", "listCoolPeople").@out("name", Neo4NetTypes.NTString).build()) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -289,7 +289,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Failed to invoke procedure `org.neo4j.kernel.impl.proc.throwsAtInvocation`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
+			  Exception.expectMessage( "Failed to invoke procedure `org.Neo4Net.kernel.impl.proc.throwsAtInvocation`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
 
 			  // When
 			  proc.Apply( new BasicContext(), new object[0], _resourceTracker );
@@ -305,7 +305,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( "Failed to invoke procedure `org.neo4j.kernel.impl.proc.throwsInStream`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
+			  Exception.expectMessage( "Failed to invoke procedure `org.Neo4Net.kernel.impl.proc.throwsInStream`: " + "Caused by: java.lang.IndexOutOfBoundsException" );
 
 			  // Expect that we get a suppressed exception from Stream.onClose (which also verifies that we actually call
 			  // onClose on the first exception)
@@ -392,7 +392,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldLoadWhiteListedProcedure()
 		 {
 			  // Given
-			  ProcedureConfig config = new ProcedureConfig( Config.defaults( procedure_whitelist, "org.neo4j.kernel.impl.proc.listCoolPeople" ) );
+			  ProcedureConfig config = new ProcedureConfig( Config.defaults( procedure_whitelist, "org.Neo4Net.kernel.impl.proc.listCoolPeople" ) );
 
 			  Log log = mock( typeof( Log ) );
 			  ReflectiveProcedureCompiler procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, _components, log, config );
@@ -412,7 +412,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldNotLoadNoneWhiteListedProcedure()
 		 {
 			  // Given
-			  ProcedureConfig config = new ProcedureConfig( Config.defaults( procedure_whitelist, "org.neo4j.kernel.impl.proc.NOTlistCoolPeople" ) );
+			  ProcedureConfig config = new ProcedureConfig( Config.defaults( procedure_whitelist, "org.Neo4Net.kernel.impl.proc.NOTlistCoolPeople" ) );
 
 			  Log log = mock( typeof( Log ) );
 			  ReflectiveProcedureCompiler procedureCompiler = new ReflectiveProcedureCompiler( new TypeMappers(), _components, _components, log, config );
@@ -420,7 +420,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // When
 			  IList<CallableProcedure> proc = procedureCompiler.CompileProcedure( typeof( SingleReadOnlyProcedure ), null, false );
 			  // Then
-			  verify( log ).warn( "The procedure 'org.neo4j.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The procedure 'org.Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
 			  assertThat( proc.Count == 0, @is( true ) );
 		 }
 
@@ -454,7 +454,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // When
 			  IList<CallableProcedure> proc = procedureCompiler.CompileProcedure( typeof( SingleReadOnlyProcedure ), null, false );
 			  // Then
-			  verify( log ).warn( "The procedure 'org.neo4j.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
+			  verify( log ).warn( "The procedure 'org.Neo4Net.kernel.impl.proc.listCoolPeople' is not on the whitelist and won't be loaded." );
 			  assertThat( proc.Count == 0, @is( true ) );
 		 }
 
@@ -483,7 +483,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class LoggingProcedure
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.logging.Log log;
+//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
 			  public Log Log;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -584,8 +584,8 @@ namespace Neo4Net.Kernel.impl.proc
 		 public class ProcedureWithStaticContextAnnotatedField
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.neo4j.graphdb.GraphDatabaseService gdb;
-			  public static GraphDatabaseService Gdb;
+//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService gdb;
+			  public static IGraphDatabaseService Gdb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Procedure public java.util.stream.Stream<MyOutputRecord> test()
@@ -692,7 +692,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.neo4j.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private IList<CallableProcedure> Compile( Type clazz )
 		 {
 			  return _procedureCompiler.compileProcedure( clazz, null, true );

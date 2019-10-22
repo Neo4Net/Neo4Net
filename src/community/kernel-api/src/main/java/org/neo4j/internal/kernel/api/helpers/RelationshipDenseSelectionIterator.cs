@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Kernel.Api.helpers
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// Helper iterator for traversing specific types and directions of a dense node.

@@ -25,19 +25,19 @@ namespace Neo4Net.Server.rest.transactional
 	using JsonGenerator = org.codehaus.jackson.JsonGenerator;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
 	using Neo4Net.Helpers.Collections;
 
 	internal class GraphExtractionWriter : ResultDataContentWriter
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.neo4j.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
-		 public override void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.Graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker )
+//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.Neo4Net.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
+		 public override void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row, TransactionStateChecker txStateChecker )
 		 {
 			  ISet<Node> nodes = new HashSet<Node>();
 			  ISet<Relationship> relationships = new HashSet<Relationship>();
@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodes(org.codehaus.jackson.JsonGenerator out, Iterable<org.neo4j.graphdb.Node> nodes, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: private void writeNodes(org.codehaus.jackson.JsonGenerator out, Iterable<org.Neo4Net.graphdb.Node> nodes, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 private void WriteNodes( JsonGenerator @out, IEnumerable<Node> nodes, TransactionStateChecker txStateChecker )
 		 {
 			  @out.writeArrayFieldStart( "nodes" );
@@ -110,7 +110,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRelationships(org.codehaus.jackson.JsonGenerator out, Iterable<org.neo4j.graphdb.Relationship> relationships, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: private void writeRelationships(org.codehaus.jackson.JsonGenerator out, Iterable<org.Neo4Net.graphdb.Relationship> relationships, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 private void WriteRelationships( JsonGenerator @out, IEnumerable<Relationship> relationships, TransactionStateChecker txStateChecker )
 		 {
 			  @out.writeArrayFieldStart( "relationships" );
@@ -148,8 +148,8 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeProperties(org.codehaus.jackson.JsonGenerator out, org.neo4j.graphdb.PropertyContainer container) throws java.io.IOException
-		 private void WriteProperties( JsonGenerator @out, PropertyContainer container )
+//ORIGINAL LINE: private void writeProperties(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.PropertyContainer container) throws java.io.IOException
+		 private void WriteProperties( JsonGenerator @out, IPropertyContainer container )
 		 {
 			  @out.writeObjectFieldStart( "properties" );
 			  try
@@ -213,18 +213,18 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static Iterable<?> map(Iterable<String> columns, final org.neo4j.graphdb.Result_ResultRow row)
+//ORIGINAL LINE: private static Iterable<?> map(Iterable<String> columns, final org.Neo4Net.graphdb.Result_ResultRow row)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 private static IEnumerable<object> Map( IEnumerable<string> columns, Neo4Net.Graphdb.Result_ResultRow row )
+		 private static IEnumerable<object> Map( IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row )
 		 {
 			  return new IterableWrapperAnonymousInnerClass( columns, row );
 		 }
 
 		 private class IterableWrapperAnonymousInnerClass : IterableWrapper<object, string>
 		 {
-			 private Neo4Net.Graphdb.Result_ResultRow _row;
+			 private Neo4Net.GraphDb.Result_ResultRow _row;
 
-			 public IterableWrapperAnonymousInnerClass( IEnumerable<string> columns, Neo4Net.Graphdb.Result_ResultRow row ) : base( columns )
+			 public IterableWrapperAnonymousInnerClass( IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row ) : base( columns )
 			 {
 				 this._row = row;
 			 }

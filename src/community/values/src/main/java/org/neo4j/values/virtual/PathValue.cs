@@ -64,7 +64,7 @@ namespace Neo4Net.Values.@virtual
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void writeTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void writeTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  writer.WritePath( Nodes(), Relationships() );

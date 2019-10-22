@@ -22,7 +22,7 @@ namespace Neo4Net.Io.fs
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using SelectiveFileSystemAbstraction = Neo4Net.Graphdb.mockfs.SelectiveFileSystemAbstraction;
+	using SelectiveFileSystemAbstraction = Neo4Net.GraphDb.mockfs.SelectiveFileSystemAbstraction;
 	using FileWatcher = Neo4Net.Io.fs.watcher.FileWatcher;
 	using WatchedResource = Neo4Net.Io.fs.watcher.resource.WatchedResource;
 

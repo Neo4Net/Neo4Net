@@ -25,12 +25,12 @@ namespace Counts
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -50,16 +50,16 @@ namespace Counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.index_background_sampling_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 	using static Neo4Net.Logging.AssertableLogProvider.LogMatcherBuilder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class RebuildCountsTest
 	{
@@ -69,15 +69,15 @@ namespace Counts
 		 private static readonly Label _human = label( "Human" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private readonly AssertableLogProvider _userLogProvider = new AssertableLogProvider();
 		 private readonly AssertableLogProvider _internalLogProvider = new AssertableLogProvider();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private File _storeDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -97,7 +97,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreOnStart() throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreOnStart() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildMissingCountsStoreOnStart()
 		 {
@@ -124,7 +124,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreAfterRecovery() throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldRebuildMissingCountsStoreAfterRecovery() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildMissingCountsStoreAfterRecovery()
 		 {
@@ -220,7 +220,7 @@ namespace Counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void restart(org.neo4j.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private void restart(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 private void Restart( FileSystemAbstraction fs )
 		 {
 			  if ( _db != null )

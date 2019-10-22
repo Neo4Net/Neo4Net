@@ -23,23 +23,23 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 	using Description = Neo4Net.Configuration.Description;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.max;
+//	import static org.Neo4Net.kernel.configuration.Settings.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.min;
+//	import static org.Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
 	/// Configuration settings for the fulltext index.

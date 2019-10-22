@@ -69,10 +69,10 @@ namespace Neo4Net.Csv.Reader
 		 /// <param name="optionalData"> holds additional information for spatial and temporal values or null </param>
 		 /// <returns> the supplied <seealso cref="Extractor"/>, which after the call carries the extracted value itself,
 		 /// where either <seealso cref="Extractor.value()"/> or a more specific accessor method can be called to access the value. </returns>
-		 /// <exception cref="IllegalStateException"> if the <seealso cref="Extractor.extract(char[], int, int, bool, org.neo4j.values.storable.CSVHeaderInformation) extraction"/>
+		 /// <exception cref="IllegalStateException"> if the <seealso cref="Extractor.extract(char[], int, int, bool, org.Neo4Net.values.storable.CSVHeaderInformation) extraction"/>
 		 /// returns {@code false}. </exception>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: <EXTRACTOR extends Extractor<?>> EXTRACTOR extract(Mark mark, EXTRACTOR extractor, org.neo4j.values.storable.CSVHeaderInformation optionalData);
+//ORIGINAL LINE: <EXTRACTOR extends Extractor<?>> EXTRACTOR extract(Mark mark, EXTRACTOR extractor, org.Neo4Net.values.storable.CSVHeaderInformation optionalData);
 		 EXTRACTOR extract<EXTRACTOR>( Mark mark, EXTRACTOR extractor, CSVHeaderInformation optionalData );
 
 		 /// <summary>
@@ -81,7 +81,7 @@ namespace Neo4Net.Csv.Reader
 		 /// <param name="extractor"> <seealso cref="Extractor"/> capable of extracting the value. </param>
 		 /// <returns> the supplied <seealso cref="Extractor"/>, which after the call carries the extracted value itself,
 		 /// where either <seealso cref="Extractor.value()"/> or a more specific accessor method can be called to access the value. </returns>
-		 /// <exception cref="IllegalStateException"> if the <seealso cref="Extractor.extract(char[], int, int, bool, org.neo4j.values.storable.CSVHeaderInformation) extraction"/>
+		 /// <exception cref="IllegalStateException"> if the <seealso cref="Extractor.extract(char[], int, int, bool, org.Neo4Net.values.storable.CSVHeaderInformation) extraction"/>
 		 /// returns {@code false}. </exception>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: <EXTRACTOR extends Extractor<?>> EXTRACTOR extract(Mark mark, EXTRACTOR extractor);
@@ -95,7 +95,7 @@ namespace Neo4Net.Csv.Reader
 		 /// <returns> {@code true} if a value was extracted, otherwise {@code false}. Probably the only reason for
 		 /// returning {@code false} would be if the data to extract was empty. </returns>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: boolean tryExtract(Mark mark, Extractor<?> extractor, org.neo4j.values.storable.CSVHeaderInformation optionalData);
+//ORIGINAL LINE: boolean tryExtract(Mark mark, Extractor<?> extractor, org.Neo4Net.values.storable.CSVHeaderInformation optionalData);
 		 bool tryExtract<T1>( Mark mark, Extractor<T1> extractor, CSVHeaderInformation optionalData );
 
 		 /// <summary>

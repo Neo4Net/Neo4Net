@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.TRUE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
 
 	/// <summary>
 	/// All functionality for reading, writing, comparing, calculating size etc a specific value type in a native index.
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <summary>
 		 /// Size of the key state of this type in the given <seealso cref="GenericKey"/>. </summary>
 		 /// <param name="state"> the <seealso cref="GenericKey"/> holding the initialized key state. </param>
-		 /// <returns> size, in bytes of the key state, not counting tree overhead or entity id. </returns>
+		 /// <returns> size, in bytes of the key state, not counting tree overhead or IEntity id. </returns>
 		 internal abstract int ValueSize( GenericKey state );
 
 		 /// <summary>

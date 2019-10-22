@@ -34,7 +34,7 @@ namespace Neo4Net.Server.Security.Auth
 		 private Random _random = new SecureRandom();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeToFile(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File file, byte[] bytes) throws java.io.IOException
+//ORIGINAL LINE: public static void writeToFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, byte[] bytes) throws java.io.IOException
 		 public static void WriteToFile( FileSystemAbstraction fs, File file, sbyte[] bytes )
 		 {
 			  using ( Stream o = fs.OpenAsOutputStream( file, false ) )
@@ -44,7 +44,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.List<String> readFromFile(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.List<String> readFromFile(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
 		 public static IList<string> ReadFromFile( FileSystemAbstraction fs, File file )
 		 {
 			  List<string> lines = new List<string>();
@@ -66,7 +66,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void saveRecordsToFile(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile, java.util.Collection<S> records) throws java.io.IOException
+//ORIGINAL LINE: public void saveRecordsToFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile, java.util.Collection<S> records) throws java.io.IOException
 		 public virtual void SaveRecordsToFile( FileSystemAbstraction fileSystem, File recordsFile, ICollection<S> records )
 		 {
 			  File tempFile = GetTempFile( fileSystem, recordsFile );
@@ -84,7 +84,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.io.File getTempFile(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile) throws java.io.IOException
+//ORIGINAL LINE: protected java.io.File getTempFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile) throws java.io.IOException
 		 protected internal virtual File GetTempFile( FileSystemAbstraction fileSystem, File recordsFile )
 		 {
 			  File directory = recordsFile.ParentFile;
@@ -99,7 +99,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<S> loadRecordsFromFile(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile) throws java.io.IOException, org.neo4j.server.security.auth.exception.FormatException
+//ORIGINAL LINE: public java.util.List<S> loadRecordsFromFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File recordsFile) throws java.io.IOException, org.Neo4Net.server.security.auth.exception.FormatException
 		 public virtual IList<S> LoadRecordsFromFile( FileSystemAbstraction fileSystem, File recordsFile )
 		 {
 			  return DeserializeRecords( ReadFromFile( fileSystem, recordsFile ) );
@@ -116,14 +116,14 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<S> deserializeRecords(byte[] bytes) throws org.neo4j.server.security.auth.exception.FormatException
+//ORIGINAL LINE: public java.util.List<S> deserializeRecords(byte[] bytes) throws org.Neo4Net.server.security.auth.exception.FormatException
 		 public virtual IList<S> DeserializeRecords( sbyte[] bytes )
 		 {
 			  return DeserializeRecords( Arrays.asList( UTF8.decode( bytes ).Split( "\n", true ) ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<S> deserializeRecords(java.util.List<String> lines) throws org.neo4j.server.security.auth.exception.FormatException
+//ORIGINAL LINE: public java.util.List<S> deserializeRecords(java.util.List<String> lines) throws org.Neo4Net.server.security.auth.exception.FormatException
 		 public virtual IList<S> DeserializeRecords( IList<string> lines )
 		 {
 			  IList<S> @out = new List<S>();
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.Security.Auth
 		 protected internal abstract string Serialize( S record );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract S deserializeRecord(String line, int lineNumber) throws org.neo4j.server.security.auth.exception.FormatException;
+//ORIGINAL LINE: protected abstract S deserializeRecord(String line, int lineNumber) throws org.Neo4Net.server.security.auth.exception.FormatException;
 		 protected internal abstract S DeserializeRecord( string line, int lineNumber );
 	}
 

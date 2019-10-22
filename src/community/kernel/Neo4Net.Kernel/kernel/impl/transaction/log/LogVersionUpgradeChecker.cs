@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.log
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using UpgradeNotAllowedByConfigurationException = Neo4Net.Kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException;
 	using LogEntryVersion = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryVersion;
@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	/// fails, it means that we will write entries with a version not compatible with the previous version responsible for
 	/// creating the transaction logs.
 	/// <para>
-	/// This can be considered an upgrade since the user is not able to revert back to the previous version of neo4j. This
+	/// This can be considered an upgrade since the user is not able to revert back to the previous version of Neo4Net. This
 	/// will effectively guard the users from accidental upgrades.
 	/// </para>
 	/// </summary>
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void check(org.neo4j.kernel.recovery.LogTailScanner tailScanner, org.neo4j.kernel.configuration.Config config) throws org.neo4j.kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException
+//ORIGINAL LINE: public static void check(org.Neo4Net.kernel.recovery.LogTailScanner tailScanner, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException
 		 public static void Check( LogTailScanner tailScanner, Config config )
 		 {
 			  if ( !config.Get( GraphDatabaseSettings.allow_upgrade ) )

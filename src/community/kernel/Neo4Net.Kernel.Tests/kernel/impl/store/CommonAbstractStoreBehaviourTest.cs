@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.store
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
@@ -50,13 +50,13 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.CHECK;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	/// <summary>
 	/// Test for <seealso cref="CommonAbstractStore"/>, but without using mocks. </summary>
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertThrowsUnderlyingStorageException(org.neo4j.function.ThrowingAction<Exception> action) throws Exception
+//ORIGINAL LINE: private void assertThrowsUnderlyingStorageException(org.Neo4Net.function.ThrowingAction<Exception> action) throws Exception
 		 private void AssertThrowsUnderlyingStorageException( ThrowingAction<Exception> action )
 		 {
 			  try
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertThrowsInvalidRecordException(org.neo4j.function.ThrowingAction<Exception> action) throws Exception
+//ORIGINAL LINE: private void assertThrowsInvalidRecordException(org.Neo4Net.function.ThrowingAction<Exception> action) throws Exception
 		 private void AssertThrowsInvalidRecordException( ThrowingAction<Exception> action )
 		 {
 			  try
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyExceptionOnOutOfBoundsAccess(org.neo4j.function.ThrowingAction<Exception> access) throws Exception
+//ORIGINAL LINE: private void verifyExceptionOnOutOfBoundsAccess(org.Neo4Net.function.ThrowingAction<Exception> access) throws Exception
 		 private void VerifyExceptionOnOutOfBoundsAccess( ThrowingAction<Exception> access )
 		 {
 			  PrepareStoreForOutOfBoundsAccess();
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyExceptionOnCursorError(org.neo4j.function.ThrowingAction<Exception> access) throws Exception
+//ORIGINAL LINE: private void verifyExceptionOnCursorError(org.Neo4Net.function.ThrowingAction<Exception> access) throws Exception
 		 private void VerifyExceptionOnCursorError( ThrowingAction<Exception> access )
 		 {
 			  PrepareStoreForCursorError();

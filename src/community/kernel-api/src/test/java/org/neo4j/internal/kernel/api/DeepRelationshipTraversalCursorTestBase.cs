@@ -23,10 +23,10 @@ namespace Neo4Net.Internal.Kernel.Api
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -35,7 +35,7 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public abstract class DeepRelationshipTraversalCursorTestBase<G> : KernelAPIReadTestBase<G> where G : KernelAPIReadTestSupport
 	{
@@ -44,7 +44,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private RelationshipType _parent = withName( "PARENT" );
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {

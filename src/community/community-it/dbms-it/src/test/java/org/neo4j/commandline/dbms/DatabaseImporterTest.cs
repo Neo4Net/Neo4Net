@@ -31,9 +31,9 @@ namespace Neo4Net.CommandLine.dbms
 
 	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using NullOutsideWorld = Neo4Net.CommandLine.Admin.NullOutsideWorld;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
@@ -56,7 +56,7 @@ namespace Neo4Net.CommandLine.dbms
 	public class DatabaseImporterTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -138,14 +138,14 @@ namespace Neo4Net.CommandLine.dbms
 		 private static Config GetConfigWith( File homeDir, string databaseName )
 		 {
 			  Dictionary<string, string> additionalConfig = new Dictionary<string, string>();
-			  additionalConfig[GraphDatabaseSettings.neo4j_home.name()] = homeDir.ToString();
+			  additionalConfig[GraphDatabaseSettings.Neo4Net_home.name()] = homeDir.ToString();
 			  additionalConfig[GraphDatabaseSettings.active_database.name()] = databaseName;
 			  return Config.defaults( additionalConfig );
 		 }
 
 		 private File ProvideStoreDirectory()
 		 {
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  File homeStoreDir = TestDir.databaseDir( "home" );
 			  try
 			  {

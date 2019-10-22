@@ -20,7 +20,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using ClassRule = org.junit.ClassRule;
 	using Rule = org.junit.Rule;
@@ -29,7 +29,7 @@ namespace Neo4Net.Graphdb
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
 	using DatabaseAvailability = Neo4Net.Kernel.availability.DatabaseAvailability;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
@@ -54,11 +54,11 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 
-	public class GraphDatabaseServiceTest
+	public class IGraphDatabaseServiceTest
 	{
 		private bool InstanceFieldsInitialized = false;
 
-		public GraphDatabaseServiceTest()
+		public IGraphDatabaseServiceTest()
 		{
 			if ( !InstanceFieldsInitialized )
 			{
@@ -73,7 +73,7 @@ namespace Neo4Net.Graphdb
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.DatabaseRule globalDb = new org.neo4j.test.rule.ImpermanentDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule globalDb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
 		 public static readonly DatabaseRule GlobalDb = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.shutdown_transaction_end_timeout, "10s");
 
 		 private readonly ExpectedException _exception = ExpectedException.none();
@@ -92,7 +92,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void GivenShutdownDatabaseWhenBeginTxThenExceptionIsThrown()
 		 {
 			  // Given
-			  GraphDatabaseService db = TemporaryDatabase;
+			  IGraphDatabaseService db = TemporaryDatabase;
 
 			  Db.shutdown();
 
@@ -110,8 +110,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = getTemporaryDatabase();
-			  GraphDatabaseService db = TemporaryDatabase;
+//ORIGINAL LINE: final IGraphDatabaseService db = getTemporaryDatabase();
+			  IGraphDatabaseService db = TemporaryDatabase;
 
 			  // When
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
@@ -154,8 +154,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = globalDb;
-			  GraphDatabaseService db = GlobalDb;
+//ORIGINAL LINE: final IGraphDatabaseService db = globalDb;
+			  IGraphDatabaseService db = GlobalDb;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -177,8 +177,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = globalDb;
-			  GraphDatabaseService db = GlobalDb;
+//ORIGINAL LINE: final IGraphDatabaseService db = globalDb;
+			  IGraphDatabaseService db = GlobalDb;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -203,8 +203,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = globalDb;
-			  GraphDatabaseService db = GlobalDb;
+//ORIGINAL LINE: final IGraphDatabaseService db = globalDb;
+			  IGraphDatabaseService db = GlobalDb;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -230,8 +230,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = getTemporaryDatabase();
-			  GraphDatabaseService db = TemporaryDatabase;
+//ORIGINAL LINE: final IGraphDatabaseService db = getTemporaryDatabase();
+			  IGraphDatabaseService db = TemporaryDatabase;
 			  try
 			  {
 					// When
@@ -286,8 +286,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final GraphDatabaseService db = getTemporaryDatabase();
-			  GraphDatabaseService db = TemporaryDatabase;
+//ORIGINAL LINE: final IGraphDatabaseService db = getTemporaryDatabase();
+			  IGraphDatabaseService db = TemporaryDatabase;
 			  try
 			  {
 					// When
@@ -346,7 +346,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void GivenDatabaseAndStartedTxWhenShutdownAndStartNewTxThenBeginTxTimesOut()
 		 {
 			  // Given
-			  GraphDatabaseService db = TemporaryDatabase;
+			  IGraphDatabaseService db = TemporaryDatabase;
 
 			  // When
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
@@ -388,7 +388,7 @@ namespace Neo4Net.Graphdb
 			  // GIVEN a database with a couple of entities:
 			  // (n1) --> (r1) --> (r2) --> (r3)
 			  // (n2)
-			  GraphDatabaseService db = GlobalDb;
+			  IGraphDatabaseService db = GlobalDb;
 			  Node n1 = CreateNode( db );
 			  Node n2 = CreateNode( db );
 			  Relationship r3 = CreateRelationship( n1 );
@@ -438,7 +438,7 @@ namespace Neo4Net.Graphdb
 //ORIGINAL LINE: @Test public void terminationOfClosedTransactionDoesNotInfluenceNextTransaction()
 		 public virtual void TerminationOfClosedTransactionDoesNotInfluenceNextTransaction()
 		 {
-			  GraphDatabaseService db = GlobalDb;
+			  IGraphDatabaseService db = GlobalDb;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -462,15 +462,15 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, Transaction> beginTx(final GraphDatabaseService db)
-		 private WorkerCommand<Void, Transaction> BeginTx( GraphDatabaseService db )
+//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Transaction> beginTx(final IGraphDatabaseService db)
+		 private WorkerCommand<Void, Transaction> BeginTx( IGraphDatabaseService db )
 		 {
 			  return state => Db.beginTx();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, Object> setProperty(final PropertyContainer entity, final String key, final String value)
-		 private WorkerCommand<Void, object> SetProperty( PropertyContainer entity, string key, string value )
+//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Object> setProperty(final IPropertyContainer IEntity, final String key, final String value)
+		 private WorkerCommand<Void, object> SetProperty( IPropertyContainer IEntity, string key, string value )
 		 {
 			  return state =>
 			  {
@@ -480,7 +480,7 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, Void> close(final Transaction tx)
+//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, Void> close(final Transaction tx)
 		 private WorkerCommand<Void, Void> Close( Transaction tx )
 		 {
 			  return state =>
@@ -500,7 +500,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private Node CreateNode( GraphDatabaseService db )
+		 private Node CreateNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -510,7 +510,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private GraphDatabaseService TemporaryDatabase
+		 private IGraphDatabaseService TemporaryDatabase
 		 {
 			 get
 			 {

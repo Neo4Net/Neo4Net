@@ -32,8 +32,8 @@ namespace Upgrade
 
 
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -53,13 +53,13 @@ namespace Upgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.store.StoreAssertions.assertConsistentStore;
+//	import static org.Neo4Net.consistency.store.StoreAssertions.assertConsistentStore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
+//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.checkNeoStoreHasDefaultFormatVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storemigration.MigrationTestUtils.prepareSampleLegacyDatabase;
+//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.prepareSampleLegacyDatabase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
+//	import static org.Neo4Net.kernel.impl.storemigration.MigrationTestUtils.removeCheckPointFromTxLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StoreUpgradeOnStartupTest
@@ -120,12 +120,12 @@ namespace Upgrade
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldUpgradeAutomaticallyOnDatabaseStartup() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldUpgradeAutomaticallyOnDatabaseStartup() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldUpgradeAutomaticallyOnDatabaseStartup()
 		 {
 			  // when
-			  GraphDatabaseService database = CreateGraphDatabaseService();
+			  IGraphDatabaseService database = CreateGraphDatabaseService();
 			  database.Shutdown();
 
 			  // then
@@ -154,7 +154,7 @@ namespace Upgrade
 			  }
 		 }
 
-		 private GraphDatabaseService CreateGraphDatabaseService()
+		 private IGraphDatabaseService CreateGraphDatabaseService()
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_workingDatabaseLayout.databaseDirectory()).setConfig(GraphDatabaseSettings.allow_upgrade, "true").newGraphDatabase();
 		 }

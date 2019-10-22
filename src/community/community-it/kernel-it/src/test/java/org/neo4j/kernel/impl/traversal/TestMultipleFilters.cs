@@ -23,20 +23,20 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Evaluator = Neo4Net.Graphdb.traversal.Evaluator;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.includeIfAcceptedByAny;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeIfAcceptedByAny;
 
 	public class TestMultipleFilters : TraversalTestBase
 	{

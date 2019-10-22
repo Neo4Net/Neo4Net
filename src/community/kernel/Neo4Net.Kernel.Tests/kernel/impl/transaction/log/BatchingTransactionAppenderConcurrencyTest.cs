@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using ClassGuardedAdversary = Neo4Net.Adversaries.ClassGuardedAdversary;
 	using CountingAdversary = Neo4Net.Adversaries.CountingAdversary;
 	using AdversarialFileSystemAbstraction = Neo4Net.Adversaries.fs.AdversarialFileSystemAbstraction;
-	using DelegatingStoreChannel = Neo4Net.Graphdb.mockfs.DelegatingStoreChannel;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using DelegatingStoreChannel = Neo4Net.GraphDb.mockfs.DelegatingStoreChannel;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileSystemLifecycleAdapter = Neo4Net.Io.fs.FileSystemLifecycleAdapter;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
@@ -78,11 +78,11 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.DoubleLatch.awaitLatch;
+//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.ThreadTestUtils.awaitThreadState;
+//	import static org.Neo4Net.test.ThreadTestUtils.awaitThreadState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.ThreadTestUtils.fork;
+//	import static org.Neo4Net.test.ThreadTestUtils.fork;
 
 	public class BatchingTransactionAppenderConcurrencyTest
 	{
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch trap = new java.util.concurrent.CountDownLatch(numberOfAppenders);
 			  System.Threading.CountdownEvent trap = new System.Threading.CountdownEvent( numberOfAppenders );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.tracing.LogAppendEvent beforeForceTrappingEvent = new org.neo4j.kernel.impl.transaction.tracing.LogAppendEvent_Empty()
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent beforeForceTrappingEvent = new org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent_Empty()
 			  LogAppendEvent beforeForceTrappingEvent = new LogAppendEvent_EmptyAnonymousInnerClass( this, trap );
 			  Race race = new Race();
 			  for ( int i = 0; i < numberOfAppenders; i++ )
@@ -425,7 +425,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 			  internal volatile bool ShouldOOM;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			  public override StoreChannel Open( File fileName, OpenMode openMode )
 			  {
 				  lock ( this )

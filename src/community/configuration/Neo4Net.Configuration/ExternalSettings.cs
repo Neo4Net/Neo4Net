@@ -22,9 +22,9 @@
 namespace Neo4Net.Configuration
 {
 
-	using Neo4Net.Graphdb.config;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using Neo4Net.GraphDb.config;
 
 	/// <summary>
 	/// This class holds settings which are used external to the java code. This includes things present in the
@@ -38,7 +38,7 @@ namespace Neo4Net.Configuration
 	public class ExternalSettings : LoadableConfig
 	{
 		 [Description("Name of the Windows Service.")]
-		 public static readonly Setting<string> WindowsServiceName = DummySetting( "dbms.windows_service_name", "neo4j" );
+		 public static readonly Setting<string> WindowsServiceName = DummySetting( "dbms.windows_service_name", "Neo4Net" );
 		 [Description("Additional JVM arguments. Argument order can be significant. To use a Java commercial feature, the argument to unlock " + "commercial features must precede the argument to enable the specific feature in the config value string. For example, " + "to use Flight Recorder, `-XX:+UnlockCommercialFeatures` must come before `-XX:+FlightRecorder`.")]
 		 public static readonly Setting<string> AdditionalJvm = DummySetting( "dbms.jvm.additional" );
 

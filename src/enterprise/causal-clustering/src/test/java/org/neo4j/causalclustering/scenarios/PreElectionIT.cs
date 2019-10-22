@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.scenarios
 	public class PreElectionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.enable_pre_voting, "true");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.enable_pre_voting, "true");
 		 public ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(0).withSharedCoreParam(CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(CausalClusteringSettings.enable_pre_voting, "true");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -72,7 +72,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  CoreClusterMember follower = cluster.AwaitCoreMemberWithRole( Role.FOLLOWER, 1, TimeUnit.MINUTES );
 
@@ -98,7 +98,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  CoreClusterMember oldLeader = cluster.AwaitLeader();
 
@@ -119,7 +119,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  // given
 			  ClusterRule.withInstanceCoreParam( CausalClusteringSettings.refuse_to_be_leader, this.firstServerRefusesToBeLeader ).withSharedCoreParam( CausalClusteringSettings.multi_dc_license, "true" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.startCluster();
 			  Cluster<object> cluster = ClusterRule.startCluster();
 			  CoreClusterMember oldLeader = cluster.AwaitLeader();
 

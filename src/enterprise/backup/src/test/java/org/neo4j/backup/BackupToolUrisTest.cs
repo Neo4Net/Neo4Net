@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup
 {
@@ -74,7 +74,7 @@ namespace Neo4Net.backup
 //ORIGINAL LINE: @Parameterized.Parameters public static java.util.List<Object[]> data()
 			  public static IList<object[]> Data()
 			  {
-					return new IList<object[]> { Uri( "127.0.0.1" ), Uri( "127.0.0.1", 6362 ), Uri( "localhost" ), Uri( "localhost", 1234 ), Uri( "192.127.10.12" ), Uri( "192.127.10.12", 20 ), Uri( "1.1.1.1" ), Uri( "1.1.1.1", 1 ), Uri( "neo4j.company.com" ), Uri( "neo4j.company.com", 65200 ), Uri( "single://localhost", 7090 ), Uri( "test-site.with-long.name.com", 55555 ), Uri( "single://neo4j-backup.server", 6468 ), Uri( "single://apple.com" ), Uri( "single://255.255.255.0" ), Uri( "single://255.1.255.1", 88 ), Uri( "single://127.0.0.1" ), Uri( "single://localhost" ), Uri( "single://127.0.0.1", 6264 ), Uri( "ha://test.server" ), Uri( "ha://test.server", 1212 ) };
+					return new IList<object[]> { Uri( "127.0.0.1" ), Uri( "127.0.0.1", 6362 ), Uri( "localhost" ), Uri( "localhost", 1234 ), Uri( "192.127.10.12" ), Uri( "192.127.10.12", 20 ), Uri( "1.1.1.1" ), Uri( "1.1.1.1", 1 ), Uri( "Neo4Net.company.com" ), Uri( "Neo4Net.company.com", 65200 ), Uri( "single://localhost", 7090 ), Uri( "test-site.with-long.name.com", 55555 ), Uri( "single://Neo4Net-backup.server", 6468 ), Uri( "single://apple.com" ), Uri( "single://255.255.255.0" ), Uri( "single://255.1.255.1", 88 ), Uri( "single://127.0.0.1" ), Uri( "single://localhost" ), Uri( "single://127.0.0.1", 6264 ), Uri( "ha://test.server" ), Uri( "ha://test.server", 1212 ) };
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

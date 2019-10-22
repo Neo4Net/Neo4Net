@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.messaging.marshalling.v1
 {
@@ -38,25 +38,25 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.APPEND_ENTRIES_REQUEST;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.APPEND_ENTRIES_REQUEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.APPEND_ENTRIES_RESPONSE;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.APPEND_ENTRIES_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.LOG_COMPACTION_INFO;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.LOG_COMPACTION_INFO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.NEW_ENTRY_REQUEST;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.NEW_ENTRY_REQUEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.PRE_VOTE_REQUEST;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.PRE_VOTE_REQUEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.PRE_VOTE_RESPONSE;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.PRE_VOTE_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.VOTE_REQUEST;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.VOTE_REQUEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.VOTE_RESPONSE;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.VOTE_RESPONSE;
 
 	public class RaftMessageDecoder : ByteToMessageDecoder
 	{
@@ -132,7 +132,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 					{
 						 long entryTerm = channel.Long;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.replication.ReplicatedContent content = marshal.unmarshal(channel);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.replication.ReplicatedContent content = marshal.unmarshal(channel);
 						 ReplicatedContent content = _marshal.unmarshal( channel );
 						 entries[i] = new RaftLogEntry( entryTerm, content );
 					}
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v1
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.identity.MemberId retrieveMember(org.neo4j.storageengine.api.ReadableChannel buffer) throws java.io.IOException, org.neo4j.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.identity.MemberId retrieveMember(org.Neo4Net.storageengine.api.ReadableChannel buffer) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private MemberId RetrieveMember( ReadableChannel buffer )
 		 {
 			  MemberId.Marshal memberIdMarshal = new MemberId.Marshal();

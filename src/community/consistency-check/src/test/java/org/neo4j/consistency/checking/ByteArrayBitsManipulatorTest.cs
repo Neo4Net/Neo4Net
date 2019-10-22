@@ -31,18 +31,18 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.ByteArrayBitsManipulator.MAX_BYTES;
+//	import static org.Neo4Net.consistency.checking.ByteArrayBitsManipulator.MAX_BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.ByteArrayBitsManipulator.MAX_SLOT_BITS;
+//	import static org.Neo4Net.consistency.checking.ByteArrayBitsManipulator.MAX_SLOT_BITS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.ByteArrayBitsManipulator.MAX_SLOT_VALUE;
+//	import static org.Neo4Net.consistency.checking.ByteArrayBitsManipulator.MAX_SLOT_VALUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class ByteArrayBitsManipulatorTest
 	internal class ByteArrayBitsManipulatorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.RandomRule random;
 		 protected internal RandomRule Random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

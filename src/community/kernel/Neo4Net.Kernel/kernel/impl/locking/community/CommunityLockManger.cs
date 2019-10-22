@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void accept(final org.neo4j.kernel.impl.locking.Locks_Visitor visitor)
+//ORIGINAL LINE: public void accept(final org.Neo4Net.kernel.impl.locking.Locks_Visitor visitor)
 		 public override void Accept( Neo4Net.Kernel.impl.locking.Locks_Visitor visitor )
 		 {
 			  _manager.accept(element =>

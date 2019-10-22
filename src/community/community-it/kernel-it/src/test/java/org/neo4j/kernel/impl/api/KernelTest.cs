@@ -24,11 +24,11 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 
 	public class KernelTest
 	{
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") class FakeHaDatabase extends org.neo4j.test.ImpermanentGraphDatabase
+//ORIGINAL LINE: @SuppressWarnings("deprecation") class FakeHaDatabase extends org.Neo4Net.test.ImpermanentGraphDatabase
 		 internal class FakeHaDatabase : ImpermanentGraphDatabase
 		 {
 			 private readonly KernelTest _outerInstance;

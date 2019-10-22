@@ -30,7 +30,7 @@ namespace Neo4Net.Ext.Udc
 
 	public class UdcSettingsIT
 	{
-		 private const string TEST_HOST_AND_PORT = "test.ucd.neo4j.org:8080";
+		 private const string TEST_HOST_AND_PORT = "test.ucd.Neo4Net.org:8080";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void testUdcHostSettingIsUnchanged()

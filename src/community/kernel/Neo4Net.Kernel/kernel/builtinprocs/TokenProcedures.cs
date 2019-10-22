@@ -28,16 +28,16 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.WRITE;
+//	import static org.Neo4Net.procedure.Mode.WRITE;
 
 	public class TokenProcedures
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.kernel.api.KernelTransaction tx;
+//ORIGINAL LINE: @Context public org.Neo4Net.kernel.api.KernelTransaction tx;
 		 public KernelTransaction Tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a label") @Procedure(name = "db.createLabel", mode = WRITE) public void createLabel(@Name("newLabel") String newLabel) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: @Description("Create a label") @Procedure(name = "db.createLabel", mode = WRITE) public void createLabel(@Name("newLabel") String newLabel) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a label"), Procedure(name : "db.createLabel", mode : WRITE)]
 		 public virtual void CreateLabel( string newLabel )
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a RelationshipType") @Procedure(name = "db.createRelationshipType", mode = WRITE) public void createRelationshipType(@Name("newRelationshipType") String newRelationshipType) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: @Description("Create a RelationshipType") @Procedure(name = "db.createRelationshipType", mode = WRITE) public void createRelationshipType(@Name("newRelationshipType") String newRelationshipType) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a RelationshipType"), Procedure(name : "db.createRelationshipType", mode : WRITE)]
 		 public virtual void CreateRelationshipType( string newRelationshipType )
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a Property") @Procedure(name = "db.createProperty", mode = WRITE) public void createProperty(@Name("newProperty") String newProperty) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: @Description("Create a Property") @Procedure(name = "db.createProperty", mode = WRITE) public void createProperty(@Name("newProperty") String newProperty) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a Property"), Procedure(name : "db.createProperty", mode : WRITE)]
 		 public virtual void CreateProperty( string newProperty )

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
 	using StandardConstraintSemantics = Neo4Net.Kernel.impl.constraints.StandardConstraintSemantics;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
@@ -54,13 +54,13 @@ namespace Neo4Net.Kernel.Impl.Api.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.constraints.ConstraintDescriptorFactory.uniqueForLabel;
+//	import static org.Neo4Net.kernel.api.schema.constraints.ConstraintDescriptorFactory.uniqueForLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.ConstraintRule.constraintRule;
+//	import static org.Neo4Net.kernel.impl.store.record.ConstraintRule.constraintRule;
 
 	public class SchemaCacheTest
 	{
@@ -407,10 +407,10 @@ namespace Neo4Net.Kernel.Impl.Api.store
 //ORIGINAL LINE: final int[] repeatedLabels = {0, 1, 0};
 			  int[] repeatedLabels = new int[] { 0, 1, 0 };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.schema.MultiTokenSchemaDescriptor schema = org.neo4j.kernel.api.schema.SchemaDescriptorFactory.multiToken(repeatedLabels, org.neo4j.storageengine.api.EntityType.NODE, 1);
-			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( repeatedLabels, EntityType.NODE, 1 );
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor schema = org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(repeatedLabels, org.Neo4Net.storageengine.api.EntityType.NODE, 1);
+			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( repeatedLabels, IEntityType.NODE, 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.schema.StoreIndexDescriptor storeIndexDescriptor = org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema(schema).withId(id);
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor storeIndexDescriptor = org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema(schema).withId(id);
 			  StoreIndexDescriptor storeIndexDescriptor = IndexDescriptorFactory.forSchema( schema ).withId( id );
 			  cache.AddSchemaRule( storeIndexDescriptor );
 			  cache.RemoveSchemaRule( id );
@@ -429,10 +429,10 @@ namespace Neo4Net.Kernel.Impl.Api.store
 //ORIGINAL LINE: final int[] repeatedRelTypes = {0, 1, 0};
 			  int[] repeatedRelTypes = new int[] { 0, 1, 0 };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.schema.MultiTokenSchemaDescriptor schema = org.neo4j.kernel.api.schema.SchemaDescriptorFactory.multiToken(repeatedRelTypes, org.neo4j.storageengine.api.EntityType.RELATIONSHIP, 1);
-			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( repeatedRelTypes, EntityType.RELATIONSHIP, 1 );
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.schema.MultiTokenSchemaDescriptor schema = org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken(repeatedRelTypes, org.Neo4Net.storageengine.api.EntityType.RELATIONSHIP, 1);
+			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( repeatedRelTypes, IEntityType.RELATIONSHIP, 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.schema.StoreIndexDescriptor storeIndexDescriptor = org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema(schema).withId(id);
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor storeIndexDescriptor = org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema(schema).withId(id);
 			  StoreIndexDescriptor storeIndexDescriptor = IndexDescriptorFactory.forSchema( schema ).withId( id );
 			  cache.AddSchemaRule( storeIndexDescriptor );
 			  cache.RemoveSchemaRule( id );

@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using IndexMap = Neo4Net.Kernel.Impl.Api.index.IndexMap;
@@ -52,9 +52,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestLabels.LABEL_ONE;
+//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
 
 	/// <summary>
 	/// Issue came up when observing that recovering an INDEX DROP command didn't actually call <seealso cref="IndexProxy.drop()"/>,
@@ -87,10 +87,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fs = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fs = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule Fs = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory(fs);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs);
 		 public TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // given a transaction stream ending in an INDEX DROP command.
 			  CommittedTransactionRepresentation dropTransaction = PrepareDropTransaction();
 			  File storeDir = Directory.databaseDir();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 			  CreateIndex( db );
 			  Db.shutdown();
 			  AppendDropTransactionToTransactionLog( Directory.databaseDir(), dropTransaction );
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 private static IndexDefinition CreateIndex( GraphDatabaseService db )
+		 private static IndexDefinition CreateIndex( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void appendDropTransactionToTransactionLog(java.io.File databaseDirectory, org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation dropTransaction) throws java.io.IOException
+//ORIGINAL LINE: private void appendDropTransactionToTransactionLog(java.io.File databaseDirectory, org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation dropTransaction) throws java.io.IOException
 		 private void AppendDropTransactionToTransactionLog( File databaseDirectory, CommittedTransactionRepresentation dropTransaction )
 		 {
 			  LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( databaseDirectory, Fs ).build();
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation prepareDropTransaction() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation prepareDropTransaction() throws java.io.IOException
 		 private CommittedTransactionRepresentation PrepareDropTransaction()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(Directory.directory("preparation"));
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation extractLastTransaction(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation extractLastTransaction(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
 		 private static CommittedTransactionRepresentation ExtractLastTransaction( GraphDatabaseAPI db )
 		 {
 			  LogicalTransactionStore txStore = Db.DependencyResolver.resolveDependency( typeof( LogicalTransactionStore ) );

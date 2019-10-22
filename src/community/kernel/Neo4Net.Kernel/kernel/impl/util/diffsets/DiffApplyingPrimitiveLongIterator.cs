@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 
 	using PrimitiveLongBaseIterator = Neo4Net.Collections.PrimitiveLongCollections.PrimitiveLongBaseIterator;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// Applies a diffset to the provided <seealso cref="LongIterator"/>.
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 		 private readonly LongSet _addedElements;
 		 private readonly LongSet _removedElements;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable private final org.neo4j.graphdb.Resource resource;
+//ORIGINAL LINE: @Nullable private final org.Neo4Net.graphdb.Resource resource;
 		 private readonly Resource _resource;
 		 private Phase _phase;
 

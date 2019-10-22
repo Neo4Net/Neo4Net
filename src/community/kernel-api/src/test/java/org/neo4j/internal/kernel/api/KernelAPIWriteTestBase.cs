@@ -23,7 +23,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Before = org.junit.Before;
 	using TemporaryFolder = org.junit.rules.TemporaryFolder;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 
@@ -43,7 +43,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	{
 		 protected internal static readonly TemporaryFolder Folder = new TemporaryFolder();
 		 protected internal static KernelAPIWriteTestSupport TestSupport;
-		 protected internal static GraphDatabaseService GraphDb;
+		 protected internal static IGraphDatabaseService GraphDb;
 
 		 /// <summary>
 		 /// Creates a new instance of WriteSupport, which will be used to execute the concrete test
@@ -66,7 +66,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Transaction beginTransaction() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected Transaction beginTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 protected internal virtual Transaction BeginTransaction()
 		 {
 			  Kernel kernel = TestSupport.kernelToTest();

@@ -29,12 +29,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Result = Neo4Net.Graphdb.Result;
-	using SeverityLevel = Neo4Net.Graphdb.SeverityLevel;
-	using NotificationCode = Neo4Net.Graphdb.impl.notification.NotificationCode;
-	using NotificationDetail = Neo4Net.Graphdb.impl.notification.NotificationDetail;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Result = Neo4Net.GraphDb.Result;
+	using SeverityLevel = Neo4Net.GraphDb.SeverityLevel;
+	using NotificationCode = Neo4Net.GraphDb.impl.notification.NotificationCode;
+	using NotificationDetail = Neo4Net.GraphDb.impl.notification.NotificationDetail;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Procedure = Neo4Net.Procedure.Procedure;
@@ -69,7 +69,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			RulePlannerUnavailable = Notification( "Neo.ClientNotification.Statement.PlannerUnavailableWarning", containsString( "Using RULE planner is unsupported for current CYPHER version, the query has been executed by an older CYPHER version" ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
 			CartesianProductWarning = Notification( "Neo.ClientNotification.Statement.CartesianProductWarning", containsString( "If a part of a query contains multiple disconnected patterns, this will build a " + "cartesian product between all those parts. This may produce a large amount of data and slow down" + " query processing. " + "While occasionally intended, it may often be possible to reformulate the query that avoids the " + "use of this cross " + "product, perhaps by adding a relationship between the different parts or by using OPTIONAL MATCH" ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
 			LargeLabelCSVWarning = Notification( "Neo.ClientNotification.Statement.NoApplicableIndexWarning", containsString( "Using LOAD CSV with a large data set in a query where the execution plan contains the " + "Using LOAD CSV followed by a MATCH or MERGE that matches a non-indexed label will most likely " + "not perform well on large data sets. Please consider using a schema index." ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
-			EagerOperatorWarning = Notification( "Neo.ClientNotification.Statement.EagerOperatorWarning", containsString( "Using LOAD CSV with a large data set in a query where the execution plan contains the " + "Eager operator could potentially consume a lot of memory and is likely to not perform well. " + "See the Neo4j Manual entry on the Eager operator for more information and hints on " + "how problems could be avoided." ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
+			EagerOperatorWarning = Notification( "Neo.ClientNotification.Statement.EagerOperatorWarning", containsString( "Using LOAD CSV with a large data set in a query where the execution plan contains the " + "Eager operator could potentially consume a lot of memory and is likely to not perform well. " + "See the Neo4Net Manual entry on the Eager operator for more information and hints on " + "how problems could be avoided." ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
 			UnknownPropertyKeyWarning = Notification( "Neo.ClientNotification.Statement.UnknownPropertyKeyWarning", containsString( "the missing property name is" ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
 			UnknownRelationshipWarning = Notification( "Neo.ClientNotification.Statement.UnknownRelationshipTypeWarning", containsString( "the missing relationship type is" ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
 			UnknownLabelWarning = Notification( "Neo.ClientNotification.Statement.UnknownLabelWarning", containsString( "the missing label name is" ), any( typeof( InputPosition ) ), SeverityLevel.WARNING );
@@ -78,7 +78,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ImpermanentDatabaseRule rule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule rule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule Rule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

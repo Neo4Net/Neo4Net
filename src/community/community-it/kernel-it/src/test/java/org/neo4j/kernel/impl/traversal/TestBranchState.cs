@@ -23,24 +23,24 @@ namespace Neo4Net.Kernel.impl.traversal
 {
 	using Test = org.junit.Test;
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.traversal;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Neo4Net.Graphdb.traversal;
-	using Neo4Net.Graphdb.traversal;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.traversal;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.traversal;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluation.ofIncludes;
+//	import static org.Neo4Net.graphdb.traversal.Evaluation.ofIncludes;
 
 	public class TestBranchState : TraversalTestBase
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  using ( Transaction tx = BeginTx() )
 			  {
 					DepthStateExpander expander = new DepthStateExpander();
-					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.Graphdb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
+					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
 					tx.Success();
 			  }
 		 }
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			   * set new state for every step.
 			   */
 					IncrementEveryOtherDepthCountingExpander expander = new IncrementEveryOtherDepthCountingExpander();
-					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.Graphdb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
+					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
 					tx.Success();
 			  }
 		 }
@@ -101,12 +101,12 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					PathEvaluator<int> evaluator = new PathEvaluator_AdapterAnonymousInnerClass( this );
 
-					ExpectPaths( GraphDb.traversalDescription().uniqueness(Uniqueness.NODE_PATH).expand(new RelationshipWeightExpander(), new Neo4Net.Graphdb.traversal.InitialBranchState_State<>(1, 1)).evaluator(evaluator).traverse(GetNodeWithName("a")), "a,b,c" );
+					ExpectPaths( GraphDb.traversalDescription().uniqueness(Uniqueness.NODE_PATH).expand(new RelationshipWeightExpander(), new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(1, 1)).evaluator(evaluator).traverse(GetNodeWithName("a")), "a,b,c" );
 					tx.Success();
 			  }
 		 }
 
-		 private class PathEvaluator_AdapterAnonymousInnerClass : Neo4Net.Graphdb.traversal.PathEvaluator_Adapter<int>
+		 private class PathEvaluator_AdapterAnonymousInnerClass : Neo4Net.GraphDb.traversal.PathEvaluator_Adapter<int>
 		 {
 			 private readonly TestBranchState _outerInstance;
 

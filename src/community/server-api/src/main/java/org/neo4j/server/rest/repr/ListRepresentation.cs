@@ -22,8 +22,8 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
 

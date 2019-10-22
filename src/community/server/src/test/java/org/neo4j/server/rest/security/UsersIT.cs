@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.security
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
@@ -46,12 +46,12 @@ namespace Neo4Net.Server.rest.security
 	public class UsersIT : ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<org.neo4j.server.rest.RESTRequestGenerator> gen = org.neo4j.test.TestData.producedThrough(org.neo4j.server.rest.RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<org.Neo4Net.server.rest.RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.server.rest.RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 		 private CommunityNeoServer _server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.") public void user_status() throws org.neo4j.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.") public void user_status() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("User status\n" + "\n" + "Given that you know the current password, you can ask the server for the user status.")]
 		 public virtual void UserStatus()
@@ -60,17 +60,17 @@ namespace Neo4Net.Server.rest.security
 			  StartServerWithConfiguredUser();
 
 			  // Document
-			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("neo4j", "secret")).get(UserURL("neo4j"));
+			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("Neo4Net", "secret")).get(UserURL("Neo4Net"));
 
 			  // Then
 			  JsonNode data = JsonHelper.jsonNode( response.Entity() );
-			  assertThat( data.get( "username" ).asText(), equalTo("neo4j") );
+			  assertThat( data.get( "username" ).asText(), equalTo("Neo4Net") );
 			  assertThat( data.get( "password_change_required" ).asBoolean(), equalTo(false) );
-			  assertThat( data.get( "password_change" ).asText(), equalTo(PasswordURL("neo4j")) );
+			  assertThat( data.get( "password_change" ).asText(), equalTo(PasswordURL("Neo4Net")) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.") public void user_status_first_access() throws org.neo4j.server.rest.domain.JsonParseException, java.io.IOException
+//ORIGINAL LINE: @Test @Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.") public void user_status_first_access() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("User status on first access\n" + "\n" + "On first access, and using the default password, the user status will indicate " + "that the users password requires changing.")]
 		 public virtual void UserStatusFirstAccess()
@@ -79,13 +79,13 @@ namespace Neo4Net.Server.rest.security
 			  StartServer( true );
 
 			  // Document
-			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("neo4j", "neo4j")).get(UserURL("neo4j"));
+			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("Neo4Net", "Neo4Net")).get(UserURL("Neo4Net"));
 
 			  // Then
 			  JsonNode data = JsonHelper.jsonNode( response.Entity() );
-			  assertThat( data.get( "username" ).asText(), equalTo("neo4j") );
+			  assertThat( data.get( "username" ).asText(), equalTo("Neo4Net") );
 			  assertThat( data.get( "password_change_required" ).asBoolean(), equalTo(true) );
-			  assertThat( data.get( "password_change" ).asText(), equalTo(PasswordURL("neo4j")) );
+			  assertThat( data.get( "password_change" ).asText(), equalTo(PasswordURL("Neo4Net")) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -98,13 +98,13 @@ namespace Neo4Net.Server.rest.security
 			  StartServer( true );
 
 			  // Document
-			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("neo4j", "neo4j")).payload(QuotedJson("{'password':'secret'}")).post(_server.baseUri().resolve("/user/neo4j/password").ToString());
+			  RESTRequestGenerator.ResponseEntity response = Gen.get().expectedStatus(200).withHeader(HttpHeaders.AUTHORIZATION, HTTP.basicAuthHeader("Neo4Net", "Neo4Net")).payload(QuotedJson("{'password':'secret'}")).post(_server.baseUri().resolve("/user/Neo4Net/password").ToString());
 
 			  // Then the new password should work
-			  assertEquals( 200, HTTP.withBasicAuth( "neo4j", "secret" ).GET( DataURL() ).status() );
+			  assertEquals( 200, HTTP.withBasicAuth( "Neo4Net", "secret" ).GET( DataURL() ).status() );
 
 			  // Then the old password should not be invalid
-			  assertEquals( 401, HTTP.withBasicAuth( "neo4j", "neo4j" ).POST( DataURL() ).status() );
+			  assertEquals( 401, HTTP.withBasicAuth( "Neo4Net", "Neo4Net" ).POST( DataURL() ).status() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -116,7 +116,7 @@ namespace Neo4Net.Server.rest.security
 			  StartServer( true );
 
 			  // When
-			  HTTP.Response res = HTTP.withBasicAuth( "neo4j", "neo4j" ).POST( _server.baseUri().resolve("/user/neo4j/password").ToString(), HTTP.RawPayload.quotedJson("{'password':'neo4j'}") );
+			  HTTP.Response res = HTTP.withBasicAuth( "Neo4Net", "Neo4Net" ).POST( _server.baseUri().resolve("/user/Neo4Net/password").ToString(), HTTP.RawPayload.quotedJson("{'password':'Neo4Net'}") );
 
 			  // Then
 			  assertThat( res.Status(), equalTo(422) );
@@ -146,7 +146,7 @@ namespace Neo4Net.Server.rest.security
 		 {
 			  StartServer( true );
 			  // Set the password
-			  HTTP.Response post = HTTP.withBasicAuth( "neo4j", "neo4j" ).POST( _server.baseUri().resolve("/user/neo4j/password").ToString(), HTTP.RawPayload.quotedJson("{'password':'secret'}") );
+			  HTTP.Response post = HTTP.withBasicAuth( "Neo4Net", "Neo4Net" ).POST( _server.baseUri().resolve("/user/Neo4Net/password").ToString(), HTTP.RawPayload.quotedJson("{'password':'secret'}") );
 			  assertEquals( 200, post.Status() );
 		 }
 

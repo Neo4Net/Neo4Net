@@ -29,15 +29,15 @@ namespace Neo4Net.CodeGen.ByteCode
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.CodeGenerationTest.PACKAGE;
+//	import static org.Neo4Net.codegen.CodeGenerationTest.PACKAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.CodeGenerator.generateCode;
+//	import static org.Neo4Net.codegen.CodeGenerator.generateCode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Parameter.param;
+//	import static org.Neo4Net.codegen.Parameter.param;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.bytecode.ByteCode.BYTECODE;
+//	import static org.Neo4Net.codegen.bytecode.ByteCode.BYTECODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.bytecode.ByteCode.VERIFY_GENERATED_BYTECODE;
+//	import static org.Neo4Net.codegen.bytecode.ByteCode.VERIFY_GENERATED_BYTECODE;
 
 	public class ByteCodeVerifierTest
 	{

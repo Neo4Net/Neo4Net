@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel
 {
 	using Test = org.junit.Test;
 
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using TransientDatabaseFailureException = Neo4Net.Graphdb.TransientDatabaseFailureException;
-	using TransientFailureException = Neo4Net.Graphdb.TransientFailureException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using TransientDatabaseFailureException = Neo4Net.GraphDb.TransientDatabaseFailureException;
+	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel
 					transaction.Close();
 					fail( "Should have failed" );
 			  }
-			  catch ( Neo4Net.Graphdb.TransactionFailureException )
+			  catch ( Neo4Net.GraphDb.TransactionFailureException )
 			  { // THEN Good
 			  }
 		 }

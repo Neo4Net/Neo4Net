@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -44,13 +44,13 @@ namespace Neo4Net.Graphdb
 	public class RunOutOfDiskSpaceIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.CleanupRule cleanup = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public readonly PageCacheRule PageCacheRule = new PageCacheRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

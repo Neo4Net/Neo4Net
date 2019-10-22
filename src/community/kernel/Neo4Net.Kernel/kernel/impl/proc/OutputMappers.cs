@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 	/// <summary>
 	/// Takes user-defined record classes, and does two things: Describe the class as a <seealso cref="ProcedureSignature"/>,
-	/// and provide a mechanism to convert an instance of the class to Neo4j-typed Object[].
+	/// and provide a mechanism to convert an instance of the class to Neo4Net-typed Object[].
 	/// </summary>
 	public class OutputMappers
 	{
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object[] apply(Object record) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object[] apply(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public virtual object[] Apply( object record )
 			  {
 					object[] output = new object[FieldMappers.Length];
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 		 /// <summary>
-		 /// Extracts field value from an instance and converts it to a Neo4j typed value.
+		 /// Extracts field value from an instance and converts it to a Neo4Net typed value.
 		 /// </summary>
 		 private class FieldMapper
 		 {
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object apply(Object record) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: Object apply(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  internal virtual object Apply( object record )
 			  {
 					object invoke = GetValue( record );
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object getValue(Object record) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private Object getValue(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  internal virtual object GetValue( object record )
 			  {
 					try
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// <returns> an output mapper for the return type of the method. </returns>
 		 /// <exception cref="ProcedureException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OutputMapper mapper(Method method) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public OutputMapper mapper(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public virtual OutputMapper Mapper( System.Reflection.MethodInfo method )
 		 {
 			  Type cls = method.ReturnType;
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OutputMapper mapper(Class userClass) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public OutputMapper mapper(Class userClass) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public virtual OutputMapper Mapper( Type userClass )
 		 {
 			  AssertIsValidRecordClass( userClass );
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.impl.proc
 					}
 					catch ( ProcedureException e )
 					{
-						 throw new ProcedureException( e.Status(), e, "Field `%s` in record `%s` cannot be converted to a Neo4j type: %s", field.Name, userClass.Name, e.Message );
+						 throw new ProcedureException( e.Status(), e, "Field `%s` in record `%s` cannot be converted to a Neo4Net type: %s", field.Name, userClass.Name, e.Message );
 					}
 					catch ( IllegalAccessException e )
 					{
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIsValidRecordClass(Class userClass) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private void assertIsValidRecordClass(Class userClass) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private void AssertIsValidRecordClass( Type userClass )
 		 {
 			  if ( userClass.IsPrimitive || userClass.IsArray || userClass.Assembly != null && userClass.Assembly.GetName().Name.StartsWith("java.") )

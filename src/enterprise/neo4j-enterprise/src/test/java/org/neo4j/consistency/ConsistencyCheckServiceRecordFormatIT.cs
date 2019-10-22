@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Consistency
 {
@@ -34,12 +34,12 @@ namespace Neo4Net.Consistency
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
@@ -78,7 +78,7 @@ namespace Neo4Net.Consistency
 		 private readonly DatabaseRule _db = new EmbeddedDatabaseRule().withSetting(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).startLazily();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.neo4j.test.rule.SuppressOutput.suppressAll()).around(db);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(db);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -111,7 +111,7 @@ namespace Neo4Net.Consistency
 			  AssertConsistentStore( _db );
 		 }
 
-		 private static void CreateLinkedList( GraphDatabaseService db, int size )
+		 private static void CreateLinkedList( IGraphDatabaseService db, int size )
 		 {
 			  Node previous = null;
 			  using ( Transaction tx = Db.beginTx() )
@@ -134,7 +134,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertConsistentStore(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws Exception
+//ORIGINAL LINE: private static void assertConsistentStore(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws Exception
 		 private static void AssertConsistentStore( GraphDatabaseAPI db )
 		 {
 			  ConsistencyCheckService service = new ConsistencyCheckService();

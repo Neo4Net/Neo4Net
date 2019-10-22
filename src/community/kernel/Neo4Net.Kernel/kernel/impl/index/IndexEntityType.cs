@@ -22,16 +22,16 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Kernel.impl.index
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	public abstract class IndexEntityType
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       Node((byte) 0) { public Class entityClass() { return org.neo4j.graphdb.Node.class; } },
+//       Node((byte) 0) { public Class IEntityClass() { return org.Neo4Net.graphdb.Node.class; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       Relationship((byte) 1) { public Class entityClass() { return org.neo4j.graphdb.Relationship.class; } };
+//       Relationship((byte) 1) { public Class IEntityClass() { return org.Neo4Net.graphdb.Relationship.class; } };
 
 		 private static readonly IList<IndexEntityType> valueList = new List<IndexEntityType>();
 
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.index
 
 		 private readonly sbyte id;
 
-		 IndexEntityType( sbyte id ) { this.id = id; } public sbyte id() { return id; } public abstract Type entityClass();
+		 IndexEntityType( sbyte id ) { this.id = id; } public sbyte id() { return id; } public abstract Type IEntityClass();
 
 		 public static readonly IndexEntityType public static IndexEntityType byId( byte id )
 		 {

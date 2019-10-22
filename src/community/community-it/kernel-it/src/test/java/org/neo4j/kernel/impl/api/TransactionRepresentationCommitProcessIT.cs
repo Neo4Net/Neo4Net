@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using DummyIndexExtensionFactory = Neo4Net.Kernel.impl.index.DummyIndexExtensionFactory;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class TransactionRepresentationCommitProcessIT
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private const int TOTAL_ACTIVE_THREADS = 6;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.check_point_interval_time, "10ms");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_interval_time, "10ms");
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.check_point_interval_time, "10ms");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -65,11 +65,11 @@ namespace Neo4Net.Kernel.Impl.Api
 		 public virtual void CommitDuringContinuousCheckpointing()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.Index<org.neo4j.graphdb.Node> index;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index;
 			  Index<Node> index;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
-					index = Db.index().forNodes(INDEX_NAME, stringMap(Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, DummyIndexExtensionFactory.IDENTIFIER));
+					index = Db.index().forNodes(INDEX_NAME, stringMap(Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, DummyIndexExtensionFactory.IDENTIFIER));
 					tx.Success();
 			  }
 

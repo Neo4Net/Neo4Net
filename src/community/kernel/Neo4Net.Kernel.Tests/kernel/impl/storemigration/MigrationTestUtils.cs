@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IoPrimitiveUtils.readAndFlip;
+//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.readAndFlip;
 
 	public class MigrationTestUtils
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void changeVersionNumber(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File storeFile, String versionString) throws java.io.IOException
+//ORIGINAL LINE: static void changeVersionNumber(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File storeFile, String versionString) throws java.io.IOException
 		 internal static void ChangeVersionNumber( FileSystemAbstraction fileSystem, File storeFile, string versionString )
 		 {
 			  sbyte[] versionBytes = UTF8.encode( versionString );
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void prepareSampleLegacyDatabase(String version, org.neo4j.io.fs.FileSystemAbstraction workingFs, java.io.File workingDirectory, java.io.File prepareDirectory) throws java.io.IOException
+//ORIGINAL LINE: public static void prepareSampleLegacyDatabase(String version, org.Neo4Net.io.fs.FileSystemAbstraction workingFs, java.io.File workingDirectory, java.io.File prepareDirectory) throws java.io.IOException
 		 public static void PrepareSampleLegacyDatabase( string version, FileSystemAbstraction workingFs, File workingDirectory, File prepareDirectory )
 		 {
 			  if ( !prepareDirectory.exists() )
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void verifyFilesHaveSameContent(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File original, java.io.File other) throws java.io.IOException
+//ORIGINAL LINE: public static void verifyFilesHaveSameContent(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File original, java.io.File other) throws java.io.IOException
 		 public static void VerifyFilesHaveSameContent( FileSystemAbstraction fileSystem, File original, File other )
 		 {
 			  const int bufferBatchSize = 32 * 1024;
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void removeCheckPointFromTxLog(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: public static void removeCheckPointFromTxLog(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File databaseDirectory) throws java.io.IOException
 		 public static void RemoveCheckPointFromTxLog( FileSystemAbstraction fileSystem, File databaseDirectory )
 		 {
 			  LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( databaseDirectory, fileSystem ).build();

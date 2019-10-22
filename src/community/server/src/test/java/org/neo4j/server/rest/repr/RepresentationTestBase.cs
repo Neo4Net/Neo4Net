@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.repr
 
 	internal class RepresentationTestBase
 	{
-		 internal static readonly URI BaseUri = URI.create( "http://neo4j.org/" );
+		 internal static readonly URI BaseUri = URI.create( "http://Neo4Net.org/" );
 		 internal const string NODE_URI_PATTERN = "http://.*/node/[0-9]+";
 		 internal const string RELATIONSHIP_URI_PATTERN = "http://.*/relationship/[0-9]+";
 

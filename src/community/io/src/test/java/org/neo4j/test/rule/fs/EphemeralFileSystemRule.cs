@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Test.rule.fs
 {
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 
 	public class EphemeralFileSystemRule : FileSystemRule<EphemeralFileSystemAbstraction>
 	{
@@ -30,7 +30,7 @@ namespace Neo4Net.Test.rule.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction snapshot(Runnable action) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction snapshot(Runnable action) throws Exception
 		 public virtual EphemeralFileSystemAbstraction Snapshot( ThreadStart action )
 		 {
 			  EphemeralFileSystemAbstraction snapshot = Fs.snapshot();

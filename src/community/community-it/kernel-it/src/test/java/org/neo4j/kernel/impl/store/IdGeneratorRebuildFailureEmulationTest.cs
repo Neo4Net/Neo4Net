@@ -27,17 +27,17 @@ namespace Neo4Net.Kernel.impl.store
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
@@ -63,10 +63,10 @@ namespace Neo4Net.Kernel.impl.store
 		 private StoreFactory _factory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public readonly PageCacheRule PageCacheRule = new PageCacheRule();
 		 private DatabaseLayout _databaseLayout;
 
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  _fs = new FileSystem();
 			  _databaseLayout = TestDirectory.databaseLayout();
-			  GraphDatabaseService graphdb = new Database( this, _databaseLayout.databaseDirectory() );
+			  IGraphDatabaseService graphdb = new Database( this, _databaseLayout.databaseDirectory() );
 			  CreateInitialData( graphdb );
 			  graphdb.Shutdown();
 			  IDictionary<string, string> @params = new Dictionary<string, string>();
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void VerifyAndDispose()
 		 {
-			  GraphDatabaseService graphdb = null;
+			  IGraphDatabaseService graphdb = null;
 			  try
 			  {
 					graphdb = new Database( this, _databaseLayout.databaseDirectory() );
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.impl.store
 			  }
 		 }
 
-		 private void VerifyData( GraphDatabaseService graphdb )
+		 private void VerifyData( IGraphDatabaseService graphdb )
 		 {
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.impl.store
 			  }
 		 }
 
-		 private void CreateInitialData( GraphDatabaseService graphdb )
+		 private void CreateInitialData( IGraphDatabaseService graphdb )
 		 {
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -163,18 +163,18 @@ namespace Neo4Net.Kernel.impl.store
 			  }
 		 }
 
-		 private E Properties<E>( E entity ) where E : Neo4Net.Graphdb.PropertyContainer
+		 private E Properties<E>( E IEntity ) where E : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  entity.setProperty( "short thing", "short" );
-			  entity.setProperty( "long thing", "this is quite a long string, don't you think, it sure is long enough at least" );
-			  entity.setProperty( "string array", new string[]{ "these are a few", "cool strings", "for your viewing pleasure" } );
-			  return entity;
+			  IEntity.setProperty( "short thing", "short" );
+			  IEntity.setProperty( "long thing", "this is quite a long string, don't you think, it sure is long enough at least" );
+			  IEntity.setProperty( "string array", new string[]{ "these are a few", "cool strings", "for your viewing pleasure" } );
+			  return IEntity;
 		 }
 
-		 private int ReadProperties( PropertyContainer entity )
+		 private int ReadProperties( IPropertyContainer IEntity )
 		 {
 			  int count = 0;
-			  foreach ( string key in entity.PropertyKeys )
+			  foreach ( string key in IEntity.PropertyKeys )
 			  {
 					entity.GetProperty( key );
 					count++;
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") private class Database extends org.neo4j.test.ImpermanentGraphDatabase
+//ORIGINAL LINE: @SuppressWarnings("deprecation") private class Database extends org.Neo4Net.test.ImpermanentGraphDatabase
 		 private class Database : ImpermanentGraphDatabase
 		 {
 			 private readonly IdGeneratorRebuildFailureEmulationTest _outerInstance;

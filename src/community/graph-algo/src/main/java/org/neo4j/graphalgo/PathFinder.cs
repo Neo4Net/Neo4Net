@@ -21,9 +21,9 @@
  */
 namespace Neo4Net.Graphalgo
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
 
 	/// <summary>
 	/// Interface of algorithms that finds paths in between two nodes.
@@ -31,7 +31,7 @@ namespace Neo4Net.Graphalgo
 	/// @author Tobias Ivarsson
 	/// </summary>
 	/// @param <P> the path type that the algorithm produces </param>
-	public interface PathFinder<P> where P : Neo4Net.Graphdb.Path
+	public interface PathFinder<P> where P : Neo4Net.GraphDb.Path
 	{
 		 /// <summary>
 		 /// Tries to find a single path between {@code start} and {@code end}

@@ -28,35 +28,35 @@ namespace Neo4Net.Server.rest.transactional
 	using SerializationConfig = org.codehaus.jackson.map.SerializationConfig;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 
-	public class Neo4jJsonCodec : ObjectMapper
+	public class Neo4NetJsonCodec : ObjectMapper
 	{
-		 private sealed class Neo4jJsonMetaType
+		 private sealed class Neo4NetJsonMetaType
 		 {
-			  public static readonly Neo4jJsonMetaType Node = new Neo4jJsonMetaType( "Node", InnerEnum.Node, "node" );
-			  public static readonly Neo4jJsonMetaType Relationship = new Neo4jJsonMetaType( "Relationship", InnerEnum.Relationship, "relationship" );
-			  public static readonly Neo4jJsonMetaType DateTime = new Neo4jJsonMetaType( "DateTime", InnerEnum.DateTime, "datetime" );
-			  public static readonly Neo4jJsonMetaType Time = new Neo4jJsonMetaType( "Time", InnerEnum.Time, "time" );
-			  public static readonly Neo4jJsonMetaType LocalDateTime = new Neo4jJsonMetaType( "LocalDateTime", InnerEnum.LocalDateTime, "localdatetime" );
-			  public static readonly Neo4jJsonMetaType Date = new Neo4jJsonMetaType( "Date", InnerEnum.Date, "date" );
-			  public static readonly Neo4jJsonMetaType LocalTime = new Neo4jJsonMetaType( "LocalTime", InnerEnum.LocalTime, "localtime" );
-			  public static readonly Neo4jJsonMetaType Duration = new Neo4jJsonMetaType( "Duration", InnerEnum.Duration, "duration" );
-			  public static readonly Neo4jJsonMetaType Point = new Neo4jJsonMetaType( "Point", InnerEnum.Point, "point" );
+			  public static readonly Neo4NetJsonMetaType Node = new Neo4NetJsonMetaType( "Node", InnerEnum.Node, "node" );
+			  public static readonly Neo4NetJsonMetaType Relationship = new Neo4NetJsonMetaType( "Relationship", InnerEnum.Relationship, "relationship" );
+			  public static readonly Neo4NetJsonMetaType DateTime = new Neo4NetJsonMetaType( "DateTime", InnerEnum.DateTime, "datetime" );
+			  public static readonly Neo4NetJsonMetaType Time = new Neo4NetJsonMetaType( "Time", InnerEnum.Time, "time" );
+			  public static readonly Neo4NetJsonMetaType LocalDateTime = new Neo4NetJsonMetaType( "LocalDateTime", InnerEnum.LocalDateTime, "localdatetime" );
+			  public static readonly Neo4NetJsonMetaType Date = new Neo4NetJsonMetaType( "Date", InnerEnum.Date, "date" );
+			  public static readonly Neo4NetJsonMetaType LocalTime = new Neo4NetJsonMetaType( "LocalTime", InnerEnum.LocalTime, "localtime" );
+			  public static readonly Neo4NetJsonMetaType Duration = new Neo4NetJsonMetaType( "Duration", InnerEnum.Duration, "duration" );
+			  public static readonly Neo4NetJsonMetaType Point = new Neo4NetJsonMetaType( "Point", InnerEnum.Point, "point" );
 
-			  private static readonly IList<Neo4jJsonMetaType> valueList = new List<Neo4jJsonMetaType>();
+			  private static readonly IList<Neo4NetJsonMetaType> valueList = new List<Neo4NetJsonMetaType>();
 
-			  static Neo4jJsonMetaType()
+			  static Neo4NetJsonMetaType()
 			  {
 				  valueList.Add( Node );
 				  valueList.Add( Relationship );
@@ -90,8 +90,8 @@ namespace Neo4Net.Server.rest.transactional
 			  internal Private readonly;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: Neo4jJsonMetaType(final String code)
-			  internal Neo4jJsonMetaType( string name, InnerEnum innerEnum, string code )
+//ORIGINAL LINE: Neo4NetJsonMetaType(final String code)
+			  internal Neo4NetJsonMetaType( string name, InnerEnum innerEnum, string code )
 			  {
 					this._code = code;
 
@@ -105,7 +105,7 @@ namespace Neo4Net.Server.rest.transactional
 					return this._code;
 			  }
 
-			 public static IList<Neo4jJsonMetaType> values()
+			 public static IList<Neo4NetJsonMetaType> values()
 			 {
 				 return valueList;
 			 }
@@ -120,9 +120,9 @@ namespace Neo4Net.Server.rest.transactional
 				 return nameValue;
 			 }
 
-			 public static Neo4jJsonMetaType valueOf( string name )
+			 public static Neo4NetJsonMetaType valueOf( string name )
 			 {
-				 foreach ( Neo4jJsonMetaType enumInstance in Neo4jJsonMetaType.valueList )
+				 foreach ( Neo4NetJsonMetaType enumInstance in Neo4NetJsonMetaType.valueList )
 				 {
 					 if ( enumInstance.nameValue == name )
 					 {
@@ -135,12 +135,12 @@ namespace Neo4Net.Server.rest.transactional
 
 		 private TransitionalPeriodTransactionMessContainer _container;
 
-		 public Neo4jJsonCodec( TransitionalPeriodTransactionMessContainer container ) : this()
+		 public Neo4NetJsonCodec( TransitionalPeriodTransactionMessContainer container ) : this()
 		 {
 			  this._container = container;
 		 }
 
-		 public Neo4jJsonCodec()
+		 public Neo4NetJsonCodec()
 		 {
 			  SerializationConfig.without( SerializationConfig.Feature.FLUSH_AFTER_WRITE_VALUE );
 		 }
@@ -149,11 +149,11 @@ namespace Neo4Net.Server.rest.transactional
 //ORIGINAL LINE: public void writeValue(org.codehaus.jackson.JsonGenerator out, Object value) throws java.io.IOException
 		 public override void WriteValue( JsonGenerator @out, object value )
 		 {
-			  if ( value is PropertyContainer )
+			  if ( value is IPropertyContainer )
 			  {
 					using ( TransactionStateChecker txStateChecker = TransactionStateChecker.Create( _container ) )
 					{
-						 WritePropertyContainer( @out, ( PropertyContainer ) value, txStateChecker );
+						 WritePropertyContainer( @out, ( IPropertyContainer ) value, txStateChecker );
 					}
 			  }
 			  else if ( value is Path )
@@ -269,7 +269,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePath(org.codehaus.jackson.JsonGenerator out, java.util.Iterator<org.neo4j.graphdb.PropertyContainer> value, TransactionStateChecker txStateChecker) throws java.io.IOException
+//ORIGINAL LINE: private void writePath(org.codehaus.jackson.JsonGenerator out, java.util.Iterator<org.Neo4Net.graphdb.PropertyContainer> value, TransactionStateChecker txStateChecker) throws java.io.IOException
 		 private void WritePath( JsonGenerator @out, IEnumerator<PropertyContainer> value, TransactionStateChecker txStateChecker )
 		 {
 			  @out.writeStartArray();
@@ -287,8 +287,8 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePropertyContainer(org.codehaus.jackson.JsonGenerator out, org.neo4j.graphdb.PropertyContainer value, TransactionStateChecker txStateChecker) throws java.io.IOException
-		 private void WritePropertyContainer( JsonGenerator @out, PropertyContainer value, TransactionStateChecker txStateChecker )
+//ORIGINAL LINE: private void writePropertyContainer(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.PropertyContainer value, TransactionStateChecker txStateChecker) throws java.io.IOException
+		 private void WritePropertyContainer( JsonGenerator @out, IPropertyContainer value, TransactionStateChecker txStateChecker )
 		 {
 			  if ( value is Node )
 			  {
@@ -305,15 +305,15 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodeOrRelationship(org.codehaus.jackson.JsonGenerator out, org.neo4j.graphdb.PropertyContainer entity, boolean isDeleted) throws java.io.IOException
-		 private void WriteNodeOrRelationship( JsonGenerator @out, PropertyContainer entity, bool isDeleted )
+//ORIGINAL LINE: private void writeNodeOrRelationship(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.PropertyContainer IEntity, boolean isDeleted) throws java.io.IOException
+		 private void WriteNodeOrRelationship( JsonGenerator @out, IPropertyContainer IEntity, bool isDeleted )
 		 {
 			  @out.writeStartObject();
 			  try
 			  {
 					if ( !isDeleted )
 					{
-						 foreach ( KeyValuePair<string, object> property in entity.AllProperties.SetOfKeyValuePairs() )
+						 foreach ( KeyValuePair<string, object> property in IEntity.AllProperties.SetOfKeyValuePairs() )
 						 {
 							  @out.writeObjectField( property.Key, property.Value );
 						 }
@@ -352,7 +352,7 @@ namespace Neo4Net.Server.rest.transactional
 					Node node = ( Node ) value;
 					using ( TransactionStateChecker stateChecker = TransactionStateChecker.Create( _container ) )
 					{
-						 WriteNodeOrRelationshipMeta( @out, node.Id, Neo4jJsonMetaType.Node, stateChecker.IsNodeDeletedInCurrentTx( node.Id ) );
+						 WriteNodeOrRelationshipMeta( @out, node.Id, Neo4NetJsonMetaType.Node, stateChecker.IsNodeDeletedInCurrentTx( node.Id ) );
 					}
 			  }
 			  else if ( value is Relationship )
@@ -360,7 +360,7 @@ namespace Neo4Net.Server.rest.transactional
 					Relationship relationship = ( Relationship ) value;
 					using ( TransactionStateChecker transactionStateChecker = TransactionStateChecker.Create( _container ) )
 					{
-						 WriteNodeOrRelationshipMeta( @out, relationship.Id, Neo4jJsonMetaType.Relationship, transactionStateChecker.IsRelationshipDeletedInCurrentTx( relationship.Id ) );
+						 WriteNodeOrRelationshipMeta( @out, relationship.Id, Neo4NetJsonMetaType.Relationship, transactionStateChecker.IsRelationshipDeletedInCurrentTx( relationship.Id ) );
 					}
 			  }
 			  else if ( value is Path )
@@ -392,7 +392,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  else if ( value is TemporalAmount )
 			  {
-					WriteObjectMeta( @out, Neo4jJsonMetaType.Duration );
+					WriteObjectMeta( @out, Neo4NetJsonMetaType.Duration );
 			  }
 			  else
 			  {
@@ -401,13 +401,13 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Neo4jJsonMetaType parseGeometryType(org.neo4j.graphdb.spatial.Geometry value) throws java.io.IOException
-		 private Neo4jJsonMetaType ParseGeometryType( Geometry value )
+//ORIGINAL LINE: private Neo4NetJsonMetaType parseGeometryType(org.Neo4Net.graphdb.spatial.Geometry value) throws java.io.IOException
+		 private Neo4NetJsonMetaType ParseGeometryType( Geometry value )
 		 {
-			  Neo4jJsonMetaType type = null;
+			  Neo4NetJsonMetaType type = null;
 			  if ( value is Point )
 			  {
-					type = Neo4jJsonMetaType.Point;
+					type = Neo4NetJsonMetaType.Point;
 			  }
 			  if ( type == null )
 			  {
@@ -416,28 +416,28 @@ namespace Neo4Net.Server.rest.transactional
 			  return type;
 		 }
 
-		 private Neo4jJsonMetaType ParseTemporalType( Temporal value )
+		 private Neo4NetJsonMetaType ParseTemporalType( Temporal value )
 		 {
-			  Neo4jJsonMetaType type = null;
+			  Neo4NetJsonMetaType type = null;
 			  if ( value is ZonedDateTime )
 			  {
-					type = Neo4jJsonMetaType.DateTime;
+					type = Neo4NetJsonMetaType.DateTime;
 			  }
 			  else if ( value is LocalDate )
 			  {
-					type = Neo4jJsonMetaType.Date;
+					type = Neo4NetJsonMetaType.Date;
 			  }
 			  else if ( value is OffsetTime )
 			  {
-					type = Neo4jJsonMetaType.Time;
+					type = Neo4NetJsonMetaType.Time;
 			  }
 			  else if ( value is DateTime )
 			  {
-					type = Neo4jJsonMetaType.LocalDateTime;
+					type = Neo4NetJsonMetaType.LocalDateTime;
 			  }
 			  else if ( value is LocalTime )
 			  {
-					type = Neo4jJsonMetaType.LocalTime;
+					type = Neo4NetJsonMetaType.LocalTime;
 			  }
 			  if ( type == null )
 			  {
@@ -447,13 +447,13 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeMetaPath(org.codehaus.jackson.JsonGenerator out, org.neo4j.graphdb.Path value) throws java.io.IOException
+//ORIGINAL LINE: private void writeMetaPath(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.graphdb.Path value) throws java.io.IOException
 		 private void WriteMetaPath( JsonGenerator @out, Path value )
 		 {
 			  @out.writeStartArray();
 			  try
 			  {
-					foreach ( PropertyContainer element in value )
+					foreach ( IPropertyContainer element in value )
 					{
 						 WriteMeta( @out, element );
 					}
@@ -465,8 +465,8 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeObjectMeta(org.codehaus.jackson.JsonGenerator out, Neo4jJsonMetaType type) throws java.io.IOException
-		 private void WriteObjectMeta( JsonGenerator @out, Neo4jJsonMetaType type )
+//ORIGINAL LINE: private void writeObjectMeta(org.codehaus.jackson.JsonGenerator out, Neo4NetJsonMetaType type) throws java.io.IOException
+		 private void WriteObjectMeta( JsonGenerator @out, Neo4NetJsonMetaType type )
 		 {
 			  requireNonNull( type, "The meta type cannot be null for known types." );
 			  @out.writeStartObject();
@@ -481,8 +481,8 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodeOrRelationshipMeta(org.codehaus.jackson.JsonGenerator out, long id, Neo4jJsonMetaType type, boolean isDeleted) throws java.io.IOException
-		 private void WriteNodeOrRelationshipMeta( JsonGenerator @out, long id, Neo4jJsonMetaType type, bool isDeleted )
+//ORIGINAL LINE: private void writeNodeOrRelationshipMeta(org.codehaus.jackson.JsonGenerator out, long id, Neo4NetJsonMetaType type, boolean isDeleted) throws java.io.IOException
+		 private void WriteNodeOrRelationshipMeta( JsonGenerator @out, long id, Neo4NetJsonMetaType type, bool isDeleted )
 		 {
 			  requireNonNull( type, "The meta type could not be null for node or relationship." );
 			  @out.writeStartObject();

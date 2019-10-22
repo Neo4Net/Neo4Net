@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.HEAP_ALLOCATOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, RandomExtension.class}) class IndexUpdateStorageTest
@@ -55,11 +55,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private static readonly SchemaDescriptorSupplier _descriptor = SchemaDescriptorFactory.forLabel( 1, 1 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.TestDirectory directory;
 		 protected internal TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.RandomRule random;
 		 protected internal RandomRule Random;
 
 		 private readonly GenericLayout _layout = new GenericLayout( 1, _spatialSettings );
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void storeAll(IndexUpdateStorage<GenericKey,NativeIndexValue> storage, java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected) throws java.io.IOException
+//ORIGINAL LINE: private static void storeAll(IndexUpdateStorage<GenericKey,NativeIndexValue> storage, java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected) throws java.io.IOException
 		 private static void StoreAll( IndexUpdateStorage<GenericKey, NativeIndexValue> storage, IList<IndexEntryUpdate<SchemaDescriptorSupplier>> expected )
 		 {
 			  foreach ( IndexEntryUpdate<SchemaDescriptorSupplier> update in expected )
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verify(java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<org.neo4j.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey,NativeIndexValue> storage) throws java.io.IOException
+//ORIGINAL LINE: private static void verify(java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey,NativeIndexValue> storage) throws java.io.IOException
 		 private static void Verify( IList<IndexEntryUpdate<SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey, NativeIndexValue> storage )
 		 {
 			  using ( IndexUpdateCursor<GenericKey, NativeIndexValue> reader = storage.reader() )
@@ -161,17 +161,17 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  IList<IndexEntryUpdate<SchemaDescriptorSupplier>> updates = new List<IndexEntryUpdate<SchemaDescriptorSupplier>>();
 			  for ( int i = 0; i < count; i++ )
 			  {
-					long entityId = Random.nextLong( 10_000_000 );
+					long IEntityId = Random.nextLong( 10_000_000 );
 					switch ( Random.among( UpdateMode.MODES ) )
 					{
 					case ADDED:
-						 updates.Add( IndexEntryUpdate.add( entityId, _descriptor, Random.nextValue() ) );
+						 updates.Add( IndexEntryUpdate.add( IEntityId, _descriptor, Random.nextValue() ) );
 						 break;
 					case REMOVED:
-						 updates.Add( IndexEntryUpdate.remove( entityId, _descriptor, Random.nextValue() ) );
+						 updates.Add( IndexEntryUpdate.remove( IEntityId, _descriptor, Random.nextValue() ) );
 						 break;
 					case CHANGED:
-						 updates.Add( IndexEntryUpdate.change( entityId, _descriptor, Random.nextValue(), Random.nextValue() ) );
+						 updates.Add( IndexEntryUpdate.change( IEntityId, _descriptor, Random.nextValue(), Random.nextValue() ) );
 						 break;
 					default:
 						 throw new System.ArgumentException();

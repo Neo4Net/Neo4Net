@@ -42,7 +42,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 
 	public class ForkedProcessorStepTest
 	{

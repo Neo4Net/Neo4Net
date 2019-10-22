@@ -27,9 +27,9 @@ namespace Neo4Net.Io.mem
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.kibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.getInteger;
+//	import static org.Neo4Net.util.FeatureToggles.getInteger;
 
 	/// <summary>
 	/// This memory allocator is allocating memory in large segments, called "grabs", and the memory returned by the memory

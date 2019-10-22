@@ -35,9 +35,9 @@ namespace Neo4Net.CommandLine.Admin.security
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.UserManager_Fields.INITIAL_PASSWORD;
+//	import static org.Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_PASSWORD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.UserManager_Fields.INITIAL_USER_NAME;
+//	import static org.Neo4Net.kernel.api.security.UserManager_Fields.INITIAL_USER_NAME;
 
 	public class SetInitialPasswordCommand : AdminCommand
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  try
@@ -84,7 +84,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 {
 			 set
 			 {
-				  Config config = LoadNeo4jConfig();
+				  Config config = LoadNeo4NetConfig();
 				  FileSystemAbstraction fileSystem = _outsideWorld.fileSystem();
    
 				  if ( RealUsersExist( config ) )
@@ -119,7 +119,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			  {
 					result = true;
 
-					// Check if it only contains the default neo4j user
+					// Check if it only contains the default Neo4Net user
 					FileUserRepository userRepository = new FileUserRepository( _outsideWorld.fileSystem(), authFile, NullLogProvider.Instance );
 					try
 					{
@@ -131,7 +131,7 @@ namespace Neo4Net.CommandLine.Admin.security
 								  User user = users.Values()[0];
 								  if ( INITIAL_USER_NAME.Equals( user.Name() ) && user.Credentials().matchesPassword(INITIAL_PASSWORD) )
 								  {
-										// We allow overwriting an unmodified default neo4j user
+										// We allow overwriting an unmodified default Neo4Net user
 										result = false;
 								  }
 							 }
@@ -160,11 +160,11 @@ namespace Neo4Net.CommandLine.Admin.security
 					files = "`auth` file";
 			  }
 
-			  return "the provided initial password was not set because existing Neo4j users were detected at `" + authFile.AbsolutePath + "`. Please remove the existing " + files + " if you want to reset your database " +
+			  return "the provided initial password was not set because existing Neo4Net users were detected at `" + authFile.AbsolutePath + "`. Please remove the existing " + files + " if you want to reset your database " +
 						 "to only have a default user with the provided password.";
 		 }
 
-		 internal virtual Config LoadNeo4jConfig()
+		 internal virtual Config LoadNeo4NetConfig()
 		 {
 			  return Config.fromFile( _configDir.resolve( Config.DEFAULT_CONFIG_FILE_NAME ).toFile() ).withHome(_homeDir.toFile()).withNoThrowOnFileLoadFailure().withConnectorsDisabled().build();
 		 }

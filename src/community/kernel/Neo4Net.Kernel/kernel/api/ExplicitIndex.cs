@@ -28,51 +28,51 @@ namespace Neo4Net.Kernel.api
 	public interface ExplicitIndex
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits get(String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits get(String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Get( string key, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits query(String key, Object queryOrQueryObject) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits query(String key, Object queryOrQueryObject) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Query( string key, object queryOrQueryObject );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits query(Object queryOrQueryObject) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits query(Object queryOrQueryObject) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Query( object queryOrQueryObject );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void addNode(long entity, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-		 void AddNode( long entity, string key, object value );
+//ORIGINAL LINE: void addNode(long IEntity, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+		 void AddNode( long IEntity, string key, object value );
 
-		 void Remove( long entity, string key, object value );
+		 void Remove( long IEntity, string key, object value );
 
-		 void Remove( long entity, string key );
+		 void Remove( long IEntity, string key );
 
-		 void Remove( long entity );
+		 void Remove( long IEntity );
 
 		 void Drop();
 
 		 // Relationship-index-specific accessors
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits get(String key, Object value, long startNode, long endNode) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits get(String key, Object value, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Get( string key, object value, long startNode, long endNode );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits query(String key, Object queryOrQueryObject, long startNode, long endNode) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits query(String key, Object queryOrQueryObject, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Query( string key, object queryOrQueryObject, long startNode, long endNode );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexHits query(Object queryOrQueryObject, long startNode, long endNode) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: ExplicitIndexHits query(Object queryOrQueryObject, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndexHits Query( object queryOrQueryObject, long startNode, long endNode );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void addRelationship(long entity, String key, Object value, long startNode, long endNode) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-		 void AddRelationship( long entity, string key, object value, long startNode, long endNode );
+//ORIGINAL LINE: void addRelationship(long IEntity, String key, Object value, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+		 void AddRelationship( long IEntity, string key, object value, long startNode, long endNode );
 
-		 void RemoveRelationship( long entity, string key, object value, long startNode, long endNode );
+		 void RemoveRelationship( long IEntity, string key, object value, long startNode, long endNode );
 
-		 void RemoveRelationship( long entity, string key, long startNode, long endNode );
+		 void RemoveRelationship( long IEntity, string key, long startNode, long endNode );
 
-		 void RemoveRelationship( long entity, long startNode, long endNode );
+		 void RemoveRelationship( long IEntity, long startNode, long endNode );
 	}
 
 }

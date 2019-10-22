@@ -26,8 +26,8 @@ namespace Neo4Net.Server.rest.web
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Database = Neo4Net.Server.database.Database;
 	using WrappedDatabase = Neo4Net.Server.database.WrappedDatabase;
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class DatabaseMetadataServiceTest
 	{

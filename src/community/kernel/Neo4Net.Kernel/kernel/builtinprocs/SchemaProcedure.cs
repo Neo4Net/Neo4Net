@@ -22,14 +22,14 @@
 namespace Neo4Net.Kernel.builtinprocs
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
 	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 private readonly KernelTransaction _kernelTransaction;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public SchemaProcedure(final org.neo4j.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.neo4j.kernel.api.KernelTransaction kernelTransaction)
+//ORIGINAL LINE: public SchemaProcedure(final org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.Neo4Net.kernel.api.KernelTransaction kernelTransaction)
 		 public SchemaProcedure( GraphDatabaseAPI graphDatabaseAPI, KernelTransaction kernelTransaction )
 		 {
 			  this._graphDatabaseAPI = graphDatabaseAPI;
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.builtinprocs
 					return false;
 			  }
 
-			  public virtual GraphDatabaseService GraphDatabase
+			  public virtual IGraphDatabaseService GraphDatabase
 			  {
 				  get
 				  {
@@ -515,7 +515,7 @@ namespace Neo4Net.Kernel.builtinprocs
 					return false;
 			  }
 
-			  public virtual GraphDatabaseService GraphDatabase
+			  public virtual IGraphDatabaseService GraphDatabase
 			  {
 				  get
 				  {

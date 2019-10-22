@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 	/// <summary>
 	/// IndexUpdaters are responsible for updating indexes during the commit process. There is one new instance handling
-	/// each commit, created from <seealso cref="org.neo4j.kernel.api.index.IndexAccessor"/>.
+	/// each commit, created from <seealso cref="org.Neo4Net.kernel.api.index.IndexAccessor"/>.
 	/// 
 	/// <seealso cref="process(IndexEntryUpdate)"/> is called for each entry, wherein the actual updates are applied.
 	/// 
@@ -32,12 +32,12 @@ namespace Neo4Net.Kernel.Api.Index
 	public interface IndexUpdater : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void process(IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void process(IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 void process<T1>( IndexEntryUpdate<T1> update );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void close() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void Close();
 	}
 

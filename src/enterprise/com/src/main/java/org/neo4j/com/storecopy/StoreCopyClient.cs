@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.com.storecopy
 {
 
 	using Neo4Net.com;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using Neo4Net.Helpers.Collections;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -55,13 +55,13 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
 
 	/// <summary>
 	/// Client-side store copier. Deals with issuing a request to a source of a database, which will
@@ -80,7 +80,7 @@ namespace Neo4Net.com.storecopy
 		 public interface StoreCopyRequester
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.com.Response<?> copyStore(StoreWriter writer);
+//ORIGINAL LINE: org.Neo4Net.com.Response<?> copyStore(StoreWriter writer);
 			  Response<object> CopyStore( StoreWriter writer );
 
 			  void Done();
@@ -89,7 +89,7 @@ namespace Neo4Net.com.storecopy
 		 private readonly DatabaseLayout _databaseLayout;
 		 private readonly Config _config;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
+//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensions;
 		 private readonly Log _log;
 		 private readonly FileSystemAbstraction _fs;
@@ -116,7 +116,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copyStore(StoreCopyRequester requester, org.neo4j.helpers.CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy) throws Exception
+//ORIGINAL LINE: public void copyStore(StoreCopyRequester requester, org.Neo4Net.helpers.CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy) throws Exception
 		 public virtual void CopyStore( StoreCopyRequester requester, CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy )
 		 {
 			  // Create a temp directory (or clean if present)
@@ -129,11 +129,11 @@ namespace Neo4Net.com.storecopy
 					_monitor.startReceivingStoreFiles();
 					ToFileStoreWriter storeWriter = new ToFileStoreWriter( tempDatabaseDirectory, _fs, _monitor );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.neo4j.com.Response<?> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
+//ORIGINAL LINE: try (org.Neo4Net.com.Response<?> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
 					try
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: using (org.neo4j.com.Response<JavaToDotNetGenericWildcard> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
+//ORIGINAL LINE: using (org.Neo4Net.com.Response<JavaToDotNetGenericWildcard> response = requester.copyStore(decorateWithProgressIndicator(storeWriter)))
 							using ( Response<object> response = requester.CopyStore( DecorateWithProgressIndicator( storeWriter ) ) )
 							{
 							 _monitor.finishReceivingStoreFiles();
@@ -181,8 +181,8 @@ namespace Neo4Net.com.storecopy
 		 {
 			  _monitor.startRecoveringStore();
 			  File storeDir = tempStore.ParentFile;
-			  GraphDatabaseService graphDatabaseService = NewTempDatabase( tempStore );
-			  graphDatabaseService.Shutdown();
+			  IGraphDatabaseService IGraphDatabaseService = NewTempDatabase( tempStore );
+			  IGraphDatabaseService.Shutdown();
 			  // as soon as recovery will be extracted we will not gonna need this
 			  File lockFile = StoreLayout.of( storeDir ).storeLockFile();
 			  if ( lockFile.exists() )
@@ -193,7 +193,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeTransactionsToActiveLogFile(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.com.Response<?> response) throws Exception
+//ORIGINAL LINE: private void writeTransactionsToActiveLogFile(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.com.Response<?> response) throws Exception
 		 private void WriteTransactionsToActiveLogFile<T1>( DatabaseLayout databaseLayout, Response<T1> response )
 		 {
 			  LifeSupport life = new LifeSupport();
@@ -210,7 +210,7 @@ namespace Neo4Net.com.storecopy
 					// use a TransactionAppender, since it has checks for which transactions one can append.
 					FlushableChannel channel = logFiles.LogFile.Writer;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionLogWriter writer = new org.neo4j.kernel.impl.transaction.log.TransactionLogWriter(new org.neo4j.kernel.impl.transaction.log.entry.LogEntryWriter(channel));
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionLogWriter writer = new org.Neo4Net.kernel.impl.transaction.log.TransactionLogWriter(new org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryWriter(channel));
 					TransactionLogWriter writer = new TransactionLogWriter( new LogEntryWriter( channel ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicLong firstTxId = new java.util.concurrent.atomic.AtomicLong(BASE_TX_ID);
@@ -285,7 +285,7 @@ namespace Neo4Net.com.storecopy
 			 }
 		 }
 
-		 private GraphDatabaseService NewTempDatabase( File tempStore )
+		 private IGraphDatabaseService NewTempDatabase( File tempStore )
 		 {
 			  ExternallyManagedPageCache.GraphDatabaseFactoryWithPageCacheFactory factory = ExternallyManagedPageCache.GraphDatabaseFactoryWithPageCache( _pageCache );
 			  return factory.setKernelExtensions( _kernelExtensions ).setUserLogProvider( NullLogProvider.Instance ).newEmbeddedDatabaseBuilder( tempStore.AbsoluteFile ).setConfig( GraphDatabaseSettings.active_database, tempStore.Name ).setConfig( "dbms.backup.enabled", Settings.FALSE ).setConfig( GraphDatabaseSettings.pagecache_warmup_enabled, Settings.FALSE ).setConfig( GraphDatabaseSettings.logs_directory, tempStore.AbsolutePath ).setConfig( GraphDatabaseSettings.keep_logical_logs, Settings.TRUE ).setConfig( GraphDatabaseSettings.logical_logs_location, tempStore.AbsolutePath ).setConfig( GraphDatabaseSettings.allow_upgrade, _config.get( GraphDatabaseSettings.allow_upgrade ).ToString() ).setConfig(GraphDatabaseSettings.default_schema_provider, _config.get(GraphDatabaseSettings.default_schema_provider)).newGraphDatabase();
@@ -342,7 +342,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkCancellation(org.neo4j.helpers.CancellationRequest cancellationRequest, java.io.File tempStore) throws java.io.IOException
+//ORIGINAL LINE: private void checkCancellation(org.Neo4Net.helpers.CancellationRequest cancellationRequest, java.io.File tempStore) throws java.io.IOException
 		 private void CheckCancellation( CancellationRequest cancellationRequest, File tempStore )
 		 {
 			  if ( cancellationRequest.CancellationRequested() )

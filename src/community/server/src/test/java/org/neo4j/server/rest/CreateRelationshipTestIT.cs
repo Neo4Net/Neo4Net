@@ -25,9 +25,9 @@ namespace Neo4Net.Server.rest
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using RelationshipRepresentationTest = Neo4Net.Server.rest.repr.RelationshipRepresentationTest;
@@ -65,12 +65,12 @@ namespace Neo4Net.Server.rest
 										 + DataUri + "node/"
 										 + GetNode( "Sara" ).Id + "\", \"type\" : \"LOVES\"}";
 			  Node i = GetNode( "Joe" );
-			  string entity = GenConflict.get().expectedStatus(Status.CREATED.StatusCode).payload(jsonString).post(GetNodeUri(i) + "/relationships").entity();
+			  string IEntity = GenConflict.get().expectedStatus(Status.CREATED.StatusCode).payload(jsonString).post(GetNodeUri(i) + "/relationships").entity();
 			  using ( Transaction tx = Graphdb().beginTx() )
 			  {
 					assertTrue( i.HasRelationship( RelationshipType.withName( "LOVES" ) ) );
 			  }
-			  AssertProperRelationshipRepresentation( JsonHelper.jsonToMap( entity ) );
+			  AssertProperRelationshipRepresentation( JsonHelper.jsonToMap( IEntity ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -104,8 +104,8 @@ namespace Neo4Net.Server.rest
 
 			  Node joe = GetNode( "Joe" );
 			  string jsonString = "{\"to\" : \"" + GetNodeUri( joe ) + "\", \"type\" : \"LOVES\"}";
-			  string entity = GenConflict.get().expectedStatus(Status.CREATED.StatusCode).payload(jsonString).post(GetNodeUri(GetNode("Joe")) + "/relationships").entity();
-			  AssertProperRelationshipRepresentation( JsonHelper.jsonToMap( entity ) );
+			  string IEntity = GenConflict.get().expectedStatus(Status.CREATED.StatusCode).payload(jsonString).post(GetNodeUri(GetNode("Joe")) + "/relationships").entity();
+			  AssertProperRelationshipRepresentation( JsonHelper.jsonToMap( IEntity ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

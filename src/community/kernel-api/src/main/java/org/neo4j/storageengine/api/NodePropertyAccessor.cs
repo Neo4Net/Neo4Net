@@ -19,13 +19,13 @@
  */
 namespace Neo4Net.Storageengine.Api
 {
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public interface NodePropertyAccessor
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException;
+//ORIGINAL LINE: org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException;
 		 Value GetNodePropertyValue( long nodeId, int propertyKeyId );
 	}
 

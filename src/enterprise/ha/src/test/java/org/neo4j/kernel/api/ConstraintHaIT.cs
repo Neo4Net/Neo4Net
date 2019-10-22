@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.api
 {
@@ -30,15 +30,15 @@ namespace Neo4Net.Kernel.api
 	using Suite = org.junit.runners.Suite;
 	using SuiteClasses = org.junit.runners.Suite.SuiteClasses;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
@@ -66,15 +66,15 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.deleteRecursively;
+//	import static org.Neo4Net.io.fs.FileUtils.deleteRecursively;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @SuiteClasses({ NodePropertyExistenceConstraintHaIT.class, RelationshipPropertyExistenceConstraintHaIT.class, UniquenessConstraintHaIT.class }) public class ConstraintHaIT
@@ -82,22 +82,22 @@ namespace Neo4Net.Kernel.api
 	{
 		 public class NodePropertyExistenceConstraintHaIT : AbstractConstraintHaIT
 		 {
-			  protected internal override void CreateConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override void CreateConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					Db.execute( string.Format( "CREATE CONSTRAINT ON (n:`{0}`) ASSERT exists(n.`{1}`)", type, value ) );
 			  }
 
-			  protected internal override ConstraintDefinition GetConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override ConstraintDefinition GetConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					return Iterables.singleOrNull( Db.schema().getConstraints(label(type)) );
 			  }
 
-			  protected internal override IndexDefinition GetIndex( GraphDatabaseService db, string type, string value )
+			  protected internal override IndexDefinition GetIndex( IGraphDatabaseService db, string type, string value )
 			  {
 					return null;
 			  }
 
-			  protected internal override void CreateEntityInTx( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateEntityInTx( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.api
 					}
 			  }
 
-			  protected internal override void CreateConstraintViolation( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateConstraintViolation( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					Db.createNode( label( type ) );
 			  }
@@ -119,22 +119,22 @@ namespace Neo4Net.Kernel.api
 
 		 public class RelationshipPropertyExistenceConstraintHaIT : AbstractConstraintHaIT
 		 {
-			  protected internal override void CreateConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override void CreateConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					Db.execute( string.Format( "CREATE CONSTRAINT ON ()-[r:`{0}`]-() ASSERT exists(r.`{1}`)", type, value ) );
 			  }
 
-			  protected internal override ConstraintDefinition GetConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override ConstraintDefinition GetConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					return Iterables.singleOrNull( Db.schema().getConstraints(withName(type)) );
 			  }
 
-			  protected internal override IndexDefinition GetIndex( GraphDatabaseService db, string type, string value )
+			  protected internal override IndexDefinition GetIndex( IGraphDatabaseService db, string type, string value )
 			  {
 					return null;
 			  }
 
-			  protected internal override void CreateEntityInTx( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateEntityInTx( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.api
 					}
 			  }
 
-			  protected internal override void CreateConstraintViolation( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateConstraintViolation( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					Node start = Db.createNode();
 					Node end = Db.createNode();
@@ -161,22 +161,22 @@ namespace Neo4Net.Kernel.api
 
 		 public class UniquenessConstraintHaIT : AbstractConstraintHaIT
 		 {
-			  protected internal override void CreateConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override void CreateConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					Db.execute( string.Format( "CREATE CONSTRAINT ON (n:`{0}`) ASSERT n.`{1}` IS UNIQUE", type, value ) );
 			  }
 
-			  protected internal override ConstraintDefinition GetConstraint( GraphDatabaseService db, string type, string value )
+			  protected internal override ConstraintDefinition GetConstraint( IGraphDatabaseService db, string type, string value )
 			  {
 					return Iterables.singleOrNull( Db.schema().getConstraints(Label.label(type)) );
 			  }
 
-			  protected internal override IndexDefinition GetIndex( GraphDatabaseService db, string type, string value )
+			  protected internal override IndexDefinition GetIndex( IGraphDatabaseService db, string type, string value )
 			  {
 					return Iterables.singleOrNull( Db.schema().getIndexes(Label.label(type)) );
 			  }
 
-			  protected internal override void CreateEntityInTx( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateEntityInTx( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.api
 					}
 			  }
 
-			  protected internal override void CreateConstraintViolation( GraphDatabaseService db, string type, string propertyKey, string value )
+			  protected internal override void CreateConstraintViolation( IGraphDatabaseService db, string type, string propertyKey, string value )
 			  {
 					Db.createNode( label( type ) ).setProperty( propertyKey, value );
 			  }
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.api
 		 public abstract class AbstractConstraintHaIT
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.kernel.ha.HaSettings.read_timeout, "4000s");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.read_timeout, "4000s");
 			  public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.read_timeout, "4000s");
 
 			  internal const string TYPE = "Type";
@@ -217,17 +217,17 @@ namespace Neo4Net.Kernel.api
 					return PROPERTY_KEY + "_" + this.GetType().Name + "_" + id;
 			  }
 
-			  protected internal abstract void CreateConstraint( GraphDatabaseService db, string type, string value );
+			  protected internal abstract void CreateConstraint( IGraphDatabaseService db, string type, string value );
 
 			  /// <returns> {@code null} if it has been dropped. </returns>
-			  protected internal abstract ConstraintDefinition GetConstraint( GraphDatabaseService db, string type, string value );
+			  protected internal abstract ConstraintDefinition GetConstraint( IGraphDatabaseService db, string type, string value );
 
 			  /// <returns> {@code null} if it has been dropped. </returns>
-			  protected internal abstract IndexDefinition GetIndex( GraphDatabaseService db, string type, string value );
+			  protected internal abstract IndexDefinition GetIndex( IGraphDatabaseService db, string type, string value );
 
-			  protected internal abstract void CreateEntityInTx( GraphDatabaseService db, string type, string propertyKey, string value );
+			  protected internal abstract void CreateEntityInTx( IGraphDatabaseService db, string type, string propertyKey, string value );
 
-			  protected internal abstract void CreateConstraintViolation( GraphDatabaseService db, string type, string propertyKey, string value );
+			  protected internal abstract void CreateConstraintViolation( IGraphDatabaseService db, string type, string propertyKey, string value );
 
 			  protected internal abstract Type ConstraintDefinitionClass();
 

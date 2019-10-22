@@ -41,7 +41,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class GetNodePropertiesIT : AbstractRestFunctionalDocTestBase
 	{
@@ -60,8 +60,8 @@ namespace Neo4Net.Server.rest
 		 [Documented("Get properties for node.")]
 		 public virtual void ShouldGet200ForProperties()
 		 {
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
-			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", entity );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
+			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  GenConflict.get().expectedStatus(200).get(createResponse.Location.ToString() + "/properties");
 		 }
 
@@ -69,17 +69,17 @@ namespace Neo4Net.Server.rest
 //ORIGINAL LINE: @Test public void shouldGetContentLengthHeaderForRetrievingProperties()
 		 public virtual void ShouldGetContentLengthHeaderForRetrievingProperties()
 		 {
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RestRequest request = req;
 			  RestRequest request = _req;
-			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", entity );
+			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  JaxRsResponse response = request.Get( createResponse.Location.ToString() + "/properties" );
 			  assertNotNull( response.Headers.get( "Content-Length" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingProperties() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingProperties() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGetCorrectContentEncodingRetrievingProperties()
 		 {
@@ -88,17 +88,17 @@ namespace Neo4Net.Server.rest
 
 			  string complicatedString = asianText + germanText;
 
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", complicatedString ) );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", complicatedString ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RestRequest request = req;
 			  RestRequest request = _req;
-			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", entity );
+			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  string response = ( string ) JsonHelper.readJson( request.Get( GetPropertyUri( createResponse.Location.ToString(), "foo" ) ).Entity );
 			  assertEquals( complicatedString, response );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGetCorrectContentEncodingRetrievingPropertiesWithStreaming()
 		 {
@@ -107,11 +107,11 @@ namespace Neo4Net.Server.rest
 
 			  string complicatedString = asianText + germanText;
 
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", complicatedString ) );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", complicatedString ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RestRequest request = req.header(org.neo4j.server.rest.repr.formats.StreamingJsonFormat.STREAM_HEADER, "true");
+//ORIGINAL LINE: final RestRequest request = req.header(org.Neo4Net.server.rest.repr.formats.StreamingJsonFormat.STREAM_HEADER, "true");
 			  RestRequest request = _req.header( StreamingJsonFormat.STREAM_HEADER, "true" );
-			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", entity );
+			  JaxRsResponse createResponse = request.Post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  string response = ( string ) JsonHelper.readJson( request.Get( GetPropertyUri( createResponse.Location.ToString(), "foo" ), new MediaType("application", "json", stringMap("stream", "true")) ).Entity );
 			  assertEquals( complicatedString, response );
 		 }
@@ -128,8 +128,8 @@ namespace Neo4Net.Server.rest
 //ORIGINAL LINE: @Test public void shouldBeJSONContentTypeOnPropertiesResponse()
 		 public virtual void ShouldBeJSONContentTypeOnPropertiesResponse()
 		 {
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
-			  JaxRsResponse createResource = _req.post( _functionalTestHelper.dataUri() + "node/", entity );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
+			  JaxRsResponse createResource = _req.post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  JaxRsResponse response = _req.get( createResource.Location.ToString() + "/properties" );
 			  assertThat( response.Type.ToString(), containsString(MediaType.APPLICATION_JSON) );
 		 }
@@ -150,8 +150,8 @@ namespace Neo4Net.Server.rest
 		 [Documented("Get property for node.\n" + "\n" + "Get a single node property from a node.")]
 		 public virtual void ShouldGet200ForProperty()
 		 {
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
-			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", entity );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
+			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", IEntity );
 			  JaxRsResponse response = _req.get( GetPropertyUri( createResponse.Location.ToString(), "foo" ) );
 			  assertEquals( 200, response.Status );
 
@@ -170,9 +170,9 @@ namespace Neo4Net.Server.rest
 //ORIGINAL LINE: @Test public void shouldBeJSONContentTypeOnPropertyResponse()
 		 public virtual void ShouldBeJSONContentTypeOnPropertyResponse()
 		 {
-			  string entity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
+			  string IEntity = JsonHelper.createJsonFrom( Collections.singletonMap( "foo", "bar" ) );
 
-			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", entity );
+			  JaxRsResponse createResponse = _req.post( _functionalTestHelper.dataUri() + "node/", IEntity );
 
 			  JaxRsResponse response = _req.get( GetPropertyUri( createResponse.Location.ToString(), "foo" ) );
 

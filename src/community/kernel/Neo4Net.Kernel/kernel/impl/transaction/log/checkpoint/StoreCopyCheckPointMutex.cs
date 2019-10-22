@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 {
 
 	using Neo4Net.Functions;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// Mutex between <seealso cref="storeCopy(ThrowingAction) store-copy"/> and <seealso cref="checkPoint() check-point"/>.
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Resource storeCopy(org.neo4j.function.ThrowingAction<java.io.IOException> beforeFirstConcurrentStoreCopy) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Resource storeCopy(org.Neo4Net.function.ThrowingAction<java.io.IOException> beforeFirstConcurrentStoreCopy) throws java.io.IOException
 		 public virtual Resource StoreCopy( ThrowingAction<IOException> beforeFirstConcurrentStoreCopy )
 		 {
 			  Lock readLock = @lock.readLock();

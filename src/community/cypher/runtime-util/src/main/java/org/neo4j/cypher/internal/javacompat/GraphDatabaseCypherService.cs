@@ -20,9 +20,9 @@
 namespace Neo4Net.Cypher.Internal.javacompat
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -35,7 +35,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 private readonly GraphDatabaseFacade _graph;
 		 private readonly DbmsOperations _dbmsOperations;
 
-		 public GraphDatabaseCypherService( GraphDatabaseService graph )
+		 public GraphDatabaseCypherService( IGraphDatabaseService graph )
 		 {
 			  this._graph = ( GraphDatabaseFacade ) graph;
 			  this._dbmsOperations = DependencyResolver.resolveDependency( typeof( DbmsOperations ) );
@@ -60,7 +60,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _graph.validateURLAccess( url );
@@ -76,7 +76,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 		 // This provides backwards compatibility to the older API for places that cannot (yet) stop using it.
 		 // TODO: Remove this when possible (remove RULE, remove older compilers)
-		 public virtual GraphDatabaseFacade GraphDatabaseService
+		 public virtual GraphDatabaseFacade IGraphDatabaseService
 		 {
 			 get
 			 {

@@ -27,34 +27,34 @@ namespace Neo4Net.Harness.junit
 
 
 	using Suppliers = Neo4Net.Functions.Suppliers;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using Neo4Net.Graphdb.config;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using Neo4Net.GraphDb.config;
 
 	/// <summary>
-	/// A convenience wrapper around <seealso cref="org.neo4j.harness.TestServerBuilder"/>, exposing it as a JUnit
+	/// A convenience wrapper around <seealso cref="org.Neo4Net.harness.TestServerBuilder"/>, exposing it as a JUnit
 	/// <seealso cref="org.junit.Rule rule"/>.
 	/// 
 	/// Note that it will try to start the web server on the standard 7474 port, but if that is not available
-	/// (typically because you already have an instance of Neo4j running) it will try other ports. Therefore it is necessary
+	/// (typically because you already have an instance of Neo4Net running) it will try other ports. Therefore it is necessary
 	/// for the test code to use <seealso cref="httpURI()"/> and then <seealso cref="java.net.URI.resolve(string)"/> to create the URIs to be invoked.
 	/// </summary>
-	public class Neo4jRule : TestRule, TestServerBuilder
+	public class Neo4NetRule : TestRule, TestServerBuilder
 	{
 		 private TestServerBuilder _builder;
 		 private ServerControls _controls;
 		 private System.Func<PrintStream> _dumpLogsOnFailureTarget;
 
-		 internal Neo4jRule( TestServerBuilder builder )
+		 internal Neo4NetRule( TestServerBuilder builder )
 		 {
 			  this._builder = builder;
 		 }
 
-		 public Neo4jRule() : this(TestServerBuilders.newInProcessBuilder())
+		 public Neo4NetRule() : this(TestServerBuilders.newInProcessBuilder())
 		 {
 		 }
 
-		 public Neo4jRule( File workingDirectory ) : this( TestServerBuilders.newInProcessBuilder( workingDirectory ) )
+		 public Neo4NetRule( File workingDirectory ) : this( TestServerBuilders.newInProcessBuilder( workingDirectory ) )
 		 {
 		 }
 
@@ -67,11 +67,11 @@ namespace Neo4Net.Harness.junit
 
 		 private class StatementAnonymousInnerClass : Statement
 		 {
-			 private readonly Neo4jRule _outerInstance;
+			 private readonly Neo4NetRule _outerInstance;
 
 			 private Statement @base;
 
-			 public StatementAnonymousInnerClass( Neo4jRule outerInstance, Statement @base )
+			 public StatementAnonymousInnerClass( Neo4NetRule outerInstance, Statement @base )
 			 {
 				 this.outerInstance = outerInstance;
 				 this.@base = @base;
@@ -105,79 +105,79 @@ namespace Neo4Net.Harness.junit
 			  throw new System.NotSupportedException( "The server cannot be manually started via this class, it must be used as a JUnit rule." );
 		 }
 
-		 public override Neo4jRule WithConfig<T1>( Setting<T1> key, string value )
+		 public override Neo4NetRule WithConfig<T1>( Setting<T1> key, string value )
 		 {
 			  _builder = _builder.withConfig( key, value );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithConfig( string key, string value )
+		 public override Neo4NetRule WithConfig( string key, string value )
 		 {
 			  _builder = _builder.withConfig( key, value );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithExtension( string mountPath, Type extension )
+		 public override Neo4NetRule WithExtension( string mountPath, Type extension )
 		 {
 			  _builder = _builder.withExtension( mountPath, extension );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithExtension( string mountPath, string packageName )
+		 public override Neo4NetRule WithExtension( string mountPath, string packageName )
 		 {
 			  _builder = _builder.withExtension( mountPath, packageName );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithFixture( File cypherFileOrDirectory )
+		 public override Neo4NetRule WithFixture( File cypherFileOrDirectory )
 		 {
 			  _builder = _builder.withFixture( cypherFileOrDirectory );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithFixture( string fixtureStatement )
+		 public override Neo4NetRule WithFixture( string fixtureStatement )
 		 {
 			  _builder = _builder.withFixture( fixtureStatement );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithFixture( System.Func<GraphDatabaseService, Void> fixtureFunction )
+		 public override Neo4NetRule WithFixture( System.Func<GraphDatabaseService, Void> fixtureFunction )
 		 {
 			  _builder = _builder.withFixture( fixtureFunction );
 			  return this;
 		 }
 
-		 public override Neo4jRule CopyFrom( File sourceDirectory )
+		 public override Neo4NetRule CopyFrom( File sourceDirectory )
 		 {
 			  _builder = _builder.copyFrom( sourceDirectory );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithProcedure( Type procedureClass )
+		 public override Neo4NetRule WithProcedure( Type procedureClass )
 		 {
 			  _builder = _builder.withProcedure( procedureClass );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithFunction( Type functionClass )
+		 public override Neo4NetRule WithFunction( Type functionClass )
 		 {
 			  _builder = _builder.withFunction( functionClass );
 			  return this;
 		 }
 
-		 public override Neo4jRule WithAggregationFunction( Type functionClass )
+		 public override Neo4NetRule WithAggregationFunction( Type functionClass )
 		 {
 			  _builder = _builder.withAggregationFunction( functionClass );
 			  return this;
 		 }
 
-		 public virtual Neo4jRule DumpLogsOnFailure( PrintStream @out )
+		 public virtual Neo4NetRule DumpLogsOnFailure( PrintStream @out )
 		 {
 			  _dumpLogsOnFailureTarget = () => @out;
 			  return this;
 		 }
 
-		 public virtual Neo4jRule DumpLogsOnFailure( System.Func<PrintStream> @out )
+		 public virtual Neo4NetRule DumpLogsOnFailure( System.Func<PrintStream> @out )
 		 {
 			  _dumpLogsOnFailureTarget = @out;
 			  return this;
@@ -210,7 +210,7 @@ namespace Neo4Net.Harness.junit
 			  return _controls.httpsURI().orElseThrow(() => new System.InvalidOperationException("HTTPS connector is not configured"));
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabaseService
+		 public virtual IGraphDatabaseService IGraphDatabaseService
 		 {
 			 get
 			 {

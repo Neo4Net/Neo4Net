@@ -24,8 +24,8 @@ namespace Recovery
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using CountsVisitor = Neo4Net.Kernel.Impl.Api.CountsVisitor;
@@ -41,20 +41,20 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 
 	public class CountsStoreRecoveryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void before()
@@ -113,8 +113,8 @@ namespace Recovery
 		 private void CrashAndRestart()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db1 = db;
-			  GraphDatabaseService db1 = _db;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db1 = db;
+			  IGraphDatabaseService db1 = _db;
 			  FileSystemAbstraction uncleanFs = FsRule.snapshot( db1.shutdown );
 			  _db = DatabaseFactory( uncleanFs ).newImpermanentDatabase();
 		 }

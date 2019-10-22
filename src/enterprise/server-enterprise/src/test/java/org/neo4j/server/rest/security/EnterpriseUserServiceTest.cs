@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.rest.security
 {
@@ -54,7 +54,7 @@ namespace Neo4Net.Server.rest.security
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.neo4j.server.security.enterprise.auth.MultiRealmAuthManagerRule(userRepository, mock(org.neo4j.server.security.auth.AuthenticationStrategy.class));
+//ORIGINAL LINE: @Rule public org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(userRepository, mock(org.Neo4Net.server.security.auth.AuthenticationStrategy.class));
 		 public MultiRealmAuthManagerRule AuthManagerRule;
 
 		 protected internal override void SetupAuthManagerAndSubject()
@@ -62,8 +62,8 @@ namespace Neo4Net.Server.rest.security
 			  UserManagerSupplier = AuthManagerRule.Manager;
 
 			  ShiroSubject shiroSubject = mock( typeof( ShiroSubject ) );
-			  when( shiroSubject.Principal ).thenReturn( "neo4j" );
-			  Neo4jContext = AuthManagerRule.makeLoginContext( shiroSubject );
+			  when( shiroSubject.Principal ).thenReturn( "Neo4Net" );
+			  Neo4NetContext = AuthManagerRule.makeLoginContext( shiroSubject );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -74,7 +74,7 @@ namespace Neo4Net.Server.rest.security
 			  ShouldChangePasswordAndReturnSuccess();
 
 			  MultiRealmAuthManagerRule.FullSecurityLog fullLog = AuthManagerRule.getFullSecurityLog();
-			  fullLog.AssertHasLine( "neo4j", "changed password" );
+			  fullLog.AssertHasLine( "Neo4Net", "changed password" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -85,7 +85,7 @@ namespace Neo4Net.Server.rest.security
 			  ShouldReturn422IfPasswordIdentical();
 
 			  MultiRealmAuthManagerRule.FullSecurityLog fullLog = AuthManagerRule.getFullSecurityLog();
-			  fullLog.AssertHasLine( "neo4j", "tried to change password: Old password and new password cannot be the same." );
+			  fullLog.AssertHasLine( "Neo4Net", "tried to change password: Old password and new password cannot be the same." );
 		 }
 	}
 

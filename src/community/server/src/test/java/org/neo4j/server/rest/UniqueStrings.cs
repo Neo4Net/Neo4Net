@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.function.Factory<String> withPrefix(final String prefix)
+//ORIGINAL LINE: public static org.Neo4Net.function.Factory<String> withPrefix(final String prefix)
 		 public static IFactory<string> WithPrefix( string prefix )
 		 {
 			  return new FactoryAnonymousInnerClass( prefix );

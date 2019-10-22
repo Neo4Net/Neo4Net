@@ -26,8 +26,8 @@ namespace Neo4Net.Index
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Label = Neo4Net.GraphDb.Label;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using Neo4Net.Helpers.Collections;
 	using LuceneBatchInserterIndexProvider = Neo4Net.Index.lucene.@unsafe.batchinsert.LuceneBatchInserterIndexProvider;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -42,7 +42,7 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class ExplicitIndexTest
@@ -51,7 +51,7 @@ namespace Neo4Net.Index
 		 private const long TEST_TIMEOUT = 80_000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

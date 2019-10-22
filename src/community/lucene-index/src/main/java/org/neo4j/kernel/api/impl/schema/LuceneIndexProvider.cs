@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 
 	public class LuceneIndexProvider : IndexProvider
 	{
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexAccessor getOnlineAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  SchemaIndex luceneIndex = LuceneSchemaIndexBuilder.Create( descriptor, _config ).withOperationalMode( _operationalMode ).withSamplingConfig( samplingConfig ).withIndexStorage( GetIndexStorage( descriptor.Id ) ).build();
@@ -127,14 +127,14 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.storemigration.StoreMigrationParticipant storeMigrationParticipant(final org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pageCache)
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.storemigration.StoreMigrationParticipant storeMigrationParticipant(final org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache)
 		 public override StoreMigrationParticipant StoreMigrationParticipant( FileSystemAbstraction fs, PageCache pageCache )
 		 {
 			  return new SchemaIndexMigrator( fs, this );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  string failure = GetIndexStorage( descriptor.Id ).StoredIndexFailure;
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean indexIsOnline(org.neo4j.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws java.io.IOException
+//ORIGINAL LINE: private boolean indexIsOnline(org.Neo4Net.kernel.api.impl.index.storage.PartitionedIndexStorage indexStorage, org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws java.io.IOException
 		 private bool IndexIsOnline( PartitionedIndexStorage indexStorage, IndexDescriptor descriptor )
 		 {
 			  using ( SchemaIndex index = LuceneSchemaIndexBuilder.Create( descriptor, _config ).withIndexStorage( indexStorage ).build() )

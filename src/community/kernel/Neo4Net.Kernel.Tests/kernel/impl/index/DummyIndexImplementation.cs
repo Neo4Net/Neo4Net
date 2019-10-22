@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.index
 {
 
 	using PrimitiveLongBaseIterator = Neo4Net.Collections.PrimitiveLongCollections.PrimitiveLongBaseIterator;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
@@ -84,17 +84,17 @@ namespace Neo4Net.Kernel.impl.index
 					this.Failing = failing;
 			  }
 
-			  public override void Remove( long entity )
+			  public override void Remove( long IEntity )
 			  {
 					Mutate();
 			  }
 
-			  public override void Remove( long entity, string key )
+			  public override void Remove( long IEntity, string key )
 			  {
 					Mutate();
 			  }
 
-			  public override void Remove( long entity, string key, object value )
+			  public override void Remove( long IEntity, string key, object value )
 			  {
 					Mutate();
 			  }
@@ -134,27 +134,27 @@ namespace Neo4Net.Kernel.impl.index
 					Mutate();
 			  }
 
-			  public override void AddRelationship( long entity, string key, object value, long startNode, long endNode )
+			  public override void AddRelationship( long IEntity, string key, object value, long startNode, long endNode )
 			  {
 					Mutate();
 			  }
 
-			  public override void AddNode( long entity, string key, object value )
+			  public override void AddNode( long IEntity, string key, object value )
 			  {
 					Mutate();
 			  }
 
-			  public override void RemoveRelationship( long entity, string key, object value, long startNode, long endNode )
+			  public override void RemoveRelationship( long IEntity, string key, object value, long startNode, long endNode )
 			  {
 					Mutate();
 			  }
 
-			  public override void RemoveRelationship( long entity, string key, long startNode, long endNode )
+			  public override void RemoveRelationship( long IEntity, string key, long startNode, long endNode )
 			  {
 					Mutate();
 			  }
 
-			  public override void RemoveRelationship( long entity, long startNode, long endNode )
+			  public override void RemoveRelationship( long IEntity, long startNode, long endNode )
 			  {
 					Mutate();
 			  }

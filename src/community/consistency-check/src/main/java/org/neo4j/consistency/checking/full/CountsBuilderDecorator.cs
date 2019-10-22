@@ -50,17 +50,17 @@ namespace Neo4Net.Consistency.checking.full
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.CacheSlots_NodeLabel_Fields.SLOT_IN_USE;
+//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_NodeLabel_Fields.SLOT_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.CacheSlots_NodeLabel_Fields.SLOT_LABEL_FIELD;
+//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_NodeLabel_Fields.SLOT_LABEL_FIELD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.NodeLabelReader.getListOfLabels;
+//	import static org.Neo4Net.consistency.checking.full.NodeLabelReader.getListOfLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	internal class CountsBuilderDecorator : Neo4Net.Consistency.checking.CheckDecorator_Adapter
 	{
@@ -157,7 +157,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void checkCounts(org.neo4j.kernel.impl.api.CountsAccessor counts, final org.neo4j.consistency.report.ConsistencyReporter reporter, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory)
+//ORIGINAL LINE: public void checkCounts(org.Neo4Net.kernel.impl.api.CountsAccessor counts, final org.Neo4Net.consistency.report.ConsistencyReporter reporter, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory)
 		 public virtual void CheckCounts( CountsAccessor counts, ConsistencyReporter reporter, ProgressMonitorFactory progressFactory )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -176,7 +176,7 @@ namespace Neo4Net.Consistency.checking.full
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger relationshipEntries = new java.util.concurrent.atomic.AtomicInteger(0);
 			  AtomicInteger relationshipEntries = new AtomicInteger( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.progress.ProgressListener listener = progressFactory.singlePart("Checking node and relationship counts", total);
+//ORIGINAL LINE: final org.Neo4Net.helpers.progress.ProgressListener listener = progressFactory.singlePart("Checking node and relationship counts", total);
 			  ProgressListener listener = progressFactory.SinglePart( "Checking node and relationship counts", total );
 			  listener.Started();
 			  Counts.accept( new CountsVisitor_AdapterAnonymousInnerClass( this, reporter, nodeEntries, relationshipEntries, listener ) );

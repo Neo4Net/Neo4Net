@@ -39,19 +39,19 @@ namespace Files
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory.subProviderDirectoryStructure;
+//	import static org.Neo4Net.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory.subProviderDirectoryStructure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
 
 	public class NativeIndexFileFilterTest
 	{
 		 private static readonly IndexProviderDescriptor _luceneDescrtiptor = LuceneIndexProviderFactory.PROVIDER_DESCRIPTOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.DefaultFileSystemRule fs = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fs = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule Fs = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Directory = TestDirectory.testDirectory();
 
 		 private File _storeDir;
@@ -132,7 +132,7 @@ namespace Files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldAcceptNativeIndexFileFromFusionProvider(org.neo4j.internal.kernel.api.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
+//ORIGINAL LINE: private void shouldAcceptNativeIndexFileFromFusionProvider(org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
 		 private void ShouldAcceptNativeIndexFileFromFusionProvider( IndexProviderDescriptor descriptor )
 		 {
 			  // given

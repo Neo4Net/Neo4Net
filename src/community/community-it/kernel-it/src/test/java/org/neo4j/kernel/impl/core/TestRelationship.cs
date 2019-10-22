@@ -25,15 +25,15 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -47,15 +47,15 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST2;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST_TRAVERSAL;
 
-	public class TestRelationship : AbstractNeo4jTestCase
+	public class TestRelationship : AbstractNeo4NetTestCase
 	{
 		 private readonly string _key1 = "key1";
 		 private readonly string _key2 = "key2";
@@ -801,7 +801,7 @@ namespace Neo4Net.Kernel.impl.core
 			  int numEdges = 100;
 
 			  /* create 256 nodes */
-			  GraphDatabaseService graphDB = GraphDb;
+			  IGraphDatabaseService graphDB = GraphDb;
 			  Node[] nodes = new Node[256];
 			  for ( int numNodes = 0; numNodes < nodes.Length; numNodes += 1 )
 			  {
@@ -854,7 +854,7 @@ namespace Neo4Net.Kernel.impl.core
 
 			  count = 0;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: for (@SuppressWarnings("unused") org.neo4j.graphdb.Relationship r1 : hub.getRelationships())
+//ORIGINAL LINE: for (@SuppressWarnings("unused") org.Neo4Net.graphdb.Relationship r1 : hub.getRelationships())
 			  foreach ( Relationship r1 in hub.Relationships )
 			  {
 					count += ( int )Iterables.count( hub.Relationships );
@@ -952,7 +952,7 @@ namespace Neo4Net.Kernel.impl.core
 		 public virtual void ShouldLoadAllRelationships()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = GraphDbAPI;
+			  IGraphDatabaseService db = GraphDbAPI;
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -979,11 +979,11 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.NotFoundException.class) public void deletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
 		 public virtual void DeletionOfSameRelationshipTwiceInOneTransactionShouldNotRollbackIt()
 		 {
 			  // Given
-			  GraphDatabaseService db = GraphDb;
+			  IGraphDatabaseService db = GraphDb;
 
 			  // transaction is opened by test
 			  Node node1 = Db.createNode();
@@ -1019,11 +1019,11 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedRelationshipShouldThrow()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedRelationshipShouldThrow()
 		 public virtual void DeletionOfAlreadyDeletedRelationshipShouldThrow()
 		 {
 			  // Given
-			  GraphDatabaseService db = GraphDb;
+			  IGraphDatabaseService db = GraphDb;
 
 			  // transaction is opened by test
 			  Node node1 = Db.createNode();

@@ -26,9 +26,9 @@ namespace Neo4Net.CodeGen.Source
 	using Neo4Net.CodeGen;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.CompilationFailureException.format;
+//	import static org.Neo4Net.codegen.CompilationFailureException.format;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.source.ClasspathHelper.fullClasspathStringFor;
+//	import static org.Neo4Net.codegen.source.ClasspathHelper.fullClasspathStringFor;
 
 	public sealed class SourceCode : CodeGeneratorOption
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Java to C# Converter does not convert types within enums:
-//		 private static class CodeGenerationStrategyAnonymousInnerClass extends org.neo4j.codegen.CodeGenerationStrategy<Configuration>
+//		 private static class CodeGenerationStrategyAnonymousInnerClass extends org.Neo4Net.codegen.CodeGenerationStrategy<Configuration>
 	//	 {
 	//		 @@Override protected Configuration createConfigurator(ClassLoader loader)
 	//		 {
@@ -131,7 +131,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Java to C# Converter does not convert types within enums:
-//		 private static class AnnotationProcessorOption implements org.neo4j.codegen.CodeGeneratorOption
+//		 private static class AnnotationProcessorOption implements org.Neo4Net.codegen.CodeGeneratorOption
 	//	 {
 	//		  private final Processor processor;
 	//
@@ -190,7 +190,7 @@ namespace Neo4Net.CodeGen.Source
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: Java to C# Converter does not convert types within enums:
-//		 private static class PrintWarningsOption implements org.neo4j.codegen.CodeGeneratorOption, WarningsHandler
+//		 private static class PrintWarningsOption implements org.Neo4Net.codegen.CodeGeneratorOption, WarningsHandler
 	//	 {
 	//		  private final PrintStream target;
 	//

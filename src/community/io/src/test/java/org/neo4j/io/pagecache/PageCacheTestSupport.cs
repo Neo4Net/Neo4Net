@@ -28,8 +28,8 @@ namespace Neo4Net.Io.pagecache
 	using BeforeEach = org.junit.jupiter.api.BeforeEach;
 
 
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -44,7 +44,7 @@ namespace Neo4Net.Io.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.ByteArrayMatcher.byteArray;
+//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 	public abstract class PageCacheTestSupport<T> where T : PageCache
 	{

@@ -47,11 +47,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
 
 	public class LockingNodeUniqueIndexSeekTest
 	{

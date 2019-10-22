@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.upstream.strategies
 {
@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class UserDefinedConfigurationStrategy extends org.neo4j.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
+//ORIGINAL LINE: @Service.Implementation(UpstreamDatabaseSelectionStrategy.class) public class UserDefinedConfigurationStrategy extends org.Neo4Net.causalclustering.upstream.UpstreamDatabaseSelectionStrategy
 	public class UserDefinedConfigurationStrategy : UpstreamDatabaseSelectionStrategy
 	{
 
@@ -79,7 +79,7 @@ namespace Neo4Net.causalclustering.upstream.strategies
 		 private ISet<ServerInfo> PossibleServers()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.stream.Stream<java.util.Map.Entry<org.neo4j.causalclustering.identity.MemberId,? extends org.neo4j.causalclustering.discovery.DiscoveryServerInfo>> infoMap = java.util.stream.Stream.of(topologyService.localReadReplicas(), topologyService.localCoreServers()).map(org.neo4j.causalclustering.discovery.Topology::members).map(java.util.Map::entrySet).flatMap(java.util.Set::stream);
+//ORIGINAL LINE: java.util.stream.Stream<java.util.Map.Entry<org.Neo4Net.causalclustering.identity.MemberId,? extends org.Neo4Net.causalclustering.discovery.DiscoveryServerInfo>> infoMap = java.util.stream.Stream.of(topologyService.localReadReplicas(), topologyService.localCoreServers()).map(org.Neo4Net.causalclustering.discovery.Topology::members).map(java.util.Map::entrySet).flatMap(java.util.Set::stream);
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  Stream<KeyValuePair<MemberId, ? extends DiscoveryServerInfo>> infoMap = Stream.of( TopologyService.localReadReplicas(), TopologyService.localCoreServers() ).map(Topology::members).map(System.Collections.IDictionary.entrySet).flatMap(ISet<object>.stream);
 

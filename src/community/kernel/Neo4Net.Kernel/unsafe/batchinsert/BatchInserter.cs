@@ -22,15 +22,15 @@
 namespace Neo4Net.@unsafe.Batchinsert
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 
 	/// <summary>
 	/// The batch inserter drops support for transactions and concurrency in favor
 	/// of insertion speed. When done using the batch inserter <seealso cref="shutdown()"/>
-	/// must be invoked and complete successfully for the Neo4j store to be in
+	/// must be invoked and complete successfully for the Neo4Net store to be in
 	/// consistent state.
 	/// <para>
 	/// Only one thread at a time may work against the batch inserter, multiple
@@ -38,7 +38,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 	/// </para>
 	/// <para>
 	/// Transactions are not supported so if the JVM/machine crashes or you fail to
-	/// invoke <seealso cref="shutdown()"/> before JVM exits the Neo4j store can be considered
+	/// invoke <seealso cref="shutdown()"/> before JVM exits the Neo4Net store can be considered
 	/// being in non consistent state and the insertion has to be re-done from
 	/// scratch.
 	/// </para>
@@ -262,7 +262,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 
 		 /// <summary>
 		 /// Shuts down this batch inserter syncing all changes that are still only
-		 /// in memory to disk. Failing to invoke this method may leave the Neo4j
+		 /// in memory to disk. Failing to invoke this method may leave the Neo4Net
 		 /// store in a inconsistent state.
 		 /// 
 		 /// Note that this method will trigger population of all indexes, both
@@ -277,9 +277,9 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 void Shutdown();
 
 		 /// <summary>
-		 /// Returns the path to default neo4j database.
+		 /// Returns the path to default Neo4Net database.
 		 /// </summary>
-		 /// <returns> the path to default Neo4j database. </returns>
+		 /// <returns> the path to default Neo4Net database. </returns>
 		 string StoreDir { get; }
 
 	}

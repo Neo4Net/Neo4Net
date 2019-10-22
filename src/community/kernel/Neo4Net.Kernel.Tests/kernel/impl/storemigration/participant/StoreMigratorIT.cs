@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.UNKNOWN_TX_COMMIT_TIMESTAMP;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StoreMigratorIT
@@ -105,11 +105,11 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 public string Version;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.kernel.impl.transaction.log.LogPosition expectedLogPosition;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.kernel.impl.transaction.log.LogPosition expectedLogPosition;
 		 public LogPosition ExpectedLogPosition;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(2) public System.Func<org.neo4j.kernel.impl.store.TransactionId, bool> txIdComparator;
+//ORIGINAL LINE: @Parameterized.Parameter(2) public System.Func<org.Neo4Net.kernel.impl.store.TransactionId, bool> txIdComparator;
 		 public System.Func<TransactionId, bool> TxIdComparator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -297,7 +297,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.recovery.LogTailScanner getTailScanner(java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.recovery.LogTailScanner getTailScanner(java.io.File databaseDirectory) throws java.io.IOException
 		 private LogTailScanner GetTailScanner( File databaseDirectory )
 		 {
 			  LogFiles logFiles = LogFilesBuilder.logFilesBasedOnlyBuilder( databaseDirectory, _fs ).build();

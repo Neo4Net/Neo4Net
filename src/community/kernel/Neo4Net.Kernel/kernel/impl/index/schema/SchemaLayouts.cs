@@ -51,14 +51,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.index.internal.gbptree.Layout<?,?> create(java.io.File indexFile, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.index.internal.gbptree.Meta meta, String targetLayout) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.index.internal.gbptree.Layout<?,?> create(java.io.File indexFile, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.index.internal.gbptree.Meta meta, String targetLayout) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public override Layout<object, ?> Create( File indexFile, PageCache pageCache, Meta meta, string targetLayout )
 		 {
 			  foreach ( LayoutBootstrapper factory in _allSchemaLayout )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.index.internal.gbptree.Layout<?,?> layout = factory.create(indexFile, pageCache, meta, targetLayout);
+//ORIGINAL LINE: final org.Neo4Net.index.internal.gbptree.Layout<?,?> layout = factory.create(indexFile, pageCache, meta, targetLayout);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 					Layout<object, ?> layout = factory.Create( indexFile, pageCache, meta, targetLayout );
 					if ( layout != null && MatchingLayout( meta, layout ) )

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.flag;
+//	import static org.Neo4Net.util.FeatureToggles.flag;
 
 	internal class KeyValueWriter : System.IDisposable
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 private State _state = State.ExpectingFormatSpecifier;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static KeyValueWriter create(MetadataCollector metadata, org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pages, java.io.File path, int pageSize) throws java.io.IOException
+//ORIGINAL LINE: public static KeyValueWriter create(MetadataCollector metadata, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, java.io.File path, int pageSize) throws java.io.IOException
 		 public static KeyValueWriter Create( MetadataCollector metadata, FileSystemAbstraction fs, PageCache pages, File path, int pageSize )
 		 {
 			  return new KeyValueWriter( metadata, Writer.Create( fs, pages, path, pageSize ) );
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 			  internal abstract void Close();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static Writer create(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pages, java.io.File path, int pageSize) throws java.io.IOException
+//ORIGINAL LINE: static Writer create(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, java.io.File path, int pageSize) throws java.io.IOException
 			  internal static Writer Create( FileSystemAbstraction fs, PageCache pages, File path, int pageSize )
 			  {
 					if ( pages == null )
@@ -321,7 +321,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 			  internal bool Opened;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PageWriter(org.neo4j.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: PageWriter(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 			  internal PageWriter( PagedFile file )
 			  {
 					this.File = file;

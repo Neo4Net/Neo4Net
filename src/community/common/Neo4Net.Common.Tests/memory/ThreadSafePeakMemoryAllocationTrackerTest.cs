@@ -20,35 +20,32 @@
 
 namespace Neo4Net.Memory
 {
+   using Neo4Net.Concurrency;
+   using Xunit;
    using Race = Neo4Net.Test.Race;
 
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.hamcrest.MatcherAssert.assertThat;
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.hamcrest.Matchers.greaterThan;
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.junit.jupiter.api.Assertions.assertEquals;
 
-   internal class ThreadSafePeakIMemoryAllocationTrackerTest
+
+   public class ThreadSafePeakMemoryAllocationTrackerTest
    {
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      [Fact] //ORIGINAL LINE: @Test void shouldRegisterConcurrentAllocationsAndDeallocations() throws Throwable
-             //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      internal virtual void ShouldRegisterConcurrentAllocationsAndDeallocations()
+      
+      [Fact]
+            
+       public void ShouldRegisterConcurrentAllocationsAndDeallocations()
       {
          // given
-         ThreadSafePeakIMemoryAllocationTracker tracker = new ThreadSafePeakIMemoryAllocationTracker(GlobalMemoryTracker.Instance);
+         ThreadSafePeakMemoryAllocationTracker tracker = new ThreadSafePeakMemoryAllocationTracker(GlobalMemoryTracker.Instance);
          Race race = new Race();
          race.AddContestants(10, () =>
          {
             for (int i = 1; i < 100; i++)
             {
                tracker.Allocated(i);
-               assertThat(tracker.UsedDirectMemory(), greaterThan(0L));
+               Assert.True(tracker.UsedDirectMemory() > 0L); //$!!$ tac assertThat(tracker.UsedDirectMemory(), greaterThan(0L));
             }
             for (int i = 1; i < 100; i++)
             {
-               assertThat(tracker.UsedDirectMemory(), greaterThan(0L));
+               Assert.True(tracker.UsedDirectMemory() > 0L); //$!!$ tac assertThat(tracker.UsedDirectMemory(), greaterThan(0L));
                tracker.Deallocated(i);
             }
          }, 1);
@@ -57,23 +54,23 @@ namespace Neo4Net.Memory
          race.Go();
 
          // then
-         assertEquals(0, tracker.UsedDirectMemory());
+       Assert.Equal(0, tracker.UsedDirectMemory());
       }
 
-      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      [Fact] //ORIGINAL LINE: @Test void shouldRegisterPeakMemoryUsage() throws Throwable
-             //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      internal virtual void ShouldRegisterPeakMemoryUsage()
+      
+      [Fact] 
+             
+       public void ShouldRegisterPeakMemoryUsage()
       {
          // given
-         ThreadSafePeakIMemoryAllocationTracker tracker = new ThreadSafePeakIMemoryAllocationTracker(GlobalMemoryTracker.Instance);
+         ThreadSafePeakMemoryAllocationTracker tracker = new ThreadSafePeakMemoryAllocationTracker(GlobalMemoryTracker.Instance);
          int threads = 200;
          long[] allocations = new long[threads];
-         ThreadLocalRandom random = ThreadLocalRandom.current();
+         //$!!$ ThreadLocalRandom random = //$!!$ ThreadLocalRandom.Current();
          long sum = 0;
          for (int i = 0; i < allocations.Length; i++)
          {
-            allocations[i] = random.Next(1, 10_000);
+            allocations[i] = ThreadLocalRandom.Next(1, 10_000);
             sum += allocations[i];
          }
 
@@ -82,24 +79,24 @@ namespace Neo4Net.Memory
          for (int i = 0; i < threads; i++)
          {
             int id = i;
-            race.AddContestant(() => tracker.allocated(allocations[id]));
+            race.AddContestant(() => tracker.Allocated(allocations[id]));
          }
          race.Go();
          long peakAfterAllocation = tracker.PeakMemoryUsage();
-         LongStream.of(allocations).forEach(tracker.deallocated);
+         LongStream.of(allocations).forEach(tracker.Deallocated);
          long peakAfterDeallocation = tracker.PeakMemoryUsage();
-         LongStream.of(allocations).forEach(tracker.allocated);
+         LongStream.of(allocations).forEach(tracker.Allocated);
          tracker.Allocated(10); // <-- 10 more than previous peak
          long peakAfterHigherReallocation = tracker.PeakMemoryUsage();
-         LongStream.of(allocations).forEach(tracker.deallocated);
+         LongStream.of(allocations).forEach(tracker.Deallocated);
          tracker.Deallocated(10);
          long peakAfterFinalDeallocation = tracker.PeakMemoryUsage();
 
          // then
-         assertEquals(sum, peakAfterAllocation);
-         assertEquals(sum, peakAfterDeallocation);
-         assertEquals(sum + 10, peakAfterHigherReallocation);
-         assertEquals(sum + 10, peakAfterFinalDeallocation);
+       Assert.Equal(sum, peakAfterAllocation);
+       Assert.Equal(sum, peakAfterDeallocation);
+       Assert.Equal(sum + 10, peakAfterHigherReallocation);
+       Assert.Equal(sum + 10, peakAfterFinalDeallocation);
       }
    }
 }

@@ -33,13 +33,13 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
 	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
 
 	/// <summary>
 	/// A <seealso cref="TxStateVisitor"/> that adds all entities to a <seealso cref="TransactionStateLuceneIndexWriter"/>, that matches the index according to the
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  this._schema = descriptor.Schema();
 			  this._modifiedEntityIdsInThisTransaction = modifiedEntityIdsInThisTransaction;
 			  this._writer = writer;
-			  this._visitingNodes = _schema.entityType() == EntityType.NODE;
+			  this._visitingNodes = _schema.entityType() == IEntityType.NODE;
 			  _entityTokenIds = _schema.EntityTokenIds;
 			  int[] propertyIds = _schema.PropertyIds;
 			  _propertyValues = new Value[propertyIds.Length];
@@ -113,9 +113,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  {
 					// Nodes that have had their indexed labels removed will not have their properties indexed, so 'indexNode' would skip them.
 					// However, we still need to make sure that they are not included in the result from the base index reader.
-					foreach ( int entityTokenId in _entityTokenIds )
+					foreach ( int IEntityTokenId in _entityTokenIds )
 					{
-						 if ( removed.contains( entityTokenId ) )
+						 if ( removed.contains( IEntityTokenId ) )
 						 {
 							  _modifiedEntityIdsInThisTransaction.add( id );
 							  break;

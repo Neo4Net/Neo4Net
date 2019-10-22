@@ -65,7 +65,7 @@ namespace Neo4Net.Cypher.Internal.evaluator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object map(org.neo4j.values.AnyValue value) throws EvaluationException
+//ORIGINAL LINE: private Object map(org.Neo4Net.values.AnyValue value) throws EvaluationException
 		 private object Map( AnyValue value )
 		 {
 			  try

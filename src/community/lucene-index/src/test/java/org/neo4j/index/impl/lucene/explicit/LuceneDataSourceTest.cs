@@ -29,9 +29,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
@@ -52,7 +52,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class LuceneDataSourceTest
 	{
@@ -315,7 +315,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 private void AddIndex( string name )
 		 {
-			  _indexStore.set( typeof( Node ), name, stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
+			  _indexStore.set( typeof( Node ), name, stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
 		 }
 
 		 private static IndexIdentifier Identifier( string name )

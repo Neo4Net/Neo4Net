@@ -48,9 +48,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  _entityCounts.propertiesImported( propertyCount );
 		 }
 
-		 public DataStatistics( DataImporter.Monitor entityCounts, RelationshipTypeCount[] sortedTypes )
+		 public DataStatistics( DataImporter.Monitor IEntityCounts, RelationshipTypeCount[] sortedTypes )
 		 {
-			  this._entityCounts = entityCounts;
+			  this._entityCounts = IEntityCounts;
 			  this._typeCounts = sortedTypes;
 		 }
 

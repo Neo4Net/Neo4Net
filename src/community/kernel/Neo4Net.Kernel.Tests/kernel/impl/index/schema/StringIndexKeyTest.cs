@@ -41,16 +41,16 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.NO_ENTITY_ID;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.NO_ENTITY_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class StringIndexKeyTest
 	internal class StringIndexKeyTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  StringIndexKey right = layout.NewKey();
 			  StringIndexKey minimalSplitter = layout.NewKey();
 
-			  // keys with same value but different entityId
+			  // keys with same value but different IEntityId
 			  TextValue value = _random.randomValues().nextTextValue();
 			  left.Initialize( 1 );
 			  right.Initialize( 2 );
@@ -156,8 +156,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // When creating minimal splitter
 			  layout.MinimalSplitter( left, right, minimalSplitter );
 
-			  // Then that minimal splitter should have entity id shaved off
-			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have entityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
+			  // Then that minimal splitter should have IEntity id shaved off
+			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have IEntityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
 		 }
 	}
 

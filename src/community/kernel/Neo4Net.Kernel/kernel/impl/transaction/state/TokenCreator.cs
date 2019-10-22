@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using TokenRecord = Neo4Net.Kernel.Impl.Store.Records.TokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.PropertyStore.encodeString;
+//	import static org.Neo4Net.kernel.impl.store.PropertyStore.encodeString;
 
 	public class TokenCreator<R> where R : Neo4Net.Kernel.Impl.Store.Records.TokenRecord
 	{

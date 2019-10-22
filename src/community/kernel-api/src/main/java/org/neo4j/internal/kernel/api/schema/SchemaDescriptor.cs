@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Kernel.Api.schema
 {
 
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 	/// <summary>
@@ -38,7 +38,7 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 SchemaDescriptor NO_SCHEMA = new SchemaDescriptor()
 	//	 {
-	//		  @@Override public boolean isAffected(long[] entityIds)
+	//		  @@Override public boolean isAffected(long[] IEntityIds)
 	//		  {
 	//				return false;
 	//		  }
@@ -78,7 +78,7 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 	//				return null;
 	//		  }
 	//
-	//		  @@Override public EntityType entityType()
+	//		  @@Override public IEntityType IEntityType()
 	//		  {
 	//				return null;
 	//		  }
@@ -113,10 +113,10 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 	//	 }
 
 		 /// <summary>
-		 /// Returns true if any of the given entity token ids are part of this schema unit. </summary>
-		 /// <param name="entityTokenIds"> entity token ids to check against. </param>
+		 /// Returns true if any of the given IEntity token ids are part of this schema unit. </summary>
+		 /// <param name="entityTokenIds"> IEntity token ids to check against. </param>
 		 /// <returns> true if the supplied ids are relevant to this schema unit. </returns>
-		 bool IsAffected( long[] entityTokenIds );
+		 bool IsAffected( long[] IEntityTokenIds );
 
 		 /// <summary>
 		 /// This enum signifies how this schema should behave in regards to updates.
@@ -174,9 +174,9 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 	//	 }
 
 		 /// <summary>
-		 /// This method returns the entity token ids handled by this descriptor. </summary>
-		 /// <returns> the entity token ids that this schema descriptor represents </returns>
-		 int[] EntityTokenIds { get; }
+		 /// This method returns the IEntity token ids handled by this descriptor. </summary>
+		 /// <returns> the IEntity token ids that this schema descriptor represents </returns>
+		 int[] IEntityTokenIds { get; }
 
 		 /// <summary>
 		 /// Id of underlying schema descriptor key.
@@ -192,8 +192,8 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 
 		 /// <summary>
 		 /// Type of entities this schema represents. </summary>
-		 /// <returns> entity type </returns>
-		 EntityType EntityType();
+		 /// <returns> IEntity type </returns>
+		 IEntityType IEntityType();
 
 		 /// <summary>
 		 /// Returns the type of this schema. See <seealso cref="PropertySchemaType"/>. </summary>

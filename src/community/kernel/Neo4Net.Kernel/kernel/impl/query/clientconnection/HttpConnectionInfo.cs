@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.query.clientconnection
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.SocketAddress.format;
+//	import static org.Neo4Net.helpers.SocketAddress.format;
 
 	/// <seealso cref= ClientConnectionInfo Parent class for documentation and tests. </seealso>
 	public class HttpConnectionInfo : ClientConnectionInfo

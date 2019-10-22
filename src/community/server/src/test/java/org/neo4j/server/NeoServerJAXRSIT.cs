@@ -24,8 +24,8 @@ namespace Neo4Net.Server
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
@@ -38,7 +38,7 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.FunctionalTestHelper.CLIENT;
+//	import static org.Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
 
 	public class NeoServerJAXRSIT : ExclusiveServerTestBase
 	{
@@ -95,7 +95,7 @@ namespace Neo4Net.Server
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private int createSimpleDatabase(final org.neo4j.kernel.internal.GraphDatabaseAPI graph)
+//ORIGINAL LINE: private int createSimpleDatabase(final org.Neo4Net.kernel.internal.GraphDatabaseAPI graph)
 		 private int CreateSimpleDatabase( GraphDatabaseAPI graph )
 		 {
 			  const int numberOfNodes = 10;

@@ -33,7 +33,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	public class BoltAuthenticationHelper
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean processAuthentication(String userAgent, java.util.Map<String,Object> authToken, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public static boolean processAuthentication(String userAgent, java.util.Map<String,Object> authToken, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public static bool ProcessAuthentication( string userAgent, IDictionary<string, object> authToken, StateMachineContext context )
 		 {
 			  try

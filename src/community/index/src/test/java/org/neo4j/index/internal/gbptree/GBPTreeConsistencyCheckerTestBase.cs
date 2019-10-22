@@ -53,9 +53,9 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.PageCacheRule.config;
+//	import static org.Neo4Net.test.rule.PageCacheRule.config;
 
 	public abstract class GBPTreeConsistencyCheckerTestBase<KEY, VALUE>
 	{

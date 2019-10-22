@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store.format.standard
 		 *
 		 * [type+inUse+highbits,next,firstOut,firstIn,firstLoop,owningNode] = 25B
 		 *
-		 * One record holds first relationship links (out,in,loop) to relationships for one type for one entity.
+		 * One record holds first relationship links (out,in,loop) to relationships for one type for one IEntity.
 		 */
 
 		 public const int RECORD_SIZE = 25;

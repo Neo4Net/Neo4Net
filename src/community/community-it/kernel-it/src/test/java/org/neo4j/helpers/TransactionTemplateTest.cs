@@ -28,9 +28,9 @@ namespace Neo4Net.Helpers
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 
@@ -52,7 +52,7 @@ namespace Neo4Net.Helpers
 	public class TransactionTemplateTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule databaseRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DatabaseRule = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.runtime
 
 		 /// <summary>
 		 /// Called zero or more times if there are failures </summary>
-		 void MarkFailed( Neo4jError error );
+		 void MarkFailed( Neo4NetError error );
 
 		 /// <summary>
 		 /// Called when the operation is completed. </summary>

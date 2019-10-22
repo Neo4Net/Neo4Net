@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.LuceneTestUtil.valueTupleList;
+//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class SimpleUniquenessVerifierTest
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 private static readonly int[] _propertyKeyIds = new int[]{ 42 };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 		 private DirectoryFactory _dirFactory;
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void runUniquenessVerification(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor, org.apache.lucene.search.IndexSearcher indexSearcher) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void runUniquenessVerification(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, org.apache.lucene.search.IndexSearcher indexSearcher) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void RunUniquenessVerification( NodePropertyAccessor nodePropertyAccessor, IndexSearcher indexSearcher )
 		 {
 			  try
@@ -260,7 +260,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNoDuplicates(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws Exception
+//ORIGINAL LINE: private void assertNoDuplicates(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws Exception
 		 private void AssertNoDuplicates( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNoDuplicatesCreated(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.neo4j.values.storable.Value[]> updatedPropertyValues) throws Exception
+//ORIGINAL LINE: private void assertNoDuplicatesCreated(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws Exception
 		 private void AssertNoDuplicatesCreated( NodePropertyAccessor nodePropertyAccessor, IList<Value[]> updatedPropertyValues )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHasDuplicates(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws java.io.IOException
+//ORIGINAL LINE: private void assertHasDuplicates(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws java.io.IOException
 		 private void AssertHasDuplicates( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -290,7 +290,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertDuplicatesCreated(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.neo4j.values.storable.Value[]> updatedPropertyValues) throws java.io.IOException
+//ORIGINAL LINE: private void assertDuplicatesCreated(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws java.io.IOException
 		 private void AssertDuplicatesCreated( NodePropertyAccessor nodePropertyAccessor, IList<Value[]> updatedPropertyValues )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.impl.schema.verification.UniquenessVerifier newSimpleUniquenessVerifier() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.impl.schema.verification.UniquenessVerifier newSimpleUniquenessVerifier() throws java.io.IOException
 		 private UniquenessVerifier NewSimpleUniquenessVerifier()
 		 {
 			  PartitionSearcher partitionSearcher = new PartitionSearcher( _searcherManager );

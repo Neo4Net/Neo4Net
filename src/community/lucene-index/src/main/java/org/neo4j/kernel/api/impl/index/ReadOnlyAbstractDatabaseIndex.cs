@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
 
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
 		 public override ResourceIterator<File> Snapshot()
 		 {
 			  return luceneIndex.snapshot();

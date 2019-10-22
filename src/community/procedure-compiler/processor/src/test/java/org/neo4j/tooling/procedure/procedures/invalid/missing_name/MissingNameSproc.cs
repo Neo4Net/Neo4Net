@@ -20,7 +20,7 @@
 namespace Neo4Net.Tooling.procedure.procedures.invalid.missing_name
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Context = Neo4Net.Procedure.Context;
 	using Procedure = Neo4Net.Procedure.Procedure;
 
@@ -28,8 +28,8 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.missing_name
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-		 public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+		 public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Procedure public java.util.stream.Stream<GoodRecord> niceSproc(String parameter, String otherParam)

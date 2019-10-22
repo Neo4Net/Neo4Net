@@ -26,7 +26,7 @@ namespace Neo4Net.Values.Storable
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.utf8Value;
+//	import static org.Neo4Net.values.storable.Values.utf8Value;
 
 	/*
 	 * Just as a normal StringValue but is backed by a byte array and does string

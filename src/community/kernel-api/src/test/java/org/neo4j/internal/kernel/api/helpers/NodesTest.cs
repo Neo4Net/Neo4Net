@@ -26,11 +26,11 @@ namespace Neo4Net.Internal.Kernel.Api.helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countAll;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countIncoming;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countIncoming;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countOutgoing;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countOutgoing;
 
 	public class NodesTest
 	{

@@ -45,7 +45,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 
 	public class EncodeGroupsStepTest
 	{

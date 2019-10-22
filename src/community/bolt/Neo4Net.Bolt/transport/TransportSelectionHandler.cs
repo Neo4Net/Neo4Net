@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.transport
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.transport.pipeline.ProtocolHandshaker.BOLT_MAGIC_PREAMBLE;
+//	import static org.Neo4Net.bolt.transport.pipeline.ProtocolHandshaker.BOLT_MAGIC_PREAMBLE;
 
 	public class TransportSelectionHandler : ByteToMessageDecoder
 	{

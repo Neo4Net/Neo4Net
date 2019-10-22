@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.counts
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -38,12 +38,12 @@ namespace Neo4Net.Kernel.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class LabelCountsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 private System.Func<KernelTransaction> _transactionSupplier;
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldGetNumberOfNodesWithLabel()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
 					graphDb.CreateNode( label( "Foo" ) );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldAccountForDeletedNodes()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  Node node;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldAccountForDeletedNodesWithMultipleLabels()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  Node node;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldAccountForAddedLabels()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  Node n1;
 			  Node n2;
 			  Node n3;
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldAccountForRemovedLabels()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  Node n1;
 			  Node n2;
 			  Node n3;

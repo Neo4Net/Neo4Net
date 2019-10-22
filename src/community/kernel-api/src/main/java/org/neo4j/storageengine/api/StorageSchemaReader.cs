@@ -57,14 +57,14 @@ namespace Neo4Net.Storageengine.Api
 		 /// <returns> <seealso cref="InternalIndexState"/> for index. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.InternalIndexState indexGetState(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.InternalIndexState indexGetState(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 InternalIndexState IndexGetState( IndexDescriptor descriptor );
 
 		 /// <param name="descriptor"> <seealso cref="SchemaDescriptor"/> to get population progress for. </param>
 		 /// <returns> progress of index population, which is the initial state of an index when it's created. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 PopulationProgress IndexGetPopulationProgress( SchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -75,7 +75,7 @@ namespace Neo4Net.Storageengine.Api
 		 /// <returns> failure of an index, or {@code null} if index is working as it should. </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if index not found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String indexGetFailure(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: String indexGetFailure(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 string IndexGetFailure( SchemaDescriptor descriptor );
 
 		 /// <param name="labelId"> label token id. </param>

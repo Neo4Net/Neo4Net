@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.api
 {
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// A statement which is a smaller coherent unit of work inside a <seealso cref="KernelTransaction"/>.
@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.api
 	/// then close all resources at statement close.
 	/// 
 	/// Note that Statement used to be the access-point for all kernel reads and writes before 3.4. For
-	/// accessing the graph now, see <seealso cref="org.neo4j.internal.kernel.api.Transaction"/>. The only remainder
+	/// accessing the graph now, see <seealso cref="org.Neo4Net.internal.kernel.api.Transaction"/>. The only remainder
 	/// the QueryRegistryOperations, which will eventually also move from here.
 	/// </summary>
 	public interface Statement : Resource, ResourceManager

@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
@@ -55,15 +55,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory20.DESCRIPTOR;
+//	import static org.Neo4Net.kernel.api.impl.schema.NativeLuceneFusionIndexProviderFactory20.DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.tracking.TrackingReadersIndexAccessor.numberOfClosedReaders;
+//	import static org.Neo4Net.kernel.impl.index.schema.tracking.TrackingReadersIndexAccessor.numberOfClosedReaders;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.tracking.TrackingReadersIndexAccessor.numberOfOpenReaders;
+//	import static org.Neo4Net.kernel.impl.index.schema.tracking.TrackingReadersIndexAccessor.numberOfOpenReaders;
 
 	public class UniqueIndexSeekIT
 	{
@@ -84,14 +84,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fs = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fs = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule Fs = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory(fs);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs);
 		 public TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void uniqueIndexSeekDoNotLeakIndexReaders() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void uniqueIndexSeekDoNotLeakIndexReaders() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void UniqueIndexSeekDoNotLeakIndexReaders()
 		 {
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void lockNodeUsingUniqueIndexSeek(org.neo4j.kernel.internal.GraphDatabaseAPI database, org.neo4j.graphdb.Label label, String nameProperty) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static void lockNodeUsingUniqueIndexSeek(org.Neo4Net.kernel.internal.GraphDatabaseAPI database, org.Neo4Net.graphdb.Label label, String nameProperty) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static void LockNodeUsingUniqueIndexSeek( GraphDatabaseAPI database, Label label, string nameProperty )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )

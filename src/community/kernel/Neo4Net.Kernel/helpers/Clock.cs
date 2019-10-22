@@ -22,7 +22,7 @@
 namespace Neo4Net.Helpers
 {
 	/// @deprecated please use <seealso cref="java.time.Clock"/> instead 
-	/// <seealso cref= org.neo4j.time.Clocks </seealso>
+	/// <seealso cref= org.Neo4Net.time.Clocks </seealso>
 	[Obsolete("please use <seealso cref=\"java.time.Clock\"/> instead")]
 	public interface Clock
 	{

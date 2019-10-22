@@ -27,9 +27,9 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using TypeSafeMatcher = org.hamcrest.TypeSafeMatcher;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using RFC1123 = Neo4Net.Server.rest.repr.util.RFC1123;
@@ -52,7 +52,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 
 	/// <summary>
 	/// Matchers and assertion methods for the transactional endpoint.
@@ -125,7 +125,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> containsNoErrors()
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> containsNoErrors()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> ContainsNoErrors()
 		 {
@@ -133,7 +133,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> hasErrors(final org.neo4j.kernel.api.exceptions.Status... expectedErrors)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> hasErrors(final org.Neo4Net.kernel.api.exceptions.Status... expectedErrors)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> HasErrors( params Status[] expectedErrors )
@@ -186,14 +186,14 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.codehaus.jackson.JsonNode getJsonNodeWithName(org.neo4j.test.server.HTTP.Response response, String name) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: static org.codehaus.jackson.JsonNode getJsonNodeWithName(org.Neo4Net.test.server.HTTP.Response response, String name) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 internal static JsonNode GetJsonNodeWithName( HTTP.Response response, string name )
 		 {
 			  return response.Get( "results" ).get( 0 ).get( "data" ).get( 0 ).get( name );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsDeletedEntities(final int nodes, final int rels)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsDeletedEntities(final int nodes, final int rels)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsDeletedEntities( int nodes, int rels )
@@ -262,7 +262,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsDeletedEntitiesInPath(final int nodes, final int rels)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsDeletedEntitiesInPath(final int nodes, final int rels)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsDeletedEntitiesInPath( int nodes, int rels )
@@ -332,7 +332,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsMetaNodesAtIndex(int... indexes)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsMetaNodesAtIndex(int... indexes)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsMetaNodesAtIndex( params int[] indexes )
 		 {
@@ -359,7 +359,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsMetaRelsAtIndex(int... indexes)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsMetaRelsAtIndex(int... indexes)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsMetaRelsAtIndex( params int[] indexes )
 		 {
@@ -419,7 +419,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsAMetaListAtIndex(int index)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsAMetaListAtIndex(int index)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsAMetaListAtIndex( int index )
 		 {
@@ -463,7 +463,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> restContainsDeletedEntities(final int amount)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> restContainsDeletedEntities(final int amount)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RestContainsDeletedEntities( int amount )
@@ -513,7 +513,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> graphContainsDeletedNodes(final int amount)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> graphContainsDeletedNodes(final int amount)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> GraphContainsDeletedNodes( int amount )
@@ -560,7 +560,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> graphContainsNoDeletedEntities()
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> graphContainsNoDeletedEntities()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> GraphContainsNoDeletedEntities()
 		 {
@@ -595,7 +595,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> rowContainsNoDeletedEntities()
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> rowContainsNoDeletedEntities()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RowContainsNoDeletedEntities()
 		 {
@@ -626,7 +626,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> restContainsNoDeletedEntities()
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> restContainsNoDeletedEntities()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> RestContainsNoDeletedEntities()
 		 {
@@ -657,7 +657,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> graphContainsDeletedRelationships(final int amount)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> graphContainsDeletedRelationships(final int amount)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> GraphContainsDeletedRelationships( int amount )
@@ -709,8 +709,8 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("WhileLoopReplaceableByForEach") public static long countNodes(org.neo4j.graphdb.GraphDatabaseService graphdb)
-		 public static long CountNodes( GraphDatabaseService graphdb )
+//ORIGINAL LINE: @SuppressWarnings("WhileLoopReplaceableByForEach") public static long countNodes(org.Neo4Net.graphdb.GraphDatabaseService graphdb)
+		 public static long CountNodes( IGraphDatabaseService graphdb )
 		 {
 			  using ( Transaction ignore = graphdb.BeginTx() )
 			  {
@@ -726,7 +726,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.neo4j.test.server.HTTP.Response> containsNoStackTraces()
+//ORIGINAL LINE: public static org.hamcrest.Matcher<? super org.Neo4Net.test.server.HTTP.Response> containsNoStackTraces()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<object> ContainsNoStackTraces()
 		 {

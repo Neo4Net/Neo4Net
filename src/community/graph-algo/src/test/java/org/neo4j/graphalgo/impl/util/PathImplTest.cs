@@ -27,9 +27,9 @@ namespace Neo4Net.Graphalgo.impl.util
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;

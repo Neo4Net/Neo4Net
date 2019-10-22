@@ -20,13 +20,13 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 {
 	/// <summary>
-	/// Manages deserialization of one or more entry values, together forming some sort of entity.
+	/// Manages deserialization of one or more entry values, together forming some sort of IEntity.
 	/// It has mutable state and the usage pattern should be:
 	/// 
 	/// <ol>
-	/// <li>One or more calls to <seealso cref="handle(org.neo4j.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/></li>
-	/// <li><seealso cref="materialize()"/> to materialize the entity from the handled values</li>
-	/// <li><seealso cref="clear()"/> to prepare for the next entity</li>
+	/// <li>One or more calls to <seealso cref="handle(org.Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/></li>
+	/// <li><seealso cref="materialize()"/> to materialize the IEntity from the handled values</li>
+	/// <li><seealso cref="clear()"/> to prepare for the next IEntity</li>
 	/// </ol>
 	/// </summary>
 	public interface Deserialization<ENTITY>
@@ -34,18 +34,18 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 
 		 /// <summary>
 		 /// Handles one value of a type described by the {@code entry}. One or more values will be able to
-		 /// <seealso cref="materialize()"/> into an entity later on.
+		 /// <seealso cref="materialize()"/> into an IEntity later on.
 		 /// </summary>
 		 void Handle( Header.Entry entry, object value );
 
 		 /// <summary>
-		 /// Takes values received in <seealso cref="handle(org.neo4j.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/>
-		 /// and materializes an entity from them.
+		 /// Takes values received in <seealso cref="handle(org.Neo4Net.unsafe.impl.batchimport.input.csv.Header.Entry, object)"/>
+		 /// and materializes an IEntity from them.
 		 /// </summary>
-		 ENTITY Materialize();
+		 IEntity Materialize();
 
 		 /// <summary>
-		 /// Clears the mutable state, preparing for the next entity.
+		 /// Clears the mutable state, preparing for the next IEntity.
 		 /// </summary>
 		 void Clear();
 	}

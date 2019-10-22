@@ -3,7 +3,7 @@ using System.Threading;
 using FluentAssertions;
 using Xunit;
 
-namespace ConcurrencyUtilities.Tests
+namespace Neo4Net.Concurrency.Tests
 {
     public class ConcurrencyTests
     {

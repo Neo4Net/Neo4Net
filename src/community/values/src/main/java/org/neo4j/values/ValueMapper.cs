@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Values
 {
 
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using BooleanArray = Neo4Net.Values.Storable.BooleanArray;
 	using BooleanValue = Neo4Net.Values.Storable.BooleanValue;
 	using ByteArray = Neo4Net.Values.Storable.ByteArray;
@@ -90,31 +90,31 @@ namespace Neo4Net.Values
 		 Base MapText( TextValue value );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapString(org.neo4j.values.storable.StringValue value)
+//		 default Base mapString(org.Neo4Net.values.storable.StringValue value)
 	//	 {
 	//		  return mapText(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapTextArray(org.neo4j.values.storable.TextArray value)
+//		 default Base mapTextArray(org.Neo4Net.values.storable.TextArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapStringArray(org.neo4j.values.storable.StringArray value)
+//		 default Base mapStringArray(org.Neo4Net.values.storable.StringArray value)
 	//	 {
 	//		  return mapTextArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapChar(org.neo4j.values.storable.CharValue value)
+//		 default Base mapChar(org.Neo4Net.values.storable.CharValue value)
 	//	 {
 	//		  return mapText(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapCharArray(org.neo4j.values.storable.CharArray value)
+//		 default Base mapCharArray(org.Neo4Net.values.storable.CharArray value)
 	//	 {
 	//		  return mapTextArray(value);
 	//	 }
@@ -122,7 +122,7 @@ namespace Neo4Net.Values
 		 Base MapBoolean( BooleanValue value );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapBooleanArray(org.neo4j.values.storable.BooleanArray value)
+//		 default Base mapBooleanArray(org.Neo4Net.values.storable.BooleanArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
@@ -130,103 +130,103 @@ namespace Neo4Net.Values
 		 Base MapNumber( NumberValue value );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapNumberArray(org.neo4j.values.storable.NumberArray value)
+//		 default Base mapNumberArray(org.Neo4Net.values.storable.NumberArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapIntegral(org.neo4j.values.storable.IntegralValue value)
+//		 default Base mapIntegral(org.Neo4Net.values.storable.IntegralValue value)
 	//	 {
 	//		  return mapNumber(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapIntegralArray(org.neo4j.values.storable.IntegralArray value)
+//		 default Base mapIntegralArray(org.Neo4Net.values.storable.IntegralArray value)
 	//	 {
 	//		  return mapNumberArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapByte(org.neo4j.values.storable.ByteValue value)
+//		 default Base mapByte(org.Neo4Net.values.storable.ByteValue value)
 	//	 {
 	//		  return mapIntegral(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapByteArray(org.neo4j.values.storable.ByteArray value)
+//		 default Base mapByteArray(org.Neo4Net.values.storable.ByteArray value)
 	//	 {
 	//		  return mapIntegralArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapShort(org.neo4j.values.storable.ShortValue value)
+//		 default Base mapShort(org.Neo4Net.values.storable.ShortValue value)
 	//	 {
 	//		  return mapIntegral(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapShortArray(org.neo4j.values.storable.ShortArray value)
+//		 default Base mapShortArray(org.Neo4Net.values.storable.ShortArray value)
 	//	 {
 	//		  return mapIntegralArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapInt(org.neo4j.values.storable.IntValue value)
+//		 default Base mapInt(org.Neo4Net.values.storable.IntValue value)
 	//	 {
 	//		  return mapIntegral(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapIntArray(org.neo4j.values.storable.IntArray value)
+//		 default Base mapIntArray(org.Neo4Net.values.storable.IntArray value)
 	//	 {
 	//		  return mapIntegralArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapLong(org.neo4j.values.storable.LongValue value)
+//		 default Base mapLong(org.Neo4Net.values.storable.LongValue value)
 	//	 {
 	//		  return mapIntegral(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapLongArray(org.neo4j.values.storable.LongArray value)
+//		 default Base mapLongArray(org.Neo4Net.values.storable.LongArray value)
 	//	 {
 	//		  return mapIntegralArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapFloatingPoint(org.neo4j.values.storable.FloatingPointValue value)
+//		 default Base mapFloatingPoint(org.Neo4Net.values.storable.FloatingPointValue value)
 	//	 {
 	//		  return mapNumber(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapFloatingPointArray(org.neo4j.values.storable.FloatingPointArray value)
+//		 default Base mapFloatingPointArray(org.Neo4Net.values.storable.FloatingPointArray value)
 	//	 {
 	//		  return mapNumberArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapDouble(org.neo4j.values.storable.DoubleValue value)
+//		 default Base mapDouble(org.Neo4Net.values.storable.DoubleValue value)
 	//	 {
 	//		  return mapFloatingPoint(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapDoubleArray(org.neo4j.values.storable.DoubleArray value)
+//		 default Base mapDoubleArray(org.Neo4Net.values.storable.DoubleArray value)
 	//	 {
 	//		  return mapFloatingPointArray(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapFloat(org.neo4j.values.storable.FloatValue value)
+//		 default Base mapFloat(org.Neo4Net.values.storable.FloatValue value)
 	//	 {
 	//		  return mapFloatingPoint(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapFloatArray(org.neo4j.values.storable.FloatArray value)
+//		 default Base mapFloatArray(org.Neo4Net.values.storable.FloatArray value)
 	//	 {
 	//		  return mapFloatingPointArray(value);
 	//	 }
@@ -246,43 +246,43 @@ namespace Neo4Net.Values
 		 Base MapPoint( PointValue value );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapPointArray(org.neo4j.values.storable.PointArray value)
+//		 default Base mapPointArray(org.Neo4Net.values.storable.PointArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapDateTimeArray(org.neo4j.values.storable.DateTimeArray value)
+//		 default Base mapDateTimeArray(org.Neo4Net.values.storable.DateTimeArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapLocalDateTimeArray(org.neo4j.values.storable.LocalDateTimeArray value)
+//		 default Base mapLocalDateTimeArray(org.Neo4Net.values.storable.LocalDateTimeArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapLocalTimeArray(org.neo4j.values.storable.LocalTimeArray value)
+//		 default Base mapLocalTimeArray(org.Neo4Net.values.storable.LocalTimeArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapTimeArray(org.neo4j.values.storable.TimeArray value)
+//		 default Base mapTimeArray(org.Neo4Net.values.storable.TimeArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapDateArray(org.neo4j.values.storable.DateArray value)
+//		 default Base mapDateArray(org.Neo4Net.values.storable.DateArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default Base mapDurationArray(org.neo4j.values.storable.DurationArray value)
+//		 default Base mapDurationArray(org.Neo4Net.values.storable.DurationArray value)
 	//	 {
 	//		  return mapSequence(value);
 	//	 }

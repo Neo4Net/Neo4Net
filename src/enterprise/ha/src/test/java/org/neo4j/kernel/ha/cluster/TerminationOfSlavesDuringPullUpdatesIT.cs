@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.cluster
 {
@@ -34,13 +34,13 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StringUtils = org.parboiled.common.StringUtils;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using Strings = Neo4Net.Helpers.Strings;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using IdController = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.id.IdController;
@@ -58,9 +58,9 @@ namespace Neo4Net.Kernel.ha.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Parameterized.Parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TerminationOfSlavesDuringPullUpdatesIT
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 private const int PROPERTY_KEY_CHAIN_LENGTH = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.kernel.ha.HaSettings.pull_interval, "0").withSharedSetting(org.neo4j.kernel.ha.HaSettings.tx_push_factor, "0");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.tx_push_factor, "0");
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withSharedSetting(HaSettings.tx_push_factor, "0");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -88,62 +88,62 @@ namespace Neo4Net.Kernel.ha.cluster
 			  {
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).AllProperties[key] ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).AllProperties[key] ),
 					  "NodeStringProperty[allProps]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperty( key, null ) ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperty( key, null ) ),
 					  "NodeStringProperty[singleProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperties( key )[key] ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperties( key )[key] ),
 					  "NodeStringProperty[varArgsProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).AllProperties[key] ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).AllProperties[key] ),
 					  "RelationshipStringProperty[allProps]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperty( key, null ) ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperty( key, null ) ),
 					  "RelationshipStringProperty[singleProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperties( key )[key] ),
+					  new PropertyValueActions( LongString( 'a' ), LongString( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperties( key )[key] ),
 					  "RelationshipStringProperty[varArgsProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).AllProperties[key] ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).AllProperties[key] ),
 					  "NodeArrayProperty[allProps]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperty( key, null ) ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperty( key, null ) ),
 					  "NodeArrayProperty[singleProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperties( key )[key] ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), true, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperties( key )[key] ),
 					  "NodeArrayProperty[varArgsProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).AllProperties[key] ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).AllProperties[key] ),
 					  "RelationshipArrayProperty[allProps]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperty( key, null ) ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperty( key, null ) ),
 					  "RelationshipArrayProperty[singleProp]"
 				  },
 				  new object[]
 				  {
-					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, entityId, key, node ) => GetEntity( db, entityId, node ).getProperties( key )[key] ),
+					  new PropertyValueActions( LongArray( 'a' ), LongArray( 'b' ), false, ( db, IEntityId, key, node ) => GetEntity( db, IEntityId, node ).getProperties( key )[key] ),
 					  "RelationshipArrayProperty[varArgsProp]"
 				  },
 				  new object[]
@@ -168,24 +168,24 @@ namespace Neo4Net.Kernel.ha.cluster
 			  ClusterRule.withSharedSetting( HaSettings.id_reuse_safe_zone_time, safeZone.ToString() );
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 			  HighlyAvailableGraphDatabase master = cluster.Master;
 
 			  // when
 			  // ... slaves and master has node with long string property
-			  long entityId = Action.createInitialEntity( master );
+			  long IEntityId = Action.createInitialEntity( master );
 			  cluster.Sync();
 			  // ... and property is removed on master
-			  Action.removeProperties( master, entityId );
+			  Action.removeProperties( master, IEntityId );
 			  Thread.Sleep( 100 );
 			  // ... and maintenance is called to make sure "safe" ids are freed to be reused
 			  ForceMaintenance( master );
 			  // ... and a new property is created on master that
-			  Action.setNewProperties( master, entityId );
+			  Action.setNewProperties( master, IEntityId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = cluster.AnySlave;
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  AtomicBoolean end = new AtomicBoolean( false );
 			  for ( int i = 0; i < READER_CONTESTANTS; i++ )
 			  {
-					race.AddContestant( ReadContestant( Action, entityId, slave, end ) );
+					race.AddContestant( ReadContestant( Action, IEntityId, slave, end ) );
 			  }
 
 			  race.AddContestant( PullUpdatesContestant( slave, end ) );
@@ -210,23 +210,23 @@ namespace Neo4Net.Kernel.ha.cluster
 			  ClusterRule.withSharedSetting( HaSettings.id_reuse_safe_zone_time, safeZone.ToString() );
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster = clusterRule.startCluster();
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 			  HighlyAvailableGraphDatabase master = cluster.Master;
 
 			  // when
 			  // ... slaves and master has node with long string property
-			  long entityId = Action.createInitialEntity( master );
+			  long IEntityId = Action.createInitialEntity( master );
 			  cluster.Sync();
 			  // ... and property is removed on master
-			  Action.removeProperties( master, entityId );
+			  Action.removeProperties( master, IEntityId );
 			  // ... and maintenance is called to make sure "safe" ids are freed to be reused
 			  ForceMaintenance( master );
 			  // ... and a new property is created on master that
-			  Action.setNewProperties( master, entityId );
+			  Action.setNewProperties( master, IEntityId );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = cluster.AnySlave;
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			  AtomicBoolean end = new AtomicBoolean( false );
 			  for ( int i = 0; i < READER_CONTESTANTS; i++ )
 			  {
-					race.AddContestant( ReadContestant( Action, entityId, slave, end ) );
+					race.AddContestant( ReadContestant( Action, IEntityId, slave, end ) );
 			  }
 
 			  race.AddContestant( PullUpdatesContestant( slave, end ) );
@@ -243,8 +243,8 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable readContestant(final ReadContestantActions action, final long entityId, final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
-		 private ThreadStart ReadContestant( ReadContestantActions action, long entityId, HighlyAvailableGraphDatabase slave, AtomicBoolean end )
+//ORIGINAL LINE: private Runnable readContestant(final ReadContestantActions action, final long IEntityId, final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
+		 private ThreadStart ReadContestant( ReadContestantActions action, long IEntityId, HighlyAvailableGraphDatabase slave, AtomicBoolean end )
 		 {
 			  return () =>
 			  {
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.ha.cluster
 						 {
 							  for ( int i = 0; i < 10; i++ )
 							  {
-									action.VerifyProperties( slave, entityId );
+									action.VerifyProperties( slave, IEntityId );
 							  }
    
 							  tx.success();
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable pullUpdatesContestant(final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
+//ORIGINAL LINE: private Runnable pullUpdatesContestant(final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave, final java.util.concurrent.atomic.AtomicBoolean end)
 		 private ThreadStart PullUpdatesContestant( HighlyAvailableGraphDatabase slave, AtomicBoolean end )
 		 {
 			  return () =>
@@ -297,14 +297,14 @@ namespace Neo4Net.Kernel.ha.cluster
 		 {
 			  long CreateInitialEntity( HighlyAvailableGraphDatabase db );
 
-			  void RemoveProperties( HighlyAvailableGraphDatabase db, long entityId );
+			  void RemoveProperties( HighlyAvailableGraphDatabase db, long IEntityId );
 
-			  void SetNewProperties( HighlyAvailableGraphDatabase db, long entityId );
+			  void SetNewProperties( HighlyAvailableGraphDatabase db, long IEntityId );
 
-			  void VerifyProperties( HighlyAvailableGraphDatabase db, long entityId );
+			  void VerifyProperties( HighlyAvailableGraphDatabase db, long IEntityId );
 		 }
 
-		 private delegate object FetchProperty( GraphDatabaseService db, long entityId, string key, bool node );
+		 private delegate object FetchProperty( IGraphDatabaseService db, long IEntityId, string key, bool node );
 
 		 private class PropertyValueActions : ReadContestantActions
 		 {
@@ -356,32 +356,32 @@ namespace Neo4Net.Kernel.ha.cluster
 					return relationship.Id;
 			  }
 
-			  public override void RemoveProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void RemoveProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
-						 GetEntity( db, entityId, Node ).removeProperty( KEY );
+						 GetEntity( db, IEntityId, Node ).removeProperty( KEY );
 						 tx.Success();
 					}
 			  }
 
-			  public override void SetNewProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void SetNewProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
-						 GetEntity( db, entityId, Node ).setProperty( KEY, ValueB );
+						 GetEntity( db, IEntityId, Node ).setProperty( KEY, ValueB );
 						 tx.Success();
 					}
 			  }
 
-			  public override void VerifyProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void VerifyProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
-					object value = FetchProperty( db, entityId, KEY, Node );
+					object value = FetchProperty( db, IEntityId, KEY, Node );
 					AssertPropertyValue( value, ValueA, ValueB );
 			  }
 		 }
 
-		 private static PropertyContainer GetEntity( GraphDatabaseService db, long id, bool node )
+		 private static IPropertyContainer GetEntity( IGraphDatabaseService db, long id, bool node )
 		 {
 			  return node ? Db.getNodeById( id ) : Db.getRelationshipById( id );
 		 }
@@ -433,42 +433,42 @@ namespace Neo4Net.Kernel.ha.cluster
 					return relationship.Id;
 			  }
 
-			  internal virtual void CreatePropertyChain( PropertyContainer entity, char prefix )
+			  internal virtual void CreatePropertyChain( IPropertyContainer IEntity, char prefix )
 			  {
 					for ( int i = 0; i < PROPERTY_KEY_CHAIN_LENGTH; i++ )
 					{
-						 entity.SetProperty( "" + prefix + i, i );
+						 IEntity.SetProperty( "" + prefix + i, i );
 					}
 			  }
 
-			  public override void RemoveProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void RemoveProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
-						 PropertyContainer entity = GetEntity( db, entityId );
-						 foreach ( string key in entity.PropertyKeys )
+						 IPropertyContainer IEntity = GetEntity( db, IEntityId );
+						 foreach ( string key in IEntity.PropertyKeys )
 						 {
-							  entity.RemoveProperty( key );
+							  IEntity.RemoveProperty( key );
 						 }
 						 tx.Success();
 					}
 			  }
 
-			  public override void SetNewProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void SetNewProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
-						 CreatePropertyChain( GetEntity( db, entityId ), KeyPrefixB );
+						 CreatePropertyChain( GetEntity( db, IEntityId ), KeyPrefixB );
 						 tx.Success();
 					}
 			  }
 
-			  public override void VerifyProperties( HighlyAvailableGraphDatabase db, long entityId )
+			  public override void VerifyProperties( HighlyAvailableGraphDatabase db, long IEntityId )
 			  {
-					AssertPropertyChain( asSet( GetEntity( db, entityId ).PropertyKeys ), KeyPrefixA, KeyPrefixB );
+					AssertPropertyChain( asSet( GetEntity( db, IEntityId ).PropertyKeys ), KeyPrefixA, KeyPrefixB );
 			  }
 
-			  internal virtual PropertyContainer GetEntity( HighlyAvailableGraphDatabase db, long id )
+			  internal virtual IPropertyContainer GetEntity( HighlyAvailableGraphDatabase db, long id )
 			  {
 					return Node ? Db.getNodeById( id ) : Db.getRelationshipById( id );
 			  }

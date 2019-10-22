@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.Test;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
@@ -62,10 +62,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private const string KEY2 = "key2";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider, org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider, org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.default_schema_provider, GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldHandleCompositeSizesCloseToTheLimit() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldHandleCompositeSizesCloseToTheLimit() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleCompositeSizesCloseToTheLimit()
 		 {

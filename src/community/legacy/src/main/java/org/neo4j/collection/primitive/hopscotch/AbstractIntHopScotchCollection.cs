@@ -57,7 +57,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void visitKeys(org.neo4j.collection.primitive.PrimitiveIntVisitor<E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void visitKeys(org.Neo4Net.collection.primitive.PrimitiveIntVisitor<E> visitor) throws E
 		 public override void VisitKeys<E>( PrimitiveIntVisitor<E> visitor ) where E : Exception
 		 {
 			  int capacity = Table.capacity();

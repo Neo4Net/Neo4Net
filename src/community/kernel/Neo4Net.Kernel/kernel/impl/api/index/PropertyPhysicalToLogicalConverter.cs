@@ -43,9 +43,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Converts physical changes to PropertyRecords for a entity into logical updates
+		 /// Converts physical changes to PropertyRecords for a IEntity into logical updates
 		 /// </summary>
-		 public virtual void ConvertPropertyRecord<T1>( EntityCommandGrouper<T1> changes, EntityUpdates.Builder properties )
+		 public virtual void ConvertPropertyRecord<T1>( IEntityCommandGrouper<T1> changes, IEntityUpdates.Builder properties )
 		 {
 			  MapBlocks( changes );
 
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 		 }
 
-		 private void MapBlocks<T1>( EntityCommandGrouper<T1> changes )
+		 private void MapBlocks<T1>( IEntityCommandGrouper<T1> changes )
 		 {
 			  _beforeBlocksCursor = 0;
 			  _afterBlocksCursor = 0;

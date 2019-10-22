@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.core
 			  this._actions = actions;
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabase
+		 public virtual IGraphDatabaseService GraphDatabase
 		 {
 			 get
 			 {

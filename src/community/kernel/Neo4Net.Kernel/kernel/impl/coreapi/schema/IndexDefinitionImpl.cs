@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.stream;
+//	import static org.Neo4Net.helpers.collection.Iterables.stream;
 
 	public class IndexDefinitionImpl : IndexDefinition
 	{
@@ -327,8 +327,8 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 
 		 public override string ToString()
 		 {
-			  string entityTokenType;
-			  string entityTokens;
+			  string IEntityTokenType;
+			  string IEntityTokens;
 			  if ( InternalIsNodeIndex() )
 			  {
 					entityTokenType = _labels.Length > 1 ? "labels" : "label";
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
 					entityTokens = java.util.relTypes.Select( RelationshipType::name ).collect( joining( "," ) );
 			  }
-			  return "IndexDefinition[" + entityTokenType + ":" + entityTokens + " on:" + string.join( ",", _propertyKeys ) + "]" + ( _indexReference == null ? "" : " (" + _indexReference + ")" );
+			  return "IndexDefinition[" + IEntityTokenType + ":" + IEntityTokens + " on:" + string.join( ",", _propertyKeys ) + "]" + ( _indexReference == null ? "" : " (" + _indexReference + ")" );
 		 }
 
 		 public static string LabelNameList( IEnumerable<Label> labels, string prefix, string postfix )

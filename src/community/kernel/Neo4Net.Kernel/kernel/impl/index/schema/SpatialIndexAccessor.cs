@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
@@ -48,18 +48,18 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.concatResourceIterators;
+//	import static org.Neo4Net.helpers.collection.Iterators.concatResourceIterators;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	internal class SpatialIndexAccessor : SpatialIndexCache<SpatialIndexAccessor.PartAccessor>, IndexAccessor
 	{
 		 private readonly StoreIndexDescriptor _descriptor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SpatialIndexAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.neo4j.kernel.api.index.IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, org.neo4j.gis.spatial.index.curves.SpaceFillingCurveConfiguration searchConfiguration, boolean readOnly) throws java.io.IOException
+//ORIGINAL LINE: SpatialIndexAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, org.Neo4Net.gis.spatial.index.curves.SpaceFillingCurveConfiguration searchConfiguration, boolean readOnly) throws java.io.IOException
 		 internal SpatialIndexAccessor( StoreIndexDescriptor descriptor, PageCache pageCache, FileSystemAbstraction fs, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, SpaceFillingCurveConfiguration searchConfiguration, bool readOnly ) : base( new PartFactory( pageCache, fs, recoveryCleanupWorkCollector, monitor, descriptor, spatialIndexFiles, searchConfiguration, readOnly ) )
 		 {
 			  this._descriptor = descriptor;
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					SpatialVerifyDeferredConstraint.Verify( nodePropertyAccessor, Layout, tree, Descriptor );
@@ -267,7 +267,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public PartAccessor newSpatial(org.neo4j.values.storable.CoordinateReferenceSystem crs) throws java.io.IOException
+//ORIGINAL LINE: public PartAccessor newSpatial(org.Neo4Net.values.storable.CoordinateReferenceSystem crs) throws java.io.IOException
 			  public override PartAccessor NewSpatial( CoordinateReferenceSystem crs )
 			  {
 					SpatialIndexFiles.SpatialFile spatialFile = SpatialIndexFiles.forCrs( crs );

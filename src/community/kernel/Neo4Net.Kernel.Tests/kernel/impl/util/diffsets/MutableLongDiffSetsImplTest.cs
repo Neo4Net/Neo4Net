@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.iterator;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.toSet;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.toSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class MutableLongDiffSetsImplTest
 	{
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 //ORIGINAL LINE: final org.eclipse.collections.api.set.primitive.MutableLongSet set2 = new org.eclipse.collections.impl.set.mutable.primitive.LongHashSet();
 			  MutableLongSet set2 = new LongHashSet();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.CollectionsFactory collectionsFactory = mock(org.neo4j.kernel.impl.util.collection.CollectionsFactory.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.CollectionsFactory collectionsFactory = mock(org.Neo4Net.kernel.impl.util.collection.CollectionsFactory.class);
 			  CollectionsFactory collectionsFactory = mock( typeof( CollectionsFactory ) );
 			  doReturn( set1, set2 ).when( collectionsFactory ).newLongSet();
 

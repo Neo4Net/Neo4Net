@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 	using Directory = org.apache.lucene.store.Directory;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// Represents a single partition of a partitioned lucene index. Each partition is a separate Lucene index.
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 		 /// <returns> the iterator over index files. </returns>
 		 /// <exception cref="IOException"> if any IO operation fails. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.neo4j.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
+//ORIGINAL LINE: public abstract org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
 		 public abstract ResourceIterator<File> Snapshot();
 
 	}

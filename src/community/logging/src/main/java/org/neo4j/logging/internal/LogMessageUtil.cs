@@ -30,7 +30,7 @@ namespace Neo4Net.Logging.Internal
 
 		 /// <summary>
 		 /// Replace SLF4J-style placeholders like {@code {}} with <seealso cref="String.format(string, object...)"/> placeholders like {@code %s} in the given string.
-		 /// This is nessesary for logging adapters that redirect SLF4J loggers to neo4j <seealso cref="Log"/>. Former uses {@code {}} while later {@code %s}.
+		 /// This is nessesary for logging adapters that redirect SLF4J loggers to Neo4Net <seealso cref="Log"/>. Former uses {@code {}} while later {@code %s}.
 		 /// </summary>
 		 /// <param name="template"> the message template to modify. </param>
 		 /// <returns> new message template which can be safely formatted using <seealso cref="String.format(string, object...)"/>. </returns>

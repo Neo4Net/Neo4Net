@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodeRecord(org.neo4j.kernel.impl.store.record.NodeRecord record) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateNodeRecord(org.Neo4Net.kernel.impl.store.record.NodeRecord record) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public virtual void ValidateNodeRecord( NodeRecord record )
 		 {
 			  if ( !record.InUse() && record.NextRel != Record.NO_NEXT_RELATIONSHIP.intValue() )
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateTransactionStartKnowledge(long lastCommittedTxWhenTransactionStarted) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateTransactionStartKnowledge(long lastCommittedTxWhenTransactionStarted) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public virtual void ValidateTransactionStartKnowledge( long lastCommittedTxWhenTransactionStarted )
 		 {
 			  long latestConstraintIntroducingTx = _neoStores.MetaDataStore.LatestConstraintIntroducingTx;
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateSchemaRule(org.neo4j.storageengine.api.schema.SchemaRule schemaRule) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateSchemaRule(org.Neo4Net.storageengine.api.schema.SchemaRule schemaRule) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public virtual void ValidateSchemaRule( SchemaRule schemaRule )
 		 {
 			  if ( schemaRule is ConstraintRule )

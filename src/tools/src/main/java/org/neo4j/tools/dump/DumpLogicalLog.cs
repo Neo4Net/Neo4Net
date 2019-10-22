@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.dump
 {
@@ -45,7 +45,7 @@ namespace Neo4Net.tools.dump
 	using ReportInconsistencies = Neo4Net.tools.dump.inconsistency.ReportInconsistencies;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.DEFAULT_TIME_ZONE;
+//	import static org.Neo4Net.helpers.Format.DEFAULT_TIME_ZONE;
 
 	/// <summary>
 	/// Tool to represent logical logs in readable format for further analysis.
@@ -65,7 +65,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void dump(String filenameOrDirectory, java.io.PrintStream out, System.Predicate<org.neo4j.kernel.impl.transaction.log.entry.LogEntry[]> filter, System.Func<org.neo4j.kernel.impl.transaction.log.entry.LogEntry,String> serializer, org.neo4j.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler) throws java.io.IOException
+//ORIGINAL LINE: public void dump(String filenameOrDirectory, java.io.PrintStream out, System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, System.Func<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> serializer, org.Neo4Net.kernel.impl.transaction.log.entry.InvalidLogEntryHandler invalidLogEntryHandler) throws java.io.IOException
 		 public virtual void Dump( string filenameOrDirectory, PrintStream @out, System.Predicate<LogEntry[]> filter, System.Func<LogEntry, string> serializer, InvalidLogEntryHandler invalidLogEntryHandler )
 		 {
 			  TransactionLogAnalyzer.Analyze( _fileSystem, new File( filenameOrDirectory ), invalidLogEntryHandler, new MonitorAnonymousInnerClass( this, @out, filter, serializer ) );
@@ -261,7 +261,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private static System.Func<org.neo4j.kernel.impl.transaction.log.entry.LogEntry,String> parseSerializer(System.Predicate<org.neo4j.kernel.impl.transaction.log.entry.LogEntry[]> filter, java.util.TimeZone timeZone)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private static System.Func<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry,String> parseSerializer(System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> filter, java.util.TimeZone timeZone)
 		 private static System.Func<LogEntry, string> ParseSerializer( System.Predicate<LogEntry[]> filter, TimeZone timeZone )
 		 {
 			  if ( filter is System.Func )
@@ -272,7 +272,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static System.Predicate<org.neo4j.kernel.impl.transaction.log.entry.LogEntry[]> parseFilter(org.neo4j.helpers.Args arguments, java.util.TimeZone timeZone) throws java.io.IOException
+//ORIGINAL LINE: private static System.Predicate<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry[]> parseFilter(org.Neo4Net.helpers.Args arguments, java.util.TimeZone timeZone) throws java.io.IOException
 		 private static System.Predicate<LogEntry[]> ParseFilter( Args arguments, TimeZone timeZone )
 		 {
 			  string regex = arguments.Get( TX_FILTER );

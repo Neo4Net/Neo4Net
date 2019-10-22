@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 /// Feeds updates raw material in the form of node/property commands, to create updates from. </summary>
 		 /// <param name="nodeCommands"> node data </param>
 		 /// <param name="relationshipCommands"> relationship data </param>
-		 void Feed( EntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, EntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands );
+		 void Feed( IEntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands );
 
 		 bool HasUpdates();
 	}

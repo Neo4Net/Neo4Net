@@ -29,14 +29,14 @@ namespace Neo4Net.Cypher.export
 
 	using ExecutionResult = Neo4Net.Cypher.Internal.javacompat.ExecutionResult;
 	using PathImpl = Neo4Net.Graphalgo.impl.util.PathImpl;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -49,7 +49,7 @@ namespace Neo4Net.Cypher.export
 	public class ExportTest
 	{
 
-		 private GraphDatabaseService _gdb;
+		 private IGraphDatabaseService _gdb;
 		 private Transaction _tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -103,7 +103,7 @@ namespace Neo4Net.Cypher.export
 			  assertEquals( "create (_0 {`double`:" + expected + "})" + lineSeparator() + ";" + lineSeparator(), DoExportGraph(_gdb) );
 		 }
 
-		 private string DoExportGraph( GraphDatabaseService db )
+		 private string DoExportGraph( IGraphDatabaseService db )
 		 {
 			  SubGraph graph = DatabaseSubGraph.From( db );
 			  return DoExportGraph( graph );
@@ -122,7 +122,7 @@ namespace Neo4Net.Cypher.export
 		 {
 			  Node n = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -136,7 +136,7 @@ namespace Neo4Net.Cypher.export
 		 {
 			  Node n = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -152,7 +152,7 @@ namespace Neo4Net.Cypher.export
 			  n.SetProperty( "name", "Node1" );
 			  n.SetProperty( "age", 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -167,7 +167,7 @@ namespace Neo4Net.Cypher.export
 			  Node n = _gdb.createNode();
 			  n.SetProperty( "name", "Brutus \"Brutal\" Howell" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -182,7 +182,7 @@ namespace Neo4Net.Cypher.export
 			  Node n = _gdb.createNode();
 			  n.SetProperty( "name", new string[]{ "Brutus \"Brutal\" Howell", "Dr." } );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -196,11 +196,11 @@ namespace Neo4Net.Cypher.export
 		 {
 			  Node n = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel = n.createRelationshipTo(n, org.neo4j.graphdb.RelationshipType.withName("REL"));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel = n.createRelationshipTo(n, org.Neo4Net.graphdb.RelationshipType.withName("REL"));
 			  Relationship rel = n.CreateRelationshipTo( n, RelationshipType.withName( "REL" ) );
 			  rel.SetProperty( "name", "Brutus \"Brutal\" Howell" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
 			  ExecutionResult result = result( "rel", rel );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -214,11 +214,11 @@ namespace Neo4Net.Cypher.export
 		 {
 			  Node n = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel = n.createRelationshipTo(n, org.neo4j.graphdb.RelationshipType.withName("REL"));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel = n.createRelationshipTo(n, org.Neo4Net.graphdb.RelationshipType.withName("REL"));
 			  Relationship rel = n.CreateRelationshipTo( n, RelationshipType.withName( "REL" ) );
 			  rel.SetProperty( "name", new string[]{ "Brutus \"Brutal\" Howell", "Dr." } );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
 			  ExecutionResult result = result( "rel", rel );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -233,7 +233,7 @@ namespace Neo4Net.Cypher.export
 			  Node n = _gdb.createNode();
 			  n.SetProperty( "name", "Some\\thing" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -248,7 +248,7 @@ namespace Neo4Net.Cypher.export
 			  Node n = _gdb.createNode();
 			  n.SetProperty( "name", "Some\\\"thing" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -264,7 +264,7 @@ namespace Neo4Net.Cypher.export
 			  n.SetProperty( "name", new string[]{ "a", "b" } );
 			  n.SetProperty( "age", new int[]{ 1, 2 } );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -280,7 +280,7 @@ namespace Neo4Net.Cypher.export
 			  n.AddLabel( Label.label( "Foo" ) );
 			  n.AddLabel( Label.label( "Bar" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, false);
@@ -309,14 +309,14 @@ namespace Neo4Net.Cypher.export
 		 public virtual void TestExportIndexesViaCypherResult()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label = org.neo4j.graphdb.Label.label("Foo");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("Foo");
 			  Label label = Label.label( "Foo" );
 			  _gdb.schema().indexFor(label).on("bar").create();
 			  _gdb.schema().indexFor(label).on("bar2").create();
 			  CommitAndStartNewTransactionAfterSchemaChanges();
 			  Node n = _gdb.createNode( label );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -329,14 +329,14 @@ namespace Neo4Net.Cypher.export
 		 public virtual void TestExportConstraintsViaCypherResult()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label = org.neo4j.graphdb.Label.label("Foo");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("Foo");
 			  Label label = Label.label( "Foo" );
 			  _gdb.schema().constraintFor(label).assertPropertyIsUnique("bar").create();
 			  _gdb.schema().constraintFor(label).assertPropertyIsUnique("bar2").create();
 			  CommitAndStartNewTransactionAfterSchemaChanges();
 			  Node n = _gdb.createNode( label );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("node", n);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("node", n);
 			  ExecutionResult result = result( "node", n );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -357,10 +357,10 @@ namespace Neo4Net.Cypher.export
 		 {
 			  Node n = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel = n.createRelationshipTo(n, org.neo4j.graphdb.RelationshipType.withName("REL"));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel = n.createRelationshipTo(n, org.Neo4Net.graphdb.RelationshipType.withName("REL"));
 			  Relationship rel = n.CreateRelationshipTo( n, RelationshipType.withName( "REL" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("rel", rel);
 			  ExecutionResult result = result( "rel", rel );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -375,13 +375,13 @@ namespace Neo4Net.Cypher.export
 			  Node n1 = _gdb.createNode();
 			  Node n2 = _gdb.createNode();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel = n1.createRelationshipTo(n2, org.neo4j.graphdb.RelationshipType.withName("REL"));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel = n1.createRelationshipTo(n2, org.Neo4Net.graphdb.RelationshipType.withName("REL"));
 			  Relationship rel = n1.CreateRelationshipTo( n2, RelationshipType.withName( "REL" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Path path = new org.neo4j.graphalgo.impl.util.PathImpl.Builder(n1).push(rel).build();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Path path = new org.Neo4Net.graphalgo.impl.util.PathImpl.Builder(n1).push(rel).build();
 			  Path path = ( new PathImpl.Builder( n1 ) ).push( rel ).build();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cypher.internal.javacompat.ExecutionResult result = result("path", path);
+//ORIGINAL LINE: final org.Neo4Net.cypher.internal.javacompat.ExecutionResult result = result("path", path);
 			  ExecutionResult result = result( "path", path );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final SubGraph graph = CypherResultSubGraph.from(result, gdb, true);
@@ -390,7 +390,7 @@ namespace Neo4Net.Cypher.export
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.cypher.internal.javacompat.ExecutionResult result(String column, Object value)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.cypher.internal.javacompat.ExecutionResult result(String column, Object value)
 		 private ExecutionResult Result( string column, object value )
 		 {
 			  ExecutionResult result = Mockito.mock( typeof( ExecutionResult ) );
@@ -400,7 +400,7 @@ namespace Neo4Net.Cypher.export
 			  IEnumerator<IDictionary<string, object>> inner = asList( singletonMap( column, value ) ).GetEnumerator();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.ResourceIterator<java.util.Map<String, Object>> iterator = new org.neo4j.graphdb.ResourceIterator<java.util.Map<String, Object>>()
+//ORIGINAL LINE: final org.Neo4Net.graphdb.ResourceIterator<java.util.Map<String, Object>> iterator = new org.Neo4Net.graphdb.ResourceIterator<java.util.Map<String, Object>>()
 			  ResourceIterator<IDictionary<string, object>> iterator = new ResourceIteratorAnonymousInnerClass( this, inner );
 
 			  Mockito.when( result.GetEnumerator() ).thenReturn(iterator);
@@ -451,15 +451,15 @@ namespace Neo4Net.Cypher.export
 		 public virtual void TestFromSimpleGraph()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node n0 = gdb.createNode();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node n0 = gdb.createNode();
 			  Node n0 = _gdb.createNode();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node n1 = gdb.createNode();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node n1 = gdb.createNode();
 			  Node n1 = _gdb.createNode();
 			  n1.SetProperty( "name", "Node1" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship relationship = n0.createRelationshipTo(n1, org.neo4j.graphdb.RelationshipType.withName("REL"));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship relationship = n0.createRelationshipTo(n1, org.Neo4Net.graphdb.RelationshipType.withName("REL"));
 			  Relationship relationship = n0.CreateRelationshipTo( n1, RelationshipType.withName( "REL" ) );
 			  relationship.SetProperty( "related", true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

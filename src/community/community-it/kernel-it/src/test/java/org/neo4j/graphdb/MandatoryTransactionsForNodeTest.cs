@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
@@ -37,9 +37,9 @@ namespace Neo4Net.Graphdb
 			  AssertFacadeMethodsThrowAfterTerminate( NodeFacadeMethods.values() );
 		 }
 
-		 protected internal override Node ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override Node ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService.CreateNode();
+			  return IGraphDatabaseService.CreateNode();
 		 }
 	}
 

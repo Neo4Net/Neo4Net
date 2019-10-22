@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Helpers.Collections
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
-	using ResourceUtils = Neo4Net.Graphdb.ResourceUtils;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
+	using ResourceUtils = Neo4Net.GraphDb.ResourceUtils;
 
 	public abstract class ResourceClosingIterator<T, V> : ResourceIterator<V>
 	{

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.emptyResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	public class PopulatingIndexProxy : IndexProxy
 	{
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
 		 public override IndexUpdater NewUpdater( IndexUpdateMode mode )
 		 {
 			  switch ( mode.innerEnumValue )
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexReader newReader() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader newReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader NewReader()
 		 {
 			  throw new IndexNotFoundKernelException( "Index is still populating: " + _job );

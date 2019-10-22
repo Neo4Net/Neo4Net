@@ -42,9 +42,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.DoubleLatch.awaitLatch;
+//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
 
 	public class ControlledPopulationIndexProvider : IndexProvider
 	{
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual DoubleLatch InstallPopulationJobCompletionLatch()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch populationCompletionLatch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch populationCompletionLatch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch populationCompletionLatch = new DoubleLatch();
 			  _mockedPopulator = new IndexPopulator_AdapterAnonymousInnerClass( this, populationCompletionLatch );
 			  return populationCompletionLatch;
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  throw new System.InvalidOperationException();

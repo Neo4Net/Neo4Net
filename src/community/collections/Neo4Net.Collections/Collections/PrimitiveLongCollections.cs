@@ -28,7 +28,7 @@ namespace Neo4Net.Collections
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// Basic and common primitive int collection utils and manipulations.
@@ -46,14 +46,14 @@ namespace Neo4Net.Collections
 //ORIGINAL LINE: public static org.eclipse.collections.api.iterator.LongIterator iterator(final long... items)
 		 public static LongIterator Iterator( params long[] items )
 		 {
-			  return new PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Neo4Net.Graphdb.Resource_Fields.Empty, items );
+			  return new PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Neo4Net.GraphDb.Resource_Fields.Empty, items );
 		 }
 
 		 private class PrimitiveLongBaseResourceIteratorAnonymousInnerClass : PrimitiveLongResourceCollections.PrimitiveLongBaseResourceIterator
 		 {
 			 private long[] _items;
 
-			 public PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Resource org, long[] items ) : base( org.neo4j.graphdb.Resource_Fields.Empty )
+			 public PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Resource org, long[] items ) : base( org.Neo4Net.graphdb.Resource_Fields.Empty )
 			 {
 				 this._items = items;
 			 }
@@ -317,7 +317,7 @@ namespace Neo4Net.Collections
 		 /// <param name="resource"> <seealso cref="Resource"/> to close in <seealso cref="PrimitiveLongResourceIterator.close()"/> </param>
 		 /// <returns> Wrapped <seealso cref="LongIterator"/>. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static PrimitiveLongResourceIterator resourceIterator(final org.eclipse.collections.api.iterator.LongIterator iterator, final org.neo4j.graphdb.Resource resource)
+//ORIGINAL LINE: public static PrimitiveLongResourceIterator resourceIterator(final org.eclipse.collections.api.iterator.LongIterator iterator, final org.Neo4Net.graphdb.Resource resource)
 		 public static PrimitiveLongResourceIterator ResourceIterator( LongIterator iterator, Resource resource )
 		 {
 			  return new PrimitiveLongResourceIteratorAnonymousInnerClass( iterator, resource );

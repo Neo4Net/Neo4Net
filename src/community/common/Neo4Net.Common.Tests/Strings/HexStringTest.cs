@@ -32,7 +32,7 @@ namespace Neo4Net.Strings
       internal virtual void ShouldEncodeBytesToString()
       {
          string result = HexString.EncodeHexString(new sbyte[] { unchecked((sbyte)0xFF), unchecked((sbyte)0x94), (sbyte)0x5C, (sbyte)0x00, (sbyte)0x3D });
-         assertEquals("FF945C003D", result);
+        Assert.Equals("FF945C003D", result);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -40,7 +40,7 @@ namespace Neo4Net.Strings
       internal virtual void ShouldEncodeEmptyBytesToEmptyString()
       {
          string result = HexString.EncodeHexString(new sbyte[] { });
-         assertEquals("", result);
+        Assert.Equals("", result);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

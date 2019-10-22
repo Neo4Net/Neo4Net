@@ -34,7 +34,7 @@ namespace Neo4Net.Storageengine.Api.txstate
 	/// <li><seealso cref="changedProperties() changed property values"/>.</li>
 	/// </ul>
 	/// </summary>
-	public interface PropertyContainerState
+	public interface IPropertyContainerState
 	{
 		 IEnumerator<StorageProperty> AddedProperties();
 
@@ -51,12 +51,12 @@ namespace Neo4Net.Storageengine.Api.txstate
 		 Value PropertyValue( int propertyKey );
 	}
 
-	public static class PropertyContainerState_Fields
+	public static class IPropertyContainerState_Fields
 	{
-		 public static readonly PropertyContainerState Empty = new PropertyContainerState_EmptyPropertyContainerState();
+		 public static readonly IPropertyContainerState Empty = new IPropertyContainerState_EmptyPropertyContainerState();
 	}
 
-	 public class PropertyContainerState_EmptyPropertyContainerState : PropertyContainerState
+	 public class IPropertyContainerState_EmptyPropertyContainerState : IPropertyContainerState
 	 {
 		  public override IEnumerator<StorageProperty> AddedProperties()
 		  {

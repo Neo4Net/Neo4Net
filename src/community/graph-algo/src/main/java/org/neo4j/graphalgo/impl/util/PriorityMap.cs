@@ -33,13 +33,13 @@ namespace Neo4Net.Graphalgo.impl.util
 		 public sealed class Entry<E, P>
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly E EntityConflict;
+			  internal readonly E IEntityConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly P PriorityConflict;
 
-			  internal Entry( E entity, P priority )
+			  internal Entry( E IEntity, P priority )
 			  {
-					this.EntityConflict = entity;
+					this.EntityConflict = IEntity;
 					this.PriorityConflict = priority;
 			  }
 
@@ -47,11 +47,11 @@ namespace Neo4Net.Graphalgo.impl.util
 			  {
 			  }
 
-			  public E Entity
+			  public E IEntity
 			  {
 				  get
 				  {
-						return EntityConflict;
+						return IEntityConflict;
 				  }
 			  }
 
@@ -132,20 +132,20 @@ namespace Neo4Net.Graphalgo.impl.util
 		 }
 
 		 /// <summary>
-		 /// Add an entity to the priority map. If the key for the {@code entity}
+		 /// Add an IEntity to the priority map. If the key for the {@code IEntity}
 		 /// was already found in the priority map and the priority is the same
-		 /// the entity will be added. If the priority is lower the existing entities
+		 /// the IEntity will be added. If the priority is lower the existing entities
 		 /// for that key will be discarded.
 		 /// </summary>
-		 /// <param name="entity"> the entity to add. </param>
-		 /// <param name="priority"> the priority of the entity. </param>
-		 /// <returns> whether or not the entity (with its priority) was added to the
-		 /// priority map. Will return {@code false} iff the key for the entity
+		 /// <param name="entity"> the IEntity to add. </param>
+		 /// <param name="priority"> the priority of the IEntity. </param>
+		 /// <returns> whether or not the IEntity (with its priority) was added to the
+		 /// priority map. Will return {@code false} iff the key for the IEntity
 		 /// already exist and its priority is better than the given
 		 /// {@code priority}. </returns>
-		 public virtual bool Put( E entity, P priority )
+		 public virtual bool Put( E IEntity, P priority )
 		 {
-			  K key = _keyFunction.convert( entity );
+			  K key = _keyFunction.convert( IEntity );
 			  Node<E, P> node = _map[key];
 			  bool result = false;
 			  if ( node != null )
@@ -154,13 +154,13 @@ namespace Neo4Net.Graphalgo.impl.util
 					{
 						 if ( _order.Compare( priority, node.Head.priority ) == 0 )
 						 { // ...with same priority => add as a candidate first in chain
-							  node.Head = new Link<P>( entity, priority, node.Head );
+							  node.Head = new Link<P>( IEntity, priority, node.Head );
 							  result = true;
 						 }
 						 else if ( _order.Compare( priority, node.Head.priority ) < 0 )
 						 { // ...with lower (better) priority => this new one replaces any existing
 							  queue.remove( node );
-							  PutNew( entity, priority, key );
+							  PutNew( IEntity, priority, key );
 							  result = true;
 						 }
 					}
@@ -168,7 +168,7 @@ namespace Neo4Net.Graphalgo.impl.util
 					{ // put in the appropriate place in the node linked list
 						 if ( _order.Compare( priority, node.Head.priority ) < 0 )
 						 { // ...first in chain and re-insert to queue
-							  node.Head = new Link<P>( entity, priority, node.Head );
+							  node.Head = new Link<P>( IEntity, priority, node.Head );
 							  Reinsert( node );
 							  result = true;
 						 }
@@ -183,7 +183,7 @@ namespace Neo4Net.Graphalgo.impl.util
 									if ( _order.Compare( priority, link.Priority ) <= 0 )
 									{ // here's our place, put it
 										 // NODE ==> N ==> N ==> N
-										 prev.Next = new Link<P>( entity, priority, link );
+										 prev.Next = new Link<P>( IEntity, priority, link );
 										 result = true;
 										 break;
 									}
@@ -192,7 +192,7 @@ namespace Neo4Net.Graphalgo.impl.util
 							  }
 							  if ( !result )
 							  { // not added so append last in the chain
-									prev.Next = new Link<P>( entity, priority, null );
+									prev.Next = new Link<P>( IEntity, priority, null );
 									result = true;
 							  }
 						 }
@@ -200,15 +200,15 @@ namespace Neo4Net.Graphalgo.impl.util
 			  }
 			  else
 			  { // Didn't exist, just put
-					PutNew( entity, priority, key );
+					PutNew( IEntity, priority, key );
 					result = true;
 			  }
 			  return result;
 		 }
 
-		 private void PutNew( E entity, P priority, K key )
+		 private void PutNew( E IEntity, P priority, K key )
 		 {
-			  Node<E, P> node = new Node<E, P>( new Link<>( entity, priority, null ) );
+			  Node<E, P> node = new Node<E, P>( new Link<>( IEntity, priority, null ) );
 			  _map[key] = node;
 			  queue.add( node );
 		 }
@@ -220,10 +220,10 @@ namespace Neo4Net.Graphalgo.impl.util
 		 }
 
 		 /// <summary>
-		 /// Get the priority for the entity with the specified key.
+		 /// Get the priority for the IEntity with the specified key.
 		 /// </summary>
 		 /// <param name="key"> the key. </param>
-		 /// <returns> the priority for the the entity with the specified key. </returns>
+		 /// <returns> the priority for the the IEntity with the specified key. </returns>
 		 public virtual P Get( K key )
 		 {
 			  Node<E, P> node = _map[key];
@@ -305,13 +305,13 @@ namespace Neo4Net.Graphalgo.impl.util
 
 		 private class Link<E, P>
 		 {
-			  internal readonly E Entity;
+			  internal readonly E IEntity;
 			  internal readonly P Priority;
 			  internal Link<E, P> Next;
 
-			  internal Link( E entity, P priority, Link<E, P> next )
+			  internal Link( E IEntity, P priority, Link<E, P> next )
 			  {
-					this.Entity = entity;
+					this.Entity = IEntity;
 					this.Priority = priority;
 					this.Next = next;
 			  }

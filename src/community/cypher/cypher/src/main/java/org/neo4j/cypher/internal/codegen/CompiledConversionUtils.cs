@@ -25,9 +25,9 @@ namespace Neo4Net.Cypher.Internal.codegen
 
 	using CypherTypeException = Neo4Net.Cypher.Internal.v3_5.util.CypherTypeException;
 	using IncomparableValuesException = Neo4Net.Cypher.Internal.v3_5.util.IncomparableValuesException;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxyWrappingNodeValue = Neo4Net.Kernel.impl.util.NodeProxyWrappingNodeValue;
 	using RelationshipProxyWrappingValue = Neo4Net.Kernel.impl.util.RelationshipProxyWrappingValue;
@@ -50,9 +50,9 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
+//	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	// Class with static methods used by compiled execution plans
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -268,7 +268,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"unchecked", "WeakerAccess"}) public static org.neo4j.values.AnyValue materializeAnyResult(org.neo4j.kernel.impl.core.EmbeddedProxySPI proxySpi, Object anyValue)
+//ORIGINAL LINE: @SuppressWarnings({"unchecked", "WeakerAccess"}) public static org.Neo4Net.values.AnyValue materializeAnyResult(org.Neo4Net.kernel.impl.core.EmbeddedProxySPI proxySpi, Object anyValue)
 		 public static AnyValue MaterializeAnyResult( EmbeddedProxySPI proxySpi, object anyValue )
 		 {
 			  if ( anyValue == null || anyValue == NO_VALUE )
@@ -563,7 +563,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public static long unboxNodeOrNull(org.neo4j.values.virtual.VirtualNodeValue value)
+//ORIGINAL LINE: @SuppressWarnings("unused") public static long unboxNodeOrNull(org.Neo4Net.values.virtual.VirtualNodeValue value)
 		 public static long UnboxNodeOrNull( VirtualNodeValue value )
 		 {
 			  if ( value == null )
@@ -574,7 +574,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public static long unboxRelationshipOrNull(org.neo4j.values.virtual.VirtualRelationshipValue value)
+//ORIGINAL LINE: @SuppressWarnings("unused") public static long unboxRelationshipOrNull(org.Neo4Net.values.virtual.VirtualRelationshipValue value)
 		 public static long UnboxRelationshipOrNull( VirtualRelationshipValue value )
 		 {
 			  if ( value == null )
@@ -641,9 +641,9 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  {
 					return Values.of( ( ( RelationshipProxyWrappingValue ) @object ).relationshipProxy().getProperty(key) );
 			  }
-			  if ( @object is PropertyContainer ) // Entity that is not wrapped by an AnyValue
+			  if ( @object is IPropertyContainer ) // IEntity that is not wrapped by an AnyValue
 			  {
-					return Values.of( ( ( PropertyContainer ) @object ).getProperty( key ) );
+					return Values.of( ( ( IPropertyContainer ) @object ).getProperty( key ) );
 			  }
 			  if ( @object is NodeValue )
 			  {
@@ -661,11 +661,11 @@ namespace Neo4Net.Cypher.Internal.codegen
 					return map[key];
 			  }
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (object instanceof org.neo4j.values.storable.TemporalValue<?,?>)
+//ORIGINAL LINE: if (object instanceof org.Neo4Net.values.storable.TemporalValue<?,?>)
 			  if ( @object is TemporalValue<object, ?> )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return ((org.neo4j.values.storable.TemporalValue<?,?>) object).get(key);
+//ORIGINAL LINE: return ((org.Neo4Net.values.storable.TemporalValue<?,?>) object).get(key);
 					return ( ( TemporalValue<object, ?> ) @object ).get( key );
 			  }
 			  if ( @object is DurationValue )

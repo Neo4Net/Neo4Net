@@ -26,13 +26,13 @@ namespace Neo4Net.Harness
 	using Statement = org.junit.runners.model.Statement;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MyUnmanagedExtension = Neo4Net.Harness.extensionpackage.MyUnmanagedExtension;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
@@ -52,27 +52,27 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.getRelativePath;
+//	import static org.Neo4Net.server.ServerTestUtils.getRelativePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.getSharedTestTemporaryFolder;
+//	import static org.Neo4Net.server.ServerTestUtils.getSharedTestTemporaryFolder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class JUnitRuleTestIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.harness.junit.Neo4jRule neo4j = new org.neo4j.harness.junit.Neo4jRule().withFixture("CREATE (u:User)").withConfig(org.neo4j.graphdb.factory.GraphDatabaseSettings.db_timezone.name(), org.neo4j.logging.LogTimeZone.SYSTEM.toString()).withConfig(org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService ->
-		 public Neo4jRule Neo4j = new Neo4jRule().withFixture("CREATE (u:User)").withConfig(GraphDatabaseSettings.db_timezone.name(), LogTimeZone.SYSTEM.ToString()).withConfig(LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(SharedTestTemporaryFolder, LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService =>
+//ORIGINAL LINE: @Rule public org.Neo4Net.harness.junit.Neo4NetRule Neo4Net = new org.Neo4Net.harness.junit.Neo4NetRule().withFixture("CREATE (u:User)").withConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone.name(), org.Neo4Net.logging.LogTimeZone.SYSTEM.toString()).withConfig(org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(getSharedTestTemporaryFolder(), org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService ->
+		 public Neo4NetRule Neo4Net = new Neo4NetRule().withFixture("CREATE (u:User)").withConfig(GraphDatabaseSettings.db_timezone.name(), LogTimeZone.SYSTEM.ToString()).withConfig(LegacySslPolicyConfig.certificates_directory.name(), getRelativePath(SharedTestTemporaryFolder, LegacySslPolicyConfig.certificates_directory)).withFixture(graphDatabaseService =>
 		 {
-					 using ( Transaction tx = graphDatabaseService.beginTx() )
+					 using ( Transaction tx = IGraphDatabaseService.beginTx() )
 					 {
-						  graphDatabaseService.createNode( Label.label( "User" ) );
+						  IGraphDatabaseService.createNode( Label.label( "User" ) );
 						  tx.success();
 					 }
 					 return null;
@@ -87,7 +87,7 @@ namespace Neo4Net.Harness
 			  // When I run this test
 
 			  // Then
-			  assertThat( HTTP.GET( Neo4j.httpURI().resolve("test/myExtension").ToString() ).status(), equalTo(234) );
+			  assertThat( HTTP.GET( Neo4Net.httpURI().resolve("test/myExtension").ToString() ).status(), equalTo(234) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -100,7 +100,7 @@ namespace Neo4Net.Harness
 			  // When I run this test
 
 			  // Then
-			  HTTP.Response response = HTTP.POST( Neo4j.httpURI().ToString() + "db/data/transaction/commit", quotedJson("{'statements':[{'statement':'MATCH (n:User) RETURN n'}]}") );
+			  HTTP.Response response = HTTP.POST( Neo4Net.httpURI().ToString() + "db/data/transaction/commit", quotedJson("{'statements':[{'statement':'MATCH (n:User) RETURN n'}]}") );
 
 			  assertThat( response.Get( "results" ).get( 0 ).get( "data" ).size(), equalTo(2) );
 		 }
@@ -114,7 +114,7 @@ namespace Neo4Net.Harness
 			  // When I run this test
 
 			  // Then
-			  assertEquals( 2, Iterators.count( Neo4j.GraphDatabaseService.execute( "MATCH (n:User) RETURN n" ) ) );
+			  assertEquals( 2, Iterators.count( Neo4Net.GraphDatabaseService.execute( "MATCH (n:User) RETURN n" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -125,7 +125,7 @@ namespace Neo4Net.Harness
 			  // given a root folder, create /databases/graph.db folders.
 			  File oldDir = TestDirectory.directory( "old" );
 			  File storeDir = Config.defaults( GraphDatabaseSettings.data_directory, oldDir.toPath().ToString() ).get(GraphDatabaseSettings.database_path);
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 
 			  try
 			  {
@@ -139,8 +139,8 @@ namespace Neo4Net.Harness
 			  // When a rule with an pre-populated graph db directory is used
 			  File newDir = TestDirectory.directory( "new" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.harness.junit.Neo4jRule ruleWithDirectory = new org.neo4j.harness.junit.Neo4jRule(newDir).copyFrom(oldDir);
-			  Neo4jRule ruleWithDirectory = ( new Neo4jRule( newDir ) ).copyFrom( oldDir );
+//ORIGINAL LINE: final org.Neo4Net.harness.junit.Neo4NetRule ruleWithDirectory = new org.Neo4Net.harness.junit.Neo4NetRule(newDir).copyFrom(oldDir);
+			  Neo4NetRule ruleWithDirectory = ( new Neo4NetRule( newDir ) ).copyFrom( oldDir );
 			  Statement statement = ruleWithDirectory.apply(new StatementAnonymousInnerClass(this, ruleWithDirectory)
 			 , null);
 
@@ -152,9 +152,9 @@ namespace Neo4Net.Harness
 		 {
 			 private readonly JUnitRuleTestIT _outerInstance;
 
-			 private Neo4jRule _ruleWithDirectory;
+			 private Neo4NetRule _ruleWithDirectory;
 
-			 public StatementAnonymousInnerClass( JUnitRuleTestIT outerInstance, Neo4jRule ruleWithDirectory )
+			 public StatementAnonymousInnerClass( JUnitRuleTestIT outerInstance, Neo4NetRule ruleWithDirectory )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._ruleWithDirectory = ruleWithDirectory;
@@ -178,7 +178,7 @@ namespace Neo4Net.Harness
 		 {
 			  string currentOffset = CurrentTimeZoneOffsetString();
 
-			  assertThat( ContentOf( "neo4j.log" ), containsString( currentOffset ) );
+			  assertThat( ContentOf( "Neo4Net.log" ), containsString( currentOffset ) );
 			  assertThat( ContentOf( "debug.log" ), containsString( currentOffset ) );
 		 }
 
@@ -186,7 +186,7 @@ namespace Neo4Net.Harness
 //ORIGINAL LINE: private String contentOf(String file) throws java.io.IOException
 		 private string ContentOf( string file )
 		 {
-			  GraphDatabaseAPI api = ( GraphDatabaseAPI ) Neo4j.GraphDatabaseService;
+			  GraphDatabaseAPI api = ( GraphDatabaseAPI ) Neo4Net.GraphDatabaseService;
 			  Config config = api.DependencyResolver.resolveDependency( typeof( Config ) );
 			  File dataDirectory = config.Get( GraphDatabaseSettings.data_directory );
 			  return new string( Files.readAllBytes( ( new File( dataDirectory, file ) ).toPath() ), UTF_8 );

@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.array;
+//	import static org.Neo4Net.helpers.collection.Iterators.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
+//	import static org.Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.GivenTransactionCursor.given;
+//	import static org.Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.given;
 
 	public class EagerlyReversedTransactionCursorTest
 	{

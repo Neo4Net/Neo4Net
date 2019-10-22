@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.core
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Strings = Neo4Net.Helpers.Strings;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 
-	public class TestPropertyTypes : AbstractNeo4jTestCase
+	public class TestPropertyTypes : AbstractNeo4NetTestCase
 	{
 		 private Node _node1;
 

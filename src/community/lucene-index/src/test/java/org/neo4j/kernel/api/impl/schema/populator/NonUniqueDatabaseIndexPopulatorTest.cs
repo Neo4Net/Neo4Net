@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({DefaultFileSystemExtension.class, TestDirectoryExtension.class}) class NonUniqueDatabaseIndexPopulatorTest
@@ -61,10 +61,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	{
 		 private readonly DirectoryFactory _dirFactory = new Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory_InMemoryDirectoryFactory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
 		 private DefaultFileSystemAbstraction _fileSystem;
 
 		 private SchemaIndex _index;
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 			  _populator = NewPopulator();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "aaa"), add(2, labelSchemaDescriptor, "bbb"), add(3, labelSchemaDescriptor, "ccc"));
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "aaa"), add(2, labelSchemaDescriptor, "bbb"), add(3, labelSchemaDescriptor, "ccc"));
 			  IList<IndexEntryUpdate<object>> updates = Arrays.asList( add( 1, _labelSchemaDescriptor, "aaa" ), add( 2, _labelSchemaDescriptor, "bbb" ), add( 3, _labelSchemaDescriptor, "ccc" ) );
 
 			  updates.ForEach( _populator.includeSample );
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 			  _populator = NewPopulator();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "foo"), add(2, labelSchemaDescriptor, "bar"), add(3, labelSchemaDescriptor, "foo"));
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "foo"), add(2, labelSchemaDescriptor, "bar"), add(3, labelSchemaDescriptor, "foo"));
 			  IList<IndexEntryUpdate<object>> updates = Arrays.asList( add( 1, _labelSchemaDescriptor, "foo" ), add( 2, _labelSchemaDescriptor, "bar" ), add( 3, _labelSchemaDescriptor, "foo" ) );
 
 			  updates.ForEach( _populator.includeSample );
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 			  _populator = NewPopulator();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "foo"), add(2, labelSchemaDescriptor, "bar"), add(42, labelSchemaDescriptor, "bar"));
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, labelSchemaDescriptor, "foo"), add(2, labelSchemaDescriptor, "bar"), add(42, labelSchemaDescriptor, "bar"));
 			  IList<IndexEntryUpdate<object>> updates = Arrays.asList( add( 1, _labelSchemaDescriptor, "foo" ), add( 2, _labelSchemaDescriptor, "bar" ), add( 42, _labelSchemaDescriptor, "bar" ) );
 
 			  _populator.add( updates );

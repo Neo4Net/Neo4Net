@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -51,13 +51,13 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V1;
+//	import static org.Neo4Net.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V1;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class ClusterDiscoveryIT
@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(config).withNumberOfReadReplicas(1).startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(config).withNumberOfReadReplicas(1).startCluster();
 			  Cluster<object> cluster = ClusterRule.withSharedCoreParams( Config ).withNumberOfReadReplicas( 1 ).startCluster();
 
 			  // then
@@ -117,7 +117,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(config).withNumberOfReadReplicas(2).startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(config).withNumberOfReadReplicas(2).startCluster();
 			  Cluster<object> cluster = ClusterRule.withSharedCoreParams( Config ).withNumberOfReadReplicas( 2 ).startCluster();
 
 			  try
@@ -134,7 +134,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<java.util.Map<String,Object>> getMembers(org.neo4j.kernel.impl.factory.GraphDatabaseFacade db) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<java.util.Map<String,Object>> getMembers(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<IDictionary<string, object>> GetMembers( GraphDatabaseFacade db )
 		 {

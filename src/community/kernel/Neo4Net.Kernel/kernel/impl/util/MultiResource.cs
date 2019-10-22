@@ -23,16 +23,16 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using IOUtils = Neo4Net.Io.IOUtils;
 
 	public sealed class MultiResource : Resource
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<? extends org.neo4j.graphdb.Resource> resources;
+//ORIGINAL LINE: private final java.util.Collection<? extends org.Neo4Net.graphdb.Resource> resources;
 		 private readonly ICollection<Resource> _resources;
 
-		 public MultiResource<T1>( ICollection<T1> resources ) where T1 : Neo4Net.Graphdb.Resource
+		 public MultiResource<T1>( ICollection<T1> resources ) where T1 : Neo4Net.GraphDb.Resource
 		 {
 			  this._resources = resources;
 		 }

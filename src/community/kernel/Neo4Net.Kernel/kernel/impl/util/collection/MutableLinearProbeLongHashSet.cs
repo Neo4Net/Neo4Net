@@ -32,13 +32,13 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using SynchronizedLongSet = org.eclipse.collections.impl.set.mutable.primitive.SynchronizedLongSet;
 	using UnmodifiableLongSet = org.eclipse.collections.impl.set.mutable.primitive.UnmodifiableLongSet;
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.bitCount;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkArgument;
+//	import static org.Neo4Net.util.Preconditions.checkArgument;
 
 	/// <summary>
 	/// Off heap implementation of long hash set.

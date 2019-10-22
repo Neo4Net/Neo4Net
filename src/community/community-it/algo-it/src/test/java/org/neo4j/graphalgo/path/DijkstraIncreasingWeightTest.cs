@@ -22,23 +22,23 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Graphalgo.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
 	using Neo4Net.Graphalgo;
 	using Dijkstra = Neo4Net.Graphalgo.impl.path.Dijkstra;
 	using PathInterestFactory = Neo4Net.Graphalgo.impl.util.PathInterestFactory;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.traversal;
-	using Neo4Net.Graphdb.traversal;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.traversal;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
@@ -50,7 +50,7 @@ namespace Neo4Net.Graphalgo.path
 //	import static org.junit.Assert.assertTrue;
 
 
-	public class DijkstraIncreasingWeightTest : Neo4jAlgoTestCase
+	public class DijkstraIncreasingWeightTest : Neo4NetAlgoTestCase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFetchLongerPaths()
@@ -277,9 +277,9 @@ namespace Neo4Net.Graphalgo.path
 			  SetWeight( "b", "c", 2 );
 			  SetWeight( "c", "d", 5 );
 
-			  InitialBranchState<int> state = new Neo4Net.Graphdb.traversal.InitialBranchState_State<int>( 0, 0 );
+			  InitialBranchState<int> state = new Neo4Net.GraphDb.traversal.InitialBranchState_State<int>( 0, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.neo4j.graphdb.Node, int> encounteredState = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<org.Neo4Net.graphdb.Node, int> encounteredState = new java.util.HashMap<>();
 			  IDictionary<Node, int> encounteredState = new Dictionary<Node, int>();
 			  PathExpander<int> expander = new PathExpanderAnonymousInnerClass( this, state, encounteredState );
 

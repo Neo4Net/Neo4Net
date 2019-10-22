@@ -21,14 +21,14 @@ namespace Neo4Net.Server.modules
 {
 	using WebServer = Neo4Net.Server.web.WebServer;
 
-	public class Neo4jBrowserModule : ServerModule
+	public class Neo4NetBrowserModule : ServerModule
 	{
 		 private const string DEFAULT_NEO4_J_BROWSER_PATH = "/browser";
 		 private const string DEFAULT_NEO4_J_BROWSER_STATIC_WEB_CONTENT_LOCATION = "browser";
 
 		 private readonly WebServer _webServer;
 
-		 public Neo4jBrowserModule( WebServer webServer )
+		 public Neo4NetBrowserModule( WebServer webServer )
 		 {
 			  this._webServer = webServer;
 		 }

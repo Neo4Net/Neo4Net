@@ -23,19 +23,19 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.domain
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Neo4Net.Helpers.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
@@ -45,15 +45,15 @@ namespace Neo4Net.Server.rest.domain
 	using Database = Neo4Net.Server.database.Database;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 
 	public class GraphDbHelper
 	{
@@ -296,7 +296,7 @@ namespace Neo4Net.Server.rest.domain
 		 {
 			  using ( Transaction transaction = _database.Graph.beginTransaction( @implicit, AUTH_DISABLED ) )
 			  {
-					Index<Node> index = _database.Graph.index().forNodes(named, MapUtil.stringMap(Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext"));
+					Index<Node> index = _database.Graph.index().forNodes(named, MapUtil.stringMap(Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext"));
 					transaction.Success();
 					return index;
 			  }
@@ -401,7 +401,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.graphdb.schema.ConstraintDefinition> getPropertyUniquenessConstraints(String labelName, final String propertyKey)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.graphdb.schema.ConstraintDefinition> getPropertyUniquenessConstraints(String labelName, final String propertyKey)
 		 public virtual IEnumerable<ConstraintDefinition> GetPropertyUniquenessConstraints( string labelName, string propertyKey )
 		 {
 			  using ( Transaction tx = _database.Graph.beginTransaction( @implicit, AnonymousContext.read() ) )

@@ -49,7 +49,7 @@ namespace Neo4Net.Ssl
 	{
 		 /* Generating SSL certificates takes a long time.
 		  * This non-official setting allows us to use a fast source of randomness when running tests */
-		 private static readonly bool _useInsecureCertificateGeneration = Boolean.getBoolean( "org.neo4j.useInsecureCertificateGeneration" );
+		 private static readonly bool _useInsecureCertificateGeneration = Boolean.getBoolean( "org.Neo4Net.useInsecureCertificateGeneration" );
 		 public const string CERTIFICATE_TYPE = "X.509";
 		 private const string DEFAULT_ENCRYPTION = "RSA";
 		 private readonly SecureRandom _random;

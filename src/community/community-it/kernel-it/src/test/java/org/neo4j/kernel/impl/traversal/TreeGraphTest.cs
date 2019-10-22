@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -40,9 +40,9 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.BranchOrderingPolicies.POSTORDER_BREADTH_FIRST;
+//	import static org.Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_BREADTH_FIRST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.BranchOrderingPolicies.POSTORDER_DEPTH_FIRST;
+//	import static org.Neo4Net.graphdb.traversal.BranchOrderingPolicies.POSTORDER_DEPTH_FIRST;
 
 	public class TreeGraphTest : TraversalTestBase
 	{

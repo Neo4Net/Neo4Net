@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -52,22 +52,22 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Internal.matchers.ThrowableCauseMatcher.hasCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.impl.SelectedBackupProtocol.ANY;
+//	import static org.Neo4Net.backup.impl.SelectedBackupProtocol.ANY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 
 	public class OnlineBackupContextFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expected = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Expected = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppress = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppress = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput Suppress = SuppressOutput.suppressAll();
 
 		 private Path _homeDir;
@@ -81,9 +81,9 @@ namespace Neo4Net.backup.impl
 		 {
 			  _homeDir = TestDirectory.directory( "home" ).toPath();
 			  _configDir = TestDirectory.directory( "config" ).toPath();
-			  _configFile = _configDir.resolve( "neo4j.conf" );
-			  string neo4jConfContents = "dbms.backup.address = localhost:1234";
-			  Files.write( _configFile, singletonList( neo4jConfContents ) );
+			  _configFile = _configDir.resolve( "Neo4Net.conf" );
+			  string Neo4NetConfContents = "dbms.backup.address = localhost:1234";
+			  Files.write( _configFile, singletonList( Neo4NetConfContents ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -223,7 +223,7 @@ namespace Neo4Net.backup.impl
 		 public virtual void ErrorHandledForNonExistingAdditionalConfigFile()
 		 {
 			  // given
-			  Path additionalConf = _homeDir.resolve( "neo4j.conf" );
+			  Path additionalConf = _homeDir.resolve( "Neo4Net.conf" );
 
 			  // and
 			  Expected.expect( typeof( CommandFailed ) );
@@ -243,7 +243,7 @@ namespace Neo4Net.backup.impl
 			  Files.write( _configFile, singletonList( "causal_clustering.minimum_core_cluster_size_at_startup=4" ), WRITE );
 
 			  // and
-			  Path homeDirConfigFile = _homeDir.resolve( "neo4j.conf" );
+			  Path homeDirConfigFile = _homeDir.resolve( "Neo4Net.conf" );
 			  Files.write( homeDirConfigFile, asList( "causal_clustering.minimum_core_cluster_size_at_startup=5", "causal_clustering.raft_in_queue_max_batch=21" ) );
 
 			  // when
@@ -264,7 +264,7 @@ namespace Neo4Net.backup.impl
 			  Files.write( _configFile, asList( "causal_clustering.minimum_core_cluster_size_at_startup=4", "causal_clustering.raft_in_queue_max_batch=21" ) );
 
 			  // and
-			  Path additionalConf = _homeDir.resolve( "additional-neo4j.conf" );
+			  Path additionalConf = _homeDir.resolve( "additional-Neo4Net.conf" );
 			  Files.write( additionalConf, singletonList( "causal_clustering.minimum_core_cluster_size_at_startup=5" ) );
 
 			  // when
@@ -299,7 +299,7 @@ namespace Neo4Net.backup.impl
 		 public virtual void MustIgnorePageCacheConfigInAdditionalConfigFile()
 		 {
 			  // given
-			  Path additionalConf = _homeDir.resolve( "additional-neo4j.conf" );
+			  Path additionalConf = _homeDir.resolve( "additional-Neo4Net.conf" );
 			  Files.write( additionalConf, singletonList( pagecache_memory.name() + "=42m" ) );
 
 			  // when
@@ -339,7 +339,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void defaultProtocolIsAny() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void defaultProtocolIsAny() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DefaultProtocolIsAny()
 		 {
@@ -354,7 +354,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void overrideWithLegacy() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void overrideWithLegacy() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void OverrideWithLegacy()
 		 {
@@ -376,7 +376,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void prometheusShouldBeDisabledToAvoidPortConflicts() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void prometheusShouldBeDisabledToAvoidPortConflicts() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void PrometheusShouldBeDisabledToAvoidPortConflicts()
 		 {
@@ -385,7 +385,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void ipv6CanBeProcessed() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void ipv6CanBeProcessed() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Ipv6CanBeProcessed()
 		 {

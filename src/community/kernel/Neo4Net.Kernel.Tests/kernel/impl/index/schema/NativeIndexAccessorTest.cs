@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueType = Neo4Net.Values.Storable.ValueType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ValueCreatorUtil.FRACTION_DUPLICATE_NON_UNIQUE;
+//	import static org.Neo4Net.kernel.impl.index.schema.ValueCreatorUtil.FRACTION_DUPLICATE_NON_UNIQUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NativeIndexAccessorTest<KEY extends NativeIndexKey<KEY>, VALUE extends NativeIndexValue> extends NativeIndexAccessorTests<KEY,VALUE>
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly IndexCapability _indexCapability;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public NativeIndexAccessorTest(String name, AccessorFactory<KEY,VALUE> accessorFactory, org.neo4j.values.storable.ValueType[] supportedTypes, IndexLayoutFactory<KEY,VALUE> indexLayoutFactory, org.neo4j.internal.kernel.api.IndexCapability indexCapability)
+//ORIGINAL LINE: @SuppressWarnings("unused") public NativeIndexAccessorTest(String name, AccessorFactory<KEY,VALUE> accessorFactory, org.Neo4Net.values.storable.ValueType[] supportedTypes, IndexLayoutFactory<KEY,VALUE> indexLayoutFactory, org.Neo4Net.internal.kernel.api.IndexCapability indexCapability)
 		 public NativeIndexAccessorTest( string name, AccessorFactory<KEY, VALUE> accessorFactory, ValueType[] supportedTypes, IndexLayoutFactory<KEY, VALUE> indexLayoutFactory, IndexCapability indexCapability )
 		 {
 			  this._accessorFactory = accessorFactory;
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private interface AccessorFactory<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NativeIndexAccessor<KEY,VALUE> create(org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.neo4j.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.neo4j.kernel.api.index.IndexProvider.Monitor monitor, org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.api.index.IndexDirectoryStructure directory, boolean readOnly) throws java.io.IOException;
+//ORIGINAL LINE: NativeIndexAccessor<KEY,VALUE> create(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.api.index.IndexDirectoryStructure directory, boolean readOnly) throws java.io.IOException;
 			  NativeIndexAccessor<KEY, VALUE> Create( PageCache pageCache, FileSystemAbstraction fs, File storeFile, IndexLayout<KEY, VALUE> layout, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IndexProvider.Monitor monitor, StoreIndexDescriptor descriptor, IndexDirectoryStructure directory, bool readOnly );
 		 }
 	}

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster
 {
@@ -68,16 +68,16 @@ namespace Neo4Net.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public ProtocolServer newNetworkedServer(final org.neo4j.kernel.configuration.Config config, org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.AcceptorInstanceStore acceptorInstanceStore, org.neo4j.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
+//ORIGINAL LINE: public ProtocolServer newNetworkedServer(final org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.AcceptorInstanceStore acceptorInstanceStore, org.Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
 		 public virtual ProtocolServer NewNetworkedServer( Config config, AcceptorInstanceStore acceptorInstanceStore, ElectionCredentialsProvider electionCredentialsProvider )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.com.NetworkReceiver receiver = new org.neo4j.cluster.com.NetworkReceiver(networkReceiverMonitor, new org.neo4j.cluster.com.NetworkReceiver.Configuration()
+//ORIGINAL LINE: final org.Neo4Net.cluster.com.NetworkReceiver receiver = new org.Neo4Net.cluster.com.NetworkReceiver(networkReceiverMonitor, new org.Neo4Net.cluster.com.NetworkReceiver.Configuration()
 			  NetworkReceiver receiver = new NetworkReceiver(_networkReceiverMonitor, new ConfigurationAnonymousInnerClass(this, config)
 			 , _logProvider);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.com.NetworkSender sender = new org.neo4j.cluster.com.NetworkSender(networkSenderMonitor, new org.neo4j.cluster.com.NetworkSender.Configuration()
+//ORIGINAL LINE: final org.Neo4Net.cluster.com.NetworkSender sender = new org.Neo4Net.cluster.com.NetworkSender(networkSenderMonitor, new org.Neo4Net.cluster.com.NetworkSender.Configuration()
 			  NetworkSender sender = new NetworkSender(_networkSenderMonitor, new ConfigurationAnonymousInnerClass(this, config)
 			 , receiver, _logProvider);
 

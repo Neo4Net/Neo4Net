@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -28,7 +28,7 @@ namespace Neo4Net.Graphdb
 	public class DeleteNodeWithRelsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -40,7 +40,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldGiveHelpfulExceptionWhenDeletingNodeWithRels()
 		 {
 			  // Given
-			  GraphDatabaseService db = this.Db.GraphDatabaseAPI;
+			  IGraphDatabaseService db = this.Db.GraphDatabaseAPI;
 
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )

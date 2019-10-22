@@ -22,17 +22,17 @@
 namespace Neo4Net.Cypher.export
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.loop;
+//	import static org.Neo4Net.helpers.collection.Iterators.loop;
 
 	public class CypherResultSubGraph : SubGraph
 	{
@@ -73,7 +73,7 @@ namespace Neo4Net.Cypher.export
 			  }
 		 }
 
-		 public static SubGraph From( Result result, GraphDatabaseService gds, bool addBetween )
+		 public static SubGraph From( Result result, IGraphDatabaseService gds, bool addBetween )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final CypherResultSubGraph graph = new CypherResultSubGraph();
@@ -139,7 +139,7 @@ namespace Neo4Net.Cypher.export
 						 }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node other = relationship.getOtherNode(node);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node other = relationship.getOtherNode(node);
 						 Node other = relationship.GetOtherNode( node );
 						 if ( _nodes.ContainsKey( other.Id ) || newNodes.Contains( other ) )
 						 {

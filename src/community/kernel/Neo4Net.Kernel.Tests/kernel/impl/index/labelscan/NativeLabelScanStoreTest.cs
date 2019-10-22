@@ -53,12 +53,12 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
+//	import static org.Neo4Net.kernel.impl.api.scan.FullStoreChangeStream_Fields.EMPTY;
 
 	public class NativeLabelScanStoreTest : LabelScanStoreTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 
 		 protected internal override LabelScanStore CreateLabelScanStore( FileSystemAbstraction fileSystemAbstraction, DatabaseLayout databaseLayout, FullStoreChangeStream fullStoreChangeStream, bool usePersistentStore, bool readOnly, Neo4Net.Kernel.api.labelscan.LabelScanStore_Monitor monitor )
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void corruptIndex(org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: protected void corruptIndex(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 protected internal override void CorruptIndex( FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout )
 		 {
 			  File lssFile = databaseLayout.LabelScanStore();

@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,17 +15,17 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.tx
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -48,15 +48,15 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
+//	import static org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.StoreType.META_DATA;
+//	import static org.Neo4Net.kernel.impl.store.StoreType.META_DATA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class TransactionLogCatchUpWriter : TxPullResponseListener, IDisposable
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 private long _expectedTxId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionLogCatchUpWriter(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.kernel.configuration.Config config, org.neo4j.logging.LogProvider logProvider, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean forceTransactionRotations) throws java.io.IOException
+//ORIGINAL LINE: TransactionLogCatchUpWriter(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.LogProvider logProvider, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean forceTransactionRotations) throws java.io.IOException
 		 internal TransactionLogCatchUpWriter( DatabaseLayout databaseLayout, FileSystemAbstraction fs, PageCache pageCache, Config config, LogProvider logProvider, long fromTxId, bool asPartOfStoreCopy, bool keepTxLogsInStoreDir, bool forceTransactionRotations )
 		 {
 			  this._pageCache = pageCache;
@@ -114,7 +114,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 				  CommittedTransactionRepresentation tx = txPullResponse.Tx();
 				  long receivedTxId = tx.CommitEntry.TxId;
       
-				  // neo4j admin backup clients pull transactions indefinitely and have no monitoring mechanism for tx log rotation
+				  // Neo4Net admin backup clients pull transactions indefinitely and have no monitoring mechanism for tx log rotation
 				  // Other cases, ex. Read Replicas have an external mechanism that rotates independently of this process and don't need to
 				  // manually rotate while pulling
 				  if ( _rotateTransactionsManually && _logFiles.LogFile.rotationNeeded() )

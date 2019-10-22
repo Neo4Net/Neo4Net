@@ -45,7 +45,7 @@ namespace Neo4Net.Server.rest.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppressAll;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class CollectUserAgentFilterTest
 	{
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.rest.web
 		 private CollectUserAgentFilter _filter;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public SuppressOutput SuppressOutput = suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

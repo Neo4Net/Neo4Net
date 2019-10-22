@@ -46,15 +46,15 @@ namespace Neo4Net.Bolt.testing
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.FAILURE;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.IGNORED;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.newMachine;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachine;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class BoltMatchers
 	{
@@ -93,7 +93,7 @@ namespace Neo4Net.Bolt.testing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<RecordedBoltResponse> succeededWithMetadata(final String key, final org.neo4j.values.AnyValue value)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<RecordedBoltResponse> succeededWithMetadata(final String key, final org.Neo4Net.values.AnyValue value)
 		 public static Matcher<RecordedBoltResponse> SucceededWithMetadata( string key, AnyValue value )
 		 {
 			  return new BaseMatcherAnonymousInnerClass2( key, value );
@@ -299,10 +299,10 @@ namespace Neo4Net.Bolt.testing
 			 public override bool matches( object item )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.runtime.BoltStateMachineV1 machine = (org.neo4j.bolt.v1.runtime.BoltStateMachineV1) item;
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.runtime.BoltStateMachineV1 machine = (org.Neo4Net.bolt.v1.runtime.BoltStateMachineV1) item;
 				  BoltStateMachineV1 machine = ( BoltStateMachineV1 ) item;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.StatementProcessor statementProcessor = machine.statementProcessor();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.StatementProcessor statementProcessor = machine.statementProcessor();
 				  StatementProcessor statementProcessor = machine.StatementProcessor();
 				  return statementProcessor != null && statementProcessor.HasTransaction();
 			 }
@@ -325,10 +325,10 @@ namespace Neo4Net.Bolt.testing
 			 public override bool matches( object item )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.runtime.BoltStateMachineV1 machine = (org.neo4j.bolt.v1.runtime.BoltStateMachineV1) item;
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.runtime.BoltStateMachineV1 machine = (org.Neo4Net.bolt.v1.runtime.BoltStateMachineV1) item;
 				  BoltStateMachineV1 machine = ( BoltStateMachineV1 ) item;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.StatementProcessor statementProcessor = machine.statementProcessor();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.StatementProcessor statementProcessor = machine.statementProcessor();
 				  StatementProcessor statementProcessor = machine.StatementProcessor();
 				  return statementProcessor == null || !statementProcessor.HasTransaction();
 			 }
@@ -381,7 +381,7 @@ namespace Neo4Net.Bolt.testing
 			 public override bool matches( object item )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = (org.neo4j.bolt.runtime.BoltStateMachine) item;
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = (org.Neo4Net.bolt.runtime.BoltStateMachine) item;
 				  BoltStateMachine machine = ( BoltStateMachine ) item;
 				  return machine.Closed;
 			 }
@@ -404,7 +404,7 @@ namespace Neo4Net.Bolt.testing
 			 public override bool matches( object item )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = (org.neo4j.bolt.runtime.BoltStateMachine) item;
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = (org.Neo4Net.bolt.runtime.BoltStateMachine) item;
 				  BoltStateMachine machine = ( BoltStateMachine ) item;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -440,7 +440,7 @@ namespace Neo4Net.Bolt.testing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void verifyOneResponse(org.neo4j.function.ThrowingBiConsumer<org.neo4j.bolt.runtime.BoltStateMachine,BoltResponseRecorder,org.neo4j.bolt.runtime.BoltConnectionFatality> transition) throws Exception
+//ORIGINAL LINE: public static void verifyOneResponse(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,BoltResponseRecorder,org.Neo4Net.bolt.runtime.BoltConnectionFatality> transition) throws Exception
 		 public static void VerifyOneResponse( ThrowingBiConsumer<BoltStateMachine, BoltResponseRecorder, BoltConnectionFatality> transition )
 		 {
 			  BoltStateMachine machine = newMachine();

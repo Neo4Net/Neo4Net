@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using ServiceUnavailableException = Neo4Net.driver.v1.exceptions.ServiceUnavailableException;
 	using SessionExpiredException = Neo4Net.driver.v1.exceptions.SessionExpiredException;
 	using ServerInfo = Neo4Net.driver.v1.summary.ServerInfo;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
@@ -76,24 +76,24 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.driver.v1.Values.parameters;
+//	import static org.Neo4Net.driver.v1.Values.parameters;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class BoltCausalClusteringIT
 	{
 		 private const long DEFAULT_TIMEOUT_MS = 15_000;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3);
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,10 +139,10 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int executeWriteAndReadThroughBolt(org.neo4j.causalclustering.discovery.CoreClusterMember core) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private static int executeWriteAndReadThroughBolt(org.Neo4Net.causalclustering.discovery.CoreClusterMember core) throws java.util.concurrent.TimeoutException
 		 private static int ExecuteWriteAndReadThroughBolt( CoreClusterMember core )
 		 {
-			  using ( Driver driver = GraphDatabase.driver( core.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") ) )
+			  using ( Driver driver = GraphDatabase.driver( core.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") ) )
 			  {
 
 					return InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  {
 				SwitchLeader( _cluster.awaitLeader() );
 				CoreClusterMember leader = _cluster.awaitLeader();
-				Driver driver = GraphDatabase.driver( leader.routingURI(), AuthTokens.basic("neo4j", "neo4j") );
+				Driver driver = GraphDatabase.driver( leader.routingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 
 				try
 				{
@@ -201,7 +201,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 			  try
 			  {
 					  using ( Session session = driver.session() )
@@ -239,7 +239,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 			  try
 			  {
 					  using ( Session session = driver.session() )
@@ -264,7 +264,7 @@ namespace Neo4Net.causalclustering.scenarios
 			 private readonly BoltCausalClusteringIT _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private final org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 			  internal readonly Cluster<object> Cluster;
 			  internal readonly System.Threading.CountdownEvent SwitchCompleteLatch;
 			  internal CoreClusterMember InitialLeader;
@@ -365,7 +365,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ISet<string> seenAddresses = new HashSet<string>();
 			  try
 			  {
-					  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j"), config ) )
+					  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net"), config ) )
 					  {
 						bool success = false;
       
@@ -426,7 +426,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  ReadReplica readReplica = _cluster.getReadReplicaById( 0 );
 			  try
 			  {
-					GraphDatabase.driver( readReplica.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") );
+					GraphDatabase.driver( readReplica.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 					fail( "Should have thrown an exception using a read replica address for routing" );
 			  }
 			  catch ( ServiceUnavailableException ex )
@@ -454,7 +454,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  _cluster = ClusterRule.withNumberOfReadReplicas( 1 ).startCluster();
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") ) )
+			  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") ) )
 			  {
 					InExpirableSession(driver, Driver.session, session =>
 					{
@@ -506,7 +506,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  _cluster = ClusterRule.withNumberOfReadReplicas( 1 ).startCluster();
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  using ( Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("neo4j", "neo4j") ) )
+			  using ( Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("Neo4Net", "Neo4Net") ) )
 			  {
 					string bookmark = InExpirableSession(driver, Driver.session, session =>
 					{
@@ -540,7 +540,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  _cluster = ClusterRule.withNumberOfReadReplicas( 1 ).startCluster();
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  using ( Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("neo4j", "neo4j") ) )
+			  using ( Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("Neo4Net", "Neo4Net") ) )
 			  {
 					InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
 					{
@@ -595,7 +595,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  readReplica.TxPollingClient().stop();
 
-			  Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  Driver driver = GraphDatabase.driver( leader.DirectURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 
 			  string bookmark = InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
 			  {
@@ -614,7 +614,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  assertNotNull( bookmark );
 			  readReplica.TxPollingClient().start();
 
-			  driver = GraphDatabase.driver( readReplica.DirectURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  driver = GraphDatabase.driver( readReplica.DirectURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 
 			  using ( Session session = driver.session( AccessMode.READ, bookmark ) )
 			  {
@@ -637,7 +637,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  _cluster = ClusterRule.withNumberOfReadReplicas( 1 ).withSharedCoreParams( stringMap( CausalClusteringSettings.cluster_routing_ttl.name(), "1s" ) ).startCluster();
 
 			  CoreClusterMember leader = _cluster.awaitLeader();
-			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 
 			  string bookmark = InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
 			  {
@@ -709,7 +709,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  CoreClusterMember leader = _cluster.awaitLeader();
 
-			  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("neo4j", "neo4j") ) )
+			  using ( Driver driver = GraphDatabase.driver( leader.RoutingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") ) )
 			  {
 					// when
 					using ( Session session = driver.session() )
@@ -764,10 +764,10 @@ namespace Neo4Net.causalclustering.scenarios
 			  IDictionary<string, string> @params = stringMap( GraphDatabaseSettings.keep_logical_logs.name(), "keep_none", GraphDatabaseSettings.logical_log_rotation_threshold.name(), "1M", GraphDatabaseSettings.check_point_interval_time.name(), "100ms", CausalClusteringSettings.cluster_allow_reads_on_followers.name(), "false" );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).withNumberOfReadReplicas(1).startCluster();
+//ORIGINAL LINE: org.Neo4Net.causalclustering.discovery.Cluster<?> cluster = clusterRule.withSharedCoreParams(params).withNumberOfReadReplicas(1).startCluster();
 			  Cluster<object> cluster = ClusterRule.withSharedCoreParams( @params ).withNumberOfReadReplicas( 1 ).startCluster();
 
-			  Driver driver = GraphDatabase.driver( cluster.AwaitLeader().routingURI(), AuthTokens.basic("neo4j", "neo4j") );
+			  Driver driver = GraphDatabase.driver( cluster.AwaitLeader().routingURI(), AuthTokens.basic("Neo4Net", "Neo4Net") );
 
 			  using ( Session session = driver.session() )
 			  {
@@ -836,7 +836,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <T> T inExpirableSession(org.neo4j.driver.v1.Driver driver, System.Func<org.neo4j.driver.v1.Driver,org.neo4j.driver.v1.Session> acquirer, System.Func<org.neo4j.driver.v1.Session,T> op) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private static <T> T inExpirableSession(org.Neo4Net.driver.v1.Driver driver, System.Func<org.Neo4Net.driver.v1.Driver,org.Neo4Net.driver.v1.Session> acquirer, System.Func<org.Neo4Net.driver.v1.Session,T> op) throws java.util.concurrent.TimeoutException
 		 private static T InExpirableSession<T>( Driver driver, System.Func<Driver, Session> acquirer, System.Func<Session, T> op )
 		 {
 			  long endTime = DateTimeHelper.CurrentUnixTimeMillis() + DEFAULT_TIMEOUT_MS;
@@ -860,7 +860,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void switchLeader(org.neo4j.causalclustering.discovery.CoreClusterMember initialLeader) throws InterruptedException
+//ORIGINAL LINE: private void switchLeader(org.Neo4Net.causalclustering.discovery.CoreClusterMember initialLeader) throws InterruptedException
 		 private void SwitchLeader( CoreClusterMember initialLeader )
 		 {
 			  long deadline = DateTimeHelper.CurrentUnixTimeMillis() + (30 * 1000);
@@ -890,7 +890,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void triggerElection(org.neo4j.causalclustering.discovery.CoreClusterMember initialLeader) throws java.io.IOException, java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private void triggerElection(org.Neo4Net.causalclustering.discovery.CoreClusterMember initialLeader) throws java.io.IOException, java.util.concurrent.TimeoutException
 		 private void TriggerElection( CoreClusterMember initialLeader )
 		 {
 			  foreach ( CoreClusterMember coreClusterMember in _cluster.coreMembers() )

@@ -28,13 +28,13 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Mode = Neo4Net.Procedure.Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asRawIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTList;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTString;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 	/// <summary>
 	/// This procedure lists "components" and their version.
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	/// get a list of which components are loaded and what versions of them.
 	/// 
 	/// This way, it works as a general mechanism into which capabilities
-	/// a given Neo4j system has, and which version of those components
+	/// a given Neo4Net system has, and which version of those components
 	/// are in use.
 	/// 
 	/// This would include things like Kernel, Storage Engine, Query Engines,
@@ -52,20 +52,20 @@ namespace Neo4Net.Kernel.builtinprocs
 	/// </summary>
 	public class ListComponentsProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
 	{
-		 private readonly string _neo4jVersion;
-		 private readonly string _neo4jEdition;
+		 private readonly string _Neo4NetVersion;
+		 private readonly string _Neo4NetEdition;
 
-		 public ListComponentsProcedure( QualifiedName name, string neo4jVersion, string neo4jEdition ) : base( procedureSignature( name ).@out( "name", NTString ).@out( "versions", NTList( NTString ) ).@out( "edition", NTString ).mode( Mode.DBMS ).description( "List DBMS components and their versions." ).build() )
+		 public ListComponentsProcedure( QualifiedName name, string Neo4NetVersion, string Neo4NetEdition ) : base( procedureSignature( name ).@out( "name", NTString ).@out( "versions", NTList( NTString ) ).@out( "edition", NTString ).mode( Mode.DBMS ).description( "List DBMS components and their versions." ).build() )
 		 {
-			  this._neo4jVersion = neo4jVersion;
-			  this._neo4jEdition = neo4jEdition;
+			  this._Neo4NetVersion = Neo4NetVersion;
+			  this._Neo4NetEdition = Neo4NetEdition;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> apply(org.neo4j.kernel.api.proc.Context ctx, Object[] input, org.neo4j.kernel.api.ResourceTracker resourceTracker) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
-			  return asRawIterator( singletonList( new object[]{ "Neo4j Kernel", singletonList( _neo4jVersion ), _neo4jEdition } ).GetEnumerator() );
+			  return asRawIterator( singletonList( new object[]{ "Neo4Net Kernel", singletonList( _Neo4NetVersion ), _Neo4NetEdition } ).GetEnumerator() );
 		 }
 	}
 

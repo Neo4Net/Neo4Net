@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -68,7 +68,7 @@ namespace Neo4Net.backup.impl
 		 /// <param name="onlineBackupContext"> filesystem, command arguments and configuration </param>
 		 /// <exception cref="CommandFailed"> when backup failed or there were issues with consistency checks </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void performBackup(OnlineBackupContext onlineBackupContext) throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void performBackup(OnlineBackupContext onlineBackupContext) throws org.Neo4Net.commandline.admin.CommandFailed
 		 public virtual void PerformBackup( OnlineBackupContext onlineBackupContext )
 		 {
 			  // Convenience
@@ -113,7 +113,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void performConsistencyCheck(org.neo4j.kernel.configuration.Config config, OnlineBackupRequiredArguments requiredArgs, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags, org.neo4j.io.layout.DatabaseLayout layout) throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void performConsistencyCheck(org.Neo4Net.kernel.configuration.Config config, OnlineBackupRequiredArguments requiredArgs, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags, org.Neo4Net.io.layout.DatabaseLayout layout) throws org.Neo4Net.commandline.admin.CommandFailed
 		 private void PerformConsistencyCheck( Config config, OnlineBackupRequiredArguments requiredArgs, ConsistencyFlags consistencyFlags, DatabaseLayout layout )
 		 {
 			  try

@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.pagecache
 {
 
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageSwapperFactory = Neo4Net.Io.pagecache.PageSwapperFactory;
 	using SingleFilePageSwapperFactory = Neo4Net.Io.pagecache.impl.SingleFilePageSwapperFactory;

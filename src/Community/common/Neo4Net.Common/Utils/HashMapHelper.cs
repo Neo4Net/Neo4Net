@@ -8,7 +8,7 @@ using System.Collections.Generic;
 
 namespace Neo4Net.Utils
 {
-   internal static class HashMapHelper
+   public static class HashMapHelper
    {
       public static HashSet<KeyValuePair<TKey, TValue>> SetOfKeyValuePairs<TKey, TValue>(this IDictionary<TKey, TValue> dictionary)
       {

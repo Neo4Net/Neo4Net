@@ -29,9 +29,9 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using DateValue = Neo4Net.Values.Storable.DateValue;
@@ -60,17 +60,17 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian_3D;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.WGS84_3D;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public abstract class NodeValueIndexCursorTestBase<G> : KernelAPIReadTestBase<G> where G : KernelAPIReadTestSupport
 	{
@@ -86,7 +86,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 private static readonly PointValue _point_1 = PointValue.parse( "{latitude: 40.7128, longitude: -74.0060, crs: 'wgs-84'}" );
 		 private static readonly PointValue _point_2 = PointValue.parse( "{latitude: 40.7128, longitude: -74.006000001, crs: 'wgs-84'}" );
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -184,8 +184,8 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void createCompositeIndex(org.neo4j.graphdb.GraphDatabaseService graphDb, String label, String... properties) throws Exception;
-		 protected internal abstract void CreateCompositeIndex( GraphDatabaseService graphDb, string label, params string[] properties );
+//ORIGINAL LINE: protected abstract void createCompositeIndex(org.Neo4Net.graphdb.GraphDatabaseService graphDb, String label, String... properties) throws Exception;
+		 protected internal abstract void CreateCompositeIndex( IGraphDatabaseService graphDb, string label, params string[] properties );
 		 protected internal abstract string ProviderKey();
 		 protected internal abstract string ProviderVersion();
 
@@ -524,7 +524,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPerformTemporalRangeSearch() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldPerformTemporalRangeSearch() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPerformTemporalRangeSearch()
 		 {
@@ -565,7 +565,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPerformSpatialRangeSearch() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldPerformSpatialRangeSearch() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPerformSpatialRangeSearch()
 		 {
@@ -606,7 +606,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPerformBooleanSearch() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldPerformBooleanSearch() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPerformBooleanSearch()
 		 {
@@ -635,7 +635,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPerformTextArraySearch() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldPerformTextArraySearch() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPerformTextArraySearch()
 		 {
@@ -735,7 +735,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForTemporal() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForTemporal() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespectOrderCapabilitiesForTemporal()
 		 {
@@ -759,7 +759,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForSpatial() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForSpatial() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespectOrderCapabilitiesForSpatial()
 		 {
@@ -783,7 +783,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForStringArray() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldRespectOrderCapabilitiesForStringArray() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespectOrderCapabilitiesForStringArray()
 		 {
@@ -1590,33 +1590,33 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 		 }
 
-		 private long NodeWithProp( GraphDatabaseService graphDb, object value )
+		 private long NodeWithProp( IGraphDatabaseService graphDb, object value )
 		 {
 			  return NodeWithProp( graphDb, "prop", value );
 		 }
 
-		 private long NodeWithProp( GraphDatabaseService graphDb, string key, object value )
+		 private long NodeWithProp( IGraphDatabaseService graphDb, string key, object value )
 		 {
 			  Node node = graphDb.CreateNode( label( "Node" ) );
 			  node.SetProperty( key, value );
 			  return node.Id;
 		 }
 
-		 private long NodeWithWhatever( GraphDatabaseService graphDb, object value )
+		 private long NodeWithWhatever( IGraphDatabaseService graphDb, object value )
 		 {
 			  Node node = graphDb.CreateNode( label( "What" ) );
 			  node.SetProperty( "ever", value );
 			  return node.Id;
 		 }
 
-		 private long NodeWithNoLabel( GraphDatabaseService graphDb, object value )
+		 private long NodeWithNoLabel( IGraphDatabaseService graphDb, object value )
 		 {
 			  Node node = graphDb.CreateNode();
 			  node.SetProperty( "prop", value );
 			  return node.Id;
 		 }
 
-		 private long Person( GraphDatabaseService graphDb, string firstName, string surname )
+		 private long Person( IGraphDatabaseService graphDb, string firstName, string surname )
 		 {
 			  Node node = graphDb.CreateNode( label( "Person" ) );
 			  node.SetProperty( "firstname", firstName );

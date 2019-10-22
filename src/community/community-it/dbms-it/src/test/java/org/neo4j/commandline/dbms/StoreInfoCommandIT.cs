@@ -23,8 +23,8 @@ namespace Neo4Net.CommandLine.dbms
 	using Test = org.junit.Test;
 
 	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using StoreLockException = Neo4Net.Kernel.StoreLockException;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -36,7 +36,7 @@ namespace Neo4Net.CommandLine.dbms
 	public class StoreInfoCommandIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -44,7 +44,7 @@ namespace Neo4Net.CommandLine.dbms
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RespectLockFilesSameProcess()
 		 {
-			  GraphDatabaseService database = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDirectory.storeDir()).newGraphDatabase();
+			  IGraphDatabaseService database = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDirectory.storeDir()).newGraphDatabase();
 			  StoreInfoCommand command = new StoreInfoCommand( System.out.println );
 			  try
 			  {

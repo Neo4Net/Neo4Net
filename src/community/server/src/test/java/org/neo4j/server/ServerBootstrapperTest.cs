@@ -23,7 +23,7 @@ namespace Neo4Net.Server
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CommunityGraphFactory = Neo4Net.Server.database.CommunityGraphFactory;
@@ -40,16 +40,16 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 
 	public class ServerBootstrapperTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppress = org.neo4j.test.rule.SuppressOutput.suppress(org.neo4j.test.rule.SuppressOutput.System.out);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppress = org.Neo4Net.test.rule.SuppressOutput.suppress(org.Neo4Net.test.rule.SuppressOutput.System.out);
 		 public readonly SuppressOutput Suppress = SuppressOutput.suppress( SuppressOutput.System.out );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory homeDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory homeDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory HomeDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

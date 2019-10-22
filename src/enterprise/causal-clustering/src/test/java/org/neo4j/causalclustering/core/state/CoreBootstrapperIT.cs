@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state
 {
@@ -37,9 +37,9 @@ namespace Neo4Net.causalclustering.core.state
 	using CoreSnapshot = Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot;
 	using CoreStateType = Neo4Net.causalclustering.core.state.snapshot.CoreStateType;
 	using RaftCoreState = Neo4Net.causalclustering.core.state.snapshot.RaftCoreState;
-	using ClassicNeo4jStore = Neo4Net.causalclustering.helpers.ClassicNeo4jStore;
+	using ClassicNeo4NetStore = Neo4Net.causalclustering.helpers.ClassicNeo4NetStore;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -69,9 +69,9 @@ namespace Neo4Net.causalclustering.core.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.record_id_batch_size;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class CoreBootstrapperIT
 	{
@@ -107,10 +107,10 @@ namespace Neo4Net.causalclustering.core.state
 			  // given
 			  int nodeCount = 100;
 			  FileSystemAbstraction fileSystem = _fileSystemRule.get();
-			  File classicNeo4jStore = ClassicNeo4jStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).build().StoreDir;
+			  File classicNeo4NetStore = ClassicNeo4NetStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).build().StoreDir;
 
 			  PageCache pageCache = _pageCacheRule.getPageCache( fileSystem );
-			  DatabaseLayout databaseLayout = DatabaseLayout.of( classicNeo4jStore );
+			  DatabaseLayout databaseLayout = DatabaseLayout.of( classicNeo4NetStore );
 			  CoreBootstrapper bootstrapper = new CoreBootstrapper( databaseLayout, pageCache, fileSystem, Config.defaults(), NullLogProvider.Instance, new Monitors() );
 			  BootstrapAndVerify( nodeCount, fileSystem, databaseLayout, pageCache, Config.defaults(), bootstrapper );
 		 }
@@ -124,10 +124,10 @@ namespace Neo4Net.causalclustering.core.state
 			  int nodeCount = 100;
 			  FileSystemAbstraction fileSystem = _fileSystemRule.get();
 			  string customTransactionLogsLocation = "transaction-logs";
-			  File classicNeo4jStore = ClassicNeo4jStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).logicalLogsLocation(customTransactionLogsLocation).build().StoreDir;
+			  File classicNeo4NetStore = ClassicNeo4NetStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).logicalLogsLocation(customTransactionLogsLocation).build().StoreDir;
 
 			  PageCache pageCache = _pageCacheRule.getPageCache( fileSystem );
-			  DatabaseLayout databaseLayout = DatabaseLayout.of( classicNeo4jStore );
+			  DatabaseLayout databaseLayout = DatabaseLayout.of( classicNeo4NetStore );
 			  Config config = Config.defaults( GraphDatabaseSettings.logical_logs_location, customTransactionLogsLocation );
 			  CoreBootstrapper bootstrapper = new CoreBootstrapper( databaseLayout, pageCache, fileSystem, config, NullLogProvider.Instance, new Monitors() );
 
@@ -142,7 +142,7 @@ namespace Neo4Net.causalclustering.core.state
 			  // given
 			  int nodeCount = 100;
 			  FileSystemAbstraction fileSystem = _fileSystemRule.get();
-			  File storeInNeedOfRecovery = ClassicNeo4jStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).needToRecover().build().StoreDir;
+			  File storeInNeedOfRecovery = ClassicNeo4NetStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).needToRecover().build().StoreDir;
 			  AssertableLogProvider assertableLogProvider = new AssertableLogProvider();
 
 			  PageCache pageCache = _pageCacheRule.getPageCache( fileSystem );
@@ -159,7 +159,7 @@ namespace Neo4Net.causalclustering.core.state
 			  catch ( Exception e )
 			  {
 					string errorMessage = "Cannot bootstrap. Recovery is required. Please ensure that the store being seeded comes from a cleanly shutdown " +
-							  "instance of Neo4j or a Neo4j backup";
+							  "instance of Neo4Net or a Neo4Net backup";
 					assertEquals( e.Message, errorMessage );
 					assertableLogProvider.AssertExactly( AssertableLogProvider.inLog( typeof( CoreBootstrapper ) ).error( errorMessage ) );
 			  }
@@ -174,7 +174,7 @@ namespace Neo4Net.causalclustering.core.state
 			  int nodeCount = 100;
 			  FileSystemAbstraction fileSystem = _fileSystemRule.get();
 			  string customTransactionLogsLocation = "transaction-logs";
-			  File storeInNeedOfRecovery = ClassicNeo4jStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).logicalLogsLocation(customTransactionLogsLocation).needToRecover().build().StoreDir;
+			  File storeInNeedOfRecovery = ClassicNeo4NetStore.builder( _testDirectory.directory(), fileSystem ).amountOfNodes(nodeCount).logicalLogsLocation(customTransactionLogsLocation).needToRecover().build().StoreDir;
 			  AssertableLogProvider assertableLogProvider = new AssertableLogProvider();
 
 			  PageCache pageCache = _pageCacheRule.getPageCache( fileSystem );
@@ -192,14 +192,14 @@ namespace Neo4Net.causalclustering.core.state
 			  catch ( Exception e )
 			  {
 					string errorMessage = "Cannot bootstrap. Recovery is required. Please ensure that the store being seeded comes from a cleanly shutdown " +
-							  "instance of Neo4j or a Neo4j backup";
+							  "instance of Neo4Net or a Neo4Net backup";
 					assertEquals( e.Message, errorMessage );
 					assertableLogProvider.AssertExactly( AssertableLogProvider.inLog( typeof( CoreBootstrapper ) ).error( errorMessage ) );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void bootstrapAndVerify(long nodeCount, org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.kernel.configuration.Config config, CoreBootstrapper bootstrapper) throws Exception
+//ORIGINAL LINE: private static void bootstrapAndVerify(long nodeCount, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.configuration.Config config, CoreBootstrapper bootstrapper) throws Exception
 		 private static void BootstrapAndVerify( long nodeCount, FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout, PageCache pageCache, Config config, CoreBootstrapper bootstrapper )
 		 {
 			  // when

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.storemigration
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.contains;
+//	import static org.Neo4Net.helpers.ArrayUtil.contains;
 
 	/// <summary>
 	/// Idea is to migrate a <seealso cref="NeoStores"/> store by store, record by record in a sequential fashion for

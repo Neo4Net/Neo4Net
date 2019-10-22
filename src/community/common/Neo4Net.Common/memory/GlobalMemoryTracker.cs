@@ -17,7 +17,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 using Neo4Net.Concurrency;
+
 namespace Neo4Net.Memory
 {
    /// <summary>
@@ -37,17 +39,17 @@ namespace Neo4Net.Memory
 
       public long UsedDirectMemory()
       {
-         return _allocatedBytes.sum();
+         return _allocatedBytes.GetValue(); //$!!$ Sum();
       }
 
       public void Allocated(long bytes)
       {
-         _allocatedBytes.add(bytes);
+         _allocatedBytes.Add(bytes);
       }
 
       public void Deallocated(long bytes)
       {
-         _allocatedBytes.add(-bytes);
+         _allocatedBytes.Add(-bytes);
       }
    }
 }

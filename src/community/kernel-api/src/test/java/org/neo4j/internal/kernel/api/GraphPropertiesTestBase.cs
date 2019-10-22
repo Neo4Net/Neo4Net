@@ -32,9 +32,9 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class GraphPropertiesTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -54,7 +54,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( testSupport.graphProperties().getProperty("prop"), equalTo("hello") );
 			  }
@@ -79,7 +79,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( testSupport.graphProperties().getProperty("prop"), equalTo("good bye") );
 			  }
@@ -104,7 +104,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertFalse( testSupport.graphProperties().hasProperty("prop") );
 			  }

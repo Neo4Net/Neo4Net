@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.impl.core
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using GraphTransactionRule = Neo4Net.Test.rule.GraphTransactionRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -49,11 +49,11 @@ namespace Neo4Net.Kernel.impl.core
 	public class NodeTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static DatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.GraphTransactionRule tx = new org.neo4j.test.rule.GraphTransactionRule(db);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.GraphTransactionRule tx = new org.Neo4Net.test.rule.GraphTransactionRule(db);
 		 public GraphTransactionRule Tx = new GraphTransactionRule( Db );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -463,7 +463,7 @@ namespace Neo4Net.Kernel.impl.core
 			  assertEquals( "test4", node.GetProperty( "test" ) );
 		 }
 
-		 private GraphDatabaseService GraphDb
+		 private IGraphDatabaseService GraphDb
 		 {
 			 get
 			 {

@@ -29,7 +29,7 @@ namespace Neo4Net.Server.Security.Auth
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.trimToList;
+//	import static org.Neo4Net.helpers.collection.MapUtil.trimToList;
 
 	public abstract class AbstractUserRepository : LifecycleAdapter, UserRepository
 	{
@@ -59,7 +59,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void create(org.neo4j.kernel.impl.security.User user) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: public void create(org.Neo4Net.kernel.impl.security.User user) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 		 public override void Create( User user )
 		 {
 			  AssertValidUsername( user.Name() );
@@ -82,7 +82,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setUsers(ListSnapshot<org.neo4j.kernel.impl.security.User> usersSnapshot) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void setUsers(ListSnapshot<org.Neo4Net.kernel.impl.security.User> usersSnapshot) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public virtual ListSnapshot<User> Users
 		 {
 			 set
@@ -111,7 +111,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void update(org.neo4j.kernel.impl.security.User existingUser, org.neo4j.kernel.impl.security.User updatedUser) throws org.neo4j.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
+//ORIGINAL LINE: public void update(org.Neo4Net.kernel.impl.security.User existingUser, org.Neo4Net.kernel.impl.security.User updatedUser) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
 		 public override void Update( User existingUser, User updatedUser )
 		 {
 			  // Assert input is ok
@@ -150,7 +150,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized boolean delete(org.neo4j.kernel.impl.security.User user) throws java.io.IOException
+//ORIGINAL LINE: public synchronized boolean delete(org.Neo4Net.kernel.impl.security.User user) throws java.io.IOException
 		 public override bool Delete( User user )
 		 {
 			 lock ( this )
@@ -189,7 +189,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void assertValidUsername(String username) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void assertValidUsername(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override void AssertValidUsername( string username )
 		 {
 			  if ( string.ReferenceEquals( username, null ) || username.Length == 0 )
@@ -229,7 +229,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <returns> a timestamped snapshot of users, or null if the backing file did not exist </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract ListSnapshot<org.neo4j.kernel.impl.security.User> readPersistedUsers() throws java.io.IOException;
+//ORIGINAL LINE: protected abstract ListSnapshot<org.Neo4Net.kernel.impl.security.User> readPersistedUsers() throws java.io.IOException;
 		 protected internal abstract ListSnapshot<User> ReadPersistedUsers();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

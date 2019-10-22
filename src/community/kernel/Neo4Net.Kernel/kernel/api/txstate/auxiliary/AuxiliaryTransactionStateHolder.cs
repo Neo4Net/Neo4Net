@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.api.txstate.auxiliary
 		 /// <param name="extractedCommands"> The collection to add the extracted commands to. </param>
 		 /// <exception cref="TransactionFailureException"> If the transaction state wanted to produce commands, but is somehow unable to do so. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void extractCommands(java.util.Collection<org.neo4j.storageengine.api.StorageCommand> extractedCommands) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> extractedCommands) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 void ExtractCommands( ICollection<StorageCommand> extractedCommands );
 
 		 /// <summary>

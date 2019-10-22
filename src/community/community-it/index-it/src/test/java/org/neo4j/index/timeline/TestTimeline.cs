@@ -26,14 +26,14 @@ namespace Neo4Net.Index.timeline
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Index.lucene;
 	using Neo4Net.Index.lucene;
@@ -42,11 +42,11 @@ namespace Neo4Net.Index.timeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
 
 	public class TestTimeline
 	{
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void before()
@@ -62,14 +62,14 @@ namespace Neo4Net.Index.timeline
 			  _db.shutdown();
 		 }
 
-		 private interface EntityCreator<T> where T : Neo4Net.Graphdb.PropertyContainer
+		 private interface IEntityCreator<T> where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  T Create();
 		 }
 
-		 private EntityCreator<PropertyContainer> nodeCreator = new EntityCreatorAnonymousInnerClass();
+		 private IEntityCreator<PropertyContainer> nodeCreator = new IEntityCreatorAnonymousInnerClass();
 
-		 private class EntityCreatorAnonymousInnerClass : EntityCreator<PropertyContainer>
+		 private class IEntityCreatorAnonymousInnerClass : IEntityCreator<PropertyContainer>
 		 {
 			 public Node create()
 			 {
@@ -77,9 +77,9 @@ namespace Neo4Net.Index.timeline
 			 }
 		 }
 
-		 private EntityCreator<PropertyContainer> relationshipCreator = new EntityCreatorAnonymousInnerClass2();
+		 private IEntityCreator<PropertyContainer> relationshipCreator = new IEntityCreatorAnonymousInnerClass2();
 
-		 private class EntityCreatorAnonymousInnerClass2 : EntityCreator<PropertyContainer>
+		 private class IEntityCreatorAnonymousInnerClass2 : IEntityCreator<PropertyContainer>
 		 {
 			 private readonly RelationshipType type = RelationshipType.withName( "whatever" );
 
@@ -109,7 +109,7 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private LinkedList<Pair<PropertyContainer, long>> CreateTimestamps( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline, params long[] timestamps )
+		 private LinkedList<Pair<PropertyContainer, long>> CreateTimestamps( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline, params long[] timestamps )
 		 {
 			  using ( Transaction tx = _db.beginTx() )
 			  {
@@ -123,15 +123,15 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private Pair<PropertyContainer, long> CreateTimestampedEntity( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline, long timestamp )
+		 private Pair<PropertyContainer, long> CreateTimestampedEntity( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline, long timestamp )
 		 {
-			  PropertyContainer entity = creator.Create();
-			  timeline.Add( entity, timestamp );
-			  return Pair.of( entity, timestamp );
+			  IPropertyContainer IEntity = creator.Create();
+			  timeline.Add( IEntity, timestamp );
+			  return Pair.of( IEntity, timestamp );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.List<org.neo4j.graphdb.PropertyContainer> sortedEntities(java.util.LinkedList<org.neo4j.helpers.collection.Pair<org.neo4j.graphdb.PropertyContainer, long>> timestamps, final boolean reversed)
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.graphdb.PropertyContainer> sortedEntities(java.util.LinkedList<org.Neo4Net.helpers.collection.Pair<org.Neo4Net.graphdb.PropertyContainer, long>> timestamps, final boolean reversed)
 		 private IList<PropertyContainer> SortedEntities( LinkedList<Pair<PropertyContainer, long>> timestamps, bool reversed )
 		 {
 			  IList<Pair<PropertyContainer, long>> sorted = new List<Pair<PropertyContainer, long>>( timestamps );
@@ -148,7 +148,7 @@ namespace Neo4Net.Index.timeline
 		 // ======== Tests, although private so that we can create two versions of each,
 		 // ======== one for nodes and one for relationships
 
-		 private void MakeSureFirstAndLastAreReturnedCorrectly( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
+		 private void MakeSureFirstAndLastAreReturnedCorrectly( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
 		 {
 			  LinkedList<Pair<PropertyContainer, long>> timestamps = CreateTimestamps( creator, timeline, 223456, 12345, 432234 );
 			  using ( Transaction tx = _db.beginTx() )
@@ -159,7 +159,7 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private void MakeSureRangesAreReturnedInCorrectOrder( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
+		 private void MakeSureRangesAreReturnedInCorrectOrder( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
 		 {
 			  LinkedList<Pair<PropertyContainer, long>> timestamps = CreateTimestamps( creator, timeline, 300000, 200000, 400000, 100000, 500000, 600000, 900000, 800000 );
 			  using ( Transaction tx = _db.beginTx() )
@@ -169,7 +169,7 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private void MakeSureRangesAreReturnedInCorrectReversedOrder( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
+		 private void MakeSureRangesAreReturnedInCorrectReversedOrder( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
 		 {
 			  LinkedList<Pair<PropertyContainer, long>> timestamps = CreateTimestamps( creator, timeline, 300000, 200000, 199999, 400000, 100000, 500000, 600000, 900000, 800000 );
 			  using ( Transaction tx = _db.beginTx() )
@@ -179,7 +179,7 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private void MakeSureWeCanQueryLowerDefaultThan1970( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
+		 private void MakeSureWeCanQueryLowerDefaultThan1970( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
 		 {
 			  LinkedList<Pair<PropertyContainer, long>> timestamps = CreateTimestamps( creator, timeline, -10000, 0, 10000 );
 			  using ( Transaction tx = _db.beginTx() )
@@ -189,7 +189,7 @@ namespace Neo4Net.Index.timeline
 			  }
 		 }
 
-		 private void MakeSureUncommittedChangesAreSortedCorrectly( EntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
+		 private void MakeSureUncommittedChangesAreSortedCorrectly( IEntityCreator<PropertyContainer> creator, TimelineIndex<PropertyContainer> timeline )
 		 {
 			  LinkedList<Pair<PropertyContainer, long>> timestamps = CreateTimestamps( creator, timeline, 300000, 100000, 500000, 900000, 800000 );
 

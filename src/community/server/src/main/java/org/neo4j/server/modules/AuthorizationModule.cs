@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.modules
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;

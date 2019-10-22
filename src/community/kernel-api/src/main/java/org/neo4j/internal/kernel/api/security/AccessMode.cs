@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Internal.Kernel.Api.security
 {
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
@@ -63,7 +63,7 @@ namespace Neo4Net.Internal.Kernel.Api.security
 		  /// <summary>
 		  /// No reading or writing allowed because of expired credentials. </summary>
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//        CREDENTIALS_EXPIRED(false, false, false, false, false, false) { public org.neo4j.graphdb.security.AuthorizationViolationException onViolation(String msg) { return new org.neo4j.graphdb.security.AuthorizationViolationException(String.format(msg + "%n%nThe credentials you provided were valid, but must be " + "changed before you can " + "use this instance. If this is the first time you are using Neo4j, this is to " + "ensure you are not using the default credentials in production. If you are not " + "using default credentials, you are getting this message because an administrator " + "requires a password change.%n" + "Changing your password is easy to do via the Neo4j Browser.%n" + "If you are connecting via a shell or programmatically via a driver, " + "just issue a `CALL dbms.changePassword('new password')` statement in the current " + "session, and then restart your driver with the new password configured."), org.neo4j.kernel.api.exceptions.Status_Security.CredentialsExpired); } },
+//        CREDENTIALS_EXPIRED(false, false, false, false, false, false) { public org.Neo4Net.graphdb.security.AuthorizationViolationException onViolation(String msg) { return new org.Neo4Net.graphdb.security.AuthorizationViolationException(String.format(msg + "%n%nThe credentials you provided were valid, but must be " + "changed before you can " + "use this instance. If this is the first time you are using Neo4Net, this is to " + "ensure you are not using the default credentials in production. If you are not " + "using default credentials, you are getting this message because an administrator " + "requires a password change.%n" + "Changing your password is easy to do via the Neo4Net Browser.%n" + "If you are connecting via a shell or programmatically via a driver, " + "just issue a `CALL dbms.changePassword('new password')` statement in the current " + "session, and then restart your driver with the new password configured."), org.Neo4Net.kernel.api.exceptions.Status_Security.CredentialsExpired); } },
 
 		  /// <summary>
 		  /// Allows reading data and schema, but not writing. </summary>
@@ -161,7 +161,7 @@ namespace Neo4Net.Internal.Kernel.Api.security
 				return Procedure;
 		  }
 
-		  public Neo4Net.Graphdb.security.AuthorizationViolationException OnViolation( string msg )
+		  public Neo4Net.GraphDb.security.AuthorizationViolationException OnViolation( string msg )
 		  {
 				return new AuthorizationViolationException( msg );
 		  }

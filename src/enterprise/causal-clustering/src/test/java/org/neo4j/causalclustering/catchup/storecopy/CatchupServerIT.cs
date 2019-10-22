@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -33,11 +33,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 
 	using StoreId = Neo4Net.causalclustering.identity.StoreId;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -65,9 +65,9 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.relativePath;
+//	import static org.Neo4Net.io.fs.FileUtils.relativePath;
 
 	public class CatchupServerIT
 	{
@@ -103,10 +103,10 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 private PageCache _pageCache;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory(fileSystemRule);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystemRule);
 		 public TestDirectory TestDirectory;
 		 private CatchUpClient _catchupClient;
 		 private DefaultFileSystemAbstraction _fsa;
@@ -314,7 +314,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void listOfDownloadedFilesMatchesServer(org.neo4j.kernel.NeoStoreDataSource neoStoreDataSource, java.io.File[] files) throws java.io.IOException
+//ORIGINAL LINE: private void listOfDownloadedFilesMatchesServer(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, java.io.File[] files) throws java.io.IOException
 		 private void ListOfDownloadedFilesMatchesServer( NeoStoreDataSource neoStoreDataSource, File[] files )
 		 {
 			  IList<string> expectedStoreFiles = GetExpectedStoreFiles( neoStoreDataSource );
@@ -328,7 +328,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.io.File> listServerExpectedNonReplayableFiles(org.neo4j.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+//ORIGINAL LINE: private static java.util.List<java.io.File> listServerExpectedNonReplayableFiles(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
 		 private static IList<File> ListServerExpectedNonReplayableFiles( NeoStoreDataSource neoStoreDataSource )
 		 {
 			  using ( Stream<StoreFileMetadata> countStoreStream = neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeNeoStoreFiles().build().stream(), Stream<StoreFileMetadata> explicitIndexStream = neoStoreDataSource.NeoStoreFileListing.builder().excludeAll().includeExplicitIndexStoreStoreFiles().build().stream() )
@@ -339,7 +339,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<String> getExpectedStoreFiles(org.neo4j.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<String> getExpectedStoreFiles(org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource) throws java.io.IOException
 		 private IList<string> GetExpectedStoreFiles( NeoStoreDataSource neoStoreDataSource )
 		 {
 			  NeoStoreFileListing.StoreFileListingBuilder builder = neoStoreDataSource.NeoStoreFileListing.builder();

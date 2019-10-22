@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.impl.store.id
 //	import static org.junit.Assert.assertTrue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
+//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
 
 	public class IdRangeIteratorTest
 	{

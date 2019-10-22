@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Helpers.Collections
 {
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	public abstract class MappingResourceIterator<T, S> : ResourceIterator<T>
 	{

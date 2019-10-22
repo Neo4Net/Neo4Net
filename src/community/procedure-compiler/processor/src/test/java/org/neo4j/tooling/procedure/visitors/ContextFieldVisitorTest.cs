@@ -25,7 +25,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using Log = Neo4Net.Logging.Log;
 	using ProcedureTransaction = Neo4Net.Procedure.ProcedureTransaction;
@@ -46,7 +46,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 	public class ContextFieldVisitorTest
 	{
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-		 private static readonly org.assertj.core.groups.Tuple _unknownContextErrorMsg = tuple( Diagnostic.Kind.ERROR, "@org.neo4j.procedure.Context usage error: found unknown type <java.lang.String> on field " + "UnknownContextType#unsupportedType, expected one of: <" + typeof( GraphDatabaseService ).FullName + ">, <" + typeof( Log ).FullName + ">, <" + typeof( TerminationGuard ).FullName + ">, <" + typeof( SecurityContext ).FullName + ">, <" + typeof( ProcedureTransaction ).FullName + ">" );
+		 private static readonly org.assertj.core.groups.Tuple _unknownContextErrorMsg = tuple( Diagnostic.Kind.ERROR, "@org.Neo4Net.procedure.Context usage error: found unknown type <java.lang.String> on field " + "UnknownContextType#unsupportedType, expected one of: <" + typeof( IGraphDatabaseService ).FullName + ">, <" + typeof( Log ).FullName + ">, <" + typeof( TerminationGuard ).FullName + ">, <" + typeof( SecurityContext ).FullName + ">, <" + typeof( ProcedureTransaction ).FullName + ">" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public com.google.testing.compile.CompilationRule compilationRule = new com.google.testing.compile.CompilationRule();
@@ -71,7 +71,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> result = fields.flatMap( _contextFieldVisitor.visit );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.neo4j.procedure.Context usage error: field NonPublicContextMisuse#arithm should be public, " + "non-static and non-final" ) );
+			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.Neo4Net.procedure.Context usage error: field NonPublicContextMisuse#arithm should be public, " + "non-static and non-final" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -83,7 +83,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> result = fields.flatMap( _contextFieldVisitor.visit );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.neo4j.procedure.Context usage error: field StaticContextMisuse#db should be public, non-static " + "and non-final" ) );
+			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.Neo4Net.procedure.Context usage error: field StaticContextMisuse#db should be public, non-static " + "and non-final" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -95,7 +95,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> result = fields.flatMap( _contextFieldVisitor.visit );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.neo4j.procedure.Context usage error: field FinalContextMisuse#graphDatabaseService should be " + "public, non-static and non-final" ) );
+			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactly( tuple( Diagnostic.Kind.ERROR, "@org.Neo4Net.procedure.Context usage error: field FinalContextMisuse#graphDatabaseService should be " + "public, non-static and non-final" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -107,7 +107,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 			  Stream<CompilationMessage> result = fields.flatMap( _contextFieldVisitor.visit );
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactlyInAnyOrder( tuple( Diagnostic.Kind.WARNING, Warning( "org.neo4j.kernel.internal.GraphDatabaseAPI", "RestrictedContextTypes#graphDatabaseAPI" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.neo4j.kernel.api.KernelTransaction", "RestrictedContextTypes#kernelTransaction" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.neo4j.graphdb.DependencyResolver", "RestrictedContextTypes#dependencyResolver" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.neo4j.kernel.api.security.UserManager", "RestrictedContextTypes#userManager" ) ) );
+			  assertThat( result ).extracting( CompilationMessage::getCategory, CompilationMessage::getContents ).containsExactlyInAnyOrder( tuple( Diagnostic.Kind.WARNING, Warning( "org.Neo4Net.kernel.internal.GraphDatabaseAPI", "RestrictedContextTypes#graphDatabaseAPI" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.Neo4Net.kernel.api.KernelTransaction", "RestrictedContextTypes#kernelTransaction" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.Neo4Net.graphdb.DependencyResolver", "RestrictedContextTypes#dependencyResolver" ) ), tuple( Diagnostic.Kind.WARNING, Warning( "org.Neo4Net.kernel.api.security.UserManager", "RestrictedContextTypes#userManager" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -149,7 +149,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 		 private string Warning( string fieldType, string fieldName )
 		 {
-			  return string.Format( "@org.neo4j.procedure.Context usage warning: found unsupported restricted type <{0}> on {1}.\n" + "The procedure will not load unless declared via the configuration option 'dbms.security.procedures.unrestricted'.\n" + "You can ignore this warning by passing the option -AIgnoreContextWarnings to the Java compiler", fieldType, fieldName );
+			  return string.Format( "@org.Neo4Net.procedure.Context usage warning: found unsupported restricted type <{0}> on {1}.\n" + "The procedure will not load unless declared via the configuration option 'dbms.security.procedures.unrestricted'.\n" + "You can ignore this warning by passing the option -AIgnoreContextWarnings to the Java compiler", fieldType, fieldName );
 		 }
 	}
 

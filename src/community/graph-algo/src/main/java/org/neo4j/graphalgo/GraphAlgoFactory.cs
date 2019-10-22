@@ -30,16 +30,16 @@ namespace Neo4Net.Graphalgo
 	using ShortestPath = Neo4Net.Graphalgo.impl.path.ShortestPath;
 	using DoubleEvaluator = Neo4Net.Graphalgo.impl.util.DoubleEvaluator;
 	using PathInterestFactory = Neo4Net.Graphalgo.impl.util.PathInterestFactory;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.traversal;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.traversal;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 	/// <summary>
 	/// Static factory methods for the recommended implementations of common
-	/// graph algorithms for Neo4j. The algorithms exposed here are implementations
+	/// graph algorithms for Neo4Net. The algorithms exposed here are implementations
 	/// which are tested extensively and also scale on bigger graphs.
 	/// </summary>
 	public abstract class GraphAlgoFactory

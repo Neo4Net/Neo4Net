@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 /// <returns> the channel of the newly opened/created log file. </returns>
 		 /// <exception cref="IOException"> if an error regarding closing or opening log files occur. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel rotate(org.neo4j.kernel.impl.transaction.log.LogVersionedStoreChannel currentLog) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel rotate(org.Neo4Net.kernel.impl.transaction.log.LogVersionedStoreChannel currentLog) throws java.io.IOException
 		 private PhysicalLogVersionedStoreChannel Rotate( LogVersionedStoreChannel currentLog )
 		 {
 			  /*
@@ -187,14 +187,14 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.ReadableLogChannel getReader(org.neo4j.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel getReader(org.Neo4Net.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
 		 public override ReadableLogChannel GetReader( LogPosition position )
 		 {
 			  return GetReader( position, _readerLogVersionBridge );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.ReadableLogChannel getReader(org.neo4j.kernel.impl.transaction.log.LogPosition position, org.neo4j.kernel.impl.transaction.log.LogVersionBridge logVersionBridge) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel getReader(org.Neo4Net.kernel.impl.transaction.log.LogPosition position, org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge logVersionBridge) throws java.io.IOException
 		 public override ReadableLogChannel GetReader( LogPosition position, LogVersionBridge logVersionBridge )
 		 {
 			  PhysicalLogVersionedStoreChannel logChannel = _logFiles.openForVersion( position.LogVersion );
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(LogFile_LogFileVisitor visitor, org.neo4j.kernel.impl.transaction.log.LogPosition startingFromPosition) throws java.io.IOException
+//ORIGINAL LINE: public void accept(LogFile_LogFileVisitor visitor, org.Neo4Net.kernel.impl.transaction.log.LogPosition startingFromPosition) throws java.io.IOException
 		 public override void Accept( LogFile_LogFileVisitor visitor, LogPosition startingFromPosition )
 		 {
 			  using ( ReadableLogChannel reader = GetReader( startingFromPosition ) )

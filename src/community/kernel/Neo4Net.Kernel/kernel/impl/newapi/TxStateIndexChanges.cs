@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// This class provides static utility methods that calculate relevant index updates from a transaction state for several index operations.
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal static AddedAndRemoved IndexUpdatesForSeek( ReadableTransactionState txState, IndexDescriptor descriptor, ValueTuple values )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> updates = txState.getIndexUpdates(descriptor.schema());
+//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> updates = txState.getIndexUpdates(descriptor.schema());
 			  UnmodifiableMap<ValueTuple, ? extends LongDiffSets> updates = txState.GetIndexUpdates( descriptor.Schema() );
 			  if ( updates != null )
 			  {
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> sortedUpdates = txState.GetSortedIndexUpdates( descriptor.Schema() );
 			  if ( sortedUpdates == null )
 			  {
@@ -153,10 +153,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> inRange = sortedUpdates.subMap(selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper);
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> inRange = sortedUpdates.subMap(selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper);
 			  IDictionary<ValueTuple, ? extends LongDiffSets> inRange = sortedUpdates.subMap( selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : inRange.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : inRange.entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in inRange.SetOfKeyValuePairs() )
 			  {
 					ValueTuple values = entry.Key;
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.neo4j.values.storable.ValueTuple, ? extends org.neo4j.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple, ? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> sortedUpdates = txState.GetSortedIndexUpdates( descriptor.Schema() );
 			  if ( sortedUpdates == null )
 			  {
@@ -222,10 +222,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> inRange = sortedUpdates.subMap(selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper);
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> inRange = sortedUpdates.subMap(selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper);
 			  IDictionary<ValueTuple, ? extends LongDiffSets> inRange = sortedUpdates.subMap( selectedLower, selectedIncludeLower, selectedUpper, selectedIncludeUpper );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : inRange.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : inRange.entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in inRange.SetOfKeyValuePairs() )
 			  {
 					ValueTuple values = entry.Key;
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal static AddedAndRemoved IndexUpdatesForRangeSeekByPrefix( ReadableTransactionState txState, IndexDescriptor descriptor, TextValue prefix, IndexOrder indexOrder )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> sortedUpdates = txState.GetSortedIndexUpdates( descriptor.Schema() );
 			  if ( sortedUpdates == null )
 			  {
@@ -260,7 +260,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : sortedUpdates.subMap(floor, MAX_STRING_TUPLE).entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : sortedUpdates.subMap(floor, MAX_STRING_TUPLE).entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in sortedUpdates.subMap( floor, _maxStringTuple ).entrySet() )
 			  {
 					ValueTuple key = entry.Key;
@@ -281,7 +281,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal static AddedWithValuesAndRemoved IndexUpdatesWithValuesForRangeSeekByPrefix( ReadableTransactionState txState, IndexDescriptor descriptor, TextValue prefix, IndexOrder indexOrder )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> sortedUpdates = txState.getSortedIndexUpdates(descriptor.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> sortedUpdates = txState.GetSortedIndexUpdates( descriptor.Schema() );
 			  if ( sortedUpdates == null )
 			  {
@@ -293,7 +293,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : sortedUpdates.tailMap(floor).entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : sortedUpdates.tailMap(floor).entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in sortedUpdates.tailMap( floor ).entrySet() )
 			  {
 					ValueTuple key = entry.Key;
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private static AddedAndRemoved IndexUpdatesForScanAndFilter( ReadableTransactionState txState, IndexDescriptor descriptor, IndexQuery filter, IndexOrder indexOrder )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> updates = getUpdates(txState, descriptor, indexOrder);
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> updates = getUpdates(txState, descriptor, indexOrder);
 			  IDictionary<ValueTuple, ? extends LongDiffSets> updates = GetUpdates( txState, descriptor, indexOrder );
 
 			  if ( updates == null )
@@ -329,7 +329,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : updates.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : updates.entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in updates.SetOfKeyValuePairs() )
 			  {
 					ValueTuple key = entry.Key;
@@ -346,7 +346,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private static AddedWithValuesAndRemoved IndexUpdatesWithValuesScanAndFilter( ReadableTransactionState txState, IndexDescriptor descriptor, IndexQuery filter, IndexOrder indexOrder )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> updates = getUpdates(txState, descriptor, indexOrder);
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> updates = getUpdates(txState, descriptor, indexOrder);
 			  IDictionary<ValueTuple, ? extends LongDiffSets> updates = GetUpdates( txState, descriptor, indexOrder );
 
 			  if ( updates == null )
@@ -358,7 +358,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet removed = LongSets.mutable.empty();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> entry : updates.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> entry : updates.entrySet())
 			  foreach ( KeyValuePair<ValueTuple, ? extends LongDiffSets> entry in updates.SetOfKeyValuePairs() )
 			  {
 					ValueTuple key = entry.Key;
@@ -374,7 +374,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Map<org.neo4j.values.storable.ValueTuple,? extends org.neo4j.storageengine.api.txstate.LongDiffSets> getUpdates(org.neo4j.storageengine.api.txstate.ReadableTransactionState txState, org.neo4j.storageengine.api.schema.IndexDescriptor descriptor, org.neo4j.internal.kernel.api.IndexOrder indexOrder)
+//ORIGINAL LINE: private static java.util.Map<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> getUpdates(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState txState, org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder)
 		 private static IDictionary<ValueTuple, ? extends LongDiffSets> GetUpdates( ReadableTransactionState txState, IndexDescriptor descriptor, IndexOrder indexOrder )
 		 {
 			  return indexOrder == IndexOrder.NONE ? txState.GetIndexUpdates( descriptor.Schema() ) : txState.GetSortedIndexUpdates(descriptor.Schema());

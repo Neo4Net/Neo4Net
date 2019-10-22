@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
+//	import static org.Neo4Net.causalclustering.catchup.storecopy.FileChunk.MAX_SIZE;
 
 	public class FileSenderTest
 	{
@@ -79,11 +79,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 		 private readonly Random _random = new Random();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 private FileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory(fsRule.get());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fsRule.get());
 		 public TestDirectory TestDirectory;
 		 private ByteBufAllocator _allocator = mock( typeof( ByteBufAllocator ) );
 		 private PageCache _pageCache = mock( typeof( PageCache ) );
@@ -327,7 +327,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] writeRandomBytes(org.neo4j.io.fs.StoreChannel writer, int size) throws java.io.IOException
+//ORIGINAL LINE: private byte[] writeRandomBytes(org.Neo4Net.io.fs.StoreChannel writer, int size) throws java.io.IOException
 		 private sbyte[] WriteRandomBytes( StoreChannel writer, int size )
 		 {
 			  sbyte[] bytes = new sbyte[size];

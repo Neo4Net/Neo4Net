@@ -27,11 +27,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using ProcessUtil = Neo4Net.Test.proc.ProcessUtil;
@@ -43,15 +43,15 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getJavaExecutable;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class LuceneRecoveryIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.VerboseTimeout timeout = org.neo4j.test.rule.VerboseTimeout.builder().withTimeout(30, MINUTES).build();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(30, MINUTES).build();
 		 public readonly VerboseTimeout Timeout = VerboseTimeout.builder().withTimeout(30, MINUTES).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -70,7 +70,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  process.destroy();
 			  process.waitFor();
 
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  try
 			  {
 					db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(TestDirectory.storeDir());
@@ -168,9 +168,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 private class NodeCreator : ThreadStart
 		 {
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 
-			  internal NodeCreator( GraphDatabaseService db )
+			  internal NodeCreator( IGraphDatabaseService db )
 			  {
 					this.Db = db;
 			  }

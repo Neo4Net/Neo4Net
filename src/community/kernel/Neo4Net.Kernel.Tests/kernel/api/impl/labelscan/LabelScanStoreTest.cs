@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
@@ -69,15 +69,15 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
+//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.scan.FullStoreChangeStream.asStream;
+//	import static org.Neo4Net.kernel.impl.api.scan.FullStoreChangeStream.asStream;
 
 	public abstract class LabelScanStoreTest
 	{
@@ -389,7 +389,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void write(java.util.Iterator<org.neo4j.kernel.api.labelscan.NodeLabelUpdate> iterator) throws java.io.IOException
+//ORIGINAL LINE: private void write(java.util.Iterator<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate> iterator) throws java.io.IOException
 		 private void Write( IEnumerator<NodeLabelUpdate> iterator )
 		 {
 			  using ( LabelScanWriter writer = _store.newWriter() )
@@ -625,7 +625,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void scrambleIndexFilesAndRestart(java.util.List<org.neo4j.kernel.api.labelscan.NodeLabelUpdate> data, boolean usePersistentStore, boolean readOnly) throws java.io.IOException
+//ORIGINAL LINE: private void scrambleIndexFilesAndRestart(java.util.List<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate> data, boolean usePersistentStore, boolean readOnly) throws java.io.IOException
 		 private void ScrambleIndexFilesAndRestart( IList<NodeLabelUpdate> data, bool usePersistentStore, bool readOnly )
 		 {
 			  Shutdown();
@@ -634,7 +634,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void corruptIndex(org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract void corruptIndex(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException;
 		 protected internal abstract void CorruptIndex( FileSystemAbstraction fileSystem, DatabaseLayout databaseLayout );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

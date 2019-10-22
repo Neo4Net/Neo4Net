@@ -24,29 +24,29 @@ namespace Neo4Net.Kernel.impl.factory
 {
 
 	using Suppliers = Neo4Net.Functions.Suppliers;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using MultipleFoundException = Neo4Net.Graphdb.MultipleFoundException;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using StringSearchMode = Neo4Net.Graphdb.StringSearchMode;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
-	using Neo4Net.Graphdb.@event;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
-	using BidirectionalTraversalDescription = Neo4Net.Graphdb.traversal.BidirectionalTraversalDescription;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using MultipleFoundException = Neo4Net.GraphDb.MultipleFoundException;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using StringSearchMode = Neo4Net.GraphDb.StringSearchMode;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
+	using Neo4Net.GraphDb.Events;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.factory
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
 	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
@@ -90,13 +90,13 @@ namespace Neo4Net.Kernel.impl.factory
 	using IndexProviderImpl = Neo4Net.Kernel.impl.coreapi.IndexProviderImpl;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using PlaceboTransaction = Neo4Net.Kernel.impl.coreapi.PlaceboTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using Neo4Net.Kernel.impl.coreapi;
 	using ReadOnlyRelationshipIndexFacade = Neo4Net.Kernel.impl.coreapi.ReadOnlyRelationshipIndexFacade;
 	using RelationshipAutoIndexerFacade = Neo4Net.Kernel.impl.coreapi.RelationshipAutoIndexerFacade;
 	using TopLevelTransaction = Neo4Net.Kernel.impl.coreapi.TopLevelTransaction;
 	using SchemaImpl = Neo4Net.Kernel.impl.coreapi.schema.SchemaImpl;
-	using Neo4jTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4jTransactionalContextFactory;
+	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using TransactionalContextFactory = Neo4Net.Kernel.impl.query.TransactionalContextFactory;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
@@ -104,32 +104,32 @@ namespace Neo4Net.Kernel.impl.factory
 	using MonoDirectionalTraversalDescription = Neo4Net.Kernel.impl.traversal.MonoDirectionalTraversalDescription;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 	using Values = Neo4Net.Values.Storable.Values;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.emptyResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
+//	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.explicitindex.InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX;
+//	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.RELATIONSHIP_AUTO_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.utf8Value;
+//	import static org.Neo4Net.values.storable.Values.utf8Value;
 
 	/// <summary>
-	/// Implementation of the GraphDatabaseService/GraphDatabaseService interfaces - the "Core API". Given an <seealso cref="SPI"/>
+	/// Implementation of the IGraphDatabaseService/GraphDatabaseService interfaces - the "Core API". Given an <seealso cref="SPI"/>
 	/// implementation, this provides users with
 	/// a clean facade to interact with the database.
 	/// </summary>
 	public class GraphDatabaseFacade : GraphDatabaseAPI, EmbeddedProxySPI
 	{
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 
 		 private Schema _schema;
 		 private System.Func<IndexManager> _indexManager;
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 /// <summary>
 		 /// This is what you need to implement to get your very own <seealso cref="GraphDatabaseFacade"/>. This SPI exists as a thin
 		 /// layer to make it easy to provide
-		 /// alternate <seealso cref="org.neo4j.graphdb.GraphDatabaseService"/> instances without having to re-implement this whole API
+		 /// alternate <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> instances without having to re-implement this whole API
 		 /// implementation.
 		 /// </summary>
 		 public interface SPI
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  DatabaseLayout DatabaseLayout();
 
 			  /// <summary>
-			  /// Eg. Neo4j Enterprise HA, Neo4j Community Standalone.. </summary>
+			  /// Eg. Neo4Net Enterprise HA, Neo4Net Community Standalone.. </summary>
 			  string Name();
 
 			  void Shutdown();
@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  /// <summary>
 			  /// Begin a new kernel transaction with specified timeout in milliseconds.
 			  /// </summary>
-			  /// <exception cref="org.neo4j.graphdb.TransactionFailureException"> if unable to begin, or a transaction already exists. </exception>
+			  /// <exception cref="org.Neo4Net.graphdb.TransactionFailureException"> if unable to begin, or a transaction already exists. </exception>
 			  /// <seealso cref= GraphDatabaseAPI#beginTransaction(KernelTransaction.Type, LoginContext) </seealso>
 			  KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
@@ -187,7 +187,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  void unregisterTransactionEventHandler<T>( TransactionEventHandler<T> handler );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError;
+//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError;
 			  URL ValidateURLAccess( URL url );
 
 			  GraphDatabaseQueryService QueryService();
@@ -212,13 +212,13 @@ namespace Neo4Net.Kernel.impl.factory
 			  this._indexManager = Suppliers.lazySingleton(() =>
 			  {
 				IndexProviderImpl idxProvider = new IndexProviderImpl( this, () => txBridge.GetKernelTransactionBoundToThisThread(true) );
-				AutoIndexerFacade<Node> nodeAutoIndexer = new AutoIndexerFacade<Node>( () => new ReadOnlyIndexFacade<Neo4Net.Graphdb.index.ReadableIndex<T>>(idxProvider.getOrCreateNodeIndex(NODE_AUTO_INDEX, null)), spi.AutoIndexing().nodes() );
+				AutoIndexerFacade<Node> nodeAutoIndexer = new AutoIndexerFacade<Node>( () => new ReadOnlyIndexFacade<Neo4Net.GraphDb.index.ReadableIndex<T>>(idxProvider.getOrCreateNodeIndex(NODE_AUTO_INDEX, null)), spi.AutoIndexing().nodes() );
 				RelationshipAutoIndexerFacade relAutoIndexer = new RelationshipAutoIndexerFacade( () => new ReadOnlyRelationshipIndexFacade(idxProvider.getOrCreateRelationshipIndex(RELATIONSHIP_AUTO_INDEX, null)), spi.AutoIndexing().relationships() );
 
 				return new IndexManagerImpl( () => txBridge.GetKernelTransactionBoundToThisThread(true), idxProvider, nodeAutoIndexer, relAutoIndexer );
 			  });
 
-			  this._contextFactory = Neo4jTransactionalContextFactory.create( spi, txBridge, _locker );
+			  this._contextFactory = Neo4NetTransactionalContextFactory.create( spi, txBridge, _locker );
 		 }
 
 		 public override Node CreateNode()
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 {
 			  if ( id < 0 )
 			  {
-					throw new NotFoundException( format( "Node %d not found", id ), new EntityNotFoundException( EntityType.NODE, id ) );
+					throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( IEntityType.NODE, id ) );
 			  }
 
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -301,7 +301,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  {
 					if ( !ktx.DataRead().nodeExists(id) )
 					{
-						 throw new NotFoundException( format( "Node %d not found", id ), new EntityNotFoundException( EntityType.NODE, id ) );
+						 throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( IEntityType.NODE, id ) );
 					}
 					return NewNodeProxy( id );
 			  }
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 {
 			  if ( id < 0 )
 			  {
-					throw new NotFoundException( format( "Relationship %d not found", id ), new EntityNotFoundException( EntityType.RELATIONSHIP, id ) );
+					throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( IEntityType.RELATIONSHIP, id ) );
 			  }
 
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -320,7 +320,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  {
 					if ( !ktx.DataRead().relationshipExists(id) )
 					{
-						 throw new NotFoundException( format( "Relationship %d not found", id ), new EntityNotFoundException( EntityType.RELATIONSHIP, id ) );
+						 throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( IEntityType.RELATIONSHIP, id ) );
 					}
 					return NewRelationshipProxy( id );
 			  }
@@ -369,21 +369,21 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query )
 		 {
 			  return Execute( query, Collections.emptyMap() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, long timeout, TimeUnit unit )
 		 {
 			  return Execute( query, Collections.emptyMap(), timeout, unit );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, java.util.Map<String,Object> parameters) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters )
 		 {
 			  // ensure we have a tx and create a context (the tx is gonna get closed by the Cypher result)
@@ -393,7 +393,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(String query, java.util.Map<String,Object> parameters, long timeout, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public override Result Execute( string query, IDictionary<string, object> parameters, long timeout, TimeUnit unit )
 		 {
 			  InternalTransaction transaction = BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, timeout, unit );
@@ -401,7 +401,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result execute(org.neo4j.kernel.impl.coreapi.InternalTransaction transaction, String query, org.neo4j.values.virtual.MapValue parameters) throws org.neo4j.graphdb.QueryExecutionException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result execute(org.Neo4Net.kernel.impl.coreapi.InternalTransaction transaction, String query, org.Neo4Net.values.virtual.MapValue parameters) throws org.Neo4Net.graphdb.QueryExecutionException
 		 public virtual Result Execute( InternalTransaction transaction, string query, MapValue parameters )
 		 {
 			  TransactionalContext context = _contextFactory.newContext( ClientConnectionInfo.EMBEDDED_CONNECTION, transaction, query, parameters );
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private <T> org.neo4j.graphdb.ResourceIterable<T> allInUse(final org.neo4j.kernel.impl.api.TokenAccess<T> tokens)
+//ORIGINAL LINE: private <T> org.Neo4Net.graphdb.ResourceIterable<T> allInUse(final org.Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
 		 private ResourceIterable<T> AllInUse<T>( TokenAccess<T> tokens )
 		 {
 			  AssertTransactionOpen();
@@ -557,7 +557,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private <T> org.neo4j.graphdb.ResourceIterable<T> all(final org.neo4j.kernel.impl.api.TokenAccess<T> tokens)
+//ORIGINAL LINE: private <T> org.Neo4Net.graphdb.ResourceIterable<T> all(final org.Neo4Net.kernel.impl.api.TokenAccess<T> tokens)
 		 private ResourceIterable<T> All<T>( TokenAccess<T> tokens )
 		 {
 			  AssertTransactionOpen();
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Node> findNodes(final org.neo4j.graphdb.Label myLabel, final String key, final Object value)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel, final String key, final Object value)
 		 public override ResourceIterator<Node> FindNodes( Label myLabel, string key, object value )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -634,7 +634,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Node> findNodes(final org.neo4j.graphdb.Label myLabel, final String key, final String value, final org.neo4j.graphdb.StringSearchMode searchMode)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel, final String key, final String value, final org.Neo4Net.graphdb.StringSearchMode searchMode)
 		 public override ResourceIterator<Node> FindNodes( Label myLabel, string key, string value, StringSearchMode searchMode )
 		 {
 			  KernelTransaction transaction = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -663,7 +663,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.Node findNode(final org.neo4j.graphdb.Label myLabel, final String key, final Object value)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Node findNode(final org.Neo4Net.graphdb.Label myLabel, final String key, final Object value)
 		 public override Node FindNode( Label myLabel, string key, object value )
 		 {
 			  using ( ResourceIterator<Node> iterator = FindNodes( myLabel, key, value ) )
@@ -685,7 +685,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Node> findNodes(final org.neo4j.graphdb.Label myLabel)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> findNodes(final org.Neo4Net.graphdb.Label myLabel)
 		 public override ResourceIterator<Node> FindNodes( Label myLabel )
 		 {
 			  return AllNodesWithLabel( myLabel );
@@ -871,7 +871,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Node> allNodesWithLabel(final org.neo4j.graphdb.Label myLabel)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> allNodesWithLabel(final org.Neo4Net.graphdb.Label myLabel)
 		 private ResourceIterator<Node> AllNodesWithLabel( Label myLabel )
 		 {
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -914,7 +914,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _spi.validateURLAccess( url );
@@ -940,7 +940,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  return _statementContext.getKernelTransactionBoundToThisThread( true );
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabase
+		 public virtual IGraphDatabaseService GraphDatabase
 		 {
 			 get
 			 {

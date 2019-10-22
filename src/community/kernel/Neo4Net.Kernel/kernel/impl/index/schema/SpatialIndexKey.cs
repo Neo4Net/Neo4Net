@@ -28,15 +28,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values).
+	/// Includes value and IEntity id (to be able to handle non-unique values).
 	/// A value can be any <seealso cref="PointValue"/> and is represented as a {@code long} to store the 1D mapped version
 	/// </summary>
 	internal class SpatialIndexKey : NativeIndexSingleValueKey<SpatialIndexKey>
 	{
-		 internal static readonly int Size = Long.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal long RawValueBits;
 		 internal CoordinateReferenceSystem Crs;
@@ -69,10 +69,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  WritePoint( Crs, limit );
 		 }
 
-		 internal virtual void FromDerivedValue( long entityId, long derivedValue )
+		 internal virtual void FromDerivedValue( long IEntityId, long derivedValue )
 		 {
 			  RawValueBits = derivedValue;
-			  initialize( entityId );
+			  initialize( IEntityId );
 		 }
 
 		 /// <summary>
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "rawValue=%d,value=%s,entityId=%d", RawValueBits, "unknown", EntityId );
+			  return format( "rawValue=%d,value=%s,entityId=%d", RawValueBits, "unknown", IEntityId );
 		 }
 	}
 

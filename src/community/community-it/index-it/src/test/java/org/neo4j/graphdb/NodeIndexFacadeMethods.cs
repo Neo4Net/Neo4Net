@@ -19,10 +19,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 
 	public sealed class NodeIndexFacadeMethods : Consumer<Index<Node>>
 	{
@@ -33,16 +33,16 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       QUERY(new FacadeMethod<>("IndexHits<T> query( Object queryOrQueryObject )", self -> self.query("foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       ADD(new FacadeMethod<>("void add( T entity, String key, Object value )", self -> self.add(null, "foo", 42))),
+//       ADD(new FacadeMethod<>("void add( T IEntity, String key, Object value )", self -> self.add(null, "foo", 42))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       REMOVE_BY_KEY_AND_VALUE(new FacadeMethod<>("void remove( T entity, String key, Object value )", self -> self.remove(null, "foo", 42))),
+//       REMOVE_BY_KEY_AND_VALUE(new FacadeMethod<>("void remove( T IEntity, String key, Object value )", self -> self.remove(null, "foo", 42))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       REMOVE_BY_KEY(new FacadeMethod<>("void remove( T entity, String key )", self -> self.remove(null, "foo"))),
+//       REMOVE_BY_KEY(new FacadeMethod<>("void remove( T IEntity, String key )", self -> self.remove(null, "foo"))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       REMOVE(new FacadeMethod<>("void remove( T entity )", self -> self.remove(null))),
-		 public static readonly NodeIndexFacadeMethods Delete = new NodeIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.Graphdb.index.Index.delete ) );
+//       REMOVE(new FacadeMethod<>("void remove( T IEntity )", self -> self.remove(null))),
+		 public static readonly NodeIndexFacadeMethods Delete = new NodeIndexFacadeMethods( "Delete", InnerEnum.Delete, new FacadeMethod<>( "void delete()", Neo4Net.GraphDb.index.Index.delete ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PUT_IF_ABSENT(new FacadeMethod<>("T putIfAbsent( T entity, String key, Object value )", self -> self.putIfAbsent(null, "foo", 42)));
+//       PUT_IF_ABSENT(new FacadeMethod<>("T putIfAbsent( T IEntity, String key, Object value )", self -> self.putIfAbsent(null, "foo", 42)));
 
 		 private static readonly IList<NodeIndexFacadeMethods> valueList = new List<NodeIndexFacadeMethods>();
 
@@ -77,9 +77,9 @@ namespace Neo4Net.Graphdb
 		 private readonly int ordinalValue;
 		 private static int nextOrdinal = 0;
 
-		 private readonly FacadeMethod<Neo4Net.Graphdb.index.Index<Node>> facadeMethod;
+		 private readonly FacadeMethod<Neo4Net.GraphDb.index.Index<Node>> facadeMethod;
 
-		 internal NodeIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.Graphdb.index.Index<Node>> facadeMethod )
+		 internal NodeIndexFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.index.Index<Node>> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -88,7 +88,7 @@ namespace Neo4Net.Graphdb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.Graphdb.index.Index<Node> nodeIndex )
+		 public void Accept( Neo4Net.GraphDb.index.Index<Node> nodeIndex )
 		 {
 			  _facadeMethod.accept( nodeIndex );
 		 }

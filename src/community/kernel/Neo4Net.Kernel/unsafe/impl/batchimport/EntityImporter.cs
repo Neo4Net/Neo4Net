@@ -37,9 +37,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using BatchingPropertyKeyTokenRepository = Neo4Net.@unsafe.Impl.Batchimport.store.BatchingTokenRepository.BatchingPropertyKeyTokenRepository;
 
 	/// <summary>
-	/// Abstract class containing logic for importing properties for an entity (node/relationship).
+	/// Abstract class containing logic for importing properties for an IEntity (node/relationship).
 	/// </summary>
-	internal abstract class EntityImporter : Neo4Net.@unsafe.Impl.Batchimport.input.InputEntityVisitor_Adapter
+	internal abstract class IEntityImporter : Neo4Net.@unsafe.Impl.Batchimport.input.InputEntityVisitor_Adapter
 	{
 		 private readonly BatchingPropertyKeyTokenRepository _propertyKeyTokenRepository;
 		 private readonly PropertyStore _propertyStore;
@@ -49,13 +49,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 private readonly BatchingIdGetter _propertyIds;
 		 protected internal readonly Monitor Monitor;
 		 private long _propertyCount;
-		 protected internal int EntityPropertyCount; // just for the current entity
+		 protected internal int IEntityPropertyCount; // just for the current IEntity
 		 private bool _hasPropertyId;
 		 private long _propertyId;
 		 private readonly DynamicRecordAllocator _dynamicStringRecordAllocator;
 		 private readonly DynamicRecordAllocator _dynamicArrayRecordAllocator;
 
-		 protected internal EntityImporter( BatchingNeoStores stores, Monitor monitor )
+		 protected internal IEntityImporter( BatchingNeoStores stores, Monitor monitor )
 		 {
 			  this._propertyStore = stores.PropertyStore;
 			  this._propertyKeyTokenRepository = stores.PropertyKeyRepository;
@@ -80,7 +80,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Debug.Assert( !_hasPropertyId );
 			  EncodeProperty( NextPropertyBlock(), propertyKeyId, value );
-			  EntityPropertyCount++;
+			  IEntityPropertyCount++;
 			  return true;
 		 }
 
@@ -96,8 +96,8 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  _propertyBlocksCursor = 0;
 			  _hasPropertyId = false;
-			  _propertyCount += EntityPropertyCount;
-			  EntityPropertyCount = 0;
+			  _propertyCount += IEntityPropertyCount;
+			  IEntityPropertyCount = 0;
 		 }
 
 		 private PropertyBlock NextPropertyBlock()

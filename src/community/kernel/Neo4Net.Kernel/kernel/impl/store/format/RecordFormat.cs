@@ -82,14 +82,14 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// know the record size in advance, but may be read from store header when opening the store. </param>
 		 /// <exception cref="IOException"> on error reading. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void read(RECORD record, org.neo4j.io.pagecache.PageCursor cursor, org.neo4j.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException;
+//ORIGINAL LINE: void read(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, int recordSize) throws java.io.IOException;
 		 void Read( RECORD record, PageCursor cursor, RecordLoad mode, int recordSize );
 
 		 /// <summary>
 		 /// Called when all changes about a record has been gathered
 		 /// and before it's time to convert into a command. The original reason for introducing this is the
 		 /// thing with record units, where we need to know whether or not a record will span two units
-		 /// before even writing to the log as a command. The format is the pluggable entity which knows
+		 /// before even writing to the log as a command. The format is the pluggable IEntity which knows
 		 /// about the format and therefore the potential length of it and can update the given record with
 		 /// additional information which needs to be written to the command, carried back inside the record
 		 /// itself.
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 /// know the record size in advance, but may be read from store header when opening the store. </param>
 		 /// <exception cref="IOException"> on error writing. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void write(RECORD record, org.neo4j.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException;
+//ORIGINAL LINE: void write(RECORD record, org.Neo4Net.io.pagecache.PageCursor cursor, int recordSize) throws java.io.IOException;
 		 void Write( RECORD record, PageCursor cursor, int recordSize );
 
 		 /// <param name="record"> to obtain "next" reference from. </param>

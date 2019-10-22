@@ -27,9 +27,9 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.gibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.gibiBytes;
 
 	/// <summary>
 	/// Why test a silly thing like this? This implementation contains some printf calls that needs to get arguments correct

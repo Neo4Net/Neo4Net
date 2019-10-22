@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.api
 	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
 
 	/// <summary>
-	/// The main API through which access to the Neo4j kernel is made, both read
+	/// The main API through which access to the Neo4Net kernel is made, both read
 	/// and write operations are supported as well as creating transactions.
 	/// 
 	/// Changes to the graph (i.e. write operations) are performed via a
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="loginContext"> transaction login context </param>
 		 /// <param name="timeout"> transaction timeout in milliseconds </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: KernelTransaction beginTransaction(KernelTransaction.Type type, org.neo4j.internal.kernel.api.security.LoginContext loginContext, long timeout) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: KernelTransaction beginTransaction(KernelTransaction.Type type, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext, long timeout) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
 		 /// <summary>
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="procedure"> procedure to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerProcedure(org.neo4j.kernel.api.proc.CallableProcedure procedure) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 void RegisterProcedure( CallableProcedure procedure );
 
 		 /// <summary>
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserFunction(org.neo4j.kernel.api.proc.CallableUserFunction function) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 void RegisterUserFunction( CallableUserFunction function );
 
 		 /// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserAggregationFunction(org.neo4j.kernel.api.proc.CallableUserAggregationFunction function) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 void RegisterUserAggregationFunction( CallableUserAggregationFunction function );
 	}
 

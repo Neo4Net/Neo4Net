@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	/// <summary>
 	/// Lookup of names from token ids. Tokens are mostly referred to by ids throughout several abstractions.
@@ -41,7 +41,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 string PropertyKeyGetName( int propertyKeyId );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default String[] entityTokensGetNames(org.neo4j.storageengine.api.EntityType type, int[] entityTokenIds)
+//		 default String[] IEntityTokensGetNames(org.Neo4Net.storageengine.api.EntityType type, int[] IEntityTokenIds)
 	//	 {
 	//		  IntFunction<String> mapper;
 	//		  switch (type)
@@ -56,7 +56,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	//				throw new IllegalArgumentException("Cannot lookup names for tokens of type: " + type);
 	//		  }
 	//		  String[] tokenNames = new String[entityTokenIds.length];
-	//		  for (int i = 0; i < entityTokenIds.length; i++)
+	//		  for (int i = 0; i < IEntityTokenIds.length; i++)
 	//		  {
 	//				tokenNames[i] = mapper.apply(entityTokenIds[i]);
 	//		  }

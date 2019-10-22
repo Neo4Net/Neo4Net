@@ -66,23 +66,23 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.LuceneIndexProvider.defaultDirectoryStructure;
+//	import static org.Neo4Net.kernel.api.impl.schema.LuceneIndexProvider.defaultDirectoryStructure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({DefaultFileSystemExtension.class, TestDirectoryExtension.class}) class LuceneSchemaIndexPopulatorTest
 	internal class LuceneSchemaIndexPopulatorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
 		 private DefaultFileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 		 private IndexStoreView _indexStoreView;
@@ -259,21 +259,21 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
 		 private IndexEntryUpdate<object> Add( long nodeId, object value )
 		 {
 			  return IndexQueryHelper.add( nodeId, _index.schema(), value );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object valueBefore, Object valueAfter)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object valueBefore, Object valueAfter)
 		 private IndexEntryUpdate<object> Change( long nodeId, object valueBefore, object valueAfter )
 		 {
 			  return IndexQueryHelper.change( nodeId, _index.schema(), valueBefore, valueAfter );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object removedValue)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object removedValue)
 		 private IndexEntryUpdate<object> Remove( long nodeId, object removedValue )
 		 {
 			  return IndexQueryHelper.remove( nodeId, _index.schema(), removedValue );
@@ -310,20 +310,20 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addUpdate(org.neo4j.kernel.api.index.IndexPopulator populator, long nodeId, Object value) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void addUpdate(org.Neo4Net.kernel.api.index.IndexPopulator populator, long nodeId, Object value) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void AddUpdate( IndexPopulator populator, long nodeId, object value )
 		 {
 			  populator.Add( singletonList( IndexQueryHelper.add( nodeId, _index.schema(), value ) ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void updatePopulator(org.neo4j.kernel.api.index.IndexPopulator populator, Iterable<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates, org.neo4j.storageengine.api.NodePropertyAccessor accessor) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static void updatePopulator(org.Neo4Net.kernel.api.index.IndexPopulator populator, Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates, org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void UpdatePopulator<T1>( IndexPopulator populator, IEnumerable<T1> updates, NodePropertyAccessor accessor )
 		 {
 			  using ( IndexUpdater updater = populator.NewPopulatingUpdater( accessor ) )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 updater.Process( update );

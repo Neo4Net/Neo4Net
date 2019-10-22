@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.dump
 {
@@ -54,11 +54,11 @@ namespace Neo4Net.tools.dump
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.parseLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	/// <summary>
 	/// Tool to dump content of specified store into readable format for further analysis. </summary>
@@ -104,7 +104,7 @@ namespace Neo4Net.tools.dump
 			  using ( DefaultFileSystemAbstraction fs = new DefaultFileSystemAbstraction(), PageCache pageCache = createPageCache(fs, createInitializedScheduler()) )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.id.DefaultIdGeneratorFactory idGeneratorFactory = new org.neo4j.kernel.impl.store.id.DefaultIdGeneratorFactory(fs);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.id.DefaultIdGeneratorFactory idGeneratorFactory = new org.Neo4Net.kernel.impl.store.id.DefaultIdGeneratorFactory(fs);
 					DefaultIdGeneratorFactory idGeneratorFactory = new DefaultIdGeneratorFactory( fs );
 					System.Func<File, StoreFactory> createStoreFactory = file => new StoreFactory( DatabaseLayout.of( file.ParentFile ), Config.defaults(), idGeneratorFactory, pageCache, fs, LogProvider(), EmptyVersionContextSupplier.EMPTY );
 
@@ -116,7 +116,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpFile(System.Func<java.io.File, org.neo4j.kernel.impl.store.StoreFactory> createStoreFactory, String fileName) throws Exception
+//ORIGINAL LINE: private static void dumpFile(System.Func<java.io.File, org.Neo4Net.kernel.impl.store.StoreFactory> createStoreFactory, String fileName) throws Exception
 		 private static void DumpFile( System.Func<File, StoreFactory> createStoreFactory, string fileName )
 		 {
 			  File file = new File( fileName );
@@ -202,35 +202,35 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord, S extends org.neo4j.kernel.impl.store.RecordStore<R>> void dump(IdRange[] ids, S store) throws Exception
+//ORIGINAL LINE: private static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord, S extends org.Neo4Net.kernel.impl.store.RecordStore<R>> void dump(IdRange[] ids, S store) throws Exception
 		 private static void Dump<R, S>( IdRange[] ids, S store ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where S : Neo4Net.Kernel.impl.store.RecordStore<R>
 		 {
 			  ( new DumpStore<R, S>( System.out ) ).Dump( store, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpPropertyKeys(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpPropertyKeys(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpPropertyKeys( NeoStores neoStores, IdRange[] ids )
 		 {
 			  DumpTokens( neoStores.PropertyKeyTokenStore, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpLabels(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpLabels(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpLabels( NeoStores neoStores, IdRange[] ids )
 		 {
 			  DumpTokens( neoStores.LabelTokenStore, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpRelationshipTypes(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpRelationshipTypes(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpRelationshipTypes( NeoStores neoStores, IdRange[] ids )
 		 {
 			  DumpTokens( neoStores.RelationshipTypeTokenStore, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <R extends org.neo4j.kernel.impl.store.record.TokenRecord> void dumpTokens(final org.neo4j.kernel.impl.store.TokenStore<R> store, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static <R extends org.Neo4Net.kernel.impl.store.record.TokenRecord> void dumpTokens(final org.Neo4Net.kernel.impl.store.TokenStore<R> store, IdRange[] ids) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static void DumpTokens<R>( TokenStore<R> store, IdRange[] ids ) where R : Neo4Net.Kernel.Impl.Store.Records.TokenRecord
 		 {
@@ -266,34 +266,34 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpRelationshipGroups(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpRelationshipGroups(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpRelationshipGroups( NeoStores neoStores, IdRange[] ids )
 		 {
 			  Dump( ids, neoStores.RelationshipGroupStore );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpRelationshipStore(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpRelationshipStore(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpRelationshipStore( NeoStores neoStores, IdRange[] ids )
 		 {
 			  Dump( ids, neoStores.RelationshipStore );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpPropertyStore(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpPropertyStore(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpPropertyStore( NeoStores neoStores, IdRange[] ids )
 		 {
 			  Dump( ids, neoStores.PropertyStore );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpSchemaStore(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpSchemaStore(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpSchemaStore( NeoStores neoStores, IdRange[] ids )
 		 {
 			  using ( SchemaStore store = neoStores.SchemaStore )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.SchemaStorage storage = new org.neo4j.kernel.impl.store.SchemaStorage(store);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.SchemaStorage storage = new org.Neo4Net.kernel.impl.store.SchemaStorage(store);
 					SchemaStorage storage = new SchemaStorage( store );
 					new DumpStoreAnonymousInnerClass2( storage )
 					.dump( store, ids );
@@ -310,7 +310,7 @@ namespace Neo4Net.tools.dump
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Object transform(org.neo4j.kernel.impl.store.record.DynamicRecord record) throws Exception
+//ORIGINAL LINE: protected Object transform(org.Neo4Net.kernel.impl.store.record.DynamicRecord record) throws Exception
 			 protected internal override object transform( DynamicRecord record )
 			 {
 				  return record.InUse() && record.StartRecord ? _storage.loadSingleSchemaRule(record.Id) : null;
@@ -318,7 +318,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpNodeStore(org.neo4j.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
+//ORIGINAL LINE: private static void dumpNodeStore(org.Neo4Net.kernel.impl.store.NeoStores neoStores, IdRange[] ids) throws Exception
 		 private static void DumpNodeStore( NeoStores neoStores, IdRange[] ids )
 		 {
 			  new DumpStoreAnonymousInnerClass3()

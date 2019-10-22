@@ -25,10 +25,10 @@ namespace Migration
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -49,20 +49,20 @@ namespace Migration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.allow_upgrade;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_upgrade;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.record_format;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_format;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class RecordFormatMigrationIT
 	internal class RecordFormatMigrationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 		 private File _storeDir;
 
@@ -77,7 +77,7 @@ namespace Migration
 //ORIGINAL LINE: @Test void failToDowngradeFormatWhenUpgradeNotAllowed()
 		 internal virtual void FailToDowngradeFormatWhenUpgradeNotAllowed()
 		 {
-			  GraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_4.NAME );
+			  IGraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_4.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();
@@ -93,7 +93,7 @@ namespace Migration
 //ORIGINAL LINE: @Test void failToDowngradeFormatWheUpgradeAllowed()
 		 internal virtual void FailToDowngradeFormatWheUpgradeAllowed()
 		 {
-			  GraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_4.NAME );
+			  IGraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_4.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();
@@ -109,7 +109,7 @@ namespace Migration
 //ORIGINAL LINE: @Test void skipMigrationIfFormatSpecifiedInConfig()
 		 internal virtual void SkipMigrationIfFormatSpecifiedInConfig()
 		 {
-			  GraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();
@@ -128,7 +128,7 @@ namespace Migration
 //ORIGINAL LINE: @Test void skipMigrationIfStoreFormatNotSpecifiedButIsAvailableInRuntime()
 		 internal virtual void SkipMigrationIfStoreFormatNotSpecifiedButIsAvailableInRuntime()
 		 {
-			  GraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();
@@ -147,7 +147,7 @@ namespace Migration
 //ORIGINAL LINE: @Test void latestRecordNotMigratedWhenFormatBumped()
 		 internal virtual void LatestRecordNotMigratedWhenFormatBumped()
 		 {
-			  GraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService database = StartDatabaseWithFormatUnspecifiedUpgrade( _storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();
@@ -160,17 +160,17 @@ namespace Migration
 			  assertSame( typeof( UpgradeNotAllowedByConfigurationException ), Exceptions.rootCause( exception ).GetType() );
 		 }
 
-		 private static GraphDatabaseService StartDatabaseWithFormatUnspecifiedUpgrade( File storeDir, string formatName )
+		 private static IGraphDatabaseService StartDatabaseWithFormatUnspecifiedUpgrade( File storeDir, string formatName )
 		 {
 			  return ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(record_format, formatName).newGraphDatabase();
 		 }
 
-		 internal static GraphDatabaseService StartNonUpgradableDatabaseWithFormat( File storeDir, string formatName )
+		 internal static IGraphDatabaseService StartNonUpgradableDatabaseWithFormat( File storeDir, string formatName )
 		 {
 			  return ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(record_format, formatName).setConfig(allow_upgrade, FALSE).newGraphDatabase();
 		 }
 
-		 internal static GraphDatabaseService StartDatabaseWithFormat( File storeDir, string formatName )
+		 internal static IGraphDatabaseService StartDatabaseWithFormat( File storeDir, string formatName )
 		 {
 			  return ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(record_format, formatName).setConfig(allow_upgrade, TRUE).newGraphDatabase();
 		 }

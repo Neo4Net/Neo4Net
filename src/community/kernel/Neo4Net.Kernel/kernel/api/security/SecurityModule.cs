@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.api.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws org.neo4j.internal.kernel.api.exceptions.KernelException, java.io.IOException;
+//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, java.io.IOException;
 		 public abstract void Setup( Dependencies dependencies );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

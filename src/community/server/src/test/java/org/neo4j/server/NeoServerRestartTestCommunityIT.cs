@@ -20,7 +20,7 @@
 namespace Neo4Net.Server
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 
 	public class NeoServerRestartTestCommunityIT : NeoServerRestartTestIT

@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Test.ha
 {
@@ -32,13 +32,13 @@ namespace Neo4Net.Test.ha
 
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
-	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.TestHighlyAvailableGraphDatabaseFactory;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
+	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -69,31 +69,31 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.rootCause;
+//	import static org.Neo4Net.helpers.Exceptions.rootCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
 
 	public class ClusterIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.LoggerRule logging = new org.neo4j.test.rule.LoggerRule(java.util.logging.Level.ALL);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logging = new org.Neo4Net.test.rule.LoggerRule(java.util.logging.Level.ALL);
 		 public LoggerRule Logging = new LoggerRule( Level.ALL );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -326,7 +326,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void createClusterWithNode(org.neo4j.kernel.impl.ha.ClusterManager clusterManager) throws Throwable
+//ORIGINAL LINE: private static void createClusterWithNode(org.Neo4Net.kernel.impl.ha.ClusterManager clusterManager) throws Throwable
 		 private static void CreateClusterWithNode( ClusterManager clusterManager )
 		 {
 			  try
@@ -359,7 +359,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void deleteLogs(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static void deleteLogs(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static void DeleteLogs( DatabaseLayout databaseLayout )
 		 {
 			  using ( DefaultFileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction() )
@@ -388,7 +388,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws Exception
+//ORIGINAL LINE: private static void clearLastTransactionCommitTimestampField(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private static void ClearLastTransactionCommitTimestampField( DatabaseLayout databaseLayout )
 		 {
 			  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction(), IJobScheduler jobScheduler = createInitializedScheduler(), PageCache pageCache = createPageCache(fileSystem, jobScheduler) )

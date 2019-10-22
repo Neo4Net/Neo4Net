@@ -22,7 +22,7 @@ namespace Neo4Net.Bolt.runtime
 
 	using TransportThrottleGroup = Neo4Net.Bolt.transport.TransportThrottleGroup;
 	using ChunkedOutput = Neo4Net.Bolt.v1.transport.ChunkedOutput;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogService = Neo4Net.Logging.Internal.LogService;

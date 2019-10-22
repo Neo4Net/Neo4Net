@@ -25,9 +25,9 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
 	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
 	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
 	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
@@ -45,11 +45,11 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class ConstraintTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -63,7 +63,7 @@ namespace Neo4Net.Internal.Kernel.Api
 //ORIGINAL LINE: @Before public void setup()
 		 public virtual void Setup()
 		 {
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					foreach ( ConstraintDefinition definition in graphDb.schema().Constraints )
 					{
@@ -123,7 +123,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldBeAbleCheckExistenceOfConstraints()
 		 {
 			  // GIVEN
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 
 					graphDb.schema().constraintFor(label("FOO")).assertPropertyIsUnique("prop1").create();
@@ -170,7 +170,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // GIVEN
 			  long nodeConflicting, nodeNotConflicting;
 			  AddConstraints( "FOO", "prop" );
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node conflict = graphDb.createNode();
 					conflict.SetProperty( "prop", 1337 );
@@ -229,7 +229,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // GIVEN
 			  long nodeConflicting, nodeNotConflicting;
 			  AddConstraints( "FOO", "prop" );
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node conflict = graphDb.createNode();
 					conflict.AddLabel( Label.label( "FOO" ) );
@@ -298,7 +298,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 {
 			  Debug.Assert( labelProps.Length % 2 == 0 );
 
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					for ( int i = 0; i < labelProps.Length; i += 2 )
 					{

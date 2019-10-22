@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.packstream.utf8
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.getInteger;
+//	import static org.Neo4Net.util.FeatureToggles.getInteger;
 
 	/// <summary>
 	/// This is a specialized UTF-8 encoder that solves two predicaments:

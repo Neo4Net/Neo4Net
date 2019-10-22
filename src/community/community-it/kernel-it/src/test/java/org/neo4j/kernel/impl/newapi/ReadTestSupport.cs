@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using KernelAPIReadTestSupport = Neo4Net.Internal.Kernel.Api.KernelAPIReadTestSupport;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	internal class ReadTestSupport : KernelAPIReadTestSupport
 	{
 		 private readonly IDictionary<Setting, string> _settings = new Dictionary<Setting, string>();
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 		 internal virtual void AddSetting( Setting setting, string value )
 		 {

@@ -21,19 +21,19 @@ namespace Neo4Net.Kernel
 {
 	using Test = org.junit.Test;
 
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class TestTraversal
 	{

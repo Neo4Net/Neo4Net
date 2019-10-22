@@ -3,10 +3,10 @@ using System.Diagnostics;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server
 {
@@ -30,8 +30,8 @@ namespace Neo4Net.Server
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
@@ -47,20 +47,20 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.createTempDir;
+//	import static org.Neo4Net.server.ServerTestUtils.createTempDir;
 
 	public class BoltQueryLoggingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.harness.junit.Neo4jRule neo4j;
-		 public readonly Neo4jRule Neo4j;
+//ORIGINAL LINE: @Rule public final org.Neo4Net.harness.junit.Neo4NetRule Neo4Net;
+		 public readonly Neo4NetRule Neo4Net;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: public BoltQueryLoggingIT() throws java.io.IOException
 		 public BoltQueryLoggingIT()
 		 {
 			  string tmpDir = createTempDir().AbsolutePath;
-			  this.Neo4j = ( new Neo4jRule() ).withConfig(ServerSettings.http_logging_enabled, "true").withConfig(LegacySslPolicyConfig.certificates_directory.name(), tmpDir).withConfig(GraphDatabaseSettings.auth_enabled, "false").withConfig(GraphDatabaseSettings.logs_directory, tmpDir).withConfig(GraphDatabaseSettings.log_queries, "true").withConfig((new BoltConnector("bolt")).type, "BOLT").withConfig((new BoltConnector("bolt")).enabled, "true").withConfig((new BoltConnector("bolt")).address, "localhost:0").withConfig((new BoltConnector("bolt")).encryption_level, "DISABLED").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
+			  this.Neo4Net = ( new Neo4NetRule() ).withConfig(ServerSettings.http_logging_enabled, "true").withConfig(LegacySslPolicyConfig.certificates_directory.name(), tmpDir).withConfig(GraphDatabaseSettings.auth_enabled, "false").withConfig(GraphDatabaseSettings.logs_directory, tmpDir).withConfig(GraphDatabaseSettings.log_queries, "true").withConfig((new BoltConnector("bolt")).type, "BOLT").withConfig((new BoltConnector("bolt")).enabled, "true").withConfig((new BoltConnector("bolt")).address, "localhost:0").withConfig((new BoltConnector("bolt")).encryption_level, "DISABLED").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -70,7 +70,7 @@ namespace Neo4Net.Server
 		 {
 			  // *** GIVEN ***
 
-			  Socket socket = new Socket( "localhost", Neo4j.boltURI().Port );
+			  Socket socket = new Socket( "localhost", Neo4Net.boltURI().Port );
 			  DataInputStream dataIn = new DataInputStream( socket.InputStream );
 			  DataOutputStream dataOut = new DataOutputStream( socket.OutputStream );
 
@@ -80,7 +80,7 @@ namespace Neo4Net.Server
 
 			  // This has been taken from: http://alpha.neohq.net/docs/server-manual/bolt-examples.html
 
-			  // Send INIT "MyClient/1.0" { "scheme": "basic", "principal": "neo4j", "credentials": "secret"}
+			  // Send INIT "MyClient/1.0" { "scheme": "basic", "principal": "Neo4Net", "credentials": "secret"}
 			  Send( dataOut, "00 40 B1 01  8C 4D 79 43  6C 69 65 6E  74 2F 31 2E\n" + "30 A3 86 73  63 68 65 6D  65 85 62 61  73 69 63 89\n" + "70 72 69 6E  63 69 70 61  6C 85 6E 65  6F 34 6A 8B\n" + "63 72 65 64  65 6E 74 69  61 6C 73 86  73 65 63 72\n" + "65 74 00 00" );
 			  // Receive SUCCESS {}
 			  ReceiveSuccess( dataIn );
@@ -108,7 +108,7 @@ namespace Neo4Net.Server
 
 			  // *** THEN ***
 
-			  Path queriesLog = Neo4j.Config.get( GraphDatabaseSettings.log_queries_filename ).toPath();
+			  Path queriesLog = Neo4Net.Config.get( GraphDatabaseSettings.log_queries_filename ).toPath();
 			  IList<string> lines = Files.readAllLines( queriesLog );
 			  assertThat( lines, hasSize( 5 ) );
 			  foreach ( string line in lines )
@@ -117,7 +117,7 @@ namespace Neo4Net.Server
 					assertThat( line, containsString( "bolt-session" ) );
 					assertThat( line, containsString( "MyClient/1.0" ) );
 					assertThat( line, containsString( "client/127.0.0.1:" ) );
-					assertThat( line, containsString( "server/127.0.0.1:" + Neo4j.boltURI().Port ) );
+					assertThat( line, containsString( "server/127.0.0.1:" + Neo4Net.boltURI().Port ) );
 					assertThat( line, containsString( " - RETURN 1 AS num - {}" ) );
 			  }
 

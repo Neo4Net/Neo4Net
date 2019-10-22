@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void apply(org.neo4j.kernel.api.proc.Context ctx, Object object) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: void apply(org.Neo4Net.kernel.api.proc.Context ctx, Object object) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  internal virtual void Apply( Neo4Net.Kernel.api.proc.Context ctx, object @object )
 			  {
 					try
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// <returns> A list of `FieldSetters` </returns>
 		 /// <exception cref="ProcedureException"> if the type of the injected field does not match what has been registered. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<FieldSetter> setters(Class cls) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: java.util.List<FieldSetter> setters(Class cls) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 internal virtual IList<FieldSetter> Setters( Type cls )
 		 {
 			  IList<FieldSetter> setters = new LinkedList<FieldSetter>();
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private FieldSetter createInjector(Class cls, Field field) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private FieldSetter createInjector(Class cls, Field field) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private FieldSetter CreateInjector( Type cls, System.Reflection.FieldInfo field )
 		 {
 			  try
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertValidForInjection(Class cls, Field field) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private void assertValidForInjection(Class cls, Field field) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private void AssertValidForInjection( Type cls, System.Reflection.FieldInfo field )
 		 {
 			  if ( !field.isAnnotationPresent( typeof( Context ) ) )

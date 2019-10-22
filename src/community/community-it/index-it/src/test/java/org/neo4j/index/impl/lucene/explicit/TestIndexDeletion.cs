@@ -28,12 +28,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -47,12 +47,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Neo4jTestCase.assertContains;
+//	import static org.Neo4Net.index.Neo4NetTestCase.assertContains;
 
 	public class TestIndexDeletion
 	{
 		 private const string INDEX_NAME = "index";
-		 private static GraphDatabaseService _graphDb;
+		 private static IGraphDatabaseService _graphDb;
 		 private Index<Node> _index;
 		 private Transaction _tx;
 		 private string _key;

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using ProgressReporter = Neo4Net.Kernel.impl.util.monitoring.ProgressReporter;
 
 	/// <summary>
-	/// Migrates schema and label indexes between different neo4j versions.
+	/// Migrates schema and label indexes between different Neo4Net versions.
 	/// Participates in store upgrade as one of the migration participants.
 	/// <para>
 	/// Since index format can be completely incompatible between version should be executed before <seealso cref="StoreMigrator"/>
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.neo4j.io.layout.DatabaseLayout migrationLayout, org.neo4j.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void MoveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToUpgradeFrom, string versionToMigrateTo )
 		 {
 			  if ( _deleteObsoleteIndexes )

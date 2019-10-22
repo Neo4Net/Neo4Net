@@ -64,7 +64,7 @@ namespace Neo4Net.Server.rest.repr
 			  assertThat( output, hasEntry( "relationship_types", "http://steveformayor.org/relationship/types" ) );
 			  assertThat( output, hasEntry( "relationship", "http://steveformayor.org/relationship" ) );
 			  assertThat( output, hasEntry( "transaction", "http://steveformayor.org/transaction" ) );
-			  assertThat( output, hasEntry( equalTo( "neo4j_version" ), notNullValue() ) );
+			  assertThat( output, hasEntry( equalTo( "Neo4Net_version" ), notNullValue() ) );
 		 }
 	}
 

@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.edition
+namespace Neo4Net.GraphDb.factory.module.edition
 {
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using IdContextFactory = Neo4Net.Graphdb.factory.module.id.IdContextFactory;
-	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
+	using IdContextFactory = Neo4Net.GraphDb.factory.module.id.IdContextFactory;
+	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -62,9 +62,9 @@ namespace Neo4Net.Graphdb.factory.module.edition
 	using UsageData = Neo4Net.Udc.UsageData;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.EditionLocksFactories.createLockFactory;
+//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.EditionLocksFactories.createLockManager;
+//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockManager;
 
 	/// <summary>
 	/// This implementation of <seealso cref="AbstractEditionModule"/> creates the implementations of services
@@ -205,7 +205,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  // Community does not add any extra procedures

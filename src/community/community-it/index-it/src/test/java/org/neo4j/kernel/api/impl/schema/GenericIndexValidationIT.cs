@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 	using Neo4Net.Index.Internal.gbptree;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -46,41 +46,41 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_BOOLEAN;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_DATE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_DATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_DURATION;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_GEOMETRY;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_GEOMETRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_LOCAL_DATE_TIME;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_LOCAL_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_LOCAL_TIME;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_LOCAL_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_BYTE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_BYTE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_DOUBLE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_FLOAT;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_FLOAT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_INT;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_INT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_LONG;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_SHORT;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_NUMBER_SHORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_STRING_LENGTH;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_STRING_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_ZONED_DATE_TIME;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ZONED_DATE_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_ZONED_TIME;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_ZONED_TIME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestLabels.LABEL_ONE;
+//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
 
 	public class GenericIndexValidationIT
 	{
@@ -90,11 +90,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 private const int WIGGLE_ROOM = 50;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule().withSetting(default_schema_provider, NATIVE_BTREE10.providerName());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(default_schema_provider, NATIVE_BTREE10.providerName());
 		 public DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(default_schema_provider, NATIVE_BTREE10.providerName());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public static RandomRule Random = new RandomRule();
 
 		 /// <summary>

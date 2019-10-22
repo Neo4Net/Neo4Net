@@ -86,15 +86,15 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.filter;
+//	import static org.Neo4Net.helpers.collection.Iterators.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.singleOrNull;
+//	import static org.Neo4Net.helpers.collection.Iterators.singleOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.register.Registers.newDoubleLongRegister;
+//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.txstate.TxStateVisitor_Fields.EMPTY;
+//	import static org.Neo4Net.storageengine.api.txstate.TxStateVisitor_Fields.EMPTY;
 
 	public class AllStoreHolder : Read
 	{
@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexReader indexReader(org.neo4j.internal.kernel.api.IndexReference index, boolean fresh) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader indexReader(org.Neo4Net.internal.kernel.api.IndexReference index, boolean fresh) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader IndexReader( IndexReference index, bool fresh )
 		 {
 			  AssertValidIndex( index );
@@ -244,7 +244,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndex explicitNodeIndex(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: ExplicitIndex explicitNodeIndex(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal override ExplicitIndex ExplicitNodeIndex( string indexName )
 		 {
 			  Ktx.assertOpen();
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndex explicitRelationshipIndex(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: ExplicitIndex explicitRelationshipIndex(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal override ExplicitIndex ExplicitRelationshipIndex( string indexName )
 		 {
 			  Ktx.assertOpen();
@@ -272,7 +272,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> nodeExplicitIndexGetConfiguration(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public java.util.Map<String,String> nodeExplicitIndexGetConfiguration(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override IDictionary<string, string> NodeExplicitIndexGetConfiguration( string indexName )
 		 {
 			  Ktx.assertOpen();
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> relationshipExplicitIndexGetConfiguration(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public java.util.Map<String,String> relationshipExplicitIndexGetConfiguration(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override IDictionary<string, string> RelationshipExplicitIndexGetConfiguration( string indexName )
 		 {
 			  Ktx.assertOpen();
@@ -409,7 +409,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual IEnumerator<IndexReference> IndexesGetForLabel( StorageSchemaReader reader, int labelId )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetForLabel(labelId);
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetForLabel(labelId);
 			  IEnumerator<IndexDescriptor> iterator = reader.IndexesGetForLabel( labelId );
 			  if ( Ktx.hasTxStateWithChanges() )
 			  {
@@ -429,7 +429,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual IEnumerator<IndexReference> IndexesGetForRelationshipType( StorageSchemaReader reader, int relationshipType )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetForRelationshipType(relationshipType);
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetForRelationshipType(relationshipType);
 			  IEnumerator<IndexDescriptor> iterator = reader.IndexesGetForRelationshipType( relationshipType );
 			  if ( Ktx.hasTxStateWithChanges() )
 			  {
@@ -473,7 +473,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  Ktx.assertOpen();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.storageengine.api.schema.IndexDescriptor> iterator = indexesGetAll(storageReader);
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.storageengine.api.schema.IndexDescriptor> iterator = indexesGetAll(storageReader);
 			  IEnumerator<IndexDescriptor> iterator = IndexesGetAll( _storageReader );
 
 			  return Iterators.map(indexDescriptor =>
@@ -484,11 +484,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.storageengine.api.schema.IndexDescriptor> indexesGetAll(org.neo4j.storageengine.api.StorageSchemaReader reader)
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.storageengine.api.schema.IndexDescriptor> indexesGetAll(org.Neo4Net.storageengine.api.StorageSchemaReader reader)
 		 internal virtual IEnumerator<IndexDescriptor> IndexesGetAll( StorageSchemaReader reader )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetAll();
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.storageengine.api.schema.IndexDescriptor> iterator = reader.indexesGetAll();
 			  IEnumerator<IndexDescriptor> iterator = reader.IndexesGetAll();
 			  if ( Ktx.hasTxStateWithChanges() )
 			  {
@@ -498,7 +498,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.InternalIndexState indexGetState(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.InternalIndexState indexGetState(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override InternalIndexState IndexGetState( IndexReference index )
 		 {
 			  AssertValidIndex( index );
@@ -508,7 +508,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override PopulationProgress IndexGetPopulationProgress( IndexReference index )
 		 {
 			  AssertValidIndex( index );
@@ -518,7 +518,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.neo4j.storageengine.api.StorageSchemaReader reader, org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.Neo4Net.storageengine.api.StorageSchemaReader reader, org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal virtual PopulationProgress IndexGetPopulationProgress( StorageSchemaReader reader, IndexReference index )
 		 {
 			  if ( Ktx.hasTxStateWithChanges() )
@@ -547,7 +547,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long indexGetCommittedId(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: public long indexGetCommittedId(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 		 public override long IndexGetCommittedId( IndexReference index )
 		 {
 			  AcquireSharedSchemaLock( index.Schema() );
@@ -563,7 +563,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String indexGetFailure(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public String indexGetFailure(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override string IndexGetFailure( IndexReference index )
 		 {
 			  AssertValidIndex( index );
@@ -571,7 +571,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public double indexUniqueValuesSelectivity(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public double indexUniqueValuesSelectivity(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override double IndexUniqueValuesSelectivity( IndexReference index )
 		 {
 			  AssertValidIndex( index );
@@ -582,7 +582,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long indexSize(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public long indexSize(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override long IndexSize( IndexReference index )
 		 {
 			  AssertValidIndex( index );
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long nodesCountIndexed(org.neo4j.internal.kernel.api.IndexReference index, long nodeId, int propertyKeyId, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public long nodesCountIndexed(org.Neo4Net.internal.kernel.api.IndexReference index, long nodeId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override long NodesCountIndexed( IndexReference index, long nodeId, int propertyKeyId, Value value )
 		 {
 			  Ktx.assertOpen();
@@ -617,7 +617,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.register.Register_DoubleLongRegister indexUpdatesAndSize(org.neo4j.internal.kernel.api.IndexReference index, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister indexUpdatesAndSize(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override Neo4Net.Register.Register_DoubleLongRegister IndexUpdatesAndSize( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target )
 		 {
 			  Ktx.assertOpen();
@@ -627,7 +627,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.register.Register_DoubleLongRegister indexSample(org.neo4j.internal.kernel.api.IndexReference index, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister indexSample(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override Neo4Net.Register.Register_DoubleLongRegister IndexSample( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target )
 		 {
 			  Ktx.assertOpen();
@@ -648,14 +648,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.InternalIndexState indexGetState(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.InternalIndexState indexGetState(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal virtual InternalIndexState IndexGetState( IndexDescriptor descriptor )
 		 {
 			  return IndexGetState( _storageReader, descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.InternalIndexState indexGetState(org.neo4j.storageengine.api.StorageSchemaReader reader, org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.InternalIndexState indexGetState(org.Neo4Net.storageengine.api.StorageSchemaReader reader, org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal virtual InternalIndexState IndexGetState( StorageSchemaReader reader, IndexDescriptor descriptor )
 		 {
 			  // If index is in our state, then return populating
@@ -687,7 +687,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean checkIndexState(org.neo4j.storageengine.api.schema.IndexDescriptor index, org.neo4j.storageengine.api.txstate.DiffSets<org.neo4j.storageengine.api.schema.IndexDescriptor> diffSet) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private boolean checkIndexState(org.Neo4Net.storageengine.api.schema.IndexDescriptor index, org.Neo4Net.storageengine.api.txstate.DiffSets<org.Neo4Net.storageengine.api.schema.IndexDescriptor> diffSet) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private bool CheckIndexState( IndexDescriptor index, DiffSets<IndexDescriptor> diffSet )
 		 {
 			  if ( diffSet.IsAdded( index ) )
@@ -802,7 +802,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String indexGetFailure(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: String indexGetFailure(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal virtual string IndexGetFailure( IndexDescriptor descriptor )
 		 {
 			  return _storageReader.indexGetFailure( descriptor.Schema() );
@@ -815,7 +815,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.ProcedureHandle procedureGet(org.neo4j.internal.kernel.api.procs.QualifiedName name) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.ProcedureHandle procedureGet(org.Neo4Net.internal.kernel.api.procs.QualifiedName name) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override ProcedureHandle ProcedureGet( QualifiedName name )
 		 {
 			  Ktx.assertOpen();
@@ -835,7 +835,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallRead(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallRead(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallRead( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -847,14 +847,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallReadOverride(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallReadOverride(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallReadOverride( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( id, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ), context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallWrite(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallWrite(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallWrite( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -866,7 +866,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallWriteOverride(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallWriteOverride(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallWriteOverride( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( id, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.TokenWrite ), context );
@@ -874,7 +874,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallSchema(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallSchema(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallSchema( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -886,14 +886,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallSchemaOverride(int id, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallSchemaOverride(int id, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallSchemaOverride( int id, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( id, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full ), context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallRead(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallRead(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallRead( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -905,14 +905,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallReadOverride(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallReadOverride(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallReadOverride( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( name, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ), context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallWrite(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallWrite(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallWrite( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -924,7 +924,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallWriteOverride(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallWriteOverride(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallWriteOverride( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( name, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.TokenWrite ), context );
@@ -932,7 +932,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallSchema(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallSchema(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallSchema( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  AccessMode accessMode = Ktx.securityContext().mode();
@@ -944,14 +944,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallSchemaOverride(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallSchemaOverride(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] arguments, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> ProcedureCallSchemaOverride( QualifiedName name, object[] arguments, ProcedureCallContext context )
 		 {
 			  return callProcedure( name, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full ), context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue functionCall(int id, org.neo4j.values.AnyValue[] arguments) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue functionCall(int id, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue FunctionCall( int id, AnyValue[] arguments )
 		 {
 			  if ( !Ktx.securityContext().mode().allowsReads() )
@@ -962,7 +962,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue functionCall(org.neo4j.internal.kernel.api.procs.QualifiedName name, org.neo4j.values.AnyValue[] arguments) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue functionCall(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue FunctionCall( QualifiedName name, AnyValue[] arguments )
 		 {
 			  if ( !Ktx.securityContext().mode().allowsReads() )
@@ -973,21 +973,21 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue functionCallOverride(int id, org.neo4j.values.AnyValue[] arguments) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue functionCallOverride(int id, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue FunctionCallOverride( int id, AnyValue[] arguments )
 		 {
 			  return callFunction( id, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue functionCallOverride(org.neo4j.internal.kernel.api.procs.QualifiedName name, org.neo4j.values.AnyValue[] arguments) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue functionCallOverride(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, org.Neo4Net.values.AnyValue[] arguments) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue FunctionCallOverride( QualifiedName name, AnyValue[] arguments )
 		 {
 			  return callFunction( name, arguments, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunction(int id) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunction(int id) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override UserAggregator AggregationFunction( int id )
 		 {
 			  if ( !Ktx.securityContext().mode().allowsReads() )
@@ -998,7 +998,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunction(org.neo4j.internal.kernel.api.procs.QualifiedName name) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunction(org.Neo4Net.internal.kernel.api.procs.QualifiedName name) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override UserAggregator AggregationFunction( QualifiedName name )
 		 {
 			  if ( !Ktx.securityContext().mode().allowsReads() )
@@ -1009,14 +1009,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunctionOverride(int id) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunctionOverride(int id) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override UserAggregator AggregationFunctionOverride( int id )
 		 {
 			  return aggregationFunction( id, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunctionOverride(org.neo4j.internal.kernel.api.procs.QualifiedName name) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunctionOverride(org.Neo4Net.internal.kernel.api.procs.QualifiedName name) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override UserAggregator AggregationFunctionOverride( QualifiedName name )
 		 {
 			  return aggregationFunction( name, new OverriddenAccessMode( Ktx.securityContext().mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
@@ -1043,17 +1043,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> callProcedure(int id, Object[] input, final org.neo4j.internal.kernel.api.security.AccessMode override, org.neo4j.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> callProcedure(int id, Object[] input, final org.Neo4Net.internal.kernel.api.security.AccessMode override, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private RawIterator<object[], ProcedureException> CallProcedure( int id, object[] input, AccessMode @override, ProcedureCallContext procedureCallContext )
 		 {
 			  Ktx.assertOpen();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.internal.kernel.api.security.SecurityContext procedureSecurityContext = ktx.securityContext().withMode(override);
+//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.security.SecurityContext procedureSecurityContext = ktx.securityContext().withMode(override);
 			  SecurityContext procedureSecurityContext = Ktx.securityContext().withMode(@override);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCall;
+//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCall;
 			  RawIterator<object[], ProcedureException> procedureCall;
 			  using ( Neo4Net.Kernel.api.KernelTransaction_Revertable ignore = Ktx.overrideWith( procedureSecurityContext ), Statement statement = Ktx.acquireStatement() )
 			  {
@@ -1063,17 +1063,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> callProcedure(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] input, final org.neo4j.internal.kernel.api.security.AccessMode override, org.neo4j.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> callProcedure(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] input, final org.Neo4Net.internal.kernel.api.security.AccessMode override, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext procedureCallContext) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private RawIterator<object[], ProcedureException> CallProcedure( QualifiedName name, object[] input, AccessMode @override, ProcedureCallContext procedureCallContext )
 		 {
 			  Ktx.assertOpen();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.internal.kernel.api.security.SecurityContext procedureSecurityContext = ktx.securityContext().withMode(override);
+//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.security.SecurityContext procedureSecurityContext = ktx.securityContext().withMode(override);
 			  SecurityContext procedureSecurityContext = Ktx.securityContext().withMode(@override);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCall;
+//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCall;
 			  RawIterator<object[], ProcedureException> procedureCall;
 			  using ( Neo4Net.Kernel.api.KernelTransaction_Revertable ignore = Ktx.overrideWith( procedureSecurityContext ), Statement statement = Ktx.acquireStatement() )
 			  {
@@ -1102,7 +1102,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean hasNext() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public boolean hasNext() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			 public bool hasNext()
 			 {
 				  using ( Neo4Net.Kernel.api.KernelTransaction_Revertable ignore = _outerInstance.ktx.overrideWith( _procedureSecurityContext ) )
@@ -1112,7 +1112,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object[] next() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object[] next() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			 public object[] next()
 			 {
 				  using ( Neo4Net.Kernel.api.KernelTransaction_Revertable ignore = _outerInstance.ktx.overrideWith( _procedureSecurityContext ) )
@@ -1123,7 +1123,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.AnyValue callFunction(int id, org.neo4j.values.AnyValue[] input, final org.neo4j.internal.kernel.api.security.AccessMode mode) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.values.AnyValue callFunction(int id, org.Neo4Net.values.AnyValue[] input, final org.Neo4Net.internal.kernel.api.security.AccessMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private AnyValue CallFunction( int id, AnyValue[] input, AccessMode mode )
 		 {
@@ -1137,7 +1137,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.AnyValue callFunction(org.neo4j.internal.kernel.api.procs.QualifiedName name, org.neo4j.values.AnyValue[] input, final org.neo4j.internal.kernel.api.security.AccessMode mode) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.values.AnyValue callFunction(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, org.Neo4Net.values.AnyValue[] input, final org.Neo4Net.internal.kernel.api.security.AccessMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private AnyValue CallFunction( QualifiedName name, AnyValue[] input, AccessMode mode )
 		 {
@@ -1151,7 +1151,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunction(int id, final org.neo4j.internal.kernel.api.security.AccessMode mode) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunction(int id, final org.Neo4Net.internal.kernel.api.security.AccessMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private UserAggregator AggregationFunction( int id, AccessMode mode )
 		 {
@@ -1165,7 +1165,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.procs.UserAggregator aggregationFunction(org.neo4j.internal.kernel.api.procs.QualifiedName name, final org.neo4j.internal.kernel.api.security.AccessMode mode) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.procs.UserAggregator aggregationFunction(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, final org.Neo4Net.internal.kernel.api.security.AccessMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private UserAggregator AggregationFunction( QualifiedName name, AccessMode mode )
 		 {
@@ -1195,7 +1195,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertValidIndex(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: static void assertValidIndex(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal static void AssertValidIndex( IndexReference index )
 		 {
 			  if ( index == IndexReference.NO_INDEX )

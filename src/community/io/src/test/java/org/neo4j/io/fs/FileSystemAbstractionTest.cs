@@ -58,11 +58,11 @@ namespace Neo4Net.Io.fs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileHandle_Fields.HANDLE_DELETE;
+//	import static org.Neo4Net.io.fs.FileHandle_Fields.HANDLE_DELETE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileHandle.handleRename;
+//	import static org.Neo4Net.io.fs.FileHandle.handleRename;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.ByteArrayMatcher.byteArray;
+//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) public abstract class FileSystemAbstractionTest

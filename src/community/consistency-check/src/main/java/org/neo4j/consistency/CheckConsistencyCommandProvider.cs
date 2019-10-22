@@ -32,7 +32,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.neo4j.commandline.arguments.Arguments allArguments()
+//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
 			  return CheckConsistencyCommand.Arguments();
@@ -42,7 +42,7 @@ namespace Neo4Net.Consistency
 //ORIGINAL LINE: @Override @Nonnull public String description()
 		 public override string Description()
 		 {
-			  return format( "This command allows for checking the consistency of a database or a backup thereof. It cannot " + "be used with a database which is currently in use.%n" + "%n" + "All checks except 'check-graph' can be quite expensive so it may be useful to turn them off" + " for very large databases. Increasing the heap size can also be a good idea." + " See 'neo4j-admin help' for details." );
+			  return format( "This command allows for checking the consistency of a database or a backup thereof. It cannot " + "be used with a database which is currently in use.%n" + "%n" + "All checks except 'check-graph' can be quite expensive so it may be useful to turn them off" + " for very large databases. Increasing the heap size can also be a good idea." + " See 'Neo4Net-admin help' for details." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -53,14 +53,14 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.neo4j.commandline.admin.AdminCommandSection commandSection()
+//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommandSection commandSection()
 		 public override AdminCommandSection CommandSection()
 		 {
 			  return AdminCommandSection.general();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public org.neo4j.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.neo4j.commandline.admin.OutsideWorld outsideWorld)
+//ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld)
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )
 		 {
 			  return new CheckConsistencyCommand( homeDir, configDir );

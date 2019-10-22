@@ -26,10 +26,10 @@ namespace Neo4Net.Consistency
 
 
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -45,11 +45,11 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.progress.ProgressMonitorFactory.NONE;
+//	import static org.Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.defaults;
+//	import static org.Neo4Net.kernel.configuration.Config.defaults;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.FormattedLogProvider.toOutputStream;
+//	import static org.Neo4Net.logging.FormattedLogProvider.toOutputStream;
 
 	/// <summary>
 	/// This is a test for triggering a race which was found in and around <seealso cref="RecordStorageEngine.apply(CommandsToApply, TransactionApplicationMode)"/>
@@ -68,11 +68,11 @@ namespace Neo4Net.Consistency
 		 private static readonly Label[] _labels = Enum.GetValues( typeof( TestLabels ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 /// <summary>

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.IOUtils.closeAll;
+//	import static org.Neo4Net.io.IOUtils.closeAll;
 
 	/// <summary>
 	/// Combines multiple <seealso cref="GBPTree"/> seekers into one seeker, keeping the total order among all keys.

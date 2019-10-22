@@ -24,9 +24,9 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Neo4Net.Kernel.impl.util;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using Neo4Net.Values;
@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 	using UTF8StringValue = Neo4Net.Values.Storable.UTF8StringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.NoValue.NO_VALUE;
+//	import static org.Neo4Net.values.storable.NoValue.NO_VALUE;
 
 	/// <summary>
 	/// <seealso cref="AnyValueWriter Writer"/> that allows to convert <seealso cref="AnyValue"/> to any primitive Java type. It explicitly

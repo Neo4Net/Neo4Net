@@ -31,10 +31,10 @@ namespace Neo4Net.Consistency.checking
 	using DefaultCounts = Neo4Net.Consistency.statistics.DefaultCounts;
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
 	using VerboseStatistics = Neo4Net.Consistency.statistics.VerboseStatistics;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
@@ -98,13 +98,13 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
+//	import static org.Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.Internal.SchemaIndexExtensionLoader.instantiateKernelExtensions;
+//	import static org.Neo4Net.consistency.Internal.SchemaIndexExtensionLoader.instantiateKernelExtensions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 	public abstract class GraphStoreFixture : ConfigurablePageCacheRule, TestRule
 	{
@@ -160,7 +160,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(Transaction transaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public virtual void Apply( Transaction transaction )
 		 {
 			  ApplyTransaction( transaction );
@@ -468,7 +468,7 @@ namespace Neo4Net.Consistency.checking
 			  }
 		 }
 
-		 protected internal abstract void GenerateInitialData( GraphDatabaseService graphDb );
+		 protected internal abstract void GenerateInitialData( IGraphDatabaseService graphDb );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: protected void start(@SuppressWarnings("UnusedParameters") java.io.File storeDir)
@@ -521,7 +521,7 @@ namespace Neo4Net.Consistency.checking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(Transaction transaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 			  public virtual void Apply( Transaction transaction )
 			  {
 					TransactionRepresentation representation = transaction.Representation( outerInstance.IdGenerator(), outerInstance.masterId(), outerInstance.myId(), TransactionIdStore.LastCommittedTransactionId, NeoStores );
@@ -540,7 +540,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyTransaction(Transaction transaction) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void applyTransaction(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void ApplyTransaction( Transaction transaction )
 		 {
 			  // TODO you know... we could have just appended the transaction representation to the log
@@ -584,7 +584,7 @@ namespace Neo4Net.Consistency.checking
 		 public override Statement Apply( Statement @base, Description description )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory(description.getTestClass());
+//ORIGINAL LINE: final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(description.getTestClass());
 			  TestDirectory directory = TestDirectory.testDirectory( description.TestClass );
 			  return base.apply(directory.apply(new StatementAnonymousInnerClass(this, @base, directory)
 			 , description), description);

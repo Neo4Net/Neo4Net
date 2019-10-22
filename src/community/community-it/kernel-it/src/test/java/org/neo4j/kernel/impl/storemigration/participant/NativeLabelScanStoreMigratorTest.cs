@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.versionStringToLong;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.versionStringToLong;
 
 	public class NativeLabelScanStoreMigratorTest
 	{
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.kernel.impl.store.InvalidIdGeneratorException.class) public void failMigrationWhenNodeIdFileIsBroken() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.kernel.impl.store.InvalidIdGeneratorException.class) public void failMigrationWhenNodeIdFileIsBroken() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailMigrationWhenNodeIdFileIsBroken()
 		 {
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initializeNativeLabelScanStoreWithContent(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void initializeNativeLabelScanStoreWithContent(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void InitializeNativeLabelScanStoreWithContent( DatabaseLayout databaseLayout )
 		 {
 			  using ( Lifespan lifespan = new Lifespan() )
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 
 		 private void Prepare34DatabaseWithNodes()
 		 {
-			  GraphDatabaseService embeddedDatabase = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(_storeDir);
+			  IGraphDatabaseService embeddedDatabase = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(_storeDir);
 			  try
 			  {
 					using ( Transaction transaction = embeddedDatabase.BeginTx() )

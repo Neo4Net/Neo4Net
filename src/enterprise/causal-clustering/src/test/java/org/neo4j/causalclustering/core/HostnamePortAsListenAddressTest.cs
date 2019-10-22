@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;

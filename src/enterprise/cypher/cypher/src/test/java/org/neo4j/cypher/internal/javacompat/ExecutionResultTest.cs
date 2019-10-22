@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Cypher.Internal.javacompat
 {
@@ -29,9 +29,9 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Test = org.junit.Test;
 
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using TestEnterpriseGraphDatabaseFactory = Neo4Net.Test.TestEnterpriseGraphDatabaseFactory;
 	using EnterpriseDatabaseRule = Neo4Net.Test.rule.EnterpriseDatabaseRule;
@@ -53,7 +53,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	{
 		 private const string CURRENT_VERSION = "CYPHER 3.5";
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EnterpriseDatabaseRule db = new org.neo4j.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EnterpriseDatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public readonly EnterpriseDatabaseRule Db = new EnterpriseDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -109,8 +109,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
-			  IList<Neo4Net.Graphdb.Result_ResultRow> listResult = new List<Neo4Net.Graphdb.Result_ResultRow>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
+			  IList<Neo4Net.GraphDb.Result_ResultRow> listResult = new List<Neo4Net.GraphDb.Result_ResultRow>();
 			  using ( Result result = Db.execute( "CYPHER runtime=compiled MATCH (n) RETURN n" ) )
 			  {
 					result.Accept(row =>
@@ -134,8 +134,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 			  // When
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
-			  IList<Neo4Net.Graphdb.Result_ResultRow> listResult = new List<Neo4Net.Graphdb.Result_ResultRow>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.graphdb.Result_ResultRow> listResult = new java.util.ArrayList<>();
+			  IList<Neo4Net.GraphDb.Result_ResultRow> listResult = new List<Neo4Net.GraphDb.Result_ResultRow>();
 			  using ( Result result = Db.execute( "CYPHER runtime=compiled MATCH (n) RETURN n" ) )
 			  {
 					result.Accept(row =>
@@ -353,7 +353,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 					// When
 					Result result = Db.execute( string.Format( "PROFILE CYPHER {0} MATCH (n) RETURN n", version ) );
 					result.ResultAsString();
-					Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics stats = result.ExecutionPlanDescription.Children[0].ProfilerStatistics;
+					Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics stats = result.ExecutionPlanDescription.Children[0].ProfilerStatistics;
 
 					// Then
 					assertThat( "Mismatching db-hits for version " + version, stats.DbHits, equalTo( 2L ) );

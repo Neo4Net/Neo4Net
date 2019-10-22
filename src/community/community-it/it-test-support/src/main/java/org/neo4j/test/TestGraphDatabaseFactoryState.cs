@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Test
 {
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;

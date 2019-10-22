@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  int valueComparison = CompareValue( o1, o2 );
 			  if ( valueComparison == 0 )
 			  {
-					// This is a special case where we need also compare entityId to support inclusive/exclusive
+					// This is a special case where we need also compare IEntityId to support inclusive/exclusive
 					if ( o1.CompareId & o2.CompareId )
 					{
 						 return Long.compare( o1.EntityId, o2.EntityId );

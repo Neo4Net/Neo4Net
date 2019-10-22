@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		public abstract void PutAllNoOverwrite( IDictionary<string, Neo4Net.Values.Storable.Value> target, IDictionary<string, Neo4Net.Values.Storable.Value> source );
 		public abstract IDictionary<string, Neo4Net.Values.Storable.Value> IndexConfig();
 		public abstract void VerifyDeferredConstraints( Neo4Net.Storageengine.Api.NodePropertyAccessor accessor );
-		public abstract Neo4Net.Graphdb.ResourceIterator<java.io.File> SnapshotFiles();
+		public abstract Neo4Net.GraphDb.ResourceIterator<java.io.File> SnapshotFiles();
 		public abstract void ValidateBeforeCommit( Neo4Net.Values.Storable.Value[] tuple );
 		public abstract void Validate();
 		public abstract void Activate();

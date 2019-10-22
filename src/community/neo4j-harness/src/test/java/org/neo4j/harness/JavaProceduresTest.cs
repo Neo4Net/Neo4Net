@@ -25,7 +25,7 @@ namespace Neo4Net.Harness
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using Context = Neo4Net.Procedure.Context;
 	using Mode = Neo4Net.Procedure.Mode;
@@ -42,16 +42,16 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class JavaProceduresTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 public class MyProcedures
@@ -108,7 +108,7 @@ namespace Neo4Net.Harness
 			  public MyCoreAPI MyCoreAPI;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(value = "makeNode", mode = org.neo4j.procedure.Mode.WRITE) public java.util.stream.Stream<LongResult> makeNode(@Name("label") String label) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Procedure(value = "makeNode", mode = org.Neo4Net.procedure.Mode.WRITE) public java.util.stream.Stream<LongResult> makeNode(@Name("label") String label) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 			  [Procedure(value : "makeNode", mode : Neo4Net.Procedure.Mode.WRITE)]
 			  public virtual Stream<LongResult> MakeNode( string label )
@@ -119,7 +119,7 @@ namespace Neo4Net.Harness
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<LongResult> willFail() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<LongResult> willFail() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  [Procedure(value : "willFail", mode : Neo4Net.Procedure.Mode.READ)]
 			  public virtual Stream<LongResult> WillFail()
 			  {
@@ -151,7 +151,7 @@ namespace Neo4Net.Harness
 			  using ( ServerControls server = CreateServer( typeof( MyProcedures ) ).newServer() )
 			  {
 					// Then
-					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'CALL org.neo4j.harness.myProc' } ] }") );
+					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'CALL org.Neo4Net.harness.myProc' } ] }") );
 
 					JsonNode result = response.Get( "results" ).get( 0 );
 					assertEquals( "someNumber", result.get( "columns" ).get( 0 ).asText() );
@@ -169,10 +169,10 @@ namespace Neo4Net.Harness
 			  using ( ServerControls server = CreateServer( typeof( MyProcedures ) ).newServer() )
 			  {
 					// Then
-					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'CALL org.neo4j.harness.procThatThrows' } ] }") );
+					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'CALL org.Neo4Net.harness.procThatThrows' } ] }") );
 
 					string error = response.Get( "errors" ).get( 0 ).get( "message" ).asText();
-					assertEquals( "Failed to invoke procedure `org.neo4j.harness.procThatThrows`: " + "Caused by: java.lang.RuntimeException: This is an exception", error );
+					assertEquals( "Failed to invoke procedure `org.Neo4Net.harness.procThatThrows`: " + "Caused by: java.lang.RuntimeException: This is an exception", error );
 			  }
 		 }
 

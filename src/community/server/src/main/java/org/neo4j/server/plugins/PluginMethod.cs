@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.plugins
 {
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
 	using Representation = Neo4Net.Server.rest.repr.Representation;
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.Representation invoke(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList params) throws BadPluginInvocationException, PluginInvocationFailureException, org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.Representation invoke(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList params) throws BadPluginInvocationException, PluginInvocationFailureException, org.Neo4Net.server.rest.repr.BadInputException
 		 public override Representation Invoke( GraphDatabaseAPI graphDb, object source, ParameterList @params )
 		 {
 			  object[] arguments = new object[_extractors.Length];

@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Matchers = org.hamcrest.Matchers;
 	using Before = org.junit.Before;
@@ -41,16 +41,16 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 
 	public class NativeLabelScanStoreUpdateIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.DatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static readonly DatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -167,7 +167,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldHandleLargeAmountsOfNodesAddedAndRemovedInSameTx()
 		 {
 			  // Given
-			  GraphDatabaseService db = DbRule;
+			  IGraphDatabaseService db = DbRule;
 			  int labelsToAdd = 80;
 			  int labelsToRemove = 40;
 

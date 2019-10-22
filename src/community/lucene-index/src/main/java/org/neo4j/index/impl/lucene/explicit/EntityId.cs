@@ -23,14 +23,14 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Store = org.apache.lucene.document.Field.Store;
 	using StringField = org.apache.lucene.document.StringField;
 
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	/// <summary>
-	/// Represents id data about an entity that is to be indexed.
+	/// Represents id data about an IEntity that is to be indexed.
 	/// </summary>
-	public interface EntityId
+	public interface IEntityId
 	{
-		 /// <returns> the entity id. </returns>
+		 /// <returns> the IEntity id. </returns>
 		 long Id();
 
 		 /// <summary>
@@ -39,7 +39,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 void Enhance( Document document );
 
 		 /// <summary>
-		 /// <seealso cref="EntityId"/> only carrying entity id.
+		 /// <seealso cref="EntityId"/> only carrying IEntity id.
 		 /// </summary>
 
 		 /// <summary>
@@ -53,13 +53,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// </summary>
 	}
 
-	 public abstract class EntityId_AbstractData : EntityId
+	 public abstract class IEntityId_AbstractData : IEntityId
 	 {
 		 public abstract void Enhance( Document document );
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		  protected internal long IdConflict;
 
-		  internal EntityId_AbstractData( long id )
+		  internal IEntityId_AbstractData( long id )
 		  {
 				this.IdConflict = id;
 		  }
@@ -71,7 +71,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		  public override bool Equals( object obj )
 		  {
-				return obj is EntityId && ( ( EntityId ) obj ).Id() == IdConflict;
+				return obj is IEntityId && ( ( IEntityId ) obj ).Id() == IdConflict;
 		  }
 
 		  public override int GetHashCode()
@@ -80,9 +80,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		  }
 	 }
 
-	 public class EntityId_IdData : EntityId_AbstractData
+	 public class IEntityId_IdData : IEntityId_AbstractData
 	 {
-		  public EntityId_IdData( long id ) : base( id )
+		  public IEntityId_IdData( long id ) : base( id )
 		  {
 		  }
 
@@ -91,12 +91,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		  }
 	 }
 
-	 public class EntityId_RelationshipData : EntityId_AbstractData
+	 public class IEntityId_RelationshipData : IEntityId_AbstractData
 	 {
 		  internal readonly long StartNode;
 		  internal readonly long EndNode;
 
-		  public EntityId_RelationshipData( long id, long startNode, long endNode ) : base( id )
+		  public IEntityId_RelationshipData( long id, long startNode, long endNode ) : base( id )
 		  {
 				this.StartNode = startNode;
 				this.EndNode = endNode;
@@ -109,13 +109,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		  }
 	 }
 
-	 public class EntityId_LongCostume : EntityId_IdData
+	 public class IEntityId_LongCostume : IEntityId_IdData
 	 {
-		  public EntityId_LongCostume() : base(-1)
+		  public IEntityId_LongCostume() : base(-1)
 		  {
 		  }
 
-		  public virtual EntityId_LongCostume setId( long id )
+		  public virtual IEntityId_LongCostume setId( long id )
 		  {
 				this.IdConflict = id;
 				return this;

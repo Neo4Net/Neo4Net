@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Graphalgo
 {
-	using Path = Neo4Net.Graphdb.Path;
+	using Path = Neo4Net.GraphDb.Path;
 
 	/// <summary>
 	/// A <seealso cref="Path"/> that has an associated weight.

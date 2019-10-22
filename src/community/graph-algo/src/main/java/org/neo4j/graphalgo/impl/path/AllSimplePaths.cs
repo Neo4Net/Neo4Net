@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Graphalgo.impl.path
 {
-	using Neo4Net.Graphdb;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Neo4Net.GraphDb;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 	public class AllSimplePaths : AllPaths
 	{

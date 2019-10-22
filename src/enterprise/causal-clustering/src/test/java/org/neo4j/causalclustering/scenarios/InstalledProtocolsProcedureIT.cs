@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -51,26 +51,26 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.COMPRESSION_SNAPPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.ProtocolInstaller_Orientation_Client_Fields.OUTBOUND;
+//	import static org.Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation_Client_Fields.OUTBOUND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.ProtocolInstaller_Orientation_Server_Fields.INBOUND;
+//	import static org.Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation_Server_Fields.INBOUND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	/// <seealso cref= InstalledProtocolsProcedureTest </seealso>
 	public class InstalledProtocolsProcedureIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.compression_implementations, "snappy").withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.compression_implementations, "snappy").withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedCoreParam(CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(CausalClusteringSettings.compression_implementations, "snappy").withNumberOfCoreMembers(3).withNumberOfReadReplicas(0);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private CoreClusterMember _leader;
 
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<ProtocolInfo> installedProtocols(org.neo4j.kernel.impl.factory.GraphDatabaseFacade db, String wantedOrientation) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private java.util.List<ProtocolInfo> installedProtocols(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db, String wantedOrientation) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private IList<ProtocolInfo> InstalledProtocols( GraphDatabaseFacade db, string wantedOrientation )
 		 {
 			  IList<ProtocolInfo> infos = new LinkedList<ProtocolInfo>();

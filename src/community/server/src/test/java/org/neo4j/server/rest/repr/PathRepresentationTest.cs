@@ -24,9 +24,9 @@ namespace Neo4Net.Server.rest.repr
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -35,23 +35,23 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestBase.NODE_URI_PATTERN;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.NODE_URI_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestBase.RELATIONSHIP_URI_PATTERN;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.RELATIONSHIP_URI_PATTERN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestBase.assertUriMatches;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestBase.assertUriMatches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.node;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.path;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.relationship;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.Link.link;
+//	import static org.Neo4Net.test.mockito.mock.Link.link;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.Properties.properties;
+//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
 
 	public class PathRepresentationTest
 	{
@@ -118,16 +118,16 @@ namespace Neo4Net.Server.rest.repr
 		  *
 		  * {
 		  *     "length" : 3,
-		  *     "start" : "http://neo4j.org/node/0",
-		  *     "end" : "http://neo4j.org/node/3",
+		  *     "start" : "http://Neo4Net.org/node/0",
+		  *     "end" : "http://Neo4Net.org/node/3",
 		  *     "nodes" : [
-		  *         "http://neo4j.org/node/0", "http://neo4j.org/node/1",
-		  *         "http://neo4j.org/node/2", "http://neo4j.org/node/3"
+		  *         "http://Neo4Net.org/node/0", "http://Neo4Net.org/node/1",
+		  *         "http://Neo4Net.org/node/2", "http://Neo4Net.org/node/3"
 		  *     ],
 		  *     "relationships" : [
-		  *         "http://neo4j.org/relationship/17",
-		  *         "http://neo4j.org/relationship/18",
-		  *         "http://neo4j.org/relationship/19"
+		  *         "http://Neo4Net.org/relationship/17",
+		  *         "http://Neo4Net.org/relationship/18",
+		  *         "http://Neo4Net.org/relationship/19"
 		  *     ],
 		  *     "directions" : [ "->", "<-", "->" ]
 		  * }

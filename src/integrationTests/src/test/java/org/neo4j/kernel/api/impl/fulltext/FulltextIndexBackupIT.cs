@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
@@ -31,15 +31,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 
 	using OnlineBackup = Neo4Net.backup.OnlineBackup;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseGraphDatabaseFactory = Neo4Net.Graphdb.factory.EnterpriseGraphDatabaseFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
@@ -51,23 +51,23 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsInAnyOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
+//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
+//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
 
 	public class FulltextIndexBackupIT
 	{

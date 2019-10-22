@@ -29,13 +29,13 @@ namespace Neo4Net.Consistency.repair
 	public abstract class RelationshipChainField
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       FIRST_NEXT { public long relOf(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNextRel(); } public boolean endOfChain(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNextRel() == org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP.intValue(); } },
+//       FIRST_NEXT { public long relOf(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNextRel(); } public boolean endOfChain(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNextRel() == org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP.intValue(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       FIRST_PREV { public long relOf(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstPrevRel(); } public boolean endOfChain(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.isFirstInFirstChain(); } },
+//       FIRST_PREV { public long relOf(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstPrevRel(); } public boolean endOfChain(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.isFirstInFirstChain(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SECOND_NEXT { public long relOf(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNextRel(); } public boolean endOfChain(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNextRel() == org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP.intValue(); } },
+//       SECOND_NEXT { public long relOf(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNextRel(); } public boolean endOfChain(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNextRel() == org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP.intValue(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SECOND_PREV { public long relOf(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondPrevRel(); } public boolean endOfChain(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.isFirstInSecondChain(); } };
+//       SECOND_PREV { public long relOf(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondPrevRel(); } public boolean endOfChain(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.isFirstInSecondChain(); } };
 
 		 private static readonly IList<RelationshipChainField> valueList = new List<RelationshipChainField>();
 

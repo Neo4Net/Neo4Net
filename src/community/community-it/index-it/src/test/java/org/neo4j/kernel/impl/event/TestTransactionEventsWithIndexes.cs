@@ -24,19 +24,19 @@ namespace Neo4Net.Kernel.Impl.@event
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
+	using Neo4Net.GraphDb.index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 
 	public class TestTransactionEventsWithIndexes : TestTransactionEvents
 	{
@@ -45,9 +45,9 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void NodeCanBeExplicitIndexedInBeforeCommit()
 		 {
 			  // Given we have an explicit index...
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.Index<org.neo4j.graphdb.Node> index;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index;
 			  Index<Node> index;
 			  using ( Transaction tx = Db.beginTx() )
 			  {

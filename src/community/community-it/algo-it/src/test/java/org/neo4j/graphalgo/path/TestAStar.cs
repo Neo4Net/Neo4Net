@@ -22,7 +22,7 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Graphalgo.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 	using RunWith = org.junit.runner.RunWith;
 	using Parameterized = org.junit.runners.Parameterized;
@@ -32,14 +32,14 @@ namespace Neo4Net.Graphalgo.path
 	using Neo4Net.Graphalgo;
 	using Neo4Net.Graphalgo;
 	using TraversalAStar = Neo4Net.Graphalgo.impl.path.TraversalAStar;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.traversal;
-	using Neo4Net.Graphdb.traversal;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.traversal;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 
@@ -48,15 +48,15 @@ namespace Neo4Net.Graphalgo.path
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphalgo.CommonEvaluators.doubleCostEvaluator;
+//	import static org.Neo4Net.graphalgo.CommonEvaluators.doubleCostEvaluator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphalgo.GraphAlgoFactory.aStar;
+//	import static org.Neo4Net.graphalgo.GraphAlgoFactory.aStar;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class TestAStar extends common.Neo4jAlgoTestCase
-	public class TestAStar : Neo4jAlgoTestCase
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class TestAStar extends common.Neo4NetAlgoTestCase
+	public class TestAStar : Neo4NetAlgoTestCase
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -200,12 +200,12 @@ namespace Neo4Net.Graphalgo.path
 			  Graph.makeEdge( "A", "C", "length", 10d );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.neo4j.graphdb.Node, double> seenBranchStates = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<org.Neo4Net.graphdb.Node, double> seenBranchStates = new java.util.HashMap<>();
 			  IDictionary<Node, double> seenBranchStates = new Dictionary<Node, double>();
 			  PathExpander<double> expander = new PathExpanderAnonymousInnerClass( this, seenBranchStates );
 
 			  double initialStateValue = 0D;
-			  PathFinder<WeightedPath> traversalFinder = new TraversalAStar( expander, new Neo4Net.Graphdb.traversal.InitialBranchState_State( initialStateValue, initialStateValue ), doubleCostEvaluator( "length" ), EstimateEvaluator );
+			  PathFinder<WeightedPath> traversalFinder = new TraversalAStar( expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State( initialStateValue, initialStateValue ), doubleCostEvaluator( "length" ), EstimateEvaluator );
 			  WeightedPath path = traversalFinder.FindSinglePath( nodeA, nodeC );
 			  assertEquals( ( double? ) 5.0D, ( double? ) path.Weight() );
 			  AssertPathDef( path, "A", "B", "C" );
@@ -252,16 +252,16 @@ namespace Neo4Net.Graphalgo.path
 			  PathFinder<WeightedPath> finder = aStar( PathExpanders.allTypesAndDirections(), doubleCostEvaluator("weight", 0d), estimator );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node1 = graph.makeNode("1", "estimate", 0.003d);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node1 = graph.makeNode("1", "estimate", 0.003d);
 			  Node node1 = Graph.makeNode( "1", "estimate", 0.003d );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node2 = graph.makeNode("2", "estimate", 0.002d);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node2 = graph.makeNode("2", "estimate", 0.002d);
 			  Node node2 = Graph.makeNode( "2", "estimate", 0.002d );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node3 = graph.makeNode("3", "estimate", 0.001d);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node3 = graph.makeNode("3", "estimate", 0.001d);
 			  Node node3 = Graph.makeNode( "3", "estimate", 0.001d );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node4 = graph.makeNode("4", "estimate", 0d);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node4 = graph.makeNode("4", "estimate", 0d);
 			  Node node4 = Graph.makeNode( "4", "estimate", 0d );
 			  Graph.makeEdge( "1", "3", "weight", 0.253d );
 			  Graph.makeEdge( "1", "2", "weight", 0.018d );

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 {
@@ -42,12 +42,12 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using PredefinedRoles = Neo4Net.Server.security.enterprise.auth.plugin.api.PredefinedRoles;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") @RunWith(Parameterized.class) @CreateDS(name = "Test", partitions = {@CreatePartition(name = "example", suffix = "dc=example,dc=com", contextEntry = @ContextEntry(entryLdif = "dn: dc=example,dc=com\n" + "dc: example\n" + "o: example\n" + "objectClass: top\n" + "objectClass: dcObject\n" + "objectClass: organization\n\n"))}, loadedSchemas = { @LoadSchema(name = "nis")}) @CreateLdapServer(transports = {@CreateTransport(protocol = "LDAP", port = 10389, address = "0.0.0.0"), @CreateTransport(protocol = "LDAPS", port = 10636, address = "0.0.0.0", ssl = true) }, saslMechanisms = { @SaslMechanism(name = "DIGEST-MD5", implClass = org.apache.directory.server.ldap.handlers.sasl.digestMD5.DigestMd5MechanismHandler.class), @SaslMechanism(name = "CRAM-MD5", implClass = org.apache.directory.server.ldap.handlers.sasl.cramMD5.CramMd5MechanismHandler.class) }, saslHost = "0.0.0.0", extendedOpHandlers = {StartTlsHandler.class}, keyStore = "target/test-classes/neo4j_ldap_test_keystore.jks", certificatePassword = "secret") @ApplyLdifFiles("ldap_test_data.ldif") public class AuthIT extends AuthTestBase
+//ORIGINAL LINE: @SuppressWarnings("deprecation") @RunWith(Parameterized.class) @CreateDS(name = "Test", partitions = {@CreatePartition(name = "example", suffix = "dc=example,dc=com", contextEntry = @ContextEntry(entryLdif = "dn: dc=example,dc=com\n" + "dc: example\n" + "o: example\n" + "objectClass: top\n" + "objectClass: dcObject\n" + "objectClass: organization\n\n"))}, loadedSchemas = { @LoadSchema(name = "nis")}) @CreateLdapServer(transports = {@CreateTransport(protocol = "LDAP", port = 10389, address = "0.0.0.0"), @CreateTransport(protocol = "LDAPS", port = 10636, address = "0.0.0.0", ssl = true) }, saslMechanisms = { @SaslMechanism(name = "DIGEST-MD5", implClass = org.apache.directory.server.ldap.handlers.sasl.digestMD5.DigestMd5MechanismHandler.class), @SaslMechanism(name = "CRAM-MD5", implClass = org.apache.directory.server.ldap.handlers.sasl.cramMD5.CramMd5MechanismHandler.class) }, saslHost = "0.0.0.0", extendedOpHandlers = {StartTlsHandler.class}, keyStore = "target/test-classes/Neo4Net_ldap_test_keystore.jks", certificatePassword = "secret") @ApplyLdifFiles("ldap_test_data.ldif") public class AuthIT extends AuthTestBase
 	public class AuthIT : AuthTestBase
 	{
 		 private static EmbeddedTestCertificates _embeddedTestCertificates;
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 		 private readonly string _password;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> configMap;
+//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap;
 		 private readonly IDictionary<Setting<object>, string> _configMap;
 		 private readonly bool _confidentialityRequired;
 
@@ -134,13 +134,13 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.neo4j.graphdb.config.Setting<?>, String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-	//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
+	//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 				  settings[SecuritySettings.ldap_authentication_user_dn_template] = "cn={0},ou=users,dc=example,dc=com";
 				  settings[SecuritySettings.ldap_authentication_cache_enabled] = "true";

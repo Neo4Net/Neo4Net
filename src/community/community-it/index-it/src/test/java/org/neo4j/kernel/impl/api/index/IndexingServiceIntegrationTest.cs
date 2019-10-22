@@ -30,15 +30,15 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using RunWith = org.junit.runner.RunWith;
 	using Parameterized = org.junit.runners.Parameterized;
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
@@ -56,13 +56,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forRelType;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class IndexingServiceIntegrationTest
@@ -77,19 +77,19 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
-		 private GraphDatabaseService _database;
+		 private IGraphDatabaseService _database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
 		 public static GraphDatabaseSettings.SchemaIndex[] Parameters()
 		 {
 			  return GraphDatabaseSettings.SchemaIndex.values();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
+//ORIGINAL LINE: @Parameterized.Parameter() public org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
 		 public GraphDatabaseSettings.SchemaIndex SchemaIndex;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestManualIndexPopulation()
 		 {
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestSchemaIndexMatchIndexingService()
 		 {
@@ -239,17 +239,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 		 }
 
-		 private IndexingService GetIndexingService( GraphDatabaseService database )
+		 private IndexingService GetIndexingService( IGraphDatabaseService database )
 		 {
 			  return GetDependencyResolver( database ).resolveDependency( typeof( IndexingService ) );
 		 }
 
-		 private DependencyResolver GetDependencyResolver( GraphDatabaseService database )
+		 private DependencyResolver GetDependencyResolver( IGraphDatabaseService database )
 		 {
 			  return ( ( GraphDatabaseAPI )database ).DependencyResolver;
 		 }
 
-		 private void CreateData( GraphDatabaseService database, int numberOfNodes )
+		 private void CreateData( IGraphDatabaseService database, int numberOfNodes )
 		 {
 			  for ( int i = 0; i < numberOfNodes; i++ )
 			  {

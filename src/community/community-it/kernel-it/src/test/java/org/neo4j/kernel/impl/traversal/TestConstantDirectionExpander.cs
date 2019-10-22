@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	public class TestConstantDirectionExpander : TraversalTestBase
 	{

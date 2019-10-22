@@ -29,7 +29,7 @@ namespace Neo4Net.Io.pagecache.impl
 		 {
 		 }
 
-		 public FileLockException( File file ) : base( "This file is locked by another process, please ensure you don't have another Neo4j process or tool using it: '" + file + "'.'" )
+		 public FileLockException( File file ) : base( "This file is locked by another process, please ensure you don't have another Neo4Net process or tool using it: '" + file + "'.'" )
 		 {
 		 }
 	}

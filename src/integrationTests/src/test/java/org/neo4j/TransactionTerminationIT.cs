@@ -6,7 +6,7 @@ using System.Threading;
  * Copyright © 2018-2020 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net
 {
@@ -36,13 +36,13 @@ namespace Neo4Net
 
 
 	using Neo4Net.Functions;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ServerControls = Neo4Net.Harness.ServerControls;
 	using TestServerBuilders = Neo4Net.Harness.TestServerBuilders;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -51,7 +51,7 @@ namespace Neo4Net
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using LockClientStoppedException = Neo4Net.Kernel.impl.locking.LockClientStoppedException;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -83,21 +83,21 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.named;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.withBaseUri;
+//	import static org.Neo4Net.test.server.HTTP.withBaseUri;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TransactionTerminationIT
@@ -130,7 +130,7 @@ namespace Neo4Net
 		 private readonly ClusterRule _clusterRule = new ClusterRule().withCluster(clusterOfSize(3));
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.neo4j.test.rule.SuppressOutput.suppressAll()).around(cleanupRule).around(clusterRule);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(cleanupRule).around(clusterRule);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -147,7 +147,7 @@ namespace Neo4Net
 		 {
 			  ServerControls server = _cleanupRule.add( TestServerBuilders.newInProcessBuilder().withConfig(GraphDatabaseSettings.auth_enabled, Settings.FALSE).withConfig(GraphDatabaseSettings.lock_manager, LockManagerName).withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newServer() );
 
-			  GraphDatabaseService db = server.Graph();
+			  IGraphDatabaseService db = server.Graph();
 			  HTTP.Builder http = withBaseUri( server.HttpURI() );
 
 			  long value1 = 1L;
@@ -264,7 +264,7 @@ namespace Neo4Net
 		 /// }
 		 /// </summary>
 
-		 private static void CreateNode( GraphDatabaseService db )
+		 private static void CreateNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -279,7 +279,7 @@ namespace Neo4Net
 			  cluster.Sync();
 		 }
 
-		 private static void AssertNodeExists( GraphDatabaseService db, object value )
+		 private static void AssertNodeExists( IGraphDatabaseService db, object value )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -296,7 +296,7 @@ namespace Neo4Net
 			  AssertNodeExists( cluster.Master, value );
 		 }
 
-		 private static Node FindNode( GraphDatabaseService db )
+		 private static Node FindNode( IGraphDatabaseService db )
 		 {
 			  return single( Db.findNodes( _label ) );
 		 }
@@ -310,7 +310,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void commit(org.neo4j.test.server.HTTP.Response tx, org.neo4j.test.server.HTTP.Builder http) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static void commit(org.Neo4Net.test.server.HTTP.Response tx, org.Neo4Net.test.server.HTTP.Builder http) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private static void Commit( HTTP.Response tx, HTTP.Builder http )
 		 {
 			  http.Post( tx.StringFromContent( "commit" ) );
@@ -336,14 +336,14 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertNumberOfActiveTransactions(int expectedCount, org.neo4j.graphdb.GraphDatabaseService db) throws InterruptedException
-		 private static void AssertNumberOfActiveTransactions( int expectedCount, GraphDatabaseService db )
+//ORIGINAL LINE: private static void assertNumberOfActiveTransactions(int expectedCount, org.Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
+		 private static void AssertNumberOfActiveTransactions( int expectedCount, IGraphDatabaseService db )
 		 {
 			  ThrowingSupplier<int, Exception> txCount = () => ActiveTxCount(db);
 			  assertEventually( "Wrong active tx count", txCount, equalTo( expectedCount ), 1, TimeUnit.MINUTES );
 		 }
 
-		 private static int ActiveTxCount( GraphDatabaseService db )
+		 private static int ActiveTxCount( IGraphDatabaseService db )
 		 {
 			  DependencyResolver resolver = ( ( GraphDatabaseAPI ) db ).DependencyResolver;
 			  KernelTransactions kernelTransactions = resolver.ResolveDependency( typeof( KernelTransactions ) );
@@ -392,8 +392,8 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndWaitBeforeCommit(String threadName, org.neo4j.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.CountDownLatch txCommit)
-		 private static Future<object> SetPropertyInSeparateThreadAndWaitBeforeCommit( string threadName, GraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, System.Threading.CountdownEvent txCommit )
+//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndWaitBeforeCommit(String threadName, org.Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.CountDownLatch txCommit)
+		 private static Future<object> SetPropertyInSeparateThreadAndWaitBeforeCommit( string threadName, IGraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, System.Threading.CountdownEvent txCommit )
 		 {
 			  return ExecuteInSeparateThread(threadName, () =>
 			  {
@@ -409,8 +409,8 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndAttemptToCommit(String threadName, org.neo4j.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.atomic.AtomicReference<org.neo4j.graphdb.Transaction> txReference)
-		 private static Future<object> SetPropertyInSeparateThreadAndAttemptToCommit( string threadName, GraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, AtomicReference<Transaction> txReference )
+//ORIGINAL LINE: private static java.util.concurrent.Future<?> setPropertyInSeparateThreadAndAttemptToCommit(String threadName, org.Neo4Net.graphdb.GraphDatabaseService db, Object value, java.util.concurrent.CountDownLatch txStarted, java.util.concurrent.atomic.AtomicReference<org.Neo4Net.graphdb.Transaction> txReference)
+		 private static Future<object> SetPropertyInSeparateThreadAndAttemptToCommit( string threadName, IGraphDatabaseService db, object value, System.Threading.CountdownEvent txStarted, AtomicReference<Transaction> txReference )
 		 {
 			  return ExecuteInSeparateThread(threadName, () =>
 			  {

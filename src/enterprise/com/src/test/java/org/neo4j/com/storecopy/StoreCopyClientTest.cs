@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.com.storecopy
 {
@@ -33,9 +33,9 @@ namespace Neo4Net.com.storecopy
 
 
 	using Neo4Net.com;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using Service = Neo4Net.Helpers.Service;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
@@ -90,13 +90,13 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.storecopy.StoreUtil.TEMP_COPY_DIRECTORY_NAME;
+//	import static org.Neo4Net.com.storecopy.StoreUtil.TEMP_COPY_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.record_format;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_format;
 
 	public class StoreCopyClientTest
 	{
@@ -143,7 +143,7 @@ namespace Neo4Net.com.storecopy
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
+//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
 			  DatabaseLayout copyLayout = _directory.databaseLayout( "copy" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.io.File originalDir = directory.storeDir("original");
@@ -159,7 +159,7 @@ namespace Neo4Net.com.storecopy
 			  StoreCopyClient copier = new StoreCopyClient( copyLayout, Config.defaults(), LoadKernelExtensions(), NullLogProvider.Instance, _fileSystem, pageCache, storeCopyMonitor, false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.internal.GraphDatabaseAPI original = (org.neo4j.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory());
+//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI original = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory());
 			  GraphDatabaseAPI original = ( GraphDatabaseAPI ) StartDatabase( originalLayout.DatabaseDirectory() );
 
 			  using ( Transaction tx = original.BeginTx() )
@@ -174,7 +174,7 @@ namespace Neo4Net.com.storecopy
 			  copier.CopyStore( storeCopyRequest, cancelStoreCopy.get, MoveAfterCopy.moveReplaceExisting() );
 
 			  // Then
-			  GraphDatabaseService copy = StartDatabase( copyLayout.DatabaseDirectory() );
+			  IGraphDatabaseService copy = StartDatabase( copyLayout.DatabaseDirectory() );
 
 			  using ( Transaction tx = copy.BeginTx() )
 			  {
@@ -215,7 +215,7 @@ namespace Neo4Net.com.storecopy
 		 public virtual void StoreCopyClientUseCustomTransactionLogLocationWhenConfigured()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copyCustomLocation");
+//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copyCustomLocation");
 			  DatabaseLayout copyLayout = _directory.databaseLayout( "copyCustomLocation" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.io.File originalDir = new java.io.File(directory.directory(), "originalCustomLocation");
@@ -272,7 +272,7 @@ namespace Neo4Net.com.storecopy
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
+//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
 			  DatabaseLayout copyLayout = _directory.databaseLayout( "copy" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.io.File originalDir = directory.storeDir("original");
@@ -288,7 +288,7 @@ namespace Neo4Net.com.storecopy
 			  StoreCopyClient copier = new StoreCopyClient( copyLayout, Config.defaults(), LoadKernelExtensions(), NullLogProvider.Instance, _fileSystem, pageCache, storeCopyMonitor, false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.internal.GraphDatabaseAPI original = (org.neo4j.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory());
+//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI original = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory());
 			  GraphDatabaseAPI original = ( GraphDatabaseAPI ) StartDatabase( originalLayout.DatabaseDirectory() );
 
 			  using ( Transaction tx = original.BeginTx() )
@@ -303,7 +303,7 @@ namespace Neo4Net.com.storecopy
 			  copier.CopyStore( storeCopyRequest, cancelStoreCopy.get, MoveAfterCopy.moveReplaceExisting() );
 
 			  // Then
-			  GraphDatabaseService copy = StartDatabase( copyLayout.DatabaseDirectory() );
+			  IGraphDatabaseService copy = StartDatabase( copyLayout.DatabaseDirectory() );
 
 			  using ( Transaction tx = copy.BeginTx() )
 			  {
@@ -349,7 +349,7 @@ namespace Neo4Net.com.storecopy
 			  CreateInitialDatabase( initialLayout.DatabaseDirectory() );
 
 			  long originalTransactionOffset = MetaDataStore.getRecord( pageCache, initialLayout.MetadataStore(), MetaDataStore.Position.LAST_CLOSED_TRANSACTION_LOG_BYTE_OFFSET );
-			  GraphDatabaseService initialDatabase = StartDatabase( initialLayout.DatabaseDirectory() );
+			  IGraphDatabaseService initialDatabase = StartDatabase( initialLayout.DatabaseDirectory() );
 
 			  DatabaseLayout backupLayout = _directory.databaseLayout( backupStore );
 			  StoreCopyClient copier = new StoreCopyClient( backupLayout, Config.defaults(), LoadKernelExtensions(), NullLogProvider.Instance, _fileSystem, pageCache, new StoreCopyClientMonitor_Adapter(), false );
@@ -376,7 +376,7 @@ namespace Neo4Net.com.storecopy
 			  DatabaseLayout backupLayout = _directory.databaseLayout( "backupStore" );
 
 			  PageCache pageCache = _pageCacheRule.getPageCache( _fileSystem );
-			  GraphDatabaseService initialDatabase = CreateInitialDatabase( initialStore );
+			  IGraphDatabaseService initialDatabase = CreateInitialDatabase( initialStore );
 			  StoreCopyClient copier = new StoreCopyClient( backupLayout, Config.defaults(), LoadKernelExtensions(), NullLogProvider.Instance, _fileSystem, pageCache, new StoreCopyClientMonitor_Adapter(), false );
 			  CancellationRequest falseCancellationRequest = () => false;
 
@@ -421,7 +421,7 @@ namespace Neo4Net.com.storecopy
 		 private void CheckStoreCopyClientWithRecordFormats( string recordFormatsName )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
+//ORIGINAL LINE: final org.Neo4Net.io.layout.DatabaseLayout copyLayout = directory.databaseLayout("copy");
 			  DatabaseLayout copyLayout = _directory.databaseLayout( "copy" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.io.File originalDir = directory.storeDir("original");
@@ -433,7 +433,7 @@ namespace Neo4Net.com.storecopy
 			  StoreCopyClient copier = new StoreCopyClient( copyLayout, config, LoadKernelExtensions(), NullLogProvider.Instance, _fileSystem, pageCache, new StoreCopyClientMonitor_Adapter(), false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.internal.GraphDatabaseAPI original = (org.neo4j.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory(), recordFormatsName);
+//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI original = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) startDatabase(originalLayout.databaseDirectory(), recordFormatsName);
 			  GraphDatabaseAPI original = ( GraphDatabaseAPI ) StartDatabase( originalLayout.DatabaseDirectory(), recordFormatsName );
 			  StoreCopyClient.StoreCopyRequester storeCopyRequest = _requestFactory.create( original, originalLayout.DatabaseDirectory(), _fileSystem, false );
 
@@ -445,9 +445,9 @@ namespace Neo4Net.com.storecopy
 			  StartDatabase( copyLayout.DatabaseDirectory(), recordFormatsName ).shutdown();
 		 }
 
-		 private GraphDatabaseService CreateInitialDatabase( File initialStore )
+		 private IGraphDatabaseService CreateInitialDatabase( File initialStore )
 		 {
-			  GraphDatabaseService initialDatabase = StartDatabase( initialStore );
+			  IGraphDatabaseService initialDatabase = StartDatabase( initialStore );
 			  for ( int i = 0; i < 10; i++ )
 			  {
 					using ( Transaction tx = initialDatabase.BeginTx() )
@@ -460,26 +460,26 @@ namespace Neo4Net.com.storecopy
 			  return initialDatabase;
 		 }
 
-		 private GraphDatabaseService StartDatabase( File storeDir )
+		 private IGraphDatabaseService StartDatabase( File storeDir )
 		 {
 			  return StartDatabase( storeDir, Standard.LATEST_NAME );
 		 }
 
-		 private GraphDatabaseService StartDatabase( File storeDir, string recordFormatName )
+		 private IGraphDatabaseService StartDatabase( File storeDir, string recordFormatName )
 		 {
-			  GraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(record_format, recordFormatName).newGraphDatabase();
+			  IGraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(record_format, recordFormatName).newGraphDatabase();
 			  return _cleanup.add( database );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.List<org.neo4j.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
+//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
 		 private static IList<KernelExtensionFactory<object>> LoadKernelExtensions()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
 			  IList<KernelExtensionFactory<object>> kernelExtensions = new List<KernelExtensionFactory<object>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.extension.KernelExtensionFactory<?> factory : org.neo4j.helpers.Service.load(org.neo4j.kernel.extension.KernelExtensionFactory.class))
+//ORIGINAL LINE: for (org.Neo4Net.kernel.extension.KernelExtensionFactory<?> factory : org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class))
 			  foreach ( KernelExtensionFactory<object> factory in Service.load( typeof( KernelExtensionFactory ) ) )
 			  {
 					kernelExtensions.Add( factory );
@@ -511,7 +511,7 @@ namespace Neo4Net.com.storecopy
 			  internal readonly FileSystemAbstraction Fs;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.com.Response<?> response;
+//ORIGINAL LINE: private org.Neo4Net.com.Response<?> response;
 			  internal Response<object> Response;
 			  internal bool IncludeLogs;
 
@@ -532,7 +532,7 @@ namespace Neo4Net.com.storecopy
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.neo4j.com.Response<?> copyStore(StoreWriter writer)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<?> copyStore(StoreWriter writer)
 			  public override Response<object> CopyStore( StoreWriter writer )
 			  {
 					NeoStoreDataSource neoStoreDataSource = Original.DependencyResolver.resolveDependency( typeof( NeoStoreDataSource ) );
@@ -546,7 +546,7 @@ namespace Neo4Net.com.storecopy
 					RequestContext requestContext = ( new StoreCopyServer( neoStoreDataSource, checkPointer, Fs, OriginalDir, ( new Monitors() ).newMonitor(typeof(StoreCopyServer.Monitor)) ) ).flushStoresAndStreamStoreFiles("test", writer, IncludeLogs);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.StoreId storeId = original.getDependencyResolver().resolveDependency(org.neo4j.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).getStoreId();
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.StoreId storeId = original.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).getStoreId();
 					StoreId storeId = Original.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).StoreId;
 
 					ResponsePacker responsePacker = new ResponsePacker( logicalTransactionStore, transactionIdStore, () => storeId );

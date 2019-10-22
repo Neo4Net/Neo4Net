@@ -43,7 +43,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private readonly IndexSearcher _searcher;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TopDocsIterator(org.apache.lucene.search.Query query, org.neo4j.index.lucene.QueryContext context, org.apache.lucene.search.IndexSearcher searcher) throws java.io.IOException
+//ORIGINAL LINE: TopDocsIterator(org.apache.lucene.search.Query query, org.Neo4Net.index.lucene.QueryContext context, org.apache.lucene.search.IndexSearcher searcher) throws java.io.IOException
 		 internal TopDocsIterator( Query query, QueryContext context, IndexSearcher searcher )
 		 {
 			  TopDocs docs = ToTopDocs( query, context, searcher );
@@ -53,7 +53,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.apache.lucene.search.TopDocs toTopDocs(org.apache.lucene.search.Query query, org.neo4j.index.lucene.QueryContext context, org.apache.lucene.search.IndexSearcher searcher) throws java.io.IOException
+//ORIGINAL LINE: private org.apache.lucene.search.TopDocs toTopDocs(org.apache.lucene.search.Query query, org.Neo4Net.index.lucene.QueryContext context, org.apache.lucene.search.IndexSearcher searcher) throws java.io.IOException
 		 private TopDocs ToTopDocs( Query query, QueryContext context, IndexSearcher searcher )
 		 {
 			  Sort sorting = context != null ? context.Sorting : null;

@@ -21,8 +21,8 @@ namespace Neo4Net.Metatest
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 	using BatchTransaction = Neo4Net.Test.BatchTransaction;
 
@@ -35,7 +35,7 @@ namespace Neo4Net.Metatest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.BatchTransaction.beginBatchTx;
+//	import static org.Neo4Net.test.BatchTransaction.beginBatchTx;
 
 	internal class BatchTransactionTest
 	{
@@ -45,7 +45,7 @@ namespace Neo4Net.Metatest
 		 {
 			  // GIVEN
 			  Transaction transaction = mock( typeof( Transaction ) );
-			  GraphDatabaseService db = mock( typeof( GraphDatabaseService ) );
+			  IGraphDatabaseService db = mock( typeof( IGraphDatabaseService ) );
 			  when( Db.beginTx() ).thenReturn(transaction);
 			  ProgressListener progress = mock( typeof( ProgressListener ) );
 			  BatchTransaction tx = beginBatchTx( db ).withIntermediarySize( 10 ).withProgress( progress );

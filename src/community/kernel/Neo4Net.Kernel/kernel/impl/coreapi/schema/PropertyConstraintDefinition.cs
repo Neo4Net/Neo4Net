@@ -21,15 +21,15 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 
 	internal abstract class PropertyConstraintDefinition : ConstraintDefinition
 	{
 		public abstract ConstraintType ConstraintType { get; }
 		public abstract void Drop();
-		public abstract Neo4Net.Graphdb.RelationshipType RelationshipType { get; }
-		public abstract Neo4Net.Graphdb.Label Label { get; }
+		public abstract Neo4Net.GraphDb.RelationshipType RelationshipType { get; }
+		public abstract Neo4Net.GraphDb.Label Label { get; }
 		 protected internal readonly InternalSchemaActions Actions;
 
 		 protected internal PropertyConstraintDefinition( InternalSchemaActions actions )

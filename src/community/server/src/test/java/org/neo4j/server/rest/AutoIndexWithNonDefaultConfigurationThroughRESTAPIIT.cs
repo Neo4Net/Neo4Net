@@ -48,7 +48,7 @@ namespace Neo4Net.Server.rest
 		 public static TemporaryFolder StaticFolder = new TemporaryFolder();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<RESTRequestGenerator> gen = org.neo4j.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

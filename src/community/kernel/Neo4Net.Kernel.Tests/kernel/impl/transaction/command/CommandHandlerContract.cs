@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 /// <param name="applier"> to use </param>
 		 /// <param name="transactions"> to apply </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void apply(org.neo4j.kernel.impl.api.BatchTransactionApplier applier, org.neo4j.kernel.impl.api.TransactionToApply... transactions) throws Exception
+//ORIGINAL LINE: public static void apply(org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier, org.Neo4Net.kernel.impl.api.TransactionToApply... transactions) throws Exception
 		 public static void Apply( BatchTransactionApplier applier, params TransactionToApply[] transactions )
 		 {
 			  foreach ( TransactionToApply tx in transactions )
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 /// function. </param>
 		 /// <returns> the boolean-and result of all function operations. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean apply(org.neo4j.kernel.impl.api.BatchTransactionApplier applier, ApplyFunction function, org.neo4j.kernel.impl.api.TransactionToApply... transactions) throws Exception
+//ORIGINAL LINE: public static boolean apply(org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier, ApplyFunction function, org.Neo4Net.kernel.impl.api.TransactionToApply... transactions) throws Exception
 		 public static bool Apply( BatchTransactionApplier applier, ApplyFunction function, params TransactionToApply[] transactions )
 		 {
 			  bool result = true;

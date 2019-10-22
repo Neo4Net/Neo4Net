@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Annotations
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SupportedSourceVersion(SourceVersion.RELEASE_8) @SupportedAnnotationTypes("org.neo4j.kernel.impl.annotations.Documented") public class DocumentationProcessor extends AnnotationProcessor
+//ORIGINAL LINE: @SupportedSourceVersion(SourceVersion.RELEASE_8) @SupportedAnnotationTypes("org.Neo4Net.kernel.impl.annotations.Documented") public class DocumentationProcessor extends AnnotationProcessor
 	public class DocumentationProcessor : AnnotationProcessor
 	{
 		 protected internal override void Process<T1>( TypeElement annotationType, Element annotated, AnnotationMirror annotation, IDictionary<T1> values ) where T1 : javax.lang.model.element.ExecutableElement

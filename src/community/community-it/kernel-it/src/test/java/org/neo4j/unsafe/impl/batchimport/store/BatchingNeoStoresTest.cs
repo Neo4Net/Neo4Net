@@ -24,10 +24,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -68,22 +68,22 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.standard.Standard.LATEST_RECORD_FORMATS;
+//	import static org.Neo4Net.kernel.impl.store.format.standard.Standard.LATEST_RECORD_FORMATS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NULL_REFERENCE;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NULL_REFERENCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.store.BatchingNeoStores.DOUBLE_RELATIONSHIP_RECORD_UNIT_THRESHOLD;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.store.BatchingNeoStores.DOUBLE_RELATIONSHIP_RECORD_UNIT_THRESHOLD;
 
 	public class BatchingNeoStoresTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.PageCacheAndDependenciesRule storage = new org.neo4j.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public readonly PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -294,7 +294,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 
 		 private void SomeDataInTheDatabase()
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(new UncloseableDelegatingFileSystemAbstraction(Storage.fileSystem())).newImpermanentDatabase(Storage.directory().databaseDir());
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(new UncloseableDelegatingFileSystemAbstraction(Storage.fileSystem())).newImpermanentDatabase(Storage.directory().databaseDir());
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )

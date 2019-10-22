@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.LegacyCredential.INACCESSIBLE;
+//	import static org.Neo4Net.server.security.auth.LegacyCredential.INACCESSIBLE;
 
 	public class LegacyCredentialTest
 	{

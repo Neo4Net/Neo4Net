@@ -29,10 +29,10 @@ namespace Neo4Net.Bolt.runtime
 	{
 		 TransactionStateMachineSPI TransactionSpi();
 
-		 void ReportError( Neo4jError err );
+		 void ReportError( Neo4NetError err );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws org.neo4j.bolt.security.auth.AuthenticationException;
+//ORIGINAL LINE: org.Neo4Net.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws org.Neo4Net.bolt.security.auth.AuthenticationException;
 		 AuthenticationResult Authenticate( IDictionary<string, object> authToken );
 
 		 void UdcRegisterClient( string clientName );

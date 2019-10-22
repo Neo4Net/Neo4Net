@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -26,13 +26,13 @@ namespace Neo4Net.Kernel.ha
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using MasterImpl = Neo4Net.Kernel.ha.com.master.MasterImpl;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 
 	/// <summary>
 	/// Determines when slaves should initialize a transaction on the master. This is particularly relevant for read operations
@@ -52,10 +52,10 @@ namespace Neo4Net.Kernel.ha
 	public class WhenToInitializeTransactionOnMasterFromSlaveIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
-		 private GraphDatabaseService _slave;
+		 private IGraphDatabaseService _slave;
 		 private ClusterManager.ManagedCluster _cluster;
 
 		 private MasterImpl.Monitor _masterMonitor = mock( typeof( MasterImpl.Monitor ) );
@@ -133,9 +133,9 @@ namespace Neo4Net.Kernel.ha
 			  }
 		 }
 
-		 private void ReadEachProperty( PropertyContainer entity )
+		 private void ReadEachProperty( IPropertyContainer IEntity )
 		 {
-			  foreach ( string k in entity.PropertyKeys )
+			  foreach ( string k in IEntity.PropertyKeys )
 			  {
 					entity.GetProperty( k );
 			  }

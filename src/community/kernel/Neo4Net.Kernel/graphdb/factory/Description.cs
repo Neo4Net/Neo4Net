@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 
 	/// <summary>
-	/// DEPRECATED: Please use <seealso cref="org.neo4j.configuration.Description"/> instead. This will be removed in 4.0.
+	/// DEPRECATED: Please use <seealso cref="org.Neo4Net.configuration.Description"/> instead. This will be removed in 4.0.
 	/// </summary>
 	[Obsolete, AttributeUsage(AttributeTargets.Class | AttributeTargets.Field, AllowMultiple = false, Inherited = false)]
 	public class Description : System.Attribute

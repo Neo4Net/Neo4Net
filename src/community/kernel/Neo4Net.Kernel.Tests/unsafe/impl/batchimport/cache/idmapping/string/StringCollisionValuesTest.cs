@@ -37,25 +37,25 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.CHUNKED_FIXED_SIZE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.CHUNKED_FIXED_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.OFF_HEAP;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.OFF_HEAP;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class StringCollisionValuesTest
 	public class StringCollisionValuesTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.PageCacheAndDependenciesRule storage = new org.neo4j.test.rule.PageCacheAndDependenciesRule().with(new org.neo4j.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public readonly PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule().withConfiguration(new org.neo4j.values.storable.RandomValues.Default()
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule().withConfiguration(new org.Neo4Net.values.storable.RandomValues.Default()
 		 public readonly RandomRule random = new RandomRule().withConfiguration(new DefaultAnonymousInnerClass());
 
 		 private class DefaultAnonymousInnerClass : RandomValues.Default
@@ -67,7 +67,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameters public static java.util.Collection<System.Func<org.neo4j.test.rule.PageCacheAndDependenciesRule,org.neo4j.unsafe.impl.batchimport.cache.NumberArrayFactory>> data()
+//ORIGINAL LINE: @Parameters public static java.util.Collection<System.Func<org.Neo4Net.test.rule.PageCacheAndDependenciesRule,org.Neo4Net.unsafe.impl.batchimport.cache.NumberArrayFactory>> data()
 		 public static ICollection<System.Func<PageCacheAndDependenciesRule, NumberArrayFactory>> Data()
 		 {
 			  return Arrays.asList( Storage => HEAP, Storage => OFF_HEAP, Storage => AUTO_WITHOUT_PAGECACHE, Storage => CHUNKED_FIXED_SIZE, Storage => new PageCachedNumberArrayFactory( Storage.pageCache(), Storage.directory().directory() ) );

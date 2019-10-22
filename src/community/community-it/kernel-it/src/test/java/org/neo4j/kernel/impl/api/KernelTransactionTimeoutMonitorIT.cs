@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Impl.Api
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule database = createDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = createDatabaseRule();
 		 public DatabaseRule Database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

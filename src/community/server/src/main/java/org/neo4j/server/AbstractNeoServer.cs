@@ -25,8 +25,8 @@ namespace Neo4Net.Server
 	using Configuration = org.apache.commons.configuration.Configuration;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 	using RunCarefully = Neo4Net.Helpers.RunCarefully;
@@ -54,7 +54,7 @@ namespace Neo4Net.Server
 	using CypherExecutorProvider = Neo4Net.Server.database.CypherExecutorProvider;
 	using Database = Neo4Net.Server.database.Database;
 	using DatabaseProvider = Neo4Net.Server.database.DatabaseProvider;
-	using GraphDatabaseServiceProvider = Neo4Net.Server.database.GraphDatabaseServiceProvider;
+	using IGraphDatabaseServiceProvider = Neo4Net.Server.database.GraphDatabaseServiceProvider;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;
 	using Neo4Net.Server.database;
 	using LifecycleManagingDatabase = Neo4Net.Server.database.LifecycleManagingDatabase;
@@ -83,23 +83,23 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.round;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.db_timezone;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.http_log_path;
+//	import static org.Neo4Net.server.configuration.ServerSettings.http_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.http_logging_enabled;
+//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.http_logging_rotation_keep_number;
+//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_rotation_keep_number;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.http_logging_rotation_size;
+//	import static org.Neo4Net.server.configuration.ServerSettings.http_logging_rotation_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.database.InjectableProvider.providerForSingleton;
+//	import static org.Neo4Net.server.database.InjectableProvider.providerForSingleton;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.database.InjectableProvider.providerFromSupplier;
+//	import static org.Neo4Net.server.database.InjectableProvider.providerFromSupplier;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public abstract class AbstractNeoServer : NeoServer
 	{
@@ -114,7 +114,7 @@ namespace Neo4Net.Server
 		 private const long ROUNDING_SECOND = 1000L;
 
 		 private static readonly Pattern[] _defaultUriWhitelist = new Pattern[]{ Pattern.compile( "/browser.*" ), Pattern.compile( "/" ) };
-		 public static readonly string Neo4jIsStartingMessage = "======== Neo4j " + Version.Neo4jVersion + " ========";
+		 public static readonly string Neo4NetIsStartingMessage = "======== Neo4Net " + Version.Neo4NetVersion + " ========";
 
 		 protected internal readonly LogProvider UserLogProvider;
 		 private readonly Log _log;
@@ -156,7 +156,7 @@ namespace Neo4Net.Server
 			  this._config = config;
 			  this.UserLogProvider = dependencies.UserLogProvider();
 			  this._log = UserLogProvider.getLog( this.GetType() );
-			  _log.info( Neo4jIsStartingMessage );
+			  _log.info( Neo4NetIsStartingMessage );
 
 			  VerifyConnectorsConfiguration( config );
 
@@ -211,7 +211,7 @@ namespace Neo4Net.Server
 //ORIGINAL LINE: final long timeoutMillis = getTransactionTimeoutMillis();
 			  long timeoutMillis = TransactionTimeoutMillis;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.time.Clock clock = org.neo4j.time.Clocks.systemClock();
+//ORIGINAL LINE: final java.time.Clock clock = org.Neo4Net.time.Clocks.systemClock();
 			  Clock clock = Clocks.systemClock();
 
 			  _transactionRegistry = new TransactionHandleRegistry( clock, timeoutMillis, UserLogProvider );
@@ -238,7 +238,7 @@ namespace Neo4Net.Server
 			 get
 			 {
 	//JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-	//ORIGINAL LINE: final long timeout = config.get(org.neo4j.server.configuration.ServerSettings.transaction_idle_timeout).toMillis();
+	//ORIGINAL LINE: final long timeout = config.get(org.Neo4Net.server.configuration.ServerSettings.transaction_idle_timeout).toMillis();
 				  long timeout = _config.get( ServerSettings.transaction_idle_timeout ).toMillis();
 				  return Math.Max( timeout, MINIMUM_TIMEOUT + ROUNDING_SECOND );
 			 }
@@ -309,7 +309,7 @@ namespace Neo4Net.Server
 			  catch ( Exception e )
 			  {
 					ListenSocketAddress address = _httpListenAddress != null ? _httpListenAddress : _httpsListenAddress;
-					_log.error( "Failed to start Neo4j on %s: %s", address, e.Message );
+					_log.error( "Failed to start Neo4Net on %s: %s", address, e.Message );
 					throw e;
 			  }
 		 }
@@ -438,18 +438,18 @@ namespace Neo4Net.Server
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> createDefaultInjectables()
+//ORIGINAL LINE: protected java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> createDefaultInjectables()
 		 protected internal virtual ICollection<InjectableProvider<object>> CreateDefaultInjectables()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> singletons = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> singletons = new java.util.ArrayList<>();
 			  ICollection<InjectableProvider<object>> singletons = new List<InjectableProvider<object>>();
 
 			  Database database = Database;
 
 			  singletons.Add( new DatabaseProvider( database ) );
 			  singletons.Add( new DatabaseActions.Provider( _databaseActions ) );
-			  singletons.Add( new GraphDatabaseServiceProvider( database ) );
+			  singletons.Add( new IGraphDatabaseServiceProvider( database ) );
 			  singletons.Add( new NeoServerProvider( this ) );
 			  singletons.Add( providerForSingleton( new ConfigAdapter( Config ), typeof( Configuration ) ) );
 			  singletons.Add( providerForSingleton( Config, typeof( Config ) ) );
@@ -476,7 +476,7 @@ namespace Neo4Net.Server
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.neo4j.server.modules.ServerModule> T getModule(Class<T> clazz)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private <T extends org.Neo4Net.server.modules.ServerModule> T getModule(Class<T> clazz)
 		 private T GetModule<T>( Type clazz ) where T : Neo4Net.Server.modules.ServerModule
 		 {
 				 clazz = typeof( T );

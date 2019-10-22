@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory;
+//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory;
 
 	public class LegacySslPolicyConfigTest
 	{

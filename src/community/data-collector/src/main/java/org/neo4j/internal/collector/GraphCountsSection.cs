@@ -37,7 +37,7 @@ namespace Neo4Net.Internal.Collector
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Register = Neo4Net.Register.Register;
 	using Registers = Neo4Net.Register.Registers;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	/// <summary>
 	/// The Graph Counts section holds all data that is available form the counts store, plus metadata
@@ -52,7 +52,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.neo4j.internal.kernel.api.Kernel kernel, Anonymizer anonymizer) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.internal.kernel.api.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel, Anonymizer anonymizer )
 		 {
 			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
@@ -133,7 +133,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.neo4j.internal.kernel.api.TokenRead tokens, org.neo4j.internal.kernel.api.SchemaRead schemaRead, Anonymizer anonymizer) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.internal.kernel.api.TokenRead tokens, org.Neo4Net.internal.kernel.api.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private static IList<IDictionary<string, object>> Indexes( TokenRead tokens, SchemaRead schemaRead, Anonymizer anonymizer )
 		 {
 			  IList<IDictionary<string, object>> indexes = new List<IDictionary<string, object>>();
@@ -173,21 +173,21 @@ namespace Neo4Net.Internal.Collector
 			  while ( iterator.MoveNext() )
 			  {
 					ConstraintDescriptor constraint = iterator.Current;
-					EntityType entityType = constraint.Schema().entityType();
+					EntityType IEntityType = constraint.Schema().entityType();
 					IDictionary<string, object> data = new Dictionary<string, object>();
 
 					data["properties"] = Map( constraint.Schema().PropertyIds, id => anonymizer.PropertyKey(tokenLookup.PropertyKeyGetName(id), id) );
 					data["type"] = ConstraintType( constraint );
-					int entityTokenId = constraint.Schema().EntityTokenIds[0];
+					int IEntityTokenId = constraint.Schema().EntityTokenIds[0];
 
-					switch ( entityType.innerEnumValue )
+					switch ( IEntityType.innerEnumValue )
 					{
-					case EntityType.InnerEnum.NODE:
-						 data["label"] = anonymizer.Label( tokenLookup.LabelGetName( entityTokenId ), entityTokenId );
+					case IEntityType.InnerEnum.NODE:
+						 data["label"] = anonymizer.Label( tokenLookup.LabelGetName( IEntityTokenId ), IEntityTokenId );
 						 constraints.Add( data );
 						 break;
-					case EntityType.InnerEnum.RELATIONSHIP:
-						 data["relationshipType"] = anonymizer.RelationshipType( tokenLookup.RelationshipTypeGetName( entityTokenId ), entityTokenId );
+					case IEntityType.InnerEnum.RELATIONSHIP:
+						 data["relationshipType"] = anonymizer.RelationshipType( tokenLookup.RelationshipTypeGetName( IEntityTokenId ), IEntityTokenId );
 						 constraints.Add( data );
 						 break;
 					default:

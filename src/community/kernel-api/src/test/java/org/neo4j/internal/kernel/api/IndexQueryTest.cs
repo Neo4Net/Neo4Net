@@ -41,7 +41,7 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class IndexQueryTest
 	{
@@ -104,7 +104,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeFalseForIrrelevant()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, true, 13, true );
 
 			  AssertFalseForOtherThings( p );
@@ -115,7 +115,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeInclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, true, 13, true );
 
 			  assertFalse( Test( p, 10 ) );
@@ -130,7 +130,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeExclusiveLowerExclusiveLower()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, false, 13, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, false, 13, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, false, 13, false );
 
 			  assertFalse( Test( p, 11 ) );
@@ -143,7 +143,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeInclusiveLowerExclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, 13, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, true, 13, false );
 
 			  assertFalse( Test( p, 10 ) );
@@ -157,7 +157,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeExclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, false, 13, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, false, 13, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, false, 13, true );
 
 			  assertFalse( Test( p, 11 ) );
@@ -171,7 +171,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeLowerNullValue()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, true, 13, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, true, 13, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, null, true, 13, true );
 
 			  assertTrue( Test( p, 10 ) );
@@ -186,7 +186,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeUpperNullValue()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, null, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 11, true, null, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 11, true, null, true );
 
 			  assertFalse( Test( p, 10 ) );
@@ -201,7 +201,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestNumRangeComparingBigDoublesAndLongs()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 9007199254740993L, true, null, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, 9007199254740993L, true, null, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, 9007199254740993L, true, null, true );
 
 			  assertFalse( Test( p, 9007199254740992D ) );
@@ -214,7 +214,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeFalseForIrrelevant()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", true, "bee", true );
 
 			  AssertFalseForOtherThings( p );
@@ -225,7 +225,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeInclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", true, "bee", true );
 
 			  assertFalse( Test( p, "bba" ) );
@@ -240,7 +240,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeExclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, "bee", true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, "bee", true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", false, "bee", true );
 
 			  assertFalse( Test( p, "bbb" ) );
@@ -254,7 +254,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeInclusiveLowerExclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", true, "bee", false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", true, "bee", false );
 
 			  assertFalse( Test( p, "bba" ) );
@@ -268,7 +268,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeExclusiveLowerExclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, "bee", false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, "bee", false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", false, "bee", false );
 
 			  assertFalse( Test( p, "bbb" ) );
@@ -282,7 +282,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeUpperUnbounded()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, null, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, "bbb", false, null, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, "bbb", false, null, false );
 
 			  assertFalse( Test( p, "bbb" ) );
@@ -295,7 +295,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestStringRangeLowerUnbounded()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, false, "bee", false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, false, "bee", false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, null, false, "bee", false );
 
 			  assertTrue( Test( p, "" ) );
@@ -326,7 +326,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeFalseForIrrelevant()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, true, _gps5, true );
 
 			  AssertFalseForOtherThings( p );
@@ -337,7 +337,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeInclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, true, _gps5, true );
 
 			  assertFalse( Test( p, _gps1 ) );
@@ -356,7 +356,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeExclusiveLowerInclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, gps5, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, gps5, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, false, _gps5, true );
 
 			  assertFalse( Test( p, _gps2 ) );
@@ -374,7 +374,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeInclusiveLowerExclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, true, gps5, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, true, _gps5, false );
 
 			  assertFalse( Test( p, _gps1 ) );
@@ -392,7 +392,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeExclusiveLowerExclusiveUpper()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, gps5, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, gps5, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, false, _gps5, false );
 
 			  assertFalse( Test( p, _gps2 ) );
@@ -410,7 +410,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeUpperUnbounded()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, null, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps2, false, null, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps2, false, null, false );
 
 			  assertFalse( Test( p, _gps2 ) );
@@ -427,7 +427,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeLowerUnbounded()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, false, gps5, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, null, false, gps5, false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, null, false, _gps5, false );
 
 			  assertTrue( Test( p, _gps1 ) );
@@ -444,7 +444,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeCartesian()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, car1, false, car2, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, car1, false, car2, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _car1, false, _car2, true );
 
 			  assertFalse( Test( p, _gps1 ) );
@@ -463,7 +463,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeCartesian3D()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, car3, true, car4, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, car3, true, car4, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _car3, true, _car4, true );
 
 			  assertFalse( Test( p, _gps1 ) );
@@ -482,7 +482,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestGeometryRangeWGS84_3D()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps1_3d, true, gps2_3d, true);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, gps1_3d, true, gps2_3d, true);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, _gps1_3d, true, _gps2_3d, true );
 
 			  assertFalse( Test( p, _gps1 ) );
@@ -501,7 +501,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestDateRange()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.neo4j.values.storable.DateValue.date(2014, 7, 7), true, org.neo4j.values.storable.DateValue.date(2017,3, 7), false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.Neo4Net.values.storable.DateValue.date(2014, 7, 7), true, org.Neo4Net.values.storable.DateValue.date(2017,3, 7), false);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, DateValue.date( 2014, 7, 7 ), true, DateValue.date( 2017,3, 7 ), false );
 
 			  assertFalse( Test( p, DateValue.date( 2014, 6, 8 ) ) );
@@ -518,7 +518,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestValueGroupRange()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.neo4j.values.storable.ValueGroup.DATE);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.Neo4Net.values.storable.ValueGroup.DATE);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, ValueGroup.DATE );
 
 			  assertTrue( Test( p, DateValue.date( -4000, 1, 31 ) ) );
@@ -533,7 +533,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void TestCRSRange()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.neo4j.values.storable.CoordinateReferenceSystem.WGS84);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> p = IndexQuery.range(propId, org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84);
 			  RangePredicate<object> p = IndexQuery.Range( _propId, CoordinateReferenceSystem.WGS84 );
 
 			  assertTrue( Test( p, _gps2 ) );

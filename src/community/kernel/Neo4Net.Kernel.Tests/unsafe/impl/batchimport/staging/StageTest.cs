@@ -30,9 +30,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 
 	public class StageTest
 	{

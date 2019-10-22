@@ -44,7 +44,7 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 
 	public class BoltIT : ExclusiveServerTestBase
 	{
@@ -69,7 +69,7 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLaunchBolt()
 		 {
-			  // When I run Neo4j with Bolt enabled
+			  // When I run Neo4Net with Bolt enabled
 			  _server = serverOnRandomPorts().withProperty((new BoltConnector("bolt")).type.name(), "BOLT").withProperty((new BoltConnector("bolt")).enabled.name(), "true").withProperty((new BoltConnector("bolt")).encryption_level.name(), "REQUIRED").withProperty((new BoltConnector("bolt")).listen_address.name(), "localhost:0").usingDataDir(TmpDir.Root.AbsolutePath).build();
 			  _server.start();
 			  ConnectorPortRegister connectorPortRegister = GetDependency( typeof( ConnectorPortRegister ) );
@@ -97,7 +97,7 @@ namespace Neo4Net.Server
 		 public virtual void BoltAddressShouldComeFromConnectorAdvertisedAddress()
 		 {
 			  // Given
-			  string host = "neo4j.com";
+			  string host = "Neo4Net.com";
 
 			  StartServerWithBoltEnabled( host, 9999, "localhost", 0 );
 			  RestRequest request = ( new RestRequest( _server.baseUri() ) ).host(host);

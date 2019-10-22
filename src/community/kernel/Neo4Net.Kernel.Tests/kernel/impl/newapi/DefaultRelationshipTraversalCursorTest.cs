@@ -353,7 +353,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 				  throw new System.NotSupportedException( "not implemented" );
 			 }
 
-			 public long entityReference()
+			 public long IEntityReference()
 			 {
 				  return rel.relId;
 			 }

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using ExplicitIndexProvider = Neo4Net.Kernel.Impl.Api.ExplicitIndexProvider;
@@ -205,7 +205,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void upgradeIndexes() throws org.neo4j.upgrade.lucene.ExplicitIndexMigrationException
+//ORIGINAL LINE: public void upgradeIndexes() throws org.Neo4Net.upgrade.lucene.ExplicitIndexMigrationException
 			  public override void UpgradeIndexes()
 			  {
 					if ( !SuccessfulMigration )

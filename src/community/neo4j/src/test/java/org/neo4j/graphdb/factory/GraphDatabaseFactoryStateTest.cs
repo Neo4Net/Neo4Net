@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 	using Test = org.junit.jupiter.api.Test;
 
@@ -28,7 +28,7 @@ namespace Neo4Net.Graphdb.factory
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 
 	internal class GraphDatabaseFactoryStateTest
 	{

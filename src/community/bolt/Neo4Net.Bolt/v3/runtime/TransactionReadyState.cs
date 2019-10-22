@@ -32,13 +32,13 @@ namespace Neo4Net.Bolt.v3.runtime
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.runtime.ReadyState.FIELDS_KEY;
+//	import static org.Neo4Net.bolt.v3.runtime.ReadyState.FIELDS_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.runtime.ReadyState.FIRST_RECORD_AVAILABLE_KEY;
+//	import static org.Neo4Net.bolt.v3.runtime.ReadyState.FIRST_RECORD_AVAILABLE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringArray;
+//	import static org.Neo4Net.values.storable.Values.stringArray;
 
 	public class TransactionReadyState : FailSafeBoltStateMachineState
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 private BoltStateMachineState _readyState;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.runtime.BoltStateMachineState processUnsafe(org.neo4j.bolt.messaging.RequestMessage message, org.neo4j.bolt.runtime.StateMachineContext context) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState processUnsafe(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws Exception
 		 public override BoltStateMachineState ProcessUnsafe( RequestMessage message, StateMachineContext context )
 		 {
 			  if ( message is RunMessage )
@@ -86,7 +86,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processRunMessage(org.neo4j.bolt.v3.messaging.request.RunMessage message, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processRunMessage(org.Neo4Net.bolt.v3.messaging.request.RunMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private BoltStateMachineState ProcessRunMessage( RunMessage message, StateMachineContext context )
 		 {
 			  long start = context.Clock().millis();
@@ -100,7 +100,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processCommitMessage(org.neo4j.bolt.runtime.StateMachineContext context) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processCommitMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws Exception
 		 private BoltStateMachineState ProcessCommitMessage( StateMachineContext context )
 		 {
 			  StatementProcessor statementProcessor = context.ConnectionState().StatementProcessor;
@@ -110,7 +110,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processRollbackMessage(org.neo4j.bolt.runtime.StateMachineContext context) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processRollbackMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws Exception
 		 private BoltStateMachineState ProcessRollbackMessage( StateMachineContext context )
 		 {
 			  StatementProcessor statementProcessor = context.ConnectionState().StatementProcessor;

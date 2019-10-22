@@ -26,10 +26,10 @@ namespace Neo4Net.Harness.Internal
 	using FileUtils = org.apache.commons.io.FileUtils;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -53,19 +53,19 @@ namespace Neo4Net.Harness.Internal
 	using ThirdPartyJaxRsPackage = Neo4Net.Server.configuration.ThirdPartyJaxRsPackage;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;
 
-	using static Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.data_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.db_timezone;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.db_timezone;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.append;
+//	import static org.Neo4Net.helpers.collection.Iterables.append;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.file.Files.createOrOpenAsOutputStream;
+//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	public abstract class AbstractInProcessServerBuilder : TestServerBuilder
 	{
@@ -135,7 +135,7 @@ namespace Neo4Net.Harness.Internal
 			  {
 					  using ( FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction() )
 					  {
-						File userLogFile = new File( _serverFolder, "neo4j.log" );
+						File userLogFile = new File( _serverFolder, "Neo4Net.log" );
 						File internalLogFile = new File( _serverFolder, "debug.log" );
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -156,8 +156,8 @@ namespace Neo4Net.Harness.Internal
 						LogProvider userLogProvider = FormattedLogProvider.withZoneId( LogZoneIdFrom( _config ) ).toOutputStream( logOutputStream );
 						GraphDatabaseDependencies dependencies = GraphDatabaseDependencies.newDependencies().userLogProvider(userLogProvider);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = append(new Neo4jHarnessExtensions(procedures), dependencies.kernelExtensions());
-						IEnumerable<KernelExtensionFactory<object>> kernelExtensions = append( new Neo4jHarnessExtensions( _procedures ), dependencies.KernelExtensions() );
+//ORIGINAL LINE: Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = append(new Neo4NetHarnessExtensions(procedures), dependencies.kernelExtensions());
+						IEnumerable<KernelExtensionFactory<object>> kernelExtensions = append( new Neo4NetHarnessExtensions( _procedures ), dependencies.KernelExtensions() );
 						dependencies = dependencies.KernelExtensions( kernelExtensions );
       
 						Config dbConfig = Config.defaults( _config );
@@ -295,7 +295,7 @@ namespace Neo4Net.Harness.Internal
 		 /// after other kernel extensions have initialized, since kernel extensions
 		 /// can add custom injectables that procedures need.
 		 /// </summary>
-		 private class Neo4jHarnessExtensions : KernelExtensionFactory<Neo4jHarnessExtensions.Dependencies>
+		 private class Neo4NetHarnessExtensions : KernelExtensionFactory<Neo4NetHarnessExtensions.Dependencies>
 		 {
 			  internal interface Dependencies
 			  {
@@ -304,7 +304,7 @@ namespace Neo4Net.Harness.Internal
 
 			  internal HarnessRegisteredProcs UserProcs;
 
-			  internal Neo4jHarnessExtensions( HarnessRegisteredProcs userProcs ) : base( ExtensionType.DATABASE, "harness" )
+			  internal Neo4NetHarnessExtensions( HarnessRegisteredProcs userProcs ) : base( ExtensionType.DATABASE, "harness" )
 			  {
 					this.UserProcs = userProcs;
 			  }
@@ -316,11 +316,11 @@ namespace Neo4Net.Harness.Internal
 
 			  private class LifecycleAdapterAnonymousInnerClass : LifecycleAdapter
 			  {
-				  private readonly Neo4jHarnessExtensions _outerInstance;
+				  private readonly Neo4NetHarnessExtensions _outerInstance;
 
-				  private Neo4Net.Harness.Internal.AbstractInProcessServerBuilder.Neo4jHarnessExtensions.Dependencies _dependencies;
+				  private Neo4Net.Harness.Internal.AbstractInProcessServerBuilder.Neo4NetHarnessExtensions.Dependencies _dependencies;
 
-				  public LifecycleAdapterAnonymousInnerClass( Neo4jHarnessExtensions outerInstance, Neo4Net.Harness.Internal.AbstractInProcessServerBuilder.Neo4jHarnessExtensions.Dependencies dependencies )
+				  public LifecycleAdapterAnonymousInnerClass( Neo4NetHarnessExtensions outerInstance, Neo4Net.Harness.Internal.AbstractInProcessServerBuilder.Neo4NetHarnessExtensions.Dependencies dependencies )
 				  {
 					  this.outerInstance = outerInstance;
 					  this._dependencies = dependencies;

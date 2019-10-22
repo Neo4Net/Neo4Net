@@ -48,25 +48,25 @@ namespace Neo4Net.Consistency.checking.full
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.ARRAYS;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.ARRAYS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.LABELS;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.NODES;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.PROPERTIES;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.RELATIONSHIP_GROUPS;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.RELATIONSHIP_GROUPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.MultiPassStore.STRINGS;
+//	import static org.Neo4Net.consistency.checking.full.MultiPassStore.STRINGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.QueueDistribution.ROUND_ROBIN;
+//	import static org.Neo4Net.consistency.checking.full.QueueDistribution.ROUND_ROBIN;
 
 	public class ConsistencyCheckTasks
 	{
@@ -137,7 +137,7 @@ namespace Neo4Net.Consistency.checking.full
 					tasks.Add( RecordScanner( CheckStage.Stage8PSProps.name(), new IterableStore<>(_nativeStores.NodeStore, true), new PropertyAndNode2LabelIndexProcessor(_reporter, checkIndexes ? _indexes : null, propertyReader, _cacheAccess, mandatoryProperties.ForNodes(_reporter)), CheckStage.Stage8PSProps, ROUND_ROBIN, new IterableStore<>(_nativeStores.PropertyStore, true) ) );
 
 					// Checking that relationships are in their expected relationship indexes.
-					IList<StoreIndexDescriptor> relationshipIndexes = Iterables.stream( _indexes.onlineRules() ).filter(rule => rule.schema().entityType() == EntityType.RELATIONSHIP).collect(Collectors.toList());
+					IList<StoreIndexDescriptor> relationshipIndexes = Iterables.stream( _indexes.onlineRules() ).filter(rule => rule.schema().entityType() == IEntityType.RELATIONSHIP).collect(Collectors.toList());
 					if ( checkIndexes && relationshipIndexes.Count > 0 )
 					{
 						 tasks.Add( RecordScanner( CheckStage.Stage9RSIndexes.name(), new IterableStore<>(_nativeStores.RelationshipStore, true), new RelationshipIndexProcessor(_reporter, _indexes, propertyReader, relationshipIndexes), CheckStage.Stage9RSIndexes, ROUND_ROBIN, new IterableStore<>(_nativeStores.PropertyStore, true) ) );
@@ -152,7 +152,7 @@ namespace Neo4Net.Consistency.checking.full
 			  tasks.Add( Create( "SchemaStore", _nativeStores.SchemaStore, ROUND_ROBIN ) );
 			  // PASS 2: Rule integrity and obligation build up
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.consistency.checking.SchemaRecordCheck schemaCheck = new org.neo4j.consistency.checking.SchemaRecordCheck(new org.neo4j.kernel.impl.store.SchemaStorage(nativeStores.getSchemaStore()), indexes);
+//ORIGINAL LINE: final org.Neo4Net.consistency.checking.SchemaRecordCheck schemaCheck = new org.Neo4Net.consistency.checking.SchemaRecordCheck(new org.Neo4Net.kernel.impl.store.SchemaStorage(nativeStores.getSchemaStore()), indexes);
 			  SchemaRecordCheck schemaCheck = new SchemaRecordCheck( new SchemaStorage( _nativeStores.SchemaStore ), _indexes );
 			  tasks.Add( new SchemaStoreProcessorTask<>( "SchemaStoreProcessor-check_rules", _statistics, _numberOfThreads, _nativeStores.SchemaStore, _nativeStores, "check_rules", schemaCheck, _multiPartBuilder, _cacheAccess, _defaultProcessor, ROUND_ROBIN ) );
 			  // PASS 3: Obligation verification and semantic rule uniqueness
@@ -188,7 +188,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: private <RECORD> RecordScanner<RECORD> recordScanner(String name, org.neo4j.helpers.collection.BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, @SuppressWarnings("rawtypes") IterableStore... warmupStores)
+//ORIGINAL LINE: private <RECORD> RecordScanner<RECORD> recordScanner(String name, org.Neo4Net.helpers.collection.BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, @SuppressWarnings("rawtypes") IterableStore... warmupStores)
 		 private RecordScanner<RECORD> RecordScanner<RECORD>( string name, BoundedIterable<RECORD> store, RecordProcessor<RECORD> processor, Stage stage, QueueDistribution distribution, params IterableStore[] warmupStores )
 		 {
 			  return stage.Parallel ? new ParallelRecordScanner<RECORD>( name, _statistics, _numberOfThreads, store, _multiPartBuilder, processor, _cacheAccess, distribution, warmupStores ) : new SequentialRecordScanner<RECORD>( name, _statistics, _numberOfThreads, store, _multiPartBuilder, processor, warmupStores );

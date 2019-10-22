@@ -29,21 +29,21 @@ namespace Neo4Net.Kernel.impl.store
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
+//	import static org.Neo4Net.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicArrayStore.getRightArray;
+//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.getRightArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.LabelIdArray.filter;
+//	import static org.Neo4Net.kernel.impl.store.LabelIdArray.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.LabelIdArray.stripNodeId;
+//	import static org.Neo4Net.kernel.impl.store.LabelIdArray.stripNodeId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.firstDynamicLabelRecordId;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.firstDynamicLabelRecordId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsBody;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsBody;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.PropertyType.ARRAY;
+//	import static org.Neo4Net.kernel.impl.store.PropertyType.ARRAY;
 
 	public class DynamicNodeLabels : NodeLabels
 	{

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using TransactionId = Neo4Net.Kernel.impl.store.TransactionId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.getRecord;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
 
 	public class ReadOnlyTransactionIdStore : TransactionIdStore
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private readonly long _byteOffset;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ReadOnlyTransactionIdStore(org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public ReadOnlyTransactionIdStore(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public ReadOnlyTransactionIdStore( PageCache pageCache, DatabaseLayout databaseLayout )
 		 {
 			  long id = 0;

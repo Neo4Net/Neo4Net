@@ -19,17 +19,17 @@
  */
 namespace Neo4Net.Cypher.Internal.codegen
 {
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
 	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
 	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using RelationshipSelectionCursor = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor;
 	using RelationshipSelections = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelections;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -57,7 +57,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 /// <returns> The value of the given property </returns>
 		 /// <exception cref="EntityNotFoundException"> If the node cannot be find. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.values.storable.Value nodeGetProperty(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.NodeCursor nodeCursor, long node, org.neo4j.internal.kernel.api.PropertyCursor propertyCursor, int prop) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public static org.Neo4Net.values.storable.Value nodeGetProperty(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, long node, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, int prop) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public static Value NodeGetProperty( Read read, NodeCursor nodeCursor, long node, PropertyCursor propertyCursor, int prop )
 		 {
 			  if ( prop == StatementConstants.NO_SUCH_PROPERTY_KEY )
@@ -87,7 +87,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 /// <returns> {@code true} if the node has the label, otherwise {@code false} </returns>
 		 /// <exception cref="EntityNotFoundException"> if the node is not there. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean nodeHasLabel(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.NodeCursor nodeCursor, long node, int label) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public static boolean nodeHasLabel(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, long node, int label) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public static bool NodeHasLabel( Read read, NodeCursor nodeCursor, long node, int label )
 		 {
 			  if ( label == StatementConstants.NO_SUCH_LABEL )
@@ -130,7 +130,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 /// <returns> The value of the given property </returns>
 		 /// <exception cref="EntityNotFoundException"> If the node cannot be find. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.values.storable.Value relationshipGetProperty(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.RelationshipScanCursor relationship, long node, org.neo4j.internal.kernel.api.PropertyCursor propertyCursor, int prop) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public static org.Neo4Net.values.storable.Value relationshipGetProperty(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.RelationshipScanCursor relationship, long node, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, int prop) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public static Value RelationshipGetProperty( Read read, RelationshipScanCursor relationship, long node, PropertyCursor propertyCursor, int prop )
 		 {
 			  if ( prop == StatementConstants.NO_SUCH_PROPERTY_KEY )
@@ -156,24 +156,24 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void singleNode(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.NodeCursor nodeCursor, long node) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private static void singleNode(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, long node) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private static void SingleNode( Read read, NodeCursor nodeCursor, long node )
 		 {
 			  read.SingleNode( node, nodeCursor );
 			  if ( !nodeCursor.Next() )
 			  {
-					throw new EntityNotFoundException( EntityType.NODE, node );
+					throw new IEntityNotFoundException( IEntityType.NODE, node );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void singleRelationship(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.RelationshipScanCursor relationships, long relationship) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private static void singleRelationship(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.RelationshipScanCursor relationships, long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private static void SingleRelationship( Read read, RelationshipScanCursor relationships, long relationship )
 		 {
 			  read.SingleRelationship( relationship, relationships );
 			  if ( !relationships.Next() )
 			  {
-					throw new EntityNotFoundException( EntityType.NODE, relationship );
+					throw new IEntityNotFoundException( IEntityType.NODE, relationship );
 			  }
 		 }
 	}

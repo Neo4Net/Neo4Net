@@ -23,16 +23,16 @@ namespace Neo4Net.Consistency
 {
 	using Description = Neo4Net.Configuration.Description;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
 	/// Settings for consistency checker

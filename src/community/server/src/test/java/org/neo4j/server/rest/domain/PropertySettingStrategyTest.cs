@@ -28,8 +28,8 @@ namespace Neo4Net.Server.rest.domain
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using PropertyValueException = Neo4Net.Server.rest.web.PropertyValueException;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -39,7 +39,7 @@ namespace Neo4Net.Server.rest.domain
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class PropertySettingStrategyTest
 	{
@@ -176,7 +176,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.server.rest.web.PropertyValueException.class) public void shouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingProperty() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.web.PropertyValueException.class) public void shouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingProperty() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingProperty()
 		 {
@@ -188,7 +188,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.server.rest.web.PropertyValueException.class) public void shouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingEmptyArray() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.server.rest.web.PropertyValueException.class) public void shouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingEmptyArray() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowPropertyErrorWhenSettingEmptyArrayOnEntityWithNoPreExistingEmptyArray()
 		 {

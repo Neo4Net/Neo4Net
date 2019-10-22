@@ -55,9 +55,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.range;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	internal class SimpleIndexReaderTest
 	{

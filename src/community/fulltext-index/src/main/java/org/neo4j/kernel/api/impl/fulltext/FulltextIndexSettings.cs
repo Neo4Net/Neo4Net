@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
 
-	using AnalyzerProvider = Neo4Net.Graphdb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void saveFulltextIndexSettings(FulltextIndexDescriptor descriptor, java.io.File indexFolder, org.neo4j.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: static void saveFulltextIndexSettings(FulltextIndexDescriptor descriptor, java.io.File indexFolder, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 internal static void SaveFulltextIndexSettings( FulltextIndexDescriptor descriptor, File indexFolder, FileSystemAbstraction fs )
 		 {
 			  File indexConfigFile = new File( indexFolder, INDEX_CONFIG_FILE );

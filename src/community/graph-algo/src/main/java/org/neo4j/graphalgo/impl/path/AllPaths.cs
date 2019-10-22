@@ -19,15 +19,15 @@
  */
 namespace Neo4Net.Graphalgo.impl.path
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.toDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
 
 	public class AllPaths : TraversalPathFinder
 	{
@@ -48,7 +48,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 protected internal override Traverser InstantiateTraverser( Node start, Node end )
 		 {
 			  // Bidirectional traversal
-			  GraphDatabaseService db = start.GraphDatabase;
+			  IGraphDatabaseService db = start.GraphDatabase;
 			  TraversalDescription @base = Db.traversalDescription().depthFirst().uniqueness(Uniqueness());
 			  return Db.bidirectionalTraversalDescription().startSide(@base.Expand(_expander).evaluator(toDepth(_maxDepth / 2))).endSide(@base.Expand(_expander.reverse()).evaluator(toDepth(_maxDepth - _maxDepth / 2))).traverse(start, end);
 		 }

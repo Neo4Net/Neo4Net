@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
+//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.E_TRANSACTION_PRUNED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
+//	import static org.Neo4Net.causalclustering.catchup.CatchupResult.SUCCESS_END_OF_STREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	/// <summary>
 	/// Entry point for remote store related RPC.
@@ -90,7 +90,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 /// get duplicate entries.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.catchup.CatchupResult tryCatchingUp(org.neo4j.helpers.AdvertisedSocketAddress from, org.neo4j.causalclustering.identity.StoreId expectedStoreId, org.neo4j.io.layout.DatabaseLayout databaseLayout, boolean keepTxLogsInDir, boolean forceTransactionLogRotation) throws StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(org.Neo4Net.helpers.AdvertisedSocketAddress from, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, boolean keepTxLogsInDir, boolean forceTransactionLogRotation) throws StoreCopyFailedException, java.io.IOException
 		 public virtual CatchupResult TryCatchingUp( AdvertisedSocketAddress from, StoreId expectedStoreId, DatabaseLayout databaseLayout, bool keepTxLogsInDir, bool forceTransactionLogRotation )
 		 {
 			  CommitState commitState = _commitStateHelper.getStoreState( databaseLayout );
@@ -120,7 +120,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void copy(org.neo4j.causalclustering.catchup.CatchupAddressProvider addressProvider, org.neo4j.causalclustering.identity.StoreId expectedStoreId, org.neo4j.io.layout.DatabaseLayout destinationLayout, boolean rotateTransactionsManually) throws StoreCopyFailedException
+//ORIGINAL LINE: public void copy(org.Neo4Net.causalclustering.catchup.CatchupAddressProvider addressProvider, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout destinationLayout, boolean rotateTransactionsManually) throws StoreCopyFailedException
 		 public virtual void Copy( CatchupAddressProvider addressProvider, StoreId expectedStoreId, DatabaseLayout destinationLayout, bool rotateTransactionsManually )
 		 {
 			  try
@@ -144,7 +144,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.catchup.CatchupResult pullTransactions(org.neo4j.helpers.AdvertisedSocketAddress from, org.neo4j.causalclustering.identity.StoreId expectedStoreId, org.neo4j.io.layout.DatabaseLayout databaseLayout, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean rotateTransactionsManually) throws java.io.IOException, StoreCopyFailedException
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.catchup.CatchupResult pullTransactions(org.Neo4Net.helpers.AdvertisedSocketAddress from, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, long fromTxId, boolean asPartOfStoreCopy, boolean keepTxLogsInStoreDir, boolean rotateTransactionsManually) throws java.io.IOException, StoreCopyFailedException
 		 private CatchupResult PullTransactions( AdvertisedSocketAddress from, StoreId expectedStoreId, DatabaseLayout databaseLayout, long fromTxId, bool asPartOfStoreCopy, bool keepTxLogsInStoreDir, bool rotateTransactionsManually )
 		 {
 			  StoreCopyClientMonitor storeCopyClientMonitor = _monitors.newMonitor( typeof( StoreCopyClientMonitor ) );
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.identity.StoreId getStoreId(org.neo4j.helpers.AdvertisedSocketAddress from) throws StoreIdDownloadFailedException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId getStoreId(org.Neo4Net.helpers.AdvertisedSocketAddress from) throws StoreIdDownloadFailedException
 		 public virtual StoreId GetStoreId( AdvertisedSocketAddress from )
 		 {
 			  return _storeCopyClient.fetchStoreId( from );

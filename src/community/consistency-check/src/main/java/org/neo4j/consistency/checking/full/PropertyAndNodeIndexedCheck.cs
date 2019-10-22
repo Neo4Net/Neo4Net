@@ -46,7 +46,7 @@ namespace Neo4Net.Consistency.checking.full
 	using PropertyBlock = Neo4Net.Kernel.Impl.Store.Records.PropertyBlock;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -96,14 +96,14 @@ namespace Neo4Net.Consistency.checking.full
 			  foreach ( StoreIndexDescriptor indexRule in _indexes.onlineRules() )
 			  {
 					SchemaDescriptor schema = indexRule.Schema();
-					if ( Schema.entityType() == EntityType.NODE && Schema.isAffected(labels) )
+					if ( Schema.entityType() == IEntityType.NODE && Schema.isAffected(labels) )
 					{
 						 if ( nodePropertyMap == null )
 						 {
 							  nodePropertyMap = Properties( _propertyReader.propertyBlocks( propertyRecs ) );
 						 }
 
-						 if ( EntityIntersectsSchema( nodePropertyMap, schema ) )
+						 if ( IEntityIntersectsSchema( nodePropertyMap, schema ) )
 						 {
 							  Value[] values = GetPropertyValues( _propertyReader, nodePropertyMap, Schema.PropertyIds );
 							  using ( IndexReader reader = _indexes.accessorFor( indexRule ).newReader() )
@@ -210,7 +210,7 @@ namespace Neo4Net.Consistency.checking.full
 		 internal static IntObjectMap<PropertyBlock> Properties( IList<PropertyBlock> propertyBlocks )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableIntObjectMap<org.neo4j.kernel.impl.store.record.PropertyBlock> propertyIds = new org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<>();
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableIntObjectMap<org.Neo4Net.kernel.impl.store.record.PropertyBlock> propertyIds = new org.eclipse.collections.impl.map.mutable.primitive.IntObjectHashMap<>();
 			  MutableIntObjectMap<PropertyBlock> propertyIds = new IntObjectHashMap<PropertyBlock>();
 			  foreach ( PropertyBlock propertyBlock in propertyBlocks )
 			  {
@@ -248,16 +248,16 @@ namespace Neo4Net.Consistency.checking.full
 			  return reader.HasFullValuePrecision( query ) ? indexedNodeIds : LookupFilter.exactIndexMatches( _propertyReader, indexedNodeIds, query );
 		 }
 
-		 internal static bool EntityIntersectsSchema( IntObjectMap<PropertyBlock> entityPropertyMap, SchemaDescriptor schema )
+		 internal static bool IEntityIntersectsSchema( IntObjectMap<PropertyBlock> IEntityPropertyMap, SchemaDescriptor schema )
 		 {
 			  bool requireAllTokens = Schema.propertySchemaType() == Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType.CompleteAllTokens;
 			  if ( requireAllTokens )
 			  {
-					return HasAllProperties( entityPropertyMap, Schema.PropertyIds );
+					return HasAllProperties( IEntityPropertyMap, Schema.PropertyIds );
 			  }
 			  else
 			  {
-					return HasAnyProperty( entityPropertyMap, Schema.PropertyIds );
+					return HasAnyProperty( IEntityPropertyMap, Schema.PropertyIds );
 			  }
 		 }
 

@@ -63,14 +63,14 @@ namespace Neo4Net.Test.rule.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 		 public override FileWatcher FileWatcher()
 		 {
 			  return Fs.fileWatcher();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 		 public override StoreChannel Open( File fileName, OpenMode openMode )
 		 {
 			  return Fs.open( fileName, openMode );
@@ -105,7 +105,7 @@ namespace Neo4Net.Test.rule.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
 		 public override StoreChannel Create( File fileName )
 		 {
 			  return Fs.create( fileName );
@@ -215,7 +215,7 @@ namespace Neo4Net.Test.rule.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<org.neo4j.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
+//ORIGINAL LINE: public java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
 		 public override Stream<FileHandle> StreamFilesRecursive( File directory )
 		 {
 			  return Fs.streamFilesRecursive( directory );

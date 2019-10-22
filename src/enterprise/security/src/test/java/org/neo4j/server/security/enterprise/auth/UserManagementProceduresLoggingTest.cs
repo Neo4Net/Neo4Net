@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -29,7 +29,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 
 	using Neo4Net.Functions;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
@@ -46,17 +46,17 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class UserManagementProceduresLoggingTest
 	{
@@ -126,9 +126,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  CatchInvalidArguments( () => AuthProcedures.createUser("", "pw", true) );
 			  CatchInvalidArguments( () => AuthProcedures.createUser("andres", "", true) );
 			  CatchInvalidArguments( () => AuthProcedures.createUser("mats", null, true) );
-			  CatchInvalidArguments( () => AuthProcedures.createUser("neo4j", "nonEmpty", true) );
+			  CatchInvalidArguments( () => AuthProcedures.createUser("Neo4Net", "nonEmpty", true) );
 
-			  _log.assertExactly( Error( "[admin]: tried to create user `%s`: %s", null, "The provided username is empty." ), Error( "[admin]: tried to create user `%s`: %s", "", "The provided username is empty." ), Error( "[admin]: tried to create user `%s`: %s", "andres", "A password cannot be empty." ), Error( "[admin]: tried to create user `%s`: %s", "mats", "A password cannot be empty." ), Error( "[admin]: tried to create user `%s`: %s", "neo4j", "The specified user 'neo4j' already exists." ) );
+			  _log.assertExactly( Error( "[admin]: tried to create user `%s`: %s", null, "The provided username is empty." ), Error( "[admin]: tried to create user `%s`: %s", "", "The provided username is empty." ), Error( "[admin]: tried to create user `%s`: %s", "andres", "A password cannot be empty." ), Error( "[admin]: tried to create user `%s`: %s", "mats", "A password cannot be empty." ), Error( "[admin]: tried to create user `%s`: %s", "Neo4Net", "The specified user 'Neo4Net' already exists." ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -176,7 +176,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogAddingRoleToUser()
 		 {
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  AuthProcedures.addRoleToUser( ARCHITECT, "mats" );
 
 			  _log.assertExactly( Info( "[admin]: created user `%s`%s", "mats", "" ), Info( "[admin]: added role `%s` to user `%s`", ARCHITECT, "mats" ) );
@@ -187,7 +187,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogFailureToAddRoleToUser()
 		 {
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  CatchInvalidArguments( () => AuthProcedures.addRoleToUser("null", "mats") );
 
 			  _log.assertExactly( Info( "[admin]: created user `%s`%s", "mats", "" ), Error( "[admin]: tried to add role `%s` to user `%s`: %s", "null", "mats", "Role 'null' does not exist." ) );
@@ -209,7 +209,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogRemovalOfRoleFromUser()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  AuthProcedures.addRoleToUser( READER, "mats" );
 			  _log.clear();
 
@@ -226,7 +226,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogFailureToRemoveRoleFromUser()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  AuthProcedures.addRoleToUser( READER, "mats" );
 			  _log.clear();
 
@@ -249,12 +249,12 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLogUserPasswordChanges() throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Test public void shouldLogUserPasswordChanges() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogUserPasswordChanges()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", true );
+			  AuthProcedures.createUser( "mats", "Neo4Net", true );
 			  _log.clear();
 
 			  // When
@@ -277,11 +277,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogFailureToChangeUserPassword()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "andres", "neo4j", true );
+			  AuthProcedures.createUser( "andres", "Neo4Net", true );
 			  _log.clear();
 
 			  // When
-			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("andres", "neo4j", false) );
+			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("andres", "Neo4Net", false) );
 			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("andres", "", false) );
 			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("notAndres", "good password", false) );
 
@@ -295,17 +295,17 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogFailureToChangeOwnPassword()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", true );
+			  AuthProcedures.createUser( "mats", "Neo4Net", true );
 			  Subject = _matsContext;
 			  _log.clear();
 
 			  // When
-			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("mats", "neo4j", false) );
+			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("mats", "Neo4Net", false) );
 			  CatchInvalidArguments( () => AuthProcedures.changeUserPassword("mats", "", false) );
 
 			  CatchInvalidArguments( () => AuthProcedures.changePassword(null, false) );
 			  CatchInvalidArguments( () => AuthProcedures.changePassword("", false) );
-			  CatchInvalidArguments( () => AuthProcedures.changePassword("neo4j", false) );
+			  CatchInvalidArguments( () => AuthProcedures.changePassword("Neo4Net", false) );
 
 			  // Then
 			  _log.assertExactly( Error( "[mats]: tried to change password: %s", "Old password and new password cannot be the same." ), Error( "[mats]: tried to change password: %s", "A password cannot be empty." ), Error( "[mats]: tried to change password: %s", "A password cannot be empty." ), Error( "[mats]: tried to change password: %s", "A password cannot be empty." ), Error( "[mats]: tried to change password: %s", "Old password and new password cannot be the same." ) );
@@ -317,7 +317,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogUnauthorizedChangePassword()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "andres", "neo4j", true );
+			  AuthProcedures.createUser( "andres", "Neo4Net", true );
 			  _log.clear();
 			  Subject = _matsContext;
 
@@ -334,7 +334,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogSuspendUser()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  _log.clear();
 
 			  // When
@@ -351,7 +351,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogFailureToSuspendUser()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  _log.clear();
 
 			  // When
@@ -382,7 +382,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogActivateUser()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "mats", "neo4j", false );
+			  AuthProcedures.createUser( "mats", "Neo4Net", false );
 			  AuthProcedures.suspendUser( "mats" );
 			  _log.clear();
 
@@ -515,7 +515,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldLogIfUnexpectedErrorTerminatingTransactions()
 		 {
 			  // Given
-			  AuthProcedures.createUser( "johan", "neo4j", false );
+			  AuthProcedures.createUser( "johan", "Neo4Net", false );
 			  AuthProcedures.failTerminateTransaction();
 			  _log.clear();
 

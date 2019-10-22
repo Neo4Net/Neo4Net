@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 
 	public class BuiltInSchemaProceduresIT : KernelIntegrationTest
 	{
@@ -570,7 +570,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode(java.util.List<String> labels, java.util.List<String> propKeys, java.util.List<org.neo4j.values.storable.Value> propValues) throws Throwable
+//ORIGINAL LINE: private long createNode(java.util.List<String> labels, java.util.List<String> propKeys, java.util.List<org.Neo4Net.values.storable.Value> propValues) throws Throwable
 		 private long CreateNode( IList<string> labels, IList<string> propKeys, IList<Value> propValues )
 		 {
 			  Debug.Assert( labels != null );
@@ -597,7 +597,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createRelationship(long startNode, String type, long endNode, java.util.List<String> propKeys, java.util.List<org.neo4j.values.storable.Value> propValues) throws Throwable
+//ORIGINAL LINE: private void createRelationship(long startNode, String type, long endNode, java.util.List<String> propKeys, java.util.List<org.Neo4Net.values.storable.Value> propValues) throws Throwable
 		 private void CreateRelationship( long startNode, string type, long endNode, IList<string> propKeys, IList<Value> propValues )
 		 {
 			  Debug.Assert( !string.ReferenceEquals( type, null ) && !type.Equals( "" ) );
@@ -622,7 +622,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		   This method can be used to print to result stream to System.out -> Useful for debugging
 		  */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> stream) throws Throwable
+//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> stream) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void PrintStream( RawIterator<object[], ProcedureException> stream )
 		 {

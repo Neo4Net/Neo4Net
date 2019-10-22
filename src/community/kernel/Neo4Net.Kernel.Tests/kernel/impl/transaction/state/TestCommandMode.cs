@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.command.Command.Mode.fromRecordState;
+//	import static org.Neo4Net.kernel.impl.transaction.command.Command.Mode.fromRecordState;
 
 	public class TestCommandMode
 	{

@@ -24,17 +24,17 @@ namespace Neo4Net.CodeGen
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodDeclaration.TypeParameter.NO_PARAMETERS;
+//	import static org.Neo4Net.codegen.MethodDeclaration.TypeParameter.NO_PARAMETERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodDeclaration.constructor;
+//	import static org.Neo4Net.codegen.MethodDeclaration.constructor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodDeclaration.method;
+//	import static org.Neo4Net.codegen.MethodDeclaration.method;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodReference.methodReference;
+//	import static org.Neo4Net.codegen.MethodReference.methodReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.NO_TYPES;
+//	import static org.Neo4Net.codegen.TypeReference.NO_TYPES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeReference;
+//	import static org.Neo4Net.codegen.TypeReference.typeReference;
 
 	public class ClassGenerator : IDisposable
 	{

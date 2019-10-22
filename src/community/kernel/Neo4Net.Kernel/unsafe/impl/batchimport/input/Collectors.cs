@@ -21,19 +21,19 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.BAD_RELATIONSHIPS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.BAD_RELATIONSHIPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.COLLECT_ALL;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.COLLECT_ALL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.DEFAULT_BACK_PRESSURE_THRESHOLD;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.DEFAULT_BACK_PRESSURE_THRESHOLD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.DUPLICATE_NODES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.DUPLICATE_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.EXTRA_COLUMNS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.EXTRA_COLUMNS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.NO_MONITOR;
 
 	/// <summary>
 	/// Common implementations of <seealso cref="Collector"/>

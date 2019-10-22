@@ -27,14 +27,14 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexPopulationProgress = Neo4Net.Graphdb.index.IndexPopulationProgress;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -63,13 +63,13 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 private static readonly Label _userLabel = Label.label( "User" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs;
 		 private EphemeralFileSystemAbstraction _fs;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @BeforeEach void createDb()
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 					for ( int id = 0; id < 100000; id++ )
 					{
 						 Node userNode = _db.createNode( label );
-						 userNode.SetProperty( "username", "user" + id + "@neo4j.org" );
+						 userNode.SetProperty( "username", "user" + id + "@Neo4Net.org" );
 					}
 					tx.Success();
 			  }
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					Schema schema = _db.schema();
-					Neo4Net.Graphdb.schema.Schema_IndexState state;
+					Neo4Net.GraphDb.schema.Schema_IndexState state;
 
 					IndexPopulationProgress progress;
 					do
@@ -130,9 +130,9 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 						 assertTrue( progress.CompletedPercentage >= 0 );
 						 assertTrue( progress.CompletedPercentage <= 100 );
 						 Thread.Sleep( 10 );
-					} while ( state == Neo4Net.Graphdb.schema.Schema_IndexState.Populating );
+					} while ( state == Neo4Net.GraphDb.schema.Schema_IndexState.Populating );
 
-					assertSame( state, Neo4Net.Graphdb.schema.Schema_IndexState.Online );
+					assertSame( state, Neo4Net.GraphDb.schema.Schema_IndexState.Online );
 					assertEquals( 100.0, progress.CompletedPercentage, 0.0001 );
 			  }
 		 }

@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void mockAssignNewTokenIdsInBatch(java.util.concurrent.atomic.AtomicInteger nextId) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void mockAssignNewTokenIdsInBatch(java.util.concurrent.atomic.AtomicInteger nextId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void MockAssignNewTokenIdsInBatch( AtomicInteger nextId )
 		 {
 			  doAnswer(inv =>
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initialTokensABC() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void initialTokensABC() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void InitialTokensABC()
 		 {
 			  _holder.InitialTokens = new IList<NamedToken> { Token( "a", 1 ), Token( "b", 2 ) };

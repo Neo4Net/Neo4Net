@@ -21,10 +21,10 @@ namespace Neo4Net.Bolt.v3
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltStateMachineFactory = Neo4Net.Bolt.runtime.BoltStateMachineFactory;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using BoltRequestMessageReaderV3 = Neo4Net.Bolt.v3.messaging.BoltRequestMessageReaderV3;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.v3
 		 {
 			  BoltProtocolV3 protocolV3 = new BoltProtocolV3( mock( typeof( BoltChannel ) ), ( ch, st ) => mock( typeof( BoltConnection ) ), mock( typeof( BoltStateMachineFactory ) ), NullLogService.Instance );
 
-			  assertThat( protocolV3.CreatePack(), instanceOf(typeof(Neo4jPackV2)) );
+			  assertThat( protocolV3.CreatePack(), instanceOf(typeof(Neo4NetPackV2)) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt.v3
 		 {
 			  BoltProtocolV3 protocolV3 = new BoltProtocolV3( mock( typeof( BoltChannel ) ), ( ch, st ) => mock( typeof( BoltConnection ) ), mock( typeof( BoltStateMachineFactory ) ), NullLogService.Instance );
 
-			  assertThat( protocolV3.CreateMessageReader( mock( typeof( BoltChannel ) ), mock( typeof( Neo4jPack ) ), mock( typeof( BoltConnection ) ), NullLogService.Instance ), instanceOf( typeof( BoltRequestMessageReaderV3 ) ) );
+			  assertThat( protocolV3.CreateMessageReader( mock( typeof( BoltChannel ) ), mock( typeof( Neo4NetPack ) ), mock( typeof( BoltConnection ) ), NullLogService.Instance ), instanceOf( typeof( BoltRequestMessageReaderV3 ) ) );
 		 }
 	}
 

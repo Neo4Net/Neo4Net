@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 /// </summary>
 		 /// <exception cref="IndexNotFoundKernelException"> if cancellation was requested. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkCancellation() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: void checkCancellation() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 internal virtual void CheckCancellation()
 		 {
 			  if ( _executionTicket.cancellationRequested() )

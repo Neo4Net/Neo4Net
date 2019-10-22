@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.locking
 {
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// </summary>
 	public class LockClientStoppedException : TransactionTerminatedException
 	{
-		 public LockClientStoppedException( Locks_Client client ) : base( org.neo4j.kernel.api.exceptions.Status_Transaction.LockClientStopped, client.ToString() )
+		 public LockClientStoppedException( Locks_Client client ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.LockClientStopped, client.ToString() )
 		 {
 		 }
 	}

@@ -25,16 +25,16 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class TestIsolationBasic : AbstractNeo4jTestCase
+	public class TestIsolationBasic : AbstractNeo4NetTestCase
 	{
 		 /*
 		  * Tests that changes performed in a transaction before commit are not apparent in another.
@@ -64,13 +64,13 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node1 = n1;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node1 = n1;
 			  Node node1 = n1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node2 = n2;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node2 = n2;
 			  Node node2 = n2;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel1 = r1;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel1 = r1;
 			  Relationship rel1 = r1;
 
 			  using ( Transaction tx = GraphDb.beginTx() )
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 		 }
 
-		 private void AssertPropertyEqual( PropertyContainer primitive, string key, string value )
+		 private void AssertPropertyEqual( IPropertyContainer primitive, string key, string value )
 		 {
 			  using ( Transaction tx = GraphDb.beginTx() )
 			  {

@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.testing
 {
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using AnyValue = Neo4Net.Values.AnyValue;
 
 	/// <summary>
@@ -51,7 +51,7 @@ namespace Neo4Net.Bolt.testing
 			  // this page intentionally left blank
 		 }
 
-		 public override void MarkFailed( Neo4jError error )
+		 public override void MarkFailed( Neo4NetError error )
 		 {
 			  // this page intentionally left blank
 		 }

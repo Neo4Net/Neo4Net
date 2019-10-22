@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.plugins
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	internal class PluginPointFactoryImpl : PluginPointFactory
 	{

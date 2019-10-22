@@ -35,7 +35,7 @@ namespace Neo4Net.Io.layout
 	internal class StoreLayoutTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

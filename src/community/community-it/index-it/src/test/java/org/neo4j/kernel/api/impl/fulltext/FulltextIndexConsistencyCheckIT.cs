@@ -33,16 +33,16 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
@@ -72,13 +72,13 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.first;
+//	import static org.Neo4Net.helpers.collection.Iterables.first;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 
 	public class FulltextIndexConsistencyCheckIT
 	{
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexWithOneLabelAndOneProperty()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "Label" ), array( "prop" ) ) ).close();
@@ -152,7 +152,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexWithOneLabelAndMultipleProperties()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "Label" ), array( "p1", "p2" ) ) ).close();
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexWithMultipleLabelsAndOneProperty()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "L1", "L2" ), array( "prop" ) ) ).close();
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexWithManyLabelsAndOneProperty()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  // Enough labels to prevent inlining them into the node record, and instead require a dynamic label record to be allocated.
 			  string[] labels = new string[] { "L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L10", "L11", "L12", "L13", "L14", "L15", "L16" };
 			  using ( Transaction tx = Db.beginTx() )
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexWithMultipleLabelsAndMultipleProperties()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "L1", "L2" ), array( "p1", "p2" ) ) ).close();
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckRelationshipIndexWithOneRelationshipTypeAndOneProperty()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  RelationshipType relationshipType = RelationshipType.withName( "R1" );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckRelationshipIndexWithOneRelationshipTypeAndMultipleProperties()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  RelationshipType relationshipType = RelationshipType.withName( "R1" );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -324,7 +324,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckRelationshipIndexWithMultipleRelationshipTypesAndOneProperty()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  RelationshipType relType1 = RelationshipType.withName( "R1" );
 			  RelationshipType relType2 = RelationshipType.withName( "R2" );
 			  using ( Transaction tx = Db.beginTx() )
@@ -352,7 +352,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckRelationshipIndexWithMultipleRelationshipTypesAndMultipleProperties()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  RelationshipType relType1 = RelationshipType.withName( "R1" );
 			  RelationshipType relType2 = RelationshipType.withName( "R2" );
 			  using ( Transaction tx = Db.beginTx() )
@@ -392,7 +392,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeAndRelationshipIndexesAtTheSameTime()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "L1", "L2", "L3" ), array( "p1", "p2" ) ) ).close();
@@ -422,7 +422,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencyCheckNodeIndexThatIsMissingNodesBecauseTheirPropertyValuesAreNotStrings()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "L1" ), array( "p1" ) ) ).close();
@@ -443,7 +443,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustBeAbleToConsistencycheckRelationshipIndexThatIsMissingRelationshipsBecauseTheirPropertyValuesaAreNotStrings()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( RELATIONSHIP_CREATE, "rels", array( "R1" ), array( "p1" ) ) ).close();
@@ -465,7 +465,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ConsistencyCheckerMustBeAbleToRunOnStoreWithFulltextIndexes()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 			  Label[] labels = IntStream.range( 1, 7 ).mapToObj( i => Label.label( "LABEL" + i ) ).toArray( Label[]::new );
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustDiscoverNodeInStoreMissingFromIndex()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "Label" ), array( "prop" ) ) ).close();
@@ -560,7 +560,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustDiscoverNodeInIndexMissingFromStore()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( NODE_CREATE, "nodes", array( "Label" ), array( "prop" ) ) ).close();
@@ -595,7 +595,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustDiscoverRelationshipInStoreMissingFromIndex()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( RELATIONSHIP_CREATE, "rels", array( "REL" ), array( "prop" ) ) ).close();
@@ -631,7 +631,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustDiscoverRelationshipInIndexMissingFromStore()
 		 {
-			  GraphDatabaseService db = CreateDatabase();
+			  IGraphDatabaseService db = CreateDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.execute( format( RELATIONSHIP_CREATE, "rels", array( "REL" ), array( "prop" ) ) ).close();
@@ -662,13 +662,13 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  assertFalse( result.Successful );
 		 }
 
-		 private GraphDatabaseService CreateDatabase()
+		 private IGraphDatabaseService CreateDatabase()
 		 {
 			  return _cleanup.add( _builder.newGraphDatabase() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.consistency.ConsistencyCheckService.Result checkConsistency() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private org.Neo4Net.consistency.ConsistencyCheckService.Result checkConsistency() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private ConsistencyCheckService.Result CheckConsistency()
 		 {
 			  Config config = Config.defaults();
@@ -685,26 +685,26 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  return indexDescriptor;
 		 }
 
-		 private static IndexingService GetIndexingService( GraphDatabaseService db )
+		 private static IndexingService GetIndexingService( IGraphDatabaseService db )
 		 {
 			  DependencyResolver dependencyResolver = GetDependencyResolver( db );
-			  return dependencyResolver.ResolveDependency( typeof( IndexingService ), Neo4Net.Graphdb.DependencyResolver_SelectionStrategy.ONLY );
+			  return dependencyResolver.ResolveDependency( typeof( IndexingService ), Neo4Net.GraphDb.DependencyResolver_SelectionStrategy.ONLY );
 		 }
 
-		 private static NeoStores GetNeoStores( GraphDatabaseService db )
+		 private static NeoStores GetNeoStores( IGraphDatabaseService db )
 		 {
 			  DependencyResolver dependencyResolver = GetDependencyResolver( db );
-			  return dependencyResolver.ResolveDependency( typeof( RecordStorageEngine ), Neo4Net.Graphdb.DependencyResolver_SelectionStrategy.ONLY ).testAccessNeoStores();
+			  return dependencyResolver.ResolveDependency( typeof( RecordStorageEngine ), Neo4Net.GraphDb.DependencyResolver_SelectionStrategy.ONLY ).testAccessNeoStores();
 		 }
 
-		 private static DependencyResolver GetDependencyResolver( GraphDatabaseService db )
+		 private static DependencyResolver GetDependencyResolver( IGraphDatabaseService db )
 		 {
 			  GraphDatabaseAPI api = ( GraphDatabaseAPI ) db;
 			  return api.DependencyResolver;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertIsConsistent(org.neo4j.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
+//ORIGINAL LINE: private static void assertIsConsistent(org.Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
 		 private static void AssertIsConsistent( ConsistencyCheckService.Result result )
 		 {
 			  if ( !result.Successful )
@@ -715,7 +715,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void printReport(org.neo4j.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
+//ORIGINAL LINE: private static void printReport(org.Neo4Net.consistency.ConsistencyCheckService.Result result) throws java.io.IOException
 		 private static void PrintReport( ConsistencyCheckService.Result result )
 		 {
 			  Files.readAllLines( result.ReportFile().toPath() ).forEach(System.err.println);

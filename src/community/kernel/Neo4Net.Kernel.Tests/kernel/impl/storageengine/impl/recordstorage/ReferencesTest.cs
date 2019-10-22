@@ -34,23 +34,23 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.References.clearEncoding;
+//	import static org.Neo4Net.kernel.impl.newapi.References.clearEncoding;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.FILTER;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.FILTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.FILTER_TX_STATE;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.FILTER_TX_STATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.GROUP;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.NO_INCOMING_OF_TYPE;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.NO_INCOMING_OF_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.NO_LOOP_OF_TYPE;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.NO_LOOP_OF_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.NO_OUTGOING_OF_TYPE;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.NO_OUTGOING_OF_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.RelationshipReferenceEncoding.parseEncoding;
+//	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.parseEncoding;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	public class ReferencesTest
 	{

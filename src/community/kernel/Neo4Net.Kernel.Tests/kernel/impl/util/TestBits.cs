@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.Bits.bits;
+//	import static org.Neo4Net.kernel.impl.util.Bits.bits;
 
 	public class TestBits
 	{

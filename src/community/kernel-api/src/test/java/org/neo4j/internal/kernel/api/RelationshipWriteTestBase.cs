@@ -25,9 +25,9 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -42,11 +42,11 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class RelationshipWriteTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -62,7 +62,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldCreateRelationship()
 		 {
 			  long n1, n2;
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					n1 = graphDb.createNode().Id;
 					n2 = graphDb.createNode().Id;
@@ -77,7 +77,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					IList<Relationship> relationships = Iterables.asList( graphDb.getNodeById( n1 ).Relationships );
 					assertEquals( 1, relationships.Count );
@@ -100,7 +100,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					IList<Relationship> relationships = Iterables.asList( graphDb.getNodeById( n1 ).Relationships );
 					assertEquals( 1, relationships.Count );
@@ -114,7 +114,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldRollbackRelationshipOnFailure()
 		 {
 			  long n1, n2;
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					n1 = graphDb.createNode().Id;
 					n2 = graphDb.createNode().Id;
@@ -128,7 +128,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Failure();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertEquals( 0, graphDb.getNodeById( n1 ).Degree );
 			  }
@@ -140,7 +140,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldDeleteRelationship()
 		 {
 			  long n1, r;
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -157,7 +157,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertEquals( 0, graphDb.getNodeById( n1 ).Degree );
 			  }
@@ -189,7 +189,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 public virtual void ShouldDeleteRelationshipAddedInTransaction()
 		 {
 			  long n1, n2;
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					n1 = graphDb.createNode().Id;
 					n2 = graphDb.createNode().Id;
@@ -205,7 +205,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertEquals( 0, graphDb.getNodeById( n1 ).Degree );
 			  }
@@ -219,7 +219,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -238,7 +238,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( "prop" ), equalTo( "hello" ) );
 			  }
@@ -252,7 +252,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -273,7 +273,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( "prop" ), equalTo( "hello" ) );
 			  }
@@ -287,7 +287,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -307,7 +307,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getRelationshipById( relationshipId ).hasProperty( "prop" ) );
 			  }
@@ -321,7 +321,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -339,7 +339,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getRelationshipById( relationshipId ).hasProperty( "prop" ) );
 			  }
@@ -353,7 +353,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -374,7 +374,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getRelationshipById( relationshipId ).hasProperty( "prop" ) );
 			  }
@@ -388,7 +388,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  // Given
 			  long relationshipId;
 			  string propertyKey = "prop";
-			  using ( Neo4Net.Graphdb.Transaction tx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();
@@ -409,7 +409,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 
 			  // Then
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getRelationshipById( relationshipId ).getProperty( "prop" ), equalTo( 1337 ) );
 			  }
@@ -425,7 +425,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  string propertyKey = "prop";
 			  Value theValue = stringValue( "The Value" );
 
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					Node node1 = graphDb.createNode();
 					Node node2 = graphDb.createNode();

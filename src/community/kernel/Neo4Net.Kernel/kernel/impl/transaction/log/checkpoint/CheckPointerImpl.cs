@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using BooleanPredicate = org.eclipse.collections.api.block.predicate.primitive.BooleanPredicate;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using LogPruning = Neo4Net.Kernel.impl.transaction.log.pruning.LogPruning;
 	using CheckPointTracer = Neo4Net.Kernel.impl.transaction.tracing.CheckPointTracer;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 
 	public class CheckPointerImpl : LifecycleAdapter, CheckPointer
 	{

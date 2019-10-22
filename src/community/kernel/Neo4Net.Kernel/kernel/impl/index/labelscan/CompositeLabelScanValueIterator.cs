@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 	using PrimitiveLongBaseIterator = Neo4Net.Collections.PrimitiveLongCollections.PrimitiveLongBaseIterator;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using ResourceUtils = Neo4Net.Graphdb.ResourceUtils;
+	using ResourceUtils = Neo4Net.GraphDb.ResourceUtils;
 
 	/// <summary>
 	/// <seealso cref="LongIterator"/> acting as a combining of multiple <seealso cref="LongIterator"/>

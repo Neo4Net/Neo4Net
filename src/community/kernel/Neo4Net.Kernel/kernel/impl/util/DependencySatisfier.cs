@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.util
 {
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 
 	/// <summary>
 	/// Able to satisfy dependencies, later needed to be resolved by for example a <seealso cref="DependencyResolver"/>.

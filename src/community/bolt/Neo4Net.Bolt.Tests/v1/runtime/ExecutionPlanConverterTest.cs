@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using Test = org.junit.Test;
 
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -35,9 +35,9 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class ExecutionPlanConverterTest
 	{
@@ -91,13 +91,13 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly string NameConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatisticsConflict;
+			  internal readonly Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatisticsConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly ISet<string> IdentifiersConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly IDictionary<string, object> ArgumentsConflict;
 
-			  internal TestExecutionPlanDescription( ExecutionPlanConverterTest outerInstance, string name, Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics profilerStatistics, ISet<string> identifiers, IDictionary<string, object> arguments )
+			  internal TestExecutionPlanDescription( ExecutionPlanConverterTest outerInstance, string name, Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics profilerStatistics, ISet<string> identifiers, IDictionary<string, object> arguments )
 			  {
 				  this._outerInstance = outerInstance;
 					this.NameConflict = name;
@@ -143,7 +143,7 @@ namespace Neo4Net.Bolt.v1.runtime
 					return ProfilerStatisticsConflict != null;
 			  }
 
-			  public virtual Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatistics
+			  public virtual Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatistics
 			  {
 				  get
 				  {
@@ -152,7 +152,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  }
 		 }
 
-		 private class TestProfilerStatistics : Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics
+		 private class TestProfilerStatistics : Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics
 		 {
 			 private readonly ExecutionPlanConverterTest _outerInstance;
 

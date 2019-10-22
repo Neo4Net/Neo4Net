@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.impl.traversal
 {
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
 
 	public interface TraverserIterator : ResourceIterator<Path>, TraversalContext
 	{

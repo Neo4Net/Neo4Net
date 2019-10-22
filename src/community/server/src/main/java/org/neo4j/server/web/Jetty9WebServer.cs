@@ -63,7 +63,7 @@ namespace Neo4Net.Server.web
 
 		 private bool _wadlEnabled;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> defaultInjectables;
+//ORIGINAL LINE: private java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> defaultInjectables;
 		 private ICollection<InjectableProvider<object>> _defaultInjectables;
 		 private System.Action<Server> _jettyCreatedCallback;
 		 private RequestLog _requestLog;
@@ -479,7 +479,7 @@ namespace Neo4Net.Server.web
 					}
 					else
 					{
-						 _log.warn( "No static content available for Neo4j Server at %s. management console may not be available.", AddressConfigurationDescription() );
+						 _log.warn( "No static content available for Neo4Net Server at %s. management console may not be available.", AddressConfigurationDescription() );
 					}
 			  }
 			  catch ( Exception e )

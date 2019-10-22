@@ -23,10 +23,10 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using After = org.junit.After;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using GeometryType = Neo4Net.Kernel.impl.store.GeometryType;
@@ -41,13 +41,13 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 
 	public class PointTypeIT : AbstractRestFunctionalTestBase
 	{
@@ -243,7 +243,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testPoint(String query, double[] expectedCoordinate, org.neo4j.values.storable.CoordinateReferenceSystem expectedCrs, String expectedType) throws Exception
+//ORIGINAL LINE: private static void testPoint(String query, double[] expectedCoordinate, org.Neo4Net.values.storable.CoordinateReferenceSystem expectedCrs, String expectedType) throws Exception
 		 private static void TestPoint( string query, double[] expectedCoordinate, CoordinateReferenceSystem expectedCrs, string expectedType )
 		 {
 			  HTTP.Response response = RunQuery( query );
@@ -260,7 +260,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertTypeEqual(String expectedType, org.neo4j.test.server.HTTP.Response response) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static void assertTypeEqual(String expectedType, org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private static void AssertTypeEqual( string expectedType, HTTP.Response response )
 		 {
 			  JsonNode data = response.Get( "results" ).get( 0 ).get( "data" );
@@ -270,7 +270,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode extractSingleElement(org.neo4j.test.server.HTTP.Response response) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode extractSingleElement(org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private static JsonNode ExtractSingleElement( HTTP.Response response )
 		 {
 			  JsonNode data = response.Get( "results" ).get( 0 ).get( "data" );

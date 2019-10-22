@@ -42,11 +42,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexSampler.combineSamples;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexSampler.combineSamples;
 
 	internal class SpatialIndexPopulator : SpatialIndexCache<WorkSyncedNativeIndexPopulator<SpatialIndexKey, NativeIndexValue>>, IndexPopulator
 	{
@@ -79,24 +79,24 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void add(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.values.storable.CoordinateReferenceSystem,java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> batchMap = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.values.storable.CoordinateReferenceSystem,java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> batchMap = new java.util.HashMap<>();
 			  IDictionary<CoordinateReferenceSystem, IList<IndexEntryUpdate<object>>> batchMap = new Dictionary<CoordinateReferenceSystem, IList<IndexEntryUpdate<object>>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 			  foreach ( IndexEntryUpdate<object> update in updates )
 			  {
 					PointValue point = ( PointValue ) update.Values()[0];
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batch = batchMap.computeIfAbsent(point.getCoordinateReferenceSystem(), k -> new java.util.ArrayList<>());
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = batchMap.computeIfAbsent(point.getCoordinateReferenceSystem(), k -> new java.util.ArrayList<>());
 					IList<IndexEntryUpdate<object>> batch = batchMap.computeIfAbsent( point.CoordinateReferenceSystem, k => new List<IndexEntryUpdate<object>>() );
 					batch.Add( update );
 			  }
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.values.storable.CoordinateReferenceSystem,java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> entry : batchMap.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.values.storable.CoordinateReferenceSystem,java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> entry : batchMap.entrySet())
 			  foreach ( KeyValuePair<CoordinateReferenceSystem, IList<IndexEntryUpdate<object>>> entry in batchMap.SetOfKeyValuePairs() )
 			  {
 					IndexPopulator partPopulator = Select( entry.Key );
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  foreach ( IndexPopulator part in this )
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					SpatialVerifyDeferredConstraint.Verify( nodePropertyAccessor, layout, tree, descriptor );

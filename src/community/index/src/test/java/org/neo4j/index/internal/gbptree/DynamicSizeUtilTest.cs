@@ -30,13 +30,13 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
 
 	internal class DynamicSizeUtilTest
 	{

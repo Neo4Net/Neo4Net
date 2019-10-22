@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -32,19 +32,19 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	public interface PropertyLoader
 	{
 		 /// <summary>
-		 /// Loads set of properties for entity. For every target propertyId P, the value for this node is loaded. If the
-		 /// entity has P, the onProperty methods will be called on the sink, with the correct value, and P will be removed
-		 /// from propertyIds. If the entity lacks P no action will be taken. </summary>
-		 /// <param name="entityId"> id of the entity to be loaded </param>
-		 /// <param name="type"> EntityType of the entity to load properties from </param>
+		 /// Loads set of properties for IEntity. For every target propertyId P, the value for this node is loaded. If the
+		 /// IEntity has P, the onProperty methods will be called on the sink, with the correct value, and P will be removed
+		 /// from propertyIds. If the IEntity lacks P no action will be taken. </summary>
+		 /// <param name="entityId"> id of the IEntity to be loaded </param>
+		 /// <param name="type"> IEntityType of the IEntity to load properties from </param>
 		 /// <param name="propertyIds"> set of target property ids to load. Loaded properties are remove from this set. </param>
 		 /// <param name="sink"> sink that will receive successfully loaded values for the target properties </param>
-		 void LoadProperties( long entityId, EntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink );
+		 void LoadProperties( long IEntityId, IEntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink );
 	}
 
 	 public interface PropertyLoader_PropertyLoadSink
 	 {
-		  void OnProperty( int entityId, Value value );
+		  void OnProperty( int IEntityId, Value value );
 	 }
 
 }

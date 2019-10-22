@@ -40,11 +40,11 @@ namespace Neo4Net.Consistency.checking.full
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.PropertyAndNodeIndexedCheck.entityIntersectsSchema;
+//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.entityIntersectsSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.PropertyAndNodeIndexedCheck.getPropertyValues;
+//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.getPropertyValues;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.PropertyAndNodeIndexedCheck.properties;
+//	import static org.Neo4Net.consistency.checking.full.PropertyAndNodeIndexedCheck.properties;
 
 	public class RelationshipToIndexCheck : RecordCheck<RelationshipRecord, Neo4Net.Consistency.report.ConsistencyReport_RelationshipConsistencyReport>
 	{
@@ -75,13 +75,13 @@ namespace Neo4Net.Consistency.checking.full
 									propertyMap = properties( _propertyReader.propertyBlocks( propertyRecs ) );
 							  }
 
-							  if ( entityIntersectsSchema( propertyMap, schema ) )
+							  if ( IEntityIntersectsSchema( propertyMap, schema ) )
 							  {
 									Value[] values = getPropertyValues( _propertyReader, propertyMap, Schema.PropertyIds );
 									using ( IndexReader reader = _indexes.accessorFor( index ).newReader() )
 									{
-										 long entityId = record.Id;
-										 long count = reader.CountIndexedNodes( entityId, Schema.PropertyIds, values );
+										 long IEntityId = record.Id;
+										 long count = reader.CountIndexedNodes( IEntityId, Schema.PropertyIds, values );
 										 ReportIncorrectIndexCount( values, engine, index, count );
 									}
 							  }

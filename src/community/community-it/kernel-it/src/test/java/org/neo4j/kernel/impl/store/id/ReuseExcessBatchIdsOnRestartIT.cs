@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.impl.store.id
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store.id
 	public class ReuseExcessBatchIdsOnRestartIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule();
 
 		 // Knowing that ids are grabbed in batches internally we only create one node and later assert

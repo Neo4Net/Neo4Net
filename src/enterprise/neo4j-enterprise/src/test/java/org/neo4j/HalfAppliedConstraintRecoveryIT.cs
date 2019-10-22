@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net
 {
@@ -29,13 +29,13 @@ namespace Neo4Net
 	using Test = org.junit.Test;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -62,9 +62,9 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// It's master creating a constraint. There are two mini transactions in creating a constraint:
@@ -99,10 +99,10 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.neo4j.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 		 private readonly Monitors _monitors = new Monitors();
 
@@ -155,7 +155,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverFromHalfConstraintAppliedBeforeCrash(System.Action<org.neo4j.kernel.internal.GraphDatabaseAPI,java.util.List<org.neo4j.kernel.impl.transaction.TransactionRepresentation>> applier, System.Action<org.neo4j.kernel.internal.GraphDatabaseAPI> constraintCreator, boolean composite) throws Exception
+//ORIGINAL LINE: private void recoverFromHalfConstraintAppliedBeforeCrash(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI,java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation>> applier, System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator, boolean composite) throws Exception
 		 private void RecoverFromHalfConstraintAppliedBeforeCrash( System.Action<GraphDatabaseAPI, IList<TransactionRepresentation>> applier, System.Action<GraphDatabaseAPI> constraintCreator, bool composite )
 		 {
 			  // GIVEN
@@ -239,7 +239,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverFromConstraintAppliedBeforeCrash(System.Action<org.neo4j.kernel.internal.GraphDatabaseAPI> constraintCreator) throws Exception
+//ORIGINAL LINE: private void recoverFromConstraintAppliedBeforeCrash(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> constraintCreator) throws Exception
 		 private void RecoverFromConstraintAppliedBeforeCrash( System.Action<GraphDatabaseAPI> constraintCreator )
 		 {
 			  IList<TransactionRepresentation> transactions = CreateTransactionsForCreatingConstraint( constraintCreator );
@@ -342,7 +342,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<org.neo4j.kernel.impl.transaction.TransactionRepresentation> createTransactionsForCreatingConstraint(System.Action<org.neo4j.kernel.internal.GraphDatabaseAPI> uniqueConstraintCreator) throws Exception
+//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation> createTransactionsForCreatingConstraint(System.Action<org.Neo4Net.kernel.internal.GraphDatabaseAPI> uniqueConstraintCreator) throws Exception
 		 private static IList<TransactionRepresentation> CreateTransactionsForCreatingConstraint( System.Action<GraphDatabaseAPI> uniqueConstraintCreator )
 		 {
 			  // A separate db altogether

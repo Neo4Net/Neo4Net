@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class GenericNativeIndexProviderFactory extends AbstractIndexProviderFactory<GenericNativeIndexProviderFactory.Dependencies>

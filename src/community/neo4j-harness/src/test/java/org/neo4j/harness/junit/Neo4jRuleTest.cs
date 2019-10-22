@@ -35,7 +35,7 @@ namespace Neo4Net.Harness.junit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 
-	internal class Neo4jRuleTest
+	internal class Neo4NetRuleTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test void shouldReturnHttpsUriWhenConfigured() throws Throwable
@@ -43,7 +43,7 @@ namespace Neo4Net.Harness.junit
 		 internal virtual void ShouldReturnHttpsUriWhenConfigured()
 		 {
 			  URI configuredHttpsUri = URI.create( "https://localhost:7473" );
-			  assertEquals( configuredHttpsUri, GetHttpsUriFromNeo4jRule( configuredHttpsUri ) );
+			  assertEquals( configuredHttpsUri, GetHttpsUriFromNeo4NetRule( configuredHttpsUri ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -51,23 +51,23 @@ namespace Neo4Net.Harness.junit
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldThrowWhenHttpsUriNotConfigured()
 		 {
-			  assertThrows( typeof( System.InvalidOperationException ), () => GetHttpsUriFromNeo4jRule(null) );
+			  assertThrows( typeof( System.InvalidOperationException ), () => GetHttpsUriFromNeo4NetRule(null) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.net.URI getHttpsUriFromNeo4jRule(java.net.URI configuredHttpsUri) throws Throwable
-		 private static URI GetHttpsUriFromNeo4jRule( URI configuredHttpsUri )
+//ORIGINAL LINE: private static java.net.URI getHttpsUriFromNeo4NetRule(java.net.URI configuredHttpsUri) throws Throwable
+		 private static URI GetHttpsUriFromNeo4NetRule( URI configuredHttpsUri )
 		 {
 			  ServerControls serverControls = mock( typeof( ServerControls ) );
 			  when( serverControls.HttpsURI() ).thenReturn(Optional.ofNullable(configuredHttpsUri));
 			  TestServerBuilder serverBuilder = mock( typeof( TestServerBuilder ) );
 			  when( serverBuilder.NewServer() ).thenReturn(serverControls);
 
-			  Neo4jRule rule = new Neo4jRule( serverBuilder );
+			  Neo4NetRule rule = new Neo4NetRule( serverBuilder );
 
 			  AtomicReference<URI> uriRef = new AtomicReference<URI>();
 			  Statement statement = rule.apply(new StatementAnonymousInnerClass(rule, uriRef)
-			 , createTestDescription( typeof( Neo4jRuleTest ), "test" ));
+			 , createTestDescription( typeof( Neo4NetRuleTest ), "test" ));
 
 			  statement.evaluate();
 			  return uriRef.get();
@@ -75,10 +75,10 @@ namespace Neo4Net.Harness.junit
 
 		 private class StatementAnonymousInnerClass : Statement
 		 {
-			 private Neo4Net.Harness.junit.Neo4jRule _rule;
+			 private Neo4Net.Harness.junit.Neo4NetRule _rule;
 			 private AtomicReference<URI> _uriRef;
 
-			 public StatementAnonymousInnerClass( Neo4Net.Harness.junit.Neo4jRule rule, AtomicReference<URI> uriRef )
+			 public StatementAnonymousInnerClass( Neo4Net.Harness.junit.Neo4NetRule rule, AtomicReference<URI> uriRef )
 			 {
 				 this._rule = rule;
 				 this._uriRef = uriRef;

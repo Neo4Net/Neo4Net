@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.impl.notification
+namespace Neo4Net.GraphDb.impl.notification
 {
 	using Test = org.junit.jupiter.api.Test;
 
@@ -30,13 +30,13 @@ namespace Neo4Net.Graphdb.impl.notification
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.CARTESIAN_PRODUCT;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.CARTESIAN_PRODUCT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.DEPRECATED_PROCEDURE;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.DEPRECATED_PROCEDURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.JOIN_HINT_UNFULFILLABLE;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.JOIN_HINT_UNFULFILLABLE;
 
 	internal class NotificationCodeTest
 	{

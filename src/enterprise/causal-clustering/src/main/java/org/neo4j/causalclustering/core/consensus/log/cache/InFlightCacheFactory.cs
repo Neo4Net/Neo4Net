@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.log.cache
 {
@@ -28,9 +28,9 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_bytes;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_entries;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.in_flight_cache_max_entries;
 
 	public class InFlightCacheFactory
 	{
@@ -42,11 +42,11 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 		 public abstract class Type
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE { InFlightCache create(org.neo4j.kernel.configuration.Config config, org.neo4j.kernel.monitoring.Monitors monitors) { return new VoidInFlightCache(); } },
+//           NONE { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new VoidInFlightCache(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CONSECUTIVE { InFlightCache create(org.neo4j.kernel.configuration.Config config, org.neo4j.kernel.monitoring.Monitors monitors) { return new ConsecutiveInFlightCache(config.get(in_flight_cache_max_entries), config.get(in_flight_cache_max_bytes), monitors.newMonitor(InFlightCacheMonitor.class), false); } },
+//           CONSECUTIVE { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new ConsecutiveInFlightCache(config.get(in_flight_cache_max_entries), config.get(in_flight_cache_max_bytes), monitors.newMonitor(InFlightCacheMonitor.class), false); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           UNBOUNDED { InFlightCache create(org.neo4j.kernel.configuration.Config config, org.neo4j.kernel.monitoring.Monitors monitors) { return new UnboundedInFlightCache(); } };
+//           UNBOUNDED { InFlightCache create(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.kernel.monitoring.Monitors monitors) { return new UnboundedInFlightCache(); } };
 
 			  private static readonly IList<Type> valueList = new List<Type>();
 

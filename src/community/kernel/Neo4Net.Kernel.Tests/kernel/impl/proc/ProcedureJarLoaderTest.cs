@@ -59,13 +59,13 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IList<ProcedureSignature> signatures = procedures.Select( CallableProcedure::signature ).ToList();
-			  assertThat( signatures, contains( procedureSignature( "org","neo4j", "kernel", "impl", "proc", "myProcedure" ).@out( "someNumber", NTInteger ).build() ) );
+			  assertThat( signatures, contains( procedureSignature( "org","Neo4Net", "kernel", "impl", "proc", "myProcedure" ).@out( "someNumber", NTInteger ).build() ) );
 
 			  assertThat( asList( procedures[0].Apply( new BasicContext(), new object[0], _resourceTracker ) ), contains(IsEqual.equalTo(new object[]{ 1337L })) );
 		 }
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IList<ProcedureSignature> signatures = procedures.Select( CallableProcedure::signature ).ToList();
-			  assertThat( signatures, contains( procedureSignature( "org", "neo4j", "kernel", "impl", "proc", "myProcedure" ).@out( "someNumber", NTInteger ).build() ) );
+			  assertThat( signatures, contains( procedureSignature( "org", "Neo4Net", "kernel", "impl", "proc", "myProcedure" ).@out( "someNumber", NTInteger ).build() ) );
 
 			  assertThat( asList( procedures[0].Apply( new BasicContext(), new object[0], _resourceTracker ) ), contains(IsEqual.equalTo(new object[]{ 1337L })) );
 		 }
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IList<ProcedureSignature> signatures = procedures.Select( CallableProcedure::signature ).ToList();
-			  assertThat( signatures, contains( procedureSignature( "org","neo4j", "kernel", "impl", "proc", "myProcedure" ).@in( "value", NTInteger ).@out( "someNumber", NTInteger ).build() ) );
+			  assertThat( signatures, contains( procedureSignature( "org","Neo4Net", "kernel", "impl", "proc", "myProcedure" ).@in( "value", NTInteger ).@out( "someNumber", NTInteger ).build() ) );
 
 			  assertThat( asList( procedures[0].Apply( new BasicContext(), new object[]{ 42L }, _resourceTracker ) ), contains(IsEqual.equalTo(new object[]{ 42L })) );
 		 }
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IList<ProcedureSignature> signatures = procedures.Select( CallableProcedure::signature ).ToList();
-			  assertThat( signatures, containsInAnyOrder( procedureSignature( "org","neo4j", "kernel", "impl", "proc", "myOtherProcedure" ).@out( "someNumber", NTInteger ).build(), procedureSignature("org","neo4j", "kernel", "impl", "proc", "myProcedure").@out("someNumber", NTInteger).build() ) );
+			  assertThat( signatures, containsInAnyOrder( procedureSignature( "org","Neo4Net", "kernel", "impl", "proc", "myOtherProcedure" ).@out( "someNumber", NTInteger ).build(), procedureSignature("org","Neo4Net", "kernel", "impl", "proc", "myProcedure").@out("someNumber", NTInteger).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IList<ProcedureSignature> signatures = procedures.Select( CallableProcedure::signature ).ToList();
-			  assertThat( signatures, containsInAnyOrder( procedureSignature( "org","neo4j", "kernel", "impl", "proc", "myOtherProcedure" ).@out( "someNumber", NTInteger ).build(), procedureSignature("org","neo4j", "kernel", "impl", "proc", "myProcedure").@out("someNumber", NTInteger).build() ) );
+			  assertThat( signatures, containsInAnyOrder( procedureSignature( "org","Neo4Net", "kernel", "impl", "proc", "myOtherProcedure" ).@out( "someNumber", NTInteger ).build(), procedureSignature("org","Neo4Net", "kernel", "impl", "proc", "myProcedure").@out("someNumber", NTInteger).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( string.Format( "Procedures must return a Stream of records, where a record is a concrete class%n" + "that you define and not a parameterized type such as java.util.List<org.neo4j" + ".kernel.impl.proc.ProcedureJarLoaderTest$Output>." ) );
+			  Exception.expectMessage( string.Format( "Procedures must return a Stream of records, where a record is a concrete class%n" + "that you define and not a parameterized type such as java.util.List<org.Neo4Net" + ".kernel.impl.proc.ProcedureJarLoaderTest$Output>." ) );
 
 			  // When
 			  _jarloader.loadProceduresFromDir( ParentDir( jar ) );
@@ -505,7 +505,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 		 private ProcedureConfig ProcedureConfig()
 		 {
-			  Config config = Config.defaults( procedure_unrestricted, "org.neo4j.kernel.impl.proc.unsafeFullAccess*" );
+			  Config config = Config.defaults( procedure_unrestricted, "org.Neo4Net.kernel.impl.proc.unsafeFullAccess*" );
 			  return new ProcedureConfig( config );
 		 }
 	}

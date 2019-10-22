@@ -61,11 +61,11 @@ namespace Neo4Net.Server.rest.transactional
 			  TransactionFacade actions = new TransactionFacade( kernel, null, queryService, registry, NullLogProvider.Instance );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, org.neo4j.internal.kernel.api.security.LoginContext.AUTH_DISABLED, -1);
+//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, org.Neo4Net.internal.kernel.api.security.LoginContext.AUTH_DISABLED, -1);
 			  TransactionHandle transactionHandle = actions.NewTransactionHandle( new DisgustingUriScheme(), true, LoginContext.AUTH_DISABLED, -1 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

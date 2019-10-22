@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.machines.locks
 {
@@ -38,13 +38,13 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Cluster.NoLeaderAvailable;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.NoLeaderAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Cluster.NotALeader;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.NotALeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.ReplicationFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Transaction.Interrupted;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.Interrupted;
 
 	/// <summary>
 	/// Each member of the cluster uses its own <seealso cref="LeaderOnlyLockManager"/> which wraps a local <seealso cref="Locks"/> manager.
@@ -213,14 +213,14 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 			  public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					LocalClient.acquireShared( tracer, resourceType, resourceId );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					EnsureHoldingToken();
@@ -283,7 +283,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.stream.Stream<? extends org.neo4j.kernel.impl.locking.ActiveLock> activeLocks()
+//ORIGINAL LINE: public java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks()
 			  public override Stream<ActiveLock> ActiveLocks()
 			  {
 					return LocalClient.activeLocks();

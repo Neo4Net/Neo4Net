@@ -33,12 +33,12 @@ namespace Neo4Net.Tooling.procedure
 	using Neo4Net.Tooling.procedure.validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
+//	import static org.Neo4Net.tooling.procedure.CompilerOptions.IGNORE_CONTEXT_WARNINGS_OPTION;
 
 	/// <summary>
 	/// Base processor that processes <seealso cref="Element"/> annotated with {@code T}.
 	/// It also detects and reports duplicated elements (duplication can obviously be detected within a compilation unit and
-	/// not globally per Neo4j instance, as explained in <seealso cref="DuplicatedExtensionValidator"/>.
+	/// not globally per Neo4Net instance, as explained in <seealso cref="DuplicatedExtensionValidator"/>.
 	/// </summary>
 	/// @param <T> processed annotation type </param>
 	public class DuplicationAwareBaseProcessor<T> : AbstractProcessor where T : Annotation
@@ -53,7 +53,7 @@ namespace Neo4Net.Tooling.procedure
 		 private MessagePrinter _messagePrinter;
 
 		 /// <summary>
-		 /// Base initialization of Neo4j extension processor (where extension can be <seealso cref="Procedure"/>, <seealso cref="UserFunction"/>,
+		 /// Base initialization of Neo4Net extension processor (where extension can be <seealso cref="Procedure"/>, <seealso cref="UserFunction"/>,
 		 /// <seealso cref="UserAggregationFunction"/>).
 		 /// </summary>
 		 /// <param name="supportedAnnotationType"> main annotation type supported by the processor. The main annotation may depend on

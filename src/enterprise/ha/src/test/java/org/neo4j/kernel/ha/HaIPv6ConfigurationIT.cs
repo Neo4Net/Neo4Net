@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.ha
 
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using HighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.HighlyAvailableGraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using HighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.HighlyAvailableGraphDatabaseFactory;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.ha
 	public class HaIPv6ConfigurationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void TestClusterWithLocalhostAddresses()
 		 {
 			  int clusterPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting("::1", clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting("::1", clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::1", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting("::1", clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting("::1", clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::1", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.ha
 		 private void TestWithAddress( InetAddress inetAddress )
 		 {
 			  int clusterPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting(inetAddress.HostAddress, clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting(inetAddress.HostAddress, clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting(inetAddress.HostAddress, clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting(inetAddress.HostAddress, clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void TestClusterWithWildcardAddresses()
 		 {
 			  int clusterPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting("::", clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting("::1", clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new HighlyAvailableGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Dir.storeDir()).setConfig(ClusterSettings.cluster_server, Ipv6HostPortSetting("::", clusterPort)).setConfig(ClusterSettings.initial_hosts, Ipv6HostPortSetting("::1", clusterPort)).setConfig(HaSettings.HaServer, Ipv6HostPortSetting("::", PortAuthority.allocatePort())).setConfig(ClusterSettings.server_id, "1").setConfig(OnlineBackupSettings.online_backup_enabled, false.ToString()).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {

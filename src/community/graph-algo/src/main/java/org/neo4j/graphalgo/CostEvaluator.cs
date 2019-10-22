@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Graphalgo
 {
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	/// <summary>
 	/// In order to make the solving of shortest path problems as general as

@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using Neo4Net.Index.Internal.gbptree;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -46,12 +46,12 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestLabels.LABEL_ONE;
+//	import static org.Neo4Net.test.TestLabels.LABEL_ONE;
 
 	public class StringLengthIndexValidationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider, org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider, org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 		 public DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.default_schema_provider, GraphDatabaseSettings.SchemaIndex.NATIVE20.providerName());
 
 		 private const string PROP_KEY = "largeString";
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 					assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					IndexDefinition next = iterator.next();
-					assertEquals( "state is FAILED", Neo4Net.Graphdb.schema.Schema_IndexState.Failed, Db.schema().getIndexState(next) );
+					assertEquals( "state is FAILED", Neo4Net.GraphDb.schema.Schema_IndexState.Failed, Db.schema().getIndexState(next) );
 					assertThat( Db.schema().getIndexFailure(next), Matchers.containsString("Index key-value size it to large. Please see index documentation for limitations.") );
 					tx.Success();
 			  }

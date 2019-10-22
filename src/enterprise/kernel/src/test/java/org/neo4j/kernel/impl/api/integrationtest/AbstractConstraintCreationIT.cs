@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
@@ -30,12 +30,12 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
 	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
@@ -63,13 +63,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 
 	public abstract class AbstractConstraintCreationIT<Constraint, DESCRIPTOR> : KernelIntegrationTest where Constraint : Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor where DESCRIPTOR : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor
 	{
@@ -81,24 +81,24 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 internal DESCRIPTOR Descriptor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract int initializeLabelOrRelType(org.neo4j.internal.kernel.api.TokenWrite tokenWrite, String name) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: abstract int initializeLabelOrRelType(org.Neo4Net.internal.kernel.api.TokenWrite tokenWrite, String name) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 internal abstract int InitializeLabelOrRelType( TokenWrite tokenWrite, string name );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract Constraint createConstraint(org.neo4j.internal.kernel.api.SchemaWrite writeOps, DESCRIPTOR descriptor) throws Exception;
+//ORIGINAL LINE: abstract Constraint createConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, DESCRIPTOR descriptor) throws Exception;
 		 internal abstract Constraint CreateConstraint( SchemaWrite writeOps, DESCRIPTOR descriptor );
 
-		 internal abstract void CreateConstraintInRunningTx( GraphDatabaseService db, string type, string property );
+		 internal abstract void CreateConstraintInRunningTx( IGraphDatabaseService db, string type, string property );
 
 		 internal abstract Constraint NewConstraintObject( DESCRIPTOR descriptor );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void dropConstraint(org.neo4j.internal.kernel.api.SchemaWrite writeOps, Constraint constraint) throws Exception;
+//ORIGINAL LINE: abstract void dropConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, Constraint constraint) throws Exception;
 		 internal abstract void DropConstraint( SchemaWrite writeOps, Constraint constraint );
 
-		 internal abstract void CreateOffendingDataInRunningTx( GraphDatabaseService db );
+		 internal abstract void CreateOffendingDataInRunningTx( IGraphDatabaseService db );
 
-		 internal abstract void RemoveOffendingDataInRunningTx( GraphDatabaseService db );
+		 internal abstract void RemoveOffendingDataInRunningTx( IGraphDatabaseService db );
 
 		 internal abstract DESCRIPTOR MakeDescriptor( int typeId, int propertyKeyId );
 
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  commit();
 		 }
 
-		 protected internal override GraphDatabaseService CreateGraphDatabase()
+		 protected internal override IGraphDatabaseService CreateGraphDatabase()
 		 {
 			  return ( new TestEnterpriseGraphDatabaseFactory() ).setFileSystem(fileSystemRule.get()).newEmbeddedDatabase(testDir.storeDir());
 		 }
@@ -301,7 +301,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					constraint = CreateConstraint( statement, Descriptor );
 					commit();
 			  }
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					// Make sure all schema changes are stable, to avoid any synchronous schema state invalidation
 					Db.schema().awaitIndexesOnline(10, TimeUnit.SECONDS);
@@ -410,7 +410,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldNotLeaveAnyStateBehindAfterFailingToCreateConstraint()
 		 {
 			  // given
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					CreateOffendingDataInRunningTx( db );
 					tx.Success();
@@ -419,7 +419,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // when
 			  try
 			  {
-					  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+					  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 					  {
 						CreateConstraintInRunningTx( db, KEY, PROP );
       
@@ -433,10 +433,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 			  // then
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					assertEquals( System.Linq.Enumerable.Empty<ConstraintDefinition>(), Iterables.asList(Db.schema().Constraints) );
-					assertEquals( System.Linq.Enumerable.Empty<IndexDefinition, Neo4Net.Graphdb.schema.Schema_IndexState>(), IndexesWithState(Db.schema()) );
+					assertEquals( System.Linq.Enumerable.Empty<IndexDefinition, Neo4Net.GraphDb.schema.Schema_IndexState>(), IndexesWithState(Db.schema()) );
 					tx.Success();
 			  }
 		 }
@@ -447,7 +447,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public virtual void ShouldBeAbleToResolveConflictsAndRecreateConstraintAfterFailingToCreateItDueToConflict()
 		 {
 			  // given
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					CreateOffendingDataInRunningTx( db );
 					tx.Success();
@@ -456,7 +456,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // when
 			  try
 			  {
-					  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+					  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 					  {
 						CreateConstraintInRunningTx( db, KEY, PROP );
       
@@ -469,7 +469,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					assertThat( e.Message, startsWith( "Unable to create CONSTRAINT" ) );
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					RemoveOffendingDataInRunningTx( db );
 					tx.Success();
@@ -488,7 +488,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // Given
 			  ThreadStart constraintCreation = () =>
 			  {
-				using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+				using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 				{
 					 CreateConstraintInRunningTx( db, KEY, PROP );
 					 tx.Success();
@@ -498,7 +498,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  // When
 			  try
 			  {
-					using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+					using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 					{
 						 Executors.newSingleThreadExecutor().submit(constraintCreation).get();
 						 Db.createNode();
@@ -516,9 +516,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 		 }
 
-		 private static IDictionary<IndexDefinition, Neo4Net.Graphdb.schema.Schema_IndexState> IndexesWithState( Schema schema )
+		 private static IDictionary<IndexDefinition, Neo4Net.GraphDb.schema.Schema_IndexState> IndexesWithState( Schema schema )
 		 {
-			  IDictionary<IndexDefinition, Neo4Net.Graphdb.schema.Schema_IndexState> result = new Dictionary<IndexDefinition, Neo4Net.Graphdb.schema.Schema_IndexState>();
+			  IDictionary<IndexDefinition, Neo4Net.GraphDb.schema.Schema_IndexState> result = new Dictionary<IndexDefinition, Neo4Net.GraphDb.schema.Schema_IndexState>();
 			  foreach ( IndexDefinition definition in Schema.Indexes )
 			  {
 					result[definition] = Schema.getIndexState( definition );
@@ -544,7 +544,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SchemaStateCheck setUp() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public SchemaStateCheck setUp() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 			  public virtual SchemaStateCheck SetUp()
 			  {
 					Transaction transaction = newTransaction();

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexSampler.combineSamples;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexSampler.combineSamples;
 
 	internal class FusionIndexPopulator : FusionIndexBase<IndexPopulator>, IndexPopulator
 	{
@@ -60,14 +60,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void add(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: LazyInstanceSelector<java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> batchSelector = new LazyInstanceSelector<>(slot -> new java.util.ArrayList<>());
+//ORIGINAL LINE: LazyInstanceSelector<java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> batchSelector = new LazyInstanceSelector<>(slot -> new java.util.ArrayList<>());
 			  LazyInstanceSelector<ICollection<IndexEntryUpdate<object>>> batchSelector = new LazyInstanceSelector<ICollection<IndexEntryUpdate<object>>>( slot => new List<>() );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 			  foreach ( IndexEntryUpdate<object> update in updates )
 			  {
 					batchSelector.Select( SlotSelector.selectSlot( update.Values(), GroupOf ) ).Add(update);
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 			  foreach ( IndexSlot slot in Enum.GetValues( typeof( IndexSlot ) ) )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batch = batchSelector.getIfInstantiated(slot);
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = batchSelector.getIfInstantiated(slot);
 					ICollection<IndexEntryUpdate<object>> batch = batchSelector.GetIfInstantiated( slot );
 					if ( batch != null )
 					{
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  // Manual loop due do multiple exception types

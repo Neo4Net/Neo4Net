@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 
 	public interface IndexProvider
 	{

@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.repr
 			  if ( value is ExtensibleRepresentation && injector != null )
 			  {
 					IDictionary<string, IList<string>> extData = injector.GetExensionsFor( value.Type.extend );
-					string entityIdentity = ( ( ExtensibleRepresentation ) value ).Identity;
+					string IEntityIdentity = ( ( ExtensibleRepresentation ) value ).Identity;
 					if ( extData != null )
 					{
 						 MappingWriter extensions = mapping.NewMapping( RepresentationType.Plugins, "extensions" );
@@ -58,9 +58,9 @@ namespace Neo4Net.Server.rest.repr
 							  {
 									StringBuilder path = ( new StringBuilder( "/ext/" ) ).Append( ext.Key );
 									path.Append( "/" ).Append( value.Type.valueName );
-									if ( !string.ReferenceEquals( entityIdentity, null ) )
+									if ( !string.ReferenceEquals( IEntityIdentity, null ) )
 									{
-										 path.Append( "/" ).Append( entityIdentity );
+										 path.Append( "/" ).Append( IEntityIdentity );
 									}
 									path.Append( "/" ).Append( method );
 									extension.writeValue( RepresentationType.Uri, method, JoinBaseWithRelativePath( baseUri, path.ToString() ) );

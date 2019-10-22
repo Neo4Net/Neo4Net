@@ -29,7 +29,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// this call it gets created.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int labelGetOrCreateForName(String labelName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException;
+//ORIGINAL LINE: int labelGetOrCreateForName(String labelName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException;
 		 int LabelGetOrCreateForName( string labelName );
 
 		 /// <summary>
@@ -43,7 +43,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <exception cref="TooManyLabelsException"> if too many labels would bve created by this call, compared to the token id space
 		 /// available. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void labelGetOrCreateForNames(String[] labelNames, int[] labelIds) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException;
+//ORIGINAL LINE: void labelGetOrCreateForNames(String[] labelNames, int[] labelIds) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException;
 		 void LabelGetOrCreateForNames( string[] labelNames, int[] labelIds );
 
 		 /// <summary>
@@ -52,7 +52,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="labelName"> the name of the label. </param>
 		 /// <returns> id of the created label. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int labelCreateForName(String labelName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException;
+//ORIGINAL LINE: int labelCreateForName(String labelName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException;
 		 int LabelCreateForName( string labelName );
 
 		 /// <summary>
@@ -61,7 +61,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="propertyKeyName"> the name of the property. </param>
 		 /// <returns> id of the created property key. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int propertyKeyCreateForName(String propertyKeyName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: int propertyKeyCreateForName(String propertyKeyName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 int PropertyKeyCreateForName( string propertyKeyName );
 
 		 /// <summary>
@@ -69,7 +69,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="relationshipTypeName"> the name of the relationship. </param>
 		 /// <returns> id of the created relationship type. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int relationshipTypeCreateForName(String relationshipTypeName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: int relationshipTypeCreateForName(String relationshipTypeName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 int RelationshipTypeCreateForName( string relationshipTypeName );
 
 		 /// <summary>
@@ -77,7 +77,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// this call it gets created.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int propertyKeyGetOrCreateForName(String propertyKeyName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: int propertyKeyGetOrCreateForName(String propertyKeyName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 int PropertyKeyGetOrCreateForName( string propertyKeyName );
 
 		 /// <summary>
@@ -89,7 +89,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="propertyKeys"> The array of property names for which to resolve or create their id. </param>
 		 /// <param name="ids"> The array into which the resulting token ids will be stored. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyKeyGetOrCreateForNames(String[] propertyKeys, int[] ids) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: void propertyKeyGetOrCreateForNames(String[] propertyKeys, int[] ids) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 void PropertyKeyGetOrCreateForNames( string[] propertyKeys, int[] ids );
 
 		 /// <summary>
@@ -97,7 +97,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="relationshipTypeName"> the name of the relationship </param>
 		 /// <returns> the id associated with the name </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int relationshipTypeGetOrCreateForName(String relationshipTypeName) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: int relationshipTypeGetOrCreateForName(String relationshipTypeName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 int RelationshipTypeGetOrCreateForName( string relationshipTypeName );
 
 		 /// <summary>
@@ -109,7 +109,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="relationshipTypes"> The array of relationship type names for which to resolve or create their id. </param>
 		 /// <param name="ids"> The array into which the resulting token ids will be stored. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipTypeGetOrCreateForNames(String[] relationshipTypes, int[] ids) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
+//ORIGINAL LINE: void relationshipTypeGetOrCreateForNames(String[] relationshipTypes, int[] ids) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException;
 		 void RelationshipTypeGetOrCreateForNames( string[] relationshipTypes, int[] ids );
 	}
 

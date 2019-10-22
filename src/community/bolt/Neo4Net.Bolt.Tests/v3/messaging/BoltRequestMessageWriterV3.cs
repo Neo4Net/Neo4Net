@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v3.messaging
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using BoltRequestMessageWriter = Neo4Net.Bolt.v1.messaging.BoltRequestMessageWriter;
 	using BeginMessage = Neo4Net.Bolt.v3.messaging.request.BeginMessage;
@@ -35,12 +35,12 @@ namespace Neo4Net.Bolt.v3.messaging
 	/// </summary>
 	public class BoltRequestMessageWriterV3 : BoltRequestMessageWriter
 	{
-		 public BoltRequestMessageWriterV3( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer ) : base( packer )
+		 public BoltRequestMessageWriterV3( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer ) : base( packer )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.messaging.BoltRequestMessageWriter write(org.neo4j.bolt.messaging.RequestMessage message) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.messaging.BoltRequestMessageWriter write(org.Neo4Net.bolt.messaging.RequestMessage message) throws java.io.IOException
 		 public override BoltRequestMessageWriter Write( RequestMessage message )
 		 {
 			  if ( message is HelloMessage )

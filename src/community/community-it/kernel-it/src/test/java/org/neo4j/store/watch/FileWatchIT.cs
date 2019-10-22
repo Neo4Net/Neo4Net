@@ -30,13 +30,13 @@ namespace Neo4Net.Store.Watch
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using LuceneDataSource = Neo4Net.Index.impl.lucene.@explicit.LuceneDataSource;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -66,12 +66,12 @@ namespace Neo4Net.Store.Watch
 		 private const long TEST_TIMEOUT = 600_000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _storeDir;
 		 private AssertableLogProvider _logProvider;
-		 private GraphDatabaseService _database;
+		 private IGraphDatabaseService _database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp()
@@ -119,7 +119,7 @@ namespace Neo4Net.Store.Watch
 		 public virtual void NotifyWhenFileWatchingFailToStart()
 		 {
 			  AssertableLogProvider logProvider = new AssertableLogProvider( true );
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  try
 			  {
 					db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).setFileSystem(new NonWatchableFileSystemAbstraction()).newEmbeddedDatabase(TestDirectory.storeDir("failed-start-db"));
@@ -262,7 +262,7 @@ namespace Neo4Net.Store.Watch
 		 public virtual void ShouldLogWhenDisabled()
 		 {
 			  AssertableLogProvider logProvider = new AssertableLogProvider( true );
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  try
 			  {
 					db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).setFileSystem(new NonWatchableFileSystemAbstraction()).newEmbeddedDatabaseBuilder(TestDirectory.directory("failed-start-db")).setConfig(GraphDatabaseSettings.filewatcher_enabled, Settings.FALSE).newGraphDatabase();
@@ -275,7 +275,7 @@ namespace Neo4Net.Store.Watch
 			  }
 		 }
 
-		 private static void ShutdownDatabaseSilently( GraphDatabaseService databaseService )
+		 private static void ShutdownDatabaseSilently( IGraphDatabaseService databaseService )
 		 {
 			  if ( databaseService != null )
 			  {
@@ -290,7 +290,7 @@ namespace Neo4Net.Store.Watch
 			  }
 		 }
 
-		 private static void DropAllIndexes( GraphDatabaseService database )
+		 private static void DropAllIndexes( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -302,7 +302,7 @@ namespace Neo4Net.Store.Watch
 			  }
 		 }
 
-		 private static void CreateIndexes( GraphDatabaseService database, string propertyName, Label testLabel )
+		 private static void CreateIndexes( IGraphDatabaseService database, string propertyName, Label testLabel )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -317,7 +317,7 @@ namespace Neo4Net.Store.Watch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void forceCheckpoint(org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
+//ORIGINAL LINE: private static void forceCheckpoint(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
 		 private static void ForceCheckpoint( CheckPointer checkPointer )
 		 {
 			  checkPointer.ForceCheckPoint( new SimpleTriggerInfo( "testForceCheckPoint" ) );
@@ -330,7 +330,7 @@ namespace Neo4Net.Store.Watch
 			  return relativeIndexPath.getName( 0 ).ToString();
 		 }
 
-		 private static void CreateNode( GraphDatabaseService database, string propertyName, Label testLabel )
+		 private static void CreateNode( IGraphDatabaseService database, string propertyName, Label testLabel )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -340,12 +340,12 @@ namespace Neo4Net.Store.Watch
 			  }
 		 }
 
-		 private static CheckPointer GetCheckpointer( GraphDatabaseService database )
+		 private static CheckPointer GetCheckpointer( IGraphDatabaseService database )
 		 {
 			  return ( ( GraphDatabaseAPI ) database ).DependencyResolver.resolveDependency( typeof( CheckPointer ) );
 		 }
 
-		 private static FileWatcher GetFileWatcher( GraphDatabaseService database )
+		 private static FileWatcher GetFileWatcher( IGraphDatabaseService database )
 		 {
 			  DependencyResolver dependencyResolver = ( ( GraphDatabaseAPI ) database ).DependencyResolver;
 			  return dependencyResolver.ResolveDependency( typeof( FileSystemWatcherService ) ).FileWatcher;
@@ -365,7 +365,7 @@ namespace Neo4Net.Store.Watch
 			  FileUtils.deleteRecursively( directory );
 		 }
 
-		 private static void CreateNode( GraphDatabaseService database )
+		 private static void CreateNode( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -377,7 +377,7 @@ namespace Neo4Net.Store.Watch
 		 private class NonWatchableFileSystemAbstraction : DefaultFileSystemAbstraction
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 			  public override FileWatcher FileWatcher()
 			  {
 					throw new IOException( "You can't watch me!" );

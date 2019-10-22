@@ -22,10 +22,10 @@
 namespace Neo4Net.Graphalgo.impl.path
 {
 	using Neo4Net.Graphalgo;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
 

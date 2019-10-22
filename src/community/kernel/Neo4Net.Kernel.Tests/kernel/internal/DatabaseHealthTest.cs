@@ -42,9 +42,9 @@ namespace Neo4Net.Kernel.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.@event.ErrorState.TX_MANAGER_NOT_OK;
+//	import static org.Neo4Net.GraphDb.Events.ErrorState.TX_MANAGER_NOT_OK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class DatabaseHealthTest
 	{

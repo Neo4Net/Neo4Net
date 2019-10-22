@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NULL_REFERENCE;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NULL_REFERENCE;
 
 	public class SchemaRecord : AbstractBaseRecord, IEnumerable<DynamicRecord>
 	{

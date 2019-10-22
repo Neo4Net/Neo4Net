@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.not;
+//	import static org.Neo4Net.function.Predicates.not;
 
 	public class Converters
 	{

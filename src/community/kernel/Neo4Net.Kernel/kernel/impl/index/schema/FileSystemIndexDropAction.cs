@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexes.deleteIndex;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexes.deleteIndex;
 
 	public class FileSystemIndexDropAction : IndexDropAction
 	{

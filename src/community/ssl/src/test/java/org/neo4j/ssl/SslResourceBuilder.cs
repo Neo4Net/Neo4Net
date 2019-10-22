@@ -26,9 +26,9 @@ namespace Neo4Net.Ssl
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ssl.SslResourceBuilder.SignedBy.CA;
+//	import static org.Neo4Net.ssl.SslResourceBuilder.SignedBy.CA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ssl.SslResourceBuilder.SignedBy.SELF;
+//	import static org.Neo4Net.ssl.SslResourceBuilder.SignedBy.SELF;
 
 	/// <summary>
 	/// This builder has a finite set of pre-generated resource

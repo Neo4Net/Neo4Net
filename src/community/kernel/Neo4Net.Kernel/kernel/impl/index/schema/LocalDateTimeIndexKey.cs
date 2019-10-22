@@ -24,11 +24,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="LocalDateTimeValue"/>.
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="LocalDateTimeValue"/>.
 	/// </summary>
 	internal class LocalDateTimeIndexKey : NativeIndexSingleValueKey<LocalDateTimeIndexKey>
 	{
-		 internal static readonly int Size = Long.BYTES + Integer.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + Integer.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal int NanoOfSecond;
 		 internal long EpochSecond;
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,epochSecond=%d,nanoOfSecond=%d", AsValue(), EntityId, EpochSecond, NanoOfSecond );
+			  return format( "value=%s,entityId=%d,epochSecond=%d,nanoOfSecond=%d", AsValue(), IEntityId, EpochSecond, NanoOfSecond );
 		 }
 
 		 public override void WriteLocalDateTime( long epochSecond, int nano )

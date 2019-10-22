@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Storageengine.Api
 {
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// A context which <seealso cref="StorageEngine"/> hands out to clients and which gets passed back in

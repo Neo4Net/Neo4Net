@@ -31,6 +31,6 @@ namespace Neo4Net.Memory
 
    public static class MemoryTracker_Fields
    {
-      public static readonly IMemoryTracker None = () => 0;
+      public static readonly IMemoryTracker None = null; //$!!$ () => 0;
    }
 }

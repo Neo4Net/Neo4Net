@@ -21,7 +21,7 @@ namespace Neo4Net.Server.Security.Auth
 {
 
 	using DatabaseManagementSystemSettings = Neo4Net.Dbms.DatabaseManagementSystemSettings;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -36,7 +36,7 @@ namespace Neo4Net.Server.Security.Auth
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class CommunitySecurityModule extends org.neo4j.kernel.api.security.SecurityModule
+//ORIGINAL LINE: @Service.Implementation(SecurityModule.class) public class CommunitySecurityModule extends org.Neo4Net.kernel.api.security.SecurityModule
 	public class CommunitySecurityModule : SecurityModule
 	{
 		 public const string COMMUNITY_SECURITY_MODULE_ID = "community-security-module";
@@ -48,7 +48,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override void Setup( Dependencies dependencies )
 		 {
 			  Config config = dependencies.Config();
@@ -63,7 +63,7 @@ namespace Neo4Net.Server.Security.Auth
 			  UserRepository initialUserRepository = GetInitialUserRepository( config, logProvider, fileSystem );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.security.PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 
 			  _authManager = new BasicAuthManager( userRepository, passwordPolicy, Clocks.systemClock(), initialUserRepository, config );

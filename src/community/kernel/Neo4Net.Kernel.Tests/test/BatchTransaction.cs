@@ -19,27 +19,27 @@
  */
 namespace Neo4Net.Test
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ProgressListener = Neo4Net.Helpers.progress.ProgressListener;
 
 	public class BatchTransaction : IDisposable
 	{
 		 private const int DEFAULT_INTERMEDIARY_SIZE = 10000;
 
-		 public static BatchTransaction BeginBatchTx( GraphDatabaseService db )
+		 public static BatchTransaction BeginBatchTx( IGraphDatabaseService db )
 		 {
 			  return new BatchTransaction( db );
 		 }
 
-		 private readonly GraphDatabaseService _db;
+		 private readonly IGraphDatabaseService _db;
 		 private Transaction _tx;
 		 private int _txSize;
 		 private int _total;
 		 private int _intermediarySize = DEFAULT_INTERMEDIARY_SIZE;
 		 private ProgressListener _progressListener = Neo4Net.Helpers.progress.ProgressListener_Fields.None;
 
-		 private BatchTransaction( GraphDatabaseService db )
+		 private BatchTransaction( IGraphDatabaseService db )
 		 {
 			  this._db = db;
 			  BeginTx();
@@ -50,7 +50,7 @@ namespace Neo4Net.Test
 			  this._tx = _db.beginTx();
 		 }
 
-		 public virtual GraphDatabaseService Db
+		 public virtual IGraphDatabaseService Db
 		 {
 			 get
 			 {

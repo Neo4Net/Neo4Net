@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 {
@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 	using TopologyService = Neo4Net.causalclustering.discovery.TopologyService;
 	using Neo4Net.Collections;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
@@ -40,15 +40,15 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_ALL_DATABASES;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_ALL_DATABASES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ParameterNames.ROUTERS;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ParameterNames.ROUTERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ParameterNames.TTL;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ParameterNames.TTL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.Util.extractBoltAddress;
+//	import static org.Neo4Net.causalclustering.routing.Util.extractBoltAddress;
 
 	public class GetRoutersForAllDatabasesProcedure : CallableProcedure
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 
 		private void InitializeInstanceFields()
 		{
-			_procedureSignature = _procedureSignature( GET_ROUTERS_FOR_ALL_DATABASES.fullyQualifiedProcedureName() ).@out(TTL.parameterName(), Neo4jTypes.NTInteger).@out(ROUTERS.parameterName(), Neo4jTypes.NTList(Neo4jTypes.NTMap)).description(DESCRIPTION).build();
+			_procedureSignature = _procedureSignature( GET_ROUTERS_FOR_ALL_DATABASES.fullyQualifiedProcedureName() ).@out(TTL.parameterName(), Neo4NetTypes.NTInteger).@out(ROUTERS.parameterName(), Neo4NetTypes.NTList(Neo4NetTypes.NTMap)).description(DESCRIPTION).build();
 		}
 
 
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> apply(org.neo4j.kernel.api.proc.Context ctx, Object[] input, org.neo4j.kernel.api.ResourceTracker resourceTracker) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
 			  IDictionary<string, IList<Endpoint>> routersPerDb = RouteEndpoints();

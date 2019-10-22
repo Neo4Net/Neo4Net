@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	public interface BatchImporter
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void doImport(org.neo4j.unsafe.impl.batchimport.input.Input input) throws java.io.IOException;
+//ORIGINAL LINE: void doImport(org.Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException;
 		 void DoImport( Input input );
 	}
 

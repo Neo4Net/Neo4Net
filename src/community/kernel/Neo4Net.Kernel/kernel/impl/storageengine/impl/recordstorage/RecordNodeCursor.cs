@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  this._open = true;
 		 }
 
-		 public override long EntityReference()
+		 public override long IEntityReference()
 		 {
 			  return Id;
 		 }

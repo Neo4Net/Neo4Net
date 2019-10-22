@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,93 +15,93 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.metrics
 {
 
 	using Description = Neo4Net.Configuration.Description;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BYTES;
+//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.DURATION;
+//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.HOSTNAME_PORT;
+//	import static org.Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.min;
+//	import static org.Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.pathSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.pathSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.range;
+//	import static org.Neo4Net.kernel.configuration.Settings.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	/// <summary>
-	/// Settings for the Neo4j Enterprise metrics reporting.
+	/// Settings for the Neo4Net Enterprise metrics reporting.
 	/// </summary>
 	[Description("Metrics settings")]
 	public class MetricsSettings : LoadableConfig
 	{
 		 // Common settings
-		 [Description("A common prefix for the reported metrics field names. By default, this is either be 'neo4j', " + "or a computed value based on the cluster and instance names, when running in an HA configuration.")]
-		 public static readonly Setting<string> MetricsPrefix = setting( "metrics.prefix", STRING, "neo4j" );
+		 [Description("A common prefix for the reported metrics field names. By default, this is either be 'Neo4Net', " + "or a computed value based on the cluster and instance names, when running in an HA configuration.")]
+		 public static readonly Setting<string> MetricsPrefix = setting( "metrics.prefix", STRING, "Neo4Net" );
 
 		 // The below settings define what metrics to gather
 		 // By default everything is on
 		 [Description("The default enablement value for all the supported metrics. Set this to `false` to turn off all " + "metrics by default. The individual settings can then be used to selectively re-enable specific " + "metrics.")]
 		 public static readonly Setting<bool> MetricsEnabled = setting( "metrics.enabled", BOOLEAN, TRUE );
 
-		 [Description("The default enablement value for all Neo4j specific support metrics. Set this to `false` to turn " + "off all Neo4j specific metrics by default. The individual `metrics.neo4j.*` metrics can then be " + "turned on selectively.")]
-		 public static readonly Setting<bool> NeoEnabled = buildSetting( "metrics.neo4j.enabled", BOOLEAN ).inherits( MetricsEnabled ).build();
+		 [Description("The default enablement value for all Neo4Net specific support metrics. Set this to `false` to turn " + "off all Neo4Net specific metrics by default. The individual `metrics.Neo4Net.*` metrics can then be " + "turned on selectively.")]
+		 public static readonly Setting<bool> NeoEnabled = buildSetting( "metrics.Neo4Net.enabled", BOOLEAN ).inherits( MetricsEnabled ).build();
 
 		 [Description("Enable reporting metrics about transactions; number of transactions started, committed, etc.")]
-		 public static readonly Setting<bool> NeoTxEnabled = buildSetting( "metrics.neo4j.tx.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> NeoTxEnabled = buildSetting( "metrics.Neo4Net.tx.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
-		 [Description("Enable reporting metrics about the Neo4j page cache; page faults, evictions, flushes, exceptions, " + "etc.")]
-		 public static readonly Setting<bool> NeoPageCacheEnabled = buildSetting( "metrics.neo4j.pagecache.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 [Description("Enable reporting metrics about the Neo4Net page cache; page faults, evictions, flushes, exceptions, " + "etc.")]
+		 public static readonly Setting<bool> NeoPageCacheEnabled = buildSetting( "metrics.Neo4Net.pagecache.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 [Description("Enable reporting metrics about approximately how many entities are in the database; nodes, " + "relationships, properties, etc.")]
-		 public static readonly Setting<bool> NeoCountsEnabled = buildSetting( "metrics.neo4j.counts.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> NeoCountsEnabled = buildSetting( "metrics.Neo4Net.counts.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 [Description("Enable reporting metrics about the network usage.")]
-		 public static readonly Setting<bool> NeoNetworkEnabled = buildSetting( "metrics.neo4j.network.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> NeoNetworkEnabled = buildSetting( "metrics.Neo4Net.network.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 [Description("Enable reporting metrics about Causal Clustering mode.")]
-		 public static readonly Setting<bool> CausalClusteringEnabled = buildSetting( "metrics.neo4j.causal_clustering.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> CausalClusteringEnabled = buildSetting( "metrics.Neo4Net.causal_clustering.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
-		 [Description("Enable reporting metrics about Neo4j check pointing; when it occurs and how much time it takes to " + "complete.")]
-		 public static readonly Setting<bool> NeoCheckPointingEnabled = buildSetting( "metrics.neo4j.checkpointing.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 [Description("Enable reporting metrics about Neo4Net check pointing; when it occurs and how much time it takes to " + "complete.")]
+		 public static readonly Setting<bool> NeoCheckPointingEnabled = buildSetting( "metrics.Neo4Net.checkpointing.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
-		 [Description("Enable reporting metrics about the Neo4j log rotation; when it occurs and how much time it takes to " + "complete.")]
-		 public static readonly Setting<bool> NeoLogRotationEnabled = buildSetting( "metrics.neo4j.logrotation.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 [Description("Enable reporting metrics about the Neo4Net log rotation; when it occurs and how much time it takes to " + "complete.")]
+		 public static readonly Setting<bool> NeoLogRotationEnabled = buildSetting( "metrics.Neo4Net.logrotation.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 /// @deprecated high availability database/edition is deprecated in favour of causal clustering. It will be removed in next major release. 
 		 [Description("Enable reporting metrics about HA cluster info."), Obsolete]
-		 public static readonly Setting<bool> NeoClusterEnabled = buildSetting( "metrics.neo4j.cluster.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> NeoClusterEnabled = buildSetting( "metrics.Neo4Net.cluster.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 [Description("Enable reporting metrics about Server threading info.")]
-		 public static readonly Setting<bool> NeoServerEnabled = buildSetting( "metrics.neo4j.server.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
+		 public static readonly Setting<bool> NeoServerEnabled = buildSetting( "metrics.Neo4Net.server.enabled", BOOLEAN ).inherits( NeoEnabled ).build();
 
 		 [Description("Enable reporting metrics about the duration of garbage collections")]
 		 public static readonly Setting<bool> JvmGcEnabled = buildSetting( "metrics.jvm.gc.enabled", BOOLEAN ).inherits( NeoEnabled ).build();

@@ -54,14 +54,14 @@ namespace Neo4Net.Server.rest
 		 {
 		 }
 
-		 public JaxRsResponse( ClientResponse response, string entity )
+		 public JaxRsResponse( ClientResponse response, string IEntity )
 		 {
 			  _status = response.Status;
 			  _metaData = ExtractMetaData( response );
 			  _headers = ExtractHeaders( response );
 			  _location = response.Location;
 			  _type = response.Type;
-			  _data = entity;
+			  _data = IEntity;
 			  response.close();
 		 }
 
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.rest
 			  return new JaxRsResponse( clientResponse );
 		 }
 
-		 public override string Entity
+		 public override string IEntity
 		 {
 			 get
 			 {

@@ -182,7 +182,7 @@ namespace Neo4Net.CodeGen
 		 public static readonly TypeReference IntArray = new TypeReference( "", "int", false, true, false, "", typeof( int ).Modifiers );
 		 public static readonly TypeReference LongArray = new TypeReference( "", "long", false, true, false, "", typeof( long ).Modifiers );
 		 public static readonly TypeReference DoubleArray = new TypeReference( "", "double", false, true, false, "", typeof( double ).Modifiers );
-		 public static readonly TypeReference Value = new TypeReference( "org.neo4j.values", "AnyValue", false, false, false, "", typeof( AnyValue ).Modifiers );
+		 public static readonly TypeReference Value = new TypeReference( "org.Neo4Net.values", "AnyValue", false, false, false, "", typeof( AnyValue ).Modifiers );
 		 internal static readonly TypeReference[] NoTypes = new TypeReference[0];
 
 		 internal TypeReference( string packageName, string name, bool isPrimitive, bool isArray, bool isTypeParameter, string declaringClassName, int modifiers, params TypeReference[] parameters )

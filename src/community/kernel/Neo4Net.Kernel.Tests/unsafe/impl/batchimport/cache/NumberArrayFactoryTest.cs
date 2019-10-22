@@ -56,9 +56,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NO_MONITOR;
 
 	public class NumberArrayFactoryTest
 	{

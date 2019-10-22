@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Diagnostics;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus
 {
@@ -34,9 +34,9 @@ namespace Neo4Net.causalclustering.core.consensus
 	using Message = Neo4Net.causalclustering.messaging.Message;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.HEARTBEAT_RESPONSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.RaftMessages_Type.PRUNE_REQUEST;
+//	import static org.Neo4Net.causalclustering.core.consensus.RaftMessages_Type.PRUNE_REQUEST;
 
 	public interface RaftMessages
 	{
@@ -1044,7 +1044,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		  RM Message();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		  default org.neo4j.causalclustering.identity.MemberId from()
+//		  default org.Neo4Net.causalclustering.identity.MemberId from()
 	//	  {
 	//			return message().from();
 	//	  }
@@ -1067,7 +1067,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		  ClusterId ClusterId();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		  static <RM> RaftMessages_ClusterIdAwareMessage<RM> of(org.neo4j.causalclustering.identity.ClusterId clusterId, RM message)
+//		  static <RM> RaftMessages_ClusterIdAwareMessage<RM> of(org.Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
 	//	  {
 	//			return new RaftMessages.ClusterIdAwareMessageImpl<>(clusterId, message);
 	//	  }
@@ -1087,7 +1087,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	 public interface RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> : RaftMessages_ReceivedInstantAwareMessage<RM>, RaftMessages_ClusterIdAwareMessage<RM> where RM : RaftMessages_RaftMessage
 	 {
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		  static <RM> RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> of(java.time.Instant receivedAt, org.neo4j.causalclustering.identity.ClusterId clusterId, RM message)
+//		  static <RM> RaftMessages_ReceivedInstantClusterIdAwareMessage<RM> of(java.time.Instant receivedAt, org.Neo4Net.causalclustering.identity.ClusterId clusterId, RM message)
 	//	  {
 	//			return new RaftMessages.ReceivedInstantClusterIdAwareMessageImpl<>(receivedAt, clusterId, message);
 	//	  }

@@ -22,7 +22,7 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 	using RunWith = org.junit.runner.RunWith;
@@ -34,19 +34,19 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.READ_ONLY;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.READ_ONLY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.READ_WRITE;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.READ_WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.SCHEMA_WRITE;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.SCHEMA_WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.WRITE;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.explained;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.explained;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.profiled;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.profiled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.query;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.query;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class QueryExecutionTypeTest

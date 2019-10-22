@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Test = org.junit.Test;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Test;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -38,17 +38,17 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.concurrent.OtherThreadRule.isWaiting;
+//	import static org.Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
 
 	public class UniquenessConstraintValidationConcurrencyIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule database = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Database = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.neo4j.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> OtherThread = new OtherThreadRule<Void>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static System.Func<org.neo4j.graphdb.GraphDatabaseService, Void> createUniquenessConstraint(final String label, final String propertyKey)
+//ORIGINAL LINE: private static System.Func<org.Neo4Net.graphdb.GraphDatabaseService, Void> createUniquenessConstraint(final String label, final String propertyKey)
 		 private static System.Func<GraphDatabaseService, Void> CreateUniquenessConstraint( string label, string propertyKey )
 		 {
 			  return db =>
@@ -134,8 +134,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, bool> createNode(final org.neo4j.graphdb.GraphDatabaseService db, final String label, final String propertyKey, final Object propertyValue)
-		 public static OtherThreadExecutor.WorkerCommand<Void, bool> CreateNode( GraphDatabaseService db, string label, string propertyKey, object propertyValue )
+//ORIGINAL LINE: public static org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, bool> createNode(final org.Neo4Net.graphdb.GraphDatabaseService db, final String label, final String propertyKey, final Object propertyValue)
+		 public static OtherThreadExecutor.WorkerCommand<Void, bool> CreateNode( IGraphDatabaseService db, string label, string propertyKey, object propertyValue )
 		 {
 			  return nothing =>
 			  {

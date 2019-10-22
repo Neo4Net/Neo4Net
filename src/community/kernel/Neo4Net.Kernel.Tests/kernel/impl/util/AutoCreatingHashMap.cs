@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.util
 		 /// <returns> a <seealso cref="Factory"/> that via reflection instantiates objects of the supplied {@code valueType},
 		 /// assuming zero-argument constructor. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <V> org.neo4j.function.Factory<V> values(final Class<V> valueType)
+//ORIGINAL LINE: public static <V> org.Neo4Net.function.Factory<V> values(final Class<V> valueType)
 		 public static IFactory<V> Values<V>( Type valueType )
 		 {
 				 valueType = typeof( V );
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.util
 		 /// <returns> a <seealso cref="Factory"/> that creates <seealso cref="AutoCreatingHashMap"/> instances as values, and where the
 		 /// created maps have the supplied {@code nested} <seealso cref="Factory"/> as value factory. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <K,V> org.neo4j.function.Factory<java.util.Map<K,V>> nested(Class<K> keyClass, final org.neo4j.function.Factory<V> nested)
+//ORIGINAL LINE: public static <K,V> org.Neo4Net.function.Factory<java.util.Map<K,V>> nested(Class<K> keyClass, final org.Neo4Net.function.Factory<V> nested)
 		 public static IFactory<IDictionary<K, V>> Nested<K, V>( Type keyClass, IFactory<V> nested )
 		 {
 				 keyClass = typeof( K );

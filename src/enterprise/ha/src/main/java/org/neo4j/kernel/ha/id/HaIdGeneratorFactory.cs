@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.id
 {
 
 	using ComException = Neo4Net.com.ComException;
 	using Neo4Net.com;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Neo4Net.Kernel.ha;
 	using RequestContextFactory = Neo4Net.Kernel.ha.com.RequestContextFactory;
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.ha.id
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
+//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.EMPTY_ID_RANGE_ITERATOR;
 
 	public class HaIdGeneratorFactory : IdGeneratorFactory
 	{
@@ -365,7 +365,7 @@ namespace Neo4Net.Kernel.ha.id
 					}
 					catch ( ComException e )
 					{
-						 throw new TransientTransactionFailureException( "Cannot allocate new entity ids from the cluster master. " + "The master instance is either down, or we have network connectivity problems", e );
+						 throw new TransientTransactionFailureException( "Cannot allocate new IEntity ids from the cluster master. " + "The master instance is either down, or we have network connectivity problems", e );
 					}
 			  }
 

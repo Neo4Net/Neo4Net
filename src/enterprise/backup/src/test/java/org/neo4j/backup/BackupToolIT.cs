@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup
 {
@@ -31,8 +31,8 @@ namespace Neo4Net.backup
 
 	using BackupProtocolService = Neo4Net.backup.impl.BackupProtocolService;
 	using ConsistencyCheck = Neo4Net.backup.impl.ConsistencyCheck;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -54,20 +54,20 @@ namespace Neo4Net.backup
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
+//	import static org.Neo4Net.backup.impl.BackupProtocolServiceFactory.backupProtocolService;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 
 	public class BackupToolIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expected = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException Expected = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public readonly EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule().startLazily();
 
 		 private DefaultFileSystemAbstraction _fs;
@@ -112,7 +112,7 @@ namespace Neo4Net.backup
 
 			  // Start database to backup
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = StartGraphDatabase( backupPort );
+			  IGraphDatabaseService db = StartGraphDatabase( backupPort );
 			  try
 			  {
 					Expected.expect( typeof( BackupTool.ToolFailureException ) );
@@ -127,7 +127,7 @@ namespace Neo4Net.backup
 			  }
 		 }
 
-		 private GraphDatabaseService StartGraphDatabase( int backupPort )
+		 private IGraphDatabaseService StartGraphDatabase( int backupPort )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDirectory.directory()).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).setConfig(OnlineBackupSettings.online_backup_server, "127.0.0.1:" + backupPort).setConfig(GraphDatabaseSettings.keep_logical_logs, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, StandardV2_3.NAME).newGraphDatabase();
 		 }

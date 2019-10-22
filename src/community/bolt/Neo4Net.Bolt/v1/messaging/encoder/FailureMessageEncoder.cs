@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using Neo4Net.Bolt.messaging;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using FatalFailureMessage = Neo4Net.Bolt.v1.messaging.response.FatalFailureMessage;
@@ -36,8 +36,8 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void encode(org.neo4j.bolt.messaging.Neo4jPack_Packer packer, org.neo4j.bolt.v1.messaging.response.FailureMessage message) throws java.io.IOException
-		 public override void Encode( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer, FailureMessage message )
+//ORIGINAL LINE: public void encode(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer, org.Neo4Net.bolt.v1.messaging.response.FailureMessage message) throws java.io.IOException
+		 public override void Encode( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer, FailureMessage message )
 		 {
 			  if ( message is FatalFailureMessage )
 			  {
@@ -47,8 +47,8 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void encodeFailure(org.neo4j.bolt.v1.messaging.response.FailureMessage message, org.neo4j.bolt.messaging.Neo4jPack_Packer packer) throws java.io.IOException
-		 private void EncodeFailure( FailureMessage message, Neo4Net.Bolt.messaging.Neo4jPack_Packer packer )
+//ORIGINAL LINE: private void encodeFailure(org.Neo4Net.bolt.v1.messaging.response.FailureMessage message, org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer) throws java.io.IOException
+		 private void EncodeFailure( FailureMessage message, Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  packer.PackStructHeader( 1, message.Signature() );
 			  packer.PackMapHeader( 2 );

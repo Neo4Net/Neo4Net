@@ -28,10 +28,10 @@ namespace Visibility
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -47,7 +47,7 @@ namespace Visibility
 		 private const string PROPERTY_NAME = "quux";
 		 private const int PROPERTY_VALUE = 42;
 
-		 private GraphDatabaseService _graphDatabaseService;
+		 private IGraphDatabaseService _graphDatabaseService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp()
@@ -126,7 +126,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeIsUnchangedOutsideThisTransaction(final org.neo4j.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeIsUnchangedOutsideThisTransaction(final org.Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeIsUnchangedOutsideThisTransaction( Node commonNode )
 		 {
@@ -158,7 +158,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeIsIndexed(final org.neo4j.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeIsIndexed(final org.Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeIsIndexed( Node commonNode )
 		 {
@@ -191,7 +191,7 @@ namespace Visibility
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeHasBeenUpdated(final org.neo4j.graphdb.Node commonNode) throws Exception
+//ORIGINAL LINE: private void assertNodeHasBeenUpdated(final org.Neo4Net.graphdb.Node commonNode) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void AssertNodeHasBeenUpdated( Node commonNode )
 		 {

@@ -19,19 +19,19 @@
  */
 namespace Neo4Net.Cypher.Internal.codegen
 {
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using RelationshipSelectionCursor = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countAll;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countIncoming;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countIncoming;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.Nodes.countOutgoing;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countOutgoing;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public abstract class CompiledExpandUtils
@@ -227,7 +227,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.internal.kernel.api.helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final org.neo4j.internal.kernel.api.helpers.RelationshipSelectionCursor allRelationships, final long toNode)
+//ORIGINAL LINE: private static org.Neo4Net.internal.kernel.api.helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final org.Neo4Net.internal.kernel.api.helpers.RelationshipSelectionCursor allRelationships, final long toNode)
 		 private static RelationshipSelectionCursor ConnectingRelationshipsIterator( RelationshipSelectionCursor allRelationships, long toNode )
 		 {
 			  return new RelationshipSelectionCursorAnonymousInnerClass( allRelationships, toNode );

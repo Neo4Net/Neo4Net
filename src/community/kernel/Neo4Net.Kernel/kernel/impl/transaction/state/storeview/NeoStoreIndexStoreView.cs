@@ -24,10 +24,10 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
 	using Neo4Net.Helpers.Collections;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using CountsAccessor = Neo4Net.Kernel.Impl.Api.CountsAccessor;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexStoreView = Neo4Net.Kernel.Impl.Api.index.IndexStoreView;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
@@ -43,14 +43,14 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	/// <summary>
 	/// Node store view that will always visit all nodes during store scan.
@@ -102,20 +102,20 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <FAILURE extends Exception> org.neo4j.kernel.impl.api.index.StoreScan<FAILURE> visitNodes(final int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, final org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.impl.api.index.EntityUpdates, FAILURE> propertyUpdatesVisitor, final org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.api.labelscan.NodeLabelUpdate, FAILURE> labelUpdateVisitor, boolean forceStoreScan)
+//ORIGINAL LINE: public <FAILURE extends Exception> org.Neo4Net.kernel.impl.api.index.StoreScan<FAILURE> visitNodes(final int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, final org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.api.index.EntityUpdates, FAILURE> propertyUpdatesVisitor, final org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate, FAILURE> labelUpdateVisitor, boolean forceStoreScan)
 		 public override StoreScan<FAILURE> VisitNodes<FAILURE>( int[] labelIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor, Visitor<NodeLabelUpdate, FAILURE> labelUpdateVisitor, bool forceStoreScan ) where FAILURE : Exception
 		 {
 			  return new StoreViewNodeStoreScan<FAILURE>( new RecordStorageReader( _neoStores ), Locks, labelUpdateVisitor, propertyUpdatesVisitor, labelIds, propertyKeyIdFilter );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <FAILURE extends Exception> org.neo4j.kernel.impl.api.index.StoreScan<FAILURE> visitRelationships(final int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, final org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.impl.api.index.EntityUpdates,FAILURE> propertyUpdatesVisitor)
+//ORIGINAL LINE: public <FAILURE extends Exception> org.Neo4Net.kernel.impl.api.index.StoreScan<FAILURE> visitRelationships(final int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, final org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.api.index.EntityUpdates,FAILURE> propertyUpdatesVisitor)
 		 public override StoreScan<FAILURE> VisitRelationships<FAILURE>( int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdatesVisitor ) where FAILURE : Exception
 		 {
 			  return new RelationshipStoreScan<FAILURE>( new RecordStorageReader( _neoStores ), Locks, propertyUpdatesVisitor, relationshipTypeIds, propertyKeyIdFilter );
 		 }
 
-		 public override EntityUpdates NodeAsUpdates( long nodeId )
+		 public override IEntityUpdates NodeAsUpdates( long nodeId )
 		 {
 			  NodeRecord node = NodeStore.getRecord( nodeId, NodeStore.newRecord(), FORCE );
 			  if ( !node.InUse() )
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  {
 					return null; // no labels => no updates (it's not going to be in any index)
 			  }
-			  EntityUpdates.Builder update = EntityUpdates.forEntity( nodeId, true ).withTokens( labels );
+			  IEntityUpdates.Builder update = IEntityUpdates.forEntity( nodeId, true ).withTokens( labels );
 			  foreach ( PropertyRecord propertyRecord in PropertyStore.getPropertyRecordChain( firstPropertyId ) )
 			  {
 					foreach ( PropertyBlock property in propertyRecord )
@@ -145,13 +145,13 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public override Value GetNodePropertyValue( long nodeId, int propertyKeyId )
 		 {
 			  NodeRecord node = NodeStore.getRecord( nodeId, NodeStore.newRecord(), FORCE );
 			  if ( !node.InUse() )
 			  {
-					throw new EntityNotFoundException( EntityType.NODE, nodeId );
+					throw new IEntityNotFoundException( IEntityType.NODE, nodeId );
 			  }
 			  long firstPropertyId = node.NextProp;
 			  if ( firstPropertyId == Record.NO_NEXT_PROPERTY.intValue() )
@@ -169,22 +169,22 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  return Values.NO_VALUE;
 		 }
 
-		 public override void LoadProperties( long entityId, EntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
+		 public override void LoadProperties( long IEntityId, IEntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
 		 {
-			  PrimitiveRecord entity;
-			  if ( type == EntityType.NODE )
+			  PrimitiveRecord IEntity;
+			  if ( type == IEntityType.NODE )
 			  {
-					entity = NodeStore.getRecord( entityId, NodeStore.newRecord(), FORCE );
+					entity = NodeStore.getRecord( IEntityId, NodeStore.newRecord(), FORCE );
 			  }
 			  else
 			  {
-					entity = RelationshipStore.getRecord( entityId, RelationshipStore.newRecord(), FORCE );
+					entity = RelationshipStore.getRecord( IEntityId, RelationshipStore.newRecord(), FORCE );
 			  }
 			  if ( !entity.InUse() )
 			  {
 					return;
 			  }
-			  long firstPropertyId = entity.NextProp;
+			  long firstPropertyId = IEntity.NextProp;
 			  if ( firstPropertyId == Record.NO_NEXT_PROPERTY.intValue() )
 			  {
 					return;

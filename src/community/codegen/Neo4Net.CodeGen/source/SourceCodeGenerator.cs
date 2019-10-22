@@ -60,7 +60,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Iterable<? extends org.neo4j.codegen.ByteCodes> compile(ClassLoader classpathLoader) throws org.neo4j.codegen.CompilationFailureException
+//ORIGINAL LINE: protected Iterable<? extends org.Neo4Net.codegen.ByteCodes> compile(ClassLoader classpathLoader) throws org.Neo4Net.codegen.CompilationFailureException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 protected internal override IEnumerable<ByteCodes> Compile( ClassLoader classpathLoader )
 		 {

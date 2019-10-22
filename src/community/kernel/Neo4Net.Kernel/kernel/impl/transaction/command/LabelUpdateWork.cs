@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.labelscan.NodeLabelUpdate.SORT_BY_NODE_ID;
+//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.SORT_BY_NODE_ID;
 
 	public class LabelUpdateWork : Work<System.Func<LabelScanWriter>, LabelUpdateWork>
 	{

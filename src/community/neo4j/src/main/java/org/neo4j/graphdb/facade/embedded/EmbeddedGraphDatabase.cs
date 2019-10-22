@@ -19,32 +19,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.facade.embedded
+namespace Neo4Net.GraphDb.facade.embedded
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.append;
+//	import static org.Neo4Net.helpers.collection.Iterables.append;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 
 	/// <summary>
-	/// An implementation of <seealso cref="GraphDatabaseService"/> that is used to embed Neo4j
+	/// An implementation of <seealso cref="GraphDatabaseService"/> that is used to embed Neo4Net
 	/// in an application. You typically instantiate it by using
-	/// <seealso cref="org.neo4j.graphdb.factory.GraphDatabaseFactory"/> like so:
+	/// <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseFactory"/> like so:
 	/// <para>
 	/// 
 	/// <pre>
 	/// <code>
-	/// GraphDatabaseService graphDb = new GraphDatabaseFactory().newEmbeddedDatabase( &quot;var/graphdb&quot; );
-	/// // ... use Neo4j
+	/// IGraphDatabaseService graphDb = new GraphDatabaseFactory().newEmbeddedDatabase( &quot;var/graphdb&quot; );
+	/// // ... use Neo4Net
 	/// graphDb.shutdown();
 	/// </code>
 	/// </pre>
@@ -56,7 +56,7 @@ namespace Neo4Net.Graphdb.facade.embedded
 	public class EmbeddedGraphDatabase : GraphDatabaseFacade
 	{
 		 /// <summary>
-		 /// Internal constructor used by <seealso cref="org.neo4j.graphdb.factory.GraphDatabaseFactory"/>
+		 /// Internal constructor used by <seealso cref="org.Neo4Net.graphdb.factory.GraphDatabaseFactory"/>
 		 /// </summary>
 		 public EmbeddedGraphDatabase( File storeDir, IDictionary<string, string> @params, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {

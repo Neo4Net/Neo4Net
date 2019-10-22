@@ -26,13 +26,13 @@ namespace Neo4Net.Index
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -42,16 +42,16 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.firstOrNull;
+//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 
 	public class IndexConstraintsTest
 	{
 		 private static readonly Label _label = Label.label( "Label" );
 		 private const string PROPERTY_KEY = "x";
 
-		 private GraphDatabaseService _graphDb;
+		 private IGraphDatabaseService _graphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setup()
@@ -78,7 +78,7 @@ namespace Neo4Net.Index
 			  string uuid = System.Guid.randomUUID().ToString();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node commonNode;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node commonNode;
 			  Node commonNode;
 			  using ( Transaction tx = _graphDb.beginTx() )
 			  {

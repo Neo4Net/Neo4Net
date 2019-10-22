@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup
 {
@@ -37,7 +37,7 @@ namespace Neo4Net.backup
 	using ServerUtil = Neo4Net.com.ServerUtil;
 	using RequestMonitor = Neo4Net.com.monitor.RequestMonitor;
 	using StoreCopyServer = Neo4Net.com.storecopy.StoreCopyServer;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -55,7 +55,7 @@ namespace Neo4Net.backup
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
+//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;
 
 	/// @deprecated This will be moved to an internal package in the future. 
 	[Obsolete("This will be moved to an internal package in the future.")]
@@ -84,7 +84,7 @@ namespace Neo4Net.backup
 		 private volatile URI _me;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public OnlineBackupKernelExtension(org.neo4j.kernel.configuration.Config config, final org.neo4j.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.neo4j.logging.LogProvider logProvider, final org.neo4j.kernel.monitoring.Monitors monitors, final org.neo4j.kernel.NeoStoreDataSource neoStoreDataSource, final org.neo4j.io.fs.FileSystemAbstraction fileSystemAbstraction)
+//ORIGINAL LINE: public OnlineBackupKernelExtension(org.Neo4Net.kernel.configuration.Config config, final org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDatabaseAPI, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.kernel.monitoring.Monitors monitors, final org.Neo4Net.kernel.NeoStoreDataSource neoStoreDataSource, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction)
 		 public OnlineBackupKernelExtension( Config config, GraphDatabaseAPI graphDatabaseAPI, LogProvider logProvider, Monitors monitors, NeoStoreDataSource neoStoreDataSource, FileSystemAbstraction fileSystemAbstraction ) : this(config, graphDatabaseAPI, () ->
 		 {
 		  {

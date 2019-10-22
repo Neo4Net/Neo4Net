@@ -20,7 +20,7 @@
 
 namespace Neo4Net.Kernel.api.dbms
 {
-   using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+   using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
    using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
    using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
    using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
@@ -36,13 +36,13 @@ namespace Neo4Net.Kernel.api.dbms
       /// <summary>
       /// Invoke a DBMS procedure by name </summary>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(org.neo4j.internal.kernel.api.procs.QualifiedName name, Object[] input, org.neo4j.graphdb.DependencyResolver dependencyResolver, org.neo4j.internal.kernel.api.security.SecurityContext securityContext, org.neo4j.kernel.api.ResourceTracker resourceTracker, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallDbms(QualifiedName name, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext context);
 
       /// <summary>
       /// Invoke a DBMS procedure by id </summary>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.neo4j.graphdb.DependencyResolver dependencyResolver, org.neo4j.internal.kernel.api.security.SecurityContext securityContext, org.neo4j.kernel.api.ResourceTracker resourceTracker, org.neo4j.internal.kernel.api.procs.ProcedureCallContext context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallDbms(int id, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext context);
    }
 }

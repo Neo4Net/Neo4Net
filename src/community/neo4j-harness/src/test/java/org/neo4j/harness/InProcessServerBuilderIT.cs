@@ -27,12 +27,12 @@ namespace Neo4Net.Harness
 
 
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MyUnmanagedExtension = Neo4Net.Harness.extensionpackage.MyUnmanagedExtension;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
@@ -67,22 +67,22 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.harness.TestServerBuilders.newInProcessBuilder;
+//	import static org.Neo4Net.harness.TestServerBuilders.newInProcessBuilder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.connectorAddress;
+//	import static org.Neo4Net.server.ServerTestUtils.connectorAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.verifyConnector;
+//	import static org.Neo4Net.server.ServerTestUtils.verifyConnector;
 
 	public class InProcessServerBuilderIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -150,7 +150,7 @@ namespace Neo4Net.Harness
 		 public virtual void ShouldMountUnmanagedExtensionsByPackage()
 		 {
 			  // When
-			  using ( ServerControls server = GetTestServerBuilder( TestDir.directory() ).withExtension("/path/to/my/extension", "org.neo4j.harness.extensionpackage").newServer() )
+			  using ( ServerControls server = GetTestServerBuilder( TestDir.directory() ).withExtension("/path/to/my/extension", "org.Neo4Net.harness.extensionpackage").newServer() )
 			  {
 					// Then
 					assertThat( HTTP.GET( server.HttpURI().ToString() + "path/to/my/extension/myExtension" ).status(), equalTo(234) );
@@ -182,7 +182,7 @@ namespace Neo4Net.Harness
 			  // create graph db with one node upfront
 			  File existingStoreDir = TestDir.directory( "existingStore" );
 			  File storeDir = Config.defaults( GraphDatabaseSettings.data_directory, existingStoreDir.toPath().ToString() ).get(GraphDatabaseSettings.database_path);
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 			  try
 			  {
 					Db.execute( "create ()" );
@@ -372,7 +372,7 @@ namespace Neo4Net.Harness
 			  }
 		 }
 
-		 private static void AssertDbAccessible( GraphDatabaseService db )
+		 private static void AssertDbAccessible( IGraphDatabaseService db )
 		 {
 			  Label label = () => "Person";
 			  string propertyKey = "name";
@@ -392,10 +392,10 @@ namespace Neo4Net.Harness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertDBConfig(ServerControls server, String expected, String key) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void assertDBConfig(ServerControls server, String expected, String key) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private void AssertDBConfig( ServerControls server, string expected, string key )
 		 {
-			  JsonNode beans = HTTP.GET( server.HttpURI().ToString() + "db/manage/server/jmx/domain/org.neo4j/" ).get("beans");
+			  JsonNode beans = HTTP.GET( server.HttpURI().ToString() + "db/manage/server/jmx/domain/org.Neo4Net/" ).get("beans");
 			  JsonNode configurationBean = FindNamedBean( beans, "Configuration" ).get( "attributes" );
 			  bool foundKey = false;
 			  foreach ( JsonNode attribute in configurationBean )

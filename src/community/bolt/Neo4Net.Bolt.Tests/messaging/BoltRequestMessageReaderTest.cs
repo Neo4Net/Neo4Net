@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.messaging
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using SynchronousBoltConnection = Neo4Net.Bolt.runtime.SynchronousBoltConnection;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
@@ -52,7 +52,7 @@ namespace Neo4Net.Bolt.messaging
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPropagateFatalError()
 		 {
-			  Neo4jPack_Unpacker unpacker = mock( typeof( Neo4jPack_Unpacker ) );
+			  Neo4NetPack_Unpacker unpacker = mock( typeof( Neo4NetPack_Unpacker ) );
 			  Exception error = new Exception();
 			  when( unpacker.UnpackStructHeader() ).thenThrow(error);
 
@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt.messaging
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleErrorThatCausesFailureMessage()
 		 {
-			  Neo4jPack_Unpacker unpacker = mock( typeof( Neo4jPack_Unpacker ) );
+			  Neo4NetPack_Unpacker unpacker = mock( typeof( Neo4NetPack_Unpacker ) );
 			  BoltIOException error = new BoltIOException( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, "Hello" );
 			  when( unpacker.UnpackStructHeader() ).thenThrow(error);
 
@@ -79,7 +79,7 @@ namespace Neo4Net.Bolt.messaging
 
 			  reader.Read( unpacker );
 
-			  verify( stateMachine ).handleExternalFailure( Neo4jError.from( error ), externalErrorResponseHandler );
+			  verify( stateMachine ).handleExternalFailure( Neo4NetError.from( error ), externalErrorResponseHandler );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -87,7 +87,7 @@ namespace Neo4Net.Bolt.messaging
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowForUnknownMessage()
 		 {
-			  Neo4jPack_Unpacker unpacker = mock( typeof( Neo4jPack_Unpacker ) );
+			  Neo4NetPack_Unpacker unpacker = mock( typeof( Neo4NetPack_Unpacker ) );
 			  when( unpacker.UnpackStructSignature() ).thenReturn('a');
 
 			  RequestMessageDecoder decoder = new TestRequestMessageDecoder( 'b', ResponseHandlerMock(), mock(typeof(RequestMessage)) );
@@ -104,7 +104,7 @@ namespace Neo4Net.Bolt.messaging
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldDecodeKnownMessage()
 		 {
-			  Neo4jPack_Unpacker unpacker = mock( typeof( Neo4jPack_Unpacker ) );
+			  Neo4NetPack_Unpacker unpacker = mock( typeof( Neo4NetPack_Unpacker ) );
 			  when( unpacker.UnpackStructSignature() ).thenReturn('a');
 
 			  RequestMessage message = mock( typeof( RequestMessage ) );
@@ -164,8 +164,8 @@ namespace Neo4Net.Bolt.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RequestMessage decode(org.neo4j.bolt.messaging.Neo4jPack_Unpacker unpacker) throws java.io.IOException
-			  public override RequestMessage Decode( Neo4jPack_Unpacker unpacker )
+//ORIGINAL LINE: public RequestMessage decode(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+			  public override RequestMessage Decode( Neo4NetPack_Unpacker unpacker )
 			  {
 					return Message;
 			  }

@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly SchemaDescriptor _descriptor;
 		 private const string MESSAGE = "No such INDEX ON %s.";
 
-		 public NoSuchIndexException( SchemaDescriptor descriptor ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexNotFound, format( MESSAGE, descriptor.UserDescription( SchemaUtil.idTokenNameLookup ) ) )
+		 public NoSuchIndexException( SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexNotFound, format( MESSAGE, descriptor.UserDescription( SchemaUtil.idTokenNameLookup ) ) )
 		 {
 			  this._descriptor = descriptor;
 		 }

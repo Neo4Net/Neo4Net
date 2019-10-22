@@ -25,13 +25,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
@@ -57,7 +57,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class NonUniqueIndexTest
 	{
@@ -66,7 +66,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private const string VALUE = "value";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheAndDependenciesRule resources = new org.neo4j.test.rule.PageCacheAndDependenciesRule().with(new org.neo4j.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule resources = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public PageCacheAndDependenciesRule Resources = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -76,7 +76,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  // Given
 			  Config config = Config.defaults();
-			  GraphDatabaseService db = NewEmbeddedGraphDatabaseWithSlowJobScheduler( config );
+			  IGraphDatabaseService db = NewEmbeddedGraphDatabaseWithSlowJobScheduler( config );
 			  try
 			  {
 					// When
@@ -118,7 +118,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 private GraphDatabaseService NewEmbeddedGraphDatabaseWithSlowJobScheduler( Config config )
+		 private IGraphDatabaseService NewEmbeddedGraphDatabaseWithSlowJobScheduler( Config config )
 		 {
 			  GraphDatabaseFactoryState graphDatabaseFactoryState = new GraphDatabaseFactoryState();
 			  graphDatabaseFactoryState.UserLogProvider = NullLogService.Instance.UserLogProvider;

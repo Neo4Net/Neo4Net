@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.discovery
 {
@@ -32,8 +32,8 @@ namespace Neo4Net.causalclustering.discovery
 	using ClusterStateDirectory = Neo4Net.causalclustering.core.state.ClusterStateDirectory;
 	using RaftLogPruner = Neo4Net.causalclustering.core.state.RaftLogPruner;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -47,17 +47,17 @@ namespace Neo4Net.causalclustering.discovery
 	using Level = Neo4Net.Logging.Level;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.AdvertisedSocketAddress.advertisedAddress;
+//	import static org.Neo4Net.helpers.AdvertisedSocketAddress.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ListenSocketAddress.listenAddress;
+//	import static org.Neo4Net.helpers.ListenSocketAddress.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class CoreClusterMember : ClusterMember<CoreGraphDatabase>
 	{
-		 private readonly File _neo4jHome;
+		 private readonly File _Neo4NetHome;
 		 protected internal readonly DiscoveryServiceFactory DiscoveryServiceFactory;
 		 private readonly File _defaultDatabaseDirectory;
 		 private readonly File _clusterStateDir;
@@ -120,13 +120,13 @@ namespace Neo4Net.causalclustering.discovery
 					_config[entry.Key] = entry.Value.apply( serverId );
 			  }
 
-			  this._neo4jHome = new File( parentDir, "server-core-" + serverId );
-			  _config[GraphDatabaseSettings.neo4j_home.name()] = _neo4jHome.AbsolutePath;
-			  _config[GraphDatabaseSettings.logs_directory.name()] = (new File(_neo4jHome, "logs")).AbsolutePath;
+			  this._Neo4NetHome = new File( parentDir, "server-core-" + serverId );
+			  _config[GraphDatabaseSettings.Neo4Net_home.name()] = _Neo4NetHome.AbsolutePath;
+			  _config[GraphDatabaseSettings.logs_directory.name()] = (new File(_Neo4NetHome, "logs")).AbsolutePath;
 			  _config[GraphDatabaseSettings.logical_logs_location.name()] = "core-tx-logs-" + serverId;
 
 			  this.DiscoveryServiceFactory = discoveryServiceFactory;
-			  File dataDir = new File( _neo4jHome, "data" );
+			  File dataDir = new File( _Neo4NetHome, "data" );
 			  _clusterStateDir = ClusterStateDirectory.withoutInitializing( dataDir ).get();
 			  _raftLogDir = new File( _clusterStateDir, RAFT_LOG_DIRECTORY_NAME );
 			  _databasesDirectory = new File( dataDir, "databases" );
@@ -234,7 +234,7 @@ namespace Neo4Net.causalclustering.discovery
 
 		 public override File HomeDir()
 		 {
-			  return _neo4jHome;
+			  return _Neo4NetHome;
 		 }
 
 		 public override string ToString()

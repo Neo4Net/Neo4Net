@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="string"/>,
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="string"/>,
 	/// or rather any string that <seealso cref="GBPTree"/> can handle.
 	/// </summary>
 	internal class StringIndexKey : NativeIndexSingleValueKey<StringIndexKey>
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual int Size()
 		 {
-			  return ENTITY_ID_SIZE + BytesLengthConflict;
+			  return IEntity_ID_SIZE + BytesLengthConflict;
 		 }
 
 		 protected internal override Value AssertCorrectType( Value value )
@@ -60,9 +60,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return value;
 		 }
 
-		 internal override void Initialize( long entityId )
+		 internal override void Initialize( long IEntityId )
 		 {
-			  base.Initialize( entityId );
+			  base.Initialize( IEntityId );
 			  _ignoreLength = false;
 		 }
 
@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			 get
 			 {
-				  return CompareId && EntityId == long.MaxValue && Bytes == null;
+				  return CompareId && IEntityId == long.MaxValue && Bytes == null;
 			 }
 		 }
 
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,bytes=%s", AsValue(), EntityId, Bytes == null ? "null" : Arrays.ToString(Arrays.copyOf(Bytes, BytesLengthConflict)) );
+			  return format( "value=%s,entityId=%d,bytes=%s", AsValue(), IEntityId, Bytes == null ? "null" : Arrays.ToString(Arrays.copyOf(Bytes, BytesLengthConflict)) );
 		 }
 
 		 public override void WriteString( string value )
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual void CopyFrom( StringIndexKey key )
 		 {
-			  EntityId = key.EntityId;
+			  IEntityId = key.EntityId;
 			  CompareId = key.CompareId;
 			  CopyValueFrom( key, key.BytesLengthConflict );
 		 }

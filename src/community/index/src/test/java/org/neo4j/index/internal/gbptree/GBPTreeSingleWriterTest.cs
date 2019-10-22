@@ -28,7 +28,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using MemoryAllocator = Neo4Net.Io.mem.MemoryAllocator;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -47,7 +47,7 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
+//	import static org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class GBPTreeSingleWriterTest

@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.nanoTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.stringify;
+//	import static org.Neo4Net.helpers.Exceptions.stringify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 
 	public class DebugUtil
 	{

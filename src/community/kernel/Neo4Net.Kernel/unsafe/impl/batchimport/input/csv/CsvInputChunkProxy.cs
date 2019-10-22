@@ -65,14 +65,14 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean fillFrom(org.neo4j.csv.reader.Chunker chunker) throws java.io.IOException
+//ORIGINAL LINE: public boolean fillFrom(org.Neo4Net.csv.reader.Chunker chunker) throws java.io.IOException
 		 public override bool FillFrom( Chunker chunker )
 		 {
 			  return _actual.fillFrom( chunker );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean next(org.neo4j.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
 		 public override bool Next( InputEntityVisitor visitor )
 		 {
 			  return _actual.next( visitor );

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.configuration
 {
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 
 	/// <summary>
 	/// This class helps you implement grouped settings without exposing internal utility methods

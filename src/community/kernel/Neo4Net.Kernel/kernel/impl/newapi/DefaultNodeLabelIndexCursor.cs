@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.mergeToSet;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal class DefaultNodeLabelIndexCursor : IndexCursor<IndexProgressor>, NodeLabelIndexCursor, IndexProgressor_NodeLabelClient
 	{
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  if ( _read.hasTxStateWithChanges() )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.txstate.LongDiffSets changes = read.txState().nodesWithLabelChanged(label);
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.LongDiffSets changes = read.txState().nodesWithLabelChanged(label);
 					LongDiffSets changes = _read.txState().nodesWithLabelChanged(label);
 					_added = changes.Augment( ImmutableEmptyLongIterator.INSTANCE );
 					_removed = mergeToSet( _read.txState().addedAndRemovedNodes().Removed, changes.Removed );

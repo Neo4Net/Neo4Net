@@ -79,7 +79,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 internal virtual void ShouldParseAndFormatSingleBookmarkContainingTransactionId()
 		 {
 			  // given
-			  string expected = "neo4j:bookmark:v1:tx1234";
+			  string expected = "Neo4Net:bookmark:v1:tx1234";
 			  MapValue @params = SingletonMap( "bookmark", expected );
 
 			  // when
@@ -95,8 +95,8 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 internal virtual void ShouldParseAndFormatMultipleBookmarkContainingTransactionId()
 		 {
 			  // given
-			  string txId1 = "neo4j:bookmark:v1:tx1234";
-			  string txId2 = "neo4j:bookmark:v1:tx12345";
+			  string txId1 = "Neo4Net:bookmark:v1:tx1234";
+			  string txId2 = "Neo4Net:bookmark:v1:tx12345";
 			  MapValue @params = SingletonMap( "bookmarks", asList( txId1, txId2 ) );
 
 			  // when
@@ -121,7 +121,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldFailWhenParsingBadlyFormattedMultipleBookmarks()
 		 internal virtual void ShouldFailWhenParsingBadlyFormattedMultipleBookmarks()
 		 {
-			  string bookmarkString = "neo4j:bookmark:v1:tx998";
+			  string bookmarkString = "Neo4Net:bookmark:v1:tx998";
 			  string wrongBookmarkString = "neo4q:markbook:v9:xt998";
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(SingletonMap("bookmarks", asList(bookmarkString, wrongBookmarkString))) );
@@ -133,7 +133,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldFailWhenNoNumberFollowsThePrefixInSingleBookmark()
 		 internal virtual void ShouldFailWhenNoNumberFollowsThePrefixInSingleBookmark()
 		 {
-			  string bookmarkString = "neo4j:bookmark:v1:tx";
+			  string bookmarkString = "Neo4Net:bookmark:v1:tx";
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(SingletonMap("bookmark", bookmarkString)) );
 
@@ -144,8 +144,8 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldFailWhenNoNumberFollowsThePrefixInMultipleBookmarks()
 		 internal virtual void ShouldFailWhenNoNumberFollowsThePrefixInMultipleBookmarks()
 		 {
-			  string bookmarkString = "neo4j:bookmark:v1:tx10";
-			  string wrongBookmarkString = "neo4j:bookmark:v1:tx";
+			  string bookmarkString = "Neo4Net:bookmark:v1:tx10";
+			  string wrongBookmarkString = "Neo4Net:bookmark:v1:tx";
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(SingletonMap("bookmarks", asList(bookmarkString, wrongBookmarkString))) );
 
@@ -156,7 +156,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldFailWhenSingleBookmarkHasExtraneousTrailingCharacters()
 		 internal virtual void ShouldFailWhenSingleBookmarkHasExtraneousTrailingCharacters()
 		 {
-			  string bookmarkString = "neo4j:bookmark:v1:tx1234supercalifragilisticexpialidocious";
+			  string bookmarkString = "Neo4Net:bookmark:v1:tx1234supercalifragilisticexpialidocious";
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(SingletonMap("bookmark", bookmarkString)) );
 
@@ -167,8 +167,8 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldFailWhenMultipleBookmarksHaveExtraneousTrailingCharacters()
 		 internal virtual void ShouldFailWhenMultipleBookmarksHaveExtraneousTrailingCharacters()
 		 {
-			  string bookmarkString = "neo4j:bookmark:v1:tx1234";
-			  string wrongBookmarkString = "neo4j:bookmark:v1:tx1234supercalifragilisticexpialidocious";
+			  string bookmarkString = "Neo4Net:bookmark:v1:tx1234";
+			  string wrongBookmarkString = "Neo4Net:bookmark:v1:tx1234supercalifragilisticexpialidocious";
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(SingletonMap("bookmarks", asList(bookmarkString, wrongBookmarkString))) );
 
@@ -180,7 +180,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldUseMultipleBookmarksWhenGivenBothSingleAndMultiple()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx42", asList( "neo4j:bookmark:v1:tx10", "neo4j:bookmark:v1:tx99", "neo4j:bookmark:v1:tx3" ) );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx42", asList( "Neo4Net:bookmark:v1:tx10", "Neo4Net:bookmark:v1:tx99", "Neo4Net:bookmark:v1:tx3" ) );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 
@@ -192,7 +192,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldUseMultipleBookmarksWhenGivenOnlyMultiple()
 		 {
-			  MapValue @params = @params( null, asList( "neo4j:bookmark:v1:tx85", "neo4j:bookmark:v1:tx47", "neo4j:bookmark:v1:tx15", "neo4j:bookmark:v1:tx6" ) );
+			  MapValue @params = @params( null, asList( "Neo4Net:bookmark:v1:tx85", "Neo4Net:bookmark:v1:tx47", "Neo4Net:bookmark:v1:tx15", "Neo4Net:bookmark:v1:tx6" ) );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 
@@ -204,7 +204,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldUseSingleBookmarkWhenGivenOnlySingle()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx82", null );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx82", null );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 
@@ -216,7 +216,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldUseSingleBookmarkWhenGivenBothSingleAndNullAsMultiple()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx58", null );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx58", null );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 
@@ -228,7 +228,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldUseSingleBookmarkWhenGivenBothSingleAndEmptyListAsMultiple()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx67", emptyList() );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx67", emptyList() );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 
@@ -239,7 +239,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldThrowWhenMultipleBookmarksIsNotAList()
 		 internal virtual void ShouldThrowWhenMultipleBookmarksIsNotAList()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx67", new string[]{ "neo4j:bookmark:v1:tx68" } );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx67", new string[]{ "Neo4Net:bookmark:v1:tx68" } );
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(@params) );
 
@@ -250,7 +250,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldThrowWhenMultipleBookmarksIsNotAListOfStrings()
 		 internal virtual void ShouldThrowWhenMultipleBookmarksIsNotAListOfStrings()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx67", asList( new string[]{ "neo4j:bookmark:v1:tx50" }, new object[]{ "neo4j:bookmark:v1:tx89" } ) );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx67", asList( new string[]{ "Neo4Net:bookmark:v1:tx50" }, new object[]{ "Neo4Net:bookmark:v1:tx89" } ) );
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(@params) );
 
@@ -261,7 +261,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldThrowWhenOneOfMultipleBookmarksIsMalformed()
 		 internal virtual void ShouldThrowWhenOneOfMultipleBookmarksIsMalformed()
 		 {
-			  MapValue @params = @params( "neo4j:bookmark:v1:tx67", asList( "neo4j:bookmark:v1:tx99", "neo4j:bookmark:v1:tx12", "neo4j:bookmark:www:tx99" ) );
+			  MapValue @params = @params( "Neo4Net:bookmark:v1:tx67", asList( "Neo4Net:bookmark:v1:tx99", "Neo4Net:bookmark:v1:tx12", "Neo4Net:bookmark:www:tx99" ) );
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(@params) );
 
@@ -272,7 +272,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //ORIGINAL LINE: @Test void shouldThrowWhenSingleBookmarkIsMalformed()
 		 internal virtual void ShouldThrowWhenSingleBookmarkIsMalformed()
 		 {
-			  MapValue @params = @params( "neo4j:strange-bookmark:v1:tx6", null );
+			  MapValue @params = @params( "Neo4Net:strange-bookmark:v1:tx6", null );
 
 			  BookmarkFormatException e = assertThrows( typeof( BookmarkFormatException ), () => Bookmark.FromParamsOrNull(@params) );
 
@@ -301,7 +301,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldSkipNullsInMultipleBookmarks()
 		 {
-			  MapValue @params = @params( null, asList( "neo4j:bookmark:v1:tx3", "neo4j:bookmark:v1:tx5", null, "neo4j:bookmark:v1:tx17" ) );
+			  MapValue @params = @params( null, asList( "Neo4Net:bookmark:v1:tx3", "Neo4Net:bookmark:v1:tx5", null, "Neo4Net:bookmark:v1:tx17" ) );
 
 			  Bookmark bookmark = Bookmark.FromParamsOrNull( @params );
 

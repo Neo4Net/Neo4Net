@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.configuration
 	using ExternalSettings = Neo4Net.Configuration.ExternalSettings;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
 	using Secret = Neo4Net.Configuration.Secret;
-	using Neo4Net.Graphdb.config;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
-	using SettingValidator = Neo4Net.Graphdb.config.SettingValidator;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.config;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
+	using SettingValidator = Neo4Net.GraphDb.config.SettingValidator;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DiagnosticsPhase = Neo4Net.Internal.Diagnostics.DiagnosticsPhase;
 	using DiagnosticsProvider = Neo4Net.Internal.Diagnostics.DiagnosticsProvider;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;
@@ -47,20 +47,20 @@ namespace Neo4Net.Kernel.configuration
 	using Logger = Neo4Net.Logging.Logger;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Connector.ConnectorType.BOLT;
+//	import static org.Neo4Net.kernel.configuration.Connector.ConnectorType.BOLT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Connector.ConnectorType.HTTP;
+//	import static org.Neo4Net.kernel.configuration.Connector.ConnectorType.HTTP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.HttpConnector.Encryption.NONE;
+//	import static org.Neo4Net.kernel.configuration.HttpConnector.Encryption.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.HttpConnector.Encryption.TLS;
+//	import static org.Neo4Net.kernel.configuration.HttpConnector.Encryption.TLS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 	/// <summary>
-	/// This class holds the overall configuration of a Neo4j database instance. Use the accessors to convert the internal
+	/// This class holds the overall configuration of a Neo4Net database instance. Use the accessors to convert the internal
 	/// key-value settings to other types.
 	/// <para>
 	/// Users can assume that old settings have been migrated to their new counterparts, and that defaults have been
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.configuration
 	/// </summary>
 	public class Config : DiagnosticsProvider, Configuration
 	{
-		 public const string DEFAULT_CONFIG_FILE_NAME = "neo4j.conf";
+		 public const string DEFAULT_CONFIG_FILE_NAME = "Neo4Net.conf";
 
 		 private readonly IList<ConfigOptions> _configOptions;
 
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.configuration
 		 private readonly IList<ConfigurationValidator> _validators = new List<ConfigurationValidator>();
 		 private readonly IDictionary<string, string> _overriddenDefaults = new CopyOnWriteHashMap<string, string>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<String,org.neo4j.graphdb.config.BaseSetting<?>> settingsMap;
+//ORIGINAL LINE: private final java.util.Map<String,org.Neo4Net.graphdb.config.BaseSetting<?>> settingsMap;
 		 private readonly IDictionary<string, BaseSetting<object>> _settingsMap; // Only contains fixed settings and not groups
 
 		 // Messages to this log get replayed into a real logger once logging has been instantiated.
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.configuration
 			  /// <param name="setting"> The setting to set. </param>
 			  /// <param name="value"> The value of the setting, pre parsed. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Builder withSetting(final org.neo4j.graphdb.config.Setting<?> setting, final String value)
+//ORIGINAL LINE: public Builder withSetting(final org.Neo4Net.graphdb.config.Setting<?> setting, final String value)
 			  public virtual Builder WithSetting<T1>( Setting<T1> setting, string value )
 			  {
 					return WithSetting( setting.Name(), value );
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.configuration
 			  /// </summary>
 			  /// <param name="loadableConfigs"> A collection fo class instances providing settings. </param>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public Builder withConfigClasses(final java.util.Collection<? extends org.neo4j.configuration.LoadableConfig> loadableConfigs)
+//ORIGINAL LINE: @Nonnull public Builder withConfigClasses(final java.util.Collection<? extends org.Neo4Net.configuration.LoadableConfig> loadableConfigs)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  public virtual Builder WithConfigClasses<T1>( ICollection<T1> loadableConfigs ) where T1 : Neo4Net.Configuration.LoadableConfig
 			  {
@@ -249,8 +249,8 @@ namespace Neo4Net.Kernel.configuration
 			  }
 
 			  /// <summary>
-			  /// Specifies the neo4j home directory to be set for this particular config. This will modify {@link
-			  /// GraphDatabaseSettings#neo4j_home} to the same value as provided. If this is not called, the home directory
+			  /// Specifies the Neo4Net home directory to be set for this particular config. This will modify {@link
+			  /// GraphDatabaseSettings#Neo4Net_home} to the same value as provided. If this is not called, the home directory
 			  /// will be set to a system specific default home directory.
 			  /// </summary>
 			  /// <param name="homeDir"> The home directory this config belongs to. </param>
@@ -259,7 +259,7 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  public virtual Builder WithHome( File homeDir )
 			  {
-					InitialSettings[GraphDatabaseSettings.neo4j_home.name()] = homeDir.AbsolutePath;
+					InitialSettings[GraphDatabaseSettings.Neo4Net_home.name()] = homeDir.AbsolutePath;
 					return this;
 			  }
 
@@ -298,17 +298,17 @@ namespace Neo4Net.Kernel.configuration
 			  /// <exception cref="InvalidSettingException"> is thrown if an invalid setting is encountered and {@link
 			  /// GraphDatabaseSettings#strict_config_validation} is true. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public Config build() throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Nonnull public Config build() throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 			  public virtual Config Build()
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 					IList<LoadableConfig> loadableConfigs = Optional.ofNullable( SettingsClasses ).orElseGet( LoadableConfig::allConfigClasses );
 
-					// If reading from a file, make sure we always have a neo4j_home
-					if ( ConfigFile != null && !InitialSettings.ContainsKey( GraphDatabaseSettings.neo4j_home.name() ) )
+					// If reading from a file, make sure we always have a Neo4Net_home
+					if ( ConfigFile != null && !InitialSettings.ContainsKey( GraphDatabaseSettings.Neo4Net_home.name() ) )
 					{
-						 InitialSettings[GraphDatabaseSettings.neo4j_home.name()] = System.getProperty("user.dir");
+						 InitialSettings[GraphDatabaseSettings.Neo4Net_home.name()] = System.getProperty("user.dir");
 					}
 
 					Config config = new Config( ConfigFile, ThrowOnFileLoadFailure, InitialSettings, OverriddenDefaults, Validators, loadableConfigs );
@@ -385,7 +385,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <param name="setting"> The initial setting to use. </param>
 		 /// <param name="value"> The initial value to give the setting. </param>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static Config defaults(@Nonnull final org.neo4j.graphdb.config.Setting<?> setting, final String value)
+//ORIGINAL LINE: @Nonnull public static Config defaults(@Nonnull final org.Neo4Net.graphdb.config.Setting<?> setting, final String value)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public static Config Defaults<T1>( Setting<T1> setting, string value )
 		 {
@@ -497,7 +497,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> when and invalid setting is found and {@link
 		 /// GraphDatabaseSettings#strict_config_validation} is true. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void augment(java.util.Map<String,String> settings) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void augment(java.util.Map<String,String> settings) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public virtual void Augment( IDictionary<string, string> settings )
 		 {
 			  MigrateAndValidateAndUpdateSettings( settings, false );
@@ -505,7 +505,7 @@ namespace Neo4Net.Kernel.configuration
 
 		 /// <seealso cref= Config#augment(Map) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void augment(String setting, String value) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void augment(String setting, String value) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public virtual void Augment( string setting, string value )
 		 {
 			  Augment( singletonMap( setting, value ) );
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> when and invalid setting is found and {@link
 		 /// GraphDatabaseSettings#strict_config_validation} is true. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void augment(Config config) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void augment(Config config) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public virtual void Augment( Config config )
 		 {
 			  Augment( config.@params );
@@ -538,7 +538,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> when and invalid setting is found and {@link
 		 /// GraphDatabaseSettings#strict_config_validation} is true. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void augmentDefaults(org.neo4j.graphdb.config.Setting<?> setting, String value) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void augmentDefaults(org.Neo4Net.graphdb.config.Setting<?> setting, String value) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public virtual void AugmentDefaults<T1>( Setting<T1> setting, string value )
 		 {
 			  _overriddenDefaults[setting.Name()] = value;
@@ -598,7 +598,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="IllegalArgumentException"> if the provided setting is unknown or not dynamic. </exception>
 		 /// <exception cref="InvalidSettingException"> if the value is not formatted correctly. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void updateDynamicSetting(String setting, String update, String origin) throws IllegalArgumentException, org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void updateDynamicSetting(String setting, String update, String origin) throws IllegalArgumentException, org.Neo4Net.graphdb.config.InvalidSettingException
 		 public virtual void UpdateDynamicSetting( string setting, string update, string origin )
 		 {
 			  VerifyValidDynamicSetting( setting );
@@ -748,7 +748,7 @@ namespace Neo4Net.Kernel.configuration
 		 {
 			  if ( phase.Initialization || phase.ExplicitlyRequested )
 			  {
-					logger.Log( "Neo4j Kernel properties:" );
+					logger.Log( "Neo4Net Kernel properties:" );
 					foreach ( KeyValuePair<string, string> param in @params.SetOfKeyValuePairs() )
 					{
 						 logger.Log( "%s=%s", param.Key, ObsfucateIfSecret( param ) );
@@ -783,7 +783,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> when and invalid setting is found and {@link
 		 /// GraphDatabaseSettings#strict_config_validation} is true. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void migrateAndValidateAndUpdateSettings(java.util.Map<String,String> settings, boolean warnOnUnknownSettings) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: private void migrateAndValidateAndUpdateSettings(java.util.Map<String,String> settings, boolean warnOnUnknownSettings) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 private void MigrateAndValidateAndUpdateSettings( IDictionary<string, string> settings, bool warnOnUnknownSettings )
 		 {
 			  IDictionary<string, string> migratedSettings = MigrateSettings( settings );

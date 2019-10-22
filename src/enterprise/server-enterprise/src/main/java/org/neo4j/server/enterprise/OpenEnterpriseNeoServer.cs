@@ -2,12 +2,12 @@
 using System.Diagnostics;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2018-2019 "GraphFoundation" [https://graphfoundation.org]
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -18,15 +18,15 @@ using System.Diagnostics;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
  /*
-   * Note: Check for changes to how the server is registered here: https://github.com/neo4j/neo4j/blob/ba4e188d51e027a7e7870d511044ea940cf0455e/community/server/src/main/java/org/neo4j/server/rest/management/VersionAndEditionService.java
+   * Note: Check for changes to how the server is registered here: https://github.com/Neo4Net/Neo4Net/blob/ba4e188d51e027a7e7870d511044ea940cf0455e/community/server/src/main/java/org/Neo4Net/server/rest/management/VersionAndEditionService.java
  */
 namespace Neo4Net.Server.enterprise
 {
@@ -34,7 +34,7 @@ namespace Neo4Net.Server.enterprise
 
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
@@ -60,7 +60,7 @@ namespace Neo4Net.Server.enterprise
 	using WebServer = Neo4Net.Server.web.WebServer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.jmx_module_enabled;
+//	import static org.Neo4Net.server.configuration.ServerSettings.jmx_module_enabled;
 
 	public class OpenEnterpriseNeoServer : CommunityNeoServer
 	{
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.enterprise
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override protected Iterable<org.neo4j.server.modules.ServerModule> createServerModules()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override protected Iterable<org.Neo4Net.server.modules.ServerModule> createServerModules()
 		 protected internal override IEnumerable<ServerModule> CreateServerModules()
 		 {
 			  IList<ServerModule> modules = new List<ServerModule>();

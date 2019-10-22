@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.impl.store
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -68,9 +68,9 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.deleteRecursively;
+//	import static org.Neo4Net.io.fs.FileUtils.deleteRecursively;
 
 	public class IdGeneratorTest
 	{
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.impl.store
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static readonly PageCacheRule PageCacheRule = new PageCacheRule();
 		 private EphemeralFileSystemRule _fsRule = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;
@@ -581,7 +581,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  RecordFormats formats = Standard.LATEST_RECORD_FORMATS;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.impl.store.format.RecordFormat<? extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord>> recordFormats = java.util.Arrays.asList(formats.node(), formats.dynamic(), formats.labelToken(), formats.property(), formats.propertyKeyToken(), formats.relationship(), formats.relationshipGroup(), formats.relationshipTypeToken());
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.impl.store.format.RecordFormat<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord>> recordFormats = java.util.Arrays.asList(formats.node(), formats.dynamic(), formats.labelToken(), formats.property(), formats.propertyKeyToken(), formats.relationship(), formats.relationshipGroup(), formats.relationshipTypeToken());
 			  IList<RecordFormat<AbstractBaseRecord>> recordFormats = Arrays.asList( formats.Node(), formats.Dynamic(), formats.LabelToken(), formats.Property(), formats.PropertyKeyToken(), formats.Relationship(), formats.RelationshipGroup(), formats.RelationshipTypeToken() );
 
 			  foreach ( RecordFormat format in recordFormats )
@@ -662,7 +662,7 @@ namespace Neo4Net.Kernel.impl.store
 		 {
 			  File storeDir = new File( "target/var/free-id-once" );
 			  deleteRecursively( storeDir );
-			  GraphDatabaseService db = CreateTestDatabase( storeDir );
+			  IGraphDatabaseService db = CreateTestDatabase( storeDir );
 			  RelationshipType type = withName( "SOME_TYPE" );
 
 			  // This transaction will, if some commands may be executed more than
@@ -784,7 +784,7 @@ namespace Neo4Net.Kernel.impl.store
 			  }
 		 }
 
-		 private GraphDatabaseService CreateTestDatabase( File storeDir )
+		 private IGraphDatabaseService CreateTestDatabase( File storeDir )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).setFileSystem(new UncloseableDelegatingFileSystemAbstraction(_fs)).newImpermanentDatabase(storeDir);
 		 }

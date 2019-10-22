@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.stresstests
 {
@@ -31,9 +31,9 @@ namespace Neo4Net.backup.stresstests
 	using Config = Neo4Net.causalclustering.stresstests.Config;
 	using Control = Neo4Net.causalclustering.stresstests.Control;
 	using DumpUtils = Neo4Net.Diagnostics.utils.DumpUtils;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using Futures = Neo4Net.Utils.Concurrent.Futures;
 
@@ -48,13 +48,13 @@ namespace Neo4Net.backup.stresstests
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.DatabaseConfiguration.configureBackup;
+//	import static org.Neo4Net.helper.DatabaseConfiguration.configureBackup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.DatabaseConfiguration.configureTxLogRotationAndPruning;
+//	import static org.Neo4Net.helper.DatabaseConfiguration.configureTxLogRotationAndPruning;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.StressTestingHelper.fromEnv;
+//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
 
 	/// <summary>
 	/// Notice the class name: this is _not_ going to be run as part of the main build.

@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.messaging
 
 	public interface UnpackerProvider
 	{
-		 Neo4jPack_Unpacker NewUnpacker( PackInput input );
+		 Neo4NetPack_Unpacker NewUnpacker( PackInput input );
 	}
 
 }

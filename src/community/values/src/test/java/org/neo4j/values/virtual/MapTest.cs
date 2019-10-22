@@ -22,9 +22,9 @@ namespace Neo4Net.Values.@virtual
 	using Test = org.junit.jupiter.api.Test;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValueTestUtil.map;
+//	import static org.Neo4Net.values.@virtual.VirtualValueTestUtil.map;
 
 	internal class MapTest
 	{

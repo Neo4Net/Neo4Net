@@ -28,10 +28,10 @@ namespace Neo4Net.Cypher
 
 
 	using CypherCacheHitMonitor = Neo4Net.Cypher.Internal.compatibility.CypherCacheHitMonitor;
-	using Label = Neo4Net.Graphdb.Label;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Label = Neo4Net.GraphDb.Label;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
@@ -53,7 +53,7 @@ namespace Neo4Net.Cypher
 		 private const int CONNECTIONS = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval, "1s");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval, "1s");
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.query_statistics_divergence_threshold, "0.5").withSetting(GraphDatabaseSettings.cypher_min_replan_interval, "1s");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -31,7 +31,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class FileRoleRepositoryTest
 	{
@@ -77,16 +77,16 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 private RoleRepository _roleRepository;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException thrown = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException Thrown = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  // Given
 
 			  // When
-			  _roleRepository.assertValidRoleName( "neo4j" );
+			  _roleRepository.assertValidRoleName( "Neo4Net" );
 			  _roleRepository.assertValidRoleName( "johnosbourne" );
 			  _roleRepository.assertValidRoleName( "john_osbourne" );
 
@@ -288,7 +288,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 			  _fs.mkdirs( _roleFile.ParentFile );
 			  // First line is correctly formatted, second line has an extra field
-			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "neo4j:admin\n" + "admin:admin:\n" ) );
+			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "Neo4Net:admin\n" + "admin:admin:\n" ) );
 
 			  // When
 			  _roleRepository = new FileRoleRepository( _fs, _roleFile, logProvider );
@@ -316,14 +316,14 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 			  _fs.mkdirs( _roleFile.ParentFile );
-			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "admin:neo4j\nreader:\n" ) );
+			  FileRepositorySerializer.writeToFile( _fs, _roleFile, UTF8.encode( "admin:Neo4Net\nreader:\n" ) );
 
 			  // When
 			  _roleRepository = new FileRoleRepository( _fs, _roleFile, _logProvider );
 			  _roleRepository.start();
 
 			  RoleRecord role = _roleRepository.getRoleByName( "admin" );
-			  assertTrue( "neo4j should be assigned to 'admin'", role.Users().Contains("neo4j") );
+			  assertTrue( "Neo4Net should be assigned to 'admin'", role.Users().Contains("Neo4Net") );
 			  assertEquals( "only one admin should exist", 1, role.Users().Count );
 
 			  role = _roleRepository.getRoleByName( "reader" );

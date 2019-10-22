@@ -26,8 +26,8 @@ namespace Neo4Net.Bolt.v1.messaging
 
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using PackedInputArray = Neo4Net.Bolt.v1.packstream.PackedInputArray;
 	using PackedOutputArray = Neo4Net.Bolt.v1.packstream.PackedOutputArray;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
@@ -55,46 +55,46 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.Neo4jPackV1.UNBOUND_RELATIONSHIP;
+//	import static org.Neo4Net.bolt.v1.messaging.Neo4NetPackV1.UNBOUND_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Paths.ALL_PATHS;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.charArray;
+//	import static org.Neo4Net.values.storable.Values.charArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.charValue;
+//	import static org.Neo4Net.values.storable.Values.charValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.utf8Value;
+//	import static org.Neo4Net.values.storable.Values.utf8Value;
 
-	public class Neo4jPackV1Test
+	public class Neo4NetPackV1Test
 	{
-		 private readonly Neo4jPackV1 _neo4jPack = new Neo4jPackV1();
+		 private readonly Neo4NetPackV1 _Neo4NetPack = new Neo4NetPackV1();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] packed(org.neo4j.values.AnyValue object) throws java.io.IOException
+//ORIGINAL LINE: private byte[] packed(org.Neo4Net.values.AnyValue object) throws java.io.IOException
 		 private sbyte[] Packed( AnyValue @object )
 		 {
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.Pack( @object );
 			  return output.Bytes();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.AnyValue unpacked(byte[] bytes) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.AnyValue unpacked(byte[] bytes) throws java.io.IOException
 		 private AnyValue Unpacked( sbyte[] bytes )
 		 {
 			  PackedInputArray input = new PackedInputArray( bytes );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = _neo4jPack.newUnpacker( input );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = _Neo4NetPack.newUnpacker( input );
 			  return unpacker.Unpack();
 		 }
 
@@ -105,7 +105,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.PackListHeader( ALICE.labels().length() );
 			  IList<string> expected = new List<string>();
 			  TextArray labels = ALICE.labels();
@@ -130,7 +130,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.PackMapHeader( ALICE.properties().size() );
 			  ALICE.properties().@foreach((s, value) =>
 			  {
@@ -159,7 +159,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 
 			  IDictionary<string, AnyValue> map = new Dictionary<string, AnyValue>();
 			  map[null] = longValue( 42L );
@@ -175,14 +175,14 @@ namespace Neo4Net.Bolt.v1.messaging
 			  try
 			  {
 					PackedInputArray input = new PackedInputArray( output.Bytes() );
-					Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = _neo4jPack.newUnpacker( input );
+					Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = _Neo4NetPack.newUnpacker( input );
 					unpacker.Unpack();
 
 					fail( "exception expected" );
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Value `null` is not supported as key in maps, must be a non-nullable string." ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Value `null` is not supported as key in maps, must be a non-nullable string." ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -193,7 +193,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.PackMapHeader( 2 );
 			  packer.Pack( "key" );
 			  packer.pack( intValue( 1 ) );
@@ -204,14 +204,14 @@ namespace Neo4Net.Bolt.v1.messaging
 			  try
 			  {
 					PackedInputArray input = new PackedInputArray( output.Bytes() );
-					Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = _neo4jPack.newUnpacker( input );
+					Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = _Neo4NetPack.newUnpacker( input );
 					unpacker.Unpack();
 
 					fail( "exception expected" );
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Duplicate map key `key`." ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Duplicate map key `key`." ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -222,7 +222,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.PackMapHeader( 2 );
 			  packer.Pack( ValueUtils.of( 1L ) );
 			  packer.pack( intValue( 1 ) );
@@ -231,14 +231,14 @@ namespace Neo4Net.Bolt.v1.messaging
 			  try
 			  {
 					PackedInputArray input = new PackedInputArray( output.Bytes() );
-					Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = _neo4jPack.newUnpacker( input );
+					Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = _Neo4NetPack.newUnpacker( input );
 					unpacker.Unpack();
 
 					fail( "exception expected" );
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, "Bad key type: INTEGER" ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, "Bad key type: INTEGER" ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -255,7 +255,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Node values cannot be unpacked with this version of bolt." ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Node values cannot be unpacked with this version of bolt." ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -272,7 +272,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Relationship values cannot be unpacked with this version of bolt." ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Relationship values cannot be unpacked with this version of bolt." ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -283,7 +283,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4jPackV1.Packer packer = _neo4jPack.newPacker( @out );
+			  Neo4NetPackV1.Packer packer = _Neo4NetPack.newPacker( @out );
 
 			  packer.packStructHeader( 3, UNBOUND_RELATIONSHIP );
 			  packer.pack( ValueUtils.of( 1L ) );
@@ -298,7 +298,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 			  catch ( BoltIOException ex )
 			  {
-					assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Relationship values cannot be unpacked with this version of bolt." ), Neo4jError.from( ex ) );
+					assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Relationship values cannot be unpacked with this version of bolt." ), Neo4NetError.from( ex ) );
 			  }
 		 }
 
@@ -317,7 +317,7 @@ namespace Neo4Net.Bolt.v1.messaging
 					}
 					catch ( BoltIOException ex )
 					{
-						 assertEquals( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Path values cannot be unpacked with this version of bolt." ), Neo4jError.from( ex ) );
+						 assertEquals( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Path values cannot be unpacked with this version of bolt." ), Neo4NetError.from( ex ) );
 					}
 			  }
 		 }
@@ -329,7 +329,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.pack( charValue( 'C' ) );
 			  AnyValue unpacked = unpacked( output.Bytes() );
 
@@ -345,7 +345,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 {
 			  // Given
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.pack( charArray( new char[]{ 'W', 'H', 'Y' } ) );
 			  object unpacked = unpacked( output.Bytes() );
 
@@ -364,7 +364,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  sbyte[] bytes = value.GetBytes( Encoding.UTF8 );
 			  TextValue textValue = utf8Value( bytes, 0, bytes.Length );
 			  PackedOutputArray output = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = _neo4jPack.newPacker( output );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = _Neo4NetPack.newPacker( output );
 			  packer.pack( textValue );
 
 			  // When

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core
 {
@@ -58,11 +58,11 @@ namespace Neo4Net.causalclustering.core
 		 private ClusterId _clusterId = new ClusterId( System.Guid.randomUUID() );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> heartbeat = org.neo4j.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new org.neo4j.causalclustering.core.consensus.RaftMessages_Heartbeat(new org.neo4j.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0L, 0, 0));
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?> heartbeat = org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage.of(java.time.Instant.now(), clusterId, new org.Neo4Net.causalclustering.core.consensus.RaftMessages_Heartbeat(new org.Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0L, 0, 0));
 		 private Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<object> _heartbeat;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.causalclustering.messaging.LifecycleMessageHandler<org.neo4j.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegate = org.mockito.Mockito.mock(org.neo4j.causalclustering.messaging.LifecycleMessageHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<org.Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> delegate = org.mockito.Mockito.mock(org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private LifecycleMessageHandler<Neo4Net.causalclustering.core.consensus.RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> @delegate = Mockito.mock( typeof( LifecycleMessageHandler ) );
 

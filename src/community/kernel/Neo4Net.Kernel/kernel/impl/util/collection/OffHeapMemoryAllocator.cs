@@ -27,17 +27,17 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.copyMemory;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.copyMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.newDirectByteBuffer;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.newDirectByteBuffer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.setMemory;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.setMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 
 	public class OffHeapMemoryAllocator : MemoryAllocator
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 public override Memory Allocate( long size, bool zeroed )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = blockAllocator.allocate(size, tracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = blockAllocator.allocate(size, tracker);
 			  OffHeapBlockAllocator_MemoryBlock block = _blockAllocator.allocate( size, _tracker );
 			  if ( zeroed )
 			  {
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  public override Memory Copy()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock copy = blockAllocator.allocate(block.size, tracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock copy = blockAllocator.allocate(block.size, tracker);
 					OffHeapBlockAllocator_MemoryBlock copy = outerInstance.blockAllocator.Allocate( Block.size, outerInstance.tracker );
 					copyMemory( Block.addr, copy.Addr, Block.size );
 					return new OffHeapMemory( _outerInstance, copy );

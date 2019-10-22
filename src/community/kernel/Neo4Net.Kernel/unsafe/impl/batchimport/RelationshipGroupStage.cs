@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StorePrepareIdSequence = Neo4Net.@unsafe.Impl.Batchimport.store.StorePrepareIdSequence;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Takes information about relationship groups in the <seealso cref="NodeRelationshipCache"/>, which is produced
@@ -41,7 +41,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new ReadGroupRecordsByCacheStep( Control(), config, store, cache ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, store, new org.neo4j.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
+//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, store, new org.Neo4Net.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
 			  Add( new UpdateRecordsStep<object>( Control(), config, store, new StorePrepareIdSequence() ) );
 		 }
 	}

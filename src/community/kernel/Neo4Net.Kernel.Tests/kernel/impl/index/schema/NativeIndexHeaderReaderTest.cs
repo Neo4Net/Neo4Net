@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
 
 	internal class NativeIndexHeaderReaderTest
 	{

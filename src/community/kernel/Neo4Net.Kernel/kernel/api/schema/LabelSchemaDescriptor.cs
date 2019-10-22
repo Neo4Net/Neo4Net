@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.api.schema
 	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
 	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 	public class LabelSchemaDescriptor : Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor
@@ -40,9 +40,9 @@ namespace Neo4Net.Kernel.api.schema
 			  this._propertyIds = propertyIds;
 		 }
 
-		 public override bool IsAffected( long[] entityTokenIds )
+		 public override bool IsAffected( long[] IEntityTokenIds )
 		 {
-			  return ArrayUtils.contains( entityTokenIds, _labelId );
+			  return ArrayUtils.contains( IEntityTokenIds, _labelId );
 		 }
 
 		 public override R ComputeWith<R>( SchemaComputer<R> processor )
@@ -78,9 +78,9 @@ namespace Neo4Net.Kernel.api.schema
 			  return ResourceTypes.LABEL;
 		 }
 
-		 public override EntityType EntityType()
+		 public override IEntityType IEntityType()
 		 {
-			  return EntityType.NODE;
+			  return IEntityType.NODE;
 		 }
 
 		 public override PropertySchemaType PropertySchemaType()
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.api.schema
 			 }
 		 }
 
-		 public virtual int[] EntityTokenIds
+		 public virtual int[] IEntityTokenIds
 		 {
 			 get
 			 {

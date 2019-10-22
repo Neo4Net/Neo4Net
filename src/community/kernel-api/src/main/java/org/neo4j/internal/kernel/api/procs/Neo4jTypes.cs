@@ -26,7 +26,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 	/// This should also move to replace the specialized type handling in packstream, or be tied to it in some
 	/// way to ensure a strict mapping.
 	/// </summary>
-	public class Neo4jTypes
+	public class Neo4NetTypes
 	{
 		 public static readonly AnyType NTAny = new AnyType();
 		 public static readonly TextType NTString = new TextType();
@@ -48,7 +48,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 		 public static readonly LocalTimeType NTLocalTime = new LocalTimeType();
 		 public static readonly DurationType NTDuration = new DurationType();
 
-		 private Neo4jTypes()
+		 private Neo4NetTypes()
 		 {
 		 }
 

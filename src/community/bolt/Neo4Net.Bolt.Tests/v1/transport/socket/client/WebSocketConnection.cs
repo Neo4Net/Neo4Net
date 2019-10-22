@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt.v1.transport.socket.client
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransportConnection connect(org.neo4j.helpers.HostnamePort address) throws Exception
+//ORIGINAL LINE: public TransportConnection connect(org.Neo4Net.helpers.HostnamePort address) throws Exception
 		 public override TransportConnection Connect( HostnamePort address )
 		 {
 			  URI target = _uriGenerator.apply( address );

@@ -18,11 +18,14 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Neo4Net.Concurrency;
+using System;
+using System.Collections.Generic;
+using System.Threading;
+
 namespace Neo4Net.Test
 {
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static System.currentTimeMillis;
-
+  
    /// <summary>
    /// Simple race scenario, a utility for executing multiple threads coordinated to start at the same time.
    /// Add contestants with <seealso cref="addContestant(System.Threading.ThreadStart)"/> and then when all have been added, start them
@@ -33,10 +36,9 @@ namespace Neo4Net.Test
    {
       private const int UNLIMITED = 0;
 
-      public interface ThrowingRunnable
+      public interface IThrowingRunnable
       {
-         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-         //ORIGINAL LINE: void run() throws Throwable;
+         
          void Run();
       }
 
@@ -79,8 +81,8 @@ namespace Neo4Net.Test
       /// <returns> this <seealso cref="Race"/> instance. </returns>
       public virtual Race WithMaxDuration(long time, TimeUnit unit)
       {
-         long endTime = currentTimeMillis() + unit.toMillis(time);
-         this._endCondition = MergeEndCondition(() => currentTimeMillis() >= endTime);
+         long endTime = currentTimeMillis() + unit toMillis(time);
+         _endCondition = MergeEndCondition(() => currentTimeMillis() >= endTime);
          return this;
       }
 
@@ -96,7 +98,7 @@ namespace Neo4Net.Test
       /// </summary>
       /// <param name="runnable"> actual contestant. </param>
       /// <returns> contestant wrapped in a try-catch (and re-throw as unchecked exception). </returns>
-      public static ThreadStart Throwing(ThrowingRunnable runnable)
+      public static ThreadStart Throwing(IThrowingRunnable runnable)
       {
          return () =>
          {
@@ -138,8 +140,7 @@ namespace Neo4Net.Test
       /// Starts the race and returns without waiting for contestants to complete.
       /// Any exception thrown by contestant will be lost.
       /// </summary>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void goAsync() throws Throwable
+      
       public virtual void GoAsync()
       {
          _asyncExecution = true;
@@ -150,8 +151,7 @@ namespace Neo4Net.Test
       /// Starts the race and waits indefinitely for all contestants to either fail or succeed.
       /// </summary>
       /// <exception cref="Throwable"> on any exception thrown from any contestant. </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void go() throws Throwable
+
       public virtual void Go()
       {
          Go(0, TimeUnit.MILLISECONDS);
@@ -164,8 +164,7 @@ namespace Neo4Net.Test
       /// <param name="unit"> <seealso cref="TimeUnit"/> that {£{@code maxWaitTime} is given in. </param>
       /// <exception cref="TimeoutException"> if all contestants haven't either succeeded or failed within the given time. </exception>
       /// <exception cref="Throwable"> on any exception thrown from any contestant. </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void go(long maxWaitTime, java.util.concurrent.TimeUnit unit) throws Throwable
+      
       public virtual void Go(long maxWaitTime, TimeUnit unit)
       {
          if (_endCondition == null)
@@ -218,7 +217,7 @@ namespace Neo4Net.Test
             {
                if (contestant.Error != null)
                {
-                  errors.addSuppressed(contestant.Error);
+                  errors.AddSuppressed(contestant.Error);
                }
             }
             throw errors;
@@ -252,17 +251,17 @@ namespace Neo4Net.Test
             };
          }
 
-         public override void Run()
+         public void Run()
          {
-            outerInstance.readySet.Signal();
+            _outerInstance._readySet.Signal();
             try
             {
-               outerInstance.go.await();
+               _outerInstance.go.await();
             }
-            catch (InterruptedException e)
+            catch (ThreadInterruptedException e)
             {
                Error = e;
-               interrupt();
+               Interrupt();
                return;
             }
 
@@ -292,7 +291,7 @@ namespace Neo4Net.Test
 
          internal virtual void RandomlyDelaySlightly()
          {
-            int millis = ThreadLocalRandom.current().Next(100);
+            int millis = ThreadLocalRandom.Next(100);
             LockSupport.parkNanos(TimeUnit.MILLISECONDS.toNanos(10 + millis));
          }
       }

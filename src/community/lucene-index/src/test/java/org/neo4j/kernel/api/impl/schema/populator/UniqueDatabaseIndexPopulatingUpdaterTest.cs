@@ -51,17 +51,17 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
+//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.documentRepresentingProperties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.LuceneTestUtil.valueTupleList;
+//	import static org.Neo4Net.kernel.api.impl.LuceneTestUtil.valueTupleList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
+//	import static org.Neo4Net.kernel.api.impl.schema.LuceneDocumentStructure.newTermForChangeOrRemove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.change;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.remove;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.remove;
 
 	internal class UniqueDatabaseIndexPopulatingUpdaterTest
 	{
@@ -273,11 +273,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyVerifyUniqueness(org.neo4j.kernel.api.impl.schema.SchemaIndex index, org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyVerifyUniqueness( SchemaIndex index, SchemaDescriptor descriptor, params object[] values )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.mockito.ArgumentCaptor<java.util.List<org.neo4j.values.storable.Value[]>> captor = org.mockito.ArgumentCaptor.forClass(java.util.List.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.mockito.ArgumentCaptor<java.util.List<org.Neo4Net.values.storable.Value[]>> captor = org.mockito.ArgumentCaptor.forClass(java.util.List.class);
 			  ArgumentCaptor<IList<Value[]>> captor = ArgumentCaptor.forClass( typeof( System.Collections.IList ) );
 			  verify( index ).verifyUniqueness( any(), eq(descriptor.PropertyIds), captor.capture() );
 

@@ -30,7 +30,7 @@ namespace Neo4Net.Consistency
 	using OptionalCanonicalPath = Neo4Net.CommandLine.Args.Common.OptionalCanonicalPath;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -44,13 +44,13 @@ namespace Neo4Net.Consistency
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
+//	import static org.Neo4Net.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class CheckConsistencyCommand : AdminCommand
 	{
@@ -77,7 +77,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -136,7 +136,7 @@ namespace Neo4Net.Consistency
 					}
 			  }
 
-			  Config config = LoadNeo4jConfig( _homeDir, _configDir, database, LoadAdditionalConfig( additionalConfigFile ) );
+			  Config config = LoadNeo4NetConfig( _homeDir, _configDir, database, LoadAdditionalConfig( additionalConfigFile ) );
 
 			  try
 			  {
@@ -234,7 +234,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkDbState(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config additionalConfiguration) throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: private static void checkDbState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config additionalConfiguration) throws org.Neo4Net.commandline.admin.CommandFailed
 		 private static void CheckDbState( DatabaseLayout databaseLayout, Config additionalConfiguration )
 		 {
 			  try
@@ -254,7 +254,7 @@ namespace Neo4Net.Consistency
 			  }
 		 }
 
-		 private static Config LoadNeo4jConfig( Path homeDir, Path configDir, string databaseName, Config additionalConfig )
+		 private static Config LoadNeo4NetConfig( Path homeDir, Path configDir, string databaseName, Config additionalConfig )
 		 {
 			  Config config = Config.fromFile( configDir.resolve( Config.DEFAULT_CONFIG_FILE_NAME ) ).withHome( homeDir ).withConnectorsDisabled().withNoThrowOnFileLoadFailure().build();
 			  config.Augment( additionalConfig );

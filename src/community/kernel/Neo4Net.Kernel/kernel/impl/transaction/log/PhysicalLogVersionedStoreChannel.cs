@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LogHeader = Neo4Net.Kernel.impl.transaction.log.entry.LogHeader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
 
 	public class PhysicalLogVersionedStoreChannel : LogVersionedStoreChannel
 	{
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 private long _position;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public PhysicalLogVersionedStoreChannel(org.neo4j.io.fs.StoreChannel delegateChannel, long version, byte formatVersion) throws java.io.IOException
+//ORIGINAL LINE: public PhysicalLogVersionedStoreChannel(org.Neo4Net.io.fs.StoreChannel delegateChannel, long version, byte formatVersion) throws java.io.IOException
 		 public PhysicalLogVersionedStoreChannel( StoreChannel delegateChannel, long version, sbyte formatVersion )
 		 {
 			  this._delegateChannel = delegateChannel;
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel position(long newPosition) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel position(long newPosition) throws java.io.IOException
 		 public override StoreChannel Position( long newPosition )
 		 {
 			  this._position = newPosition;
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel truncate(long size) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel truncate(long size) throws java.io.IOException
 		 public override StoreChannel Truncate( long size )
 		 {
 			  return _delegateChannel.truncate( size );

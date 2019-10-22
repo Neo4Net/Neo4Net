@@ -28,9 +28,9 @@ namespace Visibility
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 	using RepeatRule = Neo4Net.Test.rule.RepeatRule;
@@ -47,10 +47,10 @@ namespace Visibility
 		 private const int MAX_READER_DELAY_MS = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RepeatRule repeat = new org.neo4j.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RepeatRule repeat = new org.Neo4Net.test.rule.RepeatRule();
 		 public readonly RepeatRule Repeat = new RepeatRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -105,12 +105,12 @@ namespace Visibility
 
 		 private class Writer : ThreadStart
 		 {
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 			  internal readonly string PropertyKey;
 			  internal readonly string PropertyValue;
 			  internal readonly AtomicBoolean Start;
 
-			  internal Writer( GraphDatabaseService db, string propertyKey, string propertyValue, AtomicBoolean start )
+			  internal Writer( IGraphDatabaseService db, string propertyKey, string propertyValue, AtomicBoolean start )
 			  {
 					this.Db = db;
 					this.PropertyKey = propertyKey;
@@ -136,13 +136,13 @@ namespace Visibility
 
 		 private class Reader : ThreadStart
 		 {
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 			  internal readonly string PropertyKey;
 			  internal readonly string PropertyValue;
 			  internal readonly AtomicBoolean Start;
 			  internal readonly int Delay;
 
-			  internal Reader( GraphDatabaseService db, string propertyKey, string propertyValue, AtomicBoolean start, int delay )
+			  internal Reader( IGraphDatabaseService db, string propertyKey, string propertyValue, AtomicBoolean start, int delay )
 			  {
 					this.Db = db;
 					this.PropertyKey = propertyKey;

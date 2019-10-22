@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.StringIndexKey.ENTITY_ID_SIZE;
+//	import static org.Neo4Net.kernel.impl.index.schema.StringIndexKey.ENTITY_ID_SIZE;
 
 	/// <summary>
 	/// <seealso cref="Layout"/> for strings.
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override void ReadKey( PageCursor cursor, StringIndexKey into, int keySize )
 		 {
-			  if ( keySize < ENTITY_ID_SIZE )
+			  if ( keySize < IEntity_ID_SIZE )
 			  {
 					into.EntityId = long.MinValue;
 					into.BytesLength = 0;
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					return;
 			  }
 			  into.EntityId = cursor.Long;
-			  int bytesLength = keySize - ENTITY_ID_SIZE;
+			  int bytesLength = keySize - IEntity_ID_SIZE;
 			  into.BytesLength = bytesLength;
 			  cursor.GetBytes( into.Bytes, 0, bytesLength );
 		 }

@@ -32,7 +32,7 @@ namespace Neo4Net.Cypher.Internal.compiler.v3_5.common
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 	/// <summary>
-	/// Inspired by <seealso cref="org.neo4j.kernel.impl.api.PropertyValueComparisonTest"/>
+	/// Inspired by <seealso cref="org.Neo4Net.kernel.impl.api.PropertyValueComparisonTest"/>
 	/// </summary>
 	public class CypherOrderabilityTest
 	{

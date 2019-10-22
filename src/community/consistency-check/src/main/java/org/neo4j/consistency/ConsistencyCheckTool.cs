@@ -25,7 +25,7 @@ namespace Neo4Net.Consistency
 
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using Strings = Neo4Net.Helpers.Strings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
@@ -42,15 +42,15 @@ namespace Neo4Net.Consistency
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Args.jarUsage;
+//	import static org.Neo4Net.helpers.Args.jarUsage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Strings.joinAsLines;
+//	import static org.Neo4Net.helpers.Strings.joinAsLines;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
+//	import static org.Neo4Net.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	public class ConsistencyCheckTool
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.Consistency
 		 {
 			  try
 			  {
-					Console.Error.WriteLine( "WARNING: ConsistencyCheckTool is deprecated and support for it will be" + "removed in a future version of Neo4j. Please use neo4j-admin check-consistency." );
+					Console.Error.WriteLine( "WARNING: ConsistencyCheckTool is deprecated and support for it will be" + "removed in a future version of Neo4Net. Please use Neo4Net-admin check-consistency." );
 					RunConsistencyCheckTool( args, System.out, System.err );
 			  }
 			  catch ( ToolFailureException e )
@@ -137,7 +137,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkDbState(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration) throws ToolFailureException
+//ORIGINAL LINE: private void checkDbState(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration) throws ToolFailureException
 		 private void CheckDbState( DatabaseLayout databaseLayout, Config tuningConfiguration )
 		 {
 			  try
@@ -158,7 +158,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File determineStoreDirectory(org.neo4j.helpers.Args arguments) throws ToolFailureException
+//ORIGINAL LINE: private java.io.File determineStoreDirectory(org.Neo4Net.helpers.Args arguments) throws ToolFailureException
 		 private File DetermineStoreDirectory( Args arguments )
 		 {
 			  IList<string> unprefixedArguments = arguments.Orphans();
@@ -175,7 +175,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.kernel.configuration.Config readConfiguration(org.neo4j.helpers.Args arguments) throws ToolFailureException
+//ORIGINAL LINE: private static org.Neo4Net.kernel.configuration.Config readConfiguration(org.Neo4Net.helpers.Args arguments) throws ToolFailureException
 		 private static Config ReadConfiguration( Args arguments )
 		 {
 			  string configFilePath = arguments.Get( CONFIG, null );
@@ -196,7 +196,7 @@ namespace Neo4Net.Consistency
 
 		 private string Usage()
 		 {
-			  return joinAsLines( jarUsage( this.GetType(), " [-config <neo4j.conf>] [-v] <storedir>" ), "WHERE:   -config <filename>  Is the location of an optional properties file", "                             containing tuning parameters for the consistency check.", "         -v                  Produce execution output.", "         <storedir>          Is the path to the store to check." );
+			  return joinAsLines( jarUsage( this.GetType(), " [-config <Neo4Net.conf>] [-v] <storedir>" ), "WHERE:   -config <filename>  Is the location of an optional properties file", "                             containing tuning parameters for the consistency check.", "         -v                  Produce execution output.", "         <storedir>          Is the path to the store to check." );
 		 }
 
 		 public class ToolFailureException : Exception

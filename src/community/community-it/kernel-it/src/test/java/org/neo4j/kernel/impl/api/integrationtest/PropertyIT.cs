@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
 	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
 
 	public class PropertyIT : KernelIntegrationTest
 	{
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 					transaction.DataWrite().relationshipRemoveProperty(rel, prop1);
 					fail( "Should have failed." );
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					assertThat( e.Message, equalTo( "Unable to load RELATIONSHIP with id " + rel + "." ) );
 			  }

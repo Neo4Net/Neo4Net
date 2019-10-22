@@ -24,9 +24,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.configuration
 {
 
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
 
 
 	public abstract class ConnectorValidator : SettingGroup<object>
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.configuration
 		 private static readonly ISet<string> _validTypes = Arrays.stream( Enum.GetValues( typeof( Connector.ConnectorType ) ) ).map( Enum.name ).collect( toSet() );
 		 internal static readonly string DeprecatedConnectorMsg = "Warning: connectors with names other than [http,https,bolt] are%n" +
 							  "deprecated and support for them will be removed in a future%n" +
-							  "version of Neo4j. Offending lines in " + Config.DEFAULT_CONFIG_FILE_NAME + ":%n%n%s";
+							  "version of Neo4Net. Offending lines in " + Config.DEFAULT_CONFIG_FILE_NAME + ":%n%n%s";
 		 protected internal readonly Connector.ConnectorType Type;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.configuration
 		 /// <exception cref="InvalidSettingException"> if an answer can not be determined, for example in case of a missing second
 		 /// mandatory setting. </exception>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public boolean owns(@Nonnull String key, @Nonnull Map<String,String> rawConfig) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public boolean owns(@Nonnull String key, @Nonnull Map<String,String> rawConfig) throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual bool Owns( string key, IDictionary<string, string> rawConfig )
 		 {
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public java.util.stream.Stream<java.util.Map.Entry<String,String>> ownedEntries(@Nonnull Map<String,String> params) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Nonnull public java.util.stream.Stream<java.util.Map.Entry<String,String>> ownedEntries(@Nonnull Map<String,String> params) throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual Stream<KeyValuePair<string, string>> OwnedEntries( IDictionary<string, string> @params )
 		 {
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public java.util.Map<String,String> validate(@Nonnull Map<String,String> rawConfig, @Nonnull Consumer<String> warningConsumer) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Override @Nonnull public java.util.Map<String,String> validate(@Nonnull Map<String,String> rawConfig, @Nonnull Consumer<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override IDictionary<string, string> Validate( IDictionary<string, string> rawConfig, Consumer<string> warningConsumer )
 		 {
@@ -177,11 +177,11 @@ namespace Neo4Net.Kernel.configuration
 		 /// 
 		 /// <returns> a setting which is not necessarily literally defined in the map provided </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull protected abstract java.util.Optional<org.neo4j.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params);
+//ORIGINAL LINE: @Nonnull protected abstract java.util.Optional<org.Neo4Net.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params);
 		 protected internal abstract Optional<Setting<object>> GetSettingFor( string settingName, IDictionary<string, string> @params );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public java.util.List<org.neo4j.graphdb.config.Setting<Object>> settings(@Nonnull Map<String,String> params)
+//ORIGINAL LINE: @Override public java.util.List<org.Neo4Net.graphdb.config.Setting<Object>> settings(@Nonnull Map<String,String> params)
 		 public override IList<Setting<object>> Settings( IDictionary<string, string> @params )
 		 {
 			  return OwnedEntries( @params ).map( e => GetSettingFor( e.Key, @params ) ).filter( Optional.isPresent ).map( Optional.get ).collect( toList() );

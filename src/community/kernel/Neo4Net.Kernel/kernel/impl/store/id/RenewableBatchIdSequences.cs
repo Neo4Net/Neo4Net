@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.store.id
 {
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.Kernel.impl.store;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 

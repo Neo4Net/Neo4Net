@@ -51,9 +51,9 @@ namespace Neo4Net.Test.server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 
 	/// <summary>
 	/// A tool for performing REST HTTP requests
@@ -260,7 +260,7 @@ namespace Neo4Net.Test.server
 		 {
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  internal readonly ClientResponse ResponseConflict;
-			  internal readonly string Entity;
+			  internal readonly string IEntity;
 
 			  public Response( ClientResponse response )
 			  {
@@ -288,31 +288,31 @@ namespace Neo4Net.Test.server
 			  {
 					try
 					{
-						 return ( T ) JsonHelper.readJson( Entity );
+						 return ( T ) JsonHelper.readJson( IEntity );
 					}
 					catch ( JsonParseException e )
 					{
-						 throw new Exception( "Unable to deserialize: " + Entity, e );
+						 throw new Exception( "Unable to deserialize: " + IEntity, e );
 					}
 			  }
 
 			  public virtual string RawContent()
 			  {
-					return Entity;
+					return IEntity;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String stringFromContent(String key) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public String stringFromContent(String key) throws org.Neo4Net.server.rest.domain.JsonParseException
 			  public virtual string StringFromContent( string key )
 			  {
 					return Get( key ).asText();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.codehaus.jackson.JsonNode get(String fieldName) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: public org.codehaus.jackson.JsonNode get(String fieldName) throws org.Neo4Net.server.rest.domain.JsonParseException
 			  public virtual JsonNode Get( string fieldName )
 			  {
-					return JsonHelper.jsonNode( Entity ).get( fieldName );
+					return JsonHelper.jsonNode( IEntity ).get( fieldName );
 			  }
 
 			  public virtual string Header( string name )
@@ -332,7 +332,7 @@ namespace Neo4Net.Test.server
 						 }
 					}
 					sb.Append( "\n" );
-					sb.Append( Entity ).Append( "\n" );
+					sb.Append( IEntity ).Append( "\n" );
 
 					return sb.ToString();
 			  }

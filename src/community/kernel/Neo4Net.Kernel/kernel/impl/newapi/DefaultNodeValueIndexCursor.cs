@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using ImmutableEmptyLongIterator = org.eclipse.collections.impl.iterator.ImmutableEmptyLongIterator;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
@@ -42,27 +42,27 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.mergeToSet;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeek;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForRangeSeekByPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForScan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
+//	import static org.Neo4Net.kernel.impl.newapi.TxStateIndexChanges.indexUpdatesWithValuesForSuffixOrContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal sealed class DefaultNodeValueIndexCursor : IndexCursor<IndexProgressor>, NodeValueIndexCursor, IndexProgressor_NodeValueClient, SortedMergeJoin.Sink
 	{

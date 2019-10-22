@@ -26,14 +26,14 @@ namespace Neo4Net.Kernel.impl.core
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -43,9 +43,9 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
 
-	public class TestLoopRelationships : AbstractNeo4jTestCase
+	public class TestLoopRelationships : AbstractNeo4NetTestCase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException exception = org.junit.rules.ExpectedException.none();
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.impl.core
 		 public virtual void CannotDeleteNodeWithLoopStillAttached()
 		 {
 			  // Given
-			  GraphDatabaseService db = GraphDb;
+			  IGraphDatabaseService db = GraphDb;
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )
 			  {

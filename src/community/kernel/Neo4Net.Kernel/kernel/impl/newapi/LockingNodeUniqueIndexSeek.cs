@@ -30,22 +30,22 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
 
 	public class LockingNodeUniqueIndexSeek
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <CURSOR extends org.neo4j.internal.kernel.api.NodeValueIndexCursor> long apply(org.neo4j.kernel.impl.locking.Locks_Client locks, org.neo4j.storageengine.api.lock.LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, org.neo4j.internal.kernel.api.IndexReference index, org.neo4j.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public static <CURSOR extends org.Neo4Net.internal.kernel.api.NodeValueIndexCursor> long apply(org.Neo4Net.kernel.impl.locking.Locks_Client locks, org.Neo4Net.storageengine.api.lock.LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public static long Apply<CURSOR>( Neo4Net.Kernel.impl.locking.Locks_Client locks, LockTracer lockTracer, System.Func<CURSOR> cursors, UniqueNodeIndexSeeker<CURSOR> nodeIndexSeeker, Read read, IndexReference index, params IndexQuery.ExactPredicate[] predicates ) where CURSOR : Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor
 		 {
-			  int[] entityTokenIds = index.Schema().EntityTokenIds;
-			  if ( entityTokenIds.Length != 1 )
+			  int[] IEntityTokenIds = index.Schema().EntityTokenIds;
+			  if ( IEntityTokenIds.Length != 1 )
 			  {
 					throw new IndexNotApplicableKernelException( "Multi-token index " + index + " does not support uniqueness." );
 			  }
-			  long indexEntryId = indexEntryResourceId( entityTokenIds[0], predicates );
+			  long indexEntryId = indexEntryResourceId( IEntityTokenIds[0], predicates );
 
 			  //First try to find node under a shared lock
 			  //if not found upgrade to exclusive and try again
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal interface UniqueNodeIndexSeeker<CURSOR> where CURSOR : Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeIndexSeekWithFreshIndexReader(CURSOR cursor, org.neo4j.storageengine.api.schema.IndexReader indexReader, org.neo4j.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException;
+//ORIGINAL LINE: void nodeIndexSeekWithFreshIndexReader(CURSOR cursor, org.Neo4Net.storageengine.api.schema.IndexReader indexReader, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException;
 			  void NodeIndexSeekWithFreshIndexReader( CURSOR cursor, IndexReader indexReader, params IndexQuery.ExactPredicate[] predicates );
 		 }
 	}

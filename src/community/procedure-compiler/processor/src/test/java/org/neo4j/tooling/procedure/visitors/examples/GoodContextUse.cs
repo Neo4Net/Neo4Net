@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Tooling.procedure.visitors.examples
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Context = Neo4Net.Procedure.Context;
 
 	public class GoodContextUse
@@ -27,8 +27,8 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 		 private static readonly object @lock = new object();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-		 public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+		 public IGraphDatabaseService Db;
 	}
 
 }

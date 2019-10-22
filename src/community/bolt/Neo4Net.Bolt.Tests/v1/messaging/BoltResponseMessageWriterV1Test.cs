@@ -22,7 +22,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	using Test = org.junit.Test;
 	using InOrder = org.mockito.InOrder;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using IgnoredMessage = Neo4Net.Bolt.v1.messaging.response.IgnoredMessage;
 	using RecordMessage = Neo4Net.Bolt.v1.messaging.response.RecordMessage;
@@ -48,17 +48,17 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.IGNORED;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.date;
+//	import static org.Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.map;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
 
 	public class BoltResponseMessageWriterV1Test
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldWriteRecordMessage()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 
 			  BoltResponseMessageWriterV1 writer = NewWriter( output, packer );
 
@@ -87,7 +87,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldWriteSuccessMessage()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 
 			  BoltResponseMessageWriterV1 writer = NewWriter( output, packer );
 
@@ -106,7 +106,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldWriteFailureMessage()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 
 			  BoltResponseMessageWriterV1 writer = NewWriter( output, packer );
 
@@ -127,7 +127,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldWriteIgnoredMessage()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 
 			  BoltResponseMessageWriterV1 writer = NewWriter( output, packer );
 
@@ -145,7 +145,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldFlush()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 
 			  BoltResponseMessageWriterV1 writer = NewWriter( output, packer );
 
@@ -160,7 +160,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldNotifyOutputAboutFailedRecordMessage()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  IOException error = new IOException( "Unable to pack 42" );
 			  doThrow( error ).when( packer ).pack( longValue( 42 ) );
 
@@ -189,7 +189,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public virtual void ShouldNotNotifyOutputWhenOutputItselfFails()
 		 {
 			  PackOutput output = mock( typeof( PackOutput ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  IOException error = new IOException( "Unable to flush" );
 			  doThrow( error ).when( output ).messageSucceeded();
 
@@ -214,7 +214,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  verify( output, never() ).messageFailed();
 		 }
 
-		 private static BoltResponseMessageWriterV1 NewWriter( PackOutput output, Neo4Net.Bolt.messaging.Neo4jPack_Packer packer )
+		 private static BoltResponseMessageWriterV1 NewWriter( PackOutput output, Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  return new BoltResponseMessageWriterV1( @out => packer, output, NullLogService.Instance );
 		 }

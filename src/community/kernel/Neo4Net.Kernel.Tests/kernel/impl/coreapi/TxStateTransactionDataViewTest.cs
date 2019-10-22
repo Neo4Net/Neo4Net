@@ -25,12 +25,12 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using LabelEntry = Neo4Net.Graphdb.@event.LabelEntry;
-	using Neo4Net.Graphdb.@event;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
+	using Neo4Net.GraphDb.Events;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
@@ -67,9 +67,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 
 	public class TxStateTransactionDataViewTest
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 private readonly TransactionState _state = new TxState();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.neo4j.internal.kernel.api.exceptions.PropertyKeyIdNotFoundKernelException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.internal.kernel.api.exceptions.PropertyKeyIdNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -363,7 +363,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 {
 			  EmbeddedProxySPI spi = mock( typeof( EmbeddedProxySPI ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.api.KernelTransactionImplementation transaction = mock(org.neo4j.kernel.impl.api.KernelTransactionImplementation.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.KernelTransactionImplementation transaction = mock(org.Neo4Net.kernel.impl.api.KernelTransactionImplementation.class);
 			  KernelTransactionImplementation transaction = mock( typeof( KernelTransactionImplementation ) );
 			  when( transaction.MetaData ).thenReturn( genericMap( "username", "Igor" ) );
 			  TxStateTransactionDataSnapshot transactionDataSnapshot = new TxStateTransactionDataSnapshot( _state, spi, _ops, transaction );
@@ -371,12 +371,12 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  assertThat( "Expected metadata map to contain defined username", transactionDataSnapshot.MetaData(), equalTo(genericMap("username", "Igor")) );
 		 }
 
-		 private IList<long> IdList<T1>( IEnumerable<T1> entities ) where T1 : Neo4Net.Graphdb.PropertyContainer
+		 private IList<long> IdList<T1>( IEnumerable<T1> entities ) where T1 : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  IList<long> @out = new List<long>();
-			  foreach ( PropertyContainer entity in entities )
+			  foreach ( IPropertyContainer IEntity in entities )
 			  {
-					@out.Add( entity is Node ? ( ( Node ) entity ).Id : ( ( Relationship ) entity ).Id );
+					@out.Add( IEntity is Node ? ( ( Node ) IEntity ).Id : ( ( Relationship ) IEntity ).Id );
 			  }
 			  return @out;
 		 }

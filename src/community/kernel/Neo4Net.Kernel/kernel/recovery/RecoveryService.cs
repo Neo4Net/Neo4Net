@@ -30,17 +30,17 @@ namespace Neo4Net.Kernel.recovery
 		 void StartRecovery();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.log.TransactionCursor getTransactions(org.neo4j.kernel.impl.transaction.log.LogPosition recoveryFromPosition) throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.TransactionCursor getTransactions(org.Neo4Net.kernel.impl.transaction.log.LogPosition recoveryFromPosition) throws java.io.IOException;
 		 TransactionCursor GetTransactions( LogPosition recoveryFromPosition );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.log.TransactionCursor getTransactionsInReverseOrder(org.neo4j.kernel.impl.transaction.log.LogPosition recoveryFromPosition) throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.TransactionCursor getTransactionsInReverseOrder(org.Neo4Net.kernel.impl.transaction.log.LogPosition recoveryFromPosition) throws java.io.IOException;
 		 TransactionCursor GetTransactionsInReverseOrder( LogPosition recoveryFromPosition );
 
 		 RecoveryStartInformation RecoveryStartInformation { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RecoveryApplier getRecoveryApplier(org.neo4j.storageengine.api.TransactionApplicationMode mode) throws Exception;
+//ORIGINAL LINE: RecoveryApplier getRecoveryApplier(org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception;
 		 RecoveryApplier GetRecoveryApplier( TransactionApplicationMode mode );
 
 		 void TransactionsRecovered( CommittedTransactionRepresentation lastRecoveredTransaction, LogPosition positionAfterLastRecoveredTransaction );

@@ -24,27 +24,27 @@ namespace Common
 {
 
 	using PathImpl = Neo4Net.Graphalgo.impl.util.PathImpl;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 	public class SimpleGraphBuilder
 	{
 		 public const string KEY_ID = "name";
 
-		 internal GraphDatabaseService GraphDb;
+		 internal IGraphDatabaseService GraphDb;
 		 internal Dictionary<string, Node> Nodes;
 		 internal Dictionary<Node, string> NodeNames;
 		 internal ISet<Relationship> Edges;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 internal RelationshipType CurrentRelTypeConflict;
 
-		 public SimpleGraphBuilder( GraphDatabaseService graphDb, RelationshipType relationshipType ) : base()
+		 public SimpleGraphBuilder( IGraphDatabaseService graphDb, RelationshipType relationshipType ) : base()
 		 {
 			  this.GraphDb = graphDb;
 			  Nodes = new Dictionary<string, Node>();

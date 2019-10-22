@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.roles
 {
@@ -54,21 +54,21 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.MessageUtils.messageFor;
+//	import static org.Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
+//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.roles.Role.FOLLOWER;
+//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.FOLLOWER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
+//	import static org.Neo4Net.causalclustering.core.consensus.state.RaftStateBuilder.raftState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.identity.RaftTestMember.member;
+//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class FollowerTest
 	{
@@ -1081,21 +1081,21 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.core.consensus.state.RaftState preElectionActive() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.state.RaftState preElectionActive() throws java.io.IOException
 		 private RaftState PreElectionActive()
 		 {
 			  return raftState().myself(_myself).supportsPreVoting(true).setPreElection(true).votingMembers(asSet(_myself, _member1, _member2, _member3)).build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.core.consensus.state.RaftState preElectionSupported() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.core.consensus.state.RaftState preElectionSupported() throws java.io.IOException
 		 private RaftState PreElectionSupported()
 		 {
 			  return raftState().myself(_myself).supportsPreVoting(true).votingMembers(asSet(_myself, _member1, _member2)).build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void appendSomeEntriesToLog(org.neo4j.causalclustering.core.consensus.state.RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex) throws java.io.IOException
+//ORIGINAL LINE: private void appendSomeEntriesToLog(org.Neo4Net.causalclustering.core.consensus.state.RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex) throws java.io.IOException
 		 private void AppendSomeEntriesToLog( RaftState raft, Follower follower, int numberOfEntriesToAppend, int term, int firstIndex )
 		 {
 			  for ( int i = 0; i < numberOfEntriesToAppend; i++ )

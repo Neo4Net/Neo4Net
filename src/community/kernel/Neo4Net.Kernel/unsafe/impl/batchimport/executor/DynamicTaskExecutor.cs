@@ -31,7 +31,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.executor
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.SILENT_UNCAUGHT_EXCEPTION_HANDLER;
+//	import static org.Neo4Net.helpers.Exceptions.SILENT_UNCAUGHT_EXCEPTION_HANDLER;
 
 	/// <summary>
 	/// Implementation of <seealso cref="TaskExecutor"/> with a maximum queue size and where each processor is a dedicated

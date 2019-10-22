@@ -22,12 +22,12 @@ namespace Neo4Net.Kernel
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -35,21 +35,21 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestTransactionEventDeadlocks
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule database = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public DatabaseRule Database = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canAvoidDeadlockThatWouldHappenIfTheRelationshipTypeCreationTransactionModifiedData()
 		 public virtual void CanAvoidDeadlockThatWouldHappenIfTheRelationshipTypeCreationTransactionModifiedData()
 		 {
-			  GraphDatabaseService graphdb = Database.GraphDatabaseAPI;
+			  IGraphDatabaseService graphdb = Database.GraphDatabaseAPI;
 			  Node node = null;
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") @Override public Void beforeCommit(org.neo4j.graphdb.event.TransactionData data)
+//ORIGINAL LINE: @SuppressWarnings("boxing") @Override public Void beforeCommit(org.Neo4Net.graphdb.event.TransactionData data)
 			  public override Void BeforeCommit( TransactionData data )
 			  {
 					if ( Iterables.count( data.CreatedRelationships() ) == 0 )

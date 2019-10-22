@@ -52,8 +52,8 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	/// <para>
 	///     The tracing implementation is determined by the {@code unsupported.dbms.tracer} setting. Two built-in implementations
 	///     exist: {@code default} and {@code null}. Alternative implementations can be loaded from the
-	///     classpath by referencing their <seealso cref="org.neo4j.kernel.monitoring.tracing.TracerFactory"/> in a
-	///     {@code META-INF/services/org.neo4j.kernel.monitoring.tracing.TracerFactory}, and setting
+	///     classpath by referencing their <seealso cref="org.Neo4Net.kernel.monitoring.tracing.TracerFactory"/> in a
+	///     {@code META-INF/services/org.Neo4Net.kernel.monitoring.tracing.TracerFactory}, and setting
 	///     {@code unsupported.dbms.tracer} to the appropriate value.
 	/// </para>
 	/// <h2>Designing and implementing tracers</h2>
@@ -94,9 +94,9 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	/// <para>
 	///     The {@code default} and {@code null} implementation are always available, and 3rd party implementations can
 	///     piggy-back on them and extend them. At least one 3rd party implementation is known at this point; the
-	///     <a href="https://github.com/neo4j-contrib/neo4j-jfr">neo4j-jfr implementation</a>. It is recommended that
+	///     <a href="https://github.com/Neo4Net-contrib/Neo4Net-jfr">Neo4Net-jfr implementation</a>. It is recommended that
 	///     those change the tracer or trace event interfaces, or add tracing to more subsystems, also make sure to keep
-	///     the neo4j-jfr code base up to date.
+	///     the Neo4Net-jfr code base up to date.
 	/// </para>
 	/// </summary>
 	public class Tracers
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// Create a Tracers subsystem with the desired implementation, if it can be found and created.
 		 /// 
 		 /// Otherwise the default implementation is used, and a warning is logged to the given StringLogger. </summary>
-		 /// <param name="desiredImplementationName"> The name of the desired {@link org.neo4j.kernel.monitoring.tracing
+		 /// <param name="desiredImplementationName"> The name of the desired {@link org.Neo4Net.kernel.monitoring.tracing
 		 /// .TracerFactory} implementation, as given by its <seealso cref="TracerFactory.getImplementationName()"/> method. </param>
 		 /// <param name="msgLog"> A <seealso cref="Log"/> for logging when the desired implementation cannot be created. </param>
 		 /// <param name="monitors"> the monitoring manager </param>

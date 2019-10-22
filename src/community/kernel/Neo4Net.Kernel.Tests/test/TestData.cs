@@ -132,7 +132,7 @@ namespace Neo4Net.Test
 //ORIGINAL LINE: final Title title = description.getAnnotation(Title.class);
 			  Title title = description.getAnnotation( typeof( Title ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.annotations.Documented doc = description.getAnnotation(org.neo4j.kernel.impl.annotations.Documented.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.annotations.Documented doc = description.getAnnotation(org.Neo4Net.kernel.impl.annotations.Documented.class);
 			  Documented doc = description.getAnnotation( typeof( Documented ) );
 			  GraphDescription.Graph g = description.getAnnotation( typeof( GraphDescription.Graph ) );
 			  if ( g == null )

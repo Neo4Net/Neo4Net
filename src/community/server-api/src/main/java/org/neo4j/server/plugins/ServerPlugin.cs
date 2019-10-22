@@ -26,32 +26,32 @@ namespace Neo4Net.Server.plugins
 	using Service = Neo4Net.Helpers.Service;
 
 	/// <summary>
-	/// API for creating extensions for the Neo4j server.
+	/// API for creating extensions for the Neo4Net server.
 	/// <para>
 	/// Extensions are created by creating a subclass of this class. The subclass
 	/// should have a public no-argument constructor (or no constructor at all).
 	/// Then place this class in a jar-file that contains a file called
-	/// <code>META-INF/services/org.neo4j.server.plugins.ServerPlugin</code>.
+	/// <code>META-INF/services/org.Neo4Net.server.plugins.ServerPlugin</code>.
 	/// This file should contain the fully qualified name of the class that extends
-	/// <seealso cref="ServerPlugin"/>, e.g. <code>com.example.MyNeo4jServerExtension</code>
-	/// on a single line. If the jar contains multiple extensions to the Neo4j
+	/// <seealso cref="ServerPlugin"/>, e.g. <code>com.example.MyNeo4NetServerExtension</code>
+	/// on a single line. If the jar contains multiple extensions to the Neo4Net
 	/// server, this file should contain the fully qualified class names of all
 	/// extension classes, each class name on its own line in the file. When the jar
 	/// file is placed on the class path of the server, it will be loaded
 	/// automatically when the server starts.
 	/// </para>
 	/// <para>
-	/// The easiest way to implement Neo4j server extensions is by defining public
+	/// The easiest way to implement Neo4Net server extensions is by defining public
 	/// methods on the extension class annotated with
 	/// <code>@<seealso cref="PluginTarget"/></code>. The parameter for the
 	/// <seealso cref="PluginTarget"/> annotation should be the class representing the
-	/// entity that the method extends. The entities that can be extended are
+	/// IEntity that the method extends. The entities that can be extended are
 	/// currently:
 	/// <ul>
-	/// <li><seealso cref="org.neo4j.graphdb.GraphDatabaseService"/> - a general extension
+	/// <li><seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> - a general extension
 	/// method to the server</li>
-	/// <li><seealso cref="org.neo4j.graphdb.Node"/> - an extension method for a node</li>
-	/// <li><seealso cref="org.neo4j.graphdb.Relationship"/> - an extension method for a
+	/// <li><seealso cref="org.Neo4Net.graphdb.Node"/> - an extension method for a node</li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Relationship"/> - an extension method for a
 	/// relationship</li>
 	/// </ul>
 	/// You can then use the <code>@<seealso cref="Source"/></code> annotation on one parameter of the method to get
@@ -59,8 +59,8 @@ namespace Neo4Net.Server.plugins
 	/// supported type, and annotated with the <code>@<seealso cref="Parameter"/></code> annotation specifying the name by which the
 	/// parameter is passed from the client. The supported parameter types are:
 	/// <ul>
-	/// <li><seealso cref="org.neo4j.graphdb.Node"/></li>
-	/// <li><seealso cref="org.neo4j.graphdb.Relationship"/></li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Node"/></li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Relationship"/></li>
 	/// <li><seealso cref="java.net.URI"/> or <seealso cref="java.net.URL"/></li>
 	/// <li><seealso cref="Integer"/></li>
 	/// <li><seealso cref="Long"/></li>
@@ -145,8 +145,8 @@ namespace Neo4Net.Server.plugins
 		 /// implementation loads <seealso cref="PluginPoint"/> based on methods with the
 		 /// <seealso cref="PluginTarget"/> annotation.
 		 /// </summary>
-		 /// <param name="extender">     the collection of <seealso cref="org.neo4j.server.plugins.PluginPoint"/>s for this
-		 ///                     <seealso cref="org.neo4j.server.plugins.ServerPlugin"/>.
+		 /// <param name="extender">     the collection of <seealso cref="org.Neo4Net.server.plugins.PluginPoint"/>s for this
+		 ///                     <seealso cref="org.Neo4Net.server.plugins.ServerPlugin"/>.
 		 ///  </param>
 		 [Obsolete]
 		 protected internal virtual void LoadServerExtender( ServerExtender extender )

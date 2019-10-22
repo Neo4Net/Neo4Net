@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 
 		 /// <summary>
 		 /// Set write state of the transaction, as given by
-		 /// <seealso cref="org.neo4j.kernel.impl.api.KernelTransactionImplementation.TransactionWriteState"/>.
+		 /// <seealso cref="org.Neo4Net.kernel.impl.api.KernelTransactionImplementation.TransactionWriteState"/>.
 		 /// </summary>
 		 string TransactionWriteState { set; }
 

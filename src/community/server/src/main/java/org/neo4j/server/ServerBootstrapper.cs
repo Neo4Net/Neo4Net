@@ -26,9 +26,9 @@ namespace Neo4Net.Server
 	using Signal = sun.misc.Signal;
 
 
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -48,9 +48,9 @@ namespace Neo4Net.Server
 	using JettyLogBridge = Neo4Net.Server.logging.JettyLogBridge;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.Util.neo4jVersion;
+//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.file.Files.createOrOpenAsOutputStream;
+//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 
 	public abstract class ServerBootstrapper : Bootstrapper
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.Server
 
 			  if ( args.Version() )
 			  {
-					Console.WriteLine( "neo4j " + neo4jVersion() );
+					Console.WriteLine( "Neo4Net " + Neo4NetVersion() );
 					return 0;
 			  }
 
@@ -117,12 +117,12 @@ namespace Neo4Net.Server
 			  catch ( TransactionFailureException tfe )
 			  {
 					string locationMsg = ( _server == null ) ? "" : " Another process may be using database location " + _server.Database.Location;
-					_log.error( format( "Failed to start Neo4j on %s.", _serverAddress ) + locationMsg, tfe );
+					_log.error( format( "Failed to start Neo4Net on %s.", _serverAddress ) + locationMsg, tfe );
 					return GRAPH_DATABASE_STARTUP_ERROR_CODE;
 			  }
 			  catch ( Exception e )
 			  {
-					_log.error( format( "Failed to start Neo4j on %s.", _serverAddress ), e );
+					_log.error( format( "Failed to start Neo4Net on %s.", _serverAddress ), e );
 					return WEB_SERVER_STARTUP_ERROR_CODE;
 			  }
 		 }
@@ -210,7 +210,7 @@ namespace Neo4Net.Server
 		 private void InstallSignalHandlers()
 		 {
 			  InstallSignalHandler( SIGTERM, false ); // SIGTERM is invoked when system service is stopped
-			  InstallSignalHandler( SIGINT, true ); // SIGINT is invoked when user hits ctrl-c  when running `neo4j console`
+			  InstallSignalHandler( SIGINT, true ); // SIGINT is invoked when user hits ctrl-c  when running `Neo4Net console`
 		 }
 
 		 private void InstallSignalHandler( string sig, bool tolerateErrors )
@@ -227,7 +227,7 @@ namespace Neo4Net.Server
 						 throw e;
 					}
 					// Errors occur on IBM JDK with IllegalArgumentException: Signal already used by VM: INT
-					// I can't find anywhere where we send a SIGINT to neo4j process so I don't think this is that important
+					// I can't find anywhere where we send a SIGINT to Neo4Net process so I don't think this is that important
 			  }
 		 }
 
@@ -252,7 +252,7 @@ namespace Neo4Net.Server
 		 {
 			  _shutdownHook = new Thread(() =>
 			  {
-			  _log.info( "Neo4j Server shutdown initiated by request" );
+			  _log.info( "Neo4Net Server shutdown initiated by request" );
 			  DoShutdown();
 			  });
 			  Runtime.Runtime.addShutdownHook( _shutdownHook );

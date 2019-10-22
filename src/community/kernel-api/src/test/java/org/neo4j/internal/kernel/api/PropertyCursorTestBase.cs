@@ -26,9 +26,9 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
@@ -99,7 +99,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  return true;
 		 }
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -168,7 +168,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 		 }
 
-		 private long CreateNodeWithProperty( GraphDatabaseService graphDb, string propertyKey, object value )
+		 private long CreateNodeWithProperty( IGraphDatabaseService graphDb, string propertyKey, object value )
 		 {
 			  Node p = graphDb.CreateNode();
 			  p.SetProperty( propertyKey, value );

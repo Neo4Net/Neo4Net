@@ -64,7 +64,7 @@ namespace Neo4Net.Ext.Udc.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKeys.Features_Fields.bolt;
+//	import static org.Neo4Net.udc.UsageDataKeys.Features_Fields.bolt;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class DefaultUdcInformationCollectorTest
@@ -87,7 +87,7 @@ namespace Neo4Net.Ext.Udc.impl
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 		 private readonly UsageData _usageData = new UsageData( mock( typeof( IJobScheduler ) ) );

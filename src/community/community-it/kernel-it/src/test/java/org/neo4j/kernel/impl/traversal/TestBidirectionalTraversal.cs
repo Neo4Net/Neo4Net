@@ -23,25 +23,25 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanderBuilder = Neo4Net.Graphdb.PathExpanderBuilder;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using StandardBranchCollisionDetector = Neo4Net.Graphdb.impl.traversal.StandardBranchCollisionDetector;
-	using BidirectionalTraversalDescription = Neo4Net.Graphdb.traversal.BidirectionalTraversalDescription;
-	using BranchCollisionPolicy = Neo4Net.Graphdb.traversal.BranchCollisionPolicy;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
-	using Neo4Net.Graphdb.traversal;
-	using SideSelectorPolicies = Neo4Net.Graphdb.traversal.SideSelectorPolicies;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanderBuilder = Neo4Net.GraphDb.PathExpanderBuilder;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
+	using BranchCollisionPolicy = Neo4Net.GraphDb.traversal.BranchCollisionPolicy;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using Neo4Net.GraphDb.traversal;
+	using SideSelectorPolicies = Neo4Net.GraphDb.traversal.SideSelectorPolicies;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
@@ -50,15 +50,15 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.includeIfContainsAll;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeIfContainsAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Uniqueness.NODE_PATH;
+//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Uniqueness.RELATIONSHIP_PATH;
+//	import static org.Neo4Net.graphdb.traversal.Uniqueness.RELATIONSHIP_PATH;
 
 	public class TestBidirectionalTraversal : TraversalTestBase
 	{
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 			  BranchCollisionPolicy collisionPolicy = ( evaluator, pathPredicate ) => new StandardBranchCollisionDetectorAnonymousInnerClass( this );
 
-			  Iterables.count( GraphDb.bidirectionalTraversalDescription().mirroredSides(GraphDb.traversalDescription().uniqueness(NODE_PATH).expand(PathExpanders.forType(To), new Neo4Net.Graphdb.traversal.InitialBranchState_State<>(0, 10))).collisionPolicy(collisionPolicy).traverse(GetNodeWithName("a"), GetNodeWithName("d")) );
+			  Iterables.count( GraphDb.bidirectionalTraversalDescription().mirroredSides(GraphDb.traversalDescription().uniqueness(NODE_PATH).expand(PathExpanders.forType(To), new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 10))).collisionPolicy(collisionPolicy).traverse(GetNodeWithName("a"), GetNodeWithName("d")) );
 		 }
 
 		 private class StandardBranchCollisionDetectorAnonymousInnerClass : StandardBranchCollisionDetector

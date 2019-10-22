@@ -21,10 +21,10 @@
  */
 namespace Neo4Net.Index.lucene
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.index;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.index;
 
 	/// <summary>
 	/// A utility for ordering nodes or relationships in a timeline. Entities are added
@@ -38,34 +38,34 @@ namespace Neo4Net.Index.lucene
 	/// </summary>
 	/// @deprecated This will be removed in the next major release. Please consider using schema indexes on date/time valued properties instead. 
 	[Obsolete("This will be removed in the next major release. Please consider using schema indexes on date/time valued properties instead.")]
-	public interface TimelineIndex<T> where T : Neo4Net.Graphdb.PropertyContainer
+	public interface TimelineIndex<T> where T : Neo4Net.GraphDb.PropertyContainer
 	{
-		 /// <returns> the last entity in the timeline, that is the entity with the highest
+		 /// <returns> the last IEntity in the timeline, that is the IEntity with the highest
 		 /// timestamp or {@code null} if the timeline is empty. </returns>
 		 [Obsolete]
 		 T Last { get; }
 
-		 /// <returns> the first entity in the timeline, that is the entity with the lowest
+		 /// <returns> the first IEntity in the timeline, that is the IEntity with the lowest
 		 /// timestamp or {@code null} if the timeline is empty. </returns>
 		 [Obsolete]
 		 T First { get; }
 
 		 /// <summary>
-		 /// Removes an entity from the timeline. The timestamp should be the same
+		 /// Removes an IEntity from the timeline. The timestamp should be the same
 		 /// as when it was added.
 		 /// </summary>
-		 /// <param name="entity"> the entity to remove from this timeline. </param>
-		 /// <param name="timestamp"> the timestamp this entity was added with. </param>
+		 /// <param name="entity"> the IEntity to remove from this timeline. </param>
+		 /// <param name="timestamp"> the timestamp this IEntity was added with. </param>
 		 [Obsolete]
-		 void Remove( T entity, long timestamp );
+		 void Remove( T IEntity, long timestamp );
 
 		 /// <summary>
-		 /// Adds an entity to this timeline with the given {@code timestamp}.
+		 /// Adds an IEntity to this timeline with the given {@code timestamp}.
 		 /// </summary>
-		 /// <param name="entity"> the entity to add to this timeline. </param>
+		 /// <param name="entity"> the IEntity to add to this timeline. </param>
 		 /// <param name="timestamp"> the timestamp to use. </param>
 		 [Obsolete]
-		 void Add( T entity, long timestamp );
+		 void Add( T IEntity, long timestamp );
 
 		 /// <summary>
 		 /// Query the timeline with optional lower/upper bounds and get back

@@ -31,19 +31,19 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.CharSeekers.charSeeker;
+//	import static org.Neo4Net.csv.reader.CharSeekers.charSeeker;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Collector.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collector.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Inputs.calculatePropertySize;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.calculatePropertySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.CsvInputIterator.extractHeader;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvInputIterator.extractHeader;
 
 	/// <summary>
 	/// Provides <seealso cref="Input"/> from data contained in tabular/csv form. Expects factories for instantiating
@@ -220,16 +220,16 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.unsafe.impl.batchimport.input.Input_Estimates calculateEstimates(System.Func<org.neo4j.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.unsafe.impl.batchimport.input.Input_Estimates calculateEstimates(System.Func<org.Neo4Net.values.storable.Value[], int> valueSizeCalculator) throws java.io.IOException
 		 public override Neo4Net.@unsafe.Impl.Batchimport.input.Input_Estimates CalculateEstimates( System.Func<Value[], int> valueSizeCalculator )
 		 {
 			  long[] nodeSample = Sample( _nodeDataFactory, _nodeHeaderFactory, valueSizeCalculator, node => node.labels().length );
-			  long[] relationshipSample = Sample( _relationshipDataFactory, _relationshipHeaderFactory, valueSizeCalculator, entity => 0 );
+			  long[] relationshipSample = Sample( _relationshipDataFactory, _relationshipHeaderFactory, valueSizeCalculator, IEntity => 0 );
 			  return knownEstimates( nodeSample[0], relationshipSample[0], nodeSample[1], relationshipSample[1], nodeSample[2], relationshipSample[2], nodeSample[3] );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long[] sample(Iterable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<org.neo4j.values.storable.Value[], int> valueSizeCalculator, System.Func<org.neo4j.unsafe.impl.batchimport.input.InputEntity, int> additionalCalculator) throws java.io.IOException
+//ORIGINAL LINE: private long[] sample(Iterable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<org.Neo4Net.values.storable.Value[], int> valueSizeCalculator, System.Func<org.Neo4Net.unsafe.impl.batchimport.input.InputEntity, int> additionalCalculator) throws java.io.IOException
 		 private long[] Sample( IEnumerable<DataFactory> dataFactories, Header.Factory headerFactory, System.Func<Value[], int> valueSizeCalculator, System.Func<InputEntity, int> additionalCalculator )
 		 {
 			  long[] estimates = new long[4]; // [entity count, property count, property size, labels (for nodes only)]
@@ -252,7 +252,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 										 // Extract the header from the first file in this group
 										 header = extractHeader( source, headerFactory, _idType, _config, _groups );
 									}
-									using ( CsvInputIterator iterator = new CsvInputIterator( source, data.Decorator(), header, _config, _idType, EMPTY, extractors(_config), groupId ), InputEntity entity = new InputEntity() )
+									using ( CsvInputIterator iterator = new CsvInputIterator( source, data.Decorator(), header, _config, _idType, EMPTY, extractors(_config), groupId ), InputEntity IEntity = new InputEntity() )
 									{
 										 int entities = 0;
 										 int properties = 0;
@@ -260,20 +260,20 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 										 int additional = 0;
 										 while ( iterator.Position() < _estimateSampleSize && iterator.Next(chunk) )
 										 {
-											  for ( ; chunk.Next( entity ); entities++ )
+											  for ( ; chunk.Next( IEntity ); entities++ )
 											  {
-													properties += entity.PropertyCount();
-													propertySize += calculatePropertySize( entity, valueSizeCalculator );
-													additional += additionalCalculator( entity );
+													properties += IEntity.PropertyCount();
+													propertySize += calculatePropertySize( IEntity, valueSizeCalculator );
+													additional += additionalCalculator( IEntity );
 											  }
 										 }
 										 if ( entities > 0 )
 										 {
-											  long entityCountInSource = ( long )( ( ( double ) source.Length() / iterator.Position() ) * entities );
-											  estimates[0] += entityCountInSource;
-											  estimates[1] += ( long )( ( ( double ) properties / entities ) * entityCountInSource );
-											  estimates[2] += ( long )( ( ( double ) propertySize / entities ) * entityCountInSource );
-											  estimates[3] += ( long )( ( ( double ) additional / entities ) * entityCountInSource );
+											  long IEntityCountInSource = ( long )( ( ( double ) source.Length() / iterator.Position() ) * entities );
+											  estimates[0] += IEntityCountInSource;
+											  estimates[1] += ( long )( ( ( double ) properties / entities ) * IEntityCountInSource );
+											  estimates[2] += ( long )( ( ( double ) propertySize / entities ) * IEntityCountInSource );
+											  estimates[3] += ( long )( ( ( double ) additional / entities ) * IEntityCountInSource );
 										 }
 									}
 							  }

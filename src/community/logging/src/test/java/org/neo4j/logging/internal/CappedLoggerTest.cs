@@ -38,7 +38,7 @@ namespace Neo4Net.Logging.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CappedLoggerTest

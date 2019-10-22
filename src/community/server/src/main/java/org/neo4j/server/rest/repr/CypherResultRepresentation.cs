@@ -22,15 +22,15 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.loop;
+//	import static org.Neo4Net.helpers.collection.Iterators.loop;
 
 	public class CypherResultRepresentation : MappingRepresentation
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Server.rest.repr
 		 private readonly MappingRepresentation _plan;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public CypherResultRepresentation(final org.neo4j.graphdb.Result result, boolean includeStats, boolean includePlan)
+//ORIGINAL LINE: public CypherResultRepresentation(final org.Neo4Net.graphdb.Result result, boolean includeStats, boolean includePlan)
 		 public CypherResultRepresentation( Result result, bool includeStats, bool includePlan ) : base( RepresentationType.String )
 		 {
 			  _resultRepresentation = CreateResultRepresentation( result );
@@ -170,7 +170,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<Object, org.neo4j.graphdb.ExecutionPlanDescription> planProvider(final org.neo4j.graphdb.Result result)
+//ORIGINAL LINE: private System.Func<Object, org.Neo4Net.graphdb.ExecutionPlanDescription> planProvider(final org.Neo4Net.graphdb.Result result)
 		 private System.Func<object, ExecutionPlanDescription> PlanProvider( Result result )
 		 {
 			  return from => result.ExecutionPlanDescription;

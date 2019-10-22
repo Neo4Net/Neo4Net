@@ -23,13 +23,13 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Lock = Neo4Net.Graphdb.Lock;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using TransientFailureException = Neo4Net.Graphdb.TransientFailureException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 
 	public class TopLevelTransaction : InternalTransaction
 	{
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 		 private bool _successCalled;
 		 private readonly KernelTransaction _transaction;
 
@@ -105,14 +105,14 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  return _successCalled ? "Transaction was marked as successful, but unable to commit transaction so rolled back." : "Unable to rollback transaction";
 		 }
 
-		 public override Lock AcquireWriteLock( PropertyContainer entity )
+		 public override Lock AcquireWriteLock( IPropertyContainer IEntity )
 		 {
-			  return _locker.exclusiveLock( _transaction, entity );
+			  return _locker.exclusiveLock( _transaction, IEntity );
 		 }
 
-		 public override Lock AcquireReadLock( PropertyContainer entity )
+		 public override Lock AcquireReadLock( IPropertyContainer IEntity )
 		 {
-			  return _locker.sharedLock( _transaction, entity );
+			  return _locker.sharedLock( _transaction, IEntity );
 		 }
 
 		 public override KernelTransaction.Type TransactionType()

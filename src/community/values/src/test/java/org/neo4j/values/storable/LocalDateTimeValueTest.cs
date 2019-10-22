@@ -28,17 +28,17 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.date;
+//	import static org.Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalDateTimeValue.localDateTime;
+//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalDateTimeValue.parse;
+//	import static org.Neo4Net.values.storable.LocalDateTimeValue.parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.localTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 
 	internal class LocalDateTimeValueTest
 	{

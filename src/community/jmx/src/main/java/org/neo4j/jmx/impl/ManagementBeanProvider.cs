@@ -41,17 +41,17 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Iterable<? extends Neo4jMBean> createMBeans(ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Iterable<? extends Neo4NetMBean> createMBeans(ManagementData management) throws javax.management.NotCompliantMBeanException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 protected internal virtual IEnumerable<Neo4jMBean> CreateMBeans( ManagementData management )
+		 protected internal virtual IEnumerable<Neo4NetMBean> CreateMBeans( ManagementData management )
 		 {
 			  return SingletonOrNone( CreateMBean( management ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Iterable<? extends Neo4jMBean> createMXBeans(ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: protected Iterable<? extends Neo4NetMBean> createMXBeans(ManagementData management) throws javax.management.NotCompliantMBeanException
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 protected internal virtual IEnumerable<Neo4jMBean> CreateMXBeans( ManagementData management )
+		 protected internal virtual IEnumerable<Neo4NetMBean> CreateMXBeans( ManagementData management )
 		 {
 			  Type implClass;
 			  try
@@ -73,20 +73,20 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract Neo4jMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException;
-		 protected internal abstract Neo4jMBean CreateMBean( ManagementData management );
+//ORIGINAL LINE: protected abstract Neo4NetMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException;
+		 protected internal abstract Neo4NetMBean CreateMBean( ManagementData management );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Neo4jMBean createMXBean(ManagementData management) throws javax.management.NotCompliantMBeanException
-		 protected internal virtual Neo4jMBean CreateMXBean( ManagementData management )
+//ORIGINAL LINE: protected Neo4NetMBean createMXBean(ManagementData management) throws javax.management.NotCompliantMBeanException
+		 protected internal virtual Neo4NetMBean CreateMXBean( ManagementData management )
 		 {
 			  return CreateMBean( management );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: final Iterable<? extends Neo4jMBean> loadBeans(org.neo4j.kernel.internal.KernelData kernel, ManagementSupport support) throws Exception
+//ORIGINAL LINE: final Iterable<? extends Neo4NetMBean> loadBeans(org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws Exception
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-		 internal IEnumerable<Neo4jMBean> LoadBeans( KernelData kernel, ManagementSupport support )
+		 internal IEnumerable<Neo4NetMBean> LoadBeans( KernelData kernel, ManagementSupport support )
 		 {
 			  if ( support.SupportsMxBeans() )
 			  {
@@ -99,8 +99,8 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Collection<? extends Neo4jMBean> singletonOrNone(Neo4jMBean mbean)
-		 private static ICollection<Neo4jMBean> SingletonOrNone( Neo4jMBean mbean )
+//ORIGINAL LINE: private static java.util.Collection<? extends Neo4NetMBean> singletonOrNone(Neo4NetMBean mbean)
+		 private static ICollection<Neo4NetMBean> SingletonOrNone( Neo4NetMBean mbean )
 		 {
 			  if ( mbean == null )
 			  {

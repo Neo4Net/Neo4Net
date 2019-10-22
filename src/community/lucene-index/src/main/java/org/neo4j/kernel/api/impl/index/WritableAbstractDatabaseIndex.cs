@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
 		 public override ResourceIterator<File> Snapshot()
 		 {
 			  _commitCloseLock.@lock();
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// <returns> newly created partition </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.impl.index.partition.AbstractIndexPartition addNewPartition() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition addNewPartition() throws java.io.IOException
 		 public virtual AbstractIndexPartition AddNewPartition()
 		 {
 			  return luceneIndex.addNewPartition();

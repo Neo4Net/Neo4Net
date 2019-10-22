@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 
 	public class SpecificDepthTraversalTest : TraversalTestBase
 	{

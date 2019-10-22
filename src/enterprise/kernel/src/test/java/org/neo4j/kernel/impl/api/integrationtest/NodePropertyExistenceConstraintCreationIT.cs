@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,20 +15,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
 	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
@@ -50,27 +50,27 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 
 	public class NodePropertyExistenceConstraintCreationIT : AbstractConstraintCreationIT<ConstraintDescriptor, LabelSchemaDescriptor>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int initializeLabelOrRelType(org.neo4j.internal.kernel.api.TokenWrite tokenWrite, String name) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: int initializeLabelOrRelType(org.Neo4Net.internal.kernel.api.TokenWrite tokenWrite, String name) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal override int InitializeLabelOrRelType( TokenWrite tokenWrite, string name )
 		 {
 			  return tokenWrite.LabelGetOrCreateForName( name );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.neo4j.internal.kernel.api.SchemaWrite writeOps, org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws Exception
 		 internal override ConstraintDescriptor CreateConstraint( SchemaWrite writeOps, LabelSchemaDescriptor descriptor )
 		 {
 			  return writeOps.NodePropertyExistenceConstraintCreate( descriptor );
 		 }
 
-		 internal override void CreateConstraintInRunningTx( GraphDatabaseService db, string label, string property )
+		 internal override void CreateConstraintInRunningTx( IGraphDatabaseService db, string label, string property )
 		 {
 			  SchemaHelper.createNodePropertyExistenceConstraint( db, label, property );
 		 }
@@ -81,18 +81,18 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dropConstraint(org.neo4j.internal.kernel.api.SchemaWrite writeOps, org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws Exception
+//ORIGINAL LINE: void dropConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws Exception
 		 internal override void DropConstraint( SchemaWrite writeOps, ConstraintDescriptor constraint )
 		 {
 			  writeOps.ConstraintDrop( constraint );
 		 }
 
-		 internal override void CreateOffendingDataInRunningTx( GraphDatabaseService db )
+		 internal override void CreateOffendingDataInRunningTx( IGraphDatabaseService db )
 		 {
 			  Db.createNode( label( KEY ) );
 		 }
 
-		 internal override void RemoveOffendingDataInRunningTx( GraphDatabaseService db )
+		 internal override void RemoveOffendingDataInRunningTx( IGraphDatabaseService db )
 		 {
 			  using ( ResourceIterator<Node> nodes = Db.findNodes( label( KEY ) ) )
 			  {

@@ -21,19 +21,19 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi
 {
-	using Lock = Neo4Net.Graphdb.Lock;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 
 	/// <summary>
 	/// Manages user-facing locks.
 	/// </summary>
-	public class PropertyContainerLocker
+	public class IPropertyContainerLocker
 	{
-		 public virtual Lock ExclusiveLock( KernelTransaction ktx, PropertyContainer container )
+		 public virtual Lock ExclusiveLock( KernelTransaction ktx, IPropertyContainer container )
 		 {
 			  using ( Statement ignore = ktx.AcquireStatement() )
 			  {
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  }
 		 }
 
-		 public virtual Lock SharedLock( KernelTransaction ktx, PropertyContainer container )
+		 public virtual Lock SharedLock( KernelTransaction ktx, IPropertyContainer container )
 		 {
 			  using ( Statement ignore = ktx.AcquireStatement() )
 			  {

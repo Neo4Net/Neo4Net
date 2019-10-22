@@ -31,11 +31,11 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.parseInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.flag;
+//	import static org.Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.parseZoneName;
+//	import static org.Neo4Net.values.storable.DateTimeValue.parseZoneName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.IntegralValue.safeCastIntegral;
+//	import static org.Neo4Net.values.storable.IntegralValue.safeCastIntegral;
 
 	public sealed class DateValue : TemporalValue<LocalDate, DateValue>
 	{
@@ -131,15 +131,15 @@ namespace Neo4Net.Values.Storable
 		 {
 			  if ( unit == ChronoUnit.MILLENNIA )
 			  {
-					return value.with( Neo4JTemporalField.YearOfMillennium, 0 );
+					return value.with( Neo4NetTemporalField.YearOfMillennium, 0 );
 			  }
 			  else if ( unit == ChronoUnit.CENTURIES )
 			  {
-					return value.with( Neo4JTemporalField.YearOfCentury, 0 );
+					return value.with( Neo4NetTemporalField.YearOfCentury, 0 );
 			  }
 			  else if ( unit == ChronoUnit.DECADES )
 			  {
-					return value.with( Neo4JTemporalField.YearOfDecade, 0 );
+					return value.with( Neo4NetTemporalField.YearOfDecade, 0 );
 			  }
 			  else if ( unit == ChronoUnit.YEARS )
 			  {

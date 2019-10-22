@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -33,7 +33,7 @@ namespace Neo4Net.Graphdb
 	public class MandatoryTransactionsForIndexHitsFacadeTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 		 private IndexHits<Node> _indexHits;
@@ -93,10 +93,10 @@ namespace Neo4Net.Graphdb
 
 		 private Index<Node> CreateIndex()
 		 {
-			  GraphDatabaseService graphDatabaseService = DbRule.GraphDatabaseAPI;
-			  using ( Transaction transaction = graphDatabaseService.BeginTx() )
+			  IGraphDatabaseService IGraphDatabaseService = DbRule.GraphDatabaseAPI;
+			  using ( Transaction transaction = IGraphDatabaseService.BeginTx() )
 			  {
-					Index<Node> index = graphDatabaseService.Index().forNodes("foo");
+					Index<Node> index = IGraphDatabaseService.Index().forNodes("foo");
 					transaction.Success();
 					return index;
 			  }
@@ -104,8 +104,8 @@ namespace Neo4Net.Graphdb
 
 		 private IndexHits<Node> QueryIndex( Index<Node> index )
 		 {
-			  GraphDatabaseService graphDatabaseService = DbRule.GraphDatabaseAPI;
-			  using ( Transaction ignored = graphDatabaseService.BeginTx() )
+			  IGraphDatabaseService IGraphDatabaseService = DbRule.GraphDatabaseAPI;
+			  using ( Transaction ignored = IGraphDatabaseService.BeginTx() )
 			  {
 					IndexHits<Node> hits = index.get( "foo", 42 );
 					hits.Close();

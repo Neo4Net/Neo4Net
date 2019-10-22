@@ -26,7 +26,7 @@ namespace Neo4Net.Logging
 	using Suppliers = Neo4Net.Functions.Suppliers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.FormattedLog.OUTPUT_STREAM_CONVERTER;
+//	import static org.Neo4Net.logging.FormattedLog.OUTPUT_STREAM_CONVERTER;
 
 	/// <summary>
 	/// A <seealso cref="LogProvider"/> implementation that applies a simple formatting to each log message.
@@ -105,8 +105,8 @@ namespace Neo4Net.Logging
 
 			  /// <summary>
 			  /// Use the specified log <seealso cref="Level"/> for any <seealso cref="Log"/>s that match the specified context. Any <seealso cref="Log"/> context that
-			  /// starts with the specified string will have its level set. For example, setting the level for the context {@code org.neo4j}
-			  /// would result in that level being applied to <seealso cref="Log"/>s with the context {@code org.neo4j.Foo}, {@code org.neo4j.foo.Bar}, etc.
+			  /// starts with the specified string will have its level set. For example, setting the level for the context {@code org.Neo4Net}
+			  /// would result in that level being applied to <seealso cref="Log"/>s with the context {@code org.Neo4Net.Foo}, {@code org.Neo4Net.foo.Bar}, etc.
 			  /// </summary>
 			  /// <param name="context"> the context of the Logs to set the level of, matching any Log context starting with this string </param>
 			  /// <param name="level"> the log level to apply </param>

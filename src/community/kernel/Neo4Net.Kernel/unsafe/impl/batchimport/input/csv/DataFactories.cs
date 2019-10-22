@@ -38,9 +38,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Neo4Net.Values.Storable;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.Readables.individualFiles;
+//	import static org.Neo4Net.csv.reader.Readables.individualFiles;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.Readables.iterator;
+//	import static org.Neo4Net.csv.reader.Readables.iterator;
 
 	/// <summary>
 	/// Provides common implementations of factories required by f.ex <seealso cref="CsvInput"/>.
@@ -101,7 +101,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 /// multiple times. </param>
 		 /// <returns> <seealso cref="DataFactory"/> that returns a <seealso cref="CharSeeker"/> over the supplied {@code readable} </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static DataFactory data(final Decorator decorator, final System.Func<org.neo4j.csv.reader.CharReadable> readable)
+//ORIGINAL LINE: public static DataFactory data(final Decorator decorator, final System.Func<org.Neo4Net.csv.reader.CharReadable> readable)
 		 public static DataFactory Data( Decorator decorator, System.Func<CharReadable> readable )
 		 {
 			  return config => new DataAnonymousInnerClass2( decorator, readable );
@@ -193,7 +193,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 						 Mark mark = new Mark();
 						 Extractors extractors = new Extractors( config.arrayDelimiter(), config.emptyQuotedStringsAsNull(), config.trimStrings(), DefaultTimeZone );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.csv.reader.Extractor<?> idExtractor = idType.extractor(extractors);
+//ORIGINAL LINE: org.Neo4Net.csv.reader.Extractor<?> idExtractor = idType.extractor(extractors);
 						 Extractor<object> idExtractor = idType.extractor( extractors );
 						 int delimiter = config.delimiter();
 						 IList<Header.Entry> columns = new List<Header.Entry>();
@@ -342,7 +342,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 					// like 'int' or 'string_array' or similar, or empty for 'string' property.
 					Type type = null;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.csv.reader.Extractor<?> extractor = null;
+//ORIGINAL LINE: org.Neo4Net.csv.reader.Extractor<?> extractor = null;
 					Extractor<object> extractor = null;
 					CSVHeaderInformation optionalParameter = null;
 					if ( string.ReferenceEquals( typeSpec, null ) )
@@ -401,7 +401,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 			  {
 					Type type = null;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.csv.reader.Extractor<?> extractor = null;
+//ORIGINAL LINE: org.Neo4Net.csv.reader.Extractor<?> extractor = null;
 					Extractor<object> extractor = null;
 					CSVHeaderInformation optionalParameter = null;
 					if ( string.ReferenceEquals( typeSpec, null ) )
@@ -457,7 +457,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static org.neo4j.csv.reader.Extractor<?> parsePropertyType(String typeSpec, org.neo4j.csv.reader.Extractors extractors)
+//ORIGINAL LINE: private static org.Neo4Net.csv.reader.Extractor<?> parsePropertyType(String typeSpec, org.Neo4Net.csv.reader.Extractors extractors)
 		 private static Extractor<object> ParsePropertyType( string typeSpec, Extractors extractors )
 		 {
 			  try

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.store.format
 
 	/// <summary>
 	/// Basic abstract implementation of a <seealso cref="RecordFormat"/> implementing most functionality except
-	/// <seealso cref="RecordFormat.read(AbstractBaseRecord, PageCursor, org.neo4j.kernel.impl.store.record.RecordLoad, int)"/> and
+	/// <seealso cref="RecordFormat.read(AbstractBaseRecord, PageCursor, org.Neo4Net.kernel.impl.store.record.RecordLoad, int)"/> and
 	/// <seealso cref="RecordFormat.write(AbstractBaseRecord, PageCursor, int)"/>.
 	/// </summary>
 	/// @param <RECORD> type of record. </param>

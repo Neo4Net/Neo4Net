@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using Neo4Net.Internal.Kernel.Api;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class IndexProvidedValuesNativeBTree10Test : KernelAPIReadTestBase<ReadTestSupport>
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private static int _nNodes = 10000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.RandomRule randomRule = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 
 		 private IList<Value> _singlePropValues = new List<Value>();
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  return readTestSupport;
 		 }
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {

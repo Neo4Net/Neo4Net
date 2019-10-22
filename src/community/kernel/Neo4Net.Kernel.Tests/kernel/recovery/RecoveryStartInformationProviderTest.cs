@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.recovery.LogTailScanner.NO_TRANSACTION_ID;
+//	import static org.Neo4Net.kernel.recovery.LogTailScanner.NO_TRANSACTION_ID;
 
 	public class RecoveryStartInformationProviderTest
 	{

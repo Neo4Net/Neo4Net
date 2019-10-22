@@ -22,19 +22,19 @@
 namespace Neo4Net.Test
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using URLAccessRule = Neo4Net.Graphdb.security.URLAccessRule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -51,11 +51,11 @@ namespace Neo4Net.Test
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.ephemeral;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.ephemeral;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Connector.ConnectorType.BOLT;
+//	import static org.Neo4Net.kernel.configuration.Connector.ConnectorType.BOLT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 
 	/// <summary>
@@ -66,7 +66,7 @@ namespace Neo4Net.Test
 	public class TestGraphDatabaseFactory : GraphDatabaseFactory
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public static final System.Predicate<org.neo4j.kernel.extension.KernelExtensionFactory<?>> INDEX_PROVIDERS_FILTER = extension -> extension instanceof org.neo4j.kernel.impl.index.schema.AbstractIndexProviderFactory;
+//ORIGINAL LINE: public static final System.Predicate<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> INDEX_PROVIDERS_FILTER = extension -> extension instanceof org.Neo4Net.kernel.impl.index.schema.AbstractIndexProviderFactory;
 		 public static readonly System.Predicate<KernelExtensionFactory<object>> IndexProvidersFilter = extension => extension is AbstractIndexProviderFactory;
 
 		 public TestGraphDatabaseFactory() : this(NullLogProvider.Instance)
@@ -78,12 +78,12 @@ namespace Neo4Net.Test
 			  UserLogProvider = logProvider;
 		 }
 
-		 public virtual GraphDatabaseService NewImpermanentDatabase()
+		 public virtual IGraphDatabaseService NewImpermanentDatabase()
 		 {
 			  return NewImpermanentDatabaseBuilder().newGraphDatabase();
 		 }
 
-		 public virtual GraphDatabaseService NewImpermanentDatabase( File storeDir )
+		 public virtual IGraphDatabaseService NewImpermanentDatabase( File storeDir )
 		 {
 			  File absoluteDirectory = storeDir.AbsoluteFile;
 			  GraphDatabaseBuilder databaseBuilder = NewImpermanentDatabaseBuilder( absoluteDirectory );
@@ -92,14 +92,14 @@ namespace Neo4Net.Test
 			  return databaseBuilder.NewGraphDatabase();
 		 }
 
-		 public virtual GraphDatabaseService NewImpermanentDatabase<T1>( IDictionary<T1> config )
+		 public virtual IGraphDatabaseService NewImpermanentDatabase<T1>( IDictionary<T1> config )
 		 {
 			  GraphDatabaseBuilder builder = NewImpermanentDatabaseBuilder();
 			  SetConfig( config, builder );
 			  return builder.NewGraphDatabase();
 		 }
 
-		 public virtual GraphDatabaseService NewImpermanentDatabase<T1>( File storeDir, IDictionary<T1> config )
+		 public virtual IGraphDatabaseService NewImpermanentDatabase<T1>( File storeDir, IDictionary<T1> config )
 		 {
 			  GraphDatabaseBuilder builder = NewImpermanentDatabaseBuilder( storeDir );
 			  SetConfig( config, builder );
@@ -109,11 +109,11 @@ namespace Neo4Net.Test
 		 private void SetConfig<T1>( IDictionary<T1> config, GraphDatabaseBuilder builder )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.graphdb.config.Setting<?>,String> entry : config.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.graphdb.config.Setting<?>,String> entry : config.entrySet())
 			  foreach ( KeyValuePair<Setting<object>, string> entry in config.SetOfKeyValuePairs() )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.config.Setting<?> key = entry.getKey();
+//ORIGINAL LINE: org.Neo4Net.graphdb.config.Setting<?> key = entry.getKey();
 					Setting<object> key = entry.Key;
 					string value = entry.Value;
 					builder.SetConfig( key, value );
@@ -221,7 +221,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.factory.GraphDatabaseBuilder newImpermanentDatabaseBuilder(final java.io.File storeDir)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.factory.GraphDatabaseBuilder newImpermanentDatabaseBuilder(final java.io.File storeDir)
 		 public virtual GraphDatabaseBuilder NewImpermanentDatabaseBuilder( File storeDir )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -238,13 +238,13 @@ namespace Neo4Net.Test
 			  return new TestGraphDatabaseBuilder( creator );
 		 }
 
-		 protected internal override GraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+		 protected internal override IGraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {
 			  return ( new TestGraphDatabaseFacadeFactory( CurrentState ) ).newFacade( storeDir, config, GraphDatabaseDependencies.newDependencies( dependencies ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.neo4j.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final TestGraphDatabaseFactoryState state)
+//ORIGINAL LINE: protected org.Neo4Net.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final TestGraphDatabaseFactoryState state)
 		 protected internal virtual GraphDatabaseBuilder.DatabaseCreator CreateImpermanentDatabaseCreator( File storeDir, TestGraphDatabaseFactoryState state )
 		 {
 			  return new DatabaseCreatorAnonymousInnerClass( this, storeDir, state );
@@ -265,8 +265,8 @@ namespace Neo4Net.Test
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public org.neo4j.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
-			 public GraphDatabaseService newDatabase( Config config )
+//ORIGINAL LINE: public org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+			 public IGraphDatabaseService newDatabase( Config config )
 			 {
 				  return ( new TestGraphDatabaseFacadeFactory( _state, true ) ).newFacade( _storeDir, config, GraphDatabaseDependencies.newDependencies( _state.databaseDependencies() ) );
 			 }

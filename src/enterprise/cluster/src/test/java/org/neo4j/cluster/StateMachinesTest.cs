@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster
 {
@@ -58,7 +58,7 @@ namespace Neo4Net.cluster
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.Internal;
+//	import static org.Neo4Net.cluster.com.message.Message.Internal;
 
 	public class StateMachinesTest
 	{
@@ -87,7 +87,7 @@ namespace Neo4Net.cluster
 		 {
 			  InstanceId me = new InstanceId( 42 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.cluster.com.message.Message> sentOut = new java.util.LinkedList<>();
 			  IList<Message> sentOut = new LinkedList<Message>();
 
 			  /*
@@ -143,7 +143,7 @@ namespace Neo4Net.cluster
 		 public enum TestState
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: test { @Override public TestState handle(java.util.List context, org.neo4j.cluster.com.message.Message<TestMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { context.add(message.getMessageType()); switch(message.getMessageType()) { case message1: { outgoing.offer(internal(TestMessage.message2)); outgoing.offer(internal(TestMessage.message3)); break; } case message2: { outgoing.offer(internal(TestMessage.message4)); outgoing.offer(internal(TestMessage.message5)); break; } default: break; } return this; } }
+//ORIGINAL LINE: test { @Override public TestState handle(java.util.List context, org.Neo4Net.cluster.com.message.Message<TestMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { context.add(message.getMessageType()); switch(message.getMessageType()) { case message1: { outgoing.offer(internal(TestMessage.message2)); outgoing.offer(internal(TestMessage.message3)); break; } case message2: { outgoing.offer(internal(TestMessage.message4)); outgoing.offer(internal(TestMessage.message5)); break; } default: break; } return this; } }
 			  test
 			  {
 				  public TestState handle( System.Collections.IList context, Message<TestMessage> message, MessageHolder outgoing )

@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Bolt.v1.runtime
 {
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using DuplicatingLogProvider = Neo4Net.Logging.DuplicatingLogProvider;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Classification.DatabaseError;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Classification.DatabaseError;
 
 	/// <summary>
 	/// Report received exceptions into the appropriate log (console or debug) and delivery stacktraces to debug.log.
@@ -56,7 +56,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 /// <param name="error"> the error to log. </param>
 		 /// <seealso cref= StoreLogService </seealso>
 		 /// <seealso cref= DuplicatingLogProvider </seealso>
-		 public virtual void Report( Neo4jError error )
+		 public virtual void Report( Neo4NetError error )
 		 {
 			  if ( error.Status().code().classification() == DatabaseError )
 			  {

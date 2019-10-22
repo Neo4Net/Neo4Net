@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.api.labelscan
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using ConsistencyCheckable = Neo4Net.Kernel.Impl.Index.Schema.ConsistencyCheckable;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
@@ -50,13 +50,13 @@ namespace Neo4Net.Kernel.api.labelscan
 		 LabelScanWriter NewWriter();
 
 		 /// <summary>
-		 /// Forces all changes to disk. Called at certain points from within Neo4j for example when
+		 /// Forces all changes to disk. Called at certain points from within Neo4Net for example when
 		 /// rotating the logical log. After completion of this call there cannot be any essential state that
 		 /// hasn't been forced to disk.
 		 /// </summary>
 		 /// <exception cref="UnderlyingStorageException"> if there was a problem forcing the state to persistent storage. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void force(org.neo4j.io.pagecache.IOLimiter limiter) throws org.neo4j.kernel.impl.store.UnderlyingStorageException;
+//ORIGINAL LINE: void force(org.Neo4Net.io.pagecache.IOLimiter limiter) throws org.Neo4Net.kernel.impl.store.UnderlyingStorageException;
 		 void Force( IOLimiter limiter );
 
 		 /// <summary>

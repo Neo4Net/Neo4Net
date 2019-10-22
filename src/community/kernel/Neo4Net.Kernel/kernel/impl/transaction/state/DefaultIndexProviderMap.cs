@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.transaction.state
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 public override void Init()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<? extends org.neo4j.kernel.api.index.IndexProvider> indexProviders = dependencies.resolveTypeDependencies(org.neo4j.kernel.api.index.IndexProvider.class);
+//ORIGINAL LINE: Iterable<? extends org.Neo4Net.kernel.api.index.IndexProvider> indexProviders = dependencies.resolveTypeDependencies(org.Neo4Net.kernel.api.index.IndexProvider.class);
 			  IEnumerable<IndexProvider> indexProviders = _dependencies.resolveTypeDependencies( typeof( IndexProvider ) );
 			  foreach ( IndexProvider provider in indexProviders )
 			  {
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexProvider lookup(String providerDescriptorName) throws org.neo4j.kernel.impl.api.index.IndexProviderNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexProvider lookup(String providerDescriptorName) throws org.Neo4Net.kernel.impl.api.index.IndexProviderNotFoundException
 		 public override IndexProvider Lookup( string providerDescriptorName )
 		 {
 			  AssertInit();

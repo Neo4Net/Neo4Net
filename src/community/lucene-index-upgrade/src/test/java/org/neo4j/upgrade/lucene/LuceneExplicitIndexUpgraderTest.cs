@@ -38,7 +38,7 @@ namespace Neo4Net.Upgrade.Lucene
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.upgrade.lucene.LuceneExplicitIndexUpgrader.NO_MONITOR;
+//	import static org.Neo4Net.upgrade.lucene.LuceneExplicitIndexUpgrader.NO_MONITOR;
 
 	public class LuceneExplicitIndexUpgraderTest
 	{

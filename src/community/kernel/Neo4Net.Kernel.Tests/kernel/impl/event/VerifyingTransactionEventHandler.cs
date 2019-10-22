@@ -21,8 +21,8 @@
  */
 namespace Neo4Net.Kernel.Impl.@event
 {
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 	public class VerifyingTransactionEventHandler : TransactionEventHandler<object>

@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl
 	using TestRule = org.junit.rules.TestRule;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using PropertyStore = Neo4Net.Kernel.impl.store.PropertyStore;
@@ -43,13 +43,13 @@ namespace Neo4Net.Kernel.impl
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @AbstractNeo4jTestCase.RequiresPersistentGraphDatabase(false) public abstract class AbstractNeo4jTestCase
-	public abstract class AbstractNeo4jTestCase
+//ORIGINAL LINE: @AbstractNeo4NetTestCase.RequiresPersistentGraphDatabase(false) public abstract class AbstractNeo4NetTestCase
+	public abstract class AbstractNeo4NetTestCase
 	{
 		 [AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = true)]
 		 public class RequiresPersistentGraphDatabase : System.Attribute
 		 {
-			 private readonly AbstractNeo4jTestCase _outerInstance;
+			 private readonly AbstractNeo4NetTestCase _outerInstance;
 
 			 public RequiresPersistentGraphDatabase;
 			 {
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl
 			 }
 		 }
 
-		 protected internal static readonly File Neo4jBaseDir = new File( "target", "var" );
+		 protected internal static readonly File Neo4NetBaseDir = new File( "target", "var" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ClassRule public static final org.junit.rules.TestRule START_GRAPHDB = (super, description) ->
@@ -83,12 +83,12 @@ namespace Neo4Net.Kernel.impl
 
 		 private Transaction _tx;
 
-		 protected internal AbstractNeo4jTestCase()
+		 protected internal AbstractNeo4NetTestCase()
 		 {
 			  _graphDb = _threadLocalGraphDb.get();
 		 }
 
-		 public virtual GraphDatabaseService GraphDb
+		 public virtual IGraphDatabaseService GraphDb
 		 {
 			 get
 			 {
@@ -98,8 +98,8 @@ namespace Neo4Net.Kernel.impl
 
 		 private static void SetupGraphDatabase( string testClassName, bool requiresPersistentGraphDatabase )
 		 {
-			  AbstractNeo4jTestCase._requiresPersistentGraphDatabase.set( requiresPersistentGraphDatabase );
-			  AbstractNeo4jTestCase._currentTestClassName.set( testClassName );
+			  AbstractNeo4NetTestCase._requiresPersistentGraphDatabase.set( requiresPersistentGraphDatabase );
+			  AbstractNeo4NetTestCase._currentTestClassName.set( testClassName );
 			  if ( requiresPersistentGraphDatabase )
 			  {
 					try
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl
 
 		 public static File GetStorePath( string endPath )
 		 {
-			  return ( new File( Neo4jBaseDir, _currentTestClassName.get() + "-" + endPath ) ).AbsoluteFile;
+			  return ( new File( Neo4NetBaseDir, _currentTestClassName.get() + "-" + endPath ) ).AbsoluteFile;
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -21,7 +21,7 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 {
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	public class SchemaDescriptorPredicates
 	{
@@ -34,7 +34,7 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 			  return supplier =>
 			  {
 				SchemaDescriptor schema = supplier.schema();
-				return Schema.entityType() == EntityType.NODE && ArrayUtils.contains(Schema.EntityTokenIds, labelId);
+				return Schema.entityType() == IEntityType.NODE && ArrayUtils.contains(Schema.EntityTokenIds, labelId);
 			  };
 		 }
 
@@ -43,7 +43,7 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 			  return supplier =>
 			  {
 				SchemaDescriptor schema = supplier.schema();
-				return Schema.entityType() == EntityType.RELATIONSHIP && ArrayUtils.contains(Schema.EntityTokenIds, relTypeId);
+				return Schema.entityType() == IEntityType.RELATIONSHIP && ArrayUtils.contains(Schema.EntityTokenIds, relTypeId);
 			  };
 		 }
 
@@ -55,13 +55,13 @@ namespace Neo4Net.Internal.Kernel.Api.schema
 		 public static bool HasLabel( SchemaDescriptorSupplier supplier, int labelId )
 		 {
 			  SchemaDescriptor schema = supplier.Schema();
-			  return Schema.entityType() == EntityType.NODE && ArrayUtils.contains(Schema.EntityTokenIds, labelId);
+			  return Schema.entityType() == IEntityType.NODE && ArrayUtils.contains(Schema.EntityTokenIds, labelId);
 		 }
 
 		 public static bool HasRelType( SchemaDescriptorSupplier supplier, int relTypeId )
 		 {
 			  SchemaDescriptor schema = supplier.Schema();
-			  return Schema.entityType() == EntityType.RELATIONSHIP && ArrayUtils.contains(Schema.EntityTokenIds, relTypeId);
+			  return Schema.entityType() == IEntityType.RELATIONSHIP && ArrayUtils.contains(Schema.EntityTokenIds, relTypeId);
 		 }
 
 		 public static bool HasProperty( SchemaDescriptorSupplier supplier, int propertyId )

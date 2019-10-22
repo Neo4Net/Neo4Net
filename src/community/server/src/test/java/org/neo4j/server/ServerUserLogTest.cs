@@ -27,7 +27,7 @@ namespace Neo4Net.Server
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using CommunityGraphFactory = Neo4Net.Server.database.CommunityGraphFactory;
@@ -59,28 +59,28 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_user_log_max_archives;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_user_log_max_archives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_user_log_rotation_delay;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_user_log_rotation_delay;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_user_log_rotation_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_user_log_rotation_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_user_log_to_stdout;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_user_log_to_stdout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerBootstrapper.OK;
+//	import static org.Neo4Net.server.ServerBootstrapper.OK;
 
 	public class ServerUserLogTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppress = org.neo4j.test.rule.SuppressOutput.suppress(org.neo4j.test.rule.SuppressOutput.System.out);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppress = org.Neo4Net.test.rule.SuppressOutput.suppress(org.Neo4Net.test.rule.SuppressOutput.System.out);
 		 public readonly SuppressOutput Suppress = SuppressOutput.suppress( SuppressOutput.System.out );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory homeDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory homeDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory HomeDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -183,7 +183,7 @@ namespace Neo4Net.Server
 			  assertTrue( Files.exists( GetUserLogFileLocation( dir ) ) );
 			  assertThat( ReadUserLogFile( dir ), not( empty() ) );
 			  IList<string> userLogFiles = AllUserLogFiles( dir );
-			  assertThat( userLogFiles, containsInAnyOrder( "neo4j.log", "neo4j.log.1", "neo4j.log.2", "neo4j.log.3", "neo4j.log.4" ) );
+			  assertThat( userLogFiles, containsInAnyOrder( "Neo4Net.log", "Neo4Net.log.1", "Neo4Net.log.2", "Neo4Net.log.3", "Neo4Net.log.4" ) );
 			  assertEquals( maxArchives + 1, userLogFiles.Count );
 		 }
 
@@ -271,14 +271,14 @@ namespace Neo4Net.Server
 
 		 private Path GetUserLogFileLocation( File homeDir )
 		 {
-			  return Paths.get( homeDir.AbsolutePath, "logs", "neo4j.log" );
+			  return Paths.get( homeDir.AbsolutePath, "logs", "Neo4Net.log" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: private java.util.List<String> allUserLogFiles(java.io.File homeDir) throws java.io.IOException
 		 private IList<string> AllUserLogFiles( File homeDir )
 		 {
-			  using ( Stream<string> stream = Files.list( Paths.get( homeDir.AbsolutePath, "logs" ) ).map( x => x.FileName.ToString() ).filter(x => x.contains("neo4j.log")) )
+			  using ( Stream<string> stream = Files.list( Paths.get( homeDir.AbsolutePath, "logs" ) ).map( x => x.FileName.ToString() ).filter(x => x.contains("Neo4Net.log")) )
 			  {
 					return stream.collect( Collectors.toList() );
 			  }

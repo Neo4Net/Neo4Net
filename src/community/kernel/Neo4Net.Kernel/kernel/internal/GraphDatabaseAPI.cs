@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.Internal
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Internal
 	/// <summary>
 	/// This API can be used to get access to services.
 	/// </summary>
-	public interface GraphDatabaseAPI : GraphDatabaseService
+	public interface GraphDatabaseAPI : IGraphDatabaseService
 	{
 		 /// <summary>
 		 /// Look up database components for direct access.
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Internal
 		 /// <param name="url"> the URL being validated </param>
 		 /// <returns> an updated URL that should be used for accessing the resource </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError;
+//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError;
 		 URL ValidateURLAccess( URL url );
 
 		 /// <returns> underlying database directory </returns>

@@ -23,9 +23,9 @@ namespace Neo4Net.Cypher.Internal.runtime
 	using RelationshipValue = Neo4Net.Values.@virtual.RelationshipValue;
 
 	/// <summary>
-	/// Entity lookup operations.
+	/// IEntity lookup operations.
 	/// </summary>
-	public interface EntityById
+	public interface IEntityById
 	{
 		 NodeValue NodeById( long id );
 

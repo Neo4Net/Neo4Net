@@ -37,9 +37,9 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tooling.ImportToolTest.assertExceptionContains;
+//	import static org.Neo4Net.tooling.ImportToolTest.assertExceptionContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tooling.ImportToolTest.importTool;
+//	import static org.Neo4Net.tooling.ImportToolTest.importTool;
 
 	/// <summary>
 	/// Tests that we fail correctly when given strings which can't be interpreted as numbers when configured to interpret
@@ -100,10 +100,10 @@ namespace Neo4Net.Tooling
 		 public string ExpectedError;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public readonly EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule().startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppress(org.neo4j.test.rule.SuppressOutput.System.values());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppress(org.Neo4Net.test.rule.SuppressOutput.System.values());
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppress( SuppressOutput.System.values() );
 
 		 private int _dataIndex;

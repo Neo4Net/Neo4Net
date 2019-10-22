@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.neo4j.helpers.collection.Visitor<org.neo4j.storageengine.api.StorageCommand, java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: public void accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand, java.io.IOException> visitor) throws java.io.IOException
 		 public virtual void Accept( Visitor<StorageCommand, IOException> visitor )
 		 {
 			  _transactionRepresentation.accept( visitor );

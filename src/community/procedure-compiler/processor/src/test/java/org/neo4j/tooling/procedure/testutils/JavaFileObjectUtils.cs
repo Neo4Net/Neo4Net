@@ -59,7 +59,7 @@ namespace Neo4Net.Tooling.procedure.testutils
 
 		 private java.net.URL ResolveUrl( string relativePath )
 		 {
-			  return this.GetType().getResource("/org/neo4j/tooling/procedure/procedures/" + relativePath);
+			  return this.GetType().getResource("/org/Neo4Net/tooling/procedure/procedures/" + relativePath);
 		 }
 
 		public static IList<JavaFileObjectUtils> values()

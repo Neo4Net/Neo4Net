@@ -31,7 +31,7 @@ namespace Neo4Net.Io.fs
 
 
 	using Neo4Net.Functions;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -64,14 +64,14 @@ namespace Neo4Net.Io.fs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testdir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testdir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Testdir = TestDirectory.testDirectory();
 
 		 private FileSystemAbstraction _fs;
 		 private File _file;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public FileSystemAbstractionInterruptionTest(@SuppressWarnings("UnusedParameters") String name, org.neo4j.function.Factory<FileSystemAbstraction> factory)
+//ORIGINAL LINE: public FileSystemAbstractionInterruptionTest(@SuppressWarnings("UnusedParameters") String name, org.Neo4Net.function.Factory<FileSystemAbstraction> factory)
 		 public FileSystemAbstractionInterruptionTest( string name, IFactory<FileSystemAbstraction> factory )
 		 {
 			  _fs = factory.NewInstance();

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private readonly CatchUpClient _catchUpClient = mock( typeof( CatchUpClient ) );
@@ -126,7 +126,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void clientRequestsAllFilesListedInListingResponse() throws StoreCopyFailedException, org.neo4j.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void clientRequestsAllFilesListedInListingResponse() throws StoreCopyFailedException, org.Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ClientRequestsAllFilesListedInListingResponse()
 		 {
@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void storeIdCanBeRetrieved() throws StoreIdDownloadFailedException, org.neo4j.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void storeIdCanBeRetrieved() throws StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StoreIdCanBeRetrieved()
 		 {
@@ -177,7 +177,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotAwaitOnSuccess() throws org.neo4j.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void shouldNotAwaitOnSuccess() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotAwaitOnSuccess()
 		 {
@@ -209,7 +209,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailIfTerminationConditionFails() throws org.neo4j.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: @Test public void shouldFailIfTerminationConditionFails() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailIfTerminationConditionFails()
 		 {
@@ -242,7 +242,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void errorOnListingStore() throws org.neo4j.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void errorOnListingStore() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ErrorOnListingStore()
 		 {
@@ -259,7 +259,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void storeIdMismatchOnListing() throws org.neo4j.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
+//ORIGINAL LINE: @Test public void storeIdMismatchOnListing() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException, StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void StoreIdMismatchOnListing()
 		 {
@@ -344,7 +344,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.neo4j.causalclustering.messaging.CatchUpRequest> getRequests() throws org.neo4j.causalclustering.catchup.CatchUpClientException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.causalclustering.messaging.CatchUpRequest> getRequests() throws org.Neo4Net.causalclustering.catchup.CatchUpClientException
 		 private IList<CatchUpRequest> Requests
 		 {
 			 get

@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.configuration
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using LogTimeZone = Neo4Net.Logging.LogTimeZone;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.configuration
 	public class SystemTimeZoneLoggingIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.configuration
 			  TimeZone.Default = TimeZone.getTimeZone( ZoneOffset.ofHours( hoursShift ) );
 			  File storeDir = TestDirectory.storeDir( hoursShift.ToString() );
 			  File databaseDirectory = TestDirectory.databaseLayout( storeDir ).databaseDirectory();
-			  GraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(databaseDirectory).setConfig(GraphDatabaseSettings.db_timezone, LogTimeZone.SYSTEM.name()).newGraphDatabase();
+			  IGraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(databaseDirectory).setConfig(GraphDatabaseSettings.db_timezone, LogTimeZone.SYSTEM.name()).newGraphDatabase();
 			  database.Shutdown();
 			  Path databasePath = storeDir.toPath();
 			  Path debugLog = Paths.get( "logs", "debug.log" );

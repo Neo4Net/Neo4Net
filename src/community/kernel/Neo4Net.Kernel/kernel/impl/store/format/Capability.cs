@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.store.format
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.contains;
+//	import static org.Neo4Net.helpers.ArrayUtil.contains;
 
 	/// <summary>
 	/// A collection of high level capabilities a store can have, should not be more granular than necessary

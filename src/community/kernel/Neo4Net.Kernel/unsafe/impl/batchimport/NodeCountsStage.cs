@@ -29,9 +29,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.RecordIdIterator.allIn;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Reads all records from <seealso cref="NodeStore"/> and process the counts in them, populating <seealso cref="NodeLabelsCache"/>
@@ -45,7 +45,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new BatchFeedStep( Control(), config, allIn(nodeStore, config), nodeStore.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.neo4j.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, nodeStore));
+//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, nodeStore));
 			  Add( new ReadRecordsStep<object>( Control(), config, false, nodeStore ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: add(new RecordProcessorStep<>(control(), "COUNT", config, new NodeCountsProcessor(nodeStore, cache, highLabelId, countsUpdater, progressReporter), true, additionalStatsProviders));

@@ -23,7 +23,7 @@ namespace Neo4Net.Server.Security.Auth
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -36,9 +36,9 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 
 	public class SecurityContextDescriptionTest
 	{

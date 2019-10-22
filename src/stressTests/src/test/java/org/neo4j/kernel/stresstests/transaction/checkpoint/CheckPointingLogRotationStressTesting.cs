@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,21 +15,21 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 {
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -54,17 +54,17 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.getProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.StressTestingHelper.ensureExistsAndEmpty;
+//	import static org.Neo4Net.helper.StressTestingHelper.ensureExistsAndEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.StressTestingHelper.fromEnv;
+//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.stresstests.transaction.checkpoint.mutation.RandomMutationFactory.defaultRandomMutation;
+//	import static org.Neo4Net.kernel.stresstests.transaction.checkpoint.mutation.RandomMutationFactory.defaultRandomMutation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 
 	/// <summary>
 	/// Notice the class name: this is _not_ going to be run as part of the main build.
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.stresstests.transaction.checkpoint
 
 			  Console.WriteLine( "2/6\tStarting database..." );
 			  GraphDatabaseBuilder builder = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir);
-			  GraphDatabaseService db = builder.SetConfig( GraphDatabaseSettings.pagecache_memory, pageCacheMemory ).setConfig( GraphDatabaseSettings.keep_logical_logs, Settings.FALSE ).setConfig( GraphDatabaseSettings.check_point_interval_time, CHECK_POINT_INTERVAL_MINUTES + "m" ).setConfig( GraphDatabaseSettings.tracer, "timer" ).newGraphDatabase();
+			  IGraphDatabaseService db = builder.SetConfig( GraphDatabaseSettings.pagecache_memory, pageCacheMemory ).setConfig( GraphDatabaseSettings.keep_logical_logs, Settings.FALSE ).setConfig( GraphDatabaseSettings.check_point_interval_time, CHECK_POINT_INTERVAL_MINUTES + "m" ).setConfig( GraphDatabaseSettings.tracer, "timer" ).newGraphDatabase();
 
 			  Console.WriteLine( "3/6\tWarm up db..." );
 			  using ( Workload workload = new Workload( db, defaultRandomMutation( nodeCount, db ), threads ) )

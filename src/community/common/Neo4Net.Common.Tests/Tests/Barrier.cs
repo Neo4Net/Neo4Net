@@ -18,6 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Threading;
+
 namespace Neo4Net.Test
 {
    /// <summary>
@@ -31,31 +33,28 @@ namespace Neo4Net.Test
    ///                        <seealso cref="reached() T2 reached()"/>
    /// </pre>
    /// </summary>
-   public interface Barrier
+   public interface IBarrier
    {
       void Reached();
    }
 
    public static class Barrier_Fields
    {
-      public static readonly Barrier None = () =>
-      {
-      };
+      public static readonly Barrier None = null; //$!!$ tac () =>{};
    }
 
-   public class Barrier_Control : Barrier
+   public class Barrier_Control : IBarrier
    {
-      //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-      internal readonly System.Threading.CountdownEvent ReachedConflict = new System.Threading.CountdownEvent(1);
+      internal readonly System.Threading.CountdownEvent _reachedConflict = new System.Threading.CountdownEvent(1);
 
-      internal readonly System.Threading.CountdownEvent Released = new System.Threading.CountdownEvent(1);
+      internal readonly System.Threading.CountdownEvent _released = new System.Threading.CountdownEvent(1);
 
-      public override void Reached()
+      public void Reached()
       {
          try
          {
-            ReachedConflict.Signal();
-            Released.await();
+            _reachedConflict.Signal();
+            _released.await();
          }
          catch (InterruptedException e)
          {
@@ -63,11 +62,10 @@ namespace Neo4Net.Test
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void await() throws InterruptedException
+
       public virtual void Await()
       {
-         ReachedConflict.await();
+         _reachedConflict.await();
       }
 
       public virtual void AwaitUninterruptibly()
@@ -99,7 +97,7 @@ namespace Neo4Net.Test
 
       public virtual void Release()
       {
-         Released.Signal();
+         _released.Signal();
       }
    }
 }

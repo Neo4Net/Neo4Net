@@ -26,11 +26,11 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
+//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.checkOutOfBounds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// <seealso cref="RawCursor"/> over tree leaves, making keys/values accessible to user. Given a starting leaf
@@ -418,7 +418,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 private readonly GenerationKeeper _generationKeeper = new GenerationKeeper();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") SeekCursor(org.neo4j.io.pagecache.PageCursor cursor, TreeNode<KEY,VALUE> bTreeNode, KEY fromInclusive, KEY toExclusive, Layout<KEY,VALUE> layout, long stableGeneration, long unstableGeneration, System.Func<long> generationSupplier, RootCatchup rootCatchup, long lastFollowedPointerGeneration, System.Action<Throwable> exceptionDecorator, int maxReadAhead) throws java.io.IOException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") SeekCursor(org.Neo4Net.io.pagecache.PageCursor cursor, TreeNode<KEY,VALUE> bTreeNode, KEY fromInclusive, KEY toExclusive, Layout<KEY,VALUE> layout, long stableGeneration, long unstableGeneration, System.Func<long> generationSupplier, RootCatchup rootCatchup, long lastFollowedPointerGeneration, System.Action<Throwable> exceptionDecorator, int maxReadAhead) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal SeekCursor( PageCursor cursor, TreeNode<KEY, VALUE> bTreeNode, KEY fromInclusive, KEY toExclusive, Layout<KEY, VALUE> layout, long stableGeneration, long unstableGeneration, System.Func<long> generationSupplier, RootCatchup rootCatchup, long lastFollowedPointerGeneration, System.Action<Exception> exceptionDecorator, int maxReadAhead )
 		 {

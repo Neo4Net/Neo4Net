@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Bolt
 {
@@ -37,10 +37,10 @@ namespace Neo4Net.Bolt
 	using Session = Neo4Net.driver.v1.Session;
 	using StatementResult = Neo4Net.driver.v1.StatementResult;
 	using TransientException = Neo4Net.driver.v1.exceptions.TransientException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Result = Neo4Net.Graphdb.Result;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Result = Neo4Net.GraphDb.Result;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -63,8 +63,8 @@ namespace Neo4Net.Bolt
 	public class BoltProceduresIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.harness.junit.Neo4jRule db = new org.neo4j.harness.junit.Neo4jRule().withProcedure(BoltTestProcedures.class).withConfig(org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.neo4j.kernel.configuration.Settings.FALSE);
-		 public static readonly Neo4jRule Db = new Neo4jRule().withProcedure(typeof(BoltTestProcedures)).withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.harness.junit.Neo4NetRule db = new org.Neo4Net.harness.junit.Neo4NetRule().withProcedure(BoltTestProcedures.class).withConfig(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+		 public static readonly Neo4NetRule Db = new Neo4NetRule().withProcedure(typeof(BoltTestProcedures)).withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE);
 
 		 private static Driver _driver;
 
@@ -130,11 +130,11 @@ namespace Neo4Net.Bolt
 		 public class BoltTestProcedures
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-			  public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.kernel.api.KernelTransaction tx;
+//ORIGINAL LINE: @Context public org.Neo4Net.kernel.api.KernelTransaction tx;
 			  public KernelTransaction Tx;
 
 			  [Procedure(name : "test.readNodesReturnThemAndTerminateTheTransaction", mode : Neo4Net.Procedure.Mode.READ)]
@@ -169,7 +169,7 @@ namespace Neo4Net.Bolt
 			  internal readonly LinkedList<T> Elements;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private TransactionTerminatingIterator(org.neo4j.kernel.api.KernelTransaction tx, T... elements)
+//ORIGINAL LINE: @SafeVarargs private TransactionTerminatingIterator(org.Neo4Net.kernel.api.KernelTransaction tx, T... elements)
 			  internal TransactionTerminatingIterator( KernelTransaction tx, params T[] elements )
 			  {
 					this.Tx = tx;

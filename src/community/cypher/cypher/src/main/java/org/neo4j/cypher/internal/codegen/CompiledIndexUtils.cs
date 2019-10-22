@@ -31,9 +31,9 @@ namespace Neo4Net.Cypher.Internal.codegen
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cypher.Internal.codegen.CompiledConversionUtils.makeValueNeoSafe;
+//	import static org.Neo4Net.cypher.Internal.codegen.CompiledConversionUtils.makeValueNeoSafe;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 
 	/// <summary>
 	/// Utility for dealing with indexes from compiled code
@@ -57,7 +57,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 /// <param name="value"> The value to seek for </param>
 		 /// <returns> A cursor positioned at the data found in index. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.internal.kernel.api.NodeValueIndexCursor indexSeek(org.neo4j.internal.kernel.api.Read read, org.neo4j.internal.kernel.api.CursorFactory cursors, org.neo4j.internal.kernel.api.IndexReference index, Object value) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public static org.Neo4Net.internal.kernel.api.NodeValueIndexCursor indexSeek(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.CursorFactory cursors, org.Neo4Net.internal.kernel.api.IndexReference index, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public static NodeValueIndexCursor IndexSeek( Read read, CursorFactory cursors, IndexReference index, object value )
 		 {
 			  Debug.Assert( index.Properties().Length == 1 );

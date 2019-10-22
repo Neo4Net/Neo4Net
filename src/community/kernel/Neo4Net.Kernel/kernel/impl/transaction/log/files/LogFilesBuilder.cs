@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log.files
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold;
 
 	/// <summary>
 	/// Transactional log files facade class builder.
@@ -188,10 +188,10 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 				  // try to use absolute position only for default database. For other databases use database directory
 				  if ( TryConfigureDefaultDatabaseLogsDirectory() )
 				  {
-						File neo4jHome = _config.get( GraphDatabaseSettings.neo4j_home );
+						File Neo4NetHome = _config.get( GraphDatabaseSettings.Neo4Net_home );
 						File databasePath = _config.get( database_path );
 						File logicalLogsLocation = _config.get( GraphDatabaseSettings.logical_logs_location );
-						if ( _databaseLayout.StoreLayout.storeDirectory().Equals(neo4jHome) && databasePath.Equals(logicalLogsLocation) )
+						if ( _databaseLayout.StoreLayout.storeDirectory().Equals(Neo4NetHome) && databasePath.Equals(logicalLogsLocation) )
 						{
 							 return _databaseLayout.databaseDirectory();
 						}
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 						{
 							 return logicalLogsLocation;
 						}
-						if ( neo4jHome == null || !_databaseLayout.databaseDirectory().Equals(databasePath) )
+						if ( Neo4NetHome == null || !_databaseLayout.databaseDirectory().Equals(databasePath) )
 						{
 							 Path relativeLogicalLogPath = databasePath.toPath().relativize(logicalLogsLocation.toPath());
 							 return _databaseLayout.file( relativeLogicalLogPath.ToString() );
@@ -261,7 +261,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private System.Func<org.neo4j.kernel.impl.transaction.log.LogVersionRepository> getLogVersionRepositorySupplier() throws java.io.IOException
+//ORIGINAL LINE: private System.Func<org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository> getLogVersionRepositorySupplier() throws java.io.IOException
 		 private System.Func<LogVersionRepository> LogVersionRepositorySupplier
 		 {
 			 get

@@ -23,7 +23,7 @@ namespace Neo4Net.causalclustering.core
 	using SecureHazelcastDiscoveryServiceFactory = Neo4Net.causalclustering.discovery.SecureHazelcastDiscoveryServiceFactory;
 	using DuplexPipelineWrapperFactory = Neo4Net.causalclustering.handlers.DuplexPipelineWrapperFactory;
 	using SecurePipelineWrapperFactory = Neo4Net.causalclustering.handlers.SecurePipelineWrapperFactory;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using EnterpriseEditionModule = Neo4Net.Kernel.impl.enterprise.EnterpriseEditionModule;

@@ -25,12 +25,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Document = org.apache.lucene.document.Document;
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 
 	public class DocToIdIterator : AbstractExplicitIndexHits
 	{
 		 private readonly ICollection<EntityId> _removedInTransactionState;
-		 private readonly EntityId_LongCostume _idCostume = new EntityId_LongCostume();
+		 private readonly IEntityId_LongCostume _idCostume = new IEntityId_LongCostume();
 		 private IndexReference _searcherOrNull;
 		 private readonly IndexHits<Document> _source;
 		 private readonly LongSet _idsModifiedInTransactionState;

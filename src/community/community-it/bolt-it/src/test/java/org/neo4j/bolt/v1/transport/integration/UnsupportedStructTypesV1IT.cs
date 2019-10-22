@@ -30,8 +30,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using PackedOutputArray = Neo4Net.Bolt.v1.packstream.PackedOutputArray;
@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
 	using WebSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.WebSocketConnection;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -52,15 +52,15 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UnsupportedStructTypesV1IT
@@ -69,8 +69,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 private const string USER_AGENT = "TestClient/1.0";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass(), settings -> settings.put(auth_enabled.name(), "false"));
-		 public Neo4jWithSocket Server = new Neo4jWithSocket( this.GetType(), settings => settings.put(auth_enabled.name(), "false") );
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass(), settings -> settings.put(auth_enabled.name(), "false"));
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType(), settings => settings.put(auth_enabled.name(), "false") );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter public Class connectionClass;
@@ -94,7 +94,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  _address = Server.lookupDefaultConnector();
 			  _connection = System.Activator.CreateInstance( ConnectionClass );
-			  _util = new TransportTestUtil( new Neo4jPackV1() );
+			  _util = new TransportTestUtil( new Neo4NetPackV1() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -181,7 +181,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testFailureWithV2Value(org.neo4j.values.AnyValue value, String description) throws Exception
+//ORIGINAL LINE: private void testFailureWithV2Value(org.Neo4Net.values.AnyValue value, String description) throws Exception
 		 private void TestFailureWithV2Value( AnyValue value, string description )
 		 {
 			  _connection.connect( _address ).send( _util.defaultAcceptedVersions() );
@@ -196,11 +196,11 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] createRunWithV2Value(org.neo4j.values.AnyValue value) throws java.io.IOException
+//ORIGINAL LINE: private byte[] createRunWithV2Value(org.Neo4Net.values.AnyValue value) throws java.io.IOException
 		 private sbyte[] CreateRunWithV2Value( AnyValue value )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = ( new Neo4jPackV2() ).newPacker(@out);
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = ( new Neo4NetPackV2() ).newPacker(@out);
 
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );
 			  packer.Pack( "RETURN $x" );

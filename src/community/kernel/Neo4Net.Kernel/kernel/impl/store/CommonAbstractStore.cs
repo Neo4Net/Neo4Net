@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
@@ -46,21 +46,21 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.contains;
+//	import static org.Neo4Net.helpers.ArrayUtil.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfUnchecked;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PageCacheOpenOptions.ANY_PAGE_SIZE;
+//	import static org.Neo4Net.io.pagecache.PageCacheOpenOptions.ANY_PAGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_READ_AHEAD;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_READ_AHEAD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.CHECK;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	/// <summary>
 	/// Contains common implementation of <seealso cref="RecordStore"/>.
@@ -247,7 +247,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void initialiseNewStoreFile(org.neo4j.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: protected void initialiseNewStoreFile(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 protected internal virtual void InitializeNewStoreFile( PagedFile file )
 		 {
 			  if ( NumberOfReservedLowIds > 0 )
@@ -282,7 +282,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void extractHeaderRecord(org.neo4j.io.pagecache.PagedFile pagedFile) throws java.io.IOException
+//ORIGINAL LINE: private void extractHeaderRecord(org.Neo4Net.io.pagecache.PagedFile pagedFile) throws java.io.IOException
 		 private void ExtractHeaderRecord( PagedFile pagedFile )
 		 {
 			  if ( NumberOfReservedLowIds > 0 )
@@ -500,7 +500,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long rebuildIdGeneratorSlow(org.neo4j.io.pagecache.PageCursor cursor, int recordsPerPage, int blockSize, long foundHighId) throws java.io.IOException
+//ORIGINAL LINE: private long rebuildIdGeneratorSlow(org.Neo4Net.io.pagecache.PageCursor cursor, int recordsPerPage, int blockSize, long foundHighId) throws java.io.IOException
 		 private long RebuildIdGeneratorSlow( PageCursor cursor, int recordsPerPage, int blockSize, long foundHighId )
 		 {
 			  if ( !cursor.WriteLocked )
@@ -785,7 +785,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="pageIdStart"> Page id to start pre-fetching from. </param>
 		 /// <param name="pageIdEnd"> Page id to end pre-fetching on, inclusive {@code pageIdEnd}. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void preFetchChunk(org.neo4j.io.pagecache.PageCursor cursor, long pageIdStart, long pageIdEnd) throws java.io.IOException
+//ORIGINAL LINE: private static void preFetchChunk(org.Neo4Net.io.pagecache.PageCursor cursor, long pageIdStart, long pageIdEnd) throws java.io.IOException
 		 private static void PreFetchChunk( PageCursor cursor, long pageIdStart, long pageIdEnd )
 		 {
 			  for ( long currentPageId = pageIdStart; currentPageId <= pageIdEnd; currentPageId++ )
@@ -1043,7 +1043,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void getRecordByCursor(long id, RECORD record, org.neo4j.kernel.impl.store.record.RecordLoad mode, org.neo4j.io.pagecache.PageCursor cursor) throws UnderlyingStorageException
+//ORIGINAL LINE: public void getRecordByCursor(long id, RECORD record, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws UnderlyingStorageException
 		 public override void GetRecordByCursor( long id, RECORD record, RecordLoad mode, PageCursor cursor )
 		 {
 			  try
@@ -1057,7 +1057,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void readIntoRecord(long id, RECORD record, org.neo4j.kernel.impl.store.record.RecordLoad mode, org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void readIntoRecord(long id, RECORD record, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void ReadIntoRecord( long id, RECORD record, RecordLoad mode, PageCursor cursor )
 		 {
 			  // Mark the record with this id regardless of whether or not we load the contents of it.
@@ -1078,7 +1078,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nextRecordByCursor(RECORD record, org.neo4j.kernel.impl.store.record.RecordLoad mode, org.neo4j.io.pagecache.PageCursor cursor) throws UnderlyingStorageException
+//ORIGINAL LINE: public void nextRecordByCursor(RECORD record, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws UnderlyingStorageException
 		 public override void NextRecordByCursor( RECORD record, RecordLoad mode, PageCursor cursor )
 		 {
 			  if ( cursor.CurrentPageId < -1 )
@@ -1110,7 +1110,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void readRecordFromPage(long id, RECORD record, org.neo4j.kernel.impl.store.record.RecordLoad mode, org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void readRecordFromPage(long id, RECORD record, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void ReadRecordFromPage( long id, RECORD record, RecordLoad mode, PageCursor cursor )
 		 {
 			  cursor.Mark();
@@ -1172,7 +1172,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void scanAllRecords(org.neo4j.helpers.collection.Visitor<RECORD,EXCEPTION> visitor) throws EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void scanAllRecords(org.Neo4Net.helpers.collection.Visitor<RECORD,EXCEPTION> visitor) throws EXCEPTION
 		 public override void ScanAllRecords<EXCEPTION>( Visitor<RECORD, EXCEPTION> visitor ) where EXCEPTION : Exception
 		 {
 			  using ( PageCursor cursor = OpenPageCursorForReading( 0 ) )

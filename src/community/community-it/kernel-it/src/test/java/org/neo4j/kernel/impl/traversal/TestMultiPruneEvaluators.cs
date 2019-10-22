@@ -25,22 +25,22 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Path = Neo4Net.Graphdb.Path;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Evaluator = Neo4Net.Graphdb.traversal.Evaluator;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Path = Neo4Net.GraphDb.Path;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.toDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 
 	public class TestMultiPruneEvaluators : TraversalTestBase
 	{

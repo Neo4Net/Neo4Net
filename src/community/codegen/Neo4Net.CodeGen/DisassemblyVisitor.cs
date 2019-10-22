@@ -21,7 +21,7 @@ namespace Neo4Net.CodeGen
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeVisitor.printer;
+//	import static org.Neo4Net.codegen.ByteCodeVisitor.printer;
 
 	public abstract class DisassemblyVisitor : ByteCodeVisitor, CodeGeneratorOption
 	{

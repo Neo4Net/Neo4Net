@@ -295,7 +295,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.neo4j.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  if ( _cursorException != null )

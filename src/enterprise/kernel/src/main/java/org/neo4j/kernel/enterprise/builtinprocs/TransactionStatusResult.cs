@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
+//	import static org.Neo4Net.kernel.enterprise.builtinprocs.QueryId.ofInternalId;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class TransactionStatusResult
@@ -68,11 +68,11 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public readonly long PageHits;
 		 public readonly long PageFaults;
 		 /// <summary>
-		 /// @since Neo4j 3.5 </summary>
+		 /// @since Neo4Net 3.5 </summary>
 		 public readonly string ConnectionId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionStatusResult(org.neo4j.kernel.api.KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, java.util.Map<org.neo4j.kernel.api.KernelTransactionHandle,java.util.List<org.neo4j.kernel.api.query.QuerySnapshot>> handleSnapshotsMap, java.time.ZoneId zoneId) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public TransactionStatusResult(org.Neo4Net.kernel.api.KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, java.util.Map<org.Neo4Net.kernel.api.KernelTransactionHandle,java.util.List<org.Neo4Net.kernel.api.query.QuerySnapshot>> handleSnapshotsMap, java.time.ZoneId zoneId) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public TransactionStatusResult( KernelTransactionHandle transaction, TransactionDependenciesResolver transactionDependenciesResolver, IDictionary<KernelTransactionHandle, IList<QuerySnapshot>> handleSnapshotsMap, ZoneId zoneId )
 		 {
 			  this.TransactionId = transaction.UserTransactionName;

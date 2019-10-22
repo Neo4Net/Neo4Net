@@ -28,12 +28,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using MisconfiguredIndexException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MisconfiguredIndexException;
 	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
@@ -80,19 +80,19 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
+//	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getIndexes;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getIndexes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasSize;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.haveState;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.haveState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class IndexRecoveryIT
 	{
@@ -141,11 +141,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				public void add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 				{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					 foreach ( IndexEntryUpdate<object> update in updates )
 					 {
 						  bool added = entitiesByScan.add( update.EntityId );
-						  assertTrue( added ); // scans should never see multiple updates from the same entityId
+						  assertTrue( added ); // scans should never see multiple updates from the same IEntityId
 						  if ( update.EntityId > SCAN_BARRIER_NODE_ID_THRESHOLD )
 						  {
 								populationAtId = update.EntityId;
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					public void process<T1>( IndexEntryUpdate<T1> update )
 					{
 						 bool added = entitiesByUpdater.add( update.EntityId );
-						 assertTrue( added ); // we know that in this test we won't apply multiple updates for an entityId
+						 assertTrue( added ); // we know that in this test we won't apply multiple updates for an IEntityId
 					}
 
 					public void close()
@@ -268,7 +268,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.Graphdb.schema.Schema_IndexState.Populating ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Populating ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  verify( _mockedIndexProvider, never() ).getOnlineAccessor(any(typeof(StoreIndexDescriptor)), any(typeof(IndexSamplingConfig)));
 			  latch.Signal();
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.Graphdb.schema.Schema_IndexState.Populating ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Populating ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  verify( _mockedIndexProvider, never() ).getOnlineAccessor(any(typeof(StoreIndexDescriptor)), any(typeof(IndexSamplingConfig)));
 			  latch.Signal();
@@ -325,7 +325,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  RotateLogsAndCheckPoint();
 			  // make updates
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Set<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> expectedUpdates = createSomeBananas(myLabel);
+//ORIGINAL LINE: java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> expectedUpdates = createSomeBananas(myLabel);
 			  ISet<IndexEntryUpdate<object>> expectedUpdates = CreateSomeBananas( _myLabel );
 
 			  // And Given
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.Graphdb.schema.Schema_IndexState.Online ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Online ) ) );
 			  verify( _mockedIndexProvider, times( 1 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  int onlineAccessorInvocationCount = 2; // once when we create the index, and once when we restart the db
 			  verify( _mockedIndexProvider, times( onlineAccessorInvocationCount ) ).getOnlineAccessor( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ) );
@@ -369,23 +369,23 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.Graphdb.schema.Schema_IndexState.Failed ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Failed ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 		 }
 
 		 private GraphDatabaseAPI _db;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 		 private readonly IndexProvider _mockedIndexProvider = mock( typeof( IndexProvider ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.kernel.extension.KernelExtensionFactory<?> mockedIndexProviderFactory = singleInstanceIndexProviderFactory(PROVIDER_DESCRIPTOR.getKey(), mockedIndexProvider);
+//ORIGINAL LINE: private final org.Neo4Net.kernel.extension.KernelExtensionFactory<?> mockedIndexProviderFactory = singleInstanceIndexProviderFactory(PROVIDER_DESCRIPTOR.getKey(), mockedIndexProvider);
 		 private KernelExtensionFactory<object> _mockedIndexProviderFactory;
 		 private readonly string _key = "number_of_bananas_owned";
 		 private readonly Label _myLabel = label( "MyLabel" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.neo4j.internal.kernel.api.exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.internal.kernel.api.exceptions.schema.MisconfiguredIndexException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {
@@ -473,11 +473,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Set<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> createSomeBananas(org.neo4j.graphdb.Label label)
+//ORIGINAL LINE: private java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> createSomeBananas(org.Neo4Net.graphdb.Label label)
 		 private ISet<IndexEntryUpdate<object>> CreateSomeBananas( Label label )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Set<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.HashSet<>();
+//ORIGINAL LINE: java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.HashSet<>();
 			  ISet<IndexEntryUpdate<object>> updates = new HashSet<IndexEntryUpdate<object>>();
 			  using ( Transaction tx = _db.beginTx() )
 			  {
@@ -501,14 +501,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public class GatheringIndexWriter : Neo4Net.Kernel.Api.Index.IndexAccessor_Adapter
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Set<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> regularUpdates = new java.util.HashSet<>();
+//ORIGINAL LINE: private final java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> regularUpdates = new java.util.HashSet<>();
 			  internal readonly ISet<IndexEntryUpdate<object>> RegularUpdates = new HashSet<IndexEntryUpdate<object>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Set<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates = new java.util.HashSet<>();
+//ORIGINAL LINE: private final java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates = new java.util.HashSet<>();
 			  internal readonly ISet<IndexEntryUpdate<object>> BatchedUpdates = new HashSet<IndexEntryUpdate<object>>();
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
 			  public override IndexUpdater NewUpdater( IndexUpdateMode mode )
 			  {
 					return new CollectingIndexUpdater(updates =>
@@ -531,7 +531,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.kernel.api.index.IndexPopulator indexPopulatorWithControlledCompletionTiming(final java.util.concurrent.CountDownLatch latch)
+//ORIGINAL LINE: private static org.Neo4Net.kernel.api.index.IndexPopulator indexPopulatorWithControlledCompletionTiming(final java.util.concurrent.CountDownLatch latch)
 		 private static IndexPopulator IndexPopulatorWithControlledCompletionTiming( System.Threading.CountdownEvent latch )
 		 {
 			  return new IndexPopulator_AdapterAnonymousInnerClass( latch );

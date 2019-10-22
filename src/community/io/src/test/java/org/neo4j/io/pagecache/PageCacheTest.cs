@@ -28,10 +28,10 @@ namespace Neo4Net.Io.pagecache
 
 
 	using Neo4Net.Functions;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
-	using DelegatingStoreChannel = Neo4Net.Graphdb.mockfs.DelegatingStoreChannel;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingStoreChannel = Neo4Net.GraphDb.mockfs.DelegatingStoreChannel;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -99,19 +99,19 @@ namespace Neo4Net.Io.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assumptions.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_EAGER_FLUSH;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_EAGER_FLUSH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_NO_GROW;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.ThreadTestUtils.fork;
+//	import static org.Neo4Net.test.ThreadTestUtils.fork;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.ByteArrayMatcher.byteArray;
+//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("OptionalGetWithoutIsPresent") public abstract class PageCacheTest<T extends PageCache> extends PageCacheTestSupport<T>
@@ -724,7 +724,7 @@ namespace Neo4Net.Io.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.mockfs.DelegatingFileSystemAbstraction writeAndForceCountingFs(final java.util.concurrent.atomic.AtomicInteger writeCounter, final java.util.concurrent.atomic.AtomicInteger forceCounter)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.mockfs.DelegatingFileSystemAbstraction writeAndForceCountingFs(final java.util.concurrent.atomic.AtomicInteger writeCounter, final java.util.concurrent.atomic.AtomicInteger forceCounter)
 		 private DelegatingFileSystemAbstraction WriteAndForceCountingFs( AtomicInteger writeCounter, AtomicInteger forceCounter )
 		 {
 			  return new DelegatingFileSystemAbstractionAnonymousInnerClass( this, fs, writeCounter, forceCounter );
@@ -745,7 +745,7 @@ namespace Neo4Net.Io.pagecache
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass( this, base.open( fileName, openMode ) );
@@ -1032,7 +1032,7 @@ namespace Neo4Net.Io.pagecache
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass2( this, base.open( fileName, openMode ) );
@@ -1475,7 +1475,7 @@ namespace Neo4Net.Io.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyOnReadCursor(org.neo4j.function.ThrowingConsumer<PageCursorAction,java.io.IOException> testTemplate) throws java.io.IOException
+//ORIGINAL LINE: private void verifyOnReadCursor(org.Neo4Net.function.ThrowingConsumer<PageCursorAction,java.io.IOException> testTemplate) throws java.io.IOException
 		 private void VerifyOnReadCursor( ThrowingConsumer<PageCursorAction, IOException> testTemplate )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -1493,7 +1493,7 @@ namespace Neo4Net.Io.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyOnWriteCursor(org.neo4j.function.ThrowingConsumer<PageCursorAction,java.io.IOException> testTemplate) throws java.io.IOException
+//ORIGINAL LINE: private void verifyOnWriteCursor(org.Neo4Net.function.ThrowingConsumer<PageCursorAction,java.io.IOException> testTemplate) throws java.io.IOException
 		 private void VerifyOnWriteCursor( ThrowingConsumer<PageCursorAction, IOException> testTemplate )
 		 {
 			  testTemplate.Accept( cursor => cursor.putByte( ( sbyte ) 1 ) );
@@ -2498,7 +2498,7 @@ namespace Neo4Net.Io.pagecache
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  StoreChannel channel = base.open( fileName, openMode );
@@ -3939,7 +3939,7 @@ namespace Neo4Net.Io.pagecache
 			 private IList<StoreChannel> channels;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  StoreChannel channel = new DelegatingStoreChannelAnonymousInnerClass4( this, base.open( fileName, openMode ) );
@@ -4051,7 +4051,7 @@ namespace Neo4Net.Io.pagecache
 			 private readonly IList<StoreChannel> channels;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  StoreChannel channel = new DelegatingStoreChannelAnonymousInnerClass5( this, base.open( fileName, openMode ) );
@@ -4146,7 +4146,7 @@ namespace Neo4Net.Io.pagecache
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass6( this, base.open( fileName, openMode ) );
@@ -4238,7 +4238,7 @@ namespace Neo4Net.Io.pagecache
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass7( this, base.open( fileName, openMode ) );
@@ -6626,7 +6626,7 @@ namespace Neo4Net.Io.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyNoFaultAccessToPagesNotInMemory(org.neo4j.io.pagecache.tracing.DefaultPageCacheTracer cacheTracer, org.neo4j.io.pagecache.tracing.cursor.DefaultPageCursorTracerSupplier cursorTracerSupplier, PageCursor nofault) throws java.io.IOException
+//ORIGINAL LINE: private void verifyNoFaultAccessToPagesNotInMemory(org.Neo4Net.io.pagecache.tracing.DefaultPageCacheTracer cacheTracer, org.Neo4Net.io.pagecache.tracing.cursor.DefaultPageCursorTracerSupplier cursorTracerSupplier, PageCursor nofault) throws java.io.IOException
 		 private void VerifyNoFaultAccessToPagesNotInMemory( DefaultPageCacheTracer cacheTracer, DefaultPageCursorTracerSupplier cursorTracerSupplier, PageCursor nofault )
 		 {
 			  assertTrue( nofault.Next() ); // File contains a page id 0.

@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.v1.messaging
 {
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using StructType = Neo4Net.Bolt.messaging.StructType;
 	using PackInput = Neo4Net.Bolt.v1.packstream.PackInput;
 	using PackOutput = Neo4Net.Bolt.v1.packstream.PackOutput;
@@ -46,15 +46,15 @@ namespace Neo4Net.Bolt.v1.messaging
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.packstream.PackStream.UNKNOWN_SIZE;
+//	import static org.Neo4Net.bolt.v1.packstream.PackStream.UNKNOWN_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.byteArray;
+//	import static org.Neo4Net.values.storable.Values.byteArray;
 
 	/// <summary>
 	/// Extended PackStream packer and unpacker classes for working
-	/// with Neo4j-specific data types, represented as structures.
+	/// with Neo4Net-specific data types, represented as structures.
 	/// </summary>
-	public class Neo4jPackV1 : Neo4jPack
+	public class Neo4NetPackV1 : Neo4NetPack
 	{
 		 public const long VERSION = 1;
 
@@ -70,12 +70,12 @@ namespace Neo4Net.Bolt.v1.messaging
 		 public const sbyte PATH = ( sbyte )'P';
 		 public const int PATH_SIZE = 3;
 
-		 public override Neo4Net.Bolt.messaging.Neo4jPack_Packer NewPacker( PackOutput output )
+		 public override Neo4Net.Bolt.messaging.Neo4NetPack_Packer NewPacker( PackOutput output )
 		 {
 			  return new PackerV1( output );
 		 }
 
-		 public override Neo4Net.Bolt.messaging.Neo4jPack_Unpacker NewUnpacker( PackInput input )
+		 public override Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker NewUnpacker( PackInput input )
 		 {
 			  return new UnpackerV1( input );
 		 }
@@ -90,7 +90,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  return this.GetType().Name;
 		 }
 
-		 protected internal class PackerV1 : PackStream.Packer, AnyValueWriter<IOException>, Neo4Net.Bolt.messaging.Neo4jPack_Packer
+		 protected internal class PackerV1 : PackStream.Packer, AnyValueWriter<IOException>, Neo4Net.Bolt.messaging.Neo4NetPack_Packer
 		 {
 			  internal const int INITIAL_PATH_CAPACITY = 500;
 			  internal const int NO_SUCH_ID = -1;
@@ -102,7 +102,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void pack(org.neo4j.values.AnyValue value) throws java.io.IOException
+//ORIGINAL LINE: public void pack(org.Neo4Net.values.AnyValue value) throws java.io.IOException
 			  public override void Pack( AnyValue value )
 			  {
 					value.WriteTo( this );
@@ -114,7 +114,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeNode(long nodeId, org.neo4j.values.storable.TextArray labels, org.neo4j.values.virtual.MapValue properties) throws java.io.IOException
+//ORIGINAL LINE: public void writeNode(long nodeId, org.Neo4Net.values.storable.TextArray labels, org.Neo4Net.values.virtual.MapValue properties) throws java.io.IOException
 			  public override void WriteNode( long nodeId, TextArray labels, MapValue properties )
 			  {
 					PackStructHeader( NODE_SIZE, NODE );
@@ -133,7 +133,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeRelationship(long relationshipId, long startNodeId, long endNodeId, org.neo4j.values.storable.TextValue type, org.neo4j.values.virtual.MapValue properties) throws java.io.IOException
+//ORIGINAL LINE: public void writeRelationship(long relationshipId, long startNodeId, long endNodeId, org.Neo4Net.values.storable.TextValue type, org.Neo4Net.values.virtual.MapValue properties) throws java.io.IOException
 			  public override void WriteRelationship( long relationshipId, long startNodeId, long endNodeId, TextValue type, MapValue properties )
 			  {
 					PackStructHeader( RELATIONSHIP_SIZE, RELATIONSHIP );
@@ -169,7 +169,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePath(org.neo4j.values.virtual.NodeValue[] nodes, org.neo4j.values.virtual.RelationshipValue[] relationships) throws java.io.IOException
+//ORIGINAL LINE: public void writePath(org.Neo4Net.values.virtual.NodeValue[] nodes, org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws java.io.IOException
 			  public override void WritePath( NodeValue[] nodes, RelationshipValue[] relationships )
 			  {
 					//A path is serialized in the following form
@@ -232,7 +232,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeNodesForPath(org.neo4j.values.virtual.NodeValue[] nodes) throws java.io.IOException
+//ORIGINAL LINE: private void writeNodesForPath(org.Neo4Net.values.virtual.NodeValue[] nodes) throws java.io.IOException
 			  internal virtual void WriteNodesForPath( NodeValue[] nodes )
 			  {
 					NodeIndexes.reset( nodes.Length );
@@ -259,7 +259,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRelationshipsForPath(org.neo4j.values.virtual.RelationshipValue[] relationships) throws java.io.IOException
+//ORIGINAL LINE: private void writeRelationshipsForPath(org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws java.io.IOException
 			  internal virtual void WriteRelationshipsForPath( RelationshipValue[] relationships )
 			  {
 					RelationshipIndexes.reset( relationships.Length );
@@ -295,7 +295,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePoint(org.neo4j.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws java.io.IOException
+//ORIGINAL LINE: public void writePoint(org.Neo4Net.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws java.io.IOException
 			  public override void WritePoint( CoordinateReferenceSystem crs, double[] coordinate )
 			  {
 					ThrowUnsupportedTypeError( "Point" );
@@ -449,21 +449,21 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void throwUnsupportedTypeError(String type) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: void throwUnsupportedTypeError(String type) throws org.Neo4Net.bolt.messaging.BoltIOException
 			  internal virtual void ThrowUnsupportedTypeError( string type )
 			  {
 					throw new BoltIOException( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, type + " is not supported as a return type in Bolt protocol version 1. " + "Please make sure driver supports at least protocol version 2. " + "Driver upgrade is most likely required." );
 			  }
 		 }
 
-		 protected internal class UnpackerV1 : PackStream.Unpacker, Neo4Net.Bolt.messaging.Neo4jPack_Unpacker
+		 protected internal class UnpackerV1 : PackStream.Unpacker, Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker
 		 {
 			  protected internal UnpackerV1( PackInput input ) : base( input )
 			  {
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue unpack() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue unpack() throws java.io.IOException
 			  public override AnyValue Unpack()
 			  {
 					PackType valType = PeekNextType();
@@ -508,7 +508,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.virtual.ListValue unpackList() throws java.io.IOException
+//ORIGINAL LINE: org.Neo4Net.values.virtual.ListValue unpackList() throws java.io.IOException
 			  internal virtual ListValue UnpackList()
 			  {
 					int size = ( int ) UnpackListHeader();
@@ -548,7 +548,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.values.AnyValue unpackStruct(char signature, long size) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.values.AnyValue unpackStruct(char signature, long size) throws java.io.IOException
 			  protected internal virtual AnyValue UnpackStruct( char signature, long size )
 			  {
 					StructType structType = StructType.valueOf( signature );
@@ -561,7 +561,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.virtual.MapValue unpackMap() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.values.virtual.MapValue unpackMap() throws java.io.IOException
 			  public override MapValue UnpackMap()
 			  {
 					int size = ( int ) UnpackMapHeader();

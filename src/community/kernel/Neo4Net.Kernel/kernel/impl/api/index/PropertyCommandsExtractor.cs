@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
 
 	/// <summary>
 	/// Implements both BatchTransactionApplier and TransactionApplier in order to reduce garbage.
@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// </summary>
 	public class PropertyCommandsExtractor : Neo4Net.Kernel.Impl.Api.TransactionApplier_Adapter, BatchTransactionApplier
 	{
-		 private readonly EntityCommandGrouper<NodeCommand> _nodeCommands = new EntityCommandGrouper<NodeCommand>( typeof( NodeCommand ), 16 );
-		 private readonly EntityCommandGrouper<RelationshipCommand> _relationshipCommands = new EntityCommandGrouper<RelationshipCommand>( typeof( RelationshipCommand ), 16 );
+		 private readonly IEntityCommandGrouper<NodeCommand> _nodeCommands = new IEntityCommandGrouper<NodeCommand>( typeof( NodeCommand ), 16 );
+		 private readonly IEntityCommandGrouper<RelationshipCommand> _relationshipCommands = new IEntityCommandGrouper<RelationshipCommand>( typeof( RelationshipCommand ), 16 );
 		 private bool _hasUpdates;
 
 		 public override TransactionApplier StartTx( CommandsToApply transaction )
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return _hasUpdates;
 		 }
 
-		 public virtual EntityCommandGrouper<NodeCommand>.Cursor NodeCommands
+		 public virtual IEntityCommandGrouper<NodeCommand>.Cursor NodeCommands
 		 {
 			 get
 			 {
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 		 }
 
-		 public virtual EntityCommandGrouper<RelationshipCommand>.Cursor RelationshipCommands
+		 public virtual IEntityCommandGrouper<RelationshipCommand>.Cursor RelationshipCommands
 		 {
 			 get
 			 {

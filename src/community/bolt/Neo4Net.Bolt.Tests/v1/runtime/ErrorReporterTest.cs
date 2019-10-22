@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.runtime
 {
 	using Test = org.junit.Test;
 
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.v1.runtime
 					if ( classification != Neo4Net.Kernel.Api.Exceptions.Status_Classification.DatabaseError )
 					{
 						 Neo4Net.Kernel.Api.Exceptions.Status_Code code = NewStatusCode( classification );
-						 Neo4jError error = Neo4jError.from( () => code, "Database error" );
+						 Neo4NetError error = Neo4NetError.from( () => code, "Database error" );
 						 reporter.Report( error );
 
 						 userLog.AssertNoLoggingOccurred();
@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  AssertableLogProvider internalLog = new AssertableLogProvider();
 			  ErrorReporter reporter = NewErrorReporter( userLog, internalLog );
 
-			  Neo4jError error = Neo4jError.fatalFrom( new TestDatabaseError() );
+			  Neo4NetError error = Neo4NetError.fatalFrom( new TestDatabaseError() );
 			  System.Guid reference = error.Reference();
 
 			  // when

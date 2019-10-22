@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Before = org.junit.Before;
 	using ClassRule = org.junit.ClassRule;
@@ -27,9 +27,9 @@ namespace Neo4Net.Graphdb
 	using Test = org.junit.Test;
 	using TestName = org.junit.rules.TestName;
 
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Neo4jMatchers = Neo4Net.Test.mockito.matcher.Neo4jMatchers;
+	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 	using SpatialMocks = Neo4Net.Test.mockito.mock.SpatialMocks;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
@@ -45,29 +45,29 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.findNodesByLabelAndProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.findNodesByLabelAndProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.isEmpty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.isEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
 	public class IndexingAcceptanceTest
 	{
@@ -87,7 +87,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldInterpretPropertyAsChangedEvenIfPropertyMovesFromOneRecordToAnother()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  long smallValue = 10L;
 			  long bigValue = 1L << 62;
 			  Node myNode;
@@ -105,7 +105,7 @@ namespace Neo4Net.Graphdb
 					}
 			  }
 
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "key" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "key" );
 
 			  // WHEN
 			  using ( Transaction tx = beansAPI.BeginTx() )
@@ -125,7 +125,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldUseDynamicPropertiesToIndexANodeWhenAddedAlongsideExistingPropertiesInASeparateTransaction()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 
 			  // When
 			  long id;
@@ -141,7 +141,7 @@ namespace Neo4Net.Graphdb
 					}
 			  }
 
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "key2" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "key2" );
 			  Node myNode;
 			  {
 					using ( Transaction tx = beansAPI.BeginTx() )
@@ -166,7 +166,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void SearchingForNodeByPropertyShouldWorkWithoutIndex()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node myNode = CreateNode( beansAPI, map( "name", "Hawking" ), _label1 );
 
 			  // When
@@ -178,9 +178,9 @@ namespace Neo4Net.Graphdb
 		 public virtual void SearchingUsesIndexWhenItExists()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node myNode = CreateNode( beansAPI, map( "name", "Hawking" ), _label1 );
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
 
 			  // When
 			  assertThat( findNodesByLabelAndProperty( _label1, "name", "Hawking", beansAPI ), containsOnly( myNode ) );
@@ -191,11 +191,11 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldCorrectlyUpdateIndexesWhenChangingLabelsAndPropertyAtTheSameTime()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node myNode = CreateNode( beansAPI, map( "name", "Hawking" ), _label1, _label2 );
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
-			  Neo4jMatchers.createIndex( beansAPI, _label2, "name" );
-			  Neo4jMatchers.createIndex( beansAPI, _label3, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label2, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label3, "name" );
 
 			  // When
 			  using ( Transaction tx = beansAPI.BeginTx() )
@@ -225,11 +225,11 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldCorrectlyUpdateIndexesWhenChangingLabelsAndPropertyMultipleTimesAllAtOnce()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node myNode = CreateNode( beansAPI, map( "name", "Hawking" ), _label1, _label2 );
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
-			  Neo4jMatchers.createIndex( beansAPI, _label2, "name" );
-			  Neo4jMatchers.createIndex( beansAPI, _label3, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label2, "name" );
+			  Neo4NetMatchers.createIndex( beansAPI, _label3, "name" );
 
 			  // When
 			  using ( Transaction tx = beansAPI.BeginTx() )
@@ -263,7 +263,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void SearchingByLabelAndPropertyReturnsEmptyWhenMissingLabelOrProperty()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 
 			  // When/Then
 			  assertThat( findNodesByLabelAndProperty( _label1, "name", "Hawking", beansAPI ), Empty );
@@ -274,8 +274,8 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldSeeIndexUpdatesWhenQueryingOutsideTransaction()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
 			  Node firstNode = CreateNode( beansAPI, map( "name", "Mattias" ), _label1 );
 
 			  // WHEN THEN
@@ -289,8 +289,8 @@ namespace Neo4Net.Graphdb
 		 public virtual void CreatedNodeShouldShowUpWithinTransaction()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
 
 			  // WHEN
 			  Transaction tx = beansAPI.BeginTx();
@@ -312,8 +312,8 @@ namespace Neo4Net.Graphdb
 		 public virtual void DeletedNodeShouldShowUpWithinTransaction()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
 			  Node firstNode = CreateNode( beansAPI, map( "name", "Mattias" ), _label1 );
 
 			  // WHEN
@@ -335,8 +335,8 @@ namespace Neo4Net.Graphdb
 		 public virtual void CreatedNodeShouldShowUpInIndexQuery()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( beansAPI, _label1, "name" );
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( beansAPI, _label1, "name" );
 			  CreateNode( beansAPI, map( "name", "Mattias" ), _label1 );
 
 			  // WHEN
@@ -359,8 +359,8 @@ namespace Neo4Net.Graphdb
 		 {
 			  // GIVEN
 			  string property = "name";
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( db, _label1, property );
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( db, _label1, property );
 
 			  // WHEN & THEN
 			  AssertCanCreateAndFind( db, _label1, property, "A String" );
@@ -416,8 +416,8 @@ namespace Neo4Net.Graphdb
 			  // this test was included here for now as a precondition for the following test
 
 			  // given
-			  GraphDatabaseService graph = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( graph, _label1, "name" );
+			  IGraphDatabaseService graph = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( graph, _label1, "name" );
 
 			  Node node1;
 			  Node node2;
@@ -445,8 +445,8 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldThrowWhenMultipleResultsForSingleNode()
 		 {
 			  // given
-			  GraphDatabaseService graph = DbRule.GraphDatabaseAPI;
-			  Neo4jMatchers.createIndex( graph, _label1, "name" );
+			  IGraphDatabaseService graph = DbRule.GraphDatabaseAPI;
+			  Neo4NetMatchers.createIndex( graph, _label1, "name" );
 
 			  Node node1;
 			  Node node2;
@@ -483,13 +483,13 @@ namespace Neo4Net.Graphdb
 			  string labelPrefix = "foo";
 			  string propertyKeyPrefix = "bar";
 			  string propertyValuePrefix = "baz";
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  for ( int i = 0; i < indexesCount; i++ )
 			  {
-					Neo4jMatchers.createIndexNoWait( db, Label.label( labelPrefix + i ), propertyKeyPrefix + i );
+					Neo4NetMatchers.createIndexNoWait( db, Label.label( labelPrefix + i ), propertyKeyPrefix + i );
 			  }
-			  Neo4jMatchers.waitForIndexes( db );
+			  Neo4NetMatchers.waitForIndexes( db );
 
 			  // When
 			  long nodeId;
@@ -526,7 +526,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private void AssertCanCreateAndFind( GraphDatabaseService db, Label label, string propertyKey, object value )
+		 private void AssertCanCreateAndFind( IGraphDatabaseService db, Label label, string propertyKey, object value )
 		 {
 			  Node created = CreateNode( db, map( propertyKey, value ), label );
 
@@ -542,7 +542,7 @@ namespace Neo4Net.Graphdb
 		 public const string LONG_STRING = "a long string that has to be stored in dynamic records";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -561,7 +561,7 @@ namespace Neo4Net.Graphdb
 			  _label3 = Label.label( "LABEL3-" + TestName.MethodName );
 		 }
 
-		 private Node CreateNode( GraphDatabaseService beansAPI, IDictionary<string, object> properties, params Label[] labels )
+		 private Node CreateNode( IGraphDatabaseService beansAPI, IDictionary<string, object> properties, params Label[] labels )
 		 {
 			  using ( Transaction tx = beansAPI.BeginTx() )
 			  {
@@ -576,19 +576,19 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.test.mockito.matcher.Neo4jMatchers.Deferred<Label> labels(final Node myNode)
-		 private Neo4jMatchers.Deferred<Label> Labels( Node myNode )
+//ORIGINAL LINE: private org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.Deferred<Label> labels(final Node myNode)
+		 private Neo4NetMatchers.Deferred<Label> Labels( Node myNode )
 		 {
 			  return new DeferredAnonymousInnerClass( this, DbRule.GraphDatabaseAPI, myNode );
 		 }
 
-		 private class DeferredAnonymousInnerClass : Neo4jMatchers.Deferred<Label>
+		 private class DeferredAnonymousInnerClass : Neo4NetMatchers.Deferred<Label>
 		 {
 			 private readonly IndexingAcceptanceTest _outerInstance;
 
-			 private Neo4Net.Graphdb.Node _myNode;
+			 private Neo4Net.GraphDb.Node _myNode;
 
-			 public DeferredAnonymousInnerClass( IndexingAcceptanceTest outerInstance, Neo4Net.Kernel.Internal.GraphDatabaseAPI getGraphDatabaseAPI, Neo4Net.Graphdb.Node myNode ) : base( getGraphDatabaseAPI )
+			 public DeferredAnonymousInnerClass( IndexingAcceptanceTest outerInstance, Neo4Net.Kernel.Internal.GraphDatabaseAPI getGraphDatabaseAPI, Neo4Net.GraphDb.Node myNode ) : base( getGraphDatabaseAPI )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._myNode = myNode;

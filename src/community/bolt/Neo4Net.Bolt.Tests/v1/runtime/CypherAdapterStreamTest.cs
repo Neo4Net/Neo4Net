@@ -26,10 +26,10 @@ namespace Neo4Net.Bolt.v1.runtime
 
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
-	using NotificationCode = Neo4Net.Graphdb.impl.notification.NotificationCode;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
+	using NotificationCode = Neo4Net.GraphDb.impl.notification.NotificationCode;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using DoubleValue = Neo4Net.Values.Storable.DoubleValue;
@@ -48,25 +48,25 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.READ_ONLY;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.READ_ONLY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.QueryType.READ_WRITE;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.QueryType.READ_WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.explained;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.explained;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.QueryExecutionType.query;
+//	import static org.Neo4Net.graphdb.QueryExecutionType.query;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleValue;
+//	import static org.Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.list;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.list;
 
 	public class CypherAdapterStreamTest
 	{
@@ -208,11 +208,11 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.virtual.MapValue metadataOf(CypherAdapterStream stream) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.values.virtual.MapValue metadataOf(CypherAdapterStream stream) throws Exception
 		 private MapValue MetadataOf( CypherAdapterStream stream )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.virtual.MapValueBuilder meta = new org.neo4j.values.virtual.MapValueBuilder();
+//ORIGINAL LINE: final org.Neo4Net.values.virtual.MapValueBuilder meta = new org.Neo4Net.values.virtual.MapValueBuilder();
 			  MapValueBuilder meta = new MapValueBuilder();
 			  stream.Accept( new BoltResult_VisitorAnonymousInnerClass( this, meta ) );
 			  return meta.Build();
@@ -265,14 +265,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final long dbHits, final long pageCacheHits, final long pageCacheMisses, final long rows, final java.util.List<String> identifiers, final org.neo4j.graphdb.ExecutionPlanDescription... children)
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final long dbHits, final long pageCacheHits, final long pageCacheMisses, final long rows, final java.util.List<String> identifiers, final org.Neo4Net.graphdb.ExecutionPlanDescription... children)
 		 private static ExecutionPlanDescription Plan( string name, IDictionary<string, object> args, long dbHits, long pageCacheHits, long pageCacheMisses, long rows, IList<string> identifiers, params ExecutionPlanDescription[] children )
 		 {
 			  return plan(name, args, identifiers, new ExecutionPlanDescription_ProfilerStatisticsAnonymousInnerClass(dbHits, pageCacheHits, pageCacheMisses, rows)
 			 , children);
 		 }
 
-		 private class ExecutionPlanDescription_ProfilerStatisticsAnonymousInnerClass : Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics
+		 private class ExecutionPlanDescription_ProfilerStatisticsAnonymousInnerClass : Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics
 		 {
 			 private long _dbHits;
 			 private long _pageCacheHits;
@@ -321,15 +321,15 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final java.util.List<String> identifiers, final org.neo4j.graphdb.ExecutionPlanDescription... children)
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final java.util.List<String> identifiers, final org.Neo4Net.graphdb.ExecutionPlanDescription... children)
 		 private static ExecutionPlanDescription Plan( string name, IDictionary<string, object> args, IList<string> identifiers, params ExecutionPlanDescription[] children )
 		 {
 			  return Plan( name, args, identifiers, null, children );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final java.util.List<String> identifiers, final org.neo4j.graphdb.ExecutionPlanDescription_ProfilerStatistics profile, final org.neo4j.graphdb.ExecutionPlanDescription... children)
-		 private static ExecutionPlanDescription Plan( string name, IDictionary<string, object> args, IList<string> identifiers, Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics profile, params ExecutionPlanDescription[] children )
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.ExecutionPlanDescription plan(final String name, final java.util.Map<String,Object> args, final java.util.List<String> identifiers, final org.Neo4Net.graphdb.ExecutionPlanDescription_ProfilerStatistics profile, final org.Neo4Net.graphdb.ExecutionPlanDescription... children)
+		 private static ExecutionPlanDescription Plan( string name, IDictionary<string, object> args, IList<string> identifiers, Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics profile, params ExecutionPlanDescription[] children )
 		 {
 			  return new ExecutionPlanDescriptionAnonymousInnerClass( name, args, identifiers, profile, children );
 		 }
@@ -339,10 +339,10 @@ namespace Neo4Net.Bolt.v1.runtime
 			 private string _name;
 			 private IDictionary<string, object> _args;
 			 private IList<string> _identifiers;
-			 private Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics _profile;
+			 private Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics _profile;
 			 private ExecutionPlanDescription[] _children;
 
-			 public ExecutionPlanDescriptionAnonymousInnerClass( string name, IDictionary<string, object> args, IList<string> identifiers, Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics profile, ExecutionPlanDescription[] children )
+			 public ExecutionPlanDescriptionAnonymousInnerClass( string name, IDictionary<string, object> args, IList<string> identifiers, Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics profile, ExecutionPlanDescription[] children )
 			 {
 				 this._name = name;
 				 this._args = args;
@@ -388,7 +388,7 @@ namespace Neo4Net.Bolt.v1.runtime
 				  return _profile != null;
 			 }
 
-			 public Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatistics
+			 public Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics ProfilerStatistics
 			 {
 				 get
 				 {

@@ -30,11 +30,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.RecordIdIterator.allIn;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Counts nodes and their labels and also builds <seealso cref="LabelScanStore label index"/> while doing so.
@@ -47,7 +47,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new BatchFeedStep( Control(), config, allIn(nodeStore, config), nodeStore.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.neo4j.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, nodeStore));
+//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, nodeStore));
 			  Add( new ReadRecordsStep<object>( Control(), config, false, nodeStore ) );
 			  Add( new LabelIndexWriterStep( Control(), config, labelIndex, nodeStore ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

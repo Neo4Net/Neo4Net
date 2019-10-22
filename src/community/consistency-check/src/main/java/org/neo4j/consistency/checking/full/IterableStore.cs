@@ -22,18 +22,18 @@
 namespace Neo4Net.Consistency.checking.full
 {
 
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Kernel.impl.store;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.CloningRecordIterator.cloned;
+//	import static org.Neo4Net.consistency.checking.full.CloningRecordIterator.cloned;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.Scanner.scan;
+//	import static org.Neo4Net.kernel.impl.store.Scanner.scan;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	public class IterableStore<RECORD> : BoundedIterable<RECORD> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{

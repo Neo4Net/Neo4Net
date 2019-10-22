@@ -30,18 +30,18 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	{
 		 private const sbyte KEY_TYPE = 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.index.internal.gbptree.Layout<KEY,?> layout;
+//ORIGINAL LINE: private final org.Neo4Net.index.internal.gbptree.Layout<KEY,?> layout;
 		 private readonly Layout<KEY, ?> _layout;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexKeyStorage(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, org.neo4j.index.internal.gbptree.Layout<KEY,?> layout) throws java.io.IOException
+//ORIGINAL LINE: IndexKeyStorage(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, org.Neo4Net.index.internal.gbptree.Layout<KEY,?> layout) throws java.io.IOException
 		 internal IndexKeyStorage<T1>( FileSystemAbstraction fs, File file, ByteBufferFactory.Allocator byteBufferFactory, int blockSize, Layout<T1> layout ) : base( fs, file, byteBufferFactory, blockSize )
 		 {
 			  this._layout = layout;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void add(KEY key, org.neo4j.io.pagecache.PageCursor pageCursor) throws java.io.IOException
+//ORIGINAL LINE: void add(KEY key, org.Neo4Net.io.pagecache.PageCursor pageCursor) throws java.io.IOException
 		 internal override void Add( KEY key, PageCursor pageCursor )
 		 {
 			  int entrySize = TYPE_SIZE + BlockEntry.KeySize( _layout, key );
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  internal readonly PageCursor PageCursor;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.index.internal.gbptree.Layout<KEY,?> layout;
+//ORIGINAL LINE: private final org.Neo4Net.index.internal.gbptree.Layout<KEY,?> layout;
 			  internal readonly Layout<KEY, ?> Layout;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly KEY KeyConflict;

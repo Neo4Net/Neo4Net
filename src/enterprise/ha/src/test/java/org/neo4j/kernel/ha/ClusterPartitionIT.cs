@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel.ha
 
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using TransientDatabaseFailureException = Neo4Net.Graphdb.TransientDatabaseFailureException;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using TransientDatabaseFailureException = Neo4Net.GraphDb.TransientDatabaseFailureException;
 	using TestRunConditions = Neo4Net.ha.TestRunConditions;
 	using HighAvailabilityMemberChangeEvent = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberChangeEvent;
 	using HighAvailabilityMemberListener = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberListener;
@@ -50,33 +50,33 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
+//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.instanceEvicted;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.instanceEvicted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.memberSeesOtherMemberAsFailed;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.memberSeesOtherMemberAsFailed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.DatabaseRule.tx;
+//	import static org.Neo4Net.test.rule.DatabaseRule.tx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.RetryACoupleOfTimesHandler.TRANSIENT_ERRORS;
+//	import static org.Neo4Net.test.rule.RetryACoupleOfTimesHandler.TRANSIENT_ERRORS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.RetryACoupleOfTimesHandler.retryACoupleOfTimesOn;
+//	import static org.Neo4Net.test.rule.RetryACoupleOfTimesHandler.retryACoupleOfTimesOn;
 
 	public class ClusterPartitionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.LoggerRule logger = new org.neo4j.test.rule.LoggerRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.LoggerRule logger = new org.Neo4Net.test.rule.LoggerRule();
 		 public LoggerRule Logger = new LoggerRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Dir = TestDirectory.testDirectory();
 
 		 private readonly string _testPropKey = "testPropKey";

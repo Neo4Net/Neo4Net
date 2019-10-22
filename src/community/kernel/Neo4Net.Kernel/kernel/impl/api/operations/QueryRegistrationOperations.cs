@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api.operations
 	/// <summary>
 	/// Query execution monitoring operations.
 	/// </summary>
-	/// <seealso cref= org.neo4j.kernel.impl.api.OperationsFacade </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.api.OperationsFacade </seealso>
 	public interface QueryRegistrationOperations
 	{
 		 Stream<ExecutingQuery> ExecutingQueries( KernelStatement statement );

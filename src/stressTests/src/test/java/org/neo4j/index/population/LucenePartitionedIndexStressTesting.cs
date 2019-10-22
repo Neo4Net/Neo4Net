@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Index.population
 {
@@ -30,13 +30,13 @@ namespace Neo4Net.Index.population
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Index.population
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helper.StressTestingHelper.fromEnv;
+//	import static org.Neo4Net.helper.StressTestingHelper.fromEnv;
 
 	public class LucenePartitionedIndexStressTesting
 	{
@@ -65,7 +65,7 @@ namespace Neo4Net.Index.population
 		 private static readonly int _waitDurationMinutes = Convert.ToInt32( fromEnv( "LUCENE_PARTITIONED_INDEX_WAIT_TILL_ONLINE", 30.ToString() ) );
 
 		 private ExecutorService _populators;
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private File _storeDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -149,7 +149,7 @@ namespace Neo4Net.Index.population
 			  return populationResult;
 		 }
 
-		 private void FindLastTrackedNodesByLabelAndProperties( GraphDatabaseService db, PopulationResult populationResult )
+		 private void FindLastTrackedNodesByLabelAndProperties( IGraphDatabaseService db, PopulationResult populationResult )
 		 {
 			  using ( Transaction ignored = Db.beginTx() )
 			  {
@@ -178,8 +178,8 @@ namespace Neo4Net.Index.population
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private PopulationResult populateDb(org.neo4j.graphdb.GraphDatabaseService db) throws java.util.concurrent.ExecutionException, InterruptedException
-		 private PopulationResult PopulateDb( GraphDatabaseService db )
+//ORIGINAL LINE: private PopulationResult populateDb(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.util.concurrent.ExecutionException, InterruptedException
+		 private PopulationResult PopulateDb( IGraphDatabaseService db )
 		 {
 			  AtomicLong nodesCounter = new AtomicLong();
 
@@ -227,7 +227,7 @@ namespace Neo4Net.Index.population
 			  _db.schema().indexFor(Label.label(LABEL)).on(PROPERTY_PREFIX + index).create();
 		 }
 
-		 private void AwaitIndexesOnline( GraphDatabaseService db )
+		 private void AwaitIndexesOnline( IGraphDatabaseService db )
 		 {
 			  using ( Transaction ignored = Db.beginTx() )
 			  {
@@ -311,10 +311,10 @@ namespace Neo4Net.Index.population
 		 {
 			  internal readonly int PopulatorNumber;
 			  internal readonly int Step;
-			  internal GraphDatabaseService Db;
+			  internal IGraphDatabaseService Db;
 			  internal AtomicLong NodesCounter;
 
-			  internal Populator( int populatorNumber, int step, GraphDatabaseService db, AtomicLong nodesCounter )
+			  internal Populator( int populatorNumber, int step, IGraphDatabaseService db, AtomicLong nodesCounter )
 			  {
 					this.PopulatorNumber = populatorNumber;
 					this.Step = step;
@@ -338,7 +338,7 @@ namespace Neo4Net.Index.population
 					return longSupplier.Value;
 			  }
 
-			  internal virtual int InsertBatchNodes( GraphDatabaseService db, System.Func<string> stringValueSupplier, System.Func<long> longSupplier )
+			  internal virtual int InsertBatchNodes( IGraphDatabaseService db, System.Func<string> stringValueSupplier, System.Func<long> longSupplier )
 			  {
 					using ( Transaction transaction = Db.beginTx() )
 					{

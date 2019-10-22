@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using Test = org.junit.Test;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
@@ -70,15 +70,15 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 {
 			  File storeDir = _testDirectory.databaseDir();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db = new org.neo4j.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabase(storeDir);
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabase(storeDir);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(_fs.get()).newImpermanentDatabase(storeDir);
 			  CreateSomeTransactions( db );
 			  EphemeralFileSystemAbstraction snapshot = _fs.snapshot( Db.shutdown );
 
 			  ( new TestGraphDatabaseFactory() ).setFileSystem(snapshot).newImpermanentDatabase(storeDir).shutdown();
 		 }
 
-		 private void CreateSomeTransactions( GraphDatabaseService db )
+		 private void CreateSomeTransactions( IGraphDatabaseService db )
 		 {
 			  Transaction tx = Db.beginTx();
 			  Node node1 = Db.createNode();

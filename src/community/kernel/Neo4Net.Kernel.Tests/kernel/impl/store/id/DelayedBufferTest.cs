@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.store.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Suppliers.singleton;
+//	import static org.Neo4Net.function.Suppliers.singleton;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 
 	public class DelayedBufferTest
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.store.id
 			  const long bufferTime = 3;
 			  VerifyingConsumer consumer = new VerifyingConsumer( size );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.time.Clock clock = org.neo4j.time.Clocks.systemClock();
+//ORIGINAL LINE: final java.time.Clock clock = org.Neo4Net.time.Clocks.systemClock();
 			  Clock clock = Clocks.systemClock();
 			  System.Func<long> chunkThreshold = clock.millis;
 			  System.Predicate<long> safeThreshold = time => clock.millis() - bufferTime >= time;

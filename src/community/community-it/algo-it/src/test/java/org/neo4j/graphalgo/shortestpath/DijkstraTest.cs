@@ -19,19 +19,19 @@
  */
 namespace Neo4Net.Graphalgo.shortestpath
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using SimpleGraphBuilder = Common.SimpleGraphBuilder;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo.impl.shortestpath;
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 
-	public class DijkstraTest : Neo4jAlgoTestCase
+	public class DijkstraTest : Neo4NetAlgoTestCase
 	{
 		 protected internal virtual Dijkstra<double> GetDijkstra( SimpleGraphBuilder graph, double? startCost, string startNode, string endNode )
 		 {

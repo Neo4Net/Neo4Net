@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
 
 	internal class OnlineIndexSamplingJob : IndexSamplingJob
 	{

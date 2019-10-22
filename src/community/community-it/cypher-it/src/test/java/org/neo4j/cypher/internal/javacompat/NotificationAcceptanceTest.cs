@@ -25,12 +25,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Test = org.junit.Test;
 
 
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -42,21 +42,21 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.CREATE_UNIQUE_UNAVAILABLE_FALLBACK;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.CREATE_UNIQUE_UNAVAILABLE_FALLBACK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.EAGER_LOAD_CSV;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.EAGER_LOAD_CSV;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.INDEX_HINT_UNFULFILLABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.LENGTH_ON_NON_PATH;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.LENGTH_ON_NON_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.RUNTIME_UNSUPPORTED;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.RUNTIME_UNSUPPORTED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationCode.UNBOUNDED_SHORTEST_PATH;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationCode.UNBOUNDED_SHORTEST_PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.impl.notification.NotificationDetail_Factory.index;
+//	import static org.Neo4Net.graphdb.impl.notification.NotificationDetail_Factory.index;
 
 	public class NotificationAcceptanceTest : NotificationTestSupport
 	{

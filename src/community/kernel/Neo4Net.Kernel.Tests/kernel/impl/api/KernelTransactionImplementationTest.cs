@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
@@ -93,13 +93,13 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class KernelTransactionImplementationTest extends KernelTransactionTestBase
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 public ExpectedException ExpectedException = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public System.Action<org.neo4j.kernel.api.KernelTransaction> transactionInitializer;
+//ORIGINAL LINE: @Parameterized.Parameter() public System.Action<org.Neo4Net.kernel.api.KernelTransaction> transactionInitializer;
 		 public System.Action<KernelTransaction> TransactionInitializer;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void emptyMetadataReturnedWhenMetadataIsNotSet() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void emptyMetadataReturnedWhenMetadataIsNotSet() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void EmptyMetadataReturnedWhenMetadataIsNotSet()
 		 {
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void accessSpecifiedTransactionMetadata() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void accessSpecifiedTransactionMetadata() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AccessSpecifiedTransactionMetadata()
 		 {
@@ -375,7 +375,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.TransactionTerminatedException.class) public void shouldThrowOnTerminationInCommit() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransactionTerminatedException.class) public void shouldThrowOnTerminationInCommit() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldThrowOnTerminationInCommit()
 		 {
@@ -410,10 +410,10 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch(1);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(1);
 			  DoubleLatch latch = new DoubleLatch( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.KernelTransaction transaction = newTransaction(loginContext());
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.KernelTransaction transaction = newTransaction(loginContext());
 			  KernelTransaction transaction = NewTransaction( LoginContext() );
 			  TransactionInitializer.accept( transaction );
 
@@ -507,7 +507,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void successfulTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void successfulTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SuccessfulTxShouldNotifyKernelTransactionsThatItIsClosed()
 		 {
@@ -520,7 +520,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failedTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void failedTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailedTxShouldNotifyKernelTransactionsThatItIsClosed()
 		 {
@@ -600,7 +600,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void terminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void terminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TerminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing()
 		 {
@@ -637,7 +637,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void terminatedTxMarkedForFailureClosesWithoutThrowing() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void terminatedTxMarkedForFailureClosesWithoutThrowing() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TerminatedTxMarkedForFailureClosesWithoutThrowing()
 		 {
@@ -827,7 +827,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void closeClosedTransactionIsNotAllowed() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void closeClosedTransactionIsNotAllowed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CloseClosedTransactionIsNotAllowed()
 		 {
@@ -840,7 +840,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void resetTransactionStatisticsOnRelease() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void resetTransactionStatisticsOnRelease() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ResetTransactionStatisticsOnRelease()
 		 {

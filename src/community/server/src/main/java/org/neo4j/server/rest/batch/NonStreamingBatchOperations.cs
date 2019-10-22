@@ -44,7 +44,7 @@ namespace Neo4Net.Server.rest.batch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void invoke(String method, String path, String body, System.Nullable<int> id, java.net.URI targetUri, org.neo4j.server.rest.web.InternalJettyServletRequest req, org.neo4j.server.rest.web.InternalJettyServletResponse res) throws java.io.IOException, javax.servlet.ServletException
+//ORIGINAL LINE: protected void invoke(String method, String path, String body, System.Nullable<int> id, java.net.URI targetUri, org.Neo4Net.server.rest.web.InternalJettyServletRequest req, org.Neo4Net.server.rest.web.InternalJettyServletResponse res) throws java.io.IOException, javax.servlet.ServletException
 		 protected internal override void Invoke( string method, string path, string body, int? id, URI targetUri, InternalJettyServletRequest req, InternalJettyServletResponse res )
 		 {
 			  WebServer.invokeDirectly( targetUri.Path, req, res );

@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private PhysicalTransactionRepresentation TransactionRepresentationOf( TransactionRecordState tx )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();

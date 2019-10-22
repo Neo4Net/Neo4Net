@@ -27,7 +27,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.ByteArrayPageCursor.wrap;
+//	import static org.Neo4Net.io.pagecache.ByteArrayPageCursor.wrap;
 
 	internal class PageAwareByteArrayCursor : PageCursor
 	{
@@ -362,7 +362,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.neo4j.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  _current.checkAndClearCursorException();

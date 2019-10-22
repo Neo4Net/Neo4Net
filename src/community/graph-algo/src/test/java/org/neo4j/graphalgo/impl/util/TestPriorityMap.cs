@@ -103,20 +103,20 @@ namespace Neo4Net.Graphalgo.impl.util
 		 internal virtual void ShouldKeepAllPrioritiesIfToldTo()
 		 {
 			  // GIVEN
-			  int entity = 5;
+			  int IEntity = 5;
 			  PriorityMap<int, int, double> map = PriorityMap.WithSelfKeyNaturalOrder( false, false );
-			  assertTrue( map.Put( entity, 3d ) );
-			  assertTrue( map.Put( entity, 2d ) );
+			  assertTrue( map.Put( IEntity, 3d ) );
+			  assertTrue( map.Put( IEntity, 2d ) );
 
 			  // WHEN
-			  assertTrue( map.Put( entity, 5d ) );
-			  assertTrue( map.Put( entity, 4d ) );
+			  assertTrue( map.Put( IEntity, 5d ) );
+			  assertTrue( map.Put( IEntity, 4d ) );
 
 			  // THEN
-			  AssertEntry( map.Pop(), entity, 2d );
-			  AssertEntry( map.Pop(), entity, 3d );
-			  AssertEntry( map.Pop(), entity, 4d );
-			  AssertEntry( map.Pop(), entity, 5d );
+			  AssertEntry( map.Pop(), IEntity, 2d );
+			  AssertEntry( map.Pop(), IEntity, 3d );
+			  AssertEntry( map.Pop(), IEntity, 4d );
+			  AssertEntry( map.Pop(), IEntity, 5d );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -161,10 +161,10 @@ namespace Neo4Net.Graphalgo.impl.util
 			  assertNull( map.Peek() );
 		 }
 
-		 private static void AssertEntry( Entry<int, double> entry, int? entity, double? priority )
+		 private static void AssertEntry( Entry<int, double> entry, int? IEntity, double? priority )
 		 {
 			  assertNotNull( entry );
-			  assertEquals( entity, entry.Entity );
+			  assertEquals( IEntity, entry.Entity );
 			  assertEquals( priority, entry.Priority );
 		 }
 	}

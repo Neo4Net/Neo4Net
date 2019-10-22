@@ -40,7 +40,7 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class GapFreeAllEntriesLabelScanReaderTest
@@ -52,7 +52,7 @@ namespace Neo4Net.Consistency.checking.full
 		 private static readonly long[] _labelIds = new long[] { 1 };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

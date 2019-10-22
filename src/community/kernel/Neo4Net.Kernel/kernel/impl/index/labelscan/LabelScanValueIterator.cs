@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.Index.Internal.gbptree;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.LabelScanReader_Fields.NO_ID;
+//	import static org.Neo4Net.storageengine.api.schema.LabelScanReader_Fields.NO_ID;
 
 	/// <summary>
 	/// <seealso cref="LongIterator"/> which iterate over multiple <seealso cref="LabelScanValue"/> and for each
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 protected internal long NextConflict;
 
-		 /// <param name="fromId"> entity to start from (exclusive). The cursor gives entries that are effectively small bit-sets and the fromId may
+		 /// <param name="fromId"> IEntity to start from (exclusive). The cursor gives entries that are effectively small bit-sets and the fromId may
 		 /// be somewhere inside a bit-set range. </param>
 		 internal LabelScanValueIterator( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, long fromId ) : base( toRemoveFromWhenClosed, cursor )
 		 {

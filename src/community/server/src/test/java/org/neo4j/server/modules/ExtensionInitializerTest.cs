@@ -27,7 +27,7 @@ namespace Neo4Net.Server.modules
 	using Mockito = org.mockito.Mockito;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
@@ -51,8 +51,8 @@ namespace Neo4Net.Server.modules
 			  ExtensionInitializer extensionInitializer = new ExtensionInitializer( neoServer );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectableProperties = extensionInitializer.initializePackages(java.util.Collections.singletonList("org.neo4j.server.modules"));
-			  ICollection<Injectable<object>> injectableProperties = extensionInitializer.InitializePackages( Collections.singletonList( "org.neo4j.server.modules" ) );
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectableProperties = extensionInitializer.initializePackages(java.util.Collections.singletonList("org.Neo4Net.server.modules"));
+			  ICollection<Injectable<object>> injectableProperties = extensionInitializer.InitializePackages( Collections.singletonList( "org.Neo4Net.server.modules" ) );
 
 			  assertTrue( injectableProperties.Any( i => ServerSettings.transaction_idle_timeout.name().Equals(i.Value) ) );
 		 }
@@ -83,8 +83,8 @@ namespace Neo4Net.Server.modules
 		 {
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.neo4j.server.plugins.Injectable<?>> start(org.neo4j.graphdb.GraphDatabaseService graphDatabaseService, org.apache.commons.configuration.Configuration config)
-			  public override ICollection<Injectable<object>> Start( GraphDatabaseService graphDatabaseService, Configuration config )
+//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> start(org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
+			  public override ICollection<Injectable<object>> Start( IGraphDatabaseService IGraphDatabaseService, Configuration config )
 			  {
 					return Iterators.asList( Iterators.map( new StringToInjectableFunction( this ), config.Keys ) );
 			  }
@@ -105,7 +105,7 @@ namespace Neo4Net.Server.modules
 
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.server.plugins.Injectable<String> apply(final String value)
+//ORIGINAL LINE: public org.Neo4Net.server.plugins.Injectable<String> apply(final String value)
 					public override Injectable<string> Apply( string value )
 					{
 						 return new InjectableAnonymousInnerClass( this, value );

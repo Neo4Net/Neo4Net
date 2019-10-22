@@ -24,8 +24,8 @@ namespace Neo4Net.Server.rest.web
 {
 
 	using CypherException = Neo4Net.Cypher.CypherException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Result = Neo4Net.Graphdb.Result;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Result = Neo4Net.GraphDb.Result;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -41,9 +41,9 @@ namespace Neo4Net.Server.rest.web
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKeys.Features_Fields.http_cypher_endpoint;
+//	import static org.Neo4Net.udc.UsageDataKeys.Features_Fields.http_cypher_endpoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKeys.features;
+//	import static org.Neo4Net.udc.UsageDataKeys.features;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/cypher") public class CypherService
@@ -57,15 +57,15 @@ namespace Neo4Net.Server.rest.web
 		 private const string INCLUDE_PLAN_PARAM = "includePlan";
 		 private const string PROFILE_PARAM = "profile";
 
-		 private readonly GraphDatabaseService _database;
+		 private readonly IGraphDatabaseService _database;
 		 private readonly CypherExecutor _cypherExecutor;
 		 private readonly UsageData _usage;
 		 private readonly OutputFormat _output;
 		 private readonly InputFormat _input;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public CypherService(@Context GraphDatabaseService database, @Context CypherExecutor cypherExecutor, @Context InputFormat input, @Context OutputFormat output, @Context UsageData usage)
-		 public CypherService( GraphDatabaseService database, CypherExecutor cypherExecutor, InputFormat input, OutputFormat output, UsageData usage )
+//ORIGINAL LINE: public CypherService(@Context IGraphDatabaseService database, @Context CypherExecutor cypherExecutor, @Context InputFormat input, @Context OutputFormat output, @Context UsageData usage)
+		 public CypherService( IGraphDatabaseService database, CypherExecutor cypherExecutor, InputFormat input, OutputFormat output, UsageData usage )
 		 {
 			  this._database = database;
 			  this._cypherExecutor = cypherExecutor;
@@ -83,7 +83,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @POST @SuppressWarnings({"unchecked", "ParameterCanBeLocal"}) public javax.ws.rs.core.Response cypher(String body, @Context HttpServletRequest request, @QueryParam(INCLUDE_STATS_PARAM) boolean includeStats, @QueryParam(INCLUDE_PLAN_PARAM) boolean includePlan, @QueryParam(PROFILE_PARAM) boolean profile) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: @POST @SuppressWarnings({"unchecked", "ParameterCanBeLocal"}) public javax.ws.rs.core.Response cypher(String body, @Context HttpServletRequest request, @QueryParam(INCLUDE_STATS_PARAM) boolean includeStats, @QueryParam(INCLUDE_PLAN_PARAM) boolean includePlan, @QueryParam(PROFILE_PARAM) boolean profile) throws org.Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual Response Cypher( string body, HttpServletRequest request, bool includeStats, bool includePlan, bool profile )
 		 {

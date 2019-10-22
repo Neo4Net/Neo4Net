@@ -23,18 +23,18 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
 	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
 	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.core
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Neo4Net.Storageengine.Api;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.core
 			  return _endNode;
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabase
+		 public virtual IGraphDatabaseService GraphDatabase
 		 {
 			 get
 			 {
@@ -457,7 +457,7 @@ namespace Neo4Net.Kernel.impl.core
 					_spi.failTransaction();
 					throw e;
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( e );
 			  }
@@ -483,7 +483,7 @@ namespace Neo4Net.Kernel.impl.core
 						return transaction.DataWrite().relationshipRemoveProperty(_id, propertyKeyId).asObjectCopy();
 					  }
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( e );
 			  }
@@ -546,7 +546,7 @@ namespace Neo4Net.Kernel.impl.core
 			  transaction.DataRead().singleRelationship(_id, relationships);
 			  if ( !relationships.Next() )
 			  {
-					throw new NotFoundException( new EntityNotFoundException( EntityType.RELATIONSHIP, _id ) );
+					throw new NotFoundException( new IEntityNotFoundException( IEntityType.RELATIONSHIP, _id ) );
 			  }
 		 }
 	}

@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.management
 {
@@ -29,21 +29,21 @@ namespace Neo4Net.Kernel.ha.management
 	using Service = Neo4Net.Helpers.Service;
 	using ManagementBeanProvider = Neo4Net.Jmx.impl.ManagementBeanProvider;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
-	using Neo4jMBean = Neo4Net.Jmx.impl.Neo4jMBean;
+	using Neo4NetMBean = Neo4Net.Jmx.impl.Neo4NetMBean;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
 	using ClusterMemberInfo = Neo4Net.management.ClusterMemberInfo;
 	using HighAvailability = Neo4Net.management.HighAvailability;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class HighAvailabilityBean extends org.neo4j.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class HighAvailabilityBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class HighAvailabilityBean : ManagementBeanProvider
 	{
 		 public HighAvailabilityBean() : base(typeof(HighAvailability))
 		 {
 		 }
 
-		 protected internal override Neo4jMBean CreateMXBean( ManagementData management )
+		 protected internal override Neo4NetMBean CreateMXBean( ManagementData management )
 		 {
 			  if ( !IsHA( management ) )
 			  {
@@ -53,8 +53,8 @@ namespace Neo4Net.Kernel.ha.management
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.jmx.impl.Neo4jMBean createMBean(org.neo4j.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
-		 protected internal override Neo4jMBean CreateMBean( ManagementData management )
+//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  if ( !IsHA( management ) )
 			  {
@@ -68,13 +68,13 @@ namespace Neo4Net.Kernel.ha.management
 			  return OperationalMode.ha == management.ResolveDependency( typeof( DatabaseInfo ) ).operationalMode;
 		 }
 
-		 private class HighAvailabilityImpl : Neo4jMBean, HighAvailability
+		 private class HighAvailabilityImpl : Neo4NetMBean, HighAvailability
 		 {
 			  internal readonly ManagementData ManagementData;
 			  internal readonly HighlyAvailableKernelData KernelData;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: HighAvailabilityImpl(org.neo4j.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: HighAvailabilityImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal HighAvailabilityImpl( ManagementData management ) : base( management )
 			  {
 					this.ManagementData = management;

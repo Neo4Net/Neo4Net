@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.transaction
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionCounters = Neo4Net.Kernel.impl.transaction.stats.TransactionCounters;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.neo4j.function.ThrowingConsumer<org.neo4j.graphdb.GraphDatabaseService,Exception> dbConsumer;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.graphdb.GraphDatabaseService,Exception> dbConsumer;
 		 public ThrowingConsumer<GraphDatabaseService, Exception> DbConsumer;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  return Arrays.asList(new object[]{(ThrowingConsumer<GraphDatabaseService, Exception>) db =>
 			  {
-			  }, false, "read"}, new object[]{ ( ThrowingConsumer<GraphDatabaseService,Exception> ) GraphDatabaseService.createNode, true, "write" });
+			  }, false, "read"}, new object[]{ ( ThrowingConsumer<GraphDatabaseService,Exception> ) IGraphDatabaseService.createNode, true, "write" });
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

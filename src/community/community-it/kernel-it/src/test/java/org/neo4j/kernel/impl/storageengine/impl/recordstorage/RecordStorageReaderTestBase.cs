@@ -24,12 +24,12 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using After = org.junit.After;
 	using Before = org.junit.Before;
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	/// <summary>
 	/// Base class for disk layer tests, which test read-access to committed data.
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  this.State = new KernelStatement( null, null, StorageReader, LockTracer.NONE, null, new ClockContext(), EmptyVersionContextSupplier.EMPTY );
 		 }
 
-		 protected internal virtual GraphDatabaseService CreateGraphDatabase()
+		 protected internal virtual IGraphDatabaseService CreateGraphDatabase()
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 		 }
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  Db.shutdown();
 		 }
 
-		 protected internal static Node CreateLabeledNode( GraphDatabaseService db, IDictionary<string, object> properties, params Label[] labels )
+		 protected internal static Node CreateLabeledNode( IGraphDatabaseService db, IDictionary<string, object> properties, params Label[] labels )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected String relationshipType(int id) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: protected String relationshipType(int id) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 protected internal virtual string RelationshipType( int id )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

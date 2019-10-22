@@ -35,7 +35,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 /// <returns> {@code true} if there was data read, otherwise {@code false}, meaning end of stream. </returns>
 		 /// <exception cref="IOException"> on I/O read error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean fillFrom(org.neo4j.csv.reader.Chunker chunker) throws java.io.IOException;
+//ORIGINAL LINE: boolean fillFrom(org.Neo4Net.csv.reader.Chunker chunker) throws java.io.IOException;
 		 bool FillFrom( Chunker chunker );
 	}
 

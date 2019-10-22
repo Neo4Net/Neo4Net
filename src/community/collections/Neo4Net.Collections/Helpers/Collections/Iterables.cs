@@ -31,12 +31,12 @@ namespace Neo4Net.Helpers.Collections
 
 	using Predicates = Neo4Net.Functions.Predicates;
 	using Neo4Net.Functions;
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	public sealed class Iterables
 	{
@@ -414,11 +414,11 @@ namespace Neo4Net.Helpers.Collections
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <T> org.neo4j.graphdb.ResourceIterable<T> asResourceIterable(final Iterable<T> iterable)
+//ORIGINAL LINE: public static <T> org.Neo4Net.graphdb.ResourceIterable<T> asResourceIterable(final Iterable<T> iterable)
 		 public static ResourceIterable<T> AsResourceIterable<T>( IEnumerable<T> iterable )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (iterable instanceof org.neo4j.graphdb.ResourceIterable<?>)
+//ORIGINAL LINE: if (iterable instanceof org.Neo4Net.graphdb.ResourceIterable<?>)
 			  if ( iterable is ResourceIterable<object> )
 			  {
 					return ( ResourceIterable<T> ) iterable;
@@ -626,7 +626,7 @@ namespace Neo4Net.Helpers.Collections
 					if ( iterator is ResourceIterator )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: ((org.neo4j.graphdb.ResourceIterator<?>) iterator).close();
+//ORIGINAL LINE: ((org.Neo4Net.graphdb.ResourceIterator<?>) iterator).close();
 						 ( ( ResourceIterator<object> ) iterator ).close();
 					}
 			  }
@@ -723,10 +723,10 @@ namespace Neo4Net.Helpers.Collections
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static <T> org.neo4j.graphdb.ResourceIterable<T> resourceIterable(final Iterable<T> iterable)
+//ORIGINAL LINE: public static <T> org.Neo4Net.graphdb.ResourceIterable<T> resourceIterable(final Iterable<T> iterable)
 		 public static ResourceIterable<T> ResourceIterable<T>( IEnumerable<T> iterable )
 		 {
-			  return () => Iterators.ResourceIterator(iterable.GetEnumerator(), Neo4Net.Graphdb.Resource_Fields.Empty);
+			  return () => Iterators.ResourceIterator(iterable.GetEnumerator(), Neo4Net.GraphDb.Resource_Fields.Empty);
 		 }
 
 		 private class FlattenIterable<T, I> : IEnumerable<T>
@@ -981,7 +981,7 @@ namespace Neo4Net.Helpers.Collections
 		 /// @param <E> the type of exception anticipated, inferred from the lambda </param>
 		 /// <exception cref="E"> if consumption fails with this exception </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T, E extends Exception> void safeForAll(org.neo4j.function.ThrowingConsumer<T,E> consumer, Iterable<T> subjects) throws E
+//ORIGINAL LINE: public static <T, E extends Exception> void safeForAll(org.Neo4Net.function.ThrowingConsumer<T,E> consumer, Iterable<T> subjects) throws E
 		 public static void SafeForAll<T, E>( ThrowingConsumer<T, E> consumer, IEnumerable<T> subjects ) where E : Exception
 		 {
 			  E exception = null;

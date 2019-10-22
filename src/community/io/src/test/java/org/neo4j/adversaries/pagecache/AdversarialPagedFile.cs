@@ -33,7 +33,7 @@ namespace Neo4Net.Adversaries.pagecache
 	/// </para>
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialPagedFile implements org.neo4j.io.pagecache.PagedFile
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialPagedFile implements org.Neo4Net.io.pagecache.PagedFile
 	public class AdversarialPagedFile : PagedFile
 	{
 		 private readonly PagedFile @delegate;
@@ -46,7 +46,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 		 public override PageCursor Io( long pageId, int pfFlags )
 		 {
 			  _adversary.injectFailure( typeof( System.InvalidOperationException ) );
@@ -85,7 +85,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.neo4j.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  _adversary.injectFailure( typeof( FileNotFoundException ), typeof( IOException ), typeof( SecurityException ) );

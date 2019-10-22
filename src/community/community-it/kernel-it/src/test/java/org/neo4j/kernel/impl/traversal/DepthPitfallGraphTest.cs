@@ -25,20 +25,20 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Test = org.junit.Test;
 
 
-	using Path = Neo4Net.Graphdb.Path;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Path = Neo4Net.GraphDb.Path;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.atDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.toDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
 
 	public class DepthPitfallGraphTest : TraversalTestBase
 	{

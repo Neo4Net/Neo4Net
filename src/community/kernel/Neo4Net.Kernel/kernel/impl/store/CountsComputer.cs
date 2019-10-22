@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store
 	using NumberArrayFactory = Neo4Net.@unsafe.Impl.Batchimport.cache.NumberArrayFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseDynamicExecution;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseDynamicExecution;
 
 	public class CountsComputer : DataInitializer<Neo4Net.Kernel.Impl.Api.CountsAccessor_Updater>
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private readonly ProgressReporter _progressMonitor;
 		 private readonly NumberArrayFactory _numberArrayFactory;
 
-		 internal CountsComputer( NeoStores stores, PageCache pageCache, DatabaseLayout databaseLayout ) : this( stores.MetaDataStore.LastCommittedTransactionId, stores.NodeStore, stores.RelationshipStore, ( int ) stores.LabelTokenStore.HighId, ( int ) stores.RelationshipTypeTokenStore.HighId, NumberArrayFactory.auto( pageCache, databaseLayout.DatabaseDirectory(), true, org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NoMonitor ) )
+		 internal CountsComputer( NeoStores stores, PageCache pageCache, DatabaseLayout databaseLayout ) : this( stores.MetaDataStore.LastCommittedTransactionId, stores.NodeStore, stores.RelationshipStore, ( int ) stores.LabelTokenStore.HighId, ( int ) stores.RelationshipTypeTokenStore.HighId, NumberArrayFactory.auto( pageCache, databaseLayout.DatabaseDirectory(), true, org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NoMonitor ) )
 		 {
 		 }
 

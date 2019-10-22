@@ -59,15 +59,15 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.add;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite that provides test cases for verifying" + " IndexProvider implementations. Each index provider that is to be tested by this suite" + " must create their own test class extending IndexProviderCompatibilityTestSuite." + " The @Ignore annotation doesn't prevent these tests to run, it rather removes some annoying" + " errors or warnings in some IDEs about test classes needing a public zero-arg constructor.") public class SimpleIndexPopulatorCompatibility extends IndexProviderCompatibilityTestSuite.Compatibility
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  // GIVEN
 			  IndexSamplingConfig indexSamplingConfig = new IndexSamplingConfig( Config.defaults() );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.Value propertyValue = org.neo4j.values.storable.Values.of("value1");
+//ORIGINAL LINE: final org.Neo4Net.values.storable.Value propertyValue = org.Neo4Net.values.storable.Values.of("value1");
 			  Value propertyValue = Values.of( "value1" );
 			  WithPopulator(IndexProvider.getPopulator(Descriptor, indexSamplingConfig, heapBufferFactory(1024)), p =>
 			  {
@@ -245,11 +245,11 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// - ("A01",1), ("A90",3), ("A9",2)
 		 /// If ("A01",1) and ("A90",3) would cause a split to occur they would produce a minimal splitter ("A9",3).
 		 /// Note that the value in this minimal splitter is equal to our last update ("A9",2).
-		 /// When making insertions with the unique populator we don't compare entityId which would means ("A9",2)
-		 /// ends up to the right of ("A9",3), even though it belongs to the left because of entityId being smaller.
+		 /// When making insertions with the unique populator we don't compare IEntityId which would means ("A9",2)
+		 /// ends up to the right of ("A9",3), even though it belongs to the left because of IEntityId being smaller.
 		 /// At this point the tree is in an inconsistent (key on wrong side of splitter).
 		 /// 
-		 /// To work around this problem the entityId is only kept in minimal splitter if strictly necessary to divide
+		 /// To work around this problem the IEntityId is only kept in minimal splitter if strictly necessary to divide
 		 /// left from right. This means the minimal splitter between ("A01",1) and ("A90",3) is ("A9",-1) and ("A9",2)
 		 /// will correctly be placed on the right side of this splitter.
 		 /// 
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHasAllValues(java.util.List<NodeAndValue> values) throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void assertHasAllValues(java.util.List<NodeAndValue> values) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
 		 private void AssertHasAllValues( IList<NodeAndValue> values )
 		 {
 			  using ( IndexAccessor accessor = IndexProvider.getOnlineAccessor( Descriptor, IndexSamplingConfig ) )

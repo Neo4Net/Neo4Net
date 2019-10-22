@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest
 {
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	using Before = org.junit.Before;
 

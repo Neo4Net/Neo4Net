@@ -41,12 +41,12 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache();
 			  TransactionMetadataCache cache = new TransactionMetadataCache();
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(42);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(42);
 			  TransactionMetadataCache.TransactionMetadata metadata = cache.GetTransactionMetadata( 42 );
 
 			  // then
@@ -59,10 +59,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache();
 			  TransactionMetadataCache cache = new TransactionMetadataCache();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition position = new org.neo4j.kernel.impl.transaction.log.LogPosition(3, 4);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
 			  LogPosition position = new LogPosition( 3, 4 );
 			  const int txId = 42;
 			  const int masterId = 0;
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  // when
 			  cache.CacheTransactionMetadata( txId, position, masterId, authorId, checksum, timestamp );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(txId);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(txId);
 			  TransactionMetadataCache.TransactionMetadata metadata = cache.GetTransactionMetadata( txId );
 
 			  // then
@@ -88,10 +88,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache();
 			  TransactionMetadataCache cache = new TransactionMetadataCache();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition position = new org.neo4j.kernel.impl.transaction.log.LogPosition(3, -1);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(3, -1);
 			  LogPosition position = new LogPosition( 3, -1 );
 			  const int txId = 42;
 			  const int masterId = 0;
@@ -119,10 +119,10 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache cache = new org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache();
 			  TransactionMetadataCache cache = new TransactionMetadataCache();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition position = new org.neo4j.kernel.impl.transaction.log.LogPosition(3, 4);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition position = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(3, 4);
 			  LogPosition position = new LogPosition( 3, 4 );
 			  const int txId = 42;
 			  const int masterId = 0;
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  cache.CacheTransactionMetadata( txId, position, masterId, authorId, checksum, timestamp );
 			  cache.Clear();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(txId);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata metadata = cache.getTransactionMetadata(txId);
 			  TransactionMetadataCache.TransactionMetadata metadata = cache.GetTransactionMetadata( txId );
 
 			  // then

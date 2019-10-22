@@ -23,15 +23,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractKeySize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.extractValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.getOverhead;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.getOverhead;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.putKeyValueSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
+//	import static org.Neo4Net.index.Internal.gbptree.DynamicSizeUtil.readKeyValueSize;
 
 	/// <summary>
 	/// A <seealso cref="BlockEntry"/> is a key-value mapping and the smallest unit in the <seealso cref="BlockStorage"/> and <seealso cref="IndexUpdateStorage"/> hierarchy. Except for being a

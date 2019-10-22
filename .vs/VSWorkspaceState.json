@@ -1,12 +1,18 @@
 {
   "ExpandedNodes": [
     "",
-    "\\community",
-    "\\enterprise",
-    "\\integrationtests",
-    "\\stresstests",
-    "\\tools"
+    "\\src",
+    "\\src\\Community",
+    "\\src\\Community\\common",
+    "\\src\\Community\\common\\Neo4Net.Common",
+    "\\src\\Community\\common\\Neo4Net.Common.Tests",
+    "\\src\\Community\\concurrent",
+    "\\src\\integrationTests\\src",
+    "\\src\\integrationTests\\src\\test",
+    "\\src\\integrationTests\\src\\test\\java",
+    "\\src\\integrationTests\\src\\test\\java\\org",
+    "\\src\\integrationTests\\src\\test\\java\\org\\Neo4Net"
   ],
-  "SelectedNode": "\\.gitignore",
+  "SelectedNode": "\\src\\Community\\common\\Neo4Net.Common.Tests",
   "PreviewInSolutionExplorer": false
 }

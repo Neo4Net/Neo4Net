@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using NodeState = Neo4Net.Storageengine.Api.txstate.NodeState;
 	using Value = Neo4Net.Values.Storable.Value;
 
-	internal class NodeStateImpl : PropertyContainerStateImpl, NodeState
+	internal class NodeStateImpl : IPropertyContainerStateImpl, NodeState
 	{
 		 internal const NodeState org;
 

@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -42,7 +42,7 @@ namespace Neo4Net.Graphdb
 	{
 		 private const string INTERNAL_LOG_FILE = "debug.log";
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -68,7 +68,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldNotWriteDebugToInternalDiagnosticsLogByDefault()
 		 {
 			  // Given
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDir.storeDir()).setConfig(GraphDatabaseSettings.logs_directory, TestDir.directory("logs").AbsolutePath).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDir.storeDir()).setConfig(GraphDatabaseSettings.logs_directory, TestDir.directory("logs").AbsolutePath).newGraphDatabase();
 
 			  // When
 			  LogService logService = ( ( GraphDatabaseAPI ) db ).DependencyResolver.resolveDependency( typeof( LogService ) );
@@ -91,12 +91,12 @@ namespace Neo4Net.Graphdb
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDir.storeDir()).setConfig(GraphDatabaseSettings.store_internal_debug_contexts, this.GetType().FullName + ",java.io").setConfig(GraphDatabaseSettings.logs_directory, TestDir.directory("logs").AbsolutePath).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(TestDir.storeDir()).setConfig(GraphDatabaseSettings.store_internal_debug_contexts, this.GetType().FullName + ",java.io").setConfig(GraphDatabaseSettings.logs_directory, TestDir.directory("logs").AbsolutePath).newGraphDatabase();
 
 			  // When
 			  LogService logService = ( ( GraphDatabaseAPI ) db ).DependencyResolver.resolveDependency( typeof( LogService ) );
 			  logService.GetInternalLog( this.GetType() ).debug("A debug entry");
-			  logService.GetInternalLog( typeof( GraphDatabaseService ) ).debug( "A GDS debug entry" );
+			  logService.GetInternalLog( typeof( IGraphDatabaseService ) ).debug( "A GDS debug entry" );
 			  logService.GetInternalLog( typeof( StringWriter ) ).debug( "A SW debug entry" );
 
 			  Db.shutdown();

@@ -25,7 +25,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //	import static org.junit.Assert.fail;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
 
 	public class GroupCacheTest
 	{

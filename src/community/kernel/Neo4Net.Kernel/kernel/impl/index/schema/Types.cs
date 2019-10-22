@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static AbstractArrayType<?> typeOf(org.neo4j.values.storable.ValueWriter_ArrayType arrayType)
+//ORIGINAL LINE: private static AbstractArrayType<?> typeOf(org.Neo4Net.values.storable.ValueWriter_ArrayType arrayType)
 		 private static AbstractArrayType<object> TypeOf( Neo4Net.Values.Storable.ValueWriter_ArrayType arrayType )
 		 {
 			  switch ( arrayType )

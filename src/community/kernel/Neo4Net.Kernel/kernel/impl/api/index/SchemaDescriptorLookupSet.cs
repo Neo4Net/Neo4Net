@@ -32,25 +32,25 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveArrays.isSortedSet;
+//	import static org.Neo4Net.collection.PrimitiveArrays.isSortedSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
 
 	/// <summary>
-	/// Collects and provides efficient access to <seealso cref="SchemaDescriptor"/>, based on complete list of entity tokens and partial or complete list of property keys.
-	/// The descriptors are first grouped by entity token and then further grouped by property key. The grouping works on sorted token lists
+	/// Collects and provides efficient access to <seealso cref="SchemaDescriptor"/>, based on complete list of IEntity tokens and partial or complete list of property keys.
+	/// The descriptors are first grouped by IEntity token and then further grouped by property key. The grouping works on sorted token lists
 	/// to minimize deduplication when doing lookups, especially for composite and multi-entity descriptors.
 	/// <para>
 	/// The selection works best when providing a complete list of property keys and will have to resort to some amount of over-selection
-	/// when caller can only provide partial list of property keys. Selection starts by traversing through the entity tokens, and for each
+	/// when caller can only provide partial list of property keys. Selection starts by traversing through the IEntity tokens, and for each
 	/// found leaf continues traversing through the property keys. When adding descriptors the token lists are sorted and token lists passed
 	/// into lookup methods also have to be sorted. This way the internal data structure can be represented as chains of tokens and traversal only
 	/// needs to go through the token chains in one order (the sorted order). A visualization of the internal data structure of added descriptors:
 	/// 
 	/// <pre>
-	///     Legend: ids inside [] are entity tokens, ids inside () are properties
+	///     Legend: ids inside [] are IEntity tokens, ids inside () are properties
 	///     Single-entity token descriptors
 	///     A: [0](4, 7, 3)
 	///     B: [0](7, 4)
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	///     D: [0](3, 4, 7)
 	///     E: [1](7)
 	///     F: [1](5, 6)
-	///     Multi-entity token descriptors (matches are made on any of the entity/property key tokens)
+	///     Multi-entity token descriptors (matches are made on any of the IEntity/property key tokens)
 	///     G: [0, 1](3, 4)
 	///     H: [1, 0](3)
 	/// 
@@ -92,12 +92,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Cheap way of finding out whether or not there are any descriptors matching the set of entity token ids and the property key id.
+		 /// Cheap way of finding out whether or not there are any descriptors matching the set of IEntity token ids and the property key id.
 		 /// </summary>
-		 /// <param name="entityTokenIds"> complete list of entity token ids for the entity to check. </param>
+		 /// <param name="entityTokenIds"> complete list of IEntity token ids for the IEntity to check. </param>
 		 /// <param name="propertyKey"> a property key id to check. </param>
 		 /// <returns> {@code true} if there are one or more descriptors matching the given tokens. </returns>
-		 internal virtual bool Has( long[] entityTokenIds, int propertyKey )
+		 internal virtual bool Has( long[] IEntityTokenIds, int propertyKey )
 		 {
 			  // Abort right away if there are no descriptors at all
 			  if ( Empty )
@@ -105,10 +105,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					return false;
 			  }
 
-			  // Check if there are any descriptors that matches any of the first (or only) entity token
-			  foreach ( long entityTokenId in entityTokenIds )
+			  // Check if there are any descriptors that matches any of the first (or only) IEntity token
+			  foreach ( long IEntityTokenId in IEntityTokenIds )
 			  {
-					PropertyMultiSet set = _byEntityToken.get( toIntExact( entityTokenId ) );
+					PropertyMultiSet set = _byEntityToken.get( toIntExact( IEntityTokenId ) );
 					if ( set != null && set.Has( propertyKey ) )
 					{
 						 return true;
@@ -118,13 +118,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Cheap way of finding out whether or not there are any descriptors matching the given entity token id.
+		 /// Cheap way of finding out whether or not there are any descriptors matching the given IEntity token id.
 		 /// </summary>
-		 /// <param name="entityTokenId"> entity token id to check. </param>
-		 /// <returns> {@code true} if there are one or more descriptors matching the given entity token. </returns>
-		 internal virtual bool Has( int entityTokenId )
+		 /// <param name="entityTokenId"> IEntity token id to check. </param>
+		 /// <returns> {@code true} if there are one or more descriptors matching the given IEntity token. </returns>
+		 internal virtual bool Has( int IEntityTokenId )
 		 {
-			  return _byEntityToken.containsKey( entityTokenId );
+			  return _byEntityToken.containsKey( IEntityTokenId );
 		 }
 
 		 /// <summary>
@@ -133,10 +133,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="schemaDescriptor"> the descriptor to add. </param>
 		 public virtual void Add( T schemaDescriptor )
 		 {
-			  foreach ( int entityTokenId in schemaDescriptor.schema().EntityTokenIds )
+			  foreach ( int IEntityTokenId in schemaDescriptor.schema().EntityTokenIds )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-					_byEntityToken.getIfAbsentPut( entityTokenId, PropertyMultiSet::new ).add( schemaDescriptor );
+					_byEntityToken.getIfAbsentPut( IEntityTokenId, PropertyMultiSet::new ).add( schemaDescriptor );
 			  }
 		 }
 
@@ -147,29 +147,29 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="schemaDescriptor"> the descriptor to remove. </param>
 		 public virtual void Remove( T schemaDescriptor )
 		 {
-			  foreach ( int entityTokenId in schemaDescriptor.schema().EntityTokenIds )
+			  foreach ( int IEntityTokenId in schemaDescriptor.schema().EntityTokenIds )
 			  {
-					PropertyMultiSet any = _byEntityToken.get( entityTokenId );
+					PropertyMultiSet any = _byEntityToken.get( IEntityTokenId );
 					if ( any != null && any.Remove( schemaDescriptor ) )
 					{
-						 _byEntityToken.remove( entityTokenId );
+						 _byEntityToken.remove( IEntityTokenId );
 					}
 			  }
 		 }
 
 		 /// <summary>
-		 /// Collects descriptors matching the given complete list of entity tokens and property key tokens.
+		 /// Collects descriptors matching the given complete list of IEntity tokens and property key tokens.
 		 /// I.e. all tokens of the matching descriptors can be found in the given lists of tokens.
 		 /// </summary>
 		 /// <param name="into"> <seealso cref="System.Collections.ICollection"/> to add matching descriptors into. </param>
-		 /// <param name="entityTokenIds"> complete and sorted array of entity token ids for the entity. </param>
-		 /// <param name="sortedProperties"> complete and sorted array of property key token ids for the entity. </param>
-		 internal virtual void MatchingDescriptorsForCompleteListOfProperties( ICollection<T> into, long[] entityTokenIds, int[] sortedProperties )
+		 /// <param name="entityTokenIds"> complete and sorted array of IEntity token ids for the IEntity. </param>
+		 /// <param name="sortedProperties"> complete and sorted array of property key token ids for the IEntity. </param>
+		 internal virtual void MatchingDescriptorsForCompleteListOfProperties( ICollection<T> into, long[] IEntityTokenIds, int[] sortedProperties )
 		 {
 			  Debug.Assert( isSortedSet( sortedProperties ) );
-			  foreach ( long entityTokenId in entityTokenIds )
+			  foreach ( long IEntityTokenId in IEntityTokenIds )
 			  {
-					PropertyMultiSet first = _byEntityToken.get( toIntExact( entityTokenId ) );
+					PropertyMultiSet first = _byEntityToken.get( toIntExact( IEntityTokenId ) );
 					if ( first != null )
 					{
 						 first.CollectForCompleteListOfProperties( into, sortedProperties );
@@ -178,21 +178,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Collects descriptors matching the given complete list of entity tokens, but only partial list of property key tokens.
-		 /// I.e. all entity tokens of the matching descriptors can be found in the given lists of tokens,
-		 /// but some matching descriptors may have other property key tokens in addition to those found in the given properties of the entity.
+		 /// Collects descriptors matching the given complete list of IEntity tokens, but only partial list of property key tokens.
+		 /// I.e. all IEntity tokens of the matching descriptors can be found in the given lists of tokens,
+		 /// but some matching descriptors may have other property key tokens in addition to those found in the given properties of the IEntity.
 		 /// This is for a scenario where the complete list of property key tokens isn't known when calling this method and may
-		 /// collect additional descriptors that in the end isn't relevant for the specific entity.
+		 /// collect additional descriptors that in the end isn't relevant for the specific IEntity.
 		 /// </summary>
 		 /// <param name="into"> <seealso cref="System.Collections.ICollection"/> to add matching descriptors into. </param>
-		 /// <param name="entityTokenIds"> complete and sorted array of entity token ids for the entity. </param>
-		 /// <param name="sortedProperties"> complete and sorted array of property key token ids for the entity. </param>
-		 internal virtual void MatchingDescriptorsForPartialListOfProperties( ICollection<T> into, long[] entityTokenIds, int[] sortedProperties )
+		 /// <param name="entityTokenIds"> complete and sorted array of IEntity token ids for the IEntity. </param>
+		 /// <param name="sortedProperties"> complete and sorted array of property key token ids for the IEntity. </param>
+		 internal virtual void MatchingDescriptorsForPartialListOfProperties( ICollection<T> into, long[] IEntityTokenIds, int[] sortedProperties )
 		 {
 			  Debug.Assert( isSortedSet( sortedProperties ) );
-			  foreach ( long entityTokenId in entityTokenIds )
+			  foreach ( long IEntityTokenId in IEntityTokenIds )
 			  {
-					PropertyMultiSet first = _byEntityToken.get( toIntExact( entityTokenId ) );
+					PropertyMultiSet first = _byEntityToken.get( toIntExact( IEntityTokenId ) );
 					if ( first != null )
 					{
 						 first.CollectForPartialListOfProperties( into, sortedProperties );
@@ -201,16 +201,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Collects descriptors matching the given complete list of entity tokens.
+		 /// Collects descriptors matching the given complete list of IEntity tokens.
 		 /// </summary>
 		 /// <param name="into"> <seealso cref="System.Collections.ICollection"/> to add matching descriptors into. </param>
-		 /// <param name="entityTokenIds"> complete and sorted array of entity token ids for the entity. </param>
-		 internal virtual void MatchingDescriptors( ICollection<T> into, long[] entityTokenIds )
+		 /// <param name="entityTokenIds"> complete and sorted array of IEntity token ids for the IEntity. </param>
+		 internal virtual void MatchingDescriptors( ICollection<T> into, long[] IEntityTokenIds )
 		 {
-			  Debug.Assert( isSortedSet( entityTokenIds ) );
-			  foreach ( long entityTokenId in entityTokenIds )
+			  Debug.Assert( isSortedSet( IEntityTokenIds ) );
+			  foreach ( long IEntityTokenId in IEntityTokenIds )
 			  {
-					PropertyMultiSet set = _byEntityToken.get( toIntExact( entityTokenId ) );
+					PropertyMultiSet set = _byEntityToken.get( toIntExact( IEntityTokenId ) );
 					if ( set != null )
 					{
 						 set.CollectAll( into );

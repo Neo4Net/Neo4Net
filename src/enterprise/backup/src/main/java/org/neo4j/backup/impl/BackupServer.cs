@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -40,9 +40,9 @@ namespace Neo4Net.backup.impl
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
+//	import static org.Neo4Net.com.TxChecksumVerifier_Fields.ALWAYS_MATCH;
 
 	public class BackupServer : Server<TheBackupInterface, object>
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.backup.impl
 		 internal static readonly int FrameLength = Protocol.MEGA * 4;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public BackupServer(org.neo4j.backup.TheBackupInterface requestTarget, final org.neo4j.helpers.HostnamePort server, org.neo4j.logging.LogProvider logProvider, org.neo4j.kernel.monitoring.ByteCounterMonitor byteCounterMonitor, org.neo4j.com.monitor.RequestMonitor requestMonitor)
+//ORIGINAL LINE: public BackupServer(org.Neo4Net.backup.TheBackupInterface requestTarget, final org.Neo4Net.helpers.HostnamePort server, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.monitoring.ByteCounterMonitor byteCounterMonitor, org.Neo4Net.com.monitor.RequestMonitor requestMonitor)
 		 public BackupServer( TheBackupInterface requestTarget, HostnamePort server, LogProvider logProvider, ByteCounterMonitor byteCounterMonitor, RequestMonitor requestMonitor ) : base( requestTarget, NewBackupConfig( FrameLength, server ), logProvider, FrameLength, BackupProtocolVersion, ALWAYS_MATCH, Clocks.systemClock(), byteCounterMonitor, requestMonitor )
 		 {
 		 }
@@ -73,7 +73,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static Configuration newBackupConfig(final int chunkSize, final org.neo4j.helpers.HostnamePort server)
+//ORIGINAL LINE: private static Configuration newBackupConfig(final int chunkSize, final org.Neo4Net.helpers.HostnamePort server)
 		 private static Configuration NewBackupConfig( int chunkSize, HostnamePort server )
 		 {
 			  return new ConfigurationAnonymousInnerClass( chunkSize, server );

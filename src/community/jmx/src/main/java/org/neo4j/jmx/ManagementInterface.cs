@@ -23,7 +23,7 @@ namespace Neo4Net.Jmx
 {
 
 	/// <summary>
-	/// Marks that an interface is a Neo4j management interface.
+	/// Marks that an interface is a Neo4Net management interface.
 	/// </summary>
 	[AttributeUsage(AttributeTargets.Class, AllowMultiple = false, Inherited = false), Obsolete]
 	public class ManagementInterface : System.Attribute

@@ -42,7 +42,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using Bookmark = Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark;
-	using AuthorizationExpiredException = Neo4Net.Graphdb.security.AuthorizationExpiredException;
+	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -63,13 +63,13 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.ValueUtils.asMapValue;
+//	import static org.Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringArray;
+//	import static org.Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class ReadyStateTest
 	{
@@ -227,7 +227,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldBeginTransactionWithSingleBookmark()
 		 {
-			  IDictionary<string, object> @params = map( "bookmark", "neo4j:bookmark:v1:tx15" );
+			  IDictionary<string, object> @params = map( "bookmark", "Neo4Net:bookmark:v1:tx15" );
 
 			  BoltStateMachineState newState = _state.process( new RunMessage( "BEGIN", asMapValue( @params ) ), _context );
 			  assertEquals( _streamingState, newState );
@@ -239,7 +239,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldBeginTransactionWithMultipleBookmarks()
 		 {
-			  IDictionary<string, object> @params = map( "bookmarks", asList( "neo4j:bookmark:v1:tx7", "neo4j:bookmark:v1:tx1", "neo4j:bookmark:v1:tx92", "neo4j:bookmark:v1:tx39" ) );
+			  IDictionary<string, object> @params = map( "bookmarks", asList( "Neo4Net:bookmark:v1:tx7", "Neo4Net:bookmark:v1:tx1", "Neo4Net:bookmark:v1:tx92", "Neo4Net:bookmark:v1:tx39" ) );
 
 			  BoltStateMachineState newState = _state.process( new RunMessage( "BEGIN", asMapValue( @params ) ), _context );
 			  assertEquals( _streamingState, newState );

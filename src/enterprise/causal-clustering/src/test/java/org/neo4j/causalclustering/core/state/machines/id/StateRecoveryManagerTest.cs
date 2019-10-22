@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.machines.id
 {
@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 	using Neo4Net.causalclustering.core.state;
 	using Neo4Net.causalclustering.core.state.storage;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
@@ -130,7 +130,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
 			  StateRecoveryManager.RecoveryStatus recoveryStatus = manager.Recover( fileA, fileB );
 
 			  // then
@@ -161,7 +161,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
 			  StateRecoveryManager.RecoveryStatus recoveryStatus = manager.Recover( fileA, fileB );
 
 			  // then
@@ -198,7 +198,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recoveryStatus = manager.recover(fileA, fileB);
 			  StateRecoveryManager.RecoveryStatus recoveryStatus = manager.Recover( fileA, fileB );
 
 			  // then
@@ -223,7 +223,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recovered = manager.recover(fileA(), fileB());
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus recovered = manager.recover(fileA(), fileB());
 			  StateRecoveryManager.RecoveryStatus recovered = manager.Recover( FileA(), FileB() );
 
 			  // then
@@ -242,11 +242,11 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeSomeGarbage(org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: private void writeSomeGarbage(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File file) throws java.io.IOException
 		 private void WriteSomeGarbage( EphemeralFileSystemAbstraction fsa, File file )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.fs.StoreChannel channel = fsa.open(file, org.neo4j.io.fs.OpenMode.READ_WRITE);
+//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel channel = fsa.open(file, org.Neo4Net.io.fs.OpenMode.READ_WRITE);
 			  StoreChannel channel = fsa.Open( file, OpenMode.READ_WRITE );
 			  ByteBuffer buffer = ByteBuffer.allocate( 4 );
 			  buffer.putInt( 9876 );
@@ -257,11 +257,11 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeSomeLongsIn(org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File file, long... longs) throws java.io.IOException
+//ORIGINAL LINE: private void writeSomeLongsIn(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File file, long... longs) throws java.io.IOException
 		 private void WriteSomeLongsIn( EphemeralFileSystemAbstraction fsa, File file, params long[] longs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.fs.StoreChannel channel = fsa.open(file, org.neo4j.io.fs.OpenMode.READ_WRITE);
+//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel channel = fsa.open(file, org.Neo4Net.io.fs.OpenMode.READ_WRITE);
 			  StoreChannel channel = fsa.Open( file, OpenMode.READ_WRITE );
 			  ByteBuffer buffer = ByteBuffer.allocate( longs.Length * 8 );
 
@@ -277,7 +277,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void fillUpAndForce(org.neo4j.io.fs.StoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: private void fillUpAndForce(org.Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
 		 private void FillUpAndForce( StoreChannel channel )
 		 {
 			  for ( int i = 0; i < _numberOfRecordsPerFile; i++ )
@@ -309,14 +309,14 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(System.Nullable<long> aLong, org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(System.Nullable<long> aLong, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Marshal( long? aLong, WritableChannel channel )
 			  {
 					channel.PutLong( aLong.Value );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected System.Nullable<long> unmarshal0(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected System.Nullable<long> unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
 			  protected internal override long? Unmarshal0( ReadableChannel channel )
 			  {
 					return channel.Long;

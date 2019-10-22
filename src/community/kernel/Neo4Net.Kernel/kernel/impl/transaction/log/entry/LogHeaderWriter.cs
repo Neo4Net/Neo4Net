@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogVersions.CURRENT_FORMAT_VERSION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_FORMAT_VERSION;
 
 	public class LogHeaderWriter
 	{
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeLogHeader(org.neo4j.kernel.impl.transaction.log.FlushableChannel channel, long logVersion, long previousCommittedTxId) throws java.io.IOException
+//ORIGINAL LINE: public static void writeLogHeader(org.Neo4Net.kernel.impl.transaction.log.FlushableChannel channel, long logVersion, long previousCommittedTxId) throws java.io.IOException
 		 public static void WriteLogHeader( FlushableChannel channel, long logVersion, long previousCommittedTxId )
 		 {
 			  channel.PutLong( EncodeLogVersion( logVersion ) );
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeLogHeader(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, long logVersion, long previousLastCommittedTxId) throws java.io.IOException
+//ORIGINAL LINE: public static void writeLogHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, long logVersion, long previousLastCommittedTxId) throws java.io.IOException
 		 public static void WriteLogHeader( FileSystemAbstraction fileSystem, File file, long logVersion, long previousLastCommittedTxId )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ_WRITE ) )
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeLogHeader(org.neo4j.io.fs.StoreChannel channel, long logVersion, long previousLastCommittedTxId) throws java.io.IOException
+//ORIGINAL LINE: public static void writeLogHeader(org.Neo4Net.io.fs.StoreChannel channel, long logVersion, long previousLastCommittedTxId) throws java.io.IOException
 		 public static void WriteLogHeader( StoreChannel channel, long logVersion, long previousLastCommittedTxId )
 		 {
 			  ByteBuffer buffer = ByteBuffer.allocate( LOG_HEADER_SIZE );

@@ -17,18 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
+	using IGraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 	public class CreateAndDeleteNodesIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 		 internal enum RelTypes
@@ -41,7 +41,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void CreatingAndDeletingEntitiesShouldNotThrow()
 		 {
 			  // Given
-			  GraphDatabaseService dataBase = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService dataBase = DbRule.GraphDatabaseAPI;
 			  Node myNode;
 
 			  // When
@@ -55,7 +55,7 @@ namespace Neo4Net.Graphdb
 			  }
 
 			  // When
-			  GraphDatabaseServiceCleaner.cleanupAllRelationshipsAndNodes( dataBase );
+			  IGraphDatabaseServiceCleaner.cleanupAllRelationshipsAndNodes( dataBase );
 		 }
 	}
 

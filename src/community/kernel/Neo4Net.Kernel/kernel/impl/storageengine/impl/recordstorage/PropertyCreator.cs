@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 					freeHost.InUse = true;
 					if ( primitive.NextProp != Record.NO_NEXT_PROPERTY.intValue() )
 					{
-						 // This isn't the first property record for the entity, re-shuffle the first one so that
+						 // This isn't the first property record for the IEntity, re-shuffle the first one so that
 						 // the new one becomes the first
 						 PropertyRecord prevProp = propertyRecords.GetOrLoad( primitive.NextProp, primitive ).forChangingLinkage();
 						 Debug.Assert( prevProp.PrevProp == Record.NO_PREVIOUS_PROPERTY.intValue() );

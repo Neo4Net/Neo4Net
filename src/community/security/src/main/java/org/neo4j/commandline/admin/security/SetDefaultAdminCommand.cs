@@ -56,7 +56,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  try
@@ -80,7 +80,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			 set
 			 {
 				  FileSystemAbstraction fileSystem = _outsideWorld.fileSystem();
-				  Config config = LoadNeo4jConfig();
+				  Config config = LoadNeo4NetConfig();
    
 				  FileUserRepository users = CommunitySecurityModule.getUserRepository( config, NullLogProvider.Instance, fileSystem );
    
@@ -121,7 +121,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			 }
 		 }
 
-		 internal virtual Config LoadNeo4jConfig()
+		 internal virtual Config LoadNeo4NetConfig()
 		 {
 			  return Config.fromFile( _configDir.resolve( Config.DEFAULT_CONFIG_FILE_NAME ) ).withHome( _homeDir ).withConnectorsDisabled().withNoThrowOnFileLoadFailure().build();
 		 }

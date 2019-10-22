@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 	public interface IndexDropAction
 	{

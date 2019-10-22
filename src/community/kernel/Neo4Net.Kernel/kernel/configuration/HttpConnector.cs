@@ -24,22 +24,22 @@ namespace Neo4Net.Kernel.configuration
 {
 	using Description = Neo4Net.Configuration.Description;
 	using ReplacedBy = Neo4Net.Configuration.ReplacedBy;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.NO_DEFAULT;
+//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.advertisedAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.legacyFallback;
+//	import static org.Neo4Net.kernel.configuration.Settings.legacyFallback;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.listenAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsObeyCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	[Description("Configuration options for HTTP connectors. " + "\"(http-connector-key)\" is a placeholder for a unique name for the connector, for instance " + "\"http-public\" or some other name that describes what the connector is for.")]
 	public class HttpConnector : Connector

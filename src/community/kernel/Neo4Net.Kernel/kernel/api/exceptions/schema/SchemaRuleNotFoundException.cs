@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 	{
 		 private const string NOT_FOUND_MESSAGE_TEMPLATE = "No %s was found for %s.";
 
-		 public SchemaRuleNotFoundException( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.SchemaRuleAccessFailed, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
+		 public SchemaRuleNotFoundException( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.SchemaRuleAccessFailed, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
 		 {
 		 }
 	}

@@ -28,8 +28,8 @@ namespace Neo4Net.Index
 	using BeforeClass = org.junit.BeforeClass;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -37,9 +37,9 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 
-	public abstract class Neo4jTestCase
+	public abstract class Neo4NetTestCase
 	{
-		 private static GraphDatabaseService _graphDb;
+		 private static IGraphDatabaseService _graphDb;
 		 private Transaction _tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -119,7 +119,7 @@ namespace Neo4Net.Index
 			  assertTrue( "delete " + file, file.delete() );
 		 }
 
-		 protected internal static GraphDatabaseService GraphDb()
+		 protected internal static IGraphDatabaseService GraphDb()
 		 {
 			  return _graphDb;
 		 }

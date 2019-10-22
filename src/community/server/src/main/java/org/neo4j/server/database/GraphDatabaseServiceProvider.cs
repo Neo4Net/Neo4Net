@@ -20,22 +20,22 @@
 namespace Neo4Net.Server.database
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 
 	using HttpContext = com.sun.jersey.api.core.HttpContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class GraphDatabaseServiceProvider extends InjectableProvider<org.neo4j.graphdb.GraphDatabaseService>
-	public class GraphDatabaseServiceProvider : InjectableProvider<GraphDatabaseService>
+//ORIGINAL LINE: @Provider public class IGraphDatabaseServiceProvider extends InjectableProvider<org.Neo4Net.graphdb.GraphDatabaseService>
+	public class IGraphDatabaseServiceProvider : InjectableProvider<GraphDatabaseService>
 	{
 		 public Database Database;
 
-		 public GraphDatabaseServiceProvider( Database database ) : base( typeof( GraphDatabaseService ) )
+		 public IGraphDatabaseServiceProvider( Database database ) : base( typeof( IGraphDatabaseService ) )
 		 {
 			  this.Database = database;
 		 }
 
-		 public override GraphDatabaseService GetValue( HttpContext httpContext )
+		 public override IGraphDatabaseService GetValue( HttpContext httpContext )
 		 {
 			  return Database.Graph;
 		 }

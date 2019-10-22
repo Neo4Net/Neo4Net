@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void insertDocument(org.neo4j.kernel.api.impl.index.partition.WritableIndexPartition partition, long nodeId, Object propertyValue) throws java.io.IOException
+//ORIGINAL LINE: private static void insertDocument(org.Neo4Net.kernel.api.impl.index.partition.WritableIndexPartition partition, long nodeId, Object propertyValue) throws java.io.IOException
 		 private static void InsertDocument( WritableIndexPartition partition, long nodeId, object propertyValue )
 		 {
 			  Document doc = LuceneDocumentStructure.documentRepresentingProperties( nodeId, Values.of( propertyValue ) );

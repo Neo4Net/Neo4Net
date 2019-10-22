@@ -127,23 +127,23 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  // then
 			  int expectedNodes = 0;
 			  int expectedProperties = 0;
-			  foreach ( Ids entity in ids )
+			  foreach ( Ids IEntity in ids )
 			  {
-					bool expectedToBeInUse = !ArrayUtils.contains( duplicateNodeIds, entity.Node.Id );
+					bool expectedToBeInUse = !ArrayUtils.contains( duplicateNodeIds, IEntity.Node.Id );
 					int stride = expectedToBeInUse ? 1 : 0;
 					expectedNodes += stride;
 
 					// Verify node record
-					assertEquals( expectedToBeInUse, neoStores.NodeStore.isInUse( entity.Node.Id ) );
+					assertEquals( expectedToBeInUse, neoStores.NodeStore.isInUse( IEntity.Node.Id ) );
 
 					// Verify label records
-					foreach ( DynamicRecord labelRecord in entity.Node.DynamicLabelRecords )
+					foreach ( DynamicRecord labelRecord in IEntity.Node.DynamicLabelRecords )
 					{
 						 assertEquals( expectedToBeInUse, neoStores.NodeStore.DynamicLabelStore.isInUse( labelRecord.Id ) );
 					}
 
 					// Verify property records
-					foreach ( PropertyRecord propertyRecord in entity.Properties )
+					foreach ( PropertyRecord propertyRecord in IEntity.Properties )
 					{
 						 assertEquals( expectedToBeInUse, neoStores.PropertyStore.isInUse( propertyRecord.Id ) );
 						 foreach ( PropertyBlock property in propertyRecord )

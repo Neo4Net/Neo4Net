@@ -40,9 +40,9 @@ namespace Neo4Net.Procedure
 	/// <li><seealso cref="Double"/> or {@code double}</li>
 	/// <li><seealso cref="Number"/></li>
 	/// <li><seealso cref="Boolean"/> or {@code boolean}</li>
-	/// <li><seealso cref="org.neo4j.graphdb.Node"/></li>
-	/// <li><seealso cref="org.neo4j.graphdb.Relationship"/></li>
-	/// <li><seealso cref="org.neo4j.graphdb.Path"/></li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Node"/></li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Relationship"/></li>
+	/// <li><seealso cref="org.Neo4Net.graphdb.Path"/></li>
 	/// <li><seealso cref="System.Collections.IDictionary"/> with key <seealso cref="string"/> and value of any type in this list, including {@link
 	/// java.util.Map}</li>
 	/// <li><seealso cref="System.Collections.IList"/> with element type of any type in this list, including <seealso cref="System.Collections.IList"/></li>

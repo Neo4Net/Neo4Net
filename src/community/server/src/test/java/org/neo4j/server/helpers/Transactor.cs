@@ -22,21 +22,21 @@ using System.Diagnostics;
  */
 namespace Neo4Net.Server.helpers
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	public class Transactor
 	{
 
 		 private readonly Neo4Net.Server.helpers.UnitOfWork _unitOfWork;
-		 private readonly GraphDatabaseService _graphDb;
+		 private readonly IGraphDatabaseService _graphDb;
 		 private readonly int _attempts; // how many times to try, if the transaction fails for some reason
 
-		 public Transactor( GraphDatabaseService graphDb, UnitOfWork unitOfWork ) : this( graphDb, unitOfWork, 1 )
+		 public Transactor( IGraphDatabaseService graphDb, UnitOfWork unitOfWork ) : this( graphDb, unitOfWork, 1 )
 		 {
 		 }
 
-		 public Transactor( GraphDatabaseService graphDb, UnitOfWork unitOfWork, int attempts )
+		 public Transactor( IGraphDatabaseService graphDb, UnitOfWork unitOfWork, int attempts )
 		 {
 			  Debug.Assert( attempts > 0, "The Transactor should make at least one attempt at running the transaction." );
 			  this._unitOfWork = unitOfWork;

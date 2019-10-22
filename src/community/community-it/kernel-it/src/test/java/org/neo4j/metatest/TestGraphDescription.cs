@@ -27,13 +27,13 @@ namespace Neo4Net.Metatest
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 	using GraphDescription = Neo4Net.Test.GraphDescription;
 	using Graph = Neo4Net.Test.GraphDescription.Graph;
 	using NODE = Neo4Net.Test.GraphDescription.NODE;
@@ -52,7 +52,7 @@ namespace Neo4Net.Metatest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class TestGraphDescription : GraphHolder
 	{
@@ -72,9 +72,9 @@ namespace Neo4Net.Metatest
 			Data = TestData.producedThrough( GraphDescription.createGraphFor( this, true ) );
 		}
 
-		 private static GraphDatabaseService _graphdb;
+		 private static IGraphDatabaseService _graphdb;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<java.util.Map<String,org.neo4j.graphdb.Node>> data = org.neo4j.test.TestData.producedThrough(org.neo4j.test.GraphDescription.createGraphFor(this, true));
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<java.util.Map<String,org.Neo4Net.graphdb.Node>> data = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.test.GraphDescription.createGraphFor(this, true));
 		 public TestData<IDictionary<string, Node>> Data;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -175,7 +175,7 @@ namespace Neo4Net.Metatest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph(nodes = { @NODE(name = "I", properties = { @PROP(key = "name", value = "me"), @PROP(key = "bool", value = "true", type = org.neo4j.test.GraphDescription.PropType.BOOLEAN) }), @NODE(name = "you", setNameProperty = true) }, relationships = { @REL(start = "I", end = "you", type = "knows", properties = { @PROP(key = "name", value = "relProp"), @PROP(key = "valid", value = "true", type = org.neo4j.test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships = true) public void canCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
+//ORIGINAL LINE: @Test @Graph(nodes = { @NODE(name = "I", properties = { @PROP(key = "name", value = "me"), @PROP(key = "bool", value = "true", type = org.Neo4Net.test.GraphDescription.PropType.BOOLEAN) }), @NODE(name = "you", setNameProperty = true) }, relationships = { @REL(start = "I", end = "you", type = "knows", properties = { @PROP(key = "name", value = "relProp"), @PROP(key = "valid", value = "true", type = org.Neo4Net.test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships = true) public void canCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
 		 [Graph(nodes : { @NODE(name : "I", properties : { @PROP(key : "name", value : "me"), @PROP(key : "bool", value : "true", type : Neo4Net.Test.GraphDescription.PropType.BOOLEAN) }), @NODE(name : "you", setNameProperty : true) }, relationships : { @REL(start : "I", end : "you", type : "knows", properties : { @PROP(key : "name", value : "relProp"), @PROP(key : "valid", value : "true", type : Neo4Net.Test.GraphDescription.PropType.BOOLEAN) }) }, autoIndexRelationships : true)]
 		 public virtual void CanCreateMoreInvolvedGraphWithPropertiesAndAutoIndex()
 		 {
@@ -250,7 +250,7 @@ namespace Neo4Net.Metatest
 			  _graphdb = null;
 		 }
 
-		 public override GraphDatabaseService Graphdb()
+		 public override IGraphDatabaseService Graphdb()
 		 {
 			  return _graphdb;
 		 }

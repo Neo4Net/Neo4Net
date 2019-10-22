@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,21 +13,21 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using IndexDefinitionImpl = Neo4Net.Kernel.impl.coreapi.schema.IndexDefinitionImpl;
 	using InternalSchemaActions = Neo4Net.Kernel.impl.coreapi.schema.InternalSchemaActions;
 	using NodeKeyConstraintDefinition = Neo4Net.Kernel.impl.coreapi.schema.NodeKeyConstraintDefinition;
@@ -41,17 +41,17 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getConstraints;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getConstraints;
 
 	public class SchemaWithPECAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EnterpriseDatabaseRule dbRule = new org.neo4j.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EnterpriseDatabaseRule dbRule = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
 		 public EnterpriseDatabaseRule DbRule = new EnterpriseDatabaseRule();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private Label _label = Labels.MyLabel;
 		 private Label _label2 = Labels.MyOtherLabel;
 		 private string _propertyKey = "my_property_key";

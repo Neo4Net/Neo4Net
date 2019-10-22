@@ -129,9 +129,9 @@ namespace Neo4Net.Server.rest
 		 {
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexNodeUri("node", "name", "Trinity"), MediaType.TEXT_HTML_TYPE);
 			  assertEquals( Status.OK.StatusCode, response.Status );
-			  string entity = response.Entity;
-			  assertTrue( entity.Contains( "Trinity" ) );
-			  AssertValidHtml( entity );
+			  string IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "Trinity" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 		 }
 
@@ -141,9 +141,9 @@ namespace Neo4Net.Server.rest
 		 {
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.nodeUri(_thomasAnderson), MediaType.TEXT_HTML_TYPE);
 			  assertEquals( Status.OK.StatusCode, response.Status );
-			  string entity = response.Entity;
-			  assertTrue( entity.Contains( "Thomas Anderson" ) );
-			  AssertValidHtml( entity );
+			  string IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "Thomas Anderson" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 		 }
 
@@ -156,25 +156,25 @@ namespace Neo4Net.Server.rest
 			  RestRequest request = RestRequest.Req();
 			  JaxRsResponse response = request.Get( _functionalTestHelper.relationshipsUri( _thomasAnderson, RelationshipDirection.all.name(), "KNOWS" ), MediaType.TEXT_HTML_TYPE );
 			  assertEquals( Status.OK.StatusCode, response.Status );
-			  string entity = response.Entity;
-			  assertTrue( entity.Contains( "KNOWS" ) );
-			  assertFalse( entity.Contains( "LOVES" ) );
-			  AssertValidHtml( entity );
+			  string IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "KNOWS" ) );
+			  assertFalse( IEntity.Contains( "LOVES" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 
 			  response = request.Get( _functionalTestHelper.relationshipsUri( _thomasAnderson, RelationshipDirection.all.name(), "LOVES" ), MediaType.TEXT_HTML_TYPE );
 
-			  entity = response.Entity;
-			  assertFalse( entity.Contains( "KNOWS" ) );
-			  assertTrue( entity.Contains( "LOVES" ) );
-			  AssertValidHtml( entity );
+			  IEntity = response.Entity;
+			  assertFalse( IEntity.Contains( "KNOWS" ) );
+			  assertTrue( IEntity.Contains( "LOVES" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 
 			  response = request.Get( _functionalTestHelper.relationshipsUri( _thomasAnderson, RelationshipDirection.all.name(), "LOVES", "KNOWS" ), MediaType.TEXT_HTML_TYPE );
-			  entity = response.Entity;
-			  assertTrue( entity.Contains( "KNOWS" ) );
-			  assertTrue( entity.Contains( "LOVES" ) );
-			  AssertValidHtml( entity );
+			  IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "KNOWS" ) );
+			  assertTrue( IEntity.Contains( "LOVES" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 		 }
 
@@ -184,18 +184,18 @@ namespace Neo4Net.Server.rest
 		 {
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.relationshipUri(_thomasAndersonLovesTrinity), MediaType.TEXT_HTML_TYPE);
 			  assertEquals( Status.OK.StatusCode, response.Status );
-			  string entity = response.Entity;
-			  assertTrue( entity.Contains( "strength" ) );
-			  assertTrue( entity.Contains( "100" ) );
-			  assertTrue( entity.Contains( "LOVES" ) );
-			  AssertValidHtml( entity );
+			  string IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "strength" ) );
+			  assertTrue( IEntity.Contains( "100" ) );
+			  assertTrue( IEntity.Contains( "LOVES" ) );
+			  AssertValidHtml( IEntity );
 			  response.Close();
 		 }
 
-		 private void AssertValidHtml( string entity )
+		 private void AssertValidHtml( string IEntity )
 		 {
-			  assertTrue( entity.Contains( "<html>" ) );
-			  assertTrue( entity.Contains( "</html>" ) );
+			  assertTrue( IEntity.Contains( "<html>" ) );
+			  assertTrue( IEntity.Contains( "</html>" ) );
 		 }
 	}
 

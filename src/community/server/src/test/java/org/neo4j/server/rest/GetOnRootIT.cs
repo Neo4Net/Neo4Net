@@ -57,7 +57,7 @@ namespace Neo4Net.Server.rest
 			  assertNotNull( map["indexes"] );
 			  assertNotNull( map["constraints"] );
 			  assertNotNull( map["node_labels"] );
-			  assertEquals( Version.Neo4jVersion, map["neo4j_version"] );
+			  assertEquals( Version.Neo4NetVersion, map["Neo4Net_version"] );
 
 			  // Make sure advertised urls work
 			  JaxRsResponse response;

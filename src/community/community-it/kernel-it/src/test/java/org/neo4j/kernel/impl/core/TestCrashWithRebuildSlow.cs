@@ -28,13 +28,13 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	/// <summary>
 	/// Test for making sure that slow id generator rebuild is exercised
@@ -71,10 +71,10 @@ namespace Neo4Net.Kernel.impl.core
 	public class TestCrashWithRebuildSlow
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.core
 		 public virtual void CrashAndRebuildSlowWithDynamicStringDeletions()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) new org.neo4j.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDir.databaseDir()).setConfig(org.neo4j.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
+//ORIGINAL LINE: final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fs.get()).newImpermanentDatabaseBuilder(testDir.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).setFileSystem(Fs.get()).newImpermanentDatabaseBuilder(TestDir.databaseDir()).setConfig(GraphDatabaseSettings.record_id_batch_size, "1").newGraphDatabase();
 			  IList<long> deletedNodeIds = ProduceNonCleanDefraggedStringStore( db );
 			  IDictionary<IdType, long> highIdsBeforeCrash = GetHighIds( db );
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 		 }
 
-		 private static IList<long> ProduceNonCleanDefraggedStringStore( GraphDatabaseService db )
+		 private static IList<long> ProduceNonCleanDefraggedStringStore( IGraphDatabaseService db )
 		 {
 			  // Create some strings
 			  IList<Node> nodes = new List<Node>();
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.impl.core
 		 private static IDictionary<IdType, long> GetHighIds( GraphDatabaseAPI db )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<org.neo4j.kernel.impl.store.id.IdType,long> highIds = new java.util.HashMap<>();
+//ORIGINAL LINE: final java.util.Map<org.Neo4Net.kernel.impl.store.id.IdType,long> highIds = new java.util.HashMap<>();
 			  IDictionary<IdType, long> highIds = new Dictionary<IdType, long>();
 			  NeoStores neoStores = Db.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).testAccessNeoStores();
 			  Visitor<CommonAbstractStore, Exception> visitor = store =>

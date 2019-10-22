@@ -47,11 +47,11 @@ namespace Neo4Net.Cypher.operations
 	using VirtualRelationshipValue = Neo4Net.Values.@virtual.VirtualRelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.FALSE;
+//	import static org.Neo4Net.values.storable.Values.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.TRUE;
+//	import static org.Neo4Net.values.storable.Values.TRUE;
 
 	/// <summary>
 	/// This class contains static helper boolean methods used by the compiled expressions

@@ -98,14 +98,14 @@ namespace Neo4Net.Kernel.Impl.Api.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForLabel( int label )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasLabel( label ), Constraints() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForRelationshipType( int relTypeId )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasRelType( relTypeId ), Constraints() );
@@ -337,10 +337,10 @@ namespace Neo4Net.Kernel.Impl.Api.store
 						 SchemaDescriptor schemaDescriptor = index.Schema();
 						 IndexDescriptorsConflict[schemaDescriptor] = index;
 						 IndexDescriptorsByName[rule.Name] = index;
-						 foreach ( int entityTokenId in schemaDescriptor.EntityTokenIds )
+						 foreach ( int IEntityTokenId in schemaDescriptor.EntityTokenIds )
 						 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
-							  ISet<CapableIndexDescriptor> forLabel = IndexDescriptorsByLabel.getIfAbsentPut( entityTokenId, HashSet<object>::new );
+							  ISet<CapableIndexDescriptor> forLabel = IndexDescriptorsByLabel.getIfAbsentPut( IEntityTokenId, HashSet<object>::new );
 							  forLabel.Add( index );
 						 }
 
@@ -367,11 +367,11 @@ namespace Neo4Net.Kernel.Impl.Api.store
 						 IndexDescriptorsConflict.Remove( schema );
 						 IndexDescriptorsByName.Remove( index.Name, index );
 
-						 foreach ( int entityTokenId in Schema.EntityTokenIds )
+						 foreach ( int IEntityTokenId in Schema.EntityTokenIds )
 						 {
-							  ISet<CapableIndexDescriptor> forLabel = IndexDescriptorsByLabel.get( entityTokenId );
+							  ISet<CapableIndexDescriptor> forLabel = IndexDescriptorsByLabel.get( IEntityTokenId );
 							  /* Previously, a bug made it possible to create fulltext indexes with repeated labels or relationship types
-							     which would cause us to try and remove the same entity token twice which could cause a NPE if the 'forLabel'
+							     which would cause us to try and remove the same IEntity token twice which could cause a NPE if the 'forLabel'
 							     set would be empty after the first removal such that the set would be completely removed from 'indexDescriptorsByLabel'.
 							     Fixed as of 3.5.10 */
 							  if ( forLabel != null )
@@ -379,7 +379,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 									forLabel.remove( index );
 									if ( forLabel.Count == 0 )
 									{
-										 IndexDescriptorsByLabel.remove( entityTokenId );
+										 IndexDescriptorsByLabel.remove( IEntityTokenId );
 									}
 							  }
 						 }

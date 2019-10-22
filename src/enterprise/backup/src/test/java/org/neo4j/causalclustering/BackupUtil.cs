@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering
 {
@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RestoreDatabaseCommand = Neo4Net.restore.RestoreDatabaseCommand;
@@ -34,9 +34,9 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.BackupCoreIT.backupArguments;
+//	import static org.Neo4Net.causalclustering.BackupCoreIT.backupArguments;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 	public class BackupUtil
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.io.File createBackupFromCore(org.neo4j.causalclustering.discovery.CoreClusterMember core, String backupName, java.io.File baseBackupDir) throws Exception
+//ORIGINAL LINE: public static java.io.File createBackupFromCore(org.Neo4Net.causalclustering.discovery.CoreClusterMember core, String backupName, java.io.File baseBackupDir) throws Exception
 		 public static File CreateBackupFromCore( CoreClusterMember core, string backupName, File baseBackupDir )
 		 {
 			  string[] args = backupArguments( BackupAddress( core ), baseBackupDir, backupName );
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void restoreFromBackup(java.io.File backup, org.neo4j.io.fs.FileSystemAbstraction fsa, org.neo4j.causalclustering.discovery.ClusterMember clusterMember) throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public static void restoreFromBackup(java.io.File backup, org.Neo4Net.io.fs.FileSystemAbstraction fsa, org.Neo4Net.causalclustering.discovery.ClusterMember clusterMember) throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 		 public static void RestoreFromBackup( File backup, FileSystemAbstraction fsa, ClusterMember clusterMember )
 		 {
 			  Config config = clusterMember.config();

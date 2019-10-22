@@ -21,14 +21,14 @@
  */
 namespace Neo4Net.Server.rest.web
 {
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class NoSuchPropertyException : Exception, Neo4Net.Kernel.Api.Exceptions.Status_HasStatus
 	{
 		 private const long SERIAL_VERSION_UID = -2078314214014212029L;
 
-		 public NoSuchPropertyException( PropertyContainer entity, string key ) : base( entity + " does not have a property \"" + key + "\"" )
+		 public NoSuchPropertyException( IPropertyContainer IEntity, string key ) : base( IEntity + " does not have a property \"" + key + "\"" )
 		 {
 		 }
 

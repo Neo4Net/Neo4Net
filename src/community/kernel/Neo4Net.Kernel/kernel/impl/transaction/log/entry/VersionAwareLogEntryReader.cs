@@ -27,17 +27,17 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfInstanceOf;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfInstanceOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.withMessage;
+//	import static org.Neo4Net.helpers.Exceptions.withMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntrySanity.logEntryMakesSense;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntrySanity.logEntryMakesSense;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.byVersion;
 
 	/// <summary>
 	/// Version aware implementation of LogEntryReader
-	/// Starting with Neo4j version 2.1, log entries are prefixed with a version. This allows for Neo4j instances of
+	/// Starting with Neo4Net version 2.1, log entries are prefixed with a version. This allows for Neo4Net instances of
 	/// different versions to exchange transaction data, either directly or via logical logs.
 	/// 
 	/// Read all about it at <seealso cref="LogEntryVersion"/>.

@@ -30,7 +30,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StorePrepareIdSequence = Neo4Net.@unsafe.Impl.Batchimport.store.StorePrepareIdSequence;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.RecordIdIterator.allIn;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allIn;
 
 	/// <summary>
 	/// Updates dense nodes with which will be the <seealso cref="NodeRecord.setNextRel(long) first group"/> to point to,
@@ -44,11 +44,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new BatchFeedStep( Control(), config, allIn(groupStore, config), groupStore.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.neo4j.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, groupStore));
+//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, groupStore));
 			  Add( new ReadRecordsStep<object>( Control(), config, true, groupStore ) );
 			  Add( new NodeSetFirstGroupStep( Control(), config, nodeStore, cache ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, nodeStore, new org.neo4j.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
+//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, nodeStore, new org.Neo4Net.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
 			  Add( new UpdateRecordsStep<object>( Control(), config, nodeStore, new StorePrepareIdSequence() ) );
 		 }
 	}

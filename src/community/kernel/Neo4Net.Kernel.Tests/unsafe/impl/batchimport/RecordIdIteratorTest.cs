@@ -31,9 +31,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.withBatchSize;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.withBatchSize;
 
 	public class RecordIdIteratorTest
 	{

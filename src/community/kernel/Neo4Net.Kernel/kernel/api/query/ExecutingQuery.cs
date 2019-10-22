@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.api.query
 	using ToStringBuilder = org.apache.commons.lang3.builder.ToStringBuilder;
 
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using PageCursorCounters = Neo4Net.Io.pagecache.tracing.cursor.PageCursorCounters;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;

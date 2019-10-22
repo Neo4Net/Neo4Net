@@ -27,7 +27,7 @@ namespace Neo4Net.CodeGen.Source
 	internal interface SourceCompiler
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Iterable<? extends org.neo4j.codegen.ByteCodes> compile(java.util.List<JavaSourceFile> sourceFiles, ClassLoader loader) throws org.neo4j.codegen.CompilationFailureException;
+//ORIGINAL LINE: Iterable<? extends org.Neo4Net.codegen.ByteCodes> compile(java.util.List<JavaSourceFile> sourceFiles, ClassLoader loader) throws org.Neo4Net.codegen.CompilationFailureException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 IEnumerable<ByteCodes> Compile( IList<JavaSourceFile> sourceFiles, ClassLoader loader );
 	}
@@ -45,7 +45,7 @@ namespace Neo4Net.CodeGen.Source
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract SourceCompiler sourceCompilerFor(Configuration configuration, org.neo4j.codegen.CodeGenerationStrategy<?> strategy) throws org.neo4j.codegen.CodeGenerationStrategyNotSupportedException;
+//ORIGINAL LINE: abstract SourceCompiler sourceCompilerFor(Configuration configuration, org.Neo4Net.codegen.CodeGenerationStrategy<?> strategy) throws org.Neo4Net.codegen.CodeGenerationStrategyNotSupportedException;
 		  internal abstract SourceCompiler sourceCompilerFor<T1>( Configuration configuration, CodeGenerationStrategy<T1> strategy );
 
 		  internal virtual void Configure( Configuration configuration )

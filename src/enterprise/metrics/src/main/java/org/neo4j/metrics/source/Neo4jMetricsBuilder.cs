@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.metrics.source
 {
@@ -51,7 +51,7 @@ namespace Neo4Net.metrics.source
 	using BoltMetrics = Neo4Net.metrics.source.db.BoltMetrics;
 	using CheckPointingMetrics = Neo4Net.metrics.source.db.CheckPointingMetrics;
 	using CypherMetrics = Neo4Net.metrics.source.db.CypherMetrics;
-	using EntityCountMetrics = Neo4Net.metrics.source.db.EntityCountMetrics;
+	using IEntityCountMetrics = Neo4Net.metrics.source.db.EntityCountMetrics;
 	using LogRotationMetrics = Neo4Net.metrics.source.db.LogRotationMetrics;
 	using PageCacheMetrics = Neo4Net.metrics.source.db.PageCacheMetrics;
 	using TransactionMetrics = Neo4Net.metrics.source.db.TransactionMetrics;
@@ -61,7 +61,7 @@ namespace Neo4Net.metrics.source
 	using ThreadMetrics = Neo4Net.metrics.source.jvm.ThreadMetrics;
 	using ServerMetrics = Neo4Net.metrics.source.server.ServerMetrics;
 
-	public class Neo4jMetricsBuilder
+	public class Neo4NetMetricsBuilder
 	{
 		 private readonly MetricRegistry _registry;
 		 private readonly LifeSupport _life;
@@ -86,7 +86,7 @@ namespace Neo4Net.metrics.source
 			  DataSourceManager DataSourceManager();
 		 }
 
-		 public Neo4jMetricsBuilder( MetricRegistry registry, EventReporter reporter, Config config, LogService logService, KernelContext kernelContext, Dependencies dependencies, LifeSupport life )
+		 public Neo4NetMetricsBuilder( MetricRegistry registry, EventReporter reporter, Config config, LogService logService, KernelContext kernelContext, Dependencies dependencies, LifeSupport life )
 		 {
 			  this._registry = registry;
 			  this._reporter = reporter;
@@ -128,7 +128,7 @@ namespace Neo4Net.metrics.source
 			  {
 					if ( _kernelContext.databaseInfo().edition != Edition.community && _kernelContext.databaseInfo().edition != Edition.unknown )
 					{
-						 _life.add( new EntityCountMetrics( _registry, DatabaseDependencySupplier( typeof( StoreEntityCounters ) ) ) );
+						 _life.add( new IEntityCountMetrics( _registry, DatabaseDependencySupplier( typeof( StoreEntityCounters ) ) ) );
 						 result = true;
 					}
 			  }

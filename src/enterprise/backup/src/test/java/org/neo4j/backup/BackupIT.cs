@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup
 {
@@ -38,19 +38,19 @@ namespace Neo4Net.backup
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using Neo4Net.GraphDb.index;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using StoreLockException = Neo4Net.Kernel.StoreLockException;
@@ -92,15 +92,15 @@ namespace Neo4Net.backup
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.rootCause;
+//	import static org.Neo4Net.helpers.Exceptions.rootCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BackupIT
@@ -128,7 +128,7 @@ namespace Neo4Net.backup
 		 private readonly RandomRule _random = new RandomRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(fileSystemRule).around(testDir).around(pageCacheRule).around(org.neo4j.test.rule.SuppressOutput.suppressAll()).around(random);
+//ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(fileSystemRule).around(testDir).around(pageCacheRule).around(org.Neo4Net.test.rule.SuppressOutput.suppressAll()).around(random);
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -352,7 +352,7 @@ namespace Neo4Net.backup
 		 public virtual void MultipleIncrementals()
 		 {
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  try
 			  {
 					db = GetEmbeddedTestDataBaseService( backupPort );
@@ -399,7 +399,7 @@ namespace Neo4Net.backup
 		 public virtual void BackupIndexWithNoCommits()
 		 {
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = null;
+			  IGraphDatabaseService db = null;
 			  try
 			  {
 					db = GetEmbeddedTestDataBaseService( backupPort );
@@ -425,7 +425,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long getLastCommittedTx(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static long getLastCommittedTx(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static long GetLastCommittedTx( DatabaseLayout databaseLayout, PageCache pageCache )
 		 {
 			  File neoStore = databaseLayout.MetadataStore();
@@ -440,7 +440,7 @@ namespace Neo4Net.backup
 			  int backupPort = PortAuthority.allocatePort();
 			  string key = "name";
 			  string value = "Neo";
-			  GraphDatabaseService db = GetEmbeddedTestDataBaseService( backupPort );
+			  IGraphDatabaseService db = GetEmbeddedTestDataBaseService( backupPort );
 
 			  try
 			  {
@@ -486,7 +486,7 @@ namespace Neo4Net.backup
 			  ExecutorService executorService = Executors.newSingleThreadExecutor();
 			  AtomicBoolean end = new AtomicBoolean();
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = GetEmbeddedTestDataBaseService( backupPort );
+			  IGraphDatabaseService db = GetEmbeddedTestDataBaseService( backupPort );
 			  try
 			  {
 					int numberOfIndexedLabels = 10;
@@ -518,7 +518,7 @@ namespace Neo4Net.backup
 			  }
 		 }
 
-		 private static IList<Label> CreateIndexes( GraphDatabaseService db, int indexCount )
+		 private static IList<Label> CreateIndexes( IGraphDatabaseService db, int indexCount )
 		 {
 			  List<Label> indexedLabels = new List<Label>( indexCount );
 			  for ( int i = 0; i < indexCount; i++ )
@@ -546,7 +546,7 @@ namespace Neo4Net.backup
 			  int backupPort = PortAuthority.allocatePort();
 			  File sourcePath = _testDir.directory( "serverdb-lock" );
 
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(sourcePath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).setConfig(OnlineBackupSettings.online_backup_server, "127.0.0.1:" + backupPort).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(sourcePath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).setConfig(OnlineBackupSettings.online_backup_server, "127.0.0.1:" + backupPort).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).newGraphDatabase();
 			  try
 			  {
 					AssertStoreIsLocked( sourcePath );
@@ -564,7 +564,7 @@ namespace Neo4Net.backup
 		 public virtual void ShouldIncrementallyBackupDenseNodes()
 		 {
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort );
+			  IGraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort );
 			  try
 			  {
 					CreateInitialDataSet( db );
@@ -588,7 +588,7 @@ namespace Neo4Net.backup
 		 public virtual void ShouldLeaveIdFilesAfterBackup()
 		 {
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort );
+			  IGraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort );
 			  try
 			  {
 					CreateInitialDataSet( db );
@@ -614,7 +614,7 @@ namespace Neo4Net.backup
 		 public virtual void BackupDatabaseWithCustomTransactionLogsLocation()
 		 {
 			  int backupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort, "customLogLocation" );
+			  IGraphDatabaseService db = StartGraphDatabase( _serverStorePath, true, backupPort, "customLogLocation" );
 			  try
 			  {
 					CreateInitialDataSet( db );
@@ -639,7 +639,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureStoresHaveIdFiles(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void ensureStoresHaveIdFiles(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void EnsureStoresHaveIdFiles( DatabaseLayout databaseLayout )
 		 {
 			  foreach ( File idFile in databaseLayout.IdFiles() )
@@ -649,7 +649,7 @@ namespace Neo4Net.backup
 			  }
 		 }
 
-		 private static DbRepresentation AddLotsOfData( GraphDatabaseService db )
+		 private static DbRepresentation AddLotsOfData( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -683,7 +683,7 @@ namespace Neo4Net.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long lastTxChecksumOf(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private static long lastTxChecksumOf(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private static long LastTxChecksumOf( DatabaseLayout databaseLayout, PageCache pageCache )
 		 {
 			  File neoStore = databaseLayout.MetadataStore();
@@ -706,7 +706,7 @@ namespace Neo4Net.backup
 
 		 private DbRepresentation AddMoreData( File path )
 		 {
-			  GraphDatabaseService db = StartGraphDatabase( path, false, null );
+			  IGraphDatabaseService db = StartGraphDatabase( path, false, null );
 			  DbRepresentation representation;
 			  try
 			  {
@@ -726,12 +726,12 @@ namespace Neo4Net.backup
 			  return representation;
 		 }
 
-		 private GraphDatabaseService StartGraphDatabase( File storeDir, bool withOnlineBackup, int? backupPort )
+		 private IGraphDatabaseService StartGraphDatabase( File storeDir, bool withOnlineBackup, int? backupPort )
 		 {
 			  return StartGraphDatabase( storeDir, withOnlineBackup, backupPort, "" );
 		 }
 
-		 private GraphDatabaseService StartGraphDatabase( File storeDir, bool withOnlineBackup, int? backupPort, string logLocation )
+		 private IGraphDatabaseService StartGraphDatabase( File storeDir, bool withOnlineBackup, int? backupPort, string logLocation )
 		 {
 			  GraphDatabaseFactory dbFactory = new TestGraphDatabaseFactoryAnonymousInnerClass( this, storeDir );
 			  GraphDatabaseBuilder graphDatabaseBuilder = dbFactory.NewEmbeddedDatabaseBuilder( storeDir ).setConfig( OnlineBackupSettings.online_backup_enabled, withOnlineBackup.ToString() ).setConfig(GraphDatabaseSettings.keep_logical_logs, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).setConfig(GraphDatabaseSettings.logical_logs_location, logLocation);
@@ -756,7 +756,7 @@ namespace Neo4Net.backup
 				 this._storeDir = storeDir;
 			 }
 
-			 protected internal override GraphDatabaseService newDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+			 protected internal override IGraphDatabaseService newDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 			 {
 				  System.Func<PlatformModule, AbstractEditionModule> factory = platformModule => new CommunityEditionModuleAnonymousInnerClass( this, platformModule );
 				  return ( new GraphDatabaseFacadeFactory( DatabaseInfo.COMMUNITY, factory ) ).newFacade( storeDir, config, dependencies );
@@ -796,7 +796,7 @@ namespace Neo4Net.backup
 
 		 private DbRepresentation CreateInitialDataSet( File path )
 		 {
-			  GraphDatabaseService db = StartGraphDatabase( path, false, null );
+			  IGraphDatabaseService db = StartGraphDatabase( path, false, null );
 			  try
 			  {
 					CreateInitialDataSet( db );
@@ -808,7 +808,7 @@ namespace Neo4Net.backup
 			  }
 		 }
 
-		 private static void CreateInitialDataSet( GraphDatabaseService db )
+		 private static void CreateInitialDataSet( IGraphDatabaseService db )
 		 {
 			  // 4 transactions: THE transaction, "mykey" property key, "db-index" index, "KNOWS" rel type.
 			  using ( Transaction tx = Db.beginTx() )
@@ -822,7 +822,7 @@ namespace Neo4Net.backup
 			  }
 		 }
 
-		 private GraphDatabaseService GetEmbeddedTestDataBaseService( int backupPort )
+		 private IGraphDatabaseService GetEmbeddedTestDataBaseService( int backupPort )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_serverStorePath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).setConfig(OnlineBackupSettings.online_backup_server, "127.0.0.1:" + backupPort).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).newGraphDatabase();
 		 }

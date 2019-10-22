@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using MultiClusterRoutingResult = Neo4Net.causalclustering.routing.multi_cluster.MultiClusterRoutingResult;
 	using MultiClusterRoutingResultFormat = Neo4Net.causalclustering.routing.multi_cluster.procedure.MultiClusterRoutingResultFormat;
 	using ProcedureNames = Neo4Net.causalclustering.routing.multi_cluster.procedure.ProcedureNames;
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
@@ -57,13 +57,13 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ParameterNames.DATABASE;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ParameterNames.DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_ALL_DATABASES;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_ALL_DATABASES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_DATABASE;
+//	import static org.Neo4Net.causalclustering.routing.multi_cluster.procedure.ProcedureNames.GET_ROUTERS_FOR_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class BaseMultiClusterRoutingIT
@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 private readonly int _numCores;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private FileSystemAbstraction _fs;
 

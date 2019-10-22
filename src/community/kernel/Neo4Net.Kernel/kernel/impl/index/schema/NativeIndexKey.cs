@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	internal abstract class NativeIndexKey<SELF> : TemporalValueWriterAdapter<Exception> where SELF : NativeIndexKey<SELF>
 	{
-		 internal static readonly int EntityIdSize = Long.BYTES;
+		 internal static readonly int IEntityIdSize = Long.BYTES;
 
 		 internal enum Inclusion
 		 {
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private bool _compareId = DEFAULT_COMPARE_ID;
 
 		 /// <summary>
-		 /// Marks that comparisons with this key requires also comparing entityId, this allows functionality
+		 /// Marks that comparisons with this key requires also comparing IEntityId, this allows functionality
 		 /// of inclusive/exclusive bounds of range queries.
 		 /// This is because <seealso cref="GBPTree"/> only support from inclusive and to exclusive.
 		 /// <para>
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 
-		 internal virtual long EntityId
+		 internal virtual long IEntityId
 		 {
 			 get
 			 {
@@ -87,14 +87,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal abstract void AssertValidValue( int stateSlot, Value value );
 
 		 /// <summary>
-		 /// Initializes this key with entity id and resets other flags to default values.
+		 /// Initializes this key with IEntity id and resets other flags to default values.
 		 /// Doesn't touch value data.
 		 /// </summary>
-		 /// <param name="entityId"> entity id to set for this key. </param>
-		 internal virtual void Initialize( long entityId )
+		 /// <param name="entityId"> IEntity id to set for this key. </param>
+		 internal virtual void Initialize( long IEntityId )
 		 {
 			  this._compareId = DEFAULT_COMPARE_ID;
-			  EntityId = entityId;
+			  IEntityId = IEntityId;
 		 }
 
 		 internal abstract Value[] AsValues();

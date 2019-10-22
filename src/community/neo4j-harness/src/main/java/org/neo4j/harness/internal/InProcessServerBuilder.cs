@@ -20,7 +20,7 @@
 namespace Neo4Net.Harness.Internal
 {
 
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using AbstractNeoServer = Neo4Net.Server.AbstractNeoServer;

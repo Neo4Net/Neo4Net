@@ -37,19 +37,19 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Request.InvalidFormat;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Request.InvalidFormat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Statement.SyntaxError;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Statement.SyntaxError;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.containsNoStackTraces;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoStackTraces;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.POST;
+//	import static org.Neo4Net.test.server.HTTP.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.rawPayload;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.rawPayload;
 
 	/// <summary>
 	/// Tests for error messages and graceful handling of problems with the transactional endpoint.

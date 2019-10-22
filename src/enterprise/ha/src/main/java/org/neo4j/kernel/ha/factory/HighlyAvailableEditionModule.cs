@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.factory
 {
@@ -50,14 +50,14 @@ namespace Neo4Net.Kernel.ha.factory
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Neo4Net.Functions;
 	using Predicates = Neo4Net.Functions.Predicates;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using EditionLocksFactories = Neo4Net.Graphdb.factory.EditionLocksFactories;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using DefaultEditionModule = Neo4Net.Graphdb.factory.module.edition.DefaultEditionModule;
-	using DatabaseIdContext = Neo4Net.Graphdb.factory.module.id.DatabaseIdContext;
-	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using EditionLocksFactories = Neo4Net.GraphDb.factory.EditionLocksFactories;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using DefaultEditionModule = Neo4Net.GraphDb.factory.module.edition.DefaultEditionModule;
+	using DatabaseIdContext = Neo4Net.GraphDb.factory.module.id.DatabaseIdContext;
+	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.ha.factory
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.EditionLocksFactories.createLockFactory;
+//	import static org.Neo4Net.graphdb.factory.EditionLocksFactories.createLockFactory;
 	using static Neo4Net.Kernel.impl.transaction.log.TransactionMetadataCache.TransactionMetadata;
 
 	/// <summary>
@@ -191,37 +191,37 @@ namespace Neo4Net.Kernel.ha.factory
 		 private TokenHolders _tokenHolders;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public HighlyAvailableEditionModule(final org.neo4j.graphdb.factory.module.PlatformModule platformModule)
+//ORIGINAL LINE: public HighlyAvailableEditionModule(final org.Neo4Net.graphdb.factory.module.PlatformModule platformModule)
 		 public HighlyAvailableEditionModule( PlatformModule platformModule )
 		 {
 			  IoLimiterConflict = new ConfigurableIOLimiter( platformModule.Config );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.lifecycle.LifeSupport life = platformModule.life;
+//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport life = platformModule.life;
 			  LifeSupport life = platformModule.Life;
 			  life.Add( platformModule.DataSourceManager );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.lifecycle.LifeSupport paxosLife = new org.neo4j.kernel.lifecycle.LifeSupport();
+//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport paxosLife = new org.Neo4Net.kernel.lifecycle.LifeSupport();
 			  LifeSupport paxosLife = new LifeSupport();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.lifecycle.LifeSupport clusteringLife = new org.neo4j.kernel.lifecycle.LifeSupport();
+//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport clusteringLife = new org.Neo4Net.kernel.lifecycle.LifeSupport();
 			  LifeSupport clusteringLife = new LifeSupport();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.fs.FileSystemAbstraction fs = platformModule.fileSystem;
+//ORIGINAL LINE: final org.Neo4Net.io.fs.FileSystemAbstraction fs = platformModule.fileSystem;
 			  FileSystemAbstraction fs = platformModule.FileSystem;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.configuration.Config config = platformModule.config;
+//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = platformModule.config;
 			  Config config = platformModule.Config;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.Dependencies dependencies = platformModule.dependencies;
 			  Dependencies dependencies = platformModule.Dependencies;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.logging.internal.LogService logging = platformModule.logging;
+//ORIGINAL LINE: final org.Neo4Net.logging.internal.LogService logging = platformModule.logging;
 			  LogService logging = platformModule.Logging;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.monitoring.Monitors monitors = platformModule.monitors;
+//ORIGINAL LINE: final org.Neo4Net.kernel.monitoring.Monitors monitors = platformModule.monitors;
 			  Monitors monitors = platformModule.Monitors;
 
 			  this.AccessCapabilityConflict = config.Get( GraphDatabaseSettings.read_only ) ? new ReadOnly() : new CanWrite();
@@ -242,7 +242,7 @@ namespace Neo4Net.Kernel.ha.factory
 			  RequestContextFactory requestContextFactory = dependencies.SatisfyDependency( new RequestContextFactory( serverId.ToIntegerIndex(), () => ResolveDatabaseDependency(platformModule, typeof(TransactionIdStore)) ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long idReuseSafeZone = config.get(org.neo4j.kernel.ha.HaSettings.id_reuse_safe_zone_time).toMillis();
+//ORIGINAL LINE: final long idReuseSafeZone = config.get(org.Neo4Net.kernel.ha.HaSettings.id_reuse_safe_zone_time).toMillis();
 			  long idReuseSafeZone = config.Get( HaSettings.id_reuse_safe_zone_time ).toMillis();
 			  TransactionCommittingResponseUnpacker responseUnpacker = dependencies.SatisfyDependency( new TransactionCommittingResponseUnpacker( dependencies, config.Get( HaSettings.pull_apply_batch_size ), idReuseSafeZone ) );
 
@@ -261,7 +261,7 @@ namespace Neo4Net.Kernel.ha.factory
 
 			  // TODO There's a cyclical dependency here that should be fixed
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.neo4j.kernel.ha.cluster.HighAvailabilityMemberStateMachine> electionProviderRef = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberStateMachine> electionProviderRef = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<HighAvailabilityMemberStateMachine> electionProviderRef = new AtomicReference<HighAvailabilityMemberStateMachine>();
 			  OnDiskLastTxIdGetter lastTxIdGetter = new OnDiskLastTxIdGetter( () => ResolveDatabaseDependency(platformModule, typeof(TransactionIdStore)).LastCommittedTransactionId );
 			  ElectionCredentialsProvider electionCredentialsProvider = config.Get( HaSettings.slave_only ) ? new NotElectableElectionCredentialsProvider() : new DefaultElectionCredentialsProvider(config.Get(ClusterSettings.server_id), lastTxIdGetter, () => electionProviderRef.get().CurrentState);
@@ -324,7 +324,7 @@ namespace Neo4Net.Kernel.ha.factory
 
 			  // TODO There's a cyclical dependency here that should be fixed
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.neo4j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher> exceptionHandlerRef = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher> exceptionHandlerRef = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<HighAvailabilityModeSwitcher> exceptionHandlerRef = new AtomicReference<HighAvailabilityModeSwitcher>();
 			  InvalidEpochExceptionHandler invalidEpochHandler = () => exceptionHandlerRef.get().forceElections();
 
@@ -335,7 +335,7 @@ namespace Neo4Net.Kernel.ha.factory
 			  // but merely provide a way to get access to it. That's why this is a Supplier and will be asked
 			  // later, after the data source module and all that have started.
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"deprecation", "unchecked"}) System.Func<org.neo4j.kernel.impl.transaction.log.entry.LogEntryReader<org.neo4j.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>> logEntryReader = () -> resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.entry.LogEntryReader.class);
+//ORIGINAL LINE: @SuppressWarnings({"deprecation", "unchecked"}) System.Func<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>> logEntryReader = () -> resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader.class);
 			  System.Func<LogEntryReader<ReadableClosablePositionAwareChannel>> logEntryReader = () => ResolveDatabaseDependency(platformModule, typeof(LogEntryReader));
 
 			  MasterClientResolver masterClientResolver = new MasterClientResolver( logging.InternalLogProvider, responseUnpacker, invalidEpochHandler, ( int ) config.Get( HaSettings.read_timeout ).toMillis(), (int) config.Get(HaSettings.lock_read_timeout).toMillis(), config.Get(HaSettings.max_concurrent_channels_per_slave), config.Get(HaSettings.com_chunk_size).intValue(), logEntryReader );
@@ -356,7 +356,7 @@ namespace Neo4Net.Kernel.ha.factory
 			  SwitchToSlave switchToSlaveInstance = ChooseSwitchToSlaveStrategy( platformModule, config, dependencies, logging, monitors, masterDelegateInvocationHandler, requestContextFactory, clusterMemberAvailability, masterClientResolver, updatePullerProxy, pullerFactory, slaveServerFactory, editionIdGeneratorFactory, databaseLayout );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.function.Factory<org.neo4j.kernel.ha.com.master.MasterImpl.SPI> masterSPIFactory = () -> new org.neo4j.kernel.ha.cluster.DefaultMasterImplSPI(resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.factory.GraphDatabaseFacade.class), platformModule.fileSystem, platformModule.monitors, tokenHolders, idContext.getIdGeneratorFactory(), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.api.TransactionCommitProcess.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointer.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.TransactionIdStore.class), resolveDatabaseDependency(platformModule, org.neo4j.kernel.impl.transaction.log.LogicalTransactionStore.class), platformModule.dataSourceManager.getDataSource(), logging.getInternalLogProvider());
+//ORIGINAL LINE: final org.Neo4Net.function.Factory<org.Neo4Net.kernel.ha.com.master.MasterImpl.SPI> masterSPIFactory = () -> new org.Neo4Net.kernel.ha.cluster.DefaultMasterImplSPI(resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade.class), platformModule.fileSystem, platformModule.monitors, tokenHolders, idContext.getIdGeneratorFactory(), resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.api.TransactionCommitProcess.class), resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer.class), resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore.class), resolveDatabaseDependency(platformModule, org.Neo4Net.kernel.impl.transaction.log.LogicalTransactionStore.class), platformModule.dataSourceManager.getDataSource(), logging.getInternalLogProvider());
 			  IFactory<MasterImpl.SPI> masterSPIFactory = () => new DefaultMasterImplSPI(ResolveDatabaseDependency(platformModule, typeof(GraphDatabaseFacade)), platformModule.FileSystem, platformModule.Monitors, _tokenHolders, idContext.IdGeneratorFactory, ResolveDatabaseDependency(platformModule, typeof(TransactionCommitProcess)), ResolveDatabaseDependency(platformModule, typeof(CheckPointer)), ResolveDatabaseDependency(platformModule, typeof(TransactionIdStore)), ResolveDatabaseDependency(platformModule, typeof(LogicalTransactionStore)), platformModule.DataSourceManager.DataSource, logging.InternalLogProvider);
 
 			  System.Func<Locks, ConversationSPI> conversationSPIFactory = locks => new DefaultConversationSPI( locks, platformModule.JobScheduler );
@@ -470,7 +470,7 @@ namespace Neo4Net.Kernel.ha.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );
@@ -514,7 +514,7 @@ namespace Neo4Net.Kernel.ha.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.kernel.impl.transaction.TransactionHeaderInformationFactory createHeaderInformationFactory(final org.neo4j.kernel.ha.cluster.HighAvailabilityMemberContext memberContext)
+//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.transaction.TransactionHeaderInformationFactory createHeaderInformationFactory(final org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberContext memberContext)
 		 private static TransactionHeaderInformationFactory CreateHeaderInformationFactory( HighAvailabilityMemberContext memberContext )
 		 {
 			  return new TransactionHeaderInformationFactory_WithRandomBytesAnonymousInnerClass( memberContext );
@@ -633,7 +633,7 @@ namespace Neo4Net.Kernel.ha.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void registerRecovery(final org.neo4j.kernel.impl.factory.DatabaseInfo databaseInfo, final org.neo4j.graphdb.DependencyResolver dependencyResolver, final org.neo4j.logging.internal.LogService logging, org.neo4j.graphdb.factory.module.PlatformModule platformModule)
+//ORIGINAL LINE: private void registerRecovery(final org.Neo4Net.kernel.impl.factory.DatabaseInfo databaseInfo, final org.Neo4Net.graphdb.DependencyResolver dependencyResolver, final org.Neo4Net.logging.internal.LogService logging, org.Neo4Net.graphdb.factory.module.PlatformModule platformModule)
 		 private void RegisterRecovery( DatabaseInfo databaseInfo, DependencyResolver dependencyResolver, LogService logging, PlatformModule platformModule )
 		 {
 			  MemberStateMachine.addHighAvailabilityMemberListener( new HighAvailabilityMemberListener_AdapterAnonymousInnerClass( this, databaseInfo, dependencyResolver, logging, platformModule ) );
@@ -745,21 +745,21 @@ namespace Neo4Net.Kernel.ha.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.com.Server.Configuration masterServerConfig(final org.neo4j.kernel.configuration.Config config)
+//ORIGINAL LINE: private static org.Neo4Net.com.Server.Configuration masterServerConfig(final org.Neo4Net.kernel.configuration.Config config)
 		 private static Server.Configuration MasterServerConfig( Config config )
 		 {
 			  return CommonConfig( config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.com.Server.Configuration slaveServerConfig(final org.neo4j.kernel.configuration.Config config)
+//ORIGINAL LINE: private static org.Neo4Net.com.Server.Configuration slaveServerConfig(final org.Neo4Net.kernel.configuration.Config config)
 		 private static Server.Configuration SlaveServerConfig( Config config )
 		 {
 			  return CommonConfig( config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.com.Server.Configuration commonConfig(final org.neo4j.kernel.configuration.Config config)
+//ORIGINAL LINE: private static org.Neo4Net.com.Server.Configuration commonConfig(final org.Neo4Net.kernel.configuration.Config config)
 		 private static Server.Configuration CommonConfig( Config config )
 		 {
 			  return new ConfigurationAnonymousInnerClass( config );

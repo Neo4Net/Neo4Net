@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 	{
 		 private const string FORMAT_MESSAGE = "Failed to populate index %s";
 
-		 public IndexPopulationFailedKernelException( string indexUserDescription, Exception cause ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, FORMAT_MESSAGE, indexUserDescription )
+		 public IndexPopulationFailedKernelException( string indexUserDescription, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, FORMAT_MESSAGE, indexUserDescription )
 		 {
 		 }
 
-		 public IndexPopulationFailedKernelException( string indexUserDescription, string message ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexCreationFailed, FORMAT_MESSAGE + ", due to " + message, indexUserDescription )
+		 public IndexPopulationFailedKernelException( string indexUserDescription, string message ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexCreationFailed, FORMAT_MESSAGE + ", due to " + message, indexUserDescription )
 		 {
 		 }
 	}

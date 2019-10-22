@@ -21,17 +21,17 @@
  */
 namespace Neo4Net.Graphalgo.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo;
-	using Path = Neo4Net.Graphdb.Path;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
+	using Path = Neo4Net.GraphDb.Path;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphalgo.GraphAlgoFactory.allPaths;
+//	import static org.Neo4Net.graphalgo.GraphAlgoFactory.allPaths;
 
-	public class TestAllPaths : Neo4jAlgoTestCase
+	public class TestAllPaths : Neo4NetAlgoTestCase
 	{
 		 protected internal virtual PathFinder<Path> InstantiatePathFinder( int maxDepth )
 		 {

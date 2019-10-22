@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.kibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
 
 	/// <summary>
 	/// A buffering implementation of <seealso cref="ReadableClosableChannel"/>. This class also allows subclasses to read content

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,20 +16,20 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
 
-	using Neo4Net.Graphdb;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -48,9 +48,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 
 	public class EmbeddedInteraction : NeoInteractionLevel<EnterpriseLoginContext>
 	{
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: EmbeddedInteraction(java.util.Map<String, String> config, System.Func<org.neo4j.io.fs.FileSystemAbstraction> fileSystemSupplier) throws Throwable
+//ORIGINAL LINE: EmbeddedInteraction(java.util.Map<String, String> config, System.Func<org.Neo4Net.io.fs.FileSystemAbstraction> fileSystemSupplier) throws Throwable
 		 internal EmbeddedInteraction( IDictionary<string, string> config, System.Func<FileSystemAbstraction> fileSystemSupplier )
 		 {
 			  TestEnterpriseGraphDatabaseFactory factory = new TestEnterpriseGraphDatabaseFactory();
@@ -78,7 +78,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public EmbeddedInteraction(org.neo4j.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
+//ORIGINAL LINE: public EmbeddedInteraction(org.Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
 		 public EmbeddedInteraction( GraphDatabaseBuilder builder, IDictionary<string, string> config )
 		 {
 			  Init( builder, config );
@@ -89,7 +89,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void init(org.neo4j.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
+//ORIGINAL LINE: protected void init(org.Neo4Net.graphdb.factory.GraphDatabaseBuilder builder, java.util.Map<String, String> config) throws Throwable
 		 protected internal virtual void Init( GraphDatabaseBuilder builder, IDictionary<string, string> config )
 		 {
 			  builder.SetConfig( ( new BoltConnector( "bolt" ) ).type, "BOLT" );
@@ -158,7 +158,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.enterprise.api.security.EnterpriseLoginContext login(String username, String password) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.kernel.enterprise.api.security.EnterpriseLoginContext login(String username, String password) throws Exception
 		 public override EnterpriseLoginContext Login( string username, string password )
 		 {
 			  return _authManager.login( authToken( username, password ) );

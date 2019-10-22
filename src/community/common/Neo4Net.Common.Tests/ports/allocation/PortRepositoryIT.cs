@@ -31,7 +31,7 @@ namespace Neo4Net.Ports.Allocation
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.fail;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.ports.allocation.PortConstants.EphemeralPortMinimum;
+   //	import static org.Neo4Net.ports.allocation.PortConstants.EphemeralPortMinimum;
 
    //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
    //ORIGINAL LINE: @EnableRuleMigrationSupport public class PortRepositoryIT

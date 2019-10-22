@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,22 +13,22 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.ha
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using Neo4Net.Kernel.impl.util;
@@ -43,9 +43,9 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.concurrent.OtherThreadRule.isWaiting;
+//	import static org.Neo4Net.test.rule.concurrent.OtherThreadRule.isWaiting;
 
 	public class UniquenessConstraintValidationHAIT
 	{
@@ -53,10 +53,10 @@ namespace Neo4Net.ha
 		 private const string PROPERTY_KEY = "key1";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.neo4j.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> OtherThread = new OtherThreadRule<Void>();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withInitialDataset(uniquenessConstraint(LABEL, PROPERTY_KEY));
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withInitialDataset(uniquenessConstraint(LABEL, PROPERTY_KEY));
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withInitialDataset(UniquenessConstraint(_label, PROPERTY_KEY));
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -171,7 +171,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.kernel.impl.util.Listener<org.neo4j.graphdb.GraphDatabaseService> uniquenessConstraint(final org.neo4j.graphdb.Label label, final String propertyKey)
+//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.util.Listener<org.Neo4Net.graphdb.GraphDatabaseService> uniquenessConstraint(final org.Neo4Net.graphdb.Label label, final String propertyKey)
 		 private static Listener<GraphDatabaseService> UniquenessConstraint( Label label, string propertyKey )
 		 {
 			  return db =>
@@ -186,8 +186,8 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, bool> createNode(final org.neo4j.graphdb.GraphDatabaseService db, final String label, final String propertyKey, final Object propertyValue)
-		 public static OtherThreadExecutor.WorkerCommand<Void, bool> CreateNode( GraphDatabaseService db, string label, string propertyKey, object propertyValue )
+//ORIGINAL LINE: public static org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, bool> createNode(final org.Neo4Net.graphdb.GraphDatabaseService db, final String label, final String propertyKey, final Object propertyValue)
+		 public static OtherThreadExecutor.WorkerCommand<Void, bool> CreateNode( IGraphDatabaseService db, string label, string propertyKey, object propertyValue )
 		 {
 			  return nothing =>
 			  {

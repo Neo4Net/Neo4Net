@@ -25,9 +25,9 @@ namespace Neo4Net.Values.Storable
 	using Parameterized = org.junit.runners.Parameterized;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 
 	/// <summary>
 	/// This test was faithfully converted (including personal remarks) from PropertyEqualityTest.

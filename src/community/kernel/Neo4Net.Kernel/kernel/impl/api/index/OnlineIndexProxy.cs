@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 // - The other is the creation or starting from an uncompleted population, where there will be a point
 		 //   in the future where this index will flip from a populating index proxy to an online index proxy.
 		 //   This is the problematic part. You see... we have been accidentally relying on the short-lived node
-		 //   entity locks for this to work. The scenario where they have saved indexes from getting duplicate
+		 //   IEntity locks for this to work. The scenario where they have saved indexes from getting duplicate
 		 //   nodes in them (one from populator and the other from a "normal" update is where a populator is nearing
 		 //   its completion and wants to flip. Another thread is in the middle of applying a transaction which
 		 //   in the end will feed an update to this index. Index updates are applied after store updates, so
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 //   and flipping (the update mechanism in a populator is idempotent).
 		 //     This strategy has changed slightly in 3.0 where transactions can be applied in whole batches
 		 //   and index updates for the whole batch will be applied in the end. This is fine for everything except
-		 //   the above scenario because the short-lived entity locks are per transaction, not per batch, and must
+		 //   the above scenario because the short-lived IEntity locks are per transaction, not per batch, and must
 		 //   be so to not interfere with transactions creating constraints inside this batch. We do need to apply
 		 //   index updates in batches because nowadays slave update pulling and application isn't special in any
 		 //   way, it's simply applying transactions in batches and this needs to be very fast to not have instances
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newUpdater(final IndexUpdateMode mode)
 		 public override IndexUpdater NewUpdater( IndexUpdateMode mode )
 		 {
 			  IndexUpdater actual = Accessor.newUpdater( EscalateModeIfNecessary( mode ) );
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexUpdater updateCountingUpdater(final org.neo4j.kernel.api.index.IndexUpdater indexUpdater)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexUpdater updateCountingUpdater(final org.Neo4Net.kernel.api.index.IndexUpdater indexUpdater)
 		 private IndexUpdater UpdateCountingUpdater( IndexUpdater indexUpdater )
 		 {
 			  return new UpdateCountingIndexUpdater( _storeView, _indexId, indexUpdater );
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  Accessor.verifyDeferredConstraints( nodePropertyAccessor );

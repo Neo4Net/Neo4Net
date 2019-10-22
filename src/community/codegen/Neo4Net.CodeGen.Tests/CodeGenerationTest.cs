@@ -71,53 +71,53 @@ namespace Neo4Net.CodeGen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.add;
+//	import static org.Neo4Net.codegen.Expression.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.and;
+//	import static org.Neo4Net.codegen.Expression.and;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.constant;
+//	import static org.Neo4Net.codegen.Expression.constant;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.equal;
+//	import static org.Neo4Net.codegen.Expression.equal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.invoke;
+//	import static org.Neo4Net.codegen.Expression.invoke;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.isNull;
+//	import static org.Neo4Net.codegen.Expression.isNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.multiply;
+//	import static org.Neo4Net.codegen.Expression.multiply;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.newArray;
+//	import static org.Neo4Net.codegen.Expression.newArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.newInstance;
+//	import static org.Neo4Net.codegen.Expression.newInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.not;
+//	import static org.Neo4Net.codegen.Expression.not;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.notNull;
+//	import static org.Neo4Net.codegen.Expression.notNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.or;
+//	import static org.Neo4Net.codegen.Expression.or;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.subtract;
+//	import static org.Neo4Net.codegen.Expression.subtract;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Expression.ternary;
+//	import static org.Neo4Net.codegen.Expression.ternary;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ExpressionTemplate.cast;
+//	import static org.Neo4Net.codegen.ExpressionTemplate.cast;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ExpressionTemplate.load;
+//	import static org.Neo4Net.codegen.ExpressionTemplate.load;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ExpressionTemplate.self;
+//	import static org.Neo4Net.codegen.ExpressionTemplate.self;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodReference.constructorReference;
+//	import static org.Neo4Net.codegen.MethodReference.constructorReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodReference.methodReference;
+//	import static org.Neo4Net.codegen.MethodReference.methodReference;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Parameter.param;
+//	import static org.Neo4Net.codegen.Parameter.param;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.extending;
+//	import static org.Neo4Net.codegen.TypeReference.extending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.parameterizedType;
+//	import static org.Neo4Net.codegen.TypeReference.parameterizedType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeParameter;
+//	import static org.Neo4Net.codegen.TypeReference.typeParameter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeReference;
+//	import static org.Neo4Net.codegen.TypeReference.typeReference;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CodeGenerationTest
@@ -2071,7 +2071,7 @@ namespace Neo4Net.CodeGen
 			  return MethodHandles.lookup().unreflectConstructor(target.GetConstructor(parameters));
 		 }
 
-		 public const string PACKAGE = "org.neo4j.codegen.test";
+		 public const string PACKAGE = "org.Neo4Net.codegen.test";
 		 private CodeGenerator _generator;
 
 		 internal virtual ClassGenerator GenerateClass( string name, Type firstInterface, params Type[] more )

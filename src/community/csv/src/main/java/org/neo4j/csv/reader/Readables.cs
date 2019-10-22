@@ -314,7 +314,7 @@ namespace Neo4Net.Csv.Reader
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs public static <IN,OUT> org.neo4j.collection.RawIterator<OUT,java.io.IOException> iterator(org.neo4j.function.ThrowingFunction<IN,OUT,java.io.IOException> converter, IN... items)
+//ORIGINAL LINE: @SafeVarargs public static <IN,OUT> org.Neo4Net.collection.RawIterator<OUT,java.io.IOException> iterator(org.Neo4Net.function.ThrowingFunction<IN,OUT,java.io.IOException> converter, IN... items)
 		 public static RawIterator<OUT, IOException> Iterator<IN, OUT>( ThrowingFunction<IN, OUT, IOException> converter, params IN[] items )
 		 {
 			  if ( items.Length == 0 )

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.arbiter
 {
@@ -38,7 +38,7 @@ namespace Neo4Net.Server.arbiter
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
 	using ClusterListener_Adapter = Neo4Net.cluster.protocol.cluster.ClusterListener_Adapter;
 	using ServerIdElectionCredentialsProvider = Neo4Net.cluster.protocol.election.ServerIdElectionCredentialsProvider;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
@@ -62,22 +62,22 @@ namespace Neo4Net.Server.arbiter
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.ClusterSettings.cluster_server;
+//	import static org.Neo4Net.cluster.ClusterSettings.cluster_server;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.ClusterSettings.initial_hosts;
+//	import static org.Neo4Net.cluster.ClusterSettings.initial_hosts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.ClusterSettings.server_id;
+//	import static org.Neo4Net.cluster.ClusterSettings.server_id;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.store;
+//	import static org.Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.StreamConsumer.IGNORE_FAILURES;
+//	import static org.Neo4Net.test.StreamConsumer.IGNORE_FAILURES;
 
 	public class ArbiterBootstrapperIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -118,7 +118,7 @@ namespace Neo4Net.Server.arbiter
 		 private static int? _shouldNotJoin;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _directory;
@@ -213,7 +213,7 @@ namespace Neo4Net.Server.arbiter
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.cluster.protocol.cluster.ClusterListener_Adapter joinAwaitingListener(final java.util.concurrent.CountDownLatch latch, final java.util.concurrent.atomic.AtomicInteger port)
+//ORIGINAL LINE: private org.Neo4Net.cluster.protocol.cluster.ClusterListener_Adapter joinAwaitingListener(final java.util.concurrent.CountDownLatch latch, final java.util.concurrent.atomic.AtomicInteger port)
 		 private ClusterListener_Adapter JoinAwaitingListener( System.Threading.CountdownEvent latch, AtomicInteger port )
 		 {
 			  return new ClusterListener_AdapterAnonymousInnerClass2( this, latch, port );

@@ -23,9 +23,9 @@ using System.Threading;
 namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_proc_input_type
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
 
@@ -78,31 +78,31 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_proc_input_type
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works5(@Name("test") java.util.List<java.util.List<java.util.List<org.neo4j.graphdb.Path>>> supported)
+//ORIGINAL LINE: @Procedure public void works5(@Name("test") java.util.List<java.util.List<java.util.List<org.Neo4Net.graphdb.Path>>> supported)
 		 public virtual void Works5( IList<IList<IList<Path>>> supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works6(@Name("test") java.util.List<org.neo4j.graphdb.Node> supported)
+//ORIGINAL LINE: @Procedure public void works6(@Name("test") java.util.List<org.Neo4Net.graphdb.Node> supported)
 		 public virtual void Works6( IList<Node> supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works7(@Name("test") java.util.List<java.util.List<org.neo4j.graphdb.Relationship>> supported)
+//ORIGINAL LINE: @Procedure public void works7(@Name("test") java.util.List<java.util.List<org.Neo4Net.graphdb.Relationship>> supported)
 		 public virtual void Works7( IList<IList<Relationship>> supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works8(@Name("test") java.util.Map<String,java.util.List<java.util.List<org.neo4j.graphdb.Relationship>>> supported)
+//ORIGINAL LINE: @Procedure public void works8(@Name("test") java.util.Map<String,java.util.List<java.util.List<org.Neo4Net.graphdb.Relationship>>> supported)
 		 public virtual void Works8( IDictionary<string, IList<IList<Relationship>>> supported )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void works9(@Name("test") java.util.Map<String,java.util.Map<String,java.util.List<org.neo4j.graphdb.Node>>> supported)
+//ORIGINAL LINE: @Procedure public void works9(@Name("test") java.util.Map<String,java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Node>>> supported)
 		 public virtual void Works9( IDictionary<string, IDictionary<string, IList<Node>>> supported )
 		 {
 		 }

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Jmx
 {
-	[ManagementInterface(name : StoreSize_Fields.NAME), Description("Information about the disk space used by different parts of the Neo4j graph store"), Obsolete]
+	[ManagementInterface(name : StoreSize_Fields.NAME), Description("Information about the disk space used by different parts of the Neo4Net graph store"), Obsolete]
 	public interface StoreSize
 	{
 

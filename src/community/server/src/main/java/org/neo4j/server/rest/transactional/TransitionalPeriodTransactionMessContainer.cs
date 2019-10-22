@@ -27,9 +27,9 @@ namespace Neo4Net.Server.rest.transactional
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
-	using Neo4jTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4jTransactionalContextFactory;
+	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using TransactionalContextFactory = Neo4Net.Kernel.impl.query.TransactionalContextFactory;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
@@ -38,7 +38,7 @@ namespace Neo4Net.Server.rest.transactional
 
 	public class TransitionalPeriodTransactionMessContainer
 	{
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 
 		 private readonly GraphDatabaseFacade _db;
 		 private readonly ThreadToStatementContextBridge _txBridge;
@@ -64,7 +64,7 @@ namespace Neo4Net.Server.rest.transactional
 
 		 public virtual TransactionalContext Create( HttpServletRequest request, GraphDatabaseQueryService service, Transaction_Type type, LoginContext loginContext, string query, IDictionary<string, object> queryParameters )
 		 {
-			  TransactionalContextFactory contextFactory = Neo4jTransactionalContextFactory.create( service, _locker );
+			  TransactionalContextFactory contextFactory = Neo4NetTransactionalContextFactory.create( service, _locker );
 			  ClientConnectionInfo clientConnection = HttpConnectionInfoFactory.create( request );
 			  InternalTransaction transaction = service.BeginTransaction( type, loginContext );
 			  return contextFactory.NewContext( clientConnection, transaction, query, ValueUtils.asMapValue( queryParameters ) );

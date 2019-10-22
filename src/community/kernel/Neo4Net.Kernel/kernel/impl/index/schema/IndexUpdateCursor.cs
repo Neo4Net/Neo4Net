@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.IndexUpdateStorage.STOP_TYPE;
+//	import static org.Neo4Net.kernel.impl.index.schema.IndexUpdateStorage.STOP_TYPE;
 
 	/// <summary>
-	/// Cursor over serialized <seealso cref="org.neo4j.kernel.api.index.IndexEntryUpdate"/> represented by <seealso cref="UpdateMode"/>, 2x<seealso cref="KEY"/> and <seealso cref="VALUE"/>.
+	/// Cursor over serialized <seealso cref="org.Neo4Net.kernel.api.index.IndexEntryUpdate"/> represented by <seealso cref="UpdateMode"/>, 2x<seealso cref="KEY"/> and <seealso cref="VALUE"/>.
 	/// Reads the updates in sequential order. Field instances are reused, so consumer is responsible for creating copies if result needs to be cached.
 	/// </summary>
 	public class IndexUpdateCursor<KEY, VALUE> : BlockEntryCursor<KEY, VALUE>

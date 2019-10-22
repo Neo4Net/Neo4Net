@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 /// <returns> the next <seealso cref="LogEntry"/> read and parsed from the {@code channel}. </returns>
 		 /// <exception cref="IOException"> I/O error from channel or if data was read past the end of the channel. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: T parse(LogEntryVersion version, org.neo4j.kernel.impl.transaction.log.ReadableClosableChannel channel, org.neo4j.kernel.impl.transaction.log.LogPositionMarker marker, org.neo4j.storageengine.api.CommandReaderFactory commandReaderFactory) throws java.io.IOException;
+//ORIGINAL LINE: T parse(LogEntryVersion version, org.Neo4Net.kernel.impl.transaction.log.ReadableClosableChannel channel, org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker, org.Neo4Net.storageengine.api.CommandReaderFactory commandReaderFactory) throws java.io.IOException;
 		 T Parse( LogEntryVersion version, ReadableClosableChannel channel, LogPositionMarker marker, CommandReaderFactory commandReaderFactory );
 
 		 /// <returns> code representing the type of log entry. </returns>

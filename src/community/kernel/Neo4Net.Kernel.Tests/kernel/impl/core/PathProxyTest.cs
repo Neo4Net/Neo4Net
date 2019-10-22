@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.impl.core
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Entity = Neo4Net.Graphdb.Entity;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using IEntity = Neo4Net.GraphDb.Entity;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.instanceOf;
@@ -182,34 +182,34 @@ namespace Neo4Net.Kernel.impl.core
 			  Path path = new PathProxy( _proxySPI, new long[] { 1, 2, 3 }, new long[] { 100, 200 }, new int[] { 0, ~0 } );
 
 			  IEnumerator<PropertyContainer> iterator = path.GetEnumerator();
-			  PropertyContainer entity;
+			  IPropertyContainer IEntity;
 
 			  // then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-			  assertThat( entity = iterator.next(), instanceOf(typeof(Node)) );
-			  assertEquals( 1, ( ( Entity ) entity ).Id );
+			  assertThat( IEntity = iterator.next(), instanceOf(typeof(Node)) );
+			  assertEquals( 1, ( ( IEntity ) IEntity ).Id );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-			  assertThat( entity = iterator.next(), instanceOf(typeof(Relationship)) );
-			  assertEquals( 100, ( ( Entity ) entity ).Id );
+			  assertThat( IEntity = iterator.next(), instanceOf(typeof(Relationship)) );
+			  assertEquals( 100, ( ( IEntity ) IEntity ).Id );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-			  assertThat( entity = iterator.next(), instanceOf(typeof(Node)) );
-			  assertEquals( 2, ( ( Entity ) entity ).Id );
+			  assertThat( IEntity = iterator.next(), instanceOf(typeof(Node)) );
+			  assertEquals( 2, ( ( IEntity ) IEntity ).Id );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-			  assertThat( entity = iterator.next(), instanceOf(typeof(Relationship)) );
-			  assertEquals( 200, ( ( Entity ) entity ).Id );
+			  assertThat( IEntity = iterator.next(), instanceOf(typeof(Relationship)) );
+			  assertEquals( 200, ( ( IEntity ) IEntity ).Id );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-			  assertThat( entity = iterator.next(), instanceOf(typeof(Node)) );
-			  assertEquals( 3, ( ( Entity ) entity ).Id );
+			  assertThat( IEntity = iterator.next(), instanceOf(typeof(Node)) );
+			  assertEquals( 3, ( ( IEntity ) IEntity ).Id );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertFalse( iterator.hasNext() );
 		 }

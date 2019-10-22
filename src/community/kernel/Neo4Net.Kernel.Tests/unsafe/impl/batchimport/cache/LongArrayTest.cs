@@ -39,13 +39,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.DynamicTest.stream;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.OFF_HEAP;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.OFF_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.auto;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.auto;
 
 	internal class LongArrayTest : NumberArrayPageCacheTestSupport
 	{

@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.impl.proc
 
 
 	using Neo4Net.Collections;
-	using Resource = Neo4Net.Graphdb.Resource;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
@@ -64,11 +64,11 @@ namespace Neo4Net.Kernel.impl.proc
 	using Neo4Net.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asRawIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asRawIterator;
 
 	/// <summary>
 	/// Handles converting a class into one or more callable <seealso cref="CallableProcedure"/>.
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.proc.CallableUserFunction> compileFunction(Class fcnDefinition) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.proc.CallableUserFunction> compileFunction(Class fcnDefinition) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal virtual IList<CallableUserFunction> CompileFunction( Type fcnDefinition )
 		 {
 			  try
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.proc.CallableUserAggregationFunction> compileAggregationFunction(Class fcnDefinition) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction> compileAggregationFunction(Class fcnDefinition) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal virtual IList<CallableUserAggregationFunction> CompileAggregationFunction( Type fcnDefinition )
 		 {
 			  try
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.proc.CallableProcedure> compileProcedure(Class procDefinition, String warning, boolean fullAccess) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compileProcedure(Class procDefinition, String warning, boolean fullAccess) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal virtual IList<CallableProcedure> CompileProcedure( Type procDefinition, string warning, bool fullAccess )
 		 {
 			  try
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.proc.CallableProcedure compileProcedure(Class procDefinition, MethodHandle constructor, Method method, String warning, boolean fullAccess, org.neo4j.internal.kernel.api.procs.QualifiedName procName) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.proc.CallableProcedure compileProcedure(Class procDefinition, MethodHandle constructor, Method method, String warning, boolean fullAccess, org.Neo4Net.internal.kernel.api.procs.QualifiedName procName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private CallableProcedure CompileProcedure( Type procDefinition, MethodHandle constructor, System.Reflection.MethodInfo method, string warning, bool fullAccess, QualifiedName procName )
 		 {
 			  IList<FieldSignature> inputSignature = _inputSignatureDeterminer.signatureFor( method );
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.proc.CallableUserFunction compileFunction(Class procDefinition, MethodHandle constructor, Method method, org.neo4j.internal.kernel.api.procs.QualifiedName procName) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException, IllegalAccessException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.proc.CallableUserFunction compileFunction(Class procDefinition, MethodHandle constructor, Method method, org.Neo4Net.internal.kernel.api.procs.QualifiedName procName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, IllegalAccessException
 		 private CallableUserFunction CompileFunction( Type procDefinition, MethodHandle constructor, System.Reflection.MethodInfo method, QualifiedName procName )
 		 {
 			  _restrictions.verify( procName );
@@ -321,7 +321,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.proc.CallableUserAggregationFunction compileAggregationFunction(Class definition, MethodHandle constructor, Method method, org.neo4j.internal.kernel.api.procs.QualifiedName funcName) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException, IllegalAccessException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction compileAggregationFunction(Class definition, MethodHandle constructor, Method method, org.Neo4Net.internal.kernel.api.procs.QualifiedName funcName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, IllegalAccessException
 		 private CallableUserAggregationFunction CompileAggregationFunction( Type definition, MethodHandle constructor, System.Reflection.MethodInfo method, QualifiedName funcName )
 		 {
 			  _restrictions.verify( funcName );
@@ -438,7 +438,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private MethodHandle constructor(Class procDefinition) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private MethodHandle constructor(Class procDefinition) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private MethodHandle Constructor( Type procDefinition )
 		 {
 			  try
@@ -495,7 +495,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void inject(org.neo4j.kernel.api.proc.Context ctx, Object object) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: protected void inject(org.Neo4Net.kernel.api.proc.Context ctx, Object object) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  protected internal virtual void Inject( Context ctx, object @object )
 			  {
 					foreach ( FieldInjections.FieldSetter setter in FieldSetters )
@@ -505,7 +505,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Object[] mapToObjects(String type, org.neo4j.internal.kernel.api.procs.QualifiedName name, java.util.List<org.neo4j.internal.kernel.api.procs.FieldSignature> inputSignature, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: protected Object[] mapToObjects(String type, org.Neo4Net.internal.kernel.api.procs.QualifiedName name, java.util.List<org.Neo4Net.internal.kernel.api.procs.FieldSignature> inputSignature, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  protected internal virtual object[] MapToObjects( string type, QualifiedName name, IList<FieldSignature> inputSignature, AnyValue[] input )
 			  {
 					// Verify that the number of passed arguments matches the number expected in the mthod signature
@@ -547,7 +547,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> apply(org.neo4j.kernel.api.proc.Context ctx, Object[] input, org.neo4j.kernel.api.ResourceTracker resourceTracker) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 			  {
 					// For now, create a new instance of the class for each invocation. In the future, we'd like to keep
@@ -622,7 +622,7 @@ namespace Neo4Net.Kernel.impl.proc
 					}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean hasNext() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public boolean hasNext() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 					public override bool HasNext()
 					{
 						 try
@@ -642,7 +642,7 @@ namespace Neo4Net.Kernel.impl.proc
 					}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object[] next() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object[] next() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 					public override object[] Next()
 					{
 						 try
@@ -737,7 +737,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					// For now, create a new instance of the class for each invocation. In the future, we'd like to keep
@@ -798,7 +798,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.UserAggregator create(org.neo4j.kernel.api.proc.Context ctx) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator create(org.Neo4Net.kernel.api.proc.Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override UserAggregator Create( Context ctx )
 			  {
 					// For now, create a new instance of the class for each invocation. In the future, we'd like to keep
@@ -848,7 +848,7 @@ namespace Neo4Net.Kernel.impl.proc
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void update(Object[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public void update(Object[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 				  public void update( object[] input )
 				  {
 						try
@@ -881,7 +881,7 @@ namespace Neo4Net.Kernel.impl.proc
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object result() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object result() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 				  public object result()
 				  {
 						try
@@ -907,7 +907,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void rejectEmptyNamespace(org.neo4j.internal.kernel.api.procs.QualifiedName name) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private static void rejectEmptyNamespace(org.Neo4Net.internal.kernel.api.procs.QualifiedName name) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private static void RejectEmptyNamespace( QualifiedName name )
 		 {
 			  if ( name.Namespace() == null || name.Namespace().Length == 0 )

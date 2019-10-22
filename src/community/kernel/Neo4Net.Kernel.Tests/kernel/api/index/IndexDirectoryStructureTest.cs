@@ -26,15 +26,15 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.path;
+//	import static org.Neo4Net.io.fs.FileUtils.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.baseSchemaIndexFolder;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.baseSchemaIndexFolder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProviderKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
 
 	public class IndexDirectoryStructureTest
 	{

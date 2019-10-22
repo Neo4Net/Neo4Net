@@ -21,13 +21,13 @@
  */
 namespace Neo4Net.Graphalgo.shortestpath
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo;
 	using Neo4Net.Graphalgo.impl.shortestpath;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -37,7 +37,7 @@ namespace Neo4Net.Graphalgo.shortestpath
 	/// CostEvaluator sent to a Dijkstra.
 	/// @author Patrik Larsson </summary>
 	/// <seealso cref= CostEvaluator </seealso>
-	public class DijkstraDirectionTest : Neo4jAlgoTestCase
+	public class DijkstraDirectionTest : Neo4NetAlgoTestCase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void testDijkstraDirection1()

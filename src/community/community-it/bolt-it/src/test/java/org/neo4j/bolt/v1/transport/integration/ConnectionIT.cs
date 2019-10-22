@@ -49,17 +49,17 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public ExpectedException Exception = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass());
-		 public Neo4jWithSocket Server = new Neo4jWithSocket( this.GetType() );
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass());
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.bolt.v1.transport.socket.client.TransportConnection connection;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection;
 		 public TransportConnection Connection;
 
 		 private HostnamePort _address;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<org.neo4j.bolt.v1.transport.socket.client.TransportConnection> transports()
+//ORIGINAL LINE: @Parameterized.Parameters public static java.util.Collection<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> transports()
 		 public static ICollection<TransportConnection> Transports()
 		 {
 			  return asList( new SecureSocketConnection(), new SocketConnection(), new SecureWebSocketConnection(), new WebSocketConnection() );

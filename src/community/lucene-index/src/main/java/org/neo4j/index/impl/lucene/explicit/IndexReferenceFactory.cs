@@ -54,7 +54,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if the index is dropped prior to, or concurrently with, this
 		 /// operation. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract IndexReference createIndexReference(IndexIdentifier indexIdentifier) throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: abstract IndexReference createIndexReference(IndexIdentifier indexIdentifier) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 internal abstract IndexReference CreateIndexReference( IndexIdentifier indexIdentifier );
 
 		 /// <summary>
@@ -70,7 +70,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if the index is dropped prior to, or concurrently with, this
 		 /// operation. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract IndexReference refresh(IndexReference indexReference) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: abstract IndexReference refresh(IndexReference indexReference) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 internal abstract IndexReference Refresh( IndexReference indexReference );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -81,7 +81,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.apache.lucene.search.IndexSearcher newIndexSearcher(IndexIdentifier identifier, org.apache.lucene.index.IndexReader reader) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: org.apache.lucene.search.IndexSearcher newIndexSearcher(IndexIdentifier identifier, org.apache.lucene.index.IndexReader reader) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexSearcher NewIndexSearcher( IndexIdentifier identifier, IndexReader reader )
 		 {
 			  IndexSearcher searcher = new IndexSearcher( reader );
@@ -94,7 +94,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexType GetType( IndexIdentifier identifier )
 		 {
 			  return _typeCache.getIndexType( identifier, false );

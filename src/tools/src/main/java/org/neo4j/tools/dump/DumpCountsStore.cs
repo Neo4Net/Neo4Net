@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Text;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Text;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.dump
 {
@@ -56,9 +56,9 @@ namespace Neo4Net.tools.dump
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
+//	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 
 	/// <summary>
 	/// Tool that will dump content of count store content into a simple string representation for further analysis.
@@ -81,7 +81,7 @@ namespace Neo4Net.tools.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void dumpCountsStore(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File path, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: public static void dumpCountsStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, java.io.PrintStream out) throws Exception
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 		 public static void DumpCountsStoreConflict( FileSystemAbstraction fs, File path, PrintStream @out )
 		 {
@@ -140,7 +140,7 @@ namespace Neo4Net.tools.dump
 		 {
 			  @out.printf( "Counts Store:\t%s%n", file );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.impl.store.kvstore.HeaderField<?> headerField : headers.fields())
+//ORIGINAL LINE: for (org.Neo4Net.kernel.impl.store.kvstore.HeaderField<?> headerField : headers.fields())
 			  foreach ( HeaderField<object> headerField in headers.Fields() )
 			  {
 					@out.printf( "%s:\t%s%n", headerField.ToString(), headers.Get(headerField) );
@@ -172,7 +172,7 @@ namespace Neo4Net.tools.dump
 					tokenIds = RelationshipTypes( Schema.EntityTokenIds );
 					break;
 			  default:
-					throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + Schema.entityType() );
+					throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + Schema.entityType() );
 			  }
 			  @out.printf( "\tIndexStatistics[(%s {%s})]:\tupdates=%d, size=%d%n", tokenIds, PropertyKeys( Schema.PropertyIds ), updates, size );
 		 }
@@ -190,7 +190,7 @@ namespace Neo4Net.tools.dump
 					tokenIds = RelationshipTypes( Schema.EntityTokenIds );
 					break;
 			  default:
-					throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + Schema.entityType() );
+					throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + Schema.entityType() );
 			  }
 			  @out.printf( "\tIndexSample[(%s {%s})]:\tunique=%d, size=%d%n", tokenIds, PropertyKeys( Schema.PropertyIds ), unique, size );
 		 }
@@ -298,7 +298,7 @@ namespace Neo4Net.tools.dump
 		 private static IList<NamedToken> AllTokensFrom<T1>( TokenStore<T1> store )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.neo4j.kernel.impl.store.TokenStore<?> tokens = store)
+//ORIGINAL LINE: try (org.Neo4Net.kernel.impl.store.TokenStore<?> tokens = store)
 			  using ( TokenStore<object> tokens = store )
 			  {
 					return tokens.Tokens;
@@ -325,7 +325,7 @@ namespace Neo4Net.tools.dump
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitFile(java.io.File path, org.neo4j.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public void visitFile(java.io.File path, org.Neo4Net.kernel.impl.api.CountsVisitor visitor) throws java.io.IOException
 			  public override void VisitFile( File path, CountsVisitor visitor )
 			  {
 					base.VisitFile( path, visitor );

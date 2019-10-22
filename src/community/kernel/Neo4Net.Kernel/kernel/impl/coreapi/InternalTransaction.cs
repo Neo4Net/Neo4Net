@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.util
 	public abstract class IoPrimitiveUtils
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String readString(org.neo4j.storageengine.api.ReadableChannel channel, int length) throws java.io.IOException
+//ORIGINAL LINE: public static String readString(org.Neo4Net.storageengine.api.ReadableChannel channel, int length) throws java.io.IOException
 		 public static string ReadString( ReadableChannel channel, int length )
 		 {
 			  Debug.Assert( length >= 0, "invalid array length " + length );
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void write3bLengthAndString(org.neo4j.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
+//ORIGINAL LINE: public static void write3bLengthAndString(org.Neo4Net.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
 		 public static void Write3bLengthAndString( WritableChannel channel, string @string )
 		 {
 			  sbyte[] chars = UTF8.encode( @string );
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String read3bLengthAndString(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static String read3bLengthAndString(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
 		 public static string Read3bLengthAndString( ReadableChannel channel )
 		 {
 			  short lengthShort = channel.Short;
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void write2bLengthAndString(org.neo4j.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
+//ORIGINAL LINE: public static void write2bLengthAndString(org.Neo4Net.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
 		 public static void Write2bLengthAndString( WritableChannel channel, string @string )
 		 {
 			  sbyte[] chars = UTF8.encode( @string );
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String read2bLengthAndString(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static String read2bLengthAndString(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
 		 public static string Read2bLengthAndString( ReadableChannel channel )
 		 {
 			  short length = channel.Short;
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.Map<String, String> read2bMap(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.Map<String, String> read2bMap(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
 		 public static IDictionary<string, string> Read2bMap( ReadableChannel channel )
 		 {
 			  short size = channel.Short;
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeLengthAndString(org.neo4j.io.fs.StoreChannel channel, ByteBuffer buffer, String value) throws java.io.IOException
+//ORIGINAL LINE: public static void writeLengthAndString(org.Neo4Net.io.fs.StoreChannel channel, ByteBuffer buffer, String value) throws java.io.IOException
 		 public static void WriteLengthAndString( StoreChannel channel, ByteBuffer buffer, string value )
 		 {
 			  char[] chars = value.ToCharArray();
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeChars(org.neo4j.io.fs.StoreChannel channel, ByteBuffer buffer, char[] chars) throws java.io.IOException
+//ORIGINAL LINE: private static void writeChars(org.Neo4Net.io.fs.StoreChannel channel, ByteBuffer buffer, char[] chars) throws java.io.IOException
 		 private static void WriteChars( StoreChannel channel, ByteBuffer buffer, char[] chars )
 		 {
 			  int position = 0;
@@ -221,7 +221,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void writeInt(org.neo4j.io.fs.StoreChannel channel, ByteBuffer buffer, int value) throws java.io.IOException
+//ORIGINAL LINE: public static void writeInt(org.Neo4Net.io.fs.StoreChannel channel, ByteBuffer buffer, int value) throws java.io.IOException
 		 public static void WriteInt( StoreChannel channel, ByteBuffer buffer, int value )
 		 {
 			  buffer.clear();

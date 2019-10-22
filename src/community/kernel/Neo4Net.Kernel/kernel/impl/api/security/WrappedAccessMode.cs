@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.security
 {
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 
 	/// <summary>

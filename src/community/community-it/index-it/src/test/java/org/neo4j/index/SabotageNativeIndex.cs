@@ -35,7 +35,7 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 
 	public class SabotageNativeIndex : DatabaseRule.RestartAction
 	{
@@ -47,7 +47,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public void run(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public override void Run( FileSystemAbstraction fs, DatabaseLayout databaseLayout )
 		 {
 			  int files = ScrambleIndexFiles( fs, NativeIndexDirectoryStructure( databaseLayout ).rootDirectory() );
@@ -55,7 +55,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int scrambleIndexFiles(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File fileOrDir) throws java.io.IOException
+//ORIGINAL LINE: private int scrambleIndexFiles(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File fileOrDir) throws java.io.IOException
 		 private int ScrambleIndexFiles( FileSystemAbstraction fs, File fileOrDir )
 		 {
 			  if ( fs.IsDirectory( fileOrDir ) )

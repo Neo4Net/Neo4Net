@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest.dbms
 		 private readonly DelegatingPrincipal _principal;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public AuthorizedRequestWrapper(final String authType, final String username, final javax.servlet.http.HttpServletRequest request, org.neo4j.internal.kernel.api.security.LoginContext loginContext)
+//ORIGINAL LINE: public AuthorizedRequestWrapper(final String authType, final String username, final javax.servlet.http.HttpServletRequest request, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext)
 		 public AuthorizedRequestWrapper( string authType, string username, HttpServletRequest request, LoginContext loginContext ) : base( request )
 		 {
 			  this._authType = authType;

@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.impl.store.counts
 	using RuleChain = org.junit.rules.RuleChain;
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
@@ -61,11 +61,11 @@ namespace Neo4Net.Kernel.impl.store.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class CountsComputerTest
 	{
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateAnEmptyCountsStoreFromAnEmptyDatabase()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.newGraphDatabase();
 			  long lastCommittedTransactionId = GetLastTxId( db );
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateACountsStoreWhenThereAreNodesInTheDB()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateACountsStoreWhenThereAreUnusedNodeRecordsInTheDB()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateACountsStoreWhenThereAreUnusedRelationshipRecordsInTheDB()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateACountsStoreWhenThereAreNodesAndRelationshipsInTheDB()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 public virtual void ShouldCreateACountStoreWhenDBContainsDenseNodes()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.neo4j.kernel.internal.GraphDatabaseAPI db = (org.neo4j.kernel.internal.GraphDatabaseAPI) dbBuilder.setConfig(org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, "2").newGraphDatabase();
+//ORIGINAL LINE: @SuppressWarnings("deprecation") final org.Neo4Net.kernel.internal.GraphDatabaseAPI db = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) dbBuilder.setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, "2").newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _dbBuilder.setConfig( GraphDatabaseSettings.dense_node_threshold, "2" ).newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
@@ -346,7 +346,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: private long getLastTxId(@SuppressWarnings("deprecation") org.neo4j.kernel.internal.GraphDatabaseAPI db)
+//ORIGINAL LINE: private long getLastTxId(@SuppressWarnings("deprecation") org.Neo4Net.kernel.internal.GraphDatabaseAPI db)
 		 private long GetLastTxId( GraphDatabaseAPI db )
 		 {
 			  return Db.DependencyResolver.resolveDependency( typeof( TransactionIdStore ) ).LastCommittedTransactionId;

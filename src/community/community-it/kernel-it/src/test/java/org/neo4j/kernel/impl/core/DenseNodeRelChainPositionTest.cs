@@ -24,12 +24,12 @@ namespace Neo4Net.Kernel.impl.core
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.core
 	public class DenseNodeRelChainPositionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 /*
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.core
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int denseNodeThreshold = int.Parse(org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold.getDefaultValue()) + 1;
+//ORIGINAL LINE: final int denseNodeThreshold = int.Parse(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold.getDefaultValue()) + 1;
 			  int denseNodeThreshold = int.Parse( GraphDatabaseSettings.dense_node_threshold.DefaultValue ) + 1;
 
 			  Node node1;

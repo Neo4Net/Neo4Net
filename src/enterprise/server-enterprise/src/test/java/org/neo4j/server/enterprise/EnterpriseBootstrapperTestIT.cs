@@ -30,8 +30,8 @@ namespace Neo4Net.Server.enterprise
 
 	using OnlineBackupSettings = Neo4Net.backup.OnlineBackupSettings;
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseEditionSettings = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings;
@@ -49,25 +49,25 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.store;
+//	import static org.Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory;
+//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.certificates_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.getRelativePath;
+//	import static org.Neo4Net.server.ServerTestUtils.getRelativePath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
-	//import org.neo4j.kernel.GraphDatabaseDependencies;
-	//import org.neo4j.server.BaseBootstrapperTestIT;
-	//import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
-	//import static org.neo4j.server.configuration.ServerSettings.
-	//import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+	//import org.Neo4Net.kernel.GraphDatabaseDependencies;
+	//import org.Neo4Net.server.BaseBootstrapperTestIT;
+	//import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
+	//import static org.Neo4Net.server.configuration.ServerSettings.
+	//import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 
 	public class EnterpriseBootstrapperTestIT : BaseBootstrapperIT
 	{

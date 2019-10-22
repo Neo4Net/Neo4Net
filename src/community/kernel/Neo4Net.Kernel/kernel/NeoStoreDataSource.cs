@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Neo4Net.Graphdb;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
@@ -157,9 +157,9 @@ namespace Neo4Net.Kernel
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfUnchecked;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.extension.KernelExtensionFailureStrategies.fail;
+//	import static org.Neo4Net.kernel.extension.KernelExtensionFailureStrategies.fail;
 
 	public class NeoStoreDataSource : LifecycleAdapter
 	{
@@ -220,7 +220,7 @@ namespace Neo4Net.Kernel
 		 private NeoStoreTransactionLogModule _transactionLogModule;
 		 private NeoStoreKernelModule _kernelModule;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
+//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensionFactories;
 		 private readonly System.Func<File, FileSystemWatcherService> _watcherServiceFactory;
 		 private readonly GraphDatabaseFacade _facade;
@@ -323,7 +323,7 @@ namespace Neo4Net.Kernel
 
 			  // Check the tail of transaction logs and validate version
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.entry.LogEntryReader<org.neo4j.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> logEntryReader = new org.neo4j.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel> logEntryReader = new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
 			  LogEntryReader<ReadableClosablePositionAwareChannel> logEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
 
 			  LogFiles logFiles = LogFilesBuilder.builder( _databaseLayout, _fs ).withLogEntryReader( logEntryReader ).withLogFileMonitor( _physicalLogMonitor ).withConfig( _config ).withDependencies( _dataSourceDependencies ).build();
@@ -377,7 +377,7 @@ namespace Neo4Net.Kernel
 					NodePropertyAccessor nodePropertyAccessor = _dataSourceDependencies.resolveDependency( typeof( NodePropertyAccessor ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final NeoStoreKernelModule kernelModule = buildKernel(logFiles, transactionLogModule.transactionAppender(), dataSourceDependencies.resolveDependency(org.neo4j.kernel.impl.api.index.IndexingService.class), databaseSchemaState, dataSourceDependencies.resolveDependency(org.neo4j.kernel.api.labelscan.LabelScanStore.class), storageEngine, indexConfigStore, transactionIdStore, databaseAvailabilityGuard, clock, nodePropertyAccessor);
+//ORIGINAL LINE: final NeoStoreKernelModule kernelModule = buildKernel(logFiles, transactionLogModule.transactionAppender(), dataSourceDependencies.resolveDependency(org.Neo4Net.kernel.impl.api.index.IndexingService.class), databaseSchemaState, dataSourceDependencies.resolveDependency(org.Neo4Net.kernel.api.labelscan.LabelScanStore.class), storageEngine, indexConfigStore, transactionIdStore, databaseAvailabilityGuard, clock, nodePropertyAccessor);
 					NeoStoreKernelModule kernelModule = BuildKernel( logFiles, transactionLogModule.TransactionAppender(), _dataSourceDependencies.resolveDependency(typeof(IndexingService)), databaseSchemaState, _dataSourceDependencies.resolveDependency(typeof(LabelScanStore)), storageEngine, _indexConfigStore, transactionIdStore, _databaseAvailabilityGuard, _clock, nodePropertyAccessor );
 
 					kernelModule.SatisfyDependencies( _dataSourceDependencies );
@@ -495,24 +495,24 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.pruning.LogPruning logPruning = new org.neo4j.kernel.impl.transaction.log.pruning.LogPruningImpl(fs, logFiles, logProvider, new org.neo4j.kernel.impl.transaction.log.pruning.LogPruneStrategyFactory(), clock, config);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.pruning.LogPruning logPruning = new org.Neo4Net.kernel.impl.transaction.log.pruning.LogPruningImpl(fs, logFiles, logProvider, new org.Neo4Net.kernel.impl.transaction.log.pruning.LogPruneStrategyFactory(), clock, config);
 			  LogPruning logPruning = new LogPruningImpl( _fs, logFiles, logProvider, new LogPruneStrategyFactory(), _clock, config );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.rotation.LogRotation logRotation = new org.neo4j.kernel.impl.transaction.log.rotation.LogRotationImpl(monitors.newMonitor(org.neo4j.kernel.impl.transaction.log.rotation.LogRotation_Monitor.class), logFiles, databaseHealth);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.rotation.LogRotation logRotation = new org.Neo4Net.kernel.impl.transaction.log.rotation.LogRotationImpl(monitors.newMonitor(org.Neo4Net.kernel.impl.transaction.log.rotation.LogRotation_Monitor.class), logFiles, databaseHealth);
 			  LogRotation logRotation = new LogRotationImpl( _monitors.newMonitor( typeof( Neo4Net.Kernel.impl.transaction.log.rotation.LogRotation_Monitor ) ), logFiles, _databaseHealth );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.TransactionAppender appender = life.add(new org.neo4j.kernel.impl.transaction.log.BatchingTransactionAppender(logFiles, logRotation, transactionMetadataCache, transactionIdStore, explicitIndexTransactionOrdering, databaseHealth));
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.TransactionAppender appender = life.add(new org.Neo4Net.kernel.impl.transaction.log.BatchingTransactionAppender(logFiles, logRotation, transactionMetadataCache, transactionIdStore, explicitIndexTransactionOrdering, databaseHealth));
 			  TransactionAppender appender = _life.add( new BatchingTransactionAppender( logFiles, logRotation, transactionMetadataCache, transactionIdStore, explicitIndexTransactionOrdering, _databaseHealth ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore = new org.neo4j.kernel.impl.transaction.log.PhysicalLogicalTransactionStore(logFiles, transactionMetadataCache, logEntryReader, monitors, failOnCorruptedLogFiles);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore = new org.Neo4Net.kernel.impl.transaction.log.PhysicalLogicalTransactionStore(logFiles, transactionMetadataCache, logEntryReader, monitors, failOnCorruptedLogFiles);
 			  LogicalTransactionStore logicalTransactionStore = new PhysicalLogicalTransactionStore( logFiles, transactionMetadataCache, logEntryReader, _monitors, _failOnCorruptedLogFiles );
 
 			  CheckPointThreshold threshold = CheckPointThreshold.createThreshold( config, _clock, logPruning, logProvider );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointerImpl checkPointer = new org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointerImpl(transactionIdStore, threshold, storageEngine, logPruning, appender, databaseHealth, logProvider, tracers.checkPointTracer, ioLimiter, storeCopyCheckPointMutex);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointerImpl checkPointer = new org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointerImpl(transactionIdStore, threshold, storageEngine, logPruning, appender, databaseHealth, logProvider, tracers.checkPointTracer, ioLimiter, storeCopyCheckPointMutex);
 			  CheckPointerImpl checkPointer = new CheckPointerImpl( transactionIdStore, threshold, storageEngine, logPruning, appender, _databaseHealth, logProvider, _tracers.checkPointTracer, _ioLimiter, _storeCopyCheckPointMutex );
 
 			  long recurringPeriod = threshold.CheckFrequencyMillis();
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void buildRecovery(final org.neo4j.io.fs.FileSystemAbstraction fileSystemAbstraction, org.neo4j.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.neo4j.kernel.recovery.LogTailScanner tailScanner, org.neo4j.kernel.recovery.RecoveryMonitor recoveryMonitor, org.neo4j.kernel.recovery.RecoveryStartInformationProvider.Monitor positionMonitor, final org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles, org.neo4j.storageengine.api.StorageEngine storageEngine, org.neo4j.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore, org.neo4j.kernel.impl.transaction.log.LogVersionRepository logVersionRepository)
+//ORIGINAL LINE: private void buildRecovery(final org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.Neo4Net.kernel.recovery.LogTailScanner tailScanner, org.Neo4Net.kernel.recovery.RecoveryMonitor recoveryMonitor, org.Neo4Net.kernel.recovery.RecoveryStartInformationProvider.Monitor positionMonitor, final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, org.Neo4Net.storageengine.api.StorageEngine storageEngine, org.Neo4Net.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore, org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository logVersionRepository)
 		 private void BuildRecovery( FileSystemAbstraction fileSystemAbstraction, TransactionIdStore transactionIdStore, LogTailScanner tailScanner, RecoveryMonitor recoveryMonitor, RecoveryStartInformationProvider.Monitor positionMonitor, LogFiles logFiles, StorageEngine storageEngine, LogicalTransactionStore logicalTransactionStore, LogVersionRepository logVersionRepository )
 		 {
 			  RecoveryService recoveryService = new DefaultRecoveryService( storageEngine, tailScanner, transactionIdStore, logicalTransactionStore, logVersionRepository, positionMonitor );
@@ -563,14 +563,14 @@ namespace Neo4Net.Kernel
 			  BuildTransactionMonitor( kernelTransactions, clock, _config );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.api.KernelImpl kernel = new org.neo4j.kernel.impl.api.KernelImpl(kernelTransactions, hooks, databaseHealth, transactionMonitor, procedures, config);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.api.KernelImpl kernel = new org.Neo4Net.kernel.impl.api.KernelImpl(kernelTransactions, hooks, databaseHealth, transactionMonitor, procedures, config);
 			  KernelImpl kernel = new KernelImpl( kernelTransactions, hooks, _databaseHealth, _transactionMonitor, _procedures, _config );
 
 			  kernel.RegisterTransactionHook( _transactionEventHandlers );
 			  _life.add( kernel );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.state.NeoStoreFileListing fileListing = new org.neo4j.kernel.impl.transaction.state.NeoStoreFileListing(databaseLayout, logFiles, labelScanStore, indexingService, explicitIndexProvider, storageEngine);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.state.NeoStoreFileListing fileListing = new org.Neo4Net.kernel.impl.transaction.state.NeoStoreFileListing(databaseLayout, logFiles, labelScanStore, indexingService, explicitIndexProvider, storageEngine);
 			  NeoStoreFileListing fileListing = new NeoStoreFileListing( _databaseLayout, logFiles, labelScanStore, indexingService, _explicitIndexProvider, storageEngine );
 			  _dataSourceDependencies.satisfyDependency( fileListing );
 
@@ -707,7 +707,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<org.neo4j.storageengine.api.StoreFileMetadata> listStoreFiles(boolean includeLogs) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.storageengine.api.StoreFileMetadata> listStoreFiles(boolean includeLogs) throws java.io.IOException
 		 public virtual ResourceIterator<StoreFileMetadata> ListStoreFiles( bool includeLogs )
 		 {
 			  NeoStoreFileListing.StoreFileListingBuilder fileListingBuilder = NeoStoreFileListing.builder();
@@ -826,7 +826,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting public org.neo4j.kernel.lifecycle.LifeSupport getLife()
+//ORIGINAL LINE: @VisibleForTesting public org.Neo4Net.kernel.lifecycle.LifeSupport getLife()
 		 public virtual LifeSupport Life
 		 {
 			 get

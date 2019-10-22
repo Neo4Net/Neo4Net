@@ -18,7 +18,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 /// <summary>
-/// Implementation for embedding a Neo4j graph database in an application.
+/// Implementation for embedding a Neo4Net graph database in an application.
 /// Classes are provided for both read/write mode and read only mode.
 /// </summary>
 namespace Neo4Net.Kernel

@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongResourceCollections.emptyIterator;
+//	import static org.Neo4Net.collection.PrimitiveLongResourceCollections.emptyIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongResourceCollections.iterator;
+//	import static org.Neo4Net.collection.PrimitiveLongResourceCollections.iterator;
 
 	public class CompositeLabelScanValueIteratorTest
 	{

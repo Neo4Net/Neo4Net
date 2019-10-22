@@ -25,9 +25,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.plugins
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.Helpers.Collections;
 
 	/// @deprecated Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead. 
@@ -44,7 +44,7 @@ namespace Neo4Net.Server.plugins
 			  this._pluginPointFactory = pluginPointFactory;
 			  _targetToPluginMap[typeof( Node )] = new ConcurrentDictionary<string, PluginPoint>();
 			  _targetToPluginMap[typeof( Relationship )] = new ConcurrentDictionary<string, PluginPoint>();
-			  _targetToPluginMap[typeof( GraphDatabaseService )] = new ConcurrentDictionary<string, PluginPoint>();
+			  _targetToPluginMap[typeof( IGraphDatabaseService )] = new ConcurrentDictionary<string, PluginPoint>();
 		 }
 
 		 internal IEnumerable<PluginPoint> GetExtensionsFor( Type type )
@@ -107,7 +107,7 @@ namespace Neo4Net.Server.plugins
 		 [Obsolete]
 		 public void AddGraphDatabaseExtensions( PluginPoint plugin )
 		 {
-			  Add( _targetToPluginMap[typeof( GraphDatabaseService )], plugin );
+			  Add( _targetToPluginMap[typeof( IGraphDatabaseService )], plugin );
 		 }
 
 		 [Obsolete]

@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 
 	/// <summary>
 	/// <seealso cref="LabelScanWriter"/> for <seealso cref="NativeLabelScanStore"/>, or rather an <seealso cref="Writer"/> for its
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 /// or when <seealso cref="close() closing"/>.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.neo4j.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
+//ORIGINAL LINE: public void write(org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
 		 public override void Write( NodeLabelUpdate update )
 		 {
 			  if ( _pendingUpdatesCursor == _pendingUpdates.Length )

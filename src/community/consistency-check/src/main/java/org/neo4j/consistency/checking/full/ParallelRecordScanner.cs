@@ -26,9 +26,9 @@ namespace Neo4Net.Consistency.checking.full
 	using MultiPartBuilder = Neo4Net.Helpers.progress.ProgressMonitorFactory.MultiPartBuilder;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.DefaultCacheAccess.DEFAULT_QUEUE_SIZE;
+//	import static org.Neo4Net.consistency.checking.cache.DefaultCacheAccess.DEFAULT_QUEUE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.full.RecordDistributor.distributeRecords;
+//	import static org.Neo4Net.consistency.checking.full.RecordDistributor.distributeRecords;
 
 	public class ParallelRecordScanner<RECORD> : RecordScanner<RECORD>
 	{

@@ -23,13 +23,13 @@ namespace Neo4Net.Storageengine.Api
 	{
 		 /// <summary>
 		 /// Initializes this cursor so that it will scan over all existing entities. Each call to <seealso cref="next()"/> will
-		 /// advance the cursor so that the next entity is read.
+		 /// advance the cursor so that the next IEntity is read.
 		 /// </summary>
 		 void Scan();
 
 		 /// <summary>
-		 /// Initializes this cursor so that the next call to <seealso cref="next()"/> will place this cursor at that entity. </summary>
-		 /// <param name="reference"> entity to place this cursor at the next call to <seealso cref="next()"/>. </param>
+		 /// Initializes this cursor so that the next call to <seealso cref="next()"/> will place this cursor at that IEntity. </summary>
+		 /// <param name="reference"> IEntity to place this cursor at the next call to <seealso cref="next()"/>. </param>
 		 void Single( long reference );
 	}
 

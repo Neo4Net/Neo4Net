@@ -21,28 +21,28 @@
  */
 namespace Neo4Net.Graphalgo.impl.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using MutableInt = org.apache.commons.lang3.mutable.MutableInt;
 	using Test = org.junit.Test;
 
 
 	using Neo4Net.Graphalgo;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanderBuilder = Neo4Net.Graphdb.PathExpanderBuilder;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using StandardExpander = Neo4Net.Graphdb.impl.StandardExpander;
-	using Neo4Net.Graphdb.traversal;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanderBuilder = Neo4Net.GraphDb.PathExpanderBuilder;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using StandardExpander = Neo4Net.GraphDb.impl.StandardExpander;
+	using Neo4Net.GraphDb.traversal;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static common.Neo4jAlgoTestCase.MyRelTypes.R1;
+//	import static common.Neo4NetAlgoTestCase.MyRelTypes.R1;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.@is;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -54,46 +54,46 @@ namespace Neo4Net.Graphalgo.impl.path
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphalgo.GraphAlgoFactory.shortestPath;
+//	import static org.Neo4Net.graphalgo.GraphAlgoFactory.shortestPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.PathExpanders.allTypesAndDirections;
+//	import static org.Neo4Net.graphdb.PathExpanders.allTypesAndDirections;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 
-	public class TestShortestPath : Neo4jAlgoTestCase
+	public class TestShortestPath : Neo4NetAlgoTestCase
 	{
 		 // Attempt at recreating this issue without cypher
-		 // https://github.com/neo4j/neo4j/issues/4160
+		 // https://github.com/Neo4Net/Neo4Net/issues/4160
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldAbortAsSoonAsPossible()
 		 public virtual void ShouldAbortAsSoonAsPossible()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label A = org.neo4j.graphdb.Label.label("A");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label A = org.Neo4Net.graphdb.Label.label("A");
 			  Label a = Label.label( "A" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label B = org.neo4j.graphdb.Label.label("B");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label B = org.Neo4Net.graphdb.Label.label("B");
 			  Label b = Label.label( "B" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label C = org.neo4j.graphdb.Label.label("C");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label C = org.Neo4Net.graphdb.Label.label("C");
 			  Label c = Label.label( "C" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label D = org.neo4j.graphdb.Label.label("D");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label D = org.Neo4Net.graphdb.Label.label("D");
 			  Label d = Label.label( "D" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label E = org.neo4j.graphdb.Label.label("E");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label E = org.Neo4Net.graphdb.Label.label("E");
 			  Label e = Label.label( "E" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label F = org.neo4j.graphdb.Label.label("F");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label F = org.Neo4Net.graphdb.Label.label("F");
 			  Label f = Label.label( "F" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.RelationshipType relType = org.neo4j.graphdb.RelationshipType.withName("TO");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.RelationshipType relType = org.Neo4Net.graphdb.RelationshipType.withName("TO");
 			  RelationshipType relType = RelationshipType.withName( "TO" );
 			  RecursiveSnowFlake( null, 0, 4, 5, new Label[]{ a, b, c, d, e }, relType );
 			  Node a = GetNodeByLabel( a );
@@ -102,16 +102,16 @@ namespace Neo4Net.Graphalgo.impl.path
 					while ( allE.MoveNext() )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node e = allE.Current;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node e = allE.Current;
 						 Node e = allE.Current;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node f = graphDb.createNode(F);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node f = graphDb.createNode(F);
 						 Node f = GraphDb.createNode( f );
 						 f.CreateRelationshipTo( e, relType );
 					}
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final CountingPathExpander countingPathExpander = new CountingPathExpander(org.neo4j.graphdb.PathExpanders.forTypeAndDirection(relType, org.neo4j.graphdb.Direction.OUTGOING));
+//ORIGINAL LINE: final CountingPathExpander countingPathExpander = new CountingPathExpander(org.Neo4Net.graphdb.PathExpanders.forTypeAndDirection(relType, org.Neo4Net.graphdb.Direction.OUTGOING));
 			  CountingPathExpander countingPathExpander = new CountingPathExpander( this, PathExpanders.forTypeAndDirection( relType, Direction.OUTGOING ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final ShortestPath shortestPath = new ShortestPath(Integer.MAX_VALUE, countingPathExpander, Integer.MAX_VALUE);
@@ -121,7 +121,7 @@ namespace Neo4Net.Graphalgo.impl.path
 					while ( allF.MoveNext() )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node f = allF.Current;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node f = allF.Current;
 						 Node f = allF.Current;
 						 shortestPath.FindAllPaths( a, f );
 					}
@@ -139,7 +139,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void recursiveSnowFlake(org.neo4j.graphdb.Node parent, int level, final int desiredLevel, final int branchingFactor, final org.neo4j.graphdb.Label[] labels, final org.neo4j.graphdb.RelationshipType relType)
+//ORIGINAL LINE: private void recursiveSnowFlake(org.Neo4Net.graphdb.Node parent, int level, final int desiredLevel, final int branchingFactor, final org.Neo4Net.graphdb.Label[] labels, final org.Neo4Net.graphdb.RelationshipType relType)
 		 private void RecursiveSnowFlake( Node parent, int level, int desiredLevel, int branchingFactor, Label[] labels, RelationshipType relType )
 		 {
 			  if ( level != 0 )
@@ -147,7 +147,7 @@ namespace Neo4Net.Graphalgo.impl.path
 					for ( int n = 0; n < branchingFactor; n++ )
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node = graphDb.createNode(labels[level]);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = graphDb.createNode(labels[level]);
 						 Node node = GraphDb.createNode( labels[level] );
 						 if ( parent != null )
 						 {
@@ -162,7 +162,7 @@ namespace Neo4Net.Graphalgo.impl.path
 			  else
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node = graphDb.createNode(labels[level]);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = graphDb.createNode(labels[level]);
 					Node node = GraphDb.createNode( labels[level] );
 					RecursiveSnowFlake( node, level + 1, desiredLevel, branchingFactor, labels, relType );
 			  }
@@ -284,17 +284,17 @@ namespace Neo4Net.Graphalgo.impl.path
 			  Graph.makeEdgeChain( "a,b,c,d" );
 			  Graph.makeEdgeChain( "a,g,h,d" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node a = graph.getNode("a");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node a = graph.getNode("a");
 			  Node a = Graph.getNode( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node d = graph.getNode("d");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node d = graph.getNode("d");
 			  Node d = Graph.getNode( "d" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node b = graph.getNode("b");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node b = graph.getNode("b");
 			  Node b = Graph.getNode( "b" );
 			  b.SetProperty( "skip", true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Predicate<org.neo4j.graphdb.Node> filter = item ->
+//ORIGINAL LINE: final System.Predicate<org.Neo4Net.graphdb.Node> filter = item ->
 			  System.Predicate<Node> filter = item =>
 			  {
 				bool skip = ( bool? ) item.getProperty( "skip", false ).Value;
@@ -313,21 +313,21 @@ namespace Neo4Net.Graphalgo.impl.path
 			  //
 			  Graph.makeEdgeChain( "a,b,c,d" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node a = graph.getNode("a");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node a = graph.getNode("a");
 			  Node a = Graph.getNode( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node d = graph.getNode("d");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node d = graph.getNode("d");
 			  Node d = Graph.getNode( "d" );
 			  ICollection<Node> touchedByFilter = new HashSet<Node>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Predicate<org.neo4j.graphdb.Node> filter = item ->
+//ORIGINAL LINE: final System.Predicate<org.Neo4Net.graphdb.Node> filter = item ->
 			  System.Predicate<Node> filter = item =>
 			  {
 				touchedByFilter.Add( item );
 				return true;
 			  };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.PathExpander expander = org.neo4j.graphdb.PathExpanderBuilder.empty().add(R1, OUTGOING).addNodeFilter(filter).build();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.PathExpander expander = org.Neo4Net.graphdb.PathExpanderBuilder.empty().add(R1, OUTGOING).addNodeFilter(filter).build();
 			  PathExpander expander = PathExpanderBuilder.empty().add(R1, OUTGOING).addNodeFilter(filter).build();
 			  //final PathExpander expander = ((StandardExpander) PathExpanders.forTypeAndDirection(R1, OUTGOING)).addNodeFilter( filter );
 			  Path path = Iterables.single( GraphAlgoFactory.shortestPath( expander, 10 ).findAllPaths( a, d ) );
@@ -377,19 +377,19 @@ namespace Neo4Net.Graphalgo.impl.path
 			  Graph.makeEdgeChain( "a,b,c,d,e" );
 			  Graph.makeEdgeChain( "a,f,g,h,i" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node a = graph.getNode("a");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node a = graph.getNode("a");
 			  Node a = Graph.getNode( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node b = graph.getNode("b");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node b = graph.getNode("b");
 			  Node b = Graph.getNode( "b" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node c = graph.getNode("c");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node c = graph.getNode("c");
 			  Node c = Graph.getNode( "c" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<org.neo4j.graphdb.Node> allowedNodes = new java.util.HashSet<>(java.util.Arrays.asList(a, b, c));
+//ORIGINAL LINE: final java.util.Set<org.Neo4Net.graphdb.Node> allowedNodes = new java.util.HashSet<>(java.util.Arrays.asList(a, b, c));
 			  ISet<Node> allowedNodes = new HashSet<Node>( Arrays.asList( a, b, c ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphalgo.PathFinder<org.neo4j.graphdb.Path> finder = new ShortestPath(100, org.neo4j.graphdb.PathExpanders.forDirection(OUTGOING))
+//ORIGINAL LINE: final org.Neo4Net.graphalgo.PathFinder<org.Neo4Net.graphdb.Path> finder = new ShortestPath(100, org.Neo4Net.graphdb.PathExpanders.forDirection(OUTGOING))
 			  PathFinder<Path> finder = new ShortestPathAnonymousInnerClass( this, PathExpanders.forDirection( OUTGOING ), allowedNodes );
 			  IEnumerator<Path> paths = finder.FindAllPaths( a, c ).GetEnumerator();
 			  for ( int i = 0; i < 4; i++ )
@@ -488,13 +488,13 @@ namespace Neo4Net.Graphalgo.impl.path
 			  Graph.makeEdgeChain( "f,i,j,e" );
 			  Graph.makeEdgeChain( "i,k,e" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node a = graph.getNode("a");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node a = graph.getNode("a");
 			  Node a = Graph.getNode( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node e = graph.getNode("e");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node e = graph.getNode("e");
 			  Node e = Graph.getNode( "e" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.PathExpander expander = org.neo4j.graphdb.PathExpanders.forTypeAndDirection(R1, OUTGOING);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.PathExpander expander = org.Neo4Net.graphdb.PathExpanders.forTypeAndDirection(R1, OUTGOING);
 			  PathExpander expander = PathExpanders.forTypeAndDirection( R1, OUTGOING );
 			  TestShortestPathFinder( finder => assertEquals( 4, Iterables.count( finder.findAllPaths( a, e ) ) ), expander, 10, 10 );
 			  for ( int i = 4; i >= 1; i-- )
@@ -522,10 +522,10 @@ namespace Neo4Net.Graphalgo.impl.path
 			  Graph.makeEdgeChain( "a,b,c" );
 			  Graph.makeEdgeChain( "a,c" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node a = graph.getNode("a");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node a = graph.getNode("a");
 			  Node a = Graph.getNode( "a" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node c = graph.getNode("c");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node c = graph.getNode("c");
 			  Node c = Graph.getNode( "c" );
 			  TestShortestPathFinder( finder => assertPathDef( finder.findSinglePath( a, c ), "a", "c" ), PathExpanders.forTypeAndDirection( R1, OUTGOING ), 2 );
 			  TestShortestPathFinder( finder => assertPathDef( finder.findSinglePath( c, a ), "c", "a" ), PathExpanders.forTypeAndDirection( R1, INCOMING ), 2 );
@@ -548,10 +548,10 @@ namespace Neo4Net.Graphalgo.impl.path
 			  Graph.makeEdge( "e", "end" );
 			  Graph.makeEdge( "a", "end" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node start = graph.getNode("start");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node start = graph.getNode("start");
 			  Node start = Graph.getNode( "start" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node end = graph.getNode("end");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node end = graph.getNode("end");
 			  Node end = Graph.getNode( "end" );
 			  assertThat( ( new ShortestPath( 2, allTypesAndDirections(), 42 ) ).FindSinglePath(start, end).length(), @is(2) );
 			  assertThat( ( new ShortestPath( 3, allTypesAndDirections(), 42 ) ).FindSinglePath(start, end).length(), @is(2) );
@@ -587,7 +587,7 @@ namespace Neo4Net.Graphalgo.impl.path
 //ORIGINAL LINE: final LengthCheckingExpanderWrapper lengthChecker = new LengthCheckingExpanderWrapper(expander);
 			  LengthCheckingExpanderWrapper lengthChecker = new LengthCheckingExpanderWrapper( expander );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.graphalgo.PathFinder<org.neo4j.graphdb.Path>> finders = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.graphalgo.PathFinder<org.Neo4Net.graphdb.Path>> finders = new java.util.ArrayList<>();
 			  IList<PathFinder<Path>> finders = new List<PathFinder<Path>>();
 			  finders.Add( maxResultCount != null ? shortestPath( lengthChecker, maxDepth, maxResultCount ) : shortestPath( lengthChecker, maxDepth ) );
 			  finders.add(maxResultCount != null ? new TraversalShortestPath(lengthChecker, maxDepth, maxResultCount.Value)
@@ -613,7 +613,7 @@ namespace Neo4Net.Graphalgo.impl.path
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public Iterable<org.neo4j.graphdb.Relationship> expand(org.neo4j.graphdb.Path path, org.neo4j.graphdb.traversal.BranchState<Object> state)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public Iterable<org.Neo4Net.graphdb.Relationship> expand(org.Neo4Net.graphdb.Path path, org.Neo4Net.graphdb.traversal.BranchState<Object> state)
 			  public override IEnumerable<Relationship> Expand( Path path, BranchState<object> state )
 			  {
 					if ( path.StartNode().Equals(path.EndNode()) )

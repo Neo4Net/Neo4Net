@@ -61,9 +61,9 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.NullLog.getInstance;
+//	import static org.Neo4Net.logging.NullLog.getInstance;
 
 	public class DatabaseAvailabilityGuardTest
 	{
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel
 			  // Given
 			  Log log = mock( typeof( Log ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
+//ORIGINAL LINE: final org.Neo4Net.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
 			  DatabaseAvailabilityGuard databaseAvailabilityGuard = GetDatabaseAvailabilityGuard( _clock, log );
 			  databaseAvailabilityGuard.Require( _requirement_1 );
 			  databaseAvailabilityGuard.Require( _requirement_2 );
@@ -247,7 +247,7 @@ namespace Neo4Net.Kernel
 			  // Given
 			  Log log = mock( typeof( Log ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
+//ORIGINAL LINE: final org.Neo4Net.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
 			  DatabaseAvailabilityGuard databaseAvailabilityGuard = GetDatabaseAvailabilityGuard( _clock, log );
 			  databaseAvailabilityGuard.Require( _requirement_1 );
 
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel
 			  // Given
 			  Log log = mock( typeof( Log ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
+//ORIGINAL LINE: final org.Neo4Net.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, log);
 			  DatabaseAvailabilityGuard databaseAvailabilityGuard = GetDatabaseAvailabilityGuard( _clock, log );
 			  databaseAvailabilityGuard.Require( _requirement_1 );
 
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel
 			  // Given
 			  Clock clock = Mockito.mock( typeof( Clock ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, org.neo4j.logging.NullLog.getInstance());
+//ORIGINAL LINE: final org.Neo4Net.kernel.availability.DatabaseAvailabilityGuard databaseAvailabilityGuard = getDatabaseAvailabilityGuard(clock, org.Neo4Net.logging.NullLog.getInstance());
 			  DatabaseAvailabilityGuard databaseAvailabilityGuard = GetDatabaseAvailabilityGuard( clock, NullLog.Instance );
 			  databaseAvailabilityGuard.Require( _requirement_1 );
 

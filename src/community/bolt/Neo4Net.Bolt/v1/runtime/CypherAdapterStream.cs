@@ -24,11 +24,11 @@ namespace Neo4Net.Bolt.v1.runtime
 
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using Values = Neo4Net.Values.Storable.Values;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
@@ -36,11 +36,11 @@ namespace Neo4Net.Bolt.v1.runtime
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class CypherAdapterStream : BoltResult
 	{
@@ -66,7 +66,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(final org.neo4j.bolt.runtime.BoltResult_Visitor visitor) throws Exception
+//ORIGINAL LINE: public void accept(final org.Neo4Net.bolt.runtime.BoltResult_Visitor visitor) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void Accept( Neo4Net.Bolt.runtime.BoltResult_Visitor visitor )
 		 {

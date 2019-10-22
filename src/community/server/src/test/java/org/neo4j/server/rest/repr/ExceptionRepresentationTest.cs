@@ -40,7 +40,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_General.UnknownError;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_General.UnknownError;
 
 	public class ExceptionRepresentationTest
 	{
@@ -62,9 +62,9 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRenderErrorsWithNeo4jStatusCode() throws Exception
+//ORIGINAL LINE: @Test public void shouldRenderErrorsWithNeo4NetStatusCode() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShouldRenderErrorsWithNeo4jStatusCode()
+		 public virtual void ShouldRenderErrorsWithNeo4NetStatusCode()
 		 {
 			  // Given
 			  ExceptionRepresentation rep = new ExceptionRepresentation( new KernelExceptionAnonymousInnerClass( this, UnknownError ) );
@@ -118,7 +118,7 @@ namespace Neo4Net.Server.rest.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.codehaus.jackson.JsonNode serialize(ExceptionRepresentation rep) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private org.codehaus.jackson.JsonNode serialize(ExceptionRepresentation rep) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private JsonNode Serialize( ExceptionRepresentation rep )
 		 {
 			  IDictionary<string, object> output = new Dictionary<string, object>();

@@ -30,9 +30,9 @@ namespace Neo4Net.Bolt.v3.runtime
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.BoltAuthenticationHelper.processAuthentication;
+//	import static org.Neo4Net.bolt.v1.runtime.BoltAuthenticationHelper.processAuthentication;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 
 	/// <summary>
 	/// Following the socket connection and a small handshake exchange to
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 private BoltStateMachineState _readyState;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.runtime.BoltStateMachineState process(org.neo4j.bolt.messaging.RequestMessage message, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState process(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override BoltStateMachineState Process( RequestMessage message, StateMachineContext context )
 		 {
 			  AssertInitialized();

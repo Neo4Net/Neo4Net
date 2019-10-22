@@ -22,17 +22,17 @@
 namespace Neo4Net.Kernel.impl.traversal
 {
 
-	using Path = Neo4Net.Graphdb.Path;
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb.traversal;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
+	using Path = Neo4Net.GraphDb.Path;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb.traversal;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
 	using Neo4Net.Helpers.Collections;
 
 	internal class SortingTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final java.util.Comparator<? super org.neo4j.graphdb.Path> sortingStrategy;
+//ORIGINAL LINE: private final java.util.Comparator<? super org.Neo4Net.graphdb.Path> sortingStrategy;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private readonly IComparer<object> _sortingStrategy;
 		 private readonly MonoDirectionalTraverserIterator _source;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.traversal
 		 private IEnumerator<Path> _sortedResultIterator;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: SortingTraverserIterator(org.neo4j.graphdb.Resource resource, java.util.Comparator<? super org.neo4j.graphdb.Path> sortingStrategy, MonoDirectionalTraverserIterator source)
+//ORIGINAL LINE: SortingTraverserIterator(org.Neo4Net.graphdb.Resource resource, java.util.Comparator<? super org.Neo4Net.graphdb.Path> sortingStrategy, MonoDirectionalTraverserIterator source)
 		 internal SortingTraverserIterator<T1>( Resource resource, IComparer<T1> sortingStrategy, MonoDirectionalTraverserIterator source )
 		 {
 			  this._resource = resource;

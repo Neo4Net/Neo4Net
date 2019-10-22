@@ -49,14 +49,14 @@ namespace Neo4Net.Kernel.impl.store.format
 		 private readonly long _nullValue;
 		 private readonly float _fractionNullValues;
 
-		 public LimitedRecordGenerators( RandomValues random, int entityBits, int propertyBits, int nodeLabelBits, int tokenBits, long nullValue ) : this( random, entityBits, propertyBits, nodeLabelBits, tokenBits, nullValue, 0.2f )
+		 public LimitedRecordGenerators( RandomValues random, int IEntityBits, int propertyBits, int nodeLabelBits, int tokenBits, long nullValue ) : this( random, IEntityBits, propertyBits, nodeLabelBits, tokenBits, nullValue, 0.2f )
 		 {
 		 }
 
-		 public LimitedRecordGenerators( RandomValues random, int entityBits, int propertyBits, int nodeLabelBits, int tokenBits, long nullValue, float fractionNullValues )
+		 public LimitedRecordGenerators( RandomValues random, int IEntityBits, int propertyBits, int nodeLabelBits, int tokenBits, long nullValue, float fractionNullValues )
 		 {
 			  this._random = random;
-			  this._entityBits = entityBits;
+			  this._entityBits = IEntityBits;
 			  this._propertyBits = propertyBits;
 			  this._nodeLabelBits = nodeLabelBits;
 			  this._tokenBits = tokenBits;

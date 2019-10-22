@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
 	using DateValue = Neo4Net.Values.Storable.DateValue;
 	using LocalTimeValue = Neo4Net.Values.Storable.LocalTimeValue;
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class TestCombinedPropertyTypes : AbstractNeo4jTestCase
+	public class TestCombinedPropertyTypes : AbstractNeo4NetTestCase
 	{
 		 private Node _node1;
 

@@ -22,29 +22,29 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Neo4Net.Server.helpers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.@bool;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.@bool;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.number;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.number;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.point;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.point;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.@string;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.@string;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.temporal;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.temporal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.ValueRepresentation.temporalAmount;
+//	import static org.Neo4Net.server.rest.repr.ValueRepresentation.temporalAmount;
 
 	/// <summary>
 	/// Converts common primitive and basic objects and arrays of the same into a
 	/// representation. Handy for specialization.
 	/// </summary>
-	/// <seealso cref= org.neo4j.server.rest.management.repr.JmxAttributeRepresentationDispatcher </seealso>
+	/// <seealso cref= org.Neo4Net.server.rest.management.repr.JmxAttributeRepresentationDispatcher </seealso>
 	public abstract class RepresentationDispatcher : PropertyTypeDispatcher<string, Representation>
 	{
 		 protected internal override Representation DispatchBooleanProperty( bool property, string param )

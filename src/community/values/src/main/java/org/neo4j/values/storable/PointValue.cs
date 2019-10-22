@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Values.Storable
 {
 
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;

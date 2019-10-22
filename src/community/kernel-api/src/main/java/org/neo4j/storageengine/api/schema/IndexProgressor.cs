@@ -142,7 +142,7 @@ namespace Neo4Net.Storageengine.Api.schema
 		  void Initialize( IndexProgressor progressor, int expectedSize );
 
 		  /// <summary>
-		  /// Accept the entity id and a score. Return true if the entry is accepted, false otherwise </summary>
+		  /// Accept the IEntity id and a score. Return true if the entry is accepted, false otherwise </summary>
 		  /// <param name="reference"> the node id of the candidate index entry </param>
 		  /// <param name="score"> score of the candidate index entry </param>
 		  /// <returns> true if the entry is accepted, false otherwise </returns>

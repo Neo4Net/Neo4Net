@@ -42,15 +42,15 @@ namespace Neo4Net.Consistency.checking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.store.RecordAccessStub.SCHEMA_RECORD_TYPE;
+//	import static org.Neo4Net.consistency.store.RecordAccessStub.SCHEMA_RECORD_TYPE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Suite.class) @Suite.SuiteClasses({ DynamicRecordCheckTest.StringDynamicRecordCheckTest.class, DynamicRecordCheckTest.ArrayDynamicRecordCheckTest.class, DynamicRecordCheckTest.SchemaDynamicRecordCheckTest.class }) public abstract class DynamicRecordCheckTest extends RecordCheckTestBase<org.neo4j.kernel.impl.store.record.DynamicRecord,org.neo4j.consistency.report.ConsistencyReport_DynamicConsistencyReport,DynamicRecordCheck>
+//ORIGINAL LINE: @RunWith(Suite.class) @Suite.SuiteClasses({ DynamicRecordCheckTest.StringDynamicRecordCheckTest.class, DynamicRecordCheckTest.ArrayDynamicRecordCheckTest.class, DynamicRecordCheckTest.SchemaDynamicRecordCheckTest.class }) public abstract class DynamicRecordCheckTest extends RecordCheckTestBase<org.Neo4Net.kernel.impl.store.record.DynamicRecord,org.Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport,DynamicRecordCheck>
 	public abstract class DynamicRecordCheckTest : RecordCheckTestBase<DynamicRecord, Neo4Net.Consistency.report.ConsistencyReport_DynamicConsistencyReport, DynamicRecordCheck>
 	{
 		 private readonly int _blockSize;
 
-		 private DynamicRecordCheckTest( DynamicRecordCheck check, int blockSize ) : base( check, typeof( org.neo4j.consistency.report.ConsistencyReport_DynamicConsistencyReport ), new int[0] )
+		 private DynamicRecordCheckTest( DynamicRecordCheck check, int blockSize ) : base( check, typeof( org.Neo4Net.consistency.report.ConsistencyReport_DynamicConsistencyReport ), new int[0] )
 		 {
 			  this._blockSize = blockSize;
 		 }
@@ -295,7 +295,7 @@ namespace Neo4Net.Consistency.checking
 		 public static RecordStore<DynamicRecord> ConfigureDynamicStore( int blockSize )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.impl.store.RecordStore<org.neo4j.kernel.impl.store.record.DynamicRecord> mock = mock(org.neo4j.kernel.impl.store.RecordStore.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.DynamicRecord> mock = mock(org.Neo4Net.kernel.impl.store.RecordStore.class);
 			  RecordStore<DynamicRecord> mock = mock( typeof( RecordStore ) );
 			  when( mock.RecordSize ).thenReturn( blockSize + DynamicRecordFormat.RECORD_HEADER_SIZE );
 			  when( mock.RecordDataSize ).thenReturn( blockSize );

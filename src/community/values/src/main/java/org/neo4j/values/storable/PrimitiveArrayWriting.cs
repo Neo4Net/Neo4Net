@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Values.Storable
 {
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 
 	/// <summary>
 	/// Static methods for writing primitive arrays to a ValueWriter.
@@ -137,7 +137,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <E extends Exception> void writeTo(ValueWriter<E> writer, org.neo4j.graphdb.spatial.Point[] values) throws E
+//ORIGINAL LINE: public static <E extends Exception> void writeTo(ValueWriter<E> writer, org.Neo4Net.graphdb.spatial.Point[] values) throws E
 		 public static void WriteTo<E>( ValueWriter<E> writer, Point[] values ) where E : Exception
 		 {
 			  writer.BeginArray( values.Length, ValueWriter_ArrayType.Point );

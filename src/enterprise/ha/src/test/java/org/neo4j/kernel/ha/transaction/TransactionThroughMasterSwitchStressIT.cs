@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.transaction
 {
@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.ha.transaction
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using ManagedCluster = Neo4Net.Kernel.impl.ha.ClusterManager.ManagedCluster;
@@ -45,15 +45,15 @@ namespace Neo4Net.Kernel.ha.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.TimeUtil.parseTimeMillis;
+//	import static org.Neo4Net.helpers.TimeUtil.parseTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
+//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.MASTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
+//	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.UNKNOWN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.MyRelTypes.TEST;
+//	import static org.Neo4Net.kernel.impl.MyRelTypes.TEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.memberThinksItIsRole;
 
 	/// <summary>
 	/// Non-deterministically tries to reproduce a problem where transactions may, at the time of master switches,
@@ -78,12 +78,12 @@ namespace Neo4Net.Kernel.ha.transaction
 	/// transactions made changes off of stale values and still managed to commit.
 	/// 
 	/// This test is a stress test and duration of execution can be controlled via system property
-	/// -D<seealso cref="org.neo4j.kernel.ha.transaction.TransactionThroughMasterSwitchStressIT"/>.duration
+	/// -D<seealso cref="org.Neo4Net.kernel.ha.transaction.TransactionThroughMasterSwitchStressIT"/>.duration
 	/// </summary>
 	public class TransactionThroughMasterSwitchStressIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withInstanceSetting(org.neo4j.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? org.neo4j.kernel.configuration.Settings.TRUE : org.neo4j.kernel.configuration.Settings.FALSE);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.slave_only, value -> value == 1 || value == 2 ? org.Neo4Net.kernel.configuration.Settings.TRUE : org.Neo4Net.kernel.configuration.Settings.FALSE);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withInstanceSetting(HaSettings.slave_only, value => value == 1 || value == 2 ? Settings.TRUE : Settings.FALSE);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -110,8 +110,8 @@ namespace Neo4Net.Kernel.ha.transaction
 			  const string key = "key";
 			  ClusterManager.ManagedCluster cluster = ClusterRule.startCluster();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService master = cluster.getMaster();
-			  GraphDatabaseService master = cluster.Master;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService master = cluster.getMaster();
+			  IGraphDatabaseService master = cluster.Master;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long nodeId = createNode(master);
 			  long nodeId = CreateNode( master );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.ha.transaction
 			  assertEquals( successes.get(), GetNodePropertyValue(master, nodeId, key) );
 		 }
 
-		 private object GetNodePropertyValue( GraphDatabaseService db, long nodeId, string key )
+		 private object GetNodePropertyValue( IGraphDatabaseService db, long nodeId, string key )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void reelectTheSameMasterMakingItGoToPendingAndBack(org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws Throwable
+//ORIGINAL LINE: private void reelectTheSameMasterMakingItGoToPendingAndBack(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws Throwable
 		 private void ReelectTheSameMasterMakingItGoToPendingAndBack( ClusterManager.ManagedCluster cluster )
 		 {
 			  HighlyAvailableGraphDatabase master = cluster.Master;
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.ha.transaction
 			  assertEquals( master, cluster.Master );
 		 }
 
-		 private long CreateNode( GraphDatabaseService db )
+		 private long CreateNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -32,7 +32,7 @@ namespace Neo4Net.Server
 	using ConsoleModule = Neo4Net.Server.modules.ConsoleModule;
 	using DBMSModule = Neo4Net.Server.modules.DBMSModule;
 	using ManagementApiModule = Neo4Net.Server.modules.ManagementApiModule;
-	using Neo4jBrowserModule = Neo4Net.Server.modules.Neo4jBrowserModule;
+	using Neo4NetBrowserModule = Neo4Net.Server.modules.Neo4NetBrowserModule;
 	using RESTApiModule = Neo4Net.Server.modules.RESTApiModule;
 	using SecurityRulesModule = Neo4Net.Server.modules.SecurityRulesModule;
 	using ServerModule = Neo4Net.Server.modules.ServerModule;
@@ -45,9 +45,9 @@ namespace Neo4Net.Server
 	using WebServer = Neo4Net.Server.web.WebServer;
 	using UsageData = Neo4Net.Udc.UsageData;
 
-	using static Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
+//	import static org.Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
 
 	public class CommunityNeoServer : AbstractNeoServer
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.Server
 
 		 protected internal override IEnumerable<ServerModule> CreateServerModules()
 		 {
-			  return Arrays.asList( CreateDBMSModule(), new RESTApiModule(WebServerConflict, Config, DependencyResolver.provideDependency(typeof(UsageData)), UserLogProvider), new ManagementApiModule(WebServerConflict, Config), new ThirdPartyJAXRSModule(WebServerConflict, Config, UserLogProvider, this), new ConsoleModule(WebServerConflict, Config), new Neo4jBrowserModule(WebServerConflict), CreateAuthorizationModule(), new SecurityRulesModule(WebServerConflict, Config, UserLogProvider) );
+			  return Arrays.asList( CreateDBMSModule(), new RESTApiModule(WebServerConflict, Config, DependencyResolver.provideDependency(typeof(UsageData)), UserLogProvider), new ManagementApiModule(WebServerConflict, Config), new ThirdPartyJAXRSModule(WebServerConflict, Config, UserLogProvider, this), new ConsoleModule(WebServerConflict, Config), new Neo4NetBrowserModule(WebServerConflict), CreateAuthorizationModule(), new SecurityRulesModule(WebServerConflict, Config, UserLogProvider) );
 		 }
 
 		 protected internal override WebServer CreateWebServer()

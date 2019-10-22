@@ -175,7 +175,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 // === Methods about checking if a tree node has crashed pointers ===
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean hasCrashedGSPP(TreeNode<?,?> treeNode, org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private boolean hasCrashedGSPP(TreeNode<?,?> treeNode, org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private bool HasCrashedGSPP<T1>( TreeNode<T1> treeNode, PageCursor cursor )
 		 {
 			  bool isTreeNode;

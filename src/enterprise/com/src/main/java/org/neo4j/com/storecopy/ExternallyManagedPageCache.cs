@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,21 +15,21 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.com.storecopy
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -65,21 +65,21 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 		 public override PagedFile Map( File file, int pageSize, params OpenOption[] openOptions )
 		 {
 			  return @delegate.Map( file, pageSize, openOptions );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.neo4j.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
 		 public override Optional<PagedFile> GetExistingMapping( File file )
 		 {
 			  return @delegate.GetExistingMapping( file );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.neo4j.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.io.pagecache.PagedFile> listExistingMappings() throws java.io.IOException
 		 public override IList<PagedFile> ListExistingMappings()
 		 {
 			  return @delegate.ListExistingMappings();
@@ -93,7 +93,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.neo4j.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 		 public override void FlushAndForce( IOLimiter limiter )
 		 {
 			  @delegate.FlushAndForce( limiter );
@@ -118,7 +118,7 @@ namespace Neo4Net.com.storecopy
 		 /// Create a GraphDatabaseFactory that will build EmbeddedGraphDatabase instances that all use the given page cache.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static GraphDatabaseFactoryWithPageCacheFactory graphDatabaseFactoryWithPageCache(final org.neo4j.io.pagecache.PageCache delegatePageCache)
+//ORIGINAL LINE: public static GraphDatabaseFactoryWithPageCacheFactory graphDatabaseFactoryWithPageCache(final org.Neo4Net.io.pagecache.PageCache delegatePageCache)
 		 public static GraphDatabaseFactoryWithPageCacheFactory GraphDatabaseFactoryWithPageCache( PageCache delegatePageCache )
 		 {
 			  return new GraphDatabaseFactoryWithPageCacheFactory( delegatePageCache );
@@ -133,7 +133,7 @@ namespace Neo4Net.com.storecopy
 					this.DelegatePageCache = delegatePageCache;
 			  }
 
-			  protected internal override GraphDatabaseService NewDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+			  protected internal override IGraphDatabaseService NewDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 			  {
 					File absoluteStoreDir = storeDir.AbsoluteFile;
 					File databasesRoot = absoluteStoreDir.ParentFile;

@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
 
 	public class MandatoryTransactionsForUniquenessConstraintDefinitionTest : AbstractMandatoryTransactionsTest<ConstraintDefinition>
 	{
@@ -39,9 +39,9 @@ namespace Neo4Net.Graphdb
 			  AssertFacadeMethodsThrowAfterTerminate( ConstraintDefinitionFacadeMethods.values() );
 		 }
 
-		 protected internal override ConstraintDefinition ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override ConstraintDefinition ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService.Schema().constraintFor(Label.label("Label")).assertPropertyIsUnique("property").create();
+			  return IGraphDatabaseService.Schema().constraintFor(Label.label("Label")).assertPropertyIsUnique("property").create();
 		 }
 	}
 

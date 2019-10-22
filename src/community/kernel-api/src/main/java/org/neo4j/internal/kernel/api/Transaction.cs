@@ -27,7 +27,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	/// <summary>
 	/// A transaction with the graph database.
 	/// 
-	/// Access to the graph is performed via sub-interfaces like <seealso cref="org.neo4j.internal.kernel.api.Read"/>.
+	/// Access to the graph is performed via sub-interfaces like <seealso cref="org.Neo4Net.internal.kernel.api.Read"/>.
 	/// Changes made within a transaction are immediately visible to all operations within it, but are only
 	/// visible to other transactions after the successful commit of the transaction.
 	/// 
@@ -89,7 +89,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <exception cref="InvalidTransactionTypeKernelException"> when transaction cannot be upgraded to a write transaction. This
 		 /// can happen when there have been schema modifications. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Write dataWrite() throws org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
+//ORIGINAL LINE: Write dataWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
 		 Write DataWrite();
 
 		 /// <returns> The explicit index read operations of the graph. </returns>
@@ -97,7 +97,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 /// <returns> The explicit index write operations of the graph. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ExplicitIndexWrite indexWrite() throws org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
+//ORIGINAL LINE: ExplicitIndexWrite indexWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
 		 ExplicitIndexWrite IndexWrite();
 
 		 /// <returns> Token read operations </returns>
@@ -114,7 +114,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 /// <returns> The schema index write operations of the graph, used for creating and dropping indexes and constraints. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SchemaWrite schemaWrite() throws org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
+//ORIGINAL LINE: SchemaWrite schemaWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
 		 SchemaWrite SchemaWrite();
 
 		 /// <returns> The lock operations of the graph. </returns>
@@ -137,7 +137,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> id of the committed transaction or <seealso cref="ROLLBACK"/> if transaction was rolled back or
 		 /// <seealso cref="READ_ONLY"/> if transaction was read-only. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long closeTransaction() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: long closeTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 long CloseTransaction();
 
 		 /// <summary>
@@ -146,7 +146,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// Otherwise its changes will be rolled back.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void close() throws org.neo4j.Internal.kernel.api.exceptions.TransactionFailureException
+//		 default void close() throws org.Neo4Net.Internal.kernel.api.exceptions.TransactionFailureException
 	//	 {
 	//		  closeTransaction();
 	//	 }

@@ -35,14 +35,14 @@ namespace Neo4Net.Io.pagecache.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 		 public override PagedFile Map( File file, int pageSize, params OpenOption[] openOptions )
 		 {
 			  return new AccessCheckingPagedFile( base.Map( file, pageSize, openOptions ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.neo4j.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.io.pagecache.PagedFile> getExistingMapping(java.io.File file) throws java.io.IOException
 		 public override Optional<PagedFile> GetExistingMapping( File file )
 		 {
 			  return base.GetExistingMapping( file );

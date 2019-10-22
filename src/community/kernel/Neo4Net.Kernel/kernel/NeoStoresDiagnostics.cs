@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel
 	public abstract class NeoStoresDiagnostics : DiagnosticsExtractor<NeoStores>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NEO_STORE_VERSIONS("Store versions:") { void dump(org.neo4j.kernel.impl.store.NeoStores source, org.neo4j.logging.Logger logger) { source.logVersions(logger); } },
+//       NEO_STORE_VERSIONS("Store versions:") { void dump(org.Neo4Net.kernel.impl.store.NeoStores source, org.Neo4Net.logging.Logger logger) { source.logVersions(logger); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NEO_STORE_ID_USAGE("Id usage:") { void dump(org.neo4j.kernel.impl.store.NeoStores source, org.neo4j.logging.Logger logger) { source.logIdUsage(logger); } },
+//       NEO_STORE_ID_USAGE("Id usage:") { void dump(org.Neo4Net.kernel.impl.store.NeoStores source, org.Neo4Net.logging.Logger logger) { source.logIdUsage(logger); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NEO_STORE_RECORDS("Neostore records:") { void dump(org.neo4j.kernel.impl.store.NeoStores source, org.neo4j.logging.Logger logger) { source.getMetaDataStore().logRecords(logger); } };
+//       NEO_STORE_RECORDS("Neostore records:") { void dump(org.Neo4Net.kernel.impl.store.NeoStores source, org.Neo4Net.logging.Logger logger) { source.getMetaDataStore().logRecords(logger); } };
 
 		 private static readonly IList<NeoStoresDiagnostics> valueList = new List<NeoStoresDiagnostics>();
 
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void dumpDiagnostics(final org.neo4j.kernel.impl.store.NeoStores source, org.neo4j.internal.diagnostics.DiagnosticsPhase phase, org.neo4j.logging.Logger logger)
+//ORIGINAL LINE: public void dumpDiagnostics(final org.Neo4Net.kernel.impl.store.NeoStores source, org.Neo4Net.internal.diagnostics.DiagnosticsPhase phase, org.Neo4Net.logging.Logger logger)
 		 public void DumpDiagnostics( Neo4Net.Kernel.impl.store.NeoStores source, Neo4Net.Internal.Diagnostics.DiagnosticsPhase phase, Neo4Net.Logging.Logger logger )
 		 {
 			  if ( Applicable( phase ) )

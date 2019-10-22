@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 PopulationProgress IndexPopulationProgress { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void force(org.neo4j.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException;
+//ORIGINAL LINE: void force(org.Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException;
 		 void Force( IOLimiter ioLimiter );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -95,22 +95,22 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 /// <exception cref="IndexNotFoundKernelException"> if the index isn't online yet. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.storageengine.api.schema.IndexReader newReader() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.IndexReader newReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 IndexReader NewReader();
 
 		 /// <param name="time"> time to wait maximum. A value of 0 means indefinite wait. </param>
 		 /// <param name="unit"> unit of time to wait. </param>
 		 /// <returns> {@code true} if the call waited, {@code false} if the condition was already reached. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean awaitStoreScanCompleted(long time, java.util.concurrent.TimeUnit unit) throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException;
+//ORIGINAL LINE: boolean awaitStoreScanCompleted(long time, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException;
 		 bool AwaitStoreScanCompleted( long time, TimeUnit unit );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void activate() throws org.neo4j.kernel.api.exceptions.index.IndexActivationFailedKernelException;
+//ORIGINAL LINE: void activate() throws org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException;
 		 void Activate();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validate() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.neo4j.kernel.api.exceptions.schema.UniquePropertyValueValidationException;
+//ORIGINAL LINE: void validate() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException;
 		 void Validate();
 
 		 /// <summary>
@@ -121,11 +121,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 void ValidateBeforeCommit( Value[] tuple );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.graphdb.ResourceIterator<java.io.File> snapshotFiles() throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshotFiles() throws java.io.IOException;
 		 ResourceIterator<File> SnapshotFiles();
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor accessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//		 default void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 	//	 {
 	//		  throw new IllegalStateException(this.toString());
 	//	 }

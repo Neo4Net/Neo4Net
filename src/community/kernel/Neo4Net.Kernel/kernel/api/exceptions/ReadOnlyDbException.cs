@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
 	/// </summary>
 	public class ReadOnlyDbException : TransactionFailureException
 	{
-		 public ReadOnlyDbException() : base(Status_General.ForbiddenOnReadOnlyDatabase, "This is a read only Neo4j instance")
+		 public ReadOnlyDbException() : base(Status_General.ForbiddenOnReadOnlyDatabase, "This is a read only Neo4Net instance")
 		 {
 		 }
 	}

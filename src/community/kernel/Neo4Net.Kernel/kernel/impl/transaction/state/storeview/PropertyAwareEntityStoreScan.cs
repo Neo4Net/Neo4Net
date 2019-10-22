@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using Neo4Net.Kernel.Api.Index;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using MultipleIndexPopulator = Neo4Net.Kernel.Impl.Api.index.MultipleIndexPopulator;
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
 	using Neo4Net.Kernel.Impl.Api.index;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 
 	public abstract class PropertyAwareEntityStoreScan<CURSOR, FAILURE> : StoreScan<FAILURE> where CURSOR : Neo4Net.Storageengine.Api.StorageEntityScanCursor where FAILURE : Exception
 	{
-		 internal readonly CURSOR EntityCursor;
+		 internal readonly CURSOR IEntityCursor;
 		 private readonly StoragePropertyCursor _propertyCursor;
 		 private readonly StorageReader _storageReader;
 		 private volatile bool _continueScanning;
@@ -62,11 +62,11 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 
 		 protected internal abstract CURSOR AllocateCursor( StorageReader storageReader );
 
-		 internal static bool ContainsAnyEntityToken( int[] entityTokenFilter, params long[] entityTokens )
+		 internal static bool ContainsAnyEntityToken( int[] IEntityTokenFilter, params long[] IEntityTokens )
 		 {
-			  foreach ( long candidate in entityTokens )
+			  foreach ( long candidate in IEntityTokens )
 			  {
-					if ( ArrayUtils.contains( entityTokenFilter, Math.toIntExact( candidate ) ) )
+					if ( ArrayUtils.contains( IEntityTokenFilter, Math.toIntExact( candidate ) ) )
 					{
 						 return true;
 					}
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  return false;
 		 }
 
-		 internal virtual bool HasRelevantProperty( CURSOR cursor, EntityUpdates.Builder updates )
+		 internal virtual bool HasRelevantProperty( CURSOR cursor, IEntityUpdates.Builder updates )
 		 {
 			  if ( !cursor.hasProperties() )
 			  {
@@ -103,20 +103,20 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 //ORIGINAL LINE: public void run() throws FAILURE
 		 public override void Run()
 		 {
-			  EntityCursor.scan();
+			  IEntityCursor.scan();
 			  try
 			  {
-					  using ( EntityIdIterator entityIdIterator = EntityIdIterator )
+					  using ( IEntityIdIterator IEntityIdIterator = IEntityIdIterator )
 					  {
 						_continueScanning = true;
-						while ( _continueScanning && entityIdIterator.hasNext() )
+						while ( _continueScanning && IEntityIdIterator.hasNext() )
 						{
 							 _phaseTracker.enterPhase( Neo4Net.Kernel.Impl.Api.index.PhaseTracker_Phase.Scan );
-							 long id = entityIdIterator.next();
+							 long id = IEntityIdIterator.next();
 							 using ( Lock ignored = _lockFunction.apply( id ) )
 							 {
 								  _count++;
-								  if ( Process( EntityCursor ) )
+								  if ( Process( IEntityCursor ) )
 								  {
 										entityIdIterator.InvalidateCache();
 								  }
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  }
 			  finally
 			  {
-					IOUtils.closeAllUnchecked( _propertyCursor, EntityCursor, _storageReader );
+					IOUtils.closeAllUnchecked( _propertyCursor, IEntityCursor, _storageReader );
 			  }
 		 }
 
@@ -176,19 +176,19 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			 }
 		 }
 
-		 protected internal virtual EntityIdIterator EntityIdIterator
+		 protected internal virtual IEntityIdIterator IEntityIdIterator
 		 {
 			 get
 			 {
-				  return new EntityIdIteratorAnonymousInnerClass( this );
+				  return new IEntityIdIteratorAnonymousInnerClass( this );
 			 }
 		 }
 
-		 private class EntityIdIteratorAnonymousInnerClass : EntityIdIterator
+		 private class IEntityIdIteratorAnonymousInnerClass : IEntityIdIterator
 		 {
 			 private readonly PropertyAwareEntityStoreScan<CURSOR, FAILURE> _outerInstance;
 
-			 public EntityIdIteratorAnonymousInnerClass( PropertyAwareEntityStoreScan<CURSOR, FAILURE> outerInstance )
+			 public IEntityIdIteratorAnonymousInnerClass( PropertyAwareEntityStoreScan<CURSOR, FAILURE> outerInstance )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

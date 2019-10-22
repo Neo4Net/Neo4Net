@@ -22,7 +22,7 @@
 namespace Neo4Net.Helpers.Collections
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	public class CombiningResourceIterator<T> : CombiningIterator<T>, ResourceIterator<T>
 	{

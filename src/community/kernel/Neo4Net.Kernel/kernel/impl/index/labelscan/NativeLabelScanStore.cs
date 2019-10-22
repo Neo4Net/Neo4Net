@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 
 	using Neo4Net.Cursors;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
 	using Header = Neo4Net.Index.Internal.gbptree.Header;
@@ -48,9 +48,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 
 	/// <summary>
 	/// <seealso cref="LabelScanStore"/> which is implemented using <seealso cref="GBPTree"/> atop a <seealso cref="PageCache"/>.
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	/// </para>
 	/// <para>
 	/// <seealso cref="force(IOLimiter)"/> is vital for allowing this store to be recoverable, and must be called
-	/// whenever Neo4j performs a checkpoint.
+	/// whenever Neo4Net performs a checkpoint.
 	/// </para>
 	/// <para>
 	/// This store is backed by a single store file "neostore.labelscanstore.db".

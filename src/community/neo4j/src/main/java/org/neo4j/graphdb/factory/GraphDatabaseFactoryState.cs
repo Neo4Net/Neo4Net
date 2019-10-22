@@ -21,19 +21,19 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using URLAccessRule = Neo4Net.Graphdb.security.URLAccessRule;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using Service = Neo4Net.Helpers.Service;
 	using Neo4Net.Kernel.extension;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 
 	/// @deprecated This will be moved to an internal package in the future. 
 	[Obsolete("This will be moved to an internal package in the future.")]
@@ -44,7 +44,7 @@ namespace Neo4Net.Graphdb.factory
 		 // - this factory will potentially be handed over to other threads, which will create databases
 		 private readonly IList<Type> _settingsClasses;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
+//ORIGINAL LINE: private final java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions;
 		 private readonly IList<KernelExtensionFactory<object>> _kernelExtensions;
 		 private volatile Monitors _monitors;
 		 private volatile LogProvider _userLogProvider;
@@ -58,7 +58,7 @@ namespace Neo4Net.Graphdb.factory
 //ORIGINAL LINE: kernelExtensions = new java.util.concurrent.CopyOnWriteArrayList<>();
 			  _kernelExtensions = new CopyOnWriteArrayList<KernelExtensionFactory<object>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.extension.KernelExtensionFactory<?> factory : org.neo4j.helpers.Service.load(org.neo4j.kernel.extension.KernelExtensionFactory.class))
+//ORIGINAL LINE: for (org.Neo4Net.kernel.extension.KernelExtensionFactory<?> factory : org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class))
 			  foreach ( KernelExtensionFactory<object> factory in Service.load( typeof( KernelExtensionFactory ) ) )
 			  {
 					_kernelExtensions.Add( factory );
@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> getKernelExtension()
+//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtension()
 		 public virtual IEnumerable<KernelExtensionFactory<object>> KernelExtension
 		 {
 			 get
@@ -104,7 +104,7 @@ namespace Neo4Net.Graphdb.factory
 		 public virtual void AddKernelExtensions<T1>( IEnumerable<T1> newKernelExtensions )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.extension.KernelExtensionFactory<?> newKernelExtension : newKernelExtensions)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.extension.KernelExtensionFactory<?> newKernelExtension : newKernelExtensions)
 			  foreach ( KernelExtensionFactory<object> newKernelExtension in newKernelExtensions )
 			  {
 					_kernelExtensions.Add( newKernelExtension );

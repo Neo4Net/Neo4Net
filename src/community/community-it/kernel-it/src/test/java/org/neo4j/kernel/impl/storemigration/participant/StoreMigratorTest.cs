@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -61,19 +61,19 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_CHECKSUM;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_CHECKSUM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.getRecord;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.setRecord;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.setRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
+//	import static org.Neo4Net.kernel.impl.store.format.standard.MetaDataRecordFormat.FIELD_NOT_PRESENT;
 
 	public class StoreMigratorTest
 	{
@@ -204,13 +204,13 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void extractTransactionalInformationFromLogs(String path, java.io.File customLogLocation, org.neo4j.io.layout.DatabaseLayout databaseLayout, java.io.File storeDir) throws java.io.IOException
+//ORIGINAL LINE: private void extractTransactionalInformationFromLogs(String path, java.io.File customLogLocation, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File storeDir) throws java.io.IOException
 		 private void ExtractTransactionalInformationFromLogs( string path, File customLogLocation, DatabaseLayout databaseLayout, File storeDir )
 		 {
 			  LogService logService = new SimpleLogService( NullLogProvider.Instance, NullLogProvider.Instance );
 			  File neoStore = databaseLayout.MetadataStore();
 
-			  GraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(logical_logs_location, path).newGraphDatabase();
+			  IGraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(logical_logs_location, path).newGraphDatabase();
 			  for ( int i = 0; i < 10; i++ )
 			  {
 					using ( Transaction transaction = database.BeginTx() )

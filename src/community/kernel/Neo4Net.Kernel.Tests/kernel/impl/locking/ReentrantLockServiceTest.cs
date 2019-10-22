@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.locking
 	public class ReentrantLockServiceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadRepository threads = new org.neo4j.test.rule.concurrent.ThreadRepository(5, java.util.concurrent.TimeUnit.SECONDS);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadRepository threads = new org.Neo4Net.test.rule.concurrent.ThreadRepository(5, java.util.concurrent.TimeUnit.SECONDS);
 		 public readonly ThreadRepository Threads = new ThreadRepository( 5, TimeUnit.SECONDS );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.runtime
 {
 	using Test = org.junit.Test;
 
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
@@ -34,7 +34,7 @@ namespace Neo4Net.Bolt.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class Neo4jErrorTest
+	public class Neo4NetErrorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldAssignUnknownStatusToUnpredictedException()
@@ -42,7 +42,7 @@ namespace Neo4Net.Bolt.runtime
 		 {
 			  // Given
 			  Exception cause = new Exception( "This is not an error we know how to handle." );
-			  Neo4jError error = Neo4jError.From( cause );
+			  Neo4NetError error = Neo4NetError.From( cause );
 
 			  // Then
 			  assertThat( error.Status(), equalTo(Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError) );
@@ -53,7 +53,7 @@ namespace Neo4Net.Bolt.runtime
 		 public virtual void ShouldConvertDeadlockException()
 		 {
 			  // When
-			  Neo4jError error = Neo4jError.From( new DeadlockDetectedException( null ) );
+			  Neo4NetError error = Neo4NetError.From( new DeadlockDetectedException( null ) );
 
 			  // Then
 			  assertEquals( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.DeadlockDetected, error.Status() );
@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt.runtime
 			  DatabaseShutdownException ex = new DatabaseShutdownException();
 
 			  // When
-			  Neo4jError error = Neo4jError.From( ex );
+			  Neo4NetError error = Neo4NetError.From( ex );
 
 			  // Then
 			  assertThat( error.Status(), equalTo(Neo4Net.Kernel.Api.Exceptions.Status_General.DatabaseUnavailable) );

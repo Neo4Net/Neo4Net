@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.repr
 
 	using URIHelper = Neo4Net.Server.rest.domain.URIHelper;
 
-	public abstract class IndexRepresentation : MappingRepresentation, EntityRepresentation
+	public abstract class IndexRepresentation : MappingRepresentation, IEntityRepresentation
 	{
 		 private readonly string _name;
 		 private readonly new IDictionary<string, string> _type;
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.repr
 			  }
 		 }
 
-		 public virtual string RelativeUriFor( string key, string value, long entityId )
+		 public virtual string RelativeUriFor( string key, string value, long IEntityId )
 		 {
 			  return Path() + URIHelper.encode(key) + "/" + URIHelper.encode(value) + "/" + Convert.ToString(entityId);
 		 }
@@ -59,10 +59,10 @@ namespace Neo4Net.Server.rest.repr
 
 		 protected internal virtual string Path()
 		 {
-			  return "index/" + PropertyContainerType() + "/" + URIHelper.encode(_name) + "/";
+			  return "index/" + IPropertyContainerType() + "/" + URIHelper.encode(_name) + "/";
 		 }
 
-		 protected internal abstract string PropertyContainerType();
+		 protected internal abstract string IPropertyContainerType();
 
 	}
 

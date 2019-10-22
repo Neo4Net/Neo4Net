@@ -20,7 +20,7 @@
 namespace Neo4Net.Io.pagecache
 {
 
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 
 	/// <summary>
@@ -52,7 +52,7 @@ namespace Neo4Net.Io.pagecache
 
 		 /// <summary>
 		 /// Get the unit of alignment that the swappers require of the memory buffers. For instance, if page alignment is
-		 /// required for doing direct IO, then <seealso cref="org.neo4j.unsafe.impl.internal.dragons.UnsafeUtil.pageSize()"/> can be
+		 /// required for doing direct IO, then <seealso cref="org.Neo4Net.unsafe.impl.internal.dragons.UnsafeUtil.pageSize()"/> can be
 		 /// returned.
 		 /// </summary>
 		 /// <returns> The required buffer alignment byte multiple. </returns>

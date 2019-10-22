@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using Test = org.junit.Test;
 
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
 	using StubPropertyCursor = Neo4Net.Internal.Kernel.Api.helpers.StubPropertyCursor;
 	using StubRead = Neo4Net.Internal.Kernel.Api.helpers.StubRead;
@@ -33,14 +33,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	public class CursorPropertyAccessorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookupProperty() throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookupProperty() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookupProperty()
 		 {
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReturnNoValueOnMissingProperty() throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldReturnNoValueOnMissingProperty() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnNoValueOnMissingProperty()
 		 {
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 					accessor.GetNodePropertyValue( nodeId + 1, propertyKeyId );
 					fail();
 			  }
-			  catch ( EntityNotFoundException )
+			  catch ( IEntityNotFoundException )
 			  {
 					// then good
 			  }

@@ -20,7 +20,7 @@
 namespace Neo4Net.Cypher.Internal.javacompat
 {
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 
 	/// <summary>
 	/// Interface for <seealso cref="Result"/> of query executions that are aware how to represent their result as <seealso cref="QueryResult"/>

@@ -91,13 +91,13 @@ namespace Neo4Net.Consistency.report
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @Suite.SuiteClasses({ConsistencyReporterTest.TestAllReportMessages.class, ConsistencyReporterTest.TestReportLifecycle.class}) public class ConsistencyReporterTest
@@ -116,7 +116,7 @@ namespace Neo4Net.Consistency.report
 					// given
 					ConsistencySummaryStatistics summary = mock( typeof( ConsistencySummaryStatistics ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.consistency.store.RecordAccess records = mock(org.neo4j.consistency.store.RecordAccess.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.consistency.store.RecordAccess records = mock(org.Neo4Net.consistency.store.RecordAccess.class);
 					RecordAccess records = mock( typeof( RecordAccess ) );
 					ConsistencyReporter.ReportHandler handler = new ConsistencyReporter.ReportHandler( new InconsistencyReport( mock( typeof( InconsistencyLogger ) ), summary ), mock( typeof( ConsistencyReporter.ProxyFactory ) ), RecordType.PROPERTY, records, new PropertyRecord( 0 ), NO_MONITOR );
 
@@ -462,7 +462,7 @@ namespace Neo4Net.Consistency.report
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.consistency.checking.RecordCheck mockChecker()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.consistency.checking.RecordCheck mockChecker()
 			  internal virtual RecordCheck MockChecker()
 			  {
 					RecordCheck checker = mock( typeof( RecordCheck ) );

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Server.rest.web
 {
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 
 	public class NodeNotFoundException : Exception
 	{

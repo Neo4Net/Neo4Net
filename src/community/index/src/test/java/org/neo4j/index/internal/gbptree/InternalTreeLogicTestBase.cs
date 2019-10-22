@@ -56,21 +56,21 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTreeConsistencyChecker.assertNoCrashOrBrokenPointerInGSPP;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTreeConsistencyChecker.assertNoCrashOrBrokenPointerInGSPP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Overflow.NO;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Overflow.YES;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.YES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.ValueMergers.overwrite;
+//	import static org.Neo4Net.index.Internal.gbptree.ValueMergers.overwrite;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public abstract class InternalTreeLogicTestBase<KEY,VALUE>
@@ -117,7 +117,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 public bool IsCheckpointing;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public RandomRule Random = new RandomRule();
 
 		 internal Root Root;
@@ -1650,7 +1650,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void giveSuccessor(org.neo4j.io.pagecache.PageCursor cursor, long nodeId) throws java.io.IOException
+//ORIGINAL LINE: private void giveSuccessor(org.Neo4Net.io.pagecache.PageCursor cursor, long nodeId) throws java.io.IOException
 		 private void GiveSuccessor( PageCursor cursor, long nodeId )
 		 {
 			  GoTo( cursor, nodeId );
@@ -2023,14 +2023,14 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void goTo(org.neo4j.io.pagecache.PageCursor cursor, long pageId) throws java.io.IOException
+//ORIGINAL LINE: private static void goTo(org.Neo4Net.io.pagecache.PageCursor cursor, long pageId) throws java.io.IOException
 		 private static void GoTo( PageCursor cursor, long pageId )
 		 {
 			  PageCursorUtil.GoTo( cursor, "test", pointer( pageId ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void goToSuccessor(org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void goToSuccessor(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void GoToSuccessor( PageCursor cursor )
 		 {
 			  long newestGeneration = newestGeneration( cursor, _stableGeneration, _unstableGeneration );
@@ -2038,7 +2038,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void goToSuccessor(org.neo4j.io.pagecache.PageCursor cursor, long targetNode) throws java.io.IOException
+//ORIGINAL LINE: private void goToSuccessor(org.Neo4Net.io.pagecache.PageCursor cursor, long targetNode) throws java.io.IOException
 		 private void GoToSuccessor( PageCursor cursor, long targetNode )
 		 {
 			  GoTo( cursor, targetNode );
@@ -2066,7 +2066,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long newestGeneration(org.neo4j.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private long newestGeneration(org.Neo4Net.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private long NewestGeneration( PageCursor cursor, long stableGeneration, long unstableGeneration )
 		 {
 			  long current = cursor.CurrentPageId;

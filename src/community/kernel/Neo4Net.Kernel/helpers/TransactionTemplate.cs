@@ -23,14 +23,14 @@ using System.Threading;
 namespace Neo4Net.Helpers
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using TransientFailureException = Neo4Net.Graphdb.TransientFailureException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
 
 	/// <summary>
-	/// Neo4j transaction template that automates the retry-on-exception logic. It uses the builder
+	/// Neo4Net transaction template that automates the retry-on-exception logic. It uses the builder
 	/// pattern for configuration, with copy-semantics, so you can iteratively build up instances for
 	/// different scenarios.
 	/// <para>
@@ -89,7 +89,7 @@ namespace Neo4Net.Helpers
 				}
 		  }
 
-		 private readonly GraphDatabaseService _gds;
+		 private readonly IGraphDatabaseService _gds;
 		 private readonly Monitor _monitor;
 		 private readonly int _retries;
 		 private readonly long _backoff;
@@ -116,7 +116,7 @@ namespace Neo4Net.Helpers
 		 /// <param name="retries"> number of retries to try before failing. </param>
 		 /// <param name="backoff"> milliseconds to wait between each retry. </param>
 		 /// <param name="retryPredicate"> what <seealso cref="System.Exception"/>'s to retry on. </param>
-		 public TransactionTemplate( GraphDatabaseService gds, Monitor monitor, int retries, long backoff, System.Predicate<Exception> retryPredicate )
+		 public TransactionTemplate( IGraphDatabaseService gds, Monitor monitor, int retries, long backoff, System.Predicate<Exception> retryPredicate )
 		 {
 			  Objects.requireNonNull( gds );
 			  Objects.requireNonNull( monitor );
@@ -137,7 +137,7 @@ namespace Neo4Net.Helpers
 			  this._retryPredicate = retryPredicate;
 		 }
 
-		 public virtual TransactionTemplate With( GraphDatabaseService gds )
+		 public virtual TransactionTemplate With( IGraphDatabaseService gds )
 		 {
 			  return new TransactionTemplate( gds, _monitor, _retries, _backoff, _retryPredicate );
 		 }
@@ -169,7 +169,7 @@ namespace Neo4Net.Helpers
 		 /// <exception cref="TransactionFailureException"> if an error occurs other than those specified in <seealso cref="retryOn(Predicate)"/>
 		 /// or if the retry count was exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void execute(final System.Action<org.neo4j.graphdb.Transaction> txConsumer)
+//ORIGINAL LINE: public void execute(final System.Action<org.Neo4Net.graphdb.Transaction> txConsumer)
 		 public virtual void Execute( System.Action<Transaction> txConsumer )
 		 {
 			  Execute(transaction =>
@@ -188,7 +188,7 @@ namespace Neo4Net.Helpers
 		 /// <exception cref="TransactionFailureException"> if an error occurs other than those specified in <seealso cref="retryOn(Predicate)"/>
 		 /// or if the retry count was exceeded. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T execute(System.Func<org.neo4j.graphdb.Transaction, T> txFunction) throws org.neo4j.graphdb.TransactionFailureException
+//ORIGINAL LINE: public <T> T execute(System.Func<org.Neo4Net.graphdb.Transaction, T> txFunction) throws org.Neo4Net.graphdb.TransactionFailureException
 		 public virtual T Execute<T>( System.Func<Transaction, T> txFunction )
 		 {
 			  Exception txEx;

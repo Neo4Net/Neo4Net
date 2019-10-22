@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.impl.core
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
@@ -65,14 +65,14 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 		 private void MakeSureIdsGetsReused( string fileName, object value, int iterations )
 		 {
 			  File storeDir = new File( "target/var/idreuse" );
 			  File file = new File( storeDir, fileName );
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(Fs.get()).newImpermanentDatabaseBuilder(storeDir).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(Fs.get()).newImpermanentDatabaseBuilder(storeDir).newGraphDatabase();
 			  for ( int i = 0; i < 5; i++ )
 			  {
 					SetAndRemoveSomeProperties( db, value );
@@ -88,12 +88,12 @@ namespace Neo4Net.Kernel.impl.core
 			  assertEquals( sizeBefore, file.length() );
 		 }
 
-		 private void SetAndRemoveSomeProperties( GraphDatabaseService graphDatabaseService, object value )
+		 private void SetAndRemoveSomeProperties( IGraphDatabaseService IGraphDatabaseService, object value )
 		 {
 			  Node commonNode;
-			  using ( Transaction transaction = graphDatabaseService.BeginTx() )
+			  using ( Transaction transaction = IGraphDatabaseService.BeginTx() )
 			  {
-					commonNode = graphDatabaseService.CreateNode();
+					commonNode = IGraphDatabaseService.CreateNode();
 					for ( int i = 0; i < 10; i++ )
 					{
 						 commonNode.SetProperty( "key" + i, value );
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.core
 					transaction.Success();
 			  }
 
-			  using ( Transaction transaction = graphDatabaseService.BeginTx() )
+			  using ( Transaction transaction = IGraphDatabaseService.BeginTx() )
 			  {
 					for ( int i = 0; i < 10; i++ )
 					{

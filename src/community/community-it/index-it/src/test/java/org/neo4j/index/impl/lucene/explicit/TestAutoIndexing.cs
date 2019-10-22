@@ -26,16 +26,16 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -53,7 +53,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 
 	public class TestAutoIndexing
 	{

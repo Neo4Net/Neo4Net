@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel
 		 CollectionsFactorySupplier CollectionsFactorySupplier { get; }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories();
+//ORIGINAL LINE: Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories();
 		 IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories { get; }
 
 		 System.Func<File, FileSystemWatcherService> WatcherServiceFactory { get; }

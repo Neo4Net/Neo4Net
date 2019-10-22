@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Internal
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
 
 	public class KernelData : LifecycleAdapter
 	{

@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.DynamicRecord.dynamicRecord;
+//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
 
 	/// <summary>
 	/// At any point, a power outage may stop us from writing to the log, which means that, at any point, all our commands
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHandlesLogTruncation(org.neo4j.kernel.impl.transaction.command.Command cmd) throws java.io.IOException
+//ORIGINAL LINE: private void assertHandlesLogTruncation(org.Neo4Net.kernel.impl.transaction.command.Command cmd) throws java.io.IOException
 		 private void AssertHandlesLogTruncation( Command cmd )
 		 {
 			  _inMemoryChannel.reset();

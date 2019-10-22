@@ -22,14 +22,14 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Neo4Net.Graphdb.index;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Neo4Net.GraphDb.index;
 	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
 
 	/// <summary>
 	/// Facade exposing auto indexing operations for nodes.
 	/// </summary>
-	public class AutoIndexerFacade<T> : Neo4Net.Graphdb.index.AutoIndexer<T> where T : Neo4Net.Graphdb.PropertyContainer
+	public class AutoIndexerFacade<T> : Neo4Net.GraphDb.index.AutoIndexer<T> where T : Neo4Net.GraphDb.PropertyContainer
 	{
 		 private readonly System.Func<ReadableIndex<T>> _indexProvider;
 		 private readonly AutoIndexOperations _autoIndexing;

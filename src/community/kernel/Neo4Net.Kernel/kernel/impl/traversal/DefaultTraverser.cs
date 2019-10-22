@@ -20,13 +20,13 @@
 namespace Neo4Net.Kernel.impl.traversal
 {
 	using Neo4Net.Functions;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 	using Neo4Net.Helpers.Collections;
 
 	public class DefaultTraverser : Traverser
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			 public override ResourceIterator<Relationship> iterator()
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Path> pathIterator = pathIterator();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Path> pathIterator = pathIterator();
 				  ResourceIterator<Path> pathIterator = pathIterator();
 				  return new PrefetchingResourceIteratorAnonymousInnerClass( this, pathIterator );
 			 }
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  public override ResourceIterator<T> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Path> iterator = pathIterator();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Path> iterator = pathIterator();
 					ResourceIterator<Path> iterator = PathIterator();
 					return new PrefetchingResourceIteratorAnonymousInnerClass2( this, iterator );
 			  }

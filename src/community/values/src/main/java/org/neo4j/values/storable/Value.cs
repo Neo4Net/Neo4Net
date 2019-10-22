@@ -22,13 +22,13 @@
 namespace Neo4Net.Values.Storable
 {
 
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	public abstract class Value : AnyValue
 	{
@@ -184,7 +184,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void writeTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void writeTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  WriteTo( ( ValueWriter<E> )writer );

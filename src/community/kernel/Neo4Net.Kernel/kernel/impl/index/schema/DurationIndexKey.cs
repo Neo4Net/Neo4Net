@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="DurationValue"/>.
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="DurationValue"/>.
 	/// 
 	/// Durations are tricky, because exactly how long a duration is depends on the start date. We therefore sort them by
 	/// average total time in seconds, but keep the original months and days so we can reconstruct the value.
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal const long AVG_MONTH_SECONDS = 2_629_800;
 		 internal const long AVG_DAY_SECONDS = 86_400;
 
-		 internal static readonly int Size = Long.BYTES + Integer.BYTES + Long.BYTES + Long.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + Integer.BYTES + Long.BYTES + Long.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal long TotalAvgSeconds;
 		 internal int NanosOfSecond;
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,totalAvgSeconds=%d,nanosOfSecond=%d,months=%d,days=%d", AsValue(), EntityId, TotalAvgSeconds, NanosOfSecond, Months, Days );
+			  return format( "value=%s,entityId=%d,totalAvgSeconds=%d,nanosOfSecond=%d,months=%d,days=%d", AsValue(), IEntityId, TotalAvgSeconds, NanosOfSecond, Months, Days );
 		 }
 
 		 public override void WriteDuration( long months, long days, long seconds, int nanos )

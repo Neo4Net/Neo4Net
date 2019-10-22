@@ -22,7 +22,7 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 
 	/// <summary>
@@ -39,7 +39,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> The value to associate with the node an key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeAddToExplicitIndex(String indexName, long node, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeAddToExplicitIndex(String indexName, long node, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeAddToExplicitIndex( string indexName, long node, string key, object value );
 
 		 /// <summary>
@@ -51,7 +51,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> The value associated with the node and key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeRemoveFromExplicitIndex( string indexName, long node, string key, object value );
 
 		 /// <summary>
@@ -62,7 +62,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="key"> The key associated with the node </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeRemoveFromExplicitIndex( string indexName, long node, string key );
 
 		 /// <summary>
@@ -72,14 +72,14 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="node"> The node id of the node to remove </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeRemoveFromExplicitIndex(String indexName, long node) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeRemoveFromExplicitIndex( string indexName, long node );
 
 		 /// <summary>
 		 /// Drops the explicit index with the given name </summary>
 		 /// <param name="indexName"> the index to drop </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeExplicitIndexDrop(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeExplicitIndexDrop(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeExplicitIndexDrop( string indexName );
 
 		 /// <summary>
@@ -90,7 +90,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The old value associated with the key or <tt>null</tt> if nothing associated with the key. </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if no such index exists </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String nodeExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: String nodeExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 string NodeExplicitIndexSetConfiguration( string indexName, string key, string value );
 
 		 /// <summary>
@@ -100,7 +100,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The old value associated with the key or <tt>null</tt> if nothing associated with the key. </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if no such index exists </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String nodeExplicitIndexRemoveConfiguration(String indexName, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: String nodeExplicitIndexRemoveConfiguration(String indexName, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 string NodeExplicitIndexRemoveConfiguration( string indexName, string key );
 
 		 /// <summary>
@@ -112,7 +112,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> The value to associate with the relationship and key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipAddToExplicitIndex(String indexName, long relationship, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException;
+//ORIGINAL LINE: void relationshipAddToExplicitIndex(String indexName, long relationship, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException;
 		 void RelationshipAddToExplicitIndex( string indexName, long relationship, string key, object value );
 
 		 /// <summary>
@@ -124,7 +124,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> The value associated with the relationship and key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipRemoveFromExplicitIndex( string indexName, long relationship, string key, object value );
 
 		 /// <summary>
@@ -135,7 +135,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="key"> The key associated with the relationship </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipRemoveFromExplicitIndex( string indexName, long relationship, string key );
 
 		 /// <summary>
@@ -145,7 +145,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="relationship"> The id of the relationship to remove </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> If there is no explicit index with the given name </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipRemoveFromExplicitIndex(String indexName, long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipRemoveFromExplicitIndex( string indexName, long relationship );
 
 		 /// <summary>
@@ -180,7 +180,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// Drops the explicit index with the given name </summary>
 		 /// <param name="indexName"> the index to drop </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipExplicitIndexDrop(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipExplicitIndexDrop(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipExplicitIndexDrop( string indexName );
 
 		 /// <summary>
@@ -191,7 +191,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The old value associated with the key or <tt>null</tt> if nothing associated with the key. </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if no such index exists </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String relationshipExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: String relationshipExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 string RelationshipExplicitIndexSetConfiguration( string indexName, string key, string value );
 
 		 /// <summary>
@@ -201,7 +201,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The old value associated with the key or <tt>null</tt> if nothing associated with the key. </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if no such index exists </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String relationshipExplicitIndexRemoveConfiguration(String indexName, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: String relationshipExplicitIndexRemoveConfiguration(String indexName, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 string RelationshipExplicitIndexRemoveConfiguration( string indexName, string key );
 
 	}

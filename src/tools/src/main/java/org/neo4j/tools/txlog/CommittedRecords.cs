@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.txlog
 {
@@ -31,7 +31,7 @@ namespace Neo4Net.tools.txlog
 	using Neo4Net.tools.txlog.checktypes;
 
 	/// <summary>
-	/// Contains mapping from entity id (<seealso cref="NodeRecord.getId()"/>, <seealso cref="PropertyRecord.getId()"/>, ...) to
+	/// Contains mapping from IEntity id (<seealso cref="NodeRecord.getId()"/>, <seealso cref="PropertyRecord.getId()"/>, ...) to
 	/// <seealso cref="AbstractBaseRecord record"/> for records that have been previously seen during transaction log scan.
 	/// <p/>
 	/// Can determine if some given record is consistent with previously committed state.
@@ -40,7 +40,7 @@ namespace Neo4Net.tools.txlog
 	internal class CommittedRecords<R> where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.tools.txlog.checktypes.CheckType<?,R> checkType;
+//ORIGINAL LINE: private final org.Neo4Net.tools.txlog.checktypes.CheckType<?,R> checkType;
 		 private readonly CheckType<object, R> _checkType;
 		 private readonly IDictionary<long, RecordInfo<R>> _recordsById;
 

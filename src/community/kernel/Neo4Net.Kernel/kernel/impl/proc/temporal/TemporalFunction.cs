@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
 	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -42,24 +42,24 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.nullValue;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.nullValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public abstract class TemporalFunction<T> : CallableUserFunction where T : Neo4Net.Values.AnyValue
 	{
 		 private const string DEFAULT_TEMPORAL_ARGUMENT = "DEFAULT_TEMPORAL_ARGUMENT";
 		 private static readonly TextValue _defaultTemporalArgumentValue = Values.stringValue( DEFAULT_TEMPORAL_ARGUMENT );
-		 private static readonly DefaultParameterValue _defaultParameterValue = new DefaultParameterValue( DEFAULT_TEMPORAL_ARGUMENT, Neo4jTypes.NTAny );
+		 private static readonly DefaultParameterValue _defaultParameterValue = new DefaultParameterValue( DEFAULT_TEMPORAL_ARGUMENT, Neo4NetTypes.NTAny );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void registerTemporalFunctions(org.neo4j.kernel.impl.proc.Procedures procedures, org.neo4j.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public static void registerTemporalFunctions(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public static void RegisterTemporalFunctions( Procedures procedures, ProcedureConfig procedureConfig )
 		 {
 			  System.Func<ZoneId> defaultZone = procedureConfig.getDefaultTemporalTimeZone;
@@ -87,13 +87,13 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 
 		 protected internal abstract T Truncate( TemporalUnit unit, TemporalValue input, MapValue fields, System.Func<ZoneId> defaultZone );
 
-		 private static readonly IList<FieldSignature> _inputSignature = singletonList( inputField( "input", Neo4jTypes.NTAny, _defaultParameterValue ) );
+		 private static readonly IList<FieldSignature> _inputSignature = singletonList( inputField( "input", Neo4NetTypes.NTAny, _defaultParameterValue ) );
 		 private static readonly string[] _allowed = new string[] {};
 
 		 private readonly UserFunctionSignature _signature;
 		 private readonly System.Func<ZoneId> _defaultZone;
 
-		 internal TemporalFunction( Neo4jTypes.AnyType result, System.Func<ZoneId> defaultZone )
+		 internal TemporalFunction( Neo4NetTypes.AnyType result, System.Func<ZoneId> defaultZone )
 		 {
 			  string basename = basename( this.GetType() );
 			  Debug.Assert( result.GetType().Name.Equals(basename + "Type"), "result type should match function name" );
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void register(TemporalFunction<?> super, org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private static void register(TemporalFunction<?> super, org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private static void Register<T1>( TemporalFunction<T1> @base, Procedures procedures )
 		 {
 			  procedures.Register( @base );
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerMore(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: void registerMore(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 internal virtual void RegisterMore( Procedures procedures )
 		 {
 			  // Empty by default
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public final org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue Apply( Context ctx, AnyValue[] input )
 		 {
 			  if ( input == null || ( input.Length > 0 && ( input[0] == NO_VALUE || input[0] == null ) ) )
@@ -202,13 +202,13 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 			  public override abstract AnyValue Apply( Context ctx, AnyValue[] input );
 		 }
 
 		 private class Now<T> : SubFunction<T> where T : Neo4Net.Values.AnyValue
 		 {
-			  internal static readonly IList<FieldSignature> Signature = singletonList( inputField( "timezone", Neo4jTypes.NTAny, _defaultParameterValue ) );
+			  internal static readonly IList<FieldSignature> Signature = singletonList( inputField( "timezone", Neo4NetTypes.NTAny, _defaultParameterValue ) );
 			  internal readonly Key<Clock> Key;
 
 			  internal Now( TemporalFunction<T> function, string clock ) : base( function, clock, Signature, string.Format( "Get the current {0} instant using the {1} clock.", Basename( function.GetType() ), clock ) )
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input == null || ( input.Length > 0 && ( input[0] == NO_VALUE || input[0] == null ) ) )
@@ -255,14 +255,14 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 
 		 private class Truncate<T> : SubFunction<T> where T : Neo4Net.Values.AnyValue
 		 {
-			  internal static readonly IList<FieldSignature> Signature = Arrays.asList( inputField( "unit", Neo4jTypes.NTString ), inputField( "input", Neo4jTypes.NTAny ), inputField( "fields", Neo4jTypes.NTMap, nullValue( Neo4jTypes.NTMap ) ) );
+			  internal static readonly IList<FieldSignature> Signature = Arrays.asList( inputField( "unit", Neo4NetTypes.NTString ), inputField( "input", Neo4NetTypes.NTAny ), inputField( "fields", Neo4NetTypes.NTMap, nullValue( Neo4NetTypes.NTMap ) ) );
 
 			  internal Truncate( TemporalFunction<T> function ) : base( function, "truncate", Signature, string.Format( "Truncate the input temporal value to a {0} instant using the specified unit.", Basename( function.GetType() ) ) )
 			  {
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public T apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] args) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public T apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] args) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override T Apply( Context ctx, AnyValue[] args )
 			  {
 					if ( args != null && args.Length >= 2 && args.Length <= 3 )

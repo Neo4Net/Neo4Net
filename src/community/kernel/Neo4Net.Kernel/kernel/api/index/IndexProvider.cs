@@ -38,10 +38,10 @@ namespace Neo4Net.Kernel.Api.Index
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 	/// <summary>
-	/// Contract for implementing an index in Neo4j.
+	/// Contract for implementing an index in Neo4Net.
 	/// 
 	/// This is a sensitive thing to implement, because it manages data that is controlled by
-	/// Neo4js logical log. As such, the implementation needs to behave under some rather strict rules.
+	/// Neo4Nets logical log. As such, the implementation needs to behave under some rather strict rules.
 	/// 
 	/// <h3>Populating the index</h3>
 	/// 
@@ -66,10 +66,10 @@ namespace Neo4Net.Kernel.Api.Index
 	/// 
 	/// Once population is done, the index needs to be "flipped" to an online mode of operation.
 	/// 
-	/// The index will be notified, through the <seealso cref="org.neo4j.kernel.api.index.IndexPopulator.close(bool)"/>
+	/// The index will be notified, through the <seealso cref="org.Neo4Net.kernel.api.index.IndexPopulator.close(bool)"/>
 	/// method, that population is done, and that the index should turn it's state to <seealso cref="InternalIndexState.ONLINE"/> or
 	/// <seealso cref="InternalIndexState.FAILED"/> depending on the value given to the
-	/// <seealso cref="org.neo4j.kernel.api.index.IndexPopulator.close(bool) close method"/>.
+	/// <seealso cref="org.Neo4Net.kernel.api.index.IndexPopulator.close(bool) close method"/>.
 	/// 
 	/// If the index is persisted to disk, this is a <i>vital</i> part of the index lifecycle.
 	/// For a persisted index, the index MUST NOT store the state as online unless it first guarantees that the entire index
@@ -196,7 +196,7 @@ namespace Neo4Net.Kernel.Api.Index
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			 public override string getPopulationFailure( StoreIndexDescriptor descriptor )
 			 {
 				  throw new System.InvalidOperationException();
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <returns> The blessed index descriptor that will be used for creating the index. </returns>
 		 /// <exception cref="MisconfiguredIndexException"> if the index descriptor cannot be blessed by this provider for some reason. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexDescriptor bless(org.neo4j.storageengine.api.schema.IndexDescriptor index) throws org.neo4j.internal.kernel.api.exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexDescriptor bless(org.Neo4Net.storageengine.api.schema.IndexDescriptor index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MisconfiguredIndexException
 		 public virtual IndexDescriptor Bless( IndexDescriptor index )
 		 {
 			  // Normal schema indexes accept all configurations by default. More specialised or custom providers, such as the fulltext index provider,
@@ -245,7 +245,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// Used for updating an index once initial population has completed.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract IndexAccessor getOnlineAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException;
+//ORIGINAL LINE: public abstract IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException;
 		 public abstract IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig );
 
 		 /// <summary>
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <returns> failure, in the form of a stack trace, that happened during population. </returns>
 		 /// <exception cref="IllegalStateException"> If there was no failure during population. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException;
+//ORIGINAL LINE: public abstract String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException;
 		 public abstract string GetPopulationFailure( StoreIndexDescriptor descriptor );
 
 		 /// <summary>
@@ -329,7 +329,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			  public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 			  {
 					return null;

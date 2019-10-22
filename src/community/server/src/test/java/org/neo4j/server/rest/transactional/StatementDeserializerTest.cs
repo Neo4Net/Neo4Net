@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.transactional
 
 
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -39,9 +39,9 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 
 	public class StatementDeserializerTest
 	{
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			  string json = "{ \"timeout\" : 200, \"statements\" : [ { \"statement\" : \"ignored\", \"parameters\" : {}} ] }";
 
-			  AssertYieldsErrors( json, new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request. Expected first field to be 'statements', but was 'timeout'." ) ) );
+			  AssertYieldsErrors( json, new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request. Expected first field to be 'statements', but was 'timeout'." ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -201,20 +201,20 @@ namespace Neo4Net.Server.rest.transactional
 //ORIGINAL LINE: @Test public void shouldNotThrowButReportErrorOnInvalidInput()
 		 public virtual void ShouldNotThrowButReportErrorOnInvalidInput()
 		 {
-			  AssertYieldsErrors( "{}", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to " + "deserialize request. " + "Expected [START_OBJECT, FIELD_NAME, START_ARRAY], " + "found [START_OBJECT, END_OBJECT, null]." ) ) );
+			  AssertYieldsErrors( "{}", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to " + "deserialize request. " + "Expected [START_OBJECT, FIELD_NAME, START_ARRAY], " + "found [START_OBJECT, END_OBJECT, null]." ) ) );
 
-			  AssertYieldsErrors( "{ \"statements\":\"WAIT WAT A STRING NOO11!\" }", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to " + "deserialize request. Expected [START_OBJECT, FIELD_NAME, START_ARRAY], found [START_OBJECT, " + "FIELD_NAME, VALUE_STRING]." ) ) );
+			  AssertYieldsErrors( "{ \"statements\":\"WAIT WAT A STRING NOO11!\" }", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to " + "deserialize request. Expected [START_OBJECT, FIELD_NAME, START_ARRAY], found [START_OBJECT, " + "FIELD_NAME, VALUE_STRING]." ) ) );
 
-			  AssertYieldsErrors( "[{]}", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Unexpected close marker ']': " + "expected '}' " + "(for OBJECT starting at [Source: TestInputStream; line: 1, column: 1])\n " + "at [Source: TestInputStream; line: 1, column: 4]" ) ) );
+			  AssertYieldsErrors( "[{]}", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Unexpected close marker ']': " + "expected '}' " + "(for OBJECT starting at [Source: TestInputStream; line: 1, column: 1])\n " + "at [Source: TestInputStream; line: 1, column: 4]" ) ) );
 
-			  AssertYieldsErrors( "{ \"statements\" : \"ITS A STRING\" }", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request. " + "Expected [START_OBJECT, FIELD_NAME, START_ARRAY], " + "found [START_OBJECT, FIELD_NAME, VALUE_STRING]." ) ) );
+			  AssertYieldsErrors( "{ \"statements\" : \"ITS A STRING\" }", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request. " + "Expected [START_OBJECT, FIELD_NAME, START_ARRAY], " + "found [START_OBJECT, FIELD_NAME, VALUE_STRING]." ) ) );
 
-			  AssertYieldsErrors( "{ \"statements\" : [ { \"statement\" : [\"dd\"] } ] }", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Can not deserialize instance of" + " java.lang.String out of START_ARRAY token\n at [Source: TestInputStream; line: 1, " + "column: 22]" ) ) );
+			  AssertYieldsErrors( "{ \"statements\" : [ { \"statement\" : [\"dd\"] } ] }", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Can not deserialize instance of" + " java.lang.String out of START_ARRAY token\n at [Source: TestInputStream; line: 1, " + "column: 22]" ) ) );
 
-			  AssertYieldsErrors( "{ \"statements\" : [ { \"statement\" : \"stmt\", \"parameters\" : [\"AN ARRAY!!\"] } ] }", new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Can not deserialize instance of" + " java.util.LinkedHashMap out of START_ARRAY token\n at [Source: TestInputStream; " + "line: 1, column: 42]" ) ) );
+			  AssertYieldsErrors( "{ \"statements\" : [ { \"statement\" : \"stmt\", \"parameters\" : [\"AN ARRAY!!\"] } ] }", new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request: Can not deserialize instance of" + " java.util.LinkedHashMap out of START_ARRAY token\n at [Source: TestInputStream; " + "line: 1, column: 42]" ) ) );
 		 }
 
-		 private void AssertYieldsErrors( string json, params Neo4jError[] expectedErrors )
+		 private void AssertYieldsErrors( string json, params Neo4NetError[] expectedErrors )
 		 {
 			  StatementDeserializer de = new StatementDeserializer( new ByteArrayInputStreamAnonymousInnerClass( this, UTF8.encode( json ) ) );
 			  while ( de.MoveNext() )
@@ -222,15 +222,15 @@ namespace Neo4Net.Server.rest.transactional
 					de.Current;
 			  }
 
-			  IEnumerator<Neo4jError> actual = de.Errors();
-			  IEnumerator<Neo4jError> expected = asList( expectedErrors ).GetEnumerator();
+			  IEnumerator<Neo4NetError> actual = de.Errors();
+			  IEnumerator<Neo4NetError> expected = asList( expectedErrors ).GetEnumerator();
 			  while ( actual.MoveNext() )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertTrue( expected.hasNext() );
-					Neo4jError error = actual.Current;
+					Neo4NetError error = actual.Current;
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
-					Neo4jError expectedError = expected.next();
+					Neo4NetError expectedError = expected.next();
 
 					assertThat( error.Message, equalTo( expectedError.Message ) );
 					assertThat( error.Status(), equalTo(expectedError.Status()) );

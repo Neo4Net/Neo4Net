@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,17 +16,17 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.impl.pagecache
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 
 	/// <summary>
 	/// The page cache warmer profiles the page cache to figure out what data is in memory and what is not, and uses those
@@ -84,14 +84,14 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.neo4j.graphdb.Resource addFilesTo(java.util.Collection<org.neo4j.storageengine.api.StoreFileMetadata> coll) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<org.Neo4Net.storageengine.api.StoreFileMetadata> coll) throws java.io.IOException
 		 public override Resource AddFilesTo( ICollection<StoreFileMetadata> coll )
 		 {
 			 lock ( this )
 			 {
 				  if ( _stopped )
 				  {
-						return Neo4Net.Graphdb.Resource_Fields.Empty;
+						return Neo4Net.GraphDb.Resource_Fields.Empty;
 				  }
 				  IList<PagedFile> files = _pageCache.listExistingMappings();
 				  Profile[] existingProfiles = FindExistingProfiles( files );
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long reheat(org.neo4j.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
+//ORIGINAL LINE: private long reheat(org.Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
 		 private long Reheat( PagedFile file, Profile[] existingProfiles )
 		 {
 			  Optional<Profile> savedProfile = FilterRelevant( existingProfiles, file ).sorted( System.Collections.IComparer.reverseOrder() ).filter(this.verifyChecksum).findFirst();
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long profile(org.neo4j.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
+//ORIGINAL LINE: private long profile(org.Neo4Net.io.pagecache.PagedFile file, Profile[] existingProfiles) throws java.io.IOException
 		 private long Profile( PagedFile file, Profile[] existingProfiles )
 		 {
 			  long pagesInMemory = 0;

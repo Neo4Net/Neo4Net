@@ -23,7 +23,7 @@
 namespace Neo4Net.Helpers
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.util.Preconditions.requirePositive;
+   //	import static org.Neo4Net.util.Preconditions.requirePositive;
 
    /// @deprecated This class will be removed from public API in 4.0.
    [Obsolete("This class will be removed from public API in 4.0.")]

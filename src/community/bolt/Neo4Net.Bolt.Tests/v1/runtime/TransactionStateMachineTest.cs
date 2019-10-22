@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
 	using BoltResultHandle = Neo4Net.Bolt.runtime.BoltResultHandle;
 	using Bookmark = Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -74,14 +74,14 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.security.auth.AuthenticationResult.AUTH_DISABLED;
+//	import static org.Neo4Net.bolt.security.auth.AuthenticationResult.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class TransactionStateMachineTest
 	{
 		 private static readonly string _periodicCommitQuery = "USING PERIODIC COMMIT 1 " +
-					"LOAD CSV FROM ''https://neo4j.com/test.csv'' AS line " +
+					"LOAD CSV FROM ''https://Neo4Net.com/test.csv'' AS line " +
 					"CREATE (:Node {id: line[0], name: line[1]})";
 
 		 private TransactionStateMachineV1SPI _stateMachineSPI;
@@ -163,7 +163,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldAwaitSingleBookmark()
 		 {
-			  MapValue @params = Map( "bookmark", "neo4j:bookmark:v1:tx15" );
+			  MapValue @params = Map( "bookmark", "Neo4Net:bookmark:v1:tx15" );
 			  _stateMachine.beginTransaction( Bookmark.fromParamsOrNull( @params ) );
 			  verify( _stateMachineSPI ).awaitUpToDate( 15 );
 		 }
@@ -173,7 +173,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldAwaitMultipleBookmarks()
 		 {
-			  MapValue @params = Map( "bookmarks", asList( "neo4j:bookmark:v1:tx15", "neo4j:bookmark:v1:tx5", "neo4j:bookmark:v1:tx92", "neo4j:bookmark:v1:tx9" ) );
+			  MapValue @params = Map( "bookmarks", asList( "Neo4Net:bookmark:v1:tx15", "Neo4Net:bookmark:v1:tx5", "Neo4Net:bookmark:v1:tx92", "Neo4Net:bookmark:v1:tx9" ) );
 			  _stateMachine.beginTransaction( Bookmark.fromParamsOrNull( @params ) );
 			  verify( _stateMachineSPI ).awaitUpToDate( 92 );
 		 }
@@ -183,7 +183,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldAwaitMultipleBookmarksWhenBothSingleAndMultipleSupplied()
 		 {
-			  MapValue @params = Map( "bookmark", "neo4j:bookmark:v1:tx42", "bookmarks", asList( "neo4j:bookmark:v1:tx47", "neo4j:bookmark:v1:tx67", "neo4j:bookmark:v1:tx45" ) );
+			  MapValue @params = Map( "bookmark", "Neo4Net:bookmark:v1:tx42", "bookmarks", asList( "Neo4Net:bookmark:v1:tx47", "Neo4Net:bookmark:v1:tx67", "Neo4Net:bookmark:v1:tx45" ) );
 			  _stateMachine.beginTransaction( Bookmark.fromParamsOrNull( @params ) );
 			  verify( _stateMachineSPI ).awaitUpToDate( 67 );
 		 }
@@ -554,7 +554,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.neo4j.kernel.api.KernelTransaction transaction) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.Neo4Net.kernel.api.KernelTransaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static TransactionStateMachineV1SPI NewTransactionStateMachineSPI( KernelTransaction transaction )
 		 {
 			  BoltResultHandle resultHandle = NewResultHandle();
@@ -567,7 +567,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.neo4j.kernel.api.KernelTransaction transaction, org.neo4j.bolt.runtime.BoltResultHandle resultHandle) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static TransactionStateMachineV1SPI newTransactionStateMachineSPI(org.Neo4Net.kernel.api.KernelTransaction transaction, org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static TransactionStateMachineV1SPI NewTransactionStateMachineSPI( KernelTransaction transaction, BoltResultHandle resultHandle )
 		 {
 			  TransactionStateMachineV1SPI stateMachineSPI = mock( typeof( TransactionStateMachineV1SPI ) );
@@ -579,7 +579,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.bolt.runtime.BoltResultHandle newResultHandle() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.BoltResultHandle newResultHandle() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static BoltResultHandle NewResultHandle()
 		 {
 			  BoltResultHandle resultHandle = mock( typeof( BoltResultHandle ) );
@@ -590,7 +590,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.bolt.runtime.BoltResultHandle newResultHandle(Throwable t) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.BoltResultHandle newResultHandle(Throwable t) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static BoltResultHandle NewResultHandle( Exception t )
 		 {
 			  BoltResultHandle resultHandle = mock( typeof( BoltResultHandle ) );

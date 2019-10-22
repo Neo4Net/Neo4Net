@@ -23,26 +23,26 @@ using System.Collections.Generic;
 namespace Neo4Net.Values.Storable
 {
 
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.datetime;
+//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.date;
+//	import static org.Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.duration;
+//	import static org.Neo4Net.values.storable.DurationValue.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalDateTimeValue.localDateTime;
+//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.localTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.TimeValue.time;
+//	import static org.Neo4Net.values.storable.TimeValue.time;
 
 	/// <summary>
 	/// Entry point to the values library.
 	/// <para>
-	/// The values library centers around the Value class, which represents a value in Neo4j. Values can be correctly
+	/// The values library centers around the Value class, which represents a value in Neo4Net. Values can be correctly
 	/// checked for equality over different primitive representations, including consistent hashCodes and sorting.
 	/// </para>
 	/// <para>

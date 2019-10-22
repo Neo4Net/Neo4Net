@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.monitoring
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Action<org.neo4j.kernel.monitoring.VmPauseMonitor.VmPauseInfo> listener = mock(System.Action.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Action<org.Neo4Net.kernel.monitoring.VmPauseMonitor.VmPauseInfo> listener = mock(System.Action.class);
 		 private readonly System.Action<VmPauseInfo> _listener = mock( typeof( System.Action ) );
 		 private readonly JobHandle _jobHandle = mock( typeof( JobHandle ) );
 		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );

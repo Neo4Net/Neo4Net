@@ -36,8 +36,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using LongSets = org.eclipse.collections.impl.factory.primitive.LongSets;
 
 
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.index;
 	using Neo4Net.Helpers.Collections;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using IOUtils = Neo4Net.Io.IOUtils;
@@ -62,7 +62,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 internal interface RelationshipLookup
 		 {
-			  EntityId Lookup( long id );
+			  IEntityId Lookup( long id );
 		 }
 
 		 internal LuceneBatchInserterIndex( File dbStoreDir, IndexIdentifier identifier, IDictionary<string, string> config, RelationshipLookup relationshipLookup )
@@ -80,7 +80,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  try
 			  {
-					Document document = IndexType.NewDocument( EntityId( id ) );
+					Document document = IndexType.NewDocument( IEntityId( id ) );
 					foreach ( KeyValuePair<string, object> entry in properties.SetOfKeyValuePairs() )
 					{
 						 string key = entry.Key;
@@ -100,17 +100,17 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 private EntityId EntityId( long id )
+		 private IEntityId IEntityId( long id )
 		 {
 			  if ( _identifier.entityType == IndexEntityType.Node )
 			  {
-					return new EntityId_IdData( id );
+					return new IEntityId_IdData( id );
 			  }
 
 			  return _relationshipLookup.lookup( id );
 		 }
 
-		 private void AddSingleProperty( long entityId, Document document, string key, object value )
+		 private void AddSingleProperty( long IEntityId, Document document, string key, object value )
 		 {
 			  foreach ( object oneValue in IoPrimitiveUtils.asArray( value ) )
 			  {
@@ -122,12 +122,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 						 // If we know that the index was created this session
 						 // then we can go ahead and add stuff to the cache directly
 						 // when adding to the index.
-						 AddToCache( entityId, key, oneValue );
+						 AddToCache( IEntityId, key, oneValue );
 					}
 			  }
 		 }
 
-		 private void AddToCache( long entityId, string key, object value )
+		 private void AddToCache( long IEntityId, string key, object value )
 		 {
 			  if ( this._cache == null )
 			  {
@@ -144,7 +144,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 						 ids = new HashSet<EntityId>();
 						 cache.Put( valueAsString, ids );
 					}
-					ids.Add( new EntityId_IdData( entityId ) );
+					ids.Add( new IEntityId_IdData( IEntityId ) );
 			  }
 		 }
 
@@ -183,13 +183,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return null;
 		 }
 
-		 public override void UpdateOrAdd( long entityId, IDictionary<string, object> properties )
+		 public override void UpdateOrAdd( long IEntityId, IDictionary<string, object> properties )
 		 {
 			  try
 			  {
-					RemoveFromCache( entityId );
-					_writer.deleteDocuments( _type.idTermQuery( entityId ) );
-					Add( entityId, properties );
+					RemoveFromCache( IEntityId );
+					_writer.deleteDocuments( _type.idTermQuery( IEntityId ) );
+					Add( IEntityId, properties );
 			  }
 			  catch ( IOException e )
 			  {
@@ -198,13 +198,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void removeFromCache(long entityId) throws java.io.IOException
-		 private void RemoveFromCache( long entityId )
+//ORIGINAL LINE: private void removeFromCache(long IEntityId) throws java.io.IOException
+		 private void RemoveFromCache( long IEntityId )
 		 {
 			  IndexSearcher searcher = _searcherManager.acquire();
 			  try
 			  {
-					Query query = _type.idTermQuery( entityId );
+					Query query = _type.idTermQuery( IEntityId );
 					TopDocs docs = searcher.search( query, 1 );
 					if ( docs.totalHits > 0 )
 					{
@@ -213,7 +213,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 						 {
 							  string key = field.name();
 							  object value = field.stringValue();
-							  RemoveFromCache( entityId, key, value );
+							  RemoveFromCache( IEntityId, key, value );
 						 }
 					}
 			  }
@@ -223,7 +223,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 private void RemoveFromCache( long entityId, string key, object value )
+		 private void RemoveFromCache( long IEntityId, string key, object value )
 		 {
 			  if ( this._cache == null )
 			  {
@@ -237,7 +237,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					ICollection<EntityId> ids = cache.Get( valueAsString );
 					if ( ids != null )
 					{
-						 ids.remove( new EntityId_IdData( entityId ) );
+						 ids.remove( new IEntityId_IdData( IEntityId ) );
 					}
 			  }
 		 }
@@ -317,7 +317,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.index.IndexHits<long> query(org.apache.lucene.search.Query query, final String key, final Object value)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.index.IndexHits<long> query(org.apache.lucene.search.Query query, final String key, final Object value)
 		 private IndexHits<long> Query( Query query, string key, object value )
 		 {
 			  IndexSearcher searcher;
@@ -382,7 +382,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			 {
 				  if ( base.fetchNext() )
 				  {
-						ids.add( new EntityId_IdData( next ) );
+						ids.add( new IEntityId_IdData( next ) );
 						return true;
 				  }
 				  outerInstance.addToCache( ids, _key, _value );
@@ -391,7 +391,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.index.IndexHits<long> wrapIndexHits(final org.neo4j.kernel.api.ExplicitIndexHits ids)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.index.IndexHits<long> wrapIndexHits(final org.Neo4Net.kernel.api.ExplicitIndexHits ids)
 		 private IndexHits<long> WrapIndexHits( ExplicitIndexHits ids )
 		 {
 			  return new IndexHitsAnonymousInnerClass( this, ids );
@@ -495,7 +495,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  File dir = new File( dbStoreDir, "index" );
 			  if ( !dir.exists() && !dir.mkdirs() )
 			  {
-					throw new Exception( "Unable to create directory path[" + dir.AbsolutePath + "] for Neo4j store." );
+					throw new Exception( "Unable to create directory path[" + dir.AbsolutePath + "] for Neo4Net store." );
 			  }
 			  return dir;
 		 }

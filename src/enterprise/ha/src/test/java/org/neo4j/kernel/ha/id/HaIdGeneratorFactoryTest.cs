@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.id
 {
@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.ha.id
 
 	using ComException = Neo4Net.com.ComException;
 	using Neo4Net.com;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Neo4Net.Kernel.ha;
 	using RequestContextFactory = Neo4Net.Kernel.ha.com.RequestContextFactory;
 	using Master = Neo4Net.Kernel.ha.com.master.Master;
@@ -66,13 +66,13 @@ namespace Neo4Net.Kernel.ha.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
+//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
 
 
 	public class HaIdGeneratorFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 		 private Master _master;
 		 private DelegateInvocationHandler<Master> _masterDelegate;
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.ha.id
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.TransientTransactionFailureException.class) public void shouldTranslateComExceptionsIntoTransientTransactionFailures()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransientTransactionFailureException.class) public void shouldTranslateComExceptionsIntoTransientTransactionFailures()
 		 public virtual void ShouldTranslateComExceptionsIntoTransientTransactionFailures()
 		 {
 			  when( _master.allocateIds( Null, any( typeof( IdType ) ) ) ).thenThrow( new ComException() );
@@ -284,7 +284,7 @@ namespace Neo4Net.Kernel.ha.id
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.com.Response<IdAllocation> response(IdAllocation firstValue, IdAllocation... additionalValues)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.com.Response<IdAllocation> response(IdAllocation firstValue, IdAllocation... additionalValues)
 		 private Response<IdAllocation> Response( IdAllocation firstValue, params IdAllocation[] additionalValues )
 		 {
 			  Response<IdAllocation> response = mock( typeof( Response ) );

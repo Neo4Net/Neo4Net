@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -54,27 +54,27 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.InternalFlatFileRealm.IS_SUSPENDED;
+//	import static org.Neo4Net.server.security.enterprise.auth.InternalFlatFileRealm.IS_SUSPENDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.ProcedureInteractionTestBase.ClassWithProcedures.exceptionsInProcedure;
+//	import static org.Neo4Net.server.security.enterprise.auth.ProcedureInteractionTestBase.ClassWithProcedures.exceptionsInProcedure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 
 	public abstract class AuthProceduresInteractionTestBase<S> : ProcedureInteractionTestBase<S>
 	{
@@ -775,7 +775,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnUsersWithRoles()
 		 {
-			  IDictionary<string, object> expected = map( "adminSubject", ListOf( ADMIN ), "readSubject", ListOf( READER ), "schemaSubject", ListOf( ARCHITECT ), "writeSubject", ListOf( READER, PUBLISHER ), "editorSubject", ListOf( EDITOR ), "pwdSubject", ListOf(), "noneSubject", ListOf(), "neo4j", ListOf(ADMIN) );
+			  IDictionary<string, object> expected = map( "adminSubject", ListOf( ADMIN ), "readSubject", ListOf( READER ), "schemaSubject", ListOf( ARCHITECT ), "writeSubject", ListOf( READER, PUBLISHER ), "editorSubject", ListOf( EDITOR ), "pwdSubject", ListOf(), "noneSubject", ListOf(), "Neo4Net", ListOf(ADMIN) );
 			  UserManager.addRoleToUser( READER, "writeSubject" );
 			  AssertSuccess( AdminSubject, "CALL dbms.security.listUsers()", r => assertKeyIsMap( r, "username", "roles", ValueOf( expected ) ) );
 		 }
@@ -785,7 +785,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnUsersWithFlags()
 		 {
-			  IDictionary<string, object> expected = map( "adminSubject", ListOf(), "readSubject", ListOf(), "schemaSubject", ListOf(), "editorSubject", ListOf(), "writeSubject", ListOf(IS_SUSPENDED), "pwdSubject", ListOf(_pwdChange, IS_SUSPENDED), "noneSubject", ListOf(), "neo4j", ListOf(_pwdChange.ToLower()) );
+			  IDictionary<string, object> expected = map( "adminSubject", ListOf(), "readSubject", ListOf(), "schemaSubject", ListOf(), "editorSubject", ListOf(), "writeSubject", ListOf(IS_SUSPENDED), "pwdSubject", ListOf(_pwdChange, IS_SUSPENDED), "noneSubject", ListOf(), "Neo4Net", ListOf(_pwdChange.ToLower()) );
 			  UserManager.suspendUser( "writeSubject" );
 			  UserManager.suspendUser( "pwdSubject" );
 			  AssertSuccess( AdminSubject, "CALL dbms.security.listUsers()", r => assertKeyIsMap( r, "username", "flags", ValueOf( expected ) ) );
@@ -827,7 +827,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //ORIGINAL LINE: @Test public void shouldReturnRolesWithUsers()
 		 public virtual void ShouldReturnRolesWithUsers()
 		 {
-			  IDictionary<string, object> expected = map( ADMIN, ListOf( "adminSubject", "neo4j" ), READER, ListOf( "readSubject" ), ARCHITECT, ListOf( "schemaSubject" ), PUBLISHER, ListOf( "writeSubject" ), EDITOR, ListOf( "editorSubject" ), "empty", ListOf() );
+			  IDictionary<string, object> expected = map( ADMIN, ListOf( "adminSubject", "Neo4Net" ), READER, ListOf( "readSubject" ), ARCHITECT, ListOf( "schemaSubject" ), PUBLISHER, ListOf( "writeSubject" ), EDITOR, ListOf( "editorSubject" ), "empty", ListOf() );
 			  AssertSuccess( AdminSubject, "CALL dbms.security.listRoles()", r => assertKeyIsMap( r, "role", "users", ValueOf( expected ) ) );
 		 }
 
@@ -891,7 +891,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //ORIGINAL LINE: @Test public void shouldListUsersForRole()
 		 public virtual void ShouldListUsersForRole()
 		 {
-			  AssertSuccess( AdminSubject, "CALL dbms.security.listUsersForRole('admin') YIELD value as users RETURN users", r => assertKeyIs( r, "users", "adminSubject", "neo4j" ) );
+			  AssertSuccess( AdminSubject, "CALL dbms.security.listUsersForRole('admin') YIELD value as users RETURN users", r => assertKeyIs( r, "users", "adminSubject", "Neo4Net" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

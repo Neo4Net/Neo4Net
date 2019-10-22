@@ -37,7 +37,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="descriptor"> description of the index </param>
 		 /// <returns> the newly created index </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 IndexReference IndexCreate( SchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -47,7 +47,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="name"> name of the index </param>
 		 /// <returns> the newly created index </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> name) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 IndexReference IndexCreate( SchemaDescriptor descriptor, Optional<string> name );
 
 		 /// <summary>
@@ -58,7 +58,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="name"> name of the index </param>
 		 /// <returns> the newly created index </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider, java.util.Optional<String> name) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider, java.util.Optional<String> name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 IndexReference IndexCreate( SchemaDescriptor descriptor, string provider, Optional<string> name );
 
 		 /// <summary>
@@ -66,7 +66,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="index"> the index to drop </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void indexDrop(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: void indexDrop(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 void IndexDrop( IndexReference index );
 
 		 /// <summary>
@@ -74,7 +74,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="descriptor"> description of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor UniquePropertyConstraintCreate( SchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -83,7 +83,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="descriptor"> description of the constraint </param>
 		 /// <param name="provider"> name of the desired index provider implementation </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor UniquePropertyConstraintCreate( SchemaDescriptor descriptor, string provider );
 
 		 /// <summary>
@@ -91,7 +91,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="descriptor"> description of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor NodeKeyConstraintCreate( LabelSchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -100,7 +100,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="descriptor"> description of the constraint </param>
 		 /// <param name="provider"> name of the desired index provider implementation </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor NodeKeyConstraintCreate( LabelSchemaDescriptor descriptor, string provider );
 
 		 /// <summary>
@@ -108,7 +108,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="descriptor"> description of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodePropertyExistenceConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodePropertyExistenceConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor NodePropertyExistenceConstraintCreate( LabelSchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -116,7 +116,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="descriptor"> description of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor relationshipPropertyExistenceConstraintCreate(org.neo4j.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor relationshipPropertyExistenceConstraintCreate(org.Neo4Net.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 ConstraintDescriptor RelationshipPropertyExistenceConstraintCreate( RelationTypeSchemaDescriptor descriptor );
 
 		 /// <summary>
@@ -124,7 +124,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="descriptor"> description of the constraint </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void constraintDrop(org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: void constraintDrop(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 void ConstraintDrop( ConstraintDescriptor descriptor );
 	}
 

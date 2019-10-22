@@ -30,18 +30,18 @@ namespace Neo4Net.Server.rest.web
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
@@ -78,19 +78,19 @@ namespace Neo4Net.Server.rest.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.firstOrNull;
+//	import static org.Neo4Net.helpers.collection.Iterables.firstOrNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestAccess.nodeUriToId;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.nodeUriToId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 
 	public class DatabaseActionsTest
 	{
@@ -258,7 +258,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRemoveNodeWithNoRelationsFromDBOnDelete() throws NodeNotFoundException, org.neo4j.graphdb.ConstraintViolationException
+//ORIGINAL LINE: @Test public void shouldRemoveNodeWithNoRelationsFromDBOnDelete() throws NodeNotFoundException, org.Neo4Net.graphdb.ConstraintViolationException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRemoveNodeWithNoRelationsFromDBOnDelete()
 		 {
@@ -635,7 +635,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private void verifyRelReps(int expectedSize, org.neo4j.server.rest.repr.ListRepresentation repr)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private void verifyRelReps(int expectedSize, org.Neo4Net.server.rest.repr.ListRepresentation repr)
 		 private void VerifyRelReps( int expectedSize, ListRepresentation repr )
 		 {
 			  IList<object> relreps = serialize( repr );
@@ -646,7 +646,7 @@ namespace Neo4Net.Server.rest.web
 			  }
 		 }
 
-		 private void AssertHasProperties( PropertyContainer container, IDictionary<string, object> properties )
+		 private void AssertHasProperties( IPropertyContainer container, IDictionary<string, object> properties )
 		 {
 			  foreach ( KeyValuePair<string, object> entry in properties.SetOfKeyValuePairs() )
 			  {
@@ -916,7 +916,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.NotFoundException.class) public void shouldHandleNoFoundPathsCorrectly()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void shouldHandleNoFoundPathsCorrectly()
 		 public virtual void ShouldHandleNoFoundPathsCorrectly()
 		 {
 			  long[] nodes = CreateMoreComplexGraph();

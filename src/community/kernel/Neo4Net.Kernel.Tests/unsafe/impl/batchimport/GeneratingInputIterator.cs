@@ -115,7 +115,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean next(org.neo4j.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
 			  public override bool Next( InputEntityVisitor visitor )
 			  {
 					if ( ItemInBatch < Count )

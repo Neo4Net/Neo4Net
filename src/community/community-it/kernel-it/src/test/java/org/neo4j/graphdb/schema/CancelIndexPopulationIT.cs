@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.schema
+namespace Neo4Net.GraphDb.schema
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -32,7 +32,7 @@ namespace Neo4Net.Graphdb.schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.first;
+//	import static org.Neo4Net.helpers.collection.Iterables.first;
 
 	public class CancelIndexPopulationIT
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Graphdb.schema
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

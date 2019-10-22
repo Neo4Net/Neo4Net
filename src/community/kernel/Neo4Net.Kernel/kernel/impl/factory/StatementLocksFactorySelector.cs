@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 /// </summary>
 		 /// <returns> list of available factories. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting List<org.neo4j.kernel.impl.locking.StatementLocksFactory> serviceLoadFactories()
+//ORIGINAL LINE: @VisibleForTesting List<org.Neo4Net.kernel.impl.locking.StatementLocksFactory> serviceLoadFactories()
 		 internal virtual IList<StatementLocksFactory> ServiceLoadFactories()
 		 {
 			  return Iterables.asList( Service.load( typeof( StatementLocksFactory ) ) );

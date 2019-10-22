@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.Kernel.impl.locking.Locks_Client;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.NODE;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite, run from LockingCompatibilityTestSuite.") public class DeadlockCompatibility extends LockingCompatibilityTestSuite.Compatibility

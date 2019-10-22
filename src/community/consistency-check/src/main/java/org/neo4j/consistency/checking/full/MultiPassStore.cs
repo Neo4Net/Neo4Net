@@ -34,21 +34,21 @@ namespace Neo4Net.Consistency.checking.full
 	public abstract class MultiPassStore
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       NODES { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
+//       NODES { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIPS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getRelationshipStore(); } },
+//       RELATIONSHIPS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getRelationshipStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTIES { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getPropertyStore(); } },
+//       PROPERTIES { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getPropertyStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       PROPERTY_KEYS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getPropertyKeyTokenStore(); } },
+//       PROPERTY_KEYS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getPropertyKeyTokenStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       STRINGS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
+//       STRINGS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       ARRAYS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
+//       ARRAYS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getNodeStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       LABELS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getLabelTokenStore(); } },
+//       LABELS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getLabelTokenStore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       RELATIONSHIP_GROUPS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.neo4j.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getRelationshipGroupStore(); } };
+//       RELATIONSHIP_GROUPS { RecordStore<JavaToDotNetGenericWildcard> getRecordStore(org.Neo4Net.kernel.impl.store.StoreAccess storeAccess) { return storeAccess.getRelationshipGroupStore(); } };
 
 		 private static readonly IList<MultiPassStore> valueList = new List<MultiPassStore>();
 

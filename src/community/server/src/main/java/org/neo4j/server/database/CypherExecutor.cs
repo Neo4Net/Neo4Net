@@ -21,13 +21,13 @@ namespace Neo4Net.Server.database
 {
 
 	using ExecutionEngine = Neo4Net.Cypher.Internal.javacompat.ExecutionEngine;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
-	using Neo4jTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4jTransactionalContextFactory;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using TransactionalContextFactory = Neo4Net.Kernel.impl.query.TransactionalContextFactory;
@@ -38,9 +38,9 @@ namespace Neo4Net.Server.database
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpHeaderUtils.getTransactionTimeout;
+//	import static org.Neo4Net.server.web.HttpHeaderUtils.getTransactionTimeout;
 
 	public class CypherExecutor : LifecycleAdapter
 	{
@@ -49,7 +49,7 @@ namespace Neo4Net.Server.database
 		 private ExecutionEngine _executionEngine;
 		 private TransactionalContextFactory _contextFactory;
 
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 		 private GraphDatabaseQueryService _service;
 
 		 public CypherExecutor( Database database, LogProvider logProvider )
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.database
 			  DependencyResolver resolver = _database.Graph.DependencyResolver;
 			  this._executionEngine = ( ExecutionEngine ) resolver.ResolveDependency( typeof( QueryExecutionEngine ) );
 			  this._service = resolver.ResolveDependency( typeof( GraphDatabaseQueryService ) );
-			  this._contextFactory = Neo4jTransactionalContextFactory.create( this._service, _locker );
+			  this._contextFactory = Neo4NetTransactionalContextFactory.create( this._service, _locker );
 		 }
 
 		 public override void Stop()

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core
 {
@@ -32,68 +32,68 @@ namespace Neo4Net.causalclustering.core
 	using Internal = Neo4Net.Configuration.Internal;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
 	using ReplacedBy = Neo4Net.Configuration.ReplacedBy;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.GZIP;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.GZIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4_HIGH_COMPRESSION;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4_HIGH_COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4_HIGH_COMPRESSION_VALIDATING;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ4_HIGH_COMPRESSION_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ_VALIDATING;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.LZ_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.SNAPPY;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.SNAPPY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.SNAPPY_VALIDATING;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocols.Implementations.SNAPPY_VALIDATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.ADVERTISED_SOCKET_ADDRESS;
+//	import static org.Neo4Net.kernel.configuration.Settings.ADVERTISED_SOCKET_ADDRESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BYTES;
+//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.DOUBLE;
+//	import static org.Neo4Net.kernel.configuration.Settings.DOUBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.DURATION;
+//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.NO_DEFAULT;
+//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.PATH;
+//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING_LIST;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING_LIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.advertisedAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.derivedSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.list;
+//	import static org.Neo4Net.kernel.configuration.Settings.list;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.listenAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.min;
+//	import static org.Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsIgnoreCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsIgnoreCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.prefixSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.prefixSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	[Description("Settings for Causal Clustering")]
 	public class CausalClusteringSettings : LoadableConfig
@@ -105,14 +105,14 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<Duration> LeaderElectionTimeout = setting( "causal_clustering.leader_election_timeout", DURATION, "7s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Configures the time after which we give up trying to bind to a cluster formed of the other initial discovery members.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> cluster_binding_timeout = setting("causal_clustering.cluster_binding_timeout", DURATION, "5m");
+//ORIGINAL LINE: @Internal @Description("Configures the time after which we give up trying to bind to a cluster formed of the other initial discovery members.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> cluster_binding_timeout = setting("causal_clustering.cluster_binding_timeout", DURATION, "5m");
 		 [Description("Configures the time after which we give up trying to bind to a cluster formed of the other initial discovery members.")]
 		 public static readonly Setting<Duration> ClusterBindingTimeout = setting( "causal_clustering.cluster_binding_timeout", DURATION, "5m" );
 
 		 [Description("Prevents the current instance from volunteering to become Raft leader. Defaults to false, and " + "should only be used in exceptional circumstances by expert users. Using this can result in reduced " + "availability for the cluster.")]
 		 public static readonly Setting<bool> RefuseToBeLeader = setting( "causal_clustering.refuse_to_be_leader", BOOLEAN, FALSE );
 
-		 [Description("The name of the database being hosted by this server instance. This configuration setting may be safely ignored " + "unless deploying a multicluster. Instances may be allocated to distinct sub-clusters by assigning them distinct database " + "names using this setting. For instance if you had 6 instances you could form 2 sub-clusters by assigning half " + "the database name \"foo\", half the name \"bar\". The setting value must match exactly between members of the same sub-cluster. " + "This setting is a one-off: once an instance is configured with a database name it may not be changed in future without using " + "neo4j-admin unbind.")]
+		 [Description("The name of the database being hosted by this server instance. This configuration setting may be safely ignored " + "unless deploying a multicluster. Instances may be allocated to distinct sub-clusters by assigning them distinct database " + "names using this setting. For instance if you had 6 instances you could form 2 sub-clusters by assigning half " + "the database name \"foo\", half the name \"bar\". The setting value must match exactly between members of the same sub-cluster. " + "This setting is a one-off: once an instance is configured with a database name it may not be changed in future without using " + "Neo4Net-admin unbind.")]
 		 public static readonly Setting<string> Database = setting( "causal_clustering.database", STRING, "default" );
 
 		 [Description("Enable pre-voting extension to the Raft protocol (this is breaking and must match between the core cluster members)")]
@@ -125,7 +125,7 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<int> LogShippingMaxLag = setting( "causal_clustering.log_shipping_max_lag", INTEGER, "256" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Maximum number of entries in the RAFT in-queue") public static final org.neo4j.graphdb.config.Setting<int> raft_in_queue_size = setting("causal_clustering.raft_in_queue_size", INTEGER, "1024");
+//ORIGINAL LINE: @Internal @Description("Maximum number of entries in the RAFT in-queue") public static final org.Neo4Net.graphdb.config.Setting<int> raft_in_queue_size = setting("causal_clustering.raft_in_queue_size", INTEGER, "1024");
 		 [Description("Maximum number of entries in the RAFT in-queue")]
 		 public static readonly Setting<int> RaftInQueueSize = setting( "causal_clustering.raft_in_queue_size", INTEGER, "1024" );
 
@@ -133,7 +133,7 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<long> RaftInQueueMaxBytes = setting( "causal_clustering.raft_in_queue_max_bytes", BYTES, "2G" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Largest batch processed by RAFT in number of entries") public static final org.neo4j.graphdb.config.Setting<int> raft_in_queue_max_batch = setting("causal_clustering.raft_in_queue_max_batch", INTEGER, "128");
+//ORIGINAL LINE: @Internal @Description("Largest batch processed by RAFT in number of entries") public static final org.Neo4Net.graphdb.config.Setting<int> raft_in_queue_max_batch = setting("causal_clustering.raft_in_queue_max_batch", INTEGER, "128");
 		 [Description("Largest batch processed by RAFT in number of entries")]
 		 public static readonly Setting<int> RaftInQueueMaxBatch = setting( "causal_clustering.raft_in_queue_max_batch", INTEGER, "128" );
 
@@ -210,12 +210,12 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<string> KubernetesServicePortName = setting( "causal_clustering.kubernetes.service_port_name", STRING, NO_DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("The polling interval when attempting to resolve initial_discovery_members from DNS and SRV records.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> discovery_resolution_retry_interval = setting("causal_clustering.discovery_resolution_retry_interval", DURATION, "5s");
+//ORIGINAL LINE: @Internal @Description("The polling interval when attempting to resolve initial_discovery_members from DNS and SRV records.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> discovery_resolution_retry_interval = setting("causal_clustering.discovery_resolution_retry_interval", DURATION, "5s");
 		 [Description("The polling interval when attempting to resolve initial_discovery_members from DNS and SRV records.")]
 		 public static readonly Setting<Duration> DiscoveryResolutionRetryInterval = setting( "causal_clustering.discovery_resolution_retry_interval", DURATION, "5s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Configures the time after which we give up trying to resolve a DNS/SRV record into a list of initial discovery members.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> discovery_resolution_timeout = setting("causal_clustering.discovery_resolution_timeout", DURATION, "5m");
+//ORIGINAL LINE: @Internal @Description("Configures the time after which we give up trying to resolve a DNS/SRV record into a list of initial discovery members.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> discovery_resolution_timeout = setting("causal_clustering.discovery_resolution_timeout", DURATION, "5m");
 		 [Description("Configures the time after which we give up trying to resolve a DNS/SRV record into a list of initial discovery members.")]
 		 public static readonly Setting<Duration> DiscoveryResolutionTimeout = setting( "causal_clustering.discovery_resolution_timeout", DURATION, "5m" );
 
@@ -223,7 +223,7 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<DiscoveryType> DiscoveryType = setting( "causal_clustering.discovery_type", optionsIgnoreCase( typeof( DiscoveryType ) ), DiscoveryType.List.name() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Select the middleware used for cluster topology discovery") public static final org.neo4j.graphdb.config.Setting<org.neo4j.causalclustering.discovery.DiscoveryServiceFactorySelector.DiscoveryImplementation> discovery_implementation = setting("causal_clustering.discovery_implementation", optionsIgnoreCase(org.neo4j.causalclustering.discovery.DiscoveryServiceFactorySelector.DiscoveryImplementation.class), org.neo4j.causalclustering.discovery.DiscoveryServiceFactorySelector.DEFAULT.name());
+//ORIGINAL LINE: @Internal @Description("Select the middleware used for cluster topology discovery") public static final org.Neo4Net.graphdb.config.Setting<org.Neo4Net.causalclustering.discovery.DiscoveryServiceFactorySelector.DiscoveryImplementation> discovery_implementation = setting("causal_clustering.discovery_implementation", optionsIgnoreCase(org.Neo4Net.causalclustering.discovery.DiscoveryServiceFactorySelector.DiscoveryImplementation.class), org.Neo4Net.causalclustering.discovery.DiscoveryServiceFactorySelector.DEFAULT.name());
 		 [Description("Select the middleware used for cluster topology discovery")]
 		 public static readonly Setting<DiscoveryServiceFactorySelector.DiscoveryImplementation> DiscoveryImplementation = setting( "causal_clustering.discovery_implementation", optionsIgnoreCase( typeof( DiscoveryServiceFactorySelector.DiscoveryImplementation ) ), DiscoveryServiceFactorySelector.DEFAULT.name() );
 
@@ -234,17 +234,17 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<int> MiddlewareLoggingLevel = setting( "causal_clustering.middleware_logging.level", INTEGER, Convert.ToString( Level.FINE.intValue() ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Hazelcast license key") public static final org.neo4j.graphdb.config.Setting<String> hazelcast_license_key = setting("hazelcast.license_key", STRING, NO_DEFAULT);
+//ORIGINAL LINE: @Internal @Description("Hazelcast license key") public static final org.Neo4Net.graphdb.config.Setting<String> hazelcast_license_key = setting("hazelcast.license_key", STRING, NO_DEFAULT);
 		 [Description("Hazelcast license key")]
 		 public static readonly Setting<string> HazelcastLicenseKey = setting( "hazelcast.license_key", STRING, NO_DEFAULT );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Parallelism level of default dispatcher used by Akka based cluster topology discovery, including cluster, replicator, and discovery actors") public static final org.neo4j.graphdb.config.Setting<int> middleware_akka_default_parallelism_level = setting("causal_clustering.middleware.akka.default-parallelism", INTEGER, System.Convert.ToString(4));
+//ORIGINAL LINE: @Internal @Description("Parallelism level of default dispatcher used by Akka based cluster topology discovery, including cluster, replicator, and discovery actors") public static final org.Neo4Net.graphdb.config.Setting<int> middleware_akka_default_parallelism_level = setting("causal_clustering.middleware.akka.default-parallelism", INTEGER, System.Convert.ToString(4));
 		 [Description("Parallelism level of default dispatcher used by Akka based cluster topology discovery, including cluster, replicator, and discovery actors")]
 		 public static readonly Setting<int> MiddlewareAkkaDefaultParallelismLevel = setting( "causal_clustering.middleware.akka.default-parallelism", INTEGER, Convert.ToString( 4 ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Parallelism level of dispatcher used for communication from Akka based cluster topology discovery ") public static final org.neo4j.graphdb.config.Setting<int> middleware_akka_sink_parallelism_level = setting("causal_clustering.middleware.akka.sink-parallelism", INTEGER, System.Convert.ToString(2));
+//ORIGINAL LINE: @Internal @Description("Parallelism level of dispatcher used for communication from Akka based cluster topology discovery ") public static final org.Neo4Net.graphdb.config.Setting<int> middleware_akka_sink_parallelism_level = setting("causal_clustering.middleware.akka.sink-parallelism", INTEGER, System.Convert.ToString(2));
 		 [Description("Parallelism level of dispatcher used for communication from Akka based cluster topology discovery ")]
 		 public static readonly Setting<int> MiddlewareAkkaSinkParallelismLevel = setting( "causal_clustering.middleware.akka.sink-parallelism", INTEGER, Convert.ToString( 2 ) );
 
@@ -253,37 +253,37 @@ namespace Neo4Net.causalclustering.core
 		     setting descriptions copied from reference.conf in akka-cluster
 		  */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "How often keep-alive heartbeat messages should be sent to each connection.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> akka_failure_detector_heartbeat_interval = setting("causal_clustering.middleware.akka.failure_detector.heartbeat_interval", DURATION, "1s");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "How often keep-alive heartbeat messages should be sent to each connection.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> akka_failure_detector_heartbeat_interval = setting("causal_clustering.middleware.akka.failure_detector.heartbeat_interval", DURATION, "1s");
 		 [Description("Akka cluster phi accrual failure detector. " + "How often keep-alive heartbeat messages should be sent to each connection.")]
 		 public static readonly Setting<Duration> AkkaFailureDetectorHeartbeatInterval = setting( "causal_clustering.middleware.akka.failure_detector.heartbeat_interval", DURATION, "1s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Defines the failure detector threshold. " + "A low threshold is prone to generate many wrong suspicions but ensures " + "a quick detection in the event of a real crash. Conversely, a high " + "threshold generates fewer mistakes but needs more time to detect actual crashes.") public static final org.neo4j.graphdb.config.Setting<double> akka_failure_detector_threshold = setting("causal_clustering.middleware.akka.failure_detector.threshold", DOUBLE, "10.0");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Defines the failure detector threshold. " + "A low threshold is prone to generate many wrong suspicions but ensures " + "a quick detection in the event of a real crash. Conversely, a high " + "threshold generates fewer mistakes but needs more time to detect actual crashes.") public static final org.Neo4Net.graphdb.config.Setting<double> akka_failure_detector_threshold = setting("causal_clustering.middleware.akka.failure_detector.threshold", DOUBLE, "10.0");
 		 [Description("Akka cluster phi accrual failure detector. " + "Defines the failure detector threshold. " + "A low threshold is prone to generate many wrong suspicions but ensures " + "a quick detection in the event of a real crash. Conversely, a high " + "threshold generates fewer mistakes but needs more time to detect actual crashes.")]
 		 public static readonly Setting<double> AkkaFailureDetectorThreshold = setting( "causal_clustering.middleware.akka.failure_detector.threshold", DOUBLE, "10.0" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of the samples of inter-heartbeat arrival times to adaptively " + "calculate the failure timeout for connections.") public static final org.neo4j.graphdb.config.Setting<int> akka_failure_detector_max_sample_size = setting("causal_clustering.middleware.akka.failure_detector.max_sample_size", INTEGER, "1000");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of the samples of inter-heartbeat arrival times to adaptively " + "calculate the failure timeout for connections.") public static final org.Neo4Net.graphdb.config.Setting<int> akka_failure_detector_max_sample_size = setting("causal_clustering.middleware.akka.failure_detector.max_sample_size", INTEGER, "1000");
 		 [Description("Akka cluster phi accrual failure detector. " + "Number of the samples of inter-heartbeat arrival times to adaptively " + "calculate the failure timeout for connections.")]
 		 public static readonly Setting<int> AkkaFailureDetectorMaxSampleSize = setting( "causal_clustering.middleware.akka.failure_detector.max_sample_size", INTEGER, "1000" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Minimum standard deviation to use for the normal distribution in " + "AccrualFailureDetector. Too low standard deviation might result in " + "too much sensitivity for sudden, but normal, deviations in heartbeat inter arrival times.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> akka_failure_detector_min_std_deviation = setting("causal_clustering.middleware.akka.failure_detector.min_std_deviation", DURATION, "100ms");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Minimum standard deviation to use for the normal distribution in " + "AccrualFailureDetector. Too low standard deviation might result in " + "too much sensitivity for sudden, but normal, deviations in heartbeat inter arrival times.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> akka_failure_detector_min_std_deviation = setting("causal_clustering.middleware.akka.failure_detector.min_std_deviation", DURATION, "100ms");
 		 [Description("Akka cluster phi accrual failure detector. " + "Minimum standard deviation to use for the normal distribution in " + "AccrualFailureDetector. Too low standard deviation might result in " + "too much sensitivity for sudden, but normal, deviations in heartbeat inter arrival times.")]
 		 public static readonly Setting<Duration> AkkaFailureDetectorMinStdDeviation = setting( "causal_clustering.middleware.akka.failure_detector.min_std_deviation", DURATION, "100ms" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of potentially lost/delayed heartbeats that will be " + "accepted before considering it to be an anomaly. " + "This margin is important to be able to survive sudden, occasional, " + "pauses in heartbeat arrivals, due to for example garbage collect or network drop.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> akka_failure_detector_acceptable_heartbeat_pause = setting("causal_clustering.middleware.akka.failure_detector.acceptable_heartbeat_pause", DURATION, "4s");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of potentially lost/delayed heartbeats that will be " + "accepted before considering it to be an anomaly. " + "This margin is important to be able to survive sudden, occasional, " + "pauses in heartbeat arrivals, due to for example garbage collect or network drop.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> akka_failure_detector_acceptable_heartbeat_pause = setting("causal_clustering.middleware.akka.failure_detector.acceptable_heartbeat_pause", DURATION, "4s");
 		 [Description("Akka cluster phi accrual failure detector. " + "Number of potentially lost/delayed heartbeats that will be " + "accepted before considering it to be an anomaly. " + "This margin is important to be able to survive sudden, occasional, " + "pauses in heartbeat arrivals, due to for example garbage collect or network drop.")]
 		 public static readonly Setting<Duration> AkkaFailureDetectorAcceptableHeartbeatPause = setting( "causal_clustering.middleware.akka.failure_detector.acceptable_heartbeat_pause", DURATION, "4s" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of member nodes that each member will send heartbeat messages to, " + "i.e. each node will be monitored by this number of other nodes.") public static final org.neo4j.graphdb.config.Setting<int> akka_failure_detector_monitored_by_nr_of_members = setting("causal_clustering.middleware.akka.failure_detector.monitored_by_nr_of_members", INTEGER, "5");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "Number of member nodes that each member will send heartbeat messages to, " + "i.e. each node will be monitored by this number of other nodes.") public static final org.Neo4Net.graphdb.config.Setting<int> akka_failure_detector_monitored_by_nr_of_members = setting("causal_clustering.middleware.akka.failure_detector.monitored_by_nr_of_members", INTEGER, "5");
 		 [Description("Akka cluster phi accrual failure detector. " + "Number of member nodes that each member will send heartbeat messages to, " + "i.e. each node will be monitored by this number of other nodes.")]
 		 public static readonly Setting<int> AkkaFailureDetectorMonitoredByNrOfMembers = setting( "causal_clustering.middleware.akka.failure_detector.monitored_by_nr_of_members", INTEGER, "5" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "After the heartbeat request has been sent the first failure detection " + "will start after this period, even though no heartbeat message has been received.") public static final org.neo4j.graphdb.config.Setting<java.time.Duration> akka_failure_detector_expected_response_after = setting("causal_clustering.middleware.akka.failure_detector.expected_response_after", DURATION, "1s");
+//ORIGINAL LINE: @Internal @Description("Akka cluster phi accrual failure detector. " + "After the heartbeat request has been sent the first failure detection " + "will start after this period, even though no heartbeat message has been received.") public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> akka_failure_detector_expected_response_after = setting("causal_clustering.middleware.akka.failure_detector.expected_response_after", DURATION, "1s");
 		 [Description("Akka cluster phi accrual failure detector. " + "After the heartbeat request has been sent the first failure detection " + "will start after this period, even though no heartbeat message has been received.")]
 		 public static readonly Setting<Duration> AkkaFailureDetectorExpectedResponseAfter = setting( "causal_clustering.middleware.akka.failure_detector.expected_response_after", DURATION, "1s" );
 		 /*
@@ -339,12 +339,12 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<Duration> RaftLogPruningFrequency = setting( "causal_clustering.raft_log_pruning_frequency", DURATION, "10m" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Enable or disable the dump of all network messages pertaining to the RAFT protocol") @Internal public static final org.neo4j.graphdb.config.Setting<bool> raft_messages_log_enable = setting("causal_clustering.raft_messages_log_enable", BOOLEAN, FALSE);
+//ORIGINAL LINE: @Description("Enable or disable the dump of all network messages pertaining to the RAFT protocol") @Internal public static final org.Neo4Net.graphdb.config.Setting<bool> raft_messages_log_enable = setting("causal_clustering.raft_messages_log_enable", BOOLEAN, FALSE);
 		 [Description("Enable or disable the dump of all network messages pertaining to the RAFT protocol")]
 		 public static readonly Setting<bool> RaftMessagesLogEnable = setting( "causal_clustering.raft_messages_log_enable", BOOLEAN, FALSE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Path to RAFT messages log.") @Internal public static final org.neo4j.graphdb.config.Setting<java.io.File> raft_messages_log_path = derivedSetting("causal_clustering.raft_messages_log_path", logs_directory, logs -> new java.io.File(logs, "raft-messages.log"), PATH);
+//ORIGINAL LINE: @Description("Path to RAFT messages log.") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.io.File> raft_messages_log_path = derivedSetting("causal_clustering.raft_messages_log_path", logs_directory, logs -> new java.io.File(logs, "raft-messages.log"), PATH);
 		 [Description("Path to RAFT messages log.")]
 		 public static readonly Setting<File> RaftMessagesLogPath = derivedSetting( "causal_clustering.raft_messages_log_path", logs_directory, logs => new File( logs, "raft-messages.log" ), PATH );
 
@@ -358,7 +358,7 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<Duration> StoreCopyMaxRetryTimePerRequest = setting( "causal_clustering.store_copy_max_retry_time_per_request", DURATION, "20m" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Maximum backoff timeout for store copy requests") @Internal public static final org.neo4j.graphdb.config.Setting<java.time.Duration> store_copy_backoff_max_wait = setting("causal_clustering.store_copy_backoff_max_wait", DURATION, "5s");
+//ORIGINAL LINE: @Description("Maximum backoff timeout for store copy requests") @Internal public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> store_copy_backoff_max_wait = setting("causal_clustering.store_copy_backoff_max_wait", DURATION, "5s");
 		 [Description("Maximum backoff timeout for store copy requests")]
 		 public static readonly Setting<Duration> StoreCopyBackoffMaxWait = setting( "causal_clustering.store_copy_backoff_max_wait", DURATION, "5s" );
 
@@ -366,7 +366,7 @@ namespace Neo4Net.causalclustering.core
 		 public static readonly Setting<Duration> UnknownAddressLoggingThrottle = setting( "causal_clustering.unknown_address_logging_throttle", DURATION, "10000ms" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Maximum transaction batch size for read replicas when applying transactions pulled from core " + "servers.") @Internal public static final org.neo4j.graphdb.config.Setting<int> read_replica_transaction_applier_batch_size = setting("causal_clustering.read_replica_transaction_applier_batch_size", INTEGER, "64");
+//ORIGINAL LINE: @Description("Maximum transaction batch size for read replicas when applying transactions pulled from core " + "servers.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> read_replica_transaction_applier_batch_size = setting("causal_clustering.read_replica_transaction_applier_batch_size", INTEGER, "64");
 		 [Description("Maximum transaction batch size for read replicas when applying transactions pulled from core " + "servers.")]
 		 public static readonly Setting<int> ReadReplicaTransactionApplierBatchSize = setting( "causal_clustering.read_replica_transaction_applier_batch_size", INTEGER, "64" );
 

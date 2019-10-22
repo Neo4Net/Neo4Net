@@ -23,7 +23,7 @@ namespace Neo4Net.Test.extension
 {
 	using ExtensionContext = org.junit.jupiter.api.extension.ExtensionContext;
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 
 	public class EphemeralFileSystemExtension : FileSystemExtension<EphemeralFileSystemAbstraction>
 	{

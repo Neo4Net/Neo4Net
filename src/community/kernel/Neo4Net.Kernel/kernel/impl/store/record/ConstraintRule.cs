@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
 
 	public class ConstraintRule : SchemaRule, Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor_Supplier
 	{

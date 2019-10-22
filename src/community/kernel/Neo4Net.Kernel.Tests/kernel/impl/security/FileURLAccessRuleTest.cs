@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.impl.security
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.security
 //ORIGINAL LINE: final java.net.URL url = new java.net.URL("file:///bar/baz.csv");
 			  URL url = new URL( "file:///bar/baz.csv" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.configuration.Config config = org.neo4j.kernel.configuration.Config.defaults(org.neo4j.graphdb.factory.GraphDatabaseSettings.allow_file_urls, "false");
+//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.allow_file_urls, "false");
 			  Config config = Config.defaults( GraphDatabaseSettings.allow_file_urls, "false" );
 			  try
 			  {
@@ -99,9 +99,9 @@ namespace Neo4Net.Kernel.impl.security
 		 public virtual void ShouldThrowWhenRelativePathIsOutsideImportDirectory()
 		 {
 			  assumeFalse( Paths.get( "/" ).relativize( Paths.get( "/../baz.csv" ) ).ToString().Equals("baz.csv") );
-			  File importDir = ( new File( "/tmp/neo4jtest" ) ).AbsoluteFile;
+			  File importDir = ( new File( "/tmp/Neo4Nettest" ) ).AbsoluteFile;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.configuration.Config config = org.neo4j.kernel.configuration.Config.defaults(org.neo4j.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, importDir.toString());
+//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, importDir.toString());
 			  Config config = Config.defaults( GraphDatabaseSettings.load_csv_file_url_root, importDir.ToString() );
 			  try
 			  {
@@ -123,10 +123,10 @@ namespace Neo4Net.Kernel.impl.security
 //ORIGINAL LINE: final java.net.URL url = new java.io.File("/bar/baz.csv").toURI().toURL();
 			  URL url = ( new File( "/bar/baz.csv" ) ).toURI().toURL();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.configuration.Config config = org.neo4j.kernel.configuration.Config.defaults(org.neo4j.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/neo4j/import");
-			  Config config = Config.defaults( GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/neo4j/import" );
+//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.Config config = org.Neo4Net.kernel.configuration.Config.defaults(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/Neo4Net/import");
+			  Config config = Config.defaults( GraphDatabaseSettings.load_csv_file_url_root, "/var/lib/Neo4Net/import" );
 			  URL accessURL = URLAccessRules.FileAccess().validate(config, url);
-			  URL expected = ( new File( "/var/lib/neo4j/import/bar/baz.csv" ) ).toURI().toURL();
+			  URL expected = ( new File( "/var/lib/Neo4Net/import/bar/baz.csv" ) ).toURI().toURL();
 			  assertEquals( expected, accessURL );
 		 }
 	}

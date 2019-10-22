@@ -37,11 +37,11 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Test configuration migration rules
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.configuration
 		 private ConfigurationMigrator _migrator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.logging.AssertableLogProvider logProvider = new org.neo4j.logging.AssertableLogProvider(true);
+//ORIGINAL LINE: @Rule public org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider(true);
 		 public AssertableLogProvider LogProvider = new AssertableLogProvider( true );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

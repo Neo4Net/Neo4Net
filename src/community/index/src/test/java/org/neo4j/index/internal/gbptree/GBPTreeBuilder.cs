@@ -25,11 +25,11 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 
 	/// <summary>
 	/// Convenient builder for a <seealso cref="GBPTree"/>. Either created using zero-argument constructor for maximum

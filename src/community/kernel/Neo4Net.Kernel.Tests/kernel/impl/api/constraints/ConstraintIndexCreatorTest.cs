@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
@@ -344,7 +344,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException, org.neo4j.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LogMessagesAboutConstraintCreation()
 		 {

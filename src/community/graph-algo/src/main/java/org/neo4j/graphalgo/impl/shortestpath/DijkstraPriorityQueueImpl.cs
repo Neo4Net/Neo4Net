@@ -22,7 +22,7 @@
 namespace Neo4Net.Graphalgo.impl.shortestpath
 {
 
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 
 	/// <summary>
 	/// Implementation of <seealso cref="DijkstraPriorityQueue"/> with just a normal java

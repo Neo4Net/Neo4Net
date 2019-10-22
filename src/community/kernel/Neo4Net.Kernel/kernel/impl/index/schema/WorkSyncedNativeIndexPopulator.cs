@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void add(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 			  try
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  _actual.verifyDeferredConstraints( nodePropertyAccessor );
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void scanCompleted(org.neo4j.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void scanCompleted(org.Neo4Net.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void ScanCompleted( PhaseTracker phaseTracker )
 		 {
 			  _actual.scanCompleted( phaseTracker );
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void process(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> indexEntryUpdates) throws Exception
+//ORIGINAL LINE: void process(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> indexEntryUpdates) throws Exception
 			  internal virtual void Process<T1>( ICollection<T1> indexEntryUpdates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 					outerInstance.actual.Add( indexEntryUpdates );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 private readonly WorkSyncedNativeIndexPopulator<KEY, VALUE> _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates;
+//ORIGINAL LINE: private final java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates;
 			  internal readonly ICollection<IndexEntryUpdate<object>> Updates;
 
 			  internal IndexUpdateWork<T1>( WorkSyncedNativeIndexPopulator<KEY, VALUE> outerInstance, ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
@@ -191,7 +191,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  public override IndexUpdateWork Combine( IndexUpdateWork work )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.ArrayList<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> combined = new java.util.ArrayList<>(updates);
+//ORIGINAL LINE: java.util.ArrayList<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> combined = new java.util.ArrayList<>(updates);
 					List<IndexEntryUpdate<object>> combined = new List<IndexEntryUpdate<object>>( Updates );
 					combined.AddRange( work.Updates );
 					return new IndexUpdateWork( _outerInstance, combined );

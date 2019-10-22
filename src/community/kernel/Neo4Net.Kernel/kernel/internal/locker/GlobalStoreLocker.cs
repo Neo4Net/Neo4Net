@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Internal.locker
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkLock() throws org.neo4j.kernel.StoreLockException
+//ORIGINAL LINE: public void checkLock() throws org.Neo4Net.kernel.StoreLockException
 		 public override void CheckLock()
 		 {
 			  base.CheckLock();

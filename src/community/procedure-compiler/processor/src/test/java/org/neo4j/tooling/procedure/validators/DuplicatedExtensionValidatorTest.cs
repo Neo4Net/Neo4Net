@@ -72,7 +72,7 @@ namespace Neo4Net.Tooling.procedure.validators
 
 			  Stream<CompilationMessage> errors = _validator.apply( duplicates );
 
-			  string procedureName = "org.neo4j.tooling.procedure.validators.examples.procedure";
+			  string procedureName = "org.Neo4Net.tooling.procedure.validators.examples.procedure";
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  assertThat( errors ).extracting( CompilationMessage::getCategory, CompilationMessage::getElement, CompilationMessage::getContents ).containsExactlyInAnyOrder( tuple( Diagnostic.Kind.ERROR, procedureA, "Procedure|function name <" + procedureName + "> is already defined 2 times. It should be defined " + "only once!" ), tuple( Diagnostic.Kind.ERROR, procedureB, "Procedure|function name <" + procedureName + "> is already defined 2 times. It should be defined only once!" ) );
 		 }

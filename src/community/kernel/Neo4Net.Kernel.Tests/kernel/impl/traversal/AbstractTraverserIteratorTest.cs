@@ -21,11 +21,11 @@ namespace Neo4Net.Kernel.impl.traversal
 {
 	using Test = org.junit.Test;
 
-	using Path = Neo4Net.Graphdb.Path;
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb.traversal;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
+	using Path = Neo4Net.GraphDb.Path;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb.traversal;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;

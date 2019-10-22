@@ -204,7 +204,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 
 			  /// <summary>
 			  /// Define an input field </summary>
-			  public virtual Builder In( string name, Neo4jTypes.AnyType type )
+			  public virtual Builder In( string name, Neo4NetTypes.AnyType type )
 			  {
 					InputSignature.Add( FieldSignature.InputField( name, type ) );
 					return this;
@@ -212,7 +212,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 
 			  /// <summary>
 			  /// Define an output field </summary>
-			  public virtual Builder Out( string name, Neo4jTypes.AnyType type )
+			  public virtual Builder Out( string name, Neo4NetTypes.AnyType type )
 			  {
 					OutputSignature.Add( FieldSignature.OutputField( name, type ) );
 					return this;

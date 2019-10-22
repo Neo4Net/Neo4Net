@@ -31,14 +31,14 @@ namespace Neo4Net.Kernel.impl.store.counts
 	using ClassGuardedAdversary = Neo4Net.Adversaries.ClassGuardedAdversary;
 	using CountingAdversary = Neo4Net.Adversaries.CountingAdversary;
 	using Neo4Net.Functions;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using Neo4Net.Helpers.Collections;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -80,11 +80,11 @@ namespace Neo4Net.Kernel.impl.store.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.FileVersion.INITIAL_MINOR_VERSION;
+//	import static org.Neo4Net.kernel.impl.store.counts.FileVersion.INITIAL_MINOR_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.register.Registers.newDoubleLongRegister;
+//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
 
 	public class CountsRotationTest
 	{
@@ -307,7 +307,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 			  assertTrue( _fs.fileExists( BetaStoreFile() ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.pagecache.PageCache pageCache = db.getDependencyResolver().resolveDependency(org.neo4j.io.pagecache.PageCache.class);
+//ORIGINAL LINE: final org.Neo4Net.io.pagecache.PageCache pageCache = db.getDependencyResolver().resolveDependency(org.Neo4Net.io.pagecache.PageCache.class);
 			  PageCache pageCache = Db.DependencyResolver.resolveDependency( typeof( PageCache ) );
 			  using ( Lifespan life = new Lifespan() )
 			  {
@@ -324,7 +324,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 
 			  // on the other hand the tracker should read the correct value by merging data on disk and data in memory
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final CountsTracker tracker = db.getDependencyResolver().resolveDependency(org.neo4j.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).testAccessNeoStores().getCounts();
+//ORIGINAL LINE: final CountsTracker tracker = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).testAccessNeoStores().getCounts();
 			  CountsTracker tracker = Db.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).testAccessNeoStores().Counts;
 			  assertEquals( 1 + 1, tracker.NodeCount( -1, newDoubleLongRegister() ).readSecond() );
 
@@ -348,7 +348,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 			  ClassGuardedAdversary adversary = new ClassGuardedAdversary( new CountingAdversary( 1, true ), typeof( NodeStore ) );
 			  adversary.Disable();
 
-			  GraphDatabaseService db = AdversarialPageCacheGraphDatabaseFactory.create( _fs, adversary ).newEmbeddedDatabaseBuilder( _testDir.databaseDir() ).newGraphDatabase();
+			  IGraphDatabaseService db = AdversarialPageCacheGraphDatabaseFactory.create( _fs, adversary ).newEmbeddedDatabaseBuilder( _testDir.databaseDir() ).newGraphDatabase();
 
 			  System.Threading.CountdownEvent txStartLatch = new System.Threading.CountdownEvent( 1 );
 			  System.Threading.CountdownEvent txCommitLatch = new System.Threading.CountdownEvent( 1 );
@@ -415,7 +415,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkPoint(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
+//ORIGINAL LINE: private static void checkPoint(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException
 		 private static void CheckPoint( GraphDatabaseAPI db )
 		 {
 			  TriggerInfo triggerInfo = new SimpleTriggerInfo( "test" );
@@ -433,11 +433,11 @@ namespace Neo4Net.Kernel.impl.store.counts
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Collection<org.neo4j.helpers.collection.Pair<? extends org.neo4j.kernel.impl.store.counts.keys.CountsKey, long>> allRecords(org.neo4j.kernel.impl.api.CountsVisitor_Visitable store)
+//ORIGINAL LINE: private java.util.Collection<org.Neo4Net.helpers.collection.Pair<? extends org.Neo4Net.kernel.impl.store.counts.keys.CountsKey, long>> allRecords(org.Neo4Net.kernel.impl.api.CountsVisitor_Visitable store)
 		 private ICollection<Pair<CountsKey, long>> AllRecords( Neo4Net.Kernel.Impl.Api.CountsVisitor_Visitable store )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.neo4j.helpers.collection.Pair<? extends org.neo4j.kernel.impl.store.counts.keys.CountsKey, long>> records = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.helpers.collection.Pair<? extends org.Neo4Net.kernel.impl.store.counts.keys.CountsKey, long>> records = new java.util.ArrayList<>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  ICollection<Pair<CountsKey, long>> records = new List<Pair<CountsKey, long>>();
 			  store.Accept( new CountsVisitorAnonymousInnerClass( this, records ) );
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 			 private readonly CountsRotationTest _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private System.Collections.Generic.ICollection<org.neo4j.helpers.collection.Pair<JavaToDotNetGenericWildcard extends org.neo4j.kernel.impl.store.counts.keys.CountsKey, long>> records;
+//ORIGINAL LINE: private System.Collections.Generic.ICollection<org.Neo4Net.helpers.collection.Pair<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.counts.keys.CountsKey, long>> records;
 			 private ICollection<Pair<CountsKey, long>> _records;
 
 			 public CountsVisitorAnonymousInnerClass<T1>( CountsRotationTest outerInstance, ICollection<T1> records ) where T1 : Neo4Net.Kernel.impl.store.counts.keys.CountsKey

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using ErrorState = Neo4Net.Graphdb.@event.ErrorState;
+	using ErrorState = Neo4Net.GraphDb.Events.ErrorState;
 	using KernelEventHandlers = Neo4Net.Kernel.Internal.KernelEventHandlers;
 
 	public class DatabasePanicEventGenerator
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void generateEvent(final org.neo4j.graphdb.event.ErrorState error, final Throwable cause)
+//ORIGINAL LINE: public void generateEvent(final org.Neo4Net.graphdb.event.ErrorState error, final Throwable cause)
 		 public virtual void GenerateEvent( ErrorState error, Exception cause )
 		 {
 			  ExecutorService executor = Executors.newSingleThreadExecutor();

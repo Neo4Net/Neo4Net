@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  try
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 Writer.updateDocument( LuceneFulltextDocumentStructure.NewTermForChangeOrRemove( update.EntityId ), UpdateAsDocument( update ) );

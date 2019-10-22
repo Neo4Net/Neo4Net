@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -45,9 +45,9 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.kvstore.KeyValueDatabaseStoreFormatTest.Data.data;
+//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreFormatTest.Data.data;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.kvstore.KeyValueDatabaseStoreFormatTest.DataEntry.entry;
+//	import static org.Neo4Net.kernel.impl.store.kvstore.KeyValueDatabaseStoreFormatTest.DataEntry.entry;
 
 	public class KeyValueDatabaseStoreFormatTest
 	{
@@ -68,13 +68,13 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ConfigurablePageCacheRule pages = new org.neo4j.test.rule.ConfigurablePageCacheRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ConfigurablePageCacheRule pages = new org.Neo4Net.test.rule.ConfigurablePageCacheRule();
 		 public readonly ConfigurablePageCacheRule Pages = new ConfigurablePageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory(fs);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs);
 		 public TestDirectory Directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -321,7 +321,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertFormatSpecifierAndHeadersOnly(java.util.Map<String,byte[]> headers, org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: private void assertFormatSpecifierAndHeadersOnly(java.util.Map<String,byte[]> headers, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file) throws java.io.IOException
 		 private void AssertFormatSpecifierAndHeadersOnly( IDictionary<string, sbyte[]> headers, FileSystemAbstraction fs, File file )
 		 {
 			  assertTrue( fs.FileExists( file ) );
@@ -366,7 +366,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.helpers.collection.Pair<bool,java.util.List<Bytes>> find(KeyValueStoreFile file, final int min, final int max) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.helpers.collection.Pair<bool,java.util.List<Bytes>> find(KeyValueStoreFile file, final int min, final int max) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static Pair<bool, IList<Bytes>> Find( KeyValueStoreFile file, int min, int max )
 		 {

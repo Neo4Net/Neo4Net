@@ -20,8 +20,8 @@ namespace Neo4Net.Server.enterprise
 	using OpenEnterpriseCoreGraphDatabase = Neo4Net.causalclustering.core.OpenEnterpriseCoreGraphDatabase;
 	using SecureDiscoveryServiceFactory = Neo4Net.causalclustering.discovery.SecureDiscoveryServiceFactory;
 	using OpenEnterpriseReadReplicaGraphDatabase = Neo4Net.causalclustering.readreplica.OpenEnterpriseReadReplicaGraphDatabase;
-	using Dependencies = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Dependencies = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseEditionSettings = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings;
 	using Mode = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode;

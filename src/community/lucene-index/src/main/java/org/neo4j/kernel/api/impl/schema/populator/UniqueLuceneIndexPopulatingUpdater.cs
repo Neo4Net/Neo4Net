@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Close()
 		 {
 			  try

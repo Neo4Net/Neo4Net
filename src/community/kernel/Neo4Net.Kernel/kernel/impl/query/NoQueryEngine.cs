@@ -22,7 +22,7 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Kernel.impl.query
 {
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	internal sealed class NoQueryEngine : QueryExecutionEngine
@@ -53,12 +53,12 @@ namespace Neo4Net.Kernel.impl.query
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public Neo4Net.Graphdb.Result ExecuteQuery( string query, Neo4Net.Values.@virtual.MapValue parameters, TransactionalContext context )
+		 public Neo4Net.GraphDb.Result ExecuteQuery( string query, Neo4Net.Values.@virtual.MapValue parameters, TransactionalContext context )
 		 {
 			  throw NoQueryEngineConflict();
 		 }
 
-		 public Neo4Net.Graphdb.Result ProfileQuery( string query, Neo4Net.Values.@virtual.MapValue parameter, TransactionalContext context )
+		 public Neo4Net.GraphDb.Result ProfileQuery( string query, Neo4Net.Values.@virtual.MapValue parameter, TransactionalContext context )
 		 {
 			  throw NoQueryEngineConflict();
 		 }

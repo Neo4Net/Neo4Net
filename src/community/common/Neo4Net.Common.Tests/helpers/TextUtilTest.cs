@@ -42,7 +42,7 @@ namespace Neo4Net.Helpers
          string @string = TextUtil.TemplateString(template, values);
 
          // then
-         assertEquals("This is a String that should act as a template!!", @string);
+        Assert.Equals("This is a String that should act as a template!!", @string);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

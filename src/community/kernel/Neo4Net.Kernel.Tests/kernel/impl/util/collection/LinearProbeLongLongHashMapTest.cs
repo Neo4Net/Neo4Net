@@ -87,9 +87,9 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.collection.LinearProbeLongLongHashMap.DEFAULT_CAPACITY;
+//	import static org.Neo4Net.kernel.impl.util.collection.LinearProbeLongLongHashMap.DEFAULT_CAPACITY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.collection.LinearProbeLongLongHashMap.REMOVALS_FACTOR;
+//	import static org.Neo4Net.kernel.impl.util.collection.LinearProbeLongLongHashMap.REMOVALS_FACTOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class LinearProbeLongLongHashMapTest
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule rnd;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule rnd;
 		 private RandomRule _rnd;
 
 		 private readonly CachingOffHeapBlockAllocator _blockAllocator = new CachingOffHeapBlockAllocator();

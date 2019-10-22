@@ -20,34 +20,34 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using KernelAPIWriteTestSupport = Neo4Net.Internal.Kernel.Api.KernelAPIWriteTestSupport;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using GraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
+	using IGraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 	internal class WriteTestSupport : KernelAPIWriteTestSupport
 	{
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 		 public override void Setup( File storeDir )
 		 {
 			  _db = NewDb( storeDir );
 		 }
 
-		 protected internal virtual GraphDatabaseService NewDb( File storeDir )
+		 protected internal virtual IGraphDatabaseService NewDb( File storeDir )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newImpermanentDatabaseBuilder(storeDir).newGraphDatabase();
 		 }
 
 		 public override void ClearGraph()
 		 {
-			  GraphDatabaseServiceCleaner.cleanDatabaseContent( _db );
+			  IGraphDatabaseServiceCleaner.cleanDatabaseContent( _db );
 			  using ( Transaction tx = _db.beginTx() )
 			  {
 					PropertyContainer graphProperties = graphProperties();
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 		 }
 
-		 public override PropertyContainer GraphProperties()
+		 public override IPropertyContainer GraphProperties()
 		 {
 			  return ( ( GraphDatabaseAPI ) _db ).DependencyResolver.resolveDependency( typeof( EmbeddedProxySPI ) ).newGraphPropertiesProxy();
 		 }
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  return resolver.ResolveDependency( typeof( Kernel ) );
 		 }
 
-		 public override GraphDatabaseService GraphBackdoor()
+		 public override IGraphDatabaseService GraphBackdoor()
 		 {
 			  return _db;
 		 }

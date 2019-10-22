@@ -51,14 +51,14 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handleFailure(Throwable cause, boolean fatal) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public void handleFailure(Throwable cause, boolean fatal) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override void HandleFailure( Exception cause, bool fatal )
 		 {
 			  _machine.handleFailure( cause, fatal );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean resetMachine() throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public boolean resetMachine() throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override bool ResetMachine()
 		 {
 			  return _machine.reset();

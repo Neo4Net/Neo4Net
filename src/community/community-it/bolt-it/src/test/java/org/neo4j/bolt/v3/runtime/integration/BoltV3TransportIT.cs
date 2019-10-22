@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 	using Test = org.junit.Test;
 
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 	using BeginMessage = Neo4Net.Bolt.v3.messaging.request.BeginMessage;
 	using HelloMessage = Neo4Net.Bolt.v3.messaging.request.HelloMessage;
 	using RunMessage = Neo4Net.Bolt.v3.messaging.request.RunMessage;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
@@ -60,31 +60,31 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.not;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
+//	import static org.Neo4Net.bolt.v3.messaging.request.CommitMessage.COMMIT_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
+//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.ValueUtils.asMapValue;
+//	import static org.Neo4Net.kernel.impl.util.ValueUtils.asMapValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class BoltV3TransportIT : BoltV3TransportBase
 	{
@@ -481,7 +481,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 private sbyte[] BeginMessage( IDictionary<string, object> metadata )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = Util.Neo4jPack.newPacker( @out );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = Util.Neo4NetPack.newPacker( @out );
 
 			  packer.PackStructHeader( 1, BeginMessage.SIGNATURE );
 			  packer.pack( asMapValue( metadata ) );
@@ -494,7 +494,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 		 private sbyte[] RunMessage( IDictionary<string, object> metadata )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = Util.Neo4jPack.newPacker( @out );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = Util.Neo4NetPack.newPacker( @out );
 
 			  packer.PackStructHeader( 3, RunMessage.SIGNATURE );
 			  packer.Pack( "RETURN 1" );

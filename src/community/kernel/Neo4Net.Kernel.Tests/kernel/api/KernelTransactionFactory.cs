@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.api
 {
 
 	using Neo4Net.Collections.Pooling;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.tracing.TransactionTracer_Fields.NULL;
+//	import static org.Neo4Net.kernel.impl.transaction.tracing.TransactionTracer_Fields.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
+//	import static org.Neo4Net.kernel.impl.util.collection.CollectionsFactorySupplier_Fields.ON_HEAP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.MockedNeoStores.mockedTokenHolders;
+//	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
 	public class KernelTransactionFactory
 	{

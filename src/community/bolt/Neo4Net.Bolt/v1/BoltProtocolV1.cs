@@ -22,7 +22,7 @@ namespace Neo4Net.Bolt.v1
 	using ChannelPipeline = io.netty.channel.ChannelPipeline;
 
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltConnectionFactory = Neo4Net.Bolt.runtime.BoltConnectionFactory;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
@@ -33,7 +33,7 @@ namespace Neo4Net.Bolt.v1
 	using MessageDecoder = Neo4Net.Bolt.transport.pipeline.MessageDecoder;
 	using BoltRequestMessageReaderV1 = Neo4Net.Bolt.v1.messaging.BoltRequestMessageReaderV1;
 	using BoltResponseMessageWriterV1 = Neo4Net.Bolt.v1.messaging.BoltResponseMessageWriterV1;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 	/// <summary>
@@ -43,7 +43,7 @@ namespace Neo4Net.Bolt.v1
 	{
 		 public const long VERSION = 1;
 
-		 private readonly Neo4jPack _neo4jPack;
+		 private readonly Neo4NetPack _Neo4NetPack;
 		 private readonly BoltConnection _connection;
 		 private readonly BoltRequestMessageReader _messageReader;
 
@@ -58,8 +58,8 @@ namespace Neo4Net.Bolt.v1
 			  BoltStateMachine stateMachine = stateMachineFactory.NewStateMachine( Version(), channel );
 			  this._connection = connectionFactory.NewConnection( channel, stateMachine );
 
-			  this._neo4jPack = CreatePack();
-			  this._messageReader = CreateMessageReader( channel, _neo4jPack, _connection, logging );
+			  this._Neo4NetPack = CreatePack();
+			  this._messageReader = CreateMessageReader( channel, _Neo4NetPack, _connection, logging );
 		 }
 
 		 /// <summary>
@@ -71,13 +71,13 @@ namespace Neo4Net.Bolt.v1
 
 			  pipeline.addLast( new ChunkDecoder() );
 			  pipeline.addLast( new MessageAccumulator() );
-			  pipeline.addLast( new MessageDecoder( _neo4jPack, _messageReader, _logging ) );
+			  pipeline.addLast( new MessageDecoder( _Neo4NetPack, _messageReader, _logging ) );
 			  pipeline.addLast( new HouseKeeper( _connection, _logging.getInternalLog( typeof( HouseKeeper ) ) ) );
 		 }
 
-		 protected internal virtual Neo4jPack CreatePack()
+		 protected internal virtual Neo4NetPack CreatePack()
 		 {
-			  return new Neo4jPackV1();
+			  return new Neo4NetPackV1();
 		 }
 
 		 public override long Version()
@@ -85,9 +85,9 @@ namespace Neo4Net.Bolt.v1
 			  return VERSION;
 		 }
 
-		 protected internal virtual BoltRequestMessageReader CreateMessageReader( BoltChannel channel, Neo4jPack neo4jPack, BoltConnection connection, LogService logging )
+		 protected internal virtual BoltRequestMessageReader CreateMessageReader( BoltChannel channel, Neo4NetPack Neo4NetPack, BoltConnection connection, LogService logging )
 		 {
-			  BoltResponseMessageWriterV1 responseWriter = new BoltResponseMessageWriterV1( neo4jPack, connection.Output(), logging );
+			  BoltResponseMessageWriterV1 responseWriter = new BoltResponseMessageWriterV1( Neo4NetPack, connection.Output(), logging );
 			  return new BoltRequestMessageReaderV1( connection, responseWriter, logging );
 		 }
 	}

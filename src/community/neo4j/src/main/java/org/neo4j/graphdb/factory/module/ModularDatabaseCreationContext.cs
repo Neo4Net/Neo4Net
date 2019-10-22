@@ -19,11 +19,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module
+namespace Neo4Net.GraphDb.factory.module
 {
 
-	using DatabaseEditionContext = Neo4Net.Graphdb.factory.module.edition.context.DatabaseEditionContext;
-	using DatabaseIdContext = Neo4Net.Graphdb.factory.module.id.DatabaseIdContext;
+	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
+	using DatabaseIdContext = Neo4Net.GraphDb.factory.module.id.DatabaseIdContext;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -113,7 +113,7 @@ namespace Neo4Net.Graphdb.factory.module
 		 private readonly VersionContextSupplier _versionContextSupplier;
 		 private readonly CollectionsFactorySupplier _collectionsFactorySupplier;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
+//ORIGINAL LINE: private final Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensionFactories;
 		 private readonly IEnumerable<KernelExtensionFactory<object>> _kernelExtensionFactories;
 		 private readonly System.Func<File, FileSystemWatcherService> _watcherServiceFactory;
 		 private readonly GraphDatabaseFacade _facade;
@@ -483,7 +483,7 @@ namespace Neo4Net.Graphdb.factory.module
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
+//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> getKernelExtensionFactories()
 		 public virtual IEnumerable<KernelExtensionFactory<object>> KernelExtensionFactories
 		 {
 			 get

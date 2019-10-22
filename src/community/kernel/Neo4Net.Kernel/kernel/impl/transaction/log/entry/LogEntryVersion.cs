@@ -31,21 +31,21 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	/// by using <seealso cref="byVersion(sbyte)"/> and from there get a hold of
 	/// <seealso cref="LogEntryParser"/> using <seealso cref="entryParser(sbyte)"/>.
 	/// 
-	/// Here follows an explanation how log entry versioning in Neo4j works:
+	/// Here follows an explanation how log entry versioning in Neo4Net works:
 	/// 
-	/// In Neo4j transactions are written to a log. Each transaction consists of one or more log entries. Log entries
+	/// In Neo4Net transactions are written to a log. Each transaction consists of one or more log entries. Log entries
 	/// can be of one or more types, such as denoting start of a transaction, commands and committing the transaction.
-	/// Neo4j supports writing the latest/current log entry and reading log entries for all currently supported versions
-	/// of Neo4j. The way versioning is done has changed over the years.
+	/// Neo4Net supports writing the latest/current log entry and reading log entries for all currently supported versions
+	/// of Neo4Net. The way versioning is done has changed over the years.
 	///   First there was a format header of the entire log and it was assumed that all log entries within that log
 	/// was of the same format. This version actually specified command version, i.e. just versions of one of the
 	/// log entry types. This was a bit clunky and forced format specification to be passed in from outside,
 	/// based on the log that was read and so updated every time a new log was opened.
-	///   Starting with Neo4j version 2.1 a one-byte log version field was introduced with every single log entry.
+	///   Starting with Neo4Net version 2.1 a one-byte log version field was introduced with every single log entry.
 	/// This allowed for more flexible reading and simpler code. Versions started with negative number to be able to
 	/// distinguish the new format from the non-versioned format. So observing the log entry type, which was the first
 	/// byte in each log entry being negative being negative was a signal for the new format and that the type actually
-	/// was the next byte. This to support rolling upgrades where two Neo4j versions in a cluster could be active
+	/// was the next byte. This to support rolling upgrades where two Neo4Net versions in a cluster could be active
 	/// simultaneously, yet talking in terms of log entries of different versions.
 	/// 
 	/// At this point in time there was the log entry version which signaled how an entry was to be read, but there
@@ -60,21 +60,21 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	/// <li>Copy <seealso cref="PhysicalLogCommandReaderV3_0_2"/> or similar and modify the new copy</li>
 	/// <li>Copy <seealso cref="LogEntryParsersV2_3"/> or similar and modify the new copy if entry layout has changed</li>
 	/// <li>Add an entry in this enum, like <seealso cref="V3_0_10"/> pointing to the above new classes, version needs to be negative
-	/// to detect log files from older versions of neo4j</li>
+	/// to detect log files from older versions of Neo4Net</li>
 	/// <li>Modify <seealso cref="StorageCommand.serialize(WritableChannel)"/>.
 	/// Also <seealso cref="LogEntryWriter"/> (if log entry layout has changed) with required changes</li>
 	/// <li>Change <seealso cref="CURRENT"/> to point to the newly created version</li>
 	/// </ol>
-	/// Everything apart from that should just work and Neo4j should automatically support the new version as well.
+	/// Everything apart from that should just work and Neo4Net should automatically support the new version as well.
 	/// </summary>
 	public sealed class LogEntryVersion
 	{
 		 public static readonly LogEntryVersion V2_3 = new LogEntryVersion( "V2_3", InnerEnum.V2_3, -5, typeof( LogEntryParsersV2_3 ) );
 		 public static readonly LogEntryVersion V3_0 = new LogEntryVersion( "V3_0", InnerEnum.V3_0, -6, typeof( LogEntryParsersV2_3 ) );
-		 // as of 2016-05-30: neo4j 2.3.5 explicit index IndexDefineCommand maps write size as short instead of byte
+		 // as of 2016-05-30: Neo4Net 2.3.5 explicit index IndexDefineCommand maps write size as short instead of byte
 		 // log entry layout hasn't changed since 2_3 so just use that one
 		 public static readonly LogEntryVersion V2_3_5 = new LogEntryVersion( "V2_3_5", InnerEnum.V2_3_5, -8, typeof( LogEntryParsersV2_3 ) );
-		 // as of 2016-05-30: neo4j 3.0.2 explicit index IndexDefineCommand maps write size as short instead of byte
+		 // as of 2016-05-30: Neo4Net 3.0.2 explicit index IndexDefineCommand maps write size as short instead of byte
 		 // log entry layout hasn't changed since 2_3 so just use that one
 		 public static readonly LogEntryVersion V3_0_2 = new LogEntryVersion( "V3_0_2", InnerEnum.V3_0_2, -9, typeof( LogEntryParsersV2_3 ) );
 		 // as of 2017-05-26: the records in command log entries include a bit that specifies if the command is serialised
@@ -184,9 +184,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 			  sbyte positiveCurrentVersion = ( sbyte ) - Current.byteCode();
 			  if ( positiveVersion > positiveCurrentVersion )
 			  {
-					throw new UnsupportedLogVersionException( string.Format( "Transaction logs contains entries with prefix {0:D}, and the highest supported prefix is {1:D}. This " + "indicates that the log files originates from a newer version of neo4j.", positiveVersion, positiveCurrentVersion ) );
+					throw new UnsupportedLogVersionException( string.Format( "Transaction logs contains entries with prefix {0:D}, and the highest supported prefix is {1:D}. This " + "indicates that the log files originates from a newer version of Neo4Net.", positiveVersion, positiveCurrentVersion ) );
 			  }
-			  throw new UnsupportedLogVersionException( string.Format( "Transaction logs contains entries with prefix {0:D}, and the lowest supported prefix is {1:D}. This " + "indicates that the log files originates from an older version of neo4j, which we don't support " + "migrations from.", positiveVersion, _lowestVersion ) );
+			  throw new UnsupportedLogVersionException( string.Format( "Transaction logs contains entries with prefix {0:D}, and the lowest supported prefix is {1:D}. This " + "indicates that the log files originates from an older version of Neo4Net, which we don't support " + "migrations from.", positiveVersion, _lowestVersion ) );
 		 }
 
 		 private static void Put( LogEntryVersion[] array, int index, LogEntryVersion version )

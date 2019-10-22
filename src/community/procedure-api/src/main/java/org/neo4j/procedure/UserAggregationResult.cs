@@ -37,9 +37,9 @@ namespace Neo4Net.Procedure
 	///     <li><seealso cref="Double"/> or {@code double}</li>
 	///     <li><seealso cref="Number"/></li>
 	///     <li><seealso cref="Boolean"/> or {@code boolean}</li>
-	///     <li><seealso cref="org.neo4j.graphdb.Node"/></li>
-	///     <li><seealso cref="org.neo4j.graphdb.Relationship"/></li>
-	///     <li><seealso cref="org.neo4j.graphdb.Path"/></li>
+	///     <li><seealso cref="org.Neo4Net.graphdb.Node"/></li>
+	///     <li><seealso cref="org.Neo4Net.graphdb.Relationship"/></li>
+	///     <li><seealso cref="org.Neo4Net.graphdb.Path"/></li>
 	///     <li><seealso cref="System.Collections.IDictionary"/> with key <seealso cref="string"/> and value of any type in this list, including <seealso cref="System.Collections.IDictionary"/></li>
 	///     <li><seealso cref="System.Collections.IList"/> of elements of any valid field type, including <seealso cref="System.Collections.IList"/></li>
 	///     <li><seealso cref="object"/>, meaning any of the valid return types above</li>

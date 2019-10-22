@@ -45,7 +45,7 @@ namespace Neo4Net.Consistency.checking.full
 	public class StoreProcessorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.NeoStoresRule stores = new org.neo4j.test.rule.NeoStoresRule(getClass(), org.neo4j.kernel.impl.store.StoreType.NODE, org.neo4j.kernel.impl.store.StoreType.NODE_LABEL);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.NeoStoresRule stores = new org.Neo4Net.test.rule.NeoStoresRule(getClass(), org.Neo4Net.kernel.impl.store.StoreType.NODE, org.Neo4Net.kernel.impl.store.StoreType.NODE_LABEL);
 		 public readonly NeoStoresRule Stores = new NeoStoresRule( this.GetType(), StoreType.NODE, StoreType.NODE_LABEL );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -110,7 +110,7 @@ namespace Neo4Net.Consistency.checking.full
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void getRecordByCursor(long id, org.neo4j.kernel.impl.store.record.NodeRecord target, org.neo4j.kernel.impl.store.record.RecordLoad mode, org.neo4j.io.pagecache.PageCursor cursor) throws org.neo4j.kernel.impl.store.InvalidRecordException
+//ORIGINAL LINE: public void getRecordByCursor(long id, org.Neo4Net.kernel.impl.store.record.NodeRecord target, org.Neo4Net.kernel.impl.store.record.RecordLoad mode, org.Neo4Net.io.pagecache.PageCursor cursor) throws org.Neo4Net.kernel.impl.store.InvalidRecordException
 			 public override void getRecordByCursor( long id, NodeRecord target, RecordLoad mode, PageCursor cursor )
 			 {
 				  if ( id == 3 )

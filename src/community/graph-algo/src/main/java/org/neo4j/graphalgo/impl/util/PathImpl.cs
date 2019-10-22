@@ -23,16 +23,16 @@ using System.Diagnostics;
 namespace Neo4Net.Graphalgo.impl.util
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iteratorsEqual;
+//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	public sealed class PathImpl : Path
 	{
@@ -180,7 +180,7 @@ namespace Neo4Net.Graphalgo.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.neo4j.graphdb.Node> nodeIterator(final org.neo4j.graphdb.Node start, final Iterable<org.neo4j.graphdb.Relationship> relationships)
+//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.Node> nodeIterator(final org.Neo4Net.graphdb.Node start, final Iterable<org.Neo4Net.graphdb.Relationship> relationships)
 		 private IEnumerable<Node> NodeIterator( Node start, IEnumerable<Relationship> relationships )
 		 {
 			  return () => new IteratorAnonymousInnerClass(this, start, relationships);
@@ -270,10 +270,10 @@ namespace Neo4Net.Graphalgo.impl.util
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> current;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> current;
 			 internal IEnumerator<PropertyContainer> current;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> next;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> next;
 			 internal IEnumerator<PropertyContainer> next;
 
 			 public bool hasNext()
@@ -281,7 +281,7 @@ namespace Neo4Net.Graphalgo.impl.util
 				  return current.hasNext();
 			 }
 
-			 public PropertyContainer next()
+			 public IPropertyContainer next()
 			 {
 				  try
 				  {
@@ -290,7 +290,7 @@ namespace Neo4Net.Graphalgo.impl.util
 				  finally
 				  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> temp = current;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> temp = current;
 						IEnumerator<PropertyContainer> temp = current;
 						current = next;
 						next = temp;

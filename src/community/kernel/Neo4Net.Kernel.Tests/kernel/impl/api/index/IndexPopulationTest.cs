@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  OnlineIndexProxy onlineProxy = OnlineIndexProxy( storeView );
 			  FlippableIndexProxy flipper = new FlippableIndexProxy();
 			  flipper.FlipTarget = () => onlineProxy;
-			  MultipleIndexPopulator multipleIndexPopulator = new MultipleIndexPopulator( storeView, logProvider, EntityType.NODE, mock( typeof( SchemaState ) ) );
+			  MultipleIndexPopulator multipleIndexPopulator = new MultipleIndexPopulator( storeView, logProvider, IEntityType.NODE, mock( typeof( SchemaState ) ) );
 
 			  MultipleIndexPopulator.IndexPopulation indexPopulation = multipleIndexPopulator.AddPopulator( populator, DummyMeta(), flipper, t => failedProxy, "userDescription" );
 			  multipleIndexPopulator.QueueUpdate( SomeUpdate() );
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.neo4j.kernel.api.index.IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 				 public void process<T1>( IndexEntryUpdate<T1> update )
 				 {
 					  throw new IndexEntryConflictException( 0, 1, Values.numberValue( 0 ) );

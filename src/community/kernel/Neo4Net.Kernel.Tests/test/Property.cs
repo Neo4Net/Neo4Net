@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Test
 {
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 
 	public sealed class Property
 	{
@@ -29,13 +29,13 @@ namespace Neo4Net.Test
 			  return new Property( key, value );
 		 }
 
-		 public static E Set<E>( E entity, params Property[] properties ) where E : Neo4Net.Graphdb.PropertyContainer
+		 public static E Set<E>( E IEntity, params Property[] properties ) where E : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  foreach ( Property property in properties )
 			  {
 					entity.setProperty( property._key, property._value );
 			  }
-			  return entity;
+			  return IEntity;
 		 }
 
 		 private readonly string _key;

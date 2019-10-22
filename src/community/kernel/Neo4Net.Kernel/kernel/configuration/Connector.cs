@@ -22,16 +22,16 @@
 namespace Neo4Net.Kernel.configuration
 {
 	using Description = Neo4Net.Configuration.Description;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.NO_DEFAULT;
+//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsObeyCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	[Group("dbms.connector")]
 	public class Connector

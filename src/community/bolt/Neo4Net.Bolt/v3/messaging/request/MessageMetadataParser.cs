@@ -24,9 +24,9 @@ namespace Neo4Net.Bolt.v3.messaging.request
 {
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Neo4Net.Kernel.impl.util;
 	using AnyValue = Neo4Net.Values.AnyValue;
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.time.Duration parseTransactionTimeout(org.neo4j.values.virtual.MapValue meta) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: static java.time.Duration parseTransactionTimeout(org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
 		 internal static Duration ParseTransactionTimeout( MapValue meta )
 		 {
 			  AnyValue anyValue = meta.Get( TX_TIMEOUT_KEY );
@@ -67,7 +67,7 @@ namespace Neo4Net.Bolt.v3.messaging.request
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.Map<String,Object> parseTransactionMetadata(org.neo4j.values.virtual.MapValue meta) throws org.neo4j.bolt.messaging.BoltIOException
+//ORIGINAL LINE: static java.util.Map<String,Object> parseTransactionMetadata(org.Neo4Net.values.virtual.MapValue meta) throws org.Neo4Net.bolt.messaging.BoltIOException
 		 internal static IDictionary<string, object> ParseTransactionMetadata( MapValue meta )
 		 {
 			  AnyValue anyValue = meta.Get( TX_META_DATA_KEY );

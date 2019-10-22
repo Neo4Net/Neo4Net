@@ -36,12 +36,12 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexProvider.EMPTY;
+//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 
 	public class HighIdTransactionApplierTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.NeoStoresRule neoStoresRule = new org.neo4j.test.rule.NeoStoresRule(getClass());
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.NeoStoresRule neoStoresRule = new org.Neo4Net.test.rule.NeoStoresRule(getClass());
 		 public readonly NeoStoresRule NeoStoresRule = new NeoStoresRule( this.GetType() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

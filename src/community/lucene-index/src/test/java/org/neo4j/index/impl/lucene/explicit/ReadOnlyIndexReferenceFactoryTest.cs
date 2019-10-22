@@ -25,8 +25,8 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using ExpectedException = org.junit.rules.ExpectedException;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -112,7 +112,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  DatabaseLayout databaseLayout = _testDirectory.databaseLayout();
 			  _indexStore = new IndexConfigStore( databaseLayout, _fileSystemRule.get() );
-			  _indexStore.set( typeof( Node ), INDEX_NAME, MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
+			  _indexStore.set( typeof( Node ), INDEX_NAME, MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene", "type", "fulltext" ) );
 			  LuceneDataSource luceneDataSource = new LuceneDataSource( databaseLayout, Config.defaults(), _indexStore, _fileSystemRule.get(), OperationalMode.single );
 			  try
 			  {

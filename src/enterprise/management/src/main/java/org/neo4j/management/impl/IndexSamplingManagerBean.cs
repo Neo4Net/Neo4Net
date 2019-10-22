@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,22 +13,22 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.management.impl
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Service = Neo4Net.Helpers.Service;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using ManagementBeanProvider = Neo4Net.Jmx.impl.ManagementBeanProvider;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
-	using Neo4jMBean = Neo4Net.Jmx.impl.Neo4jMBean;
+	using Neo4NetMBean = Neo4Net.Jmx.impl.Neo4NetMBean;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -38,10 +38,10 @@ namespace Neo4Net.management.impl
 	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class IndexSamplingManagerBean extends org.neo4j.jmx.impl.ManagementBeanProvider
+//ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class IndexSamplingManagerBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider
 	public sealed class IndexSamplingManagerBean : ManagementBeanProvider
 	{
 		 public IndexSamplingManagerBean() : base(typeof(IndexSamplingManager))
@@ -49,23 +49,23 @@ namespace Neo4Net.management.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.jmx.impl.Neo4jMBean createMBean(org.neo4j.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
-		 protected internal override Neo4jMBean CreateMBean( ManagementData management )
+//ORIGINAL LINE: protected org.Neo4Net.jmx.impl.Neo4NetMBean createMBean(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new IndexSamplingManagerImpl( management );
 		 }
 
-		 protected internal override Neo4jMBean CreateMXBean( ManagementData management )
+		 protected internal override Neo4NetMBean CreateMXBean( ManagementData management )
 		 {
 			  return new IndexSamplingManagerImpl( management, true );
 		 }
 
-		 private class IndexSamplingManagerImpl : Neo4jMBean, IndexSamplingManager
+		 private class IndexSamplingManagerImpl : Neo4NetMBean, IndexSamplingManager
 		 {
 			  internal readonly StoreAccess Access;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexSamplingManagerImpl(org.neo4j.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: IndexSamplingManagerImpl(org.Neo4Net.jmx.impl.ManagementData management) throws javax.management.NotCompliantMBeanException
 			  internal IndexSamplingManagerImpl( ManagementData management ) : base( management )
 			  {
 					this.Access = Access( management );

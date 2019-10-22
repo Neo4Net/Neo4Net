@@ -27,7 +27,7 @@ namespace Neo4Net.Helpers
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.flag;
+//	import static org.Neo4Net.util.FeatureToggles.flag;
 
 	/// <summary>
 	/// A utility for locating services. This implements the same functionality as <a
@@ -38,7 +38,7 @@ namespace Neo4Net.Helpers
 	/// that are differentiated by a String key. An example implementation might be:
 	/// <pre>
 	/// <code>
-	/// public abstract class StringConverter extends org.neo4j.commons.Service
+	/// public abstract class StringConverter extends org.Neo4Net.commons.Service
 	/// {
 	///     protected StringConverter(String id)
 	///     {
@@ -49,7 +49,7 @@ namespace Neo4Net.Helpers
 	/// 
 	///     public static StringConverter load( String id )
 	///     {
-	///         return org.neo4j.commons.Service.load( StringConverter.class, id );
+	///         return org.Neo4Net.commons.Service.load( StringConverter.class, id );
 	///     }
 	/// }
 	/// </code>
@@ -322,7 +322,7 @@ namespace Neo4Net.Helpers
 					if ( currentCL != contextCL )
 					{
 						 // JBoss 7 does not export content of META-INF/services to context
-						 // class loader, so this call adds implementations defined in Neo4j
+						 // class loader, so this call adds implementations defined in Neo4Net
 						 // libraries from the same module.
 						 IEnumerable<T> currentClassLoaderServices = ServiceLoader.load( type, currentCL );
 						 // Combine services loaded by both context and module class loaders.

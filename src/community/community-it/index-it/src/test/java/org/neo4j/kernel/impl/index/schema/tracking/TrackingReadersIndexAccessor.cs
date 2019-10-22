@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema.tracking
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.tracking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  _accessor.verifyDeferredConstraints( nodePropertyAccessor );

@@ -22,7 +22,7 @@
 namespace Neo4Net.Internal
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using DataCollectorModule = Neo4Net.Internal.Collector.DataCollectorModule;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
@@ -60,7 +60,7 @@ namespace Neo4Net.Internal
 		 {
 			  // When we have multiple dbs, this has to be suitably modified to get the right kernel and procedures
 			  NeoStoreDataSource dataSource = _dataSourceManager.DataSource;
-			  EmbeddedProxySPI embeddedProxySPI = dataSource.DependencyResolver.resolveDependency( typeof( EmbeddedProxySPI ), Neo4Net.Graphdb.DependencyResolver_SelectionStrategy.ONLY );
+			  EmbeddedProxySPI embeddedProxySPI = dataSource.DependencyResolver.resolveDependency( typeof( EmbeddedProxySPI ), Neo4Net.GraphDb.DependencyResolver_SelectionStrategy.ONLY );
 			  _dataCollectors.Add( DataCollectorModule.setupDataCollector( _procedures, _jobScheduler, dataSource.Kernel, _monitors, new DefaultValueMapper( embeddedProxySPI ), _config ) );
 		 }
 

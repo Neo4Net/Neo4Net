@@ -48,7 +48,7 @@ namespace Neo4Net.Collections
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.mergeToSet;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
 
 	internal class PrimitiveLongCollectionsTest
 	{

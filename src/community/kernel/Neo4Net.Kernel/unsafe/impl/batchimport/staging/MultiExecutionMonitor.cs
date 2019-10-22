@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Clocks = Neo4Net.Time.Clocks;
 
 	/// <summary>

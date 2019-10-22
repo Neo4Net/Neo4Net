@@ -29,10 +29,10 @@ namespace Neo4Net.Server.plugins
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
 	using ServerHelper = Neo4Net.Server.helpers.ServerHelper;
 	using JaxRsResponse = Neo4Net.Server.rest.JaxRsResponse;
@@ -94,7 +94,7 @@ namespace Neo4Net.Server.plugins
 
 		 private Node _jw;
 
-		 private void CreateASocialNetwork( GraphDatabaseService db )
+		 private void CreateASocialNetwork( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -157,7 +157,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAdvertiseExtensionThatPluginCreates() throws org.neo4j.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException
+//ORIGINAL LINE: @Test public void shouldAdvertiseExtensionThatPluginCreates() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAdvertiseExtensionThatPluginCreates()
 		 {
@@ -166,9 +166,9 @@ namespace Neo4Net.Server.plugins
 			  // Find the start node URI from the server
 			  JaxRsResponse response = ( new RestRequest() ).get(_functionalTestHelper.dataUri() + "node/1");
 
-			  string entity = response.Entity;
+			  string IEntity = response.Entity;
 
-			  IDictionary<string, object> map = JsonHelper.jsonToMap( entity );
+			  IDictionary<string, object> map = JsonHelper.jsonToMap( IEntity );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: java.util.HashMap<?, ?> extensionsMap = (java.util.HashMap<?, ?>) map.get("extensions");

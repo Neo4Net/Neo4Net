@@ -63,7 +63,7 @@ namespace Neo4Net.Bolt.v1.runtime.spi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.neo4j.cypher.result.QueryResult_Record> eqRecord(final org.hamcrest.Matcher<?>... expectedFieldValues)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.cypher.result.QueryResult_Record> eqRecord(final org.hamcrest.Matcher<?>... expectedFieldValues)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static Matcher<Neo4Net.Cypher.result.QueryResult_Record> EqRecord( params Matcher<object>[] expectedFieldValues )
 		 {

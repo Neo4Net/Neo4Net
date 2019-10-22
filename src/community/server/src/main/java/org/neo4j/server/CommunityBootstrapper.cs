@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server
 {
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CommunityGraphFactory = Neo4Net.Server.database.CommunityGraphFactory;
 	using GraphFactory = Neo4Net.Server.database.GraphFactory;

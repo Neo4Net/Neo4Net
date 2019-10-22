@@ -23,10 +23,10 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
 	using SchemaReadCore = Neo4Net.Internal.Kernel.Api.SchemaReadCore;
@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Statement = Neo4Net.Kernel.api.Statement;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 
 	public abstract class TokenAccess<R>
 	{

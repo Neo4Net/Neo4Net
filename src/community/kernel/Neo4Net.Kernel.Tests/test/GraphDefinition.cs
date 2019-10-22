@@ -22,12 +22,12 @@
 namespace Neo4Net.Test
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
 
 	public interface GraphDefinition
 	{
-		 IDictionary<string, Node> Create( GraphDatabaseService graphdb );
+		 IDictionary<string, Node> Create( IGraphDatabaseService graphdb );
 	}
 
 }

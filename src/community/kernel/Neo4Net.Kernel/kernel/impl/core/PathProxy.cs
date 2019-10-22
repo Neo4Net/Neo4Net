@@ -25,14 +25,14 @@ using System.Text;
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iteratorsEqual;
+//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	public class PathProxy : Path
 	{
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.impl.core
 				  return i < _outerInstance.relationships.Length || !relationship;
 			 }
 
-			 public PropertyContainer next()
+			 public IPropertyContainer next()
 			 {
 				  if ( relationship )
 				  {

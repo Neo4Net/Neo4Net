@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void FreeAfterRelease()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = allocator.allocate(128, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block = allocator.allocate(128, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block = _allocator.allocate( 128, _memoryTracker );
 			  _allocator.release();
 			  _allocator.free( block, _memoryTracker );
@@ -88,14 +88,14 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void AllocateAndFree()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(128, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(128, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block1 = _allocator.allocate( 128, _memoryTracker );
 			  assertEquals( block1.Size, 128 );
 			  assertEquals( 128 + Long.BYTES - 1, block1.UnalignedSize );
 			  assertEquals( block1.UnalignedSize, _memoryTracker.usedDirectMemory() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(256, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(256, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block2 = _allocator.allocate( 256, _memoryTracker );
 			  assertEquals( block2.Size, 256 );
 			  assertEquals( 256 + Long.BYTES - 1, block2.UnalignedSize );
@@ -111,12 +111,12 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void AllocateNonCacheableSize( long bytes )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(bytes, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(bytes, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block1 = _allocator.allocate( bytes, _memoryTracker );
 			  _allocator.free( block1, _memoryTracker );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(bytes, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(bytes, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block2 = _allocator.allocate( bytes, _memoryTracker );
 			  _allocator.free( block2, _memoryTracker );
 
@@ -131,12 +131,12 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 internal virtual void AllocateCacheableSize( long bytes )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(bytes, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block1 = allocator.allocate(bytes, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block1 = _allocator.allocate( bytes, _memoryTracker );
 			  _allocator.free( block1, _memoryTracker );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(bytes, memoryTracker);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock block2 = allocator.allocate(bytes, memoryTracker);
 			  OffHeapBlockAllocator_MemoryBlock block2 = _allocator.allocate( bytes, _memoryTracker );
 			  _allocator.free( block2, _memoryTracker );
 
@@ -151,10 +151,10 @@ namespace Neo4Net.Kernel.impl.util.collection
 		 {
 			  const int extra = 3;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks64 = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks64 = new java.util.ArrayList<>();
 			  IList<OffHeapBlockAllocator_MemoryBlock> blocks64 = new List<OffHeapBlockAllocator_MemoryBlock>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks128 = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.kernel.impl.util.collection.OffHeapBlockAllocator_MemoryBlock> blocks128 = new java.util.ArrayList<>();
 			  IList<OffHeapBlockAllocator_MemoryBlock> blocks128 = new List<OffHeapBlockAllocator_MemoryBlock>();
 			  for ( int i = 0; i < CACHE_SIZE + extra; i++ )
 			  {

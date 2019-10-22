@@ -22,7 +22,7 @@ namespace Neo4Net.Server.rest.web
 
 	public class CustomStatusType : Response.StatusType
 	{
-		 public static readonly Response.StatusType Unprocessable = new CustomStatusType( 422, "Unprocessable Entity" );
+		 public static readonly Response.StatusType Unprocessable = new CustomStatusType( 422, "Unprocessable IEntity" );
 
 		 private readonly int _code;
 		 private readonly string _reason;

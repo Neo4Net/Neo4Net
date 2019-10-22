@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.management.impl
 {
@@ -30,12 +30,12 @@ namespace Neo4Net.management.impl
 
 	/// <summary>
 	/// Does not have any public methods - since the public interface of
-	/// <seealso cref="org.neo4j.management.Neo4jManager"/> should be defined completely in
+	/// <seealso cref="org.Neo4Net.management.Neo4NetManager"/> should be defined completely in
 	/// that class.
 	/// </summary>
 	public abstract class KernelProxy
 	{
-		 internal const string KERNEL_BEAN_TYPE = "org.neo4j.jmx.Kernel";
+		 internal const string KERNEL_BEAN_TYPE = "org.Neo4Net.jmx.Kernel";
 		 protected internal const string KERNEL_BEAN_NAME = "Kernel";
 		 internal const string MBEAN_QUERY = "MBeanQuery";
 		 protected internal readonly MBeanServerConnection Server;
@@ -54,7 +54,7 @@ namespace Neo4Net.management.impl
 			  }
 			  if ( !KERNEL_BEAN_TYPE.Equals( className ) )
 			  {
-					throw new System.ArgumentException( "The specified ObjectName does not represent a Neo4j Kernel bean in the specified MBean server." );
+					throw new System.ArgumentException( "The specified ObjectName does not represent a Neo4Net Kernel bean in the specified MBean server." );
 			  }
 			  this.Server = server;
 			  this.Kernel = kernel;
@@ -166,14 +166,14 @@ namespace Neo4Net.management.impl
 		 {
 			  Dictionary<string, string> properties = new Dictionary<string, string>();
 			  properties["instance"] = "kernel#" + kernelIdentifier;
-			  return CreateObjectName( "org.neo4j", properties, beanName, false, extraNaming );
+			  return CreateObjectName( "org.Neo4Net", properties, beanName, false, extraNaming );
 		 }
 
 		 internal static ObjectName CreateObjectNameQuery( string kernelIdentifier, string beanName, params string[] extraNaming )
 		 {
 			  Dictionary<string, string> properties = new Dictionary<string, string>();
 			  properties["instance"] = "kernel#" + kernelIdentifier;
-			  return CreateObjectName( "org.neo4j", properties, beanName, true, extraNaming );
+			  return CreateObjectName( "org.Neo4Net", properties, beanName, true, extraNaming );
 		 }
 
 		 internal static ObjectName CreateObjectName( ObjectName query, Type beanInterface )
@@ -202,7 +202,7 @@ namespace Neo4Net.management.impl
 						 return management.name();
 					}
 			  }
-			  throw new System.ArgumentException( beanInterface + " is not a Neo4j Management Been interface" );
+			  throw new System.ArgumentException( beanInterface + " is not a Neo4Net Management Been interface" );
 		 }
 
 		 private static ObjectName CreateObjectName( string domain, Dictionary<string, string> properties, string beanName, bool query, params string[] extraNaming )

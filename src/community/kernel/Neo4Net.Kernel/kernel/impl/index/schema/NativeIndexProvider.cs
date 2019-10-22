@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 protected internal abstract IndexPopulator NewIndexPopulator( File storeFile, LAYOUT layout, StoreIndexDescriptor descriptor, ByteBufferFactory bufferFactory );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexAccessor getOnlineAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  File storeFile = NativeIndexFileFromIndexId( descriptor.Id );
@@ -92,11 +92,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.neo4j.kernel.api.index.IndexAccessor newIndexAccessor(java.io.File storeFile, LAYOUT layout, org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, boolean readOnly) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract org.Neo4Net.kernel.api.index.IndexAccessor newIndexAccessor(java.io.File storeFile, LAYOUT layout, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, boolean readOnly) throws java.io.IOException;
 		 protected internal abstract IndexAccessor NewIndexAccessor( File storeFile, LAYOUT layout, StoreIndexDescriptor descriptor, bool readOnly );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  try

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.recovery
 	public interface RecoveryMonitor
 	{
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void recoveryRequired(org.neo4j.kernel.impl.transaction.log.LogPosition recoveryPosition)
+//		 default void recoveryRequired(org.Neo4Net.kernel.impl.transaction.log.LogPosition recoveryPosition)
 	//	 {
 	//		  // noop
 	//	 }
@@ -49,13 +49,13 @@ namespace Neo4Net.Kernel.recovery
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void failToRecoverTransactionsAfterCommit(Throwable t, org.neo4j.kernel.impl.transaction.log.entry.LogEntryCommit commitEntry, org.neo4j.kernel.impl.transaction.log.LogPosition recoveryToPosition)
+//		 default void failToRecoverTransactionsAfterCommit(Throwable t, org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryCommit commitEntry, org.Neo4Net.kernel.impl.transaction.log.LogPosition recoveryToPosition)
 	//	 {
 	//		  //noop
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void failToRecoverTransactionsAfterPosition(Throwable t, org.neo4j.kernel.impl.transaction.log.LogPosition recoveryFromPosition)
+//		 default void failToRecoverTransactionsAfterPosition(Throwable t, org.Neo4Net.kernel.impl.transaction.log.LogPosition recoveryFromPosition)
 	//	 {
 	//		  //noop
 	//	 }

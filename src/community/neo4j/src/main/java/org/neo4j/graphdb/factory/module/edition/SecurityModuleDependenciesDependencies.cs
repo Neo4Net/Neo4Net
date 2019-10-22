@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.edition
+namespace Neo4Net.GraphDb.factory.module.edition
 {
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;

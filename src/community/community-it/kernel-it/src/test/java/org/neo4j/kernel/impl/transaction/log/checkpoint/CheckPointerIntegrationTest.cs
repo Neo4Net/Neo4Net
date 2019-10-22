@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using CheckPoint = Neo4Net.Kernel.impl.transaction.log.entry.CheckPoint;
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
@@ -54,17 +54,17 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class CheckPointerIntegrationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private GraphDatabaseBuilder _builder;
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DatabaseShutdownDuringConstantCheckPointing()
 		 {
-			  GraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, 0 + "ms" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "1" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
+			  IGraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, 0 + "ms" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "1" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.createNode();
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 {
 			  // given
 			  long millis = 200;
-			  GraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, millis + "ms" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "10000" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
+			  IGraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, millis + "ms" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "10000" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
 
 			  // when
 			  using ( Transaction tx = Db.beginTx() )
@@ -128,8 +128,8 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static boolean checkPointInTxLog(org.neo4j.graphdb.GraphDatabaseService db) throws java.io.IOException
-		 private static bool CheckPointInTxLog( GraphDatabaseService db )
+//ORIGINAL LINE: private static boolean checkPointInTxLog(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+		 private static bool CheckPointInTxLog( IGraphDatabaseService db )
 		 {
 			  LogFiles logFiles = ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( LogFiles ) );
 			  LogFile logFile = logFiles.LogFile;
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 public virtual void ShouldCheckPointBasedOnTxCount()
 		 {
 			  // given
-			  GraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, "300m" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "1" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
+			  IGraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, "300m" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "1" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
 
 			  // when
 			  using ( Transaction tx = Db.beginTx() )
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 public virtual void ShouldNotCheckPointWhenThereAreNoCommits()
 		 {
 			  // given
-			  GraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, "1s" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "10000" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
+			  IGraphDatabaseService db = _builder.setConfig( GraphDatabaseSettings.check_point_interval_time, "1s" ).setConfig( GraphDatabaseSettings.check_point_interval_tx, "10000" ).setConfig( GraphDatabaseSettings.logical_log_rotation_threshold, "1g" ).newGraphDatabase();
 
 			  // when
 
@@ -218,8 +218,8 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void triggerCheckPointAttempt(org.neo4j.graphdb.GraphDatabaseService db) throws Exception
-		 private static void TriggerCheckPointAttempt( GraphDatabaseService db )
+//ORIGINAL LINE: private static void triggerCheckPointAttempt(org.Neo4Net.graphdb.GraphDatabaseService db) throws Exception
+		 private static void TriggerCheckPointAttempt( IGraphDatabaseService db )
 		 {
 			  // Simulates triggering the checkpointer background job which runs now and then, checking whether
 			  // or not there's a need to perform a checkpoint.
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			  internal readonly LogEntryReader<ReadableClosablePositionAwareChannel> LogEntryReader;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CheckPointCollector(java.io.File directory, org.neo4j.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
+//ORIGINAL LINE: CheckPointCollector(java.io.File directory, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws java.io.IOException
 			  internal CheckPointCollector( File directory, FileSystemAbstraction fileSystem )
 			  {
 					this.LogEntryReader = new VersionAwareLogEntryReader<ReadableClosablePositionAwareChannel>();
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.neo4j.kernel.impl.transaction.log.entry.CheckPoint> find(long version) throws java.io.IOException
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.kernel.impl.transaction.log.entry.CheckPoint> find(long version) throws java.io.IOException
 			  public virtual IList<CheckPoint> Find( long version )
 			  {
 					IList<CheckPoint> checkPoints = new List<CheckPoint>();

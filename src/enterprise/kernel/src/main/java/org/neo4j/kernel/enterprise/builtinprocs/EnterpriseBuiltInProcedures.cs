@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,17 +13,17 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using BuiltInProcedures = Neo4Net.Kernel.builtinprocs.BuiltInProcedures;
@@ -35,22 +35,22 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.SCHEMA;
+//	import static org.Neo4Net.procedure.Mode.SCHEMA;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public class EnterpriseBuiltInProcedures
 	public class EnterpriseBuiltInProcedures
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.kernel.api.KernelTransaction tx;
+//ORIGINAL LINE: @Context public org.Neo4Net.kernel.api.KernelTransaction tx;
 		 public KernelTransaction Tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.DependencyResolver resolver;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.DependencyResolver resolver;
 		 public DependencyResolver Resolver;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createNodeKey", mode = SCHEMA) public java.util.stream.Stream<org.neo4j.kernel.builtinprocs.BuiltInProcedures.SchemaIndexInfo> createNodeKey(@Name("index") String index, @Name("providerName") String providerName) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createNodeKey", mode = SCHEMA) public java.util.stream.Stream<org.Neo4Net.kernel.builtinprocs.BuiltInProcedures.SchemaIndexInfo> createNodeKey(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status"), Procedure(name : "db.createNodeKey", mode : SCHEMA)]
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateNodeKey( string index, string providerName )

@@ -22,7 +22,7 @@ namespace Neo4Net.Server.rest.transactional
 	using HttpContext = com.sun.jersey.api.core.HttpContext;
 	using HttpResponseContext = com.sun.jersey.api.core.HttpResponseContext;
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using RepresentationWriteHandler = Neo4Net.Server.rest.repr.RepresentationWriteHandler;
 
 	public class CommitOnSuccessfulStatusCodeRepresentationWriteHandler : RepresentationWriteHandler

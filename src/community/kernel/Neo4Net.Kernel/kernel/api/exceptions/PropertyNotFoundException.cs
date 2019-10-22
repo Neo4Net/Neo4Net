@@ -21,20 +21,20 @@ namespace Neo4Net.Kernel.Api.Exceptions
 {
 	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	public class PropertyNotFoundException : KernelException
 	{
 		 private readonly string _entity;
 		 private readonly int _propertyKeyId;
 
-		 public PropertyNotFoundException( int propertyKeyId, EntityType entityType, long entityId ) : this( entityType == EntityType.GRAPH ? "GraphProperties" : entityType.name() + "[" + entityId + "]", propertyKeyId )
+		 public PropertyNotFoundException( int propertyKeyId, IEntityType IEntityType, long IEntityId ) : this( IEntityType == IEntityType.GRAPH ? "GraphProperties" : IEntityType.name() + "[" + IEntityId + "]", propertyKeyId )
 		 {
 		 }
 
-		 private PropertyNotFoundException( string entity, int propertyKeyId ) : base( Status_Statement.PropertyNotFound, "%s has no property with propertyKeyId=%s.", entity, propertyKeyId )
+		 private PropertyNotFoundException( string IEntity, int propertyKeyId ) : base( Status_Statement.PropertyNotFound, "%s has no property with propertyKeyId=%s.", IEntity, propertyKeyId )
 		 {
-			  this._entity = entity;
+			  this._entity = IEntity;
 			  this._propertyKeyId = propertyKeyId;
 		 }
 

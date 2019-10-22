@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus
 {
@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.core.consensus
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
+//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.identity.RaftTestMember.member;
+//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
 
 	public class CatchUpTest
 	{
@@ -58,10 +58,10 @@ namespace Neo4Net.causalclustering.core.consensus
 
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId leader = member(0);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leader = member(0);
 			  MemberId leader = member( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId[] allMembers = {leader, member(1), member(2)};
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] allMembers = {leader, member(1), member(2)};
 			  MemberId[] allMembers = new MemberId[] { leader, member( 1 ), member( 2 ) };
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  RaftTestFixture fixture = new RaftTestFixture( net, 3, allMembers );
 			  fixture.Bootstrap( allMembers );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId leaderMember = fixture.members().withId(leader).member();
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leaderMember = fixture.members().withId(leader).member();
 			  MemberId leaderMember = fixture.Members().withId(leader).member();
 
 			  // when
@@ -94,17 +94,17 @@ namespace Neo4Net.causalclustering.core.consensus
 
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId leaderId = member(0);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leaderId = member(0);
 			  MemberId leaderId = member( 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId sleepyId = member(2);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId sleepyId = member(2);
 			  MemberId sleepyId = member( 2 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId[] awakeMembers = {leaderId, member(1)};
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] awakeMembers = {leaderId, member(1)};
 			  MemberId[] awakeMembers = new MemberId[] { leaderId, member( 1 ) };
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId[] allMembers = {leaderId, member(1), sleepyId};
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId[] allMembers = {leaderId, member(1), sleepyId};
 			  MemberId[] allMembers = new MemberId[] { leaderId, member( 1 ), sleepyId };
 
 			  RaftTestFixture fixture = new RaftTestFixture( net, 3, allMembers );
@@ -115,7 +115,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  net.ProcessMessages();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.identity.MemberId leader = fixture.members().withId(leaderId).member();
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.identity.MemberId leader = fixture.members().withId(leaderId).member();
 			  MemberId leader = fixture.Members().withId(leaderId).member();
 
 			  net.Disconnect( sleepyId );
@@ -145,7 +145,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<int> integerValues(org.neo4j.causalclustering.core.consensus.log.ReadableRaftLog log) throws java.io.IOException
+//ORIGINAL LINE: private java.util.List<int> integerValues(org.Neo4Net.causalclustering.core.consensus.log.ReadableRaftLog log) throws java.io.IOException
 		 private IList<int> IntegerValues( ReadableRaftLog log )
 		 {
 			  IList<int> actual = new List<int>();

@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Test.rule
 {
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -45,9 +45,9 @@ namespace Neo4Net.Test.rule
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.tracing.PageCacheTracer.NULL;
+//	import static org.Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
 
 	/// <summary>
 	/// Rule for opening a <seealso cref="NeoStores"/>.
@@ -76,7 +76,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.store.NeoStores open(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.kernel.impl.store.format.RecordFormats format, System.Func<org.neo4j.io.fs.FileSystemAbstraction,org.neo4j.kernel.impl.store.id.IdGeneratorFactory> idGeneratorFactory, String... config) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.store.NeoStores open(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.impl.store.format.RecordFormats format, System.Func<org.Neo4Net.io.fs.FileSystemAbstraction,org.Neo4Net.kernel.impl.store.id.IdGeneratorFactory> idGeneratorFactory, String... config) throws java.io.IOException
 		 private NeoStores Open( FileSystemAbstraction fs, PageCache pageCache, RecordFormats format, System.Func<FileSystemAbstraction, IdGeneratorFactory> idGeneratorFactory, params string[] config )
 		 {
 			  Debug.Assert( _neoStores == null, "Already opened" );
@@ -150,7 +150,7 @@ namespace Neo4Net.Test.rule
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.store.NeoStores build() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.NeoStores build() throws java.io.IOException
 			  public virtual NeoStores Build()
 			  {
 					if ( Fs == null )

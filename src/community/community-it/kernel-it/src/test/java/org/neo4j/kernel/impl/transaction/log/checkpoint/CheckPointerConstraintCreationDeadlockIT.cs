@@ -26,10 +26,10 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using Test = org.junit.Test;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
@@ -49,11 +49,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// The scenario, which takes place on database instance applying constraint
@@ -85,16 +85,16 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.VerboseTimeout timeout = org.neo4j.test.rule.VerboseTimeout.builder().withTimeout(30, SECONDS).build();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(30, SECONDS).build();
 		 public readonly VerboseTimeout Timeout = VerboseTimeout.builder().withTimeout(30, SECONDS).build();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.neo4j.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.neo4j.test.rule.concurrent.OtherThreadRule<>("T3");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>( "T3" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<org.neo4j.kernel.impl.transaction.TransactionRepresentation> createConstraintCreatingTransactions() throws Exception
+//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.impl.transaction.TransactionRepresentation> createConstraintCreatingTransactions() throws Exception
 		 private static IList<TransactionRepresentation> CreateConstraintCreatingTransactions()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();

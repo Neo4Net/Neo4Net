@@ -22,7 +22,7 @@
 namespace Neo4Net.Graphalgo.impl.util
 {
 	using Neo4Net.Graphalgo;
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 
 	public class GeoEstimateEvaluator : EstimateEvaluator<double>
 	{

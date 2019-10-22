@@ -29,11 +29,11 @@ namespace Schema
 
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
@@ -43,7 +43,7 @@ namespace Schema
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.DoubleLatch.awaitLatch;
+//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
 
 	public class DynamicIndexStoreViewIT
 	{
@@ -75,7 +75,7 @@ namespace Schema
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void PopulateDbWithConcurrentUpdates()
 		 {
-			  GraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(_testDirectory.databaseDir());
+			  IGraphDatabaseService database = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(_testDirectory.databaseDir());
 			  try
 			  {
 					RandomValues randomValues = RandomValues.create();
@@ -138,12 +138,12 @@ namespace Schema
 		 {
 			 private readonly DynamicIndexStoreViewIT _outerInstance;
 
-			  internal readonly GraphDatabaseService DatabaseService;
+			  internal readonly IGraphDatabaseService DatabaseService;
 			  internal readonly long TotalNodes;
 			  internal readonly System.Threading.CountdownEvent StartSignal;
 			  internal readonly AtomicBoolean EndSignal;
 
-			  internal Populator( DynamicIndexStoreViewIT outerInstance, GraphDatabaseService databaseService, long totalNodes, System.Threading.CountdownEvent startSignal, AtomicBoolean endSignal )
+			  internal Populator( DynamicIndexStoreViewIT outerInstance, IGraphDatabaseService databaseService, long totalNodes, System.Threading.CountdownEvent startSignal, AtomicBoolean endSignal )
 			  {
 				  this._outerInstance = outerInstance;
 					this.DatabaseService = databaseService;

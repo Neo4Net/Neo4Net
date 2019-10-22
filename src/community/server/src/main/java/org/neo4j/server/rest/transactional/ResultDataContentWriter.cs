@@ -23,13 +23,13 @@ namespace Neo4Net.Server.rest.transactional
 {
 	using JsonGenerator = org.codehaus.jackson.JsonGenerator;
 
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 
 	public interface ResultDataContentWriter
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.neo4j.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException;
-		 void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.Graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker );
+//ORIGINAL LINE: void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.Neo4Net.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException;
+		 void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row, TransactionStateChecker txStateChecker );
 	}
 
 }

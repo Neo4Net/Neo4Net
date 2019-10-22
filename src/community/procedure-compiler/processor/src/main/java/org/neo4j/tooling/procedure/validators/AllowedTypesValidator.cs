@@ -27,7 +27,7 @@ namespace Neo4Net.Tooling.procedure.validators
 
 	/// <summary>
 	/// This predicate makes sure that a given declared type (record field type,
-	/// procedure parameter type...) is supported by Neo4j stored procedures.
+	/// procedure parameter type...) is supported by Neo4Net stored procedures.
 	/// </summary>
 	public class AllowedTypesValidator : System.Predicate<TypeMirror>
 	{
@@ -99,7 +99,7 @@ namespace Neo4Net.Tooling.procedure.validators
 
 		 /// <summary>
 		 /// Recursively visits Map type arguments
-		 /// Map key type argument must be a String as of Neo4j stored procedure specification
+		 /// Map key type argument must be a String as of Neo4Net stored procedure specification
 		 /// Map value type argument is recursively visited
 		 /// </summary>
 		 /// <param name="typeMirror"> Map type mirror </param>

@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_record_field_type
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	public class BadRecordSimpleFieldType
 	{

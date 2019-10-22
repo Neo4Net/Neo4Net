@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Input input(final org.neo4j.unsafe.impl.batchimport.InputIterable nodes, final org.neo4j.unsafe.impl.batchimport.InputIterable relationships, final org.neo4j.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, final Collector badCollector, org.neo4j.unsafe.impl.batchimport.input.Input_Estimates estimates)
+//ORIGINAL LINE: public static Input input(final org.Neo4Net.unsafe.impl.batchimport.InputIterable nodes, final org.Neo4Net.unsafe.impl.batchimport.InputIterable relationships, final org.Neo4Net.unsafe.impl.batchimport.cache.idmapping.IdMapper idMapper, final Collector badCollector, org.Neo4Net.unsafe.impl.batchimport.input.Input_Estimates estimates)
 		 public static Input Input( InputIterable nodes, InputIterable relationships, IdMapper idMapper, Collector badCollector, Input_Estimates estimates )
 		 {
 			  return new InputAnonymousInnerClass( nodes, relationships, idMapper, badCollector, estimates );
@@ -143,16 +143,16 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 			 }
 		 }
 
-		 public static int CalculatePropertySize( InputEntity entity, System.Func<Value[], int> valueSizeCalculator )
+		 public static int CalculatePropertySize( InputEntity IEntity, System.Func<Value[], int> valueSizeCalculator )
 		 {
 			  int size = 0;
-			  int propertyCount = entity.PropertyCount();
+			  int propertyCount = IEntity.PropertyCount();
 			  if ( propertyCount > 0 )
 			  {
 					Value[] values = new Value[propertyCount];
 					for ( int i = 0; i < propertyCount; i++ )
 					{
-						 values[i] = ValueUtils.asValue( entity.PropertyValue( i ) );
+						 values[i] = ValueUtils.asValue( IEntity.PropertyValue( i ) );
 					}
 					size += valueSizeCalculator( values );
 			  }

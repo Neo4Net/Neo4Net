@@ -49,7 +49,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <exception cref="InvalidArgumentsException"> if the username is not valid </exception>
 		 /// <exception cref="IOException"> if the underlying storage for users fails </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void create(org.neo4j.kernel.impl.security.User user) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException;
+//ORIGINAL LINE: void create(org.Neo4Net.kernel.impl.security.User user) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException;
 		 void Create( User user );
 
 		 /// <summary>
@@ -58,7 +58,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <exception cref="InvalidArgumentsException"> if any username is not valid </exception>
 		 /// <exception cref="IOException"> if the underlying storage for users fails </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setUsers(ListSnapshot<org.neo4j.kernel.impl.security.User> users) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void setUsers(ListSnapshot<org.Neo4Net.kernel.impl.security.User> users) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 ListSnapshot<User> Users { set; }
 
 		 /// <summary>
@@ -69,7 +69,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <exception cref="IOException"> if the underlying storage for users fails </exception>
 		 /// <exception cref="InvalidArgumentsException"> if the existing and updated users have different names </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void update(org.neo4j.kernel.impl.security.User existingUser, org.neo4j.kernel.impl.security.User updatedUser) throws org.neo4j.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
+//ORIGINAL LINE: void update(org.Neo4Net.kernel.impl.security.User existingUser, org.Neo4Net.kernel.impl.security.User updatedUser) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException;
 		 void Update( User existingUser, User updatedUser );
 
 		 /// <summary>
@@ -78,7 +78,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <exception cref="IOException"> if the underlying storage for users fails </exception>
 		 /// <returns> true if the user was found and deleted </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean delete(org.neo4j.kernel.impl.security.User user) throws java.io.IOException;
+//ORIGINAL LINE: boolean delete(org.Neo4Net.kernel.impl.security.User user) throws java.io.IOException;
 		 bool Delete( User user );
 
 		 int NumberOfUsers();
@@ -89,7 +89,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <param name="username"> the username to be tested. </param>
 		 /// <exception cref="InvalidArgumentsException"> if the username was invalid. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertValidUsername(String username) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void assertValidUsername(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void AssertValidUsername( string username );
 
 		 ISet<string> AllUsernames { get; }
@@ -99,7 +99,7 @@ namespace Neo4Net.Server.Security.Auth
 		 /// <returns> a snapshot of the current persisted user repository </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ListSnapshot<org.neo4j.kernel.impl.security.User> getPersistedSnapshot() throws java.io.IOException;
+//ORIGINAL LINE: ListSnapshot<org.Neo4Net.kernel.impl.security.User> getPersistedSnapshot() throws java.io.IOException;
 		 ListSnapshot<User> PersistedSnapshot { get; }
 
 		 /// <summary>

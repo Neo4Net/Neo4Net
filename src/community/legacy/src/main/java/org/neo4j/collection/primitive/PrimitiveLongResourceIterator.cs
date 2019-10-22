@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Collections.primitive
 {
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	public interface PrimitiveLongResourceIterator : PrimitiveLongIterator, Resource
 	{

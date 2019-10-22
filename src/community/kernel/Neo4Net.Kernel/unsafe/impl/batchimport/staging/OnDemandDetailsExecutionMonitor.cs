@@ -25,7 +25,7 @@ using System.Threading;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Format = Neo4Net.Helpers.Format;
 	using Neo4Net.Helpers.Collections;
 	using OsBeanUtil = Neo4Net.Io.os.OsBeanUtil;
@@ -43,11 +43,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.date;
+//	import static org.Neo4Net.helpers.Format.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 
 	/// <summary>
 	/// Sits in the background and collect stats about stages that are executing.

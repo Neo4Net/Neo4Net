@@ -76,13 +76,13 @@ namespace Neo4Net.Helpers
 //ORIGINAL LINE: final java.util.List<String> states = new java.util.ArrayList<>();
 			  IList<string> states = new List<string>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control phaseA = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control phaseA = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control phaseA = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control phaseB = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control phaseB = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control phaseB = new Neo4Net.Test.Barrier_Control();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control phaseC = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control phaseC = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control phaseC = new Neo4Net.Test.Barrier_Control();
 
 			  state.set( "A" );

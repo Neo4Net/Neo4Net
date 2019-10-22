@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Test
 {
-	using Label = Neo4Net.Graphdb.Label;
+	using Label = Neo4Net.GraphDb.Label;
 
 	public enum TestLabels
 	{

@@ -29,8 +29,8 @@ namespace Neo4Net.Bolt.messaging
 		 BoltResponseHandler ResponseHandler();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RequestMessage decode(Neo4jPack_Unpacker unpacker) throws java.io.IOException;
-		 RequestMessage Decode( Neo4jPack_Unpacker unpacker );
+//ORIGINAL LINE: RequestMessage decode(Neo4NetPack_Unpacker unpacker) throws java.io.IOException;
+		 RequestMessage Decode( Neo4NetPack_Unpacker unpacker );
 	}
 
 }

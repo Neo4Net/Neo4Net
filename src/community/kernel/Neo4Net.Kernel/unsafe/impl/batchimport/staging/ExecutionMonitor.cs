@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Clocks = Neo4Net.Time.Clocks;
 
 	/// <summary>
@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 /// </summary>
 		 /// <param name="dependencyResolver"> <seealso cref="DependencyResolver"/> for getting dependencies from. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void initialize(org.neo4j.graphdb.DependencyResolver dependencyResolver)
+//		 default void initialize(org.Neo4Net.graphdb.DependencyResolver dependencyResolver)
 	//	 { // empty by default
 	//	 }
 

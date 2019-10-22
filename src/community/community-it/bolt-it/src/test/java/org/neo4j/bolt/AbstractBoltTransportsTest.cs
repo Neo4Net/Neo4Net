@@ -28,15 +28,15 @@ namespace Neo4Net.Bolt
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SecureSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureSocketConnection;
 	using SecureWebSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureWebSocketConnection;
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
 	using WebSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.WebSocketConnection;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -50,13 +50,13 @@ namespace Neo4Net.Bolt
 	{
 		 private static readonly IList<Type> _connectionClasses = Arrays.asList( typeof( SocketConnection ), typeof( WebSocketConnection ), typeof( SecureSocketConnection ), typeof( SecureWebSocketConnection ) );
 
-		 private static readonly IList<Neo4jPack> _neo4jPackVersions = Arrays.asList( new Neo4jPackV1(), new Neo4jPackV2() );
+		 private static readonly IList<Neo4NetPack> _Neo4NetPackVersions = Arrays.asList( new Neo4NetPackV1(), new Neo4NetPackV2() );
 
 		 [Parameter(0)]
 		 public Type ConnectionClass;
 
 		 [Parameter(1)]
-		 public Neo4jPack Neo4jPack;
+		 public Neo4NetPack Neo4NetPack;
 
 		 [Parameter(2)]
 		 public string Name;
@@ -71,7 +71,7 @@ namespace Neo4Net.Bolt
 		 public virtual void InitializeConnectionAndUtil()
 		 {
 			  Connection = System.Activator.CreateInstance( ConnectionClass );
-			  Util = new TransportTestUtil( Neo4jPack );
+			  Util = new TransportTestUtil( Neo4NetPack );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -92,16 +92,16 @@ namespace Neo4Net.Bolt
 			  IList<object[]> result = new List<object[]>();
 			  foreach ( Type connectionClass in _connectionClasses )
 			  {
-					foreach ( Neo4jPack neo4jPack in _neo4jPackVersions )
+					foreach ( Neo4NetPack Neo4NetPack in _Neo4NetPackVersions )
 					{
-						 result.Add( new object[]{ connectionClass, neo4jPack, NewName( connectionClass, neo4jPack ) } );
+						 result.Add( new object[]{ connectionClass, Neo4NetPack, NewName( connectionClass, Neo4NetPack ) } );
 					}
 			  }
 			  return result;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.bolt.v1.transport.socket.client.TransportConnection newConnection() throws Exception
+//ORIGINAL LINE: protected org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection newConnection() throws Exception
 		 protected internal virtual TransportConnection NewConnection()
 		 {
 			  return System.Activator.CreateInstance( ConnectionClass );
@@ -118,9 +118,9 @@ namespace Neo4Net.Bolt
 			  Connection = NewConnection();
 		 }
 
-		 private static string NewName( Type connectionClass, Neo4jPack neo4jPack )
+		 private static string NewName( Type connectionClass, Neo4NetPack Neo4NetPack )
 		 {
-			  return connectionClass.Name + " & " + neo4jPack;
+			  return connectionClass.Name + " & " + Neo4NetPack;
 		 }
 	}
 

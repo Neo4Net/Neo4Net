@@ -19,18 +19,18 @@
  */
 namespace Neo4Net.Graphalgo.shortestpath
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo.impl.shortestpath;
 	using DoubleAdder = Neo4Net.Graphalgo.impl.util.DoubleAdder;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class DijkstraMultipleRelationshipTypesTest : Neo4jAlgoTestCase
+	public class DijkstraMultipleRelationshipTypesTest : Neo4NetAlgoTestCase
 	{
 		 protected internal virtual Dijkstra<double> GetDijkstra( string startNode, string endNode, params RelationshipType[] relTypes )
 		 {

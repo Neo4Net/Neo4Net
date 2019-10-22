@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.web
 	using HttpMethod = Neo4Net.Server.web.HttpMethod;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpHeaderUtils.isValidHttpHeaderName;
+//	import static org.Neo4Net.server.web.HttpHeaderUtils.isValidHttpHeaderName;
 
 	/// <summary>
 	/// This filter adds the header "Access-Control-Allow-Origin : *" to all

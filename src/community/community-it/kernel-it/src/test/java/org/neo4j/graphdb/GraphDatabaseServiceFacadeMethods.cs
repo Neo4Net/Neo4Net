@@ -19,20 +19,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.FacadeMethod.consume;
+//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	/// <summary>
-	/// Test convenience: all the methods on GraphDatabaseService, callable using generic interface
+	/// Test convenience: all the methods on IGraphDatabaseService, callable using generic interface
 	/// </summary>
-	public sealed class GraphDatabaseServiceFacadeMethods : Consumer<GraphDatabaseService>
+	public sealed class IGraphDatabaseServiceFacadeMethods : Consumer<GraphDatabaseService>
 	{
-		 public static readonly GraphDatabaseServiceFacadeMethods CreateNode = new GraphDatabaseServiceFacadeMethods( "CreateNode", InnerEnum.CreateNode, new FacadeMethod<>( "Node createNode()", GraphDatabaseService::createNode ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods CreateNode = new IGraphDatabaseServiceFacadeMethods( "CreateNode", InnerEnum.CreateNode, new FacadeMethod<>( "Node createNode()", IGraphDatabaseService::createNode ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       CREATE_NODE_WITH_LABELS(new FacadeMethod<>("Node createNode( Label... labels )", gds -> gds.createNode(label("FOO")))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
@@ -45,16 +45,16 @@ namespace Neo4Net.Graphdb
 //       FIND_NODES_BY_LABEL_AND_PROPERTY_DEPRECATED(new FacadeMethod<>("ResourceIterator<Node> findNodeByLabelAndProperty( Label label, String key, Object value )", gds -> consume(gds.findNodes(label("bar"), "baz", 23)))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       FIND_NODES_BY_LABEL(new FacadeMethod<>("ResourceIterator<Node> findNodes( Label label )", gds -> consume(gds.findNodes(label("bar"))))),
-		 public static readonly GraphDatabaseServiceFacadeMethods GetAllLabels = new GraphDatabaseServiceFacadeMethods( "GetAllLabels", InnerEnum.GetAllLabels, new FacadeMethod<>( "Iterable<Label> getAllLabels()", GraphDatabaseService::getAllLabels ) );
-		 public static readonly GraphDatabaseServiceFacadeMethods GetAllLabelsInUse = new GraphDatabaseServiceFacadeMethods( "GetAllLabelsInUse", InnerEnum.GetAllLabelsInUse, new FacadeMethod<>( "Iterable<Label> getAllLabelsInUse()", GraphDatabaseService::getAllLabelsInUse ) );
-		 public static readonly GraphDatabaseServiceFacadeMethods GetAllRelationshipTypes = new GraphDatabaseServiceFacadeMethods( "GetAllRelationshipTypes", InnerEnum.GetAllRelationshipTypes, new FacadeMethod<>( "Iterable<RelationshipType> getAllRelationshipTypes()", GraphDatabaseService::getAllRelationshipTypes ) );
-		 public static readonly GraphDatabaseServiceFacadeMethods GetAllRelationshipTypesInUse = new GraphDatabaseServiceFacadeMethods( "GetAllRelationshipTypesInUse", InnerEnum.GetAllRelationshipTypesInUse, new FacadeMethod<>( "Iterable<RelationshipType> getAllRelationshipTypesInUse()", GraphDatabaseService::getAllRelationshipTypesInUse ) );
-		 public static readonly GraphDatabaseServiceFacadeMethods GetAllPropertyKeys = new GraphDatabaseServiceFacadeMethods( "GetAllPropertyKeys", InnerEnum.GetAllPropertyKeys, new FacadeMethod<>( "Iterable<String> getAllPropertyKeys()", GraphDatabaseService::getAllPropertyKeys ) );
-		 public static readonly GraphDatabaseServiceFacadeMethods Schema = new GraphDatabaseServiceFacadeMethods( "Schema", InnerEnum.Schema, new FacadeMethod<>( "Schema schema()", GraphDatabaseService::schema ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods GetAllLabels = new IGraphDatabaseServiceFacadeMethods( "GetAllLabels", InnerEnum.GetAllLabels, new FacadeMethod<>( "Iterable<Label> getAllLabels()", IGraphDatabaseService::getAllLabels ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods GetAllLabelsInUse = new IGraphDatabaseServiceFacadeMethods( "GetAllLabelsInUse", InnerEnum.GetAllLabelsInUse, new FacadeMethod<>( "Iterable<Label> getAllLabelsInUse()", IGraphDatabaseService::getAllLabelsInUse ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods GetAllRelationshipTypes = new IGraphDatabaseServiceFacadeMethods( "GetAllRelationshipTypes", InnerEnum.GetAllRelationshipTypes, new FacadeMethod<>( "Iterable<RelationshipType> getAllRelationshipTypes()", IGraphDatabaseService::getAllRelationshipTypes ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods GetAllRelationshipTypesInUse = new IGraphDatabaseServiceFacadeMethods( "GetAllRelationshipTypesInUse", InnerEnum.GetAllRelationshipTypesInUse, new FacadeMethod<>( "Iterable<RelationshipType> getAllRelationshipTypesInUse()", IGraphDatabaseService::getAllRelationshipTypesInUse ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods GetAllPropertyKeys = new IGraphDatabaseServiceFacadeMethods( "GetAllPropertyKeys", InnerEnum.GetAllPropertyKeys, new FacadeMethod<>( "Iterable<String> getAllPropertyKeys()", IGraphDatabaseService::getAllPropertyKeys ) );
+		 public static readonly IGraphDatabaseServiceFacadeMethods Schema = new IGraphDatabaseServiceFacadeMethods( "Schema", InnerEnum.Schema, new FacadeMethod<>( "Schema schema()", IGraphDatabaseService::schema ) );
 
 		 private static readonly IList<GraphDatabaseServiceFacadeMethods> valueList = new List<GraphDatabaseServiceFacadeMethods>();
 
-		 static GraphDatabaseServiceFacadeMethods()
+		 static IGraphDatabaseServiceFacadeMethods()
 		 {
 			 valueList.Add( CreateNode );
 			 valueList.Add( CREATE_NODE_WITH_LABELS );
@@ -95,7 +95,7 @@ namespace Neo4Net.Graphdb
 
 		 internal Private readonly;
 
-		 internal GraphDatabaseServiceFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<GraphDatabaseService> facadeMethod )
+		 internal IGraphDatabaseServiceFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<GraphDatabaseService> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -104,9 +104,9 @@ namespace Neo4Net.Graphdb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( GraphDatabaseService graphDatabaseService )
+		 public void Accept( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  _facadeMethod.accept( graphDatabaseService );
+			  _facadeMethod.accept( IGraphDatabaseService );
 		 }
 
 		 public override string ToString()
@@ -124,9 +124,9 @@ namespace Neo4Net.Graphdb
 			return ordinalValue;
 		}
 
-		public static GraphDatabaseServiceFacadeMethods valueOf( string name )
+		public static IGraphDatabaseServiceFacadeMethods valueOf( string name )
 		{
-			foreach ( GraphDatabaseServiceFacadeMethods enumInstance in GraphDatabaseServiceFacadeMethods.valueList )
+			foreach ( IGraphDatabaseServiceFacadeMethods enumInstance in IGraphDatabaseServiceFacadeMethods.valueList )
 			{
 				if ( enumInstance.nameValue == name )
 				{

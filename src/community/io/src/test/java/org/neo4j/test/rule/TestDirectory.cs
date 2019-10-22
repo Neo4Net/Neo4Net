@@ -313,7 +313,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting public org.neo4j.io.fs.FileSystemAbstraction getFileSystem()
+//ORIGINAL LINE: @VisibleForTesting public org.Neo4Net.io.fs.FileSystemAbstraction getFileSystem()
 		 public virtual FileSystemAbstraction FileSystem
 		 {
 			 get
@@ -357,7 +357,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.io.File clean(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File dir) throws java.io.IOException
+//ORIGINAL LINE: private static java.io.File clean(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File dir) throws java.io.IOException
 		 private static File Clean( FileSystemAbstraction fs, File dir )
 		 {
 			  if ( fs.FileExists( dir ) )

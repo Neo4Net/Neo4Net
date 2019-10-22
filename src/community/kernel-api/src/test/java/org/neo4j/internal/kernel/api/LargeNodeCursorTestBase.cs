@@ -25,9 +25,9 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -43,7 +43,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private static Random _random = new Random( 2 );
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  IList<Node> deleted = new List<Node>();
 			  using ( Transaction tx = graphDb.BeginTx() )

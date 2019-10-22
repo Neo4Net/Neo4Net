@@ -22,22 +22,22 @@ namespace Neo4Net.Bolt.testing
 
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
 	using AnyValue = Neo4Net.Values.AnyValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.FAILURE;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.IGNORED;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.IGNORED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
+//	import static org.Neo4Net.bolt.v1.messaging.BoltResponseMessage.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringOrNoValue;
+//	import static org.Neo4Net.values.storable.Values.stringOrNoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class BoltResponseRecorder : BoltResponseHandler
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Bolt.testing
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void onRecords(org.neo4j.bolt.runtime.BoltResult result, boolean pull) throws Exception
+//ORIGINAL LINE: public void onRecords(org.Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
 		 public override void OnRecords( BoltResult result, bool pull )
 		 {
 			  result.Accept( new BoltResult_VisitorAnonymousInnerClass( this ) );
@@ -92,7 +92,7 @@ namespace Neo4Net.Bolt.testing
 			  _currentResponse.Response = IGNORED;
 		 }
 
-		 public override void MarkFailed( Neo4jError error )
+		 public override void MarkFailed( Neo4NetError error )
 		 {
 			  _currentResponse.Response = FAILURE;
 			  OnMetadata( "code", stringValue( error.Status().code().serialize() ) );

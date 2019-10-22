@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net
 {
@@ -34,18 +34,18 @@ namespace Neo4Net
 	using Driver = Neo4Net.driver.v1.Driver;
 	using GraphDatabase = Neo4Net.driver.v1.GraphDatabase;
 	using Session = Neo4Net.driver.v1.Session;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using IdContextFactory = Neo4Net.Graphdb.factory.module.id.IdContextFactory;
-	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using IdContextFactory = Neo4Net.GraphDb.factory.module.id.IdContextFactory;
+	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -90,21 +90,21 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.transaction_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionNotFound;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class TransactionGuardIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.CleanupRule cleanupRule = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.CleanupRule cleanupRule = new org.Neo4Net.test.rule.CleanupRule();
 		 public static readonly CleanupRule CleanupRule = new CleanupRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private const string BOLT_CONNECTOR_KEY = "bolt";
@@ -442,7 +442,7 @@ namespace Neo4Net
 			  if ( _databaseWithTimeout == null )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> configMap = getSettingsWithTimeoutAndBolt();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithTimeoutAndBolt();
 					IDictionary<Setting<object>, string> configMap = SettingsWithTimeoutAndBolt;
 					_databaseWithTimeout = StartCustomDatabase( TestDirectory.directory( "dbWithTimeout" ), configMap );
 					_boltPortDatabaseWithTimeout = GetBoltConnectorPort( _databaseWithTimeout );
@@ -461,7 +461,7 @@ namespace Neo4Net
 			  if ( _databaseWithoutTimeout == null )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> configMap = getSettingsWithoutTransactionTimeout();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configMap = getSettingsWithoutTransactionTimeout();
 					IDictionary<Setting<object>, string> configMap = SettingsWithoutTransactionTimeout;
 					_databaseWithoutTimeout = StartCustomDatabase( TestDirectory.directory( "dbWithoutTimeout" ), configMap );
 			  }
@@ -477,7 +477,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.server.enterprise.OpenEnterpriseNeoServer startNeoServer(org.neo4j.kernel.impl.factory.GraphDatabaseFacade database) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.server.enterprise.OpenEnterpriseNeoServer startNeoServer(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade database) throws java.io.IOException
 		 private OpenEnterpriseNeoServer StartNeoServer( GraphDatabaseFacade database )
 		 {
 			  if ( _neoServer == null )
@@ -494,7 +494,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> getSettingsWithTimeoutAndBolt()
+//ORIGINAL LINE: private java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithTimeoutAndBolt()
 		 private IDictionary<Setting<object>, string> SettingsWithTimeoutAndBolt
 		 {
 			 get
@@ -505,7 +505,7 @@ namespace Neo4Net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> getSettingsWithoutTransactionTimeout()
+//ORIGINAL LINE: private java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettingsWithoutTransactionTimeout()
 		 private IDictionary<Setting<object>, string> SettingsWithoutTransactionTimeout
 		 {
 			 get
@@ -658,7 +658,7 @@ namespace Neo4Net
 					  this._state = state;
 				  }
 
-				  public GraphDatabaseService newDatabase( Config config )
+				  public IGraphDatabaseService newDatabase( Config config )
 				  {
 						return _outerInstance.customFacadeFactory.newFacade( _storeDir, config, newDependencies( _state.databaseDependencies() ) );
 				  }

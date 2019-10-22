@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.Security.Auth
 {
 
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
@@ -36,22 +36,22 @@ namespace Neo4Net.Server.Security.Auth
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.DBMS;
+//	import static org.Neo4Net.procedure.Mode.DBMS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings({"unused", "WeakerAccess"}) public class AuthProcedures
 	public class AuthProcedures
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.kernel.api.security.UserManager userManager;
+//ORIGINAL LINE: @Context public org.Neo4Net.kernel.api.security.UserManager userManager;
 		 public UserManager UserManager;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a new user.") @Procedure(name = "dbms.security.createUser", mode = DBMS) public void createUser(@Name("username") String username, @Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Description("Create a new user.") @Procedure(name = "dbms.security.createUser", mode = DBMS) public void createUser(@Name("username") String username, @Name("password") String password, @Name(value = "requirePasswordChange", defaultValue = "true") boolean requirePasswordChange) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a new user."), Procedure(name : "dbms.security.createUser", mode : DBMS)]
 		 public virtual void CreateUser( string username, string password, bool requirePasswordChange )
@@ -62,7 +62,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Delete the specified user.") @Procedure(name = "dbms.security.deleteUser", mode = DBMS) public void deleteUser(@Name("username") String username) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Description("Delete the specified user.") @Procedure(name = "dbms.security.deleteUser", mode = DBMS) public void deleteUser(@Name("username") String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Delete the specified user."), Procedure(name : "dbms.security.deleteUser", mode : DBMS)]
 		 public virtual void DeleteUser( string username )
@@ -76,7 +76,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Change the current user's password. Deprecated by dbms.security.changePassword.") @Procedure(name = "dbms.changePassword", mode = DBMS, deprecatedBy = "dbms.security.changePassword") public void changePasswordDeprecated(@Name("password") String password) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Deprecated @Description("Change the current user's password. Deprecated by dbms.security.changePassword.") @Procedure(name = "dbms.changePassword", mode = DBMS, deprecatedBy = "dbms.security.changePassword") public void changePasswordDeprecated(@Name("password") String password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Change the current user's password. Deprecated by dbms.security.changePassword."), Procedure(name : "dbms.changePassword", mode : DBMS, deprecatedBy : "dbms.security.changePassword")]
 		 public virtual void ChangePasswordDeprecated( string password )
@@ -86,7 +86,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Change the current user's password.") @Procedure(name = "dbms.security.changePassword", mode = DBMS) public void changePassword(@Name("password") String password) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Description("Change the current user's password.") @Procedure(name = "dbms.security.changePassword", mode = DBMS) public void changePassword(@Name("password") String password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Change the current user's password."), Procedure(name : "dbms.security.changePassword", mode : DBMS)]
 		 public virtual void ChangePassword( string password )

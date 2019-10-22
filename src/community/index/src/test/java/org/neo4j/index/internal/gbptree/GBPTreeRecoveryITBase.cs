@@ -45,11 +45,11 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.ThrowingRunnable.throwing;
+//	import static org.Neo4Net.index.Internal.gbptree.ThrowingRunnable.throwing;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.IOLimiter_Fields.UNLIMITED;
+//	import static org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.PageCacheRule.config;
+//	import static org.Neo4Net.test.rule.PageCacheRule.config;
 
 	public abstract class GBPTreeRecoveryITBase<KEY, VALUE>
 	{
@@ -288,7 +288,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// Shuffle actions without breaking causal dependencies, i.e. without affecting the end result
 		 /// of the data ending up in the tree. Checkpoints cannot move.
 		 /// 
-		 /// On an integration level with neo4j, this is done because of the nature of how concurrent transactions
+		 /// On an integration level with Neo4Net, this is done because of the nature of how concurrent transactions
 		 /// are applied in random order and recovery applies transactions in order of transaction id.
 		 /// </summary>
 		 private IList<Action> RandomCausalAwareShuffle( IList<Action> actions )
@@ -471,7 +471,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private GBPTree<KEY,VALUE> createIndex(org.neo4j.io.pagecache.PageCache pageCache, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: private GBPTree<KEY,VALUE> createIndex(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File file) throws java.io.IOException
 		 private GBPTree<KEY, VALUE> CreateIndex( PageCache pageCache, File file )
 		 {
 			  return ( new GBPTreeBuilder<KEY, VALUE>( pageCache, file, _layout ) ).build();

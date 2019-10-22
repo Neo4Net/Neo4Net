@@ -25,12 +25,12 @@ namespace Neo4Net.Consistency.checking.full
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
 	using IndexEntry = Neo4Net.Consistency.store.synthetic.IndexEntry;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 	public class IndexCheck : RecordCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport>
 	{
-		 private readonly EntityType _entityType;
+		 private readonly IEntityType _entityType;
 		 private readonly StoreIndexDescriptor _indexRule;
 		 private NodeInUseWithCorrectLabelsCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport> _nodeChecker;
 		 private RelationshipInUseWithCorrectRelationshipTypeCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport> _relationshipChecker;
@@ -39,21 +39,21 @@ namespace Neo4Net.Consistency.checking.full
 		 {
 			  this._indexRule = indexRule;
 			  SchemaDescriptor schema = indexRule.Schema();
-			  int[] entityTokenIntIds = Schema.EntityTokenIds;
-			  long[] entityTokenLongIds = new long[entityTokenIntIds.Length];
-			  for ( int i = 0; i < entityTokenIntIds.Length; i++ )
+			  int[] IEntityTokenIntIds = Schema.EntityTokenIds;
+			  long[] IEntityTokenLongIds = new long[entityTokenIntIds.Length];
+			  for ( int i = 0; i < IEntityTokenIntIds.Length; i++ )
 			  {
-					entityTokenLongIds[i] = entityTokenIntIds[i];
+					entityTokenLongIds[i] = IEntityTokenIntIds[i];
 			  }
 			  Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType propertySchemaType = Schema.propertySchemaType();
 			  _entityType = Schema.entityType();
-			  if ( _entityType == EntityType.NODE )
+			  if ( _entityType == IEntityType.NODE )
 			  {
-					_nodeChecker = new NodeInUseWithCorrectLabelsCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport>( entityTokenLongIds, propertySchemaType, false );
+					_nodeChecker = new NodeInUseWithCorrectLabelsCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport>( IEntityTokenLongIds, propertySchemaType, false );
 			  }
-			  if ( _entityType == EntityType.RELATIONSHIP )
+			  if ( _entityType == IEntityType.RELATIONSHIP )
 			  {
-					_relationshipChecker = new RelationshipInUseWithCorrectRelationshipTypeCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport>( entityTokenLongIds );
+					_relationshipChecker = new RelationshipInUseWithCorrectRelationshipTypeCheck<IndexEntry, Neo4Net.Consistency.report.ConsistencyReport_IndexConsistencyReport>( IEntityTokenLongIds );
 			  }
 		 }
 
@@ -62,10 +62,10 @@ namespace Neo4Net.Consistency.checking.full
 			  long id = record.Id;
 			  switch ( _entityType.innerEnumValue )
 			  {
-			  case EntityType.InnerEnum.NODE:
+			  case IEntityType.InnerEnum.NODE:
 					engine.ComparativeCheck( records.Node( id ), _nodeChecker );
 					break;
-			  case EntityType.InnerEnum.RELATIONSHIP:
+			  case IEntityType.InnerEnum.RELATIONSHIP:
 					if ( _indexRule.canSupportUniqueConstraint() )
 					{
 						 engine.Report().relationshipConstraintIndex();
@@ -73,7 +73,7 @@ namespace Neo4Net.Consistency.checking.full
 					engine.ComparativeCheck( records.Relationship( id ), _relationshipChecker );
 					break;
 			  default:
-					throw new System.InvalidOperationException( "Don't know how to check index entry of entity type " + _entityType );
+					throw new System.InvalidOperationException( "Don't know how to check index entry of IEntity type " + _entityType );
 			  }
 		 }
 	}

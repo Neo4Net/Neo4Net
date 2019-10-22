@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.transport
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	/// <summary>
-	/// Implements a transport for the Neo4j Messaging Protocol that uses good old regular sockets.
+	/// Implements a transport for the Neo4Net Messaging Protocol that uses good old regular sockets.
 	/// </summary>
 	public class SocketTransport : NettyServer.ProtocolInitializer
 	{

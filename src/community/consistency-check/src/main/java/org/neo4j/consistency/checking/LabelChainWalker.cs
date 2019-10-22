@@ -34,9 +34,9 @@ namespace Neo4Net.Consistency.checking
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
+//	import static org.Neo4Net.kernel.impl.store.AbstractDynamicStore.readFullByteArrayFromHeavyRecords;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicArrayStore.getRightArray;
+//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.getRightArray;
 
 	public class LabelChainWalker<RECORD, REPORT> : ComparativeRecordChecker<RECORD, DynamicRecord, REPORT> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 	{
@@ -77,7 +77,7 @@ namespace Neo4Net.Consistency.checking
 			  else
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.DynamicRecord nextRecord = recordIds.get(nextBlock);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.DynamicRecord nextRecord = recordIds.get(nextBlock);
 					DynamicRecord nextRecord = _recordIds.get( nextBlock );
 					if ( nextRecord != null )
 					{

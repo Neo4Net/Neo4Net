@@ -17,6 +17,8 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+using Neo4Net.Utils;
+using System.Threading;
 
 namespace Neo4Net.Test
 {
@@ -95,18 +97,18 @@ namespace Neo4Net.Test
             try
             {
                long waitingTime = Math.Min(Math.Max(0, deadline - now), 5000L);
-               if (latch.await(waitingTime, TimeUnit.MILLISECONDS))
+               if (latch.Await(waitingTime, TimeUnit.MILLISECONDS))
                {
                   return;
                }
                else
                {
-                  Thread.yield();
+                  Thread.Yield();
                }
             }
             catch (InterruptedException e)
             {
-               Thread.interrupted();
+               Thread.Interrupted();
                if (!uninterruptedWaiting)
                {
                   throw new Exception("Thread interrupted while waiting on latch", e);

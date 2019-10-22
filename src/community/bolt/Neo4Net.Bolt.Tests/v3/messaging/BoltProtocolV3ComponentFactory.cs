@@ -22,7 +22,7 @@ namespace Neo4Net.Bolt.v3.messaging
 
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using ResponseMessage = Neo4Net.Bolt.messaging.ResponseMessage;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
@@ -31,25 +31,25 @@ namespace Neo4Net.Bolt.v3.messaging
 	using RecordingByteChannel = Neo4Net.Bolt.v1.messaging.RecordingByteChannel;
 	using BufferedChannelOutput = Neo4Net.Bolt.v1.packstream.BufferedChannelOutput;
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 
 	/// <summary>
 	/// A helper factory to generate boltV3 component in tests
 	/// </summary>
 	public class BoltProtocolV3ComponentFactory
 	{
-		 public static Neo4jPack NewNeo4jPack()
+		 public static Neo4NetPack NewNeo4NetPack()
 		 {
-			  return new Neo4jPackV2();
+			  return new Neo4NetPackV2();
 		 }
 
-		 public static BoltRequestMessageWriter RequestMessageWriter( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer )
+		 public static BoltRequestMessageWriter RequestMessageWriter( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  return new BoltRequestMessageWriterV3( packer );
 		 }
@@ -60,11 +60,11 @@ namespace Neo4Net.Bolt.v3.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static byte[] encode(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, org.neo4j.bolt.messaging.RequestMessage... messages) throws java.io.IOException
-		 public static sbyte[] Encode( Neo4jPack neo4jPack, params RequestMessage[] messages )
+//ORIGINAL LINE: public static byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+		 public static sbyte[] Encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 		 {
 			  RecordingByteChannel rawData = new RecordingByteChannel();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = neo4jPack.NewPacker( new BufferedChannelOutput( rawData ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = Neo4NetPack.NewPacker( new BufferedChannelOutput( rawData ) );
 			  BoltRequestMessageWriter writer = RequestMessageWriter( packer );
 
 			  foreach ( RequestMessage message in messages )
@@ -84,17 +84,17 @@ namespace Neo4Net.Bolt.v3.messaging
 		 private class MessageEncoderAnonymousInnerClass : TransportTestUtil.MessageEncoder
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, org.neo4j.bolt.messaging.RequestMessage... messages) throws java.io.IOException
-			 public sbyte[] encode( Neo4jPack neo4jPack, params RequestMessage[] messages )
+//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+			 public sbyte[] encode( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 			 {
-				  return BoltProtocolV3ComponentFactory.Encode( neo4jPack, messages );
+				  return BoltProtocolV3ComponentFactory.Encode( Neo4NetPack, messages );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public byte[] encode(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, org.neo4j.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
-			 public sbyte[] encode( Neo4jPack neo4jPack, params ResponseMessage[] messages )
+//ORIGINAL LINE: public byte[] encode(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+			 public sbyte[] encode( Neo4NetPack Neo4NetPack, params ResponseMessage[] messages )
 			 {
-				  return serialize( neo4jPack, messages );
+				  return serialize( Neo4NetPack, messages );
 			 }
 		 }
 	}

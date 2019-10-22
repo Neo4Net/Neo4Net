@@ -24,11 +24,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="DateValue"/>.
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="DateValue"/>.
 	/// </summary>
 	internal class DateIndexKey : NativeIndexSingleValueKey<DateIndexKey>
 	{
-		 internal static readonly int Size = Long.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal long EpochDay;
 
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,epochDay=%d", AsValue(), EntityId, EpochDay );
+			  return format( "value=%s,entityId=%d,epochDay=%d", AsValue(), IEntityId, EpochDay );
 		 }
 
 		 public override void WriteDate( long epochDay )

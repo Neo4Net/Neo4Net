@@ -31,10 +31,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	{
 		 private readonly IDictionary<IndexIdentifier, TxDataBoth> _txData = new Dictionary<IndexIdentifier, TxDataBoth>();
 
-		 internal virtual void Add( LuceneExplicitIndex index, EntityId entity, string key, object value )
+		 internal virtual void Add( LuceneExplicitIndex index, IEntityId IEntity, string key, object value )
 		 {
 			  TxDataBoth data = GetTxData( index, true );
-			  Insert( entity, key, value, data.Added( true ), data.Removed( false ) );
+			  Insert( IEntity, key, value, data.Added( true ), data.Removed( false ) );
 		 }
 
 		 internal virtual TxDataBoth GetTxData( LuceneExplicitIndex index, bool createIfNotExists )
@@ -49,22 +49,22 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return data;
 		 }
 
-		 internal virtual void Remove( LuceneExplicitIndex index, EntityId entity, string key, object value )
+		 internal virtual void Remove( LuceneExplicitIndex index, IEntityId IEntity, string key, object value )
 		 {
 			  TxDataBoth data = GetTxData( index, true );
-			  Insert( entity, key, value, data.Removed( true ), data.Added( false ) );
+			  Insert( IEntity, key, value, data.Removed( true ), data.Added( false ) );
 		 }
 
-		 internal virtual void Remove( LuceneExplicitIndex index, EntityId entity, string key )
+		 internal virtual void Remove( LuceneExplicitIndex index, IEntityId IEntity, string key )
 		 {
 			  TxDataBoth data = GetTxData( index, true );
-			  Insert( entity, key, null, data.Removed( true ), data.Added( false ) );
+			  Insert( IEntity, key, null, data.Removed( true ), data.Added( false ) );
 		 }
 
-		 internal virtual void Remove( LuceneExplicitIndex index, EntityId entity )
+		 internal virtual void Remove( LuceneExplicitIndex index, IEntityId IEntity )
 		 {
 			  TxDataBoth data = GetTxData( index, true );
-			  Insert( entity, null, null, data.Removed( true ), data.Added( false ) );
+			  Insert( IEntity, null, null, data.Removed( true ), data.Added( false ) );
 		 }
 
 		 internal virtual void Delete( LuceneExplicitIndex index )
@@ -73,13 +73,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  _txData[identifier] = new DeletedTxDataBoth( this, index );
 		 }
 
-		 private void Insert( EntityId entity, string key, object value, TxDataHolder insertInto, TxDataHolder removeFrom )
+		 private void Insert( IEntityId IEntity, string key, object value, TxDataHolder insertInto, TxDataHolder removeFrom )
 		 {
 			  if ( removeFrom != null )
 			  {
-					removeFrom.Remove( entity, key, value );
+					removeFrom.Remove( IEntity, key, value );
 			  }
-			  insertInto.Add( entity, key, value );
+			  insertInto.Add( IEntity, key, value );
 		 }
 
 		 internal virtual ICollection<EntityId> GetRemovedIds( LuceneExplicitIndex index, Query query )

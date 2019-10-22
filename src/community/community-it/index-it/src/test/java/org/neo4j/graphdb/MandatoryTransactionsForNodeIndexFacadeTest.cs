@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 
 	public class MandatoryTransactionsForNodeIndexFacadeTest : AbstractMandatoryTransactionsTest<Index<Node>>
 	{
@@ -32,9 +32,9 @@ namespace Neo4Net.Graphdb
 			  AssertFacadeMethodsThrowNotInTransaction( ObtainEntity(), NodeIndexFacadeMethods.values() );
 		 }
 
-		 protected internal override Index<Node> ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override Index<Node> ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService.Index().forNodes("foo");
+			  return IGraphDatabaseService.Index().forNodes("foo");
 		 }
 	}
 

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using EnumSource = org.junit.jupiter.@params.provider.EnumSource;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
@@ -36,14 +36,14 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.ReadAheadChannel.DEFAULT_READ_AHEAD_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.ReadAheadChannel.DEFAULT_READ_AHEAD_SIZE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(EphemeralFileSystemExtension.class) class ReadAheadChannelTest
 	internal class ReadAheadChannelTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem;
 		 protected internal EphemeralFileSystemAbstraction FileSystem;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  storeChannel1 = FileSystem.open( new File( "foo.1" ), OpenMode.READ );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.fs.StoreChannel storeChannel2Copy = fileSystem.open(new java.io.File("foo.2"), org.neo4j.io.fs.OpenMode.READ);
+//ORIGINAL LINE: final org.Neo4Net.io.fs.StoreChannel storeChannel2Copy = fileSystem.open(new java.io.File("foo.2"), org.Neo4Net.io.fs.OpenMode.READ);
 			  StoreChannel storeChannel2Copy = FileSystem.open( new File( "foo.2" ), OpenMode.READ );
 
 			  ReadAheadChannel<StoreChannel> channel = new ReadAheadChannelAnonymousInnerClass( this, storeChannel1, bufferFactory( DEFAULT_READ_AHEAD_SIZE ), storeChannel2Copy );
@@ -236,7 +236,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createFile(org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File name, int bufferSize) throws java.io.IOException
+//ORIGINAL LINE: private void createFile(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fsa, java.io.File name, int bufferSize) throws java.io.IOException
 		 private void CreateFile( EphemeralFileSystemAbstraction fsa, File name, int bufferSize )
 		 {
 			  StoreChannel storeChannel = fsa.Open( name, OpenMode.READ_WRITE );

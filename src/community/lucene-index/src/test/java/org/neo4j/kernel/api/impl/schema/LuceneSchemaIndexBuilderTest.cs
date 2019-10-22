@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -44,10 +44,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	internal class LuceneSchemaIndexBuilderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fileSystemRule;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystemRule;
 		 private DefaultFileSystemAbstraction _fileSystemRule;
 
 		 private readonly IndexDescriptor _descriptor = TestIndexDescriptorFactory.forLabel( 0, 0 );

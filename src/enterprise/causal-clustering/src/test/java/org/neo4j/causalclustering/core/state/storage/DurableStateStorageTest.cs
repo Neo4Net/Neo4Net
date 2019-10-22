@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.storage
 {
@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
@@ -197,14 +197,14 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 private class AtomicIntegerMarshal : SafeStateMarshal<AtomicInteger>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(java.util.concurrent.atomic.AtomicInteger state, org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(java.util.concurrent.atomic.AtomicInteger state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Marshal( AtomicInteger state, WritableChannel channel )
 			  {
 					channel.PutInt( state.intValue() );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.concurrent.atomic.AtomicInteger unmarshal0(org.neo4j.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public java.util.concurrent.atomic.AtomicInteger unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
 			  public override AtomicInteger Unmarshal0( ReadableChannel channel )
 			  {
 					return new AtomicInteger( channel.Int );

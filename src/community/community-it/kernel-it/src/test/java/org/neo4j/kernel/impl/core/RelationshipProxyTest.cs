@@ -23,12 +23,12 @@ namespace Neo4Net.Kernel.impl.core
 	using RandomUtils = org.apache.commons.lang3.RandomUtils;
 	using Test = org.junit.Test;
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -50,16 +50,16 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
-	public class RelationshipProxyTest : PropertyContainerProxyTest
+	public class RelationshipProxyTest : IPropertyContainerProxyTest
 	{
 		 protected internal override long CreatePropertyContainer()
 		 {
 			  return Db.createNode().createRelationshipTo(Db.createNode(), withName("FOO")).Id;
 		 }
 
-		 protected internal override PropertyContainer LookupPropertyContainer( long id )
+		 protected internal override IPropertyContainer LookupPropertyContainer( long id )
 		 {
 			  return Db.getRelationshipById( id );
 		 }

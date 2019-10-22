@@ -23,24 +23,24 @@ using System.Collections.Generic;
 namespace Neo4Net.Test
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.copyOfRange;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.GraphDescription.PropType.ERROR;
+//	import static org.Neo4Net.test.GraphDescription.PropType.ERROR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.GraphDescription.PropType.STRING;
+//	import static org.Neo4Net.test.GraphDescription.PropType.STRING;
 
 	public class GraphDescription : GraphDefinition
 	{
@@ -276,7 +276,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static TestData.Producer<java.util.Map<String, org.neo4j.graphdb.Node>> createGraphFor(final GraphHolder holder, final boolean destroy)
+//ORIGINAL LINE: public static TestData.Producer<java.util.Map<String, org.Neo4Net.graphdb.Node>> createGraphFor(final GraphHolder holder, final boolean destroy)
 		 public static TestData.Producer<IDictionary<string, Node>> CreateGraphFor( GraphHolder holder, bool destroy )
 		 {
 			  return new ProducerAnonymousInnerClass( holder, destroy );
@@ -307,7 +307,7 @@ namespace Neo4Net.Test
 			 }
 		 }
 
-		 public override IDictionary<string, Node> Create( GraphDatabaseService graphdb )
+		 public override IDictionary<string, Node> Create( IGraphDatabaseService graphdb )
 		 {
 			  IDictionary<string, Node> result = new Dictionary<string, Node>();
 			  using ( Transaction tx = graphdb.BeginTx() )
@@ -331,7 +331,7 @@ namespace Neo4Net.Test
 			  return result;
 		 }
 
-		 private static T Init<T>( T entity, string name, PROP[] properties, AutoIndexer<T> autoindex, bool auto ) where T : Neo4Net.Graphdb.PropertyContainer
+		 private static T Init<T>( T IEntity, string name, PROP[] properties, AutoIndexer<T> autoindex, bool auto ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  autoindex.Enabled = auto;
 			  foreach ( PROP prop in properties )
@@ -344,10 +344,10 @@ namespace Neo4Net.Test
 					switch ( tpe.innerEnumValue )
 					{
 					case Neo4Net.Test.GraphDescription.PropType.InnerEnum.ARRAY:
-						 entity.setProperty( prop.key(), tpe.convert(prop.componentType(), prop.value()) );
+						 IEntity.setProperty( prop.key(), tpe.convert(prop.componentType(), prop.value()) );
 						 break;
 					default:
-						 entity.setProperty( prop.key(), prop.type().convert(prop.value()) );
+						 IEntity.setProperty( prop.key(), prop.type().convert(prop.value()) );
 					 break;
 					}
 			  }
@@ -360,7 +360,7 @@ namespace Neo4Net.Test
 					entity.setProperty( "name", name );
 			  }
 
-			  return entity;
+			  return IEntity;
 		 }
 
 		 private static readonly PROP[] _noProps = new PROP[] {};
@@ -374,7 +374,7 @@ namespace Neo4Net.Test
 			 {
 			 }
 
-			 public override IDictionary<string, Node> create( GraphDatabaseService graphdb )
+			 public override IDictionary<string, Node> create( IGraphDatabaseService graphdb )
 			 {
 				  // don't bother with creating a transaction
 				  return new Dictionary<string, Node>();
@@ -399,7 +399,7 @@ namespace Neo4Net.Test
 			  {
 					return;
 			  }
-			  GraphDatabaseService db = nodes.Values.GetEnumerator().next().GraphDatabase;
+			  IGraphDatabaseService db = nodes.Values.GetEnumerator().next().GraphDatabase;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					foreach ( Node node in Db.AllNodes )

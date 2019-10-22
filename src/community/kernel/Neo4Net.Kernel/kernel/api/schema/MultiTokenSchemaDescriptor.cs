@@ -28,27 +28,27 @@ namespace Neo4Net.Kernel.api.schema
 	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
 	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 	public class MultiTokenSchemaDescriptor : SchemaDescriptor
 	{
 		 private readonly int[] _entityTokens;
-		 private readonly EntityType _entityType;
+		 private readonly IEntityType _entityType;
 		 private readonly int[] _propertyIds;
 
-		 internal MultiTokenSchemaDescriptor( int[] entityTokens, EntityType entityType, int[] propertyIds )
+		 internal MultiTokenSchemaDescriptor( int[] IEntityTokens, IEntityType IEntityType, int[] propertyIds )
 		 {
-			  this._entityTokens = entityTokens;
-			  this._entityType = entityType;
+			  this._entityTokens = IEntityTokens;
+			  this._entityType = IEntityType;
 			  this._propertyIds = propertyIds;
 		 }
 
-		 public override bool IsAffected( long[] entityTokenIds )
+		 public override bool IsAffected( long[] IEntityTokenIds )
 		 {
 			  foreach ( int id in _entityTokens )
 			  {
-					if ( ArrayUtils.contains( entityTokenIds, id ) )
+					if ( ArrayUtils.contains( IEntityTokenIds, id ) )
 					{
 						 return true;
 					}
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.api.schema
 			 }
 		 }
 
-		 public virtual int[] EntityTokenIds
+		 public virtual int[] IEntityTokenIds
 		 {
 			 get
 			 {
@@ -99,10 +99,10 @@ namespace Neo4Net.Kernel.api.schema
 
 		 public override ResourceType KeyType()
 		 {
-			  return _entityType == EntityType.NODE ? ResourceTypes.LABEL : ResourceTypes.RELATIONSHIP_TYPE;
+			  return _entityType == IEntityType.NODE ? ResourceTypes.LABEL : ResourceTypes.RELATIONSHIP_TYPE;
 		 }
 
-		 public override EntityType EntityType()
+		 public override IEntityType IEntityType()
 		 {
 			  return _entityType;
 		 }

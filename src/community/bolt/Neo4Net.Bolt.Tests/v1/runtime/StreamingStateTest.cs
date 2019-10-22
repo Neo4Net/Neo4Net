@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using AuthorizationExpiredException = Neo4Net.Graphdb.security.AuthorizationExpiredException;
+	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -58,7 +58,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class StreamingStateTest
 	{

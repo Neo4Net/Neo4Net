@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
 	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -38,17 +38,17 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	[Description("Construct a Duration value.")]
 	internal class DurationFunction : CallableUserFunction
 	{
-		 private static readonly UserFunctionSignature _duration = new UserFunctionSignature( new QualifiedName( new string[0], "duration" ), Collections.singletonList( inputField( "input", Neo4jTypes.NTAny ) ), Neo4jTypes.NTDuration, null, new string[0], typeof( DurationFunction ).getAnnotation( typeof( Description ) ).value(), true );
+		 private static readonly UserFunctionSignature _duration = new UserFunctionSignature( new QualifiedName( new string[0], "duration" ), Collections.singletonList( inputField( "input", Neo4NetTypes.NTAny ) ), Neo4NetTypes.NTDuration, null, new string[0], typeof( DurationFunction ).getAnnotation( typeof( Description ) ).value(), true );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void register(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: static void register(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 internal static void Register( Procedures procedures )
 		 {
 			  procedures.Register( new DurationFunction() );
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override AnyValue Apply( Context ctx, AnyValue[] input )
 		 {
 			  if ( input == null )
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 {
 			  internal const string DESCRIPTION = "Compute the duration between the 'from' instant (inclusive) and the 'to' instant (exclusive) in %s.";
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal static readonly IList<FieldSignature> SignatureConflict = Arrays.asList( inputField( "from", Neo4jTypes.NTAny ), inputField( "to", Neo4jTypes.NTAny ) );
+			  internal static readonly IList<FieldSignature> SignatureConflict = Arrays.asList( inputField( "from", Neo4NetTypes.NTAny ), inputField( "to", Neo4NetTypes.NTAny ) );
 			  internal readonly UserFunctionSignature Signature;
 			  internal readonly TemporalUnit Unit;
 
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 					default:
 						 throw new System.InvalidOperationException( "Unsupported unit: " + unit );
 					}
-					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "duration" }, unit ), SignatureConflict, Neo4jTypes.NTDuration, null, new string[0], string.format( DESCRIPTION, unitString ), true );
+					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "duration" }, unit ), SignatureConflict, Neo4NetTypes.NTDuration, null, new string[0], string.format( DESCRIPTION, unitString ), true );
 			  }
 
 			  public override UserFunctionSignature Signature()
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input == null || ( input.Length == 2 && ( input[0] == NO_VALUE || input[0] == null ) || input[1] == NO_VALUE || input[1] == null ) )

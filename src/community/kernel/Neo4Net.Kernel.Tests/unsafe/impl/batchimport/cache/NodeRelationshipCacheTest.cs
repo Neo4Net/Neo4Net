@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 	using Neo4Net.Helpers.Collections;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using GroupVisitor = Neo4Net.@unsafe.Impl.Batchimport.cache.NodeRelationshipCache.GroupVisitor;
@@ -59,18 +59,18 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NodeRelationshipCacheTest
 	public class NodeRelationshipCacheTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(0) public long super;

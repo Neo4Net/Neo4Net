@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.builtinprocs
 
 
 	using Neo4Net.Collections;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Procedures = Neo4Net.Internal.Kernel.Api.Procedures;
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
@@ -49,9 +49,9 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 
 	public class SchemaProcedureIT : KernelIntegrationTest
 	{

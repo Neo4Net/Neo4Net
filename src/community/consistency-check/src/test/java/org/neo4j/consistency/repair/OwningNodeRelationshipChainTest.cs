@@ -42,7 +42,7 @@ namespace Neo4Net.Consistency.repair
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 
 	internal class OwningNodeRelationshipChainTest
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Consistency.repair
 			  RecordSet<RelationshipRecord> node2RelChain = AsSet( new RelationshipRecord( node2Rel, node2 - 1, node2, relType ), new RelationshipRecord( sharedRel, node1, node2, relType ), new RelationshipRecord( node2Rel + 1, node2, node2 + 1, relType ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.impl.store.RecordStore<org.neo4j.kernel.impl.store.record.NodeRecord> recordStore = mock(org.neo4j.kernel.impl.store.RecordStore.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.NodeRecord> recordStore = mock(org.Neo4Net.kernel.impl.store.RecordStore.class);
 			  RecordStore<NodeRecord> recordStore = mock( typeof( RecordStore ) );
 			  when( recordStore.GetRecord( eq( node1 ), any( typeof( NodeRecord ) ), any( typeof( RecordLoad ) ) ) ).thenAnswer( new ReadNodeAnswer( false, node1Rel, NO_NEXT_PROPERTY.intValue() ) );
 			  when( recordStore.GetRecord( eq( node2 ), any( typeof( NodeRecord ) ), any( typeof( RecordLoad ) ) ) ).thenAnswer( new ReadNodeAnswer( false, node2Rel, NO_NEXT_PROPERTY.intValue() ) );
@@ -83,7 +83,7 @@ namespace Neo4Net.Consistency.repair
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.hamcrest.Matcher<RecordSet<org.neo4j.kernel.impl.store.record.RelationshipRecord>> containsAllRecords(final RecordSet<org.neo4j.kernel.impl.store.record.RelationshipRecord> expectedSet)
+//ORIGINAL LINE: private static org.hamcrest.Matcher<RecordSet<org.Neo4Net.kernel.impl.store.record.RelationshipRecord>> containsAllRecords(final RecordSet<org.Neo4Net.kernel.impl.store.record.RelationshipRecord> expectedSet)
 		 private static Matcher<RecordSet<RelationshipRecord>> ContainsAllRecords( RecordSet<RelationshipRecord> expectedSet )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass( expectedSet );
@@ -110,7 +110,7 @@ namespace Neo4Net.Consistency.repair
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> RecordSet<R> asSet(R... records)
+//ORIGINAL LINE: @SafeVarargs private static <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> RecordSet<R> asSet(R... records)
 		 private static RecordSet<R> AsSet<R>( params R[] records ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  RecordSet<R> set = new RecordSet<R>();

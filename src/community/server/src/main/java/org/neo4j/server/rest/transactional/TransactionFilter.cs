@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Neo4Net.Server.database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class TransactionFilter extends org.neo4j.server.database.InjectableProvider<Void> implements com.sun.jersey.spi.container.ResourceMethodDispatchAdapter
+//ORIGINAL LINE: @Provider public class TransactionFilter extends org.Neo4Net.server.database.InjectableProvider<Void> implements com.sun.jersey.spi.container.ResourceMethodDispatchAdapter
 	public class TransactionFilter : InjectableProvider<Void>, ResourceMethodDispatchAdapter
 	{
 		 private Database _database;

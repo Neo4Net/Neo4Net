@@ -48,12 +48,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using RAMDirectory = org.apache.lucene.store.RAMDirectory;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
@@ -142,7 +142,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertValidType(String key, Object value, IndexIdentifier identifier) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: void assertValidType(String key, Object value, IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual void AssertValidType( string key, object value, IndexIdentifier identifier )
 		 {
 			  DocValuesType expectedType;
@@ -187,7 +187,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier, boolean recovery) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexType GetType( IndexIdentifier identifier, bool recovery )
 		 {
 			  return _typeCache.getIndexType( identifier, recovery );
@@ -290,7 +290,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference getIndexSearcher(IndexIdentifier identifier) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexReference getIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexReference GetIndexSearcher( IndexIdentifier identifier )
 		 {
 			  AssertNotClosed();
@@ -326,7 +326,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized IndexReference syncGetIndexSearcher(IndexIdentifier identifier) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private synchronized IndexReference syncGetIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexReference SyncGetIndexSearcher( IndexIdentifier identifier )
 		 {
 			 lock ( this )
@@ -371,7 +371,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private IndexReference refreshSearcherIfNeeded(IndexReference searcher) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private IndexReference refreshSearcherIfNeeded(IndexReference searcher) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexReference RefreshSearcherIfNeeded( IndexReference searcher )
 		 {
 			  if ( searcher.CheckAndClearStale() )
@@ -413,11 +413,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  _typeCache.invalidate( identifier );
 		 }
 
-		 internal static Document FindDocument( IndexType type, IndexSearcher searcher, long entityId )
+		 internal static Document FindDocument( IndexType type, IndexSearcher searcher, long IEntityId )
 		 {
 			  try
 			  {
-					TopDocs docs = searcher.search( type.IdTermQuery( entityId ), 1 );
+					TopDocs docs = searcher.search( type.IdTermQuery( IEntityId ), 1 );
 					if ( docs.scoreDocs.length > 0 )
 					{
 						 return searcher.doc( docs.scoreDocs[0].doc );
@@ -463,14 +463,14 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.ResourceIterator<java.io.File> listWritableStoreFiles() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterator<java.io.File> listWritableStoreFiles() throws java.io.IOException
 		 private ResourceIterator<File> ListWritableStoreFiles()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.Collection<java.io.File> files = new java.util.ArrayList<>();
 			  ICollection<File> files = new List<File>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.neo4j.helpers.collection.Pair<org.apache.lucene.index.SnapshotDeletionPolicy,org.apache.lucene.index.IndexCommit>> snapshots = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.helpers.collection.Pair<org.apache.lucene.index.SnapshotDeletionPolicy,org.apache.lucene.index.IndexCommit>> snapshots = new java.util.ArrayList<>();
 			  ICollection<Pair<SnapshotDeletionPolicy, IndexCommit>> snapshots = new List<Pair<SnapshotDeletionPolicy, IndexCommit>>();
 			  MakeSureAllIndexesAreInstantiated();
 			  foreach ( IndexReference index in AllIndexes )
@@ -556,7 +556,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.ResourceIterator<java.io.File> listReadOnlyStoreFiles() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterator<java.io.File> listReadOnlyStoreFiles() throws java.io.IOException
 		 private ResourceIterator<File> ListReadOnlyStoreFiles()
 		 {
 			  // In read-only mode we don't need to take a snapshot, because the index will not be modified.
@@ -582,7 +582,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
+//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
 		 internal virtual ResourceIterator<File> ListStoreFiles()
 		 {
 			  if ( _readOnly )
@@ -600,7 +600,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  foreach ( string name in _indexStore.getNames( typeof( Node ) ) )
 			  {
 					IDictionary<string, string> config = _indexStore.get( typeof( Node ), name );
-					if ( config[Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
+					if ( config[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
 					{
 						 EnsureInstantiated( new IndexIdentifier( IndexEntityType.Node, name ) );
 					}
@@ -608,7 +608,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  foreach ( string name in _indexStore.getNames( typeof( Relationship ) ) )
 			  {
 					IDictionary<string, string> config = _indexStore.get( typeof( Relationship ), name );
-					if ( config[Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
+					if ( config[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER].Equals( LuceneIndexImplementation.SERVICE_NAME ) )
 					{
 						 EnsureInstantiated( new IndexIdentifier( IndexEntityType.Relationship, name ) );
 					}
@@ -636,9 +636,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 internal abstract class LuceneFilesystemFacade
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FS { Directory getDirectory(java.io.File baseStorePath, IndexIdentifier identifier) throws java.io.IOException { return org.apache.lucene.store.FSDirectory.open(getFileDirectory(baseStorePath, identifier).toPath()); } void cleanWriteLocks(java.io.File dir) { if(!dir.isDirectory()) { return; } for(java.io.File file : dir.listFiles()) { if(file.isDirectory()) { cleanWriteLocks(file); } else if(file.getName().equals("write.lock")) { boolean success = file.delete(); assert success; } } } File ensureDirectoryExists(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File dir) { if(!dir.exists() && !dir.mkdirs()) { String message = String.format("Unable to create directory path[%s] for Neo4j store" + ".", dir.getAbsolutePath()); throw new RuntimeException(message); } return dir; } },
+//           FS { Directory getDirectory(java.io.File baseStorePath, IndexIdentifier identifier) throws java.io.IOException { return org.apache.lucene.store.FSDirectory.open(getFileDirectory(baseStorePath, identifier).toPath()); } void cleanWriteLocks(java.io.File dir) { if(!dir.isDirectory()) { return; } for(java.io.File file : dir.listFiles()) { if(file.isDirectory()) { cleanWriteLocks(file); } else if(file.getName().equals("write.lock")) { boolean success = file.delete(); assert success; } } } File ensureDirectoryExists(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File dir) { if(!dir.exists() && !dir.mkdirs()) { String message = String.format("Unable to create directory path[%s] for Neo4Net store" + ".", dir.getAbsolutePath()); throw new RuntimeException(message); } return dir; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           MEMORY { Directory getDirectory(java.io.File baseStorePath, IndexIdentifier identifier) { return new org.apache.lucene.store.RAMDirectory(); } void cleanWriteLocks(java.io.File path) { } File ensureDirectoryExists(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File path) { try { fileSystem.mkdirs(path); } catch(java.io.IOException e) { throw new RuntimeException(e); } return path; } };
+//           MEMORY { Directory getDirectory(java.io.File baseStorePath, IndexIdentifier identifier) { return new org.apache.lucene.store.RAMDirectory(); } void cleanWriteLocks(java.io.File path) { } File ensureDirectoryExists(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File path) { try { fileSystem.mkdirs(path); } catch(java.io.IOException e) { throw new RuntimeException(e); } return path; } };
 
 			  private static readonly IList<LuceneFilesystemFacade> valueList = new List<LuceneFilesystemFacade>();
 

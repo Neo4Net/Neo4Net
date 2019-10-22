@@ -23,13 +23,13 @@ namespace Neo4Net.Consistency.repair
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.repair.RelationshipChainDirection.NEXT;
+//	import static org.Neo4Net.consistency.repair.RelationshipChainDirection.NEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.repair.RelationshipChainDirection.PREV;
+//	import static org.Neo4Net.consistency.repair.RelationshipChainDirection.PREV;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class RelationshipChainExplorer
 	{

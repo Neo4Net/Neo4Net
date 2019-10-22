@@ -156,7 +156,7 @@ namespace Neo4Net.Consistency.checking.cache
 		  /// Gets a cached value, put there with <seealso cref="putToCache(long, long...)"/> or
 		  /// <seealso cref="putToCacheSingle(long, int, long)"/>.
 		  /// </summary>
-		  /// <param name="id"> the entity id this cached value is tied to. </param>
+		  /// <param name="id"> the IEntity id this cached value is tied to. </param>
 		  /// <param name="slot"> which cache slot for this id. </param>
 		  /// <returns> the cached value. </returns>
 		  long GetFromCache( long id, int slot );
@@ -166,7 +166,7 @@ namespace Neo4Net.Consistency.checking.cache
 		  /// <seealso cref="putToCacheSingle(long, int, long)"/> and interpret field value as a boolean.
 		  /// 0 will be treated as false all the rest as true.
 		  /// </summary>
-		  /// <param name="id"> the entity id this cached value is tied to. </param>
+		  /// <param name="id"> the IEntity id this cached value is tied to. </param>
 		  /// <param name="slot"> which cache slot for this id. </param>
 		  /// <returns> false if slot value is 0, true otherwise. </returns>
 		  bool GetBooleanFromCache( long id, int slot );
@@ -174,14 +174,14 @@ namespace Neo4Net.Consistency.checking.cache
 		  /// <summary>
 		  /// Caches all values for an id, i.e. fills all slots.
 		  /// </summary>
-		  /// <param name="id"> the entity id these cached values will be tied to. </param>
+		  /// <param name="id"> the IEntity id these cached values will be tied to. </param>
 		  /// <param name="cacheFields"> the values to cache, one per slot. </param>
 		  void PutToCache( long id, params long[] cacheFields );
 
 		  /// <summary>
 		  /// Caches a single value for an id and slot.
 		  /// </summary>
-		  /// <param name="id"> the entity id this cached values will be tied to. </param>
+		  /// <param name="id"> the IEntity id this cached values will be tied to. </param>
 		  /// <param name="slot"> the slot for the given {@code id}. </param>
 		  /// <param name="value"> the value to cache for this id and slot. </param>
 		  void PutToCacheSingle( long id, int slot, long value );
@@ -189,7 +189,7 @@ namespace Neo4Net.Consistency.checking.cache
 		  /// <summary>
 		  /// Clears the cached values for the specified {@code id}.
 		  /// </summary>
-		  /// <param name="id"> the entity id to clear the cached values for. </param>
+		  /// <param name="id"> the IEntity id to clear the cached values for. </param>
 		  void ClearCache( long id );
 
 		  /// <summary>

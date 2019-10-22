@@ -32,7 +32,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Condition numberOfEvictions(final org.neo4j.io.pagecache.monitoring.PageCacheCounters monitor, final long desiredNumberOfEvictions)
+//ORIGINAL LINE: public static Condition numberOfEvictions(final org.Neo4Net.io.pagecache.monitoring.PageCacheCounters monitor, final long desiredNumberOfEvictions)
 		 public static Condition NumberOfEvictions( PageCacheCounters monitor, long desiredNumberOfEvictions )
 		 {
 			  return () => monitor.Evictions() > desiredNumberOfEvictions;

@@ -25,7 +25,7 @@ namespace Neo4Net.Tooling
 {
 
 	using IllegalMultilineFieldException = Neo4Net.Csv.Reader.IllegalMultilineFieldException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using Neo4Net.Helpers.Args;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
@@ -67,59 +67,59 @@ namespace Neo4Net.Tooling
 	using SpectrumExecutionMonitor = Neo4Net.@unsafe.Impl.Batchimport.staging.SpectrumExecutionMonitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfUnchecked;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Strings.TAB;
+//	import static org.Neo4Net.helpers.Strings.TAB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.TextUtil.tokenizeStringWithQuotes;
+//	import static org.Neo4Net.helpers.TextUtil.tokenizeStringWithQuotes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.readTextFile;
+//	import static org.Neo4Net.io.fs.FileUtils.readTextFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.parseLongWithUnit;
+//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.PropertyType.EMPTY_BYTE_ARRAY;
+//	import static org.Neo4Net.kernel.impl.store.PropertyType.EMPTY_BYTE_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.Converters.withDefault;
+//	import static org.Neo4Net.kernel.impl.util.Converters.withDefault;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.DEFAULT_MAX_MEMORY_PERCENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.calculateMaxMemoryFromPercent;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.calculateMaxMemoryFromPercent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.canDetectFreeMemory;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.canDetectFreeMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Collectors.badCollector;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.badCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Collectors.collect;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.collect;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.data;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 
 	/// <summary>
 	/// User-facing command line tool around a <seealso cref="BatchImporter"/>.
@@ -163,7 +163,7 @@ namespace Neo4Net.Tooling
 			  public static readonly Options SkipDuplicateNodes = new Options( "SkipDuplicateNodes", InnerEnum.SkipDuplicateNodes, "skip-duplicate-nodes", false, "<true/false>", "Whether or not to skip importing nodes that have the same id/group. In the event of multiple " + "nodes within the same group having the same id, the first encountered will be imported " + "whereas consecutive such nodes will be skipped. " + "Skipped nodes will be logged" + ", containing at most number of entities specified by " + BAD_TOLERANCE.key() + ", unless " + "otherwise specified by " + SKIP_BAD_ENTRIES_LOGGING.key() + "option." );
 			  public static readonly Options IgnoreExtraColumns = new Options( "IgnoreExtraColumns", InnerEnum.IgnoreExtraColumns, "ignore-extra-columns", false, "<true/false>", "Whether or not to ignore extra columns in the data not specified by the header. " + "Skipped columns will be logged, containing at most number of entities specified by " + BAD_TOLERANCE.key() + ", unless " + "otherwise specified by " + SKIP_BAD_ENTRIES_LOGGING.key() + "option." );
 			  public static readonly Options DatabaseConfig = new Options( "DatabaseConfig", InnerEnum.DatabaseConfig, "db-config", null, "<path/to/" + Neo4Net.Kernel.configuration.Config.DEFAULT_CONFIG_FILE_NAME + ">", "(advanced) Option is deprecated and replaced by 'additional-config'. " );
-			  public static readonly Options AdditionalConfig = new Options( "AdditionalConfig", InnerEnum.AdditionalConfig, "additional-config", null, "<path/to/" + Neo4Net.Kernel.configuration.Config.DEFAULT_CONFIG_FILE_NAME + ">", "(advanced) File specifying database-specific configuration. For more information consult " + "manual about available configuration options for a neo4j configuration file. " + "Only configuration affecting store at time of creation will be read. " + "Examples of supported config are:\n" + Neo4Net.Graphdb.factory.GraphDatabaseSettings.DenseNodeThreshold.name() + "\n" + Neo4Net.Graphdb.factory.GraphDatabaseSettings.StringBlockSize.name() + "\n" + Neo4Net.Graphdb.factory.GraphDatabaseSettings.ArrayBlockSize.name(), true );
+			  public static readonly Options AdditionalConfig = new Options( "AdditionalConfig", InnerEnum.AdditionalConfig, "additional-config", null, "<path/to/" + Neo4Net.Kernel.configuration.Config.DEFAULT_CONFIG_FILE_NAME + ">", "(advanced) File specifying database-specific configuration. For more information consult " + "manual about available configuration options for a Neo4Net configuration file. " + "Only configuration affecting store at time of creation will be read. " + "Examples of supported config are:\n" + Neo4Net.GraphDb.factory.GraphDatabaseSettings.DenseNodeThreshold.name() + "\n" + Neo4Net.GraphDb.factory.GraphDatabaseSettings.StringBlockSize.name() + "\n" + Neo4Net.GraphDb.factory.GraphDatabaseSettings.ArrayBlockSize.name(), true );
 			  public static readonly Options LegacyStyleQuoting = new Options( "LegacyStyleQuoting", InnerEnum.LegacyStyleQuoting, "legacy-style-quoting", Neo4Net.@unsafe.Impl.Batchimport.input.csv.Configuration.DEFAULT_LEGACY_STYLE_QUOTING, "<true/false>", "Whether or not backslash-escaped quote e.g. \\\" is interpreted as inner quote." );
 			  public static readonly Options ReadBufferSize = new Options( "ReadBufferSize", InnerEnum.ReadBufferSize, "read-buffer-size", Neo4Net.Csv.Reader.Configuration_Fields.Default.bufferSize(), "<bytes, e.g. 10k, 4M>", "Size of each buffer for reading input data. It has to at least be large enough to hold the " + "biggest single value in the input data." );
 			  public static readonly Options MaxMemory = new Options( "MaxMemory", InnerEnum.MaxMemory, "max-memory", null, "<max memory that importer can use>", "(advanced) Maximum memory that importer can use for various data structures and caching " + "to improve performance. If left as unspecified (null) it is set to " + DEFAULT_MAX_MEMORY_PERCENT + "% of (free memory on machine - max JVM memory). " + "Values can be plain numbers, like 10000000 or e.g. 20G for 20 gigabyte, or even e.g. 70%." );
@@ -405,7 +405,7 @@ namespace Neo4Net.Tooling
 //ORIGINAL LINE: public static void main(String[] incomingArguments, boolean defaultSettingsSuitableForTests) throws java.io.IOException
 		 public static void Main( string[] incomingArguments, bool defaultSettingsSuitableForTests )
 		 {
-			  Console.Error.WriteLine( format( "WARNING: neo4j-import is deprecated and support for it will be removed in a future%n" + "version of Neo4j; please use neo4j-admin import instead." ) );
+			  Console.Error.WriteLine( format( "WARNING: Neo4Net-import is deprecated and support for it will be removed in a future%n" + "version of Neo4Net; please use Neo4Net-admin import instead." ) );
 
 			  PrintStream @out = System.out;
 			  PrintStream err = System.err;
@@ -474,7 +474,7 @@ namespace Neo4Net.Tooling
       
 						dbConfig = LoadDbConfig( args.InterpretOption( Options.DatabaseConfig.key(), Converters.optional(), Converters.toFile(), Validators.REGEX_FILE_EXISTS ) );
 						dbConfig.Augment( LoadDbConfig( args.InterpretOption( Options.AdditionalConfig.key(), Converters.optional(), Converters.toFile(), Validators.REGEX_FILE_EXISTS ) ) );
-						dbConfig.augment( GraphDatabaseSettings.neo4j_home, storeDir.CanonicalFile.ParentFile.AbsolutePath );
+						dbConfig.augment( GraphDatabaseSettings.Neo4Net_home, storeDir.CanonicalFile.ParentFile.AbsolutePath );
 						bool allowCacheOnHeap = args.GetBoolean( Options.CacheOnHeap.key(), (bool?) Options.CacheOnHeap.defaultValue() ).Value;
 						configuration = ImportConfiguration( processors, defaultSettingsSuitableForTests, dbConfig, maxMemory, storeDir, allowCacheOnHeap, defaultHighIO );
 						input = new CsvInput( NodeData( inputEncoding, nodesFiles ), defaultFormatNodeFileHeader(), RelationshipData(inputEncoding, relationshipsFiles), defaultFormatRelationshipFileHeader(), idType, CsvConfiguration(args, defaultSettingsSuitableForTests), badCollector, new CsvInput.PrintingMonitor(@out) );
@@ -504,7 +504,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.helpers.Args useArgumentsFromFileArgumentIfPresent(org.neo4j.helpers.Args args) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.helpers.Args useArgumentsFromFileArgumentIfPresent(org.Neo4Net.helpers.Args args) throws java.io.IOException
 		 public static Args UseArgumentsFromFileArgumentIfPresent( Args args )
 		 {
 			  string fileArgument = args.Get( Options.File.key(), null );
@@ -552,7 +552,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void doImport(java.io.PrintStream out, java.io.PrintStream err, java.io.InputStream in, org.neo4j.io.layout.DatabaseLayout databaseLayout, java.io.File badFile, org.neo4j.io.fs.FileSystemAbstraction fs, java.util.Collection<org.neo4j.helpers.Args.Option<java.io.File[]>> nodesFiles, java.util.Collection<org.neo4j.helpers.Args.Option<java.io.File[]>> relationshipsFiles, boolean enableStacktrace, org.neo4j.unsafe.impl.batchimport.input.Input input, org.neo4j.kernel.configuration.Config dbConfig, java.io.OutputStream badOutput, org.neo4j.unsafe.impl.batchimport.Configuration configuration, boolean detailedProgress) throws java.io.IOException
+//ORIGINAL LINE: public static void doImport(java.io.PrintStream out, java.io.PrintStream err, java.io.InputStream in, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, java.io.File badFile, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles, boolean enableStacktrace, org.Neo4Net.unsafe.impl.batchimport.input.Input input, org.Neo4Net.kernel.configuration.Config dbConfig, java.io.OutputStream badOutput, org.Neo4Net.unsafe.impl.batchimport.Configuration configuration, boolean detailedProgress) throws java.io.IOException
 		 public static void DoImport( PrintStream @out, PrintStream err, Stream @in, DatabaseLayout databaseLayout, File badFile, FileSystemAbstraction fs, ICollection<Args.Option<File[]>> nodesFiles, ICollection<Args.Option<File[]>> relationshipsFiles, bool enableStacktrace, Input input, Config dbConfig, Stream badOutput, Neo4Net.@unsafe.Impl.Batchimport.Configuration configuration, bool detailedProgress )
 		 {
 			  bool success;
@@ -561,7 +561,7 @@ namespace Neo4Net.Tooling
 			  File internalLogFile = dbConfig.Get( store_internal_log_path );
 			  LogService logService = life.Add( StoreLogService.withInternalLog( internalLogFile ).build( fs ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
+//ORIGINAL LINE: final org.Neo4Net.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
 			  IJobScheduler jobScheduler = life.Add( createScheduler() );
 
 			  life.Start();
@@ -641,7 +641,7 @@ namespace Neo4Net.Tooling
 
 		 internal static void PrintOverview( File storeDir, ICollection<Args.Option<File[]>> nodesFiles, ICollection<Args.Option<File[]>> relationshipsFiles, Neo4Net.@unsafe.Impl.Batchimport.Configuration configuration, PrintStream @out )
 		 {
-			  @out.println( "Neo4j version: " + Version.Neo4jVersion );
+			  @out.println( "Neo4Net version: " + Version.Neo4NetVersion );
 			  @out.println( "Importing the contents of these files into " + storeDir + ":" );
 			  PrintInputFiles( "Nodes", nodesFiles, @out );
 			  PrintInputFiles( "Relationships", relationshipsFiles, @out );
@@ -764,11 +764,11 @@ namespace Neo4Net.Tooling
 		 private static string ManualReference( ManualPage page, Anchor anchor )
 		 {
 			  // Docs are versioned major.minor-suffix, so drop the patch version.
-			  string[] versionParts = Version.Neo4jVersion.Split( "-", true );
+			  string[] versionParts = Version.Neo4NetVersion.Split( "-", true );
 			  versionParts[0] = versionParts[0].Substring( 0, 3 );
 			  string docsVersion = string.join( "-", versionParts );
 
-			  return " https://neo4j.com/docs/operations-manual/" + docsVersion + "/" + page.getReference( anchor );
+			  return " https://Neo4Net.com/docs/operations-manual/" + docsVersion + "/" + page.getReference( anchor );
 		 }
 
 		 /// <summary>
@@ -827,7 +827,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Iterable<org.neo4j.unsafe.impl.batchimport.input.csv.DataFactory> relationshipData(final java.nio.charset.Charset encoding, java.util.Collection<org.neo4j.helpers.Args.Option<java.io.File[]>> relationshipsFiles)
+//ORIGINAL LINE: public static Iterable<org.Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> relationshipData(final java.nio.charset.Charset encoding, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> relationshipsFiles)
 		 public static IEnumerable<DataFactory> RelationshipData( Charset encoding, ICollection<Args.Option<File[]>> relationshipsFiles )
 		 {
 			  return new IterableWrapperAnonymousInnerClass( relationshipsFiles, encoding );
@@ -849,7 +849,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Iterable<org.neo4j.unsafe.impl.batchimport.input.csv.DataFactory> nodeData(final java.nio.charset.Charset encoding, java.util.Collection<org.neo4j.helpers.Args.Option<java.io.File[]>> nodesFiles)
+//ORIGINAL LINE: public static Iterable<org.Neo4Net.unsafe.impl.batchimport.input.csv.DataFactory> nodeData(final java.nio.charset.Charset encoding, java.util.Collection<org.Neo4Net.helpers.Args.Option<java.io.File[]>> nodesFiles)
 		 public static IEnumerable<DataFactory> NodeData( Charset encoding, ICollection<Args.Option<File[]>> nodesFiles )
 		 {
 			  return new IterableWrapperAnonymousInnerClass2( nodesFiles, encoding );
@@ -873,8 +873,8 @@ namespace Neo4Net.Tooling
 
 		 private static void PrintUsage( PrintStream @out )
 		 {
-			  @out.println( "Neo4j Import Tool" );
-			  foreach ( string line in Args.splitLongLine( "neo4j-import is used to create a new Neo4j database " + "from data in CSV files. " + "See the chapter \"Import Tool\" in the Neo4j Manual for details on the CSV file format " + "- a special kind of header is required.", 80 ) )
+			  @out.println( "Neo4Net Import Tool" );
+			  foreach ( string line in Args.splitLongLine( "Neo4Net-import is used to create a new Neo4Net database " + "from data in CSV files. " + "See the chapter \"Import Tool\" in the Neo4Net Manual for details on the CSV file format " + "- a special kind of header is required.", 80 ) )
 			  {
 					@out.println( "\t" + line );
 			  }
@@ -885,7 +885,7 @@ namespace Neo4Net.Tooling
 			  }
 
 			  @out.println( "Example:" );
-			  @out.print( Strings.joinAsLines( TAB + "bin/neo4j-import --into retail.db --id-type string --nodes:Customer customers.csv ", TAB + "--nodes products.csv --nodes orders_header.csv,orders1.csv,orders2.csv ", TAB + "--relationships:CONTAINS order_details.csv ", TAB + "--relationships:ORDERED customer_orders_header.csv,orders1.csv,orders2.csv" ) );
+			  @out.print( Strings.joinAsLines( TAB + "bin/Neo4Net-import --into retail.db --id-type string --nodes:Customer customers.csv ", TAB + "--nodes products.csv --nodes orders_header.csv,orders1.csv,orders2.csv ", TAB + "--relationships:CONTAINS order_details.csv ", TAB + "--relationships:ORDERED customer_orders_header.csv,orders1.csv,orders2.csv" ) );
 		 }
 
 		 private static bool AsksForUsage( Args args )
@@ -914,20 +914,20 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.unsafe.impl.batchimport.input.csv.Configuration csvConfiguration(org.neo4j.helpers.Args args, final boolean defaultSettingsSuitableForTests)
+//ORIGINAL LINE: public static org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration csvConfiguration(org.Neo4Net.helpers.Args args, final boolean defaultSettingsSuitableForTests)
 		 public static Configuration CsvConfiguration( Args args, bool defaultSettingsSuitableForTests )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.unsafe.impl.batchimport.input.csv.Configuration defaultConfiguration = COMMAS;
+//ORIGINAL LINE: final org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration defaultConfiguration = COMMAS;
 			  Configuration defaultConfiguration = COMMAS;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificDelimiter = args.interpretOption(Options.DELIMITER.key(), org.neo4j.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificDelimiter = args.interpretOption(Options.DELIMITER.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificDelimiter = args.InterpretOption( Options.Delimiter.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificArrayDelimiter = args.interpretOption(Options.ARRAY_DELIMITER.key(), org.neo4j.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificArrayDelimiter = args.interpretOption(Options.ARRAY_DELIMITER.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificArrayDelimiter = args.InterpretOption( Options.ArrayDelimiter.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Nullable<char> specificQuote = args.interpretOption(Options.QUOTE.key(), org.neo4j.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
+//ORIGINAL LINE: final System.Nullable<char> specificQuote = args.interpretOption(Options.QUOTE.key(), org.Neo4Net.kernel.impl.util.Converters.optional(), CHARACTER_CONVERTER);
 			  char? specificQuote = args.InterpretOption( Options.Quote.key(), Converters.optional(), _characterConverter );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final System.Nullable<bool> multiLineFields = args.getBoolean(Options.MULTILINE_FIELDS.key(), null);

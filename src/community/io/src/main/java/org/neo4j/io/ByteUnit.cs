@@ -41,7 +41,7 @@ namespace Neo4Net.Io
 	public sealed class ByteUnit
 	{
 		 /*
-		 XXX Future notes: This class can potentially replace some of the functionality in org.neo4j.helpers.Format.
+		 XXX Future notes: This class can potentially replace some of the functionality in org.Neo4Net.helpers.Format.
 		  */
 
 		 public static readonly ByteUnit Byte = new ByteUnit( "Byte", InnerEnum.Byte, 0, "B" );

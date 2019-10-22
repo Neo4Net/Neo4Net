@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.ha
 {
@@ -29,7 +29,7 @@ namespace Neo4Net.ha
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -47,17 +47,17 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.ClusterHelper.createSomeData;
+//	import static org.Neo4Net.causalclustering.ClusterHelper.createSomeData;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 	public class BackupHaIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.neo4j.kernel.configuration.Settings.TRUE).withInstanceSetting(org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server, serverId -> ":" + org.neo4j.ports.allocation.PortAuthority.allocatePort());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.TRUE).withInstanceSetting(org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server, serverId -> ":" + org.Neo4Net.ports.allocation.PortAuthority.allocatePort());
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(OnlineBackupSettings.online_backup_enabled, Settings.TRUE).withInstanceSetting(OnlineBackupSettings.online_backup_server, serverId => ":" + PortAuthority.allocatePort());
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private File _backupPath;

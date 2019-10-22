@@ -31,7 +31,7 @@ namespace Neo4Net.Io.pagecache.stress
 	/// It works like this: We have N threads, and a number of records with N long fields plus a sum field. So each record
 	/// can verify their consistency by summing up their N fields and comparing the result to their sum field. Further, each
 	/// thread can also verify their consistency, by taking the sum of their respective N field across all records, and
-	/// comparing it to the number of increments they've done. The records are protected by entity locks, since page write
+	/// comparing it to the number of increments they've done. The records are protected by IEntity locks, since page write
 	/// locks are not exclusive, so in the end we should see no lost updates. That is, both consistency checks should pass.
 	/// We will also have many more file pages and cache pages, so we'll have lots of concurrent eviction and page faulting
 	/// as well.
@@ -51,7 +51,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void stress(org.neo4j.io.pagecache.PageCache pageCache, Condition condition) throws Exception
+//ORIGINAL LINE: public void stress(org.Neo4Net.io.pagecache.PageCache pageCache, Condition condition) throws Exception
 		 public virtual void Stress( PageCache pageCache, Condition condition )
 		 {
 			  File file = Files.createTempFile( _workingDirectory.toPath(), "pagecacheundertest", ".bin" ).toFile();
@@ -103,7 +103,7 @@ namespace Neo4Net.Io.pagecache.stress
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyResults(RecordFormat format, org.neo4j.io.pagecache.PagedFile pagedFile, java.util.List<RecordStresser> recordStressers) throws java.io.IOException
+//ORIGINAL LINE: private void verifyResults(RecordFormat format, org.Neo4Net.io.pagecache.PagedFile pagedFile, java.util.List<RecordStresser> recordStressers) throws java.io.IOException
 		 private void VerifyResults( RecordFormat format, PagedFile pagedFile, IList<RecordStresser> recordStressers )
 		 {
 			  foreach ( RecordStresser stresser in recordStressers )

@@ -36,16 +36,16 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.hasErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.hasErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.POST;
+//	import static org.Neo4Net.test.server.HTTP.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class ClientErrorIT extends org.neo4j.server.rest.AbstractRestFunctionalTestBase
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class ClientErrorIT extends org.Neo4Net.server.rest.AbstractRestFunctionalTestBase
 	public class ClientErrorIT : AbstractRestFunctionalTestBase
 	{
 		 private const int UNIQUE_ISBN = 12345;
@@ -55,7 +55,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 public string Query;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.kernel.api.exceptions.Status errorStatus;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.kernel.api.exceptions.Status errorStatus;
 		 public Status ErrorStatus;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void clientErrorShouldRollbackTheTransaction() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void clientErrorShouldRollbackTheTransaction() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ClientErrorShouldRollbackTheTransaction()
 		 {

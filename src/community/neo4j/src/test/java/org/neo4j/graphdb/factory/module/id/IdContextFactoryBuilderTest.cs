@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.id
+namespace Neo4Net.GraphDb.factory.module.id
 {
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
@@ -65,10 +65,10 @@ namespace Neo4Net.Graphdb.factory.module.id
 	internal class IdContextFactoryBuilderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fs;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fs;
 		 private DefaultFileSystemAbstraction _fs;
 		 private readonly IJobScheduler _jobScheduler = mock( typeof( IJobScheduler ) );
 

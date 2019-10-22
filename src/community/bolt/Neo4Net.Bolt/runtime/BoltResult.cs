@@ -68,12 +68,12 @@ namespace Neo4Net.Bolt.runtime
 	 public interface BoltResult_Visitor
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void visit(org.neo4j.cypher.result.QueryResult_Record record) throws Exception;
+//ORIGINAL LINE: void visit(org.Neo4Net.cypher.result.QueryResult_Record record) throws Exception;
 		  void Visit( Neo4Net.Cypher.result.QueryResult_Record record );
 
 		  /// <summary>
 		  /// Associate arbitrary metadata with the result stream. This will get transferred at the end of the stream.
-		  /// Please stick to Neo4j type system types (Map, List, Integer, Float, Boolean, String etc) 
+		  /// Please stick to Neo4Net type system types (Map, List, Integer, Float, Boolean, String etc) 
 		  /// </summary>
 		  void AddMetadata( string key, AnyValue value );
 	 }

@@ -25,12 +25,12 @@ namespace Migration
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
 	using StandardV3_2 = Neo4Net.Kernel.impl.store.format.standard.StandardV3_2;
@@ -63,7 +63,7 @@ namespace Migration
 	internal class TemporalPropertiesRecordFormatIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -71,7 +71,7 @@ namespace Migration
 		 internal virtual void FailToCreateDateOnOldDatabase()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  TransactionFailureException failureException = assertThrows(typeof(TransactionFailureException), () =>
 			  {
 				using ( Transaction transaction = nonUpgradedStore.BeginTx() )
@@ -84,7 +84,7 @@ namespace Migration
 			  assertEquals( "Current record format does not support TEMPORAL_PROPERTIES. Please upgrade your store to the format that support requested capability.", Exceptions.rootCause( failureException ).Message );
 			  nonUpgradedStore.Shutdown();
 
-			  GraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = restartedOldFormatDatabase.BeginTx() )
 			  {
 					Node node = restartedOldFormatDatabase.CreateNode();
@@ -99,7 +99,7 @@ namespace Migration
 		 internal virtual void FailToCreateDateArrayOnOldDatabase()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  LocalDate date = DateValue.date( 1991, 5, 3 ).asObjectCopy();
 			  TransactionFailureException failureException = assertThrows(typeof(TransactionFailureException), () =>
 			  {
@@ -113,7 +113,7 @@ namespace Migration
 			  assertEquals( "Current record format does not support TEMPORAL_PROPERTIES. Please upgrade your store " + "to the format that support requested capability.", Exceptions.rootCause( failureException ).Message );
 			  nonUpgradedStore.Shutdown();
 
-			  GraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = restartedOldFormatDatabase.BeginTx() )
 			  {
 					Node node = restartedOldFormatDatabase.CreateNode();
@@ -132,7 +132,7 @@ namespace Migration
 			  string propertyKey = "a";
 			  LocalDate date = DateValue.date( 1991, 5, 3 ).asObjectCopy();
 
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode( label );
@@ -141,7 +141,7 @@ namespace Migration
 			  }
 			  database.Shutdown();
 
-			  GraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction ignored = restartedDatabase.BeginTx() )
 			  {
 					assertNotNull( restartedDatabase.FindNode( label, propertyKey, date ) );
@@ -158,7 +158,7 @@ namespace Migration
 			  string propertyKey = "a";
 			  LocalDate date = DateValue.date( 1991, 5, 3 ).asObjectCopy();
 
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode( label );
@@ -167,7 +167,7 @@ namespace Migration
 			  }
 			  database.Shutdown();
 
-			  GraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction ignored = restartedDatabase.BeginTx() )
 			  {
 					using ( ResourceIterator<Node> nodes = restartedDatabase.FindNodes( label ) )
@@ -186,7 +186,7 @@ namespace Migration
 		 internal virtual void FailToOpenStoreWithDatePropertyUsingOldFormat()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, StandardV3_4.NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, StandardV3_4.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();

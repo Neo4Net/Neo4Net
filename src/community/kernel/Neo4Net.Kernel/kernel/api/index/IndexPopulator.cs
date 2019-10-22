@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// pass over the index in <seealso cref="verifyDeferredConstraints(NodePropertyAccessor)"/>. </exception>
 		 /// <exception cref="UncheckedIOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void add(java.util.Collection<? extends IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void add(java.util.Collection<? extends IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 void add<T1>( ICollection<T1> updates );
 
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <exception cref="IndexEntryConflictException"> for first detected uniqueness conflict, if any. </exception>
 		 /// <exception cref="UncheckedIOException"> on error reading from source files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor );
 
 		 /// <summary>
@@ -147,13 +147,13 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <param name="scanProgress"> progress of the scan. </param>
 		 /// <returns> progress of the population of this index as a whole. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.neo4j.storageengine.api.schema.PopulationProgress progress(org.neo4j.storageengine.api.schema.PopulationProgress scanProgress)
+//		 default org.Neo4Net.storageengine.api.schema.PopulationProgress progress(org.Neo4Net.storageengine.api.schema.PopulationProgress scanProgress)
 	//	 {
 	//		  return scanProgress;
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void scanCompleted(org.neo4j.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//		 default void scanCompleted(org.Neo4Net.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 	//	 { // no-op by default
 	//	 }
 	}
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.Api.Index
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		  {
 		  }

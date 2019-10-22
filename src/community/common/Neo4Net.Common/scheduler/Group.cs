@@ -248,7 +248,7 @@ namespace Neo4Net.Scheduler
       /// </summary>
       public string ThreadName()
       {
-         return "neo4j." + GroupName() + "-" + _threadCounter.incrementAndGet();
+         return "Neo4Net." + GroupName() + "-" + _threadCounter.incrementAndGet();
       }
 
       public java.util.concurrent.ExecutorService BuildExecutorService(SchedulerThreadFactory factory)

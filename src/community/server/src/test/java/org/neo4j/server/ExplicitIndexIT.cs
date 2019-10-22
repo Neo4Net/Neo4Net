@@ -38,12 +38,12 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Theories.class) public class ExplicitIndexIT extends org.neo4j.test.server.ExclusiveServerTestBase
+//ORIGINAL LINE: @RunWith(Theories.class) public class ExplicitIndexIT extends org.Neo4Net.test.server.ExclusiveServerTestBase
 	public class ExplicitIndexIT : ExclusiveServerTestBase
 	{
 		 private CommunityNeoServer _server;

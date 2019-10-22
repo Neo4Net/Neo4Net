@@ -19,12 +19,12 @@
  */
 namespace Common
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
 
 	public interface GraphDefinition
 	{
-		 Node Create( GraphDatabaseService graphdb );
+		 Node Create( IGraphDatabaseService graphdb );
 	}
 
 }

@@ -47,111 +47,111 @@ namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.allocateMemory;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.allocateMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayBaseOffset;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayBaseOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayIndexScale;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayIndexScale;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayOffset;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.arrayOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.assertHasUnsafe;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.assertHasUnsafe;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSetMaxLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSetMaxLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSwapLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSwapLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSwapObject;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.compareAndSwapObject;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.free;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.free;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndAddInt;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndAddInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndSetLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndSetLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndSetObject;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getAndSetObject;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getBoolean;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getBooleanVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getBooleanVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getByte;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getByte;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getByteVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getByteVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getChar;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getChar;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getCharVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getCharVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getDouble;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getDouble;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getDoubleVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getDoubleVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getFieldOffset;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getFieldOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getFloat;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getFloatVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getFloatVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getInt;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getIntVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getIntVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getLongVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getLongVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getObject;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getObject;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getObjectVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getObjectVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getShort;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.getShortVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.getShortVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.initDirectByteBuffer;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.initDirectByteBuffer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.newDirectByteBuffer;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.newDirectByteBuffer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.pageSize;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.pageSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putBoolean;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putBooleanVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putBooleanVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putByte;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putByte;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putByteVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putByteVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putChar;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putChar;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putCharVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putCharVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putDouble;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putDouble;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putDoubleVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putDoubleVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putFloat;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putFloatVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putFloatVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putInt;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putIntVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putIntVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putLong;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putLongVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putLongVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putObject;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putObject;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putObjectVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putObjectVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putShort;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.putShortVolatile;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.putShortVolatile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.Internal.dragons.UnsafeUtil.setMemory;
+//	import static org.Neo4Net.@unsafe.impl.Internal.dragons.UnsafeUtil.setMemory;
 
 	internal class UnsafeUtilTest
 	{

@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.edition
+namespace Neo4Net.GraphDb.factory.module.edition
 {
 
-	using DatabaseEditionContext = Neo4Net.Graphdb.factory.module.edition.context.DatabaseEditionContext;
-	using DefaultEditionModuleDatabaseContext = Neo4Net.Graphdb.factory.module.edition.context.DefaultEditionModuleDatabaseContext;
-	using IdContextFactory = Neo4Net.Graphdb.factory.module.id.IdContextFactory;
+	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
+	using DefaultEditionModuleDatabaseContext = Neo4Net.GraphDb.factory.module.edition.context.DefaultEditionModuleDatabaseContext;
+	using IdContextFactory = Neo4Net.GraphDb.factory.module.id.IdContextFactory;
 	using CommitProcessFactory = Neo4Net.Kernel.Impl.Api.CommitProcessFactory;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;

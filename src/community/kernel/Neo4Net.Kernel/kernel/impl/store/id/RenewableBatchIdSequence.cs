@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.impl.store.id
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
+//	import static org.Neo4Net.kernel.impl.store.id.IdRangeIterator.VALUE_REPRESENTING_NULL;
 
 	/// <summary>
 	/// An <seealso cref="IdSequence"/> which does internal batching by using another <seealso cref="IdSequence"/> as source of batches.

@@ -30,7 +30,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.stress.Conditions.numberOfEvictions;
+//	import static org.Neo4Net.io.pagecache.stress.Conditions.numberOfEvictions;
 
 	/// <summary>
 	/// A stress test for Muninn page cache.

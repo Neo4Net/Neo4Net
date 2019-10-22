@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.constraints.ConstraintDescriptorFactory.existsForLabel;
+//	import static org.Neo4Net.kernel.api.schema.constraints.ConstraintDescriptorFactory.existsForLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.constraints.ConstraintDescriptorFactory.nodeKeyForLabel;
+//	import static org.Neo4Net.kernel.api.schema.constraints.ConstraintDescriptorFactory.nodeKeyForLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class ConstraintRuleTest : SchemaRuleTestBase
 	{

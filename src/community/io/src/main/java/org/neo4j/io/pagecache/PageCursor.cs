@@ -21,7 +21,7 @@ namespace Neo4Net.Io.pagecache
 {
 
 	/// <summary>
-	/// A PageCursor is returned from <seealso cref="org.neo4j.io.pagecache.PagedFile.io(long, int)"/>,
+	/// A PageCursor is returned from <seealso cref="org.Neo4Net.io.pagecache.PagedFile.io(long, int)"/>,
 	/// and is used to scan through pages and process them in a consistent and safe fashion.
 	/// <para>
 	/// A page must be processed in the following manner:

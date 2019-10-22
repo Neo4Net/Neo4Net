@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 
 namespace Neo4Net.backup.impl
@@ -33,8 +33,8 @@ namespace Neo4Net.backup.impl
 	using MandatoryCanonicalPath = Neo4Net.CommandLine.Args.Common.MandatoryCanonicalPath;
 	using OptionalCanonicalPath = Neo4Net.CommandLine.Args.Common.OptionalCanonicalPath;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
@@ -50,7 +50,7 @@ namespace Neo4Net.backup.impl
 		 internal const string ARG_DESC_BACKUP_NAME = "Name of backup. If a backup with this name already exists an incremental backup will be attempted.";
 
 		 internal const string ARG_NAME_BACKUP_SOURCE = "from";
-		 internal const string ARG_DESC_BACKUP_SOURCE = "Host and port of Neo4j.";
+		 internal const string ARG_DESC_BACKUP_SOURCE = "Host and port of Neo4Net.";
 		 internal const string ARG_DFLT_BACKUP_SOURCE = "localhost:6362";
 
 		 internal const string ARG_NAME_PROTO_OVERRIDE = "protocol";
@@ -107,7 +107,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OnlineBackupContext createContext(String... args) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public OnlineBackupContext createContext(String... args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public virtual OnlineBackupContext CreateContext( params string[] args )
 		 {
 			  try
@@ -164,7 +164,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.nio.file.Path getBackupDirectory(org.neo4j.commandline.arguments.Arguments arguments) throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: private java.nio.file.Path getBackupDirectory(org.Neo4Net.commandline.arguments.Arguments arguments) throws org.Neo4Net.commandline.admin.CommandFailed
 		 private Path GetBackupDirectory( Arguments arguments )
 		 {
 			  Path path = arguments.GetMandatoryPath( ARG_NAME_BACKUP_DIRECTORY );

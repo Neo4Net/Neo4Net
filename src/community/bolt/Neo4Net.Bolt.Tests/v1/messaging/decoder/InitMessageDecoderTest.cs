@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack_Unpacker = Neo4Net.Bolt.messaging.Neo4jPack_Unpacker;
+	using Neo4NetPack_Unpacker = Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using RequestMessageDecoder = Neo4Net.Bolt.messaging.RequestMessageDecoder;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
@@ -36,11 +36,11 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.AuthTokenUtil.assertAuthTokenMatches;
+//	import static org.Neo4Net.test.AuthTokenUtil.assertAuthTokenMatches;
 
 	internal class InitMessageDecoderTest : AuthTokenDecoderTest
 	{
@@ -82,11 +82,11 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAckFailure()
 		 {
-			  Neo4jPackV1 neo4jPack = new Neo4jPackV1();
-			  InitMessage originalMessage = new InitMessage( "My Driver", map( "user", "neo4j", "password", "secret" ) );
+			  Neo4NetPackV1 Neo4NetPack = new Neo4NetPackV1();
+			  InitMessage originalMessage = new InitMessage( "My Driver", map( "user", "Neo4Net", "password", "secret" ) );
 
-			  PackedInputArray innput = new PackedInputArray( serialize( neo4jPack, originalMessage ) );
-			  Neo4jPack_Unpacker unpacker = neo4jPack.NewUnpacker( innput );
+			  PackedInputArray innput = new PackedInputArray( serialize( Neo4NetPack, originalMessage ) );
+			  Neo4NetPack_Unpacker unpacker = Neo4NetPack.NewUnpacker( innput );
 
 			  // these two steps are executed before decoding in order to select a correct decoder
 			  unpacker.UnpackStructHeader();
@@ -100,11 +100,11 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 //ORIGINAL LINE: protected void testShouldDecodeAuthToken(java.util.Map<String,Object> authToken, boolean checkDecodingResult) throws Exception
 		 protected internal override void TestShouldDecodeAuthToken( IDictionary<string, object> authToken, bool checkDecodingResult )
 		 {
-			  Neo4jPackV1 neo4jPack = new Neo4jPackV1();
+			  Neo4NetPackV1 Neo4NetPack = new Neo4NetPackV1();
 			  InitMessage originalMessage = new InitMessage( "My Driver", authToken );
 
-			  PackedInputArray innput = new PackedInputArray( serialize( neo4jPack, originalMessage ) );
-			  Neo4jPack_Unpacker unpacker = neo4jPack.NewUnpacker( innput );
+			  PackedInputArray innput = new PackedInputArray( serialize( Neo4NetPack, originalMessage ) );
+			  Neo4NetPack_Unpacker unpacker = Neo4NetPack.NewUnpacker( innput );
 
 			  // these two steps are executed before decoding in order to select a correct decoder
 			  unpacker.UnpackStructHeader();

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.api.query
 {
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;

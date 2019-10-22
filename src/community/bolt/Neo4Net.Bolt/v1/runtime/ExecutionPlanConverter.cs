@@ -22,7 +22,7 @@
 namespace Neo4Net.Bolt.v1.runtime
 {
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using ListValue = Neo4Net.Values.@virtual.ListValue;
@@ -31,14 +31,14 @@ namespace Neo4Net.Bolt.v1.runtime
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleValue;
+//	import static org.Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	/// <summary>
-	/// Takes execution plans and converts them to the subset of types used in the Neo4j type system </summary>
+	/// Takes execution plans and converts them to the subset of types used in the Neo4Net type system </summary>
 	internal class ExecutionPlanConverter
 	{
 		 private ExecutionPlanConverter()
@@ -56,7 +56,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  @out.Add( "children", Children( plan ) );
 			  if ( hasProfilerStatistics )
 			  {
-					Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics profile = plan.ProfilerStatistics;
+					Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics profile = plan.ProfilerStatistics;
 					@out.Add( "dbHits", longValue( profile.DbHits ) );
 					@out.Add( "pageCacheHits", longValue( profile.PageCacheHits ) );
 					@out.Add( "pageCacheMisses", longValue( profile.PageCacheMisses ) );

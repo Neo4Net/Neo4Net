@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.api.proc
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.api.proc
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T> T get(Key<T> key) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: <T> T get(Key<T> key) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 T get<T>( Key<T> key );
 		 T getOrElse<T>( Key<T> key, T orElse );
 	}

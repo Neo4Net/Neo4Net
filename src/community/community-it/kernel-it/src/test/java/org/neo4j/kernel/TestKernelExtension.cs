@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel
 //	import static org.junit.Assert.assertEquals;
 
 	/// <summary>
-	/// Test the implementation of the <seealso cref="org.neo4j.kernel.extension.KernelExtensionFactory"/> framework. Treats the
+	/// Test the implementation of the <seealso cref="org.Neo4Net.kernel.extension.KernelExtensionFactory"/> framework. Treats the
 	/// framework as a black box and takes the perspective of the extension, making
 	/// sure that the framework fulfills its part of the contract. The parent class (
 	/// <seealso cref="KernelExtensionFactoryContractTest"/>) takes the opposite approach, it treats

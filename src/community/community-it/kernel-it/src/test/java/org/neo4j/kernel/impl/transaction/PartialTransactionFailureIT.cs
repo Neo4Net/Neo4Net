@@ -30,16 +30,16 @@ namespace Neo4Net.Kernel.impl.transaction
 	using ClassGuardedAdversary = Neo4Net.Adversaries.ClassGuardedAdversary;
 	using CountingAdversary = Neo4Net.Adversaries.CountingAdversary;
 	using AdversarialFileSystemAbstraction = Neo4Net.Adversaries.fs.AdversarialFileSystemAbstraction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using EmbeddedGraphDatabase = Neo4Net.Graphdb.facade.embedded.EmbeddedGraphDatabase;
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using EmbeddedGraphDatabase = Neo4Net.GraphDb.facade.embedded.EmbeddedGraphDatabase;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Here we are verifying that even if we get an exception from the storage layer during commit,
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	public class PartialTransactionFailureIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -74,16 +74,16 @@ namespace Neo4Net.Kernel.impl.transaction
 		 public virtual void ConcurrentlyCommittingTransactionsMustNotRotateOutLoggedCommandsOfFailingTransaction()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.adversaries.ClassGuardedAdversary adversary = new org.neo4j.adversaries.ClassGuardedAdversary(new org.neo4j.adversaries.CountingAdversary(1, false), org.neo4j.kernel.impl.transaction.command.Command.RelationshipCommand.class);
+//ORIGINAL LINE: final org.Neo4Net.adversaries.ClassGuardedAdversary adversary = new org.Neo4Net.adversaries.ClassGuardedAdversary(new org.Neo4Net.adversaries.CountingAdversary(1, false), org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand.class);
 			  ClassGuardedAdversary adversary = new ClassGuardedAdversary( new CountingAdversary( 1, false ), typeof( Command.RelationshipCommand ) );
 			  adversary.Disable();
 
 			  File storeDir = Dir.storeDir();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String,String> params = stringMap(org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory.name(), "8m");
+//ORIGINAL LINE: final java.util.Map<String,String> params = stringMap(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory.name(), "8m");
 			  IDictionary<string, string> @params = stringMap( GraphDatabaseSettings.pagecache_memory.name(), "8m" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.facade.embedded.EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabase(storeDir, params)
+//ORIGINAL LINE: final org.Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabase(storeDir, params)
 			  EmbeddedGraphDatabase db = new TestEmbeddedGraphDatabaseAnonymousInnerClass( this, storeDir, @params, adversary );
 
 			  Node a;
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Runnable createRelationship(final org.neo4j.graphdb.facade.embedded.EmbeddedGraphDatabase db, final org.neo4j.graphdb.Node x, final org.neo4j.graphdb.Node y, final java.util.concurrent.CountDownLatch latch)
+//ORIGINAL LINE: private Runnable createRelationship(final org.Neo4Net.graphdb.facade.embedded.EmbeddedGraphDatabase db, final org.Neo4Net.graphdb.Node x, final org.Neo4Net.graphdb.Node y, final java.util.concurrent.CountDownLatch latch)
 		 private ThreadStart CreateRelationship( EmbeddedGraphDatabase db, Node x, Node y, System.Threading.CountdownEvent latch )
 		 {
 			  return () =>

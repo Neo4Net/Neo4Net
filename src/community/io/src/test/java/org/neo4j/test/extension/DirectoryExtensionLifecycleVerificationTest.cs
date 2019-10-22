@@ -35,13 +35,13 @@ namespace Neo4Net.Test.extension
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.extension.ConditionEvaluationResult.disabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.CONTEXT;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.CONTEXT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.FAILED_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.FAILED_TEST_FILE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.LOCKED_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.LOCKED_TEST_FILE_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.extension.ExecutionSharedContext.SUCCESSFUL_TEST_FILE_KEY;
+//	import static org.Neo4Net.test.extension.ExecutionSharedContext.SUCCESSFUL_TEST_FILE_KEY;
 
 	/// <summary>
 	/// This test is disabled by default and not executed directly by test runner.
@@ -52,7 +52,7 @@ namespace Neo4Net.Test.extension
 	internal class DirectoryExtensionLifecycleVerificationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

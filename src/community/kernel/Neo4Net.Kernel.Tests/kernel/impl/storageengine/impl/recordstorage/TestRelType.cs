@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	public enum TestRelType
 	{

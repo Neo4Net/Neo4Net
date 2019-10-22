@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 {
@@ -32,7 +32,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	public enum AcceptorState
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: start { @Override public AcceptorState handle(AcceptorContext context, org.neo4j.cluster.com.message.Message<AcceptorMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { if(message.getMessageType() == AcceptorMessage.join) { return acceptor; } return this; } },
+//ORIGINAL LINE: start { @Override public AcceptorState handle(AcceptorContext context, org.Neo4Net.cluster.com.message.Message<AcceptorMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { if(message.getMessageType() == AcceptorMessage.join) { return acceptor; } return this; } },
 		 start
 		 {
 			 public AcceptorState handle( AcceptorContext context, Message<AcceptorMessage> message, MessageHolder outgoing )
@@ -42,7 +42,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 		 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: acceptor { @Override public AcceptorState handle(AcceptorContext context, org.neo4j.cluster.com.message.Message<AcceptorMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case prepare: { AcceptorMessage.PrepareState incomingState = message.getPayload(); InstanceId instanceId = new InstanceId(message); AcceptorInstance localState = context.getAcceptorInstance(instanceId); if(incomingState.getBallot() >= localState.getBallot()) { context.promise(localState, incomingState.getBallot()); outgoing.offer(message.copyHeadersTo(org.neo4j.cluster.com.message.Message.respond(ProposerMessage.promise, message, new ProposerMessage.PromiseState(incomingState.getBallot(), localState.getValue())), InstanceId.INSTANCE)); } else { context.getLog(AcceptorState.class).debug("Rejecting prepare from " + message.getHeader(org.neo4j.cluster.com.message.Message.HEADER_FROM) + " for instance " + message.getHeader(InstanceId.INSTANCE) + " and ballot " + incomingState.getBallot() + " (i had a prepare state ballot = " + localState.getBallot() + ")"); outgoing.offer(message.copyHeadersTo(org.neo4j.cluster.com.message.Message.respond(ProposerMessage.rejectPrepare, message, new ProposerMessage.RejectPrepare(localState.getBallot())), InstanceId.INSTANCE)); } break; } case accept: { AcceptorMessage.AcceptState acceptState = message.getPayload(); InstanceId instanceId = new InstanceId(message); AcceptorInstance instance = context.getAcceptorInstance(instanceId); if(acceptState.getBallot() == instance.getBallot()) { context.accept(instance, acceptState.getValue()); instance.accept(acceptState.getValue()); outgoing.offer(message.copyHeadersTo(org.neo4j.cluster.com.message.Message.respond(ProposerMessage.accepted, message, new ProposerMessage.AcceptedState()), InstanceId.INSTANCE)); } else { context.getLog(AcceptorState.class).debug("Reject " + instanceId + " accept ballot:" + acceptState.getBallot() + " actual ballot:" + instance.getBallot()); outgoing.offer(message.copyHeadersTo(org.neo4j.cluster.com.message.Message.respond(ProposerMessage.rejectAccept, message, new ProposerMessage.RejectAcceptState()), InstanceId.INSTANCE)); } break; } case leave: { context.leave(); return start; } default: break; } return this; } },
+//ORIGINAL LINE: acceptor { @Override public AcceptorState handle(AcceptorContext context, org.Neo4Net.cluster.com.message.Message<AcceptorMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case prepare: { AcceptorMessage.PrepareState incomingState = message.getPayload(); InstanceId instanceId = new InstanceId(message); AcceptorInstance localState = context.getAcceptorInstance(instanceId); if(incomingState.getBallot() >= localState.getBallot()) { context.promise(localState, incomingState.getBallot()); outgoing.offer(message.copyHeadersTo(org.Neo4Net.cluster.com.message.Message.respond(ProposerMessage.promise, message, new ProposerMessage.PromiseState(incomingState.getBallot(), localState.getValue())), InstanceId.INSTANCE)); } else { context.getLog(AcceptorState.class).debug("Rejecting prepare from " + message.getHeader(org.Neo4Net.cluster.com.message.Message.HEADER_FROM) + " for instance " + message.getHeader(InstanceId.INSTANCE) + " and ballot " + incomingState.getBallot() + " (i had a prepare state ballot = " + localState.getBallot() + ")"); outgoing.offer(message.copyHeadersTo(org.Neo4Net.cluster.com.message.Message.respond(ProposerMessage.rejectPrepare, message, new ProposerMessage.RejectPrepare(localState.getBallot())), InstanceId.INSTANCE)); } break; } case accept: { AcceptorMessage.AcceptState acceptState = message.getPayload(); InstanceId instanceId = new InstanceId(message); AcceptorInstance instance = context.getAcceptorInstance(instanceId); if(acceptState.getBallot() == instance.getBallot()) { context.accept(instance, acceptState.getValue()); instance.accept(acceptState.getValue()); outgoing.offer(message.copyHeadersTo(org.Neo4Net.cluster.com.message.Message.respond(ProposerMessage.accepted, message, new ProposerMessage.AcceptedState()), InstanceId.INSTANCE)); } else { context.getLog(AcceptorState.class).debug("Reject " + instanceId + " accept ballot:" + acceptState.getBallot() + " actual ballot:" + instance.getBallot()); outgoing.offer(message.copyHeadersTo(org.Neo4Net.cluster.com.message.Message.respond(ProposerMessage.rejectAccept, message, new ProposerMessage.RejectAcceptState()), InstanceId.INSTANCE)); } break; } case leave: { context.leave(); return start; } default: break; } return this; } },
 		 acceptor
 		 {
 			 public AcceptorState handle( AcceptorContext context, Message<AcceptorMessage> message, MessageHolder outgoing )

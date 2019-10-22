@@ -39,7 +39,7 @@ namespace Neo4Net.Io.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 		 public override FileWatcher FileWatcher()
 		 {
 			  return new DefaultFileSystemWatcher( _fs.newWatchService() );

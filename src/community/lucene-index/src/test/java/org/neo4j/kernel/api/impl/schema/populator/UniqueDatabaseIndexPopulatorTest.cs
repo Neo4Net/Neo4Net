@@ -66,11 +66,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.change;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.remove;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.remove;
 
 	public class UniqueDatabaseIndexPopulatorTest
 	{
@@ -563,7 +563,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 			  LabelSchemaDescriptor schemaDescriptor = SchemaDescriptorFactory.forLabel( 1, 1 );
 			  _populator = NewPopulator();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, schemaDescriptor, "foo"), add(2, schemaDescriptor, "bar"), add(3, schemaDescriptor, "baz"), add(4, schemaDescriptor, "qux"));
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, schemaDescriptor, "foo"), add(2, schemaDescriptor, "bar"), add(3, schemaDescriptor, "baz"), add(4, schemaDescriptor, "qux"));
 			  IList<IndexEntryUpdate<object>> updates = Arrays.asList( add( 1, schemaDescriptor, "foo" ), add( 2, schemaDescriptor, "bar" ), add( 3, schemaDescriptor, "baz" ), add( 4, schemaDescriptor, "qux" ) );
 
 			  updates.ForEach( _populator.includeSample );
@@ -581,7 +581,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 			  _populator = NewPopulator();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, schemaDescriptor, "aaa"), add(2, schemaDescriptor, "bbb"), add(3, schemaDescriptor, "ccc"));
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = java.util.Arrays.asList(add(1, schemaDescriptor, "aaa"), add(2, schemaDescriptor, "bbb"), add(3, schemaDescriptor, "ccc"));
 			  IList<IndexEntryUpdate<object>> updates = Arrays.asList( add( 1, _schemaDescriptor, "aaa" ), add( 2, _schemaDescriptor, "bbb" ), add( 3, _schemaDescriptor, "ccc" ) );
 
 			  _populator.add( updates );
@@ -608,7 +608,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 private static void AddUpdate( UniqueLuceneIndexPopulator populator, long nodeId, object value )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update = add(nodeId, descriptor.schema(), value);
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = add(nodeId, descriptor.schema(), value);
 			  IndexEntryUpdate<object> update = add( nodeId, _descriptor.schema(), value );
 			  populator.Add( asList( update ) );
 		 }

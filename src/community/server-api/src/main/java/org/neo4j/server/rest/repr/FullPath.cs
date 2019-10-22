@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using Path = Neo4Net.Graphdb.Path;
+	using Path = Neo4Net.GraphDb.Path;
 
 	/// <summary>
 	/// @author mh

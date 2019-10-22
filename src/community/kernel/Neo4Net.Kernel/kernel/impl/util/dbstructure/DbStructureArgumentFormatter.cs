@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
 
 	public sealed class DbStructureArgumentFormatter : ArgumentFormatter
 	{

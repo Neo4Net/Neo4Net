@@ -33,11 +33,11 @@ namespace Neo4Net.Adversaries.pagecache
 	/// </para>
 	/// <para>
 	/// Read operations will always return a consistent value because the underlying page is write locked.
-	/// See <seealso cref="org.neo4j.io.pagecache.PagedFile.PF_SHARED_WRITE_LOCK"/> flag.
+	/// See <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_SHARED_WRITE_LOCK"/> flag.
 	/// </para>
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") class AdversarialWritePageCursor extends org.neo4j.io.pagecache.impl.DelegatingPageCursor
+//ORIGINAL LINE: @SuppressWarnings("unchecked") class AdversarialWritePageCursor extends org.Neo4Net.io.pagecache.impl.DelegatingPageCursor
 	internal class AdversarialWritePageCursor : DelegatingPageCursor
 	{
 		 private readonly Adversary _adversary;
@@ -270,7 +270,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void checkAndClearCursorException() throws org.neo4j.io.pagecache.CursorException
+//ORIGINAL LINE: public void checkAndClearCursorException() throws org.Neo4Net.io.pagecache.CursorException
 		 public override void CheckAndClearCursorException()
 		 {
 			  Delegate.checkAndClearCursorException();
@@ -295,7 +295,7 @@ namespace Neo4Net.Adversaries.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor openLinkedCursor(long pageId) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor openLinkedCursor(long pageId) throws java.io.IOException
 		 public override PageCursor OpenLinkedCursor( long pageId )
 		 {
 			  return _linkedCursor = new AdversarialWritePageCursor( Delegate.openLinkedCursor( pageId ), _adversary );

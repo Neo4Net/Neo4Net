@@ -22,10 +22,10 @@ namespace Neo4Net.Kernel.impl.recovery
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
@@ -39,25 +39,25 @@ namespace Neo4Net.Kernel.impl.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.checkPoint;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.checkPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.commandEntry;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.commandEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.commitEntry;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.commitEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.containsExactly;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.containsExactly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.logEntries;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.logEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.LogMatchers.startEntry;
+//	import static org.Neo4Net.test.mockito.matcher.LogMatchers.startEntry;
 
 	public class KernelRecoveryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 {
 			  // Given
 			  EphemeralFileSystemAbstraction fs = FsRule.get();
-			  GraphDatabaseService db = NewDB( fs );
+			  IGraphDatabaseService db = NewDB( fs );
 
 			  long node1 = CreateNode( db );
 
@@ -86,12 +86,12 @@ namespace Neo4Net.Kernel.impl.recovery
 			  }
 		 }
 
-		 private GraphDatabaseService NewDB( FileSystemAbstraction fs )
+		 private IGraphDatabaseService NewDB( FileSystemAbstraction fs )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).setFileSystem(new UncloseableDelegatingFileSystemAbstraction(fs)).newImpermanentDatabase(TestDirectory.databaseDir());
 		 }
 
-		 private static long CreateNode( GraphDatabaseService db )
+		 private static long CreateNode( IGraphDatabaseService db )
 		 {
 			  long node1;
 			  using ( Transaction tx = Db.beginTx() )

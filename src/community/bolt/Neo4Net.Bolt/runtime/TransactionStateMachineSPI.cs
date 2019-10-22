@@ -30,7 +30,7 @@ namespace Neo4Net.Bolt.runtime
 	public interface TransactionStateMachineSPI
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void awaitUpToDate(long oldestAcceptableTxId) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 void AwaitUpToDate( long oldestAcceptableTxId );
 
 		 long NewestEncounteredTxId();

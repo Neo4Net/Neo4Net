@@ -33,13 +33,13 @@ namespace Neo4Net.Server.rest.dbms
 	using ExceptionRepresentation = Neo4Net.Server.rest.repr.ExceptionRepresentation;
 	using InputFormat = Neo4Net.Server.rest.repr.InputFormat;
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.dbms.AuthorizedRequestWrapper.getLoginContextFromUserPrincipal;
+//	import static org.Neo4Net.server.rest.dbms.AuthorizedRequestWrapper.getLoginContextFromUserPrincipal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CustomStatusType.UNPROCESSABLE;
+//	import static org.Neo4Net.server.rest.web.CustomStatusType.UNPROCESSABLE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/user") public class UserService
@@ -103,17 +103,17 @@ namespace Neo4Net.Server.rest.dbms
 			  }
 			  catch ( BadInputException e )
 			  {
-					return _output.response( BAD_REQUEST, new ExceptionRepresentation( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, e.Message ) ) );
+					return _output.response( BAD_REQUEST, new ExceptionRepresentation( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, e.Message ) ) );
 			  }
 
 			  object o = deserialized[PASSWORD];
 			  if ( o == null )
 			  {
-					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Required parameter '{0}' is missing.", PASSWORD ) ) ) );
+					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Required parameter '{0}' is missing.", PASSWORD ) ) ) );
 			  }
 			  if ( !( o is string ) )
 			  {
-					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Expected '{0}' to be a string.", PASSWORD ) ) ) );
+					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Expected '{0}' to be a string.", PASSWORD ) ) ) );
 			  }
 			  string newPassword = ( string ) o;
 
@@ -136,7 +136,7 @@ namespace Neo4Net.Server.rest.dbms
 			  }
 			  catch ( InvalidArgumentsException e )
 			  {
-					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4jError( e.Status(), e.Message ) ) );
+					return _output.response( UNPROCESSABLE, new ExceptionRepresentation( new Neo4NetError( e.Status(), e.Message ) ) );
 			  }
 			  return _output.ok();
 		 }

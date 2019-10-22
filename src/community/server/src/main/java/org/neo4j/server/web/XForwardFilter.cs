@@ -24,15 +24,15 @@ namespace Neo4Net.Server.web
 	using ContainerRequestFilter = com.sun.jersey.spi.container.ContainerRequestFilter;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
+//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
+//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
 
 	/// <summary>
 	/// Changes the value of the base and request URIs to match the provided
 	/// X-Forwarded-Host and X-Forwarded-Proto header values.
 	/// <para>
-	/// In doing so, it means Neo4j server can use those URIs as if they were the
+	/// In doing so, it means Neo4Net server can use those URIs as if they were the
 	/// actual request URIs.
 	/// </para>
 	/// </summary>

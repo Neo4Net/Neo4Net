@@ -27,12 +27,12 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -46,14 +46,14 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.INCOMING;
+//	import static org.Neo4Net.graphdb.Direction.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 
-	public class TestNeo4jCacheAndPersistence : AbstractNeo4jTestCase
+	public class TestNeo4NetCacheAndPersistence : AbstractNeo4NetTestCase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private long _node1Id = -1;
@@ -361,7 +361,7 @@ namespace Neo4Net.Kernel.impl.core
 		 {
 			  IDictionary<string, string> config = new Dictionary<string, string>();
 			  config["relationship_grab_size"] = "1";
-			  GraphDatabaseService graphDb = GetImpermanentDatabase( config );
+			  IGraphDatabaseService graphDb = GetImpermanentDatabase( config );
 
 			  Node node1;
 			  Node node2;
@@ -418,7 +418,7 @@ namespace Neo4Net.Kernel.impl.core
 		 {
 			  IDictionary<string, string> config = new Dictionary<string, string>();
 			  config["relationship_grab_size"] = "2";
-			  GraphDatabaseService graphDb = GetImpermanentDatabase( config );
+			  IGraphDatabaseService graphDb = GetImpermanentDatabase( config );
 			  Transaction tx = graphDb.BeginTx();
 			  Node node1 = graphDb.CreateNode();
 			  Node node2 = graphDb.CreateNode();
@@ -537,7 +537,7 @@ namespace Neo4Net.Kernel.impl.core
 			  graphDb.Shutdown();
 		 }
 
-		 private GraphDatabaseService GetImpermanentDatabase( IDictionary<string, string> config )
+		 private IGraphDatabaseService GetImpermanentDatabase( IDictionary<string, string> config )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newImpermanentDatabaseBuilder(TestDirectory.directory("impermanent")).setConfig(config).newGraphDatabase();
 		 }

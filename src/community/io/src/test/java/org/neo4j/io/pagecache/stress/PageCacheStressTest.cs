@@ -20,7 +20,7 @@
 namespace Neo4Net.Io.pagecache.stress
 {
 
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using SingleFilePageSwapperFactory = Neo4Net.Io.pagecache.impl.SingleFilePageSwapperFactory;
@@ -38,7 +38,7 @@ namespace Neo4Net.Io.pagecache.stress
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.tracing.PageCacheTracer.NULL;
+//	import static org.Neo4Net.io.pagecache.tracing.PageCacheTracer.NULL;
 
 	/// <summary>
 	/// A stress test for page cache(s).

@@ -48,9 +48,9 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.pathToFileAfterMove;
+//	import static org.Neo4Net.io.fs.FileUtils.pathToFileAfterMove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.size;
+//	import static org.Neo4Net.io.fs.FileUtils.size;
 
 	public class FileUtilsTest
 	{

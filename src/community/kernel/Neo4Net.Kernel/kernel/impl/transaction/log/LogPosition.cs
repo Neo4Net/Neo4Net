@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class LogPosition : IComparable<LogPosition>
 	{

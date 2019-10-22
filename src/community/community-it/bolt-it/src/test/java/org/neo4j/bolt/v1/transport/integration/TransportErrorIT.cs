@@ -31,15 +31,15 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 
 	public class TransportErrorIT : AbstractBoltTransportsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass());
-		 public Neo4jWithSocket Server = new Neo4jWithSocket( this.GetType() );
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass());
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setup()
@@ -54,7 +54,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldHandleIncorrectFraming()
 		 {
 			  // Given I have a message that gets truncated in the chunking, so part of it is missing
-			  sbyte[] truncated = serialize( Util.Neo4jPack, new RunMessage( "UNWIND [1,2,3] AS a RETURN a, a * a AS a_squared" ) );
+			  sbyte[] truncated = serialize( Util.Neo4NetPack, new RunMessage( "UNWIND [1,2,3] AS a RETURN a, a * a AS a_squared" ) );
 			  truncated = Arrays.copyOf( truncated, truncated.Length - 12 );
 
 			  // When
@@ -72,10 +72,10 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with the wrong types in its fields
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.messaging.RecordingByteChannel rawData = new org.neo4j.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.packstream.PackStream.Packer packer = new org.neo4j.bolt.v1.packstream.PackStream.Packer(new org.neo4j.bolt.v1.packstream.BufferedChannelOutput(rawData));
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
 			  PackStream.Packer packer = new PackStream.Packer( new BufferedChannelOutput( rawData ) );
 
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );
@@ -100,10 +100,10 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with an invalid type
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.messaging.RecordingByteChannel rawData = new org.neo4j.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.packstream.PackStream.Packer packer = new org.neo4j.bolt.v1.packstream.PackStream.Packer(new org.neo4j.bolt.v1.packstream.BufferedChannelOutput(rawData));
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData));
 			  PackStream.Packer packer = new PackStream.Packer( new BufferedChannelOutput( rawData ) );
 
 			  packer.PackStructHeader( 1, ( sbyte )0x66 ); // Invalid message type
@@ -127,13 +127,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 {
 			  // Given I send a message with an invalid type
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.messaging.RecordingByteChannel rawData = new org.neo4j.bolt.v1.messaging.RecordingByteChannel();
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.messaging.RecordingByteChannel rawData = new org.Neo4Net.bolt.v1.messaging.RecordingByteChannel();
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.packstream.BufferedChannelOutput out = new org.neo4j.bolt.v1.packstream.BufferedChannelOutput(rawData);
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput out = new org.Neo4Net.bolt.v1.packstream.BufferedChannelOutput(rawData);
 			  BufferedChannelOutput @out = new BufferedChannelOutput( rawData );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.v1.packstream.PackStream.Packer packer = new org.neo4j.bolt.v1.packstream.PackStream.Packer(out);
+//ORIGINAL LINE: final org.Neo4Net.bolt.v1.packstream.PackStream.Packer packer = new org.Neo4Net.bolt.v1.packstream.PackStream.Packer(out);
 			  PackStream.Packer packer = new PackStream.Packer( @out );
 
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );

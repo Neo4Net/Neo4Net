@@ -57,7 +57,7 @@ namespace Neo4Net.Server.modules
 			  {
 					IList<string> packageNames = PackagesFor( tpp );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectables = extensionInitializer.initializePackages(packageNames);
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectables = extensionInitializer.initializePackages(packageNames);
 					ICollection<Injectable<object>> injectables = _extensionInitializer.initializePackages( packageNames );
 					_webServer.addJAXRSPackages( packageNames, tpp.MountPoint, injectables );
 					_log.info( "Mounted unmanaged extension [%s] at [%s]", tpp.PackageName, tpp.MountPoint );

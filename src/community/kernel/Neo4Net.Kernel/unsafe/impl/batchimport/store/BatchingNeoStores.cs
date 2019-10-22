@@ -65,27 +65,27 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using IoTracer = Neo4Net.@unsafe.Impl.Batchimport.store.io.IoTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.IOUtils.closeAll;
+//	import static org.Neo4Net.io.IOUtils.closeAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.IOLimiter_Fields.UNLIMITED;
+//	import static org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanStore.getLabelScanStoreFile;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore.getLabelScanStoreFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.StoreType.PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.StoreType.PROPERTY_ARRAY;
+//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.StoreType.PROPERTY_STRING;
+//	import static org.Neo4Net.kernel.impl.store.StoreType.PROPERTY_STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.StoreType.RELATIONSHIP_GROUP;
+//	import static org.Neo4Net.kernel.impl.store.StoreType.RELATIONSHIP_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 
 	/// <summary>
 	/// Creator and accessor of <seealso cref="NeoStores"/> with some logic to provide very batch friendly services to the
@@ -104,7 +104,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 private readonly LogProvider _logProvider;
 		 private readonly DatabaseLayout _databaseLayout;
 		 private readonly DatabaseLayout _temporaryDatabaseLayout;
-		 private readonly Config _neo4jConfig;
+		 private readonly Config _Neo4NetConfig;
 		 private readonly Configuration _importConfiguration;
 		 private readonly PageCache _pageCache;
 		 private readonly IoTracer _ioTracer;
@@ -127,7 +127,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 
 		 private bool _successful;
 
-		 private BatchingNeoStores( FileSystemAbstraction fileSystem, PageCache pageCache, File databaseDirectory, RecordFormats recordFormats, Config neo4jConfig, Configuration importConfiguration, LogService logService, AdditionalInitialIds initialIds, bool externalPageCache, IoTracer ioTracer )
+		 private BatchingNeoStores( FileSystemAbstraction fileSystem, PageCache pageCache, File databaseDirectory, RecordFormats recordFormats, Config Neo4NetConfig, Configuration importConfiguration, LogService logService, AdditionalInitialIds initialIds, bool externalPageCache, IoTracer ioTracer )
 		 {
 			  this._fileSystem = fileSystem;
 			  this._recordFormats = recordFormats;
@@ -136,7 +136,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 			  this._logProvider = logService.InternalLogProvider;
 			  this._databaseLayout = DatabaseLayout.of( databaseDirectory );
 			  this._temporaryDatabaseLayout = DatabaseLayout.of( _databaseLayout.file( TEMP_STORE_NAME ), TEMP_STORE_NAME );
-			  this._neo4jConfig = neo4jConfig;
+			  this._Neo4NetConfig = Neo4NetConfig;
 			  this._pageCache = pageCache;
 			  this._ioTracer = ioTracer;
 			  this._externalPageCache = externalPageCache;
@@ -203,7 +203,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 		 /// <param name="tempStoresToKeep"> <seealso cref="Predicate"/> controlling which files to keep, i.e. {@code true} means keep, {@code false} means delete. </param>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void pruneAndOpenExistingStore(System.Predicate<org.neo4j.kernel.impl.store.StoreType> mainStoresToKeep, System.Predicate<org.neo4j.kernel.impl.store.StoreType> tempStoresToKeep) throws java.io.IOException
+//ORIGINAL LINE: public void pruneAndOpenExistingStore(System.Predicate<org.Neo4Net.kernel.impl.store.StoreType> mainStoresToKeep, System.Predicate<org.Neo4Net.kernel.impl.store.StoreType> tempStoresToKeep) throws java.io.IOException
 		 public virtual void PruneAndOpenExistingStore( System.Predicate<StoreType> mainStoresToKeep, System.Predicate<StoreType> tempStoresToKeep )
 		 {
 			  DeleteStoreFiles( _temporaryDatabaseLayout, tempStoresToKeep );
@@ -262,23 +262,23 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 		 public static BatchingNeoStores BatchingNeoStoresConflict( FileSystemAbstraction fileSystem, File storeDir, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds initialIds, Config dbConfig, IJobScheduler jobScheduler )
 		 {
-			  Config neo4jConfig = GetNeo4jConfig( config, dbConfig );
+			  Config Neo4NetConfig = GetNeo4NetConfig( config, dbConfig );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.io.pagecache.tracing.PageCacheTracer tracer = new org.neo4j.io.pagecache.tracing.DefaultPageCacheTracer();
+//ORIGINAL LINE: final org.Neo4Net.io.pagecache.tracing.PageCacheTracer tracer = new org.Neo4Net.io.pagecache.tracing.DefaultPageCacheTracer();
 			  PageCacheTracer tracer = new DefaultPageCacheTracer();
-			  PageCache pageCache = CreatePageCache( fileSystem, neo4jConfig, logService.InternalLogProvider, tracer, DefaultPageCursorTracerSupplier.INSTANCE, EmptyVersionContextSupplier.EMPTY, jobScheduler );
+			  PageCache pageCache = CreatePageCache( fileSystem, Neo4NetConfig, logService.InternalLogProvider, tracer, DefaultPageCursorTracerSupplier.INSTANCE, EmptyVersionContextSupplier.EMPTY, jobScheduler );
 
-			  return new BatchingNeoStores( fileSystem, pageCache, storeDir, recordFormats, neo4jConfig, config, logService, initialIds, false, tracer.bytesWritten );
+			  return new BatchingNeoStores( fileSystem, pageCache, storeDir, recordFormats, Neo4NetConfig, config, logService, initialIds, false, tracer.bytesWritten );
 		 }
 
 		 public static BatchingNeoStores BatchingNeoStoresWithExternalPageCache( FileSystemAbstraction fileSystem, PageCache pageCache, PageCacheTracer tracer, File storeDir, RecordFormats recordFormats, Configuration config, LogService logService, AdditionalInitialIds initialIds, Config dbConfig )
 		 {
-			  Config neo4jConfig = GetNeo4jConfig( config, dbConfig );
+			  Config Neo4NetConfig = GetNeo4NetConfig( config, dbConfig );
 
-			  return new BatchingNeoStores( fileSystem, pageCache, storeDir, recordFormats, neo4jConfig, config, logService, initialIds, true, tracer.bytesWritten );
+			  return new BatchingNeoStores( fileSystem, pageCache, storeDir, recordFormats, Neo4NetConfig, config, logService, initialIds, true, tracer.bytesWritten );
 		 }
 
-		 private static Config GetNeo4jConfig( Configuration config, Config dbConfig )
+		 private static Config GetNeo4NetConfig( Configuration config, Config dbConfig )
 		 {
 			  dbConfig.Augment( stringMap( dense_node_threshold.name(), valueOf(config.DenseNodeThreshold()), pagecache_memory.name(), valueOf(config.PageCacheMemory()) ) );
 			  return dbConfig;
@@ -291,7 +291,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 
 		 private StoreFactory NewStoreFactory( DatabaseLayout databaseLayout, params OpenOption[] openOptions )
 		 {
-			  return new StoreFactory( databaseLayout, _neo4jConfig, _idGeneratorFactory, _pageCache, _fileSystem, _recordFormats, _logProvider, EmptyVersionContextSupplier.EMPTY, openOptions );
+			  return new StoreFactory( databaseLayout, _Neo4NetConfig, _idGeneratorFactory, _pageCache, _fileSystem, _recordFormats, _logProvider, EmptyVersionContextSupplier.EMPTY, openOptions );
 		 }
 
 		 /// <returns> temporary relationship group store which will be deleted in <seealso cref="close()"/>. </returns>

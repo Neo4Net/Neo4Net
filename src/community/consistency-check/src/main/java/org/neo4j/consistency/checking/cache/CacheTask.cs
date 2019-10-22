@@ -23,14 +23,14 @@ namespace Neo4Net.Consistency.checking.cache
 	using Stage = Neo4Net.Consistency.checking.full.Stage;
 	using StoreProcessor = Neo4Net.Consistency.checking.full.StoreProcessor;
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Kernel.impl.store;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	/// <summary>
 	/// Action to be manipulate the <seealso cref="CacheAccess"/> in some way.

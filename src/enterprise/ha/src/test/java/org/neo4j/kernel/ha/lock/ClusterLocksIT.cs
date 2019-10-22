@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.@lock
 {
@@ -31,26 +31,26 @@ namespace Neo4Net.Kernel.ha.@lock
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
+//	import static org.Neo4Net.kernel.ha.cluster.HighAvailabilityMemberState.PENDING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.instanceEvicted;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.instanceEvicted;
 
 	public class ClusterLocksIT
 	{
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void takeExclusiveLockOnSameNodeAfterSwitch(org.neo4j.graphdb.Label testLabel, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase master, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase db) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void takeExclusiveLockOnSameNodeAfterSwitch(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase master, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private void TakeExclusiveLockOnSameNodeAfterSwitch( Label testLabel, HighlyAvailableGraphDatabase master, HighlyAvailableGraphDatabase db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.ha.ClusterManager.RepairKit takeExclusiveLockAndKillSlave(org.neo4j.graphdb.Label testLabel, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase db) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.ha.ClusterManager.RepairKit takeExclusiveLockAndKillSlave(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private ClusterManager.RepairKit TakeExclusiveLockAndKillSlave( Label testLabel, HighlyAvailableGraphDatabase db )
 		 {
 			  TakeExclusiveLock( testLabel, db );
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.Transaction takeExclusiveLock(org.neo4j.graphdb.Label testLabel, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase db) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Transaction takeExclusiveLock(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private Transaction TakeExclusiveLock( Label testLabel, HighlyAvailableGraphDatabase db )
 		 {
 			  Transaction transaction = Db.beginTx();
@@ -245,12 +245,12 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.Node getNode(org.neo4j.kernel.ha.HighlyAvailableGraphDatabase db, org.neo4j.graphdb.Label testLabel) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db, org.Neo4Net.graphdb.Label testLabel) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private Node GetNode( HighlyAvailableGraphDatabase db, Label testLabel )
 		 {
 			  using ( ResourceIterator<Node> nodes = Db.findNodes( testLabel ) )
 			  {
-					return nodes.First().orElseThrow(() => new EntityNotFoundException(EntityType.NODE, 0L));
+					return nodes.First().orElseThrow(() => new IEntityNotFoundException(EntityType.NODE, 0L));
 			  }
 		 }
 	}

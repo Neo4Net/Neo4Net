@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.CommandLine.dbms
 {
@@ -31,7 +31,7 @@ namespace Neo4Net.CommandLine.dbms
 	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using Arguments = Neo4Net.CommandLine.Args.Arguments;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using StoreLayout = Neo4Net.Io.layout.StoreLayout;
 	using StoreLockException = Neo4Net.Kernel.StoreLockException;
@@ -39,9 +39,9 @@ namespace Neo4Net.CommandLine.dbms
 	using Validators = Neo4Net.Kernel.impl.util.Validators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.fromFile;
+//	import static org.Neo4Net.kernel.configuration.Config.fromFile;
 
 	public class UnbindFromClusterCommand : AdminCommand
 	{
@@ -62,18 +62,18 @@ namespace Neo4Net.CommandLine.dbms
 			  return _arguments;
 		 }
 
-		 private static Config LoadNeo4jConfig( Path homeDir, Path configDir, string databaseName )
+		 private static Config LoadNeo4NetConfig( Path homeDir, Path configDir, string databaseName )
 		 {
 			  return fromFile( configDir.resolve( Config.DEFAULT_CONFIG_FILE_NAME ) ).withSetting( GraphDatabaseSettings.active_database, databaseName ).withHome( homeDir ).withConnectorsDisabled().withNoThrowOnFileLoadFailure().build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] args) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] args) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] args )
 		 {
 			  try
 			  {
-					Config config = LoadNeo4jConfig( _homeDir, _configDir, _arguments.parse( args ).get( ARG_DATABASE ) );
+					Config config = LoadNeo4NetConfig( _homeDir, _configDir, _arguments.parse( args ).get( ARG_DATABASE ) );
 					File dataDirectory = config.Get( GraphDatabaseSettings.data_directory );
 					Path pathToSpecificDatabase = config.Get( GraphDatabaseSettings.database_path ).toPath();
 
@@ -106,7 +106,7 @@ namespace Neo4Net.CommandLine.dbms
 			  }
 			  catch ( StoreLockException e )
 			  {
-					throw new CommandFailed( "Database is currently locked. Please shutdown Neo4j.", e );
+					throw new CommandFailed( "Database is currently locked. Please shutdown Neo4Net.", e );
 			  }
 			  catch ( System.ArgumentException e )
 			  {
@@ -119,7 +119,7 @@ namespace Neo4Net.CommandLine.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void confirmTargetDirectoryIsWritable(org.neo4j.io.layout.StoreLayout storeLayout) throws CannotWriteException, java.io.IOException
+//ORIGINAL LINE: private static void confirmTargetDirectoryIsWritable(org.Neo4Net.io.layout.StoreLayout storeLayout) throws CannotWriteException, java.io.IOException
 		 private static void ConfirmTargetDirectoryIsWritable( StoreLayout storeLayout )
 		 {
 			  using ( System.IDisposable ignored = StoreLockChecker.Check( storeLayout ) )

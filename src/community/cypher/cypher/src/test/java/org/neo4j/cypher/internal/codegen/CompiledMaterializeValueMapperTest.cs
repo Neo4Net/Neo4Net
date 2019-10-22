@@ -21,8 +21,8 @@ namespace Neo4Net.Cypher.Internal.codegen
 {
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
@@ -87,7 +87,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 				  throw new System.InvalidOperationException( "Should not be used" );
 			 }
 
-			 public GraphDatabaseService GraphDatabase
+			 public IGraphDatabaseService GraphDatabase
 			 {
 				 get
 				 {

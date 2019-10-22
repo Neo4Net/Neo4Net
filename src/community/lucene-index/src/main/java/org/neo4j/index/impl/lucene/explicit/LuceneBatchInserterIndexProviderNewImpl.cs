@@ -23,11 +23,11 @@ using System.Collections.Generic;
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
@@ -51,7 +51,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 private LuceneBatchInserterIndex.RelationshipLookup _relationshipLookup;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public LuceneBatchInserterIndexProviderNewImpl(final org.neo4j.unsafe.batchinsert.BatchInserter inserter)
+//ORIGINAL LINE: public LuceneBatchInserterIndexProviderNewImpl(final org.Neo4Net.unsafe.batchinsert.BatchInserter inserter)
 		 [Obsolete]
 		 public LuceneBatchInserterIndexProviderNewImpl( BatchInserter inserter )
 		 {
@@ -61,7 +61,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  {
 				// TODO too may objects allocated here
 				BatchRelationship rel = inserter.GetRelationshipById( id );
-				return new EntityId_RelationshipData( id, rel.StartNode, rel.EndNode );
+				return new IEntityId_RelationshipData( id, rel.StartNode, rel.EndNode );
 			  };
 		 }
 
@@ -76,7 +76,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  // TODO Doesn't look right
 			  if ( config != null )
 			  {
-					config = MapUtil.stringMap( new Dictionary<>( config ), Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, LuceneIndexImplementation.SERVICE_NAME );
+					config = MapUtil.stringMap( new Dictionary<>( config ), Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, LuceneIndexImplementation.SERVICE_NAME );
 					IndexStore.setIfNecessary( cls, indexName, config );
 					return config;
 			  }

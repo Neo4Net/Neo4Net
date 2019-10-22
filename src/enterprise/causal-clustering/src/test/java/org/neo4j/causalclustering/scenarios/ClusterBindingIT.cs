@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -38,7 +38,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using ClusterId = Neo4Net.causalclustering.identity.ClusterId;
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -60,13 +60,13 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.TestStoreId.assertAllStoresHaveTheSameStoreId;
+//	import static org.Neo4Net.causalclustering.TestStoreId.assertAllStoresHaveTheSameStoreId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
+//	import static org.Neo4Net.causalclustering.core.server.CoreServerModule.CLUSTER_ID_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.RANDOM_NUMBER;
 
 	public class ClusterBindingIT
 	{
@@ -94,7 +94,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private FileSystemAbstraction _fs;
 
@@ -307,7 +307,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void changeClusterId(org.neo4j.causalclustering.discovery.CoreClusterMember coreMember) throws java.io.IOException
+//ORIGINAL LINE: private void changeClusterId(org.Neo4Net.causalclustering.discovery.CoreClusterMember coreMember) throws java.io.IOException
 		 private void ChangeClusterId( CoreClusterMember coreMember )
 		 {
 			  SimpleStorage<ClusterId> clusterIdStorage = new SimpleFileStorage<ClusterId>( _fs, coreMember.ClusterStateDirectory(), CLUSTER_ID_NAME, new ClusterId.Marshal(), NullLogProvider.Instance );
@@ -315,7 +315,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void changeStoreId(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws Exception
+//ORIGINAL LINE: private void changeStoreId(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws Exception
 		 private void ChangeStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();

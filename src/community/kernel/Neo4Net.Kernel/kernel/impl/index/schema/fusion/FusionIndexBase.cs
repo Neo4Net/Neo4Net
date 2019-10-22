@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 /// @param <E> the type of exception anticipated, inferred from the lambda </param>
 		 /// <exception cref="E"> if consumption fails with this exception </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T, E extends Exception> void forAll(org.neo4j.function.ThrowingConsumer<T,E> consumer, Iterable<T> subjects) throws E
+//ORIGINAL LINE: public static <T, E extends Exception> void forAll(org.Neo4Net.function.ThrowingConsumer<T,E> consumer, Iterable<T> subjects) throws E
 		 public static void ForAll<T, E>( ThrowingConsumer<T, E> consumer, IEnumerable<T> subjects ) where E : Exception
 		 {
 			  Iterables.safeForAll( consumer, subjects );
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 /// @param <E> the type of exception anticipated, inferred from the lambda </param>
 		 /// <exception cref="E"> if consumption fails with this exception </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <T, E extends Exception> void forAll(org.neo4j.function.ThrowingConsumer<T,E> consumer, T[] subjects) throws E
+//ORIGINAL LINE: public static <T, E extends Exception> void forAll(org.Neo4Net.function.ThrowingConsumer<T,E> consumer, T[] subjects) throws E
 		 public static void ForAll<T, E>( ThrowingConsumer<T, E> consumer, T[] subjects ) where E : Exception
 		 {
 			  ForAll( consumer, Arrays.asList( subjects ) );

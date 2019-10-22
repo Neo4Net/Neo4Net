@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.concatResourceIterators;
+//	import static org.Neo4Net.helpers.collection.Iterators.concatResourceIterators;
 
 	internal class FusionIndexAccessor : FusionIndexBase<IndexAccessor>, IndexAccessor
 	{
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  foreach ( IndexSlot slot in Enum.GetValues( typeof( IndexSlot ) ) )

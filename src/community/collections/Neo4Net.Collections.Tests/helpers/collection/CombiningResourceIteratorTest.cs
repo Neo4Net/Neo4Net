@@ -21,7 +21,7 @@ namespace Neo4Net.Helpers.Collections
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -36,9 +36,9 @@ namespace Neo4Net.Helpers.Collections
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 
 	internal class CombiningResourceIteratorTest
 	{

@@ -26,7 +26,7 @@ namespace Neo4Net.Server.plugins
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullFormat = Neo4Net.Server.rest.repr.formats.NullFormat;
@@ -68,7 +68,7 @@ namespace Neo4Net.Server.plugins
 //ORIGINAL LINE: @Test public void canGetUrisForNode()
 		 public virtual void CanGetUrisForNode()
 		 {
-			  IDictionary<string, IList<string>> extensions = _manager.getExensionsFor( typeof( GraphDatabaseService ) );
+			  IDictionary<string, IList<string>> extensions = _manager.getExensionsFor( typeof( IGraphDatabaseService ) );
 			  IList<string> methods = extensions[typeof( FunctionalTestPlugin ).Name];
 			  assertNotNull( methods );
 			  assertThat( methods, hasItem( FunctionalTestPlugin.CREATE_NODE ) );
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.plugins
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CanInvokeExtension()
 		 {
-			  _manager.invoke( _graphDb, typeof( FunctionalTestPlugin ).Name, typeof( GraphDatabaseService ), FunctionalTestPlugin.CREATE_NODE, _graphDb, ( new NullFormat( null, ( MediaType[] ) null ) ).readParameterList( "" ) );
+			  _manager.invoke( _graphDb, typeof( FunctionalTestPlugin ).Name, typeof( IGraphDatabaseService ), FunctionalTestPlugin.CREATE_NODE, _graphDb, ( new NullFormat( null, ( MediaType[] ) null ) ).readParameterList( "" ) );
 		 }
 	}
 

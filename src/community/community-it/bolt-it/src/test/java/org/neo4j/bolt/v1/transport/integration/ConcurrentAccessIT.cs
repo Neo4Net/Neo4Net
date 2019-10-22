@@ -31,7 +31,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;
@@ -44,7 +44,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 
 	/// <summary>
 	/// Multiple concurrent users should be able to connect simultaneously. We test this with multiple users running
@@ -53,8 +53,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	public class ConcurrentAccessIT : AbstractBoltTransportsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass(), settings -> settings.put(org.neo4j.graphdb.factory.GraphDatabaseSettings.auth_enabled.name(), "false"));
-		 public Neo4jWithSocket Server = new Neo4jWithSocket( this.GetType(), settings => settings.put(GraphDatabaseSettings.auth_enabled.name(), "false") );
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass(), settings -> settings.put(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled.name(), "false"));
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType(), settings => settings.put(GraphDatabaseSettings.auth_enabled.name(), "false") );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldRunSimpleStatement() throws Throwable
@@ -144,7 +144,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void init(org.neo4j.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private void init(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 			 private void init( TransportConnection client )
 			 {
 				  client.Send( init );
@@ -152,7 +152,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createAndRollback(org.neo4j.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private void createAndRollback(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 			 private void createAndRollback( TransportConnection client )
 			 {
 				  client.Send( createAndRollback );

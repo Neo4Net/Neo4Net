@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
 	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDateTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDateTime;
 
 	[Description("Create a DateTime instant.")]
 	internal class DateTimeFunction : TemporalFunction<DateTimeValue>
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerMore(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: void registerMore(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 internal override void RegisterMore( Procedures procedures )
 		 {
 			  procedures.Register( new FromEpoch() );
@@ -87,12 +87,12 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 {
 			  internal const string DESCRIPTION = "Create a DateTime given the seconds and nanoseconds since the start of the epoch.";
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal static readonly IList<FieldSignature> SignatureConflict = Arrays.asList( inputField( "seconds", Neo4jTypes.NTNumber ), inputField( "nanoseconds", Neo4jTypes.NTNumber ) );
+			  internal static readonly IList<FieldSignature> SignatureConflict = Arrays.asList( inputField( "seconds", Neo4NetTypes.NTNumber ), inputField( "nanoseconds", Neo4NetTypes.NTNumber ) );
 			  internal readonly UserFunctionSignature Signature;
 
 			  internal FromEpoch()
 			  {
-					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "datetime" }, "fromepoch" ), SignatureConflict, Neo4jTypes.NTDateTime, null, new string[0], DESCRIPTION, true );
+					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "datetime" }, "fromepoch" ), SignatureConflict, Neo4NetTypes.NTDateTime, null, new string[0], DESCRIPTION, true );
 			  }
 
 			  public override UserFunctionSignature Signature()
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input != null && input.Length == 2 )
@@ -121,12 +121,12 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 		 {
 			  internal const string DESCRIPTION = "Create a DateTime given the milliseconds since the start of the epoch.";
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal static readonly IList<FieldSignature> SignatureConflict = Collections.singletonList( inputField( "milliseconds", Neo4jTypes.NTNumber ) );
+			  internal static readonly IList<FieldSignature> SignatureConflict = Collections.singletonList( inputField( "milliseconds", Neo4NetTypes.NTNumber ) );
 			  internal readonly UserFunctionSignature Signature;
 
 			  internal FromEpochMillis()
 			  {
-					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "datetime" }, "fromepochmillis" ), SignatureConflict, Neo4jTypes.NTDateTime, null, new string[0], DESCRIPTION, true );
+					this.Signature = new UserFunctionSignature( new QualifiedName( new string[] { "datetime" }, "fromepochmillis" ), SignatureConflict, Neo4NetTypes.NTDateTime, null, new string[0], DESCRIPTION, true );
 			  }
 
 			  public override UserFunctionSignature Signature()
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public override AnyValue Apply( Context ctx, AnyValue[] input )
 			  {
 					if ( input != null && input.Length == 1 )

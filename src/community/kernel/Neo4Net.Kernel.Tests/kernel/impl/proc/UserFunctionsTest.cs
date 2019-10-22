@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using UserAggregator = Neo4Net.Internal.Kernel.Api.procs.UserAggregator;
 	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
 	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
@@ -47,11 +47,11 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.UserFunctionSignature.functionSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.UserFunctionSignature.functionSignature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Key.key;
+//	import static org.Neo4Net.kernel.api.proc.Key.key;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.numberValue;
+//	import static org.Neo4Net.values.storable.Values.numberValue;
 
 	public class UserFunctionsTest
 	{
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public ExpectedException Exception = ExpectedException.none();
 
 		 private readonly Procedures _procs = new Procedures();
-		 private readonly UserFunctionSignature _signature = functionSignature( "org", "myproc" ).@out( Neo4jTypes.NTAny ).build();
+		 private readonly UserFunctionSignature _signature = functionSignature( "org", "myproc" ).@out( Neo4NetTypes.NTAny ).build();
 		 private CallableUserFunction _function;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -97,13 +97,13 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldGetAllRegisteredFunctions()
 		 {
 			  // When
-			  _procs.register( Function( functionSignature( "org", "myproc1" ).@out( Neo4jTypes.NTAny ).build() ) );
-			  _procs.register( Function( functionSignature( "org", "myproc2" ).@out( Neo4jTypes.NTAny ).build() ) );
-			  _procs.register( Function( functionSignature( "org", "myproc3" ).@out( Neo4jTypes.NTAny ).build() ) );
+			  _procs.register( Function( functionSignature( "org", "myproc1" ).@out( Neo4NetTypes.NTAny ).build() ) );
+			  _procs.register( Function( functionSignature( "org", "myproc2" ).@out( Neo4NetTypes.NTAny ).build() ) );
+			  _procs.register( Function( functionSignature( "org", "myproc3" ).@out( Neo4NetTypes.NTAny ).build() ) );
 
 			  // Then
 			  IList<UserFunctionSignature> signatures = Iterables.asList( _procs.AllFunctions );
-			  assertThat( signatures, containsInAnyOrder( functionSignature( "org", "myproc1" ).@out( Neo4jTypes.NTAny ).build(), functionSignature("org", "myproc2").@out(Neo4jTypes.NTAny).build(), functionSignature("org", "myproc3").@out(Neo4jTypes.NTAny).build() ) );
+			  assertThat( signatures, containsInAnyOrder( functionSignature( "org", "myproc1" ).@out( Neo4NetTypes.NTAny ).build(), functionSignature("org", "myproc2").@out(Neo4NetTypes.NTAny).build(), functionSignature("org", "myproc3").@out(Neo4NetTypes.NTAny).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -112,13 +112,13 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldGetRegisteredAggregationFunctions()
 		 {
 			  // When
-			  _procs.register( Function( functionSignature( "org", "myfunc1" ).@out( Neo4jTypes.NTAny ).build() ) );
-			  _procs.register( Function( functionSignature( "org", "myfunc2" ).@out( Neo4jTypes.NTAny ).build() ) );
-			  _procs.register( AggregationFunction( functionSignature( "org", "myaggrfunc1" ).@out( Neo4jTypes.NTAny ).build() ) );
+			  _procs.register( Function( functionSignature( "org", "myfunc1" ).@out( Neo4NetTypes.NTAny ).build() ) );
+			  _procs.register( Function( functionSignature( "org", "myfunc2" ).@out( Neo4NetTypes.NTAny ).build() ) );
+			  _procs.register( AggregationFunction( functionSignature( "org", "myaggrfunc1" ).@out( Neo4NetTypes.NTAny ).build() ) );
 
 			  // Then
 			  IList<UserFunctionSignature> signatures = Iterables.asList( _procs.AllFunctions );
-			  assertThat( signatures, containsInAnyOrder( functionSignature( "org", "myfunc1" ).@out( Neo4jTypes.NTAny ).build(), functionSignature("org", "myfunc2").@out(Neo4jTypes.NTAny).build(), functionSignature("org", "myaggrfunc1").@out(Neo4jTypes.NTAny).build() ) );
+			  assertThat( signatures, containsInAnyOrder( functionSignature( "org", "myfunc1" ).@out( Neo4NetTypes.NTAny ).build(), functionSignature("org", "myfunc2").@out(Neo4NetTypes.NTAny).build(), functionSignature("org", "myaggrfunc1").@out(Neo4NetTypes.NTAny).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.impl.proc
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.AnyValue apply(org.neo4j.kernel.api.proc.Context ctx, org.neo4j.values.AnyValue[] input) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.values.AnyValue apply(org.Neo4Net.kernel.api.proc.Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			 public override AnyValue apply( Context ctx, AnyValue[] input )
 			 {
 				  return Values.stringValue( ctx.Get( _someKey ) );

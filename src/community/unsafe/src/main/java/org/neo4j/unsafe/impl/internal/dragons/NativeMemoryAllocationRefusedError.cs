@@ -23,13 +23,13 @@ using System.Text;
 namespace Neo4Net.@unsafe.Impl.Internal.Dragons
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
+//	import static org.Neo4Net.io.os.OsBeanUtil.VALUE_UNAVAILABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.os.OsBeanUtil.getCommittedVirtualMemory;
+//	import static org.Neo4Net.io.os.OsBeanUtil.getCommittedVirtualMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.os.OsBeanUtil.getFreePhysicalMemory;
+//	import static org.Neo4Net.io.os.OsBeanUtil.getFreePhysicalMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.os.OsBeanUtil.getTotalPhysicalMemory;
+//	import static org.Neo4Net.io.os.OsBeanUtil.getTotalPhysicalMemory;
 
 	public class NativeMemoryAllocationRefusedError : Exception
 	{

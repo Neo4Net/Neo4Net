@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Neo4Net.Internal.Kernel.Api.schema;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 	internal class FulltextSchemaDescriptor : SchemaDescriptor
@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  this._indexConfiguration = indexConfiguration;
 		 }
 
-		 public override bool IsAffected( long[] entityTokenIds )
+		 public override bool IsAffected( long[] IEntityTokenIds )
 		 {
-			  return _schema.isAffected( entityTokenIds );
+			  return _schema.isAffected( IEntityTokenIds );
 		 }
 
 		 public override R ComputeWith<R>( SchemaComputer<R> computer )
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			 }
 		 }
 
-		 public virtual int[] EntityTokenIds
+		 public virtual int[] IEntityTokenIds
 		 {
 			 get
 			 {
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  return _schema.keyType();
 		 }
 
-		 public override EntityType EntityType()
+		 public override IEntityType IEntityType()
 		 {
 			  return _schema.entityType();
 		 }

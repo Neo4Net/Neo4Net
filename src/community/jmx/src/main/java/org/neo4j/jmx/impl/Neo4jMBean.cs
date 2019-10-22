@@ -25,19 +25,19 @@ namespace Neo4Net.Jmx.impl
 	using KernelData = Neo4Net.Kernel.Internal.KernelData;
 
 	[Obsolete]
-	public abstract class Neo4jMBean : StandardMBean
+	public abstract class Neo4NetMBean : StandardMBean
 	{
 		 internal readonly ObjectName ObjectName;
 
-		 protected internal Neo4jMBean( ManagementData management, bool isMXBean, params string[] extraNaming ) : base( management.Provider.beanInterface, isMXBean )
+		 protected internal Neo4NetMBean( ManagementData management, bool isMXBean, params string[] extraNaming ) : base( management.Provider.beanInterface, isMXBean )
 		 {
 			  management.Validate( this.GetType() );
 			  this.ObjectName = management.GetObjectName( extraNaming );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Neo4jMBean(ManagementData management, String... extraNaming) throws javax.management.NotCompliantMBeanException
-		 protected internal Neo4jMBean( ManagementData management, params string[] extraNaming ) : base( management.Provider.beanInterface )
+//ORIGINAL LINE: protected Neo4NetMBean(ManagementData management, String... extraNaming) throws javax.management.NotCompliantMBeanException
+		 protected internal Neo4NetMBean( ManagementData management, params string[] extraNaming ) : base( management.Provider.beanInterface )
 		 {
 			  management.Validate( this.GetType() );
 			  this.ObjectName = management.GetObjectName( extraNaming );
@@ -46,8 +46,8 @@ namespace Neo4Net.Jmx.impl
 		 /// <summary>
 		 /// Constructor for <seealso cref="KernelBean"/> </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Neo4jMBean(Class<org.neo4j.jmx.Kernel> beanInterface, org.neo4j.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
-		 internal Neo4jMBean( Type beanInterface, KernelData kernel, ManagementSupport support )
+//ORIGINAL LINE: Neo4NetMBean(Class<org.Neo4Net.jmx.Kernel> beanInterface, org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+		 internal Neo4NetMBean( Type beanInterface, KernelData kernel, ManagementSupport support )
 		 {
 				 beanInterface = typeof( Kernel );
 			  base( beanInterface );
@@ -57,8 +57,8 @@ namespace Neo4Net.Jmx.impl
 		 /// <summary>
 		 /// Constructor for <seealso cref="ConfigurationBean"/> </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Neo4jMBean(String beanName, org.neo4j.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
-		 internal Neo4jMBean( string beanName, KernelData kernel, ManagementSupport support ) : base( typeof( DynamicMBean ) )
+//ORIGINAL LINE: Neo4NetMBean(String beanName, org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+		 internal Neo4NetMBean( string beanName, KernelData kernel, ManagementSupport support ) : base( typeof( DynamicMBean ) )
 		 {
 			  this.ObjectName = support.CreateObjectName( kernel.InstanceId(), beanName, false );
 		 }

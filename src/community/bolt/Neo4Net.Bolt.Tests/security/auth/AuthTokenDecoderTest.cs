@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.security.auth
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public abstract class AuthTokenDecoderTest
 	{
@@ -107,7 +107,7 @@ namespace Neo4Net.Bolt.security.auth
 
 		 private static IDictionary<string, object> AuthTokenMapWith( string fieldName, object fieldValue )
 		 {
-			  return map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "neo4j", fieldName, fieldValue );
+			  return map( Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net", fieldName, fieldValue );
 		 }
 
 		 private static object[] _valuesWithInvalidTypes = new object[]

@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Index.Internal.gbptree;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
@@ -47,9 +47,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.config.SpaceFillingCurveSettingsFactory.getConfiguredSpaceFillingCurveConfiguration;
+//	import static org.Neo4Net.kernel.impl.index.schema.config.SpaceFillingCurveSettingsFactory.getConfiguredSpaceFillingCurveConfiguration;
 
 	/// <summary>
 	/// Native index able to handle all value types in a single <seealso cref="GBPTree"/>. Single-key as well as composite-key is supported.

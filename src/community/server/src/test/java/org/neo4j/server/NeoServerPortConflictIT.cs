@@ -55,10 +55,10 @@ namespace Neo4Net.Server
 					}
 					catch ( ServerStartupException e )
 					{
-						 assertThat( e.Message, containsString( "Starting Neo4j failed" ) );
+						 assertThat( e.Message, containsString( "Starting Neo4Net failed" ) );
 					}
 
-					logProvider.AssertAtLeastOnce( AssertableLogProvider.inLog( containsString( "CommunityNeoServer" ) ).error( "Failed to start Neo4j on %s: %s", contestedAddress, format( "Address %s is already in use, cannot bind to it.", contestedAddress ) ) );
+					logProvider.AssertAtLeastOnce( AssertableLogProvider.inLog( containsString( "CommunityNeoServer" ) ).error( "Failed to start Neo4Net on %s: %s", contestedAddress, format( "Address %s is already in use, cannot bind to it.", contestedAddress ) ) );
 					server.Stop();
 			  }
 		 }
@@ -82,10 +82,10 @@ namespace Neo4Net.Server
 					}
 					catch ( ServerStartupException e )
 					{
-						 assertThat( e.Message, containsString( "Starting Neo4j failed" ) );
+						 assertThat( e.Message, containsString( "Starting Neo4Net failed" ) );
 					}
 
-					logProvider.AssertAtLeastOnce( AssertableLogProvider.inLog( containsString( "CommunityNeoServer" ) ).error( "Failed to start Neo4j on %s: %s", unContestedAddress, format( "At least one of the addresses %s or %s is already in use, cannot bind to it.", unContestedAddress, httpsAddress ) ) );
+					logProvider.AssertAtLeastOnce( AssertableLogProvider.inLog( containsString( "CommunityNeoServer" ) ).error( "Failed to start Neo4Net on %s: %s", unContestedAddress, format( "At least one of the addresses %s or %s is already in use, cannot bind to it.", unContestedAddress, httpsAddress ) ) );
 					server.Stop();
 			  }
 		 }

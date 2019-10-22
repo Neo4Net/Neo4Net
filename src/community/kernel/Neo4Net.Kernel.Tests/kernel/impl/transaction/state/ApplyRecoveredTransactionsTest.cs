@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyExternalTransaction(long transactionId, org.neo4j.kernel.impl.transaction.command.Command...commands) throws Exception
+//ORIGINAL LINE: private void applyExternalTransaction(long transactionId, org.Neo4Net.kernel.impl.transaction.command.Command...commands) throws Exception
 		 private void ApplyExternalTransaction( long transactionId, params Command[] commands )
 		 {
 			  LockService lockService = mock( typeof( LockService ) );

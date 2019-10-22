@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.repr
 	using HttpContext = com.sun.jersey.api.core.HttpContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public final class InputFormatProvider extends org.neo4j.server.database.InjectableProvider<InputFormat>
+//ORIGINAL LINE: @Provider public final class InputFormatProvider extends org.Neo4Net.server.database.InjectableProvider<InputFormat>
 	public sealed class InputFormatProvider : InjectableProvider<InputFormat>
 	{
 		 private readonly RepresentationFormatRepository _repository;

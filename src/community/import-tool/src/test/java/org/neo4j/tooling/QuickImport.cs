@@ -53,15 +53,15 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.ExecutionMonitors.defaultVisible;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionMonitors.defaultVisible;
 
 	/// <summary>
 	/// Uses all available shortcuts to as quickly as possible import as much data as possible. Usage of this
@@ -136,7 +136,7 @@ namespace Neo4Net.Tooling
 					{
 						 Console.WriteLine( "Seed " + randomSeed );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
+//ORIGINAL LINE: final org.Neo4Net.scheduler.JobScheduler jobScheduler = life.add(createScheduler());
 						 IJobScheduler jobScheduler = life.Add( createScheduler() );
 						 consumer = BatchImporterFactory.withHighestPriority().instantiate(DatabaseLayout.of(dir), fileSystem, null, importConfig, new SimpleLogService(logging, logging), defaultVisible(jobScheduler), EMPTY, dbConfig, RecordFormatSelector.selectForConfig(dbConfig, logging), NO_MONITOR, jobScheduler);
 						 ImportTool.PrintOverview( dir, Collections.emptyList(), Collections.emptyList(), importConfig, System.out );

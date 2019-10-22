@@ -22,9 +22,9 @@
 namespace Neo4Net.Server.rest.web
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using EndNodeNotFoundException = Neo4Net.Server.rest.domain.EndNodeNotFoundException;
 	using StartNodeNotFoundException = Neo4Net.Server.rest.domain.StartNodeNotFoundException;
@@ -55,7 +55,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.NodeRepresentation createNode(java.util.Map<String, Object> properties, org.neo4j.graphdb.Label... labels) throws PropertyValueException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.NodeRepresentation createNode(java.util.Map<String, Object> properties, org.Neo4Net.graphdb.Label... labels) throws PropertyValueException
 		 public override NodeRepresentation CreateNode( IDictionary<string, object> properties, params Label[] labels )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.NodeRepresentation getNode(long nodeId) throws NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.NodeRepresentation getNode(long nodeId) throws NodeNotFoundException
 		 public override NodeRepresentation GetNode( long nodeId )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void deleteNode(long nodeId) throws NodeNotFoundException, org.neo4j.graphdb.ConstraintViolationException
+//ORIGINAL LINE: public void deleteNode(long nodeId) throws NodeNotFoundException, org.Neo4Net.graphdb.ConstraintViolationException
 		 public override void DeleteNode( long nodeId )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -134,7 +134,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addLabelToNode(long nodeId, java.util.Collection<String> labelNames) throws NodeNotFoundException, org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public void addLabelToNode(long nodeId, java.util.Collection<String> labelNames) throws NodeNotFoundException, org.Neo4Net.server.rest.repr.BadInputException
 		 public override void AddLabelToNode( long nodeId, ICollection<string> labelNames )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -166,7 +166,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.RelationshipRepresentation createRelationship(long startNodeId, long endNodeId, String type, java.util.Map<String, Object> properties) throws org.neo4j.server.rest.domain.StartNodeNotFoundException, org.neo4j.server.rest.domain.EndNodeNotFoundException, PropertyValueException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.RelationshipRepresentation createRelationship(long startNodeId, long endNodeId, String type, java.util.Map<String, Object> properties) throws org.Neo4Net.server.rest.domain.StartNodeNotFoundException, org.Neo4Net.server.rest.domain.EndNodeNotFoundException, PropertyValueException
 		 public override RelationshipRepresentation CreateRelationship( long startNodeId, long endNodeId, string type, IDictionary<string, object> properties )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -178,7 +178,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.RelationshipRepresentation getRelationship(long relationshipId) throws RelationshipNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.RelationshipRepresentation getRelationship(long relationshipId) throws RelationshipNotFoundException
 		 public override RelationshipRepresentation GetRelationship( long relationshipId )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )
@@ -201,7 +201,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ListRepresentation getNodeRelationships(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ListRepresentation getNodeRelationships(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
 		 public override ListRepresentation GetNodeRelationships( long nodeId, RelationshipDirection direction, ICollection<string> types )
 		 {
 			  using ( Transaction transaction = _graph.beginTx() )

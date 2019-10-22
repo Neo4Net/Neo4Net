@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 
 	public class InstanceSelectorTest
 	{

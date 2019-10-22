@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,19 +13,19 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
 	using ComException = Neo4Net.com.ComException;
 	using RequestContext = Neo4Net.com.RequestContext;
 	using Neo4Net.com;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using RequestContextFactory = Neo4Net.Kernel.ha.com.RequestContextFactory;
 	using Master = Neo4Net.Kernel.ha.com.master.Master;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.ha
 
 	/// <summary>
 	/// Commit process on slaves in HA. Transactions aren't committed here, but sent to the master, committed
-	/// there and streamed back. Look at <seealso cref="org.neo4j.com.storecopy.TransactionCommittingResponseUnpacker"/>
+	/// there and streamed back. Look at <seealso cref="org.Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker"/>
 	/// </summary>
 	public class SlaveTransactionCommitProcess : TransactionCommitProcess
 	{
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.neo4j.kernel.impl.api.TransactionToApply batch, org.neo4j.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.neo4j.storageengine.api.TransactionApplicationMode mode) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {
 			  if ( batch.Next() != null )

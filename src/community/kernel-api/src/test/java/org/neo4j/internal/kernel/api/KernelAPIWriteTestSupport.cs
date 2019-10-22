@@ -20,8 +20,8 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 
 
 	/// <summary>
@@ -48,7 +48,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <summary>
 		 /// Backdoor to allow asserting on write effects
 		 /// </summary>
-		 GraphDatabaseService GraphBackdoor();
+		 IGraphDatabaseService GraphBackdoor();
 
 		 /// <summary>
 		 /// Clean up resources and close the database. Executed after all tests are completed.
@@ -58,7 +58,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <summary>
 		 /// Retrieves all properties associated with the graph </summary>
 		 /// <returns> The properties associated with the graph </returns>
-		 PropertyContainer GraphProperties();
+		 IPropertyContainer GraphProperties();
 	}
 
 }

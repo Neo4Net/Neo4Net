@@ -37,9 +37,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 		 }
 
-		 internal override void Add( TxDataHolder holder, EntityId entityId, string key, object value )
+		 internal override void Add( TxDataHolder holder, IEntityId IEntityId, string key, object value )
 		 {
-			  IdCollection( key, value, true ).Add( entityId );
+			  IdCollection( key, value, true ).Add( IEntityId );
 		 }
 
 		 private ISet<EntityId> IdCollection( string key, object value, bool create )
@@ -101,7 +101,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 						 foreach ( KeyValuePair<object, ISet<EntityId>> valueEntry in entry.Value.entrySet() )
 						 {
 							  object value = valueEntry.Key;
-							  foreach ( EntityId id in valueEntry.Value )
+							  foreach ( IEntityId id in valueEntry.Value )
 							  {
 									data.Add( null, id, key, value );
 							  }
@@ -127,7 +127,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return fullTxData.Query( holder, query, contextOrNull );
 		 }
 
-		 internal override void Remove( TxDataHolder holder, EntityId entityId, string key, object value )
+		 internal override void Remove( TxDataHolder holder, IEntityId IEntityId, string key, object value )
 		 {
 			  if ( _data == null )
 			  {
@@ -137,7 +137,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  if ( string.ReferenceEquals( key, null ) || value == null )
 			  {
 					TxData fullData = ToFullTxData();
-					fullData.Remove( holder, entityId, key, value );
+					fullData.Remove( holder, IEntityId, key, value );
 					holder.Set( fullData );
 			  }
 			  else
@@ -145,7 +145,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					ICollection<EntityId> ids = IdCollection( key, value, false );
 					if ( ids != null )
 					{
-						 ids.remove( entityId );
+						 ids.remove( IEntityId );
 					}
 			  }
 		 }

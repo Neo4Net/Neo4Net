@@ -28,14 +28,14 @@ namespace Neo4Net.Kernel.impl.core
 	using TestName = org.junit.rules.TestName;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
@@ -51,16 +51,16 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.AbstractNeo4jTestCase.deleteFileOrDirectory;
+//	import static org.Neo4Net.kernel.impl.AbstractNeo4NetTestCase.deleteFileOrDirectory;
 
 	public class BigStoreIT : RelationshipType
 	{
 		 private static readonly RelationshipType _otherType = RelationshipType.withName( "OTHER" );
 
 		 private const string PATH = "target/var/big";
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.TestName testName = new org.junit.rules.TestName()
 		 public TestName testName = new TestNameAnonymousInnerClass();
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.core
 			 }
 		 }
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 private static readonly Label _reference = Label.label( "Reference" );
 
-		 private Node CreateReferenceNode( GraphDatabaseService db )
+		 private Node CreateReferenceNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -221,27 +221,27 @@ namespace Neo4Net.Kernel.impl.core
 			  return heapMb >= requiredHeapMb;
 		 }
 
-		 public static void AssertProperties( IDictionary<string, object> properties, PropertyContainer entity )
+		 public static void AssertProperties( IDictionary<string, object> properties, IPropertyContainer IEntity )
 		 {
 			  int count = 0;
-			  foreach ( string key in entity.PropertyKeys )
+			  foreach ( string key in IEntity.PropertyKeys )
 			  {
 					object expectedValue = properties[key];
-					object entityValue = entity.GetProperty( key );
+					object IEntityValue = IEntity.GetProperty( key );
 					if ( expectedValue.GetType().IsArray )
 					{
-						 assertTrue( Arrays.Equals( ( sbyte[] ) expectedValue, ( sbyte[] ) entityValue ) );
+						 assertTrue( Arrays.Equals( ( sbyte[] ) expectedValue, ( sbyte[] ) IEntityValue ) );
 					}
 					else
 					{
-						 assertEquals( expectedValue, entityValue );
+						 assertEquals( expectedValue, IEntityValue );
 					}
 					count++;
 			  }
 			  assertEquals( properties.Count, count );
 		 }
 
-		 private void SetProperties( PropertyContainer entity, IDictionary<string, object> properties )
+		 private void SetProperties( IPropertyContainer IEntity, IDictionary<string, object> properties )
 		 {
 			  foreach ( KeyValuePair<string, object> property in properties.SetOfKeyValuePairs() )
 			  {

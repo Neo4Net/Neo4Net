@@ -25,16 +25,16 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using WriteOperationsNotAllowedException = Neo4Net.Graphdb.security.WriteOperationsNotAllowedException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -52,16 +52,16 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
-	public class TestReadOnlyNeo4j
+	public class TestReadOnlyNeo4Net
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.core
 			  File databaseDir = TestDirectory.databaseDir();
 			  FileSystemAbstraction fs = TestDirectory.FileSystem;
 			  DbRepresentation someData = CreateSomeData( databaseDir, fs );
-			  GraphDatabaseService readGraphDb = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newEmbeddedDatabaseBuilder(databaseDir).setConfig(GraphDatabaseSettings.read_only, Settings.TRUE).newGraphDatabase();
+			  IGraphDatabaseService readGraphDb = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newEmbeddedDatabaseBuilder(databaseDir).setConfig(GraphDatabaseSettings.read_only, Settings.TRUE).newGraphDatabase();
 			  assertEquals( someData, DbRepresentation.of( readGraphDb ) );
 
 			  try
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.impl.core
 			  FileSystemAbstraction fs = TestDirectory.FileSystem;
 			  CreateIndex( databaseDir, fs );
 			  DeleteIndexFolder( databaseDir, fs );
-			  GraphDatabaseService readGraphDb = null;
+			  IGraphDatabaseService readGraphDb = null;
 			  try
 			  {
 					readGraphDb = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabaseBuilder(databaseDir).setConfig(GraphDatabaseSettings.read_only, Settings.TRUE).newGraphDatabase();
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.impl.core
 		 {
 			  FileSystemAbstraction fs = TestDirectory.FileSystem;
 			  File databaseDir = TestDirectory.databaseDir();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(databaseDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(databaseDir);
 
 			  Transaction tx = Db.beginTx();
 			  Node node1 = Db.createNode();
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteIndexFolder(java.io.File databaseDir, org.neo4j.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private void deleteIndexFolder(java.io.File databaseDir, org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 private void DeleteIndexFolder( File databaseDir, FileSystemAbstraction fs )
 		 {
 			  fs.DeleteRecursively( IndexDirectoryStructure.baseSchemaIndexFolder( databaseDir ) );
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 private void CreateIndex( File databaseDir, FileSystemAbstraction fs )
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newEmbeddedDatabase(databaseDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newEmbeddedDatabase(databaseDir);
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.schema().indexFor(Label.label("label")).on("prop").create();
@@ -211,7 +211,7 @@ namespace Neo4Net.Kernel.impl.core
 		 private DbRepresentation CreateSomeData( File databaseDir, FileSystemAbstraction fs )
 		 {
 			  RelationshipType type = withName( "KNOWS" );
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(databaseDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(databaseDir);
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Node prevNode = Db.createNode();

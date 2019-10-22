@@ -20,18 +20,18 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Neo4Net.Server.helpers;
 
 	public sealed class PropertiesRepresentation : MappingRepresentation
 	{
-		 private readonly PropertyContainer _entity;
+		 private readonly IPropertyContainer _entity;
 
-		 public PropertiesRepresentation( PropertyContainer entity ) : base( RepresentationType.Properties )
+		 public PropertiesRepresentation( IPropertyContainer IEntity ) : base( RepresentationType.Properties )
 		 {
-			  this._entity = entity;
+			  this._entity = IEntity;
 		 }
 
 		 public override bool Empty

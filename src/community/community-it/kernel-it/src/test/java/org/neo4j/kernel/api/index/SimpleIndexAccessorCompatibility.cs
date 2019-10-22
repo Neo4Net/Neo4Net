@@ -59,33 +59,33 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exists;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exists;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.range;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.stringContains;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.stringPrefix;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.stringSuffix;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringSuffix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.datetime;
+//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.epochDate;
+//	import static org.Neo4Net.values.storable.DateValue.epochDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.duration;
+//	import static org.Neo4Net.values.storable.DurationValue.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalDateTimeValue.localDateTime;
+//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.localTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.TimeValue.time;
+//	import static org.Neo4Net.values.storable.TimeValue.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite that provides test cases for verifying" + " IndexProvider implementations. Each index provider that is to be tested by this suite" + " must create their own test class extending IndexProviderCompatibilityTestSuite." + " The @Ignore annotation doesn't prevent these tests to run, it rather removes some annoying" + " errors or warnings in some IDEs about test classes needing a public zero-arg constructor.") public abstract class SimpleIndexAccessorCompatibility extends IndexAccessorCompatibility
@@ -395,7 +395,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexRangeSeekArray(System.Func<org.neo4j.values.storable.ArrayValue> generator) throws Exception
+//ORIGINAL LINE: private void testIndexRangeSeekArray(System.Func<org.Neo4Net.values.storable.ArrayValue> generator) throws Exception
 		 private void TestIndexRangeSeekArray( System.Func<ArrayValue> generator )
 		 {
 			  Assume.assumeTrue( TestSuite.supportsGranularCompositeQueries() );
@@ -403,7 +403,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testIndexRangeSeek(System.Func<? extends org.neo4j.values.storable.Value> generator) throws Exception
+//ORIGINAL LINE: private void testIndexRangeSeek(System.Func<? extends org.Neo4Net.values.storable.Value> generator) throws Exception
 		 private void TestIndexRangeSeek<T1>( System.Func<T1> generator ) where T1 : Neo4Net.Values.Storable.Value
 		 {
 			  int count = Random.Next( 5, 10 );
@@ -936,7 +936,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldRangeSeekInOrder(org.neo4j.internal.kernel.api.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
+//ORIGINAL LINE: private void shouldRangeSeekInOrder(org.Neo4Net.internal.kernel.api.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
 		 private void ShouldRangeSeekInOrder( IndexOrder order, object o0, object o1, object o2, object o3, object o4, object o5 )
 		 {
 			  IndexQuery range = range( 100, Values.of( o0 ), true, Values.of( o5 ), true );
@@ -959,13 +959,13 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldUpdateEntries()
 		 {
 			  ValueType[] valueTypes = TestSuite.supportedValueTypes();
-			  long entityId = Random.nextLong( 1_000_000_000 );
+			  long IEntityId = Random.nextLong( 1_000_000_000 );
 			  foreach ( ValueType valueType in valueTypes )
 			  {
 					// given
 					Value value = Random.nextValue( valueType );
-					UpdateAndCommit( singletonList( IndexEntryUpdate.Add( entityId, Descriptor.schema(), value ) ) );
-					assertEquals( singletonList( entityId ), Query( IndexQuery.exact( 0, value ) ) );
+					UpdateAndCommit( singletonList( IndexEntryUpdate.Add( IEntityId, Descriptor.schema(), value ) ) );
+					assertEquals( singletonList( IEntityId ), Query( IndexQuery.exact( 0, value ) ) );
 
 					// when
 					Value newValue;
@@ -973,11 +973,11 @@ namespace Neo4Net.Kernel.Api.Index
 					{
 						 newValue = Random.nextValue( valueType );
 					} while ( value.Equals( newValue ) );
-					UpdateAndCommit( singletonList( IndexEntryUpdate.Change( entityId, Descriptor.schema(), value, newValue ) ) );
+					UpdateAndCommit( singletonList( IndexEntryUpdate.Change( IEntityId, Descriptor.schema(), value, newValue ) ) );
 
 					// then
 					assertEquals( emptyList(), Query(IndexQuery.exact(0, value)) );
-					assertEquals( singletonList( entityId ), Query( IndexQuery.exact( 0, newValue ) ) );
+					assertEquals( singletonList( IEntityId ), Query( IndexQuery.exact( 0, newValue ) ) );
 			  }
 		 }
 
@@ -987,16 +987,16 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldRemoveEntries()
 		 {
 			  ValueType[] valueTypes = TestSuite.supportedValueTypes();
-			  long entityId = Random.nextLong( 1_000_000_000 );
+			  long IEntityId = Random.nextLong( 1_000_000_000 );
 			  foreach ( ValueType valueType in valueTypes )
 			  {
 					// given
 					Value value = Random.nextValue( valueType );
-					UpdateAndCommit( singletonList( IndexEntryUpdate.Add( entityId, Descriptor.schema(), value ) ) );
-					assertEquals( singletonList( entityId ), Query( IndexQuery.exact( 0, value ) ) );
+					UpdateAndCommit( singletonList( IndexEntryUpdate.Add( IEntityId, Descriptor.schema(), value ) ) );
+					assertEquals( singletonList( IEntityId ), Query( IndexQuery.exact( 0, value ) ) );
 
 					// when
-					UpdateAndCommit( singletonList( IndexEntryUpdate.Remove( entityId, Descriptor.schema(), value ) ) );
+					UpdateAndCommit( singletonList( IndexEntryUpdate.Remove( IEntityId, Descriptor.schema(), value ) ) );
 
 					// then
 					assertTrue( Query( IndexQuery.exact( 0, value ) ).Count == 0 );
@@ -1128,7 +1128,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  /// Helper for testing range seeks. Takes 4 ordered sample values.
 			  /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <VALUE extends org.neo4j.values.storable.Value> void testIndexRangeSeekWithDuplicates(VALUE v1, VALUE v2, VALUE v3, VALUE v4) throws Exception
+//ORIGINAL LINE: private <VALUE extends org.Neo4Net.values.storable.Value> void testIndexRangeSeekWithDuplicates(VALUE v1, VALUE v2, VALUE v3, VALUE v4) throws Exception
 			  internal virtual void TestIndexRangeSeekWithDuplicates<VALUE>( VALUE v1, VALUE v2, VALUE v3, VALUE v4 ) where VALUE : Neo4Net.Values.Storable.Value
 			  {
 					UpdateAndCommit( asList( add( 1L, Descriptor.schema(), v1 ), add(2L, Descriptor.schema(), v1), add(3L, Descriptor.schema(), v3), add(4L, Descriptor.schema(), v4), add(5L, Descriptor.schema(), v4) ) );

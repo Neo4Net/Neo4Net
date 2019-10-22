@@ -28,8 +28,8 @@ namespace Neo4Net.Server.rest.discovery
 	using Answers = org.mockito.Answers;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.discovery
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
-	using EntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
+	using IEntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
@@ -56,7 +56,7 @@ namespace Neo4Net.Server.rest.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
+//	import static org.Neo4Net.server.rest.discovery.CommunityDiscoverableURIs.communityDiscoverableURIs;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class DiscoveryServiceTest
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.rest.discovery
 		 private string _expectedBoltUri;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public DiscoveryServiceTest(String description, String baseUri, System.Action<org.neo4j.kernel.configuration.ConnectorPortRegister> portRegistryOverrider, System.Action<org.neo4j.kernel.configuration.Config> configOverrider, String expectedBoltUri) throws Throwable
+//ORIGINAL LINE: public DiscoveryServiceTest(String description, String baseUri, System.Action<org.Neo4Net.kernel.configuration.ConnectorPortRegister> portRegistryOverrider, System.Action<org.Neo4Net.kernel.configuration.Config> configOverrider, String expectedBoltUri) throws Throwable
 		 public DiscoveryServiceTest( string description, string baseUri, System.Action<ConnectorPortRegister> portRegistryOverrider, System.Action<Config> configOverrider, string expectedBoltUri )
 		 {
 			  this._baseUri = new URI( baseUri );
@@ -177,7 +177,7 @@ namespace Neo4Net.Server.rest.discovery
 		 private DiscoveryService TestDiscoveryService()
 		 {
 			  Config config = MockConfig();
-			  return new DiscoveryService( config, new EntityOutputFormat( new JsonFormat(), _baseUri, null ), communityDiscoverableURIs(config, _portRegistry) );
+			  return new DiscoveryService( config, new IEntityOutputFormat( new JsonFormat(), _baseUri, null ), communityDiscoverableURIs(config, _portRegistry) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -239,7 +239,7 @@ namespace Neo4Net.Server.rest.discovery
 			  Config config = Config.defaults( ServerSettings.browser_path, "/browser/" );
 
 			  string baseUri = "http://www.example.com:5435";
-			  DiscoveryService ds = new DiscoveryService( config, new EntityOutputFormat( new JsonFormat(), new URI(baseUri), null ), communityDiscoverableURIs(config, null) );
+			  DiscoveryService ds = new DiscoveryService( config, new IEntityOutputFormat( new JsonFormat(), new URI(baseUri), null ), communityDiscoverableURIs(config, null) );
 
 			  Response response = ds.RedirectToBrowser();
 
@@ -283,7 +283,7 @@ namespace Neo4Net.Server.rest.discovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static System.Action<org.neo4j.kernel.configuration.Config> combineConfigOverriders(System.Action<org.neo4j.kernel.configuration.Config>... overriders)
+//ORIGINAL LINE: @SafeVarargs private static System.Action<org.Neo4Net.kernel.configuration.Config> combineConfigOverriders(System.Action<org.Neo4Net.kernel.configuration.Config>... overriders)
 		 private static System.Action<Config> CombineConfigOverriders( params System.Action<Config>[] overriders )
 		 {
 			  return config =>

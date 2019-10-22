@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.Lifecycle
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertTrue;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.HALT;
+   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.HALT;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.IDLE;
+   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.IDLE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.PRE;
+   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.PRE;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.RUN;
+   //	import static org.Neo4Net.kernel.lifecycle.SafeLifecycle.State.RUN;
 
    internal class SafeLifecycleTest
    {
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Lifecycle
       private ThrowingConsumer<ILifecycle, Exception> _shutdown;
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-      //ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.function.ThrowingConsumer<Lifecycle,Throwable>[] ops = new org.neo4j.function.ThrowingConsumer[]{init, start, stop, shutdown};
+      //ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.function.ThrowingConsumer<Lifecycle,Throwable>[] ops = new org.Neo4Net.function.ThrowingConsumer[]{init, start, stop, shutdown};
       private ThrowingConsumer<ILifecycle, Exception>[] _ops;
 
       private object[][] _onSuccess = new object[][]
@@ -115,14 +115,14 @@ namespace Neo4Net.Kernel.Lifecycle
                if (_onSuccess[state][op] == null)
                {
                   assertTrue(caughtIllegalTransition);
-                  assertEquals(Enum.GetValues(typeof(State))[state], sf.State());
+                 Assert.Equals(Enum.GetValues(typeof(State))[state], sf.State());
                }
                else
                {
                   assertFalse(caughtIllegalTransition);
-                  assertEquals(_onSuccess[state][op], sf.State());
+                 Assert.Equals(_onSuccess[state][op], sf.State());
                   int expectedOpCode = _ignored[state][op] ? -1 : op;
-                  assertEquals(expectedOpCode, sf.OpCode);
+                 Assert.Equals(expectedOpCode, sf.OpCode);
                }
             }
          }
@@ -156,21 +156,21 @@ namespace Neo4Net.Kernel.Lifecycle
                if (_onFailed[state][op] == null)
                {
                   assertTrue(caughtIllegalTransition);
-                  assertEquals(Enum.GetValues(typeof(State))[state], sf.State());
+                 Assert.Equals(Enum.GetValues(typeof(State))[state], sf.State());
                }
                else
                {
                   assertFalse(caughtIllegalTransition);
-                  assertEquals(_onFailed[state][op], sf.State());
+                 Assert.Equals(_onFailed[state][op], sf.State());
 
                   if (_ignored[state][op].Value)
                   {
-                     assertEquals(-1, sf.OpCode);
+                    Assert.Equals(-1, sf.OpCode);
                      assertFalse(failedOperation);
                   }
                   else
                   {
-                     assertEquals(op, sf.OpCode);
+                    Assert.Equals(op, sf.OpCode);
                      assertTrue(failedOperation);
                   }
                }

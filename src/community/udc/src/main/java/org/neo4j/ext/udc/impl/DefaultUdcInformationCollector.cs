@@ -25,8 +25,8 @@ using System.Text;
 namespace Neo4Net.Ext.Udc.impl
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Neo4Net.Graphdb.config;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Neo4Net.GraphDb.config;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -40,59 +40,59 @@ namespace Neo4Net.Ext.Udc.impl
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.CLUSTER_HASH;
+//	import static org.Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.DATABASE_MODE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.DISTRIBUTION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.DISTRIBUTION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.EDITION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.EDITION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.FEATURES;
+//	import static org.Neo4Net.ext.udc.UdcConstants.FEATURES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.HEAP_SIZE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.HEAP_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.ID;
+//	import static org.Neo4Net.ext.udc.UdcConstants.ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.LABEL_IDS_IN_USE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.LABEL_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.MAC;
+//	import static org.Neo4Net.ext.udc.UdcConstants.MAC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.NODE_IDS_IN_USE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.NODE_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.NUM_PROCESSORS;
+//	import static org.Neo4Net.ext.udc.UdcConstants.NUM_PROCESSORS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.OS_PROPERTY_PREFIX;
+//	import static org.Neo4Net.ext.udc.UdcConstants.OS_PROPERTY_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.PROPERTY_IDS_IN_USE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.PROPERTY_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.REGISTRATION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.REGISTRATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.RELATIONSHIP_IDS_IN_USE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.RELATIONSHIP_IDS_IN_USE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.REVISION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.REVISION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.SERVER_ID;
+//	import static org.Neo4Net.ext.udc.UdcConstants.SERVER_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.SOURCE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.SOURCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.STORE_SIZE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.STORE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.TAGS;
+//	import static org.Neo4Net.ext.udc.UdcConstants.TAGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.TOTAL_MEMORY;
+//	import static org.Neo4Net.ext.udc.UdcConstants.TOTAL_MEMORY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.UDC_PROPERTY_PREFIX;
+//	import static org.Neo4Net.ext.udc.UdcConstants.UDC_PROPERTY_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.UNKNOWN_DIST;
+//	import static org.Neo4Net.ext.udc.UdcConstants.UNKNOWN_DIST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.USER_AGENTS;
+//	import static org.Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.VERSION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.VERSION;
 
 	public class DefaultUdcInformationCollector : UdcInformationCollector
 	{
-		 private static readonly IDictionary<string, string> _jarNamesForTags = MapUtil.stringMap( "spring-", "spring", "(javax.ejb|ejb-jar)", "ejb", "(weblogic|glassfish|websphere|jboss)", "appserver", "openshift", "openshift", "cloudfoundry", "cloudfoundry", "(junit|testng)", "test", "jruby", "ruby", "clojure", "clojure", "jython", "python", "groovy", "groovy", "(tomcat|jetty)", "web", "spring-data-neo4j", "sdn" );
+		 private static readonly IDictionary<string, string> _jarNamesForTags = MapUtil.stringMap( "spring-", "spring", "(javax.ejb|ejb-jar)", "ejb", "(weblogic|glassfish|websphere|jboss)", "appserver", "openshift", "openshift", "cloudfoundry", "cloudfoundry", "(junit|testng)", "test", "jruby", "ruby", "clojure", "clojure", "jython", "python", "groovy", "groovy", "(tomcat|jetty)", "web", "spring-data-Neo4Net", "sdn" );
 
 		 private readonly Config _config;
 		 private readonly UsageData _usageData;
@@ -239,7 +239,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 {
 			  try
 			  {
-					Type settings = Type.GetType( "org.neo4j.cluster.ClusterSettings" );
+					Type settings = Type.GetType( "org.Neo4Net.cluster.ClusterSettings" );
 					Setting setting = ( Setting ) settings.GetField( "cluster_name" ).get( null );
 					object name = _config.get( setting );
 					return name != null ? Math.Abs( name.GetHashCode() % int.MaxValue ) : null;

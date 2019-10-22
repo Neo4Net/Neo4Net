@@ -57,7 +57,7 @@ namespace Neo4Net.Jmx.impl
 			  ObjectName name = _support.createObjectName( _kernel.instanceId(), Provider.beanInterface, extraNaming );
 			  if ( name == null )
 			  {
-					throw new System.ArgumentException( Provider.beanInterface + " is not a Neo4j Management Bean interface" );
+					throw new System.ArgumentException( Provider.beanInterface + " is not a Neo4Net Management Bean interface" );
 			  }
 			  return name;
 		 }

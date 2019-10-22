@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 
 	using Neo4Net.Functions;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Node = Neo4Net.Graphdb.Node;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Node = Neo4Net.GraphDb.Node;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Operations = Neo4Net.Kernel.Impl.Newapi.Operations;
@@ -54,13 +54,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.runners.Suite.SuiteClasses;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 	using static Neo4Net.Kernel.Impl.Api.integrationtest.PropertyExistenceConstraintVerificationIT.NodePropertyExistenceExistenceConstrainVerificationIT;
 	using static Neo4Net.Kernel.Impl.Api.integrationtest.PropertyExistenceConstraintVerificationIT.RelationshipPropertyExistenceExistenceConstrainVerificationIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.concurrent.ThreadingRule.waitingWhileIn;
+//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Suite.class) @SuiteClasses({ NodePropertyExistenceExistenceConstrainVerificationIT.class, RelationshipPropertyExistenceExistenceConstrainVerificationIT.class }) public class PropertyExistenceConstraintVerificationIT
@@ -143,10 +143,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  internal const string PROPERTY = "bar";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EnterpriseDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EnterpriseDatabaseRule();
 			  public readonly DatabaseRule Db = new EnterpriseDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule thread = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule thread = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 			  public readonly ThreadingRule Thread = new ThreadingRule();
 
 			  internal abstract void CreateConstraint( DatabaseRule db, string key, string property );

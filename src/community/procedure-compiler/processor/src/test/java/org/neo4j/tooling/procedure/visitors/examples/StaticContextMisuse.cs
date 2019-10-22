@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Tooling.procedure.visitors.examples
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Context = Neo4Net.Procedure.Context;
 
 	public class StaticContextMisuse
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.neo4j.graphdb.GraphDatabaseService db;
-		 public static GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService db;
+		 public static IGraphDatabaseService Db;
 
 		 private StaticContextMisuse()
 		 {

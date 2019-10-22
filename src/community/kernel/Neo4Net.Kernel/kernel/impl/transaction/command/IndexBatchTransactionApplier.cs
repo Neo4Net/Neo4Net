@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 
 	/// <summary>
 	/// Gather node and property changes, converting them into logical updates to the indexes. <seealso cref="close()"/> will actually

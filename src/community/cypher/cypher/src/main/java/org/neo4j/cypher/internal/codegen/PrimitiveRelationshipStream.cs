@@ -22,7 +22,7 @@
 namespace Neo4Net.Cypher.Internal.codegen
 {
 
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using VirtualRelationshipValue = Neo4Net.Values.@virtual.VirtualRelationshipValue;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 

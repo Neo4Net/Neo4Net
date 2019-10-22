@@ -119,7 +119,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput flush() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput flush() throws java.io.IOException
 		 public override PackOutput Flush()
 		 {
 			  if ( _buffer != null && _buffer.readableBytes() > 0 )
@@ -148,7 +148,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeByte(byte value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeByte(byte value) throws java.io.IOException
 		 public override PackOutput WriteByte( sbyte value )
 		 {
 			  Ensure( Byte.BYTES );
@@ -157,7 +157,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeShort(short value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeShort(short value) throws java.io.IOException
 		 public override PackOutput WriteShort( short value )
 		 {
 			  Ensure( Short.BYTES );
@@ -166,7 +166,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeInt(int value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeInt(int value) throws java.io.IOException
 		 public override PackOutput WriteInt( int value )
 		 {
 			  Ensure( Integer.BYTES );
@@ -175,7 +175,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeLong(long value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeLong(long value) throws java.io.IOException
 		 public override PackOutput WriteLong( long value )
 		 {
 			  Ensure( Long.BYTES );
@@ -184,7 +184,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeDouble(double value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeDouble(double value) throws java.io.IOException
 		 public override PackOutput WriteDouble( double value )
 		 {
 			  Ensure( Double.BYTES );
@@ -193,7 +193,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeBytes(ByteBuffer data) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeBytes(ByteBuffer data) throws java.io.IOException
 		 public override PackOutput WriteBytes( ByteBuffer data )
 		 {
 			  while ( data.remaining() > 0 )
@@ -210,7 +210,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.v1.packstream.PackOutput writeBytes(byte[] data, int offset, int length) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.packstream.PackOutput writeBytes(byte[] data, int offset, int length) throws java.io.IOException
 		 public override PackOutput WriteBytes( sbyte[] data, int offset, int length )
 		 {
 			  if ( offset + length > data.Length )
@@ -305,7 +305,7 @@ namespace Neo4Net.Bolt.v1.transport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertOpen() throws org.neo4j.bolt.v1.packstream.PackOutputClosedException
+//ORIGINAL LINE: private void assertOpen() throws org.Neo4Net.bolt.v1.packstream.PackOutputClosedException
 		 private void AssertOpen()
 		 {
 			  if ( _closed )

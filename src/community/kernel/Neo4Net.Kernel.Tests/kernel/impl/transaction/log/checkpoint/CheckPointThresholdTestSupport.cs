@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using Before = org.junit.Before;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogPruning = Neo4Net.Kernel.impl.transaction.log.pruning.LogPruning;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class CheckPointThresholdTestSupport
 	{

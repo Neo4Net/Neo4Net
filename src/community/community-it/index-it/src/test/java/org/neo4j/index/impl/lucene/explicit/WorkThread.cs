@@ -23,19 +23,19 @@ using System.Diagnostics;
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 	using Neo4Net.Test;
 
 	public class WorkThread : OtherThreadExecutor<CommandState>
 	{
 		 private volatile bool _txOngoing;
 
-		 public WorkThread( string name, Index<Node> index, GraphDatabaseService graphDb, Node node ) : base( name, new CommandState( index, graphDb, node ) )
+		 public WorkThread( string name, Index<Node> index, IGraphDatabaseService graphDb, Node node ) : base( name, new CommandState( index, graphDb, node ) )
 		 {
 		 }
 
@@ -54,7 +54,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.index.IndexHits<org.neo4j.graphdb.Node> queryIndex(String key, Object value) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> queryIndex(String key, Object value) throws Exception
 		 public virtual IndexHits<Node> QueryIndex( string key, object value )
 		 {
 			  return Execute( new QueryIndexCommand( key, value ) );
@@ -109,7 +109,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(final org.neo4j.graphdb.Node node, final String key, final Object value) throws Exception
+//ORIGINAL LINE: public void add(final org.Neo4Net.graphdb.Node node, final String key, final Object value) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual void Add( Node node, string key, object value )
 		 {
@@ -121,7 +121,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.concurrent.Future<org.neo4j.graphdb.Node> getOrCreate(final String key, final Object value, final Object initialValue)
+//ORIGINAL LINE: public java.util.concurrent.Future<org.Neo4Net.graphdb.Node> getOrCreate(final String key, final Object value, final Object initialValue)
 		 public virtual Future<Node> GetOrCreate( string key, object value, object initialValue )
 		 {
 			  return ExecuteDontWait(StateConflict =>
@@ -152,11 +152,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object getProperty(final org.neo4j.graphdb.PropertyContainer entity, final String key) throws Exception
+//ORIGINAL LINE: public Object getProperty(final org.Neo4Net.graphdb.PropertyContainer IEntity, final String key) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-		 public virtual object GetProperty( PropertyContainer entity, string key )
+		 public virtual object GetProperty( IPropertyContainer IEntity, string key )
 		 {
-			  return Execute( StateConflict => entity.GetProperty( key ) );
+			  return Execute( StateConflict => IEntity.GetProperty( key ) );
 		 }
 	}
 

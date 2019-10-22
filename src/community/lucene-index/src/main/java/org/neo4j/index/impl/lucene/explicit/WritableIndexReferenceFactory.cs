@@ -41,7 +41,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference createIndexReference(IndexIdentifier identifier) throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexReference createIndexReference(IndexIdentifier identifier) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal override IndexReference CreateIndexReference( IndexIdentifier identifier )
 		 {
 			  IndexWriter writer = NewIndexWriter( identifier );
@@ -51,7 +51,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference refresh(IndexReference indexReference) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexReference refresh(IndexReference indexReference) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal override IndexReference Refresh( IndexReference indexReference )
 		 {
 			  try
@@ -74,7 +74,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.apache.lucene.index.IndexWriter newIndexWriter(IndexIdentifier identifier) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private org.apache.lucene.index.IndexWriter newIndexWriter(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexWriter NewIndexWriter( IndexIdentifier identifier )
 		 {
 			  try

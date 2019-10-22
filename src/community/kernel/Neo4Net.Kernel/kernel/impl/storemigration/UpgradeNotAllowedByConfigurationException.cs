@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.storemigration
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 	public class UpgradeNotAllowedByConfigurationException : UpgradeNotAllowedException
 	{
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 
 		 private static string BaseMessage()
 		 {
-			  return string.Format( "Neo4j cannot be started because the database files require upgrading and upgrades are disabled " + "in the configuration. Please set '{0}' to 'true' in your configuration file and try again.", GraphDatabaseSettings.allow_upgrade.name() );
+			  return string.Format( "Neo4Net cannot be started because the database files require upgrading and upgrades are disabled " + "in the configuration. Please set '{0}' to 'true' in your configuration file and try again.", GraphDatabaseSettings.allow_upgrade.name() );
 		 }
 	}
 

@@ -22,10 +22,10 @@ using System.Collections.Generic;
  */
 namespace Neo4Net.Cypher.result
 {
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
 	using AnyValue = Neo4Net.Values.AnyValue;
 
 	/// <summary>

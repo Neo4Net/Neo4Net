@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
+//	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
 
 	public class AutoIndexOperationsTest
 	{
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private readonly string _indexedPropertyName2 = "baz";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.neo4j.kernel.impl.core.TokenNotFoundException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.kernel.impl.core.TokenNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {

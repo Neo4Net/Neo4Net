@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -52,10 +52,10 @@ namespace Neo4Net.Graphdb
 		 private static readonly Label _label = Label.label( "testLabel" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule DbRule = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
 		 private int _labelId;
@@ -162,7 +162,7 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void corruptLabelScanStoreFiles(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private void corruptLabelScanStoreFiles(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private void CorruptLabelScanStoreFiles( DatabaseLayout databaseLayout )
 		 {
 			  ScrambleFile( StoreFile( databaseLayout ) );
@@ -174,7 +174,7 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkLabelScanStoreAccessible(org.neo4j.kernel.api.labelscan.LabelScanStore labelScanStore) throws java.io.IOException
+//ORIGINAL LINE: private static void checkLabelScanStoreAccessible(org.Neo4Net.kernel.api.labelscan.LabelScanStore labelScanStore) throws java.io.IOException
 		 private static void CheckLabelScanStoreAccessible( LabelScanStore labelScanStore )
 		 {
 			  int labelId = 1;

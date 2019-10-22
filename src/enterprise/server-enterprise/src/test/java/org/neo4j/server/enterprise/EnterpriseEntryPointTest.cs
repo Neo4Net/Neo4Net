@@ -1,5 +1,5 @@
 ﻿/// <summary>
-/// See https://raw.githubusercontent.com/neo4j/neo4j/3.3/enterprise/server-enterprise/src/test/java/org/neo4j/server/enterprise/OpenEnterpriseEntryPointTest.java
+/// See https://raw.githubusercontent.com/Neo4Net/Neo4Net/3.3/enterprise/server-enterprise/src/test/java/org/Neo4Net/server/enterprise/OpenEnterpriseEntryPointTest.java
 /// </summary>
 
 namespace Neo4Net.Server.enterprise
@@ -15,7 +15,7 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.Util.neo4jVersion;
+//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
 
 	public class EnterpriseEntryPointTest
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.Server.enterprise
 			  EnterpriseEntryPoint.Main( new string[]{ "--version" } );
 
 			  // then
-			  verify( _fakeSystemOut ).println( "neo4j " + neo4jVersion() );
+			  verify( _fakeSystemOut ).println( "Neo4Net " + Neo4NetVersion() );
 			  verifyNoMoreInteractions( _fakeSystemOut );
 		 }
 	}

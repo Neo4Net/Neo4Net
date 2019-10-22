@@ -29,14 +29,14 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.Util.neo4jVersion;
+//	import static org.Neo4Net.commandline.Util.Neo4NetVersion;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(SuppressOutputExtension.class) class CommunityEntryPointTest
 	internal class CommunityEntryPointTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.SuppressOutput suppressOutput;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.SuppressOutput suppressOutput;
 		 private SuppressOutput _suppressOutput;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -47,7 +47,7 @@ namespace Neo4Net.Server
 			  CommunityEntryPoint.Main( new string[]{ "--version" } );
 
 			  // then
-			  assertTrue( _suppressOutput.OutputVoice.containsMessage( "neo4j " + neo4jVersion() ) );
+			  assertTrue( _suppressOutput.OutputVoice.containsMessage( "Neo4Net " + Neo4NetVersion() ) );
 		 }
 	}
 

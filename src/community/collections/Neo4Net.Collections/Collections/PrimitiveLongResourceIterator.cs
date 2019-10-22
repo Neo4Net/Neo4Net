@@ -21,7 +21,7 @@ namespace Neo4Net.Collections
 {
 	using LongIterator = org.eclipse.collections.api.iterator.LongIterator;
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	public interface PrimitiveLongResourceIterator : LongIterator, Resource
 	{

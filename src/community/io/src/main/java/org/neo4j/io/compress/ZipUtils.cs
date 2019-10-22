@@ -37,7 +37,7 @@ namespace Neo4Net.Io.compress
 		 /// <param name="destinationZip"> zip file compress source to </param>
 		 /// <exception cref="IOException"> when underlying file system access produce IOException </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void zip(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File sourceToCompress, java.io.File destinationZip) throws java.io.IOException
+//ORIGINAL LINE: public static void zip(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File sourceToCompress, java.io.File destinationZip) throws java.io.IOException
 		 public static void Zip( FileSystemAbstraction fileSystem, File sourceToCompress, File destinationZip )
 		 {
 			  if ( !fileSystem.FileExists( sourceToCompress ) )

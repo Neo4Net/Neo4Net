@@ -22,10 +22,10 @@
 namespace Neo4Net.Graphalgo.impl.util
 {
 
-	using Neo4Net.Graphdb;
-	using BranchSelector = Neo4Net.Graphdb.traversal.BranchSelector;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
+	using Neo4Net.GraphDb;
+	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
 
 	/// <summary>
 	/// A preorder depth first selector which detects "super nodes", i.e. nodes

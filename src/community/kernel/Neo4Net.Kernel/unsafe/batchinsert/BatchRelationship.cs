@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.@unsafe.Batchinsert
 {
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	/// <summary>
 	/// Simple relationship wrapping start node id, end node id and relationship

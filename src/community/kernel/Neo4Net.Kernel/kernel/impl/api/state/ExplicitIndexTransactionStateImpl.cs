@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.Impl.Api.state
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.ExplicitIndexStore.assertConfigMatches;
+//	import static org.Neo4Net.kernel.impl.index.ExplicitIndexStore.assertConfigMatches;
 
 	/// <summary>
 	/// Provides access to <seealso cref="ExplicitIndex indexes"/>. Holds transaction state for all providers in a transaction.
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Node ), indexName );
@@ -77,14 +77,14 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  {
 					throw new ExplicitIndexNotFoundKernelException( "Node index '" + indexName + " not found" );
 			  }
-			  string providerName = configuration[Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  ExplicitIndexProviderTransaction transaction = _transactions.computeIfAbsent( providerName, k => provider.NewTransaction( this ) );
 			  return transaction.NodeIndex( indexName, configuration );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Relationship ), indexName );
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  {
 					throw new ExplicitIndexNotFoundKernelException( "Relationship index '" + indexName + " not found" );
 			  }
-			  string providerName = configuration[Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  ExplicitIndexProviderTransaction transaction = _transactions[providerName];
 			  if ( transaction == null )
@@ -195,17 +195,17 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  AddCommand( indexName, command );
 		 }
 
-		 public override void DeleteIndex( IndexEntityType entityType, string indexName )
+		 public override void DeleteIndex( IndexEntityType IEntityType, string indexName )
 		 {
 			  IndexCommand.DeleteCommand command = new IndexCommand.DeleteCommand();
-			  command.Init( Definitions().getOrAssignIndexNameId(indexName), entityType.id() );
+			  command.Init( Definitions().getOrAssignIndexNameId(indexName), IEntityType.id() );
 			  AddCommand( indexName, command, true );
 		 }
 
-		 public override void CreateIndex( IndexEntityType entityType, string indexName, IDictionary<string, string> config )
+		 public override void CreateIndex( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
 		 {
 			  IndexCommand.CreateCommand command = new IndexCommand.CreateCommand();
-			  command.Init( Definitions().getOrAssignIndexNameId(indexName), entityType.id(), config );
+			  command.Init( Definitions().getOrAssignIndexNameId(indexName), IEntityType.id(), config );
 			  AddCommand( indexName, command );
 		 }
 
@@ -214,15 +214,15 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  return _defineCommand != null;
 		 }
 
-		 public override bool CheckIndexExistence( IndexEntityType entityType, string indexName, IDictionary<string, string> config )
+		 public override bool CheckIndexExistence( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
 		 {
-			  IDictionary<string, string> configuration = _indexConfigStore.get( entityType.entityClass(), indexName );
+			  IDictionary<string, string> configuration = _indexConfigStore.get( IEntityType.entityClass(), indexName );
 			  if ( configuration == null )
 			  {
 					return false;
 			  }
 
-			  string providerName = configuration[Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER];
+			  string providerName = configuration[Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER];
 			  IndexImplementation provider = _providerLookup.getProviderByName( providerName );
 			  assertConfigMatches( provider, indexName, configuration, config );
 			  return true;

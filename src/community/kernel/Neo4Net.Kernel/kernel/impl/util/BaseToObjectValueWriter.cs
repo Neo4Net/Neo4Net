@@ -24,12 +24,12 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Point = Neo4Net.Graphdb.spatial.Point;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Values;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
@@ -41,14 +41,14 @@ namespace Neo4Net.Kernel.impl.util
 	using RelationshipValue = Neo4Net.Values.@virtual.RelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iteratorsEqual;
+//	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;
 
 	/// <summary>
 	/// Base class for converting AnyValue to normal java objects.
 	/// <para>
 	/// This base class takes care of converting all "normal" java types such as
 	/// number types, booleans, strings, arrays and lists. It leaves to the extending
-	/// class to handle neo4j specific types such as nodes, edges and points.
+	/// class to handle Neo4Net specific types such as nodes, edges and points.
 	/// 
 	/// </para>
 	/// </summary>
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeNode(long nodeId, org.neo4j.values.storable.TextArray ignore, org.neo4j.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeNode(long nodeId, org.Neo4Net.values.storable.TextArray ignore, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteNode( long nodeId, TextArray ignore, MapValue properties )
 		 {
 			  if ( nodeId >= 0 )
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, org.neo4j.values.storable.TextValue type, org.neo4j.values.virtual.MapValue properties) throws RuntimeException
+//ORIGINAL LINE: public void writeRelationship(long relId, long startNodeId, long endNodeId, org.Neo4Net.values.storable.TextValue type, org.Neo4Net.values.virtual.MapValue properties) throws RuntimeException
 		 public override void WriteRelationship( long relId, long startNodeId, long endNodeId, TextValue type, MapValue properties )
 		 {
 			  if ( relId >= 0 )
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePath(org.neo4j.values.virtual.NodeValue[] nodes, org.neo4j.values.virtual.RelationshipValue[] relationships) throws RuntimeException
+//ORIGINAL LINE: public void writePath(org.Neo4Net.values.virtual.NodeValue[] nodes, org.Neo4Net.values.virtual.RelationshipValue[] relationships) throws RuntimeException
 		 public override void WritePath( NodeValue[] nodes, RelationshipValue[] relationships )
 		 {
 			  Debug.Assert( nodes != null );
@@ -278,10 +278,10 @@ namespace Neo4Net.Kernel.impl.util
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> current;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> current;
 				 internal IEnumerator<PropertyContainer> current;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> next;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> next;
 				 internal IEnumerator<PropertyContainer> next;
 
 				 public bool hasNext()
@@ -289,7 +289,7 @@ namespace Neo4Net.Kernel.impl.util
 					  return current.hasNext();
 				 }
 
-				 public PropertyContainer next()
+				 public IPropertyContainer next()
 				 {
 					  try
 					  {
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.util
 					  finally
 					  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Iterator<? extends org.neo4j.graphdb.PropertyContainer> temp = current;
+//ORIGINAL LINE: java.util.Iterator<? extends org.Neo4Net.graphdb.PropertyContainer> temp = current;
 							IEnumerator<PropertyContainer> temp = current;
 							current = next;
 							next = temp;

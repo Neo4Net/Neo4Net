@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 
 
 	using Neo4Net.Functions;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Barrier = Neo4Net.Test.Barrier;
 	using Race = Neo4Net.Test.Race;
 	using Neo4Net.Test.rule.concurrent;
@@ -54,19 +54,19 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.ThrowingAction.noop;
+//	import static org.Neo4Net.function.ThrowingAction.noop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Race.throwing;
+//	import static org.Neo4Net.test.Race.throwing;
 
 	public class StoreCopyCheckPointMutexTest
 	{
 		 private static readonly ThrowingAction<IOException> _assertNotCalled = () => fail("Should not be called");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.neo4j.test.rule.concurrent.OtherThreadRule<>("T2");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t2 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T2");
 		 public readonly OtherThreadRule<Void> T2 = new OtherThreadRule<Void>( "T2" );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.neo4j.test.rule.concurrent.OtherThreadRule<>("T3");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> t3 = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>("T3");
 		 public readonly OtherThreadRule<Void> T3 = new OtherThreadRule<Void>( "T3" );
 
 		 private readonly StoreCopyCheckPointMutex _mutex = new StoreCopyCheckPointMutex();
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.function.ThrowingAction<java.io.IOException> action = mock(org.neo4j.function.ThrowingAction.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.function.ThrowingAction<java.io.IOException> action = mock(org.Neo4Net.function.ThrowingAction.class);
 			  ThrowingAction<IOException> action = mock( typeof( ThrowingAction ) );
 			  using ( Resource @lock = _mutex.storeCopy( action ) )
 			  {

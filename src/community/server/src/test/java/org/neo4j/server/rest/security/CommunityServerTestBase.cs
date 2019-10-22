@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.security
 {
 	using After = org.junit.After;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;

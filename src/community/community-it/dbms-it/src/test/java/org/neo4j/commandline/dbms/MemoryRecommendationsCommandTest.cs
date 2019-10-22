@@ -31,10 +31,10 @@ namespace Neo4Net.CommandLine.dbms
 
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.config;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.config;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using FailureStorage = Neo4Net.Kernel.Api.Impl.Index.storage.FailureStorage;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -60,57 +60,57 @@ namespace Neo4Net.CommandLine.dbms
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.dbms.MemoryRecommendationsCommand.bytesToString;
+//	import static org.Neo4Net.commandline.dbms.MemoryRecommendationsCommand.bytesToString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.dbms.MemoryRecommendationsCommand.recommendHeapMemory;
+//	import static org.Neo4Net.commandline.dbms.MemoryRecommendationsCommand.recommendHeapMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.dbms.MemoryRecommendationsCommand.recommendOsMemory;
+//	import static org.Neo4Net.commandline.dbms.MemoryRecommendationsCommand.recommendOsMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.dbms.MemoryRecommendationsCommand.recommendPageCacheMemory;
+//	import static org.Neo4Net.commandline.dbms.MemoryRecommendationsCommand.recommendPageCacheMemory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.configuration.ExternalSettings.initialHeapSize;
+//	import static org.Neo4Net.configuration.ExternalSettings.initialHeapSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.configuration.ExternalSettings.maxHeapSize;
-	using static Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex;
+//	import static org.Neo4Net.configuration.ExternalSettings.maxHeapSize;
+	using static Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.active_database;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.active_database;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.data_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.data_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.database_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.database_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.array;
+//	import static org.Neo4Net.helpers.ArrayUtil.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.load;
+//	import static org.Neo4Net.helpers.collection.MapUtil.load;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.store;
+//	import static org.Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.exbiBytes;
+//	import static org.Neo4Net.io.ByteUnit.exbiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.gibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.gibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.tebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.tebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.DEFAULT_CONFIG_FILE_NAME;
+//	import static org.Neo4Net.kernel.configuration.Config.DEFAULT_CONFIG_FILE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.fromFile;
+//	import static org.Neo4Net.kernel.configuration.Config.fromFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BYTES;
+//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 
 	public class MemoryRecommendationsCommandTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -269,7 +269,7 @@ namespace Neo4Net.CommandLine.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long[] calculatePageCacheFileSize(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: private static long[] calculatePageCacheFileSize(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 private static long[] CalculatePageCacheFileSize( DatabaseLayout databaseLayout )
 		 {
 			  MutableLong pageCacheTotal = new MutableLong();

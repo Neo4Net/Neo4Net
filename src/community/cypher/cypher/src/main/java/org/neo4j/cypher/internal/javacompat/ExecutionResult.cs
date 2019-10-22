@@ -27,15 +27,15 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 	using InternalExecutionResult = Neo4Net.Cypher.Internal.runtime.InternalExecutionResult;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using QueryType = Neo4Net.Graphdb.QueryExecutionType.QueryType;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using QueryType = Neo4Net.GraphDb.QueryExecutionType.QueryType;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
@@ -44,8 +44,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	/// Holds Cypher query result sets, in tabular form. Each row of the result is a map
 	/// of column name to result object. Each column name correlates directly
 	/// with the terms used in the "return" clause of the Cypher query.
-	/// The result objects could be <seealso cref="org.neo4j.graphdb.Node Nodes"/>,
-	/// <seealso cref="org.neo4j.graphdb.Relationship Relationships"/> or java primitives.
+	/// The result objects could be <seealso cref="org.Neo4Net.graphdb.Node Nodes"/>,
+	/// <seealso cref="org.Neo4Net.graphdb.Relationship Relationships"/> or java primitives.
 	/// 
 	/// 
 	/// Either iterate directly over the ExecutionResult to retrieve each row of the result
@@ -65,7 +65,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// <summary>
 		 /// Constructor used by the Cypher framework. End-users should not
 		 /// create an ExecutionResult directly, but instead use the result
-		 /// returned from calling <seealso cref="QueryExecutionEngine.executeQuery(string, MapValue, org.neo4j.kernel.impl.query.TransactionalContext)"/>.
+		 /// returned from calling <seealso cref="QueryExecutionEngine.executeQuery(string, MapValue, org.Neo4Net.kernel.impl.query.TransactionalContext)"/>.
 		 /// </summary>
 		 /// <param name="projection"> Execution result projection to use. </param>
 		 public ExecutionResult( InternalExecutionResult projection )
@@ -90,7 +90,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 /// @param <T> desired type cast for the result objects </param>
 		 /// <returns> an iterator of the result objects, possibly empty </returns>
 		 /// <exception cref="ClassCastException"> when the result object can not be cast to the requested type </exception>
-		 /// <exception cref="org.neo4j.graphdb.NotFoundException"> when the column name does not appear in the original query </exception>
+		 /// <exception cref="org.Neo4Net.graphdb.NotFoundException"> when the column name does not appear in the original query </exception>
 		 public override ResourceIterator<T> ColumnAs<T>( string n )
 		 {
 			  // this method is both a legacy method, and a method on Result,
@@ -293,8 +293,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.neo4j.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
-		 public override void Accept<VisitationException>( Neo4Net.Graphdb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
+//ORIGINAL LINE: public <VisitationException extends Exception> void accept(org.Neo4Net.graphdb.Result_ResultVisitor<VisitationException> visitor) throws VisitationException
+		 public override void Accept<VisitationException>( Neo4Net.GraphDb.Result_ResultVisitor<VisitationException> visitor ) where VisitationException : Exception
 		 {
 			  _inner.accept( visitor );
 		 }

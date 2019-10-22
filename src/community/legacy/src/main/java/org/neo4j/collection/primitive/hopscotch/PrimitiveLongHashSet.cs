@@ -26,7 +26,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 	using Monitor = Neo4Net.Collections.primitive.hopscotch.HopScotchHashingAlgorithm.Monitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_HASHING;
+//	import static org.Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_HASHING;
 
 	public class PrimitiveLongHashSet : AbstractLongHopScotchCollection<object>, PrimitiveLongSet
 	{

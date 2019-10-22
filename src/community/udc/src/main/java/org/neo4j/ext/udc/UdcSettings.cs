@@ -26,31 +26,31 @@ namespace Neo4Net.Ext.Udc
 	using Description = Neo4Net.Configuration.Description;
 	using Internal = Neo4Net.Configuration.Internal;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.ANY;
+//	import static org.Neo4Net.kernel.configuration.Settings.ANY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.HOSTNAME_PORT;
+//	import static org.Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.illegalValueMessage;
+//	import static org.Neo4Net.kernel.configuration.Settings.illegalValueMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.matches;
+//	import static org.Neo4Net.kernel.configuration.Settings.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.min;
+//	import static org.Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	[Description("Usage Data Collector configuration settings")]
 	public class UdcSettings : LoadableConfig
@@ -63,31 +63,31 @@ namespace Neo4Net.Ext.Udc
 		 /// <summary>
 		 /// Configuration key for the first delay, expressed in milliseconds. </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.neo4j.graphdb.config.Setting<int> first_delay = buildSetting("unsupported.dbms.udc.first_delay", INTEGER, System.Convert.ToString(10 * 1000 * 60)).constraint(min(1)).build();
+//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<int> first_delay = buildSetting("unsupported.dbms.udc.first_delay", INTEGER, System.Convert.ToString(10 * 1000 * 60)).constraint(min(1)).build();
 		 public static readonly Setting<int> FirstDelay = buildSetting( "unsupported.dbms.udc.first_delay", INTEGER, Convert.ToString( 10 * 1000 * 60 ) ).constraint( min( 1 ) ).build();
 
 		 /// <summary>
 		 /// Configuration key for the interval for regular updates, expressed in milliseconds. </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.neo4j.graphdb.config.Setting<int> interval = buildSetting("unsupported.dbms.udc.interval", INTEGER, System.Convert.ToString(1000 * 60 * 60 * 24)).constraint(min(1)).build();
+//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<int> interval = buildSetting("unsupported.dbms.udc.interval", INTEGER, System.Convert.ToString(1000 * 60 * 60 * 24)).constraint(min(1)).build();
 		 public static readonly Setting<int> Interval = buildSetting( "unsupported.dbms.udc.interval", INTEGER, Convert.ToString( 1000 * 60 * 60 * 24 ) ).constraint( min( 1 ) ).build();
 
 		 /// <summary>
 		 /// The host address to which UDC updates will be sent. Should be of the form hostname[:port]. </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.neo4j.graphdb.config.Setting<org.neo4j.helpers.HostnamePort> udc_host = setting("unsupported.dbms.udc.host", HOSTNAME_PORT, "udc.neo4j.org");
-		 public static readonly Setting<HostnamePort> UdcHost = setting( "unsupported.dbms.udc.host", HOSTNAME_PORT, "udc.neo4j.org" );
+//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<org.Neo4Net.helpers.HostnamePort> udc_host = setting("unsupported.dbms.udc.host", HOSTNAME_PORT, "udc.Neo4Net.org");
+		 public static readonly Setting<HostnamePort> UdcHost = setting( "unsupported.dbms.udc.host", HOSTNAME_PORT, "udc.Neo4Net.org" );
 
 		 /// <summary>
 		 /// Configuration key for overriding the source parameter in UDC </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.neo4j.graphdb.config.Setting<String> udc_source = buildSetting("unsupported.dbms.udc.source", STRING, "maven").constraint(illegalValueMessage("Must be a valid source", matches(ANY))).build();
+//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> udc_source = buildSetting("unsupported.dbms.udc.source", STRING, "maven").constraint(illegalValueMessage("Must be a valid source", matches(ANY))).build();
 		 public static readonly Setting<string> UdcSource = buildSetting( "unsupported.dbms.udc.source", STRING, "maven" ).constraint( illegalValueMessage( "Must be a valid source", matches( ANY ) ) ).build();
 
 		 /// <summary>
 		 /// Unique registration id </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal public static final org.neo4j.graphdb.config.Setting<String> udc_registration_key = buildSetting("unsupported.dbms.udc.reg", STRING, "unreg").constraint(illegalValueMessage("Must be a valid registration id", matches(ANY))).build();
+//ORIGINAL LINE: @Internal public static final org.Neo4Net.graphdb.config.Setting<String> udc_registration_key = buildSetting("unsupported.dbms.udc.reg", STRING, "unreg").constraint(illegalValueMessage("Must be a valid registration id", matches(ANY))).build();
 		 public static readonly Setting<string> UdcRegistrationKey = buildSetting( "unsupported.dbms.udc.reg", STRING, "unreg" ).constraint( illegalValueMessage( "Must be a valid registration id", matches( ANY ) ) ).build();
 
 		 private sealed class Enabled : Function<string, bool>

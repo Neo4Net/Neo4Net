@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 	using Neo4Net.Functions;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexPopulationJob = Neo4Net.Kernel.Impl.Api.index.IndexPopulationJob;
@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.Impl.Api
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class SchemaLoggingIT
 	{
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private readonly AssertableLogProvider _logProvider = new AssertableLogProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule(logProvider);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule(logProvider);
 		 public ImpermanentDatabaseRule DbRule;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

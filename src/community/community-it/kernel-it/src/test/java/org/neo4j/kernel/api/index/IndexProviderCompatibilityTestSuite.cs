@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <summary>
 		 /// Granular composite queries means queries against composite index that is made up of a mix of exact, range and exists queries.
 		 /// For example: exact match on first column and range scan on seconds column.
-		 /// See <seealso cref="org.neo4j.kernel.impl.index.schema.GenericNativeIndexProvider"/> for further details on supported combinations. </summary>
+		 /// See <seealso cref="org.Neo4Net.kernel.impl.index.schema.GenericNativeIndexProvider"/> for further details on supported combinations. </summary>
 		 /// <returns> true if index provider have support granular composite queries. </returns>
 		 public virtual bool SupportsGranularCompositeQueries()
 		 {
@@ -134,14 +134,14 @@ namespace Neo4Net.Kernel.Api.Index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void withPopulator(IndexPopulator populator, org.neo4j.function.ThrowingConsumer<IndexPopulator,Exception> runWithPopulator) throws Exception
+//ORIGINAL LINE: void withPopulator(IndexPopulator populator, org.Neo4Net.function.ThrowingConsumer<IndexPopulator,Exception> runWithPopulator) throws Exception
 			  internal virtual void WithPopulator( IndexPopulator populator, ThrowingConsumer<IndexPopulator, Exception> runWithPopulator )
 			  {
 					WithPopulator( populator, runWithPopulator, true );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void withPopulator(IndexPopulator populator, org.neo4j.function.ThrowingConsumer<IndexPopulator,Exception> runWithPopulator, boolean closeSuccessfully) throws Exception
+//ORIGINAL LINE: void withPopulator(IndexPopulator populator, org.Neo4Net.function.ThrowingConsumer<IndexPopulator,Exception> runWithPopulator, boolean closeSuccessfully) throws Exception
 			  internal virtual void WithPopulator( IndexPopulator populator, ThrowingConsumer<IndexPopulator, Exception> runWithPopulator, bool closeSuccessfully )
 			  {
 					try

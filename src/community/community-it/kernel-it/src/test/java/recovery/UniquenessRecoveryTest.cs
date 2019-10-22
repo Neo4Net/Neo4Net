@@ -29,14 +29,14 @@ namespace Recovery
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -53,9 +53,9 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppress;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppress;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UniquenessRecoveryTest
@@ -79,10 +79,10 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput muted = suppress(org.neo4j.test.rule.SuppressOutput.System.out);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput muted = suppress(org.Neo4Net.test.rule.SuppressOutput.System.out);
 		 public readonly SuppressOutput Muted = suppress( SuppressOutput.System.out );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Dir = TestDirectory.testDirectory();
 		 private readonly Configuration _config;
 
@@ -146,7 +146,7 @@ namespace Recovery
 			  }
 
 			  // then
-			  GraphDatabaseService db = Graphdb( path );
+			  IGraphDatabaseService db = Graphdb( path );
 			  try
 			  {
 					ShouldHaveUniquenessConstraintForNamePropertyOnPersonLabel( db );
@@ -167,7 +167,7 @@ namespace Recovery
 			  Console.WriteLine( "hello world" );
 			  File path = new File( args[0] );
 			  bool createConstraint = getBoolean( "force_create_constraint" ) || !( new File( path, "neostore" ) ).File;
-			  GraphDatabaseService db = Graphdb( path );
+			  IGraphDatabaseService db = Graphdb( path );
 			  Console.WriteLine( "database started" );
 			  Console.WriteLine( "createConstraint = " + createConstraint );
 			  if ( createConstraint )
@@ -220,7 +220,7 @@ namespace Recovery
 
 		 // ASSERTIONS
 
-		 private static void ShouldHaveUniquenessConstraintForNamePropertyOnPersonLabel( GraphDatabaseService db )
+		 private static void ShouldHaveUniquenessConstraintForNamePropertyOnPersonLabel( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -233,7 +233,7 @@ namespace Recovery
 			  }
 		 }
 
-		 private static void NodesWithPersonLabelHaveUniqueName( GraphDatabaseService db )
+		 private static void NodesWithPersonLabelHaveUniqueName( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -256,7 +256,7 @@ namespace Recovery
 
 		 // UTILITIES used for execution
 
-		 private static void CreateConstraint( GraphDatabaseService db )
+		 private static void CreateConstraint( IGraphDatabaseService db )
 		 {
 			  if ( _useCypher )
 			  {
@@ -273,7 +273,7 @@ namespace Recovery
 			  }
 		 }
 
-		 private static void AddNode( GraphDatabaseService db )
+		 private static void AddNode( IGraphDatabaseService db )
 		 {
 			  if ( _useCypher )
 			  {
@@ -291,12 +291,12 @@ namespace Recovery
 			  }
 		 }
 
-		 private static GraphDatabaseService Graphdb( File path )
+		 private static IGraphDatabaseService Graphdb( File path )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(path).newGraphDatabase();
 		 }
 
-		 private static void FlushPageCache( GraphDatabaseService db )
+		 private static void FlushPageCache( IGraphDatabaseService db )
 		 {
 			  try
 			  {

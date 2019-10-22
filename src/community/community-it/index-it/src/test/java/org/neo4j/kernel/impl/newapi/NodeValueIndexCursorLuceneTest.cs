@@ -19,10 +19,10 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 
 	public class NodeValueIndexCursorLuceneTest : AbstractNodeValueIndexCursorTest
 	{

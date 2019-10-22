@@ -249,7 +249,7 @@ namespace Neo4Net.Helpers
 			  // Given
 			  string hostname1 = InetAddress.LocalHost.HostName;
 			  string host1 = InetAddress.LocalHost.HostAddress;
-			  string hostname2 = "neo4j.org";
+			  string hostname2 = "Neo4Net.org";
 
 			  assertDoesNotThrow( () => InetAddress.getByName(hostname2) );
 			  assumeFalse( hostname1.Equals( hostname2 ) );
@@ -317,7 +317,7 @@ namespace Neo4Net.Helpers
 
 			  string host1 = InetAddress.LocalHost.HostName.replace( '.', '-' );
 			  // any other hostname?
-			  string host2 = "neo4j.org";
+			  string host2 = "Neo4Net.org";
 
 			  assertDoesNotThrow( () => InetAddress.getByName(host2) );
 			  assumeFalse( host1.Equals( host2 ) );

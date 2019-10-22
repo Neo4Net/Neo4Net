@@ -26,12 +26,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
@@ -45,28 +45,28 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	public class TestMigration
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void providerGetsFilledInAutomatically()
 		 public virtual void ProviderGetsFilledInAutomatically()
 		 {
-			  IDictionary<string, string> correctConfig = MapUtil.stringMap( "type", "exact", Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene" );
+			  IDictionary<string, string> correctConfig = MapUtil.stringMap( "type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene" );
 			  File storeDir = TestDirectory.storeDir();
-			  Neo4jTestCase.deleteFileOrDirectory( storeDir );
-			  GraphDatabaseService graphDb = StartDatabase( storeDir );
+			  Neo4NetTestCase.deleteFileOrDirectory( storeDir );
+			  IGraphDatabaseService graphDb = StartDatabase( storeDir );
 			  using ( Transaction transaction = graphDb.BeginTx() )
 			  {
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					transaction.Success();
 			  }
 
@@ -80,10 +80,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					// Getting the index w/o exception means that the provider has been reinstated
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forNodes("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("default")) );
 					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("wo-provider", MapUtil.stringMap("type", "exact"))) );
-					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
+					assertEquals( correctConfig, graphDb.Index().getConfiguration(graphDb.Index().forRelationships("w-provider", MapUtil.stringMap("type", "exact", Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, "lucene"))) );
 			  }
 
 			  graphDb.Shutdown();
@@ -105,7 +105,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  graphDb.Shutdown();
 		 }
 
-		 private static GraphDatabaseService StartDatabase( File storeDir )
+		 private static IGraphDatabaseService StartDatabase( File storeDir )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 		 }
@@ -119,7 +119,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					{
 						 IDictionary<string, string> config = indexStore.Get( cls, name );
 						 config = new Dictionary<string, string>( config );
-						 config.Remove( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER );
+						 config.Remove( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER );
 						 indexStore.Set( typeof( Node ), name, config );
 					}
 			  }

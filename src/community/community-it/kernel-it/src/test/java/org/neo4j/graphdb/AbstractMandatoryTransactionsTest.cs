@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 
@@ -29,16 +29,16 @@ namespace Neo4Net.Graphdb
 	public abstract class AbstractMandatoryTransactionsTest<T>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 
 		 public virtual T ObtainEntity()
 		 {
-			  GraphDatabaseService graphDatabaseService = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService IGraphDatabaseService = DbRule.GraphDatabaseAPI;
 
-			  using ( Transaction tx = graphDatabaseService.BeginTx() )
+			  using ( Transaction tx = IGraphDatabaseService.BeginTx() )
 			  {
-					T result = ObtainEntityInTransaction( graphDatabaseService );
+					T result = ObtainEntityInTransaction( IGraphDatabaseService );
 					tx.Success();
 
 					return result;
@@ -47,26 +47,26 @@ namespace Neo4Net.Graphdb
 
 		 public virtual void ObtainEntityInTerminatedTransaction( System.Action<T> f )
 		 {
-			  GraphDatabaseService graphDatabaseService = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService IGraphDatabaseService = DbRule.GraphDatabaseAPI;
 
-			  using ( Transaction tx = graphDatabaseService.BeginTx() )
+			  using ( Transaction tx = IGraphDatabaseService.BeginTx() )
 			  {
-					T result = ObtainEntityInTransaction( graphDatabaseService );
+					T result = ObtainEntityInTransaction( IGraphDatabaseService );
 					tx.Terminate();
 
 					f( result );
 			  }
 		 }
 
-		 protected internal abstract T ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService );
+		 protected internal abstract T ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService );
 
-		 public static void AssertFacadeMethodsThrowNotInTransaction<T>( T entity, System.Action<T>[] methods )
+		 public static void AssertFacadeMethodsThrowNotInTransaction<T>( T IEntity, System.Action<T>[] methods )
 		 {
 			  foreach ( System.Action<T> method in methods )
 			  {
 					try
 					{
-						 method( entity );
+						 method( IEntity );
 
 						 fail( "Transactions are mandatory, also for reads: " + method );
 					}
@@ -85,7 +85,7 @@ namespace Neo4Net.Graphdb
 					{
 					 try
 					 {
-						  method.accept( entity );
+						  method.accept( IEntity );
 
 						  fail( "Transaction was terminated, yet not exception thrown in: " + method );
 					 }

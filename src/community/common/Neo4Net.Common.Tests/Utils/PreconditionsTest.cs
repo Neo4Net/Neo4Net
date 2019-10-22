@@ -25,7 +25,7 @@ namespace Neo4Net.Utils
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertThrows;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.util.Preconditions.requirePositive;
+   //	import static org.Neo4Net.util.Preconditions.requirePositive;
 
    internal class PreconditionsTest
    {
@@ -83,10 +83,10 @@ namespace Neo4Net.Utils
       [Fact] //ORIGINAL LINE: @Test void requirePowerOfTwo()
       internal virtual void RequirePowerOfTwo()
       {
-         assertEquals(1, Preconditions.RequirePowerOfTwo(1));
-         assertEquals(2, Preconditions.RequirePowerOfTwo(2));
-         assertEquals(128, Preconditions.RequirePowerOfTwo(128));
-         assertEquals(0b01000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000L, Preconditions.RequirePowerOfTwo(0b01000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000L));
+        Assert.Equals(1, Preconditions.RequirePowerOfTwo(1));
+        Assert.Equals(2, Preconditions.RequirePowerOfTwo(2));
+        Assert.Equals(128, Preconditions.RequirePowerOfTwo(128));
+        Assert.Equals(0b01000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000L, Preconditions.RequirePowerOfTwo(0b01000000_00000000_00000000_00000000_00000000_00000000_00000000_00000000L));
 
          assertThrows(typeof(System.ArgumentException), () => Preconditions.RequirePowerOfTwo(-1), "negative");
          assertThrows(typeof(System.ArgumentException), () => Preconditions.RequirePowerOfTwo(0), "zero");

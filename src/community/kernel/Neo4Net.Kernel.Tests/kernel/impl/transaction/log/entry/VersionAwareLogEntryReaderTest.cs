@@ -47,10 +47,10 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 			  // given
 			  LogEntryVersion version = LogEntryVersion.CURRENT;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LogEntryStart start = new LogEntryStart(version, 1, 2, 3, 4, new byte[]{5}, new org.neo4j.kernel.impl.transaction.log.LogPosition(0, 31));
+//ORIGINAL LINE: final LogEntryStart start = new LogEntryStart(version, 1, 2, 3, 4, new byte[]{5}, new org.Neo4Net.kernel.impl.transaction.log.LogPosition(0, 31));
 			  LogEntryStart start = new LogEntryStart( version, 1, 2, 3, 4, new sbyte[]{ 5 }, new LogPosition( 0, 31 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  channel.Put( version.byteCode() ); // version
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 //ORIGINAL LINE: final LogEntryCommit commit = new LogEntryCommit(version, 42, 21);
 			  LogEntryCommit commit = new LogEntryCommit( version, 42, 21 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  channel.Put( version.byteCode() );
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 //ORIGINAL LINE: final LogEntryCommand command = new LogEntryCommand(version, nodeCommand);
 			  LogEntryCommand command = new LogEntryCommand( version, nodeCommand );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  channel.Put( version.byteCode() );
@@ -135,13 +135,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 			  // given
 			  LogEntryVersion version = LogEntryVersion.CURRENT;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition logPosition = new org.neo4j.kernel.impl.transaction.log.LogPosition(42, 43);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition = new org.Neo4Net.kernel.impl.transaction.log.LogPosition(42, 43);
 			  LogPosition logPosition = new LogPosition( 42, 43 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final CheckPoint checkPoint = new CheckPoint(version, logPosition);
 			  CheckPoint checkPoint = new CheckPoint( version, logPosition );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  channel.Put( version.byteCode() );
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 			  // given
 			  LogEntryVersion version = LogEntryVersion.CURRENT;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  channel.Put( version.byteCode() );
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.neo4j.kernel.impl.transaction.log.InMemoryClosableChannel();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel channel = new org.Neo4Net.kernel.impl.transaction.log.InMemoryClosableChannel();
 			  InMemoryClosableChannel channel = new InMemoryClosableChannel();
 
 			  // when

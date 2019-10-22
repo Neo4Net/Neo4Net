@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ConstraintIndexCreator = Neo4Net.Kernel.Impl.Api.state.ConstraintIndexCreator;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -68,17 +68,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 
 	public class IndexIT : KernelIntegrationTest
 	{
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void createIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void createIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CreateIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel()
 		 {
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  Commit();
 
 			  // when
-			  using ( Neo4Net.Graphdb.Transaction ignore = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = Db.beginTx() )
 			  {
 					ISet<IndexDefinition> indexes = Iterables.asSet( Db.schema().Indexes );
 
@@ -349,13 +349,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual void ShouldListMultiTokenIndexesInTheCoreAPI()
 		 {
 			  Transaction transaction = NewTransaction( AUTH_DISABLED );
-			  MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _labelId, _labelId2 }, EntityType.NODE, _propertyKeyId );
+			  MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _labelId, _labelId2 }, IEntityType.NODE, _propertyKeyId );
 			  transaction.SchemaWrite().indexCreate(descriptor);
 			  Commit();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: try (@SuppressWarnings("unused") org.neo4j.graphdb.Transaction tx = db.beginTx())
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+//ORIGINAL LINE: try (@SuppressWarnings("unused") org.Neo4Net.graphdb.Transaction tx = db.beginTx())
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					ISet<IndexDefinition> indexes = Iterables.asSet( Db.schema().Indexes );
 
@@ -407,8 +407,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  Commit();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: try (@SuppressWarnings("unused") org.neo4j.graphdb.Transaction tx = db.beginTx())
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+//ORIGINAL LINE: try (@SuppressWarnings("unused") org.Neo4Net.graphdb.Transaction tx = db.beginTx())
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					ISet<IndexDefinition> indexes = Iterables.asSet( Db.schema().Indexes );
 
@@ -452,7 +452,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  transaction.SchemaWrite().indexCreate(descriptor);
 			  Commit();
 
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					ISet<IndexDefinition> indexes = Iterables.asSet( Db.schema().Indexes );
 
@@ -492,11 +492,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual void ShouldListCompositeMultiTokenRelationshipIndexesInTheCoreAPI()
 		 {
 			  Transaction transaction = NewTransaction( AUTH_DISABLED );
-			  SchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _relType, _relType2 }, EntityType.RELATIONSHIP, _propertyKeyId, _propertyKeyId2 );
+			  SchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _relType, _relType2 }, IEntityType.RELATIONSHIP, _propertyKeyId, _propertyKeyId2 );
 			  transaction.SchemaWrite().indexCreate(descriptor);
 			  Commit();
 
-			  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 			  {
 					ISet<IndexDefinition> indexes = Iterables.asSet( Db.schema().Indexes );
 
@@ -559,13 +559,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  return () =>
 			  {
-				using ( Neo4Net.Graphdb.Transaction transaction = Db.beginTx() )
+				using ( Neo4Net.GraphDb.Transaction transaction = Db.beginTx() )
 				{
 					 Db.schema().indexFor(label).on(propertyKey).create();
 					 transaction.Success();
 				}
 
-				using ( Neo4Net.Graphdb.Transaction transaction = Db.beginTx() )
+				using ( Neo4Net.GraphDb.Transaction transaction = Db.beginTx() )
 				{
 					 Db.schema().awaitIndexesOnline(1, TimeUnit.MINUTES);
 					 transaction.Success();

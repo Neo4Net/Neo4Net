@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.impl.locking.community
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.interrupted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.LockType.READ;
+//	import static org.Neo4Net.kernel.impl.locking.LockType.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.LockType.WRITE;
+//	import static org.Neo4Net.kernel.impl.locking.LockType.WRITE;
 
 	/// <summary>
 	/// A read/write lock is a lock that will allow many transactions to acquire read
@@ -200,13 +200,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 /// If the lock can be acquired the lock count is updated on <CODE>this</CODE>
 		 /// and the transaction lock element (tle).
 		 /// Waiting for a lock can also be terminated. In that case waiting thread will be interrupted and corresponding
-		 /// <seealso cref="org.neo4j.kernel.impl.locking.community.RWLock.TxLockElement"/> will be marked as terminated.
+		 /// <seealso cref="org.Neo4Net.kernel.impl.locking.community.RWLock.TxLockElement"/> will be marked as terminated.
 		 /// In that case lock will not be acquired and false will be return as result of acquisition
 		 /// </summary>
 		 /// <returns> true is lock was acquired, false otherwise </returns>
 		 /// <exception cref="DeadlockDetectedException"> if a deadlock is detected </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized boolean acquireReadLock(org.neo4j.storageengine.api.lock.LockTracer tracer, Object tx) throws org.neo4j.kernel.DeadlockDetectedException
+//ORIGINAL LINE: synchronized boolean acquireReadLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
 		 internal virtual bool AcquireReadLock( LockTracer tracer, object tx )
 		 {
 			 lock ( this )
@@ -401,13 +401,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 /// If the lock can be acquires the lock count is updated on <CODE>this</CODE>
 		 /// and the transaction lock element (tle).
 		 /// Waiting for a lock can also be terminated. In that case waiting thread will be interrupted and corresponding
-		 /// <seealso cref="org.neo4j.kernel.impl.locking.community.RWLock.TxLockElement"/> will be marked as terminated.
+		 /// <seealso cref="org.Neo4Net.kernel.impl.locking.community.RWLock.TxLockElement"/> will be marked as terminated.
 		 /// In that case lock will not be acquired and false will be return as result of acquisition
 		 /// </summary>
 		 /// <returns> true is lock was acquired, false otherwise </returns>
 		 /// <exception cref="DeadlockDetectedException"> if a deadlock is detected </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized boolean acquireWriteLock(org.neo4j.storageengine.api.lock.LockTracer tracer, Object tx) throws org.neo4j.kernel.DeadlockDetectedException
+//ORIGINAL LINE: synchronized boolean acquireWriteLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
 		 internal virtual bool AcquireWriteLock( LockTracer tracer, object tx )
 		 {
 			 lock ( this )

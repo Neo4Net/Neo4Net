@@ -19,20 +19,20 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 
 	public sealed class ConstraintDefinitionFacadeMethods : Consumer<ConstraintDefinition>
 	{
-		 public static readonly ConstraintDefinitionFacadeMethods GetLabel = new ConstraintDefinitionFacadeMethods( "GetLabel", InnerEnum.GetLabel, new FacadeMethod<>( "Label getLabel()", Neo4Net.Graphdb.schema.ConstraintDefinition::getLabel ) );
-		 public static readonly ConstraintDefinitionFacadeMethods GetRelationshipType = new ConstraintDefinitionFacadeMethods( "GetRelationshipType", InnerEnum.GetRelationshipType, new FacadeMethod<>( "RelationshipType getRelationshipType()", Neo4Net.Graphdb.schema.ConstraintDefinition::getRelationshipType ) );
-		 public static readonly ConstraintDefinitionFacadeMethods Drop = new ConstraintDefinitionFacadeMethods( "Drop", InnerEnum.Drop, new FacadeMethod<>( "void drop()", Neo4Net.Graphdb.schema.ConstraintDefinition.drop ) );
+		 public static readonly ConstraintDefinitionFacadeMethods GetLabel = new ConstraintDefinitionFacadeMethods( "GetLabel", InnerEnum.GetLabel, new FacadeMethod<>( "Label getLabel()", Neo4Net.GraphDb.schema.ConstraintDefinition::getLabel ) );
+		 public static readonly ConstraintDefinitionFacadeMethods GetRelationshipType = new ConstraintDefinitionFacadeMethods( "GetRelationshipType", InnerEnum.GetRelationshipType, new FacadeMethod<>( "RelationshipType getRelationshipType()", Neo4Net.GraphDb.schema.ConstraintDefinition::getRelationshipType ) );
+		 public static readonly ConstraintDefinitionFacadeMethods Drop = new ConstraintDefinitionFacadeMethods( "Drop", InnerEnum.Drop, new FacadeMethod<>( "void drop()", Neo4Net.GraphDb.schema.ConstraintDefinition.drop ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       IS_CONSTRAINT_TYPE(new FacadeMethod<>("boolean isConstraintType( ConstraintType type )", self -> self.isConstraintType(org.neo4j.graphdb.schema.ConstraintType.UNIQUENESS))),
-		 public static readonly ConstraintDefinitionFacadeMethods GetPropertyKeys = new ConstraintDefinitionFacadeMethods( "GetPropertyKeys", InnerEnum.GetPropertyKeys, new FacadeMethod<>( "Iterable<String> getPropertyKeys()", Neo4Net.Graphdb.schema.ConstraintDefinition::getPropertyKeys ) );
+//       IS_CONSTRAINT_TYPE(new FacadeMethod<>("boolean isConstraintType( ConstraintType type )", self -> self.isConstraintType(org.Neo4Net.graphdb.schema.ConstraintType.UNIQUENESS))),
+		 public static readonly ConstraintDefinitionFacadeMethods GetPropertyKeys = new ConstraintDefinitionFacadeMethods( "GetPropertyKeys", InnerEnum.GetPropertyKeys, new FacadeMethod<>( "Iterable<String> getPropertyKeys()", Neo4Net.GraphDb.schema.ConstraintDefinition::getPropertyKeys ) );
 
 		 private static readonly IList<ConstraintDefinitionFacadeMethods> valueList = new List<ConstraintDefinitionFacadeMethods>();
 
@@ -61,7 +61,7 @@ namespace Neo4Net.Graphdb
 
 		 internal Private readonly;
 
-		 internal ConstraintDefinitionFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.Graphdb.schema.ConstraintDefinition> facadeMethod )
+		 internal ConstraintDefinitionFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.ConstraintDefinition> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -70,7 +70,7 @@ namespace Neo4Net.Graphdb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.Graphdb.schema.ConstraintDefinition constraintDefinition )
+		 public void Accept( Neo4Net.GraphDb.schema.ConstraintDefinition constraintDefinition )
 		 {
 			  _facadeMethod.accept( constraintDefinition );
 		 }

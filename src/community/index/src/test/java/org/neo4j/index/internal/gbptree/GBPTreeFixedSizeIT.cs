@@ -26,7 +26,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 
 	public class GBPTreeFixedSizeIT : GBPTreeITBase<MutableLong, MutableLong>
 	{

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -40,15 +40,15 @@ namespace Neo4Net.backup.impl
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
@@ -87,13 +87,13 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.impl.OnlineBackupCommandCcIT.arg;
+//	import static org.Neo4Net.backup.impl.OnlineBackupCommandCcIT.arg;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.impl.OnlineBackupCommandCcIT.wrapWithNormalOutput;
+//	import static org.Neo4Net.backup.impl.OnlineBackupCommandCcIT.wrapWithNormalOutput;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.impl.OnlineBackupContextFactory.ARG_NAME_FALLBACK_FULL;
+//	import static org.Neo4Net.backup.impl.OnlineBackupContextFactory.ARG_NAME_FALLBACK_FULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
+//	import static org.Neo4Net.util.TestHelpers.runBackupToolFromOtherJvmToGetExitCode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class OnlineBackupCommandHaIT
@@ -359,7 +359,7 @@ namespace Neo4Net.backup.impl
 
 			  // and a different database
 			  int secondBackupPort = PortAuthority.allocatePort();
-			  GraphDatabaseService db2 = CreateDb2( secondBackupPort );
+			  IGraphDatabaseService db2 = CreateDb2( secondBackupPort );
 			  CreateSpecificNodePair( db2, "second" );
 			  DbRepresentation secondDatabaseRepresentation = DbRepresentation.of( db2 );
 
@@ -389,7 +389,7 @@ namespace Neo4Net.backup.impl
 
 			  // and backup client is told to rotate conveniently
 			  Config config = Config.builder().withSetting(GraphDatabaseSettings.logical_log_rotation_threshold, "1m").build();
-			  File configOverrideFile = _testDirectory.file( "neo4j-backup.conf" );
+			  File configOverrideFile = _testDirectory.file( "Neo4Net-backup.conf" );
 			  OnlineBackupCommandBuilder.WriteConfigToFile( config, configOverrideFile );
 
 			  // and we have a full backup
@@ -415,7 +415,7 @@ namespace Neo4Net.backup.impl
 			  assertEquals( 0, lowestTxIdInLogFiles );
 		 }
 
-		 private static void Transactions1M( GraphDatabaseService db )
+		 private static void Transactions1M( IGraphDatabaseService db )
 		 {
 			  int numberOfTransactions = 500;
 			  long sizeOfTransaction = ( ByteUnit.mebiBytes( 1 ) / numberOfTransactions ) + 1;
@@ -432,7 +432,7 @@ namespace Neo4Net.backup.impl
 			  }
 		 }
 
-		 private static void CreateSomeData( GraphDatabaseService db )
+		 private static void CreateSomeData( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -443,7 +443,7 @@ namespace Neo4Net.backup.impl
 			  }
 		 }
 
-		 private static void CreateSpecificNodePair( GraphDatabaseService db, string name )
+		 private static void CreateSpecificNodePair( IGraphDatabaseService db, string name )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -456,7 +456,7 @@ namespace Neo4Net.backup.impl
 			  }
 		 }
 
-		 private static void RepeatedlyPopulateDatabase( GraphDatabaseService db, AtomicBoolean continueFlagReference )
+		 private static void RepeatedlyPopulateDatabase( IGraphDatabaseService db, AtomicBoolean continueFlagReference )
 		 {
 			  while ( continueFlagReference.get() )
 			  {
@@ -471,7 +471,7 @@ namespace Neo4Net.backup.impl
 			  }
 		 }
 
-		 private static void CreateIndexes( GraphDatabaseService db )
+		 private static void CreateIndexes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -480,7 +480,7 @@ namespace Neo4Net.backup.impl
 			  }
 		 }
 
-		 private GraphDatabaseService CreateDb2( int? backupPort )
+		 private IGraphDatabaseService CreateDb2( int? backupPort )
 		 {
 			  File storeDir = _testDirectory.databaseDir( "graph-db-2" );
 			  GraphDatabaseFactory factory = new GraphDatabaseFactory();
@@ -504,17 +504,17 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int runBackupTool(java.io.File neo4jHome, java.io.PrintStream outputStream, java.io.PrintStream errorStream, String... args) throws Exception
-		 private static int RunBackupTool( File neo4jHome, PrintStream outputStream, PrintStream errorStream, params string[] args )
+//ORIGINAL LINE: private static int runBackupTool(java.io.File Neo4NetHome, java.io.PrintStream outputStream, java.io.PrintStream errorStream, String... args) throws Exception
+		 private static int RunBackupTool( File Neo4NetHome, PrintStream outputStream, PrintStream errorStream, params string[] args )
 		 {
-			  return runBackupToolFromOtherJvmToGetExitCode( neo4jHome, outputStream, errorStream, false, args );
+			  return runBackupToolFromOtherJvmToGetExitCode( Neo4NetHome, outputStream, errorStream, false, args );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int runBackupTool(java.io.File neo4jHome, String... args) throws Exception
-		 private static int RunBackupTool( File neo4jHome, params string[] args )
+//ORIGINAL LINE: private static int runBackupTool(java.io.File Neo4NetHome, String... args) throws Exception
+		 private static int RunBackupTool( File Neo4NetHome, params string[] args )
 		 {
-			  return runBackupToolFromOtherJvmToGetExitCode( neo4jHome, args );
+			  return runBackupToolFromOtherJvmToGetExitCode( Neo4NetHome, args );
 		 }
 
 		 private static int RunSameJvm( File home, string name, params string[] args )

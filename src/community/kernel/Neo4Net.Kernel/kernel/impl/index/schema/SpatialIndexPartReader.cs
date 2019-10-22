@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using ExactPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate;
 	using GeometryRangePredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.GeometryRangePredicate;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
@@ -143,9 +143,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 				  {
 						return new Value[]{ _propertyAccessor.getNodePropertyValue( key.EntityId, descriptor.schema().PropertyId ) };
 				  }
-				  catch ( EntityNotFoundException )
+				  catch ( IEntityNotFoundException )
 				  {
-						// We couldn't get the value due to the entity not being there. Concurrently deleted?
+						// We couldn't get the value due to the IEntity not being there. Concurrently deleted?
 						return null;
 				  }
 			 }

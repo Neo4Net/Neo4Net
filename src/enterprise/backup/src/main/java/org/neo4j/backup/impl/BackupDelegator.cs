@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -53,14 +53,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void copy(org.neo4j.helpers.AdvertisedSocketAddress fromAddress, org.neo4j.causalclustering.identity.StoreId expectedStoreId, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: void copy(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 		 internal virtual void Copy( AdvertisedSocketAddress fromAddress, StoreId expectedStoreId, DatabaseLayout databaseLayout )
 		 {
 			  _remoteStore.copy( new Neo4Net.causalclustering.catchup.CatchupAddressProvider_SingleAddressProvider( fromAddress ), expectedStoreId, databaseLayout, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.causalclustering.catchup.CatchupResult tryCatchingUp(org.neo4j.helpers.AdvertisedSocketAddress fromAddress, org.neo4j.causalclustering.identity.StoreId expectedStoreId, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: org.Neo4Net.causalclustering.catchup.CatchupResult tryCatchingUp(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress, org.Neo4Net.causalclustering.identity.StoreId expectedStoreId, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 		 internal virtual CatchupResult TryCatchingUp( AdvertisedSocketAddress fromAddress, StoreId expectedStoreId, DatabaseLayout databaseLayout )
 		 {
 			  try
@@ -84,7 +84,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.identity.StoreId fetchStoreId(org.neo4j.helpers.AdvertisedSocketAddress fromAddress) throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId fetchStoreId(org.Neo4Net.helpers.AdvertisedSocketAddress fromAddress) throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 		 public virtual StoreId FetchStoreId( AdvertisedSocketAddress fromAddress )
 		 {
 			  return _storeCopyClient.fetchStoreId( fromAddress );

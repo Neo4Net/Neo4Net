@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class NeoStoreDataSourceTest
 	{
@@ -95,16 +95,16 @@ namespace Neo4Net.Kernel
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory(fs.get());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs.get());
 		 public TestDirectory Dir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.NeoStoreDataSourceRule dsRule = new org.neo4j.test.rule.NeoStoreDataSourceRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.NeoStoreDataSourceRule dsRule = new org.Neo4Net.test.rule.NeoStoreDataSourceRule();
 		 public NeoStoreDataSourceRule DsRule = new NeoStoreDataSourceRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -326,7 +326,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.kernel.impl.transaction.log.files.LogFiles logWithTransactions(long logVersion, long headerTxId) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logWithTransactions(long logVersion, long headerTxId) throws java.io.IOException
 		 private static LogFiles LogWithTransactions( long logVersion, long headerTxId )
 		 {
 			  LogFiles files = mock( typeof( TransactionLogFiles ) );
@@ -338,7 +338,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.kernel.impl.transaction.log.files.LogFiles logWithTransactionsInNextToOldestLog(long logVersion, long prevLogLastTxId) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logWithTransactionsInNextToOldestLog(long logVersion, long prevLogLastTxId) throws java.io.IOException
 		 private static LogFiles LogWithTransactionsInNextToOldestLog( long logVersion, long prevLogLastTxId )
 		 {
 			  LogFiles files = LogWithTransactions( logVersion + 1, prevLogLastTxId );

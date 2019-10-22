@@ -40,14 +40,14 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 
-	public class PropertyContainerStateImplTest
+	public class IPropertyContainerStateImplTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldListAddedProperties()
 		 public virtual void ShouldListAddedProperties()
 		 {
 			  // Given
-			  PropertyContainerStateImpl state = new PropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
+			  IPropertyContainerStateImpl state = new IPropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
 			  state.AddProperty( 1, Values.of( "Hello" ) );
 			  state.AddProperty( 2, Values.of( "Hello" ) );
 			  state.RemoveProperty( 1 );
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 public virtual void ShouldListAddedPropertiesEvenIfPropertiesHaveBeenReplaced()
 		 {
 			  // Given
-			  PropertyContainerStateImpl state = new PropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
+			  IPropertyContainerStateImpl state = new IPropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
 			  state.AddProperty( 1, Values.of( "Hello" ) );
 			  state.AddProperty( 1, Values.of( "WAT" ) );
 			  state.AddProperty( 2, Values.of( "Hello" ) );
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 public virtual void ShouldConvertAddRemoveToChange()
 		 {
 			  // Given
-			  PropertyContainerStateImpl state = new PropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
+			  IPropertyContainerStateImpl state = new IPropertyContainerStateImpl( 1, OnHeapCollectionsFactory.INSTANCE );
 
 			  // When
 			  state.RemoveProperty( 4 );

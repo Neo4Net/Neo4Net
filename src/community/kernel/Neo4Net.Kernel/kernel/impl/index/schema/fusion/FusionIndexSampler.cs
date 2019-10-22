@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterables.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.IOUtils.closeAllSilently;
+//	import static org.Neo4Net.io.IOUtils.closeAllSilently;
 
 	public class FusionIndexSampler : IndexSampler
 	{
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexSample sampleIndex() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexSample sampleIndex() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexSample SampleIndex()
 		 {
 			  IList<IndexSample> samples = new List<IndexSample>();

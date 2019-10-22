@@ -22,9 +22,9 @@
 namespace Neo4Net.Storageengine.Api
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.CommandVersion.AFTER;
+//	import static org.Neo4Net.storageengine.api.CommandVersion.AFTER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.CommandVersion.BEFORE;
+//	import static org.Neo4Net.storageengine.api.CommandVersion.BEFORE;
 
 	/// <summary>
 	/// Mode of <seealso cref="StorageEngine.apply(CommandsToApply, TransactionApplicationMode) applying transactions"/>.

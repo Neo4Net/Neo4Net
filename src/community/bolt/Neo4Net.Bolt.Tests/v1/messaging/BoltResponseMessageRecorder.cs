@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.neo4j.bolt.messaging.ResponseMessage message) throws java.io.IOException
+//ORIGINAL LINE: public void write(org.Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
 		 public override void Write( ResponseMessage message )
 		 {
 			  _messages.Add( message );

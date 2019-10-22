@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// <returns> transaction id of the last committed transaction in this batch. </returns>
 		 /// <exception cref="TransactionFailureException"> If the commit process fails. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long commit(TransactionToApply batch, org.neo4j.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.neo4j.storageengine.api.TransactionApplicationMode mode) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: long commit(TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
 		 long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode );
 	}
 

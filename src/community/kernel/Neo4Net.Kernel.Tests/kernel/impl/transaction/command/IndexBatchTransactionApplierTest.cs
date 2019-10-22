@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 	using Neo4Net.Utils.Concurrent;
@@ -61,13 +61,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class IndexBatchTransactionApplierTest
 	{
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Func<org.neo4j.kernel.api.labelscan.LabelScanWriter> singletonProvider(final org.neo4j.kernel.api.labelscan.LabelScanWriter writer)
+//ORIGINAL LINE: private System.Func<org.Neo4Net.kernel.api.labelscan.LabelScanWriter> singletonProvider(final org.Neo4Net.kernel.api.labelscan.LabelScanWriter writer)
 		 private System.Func<LabelScanWriter> SingletonProvider( LabelScanWriter writer )
 		 {
 			  return () => writer;

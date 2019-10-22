@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 
 	/// <summary>
 	/// This class houses built-in procedures which use a backdoor to inject dependencies.
@@ -35,20 +35,20 @@ namespace Neo4Net.Kernel.builtinprocs
 	/// </summary>
 	public class SpecialBuiltInProcedures : ThrowingConsumer<Procedures, ProcedureException>
 	{
-		 private readonly string _neo4jVersion;
-		 private readonly string _neo4jEdition;
+		 private readonly string _Neo4NetVersion;
+		 private readonly string _Neo4NetEdition;
 
-		 public SpecialBuiltInProcedures( string neo4jVersion, string neo4jEdition )
+		 public SpecialBuiltInProcedures( string Neo4NetVersion, string Neo4NetEdition )
 		 {
-			  this._neo4jVersion = neo4jVersion;
-			  this._neo4jEdition = neo4jEdition;
+			  this._Neo4NetVersion = Neo4NetVersion;
+			  this._Neo4NetEdition = Neo4NetEdition;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.neo4j.kernel.impl.proc.Procedures procs) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public void accept(org.Neo4Net.kernel.impl.proc.Procedures procs) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override void Accept( Procedures procs )
 		 {
-			  procs.Register( new ListComponentsProcedure( procedureName( "dbms", "components" ), _neo4jVersion, _neo4jEdition ) );
+			  procs.Register( new ListComponentsProcedure( procedureName( "dbms", "components" ), _Neo4NetVersion, _Neo4NetEdition ) );
 			  procs.Register( new JmxQueryProcedure( procedureName( "dbms", "queryJmx" ), ManagementFactory.PlatformMBeanServer ) );
 		 }
 	}

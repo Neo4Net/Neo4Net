@@ -48,16 +48,16 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CompositeUniquenessConstraintValidationIT
 	public class CompositeUniquenessConstraintValidationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -329,7 +329,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void newTransaction() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void newTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void NewTransaction()
 		 {
 			  if ( _transaction != null )
@@ -340,7 +340,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void commit() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void commit() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 protected internal virtual void Commit()
 		 {
 			  _transaction.success();
@@ -355,7 +355,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createLabeledNode(int labelId) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createLabeledNode(int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private long CreateLabeledNode( int labelId )
 		 {
 			  long node = _transaction.dataWrite().nodeCreate();
@@ -364,28 +364,28 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addLabel(long nodeId, int labelId) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void addLabel(long nodeId, int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void AddLabel( long nodeId, int labelId )
 		 {
 			  _transaction.dataWrite().nodeAddLabel(nodeId, labelId);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setProperty(long nodeId, int propertyId, Object value) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void setProperty(long nodeId, int propertyId, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void SetProperty( long nodeId, int propertyId, object value )
 		 {
 			  _transaction.dataWrite().nodeSetProperty(nodeId, propertyId, Values.of(value));
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private long CreateNode()
 		 {
 			  return _transaction.dataWrite().nodeCreate();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNodeWithLabelAndProps(int labelId, Object[] propertyValues) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNodeWithLabelAndProps(int labelId, Object[] propertyValues) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private long CreateNodeWithLabelAndProps( int labelId, object[] propertyValues )
 		 {
 			  NewTransaction();
@@ -400,7 +400,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setProperties(long nodeId, Object[] propertyValues) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void setProperties(long nodeId, Object[] propertyValues) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void SetProperties( long nodeId, object[] propertyValues )
 		 {
 			  for ( int prop = 0; prop < propertyValues.Length; prop++ )

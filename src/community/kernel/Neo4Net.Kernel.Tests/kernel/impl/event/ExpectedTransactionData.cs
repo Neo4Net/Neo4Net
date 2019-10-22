@@ -22,13 +22,13 @@
 namespace Neo4Net.Kernel.Impl.@event
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using LabelEntry = Neo4Net.Graphdb.@event.LabelEntry;
-	using Neo4Net.Graphdb.@event;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
+	using Neo4Net.GraphDb.Events;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.Kernel.impl.util;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.AutoCreatingHashMap.nested;
+//	import static org.Neo4Net.kernel.impl.util.AutoCreatingHashMap.nested;
 
 	internal class ExpectedTransactionData
 	{
@@ -189,9 +189,9 @@ namespace Neo4Net.Kernel.Impl.@event
 		 }
 
 		 /// <returns> {@code non-null} if this property should be expected to come as removed property in the event </returns>
-		 private object RemoveProperty<E>( IDictionary<E, IDictionary<string, PropertyEntryImpl<E>>> map, E entity, string key, object valueBeforeTx ) where E : Neo4Net.Graphdb.PropertyContainer
+		 private object RemoveProperty<E>( IDictionary<E, IDictionary<string, PropertyEntryImpl<E>>> map, E IEntity, string key, object valueBeforeTx ) where E : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  if ( map.ContainsKey( entity ) )
+			  if ( map.ContainsKey( IEntity ) )
 			  {
 					IDictionary<string, PropertyEntryImpl<E>> inner = map[entity];
 					PropertyEntryImpl<E> entry = inner.Remove( key );
@@ -202,7 +202,7 @@ namespace Neo4Net.Kernel.Impl.@event
 
 					if ( inner.Count == 0 )
 					{
-						 map.Remove( entity );
+						 map.Remove( IEntity );
 					}
 					if ( entry.PreviouslyCommitedValue() != null )
 					{ // this means that we're removing a previously changed property, i.e. there's a value to remove
@@ -213,9 +213,9 @@ namespace Neo4Net.Kernel.Impl.@event
 			  return valueBeforeTx;
 		 }
 
-		 private PropertyEntryImpl<E> Property<E>( E entity, string key, object value, object valueBeforeTx ) where E : Neo4Net.Graphdb.PropertyContainer
+		 private PropertyEntryImpl<E> Property<E>( E IEntity, string key, object value, object valueBeforeTx ) where E : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  return new PropertyEntryImpl<E>( entity, key, value, valueBeforeTx );
+			  return new PropertyEntryImpl<E>( IEntity, key, value, valueBeforeTx );
 		 }
 
 		 internal virtual void CompareTo( TransactionData data )
@@ -331,7 +331,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private IDictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>> Clone<KEY>( IDictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>> map ) where KEY : Neo4Net.Graphdb.PropertyContainer
+		 private IDictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>> Clone<KEY>( IDictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>> map ) where KEY : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  IDictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>> result = new Dictionary<KEY, IDictionary<string, PropertyEntryImpl<KEY>>>();
 			  foreach ( KEY key in map.Keys )
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  return result;
 		 }
 
-		 internal virtual void CheckAssigned<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.Graphdb.PropertyContainer
+		 internal virtual void CheckAssigned<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  PropertyEntryImpl<T> expected = FetchExpectedPropertyEntry( map, entry );
 			  if ( expected != null )
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 internal virtual void CheckRemoved<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.Graphdb.PropertyContainer
+		 internal virtual void CheckRemoved<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  PropertyEntryImpl<T> expected = FetchExpectedPropertyEntry( map, entry );
 			  if ( expected != null )
@@ -359,15 +359,15 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 internal virtual PropertyEntryImpl<T> FetchExpectedPropertyEntry<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.Graphdb.PropertyContainer
+		 internal virtual PropertyEntryImpl<T> FetchExpectedPropertyEntry<T>( IDictionary<T, IDictionary<string, PropertyEntryImpl<T>>> map, PropertyEntry<T> entry ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  T entity = entry.Entity();
-			  bool hasEntity = map.ContainsKey( entity );
+			  T IEntity = entry.Entity();
+			  bool hasEntity = map.ContainsKey( IEntity );
 			  if ( _ignoreAdditionalData && !hasEntity )
 			  {
 					return null;
 			  }
-			  assertTrue( "Unexpected entity " + entry, hasEntity );
+			  assertTrue( "Unexpected IEntity " + entry, hasEntity );
 			  IDictionary<string, PropertyEntryImpl<T>> innerMap = map[entity];
 			  PropertyEntryImpl<T> expectedEntry = innerMap.Remove( entry.Key() );
 			  if ( expectedEntry == null && _ignoreAdditionalData )
@@ -377,7 +377,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  assertNotNull( "Unexpected property entry " + entry, expectedEntry );
 			  if ( innerMap.Count == 0 )
 			  {
-					map.Remove( entity );
+					map.Remove( IEntity );
 			  }
 			  return expectedEntry;
 		 }

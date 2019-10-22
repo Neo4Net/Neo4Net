@@ -26,12 +26,12 @@ namespace Neo4Net.Cypher
 	using Test = org.junit.Test;
 
 
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Name = Neo4Net.Procedure.Name;
@@ -46,13 +46,13 @@ namespace Neo4Net.Cypher
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
-	public class GraphDatabaseServiceExecuteTest
+	public class IGraphDatabaseServiceExecuteTest
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule graphDb = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule graphDb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule GraphDb = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -260,11 +260,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.graphdb.spatial.Point makeFakePoint(double x, double y, final org.neo4j.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.spatial.Point makeFakePoint(double x, double y, final org.Neo4Net.graphdb.spatial.CRS crs)
 		 private static Point MakeFakePoint( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.spatial.Coordinate coord = new org.neo4j.graphdb.spatial.Coordinate(x, y);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.spatial.Coordinate coord = new org.Neo4Net.graphdb.spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new PointAnonymousInnerClass( crs, coord );
 		 }
@@ -307,11 +307,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.graphdb.spatial.Geometry makeFakePointAsGeometry(double x, double y, final org.neo4j.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private static org.Neo4Net.graphdb.spatial.Geometry makeFakePointAsGeometry(double x, double y, final org.Neo4Net.graphdb.spatial.CRS crs)
 		 private static Geometry MakeFakePointAsGeometry( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.spatial.Coordinate coord = new org.neo4j.graphdb.spatial.Coordinate(x, y);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.spatial.Coordinate coord = new org.Neo4Net.graphdb.spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new GeometryAnonymousInnerClass( crs, coord );
 		 }

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -70,12 +70,12 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void tryCatchingUpDelegatesToRemoteStore() throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: @Test public void tryCatchingUpDelegatesToRemoteStore() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TryCatchingUpDelegatesToRemoteStore()
 		 {
 			  // given
-			  AdvertisedSocketAddress fromAddress = new AdvertisedSocketAddress( "neo4j.com", 5432 );
+			  AdvertisedSocketAddress fromAddress = new AdvertisedSocketAddress( "Neo4Net.com", 5432 );
 			  StoreId expectedStoreId = new StoreId( 7, 2, 5, 98 );
 			  DatabaseLayout databaseLayout = DatabaseLayout.of( new File( "." ) );
 
@@ -109,7 +109,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void fetchStoreIdDelegatesToStoreCopyClient() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Test public void fetchStoreIdDelegatesToStoreCopyClient() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FetchStoreIdDelegatesToStoreCopyClient()
 		 {
@@ -128,7 +128,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void retrieveStoreDelegatesToStoreCopyService() throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException, org.neo4j.causalclustering.catchup.CatchupAddressResolutionException
+//ORIGINAL LINE: @Test public void retrieveStoreDelegatesToStoreCopyService() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, org.Neo4Net.causalclustering.catchup.CatchupAddressResolutionException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RetrieveStoreDelegatesToStoreCopyService()
 		 {

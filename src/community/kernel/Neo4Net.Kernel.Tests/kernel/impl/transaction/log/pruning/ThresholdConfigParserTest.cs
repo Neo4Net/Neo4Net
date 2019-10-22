@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 //	import static org.junit.Assert.fail;
 	using static Neo4Net.Kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue.KEEP_LAST_FILE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue.KEEP_LAST_FILE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue.NO_PRUNING;
+//	import static org.Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.ThresholdConfigValue.NO_PRUNING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.pruning.ThresholdConfigParser.parse;
+//	import static org.Neo4Net.kernel.impl.transaction.log.pruning.ThresholdConfigParser.parse;
 
 	public class ThresholdConfigParserTest
 	{

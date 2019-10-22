@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.impl.transaction
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using LogEntry = Neo4Net.Kernel.impl.transaction.log.entry.LogEntry;
@@ -43,9 +43,9 @@ namespace Neo4Net.Kernel.impl.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.LogTestUtils.filterNeostoreLogicalLog;
+//	import static org.Neo4Net.test.LogTestUtils.filterNeostoreLogicalLog;
 
 	/// <summary>
 	/// Asserts that pure read operations does not write records to logical or transaction logs.
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule dbr = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbr = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Dbr = new ImpermanentDatabaseRule();
 
 		 private Label _label;
@@ -215,9 +215,9 @@ namespace Neo4Net.Kernel.impl.transaction
 				  getAllProperties( _outerInstance.relationship );
 			 }
 
-			 private void getAllProperties( PropertyContainer entity )
+			 private void getAllProperties( IPropertyContainer IEntity )
 			 {
-				  foreach ( string key in entity.PropertyKeys )
+				  foreach ( string key in IEntity.PropertyKeys )
 				  {
 						entity.GetProperty( key );
 				  }

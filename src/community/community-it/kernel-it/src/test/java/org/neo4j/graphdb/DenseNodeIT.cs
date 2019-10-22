@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -31,14 +31,14 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 
 	public class DenseNodeIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule databaseRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule databaseRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DatabaseRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -46,7 +46,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void TestBringingNodeOverDenseThresholdIsConsistent()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
 
 			  Node root;
 			  using ( Transaction tx = Db.beginTx() )
@@ -90,7 +90,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void DeletingRelationshipsFromDenseNodeIsConsistent()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
 
 			  Node root;
 			  using ( Transaction tx = Db.beginTx() )
@@ -124,7 +124,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void MovingBilaterallyOfTheDenseNodeThresholdIsConsistent()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
 
 			  Node root;
 			  // WHEN
@@ -156,7 +156,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void TestBringingTwoConnectedNodesOverDenseThresholdIsConsistent()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DatabaseRule.GraphDatabaseAPI;
 
 			  Node source;
 			  Node sink;
@@ -270,7 +270,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private void CreateRelationshipsOnNode( GraphDatabaseService db, Node root, int numberOfRelationships )
+		 private void CreateRelationshipsOnNode( IGraphDatabaseService db, Node root, int numberOfRelationships )
 		 {
 			  for ( int i = 0; i < numberOfRelationships; i++ )
 			  {

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	/// Default empty implementation of StoreMigrationParticipant.
 	/// Base class for all StoreMigrationParticipant implementations.
 	/// </summary>
-	/// <seealso cref= org.neo4j.kernel.impl.storemigration.StoreUpgrader </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.storemigration.StoreUpgrader </seealso>
 	public class AbstractStoreMigrationParticipant : StoreMigrationParticipant
 	{
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -39,19 +39,19 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void migrate(org.neo4j.io.layout.DatabaseLayout directoryLayout, org.neo4j.io.layout.DatabaseLayout migrationLayout, org.neo4j.kernel.impl.util.monitoring.ProgressReporter progressMonitor, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void migrate(org.Neo4Net.io.layout.DatabaseLayout directoryLayout, org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressMonitor, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void Migrate( DatabaseLayout directoryLayout, DatabaseLayout migrationLayout, ProgressReporter progressMonitor, string versionToMigrateFrom, string versionToMigrateTo )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.neo4j.io.layout.DatabaseLayout migrationLayout, org.neo4j.io.layout.DatabaseLayout directoryLayout, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void MoveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToMigrateFrom, string versionToMigrateTo )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void cleanup(org.neo4j.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException
+//ORIGINAL LINE: public void cleanup(org.Neo4Net.io.layout.DatabaseLayout migrationLayout) throws java.io.IOException
 		 public override void Cleanup( DatabaseLayout migrationLayout )
 		 {
 		 }

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.Test.OtherThreadExecutor;
 
 	public class PutIfAbsentCommand : WorkerCommand<CommandState, Node>

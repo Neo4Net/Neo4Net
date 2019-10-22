@@ -25,7 +25,7 @@ namespace Neo4Net.Bolt.v1.messaging
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using PackProvider = Neo4Net.Bolt.messaging.PackProvider;
 	using ResponseMessage = Neo4Net.Bolt.messaging.ResponseMessage;
 	using Neo4Net.Bolt.messaging;
@@ -44,12 +44,12 @@ namespace Neo4Net.Bolt.v1.messaging
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 	/// <summary>
-	/// Writer for Bolt request messages to be sent to a <seealso cref="Neo4jPack.Packer"/>.
+	/// Writer for Bolt request messages to be sent to a <seealso cref="Neo4NetPack.Packer"/>.
 	/// </summary>
 	public class BoltResponseMessageWriterV1 : BoltResponseMessageWriter
 	{
 		 private readonly PackOutput _output;
-		 private readonly Neo4Net.Bolt.messaging.Neo4jPack_Packer _packer;
+		 private readonly Neo4Net.Bolt.messaging.Neo4NetPack_Packer _packer;
 		 private readonly Log _log;
 		 private readonly IDictionary<sbyte, ResponseMessageEncoder<ResponseMessage>> _encoders;
 
@@ -64,7 +64,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 private IDictionary<sbyte, ResponseMessageEncoder<ResponseMessage>> RegisterEncoders()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<sbyte,org.neo4j.bolt.messaging.ResponseMessageEncoder<?>> encoders = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<sbyte,org.Neo4Net.bolt.messaging.ResponseMessageEncoder<?>> encoders = new java.util.HashMap<>();
 			  IDictionary<sbyte, ResponseMessageEncoder<object>> encoders = new Dictionary<sbyte, ResponseMessageEncoder<object>>();
 			  encoders[SuccessMessage.SIGNATURE] = new SuccessMessageEncoder();
 			  encoders[RecordMessage.SIGNATURE] = new RecordMessageEncoder();
@@ -74,7 +74,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.neo4j.bolt.messaging.ResponseMessage message) throws java.io.IOException
+//ORIGINAL LINE: public void write(org.Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
 		 public override void Write( ResponseMessage message )
 		 {
 			  PackCompleteMessageOrFail( message );
@@ -92,7 +92,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void packCompleteMessageOrFail(org.neo4j.bolt.messaging.ResponseMessage message) throws java.io.IOException
+//ORIGINAL LINE: private void packCompleteMessageOrFail(org.Neo4Net.bolt.messaging.ResponseMessage message) throws java.io.IOException
 		 private void PackCompleteMessageOrFail( ResponseMessage message )
 		 {
 			  bool packingFailed = true;

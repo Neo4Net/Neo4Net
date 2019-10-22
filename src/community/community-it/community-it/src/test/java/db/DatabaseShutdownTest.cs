@@ -23,10 +23,10 @@ namespace Db
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DelegatingPageCache = Neo4Net.Io.pagecache.DelegatingPageCache;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -56,7 +56,7 @@ namespace Db
 	internal class DatabaseShutdownTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -72,7 +72,7 @@ namespace Db
 		 {
 			  internal LifeSupport Life;
 
-			  protected internal override GraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+			  protected internal override IGraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 			  {
 					return new GraphDatabaseFacadeFactoryAnonymousInnerClass( this, DatabaseInfo.COMMUNITY, storeDir, config, dependencies )
 					.newFacade( storeDir, config, dependencies );
@@ -131,7 +131,7 @@ namespace Db
 						  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.neo4j.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
 						  public override void flushAndForce( IOLimiter ioLimiter )
 						  {
 								// this is simulating a failing check pointing on shutdown

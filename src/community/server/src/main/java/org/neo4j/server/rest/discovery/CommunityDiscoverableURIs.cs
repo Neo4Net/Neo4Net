@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.discovery
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
+//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.NORMAL;
 
 	public class CommunityDiscoverableURIs
 	{

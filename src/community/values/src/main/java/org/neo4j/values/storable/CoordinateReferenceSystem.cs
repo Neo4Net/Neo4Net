@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 

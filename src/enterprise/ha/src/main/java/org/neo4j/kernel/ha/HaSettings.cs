@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -28,34 +28,34 @@ namespace Neo4Net.Kernel.ha
 	using Description = Neo4Net.Configuration.Description;
 	using Internal = Neo4Net.Configuration.Internal;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using ConfigurationMigrator = Neo4Net.Kernel.configuration.ConfigurationMigrator;
 	using Migrator = Neo4Net.Kernel.configuration.Migrator;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BYTES;
+//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.DURATION;
+//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.HOSTNAME_PORT;
+//	import static org.Neo4Net.kernel.configuration.Settings.HOSTNAME_PORT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.buildSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.buildSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.min;
+//	import static org.Neo4Net.kernel.configuration.Settings.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsObeyCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.BranchedDataCopyingStrategy.branch_then_copy;
+//	import static org.Neo4Net.kernel.ha.HaSettings.BranchedDataCopyingStrategy.branch_then_copy;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
+//	import static org.Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
 
 	/// <summary>
 	/// Settings for High Availability mode
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.ha
 	public class HaSettings : LoadableConfig
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") @Migrator private static final org.neo4j.kernel.configuration.ConfigurationMigrator migrator = new EnterpriseConfigurationMigrator();
+//ORIGINAL LINE: @SuppressWarnings("unused") @Migrator private static final org.Neo4Net.kernel.configuration.ConfigurationMigrator migrator = new EnterpriseConfigurationMigrator();
 		 private static readonly ConfigurationMigrator _migrator = new EnterpriseConfigurationMigrator();
 
 		 [Description("How long a slave will wait for response from master before giving up."), Obsolete]
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.ha
 		 public static readonly Setting<int> PullApplyBatchSize = setting( "ha.pull_batch_size", INTEGER, "100" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Duration for which master will buffer ids and not reuse them to allow slaves read " + "consistently. Slaves will also terminate transactions longer than this duration, when " + "applying received transaction stream, to make sure they do not read potentially " + "inconsistent/reused records.") @Internal @Deprecated public static final org.neo4j.graphdb.config.Setting<java.time.Duration> id_reuse_safe_zone_time = setting("unsupported.dbms.id_reuse_safe_zone", org.neo4j.kernel.configuration.Settings.DURATION, "1h");
+//ORIGINAL LINE: @Description("Duration for which master will buffer ids and not reuse them to allow slaves read " + "consistently. Slaves will also terminate transactions longer than this duration, when " + "applying received transaction stream, to make sure they do not read potentially " + "inconsistent/reused records.") @Internal @Deprecated public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> id_reuse_safe_zone_time = setting("unsupported.dbms.id_reuse_safe_zone", org.Neo4Net.kernel.configuration.Settings.DURATION, "1h");
 		 [Description("Duration for which master will buffer ids and not reuse them to allow slaves read " + "consistently. Slaves will also terminate transactions longer than this duration, when " + "applying received transaction stream, to make sure they do not read potentially " + "inconsistent/reused records."), Obsolete]
 		 public static readonly Setting<Duration> IdReuseSafeZoneTime = setting( "unsupported.dbms.id_reuse_safe_zone", Settings.DURATION, "1h" );
 

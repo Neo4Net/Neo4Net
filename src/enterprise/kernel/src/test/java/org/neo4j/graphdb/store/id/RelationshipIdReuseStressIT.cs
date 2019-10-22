@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,14 +17,14 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.Graphdb.store.id
+namespace Neo4Net.GraphDb.store.id
 {
 
 	using Matchers = org.hamcrest.Matchers;
@@ -33,7 +33,7 @@ namespace Neo4Net.Graphdb.store.id
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
@@ -55,7 +55,7 @@ namespace Neo4Net.Graphdb.store.id
 	public class RelationshipIdReuseStressIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule embeddedDatabase = new org.neo4j.test.rule.EnterpriseDatabaseRule().withSetting(org.neo4j.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP.name());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule embeddedDatabase = new org.Neo4Net.test.rule.EnterpriseDatabaseRule().withSetting(org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.idTypesToReuse, org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP.name());
 		 public DatabaseRule EmbeddedDatabase = new EnterpriseDatabaseRule().withSetting(EnterpriseEditionSettings.idTypesToReuse, IdType.RELATIONSHIP.name());
 
 		 private readonly ExecutorService _executorService = Executors.newCachedThreadPool();
@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb.store.id
 		 {
 			  Label cityLabel = Label.label( "city" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label bandLabel = org.neo4j.graphdb.Label.label("band");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label bandLabel = org.Neo4Net.graphdb.Label.label("band");
 			  Label bandLabel = Label.label( "band" );
 			  CreateBands( bandLabel );
 			  CreateCities( cityLabel );
@@ -164,7 +164,7 @@ namespace Neo4Net.Graphdb.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipCalculator(final org.neo4j.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
+//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipCalculator(final org.Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Future<object> StartRelationshipCalculator( Label bandLabel, AtomicBoolean stopFlag )
 		 {
@@ -172,7 +172,7 @@ namespace Neo4Net.Graphdb.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipTypesCalculator(final org.neo4j.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
+//ORIGINAL LINE: private java.util.concurrent.Future<?> startRelationshipTypesCalculator(final org.Neo4Net.graphdb.Label bandLabel, final java.util.concurrent.atomic.AtomicBoolean stopFlag)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private Future<object> StartRelationshipTypesCalculator( Label bandLabel, AtomicBoolean stopFlag )
 		 {

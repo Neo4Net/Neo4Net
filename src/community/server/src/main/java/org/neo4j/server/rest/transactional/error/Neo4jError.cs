@@ -29,7 +29,7 @@ namespace Neo4Net.Server.rest.transactional.error
 	/// This is an initial move towards unified errors - it should not live here in the server, but should probably
 	/// exist in the kernel or similar, where it can be shared across surfaces other than the server.
 	/// <para>
-	/// It's put in place here in order to enforce that the <seealso cref="org.neo4j.server.rest.web.TransactionalService"/>
+	/// It's put in place here in order to enforce that the <seealso cref="org.Neo4Net.server.rest.web.TransactionalService"/>
 	/// is strictly tied down towards what errors it handles and returns to the client, to create a waterproof abstraction
 	/// between the runtime-exception landscape that lives below, and the errors we send to the user.
 	/// </para>
@@ -37,16 +37,16 @@ namespace Neo4Net.Server.rest.transactional.error
 	/// This way, we make it easy to transition this service over to a unified error code based error scheme.
 	/// </para>
 	/// </summary>
-	public class Neo4jError
+	public class Neo4NetError
 	{
 		 private readonly Status _status;
 		 private readonly Exception _cause;
 
-		 public Neo4jError( Status status, string message ) : this( status, new Exception( message ) )
+		 public Neo4NetError( Status status, string message ) : this( status, new Exception( message ) )
 		 {
 		 }
 
-		 public Neo4jError( Status status, Exception cause )
+		 public Neo4NetError( Status status, Exception cause )
 		 {
 			  if ( status == null )
 			  {
@@ -108,13 +108,13 @@ namespace Neo4Net.Server.rest.transactional.error
 			 }
 		 }
 
-		 public static bool ShouldRollBackOn( ICollection<Neo4jError> errors )
+		 public static bool ShouldRollBackOn( ICollection<Neo4NetError> errors )
 		 {
 			  if ( errors.Count == 0 )
 			  {
 					return false;
 			  }
-			  foreach ( Neo4jError error in errors )
+			  foreach ( Neo4NetError error in errors )
 			  {
 					if ( error.Status().code().classification().rollbackTransaction() )
 					{

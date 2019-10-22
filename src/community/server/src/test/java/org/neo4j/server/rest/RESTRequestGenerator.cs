@@ -224,7 +224,7 @@ namespace Neo4Net.Server.rest
 		 /// Send a request with no payload.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private ResponseEntity retrieveResponseFromRequest(final String method, final String uri, final int responseCode, final javax.ws.rs.core.MediaType accept, final java.util.List<org.neo4j.helpers.collection.Pair<String,System.Predicate<String>>> headerFields)
+//ORIGINAL LINE: private ResponseEntity retrieveResponseFromRequest(final String method, final String uri, final int responseCode, final javax.ws.rs.core.MediaType accept, final java.util.List<org.Neo4Net.helpers.collection.Pair<String,System.Predicate<String>>> headerFields)
 		 private ResponseEntity RetrieveResponseFromRequest( string method, string uri, int responseCode, MediaType accept, IList<Pair<string, System.Predicate<string>>> headerFields )
 		 {
 			  ClientRequest request;
@@ -243,7 +243,7 @@ namespace Neo4Net.Server.rest
 		 /// Send a request with payload.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private ResponseEntity retrieveResponseFromRequest(final String method, final String uri, final String payload, final javax.ws.rs.core.MediaType payloadType, final int responseCode, final javax.ws.rs.core.MediaType accept, final java.util.List<org.neo4j.helpers.collection.Pair<String,System.Predicate<String>>> headerFields)
+//ORIGINAL LINE: private ResponseEntity retrieveResponseFromRequest(final String method, final String uri, final String payload, final javax.ws.rs.core.MediaType payloadType, final int responseCode, final javax.ws.rs.core.MediaType accept, final java.util.List<org.Neo4Net.helpers.collection.Pair<String,System.Predicate<String>>> headerFields)
 		 private ResponseEntity RetrieveResponseFromRequest( string method, string uri, string payload, MediaType payloadType, int responseCode, MediaType accept, IList<Pair<string, System.Predicate<string>>> headerFields )
 		 {
 			  ClientRequest request;
@@ -278,7 +278,7 @@ namespace Neo4Net.Server.rest
 		 /// Send the request and create the documentation.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private ResponseEntity retrieveResponse(final String uri, final int responseCode, final javax.ws.rs.core.MediaType type, final java.util.List<org.neo4j.helpers.collection.Pair<String, System.Predicate<String>>> headerFields, final com.sun.jersey.api.client.ClientRequest request)
+//ORIGINAL LINE: private ResponseEntity retrieveResponse(final String uri, final int responseCode, final javax.ws.rs.core.MediaType type, final java.util.List<org.Neo4Net.helpers.collection.Pair<String, System.Predicate<String>>> headerFields, final com.sun.jersey.api.client.ClientRequest request)
 		 private ResponseEntity RetrieveResponse( string uri, int responseCode, MediaType type, IList<Pair<string, System.Predicate<string>>> headerFields, ClientRequest request )
 		 {
 			  RequestData data = new RequestData();
@@ -359,32 +359,32 @@ namespace Neo4Net.Server.rest
 		 }
 
 		 /// <summary>
-		 /// Wraps a response, to give access to the response entity as well.
+		 /// Wraps a response, to give access to the response IEntity as well.
 		 /// </summary>
 		 public class ResponseEntity
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly string EntityConflict;
+			  internal readonly string IEntityConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly JaxRsResponse ResponseConflict;
 
-			  public ResponseEntity( ClientResponse response, string entity )
+			  public ResponseEntity( ClientResponse response, string IEntity )
 			  {
-					this.ResponseConflict = new JaxRsResponse( response, entity );
-					this.EntityConflict = entity;
+					this.ResponseConflict = new JaxRsResponse( response, IEntity );
+					this.EntityConflict = IEntity;
 			  }
 
 			  /// <summary>
-			  /// The response entity as a String.
+			  /// The response IEntity as a String.
 			  /// </summary>
-			  public virtual string Entity()
+			  public virtual string IEntity()
 			  {
-					return EntityConflict;
+					return IEntityConflict;
 			  }
 
 			  /// <summary>
 			  /// Note that the response object returned does not give access to the
-			  /// response entity.
+			  /// response IEntity.
 			  /// </summary>
 			  public virtual JaxRsResponse Response()
 			  {

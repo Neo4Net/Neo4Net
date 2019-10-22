@@ -34,11 +34,11 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 
 	public class DbStructureCollector : DbStructureVisitor
 	{
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			  public override IEnumerator<Pair<string[], string[]>> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Iterator<org.neo4j.internal.kernel.api.schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
+//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
 					IEnumerator<SchemaDescriptor> iterator = IndexMap.Keys.GetEnumerator();
 					return new IteratorAnonymousInnerClass( this, iterator );
 			  }
@@ -379,20 +379,20 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						SchemaDescriptor next = _iterator.next();
 						EntityType type = next.EntityType();
-						string[] entityTokens;
+						string[] IEntityTokens;
 						switch ( type.innerEnumValue )
 						{
-						case EntityType.InnerEnum.NODE:
-							 entityTokens = _outerInstance._outerInstance.labels.byIdOrFail( next.EntityTokenIds );
+						case IEntityType.InnerEnum.NODE:
+							 IEntityTokens = _outerInstance._outerInstance.labels.byIdOrFail( next.EntityTokenIds );
 							 break;
-						case EntityType.InnerEnum.RELATIONSHIP:
-							 entityTokens = _outerInstance._outerInstance.relationshipTypes.byIdOrFail( next.EntityTokenIds );
+						case IEntityType.InnerEnum.RELATIONSHIP:
+							 IEntityTokens = _outerInstance._outerInstance.relationshipTypes.byIdOrFail( next.EntityTokenIds );
 							 break;
 						default:
-							 throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + type );
+							 throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + type );
 						}
 						string[] propertyKeyNames = _outerInstance._outerInstance.propertyKeys.byIdOrFail( next.PropertyIds );
-						return Pair.of( entityTokens, propertyKeyNames );
+						return Pair.of( IEntityTokens, propertyKeyNames );
 				  }
 
 				  public void remove()

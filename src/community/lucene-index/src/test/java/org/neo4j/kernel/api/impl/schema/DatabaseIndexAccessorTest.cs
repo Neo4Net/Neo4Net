@@ -57,13 +57,13 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.range;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.concurrent.ThreadingRule.waitingWhileIn;
+//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class DatabaseIndexAccessorTest
@@ -72,17 +72,17 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 public const int PROP_ID = 1;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public static readonly EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.neo4j.storageengine.api.schema.IndexDescriptor index;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.storageengine.api.schema.IndexDescriptor index;
 		 public IndexDescriptor Index;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.function.IOFunction<org.neo4j.kernel.api.impl.index.storage.DirectoryFactory,LuceneIndexAccessor> accessorFactory;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.function.IOFunction<org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory,LuceneIndexAccessor> accessorFactory;
 		 public IOFunction<DirectoryFactory, LuceneIndexAccessor> AccessorFactory;
 
 		 private LuceneIndexAccessor _accessor;
@@ -372,34 +372,34 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
 		 private IndexEntryUpdate<object> Add( long nodeId, object value )
 		 {
 			  return IndexQueryHelper.add( nodeId, Index.schema(), value );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object value)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> remove(long nodeId, Object value)
 		 private IndexEntryUpdate<object> Remove( long nodeId, object value )
 		 {
 			  return IndexQueryHelper.remove( nodeId, Index.schema(), value );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object valueBefore, Object valueAfter)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> change(long nodeId, Object valueBefore, Object valueAfter)
 		 private IndexEntryUpdate<object> Change( long nodeId, object valueBefore, object valueAfter )
 		 {
 			  return IndexQueryHelper.change( nodeId, Index.schema(), valueBefore, valueAfter );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateAndCommit(java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> nodePropertyUpdates) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void updateAndCommit(java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> nodePropertyUpdates) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void UpdateAndCommit<T1>( IList<T1> nodePropertyUpdates )
 		 {
 			  using ( IndexUpdater updater = _accessor.newUpdater( IndexUpdateMode.ONLINE ) )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : nodePropertyUpdates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : nodePropertyUpdates)
 					foreach ( IndexEntryUpdate<object> update in nodePropertyUpdates )
 					{
 						 updater.Process( update );

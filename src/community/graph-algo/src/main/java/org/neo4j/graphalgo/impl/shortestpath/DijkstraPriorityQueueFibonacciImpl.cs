@@ -23,7 +23,7 @@ namespace Neo4Net.Graphalgo.impl.shortestpath
 {
 
 	using Neo4Net.Graphalgo.impl.util;
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 
 	/// <summary>
 	/// Implementation of <seealso cref="DijkstraPriorityQueue"/> using a <seealso cref="FibonacciHeap"/> </summary>

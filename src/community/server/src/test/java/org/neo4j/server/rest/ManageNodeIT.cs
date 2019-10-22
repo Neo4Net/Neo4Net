@@ -33,7 +33,7 @@ namespace Neo4Net.Server.rest
 	using TemporaryFolder = org.junit.rules.TemporaryFolder;
 
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;
@@ -58,7 +58,7 @@ namespace Neo4Net.Server.rest
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
 	using UTF8 = Neo4Net.Strings.UTF8;
 	using Neo4Net.Test;
-	using EntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
+	using IEntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
 	using HTTP = Neo4Net.Test.server.HTTP;
 
@@ -83,9 +83,9 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppressAll;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class ManageNodeIT : AbstractRestFunctionalDocTestBase
 	{
@@ -196,9 +196,9 @@ namespace Neo4Net.Server.rest
 		 public virtual void ShouldGetValidNodeRepresentationWhenCreatingNode()
 		 {
 			  JaxRsResponse response = SendCreateRequestToServer();
-			  string entity = response.Entity;
+			  string IEntity = response.Entity;
 
-			  IDictionary<string, object> map = JsonHelper.jsonToMap( entity );
+			  IDictionary<string, object> map = JsonHelper.jsonToMap( IEntity );
 
 			  assertNotNull( map );
 			  assertTrue( map.ContainsKey( "self" ) );
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.rest
 			  public static TemporaryFolder StaticFolder = new TemporaryFolder();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<RESTRequestGenerator> gen = org.neo4j.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
 			  public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -507,7 +507,7 @@ namespace Neo4Net.Server.rest
 
 					RootService svc = new RootService( new CommunityNeoServer( Config.defaults( stringMap( ( new HttpConnector( "http", HttpConnector.Encryption.NONE ) ).type.name(), "HTTP", (new HttpConnector("http", HttpConnector.Encryption.NONE)).enabled.name(), "true" ) ), GraphDatabaseDependencies.newDependencies().userLogProvider(NullLogProvider.Instance).monitors(new Monitors()) ) );
 
-					EntityOutputFormat output = new EntityOutputFormat( new JsonFormat(), null, null );
+					EntityOutputFormat output = new IEntityOutputFormat( new JsonFormat(), null, null );
 					Response serviceDefinition = svc.GetServiceDefinition( uriInfo, output );
 
 					assertEquals( 200, serviceDefinition.Status );

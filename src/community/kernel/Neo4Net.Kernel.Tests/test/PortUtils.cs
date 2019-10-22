@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Test
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -31,7 +31,7 @@ namespace Neo4Net.Test
 			  // nop
 		 }
 
-		 public static int GetBoltPort( GraphDatabaseService db )
+		 public static int GetBoltPort( IGraphDatabaseService db )
 		 {
 			  return GetConnectorAddress( ( GraphDatabaseAPI ) db, "bolt" ).Port;
 		 }
@@ -39,7 +39,7 @@ namespace Neo4Net.Test
 		 public static HostnamePort GetConnectorAddress( GraphDatabaseAPI db, string connectorKey )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.configuration.ConnectorPortRegister portRegister = db.getDependencyResolver().resolveDependency(org.neo4j.kernel.configuration.ConnectorPortRegister.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.configuration.ConnectorPortRegister portRegister = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.configuration.ConnectorPortRegister.class);
 			  ConnectorPortRegister portRegister = Db.DependencyResolver.resolveDependency( typeof( ConnectorPortRegister ) );
 			  return requireNonNull( portRegister.GetLocalAddress( connectorKey ), "Connector not found: " + connectorKey );
 		 }

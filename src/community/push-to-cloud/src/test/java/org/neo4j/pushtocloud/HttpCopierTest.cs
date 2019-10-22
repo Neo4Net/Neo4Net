@@ -77,7 +77,7 @@ namespace Neo4Net.Pushtocloud
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.pushtocloud.HttpCopier.HTTP_RESUME_INCOMPLETE;
+//	import static org.Neo4Net.pushtocloud.HttpCopier.HTTP_RESUME_INCOMPLETE;
 
 	public class HttpCopierTest
 	{
@@ -92,7 +92,7 @@ namespace Neo4Net.Pushtocloud
 //ORIGINAL LINE: @Rule public com.github.tomakehurst.wiremock.junit.WireMockRule wireMock = new com.github.tomakehurst.wiremock.junit.WireMockRule(TEST_PORT);
 		 public WireMockRule WireMock = new WireMockRule( TEST_PORT );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -252,7 +252,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldHandleConflictResponseFromInitiateUploadTargetAndContinueOnUserConsent() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldHandleConflictResponseFromInitiateUploadTargetAndContinueOnUserConsent() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleConflictResponseFromInitiateUploadTargetAndContinueOnUserConsent()
 		 {
@@ -344,7 +344,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldHandleUploadInACoupleOfRounds() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldHandleUploadInACoupleOfRounds() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleUploadInACoupleOfRounds()
 		 {
@@ -381,7 +381,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldHandleIncompleteUploadButPositionSaysComplete() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void shouldHandleIncompleteUploadButPositionSaysComplete() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleIncompleteUploadButPositionSaysComplete()
 		 {
@@ -576,7 +576,7 @@ namespace Neo4Net.Pushtocloud
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void authenticateAndCopy(PushToCloudCommand.Copier copier, java.nio.file.Path source, String username, char[] password) throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: private void authenticateAndCopy(PushToCloudCommand.Copier copier, java.nio.file.Path source, String username, char[] password) throws org.Neo4Net.commandline.admin.CommandFailed
 		 private void AuthenticateAndCopy( PushToCloudCommand.Copier copier, Path source, string username, char[] password )
 		 {
 			  string bearerToken = copier.Authenticate( false, _testConsoleUrl, username, password, false );

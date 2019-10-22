@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.core
 	using RuleChain = org.junit.rules.RuleChain;
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.impl.core
 			  return "key" + i;
 		 }
 
-		 private static Node CreateNodeWithProperty( GraphDatabaseService db, string key, object value )
+		 private static Node CreateNodeWithProperty( IGraphDatabaseService db, string key, object value )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int propertyKeyCount(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static int propertyKeyCount(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private static int PropertyKeyCount( GraphDatabaseAPI db )
 		 {
 			  InwardKernel kernelAPI = Db.DependencyResolver.resolveDependency( typeof( InwardKernel ) );
@@ -187,10 +187,10 @@ namespace Neo4Net.Kernel.impl.core
 
 		 private class WorkerState
 		 {
-			  protected internal readonly GraphDatabaseService Db;
+			  protected internal readonly IGraphDatabaseService Db;
 			  protected internal Transaction Tx;
 
-			  internal WorkerState( GraphDatabaseService db )
+			  internal WorkerState( IGraphDatabaseService db )
 			  {
 					this.Db = db;
 			  }

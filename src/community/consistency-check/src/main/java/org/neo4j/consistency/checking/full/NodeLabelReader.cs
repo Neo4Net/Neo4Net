@@ -42,7 +42,7 @@ namespace Neo4Net.Consistency.checking.full
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 
 	public class NodeLabelReader
 	{
@@ -64,7 +64,7 @@ namespace Neo4Net.Consistency.checking.full
 					long firstRecordId = dynamicNodeLabels.FirstDynamicRecordId;
 					RecordReference<DynamicRecord> firstRecordReference = records.NodeLabels( firstRecordId );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: engine.comparativeCheck(firstRecordReference, new org.neo4j.consistency.checking.LabelChainWalker<>(new org.neo4j.consistency.checking.LabelChainWalker.Validator<RECORD, REPORT>()
+//ORIGINAL LINE: engine.comparativeCheck(firstRecordReference, new org.Neo4Net.consistency.checking.LabelChainWalker<>(new org.Neo4Net.consistency.checking.LabelChainWalker.Validator<RECORD, REPORT>()
 					engine.ComparativeCheck( firstRecordReference, new LabelChainWalker<RECORD, ?, REPORT>( new ValidatorAnonymousInnerClass( records, engine, labels ) ) );
 			  }
 			  else

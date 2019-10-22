@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
@@ -83,17 +83,17 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.cypher_hints_error;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_hints_error;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.track_query_allocation;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_allocation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.track_query_cpu_time;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.track_query_cpu_time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.concurrent.ThreadingRule.waitingWhileIn;
+//	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 
 	public class ListQueriesProcedureTest
 	{
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 private const int SECONDS_TIMEOUT = 240;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.VerboseTimeout timeout = org.neo4j.test.rule.VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, java.util.concurrent.TimeUnit.SECONDS).build();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.VerboseTimeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, java.util.concurrent.TimeUnit.SECONDS).build();
 		 public VerboseTimeout Timeout = VerboseTimeout.builder().withTimeout(SECONDS_TIMEOUT - 2, TimeUnit.SECONDS).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 			  // given
 			  string query = "MATCH (n) SET n.v = n.v + 1";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Resource<Node> test = test( _db.createNode, query ) )
 			  {
@@ -691,8 +691,8 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T extends org.neo4j.graphdb.PropertyContainer> Resource<T> test(System.Func<T> setup, String... queries) throws InterruptedException, java.util.concurrent.ExecutionException
-		 private Resource<T> Test<T>( System.Func<T> setup, params string[] queries ) where T : Neo4Net.Graphdb.PropertyContainer
+//ORIGINAL LINE: private <T extends org.Neo4Net.graphdb.PropertyContainer> Resource<T> test(System.Func<T> setup, String... queries) throws InterruptedException, java.util.concurrent.ExecutionException
+		 private Resource<T> Test<T>( System.Func<T> setup, params string[] queries ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  System.Threading.CountdownEvent resourceLocked = new System.Threading.CountdownEvent( 1 );
 			  System.Threading.CountdownEvent listQueriesLatch = new System.Threading.CountdownEvent( 1 );

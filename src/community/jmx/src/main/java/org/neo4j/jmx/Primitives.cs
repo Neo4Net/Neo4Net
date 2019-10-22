@@ -21,20 +21,20 @@
  */
 namespace Neo4Net.Jmx
 {
-	[ManagementInterface(name : Primitives_Fields.NAME), Description("Estimates of the numbers of different kinds of Neo4j primitives"), Obsolete]
+	[ManagementInterface(name : Primitives_Fields.NAME), Description("Estimates of the numbers of different kinds of Neo4Net primitives"), Obsolete]
 	public interface Primitives
 	{
 
-		 [Description("An estimation of the number of nodes used in this Neo4j instance")]
+		 [Description("An estimation of the number of nodes used in this Neo4Net instance")]
 		 long NumberOfNodeIdsInUse { get; }
 
-		 [Description("An estimation of the number of relationships used in this Neo4j instance")]
+		 [Description("An estimation of the number of relationships used in this Neo4Net instance")]
 		 long NumberOfRelationshipIdsInUse { get; }
 
-		 [Description("The number of relationship types used in this Neo4j instance")]
+		 [Description("The number of relationship types used in this Neo4Net instance")]
 		 long NumberOfRelationshipTypeIdsInUse { get; }
 
-		 [Description("An estimation of the number of properties used in this Neo4j instance")]
+		 [Description("An estimation of the number of properties used in this Neo4Net instance")]
 		 long NumberOfPropertyIdsInUse { get; }
 	}
 

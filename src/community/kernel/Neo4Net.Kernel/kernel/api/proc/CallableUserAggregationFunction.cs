@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.api.proc
 	{
 		 UserFunctionSignature Signature();
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		 UserAggregator Create( Context ctx );
 	}
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.proc
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.neo4j.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
 		  public override abstract UserAggregator Create( Context ctx );
 	 }
 

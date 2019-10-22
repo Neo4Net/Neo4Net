@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.query
 	using Mockito = org.mockito.Mockito;
 	using ReturnsDeepStubs = org.mockito.Internal.stubbing.defaultanswers.ReturnsDeepStubs;
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.query
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using StatisticProvider = Neo4Net.Kernel.impl.query.statistic.StatisticProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -71,9 +71,9 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
-	public class Neo4jTransactionalContextTest
+	public class Neo4NetTransactionalContextTest
 	{
 		 private GraphDatabaseQueryService _queryService;
 		 private KernelStatement _initialStatement;
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.query
 			  KernelTransaction kernelTransaction = MockTransaction( _initialStatement );
 			  when( txBridge.GetKernelTransactionBoundToThisThread( true ) ).thenReturn( kernelTransaction );
 
-			  Neo4jTransactionalContext transactionalContext = new Neo4jTransactionalContext( null, txBridge, null, initialTransaction, _initialStatement, null, kernel );
+			  Neo4NetTransactionalContext transactionalContext = new Neo4NetTransactionalContext( null, txBridge, null, initialTransaction, _initialStatement, null, kernel );
 
 			  transactionalContext.Check();
 
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.query
 			  when( initialTransaction.TerminationReason() ).thenReturn(null);
 			  QueryRegistryOperations initialQueryRegistry = mock( typeof( QueryRegistryOperations ) );
 			  ExecutingQuery executingQuery = mock( typeof( ExecutingQuery ) );
-			  PropertyContainerLocker locker = null;
+			  IPropertyContainerLocker locker = null;
 			  ThreadToStatementContextBridge txBridge = mock( typeof( ThreadToStatementContextBridge ) );
 
 			  Statement secondStatement = mock( typeof( Statement ) );
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.impl.query
 			  when( secondStatement.QueryRegistration() ).thenReturn(secondQueryRegistry);
 
 			  Kernel kernel = mock( typeof( Kernel ) );
-			  Neo4jTransactionalContext context = new Neo4jTransactionalContext( _queryService, txBridge, locker, initialTransaction, _initialStatement, executingQuery, kernel );
+			  Neo4NetTransactionalContext context = new Neo4NetTransactionalContext( _queryService, txBridge, locker, initialTransaction, _initialStatement, executingQuery, kernel );
 
 			  // When
 			  context.CommitAndRestartTx();
@@ -192,7 +192,7 @@ namespace Neo4Net.Kernel.impl.query
 			  KernelTransaction initialKTX = MockTransaction( initialStatement );
 			  QueryRegistryOperations initialQueryRegistry = mock( typeof( QueryRegistryOperations ) );
 			  ExecutingQuery executingQuery = mock( typeof( ExecutingQuery ) );
-			  PropertyContainerLocker locker = new PropertyContainerLocker();
+			  IPropertyContainerLocker locker = new IPropertyContainerLocker();
 			  ThreadToStatementContextBridge txBridge = mock( typeof( ThreadToStatementContextBridge ) );
 
 			  Statement secondStatement = mock( typeof( Statement ) );
@@ -211,7 +211,7 @@ namespace Neo4Net.Kernel.impl.query
 			  when( secondStatement.QueryRegistration() ).thenReturn(secondQueryRegistry);
 
 			  Kernel kernel = mock( typeof( Kernel ) );
-			  Neo4jTransactionalContext context = new Neo4jTransactionalContext( queryService, txBridge, locker, initialTransaction, initialStatement, executingQuery, kernel );
+			  Neo4NetTransactionalContext context = new Neo4NetTransactionalContext( queryService, txBridge, locker, initialTransaction, initialStatement, executingQuery, kernel );
 
 			  // When
 			  try
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.impl.query
 			  InternalTransaction initialTransaction = mock( typeof( InternalTransaction ), new ReturnsDeepStubs() );
 			  when( initialTransaction.TerminationReason() ).thenReturn(null);
 			  Kernel kernel = mock( typeof( Kernel ) );
-			  Neo4jTransactionalContext transactionalContext = new Neo4jTransactionalContext( _queryService, _txBridge, null, initialTransaction, _initialStatement, null, kernel );
+			  Neo4NetTransactionalContext transactionalContext = new Neo4NetTransactionalContext( _queryService, _txBridge, null, initialTransaction, _initialStatement, null, kernel );
 
 			  _statistics.Faults = 2;
 			  _statistics.Hits = 5;
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  assertTrue( context.Open );
 		 }
@@ -304,7 +304,7 @@ namespace Neo4Net.Kernel.impl.query
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
 			  when( tx.TransactionType() ).thenReturn(KernelTransaction.Type.@implicit);
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  assertTrue( context.TopLevelTx );
 		 }
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.impl.query
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
 			  when( tx.TransactionType() ).thenReturn(KernelTransaction.Type.@explicit);
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  assertFalse( context.TopLevelTx );
 		 }
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.impl.query
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
 			  when( tx.TransactionType() ).thenReturn(KernelTransaction.Type.@implicit);
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Terminate();
 
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.impl.query
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
 			  when( tx.TransactionType() ).thenReturn(KernelTransaction.Type.@implicit);
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Terminate();
 
@@ -360,7 +360,7 @@ namespace Neo4Net.Kernel.impl.query
 		 public virtual void ShouldBePossibleToTerminateWithoutActiveTransaction()
 		 {
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Close( true );
 			  verify( tx ).success();
@@ -383,7 +383,7 @@ namespace Neo4Net.Kernel.impl.query
 			  }).when( tx ).terminate();
 			  when( tx.TerminationReason() ).then(invocation => Optional.ofNullable(terminationReason.Value));
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Terminate();
 
@@ -411,7 +411,7 @@ namespace Neo4Net.Kernel.impl.query
 			  }).when( tx ).terminate();
 			  when( tx.TerminationReason() ).then(invocation => Optional.ofNullable(terminationReason.Value));
 
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Terminate();
 
@@ -431,7 +431,7 @@ namespace Neo4Net.Kernel.impl.query
 		 public virtual void ShouldNotBePossibleToCloseMultipleTimes()
 		 {
 			  InternalTransaction tx = mock( typeof( InternalTransaction ) );
-			  Neo4jTransactionalContext context = NewContext( tx );
+			  Neo4NetTransactionalContext context = NewContext( tx );
 
 			  context.Close( false );
 			  context.Close( true );
@@ -464,9 +464,9 @@ namespace Neo4Net.Kernel.impl.query
 			  when( _txBridge.getKernelTransactionBoundToThisThread( true ) ).thenReturn( mockTransaction );
 		 }
 
-		 private Neo4jTransactionalContext NewContext( InternalTransaction initialTx )
+		 private Neo4NetTransactionalContext NewContext( InternalTransaction initialTx )
 		 {
-			  return new Neo4jTransactionalContext( _queryService, _txBridge, new PropertyContainerLocker(), initialTx, _initialStatement, null, null );
+			  return new Neo4NetTransactionalContext( _queryService, _txBridge, new IPropertyContainerLocker(), initialTx, _initialStatement, null, null );
 		 }
 
 		 private KernelTransaction MockTransaction( Statement statement )
@@ -479,9 +479,9 @@ namespace Neo4Net.Kernel.impl.query
 
 		 private class ConfiguredExecutionStatistics : ExecutionStatistics
 		 {
-			 private readonly Neo4jTransactionalContextTest _outerInstance;
+			 private readonly Neo4NetTransactionalContextTest _outerInstance;
 
-			 public ConfiguredExecutionStatistics( Neo4jTransactionalContextTest outerInstance )
+			 public ConfiguredExecutionStatistics( Neo4NetTransactionalContextTest outerInstance )
 			 {
 				 this._outerInstance = outerInstance;
 			 }

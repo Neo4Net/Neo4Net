@@ -32,7 +32,7 @@ namespace Neo4Net.Server.rest.transactional
 
 	using Neo4Net.Helpers.Collections;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -47,16 +47,16 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.codehaus.jackson.JsonToken.START_OBJECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class StatementDeserializer : PrefetchingIterator<Statement>
 	{
-		 private static readonly JsonFactory _jsonFactory = new JsonFactory().setCodec(new Neo4jJsonCodec()).disable(JsonGenerator.Feature.FLUSH_PASSED_TO_STREAM);
+		 private static readonly JsonFactory _jsonFactory = new JsonFactory().setCodec(new Neo4NetJsonCodec()).disable(JsonGenerator.Feature.FLUSH_PASSED_TO_STREAM);
 		 private static readonly IDictionary<string, object> _noParameters = unmodifiableMap( map() );
 
 		 private readonly JsonParser _input;
 		 private State _state;
-		 private IList<Neo4jError> _errors;
+		 private IList<Neo4NetError> _errors;
 
 		 private enum State
 		 {
@@ -78,7 +78,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 		 }
 
-		 public virtual IEnumerator<Neo4jError> Errors()
+		 public virtual IEnumerator<Neo4NetError> Errors()
 		 {
 			  return _errors == null ? emptyIterator() : _errors.GetEnumerator();
 		 }
@@ -141,7 +141,7 @@ namespace Neo4Net.Server.rest.transactional
 
 							  if ( string.ReferenceEquals( statement, null ) )
 							  {
-									AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "No statement provided." ) ) );
+									AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "No statement provided." ) ) );
 									return null;
 							  }
 							  return new Statement( statement, parameters == null ? _noParameters : parameters, includeStats, ResultDataContent.fromNames( resultsDataContents ) );
@@ -156,17 +156,17 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( Exception e ) when ( e is JsonParseException || e is JsonMappingException )
 			  {
-					AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request", e ) ) );
+					AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( "Unable to deserialize request", e ) ) );
 					return null;
 			  }
 			  catch ( IOException e )
 			  {
-					AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Network.CommunicationError, e ) );
+					AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Network.CommunicationError, e ) );
 					return null;
 			  }
 			  catch ( Exception e )
 			  {
-					AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, e ) );
+					AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, e ) );
 					return null;
 			  }
 		 }
@@ -195,11 +195,11 @@ namespace Neo4Net.Server.rest.transactional
 			  return input.readValueAs( typeof( System.Collections.IList ) );
 		 }
 
-		 private void AddError( Neo4jError error )
+		 private void AddError( Neo4NetError error )
 		 {
 			  if ( _errors == null )
 			  {
-					_errors = new LinkedList<Neo4jError>();
+					_errors = new LinkedList<Neo4NetError>();
 			  }
 			  _errors.Add( error );
 		 }
@@ -222,7 +222,7 @@ namespace Neo4Net.Server.rest.transactional
 					}
 					if ( token == FIELD_NAME && !expectedField.Equals( _input.Text ) )
 					{
-						 AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( string.Format( "Unable to deserialize request. " + "Expected first field to be '{0}', but was '{1}'.", expectedField, _input.Text ) ) ) );
+						 AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( string.Format( "Unable to deserialize request. " + "Expected first field to be '{0}', but was '{1}'.", expectedField, _input.Text ) ) ) );
 						 return false;
 					}
 					foundTokens.Add( token );
@@ -231,7 +231,7 @@ namespace Neo4Net.Server.rest.transactional
 //ORIGINAL LINE: if (!expectedTokens.equals(foundTokens))
 			  if ( !expectedTokens.SequenceEqual( foundTokens ) )
 			  {
-					AddError( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( string.Format( "Unable to deserialize request. " + "Expected {0}, found {1}.", expectedTokens, foundTokens ) ) ) );
+					AddError( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new DeserializationException( string.Format( "Unable to deserialize request. " + "Expected {0}, found {1}.", expectedTokens, foundTokens ) ) ) );
 					return false;
 			  }
 			  return true;

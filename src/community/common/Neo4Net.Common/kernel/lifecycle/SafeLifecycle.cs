@@ -20,14 +20,7 @@
 
 namespace Neo4Net.Kernel.Lifecycle
 {
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.HALT;
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.IDLE;
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.PRE;
-   //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.kernel.lifecycle.SafeLifecycle.State.RUN;
+ 
 
    /// <summary>
    /// A safer lifecycle adapter with strict semantics and as
@@ -96,13 +89,13 @@ namespace Neo4Net.Kernel.Lifecycle
    /// </summary>
    public abstract class SafeLifecycle : ILifecycle
    {
-      private State _state;
+      private StateType _state;
 
-      protected internal SafeLifecycle() : this(PRE)
+      protected internal SafeLifecycle() : this(StateType.Pre)
       {
       }
 
-      internal SafeLifecycle(State state)
+      internal SafeLifecycle(StateType state)
       {
          this._state = state;
       }
@@ -112,9 +105,8 @@ namespace Neo4Net.Kernel.Lifecycle
       /// <param name="op"> The state transition operation. </param>
       /// <param name="force"> Causes the state to be updated regardless of if the operation throws. </param>
       /// <exception cref="Throwable"> Issues. </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: private void transition(State expected, State to, Operation op, boolean force) throws Throwable
-      private void Transition(State expected, State to, Operation op, bool force)
+      
+      private void Transition(StateType expected, StateType to, IOperation op, bool force)
       {
          if (_state != expected)
          {
@@ -133,43 +125,38 @@ namespace Neo4Net.Kernel.Lifecycle
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public final synchronized void init() throws Throwable
-      public override void Init()
+      public void Init()
       {
          lock (this)
          {
-            Transition(PRE, IDLE, this.init0, false);
+            Transition(StateType.Pre, StateType.Idle, this.Init0, false);
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public final synchronized void start() throws Throwable
-      public override void Start()
+
+      public void Start()
       {
          lock (this)
          {
-            Transition(IDLE, RUN, this.start0, false);
+            Transition(StateType.Idle, StateType.Run, this.Start0, false);
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public final synchronized void stop() throws Throwable
-      public override void Stop()
+   
+      public void Stop()
       {
          lock (this)
          {
-            if (_state == IDLE)
+            if (_state == Idle)
             {
                return;
             }
-            Transition(RUN, IDLE, this.stop0, true);
+            Transition(Run, IDLE, this.Stop0, true);
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public final synchronized void shutdown() throws Throwable
-      public override void Shutdown()
+
+      public void Shutdown()
       {
          lock (this)
          {
@@ -178,40 +165,36 @@ namespace Neo4Net.Kernel.Lifecycle
                _state = HALT;
                return;
             }
-            Transition(IDLE, HALT, this.shutdown0, true);
+            Transition(IDLE, HALT, this.Shutdown0, true);
          }
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void init0() throws Throwable
+
       public virtual void Init0()
       {
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void start0() throws Throwable
+
       public virtual void Start0()
       {
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void stop0() throws Throwable
+  
       public virtual void Stop0()
       {
       }
 
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: public void shutdown0() throws Throwable
+
       public virtual void Shutdown0()
       {
       }
 
-      public virtual State State()
+      public virtual StateType State()
       {
          return _state;
       }
 
-      protected internal enum State
+      public internal enum StateType
       {
          Pre,
          Idle,
@@ -219,10 +202,9 @@ namespace Neo4Net.Kernel.Lifecycle
          Halt
       }
 
-      internal interface Operation
+      internal interface IOperation
       {
-         //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-         //ORIGINAL LINE: void run() throws Throwable;
+
          void Run();
       }
    }

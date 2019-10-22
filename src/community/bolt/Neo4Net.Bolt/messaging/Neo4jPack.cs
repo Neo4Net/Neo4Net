@@ -27,19 +27,19 @@ namespace Neo4Net.Bolt.messaging
 	/// Represents a single Bolt message format by exposing a <seealso cref="Packer packer"/> and <seealso cref="Unpacker unpacker"/>
 	/// for primitives of this format.
 	/// </summary>
-	public interface Neo4jPack : PackProvider, UnpackerProvider
+	public interface Neo4NetPack : PackProvider, UnpackerProvider
 	{
 		 long Version();
 	}
 
-	 public interface Neo4jPack_Packer
+	 public interface Neo4NetPack_Packer
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void pack(String value) throws java.io.IOException;
 		  void Pack( string value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void pack(org.neo4j.values.AnyValue value) throws java.io.IOException;
+//ORIGINAL LINE: void pack(org.Neo4Net.values.AnyValue value) throws java.io.IOException;
 		  void Pack( AnyValue value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -59,10 +59,10 @@ namespace Neo4Net.Bolt.messaging
 		  void Flush();
 	 }
 
-	 public interface Neo4jPack_Unpacker
+	 public interface Neo4NetPack_Unpacker
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.AnyValue unpack() throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.values.AnyValue unpack() throws java.io.IOException;
 		  AnyValue Unpack();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -70,7 +70,7 @@ namespace Neo4Net.Bolt.messaging
 		  string UnpackString();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.virtual.MapValue unpackMap() throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.values.virtual.MapValue unpackMap() throws java.io.IOException;
 		  MapValue UnpackMap();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

@@ -25,7 +25,7 @@ namespace Neo4Net.Helpers
 
 
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 	public class Configuration : ExternalResource

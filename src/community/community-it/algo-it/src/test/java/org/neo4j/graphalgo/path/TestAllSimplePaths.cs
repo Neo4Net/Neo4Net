@@ -21,14 +21,14 @@
  */
 namespace Neo4Net.Graphalgo.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 	using Neo4Net.Graphalgo;
-	using Path = Neo4Net.Graphdb.Path;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
+	using Path = Neo4Net.GraphDb.Path;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 
-	public class TestAllSimplePaths : Neo4jAlgoTestCase
+	public class TestAllSimplePaths : Neo4NetAlgoTestCase
 	{
 		 protected internal virtual PathFinder<Path> InstantiatePathFinder( int maxDepth )
 		 {

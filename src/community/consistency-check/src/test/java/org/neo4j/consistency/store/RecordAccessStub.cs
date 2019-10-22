@@ -62,14 +62,14 @@ namespace Neo4Net.Consistency.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.resourceIterable;
+//	import static org.Neo4Net.helpers.collection.Iterables.resourceIterable;
 
 	public class RecordAccessStub : RecordAccess
 	{
 		 public const int SCHEMA_RECORD_TYPE = 255;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <RECORD extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.neo4j.consistency.report.ConsistencyReport> org.neo4j.consistency.checking.CheckerEngine<RECORD, REPORT> engine(final RECORD record, final REPORT report)
+//ORIGINAL LINE: public <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.Neo4Net.consistency.report.ConsistencyReport> org.Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine(final RECORD record, final REPORT report)
 		 public virtual CheckerEngine<RECORD, REPORT> Engine<RECORD, REPORT>( RECORD record, REPORT report ) where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 		 {
 			  return new EngineAnonymousInnerClass( this, report, record );
@@ -88,7 +88,7 @@ namespace Neo4Net.Consistency.store
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(org.neo4j.consistency.checking.ComparativeRecordChecker checker, org.neo4j.kernel.impl.store.record.AbstractBaseRecord oldReference, org.neo4j.kernel.impl.store.record.AbstractBaseRecord newReference)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(org.Neo4Net.consistency.checking.ComparativeRecordChecker checker, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord oldReference, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord newReference)
 			 internal override void checkReference( ComparativeRecordChecker checker, AbstractBaseRecord oldReference, AbstractBaseRecord newReference )
 			 {
 				  checker.checkReference( _record, newReference, this, _outerInstance );
@@ -96,7 +96,7 @@ namespace Neo4Net.Consistency.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public <RECORD extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.neo4j.consistency.report.ConsistencyReport> org.neo4j.consistency.checking.CheckerEngine<RECORD, REPORT> engine(final RECORD oldRecord, final RECORD newRecord, REPORT report)
+//ORIGINAL LINE: public <RECORD extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord, REPORT extends org.Neo4Net.consistency.report.ConsistencyReport> org.Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine(final RECORD oldRecord, final RECORD newRecord, REPORT report)
 		 public virtual CheckerEngine<RECORD, REPORT> Engine<RECORD, REPORT>( RECORD oldRecord, RECORD newRecord, REPORT report ) where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 		 {
 			  return new EngineAnonymousInnerClass2( this, report, newRecord );
@@ -115,7 +115,7 @@ namespace Neo4Net.Consistency.store
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(org.neo4j.consistency.checking.ComparativeRecordChecker checker, org.neo4j.kernel.impl.store.record.AbstractBaseRecord oldReference, org.neo4j.kernel.impl.store.record.AbstractBaseRecord newReference)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") void checkReference(org.Neo4Net.consistency.checking.ComparativeRecordChecker checker, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord oldReference, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord newReference)
 			 internal override void checkReference( ComparativeRecordChecker checker, AbstractBaseRecord oldReference, AbstractBaseRecord newReference )
 			 {
 				  checker.checkReference( _newRecord, newReference, this, _outerInstance );
@@ -136,7 +136,7 @@ namespace Neo4Net.Consistency.store
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public <REFERRED extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(final RecordReference<REFERRED> other, final org.neo4j.consistency.checking.ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker)
+//ORIGINAL LINE: public <REFERRED extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void comparativeCheck(final RecordReference<REFERRED> other, final org.Neo4Net.consistency.checking.ComparativeRecordChecker<RECORD, ? super REFERRED, REPORT> checker)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 			  public override void ComparativeCheck<REFERRED, T1>( RecordReference<REFERRED> other, ComparativeRecordChecker<T1> checker ) where REFERRED : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 			  {
@@ -217,7 +217,7 @@ namespace Neo4Net.Consistency.store
 		 private readonly CacheAccess _cacheAccess = new DefaultCacheAccess( Counts.NONE, 1 );
 		 private readonly MultiPassStore[] _storesToCheck;
 
-		 public RecordAccessStub() : this(org.neo4j.consistency.checking.full.Stage_Fields.SequentialForward, MultiPassStore.values())
+		 public RecordAccessStub() : this(org.Neo4Net.consistency.checking.full.Stage_Fields.SequentialForward, MultiPassStore.values())
 		 {
 		 }
 
@@ -536,7 +536,7 @@ namespace Neo4Net.Consistency.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.neo4j.kernel.impl.store.record.PropertyRecord> rawPropertyChain(final long firstId)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.kernel.impl.store.record.PropertyRecord> rawPropertyChain(final long firstId)
 		 public override IEnumerator<PropertyRecord> RawPropertyChain( long firstId )
 		 {
 			  return new PrefetchingIteratorAnonymousInnerClass( this, firstId );

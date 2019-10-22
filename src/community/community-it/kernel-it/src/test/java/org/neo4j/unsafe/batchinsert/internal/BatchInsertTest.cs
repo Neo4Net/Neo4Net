@@ -33,18 +33,18 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
@@ -122,35 +122,35 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.add;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
+//	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.RecordStore.getRecord;
+//	import static org.Neo4Net.kernel.impl.store.RecordStore.getRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.CollectionMatcher.matchesCollection;
+//	import static org.Neo4Net.test.mockito.matcher.CollectionMatcher.matchesCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BatchInsertTest
@@ -213,16 +213,16 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.TestDirectory globalTestDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.TestDirectory globalTestDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static TestDirectory GlobalTestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public static DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory localTestDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory localTestDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory LocalTestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public readonly PageCacheRule PageCacheRule = new PageCacheRule();
 
 		 private static BatchInserter _globalInserter;
@@ -318,7 +318,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  string key = "name";
 			  inserter.SetNodeProperty( node, key, value );
 
-			  GraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
+			  IGraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
 			  assertThat( GetNodeInTx( node, db ), inTx( db, hasProperty( key ).withValue( value ) ) );
 			  Db.shutdown();
 		 }
@@ -571,7 +571,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 					}
 			  }
 
-			  GraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( graphDb );
+			  IGraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( graphDb );
 
 			  try
 			  {
@@ -606,7 +606,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  inserter.CreateRelationship( inserter.CreateNode( null ), nodeId, RelTypes.RelType1, null );
 
 			  // Delete node and all its relationships
-			  GraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
+			  IGraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -1256,7 +1256,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  inserter.CreateDeferredConstraint( label ).assertPropertyIsUnique( propertyKey ).create();
 
 			  // Then
-			  GraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
+			  IGraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
 			  try
 			  {
 					using ( Transaction tx = Db.beginTx() )
@@ -1380,7 +1380,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  inserter.createNode( Collections.singletonMap( property, value ), label );
 
 			  // Then
-			  GraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
+			  IGraphDatabaseService db = SwitchToEmbeddedGraphDatabaseService( inserter );
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )
@@ -1426,7 +1426,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  // when
 			  inserter.RemoveNodeProperty( id, "non-existent" );
 
-			  // then no exception should be thrown, this mimics GraphDatabaseService behaviour
+			  // then no exception should be thrown, this mimics IGraphDatabaseService behaviour
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1443,7 +1443,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  // when
 			  inserter.RemoveRelationshipProperty( id, "non-existent" );
 
-			  // then no exception should be thrown, this mimics GraphDatabaseService behaviour
+			  // then no exception should be thrown, this mimics IGraphDatabaseService behaviour
 		 }
 
 		 private IDictionary<string, string> Configuration()
@@ -1452,14 +1452,14 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.unsafe.batchinsert.BatchInserter newBatchInserter() throws Exception
+//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserter() throws Exception
 		 private BatchInserter NewBatchInserter()
 		 {
 			  return BatchInserters.inserter( LocalTestDirectory.databaseDir(), FileSystemRule.get(), Configuration() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.neo4j.kernel.extension.KernelExtensionFactory<?> provider, org.neo4j.internal.kernel.api.schema.IndexProviderDescriptor providerDescriptor) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.Neo4Net.kernel.extension.KernelExtensionFactory<?> provider, org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor providerDescriptor) throws Exception
 		 private BatchInserter NewBatchInserterWithIndexProvider<T1>( KernelExtensionFactory<T1> provider, IndexProviderDescriptor providerDescriptor )
 		 {
 			  IDictionary<string, string> configuration = configuration();
@@ -1467,7 +1467,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  return BatchInserters.inserter( LocalTestDirectory.databaseDir(), FileSystemRule.get(), configuration, singletonList(provider) );
 		 }
 
-		 private GraphDatabaseService SwitchToEmbeddedGraphDatabaseService( BatchInserter inserter )
+		 private IGraphDatabaseService SwitchToEmbeddedGraphDatabaseService( BatchInserter inserter )
 		 {
 			  inserter.Shutdown();
 			  TestGraphDatabaseFactory factory = new TestGraphDatabaseFactory();
@@ -1564,7 +1564,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  return array;
 		 }
 
-		 private Node GetNodeInTx( long nodeId, GraphDatabaseService db )
+		 private Node GetNodeInTx( long nodeId, IGraphDatabaseService db )
 		 {
 			  using ( Transaction ignored = Db.beginTx() )
 			  {

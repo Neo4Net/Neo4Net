@@ -20,8 +20,8 @@
 namespace Neo4Net.Server.rest.web
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	/// <summary>
 	/// A convenient class for testing RestfulGraphDatabase: just wraps every "web call" in a transaction like the
@@ -29,10 +29,10 @@ namespace Neo4Net.Server.rest.web
 	/// </summary>
 	public class TransactionWrappingRestfulGraphDatabase : RestfulGraphDatabase
 	{
-		 private readonly GraphDatabaseService _graph;
+		 private readonly IGraphDatabaseService _graph;
 		 private readonly RestfulGraphDatabase _restfulGraphDatabase;
 
-		 public TransactionWrappingRestfulGraphDatabase( GraphDatabaseService graph, RestfulGraphDatabase restfulGraphDatabase ) : base( null, null, null, null )
+		 public TransactionWrappingRestfulGraphDatabase( IGraphDatabaseService graph, RestfulGraphDatabase restfulGraphDatabase ) : base( null, null, null, null )
 		 {
 
 			  this._graph = graph;

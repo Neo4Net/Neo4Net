@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	public interface Decorator : System.Func<InputEntityVisitor, InputEntityVisitor>, Resource
 	{

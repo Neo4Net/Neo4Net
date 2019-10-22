@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.plugin
 {
@@ -34,7 +34,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using PrincipalCollection = org.apache.shiro.subject.PrincipalCollection;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Version = Neo4Net.Kernel.Internal.Version;
@@ -50,7 +50,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using SecurityLog = Neo4Net.Server.security.enterprise.log.SecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.configuration.SecuritySettings.PLUGIN_REALM_NAME_PREFIX;
+//	import static org.Neo4Net.server.security.enterprise.configuration.SecuritySettings.PLUGIN_REALM_NAME_PREFIX;
 
 	public class PluginRealm : AuthorizingRealm, RealmLifecycle, ShiroAuthorizationInfoProvider
 	{
@@ -166,7 +166,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 					}
 					catch ( AuthorizationExpiredException e )
 					{
-						 throw new Neo4Net.Graphdb.security.AuthorizationExpiredException( "Plugin '" + Name + "' authorization info expired: " + e.Message, e );
+						 throw new Neo4Net.GraphDb.security.AuthorizationExpiredException( "Plugin '" + Name + "' authorization info expired: " + e.Message, e );
 					}
 					if ( authorizationInfo != null )
 					{
@@ -179,7 +179,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 					// Since we do not have the subject's credentials we cannot perform a new
 					// authenticateAndAuthorize() to renew authorization info.
 					// Instead we need to fail with a special status, so that the client can react by re-authenticating.
-					throw new Neo4Net.Graphdb.security.AuthorizationExpiredException( "Plugin '" + Name + "' authorization info expired." );
+					throw new Neo4Net.GraphDb.security.AuthorizationExpiredException( "Plugin '" + Name + "' authorization info expired." );
 			  }
 			  return null;
 		 }
@@ -465,19 +465,19 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 				  }
 			  }
 
-			  public override Path Neo4jHome()
+			  public override Path Neo4NetHome()
 			  {
-					return outerInstance.config.Get( GraphDatabaseSettings.neo4j_home ).AbsoluteFile.toPath();
+					return outerInstance.config.Get( GraphDatabaseSettings.Neo4Net_home ).AbsoluteFile.toPath();
 			  }
 
-			  public override Optional<Path> Neo4jConfigFile()
+			  public override Optional<Path> Neo4NetConfigFile()
 			  {
 					return null;
 			  }
 
-			  public override string Neo4jVersion()
+			  public override string Neo4NetVersion()
 			  {
-					return Version.Neo4jVersion;
+					return Version.Neo4NetVersion;
 			  }
 
 			  public override Clock Clock()

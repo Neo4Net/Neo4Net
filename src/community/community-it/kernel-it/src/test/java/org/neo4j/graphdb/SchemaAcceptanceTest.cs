@@ -17,16 +17,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
@@ -45,33 +45,33 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.contains;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.createIndex;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.createIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.findNodesByLabelAndProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.findNodesByLabelAndProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getConstraints;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getConstraints;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getIndexes;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getIndexes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.isEmpty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.isEmpty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.waitForIndex;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.waitForIndex;
 
 	public class SchemaAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private Label _label = Labels.MyLabel;
 		 private string _propertyKey = "my_property_key";
 		 private string _secondPropertyKey = "my_second_property_key";
@@ -290,7 +290,7 @@ namespace Neo4Net.Graphdb
 					_db.schema().awaitIndexOnline(index, 1L, TimeUnit.MINUTES);
 
 					// THEN
-					assertEquals( Neo4Net.Graphdb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
+					assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
 			  }
 		 }
 
@@ -311,7 +311,7 @@ namespace Neo4Net.Graphdb
 					_db.schema().awaitIndexesOnline(1L, TimeUnit.MINUTES);
 
 					// THEN
-					assertEquals( Neo4Net.Graphdb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
+					assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
 			  }
 		 }
 
@@ -524,12 +524,12 @@ namespace Neo4Net.Graphdb
 					IndexDefinition indexC = _db.schema().indexFor(_label).on("c").create();
 					// THEN
 					assertThat( count( _db.schema().getIndexes(_label) ), @is(3L) );
-					assertThat( _db.schema().getIndexState(indexA), @is(Neo4Net.Graphdb.schema.Schema_IndexState.Online) );
-					assertThat( _db.schema().getIndexState(indexC), @is(Neo4Net.Graphdb.schema.Schema_IndexState.Populating) );
+					assertThat( _db.schema().getIndexState(indexA), @is(Neo4Net.GraphDb.schema.Schema_IndexState.Online) );
+					assertThat( _db.schema().getIndexState(indexC), @is(Neo4Net.GraphDb.schema.Schema_IndexState.Populating) );
 			  }
 		 }
 
-		 private void DropConstraint( GraphDatabaseService db, ConstraintDefinition constraint )
+		 private void DropConstraint( IGraphDatabaseService db, ConstraintDefinition constraint )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -557,7 +557,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private Node CreateNode( GraphDatabaseService db, string key, object value, Label label )
+		 private Node CreateNode( IGraphDatabaseService db, string key, object value, Label label )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

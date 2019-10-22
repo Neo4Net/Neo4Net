@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfUnchecked;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
 
 	/// <summary>
 	/// A dedicated thread which constantly call <seealso cref="PageCache.flushAndForce()"/> until a call to <seealso cref="halt()"/> is made.

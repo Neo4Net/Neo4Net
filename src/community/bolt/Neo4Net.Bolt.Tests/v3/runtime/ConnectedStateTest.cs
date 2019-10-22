@@ -46,13 +46,13 @@ namespace Neo4Net.Bolt.v3.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.CREDENTIALS;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	internal class ConnectedStateTest
 	{
@@ -63,7 +63,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 {
 			  // Given
 			  // hello message
-			  IDictionary<string, object> meta = map( "user_agent", "3.0", PRINCIPAL, "neo4j", CREDENTIALS, "password" );
+			  IDictionary<string, object> meta = map( "user_agent", "3.0", PRINCIPAL, "Neo4Net", CREDENTIALS, "password" );
 			  HelloMessage helloMessage = new HelloMessage( meta );
 
 			  // setup state machine

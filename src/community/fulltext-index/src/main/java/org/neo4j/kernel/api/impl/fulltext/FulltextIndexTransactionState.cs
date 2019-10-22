@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
 	using Log = Neo4Net.Logging.Log;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 	/// <summary>
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _toCloseLater = new List<IDisposable>();
 			  _writer = accessor.TransactionStateIndexWriter;
 			  _modifiedEntityIdsInThisTransaction = new LongHashSet();
-			  _visitingNodes = Schema.entityType() == EntityType.NODE;
+			  _visitingNodes = Schema.entityType() == IEntityType.NODE;
 			  _txStateVisitor = new FulltextIndexTransactionStateVisitor( _descriptor, _modifiedEntityIdsInThisTransaction, _writer );
 		 }
 
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateReader(org.neo4j.kernel.impl.api.KernelTransactionImplementation kti) throws Exception
+//ORIGINAL LINE: private void updateReader(org.Neo4Net.kernel.impl.api.KernelTransactionImplementation kti) throws Exception
 		 private void UpdateReader( KernelTransactionImplementation kti )
 		 {
 			  _modifiedEntityIdsInThisTransaction.clear(); // Clear this so we don't filter out entities who have had their changes reversed since last time.

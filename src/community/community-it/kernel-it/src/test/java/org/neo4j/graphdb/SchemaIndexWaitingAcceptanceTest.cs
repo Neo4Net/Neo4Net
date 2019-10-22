@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Neo4Net.Kernel.extension;
 	using ControlledPopulationIndexProvider = Neo4Net.Kernel.Impl.Api.index.ControlledPopulationIndexProvider;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
@@ -39,16 +39,16 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
+//	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
 
 	public class SchemaIndexWaitingAcceptanceTest
 	{
 		 private readonly ControlledPopulationIndexProvider _provider = new ControlledPopulationIndexProvider();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule rule = new org.neo4j.test.rule.ImpermanentDatabaseRule()
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule rule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule()
 		 public final DatabaseRule rule = new ImpermanentDatabaseRuleAnonymousInnerClass()
 		 .withSetting( default_schema_provider, _provider.ProviderDescriptor.name() );
 
@@ -57,7 +57,7 @@ namespace Neo4Net.Graphdb
 		 public void shouldTimeoutWaitingForIndexToComeOnline()
 		 {
 			  // given
-			  GraphDatabaseService db = rule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = rule.GraphDatabaseAPI;
 			  DoubleLatch latch = _provider.installPopulationJobCompletionLatch();
 
 			  IndexDefinition index;
@@ -96,7 +96,7 @@ namespace Neo4Net.Graphdb
 		 public void shouldTimeoutWaitingForAllIndexesToComeOnline()
 		 {
 			  // given
-			  GraphDatabaseService db = rule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = rule.GraphDatabaseAPI;
 			  DoubleLatch latch = _provider.installPopulationJobCompletionLatch();
 
 			  using ( Transaction tx = Db.beginTx() )

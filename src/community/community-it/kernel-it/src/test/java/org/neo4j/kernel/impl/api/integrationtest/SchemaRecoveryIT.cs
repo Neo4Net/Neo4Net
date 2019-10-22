@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class SchemaRecoveryIT
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  SubProcess.kill( process );
 
 			  // when
-			  GraphDatabaseService recoveredDatabase = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService recoveredDatabase = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 
 			  // then
 			  assertEquals( 1, Constraints( recoveredDatabase ).Count );
@@ -65,10 +65,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
-		 private IList<ConstraintDefinition> Constraints( GraphDatabaseService database )
+		 private IList<ConstraintDefinition> Constraints( IGraphDatabaseService database )
 		 {
 			  using ( Transaction ignored = database.BeginTx() )
 			  {
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 		 }
 
-		 private IList<IndexDefinition> Indexes( GraphDatabaseService database )
+		 private IList<IndexDefinition> Indexes( IGraphDatabaseService database )
 		 {
 			  using ( Transaction ignored = database.BeginTx() )
 			  {

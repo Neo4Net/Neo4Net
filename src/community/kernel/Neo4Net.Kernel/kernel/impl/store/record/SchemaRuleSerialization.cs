@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@string.UTF8.getDecodedStringFrom;
+//	import static org.Neo4Net.@string.UTF8.getDecodedStringFrom;
 
 	public class SchemaRuleSerialization
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 /// <returns> a SchemaRule </returns>
 		 /// <exception cref="MalformedSchemaRuleException"> if bytes in the buffer do encode a valid SchemaRule </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.storageengine.api.schema.SchemaRule deserialize(long id, ByteBuffer source) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public static org.Neo4Net.storageengine.api.schema.SchemaRule deserialize(long id, ByteBuffer source) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 public static SchemaRule Deserialize( long id, ByteBuffer source )
 		 {
 			  int legacyLabelOrRelTypeId = source.Int;
@@ -242,7 +242,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ INDEX
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.storageengine.api.schema.StoreIndexDescriptor readIndexRule(long id, ByteBuffer source) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor readIndexRule(long id, ByteBuffer source) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 private static StoreIndexDescriptor ReadIndexRule( long id, ByteBuffer source )
 		 {
 			  IndexProviderDescriptor indexProvider = ReadIndexProviderDescriptor( source );
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ CONSTRAINT
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static ConstraintRule readConstraintRule(long id, ByteBuffer source) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static ConstraintRule readConstraintRule(long id, ByteBuffer source) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 private static ConstraintRule ReadConstraintRule( long id, ByteBuffer source )
 		 {
 			  SchemaDescriptor schema;
@@ -325,7 +325,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 // READ HELP
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.internal.kernel.api.schema.SchemaDescriptor readSchema(ByteBuffer source) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor readSchema(ByteBuffer source) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 private static SchemaDescriptor ReadSchema( ByteBuffer source )
 		 {
 			  int[] propertyIds;
@@ -348,25 +348,25 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.internal.kernel.api.schema.SchemaDescriptor readMultiTokenSchema(ByteBuffer source) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: private static org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor readMultiTokenSchema(ByteBuffer source) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 private static SchemaDescriptor ReadMultiTokenSchema( ByteBuffer source )
 		 {
 			  sbyte schemaDescriptorType = source.get();
-			  EntityType type;
+			  IEntityType type;
 			  switch ( schemaDescriptorType )
 			  {
 			  case SIMPLE_LABEL:
-					type = EntityType.NODE;
+					type = IEntityType.NODE;
 					break;
 			  case SIMPLE_REL_TYPE:
-					type = EntityType.RELATIONSHIP;
+					type = IEntityType.RELATIONSHIP;
 					break;
 			  default:
 					throw new MalformedSchemaRuleException( format( "Got unknown schema descriptor type '%d'.", schemaDescriptorType ) );
 			  }
-			  int[] entityTokenIds = ReadTokenIdList( source );
+			  int[] IEntityTokenIds = ReadTokenIdList( source );
 			  int[] propertyIds = ReadTokenIdList( source );
-			  return SchemaDescriptorFactory.multiToken( entityTokenIds, type, propertyIds );
+			  return SchemaDescriptorFactory.multiToken( IEntityTokenIds, type, propertyIds );
 		 }
 
 		 private static int[] ReadTokenIdList( ByteBuffer source )
@@ -408,7 +408,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 			  public override void ProcessSpecific( SchemaDescriptor schema )
 			  {
 					Target.put( GENERIC_MULTI_TOKEN_TYPE );
-					if ( Schema.entityType() == EntityType.NODE )
+					if ( Schema.entityType() == IEntityType.NODE )
 					{
 						 Target.put( SIMPLE_LABEL );
 					}
@@ -424,9 +424,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 			  internal virtual void PutIds( int[] ids )
 			  {
 					Target.putShort( ( short ) ids.Length );
-					foreach ( int entityTokenId in ids )
+					foreach ( int IEntityTokenId in ids )
 					{
-						 Target.putInt( entityTokenId );
+						 Target.putInt( IEntityTokenId );
 					}
 			  }
 		 }

@@ -32,10 +32,10 @@ namespace Neo4Net.Storageengine.Api
 	///  a.getRelationships( INCOMING ) => r2
 	///  a.getRelationships( LOOP ) => r3
 	/// </summary>
-	/// Note that this contrasts with /** <seealso cref= #org.neo4j.graphdb.Direction(long), where
-	///  a.getRelationships( org.neo4j.graphdb.Direction.OUTGOING ) => r1, r3
-	///  a.getRelationships( org.neo4j.graphdb.Direction.INCOMING ) => r2, r3
-	///  a.getRelationships( org.neo4j.graphdb.Direction.BOTH ) => r1, r2, r3 </seealso>
+	/// Note that this contrasts with /** <seealso cref= #org.Neo4Net.graphdb.Direction(long), where
+	///  a.getRelationships( org.Neo4Net.graphdb.Direction.OUTGOING ) => r1, r3
+	///  a.getRelationships( org.Neo4Net.graphdb.Direction.INCOMING ) => r2, r3
+	///  a.getRelationships( org.Neo4Net.graphdb.Direction.BOTH ) => r1, r2, r3 </seealso>
 	public enum RelationshipDirection
 	{
 		 Outgoing,

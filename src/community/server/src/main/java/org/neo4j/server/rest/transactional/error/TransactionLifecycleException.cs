@@ -38,9 +38,9 @@ namespace Neo4Net.Server.rest.transactional.error
 		 {
 		 }
 
-		 public virtual Neo4jError ToNeo4jError()
+		 public virtual Neo4NetError ToNeo4NetError()
 		 {
-			  return new Neo4jError( StatusCode, this );
+			  return new Neo4NetError( StatusCode, this );
 		 }
 
 		 protected internal abstract Status StatusCode { get; }

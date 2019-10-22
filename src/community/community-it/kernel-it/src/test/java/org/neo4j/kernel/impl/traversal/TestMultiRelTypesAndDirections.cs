@@ -22,18 +22,18 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Path = Neo4Net.Graphdb.Path;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using Path = Neo4Net.GraphDb.Path;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class TestMultiRelTypesAndDirections : TraversalTestBase
 	{

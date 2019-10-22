@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -34,7 +34,7 @@ namespace Neo4Net.backup.impl
 		 {
 			  IList<string> lines = new List<string>();
 
-			  lines.Add( "usage: neo4j-admin backup --backup-dir=<backup-path> --name=<graph.db-backup>" );
+			  lines.Add( "usage: Neo4Net-admin backup --backup-dir=<backup-path> --name=<graph.db-backup>" );
 			  lines.Add( "                          [--from=<address>] [--protocol=<any|catchup|common>]" );
 			  lines.Add( "                          [--fallback-to-full[=<true|false>]]" );
 			  lines.Add( "                          [--timeout=<timeout>] [--pagecache=<8m>]" );
@@ -47,28 +47,28 @@ namespace Neo4Net.backup.impl
 			  lines.Add( "                          [--cc-property-owners[=<true|false>]]" );
 			  lines.Add( "" );
 			  lines.Add( "environment variables:" );
-			  lines.Add( "    NEO4J_CONF    Path to directory which contains neo4j.conf." );
-			  lines.Add( "    NEO4J_DEBUG   Set to anything to enable debug output." );
-			  lines.Add( "    NEO4J_HOME    Neo4j home directory." );
+			  lines.Add( "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf." );
+			  lines.Add( "    Neo4Net_DEBUG   Set to anything to enable debug output." );
+			  lines.Add( "    Neo4Net_HOME    Neo4Net home directory." );
 			  lines.Add( "    HEAP_SIZE     Set JVM maximum heap size during command execution." );
 			  lines.Add( "                  Takes a number and a unit, for example 512m." );
 			  lines.Add( "" );
-			  lines.Add( "Perform an online backup from a running Neo4j enterprise server. Neo4j's backup" );
+			  lines.Add( "Perform an online backup from a running Neo4Net enterprise server. Neo4Net's backup" );
 			  lines.Add( "service must have been configured on the server beforehand." );
 			  lines.Add( "" );
 			  lines.Add( "All consistency checks except 'cc-graph' can be quite expensive so it may be" );
 			  lines.Add( "useful to turn them off for very large databases. Increasing the heap size can" );
-			  lines.Add( "also be a good idea. See 'neo4j-admin help' for details." );
+			  lines.Add( "also be a good idea. See 'Neo4Net-admin help' for details." );
 			  lines.Add( "" );
 			  lines.Add( "For more information see:" );
-			  lines.Add( "https://neo4j.com/docs/operations-manual/current/backup/" );
+			  lines.Add( "https://Neo4Net.com/docs/operations-manual/current/backup/" );
 			  lines.Add( "" );
 			  lines.Add( "options:" );
 			  lines.Add( "  --backup-dir=<backup-path>               Directory to place backup in." );
 			  lines.Add( "  --name=<graph.db-backup>                 Name of backup. If a backup with this" );
 			  lines.Add( "                                           name already exists an incremental" );
 			  lines.Add( "                                           backup will be attempted." );
-			  lines.Add( "  --from=<address>                         Host and port of Neo4j." );
+			  lines.Add( "  --from=<address>                         Host and port of Neo4Net." );
 			  lines.Add( "                                           [default:localhost:6362]" );
 			  lines.Add( "  --protocol=<any|catchup|common>          Preferred backup protocol" );
 			  lines.Add( "                                           [default:any]" );

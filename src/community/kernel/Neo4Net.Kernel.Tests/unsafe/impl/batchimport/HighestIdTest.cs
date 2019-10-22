@@ -38,7 +38,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	public class HighestIdTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RepeatRule repeater = new org.neo4j.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RepeatRule repeater = new org.Neo4Net.test.rule.RepeatRule();
 		 public readonly RepeatRule Repeater = new RepeatRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

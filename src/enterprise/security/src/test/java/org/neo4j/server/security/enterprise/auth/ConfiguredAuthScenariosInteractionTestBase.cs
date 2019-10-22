@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,20 +15,20 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
 	using Test = org.junit.Test;
 
 
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Result = Neo4Net.Graphdb.Result;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Result = Neo4Net.GraphDb.Result;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
@@ -40,21 +40,21 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public abstract class ConfiguredAuthScenariosInteractionTestBase<S> : ProcedureInteractionTestBase<S>
 	{
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 		private void InitializeInstanceFields()
 		{
-			_userList = map( "adminSubject", ListOf( ADMIN ), "readSubject", ListOf( READER ), "schemaSubject", ListOf( ARCHITECT ), "writeSubject", ListOf( PUBLISHER ), "editorSubject", ListOf( EDITOR ), "pwdSubject", ListOf(), "noneSubject", ListOf(), "neo4j", ListOf(ADMIN) );
+			_userList = map( "adminSubject", ListOf( ADMIN ), "readSubject", ListOf( READER ), "schemaSubject", ListOf( ARCHITECT ), "writeSubject", ListOf( PUBLISHER ), "editorSubject", ListOf( EDITOR ), "pwdSubject", ListOf(), "noneSubject", ListOf(), "Neo4Net", ListOf(ADMIN) );
 		}
 
 		 public override void SetUp()

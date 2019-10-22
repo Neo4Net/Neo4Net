@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	internal class BoltStateMachineV1ContextTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldHandleFailure() throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: @Test void shouldHandleFailure() throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldHandleFailure()
 		 {
@@ -51,7 +51,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldResetMachine() throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: @Test void shouldResetMachine() throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldResetMachine()
 		 {

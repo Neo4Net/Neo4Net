@@ -21,8 +21,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 {
 	using CypherRuntimeConfiguration = Neo4Net.Cypher.Internal.compatibility.CypherRuntimeConfiguration;
 	using CypherPlannerConfiguration = Neo4Net.Cypher.Internal.compiler.v3_5.CypherPlannerConfiguration;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using QueryEngineProvider = Neo4Net.Kernel.impl.query.QueryEngineProvider;
@@ -34,7 +34,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(QueryEngineProvider.class) public class CommunityCypherEngineProvider extends org.neo4j.kernel.impl.query.QueryEngineProvider
+//ORIGINAL LINE: @Service.Implementation(QueryEngineProvider.class) public class CommunityCypherEngineProvider extends org.Neo4Net.kernel.impl.query.QueryEngineProvider
 	public class CommunityCypherEngineProvider : QueryEngineProvider
 	{
 		 public CommunityCypherEngineProvider() : base("cypher")

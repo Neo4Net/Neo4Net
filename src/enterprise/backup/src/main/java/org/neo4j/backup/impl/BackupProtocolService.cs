@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -38,9 +38,9 @@ namespace Neo4Net.backup.impl
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
 	using TransactionCommittingResponseUnpacker = Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker;
 	using ConsistencyFlags = Neo4Net.Consistency.checking.full.ConsistencyFlags;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CancellationRequest = Neo4Net.Helpers.CancellationRequest;
 	using Service = Neo4Net.Helpers.Service;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
@@ -70,15 +70,15 @@ namespace Neo4Net.backup.impl
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.RequestContext.anonymous;
+//	import static org.Neo4Net.com.RequestContext.anonymous;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
+//	import static org.Neo4Net.com.storecopy.TransactionCommittingResponseUnpacker.DEFAULT_BATCH_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.rootCause;
+//	import static org.Neo4Net.helpers.Exceptions.rootCause;
 
 	/// <summary>
 	/// Client-side convenience service for doing backups from a running database instance.
@@ -383,14 +383,14 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.List<org.neo4j.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
+//ORIGINAL LINE: private static java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> loadKernelExtensions()
 		 private static IList<KernelExtensionFactory<object>> LoadKernelExtensions()
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions = new java.util.ArrayList<>();
 			  IList<KernelExtensionFactory<object>> kernelExtensions = new List<KernelExtensionFactory<object>>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.extension.KernelExtensionFactory<?> factory : org.neo4j.helpers.Service.load(org.neo4j.kernel.extension.KernelExtensionFactory.class))
+//ORIGINAL LINE: for (org.Neo4Net.kernel.extension.KernelExtensionFactory<?> factory : org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class))
 			  foreach ( KernelExtensionFactory<object> factory in Service.load( typeof( KernelExtensionFactory ) ) )
 			  {
 					kernelExtensions.Add( factory );
@@ -451,7 +451,7 @@ namespace Neo4Net.backup.impl
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.neo4j.com.Response<?> copyStore(org.neo4j.com.storecopy.StoreWriter writer)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<?> copyStore(org.Neo4Net.com.storecopy.StoreWriter writer)
 			  public Response<object> copyStore( StoreWriter writer )
 			  {
 					client = new BackupClient( sourceHostNameOrIp, sourcePort, null, NullLogProvider.Instance, StoreId.DEFAULT, timeout, Neo4Net.com.storecopy.ResponseUnpacker_Fields.NoOpResponseUnpacker, _monitors.newMonitor( typeof( ByteCounterMonitor ) ), _monitors.newMonitor( typeof( RequestMonitor ) ), new VersionAwareLogEntryReader<Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>() );

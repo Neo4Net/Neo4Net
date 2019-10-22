@@ -28,7 +28,7 @@ namespace Neo4Net.Io.pagecache.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 		 public override PageCursor Io( long pageId, int pfFlags )
 		 {
 			  PageCursor @delegate = base.Io( pageId, pfFlags );

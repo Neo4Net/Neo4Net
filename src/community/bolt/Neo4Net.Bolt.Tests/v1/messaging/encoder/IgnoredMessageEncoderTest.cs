@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using IgnoredMessage = Neo4Net.Bolt.v1.messaging.response.IgnoredMessage;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -33,7 +33,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
+//	import static org.Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
 
 	internal class IgnoredMessageEncoderTest
 	{
@@ -43,7 +43,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 internal virtual void ShouldEncodeIgnoredMessage()
 		 {
 			  // Given
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  IgnoredMessageEncoder encoder = new IgnoredMessageEncoder();
 
 			  // When

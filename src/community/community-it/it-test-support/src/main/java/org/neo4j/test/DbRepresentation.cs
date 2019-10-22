@@ -23,18 +23,18 @@ using System.Collections.Generic;
 namespace Neo4Net.Test
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IoPrimitiveUtils = Neo4Net.Kernel.impl.util.IoPrimitiveUtils;
 
@@ -46,12 +46,12 @@ namespace Neo4Net.Test
 		 private long _highestNodeId;
 		 private long _highestRelationshipId;
 
-		 public static DbRepresentation Of( GraphDatabaseService db )
+		 public static DbRepresentation Of( IGraphDatabaseService db )
 		 {
 			  return of( db, true );
 		 }
 
-		 public static DbRepresentation Of( GraphDatabaseService db, bool includeIndexes )
+		 public static DbRepresentation Of( IGraphDatabaseService db, bool includeIndexes )
 		 {
 			  int retryCount = 5;
 			  while ( true )
@@ -105,7 +105,7 @@ namespace Neo4Net.Test
 			  GraphDatabaseBuilder builder = ( new TestGraphDatabaseFactory() ).NewEmbeddedDatabaseBuilder(storeDir);
 			  builder.Config = config.Raw;
 
-			  GraphDatabaseService db = builder.NewGraphDatabase();
+			  IGraphDatabaseService db = builder.NewGraphDatabase();
 			  try
 			  {
 					return of( db, includeIndexes );
@@ -210,7 +210,7 @@ namespace Neo4Net.Test
 			  internal readonly long Id;
 			  internal readonly IDictionary<string, IDictionary<string, Serializable>> Index;
 
-			  internal NodeRep( GraphDatabaseService db, Node node, bool includeIndexes )
+			  internal NodeRep( IGraphDatabaseService db, Node node, bool includeIndexes )
 			  {
 					Id = node.Id;
 					Properties = new PropertiesRep( node, node.Id );
@@ -224,7 +224,7 @@ namespace Neo4Net.Test
 					this.Index = includeIndexes ? CheckIndex( db ) : null;
 			  }
 
-			  internal virtual IDictionary<string, IDictionary<string, Serializable>> CheckIndex( GraphDatabaseService db )
+			  internal virtual IDictionary<string, IDictionary<string, Serializable>> CheckIndex( IGraphDatabaseService db )
 			  {
 					IDictionary<string, IDictionary<string, Serializable>> result = new Dictionary<string, IDictionary<string, Serializable>>();
 					foreach ( string indexName in Db.index().nodeIndexNames() )
@@ -373,16 +373,16 @@ namespace Neo4Net.Test
 		 private class PropertiesRep
 		 {
 			  internal readonly IDictionary<string, Serializable> Props = new Dictionary<string, Serializable>();
-			  internal readonly string EntityToString;
-			  internal readonly long EntityId;
+			  internal readonly string IEntityToString;
+			  internal readonly long IEntityId;
 
-			  internal PropertiesRep( PropertyContainer entity, long id )
+			  internal PropertiesRep( IPropertyContainer IEntity, long id )
 			  {
 					this.EntityId = id;
-					this.EntityToString = entity.ToString();
-					foreach ( string key in entity.PropertyKeys )
+					this.EntityToString = IEntity.ToString();
+					foreach ( string key in IEntity.PropertyKeys )
 					{
-						 Serializable value = ( Serializable ) entity.GetProperty( key, null );
+						 Serializable value = ( Serializable ) IEntity.GetProperty( key, null );
 						 // We do this because the node may have changed since we did getPropertyKeys()
 						 if ( value != null )
 						 {
@@ -403,7 +403,7 @@ namespace Neo4Net.Test
 					bool equals = Props.Equals( other.Props );
 					if ( !equals )
 					{
-						 diff.Add( "Properties diff for " + EntityToString + " mine:" + Props + ", other:" + other.Props );
+						 diff.Add( "Properties diff for " + IEntityToString + " mine:" + Props + ", other:" + other.Props );
 					}
 			  }
 

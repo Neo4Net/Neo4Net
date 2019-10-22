@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.Impl.Api.scan
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long applyTo(org.neo4j.kernel.api.labelscan.LabelScanWriter writer) throws java.io.IOException;
+//ORIGINAL LINE: long applyTo(org.Neo4Net.kernel.api.labelscan.LabelScanWriter writer) throws java.io.IOException;
 		 long ApplyTo( LabelScanWriter writer );
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static FullStoreChangeStream asStream(final java.util.List<org.neo4j.kernel.api.labelscan.NodeLabelUpdate> existingData)
+//		 static FullStoreChangeStream asStream(final java.util.List<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate> existingData)
 	//	 {
 	//		  return writer ->
 	//		  {

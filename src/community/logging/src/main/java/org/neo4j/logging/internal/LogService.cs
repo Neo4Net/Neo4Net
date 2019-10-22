@@ -27,13 +27,13 @@ namespace Neo4Net.Logging.Internal
 	/// </summary>
 	public interface LogService
 	{
-		 /// <returns> a <seealso cref="org.neo4j.logging.LogProvider"/> that providers loggers for user visible messages. </returns>
+		 /// <returns> a <seealso cref="org.Neo4Net.logging.LogProvider"/> that providers loggers for user visible messages. </returns>
 		 LogProvider UserLogProvider { get; }
 
 		 /// <summary>
 		 /// Equivalent to {@code <seealso cref="getUserLogProvider"/>()( loggingClass )} </summary>
 		 /// <param name="loggingClass"> the context for the return logger. </param>
-		 /// <returns> a <seealso cref="org.neo4j.logging.Log"/> that logs user visible messages with the {@code loggingClass} as context. </returns>
+		 /// <returns> a <seealso cref="org.Neo4Net.logging.Log"/> that logs user visible messages with the {@code loggingClass} as context. </returns>
 		 Log GetUserLog( Type loggingClass );
 
 		 /// <returns> a <seealso cref="LogProvider"/> that providers loggers for internal messages. </returns>

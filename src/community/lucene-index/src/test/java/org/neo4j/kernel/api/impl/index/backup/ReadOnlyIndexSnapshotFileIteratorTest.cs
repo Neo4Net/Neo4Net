@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	public class ReadOnlyIndexSnapshotFileIteratorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 
 		 internal File IndexDir;
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.graphdb.ResourceIterator<java.io.File> makeSnapshot() throws java.io.IOException
 		 protected internal virtual ResourceIterator<File> MakeSnapshot()
 		 {
 			  return LuceneIndexSnapshots.ForIndex( IndexDir, Dir );

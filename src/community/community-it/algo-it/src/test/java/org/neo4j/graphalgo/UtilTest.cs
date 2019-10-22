@@ -21,19 +21,19 @@
  */
 namespace Neo4Net.Graphalgo
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
 	using Util = Neo4Net.Graphalgo.impl.shortestpath.Util;
 	using PathCounter = Neo4Net.Graphalgo.impl.shortestpath.Util.PathCounter;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 
-	public class UtilTest : Neo4jAlgoTestCase
+	public class UtilTest : Neo4NetAlgoTestCase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void testPathCounter()

@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly Layout<KEY, VALUE> _layout;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: BlockReader(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File file, org.neo4j.index.internal.gbptree.Layout<KEY,VALUE> layout) throws java.io.IOException
+//ORIGINAL LINE: BlockReader(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File file, org.Neo4Net.index.internal.gbptree.Layout<KEY,VALUE> layout) throws java.io.IOException
 		 internal BlockReader( FileSystemAbstraction fs, File file, Layout<KEY, VALUE> layout )
 		 {
 			  this._fs = fs;

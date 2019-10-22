@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	using AbstractLongIterable = org.eclipse.collections.impl.primitive.AbstractLongIterable;
 
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.collections.impl.tuple.primitive.PrimitiveTuples.pair;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkArgument;
+//	import static org.Neo4Net.util.Preconditions.checkArgument;
 
 	/// <summary>
 	/// Off heap implementation of long-long hash map.

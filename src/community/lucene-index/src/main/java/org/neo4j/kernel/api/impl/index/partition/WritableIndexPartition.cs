@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 	using Directory = org.apache.lucene.store.Directory;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using LuceneIndexSnapshots = Neo4Net.Kernel.Api.Impl.Index.backup.LuceneIndexSnapshots;
 
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.partition
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException
 		 public override ResourceIterator<File> Snapshot()
 		 {
 			  return LuceneIndexSnapshots.forIndex( PartitionFolder, _indexWriter );

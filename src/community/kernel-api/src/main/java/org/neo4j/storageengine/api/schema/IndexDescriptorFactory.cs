@@ -24,11 +24,11 @@ namespace Neo4Net.Storageengine.Api.schema
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.IndexProviderDescriptor.UNDECIDED;
+//	import static org.Neo4Net.Internal.kernel.api.schema.IndexProviderDescriptor.UNDECIDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 
 	public class IndexDescriptorFactory
 	{

@@ -29,9 +29,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 
 	using Neo4Net.Cursors;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using IndexDefineCommand = Neo4Net.Kernel.impl.index.IndexDefineCommand;
@@ -70,7 +70,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	public class IndexCreationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private GraphDatabaseAPI _db;

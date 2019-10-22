@@ -52,7 +52,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using DocValuesCollector = Neo4Net.Kernel.Api.Impl.Index.collector.DocValuesCollector;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneExplicitIndex.KEY_DOC_ID;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneExplicitIndex.KEY_DOC_ID;
 
 	internal class FullTxData : TxData
 	{
@@ -96,17 +96,17 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 		 }
 
-		 internal override void Add( TxDataHolder holder, EntityId entityId, string key, object value )
+		 internal override void Add( TxDataHolder holder, IEntityId IEntityId, string key, object value )
 		 {
 			  try
 			  {
 					EnsureLuceneDataInstantiated();
-					long id = entityId.Id();
+					long id = IEntityId.Id();
 					Document document = FindDocument( id );
 					bool add = false;
 					if ( document == null )
 					{
-						 document = IndexType.NewDocument( entityId );
+						 document = IndexType.NewDocument( IEntityId );
 						 document.add( new StoredField( TX_STATE_KEY, _txStateValue ) );
 						 _cachedDocuments.put( id, document );
 						 add = true;
@@ -176,12 +176,12 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 internal override void Remove( TxDataHolder holder, EntityId entityId, string key, object value )
+		 internal override void Remove( TxDataHolder holder, IEntityId IEntityId, string key, object value )
 		 {
 			  try
 			  {
 					EnsureLuceneDataInstantiated();
-					long id = entityId.Id();
+					long id = IEntityId.Id();
 					Document document = FindDocument( id );
 					if ( document != null )
 					{
@@ -229,7 +229,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					LongIterator valuesIterator = docValuesCollector.GetSortedValuesIterator( KEY_DOC_ID, sorting );
 					while ( valuesIterator.hasNext() )
 					{
-						 result.Add( new EntityId_IdData( valuesIterator.next() ) );
+						 result.Add( new IEntityId_IdData( valuesIterator.next() ) );
 					}
 					return result;
 			  }

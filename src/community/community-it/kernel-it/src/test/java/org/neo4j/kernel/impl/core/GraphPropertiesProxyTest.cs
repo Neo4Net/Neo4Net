@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.impl.core
 	public class GraphPropertiesProxyTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static DatabaseRule Db = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.GraphTransactionRule tx = new org.neo4j.test.rule.GraphTransactionRule(db);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.GraphTransactionRule tx = new org.Neo4Net.test.rule.GraphTransactionRule(db);
 		 public GraphTransactionRule Tx = new GraphTransactionRule( Db );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

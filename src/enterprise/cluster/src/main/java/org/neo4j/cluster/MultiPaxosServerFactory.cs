@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster
 {
@@ -66,7 +66,7 @@ namespace Neo4Net.cluster
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.Internal;
+//	import static org.Neo4Net.cluster.com.message.Message.Internal;
 
 	/// <summary>
 	/// Factory for MultiPaxos <seealso cref="ProtocolServer"/>s.
@@ -92,7 +92,7 @@ namespace Neo4Net.cluster
 			  Timeouts timeouts = new Timeouts( timeoutStrategy );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context = new org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext(me, org.neo4j.helpers.collection.Iterables.iterable(new org.neo4j.cluster.protocol.election.ElectionRole(org.neo4j.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR)), new org.neo4j.cluster.protocol.cluster.ClusterConfiguration(initialConfig.getName(), logging, initialConfig.getMemberURIs()), executor, logging, objectInputStreamFactory, objectOutputStreamFactory, acceptorInstanceStore, timeouts, electionCredentialsProvider, config);
+//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context = new org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext(me, org.Neo4Net.helpers.collection.Iterables.iterable(new org.Neo4Net.cluster.protocol.election.ElectionRole(org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR)), new org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration(initialConfig.getName(), logging, initialConfig.getMemberURIs()), executor, logging, objectInputStreamFactory, objectOutputStreamFactory, acceptorInstanceStore, timeouts, electionCredentialsProvider, config);
 			  MultiPaxosContext context = new MultiPaxosContext( me, Iterables.iterable( new ElectionRole( ClusterConfiguration.COORDINATOR ) ), new ClusterConfiguration( _initialConfig.Name, _logging, _initialConfig.MemberURIs ), executor, _logging, objectInputStreamFactory, objectOutputStreamFactory, acceptorInstanceStore, timeouts, electionCredentialsProvider, config );
 
 			  SnapshotContext snapshotContext = new SnapshotContext( context.ClusterContext, context.LearnerContext );
@@ -101,7 +101,7 @@ namespace Neo4Net.cluster
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ProtocolServer newProtocolServer(InstanceId me, org.neo4j.cluster.com.message.MessageSource input, org.neo4j.cluster.com.message.MessageSender output, java.util.concurrent.Executor stateMachineExecutor, DelayedDirectExecutor executor, org.neo4j.cluster.timeout.Timeouts timeouts, org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context, org.neo4j.cluster.protocol.snapshot.SnapshotContext snapshotContext)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ProtocolServer newProtocolServer(InstanceId me, org.Neo4Net.cluster.com.message.MessageSource input, org.Neo4Net.cluster.com.message.MessageSender output, java.util.concurrent.Executor stateMachineExecutor, DelayedDirectExecutor executor, org.Neo4Net.cluster.timeout.Timeouts timeouts, org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context, org.Neo4Net.cluster.protocol.snapshot.SnapshotContext snapshotContext)
 		 public virtual ProtocolServer NewProtocolServer( InstanceId me, MessageSource input, MessageSender output, Executor stateMachineExecutor, DelayedDirectExecutor executor, Timeouts timeouts, MultiPaxosContext context, SnapshotContext snapshotContext )
 		 {
 			  return ConstructSupportingInfrastructureFor(me, input, output, executor, timeouts, stateMachineExecutor, context, new StateMachine[]
@@ -123,7 +123,7 @@ namespace Neo4Net.cluster
 		 /// correctness).
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("rawtypes") public ProtocolServer constructSupportingInfrastructureFor(InstanceId me, org.neo4j.cluster.com.message.MessageSource input, org.neo4j.cluster.com.message.MessageSender output, DelayedDirectExecutor executor, org.neo4j.cluster.timeout.Timeouts timeouts, java.util.concurrent.Executor stateMachineExecutor, final org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context, org.neo4j.cluster.statemachine.StateMachine[] machines)
+//ORIGINAL LINE: @SuppressWarnings("rawtypes") public ProtocolServer constructSupportingInfrastructureFor(InstanceId me, org.Neo4Net.cluster.com.message.MessageSource input, org.Neo4Net.cluster.com.message.MessageSender output, DelayedDirectExecutor executor, org.Neo4Net.cluster.timeout.Timeouts timeouts, java.util.concurrent.Executor stateMachineExecutor, final org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.context.MultiPaxosContext context, org.Neo4Net.cluster.statemachine.StateMachine[] machines)
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual ProtocolServer ConstructSupportingInfrastructureFor( InstanceId me, MessageSource input, MessageSender output, DelayedDirectExecutor executor, Timeouts timeouts, Executor stateMachineExecutor, MultiPaxosContext context, StateMachine[] machines )
 		 {

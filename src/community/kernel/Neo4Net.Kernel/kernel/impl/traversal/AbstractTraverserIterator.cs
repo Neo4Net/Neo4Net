@@ -19,15 +19,15 @@
  */
 namespace Neo4Net.Kernel.impl.traversal
 {
-	using Path = Neo4Net.Graphdb.Path;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Path = Neo4Net.GraphDb.Path;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.Helpers.Collections;
 
 	internal abstract class AbstractTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{
-		public abstract Evaluation Evaluate( Neo4Net.Graphdb.traversal.TraversalBranch branch, Neo4Net.Graphdb.traversal.BranchState<STATE> state );
-		public abstract bool IsUnique( Neo4Net.Graphdb.traversal.TraversalBranch branch );
-		public abstract bool IsUniqueFirst( Neo4Net.Graphdb.traversal.TraversalBranch branch );
+		public abstract Evaluation Evaluate( Neo4Net.GraphDb.traversal.TraversalBranch branch, Neo4Net.GraphDb.traversal.BranchState<STATE> state );
+		public abstract bool IsUnique( Neo4Net.GraphDb.traversal.TraversalBranch branch );
+		public abstract bool IsUniqueFirst( Neo4Net.GraphDb.traversal.TraversalBranch branch );
 		public abstract ResourceIterator<R> Map( System.Func<T, R> map );
 		public override abstract java.util.stream.Stream<T> Stream();
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:

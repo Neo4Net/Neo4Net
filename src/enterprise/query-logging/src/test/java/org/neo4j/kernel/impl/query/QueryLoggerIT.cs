@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.impl.query
 {
@@ -31,12 +31,12 @@ namespace Neo4Net.Kernel.impl.query
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
@@ -77,19 +77,19 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.log_queries;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.log_queries_max_archives;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_max_archives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.log_queries_rotation_threshold;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.log_queries_rotation_threshold;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthSubject.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthSubject.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 
 	public class QueryLoggerIT
 	{
@@ -97,10 +97,10 @@ namespace Neo4Net.Kernel.impl.query
 		 // It is imperative that this test executes using a real filesystem; otherwise rotation failures will not be
 		 // detected on Windows.
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystem = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystem = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystem = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.query
 		 private File _logsDirectory;
 		 private File _logFilename;
 		 private EmbeddedInteraction _db;
-		 private GraphDatabaseService _database;
+		 private IGraphDatabaseService _database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp()
@@ -145,24 +145,24 @@ namespace Neo4Net.Kernel.impl.query
 		 {
 			  // turn on query logging
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Map<String, String> config = stringMap(logs_directory.name(), logsDirectory.getPath(), log_queries.name(), org.neo4j.kernel.configuration.Settings.TRUE);
+//ORIGINAL LINE: final java.util.Map<String, String> config = stringMap(logs_directory.name(), logsDirectory.getPath(), log_queries.name(), org.Neo4Net.kernel.configuration.Settings.TRUE);
 			  IDictionary<string, string> config = stringMap( logs_directory.name(), _logsDirectory.Path, log_queries.name(), Settings.TRUE );
 			  _db = new EmbeddedInteraction( _databaseBuilder, config );
 
 			  // create users
-			  _db.LocalUserManager.newUser( "mats", password( "neo4j" ), false );
-			  _db.LocalUserManager.newUser( "andres", password( "neo4j" ), false );
+			  _db.LocalUserManager.newUser( "mats", password( "Neo4Net" ), false );
+			  _db.LocalUserManager.newUser( "andres", password( "Neo4Net" ), false );
 			  _db.LocalUserManager.addRoleToUser( "architect", "mats" );
 			  _db.LocalUserManager.addRoleToUser( "reader", "andres" );
 
-			  EnterpriseLoginContext mats = _db.login( "mats", "neo4j" );
+			  EnterpriseLoginContext mats = _db.login( "mats", "Neo4Net" );
 
 			  // run query
 			  _db.executeQuery( mats, "UNWIND range(0, 10) AS i CREATE (:Foo {p: i})", Collections.emptyMap(), ResourceIterator.close );
 			  _db.executeQuery( mats, "CREATE (:Label)", Collections.emptyMap(), ResourceIterator.close );
 
 			  // switch user, run query
-			  EnterpriseLoginContext andres = _db.login( "andres", "neo4j" );
+			  EnterpriseLoginContext andres = _db.login( "andres", "Neo4Net" );
 			  _db.executeQuery( andres, "MATCH (n:Label) RETURN n", Collections.emptyMap(), ResourceIterator.close );
 
 			  _db.tearDown();
@@ -187,9 +187,9 @@ namespace Neo4Net.Kernel.impl.query
 			  _db = new EmbeddedInteraction( _databaseBuilder, Collections.emptyMap() );
 			  GraphDatabaseFacade graph = _db.LocalGraph;
 
-			  _db.LocalUserManager.setUserPassword( "neo4j", password( "123" ), false );
+			  _db.LocalUserManager.setUserPassword( "Neo4Net", password( "123" ), false );
 
-			  EnterpriseLoginContext subject = _db.login( "neo4j", "123" );
+			  EnterpriseLoginContext subject = _db.login( "Neo4Net", "123" );
 			  _db.executeQuery( subject, "UNWIND range(0, 10) AS i CREATE (:Foo {p: i})", Collections.emptyMap(), ResourceIterator.close );
 
 			  // Set meta data and execute query in transaction
@@ -394,7 +394,7 @@ namespace Neo4Net.Kernel.impl.query
 			  GraphDatabaseFacade facade = ( GraphDatabaseFacade ) this._database;
 
 			  EnterpriseAuthManager authManager = facade.DependencyResolver.resolveDependency( typeof( EnterpriseAuthManager ) );
-			  EnterpriseLoginContext neo = authManager.Login( AuthToken.newBasicAuthToken( "neo4j", "neo4j" ) );
+			  EnterpriseLoginContext neo = authManager.Login( AuthToken.newBasicAuthToken( "Neo4Net", "Neo4Net" ) );
 
 			  string query = "CALL dbms.security.changePassword('abc123')";
 			  try
@@ -481,12 +481,12 @@ namespace Neo4Net.Kernel.impl.query
 			  _database.shutdown();
 		 }
 
-		 private static void ExecuteQueryAndShutdown( GraphDatabaseService database )
+		 private static void ExecuteQueryAndShutdown( IGraphDatabaseService database )
 		 {
 			  ExecuteQueryAndShutdown( database, QUERY, Collections.emptyMap() );
 		 }
 
-		 private static void ExecuteQueryAndShutdown( GraphDatabaseService database, string query, IDictionary<string, object> @params )
+		 private static void ExecuteQueryAndShutdown( IGraphDatabaseService database, string query, IDictionary<string, object> @params )
 		 {
 			  Result execute = database.Execute( query, @params );
 			  execute.Close();
@@ -518,7 +518,7 @@ namespace Neo4Net.Kernel.impl.query
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.List<String> readAllLines(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File logFilename) throws java.io.IOException
+//ORIGINAL LINE: static java.util.List<String> readAllLines(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File logFilename) throws java.io.IOException
 		 internal static IList<string> ReadAllLines( FileSystemAbstraction fs, File logFilename )
 		 {
 			  IList<string> logLines = new List<string>();

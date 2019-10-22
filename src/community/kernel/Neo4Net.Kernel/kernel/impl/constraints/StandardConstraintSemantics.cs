@@ -40,8 +40,8 @@ namespace Neo4Net.Kernel.impl.constraints
 
 	public class StandardConstraintSemantics : ConstraintSemantics
 	{
-		 public const string ERROR_MESSAGE_EXISTS = "Property existence constraint requires Neo4j Enterprise Edition";
-		 public const string ERROR_MESSAGE_NODE_KEY = "Node Key constraint requires Neo4j Enterprise Edition";
+		 public const string ERROR_MESSAGE_EXISTS = "Property existence constraint requires Neo4Net Enterprise Edition";
+		 public const string ERROR_MESSAGE_NODE_KEY = "Node Key constraint requires Neo4Net Enterprise Edition";
 
 		 public StandardConstraintSemantics() : this("standardConstraints", 1)
 		 {
@@ -52,21 +52,21 @@ namespace Neo4Net.Kernel.impl.constraints
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodeKeyConstraint(org.neo4j.internal.kernel.api.NodeLabelIndexCursor allNodes, org.neo4j.internal.kernel.api.NodeCursor nodeCursor, org.neo4j.internal.kernel.api.PropertyCursor propertyCursor, org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateNodeKeyConstraint(org.Neo4Net.internal.kernel.api.NodeLabelIndexCursor allNodes, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateNodeKeyConstraint( NodeLabelIndexCursor allNodes, NodeCursor nodeCursor, PropertyCursor propertyCursor, LabelSchemaDescriptor descriptor )
 		 {
 			  throw NodeKeyConstraintsNotAllowed( descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodePropertyExistenceConstraint(org.neo4j.internal.kernel.api.NodeLabelIndexCursor allNodes, org.neo4j.internal.kernel.api.NodeCursor nodeCursor, org.neo4j.internal.kernel.api.PropertyCursor propertyCursor, org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateNodePropertyExistenceConstraint(org.Neo4Net.internal.kernel.api.NodeLabelIndexCursor allNodes, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateNodePropertyExistenceConstraint( NodeLabelIndexCursor allNodes, NodeCursor nodeCursor, PropertyCursor propertyCursor, LabelSchemaDescriptor descriptor )
 		 {
 			  throw PropertyExistenceConstraintsNotAllowed( descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateRelationshipPropertyExistenceConstraint(org.neo4j.internal.kernel.api.RelationshipScanCursor relationshipCursor, org.neo4j.internal.kernel.api.PropertyCursor propertyCursor, org.neo4j.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateRelationshipPropertyExistenceConstraint(org.Neo4Net.internal.kernel.api.RelationshipScanCursor relationshipCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateRelationshipPropertyExistenceConstraint( RelationshipScanCursor relationshipCursor, PropertyCursor propertyCursor, RelationTypeSchemaDescriptor descriptor )
 		 {
 			  throw PropertyExistenceConstraintsNotAllowed( descriptor );
@@ -110,14 +110,14 @@ namespace Neo4Net.Kernel.impl.constraints
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.store.record.ConstraintRule createNodeKeyConstraintRule(long ruleId, org.neo4j.kernel.api.schema.constraints.NodeKeyConstraintDescriptor descriptor, long indexId) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.record.ConstraintRule createNodeKeyConstraintRule(long ruleId, org.Neo4Net.kernel.api.schema.constraints.NodeKeyConstraintDescriptor descriptor, long indexId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 public override ConstraintRule CreateNodeKeyConstraintRule( long ruleId, NodeKeyConstraintDescriptor descriptor, long indexId )
 		 {
 			  throw NodeKeyConstraintsNotAllowed( descriptor.Schema() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.store.record.ConstraintRule createExistenceConstraint(long ruleId, org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.record.ConstraintRule createExistenceConstraint(long ruleId, org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 public override ConstraintRule CreateExistenceConstraint( long ruleId, ConstraintDescriptor descriptor )
 		 {
 			  throw PropertyExistenceConstraintsNotAllowed( descriptor.Schema() );

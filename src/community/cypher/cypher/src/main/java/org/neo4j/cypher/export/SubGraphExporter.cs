@@ -24,18 +24,18 @@ using System.Text;
 namespace Neo4Net.Cypher.export
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 
 	public class SubGraphExporter
 	{
@@ -256,7 +256,7 @@ namespace Neo4Net.Cypher.export
 			  @out.println( ")" );
 		 }
 
-		 private void FormatProperties( PrintWriter @out, PropertyContainer pc )
+		 private void FormatProperties( PrintWriter @out, IPropertyContainer pc )
 		 {
 			  if ( !pc.PropertyKeys.GetEnumerator().hasNext() )
 			  {
@@ -269,7 +269,7 @@ namespace Neo4Net.Cypher.export
 			  @out.print( propertyString );
 		 }
 
-		 private string FormatProperties( PropertyContainer pc )
+		 private string FormatProperties( IPropertyContainer pc )
 		 {
 			  StringBuilder result = new StringBuilder();
 			  IList<string> keys = Iterables.asList( pc.PropertyKeys );

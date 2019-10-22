@@ -22,7 +22,7 @@ namespace Neo4Net.Server.Security.Auth
 	using After = org.junit.After;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
 	using ExclusiveServerTestBase = Neo4Net.Test.server.ExclusiveServerTestBase;
 	using HTTP = Neo4Net.Test.server.HTTP;
@@ -99,7 +99,7 @@ namespace Neo4Net.Server.Security.Auth
 
 		 private bool BrowserIsLoaded()
 		 {
-			  // In some automatic builds, the Neo4j browser is not built, and it is subsequently not present for these
+			  // In some automatic builds, the Neo4Net browser is not built, and it is subsequently not present for these
 			  // tests. So - only run these tests if the browser artifact is on the classpath
 			  return this.GetType().ClassLoader.getResource("browser") != null;
 		 }

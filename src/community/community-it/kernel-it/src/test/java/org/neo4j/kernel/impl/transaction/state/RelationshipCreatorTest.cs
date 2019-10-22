@@ -26,10 +26,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using NoOpClient = Neo4Net.Kernel.impl.locking.NoOpClient;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 		 private const int DENSE_NODE_THRESHOLD = 5;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.valueOf(DENSE_NODE_THRESHOLD));
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.valueOf(DENSE_NODE_THRESHOLD));
 		 public readonly DatabaseRule DbRule = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, DENSE_NODE_THRESHOLD.ToString());
 		 private IdGeneratorFactory _idGeneratorFactory;
 
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 		 private long CreateNodeWithRelationships( int count )
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Node node = Db.createNode();
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 			  {
 					assertEquals( ResourceTypes.RELATIONSHIP, resourceType );

@@ -25,7 +25,7 @@ namespace Neo4Net.Internal.Kernel.Api.exceptions
 
 	public class PropertyKeyIdNotFoundKernelException : KernelException
 	{
-		 public PropertyKeyIdNotFoundKernelException( int propertyKeyId, Exception cause ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.PropertyKeyAccessFailed, cause, "Property key with id=%d not found", propertyKeyId )
+		 public PropertyKeyIdNotFoundKernelException( int propertyKeyId, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.PropertyKeyAccessFailed, cause, "Property key with id=%d not found", propertyKeyId )
 		 {
 		 }
 	}

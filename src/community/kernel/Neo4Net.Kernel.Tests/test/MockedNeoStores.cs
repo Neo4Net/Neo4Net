@@ -41,7 +41,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"unchecked", "rawtypes"}) public static org.neo4j.kernel.impl.store.NeoStores basicMockedNeoStores()
+//ORIGINAL LINE: @SuppressWarnings({"unchecked", "rawtypes"}) public static org.Neo4Net.kernel.impl.store.NeoStores basicMockedNeoStores()
 		 public static NeoStores BasicMockedNeoStores()
 		 {
 			  NeoStores neoStores = mock( typeof( NeoStores ) );

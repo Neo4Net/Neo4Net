@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
@@ -45,14 +45,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
+//	import static org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class FulltextIndexProviderFactory extends org.neo4j.kernel.extension.KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class FulltextIndexProviderFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
 	public class FulltextIndexProviderFactory : KernelExtensionFactory<FulltextIndexProviderFactory.Dependencies>
 	{
 		 private const string KEY = "fulltext";

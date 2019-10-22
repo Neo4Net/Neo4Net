@@ -27,29 +27,29 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.KeySearch.isHit;
+//	import static org.Neo4Net.index.Internal.gbptree.KeySearch.isHit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.KeySearch.positionOf;
+//	import static org.Neo4Net.index.Internal.gbptree.KeySearch.positionOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PointerChecking.assertNoSuccessor;
+//	import static org.Neo4Net.index.Internal.gbptree.PointerChecking.assertNoSuccessor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.StructurePropagation.KeyReplaceStrategy.BUBBLE;
+//	import static org.Neo4Net.index.Internal.gbptree.StructurePropagation.KeyReplaceStrategy.BUBBLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.StructurePropagation.KeyReplaceStrategy.REPLACE;
+//	import static org.Neo4Net.index.Internal.gbptree.StructurePropagation.KeyReplaceStrategy.REPLACE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.StructurePropagation.UPDATE_LEFT_CHILD;
+//	import static org.Neo4Net.index.Internal.gbptree.StructurePropagation.UPDATE_LEFT_CHILD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.StructurePropagation.UPDATE_MID_CHILD;
+//	import static org.Neo4Net.index.Internal.gbptree.StructurePropagation.UPDATE_MID_CHILD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.StructurePropagation.UPDATE_RIGHT_CHILD;
+//	import static org.Neo4Net.index.Internal.gbptree.StructurePropagation.UPDATE_RIGHT_CHILD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Overflow.NO_NEED_DEFRAG;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.NO_NEED_DEFRAG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Overflow.YES;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Overflow.YES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// Implementation of GB+ tree insert/remove algorithms.
@@ -217,7 +217,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean popLevel(org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private boolean popLevel(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private bool PopLevel( PageCursor cursor )
 		 {
 			  _currentLevel--;
@@ -279,7 +279,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="unstableGeneration"> unstable generation. </param>
 		 /// <exception cref="IOException"> on <seealso cref="PageCursor"/> error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void moveToCorrectLeaf(org.neo4j.io.pagecache.PageCursor cursor, KEY key, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void moveToCorrectLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, KEY key, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void MoveToCorrectLeaf( PageCursor cursor, KEY key, long stableGeneration, long unstableGeneration )
 		 {
 			  int previousLevel = _currentLevel;
@@ -385,7 +385,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="unstableGeneration"> unstable generation, i.e. generation which is under development right now. </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void insert(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: void insert(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 internal virtual void Insert( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY, VALUE> valueMerger, long stableGeneration, long unstableGeneration )
 		 {
 			  Debug.Assert( CursorIsAtExpectedLocation( cursor ) );
@@ -433,7 +433,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="rightChild"> the right child of primKey </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void insertInInternal(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void insertInInternal(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void InsertInInternal( PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration )
 		 {
 			  CreateSuccessorIfNeeded( cursor, structurePropagation, UPDATE_MID_CHILD, stableGeneration, unstableGeneration );
@@ -442,7 +442,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void doInsertInInternal(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void doInsertInInternal(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void DoInsertInInternal( PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, KEY primKey, long rightChild, long stableGeneration, long unstableGeneration )
 		 {
 			  Overflow overflow = _bTreeNode.internalOverflow( cursor, keyCount, primKey );
@@ -481,7 +481,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="keyCount"> key count for fullNode </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void splitInternal(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, long newRightChild, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void splitInternal(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, long newRightChild, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void SplitInternal( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, long newRightChild, int keyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  long current = cursor.CurrentPageId;
@@ -537,7 +537,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="valueMerger"> <seealso cref="ValueMerger"/> for deciding what to do with existing keys </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void insertInLeaf(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void insertInLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void InsertInLeaf( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY, VALUE> valueMerger, long stableGeneration, long unstableGeneration )
 		 {
 			  int keyCount = TreeNode.KeyCount( cursor );
@@ -555,7 +555,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void overwriteValue(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, int pos, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void overwriteValue(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY,VALUE> valueMerger, int pos, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void OverwriteValue( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, ValueMerger<KEY, VALUE> valueMerger, int pos, int keyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  // this key already exists, what shall we do? ask the valueMerger
@@ -583,7 +583,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean doInsertInLeaf(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, int pos, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private boolean doInsertInLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, int pos, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private bool DoInsertInLeaf( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE value, int pos, int keyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  Overflow overflow = _bTreeNode.leafOverflow( cursor, keyCount, key, value );
@@ -616,7 +616,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="keyCount"> number of keys in this leaf (it was already read anyway) </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void splitLeaf(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, VALUE newValue, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void splitLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, VALUE newValue, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void SplitLeaf( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, VALUE newValue, int keyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  // To avoid moving cursor between pages we do all operations on left node first.
@@ -738,7 +738,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// Otherwise {@code null}. </returns>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: VALUE remove(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: VALUE remove(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 internal virtual VALUE Remove( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration )
 		 {
 			  Debug.Assert( CursorIsAtExpectedLocation( cursor ) );
@@ -760,7 +760,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void handleStructureChanges(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void handleStructureChanges(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void HandleStructureChanges( PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration )
 		 {
 			  while ( structurePropagation.HasLeftChildUpdate || structurePropagation.HasMidChildUpdate || structurePropagation.HasRightChildUpdate || structurePropagation.HasLeftKeyReplace || structurePropagation.HasRightKeyReplace || structurePropagation.HasRightKeyInsert )
@@ -848,7 +848,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void overwriteKeyInternal(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, int pos, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void overwriteKeyInternal(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, int pos, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void OverwriteKeyInternal( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY newKey, int pos, long stableGeneration, long unstableGeneration )
 		 {
 			  CreateSuccessorIfNeeded( cursor, structurePropagation, UPDATE_MID_CHILD, stableGeneration, unstableGeneration );
@@ -866,7 +866,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void tryShrinkTree(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void tryShrinkTree(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void TryShrinkTree( PageCursor cursor, StructurePropagation<KEY> structurePropagation, long stableGeneration, long unstableGeneration )
 		 {
 			  // New root will be propagated out. If rootKeyCount is 0 we can shrink the tree.
@@ -896,7 +896,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void replaceKeyByBubbleRightmostFromSubtree(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int subtreePosition, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void replaceKeyByBubbleRightmostFromSubtree(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int subtreePosition, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void ReplaceKeyByBubbleRightmostFromSubtree( PageCursor cursor, StructurePropagation<KEY> structurePropagation, int subtreePosition, long stableGeneration, long unstableGeneration )
 		 {
 			  long currentPageId = cursor.CurrentPageId;
@@ -930,7 +930,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean bubbleRightmostKeyRecursive(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long previousNode, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private boolean bubbleRightmostKeyRecursive(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, long previousNode, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private bool BubbleRightmostKeyRecursive( PageCursor cursor, StructurePropagation<KEY> structurePropagation, long previousNode, long stableGeneration, long unstableGeneration )
 		 {
 			  try
@@ -1002,7 +1002,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateRightmostChildInLeftSibling(org.neo4j.io.pagecache.PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void updateRightmostChildInLeftSibling(org.Neo4Net.io.pagecache.PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void UpdateRightmostChildInLeftSibling( PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration )
 		 {
 			  long leftSibling = TreeNode.LeftSibling( cursor, stableGeneration, unstableGeneration );
@@ -1018,7 +1018,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void updateLeftmostChildInRightSibling(org.neo4j.io.pagecache.PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void updateLeftmostChildInRightSibling(org.Neo4Net.io.pagecache.PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void UpdateLeftmostChildInRightSibling( PageCursor cursor, long childPointer, long stableGeneration, long unstableGeneration )
 		 {
 			  long rightSibling = TreeNode.RightSibling( cursor, stableGeneration, unstableGeneration );
@@ -1052,7 +1052,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <returns> {@code true} if key was removed, otherwise {@code false}. </returns>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean removeFromLeaf(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private boolean removeFromLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private bool RemoveFromLeaf( PageCursor cursor, StructurePropagation<KEY> structurePropagation, KEY key, VALUE into, long stableGeneration, long unstableGeneration )
 		 {
 			  int keyCount = TreeNode.KeyCount( cursor );
@@ -1078,7 +1078,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void underflowInLeaf(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void underflowInLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void UnderflowInLeaf( PageCursor cursor, StructurePropagation<KEY> structurePropagation, int keyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  long leftSibling = TreeNode.LeftSibling( cursor, stableGeneration, unstableGeneration );
@@ -1125,7 +1125,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void connectLeftAndRightSibling(org.neo4j.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void connectLeftAndRightSibling(org.Neo4Net.io.pagecache.PageCursor cursor, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void ConnectLeftAndRightSibling( PageCursor cursor, long stableGeneration, long unstableGeneration )
 		 {
 			  long currentId = cursor.CurrentPageId;
@@ -1148,7 +1148,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void mergeToRightSiblingLeaf(org.neo4j.io.pagecache.PageCursor cursor, org.neo4j.io.pagecache.PageCursor rightSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void mergeToRightSiblingLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.io.pagecache.PageCursor rightSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void MergeToRightSiblingLeaf( PageCursor cursor, PageCursor rightSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  // Read the right-most key from the right sibling to use when comparing whether or not
@@ -1166,7 +1166,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void mergeFromLeftSiblingLeaf(org.neo4j.io.pagecache.PageCursor cursor, org.neo4j.io.pagecache.PageCursor leftSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int leftSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void mergeFromLeftSiblingLeaf(org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.io.pagecache.PageCursor leftSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int leftSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void MergeFromLeftSiblingLeaf( PageCursor cursor, PageCursor leftSiblingCursor, StructurePropagation<KEY> structurePropagation, int keyCount, int leftSiblingKeyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  // Read the left-most key from the left sibling to use when comparing whether or not
@@ -1184,7 +1184,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void merge(org.neo4j.io.pagecache.PageCursor leftSiblingCursor, int leftSiblingKeyCount, org.neo4j.io.pagecache.PageCursor rightSiblingCursor, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void merge(org.Neo4Net.io.pagecache.PageCursor leftSiblingCursor, int leftSiblingKeyCount, org.Neo4Net.io.pagecache.PageCursor rightSiblingCursor, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void Merge( PageCursor leftSiblingCursor, int leftSiblingKeyCount, PageCursor rightSiblingCursor, int rightSiblingKeyCount, long stableGeneration, long unstableGeneration )
 		 {
 			  _bTreeNode.copyKeyValuesFromLeftToRight( leftSiblingCursor, leftSiblingKeyCount, rightSiblingCursor, rightSiblingKeyCount );
@@ -1252,7 +1252,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="unstableGeneration"> unstable generation, i.e. generation which is under development right now. </param>
 		 /// <exception cref="IOException"> on cursor failure </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createSuccessorIfNeeded(org.neo4j.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, StructurePropagation.StructureUpdate structureUpdate, long stableGeneration, long unstableGeneration) throws java.io.IOException
+//ORIGINAL LINE: private void createSuccessorIfNeeded(org.Neo4Net.io.pagecache.PageCursor cursor, StructurePropagation<KEY> structurePropagation, StructurePropagation.StructureUpdate structureUpdate, long stableGeneration, long unstableGeneration) throws java.io.IOException
 		 private void CreateSuccessorIfNeeded( PageCursor cursor, StructurePropagation<KEY> structurePropagation, StructurePropagation.StructureUpdate structureUpdate, long stableGeneration, long unstableGeneration )
 		 {
 			  long oldId = cursor.CurrentPageId;

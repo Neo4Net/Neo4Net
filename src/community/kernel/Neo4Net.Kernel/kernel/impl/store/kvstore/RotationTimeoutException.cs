@@ -21,10 +21,10 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 {
 
 	/// <summary>
-	/// When <seealso cref="org.neo4j.kernel.impl.store.kvstore.AbstractKeyValueStore.RotationTask"/> do rotation without force
+	/// When <seealso cref="org.Neo4Net.kernel.impl.store.kvstore.AbstractKeyValueStore.RotationTask"/> do rotation without force
 	/// option specified, it will wait for all transactions below specified version before doing rotation
 	/// in case if they will not finish for specified timeout rotation will be terminated and exception will be thrown. </summary>
-	/// <seealso cref= org.neo4j.kernel.impl.store.kvstore.AbstractKeyValueStore.RotationTask </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.store.kvstore.AbstractKeyValueStore.RotationTask </seealso>
 	public class RotationTimeoutException : StoreFailureException
 	{
 

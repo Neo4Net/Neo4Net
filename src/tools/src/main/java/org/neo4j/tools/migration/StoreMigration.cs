@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,18 +15,18 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.migration
 {
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
@@ -65,14 +65,14 @@ namespace Neo4Net.tools.migration
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using KernelExtensionFailureStrategies = Neo4Net.Kernel.extension.KernelExtensionFailureStrategies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.extension.KernelExtensionFailureStrategies.ignore;
+//	import static org.Neo4Net.kernel.extension.KernelExtensionFailureStrategies.ignore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
+//	import static org.Neo4Net.kernel.impl.pagecache.ConfigurableStandalonePageCacheFactory.createPageCache;
 
 	/// <summary>
-	/// Stand alone tool for migrating/upgrading a neo4j database from one version to the next.
+	/// Stand alone tool for migrating/upgrading a Neo4Net database from one version to the next.
 	/// </summary>
 	/// <seealso cref= StoreMigrator </seealso>
 	//: TODO introduce abstract tool class as soon as we will have several tools in tools module
@@ -107,7 +107,7 @@ namespace Neo4Net.tools.migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void run(final org.neo4j.io.fs.FileSystemAbstraction fs, final java.io.File storeDirectory, org.neo4j.kernel.configuration.Config config, org.neo4j.logging.LogProvider userLogProvider) throws Exception
+//ORIGINAL LINE: public static void run(final org.Neo4Net.io.fs.FileSystemAbstraction fs, final java.io.File storeDirectory, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.LogProvider userLogProvider) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public static void Run( FileSystemAbstraction fs, File storeDirectory, Config config, LogProvider userLogProvider )
 		 {
@@ -137,7 +137,7 @@ namespace Neo4Net.tools.migration
       
 						DatabaseLayout databaseLayout = DatabaseLayout.of( storeDirectory );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles = org.neo4j.kernel.impl.transaction.log.files.LogFilesBuilder.activeFilesBuilder(databaseLayout, fs, pageCache).withConfig(config).build();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles = org.Neo4Net.kernel.impl.transaction.log.files.LogFilesBuilder.activeFilesBuilder(databaseLayout, fs, pageCache).withConfig(config).build();
 						LogFiles logFiles = LogFilesBuilder.activeFilesBuilder( databaseLayout, fs, pageCache ).withConfig( config ).build();
 						LogTailScanner tailScanner = new LogTailScanner( logFiles, new VersionAwareLogEntryReader<Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel>(), monitors );
       
@@ -169,7 +169,7 @@ namespace Neo4Net.tools.migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void appendCheckpoint(org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles, org.neo4j.kernel.recovery.LogTailScanner tailScanner) throws java.io.IOException
+//ORIGINAL LINE: private static void appendCheckpoint(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, org.Neo4Net.kernel.recovery.LogTailScanner tailScanner) throws java.io.IOException
 		 private static void AppendCheckpoint( LogFiles logFiles, LogTailScanner tailScanner )
 		 {
 			  using ( Lifespan lifespan = new Lifespan( logFiles ) )

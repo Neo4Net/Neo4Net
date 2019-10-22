@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.impl.store.format.highlimit
 {
@@ -46,13 +46,13 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
+//	import static org.Neo4Net.kernel.impl.store.NoStoreHeader.NO_STORE_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
+//	import static org.Neo4Net.kernel.impl.store.RecordPageLocationCalculator.offsetForId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.BaseRecordFormat.IN_USE_BIT;
+//	import static org.Neo4Net.kernel.impl.store.format.BaseRecordFormat.IN_USE_BIT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
+//	import static org.Neo4Net.kernel.impl.store.format.highlimit.BaseHighLimitRecordFormat.NULL;
 
 	public class RelationshipRecordFormatTest
 	{
@@ -246,7 +246,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(org.neo4j.kernel.impl.store.record.RelationshipRecord source, org.neo4j.kernel.impl.store.record.RelationshipRecord target, long poisonedReference, int type) throws java.io.IOException
+//ORIGINAL LINE: private void verifyRecordsWithPoisonedReference(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target, long poisonedReference, int type) throws java.io.IOException
 		 private void VerifyRecordsWithPoisonedReference( RelationshipRecord source, RelationshipRecord target, long poisonedReference, int type )
 		 {
 			  bool nullPoison = poisonedReference == NULL;
@@ -287,14 +287,14 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.neo4j.kernel.impl.store.record.RelationshipRecord source, org.neo4j.kernel.impl.store.record.RelationshipRecord target) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipRecord source, RelationshipRecord target )
 		 {
 			  WriteReadRecord( source, target, _recordSize );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeReadRecord(org.neo4j.kernel.impl.store.record.RelationshipRecord source, org.neo4j.kernel.impl.store.record.RelationshipRecord target, int recordSize) throws java.io.IOException
+//ORIGINAL LINE: private void writeReadRecord(org.Neo4Net.kernel.impl.store.record.RelationshipRecord source, org.Neo4Net.kernel.impl.store.record.RelationshipRecord target, int recordSize) throws java.io.IOException
 		 private void WriteReadRecord( RelationshipRecord source, RelationshipRecord target, int recordSize )
 		 {
 			  _format.prepare( source, recordSize, _idSequence );
@@ -310,7 +310,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkRecord(RelationshipRecordFormat format, int recordSize, org.neo4j.io.pagecache.StubPageCursor cursor, long recordId, int recordOffset, org.neo4j.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
+//ORIGINAL LINE: private void checkRecord(RelationshipRecordFormat format, int recordSize, org.Neo4Net.io.pagecache.StubPageCursor cursor, long recordId, int recordOffset, org.Neo4Net.kernel.impl.store.record.RelationshipRecord record) throws java.io.IOException
 		 private void CheckRecord( RelationshipRecordFormat format, int recordSize, StubPageCursor cursor, long recordId, int recordOffset, RelationshipRecord record )
 		 {
 			  format.Write( record, cursor, recordSize );

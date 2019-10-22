@@ -42,14 +42,14 @@ namespace Neo4Net.Kernel.configuration.ssl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.neo4j_home;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.Neo4Net_home;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class SslPolicyLoaderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _home;
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  SslPolicyConfig policyConfig = new SslPolicyConfig( "default" );
 
-			  @params[neo4j_home.name()] = _home.AbsolutePath;
+			  @params[Neo4Net_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 			  Config config = Config.defaults( @params );
 
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  SslPolicyConfig policyConfig = new SslPolicyConfig( "default" );
 
-			  @params[neo4j_home.name()] = _home.AbsolutePath;
+			  @params[Neo4Net_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 
 			  Config config = Config.defaults( @params );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  SslPolicyConfig policyConfig = new SslPolicyConfig( "default" );
 
-			  @params[neo4j_home.name()] = _home.AbsolutePath;
+			  @params[Neo4Net_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 			  Config config = Config.defaults( @params );
 
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  SslPolicyConfig policyConfig = new SslPolicyConfig( LegacySslPolicyConfig.LEGACY_POLICY_NAME );
 
-			  @params[neo4j_home.name()] = _home.AbsolutePath;
+			  @params[Neo4Net_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 			  Config config = Config.defaults( @params );
 

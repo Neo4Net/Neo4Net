@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
@@ -40,12 +40,12 @@ namespace Neo4Net.Kernel.impl.transaction.log.pruning
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.keep_logical_logs;
 
 	public class LogPruningIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(keep_logical_logs, "true");
 
 		 private static readonly SimpleTriggerInfo _triggerInfo = new SimpleTriggerInfo( "forced trigger" );

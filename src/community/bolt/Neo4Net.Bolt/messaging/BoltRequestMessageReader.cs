@@ -24,13 +24,13 @@ namespace Neo4Net.Bolt.messaging
 
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using PackStream = Neo4Net.Bolt.v1.packstream.PackStream;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 
 	/// <summary>
-	/// Reader for Bolt request messages made available via a <seealso cref="Neo4jPack.Unpacker"/>.
+	/// Reader for Bolt request messages made available via a <seealso cref="Neo4NetPack.Unpacker"/>.
 	/// </summary>
 	public abstract class BoltRequestMessageReader
 	{
@@ -47,8 +47,8 @@ namespace Neo4Net.Bolt.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void read(Neo4jPack_Unpacker unpacker) throws java.io.IOException
-		 public virtual void Read( Neo4jPack_Unpacker unpacker )
+//ORIGINAL LINE: public void read(Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+		 public virtual void Read( Neo4NetPack_Unpacker unpacker )
 		 {
 			  try
 			  {
@@ -58,7 +58,7 @@ namespace Neo4Net.Bolt.messaging
 			  {
 					if ( e.CausesFailureMessage() )
 					{
-						 Neo4jError error = Neo4jError.from( e );
+						 Neo4NetError error = Neo4NetError.from( e );
 						 _connection.enqueue( stateMachine => stateMachine.handleExternalFailure( error, _externalErrorResponseHandler ) );
 					}
 					else
@@ -69,8 +69,8 @@ namespace Neo4Net.Bolt.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void doRead(Neo4jPack_Unpacker unpacker) throws java.io.IOException
-		 private void DoRead( Neo4jPack_Unpacker unpacker )
+//ORIGINAL LINE: private void doRead(Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+		 private void DoRead( Neo4NetPack_Unpacker unpacker )
 		 {
 			  try
 			  {

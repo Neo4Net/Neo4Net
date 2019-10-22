@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.impl.util
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.AutoCreatingHashMap.nested;
+//	import static org.Neo4Net.kernel.impl.util.AutoCreatingHashMap.nested;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.AutoCreatingHashMap.values;
+//	import static org.Neo4Net.kernel.impl.util.AutoCreatingHashMap.values;
 
 	public class AutoCreatingHashMapTest
 	{

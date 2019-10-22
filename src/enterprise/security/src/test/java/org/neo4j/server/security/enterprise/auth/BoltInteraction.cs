@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,19 +16,19 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
 
 	using ResponseMessage = Neo4Net.Bolt.messaging.ResponseMessage;
 	using AuthenticationException = Neo4Net.Bolt.security.auth.AuthenticationException;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
@@ -36,14 +36,14 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using RecordMessage = Neo4Net.Bolt.v1.messaging.response.RecordMessage;
 	using SuccessMessage = Neo4Net.Bolt.v1.messaging.response.SuccessMessage;
-	using Neo4jWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4jWithSocket;
+	using Neo4NetWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4NetWithSocket;
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
 	using Neo4Net.Functions;
-	using Neo4Net.Graphdb;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -68,30 +68,30 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.BASIC_SCHEME;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.BASIC_SCHEME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.CREDENTIALS;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.CREDENTIALS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.NATIVE_REALM;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.NATIVE_REALM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.PRINCIPAL;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.PRINCIPAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.REALM_KEY;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.REALM_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken_Fields.SCHEME_KEY;
+//	import static org.Neo4Net.kernel.api.security.AuthToken_Fields.SCHEME_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 
 	internal class BoltInteraction : NeoInteractionLevel<BoltInteraction.BoltSubject>
 	{
-		 private readonly TransportTestUtil _util = new TransportTestUtil( new Neo4jPackV1() );
+		 private readonly TransportTestUtil _util = new TransportTestUtil( new Neo4NetPackV1() );
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 private readonly IFactory<TransportConnection> _connectionFactory = SocketConnection::new;
-		 private readonly Neo4jWithSocket _server;
+		 private readonly Neo4NetWithSocket _server;
 		 private IDictionary<string, BoltSubject> _subjects = new Dictionary<string, BoltSubject>();
 		 private FileSystemAbstraction _fileSystem;
 		 private EnterpriseAuthManager _authManager;
@@ -105,7 +105,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  TestEnterpriseGraphDatabaseFactory factory = new TestEnterpriseGraphDatabaseFactory();
 			  _fileSystem = fileSystemSupplier();
-			  _server = new Neo4jWithSocket(this.GetType(), factory, () => _fileSystem, settings =>
+			  _server = new Neo4NetWithSocket(this.GetType(), factory, () => _fileSystem, settings =>
 			  {
 						  settings.put( GraphDatabaseSettings.auth_enabled.name(), "true" );
 						  settings.putAll( config );
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(BoltSubject subject, org.neo4j.kernel.api.KernelTransaction.Type txType) throws Throwable
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.coreapi.InternalTransaction beginLocalTransactionAsUser(BoltSubject subject, org.Neo4Net.kernel.api.KernelTransaction.Type txType) throws Throwable
 		 public override InternalTransaction BeginLocalTransactionAsUser( BoltSubject subject, KernelTransaction.Type txType )
 		 {
 			  LoginContext loginContext = _authManager.login( newBasicAuthToken( subject.Username, subject.Password ) );
@@ -256,7 +256,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private BoltResult collectResults(org.neo4j.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
+//ORIGINAL LINE: private BoltResult collectResults(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection client) throws Exception
 		 private BoltResult CollectResults( TransportConnection client )
 		 {
 			  ResponseMessage message = _util.receiveOneResponseMessage( client );

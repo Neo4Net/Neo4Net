@@ -34,7 +34,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void onRecords(final org.neo4j.bolt.runtime.BoltResult result, final boolean pull) throws Exception
+//ORIGINAL LINE: public void onRecords(final org.Neo4Net.bolt.runtime.BoltResult result, final boolean pull) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void OnRecords( BoltResult result, bool pull )
 		 {
@@ -54,7 +54,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visit(org.neo4j.cypher.result.QueryResult_Record record) throws Exception
+//ORIGINAL LINE: public void visit(org.Neo4Net.cypher.result.QueryResult_Record record) throws Exception
 			 public void visit( Neo4Net.Cypher.result.QueryResult_Record record )
 			 {
 				  if ( _pull )

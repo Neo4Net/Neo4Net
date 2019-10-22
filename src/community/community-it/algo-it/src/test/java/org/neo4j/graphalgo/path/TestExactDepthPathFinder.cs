@@ -21,17 +21,17 @@
  */
 namespace Neo4Net.Graphalgo.path
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
 	using Neo4Net.Graphalgo;
 	using ExactDepthPathFinder = Neo4Net.Graphalgo.impl.path.ExactDepthPathFinder;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.collection.IsIn.isIn;
@@ -42,7 +42,7 @@ namespace Neo4Net.Graphalgo.path
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 
-	public class TestExactDepthPathFinder : Neo4jAlgoTestCase
+	public class TestExactDepthPathFinder : Neo4NetAlgoTestCase
 	{
 		 public virtual void CreateGraph()
 		 {

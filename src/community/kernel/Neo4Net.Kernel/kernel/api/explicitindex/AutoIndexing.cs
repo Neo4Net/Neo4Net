@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.api.explicitindex
 	/// Abstract interface for accessing legacy auto indexing facilities for nodes and relationships
 	/// </summary>
 	/// <seealso cref= AutoIndexOperations </seealso>
-	/// <seealso cref= org.neo4j.kernel.impl.api.explicitindex.InternalAutoIndexing </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing </seealso>
 	public interface AutoIndexing
 	{
 		 /// <summary>

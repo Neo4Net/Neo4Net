@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.database
 {
 
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using URLAccessRule = Neo4Net.Graphdb.security.URLAccessRule;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using Neo4Net.Helpers.Collections;
 	using AvailabilityGuardInstaller = Neo4Net.Kernel.availability.AvailabilityGuardInstaller;
 	using Neo4Net.Kernel.extension;
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.database
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
+//ORIGINAL LINE: public Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions()
 		 public override IEnumerable<KernelExtensionFactory<object>> KernelExtensions()
 		 {
 			  return _wrapped.kernelExtensions();

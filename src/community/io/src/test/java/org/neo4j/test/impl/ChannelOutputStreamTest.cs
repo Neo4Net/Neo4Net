@@ -23,7 +23,7 @@ namespace Neo4Net.Test.impl
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

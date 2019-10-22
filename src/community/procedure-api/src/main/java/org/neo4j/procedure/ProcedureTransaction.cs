@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Procedure
 {
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 
 	/// <summary>
 	/// ProcedureTransaction allows to mark a transaction for termination, this will make it so that it can not commit.

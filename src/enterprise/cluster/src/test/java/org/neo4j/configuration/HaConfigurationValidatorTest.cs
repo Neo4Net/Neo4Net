@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Configuration
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.Configuration
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseEditionSettings = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings;
@@ -43,7 +43,7 @@ namespace Neo4Net.Configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class HaConfigurationValidatorTest
@@ -54,11 +54,11 @@ namespace Neo4Net.Configuration
 		 public ExpectedException Expected = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode mode;
 		 public EnterpriseEditionSettings.Mode Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<org.neo4j.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static java.util.List<org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode> recordFormats()
 		 public static IList<EnterpriseEditionSettings.Mode> RecordFormats()
 		 {
 			  return Arrays.asList( EnterpriseEditionSettings.Mode.HA, EnterpriseEditionSettings.Mode.ARBITER );

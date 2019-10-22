@@ -97,7 +97,7 @@ namespace Neo4Net.Test.assertion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(org.neo4j.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
+//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(org.Neo4Net.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void AssertEventually<T, E, T1>( ThrowingSupplier<T, E> actual, Matcher<T1> matcher, long timeout, TimeUnit timeUnit ) where E : Exception
 		 {
@@ -105,7 +105,7 @@ namespace Neo4Net.Test.assertion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(String reason, org.neo4j.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
+//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(String reason, org.Neo4Net.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void AssertEventually<T, E, T1>( string reason, ThrowingSupplier<T, E> actual, Matcher<T1> matcher, long timeout, TimeUnit timeUnit ) where E : Exception
 		 {
@@ -113,7 +113,7 @@ namespace Neo4Net.Test.assertion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(System.Func<T, String> reason, org.neo4j.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
+//ORIGINAL LINE: public static <T, E extends Exception> void assertEventually(System.Func<T, String> reason, org.Neo4Net.function.ThrowingSupplier<T, E> actual, org.hamcrest.Matcher<? super T> matcher, long timeout, java.util.concurrent.TimeUnit timeUnit) throws E, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public static void AssertEventually<T, E, T1>( System.Func<T, string> reason, ThrowingSupplier<T, E> actual, Matcher<T1> matcher, long timeout, TimeUnit timeUnit ) where E : Exception
 		 {

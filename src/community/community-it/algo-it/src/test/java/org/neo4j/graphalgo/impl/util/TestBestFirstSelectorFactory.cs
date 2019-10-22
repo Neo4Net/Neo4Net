@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Graphalgo.impl.util
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 	using RunWith = org.junit.runner.RunWith;
@@ -29,15 +29,15 @@ namespace Neo4Net.Graphalgo.impl.util
 
 
 	using Neo4Net.Graphalgo;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Neo4Net.Graphdb;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Neo4Net.GraphDb;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 	using MonoDirectionalTraversalDescription = Neo4Net.Kernel.impl.traversal.MonoDirectionalTraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -47,8 +47,8 @@ namespace Neo4Net.Graphalgo.impl.util
 	/// @author Anton Persson
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class TestBestFirstSelectorFactory extends common.Neo4jAlgoTestCase
-	public class TestBestFirstSelectorFactory : Neo4jAlgoTestCase
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class TestBestFirstSelectorFactory extends common.Neo4NetAlgoTestCase
+	public class TestBestFirstSelectorFactory : Neo4NetAlgoTestCase
 	{
 		 /*
 		  * LAYOUT

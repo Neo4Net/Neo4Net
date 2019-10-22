@@ -65,15 +65,15 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.count;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.progress.ProgressListener_Fields.NONE;
+//	import static org.Neo4Net.helpers.progress.ProgressListener_Fields.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Group_Fields.GLOBAL;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Group_Fields.GLOBAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class EncodingIdMapperTest
@@ -413,7 +413,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 			  }
 			  IdMapper mapper = mapper( encoder, Radix.Long, NO_MONITOR, ParallelSort.DEFAULT, numberOfCollisions => new LongCollisionValues( NumberArrayFactory.HEAP, numberOfCollisions ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.neo4j.unsafe.impl.batchimport.input.Group> group = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.unsafe.impl.batchimport.input.Group> group = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<Group> group = new AtomicReference<Group>();
 			  System.Func<long, object> ids = nodeId =>
 			  {
@@ -664,7 +664,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //           LONGS_AS_STRINGS { Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return() -> String.valueOf(random.nextInt(1_000_000_000)); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           VERY_LONG_STRINGS { char[] CHARS = "½!\"#¤%&/()=?`´;:,._-<>".toCharArray(); Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return new org.neo4j.function.Factory<Object>() { public Object newInstance() { int length = 1500; for(int i = 0; i < 4; i++) { length = random.nextInt(length) + 20; } char[] chars = new char[length]; for(int i = 0; i < length; i++) { char ch; if(random.nextBoolean()) { ch = randomLetter(random); } else { ch = CHARS[random.nextInt(CHARS.length)]; } chars[i] = ch; } return new String(chars); } private char randomLetter(java.util.Random random) { int super; if(random.nextBoolean()) { super = 'a'; } else { super = 'A'; } int size = 'z' - 'a'; return(char)(super + random.nextInt(size)); } }; } };
+//           VERY_LONG_STRINGS { char[] CHARS = "½!\"#¤%&/()=?`´;:,._-<>".toCharArray(); Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return new org.Neo4Net.function.Factory<Object>() { public Object newInstance() { int length = 1500; for(int i = 0; i < 4; i++) { length = random.nextInt(length) + 20; } char[] chars = new char[length]; for(int i = 0; i < length; i++) { char ch; if(random.nextBoolean()) { ch = randomLetter(random); } else { ch = CHARS[random.nextInt(CHARS.length)]; } chars[i] = ch; } return new String(chars); } private char randomLetter(java.util.Random random) { int super; if(random.nextBoolean()) { super = 'a'; } else { super = 'A'; } int size = 'z' - 'a'; return(char)(super + random.nextInt(size)); } }; } };
 
 			  private static readonly IList<ValueType> valueList = new List<ValueType>();
 
@@ -729,10 +729,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RepeatRule repeater = new org.neo4j.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RepeatRule repeater = new org.Neo4Net.test.rule.RepeatRule();
 		 public readonly RepeatRule Repeater = new RepeatRule();
 
 		 private class CountingCollector : Collector

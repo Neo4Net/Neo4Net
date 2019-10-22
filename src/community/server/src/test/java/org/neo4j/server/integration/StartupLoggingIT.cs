@@ -28,7 +28,7 @@ namespace Neo4Net.Server.integration
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;
@@ -43,18 +43,18 @@ namespace Neo4Net.Server.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.AbstractNeoServer.NEO4J_IS_STARTING_MESSAGE;
+//	import static org.Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
 
 	public class StartupLoggingIT : ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public new SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -69,7 +69,7 @@ namespace Neo4Net.Server.integration
 			  boot.Stop();
 
 			  IList<string> captured = SuppressOutput.OutputVoice.lines();
-			  assertThat( captured, ContainsAtLeastTheseLines( Warn( "Config file \\[nonexistent-file.conf\\] does not exist." ), Info( NEO4J_IS_STARTING_MESSAGE ), Info( "Starting..." ), Info( "Started." ), Info( "Remote interface available at " + uri.ToString() ), Info("Stopping..."), Info("Stopped.") ) );
+			  assertThat( captured, ContainsAtLeastTheseLines( Warn( "Config file \\[nonexistent-file.conf\\] does not exist." ), Info( Neo4Net_IS_STARTING_MESSAGE ), Info( "Starting..." ), Info( "Started." ), Info( "Remote interface available at " + uri.ToString() ), Info("Stopping..."), Info("Stopped.") ) );
 		 }
 
 		 private IDictionary<string, string> PropertyPairs

@@ -28,12 +28,12 @@ namespace Neo4Net.Index.backup
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
@@ -56,10 +56,10 @@ namespace Neo4Net.Index.backup
 		 private const int NUMBER_OF_INDEXES = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.RandomRule randomRule = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule database = new org.neo4j.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule database = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public EmbeddedDatabaseRule Database = new EmbeddedDatabaseRule().startLazily();
 		 private CheckPointer _checkPointer;
 		 private IndexingService _indexingService;
@@ -194,7 +194,7 @@ namespace Neo4Net.Index.backup
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void forceCheckpoint(org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
+//ORIGINAL LINE: private void forceCheckpoint(org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointer checkPointer) throws java.io.IOException
 		 private void ForceCheckpoint( CheckPointer checkPointer )
 		 {
 			  checkPointer.ForceCheckPoint( new SimpleTriggerInfo( "testForcedCheckpoint" ) );

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using ValuesIterator = Neo4Net.Kernel.Api.Impl.Index.collector.ValuesIterator;
 
 	/// <summary>
-	/// Iterator over entity ids together with their respective score.
+	/// Iterator over IEntity ids together with their respective score.
 	/// </summary>
 	public class ScoreEntityIterator : IEnumerator<ScoreEntityIterator.ScoreEntry>
 	{
@@ -54,9 +54,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 {
 			  while ( _next == null && _iterator.hasNext() )
 			  {
-					long entityId = _iterator.next();
+					long IEntityId = _iterator.next();
 					float score = _iterator.currentScore();
-					ScoreEntry tmp = new ScoreEntry( entityId, score );
+					ScoreEntry tmp = new ScoreEntry( IEntityId, score );
 					if ( _predicate == null || _predicate.test( tmp ) )
 					{
 						 _next = tmp;
@@ -166,18 +166,18 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 		 /// <summary>
-		 /// A ScoreEntry consists of an entity id together with its score.
+		 /// A ScoreEntry consists of an IEntity id together with its score.
 		 /// </summary>
 		 internal class ScoreEntry
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly long EntityIdConflict;
+			  internal readonly long IEntityIdConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly float ScoreConflict;
 
-			  internal virtual long EntityId()
+			  internal virtual long IEntityId()
 			  {
-					return EntityIdConflict;
+					return IEntityIdConflict;
 			  }
 
 			  internal virtual float Score()
@@ -185,15 +185,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					return ScoreConflict;
 			  }
 
-			  internal ScoreEntry( long entityId, float score )
+			  internal ScoreEntry( long IEntityId, float score )
 			  {
-					this.EntityIdConflict = entityId;
+					this.EntityIdConflict = IEntityId;
 					this.ScoreConflict = score;
 			  }
 
 			  public override string ToString()
 			  {
-					return "ScoreEntry[entityId=" + EntityIdConflict + ", score=" + ScoreConflict + "]";
+					return "ScoreEntry[entityId=" + IEntityIdConflict + ", score=" + ScoreConflict + "]";
 			  }
 		 }
 	}

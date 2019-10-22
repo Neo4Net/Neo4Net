@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.labelscan.NodeLabelRange.convertState;
+//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelRange.convertState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.labelscan.NodeLabelRange.readBitmap;
+//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelRange.readBitmap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.LabelScanValue.RANGE_SIZE;
 
 	/// <summary>
 	/// <seealso cref="AllEntriesLabelScanReader"/> for <seealso cref="NativeLabelScanStore"/>.

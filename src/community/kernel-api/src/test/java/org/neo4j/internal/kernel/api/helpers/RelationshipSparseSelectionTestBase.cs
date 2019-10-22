@@ -22,7 +22,7 @@ namespace Neo4Net.Internal.Kernel.Api.helpers
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;

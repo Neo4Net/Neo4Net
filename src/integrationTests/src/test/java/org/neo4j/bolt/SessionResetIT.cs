@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Bolt
 {
@@ -41,11 +41,11 @@ namespace Neo4Net.Bolt
 	using ClientException = Neo4Net.driver.v1.exceptions.ClientException;
 	using ServiceUnavailableException = Neo4Net.driver.v1.exceptions.ServiceUnavailableException;
 	using TransientException = Neo4Net.driver.v1.exceptions.TransientException;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Result = Neo4Net.Graphdb.Result;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EnterpriseNeo4jRule = Neo4Net.Harness.junit.EnterpriseNeo4jRule;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Result = Neo4Net.GraphDb.Result;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EnterpriseNeo4NetRule = Neo4Net.Harness.junit.EnterpriseNeo4NetRule;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
@@ -68,17 +68,17 @@ namespace Neo4Net.Bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
+//	import static org.Neo4Net.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.await;
+//	import static org.Neo4Net.function.Predicates.await;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.rootCause;
+//	import static org.Neo4Net.helpers.Exceptions.rootCause;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.daemon;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class SessionResetIT
 	{
@@ -107,7 +107,7 @@ namespace Neo4Net.Bolt
 		 private static readonly string[] _stressItQueries = new string[] { SHORT_QUERY_1, SHORT_QUERY_2, LONG_QUERY };
 
 		 private readonly VerboseTimeout _timeout = VerboseTimeout.builder().withTimeout(6, MINUTES).build();
-		 private readonly Neo4jRule _db = new EnterpriseNeo4jRule().withConfig(GraphDatabaseSettings.load_csv_file_url_root, "import").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).dumpLogsOnFailure(System.out);
+		 private readonly Neo4NetRule _db = new EnterpriseNeo4NetRule().withConfig(GraphDatabaseSettings.load_csv_file_url_root, "import").withConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).dumpLogsOnFailure(System.out);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(timeout).around(db);

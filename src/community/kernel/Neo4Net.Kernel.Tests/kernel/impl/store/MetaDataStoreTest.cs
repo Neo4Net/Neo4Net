@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.store
 
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using DelegatingPageCache = Neo4Net.Io.pagecache.DelegatingPageCache;
 	using DelegatingPagedFile = Neo4Net.Io.pagecache.DelegatingPagedFile;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -68,13 +68,13 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.versionStringToLong;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.versionStringToLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Race.throwing;
+//	import static org.Neo4Net.test.Race.throwing;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.PageCacheRule.config;
+//	import static org.Neo4Net.test.rule.PageCacheRule.config;
 
 	public class MetaDataStoreTest
 	{
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.impl.store
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 			 public override PagedFile map( File file, int pageSize, params OpenOption[] openOptions )
 			 {
 				  return new DelegatingPagedFileAnonymousInnerClass( this, base.map( file, pageSize, openOptions ) );
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.impl.store
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 				 public override PageCursor io( long pageId, int pfFlags )
 				 {
 					  return new DelegatingPageCursorAnonymousInnerClass( this, base.io( pageId, pfFlags ) );

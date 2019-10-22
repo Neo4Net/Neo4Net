@@ -68,7 +68,7 @@ namespace Neo4Net.Consistency.checking.full
 		 protected internal abstract MultiPassStore MultiPassStore();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected abstract org.neo4j.consistency.store.RecordReference<? extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> record(org.neo4j.consistency.store.RecordAccess filter, long id);
+//ORIGINAL LINE: protected abstract org.Neo4Net.consistency.store.RecordReference<? extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> record(org.Neo4Net.consistency.store.RecordAccess filter, long id);
 		 protected internal abstract RecordReference<AbstractBaseRecord> Record( RecordAccess filter, long id );
 
 		 protected internal abstract void OtherRecords( RecordAccess filter, long id );

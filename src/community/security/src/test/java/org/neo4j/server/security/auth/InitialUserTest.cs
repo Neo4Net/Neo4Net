@@ -40,7 +40,7 @@ namespace Neo4Net.Server.Security.Auth
 	public abstract class InitialUserTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 
 		 protected internal Config Config;
@@ -58,10 +58,10 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = users.getUserByName("neo4j");
-			  User user = Users.getUserByName( "neo4j" );
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = users.getUserByName("Neo4Net");
+			  User user = Users.getUserByName( "Neo4Net" );
 			  assertNotNull( user );
-			  assertTrue( user.Credentials().matchesPassword("neo4j") );
+			  assertTrue( user.Credentials().matchesPassword("Neo4Net") );
 			  assertTrue( user.PasswordChangeRequired() );
 		 }
 
@@ -73,7 +73,7 @@ namespace Neo4Net.Server.Security.Auth
 			  // Given
 			  FileUserRepository initialUserRepository = CommunitySecurityModule.GetInitialUserRepository( Config, NullLogProvider.Instance, FsRule.get() );
 			  initialUserRepository.Start();
-			  initialUserRepository.create(new User.Builder("neo4j", LegacyCredential.ForPassword("123"))
+			  initialUserRepository.create(new User.Builder("Neo4Net", LegacyCredential.ForPassword("123"))
 									.withRequiredPasswordChange( false ).build());
 			  initialUserRepository.Shutdown();
 
@@ -82,8 +82,8 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = users.getUserByName("neo4j");
-			  User user = Users.getUserByName( "neo4j" );
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = users.getUserByName("Neo4Net");
+			  User user = Users.getUserByName( "Neo4Net" );
 			  assertNotNull( user );
 			  assertTrue( user.Credentials().matchesPassword("123") );
 			  assertFalse( user.PasswordChangeRequired() );
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.Security.Auth
 			  // Given
 			  FileUserRepository initialUserRepository = CommunitySecurityModule.GetInitialUserRepository( Config, NullLogProvider.Instance, FsRule.get() );
 			  initialUserRepository.Start();
-			  initialUserRepository.create(new User.Builder("neo4j", LegacyCredential.ForPassword("neo4j"))
+			  initialUserRepository.create(new User.Builder("Neo4Net", LegacyCredential.ForPassword("Neo4Net"))
 									.withRequiredPasswordChange( false ).build());
 			  initialUserRepository.Shutdown();
 
@@ -106,10 +106,10 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = users.getUserByName("neo4j");
-			  User user = Users.getUserByName( "neo4j" );
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = users.getUserByName("Neo4Net");
+			  User user = Users.getUserByName( "Neo4Net" );
 			  assertNotNull( user );
-			  assertTrue( user.Credentials().matchesPassword("neo4j") );
+			  assertTrue( user.Credentials().matchesPassword("Neo4Net") );
 			  assertFalse( user.PasswordChangeRequired() );
 		 }
 
@@ -132,12 +132,12 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User initUser = users.getUserByName("initUser");
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User initUser = users.getUserByName("initUser");
 			  User initUser = Users.getUserByName( "initUser" );
 			  assertNull( initUser );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User oldUser = users.getUserByName("oldUser");
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User oldUser = users.getUserByName("oldUser");
 			  User oldUser = Users.getUserByName( "oldUser" );
 			  assertNotNull( oldUser );
 			  assertTrue( oldUser.Credentials().matchesPassword("321") );
@@ -163,7 +163,7 @@ namespace Neo4Net.Server.Security.Auth
 
 			  // Then
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User oldUser = users.getUserByName("oldUser");
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User oldUser = users.getUserByName("oldUser");
 			  User oldUser = Users.getUserByName( "oldUser" );
 			  assertNotNull( oldUser );
 			  assertTrue( oldUser.Credentials().matchesPassword("oldPassword") );

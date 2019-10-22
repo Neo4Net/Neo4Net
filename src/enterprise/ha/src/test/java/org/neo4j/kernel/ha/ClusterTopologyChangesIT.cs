@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -40,8 +40,8 @@ namespace Neo4Net.Kernel.ha
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
 	using NotElectableElectionCredentialsProvider = Neo4Net.cluster.protocol.election.NotElectableElectionCredentialsProvider;
 	using HeartbeatListener = Neo4Net.cluster.protocol.heartbeat.HeartbeatListener;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HighAvailabilityMemberState = Neo4Net.Kernel.ha.cluster.HighAvailabilityMemberState;
@@ -65,28 +65,28 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR;
+//	import static org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 
 	public class ClusterTopologyChangesIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.CleanupRule cleanup = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RepeatRule repeat = new org.neo4j.test.rule.RepeatRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RepeatRule repeat = new org.Neo4Net.test.rule.RepeatRule();
 		 public readonly RepeatRule Repeat = new RepeatRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 private ClusterManager.ManagedCluster _cluster;
@@ -286,7 +286,7 @@ namespace Neo4Net.Kernel.ha
 			  Cleanup.add( life );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.neo4j.cluster.InstanceId> coordinatorIdWhenReJoined = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.cluster.InstanceId> coordinatorIdWhenReJoined = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<InstanceId> coordinatorIdWhenReJoined = new AtomicReference<InstanceId>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch latch = new java.util.concurrent.CountDownLatch(1);

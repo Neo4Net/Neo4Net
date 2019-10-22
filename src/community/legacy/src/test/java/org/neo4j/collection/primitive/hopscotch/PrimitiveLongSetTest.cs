@@ -46,9 +46,9 @@ namespace Neo4Net.Collections.primitive.hopscotch
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.Primitive.VALUE_MARKER;
+//	import static org.Neo4Net.collection.primitive.Primitive.VALUE_MARKER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.hopscotch.HopScotchHashingAlgorithm.NO_MONITOR;
+//	import static org.Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.NO_MONITOR;
 
 	internal class PrimitiveLongSetTest
 	{

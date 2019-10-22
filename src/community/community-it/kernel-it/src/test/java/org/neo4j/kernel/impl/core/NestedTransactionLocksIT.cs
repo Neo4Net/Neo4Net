@@ -24,10 +24,10 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Lock = Neo4Net.Graphdb.Lock;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Test;
 	using Neo4Net.Test.OtherThreadExecutor;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -41,12 +41,12 @@ namespace Neo4Net.Kernel.impl.core
 
 	/// <summary>
 	/// Confirms that a nested <seealso cref="Transaction"/> can grab locks with its
-	/// explicit methods: <seealso cref="Transaction.acquireReadLock(org.neo4j.graphdb.PropertyContainer) acquireReadLock"/>
-	/// and <seealso cref="Transaction.acquireWriteLock(org.neo4j.graphdb.PropertyContainer) acquireWriteLock"/>.
+	/// explicit methods: <seealso cref="Transaction.acquireReadLock(org.Neo4Net.graphdb.PropertyContainer) acquireReadLock"/>
+	/// and <seealso cref="Transaction.acquireWriteLock(org.Neo4Net.graphdb.PropertyContainer) acquireWriteLock"/>.
 	/// </summary>
 	public class NestedTransactionLocksIT
 	{
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void before()
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.test.OtherThreadExecutor.WorkerCommand<Void, org.neo4j.graphdb.Lock> acquireWriteLock(final org.neo4j.graphdb.Node resource)
+//ORIGINAL LINE: private org.Neo4Net.test.OtherThreadExecutor.WorkerCommand<Void, org.Neo4Net.graphdb.Lock> acquireWriteLock(final org.Neo4Net.graphdb.Node resource)
 		 private OtherThreadExecutor.WorkerCommand<Void, Lock> AcquireWriteLock( Node resource )
 		 {
 			  return state =>
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void acquireOnOtherThreadTimesOut(java.util.concurrent.Future<org.neo4j.graphdb.Lock> future) throws InterruptedException, java.util.concurrent.ExecutionException
+//ORIGINAL LINE: private void acquireOnOtherThreadTimesOut(java.util.concurrent.Future<org.Neo4Net.graphdb.Lock> future) throws InterruptedException, java.util.concurrent.ExecutionException
 		 private void AcquireOnOtherThreadTimesOut( Future<Lock> future )
 		 {
 			  try
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.concurrent.Future<org.neo4j.graphdb.Lock> tryToAcquireSameLockOnAnotherThread(org.neo4j.graphdb.Node resource, org.neo4j.test.OtherThreadExecutor<Void> otherThread) throws Exception
+//ORIGINAL LINE: private java.util.concurrent.Future<org.Neo4Net.graphdb.Lock> tryToAcquireSameLockOnAnotherThread(org.Neo4Net.graphdb.Node resource, org.Neo4Net.test.OtherThreadExecutor<Void> otherThread) throws Exception
 		 private Future<Lock> TryToAcquireSameLockOnAnotherThread( Node resource, OtherThreadExecutor<Void> otherThread )
 		 {
 			  Future<Lock> future = otherThread.ExecuteDontWait( AcquireWriteLock( resource ) );

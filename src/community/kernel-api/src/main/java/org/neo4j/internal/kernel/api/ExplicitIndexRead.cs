@@ -38,7 +38,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> the value corresponding to the key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeExplicitIndexLookup(NodeExplicitIndexCursor cursor, String index, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeExplicitIndexLookup(NodeExplicitIndexCursor cursor, String index, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeExplicitIndexLookup( NodeExplicitIndexCursor cursor, string index, string key, object value );
 
 		 /// <summary>
@@ -49,7 +49,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="query"> the query object </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeExplicitIndexQuery(NodeExplicitIndexCursor cursor, String index, Object query) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeExplicitIndexQuery(NodeExplicitIndexCursor cursor, String index, Object query) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeExplicitIndexQuery( NodeExplicitIndexCursor cursor, string index, object query );
 
 		 /// <summary>
@@ -61,7 +61,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="query"> the query object </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void nodeExplicitIndexQuery(NodeExplicitIndexCursor cursor, String index, String key, Object query) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void nodeExplicitIndexQuery(NodeExplicitIndexCursor cursor, String index, String key, Object query) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void NodeExplicitIndexQuery( NodeExplicitIndexCursor cursor, string index, string key, object query );
 
 		 /// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> the configuration of the index with the given name </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if the index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Map<String, String> nodeExplicitIndexGetConfiguration(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: java.util.Map<String, String> nodeExplicitIndexGetConfiguration(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 IDictionary<string, string> NodeExplicitIndexGetConfiguration( string indexName );
 
 		 /// <summary>
@@ -92,7 +92,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> the value corresponding to the key </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipExplicitIndexLookup(RelationshipExplicitIndexCursor cursor, String index, String key, Object value, long source, long target) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipExplicitIndexLookup(RelationshipExplicitIndexCursor cursor, String index, String key, Object value, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipExplicitIndexLookup( RelationshipExplicitIndexCursor cursor, string index, string key, object value, long source, long target );
 
 		 /// <summary>
@@ -105,7 +105,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="target"> the source node or <code>-1</code> if any </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipExplicitIndexQuery(RelationshipExplicitIndexCursor cursor, String index, Object query, long source, long target) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipExplicitIndexQuery(RelationshipExplicitIndexCursor cursor, String index, Object query, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipExplicitIndexQuery( RelationshipExplicitIndexCursor cursor, string index, object query, long source, long target );
 
 		 /// <summary>
@@ -119,7 +119,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="target"> the source node or <code>-1</code> if any </param>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void relationshipExplicitIndexQuery(RelationshipExplicitIndexCursor cursor, String index, String key, Object query, long source, long target) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: void relationshipExplicitIndexQuery(RelationshipExplicitIndexCursor cursor, String index, String key, Object query, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 void RelationshipExplicitIndexQuery( RelationshipExplicitIndexCursor cursor, string index, string key, object query, long source, long target );
 
 		 /// <summary>
@@ -148,7 +148,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> the configuration of the index with the given name </returns>
 		 /// <exception cref="ExplicitIndexNotFoundKernelException"> if the index doesn't exist </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.Map<String, String> relationshipExplicitIndexGetConfiguration(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: java.util.Map<String, String> relationshipExplicitIndexGetConfiguration(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 IDictionary<string, string> RelationshipExplicitIndexGetConfiguration( string indexName );
 	}
 

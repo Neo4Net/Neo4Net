@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using LongIterator = org.eclipse.collections.api.iterator.LongIterator;
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
@@ -39,12 +39,12 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public abstract class IndexingStringQueryAcceptanceTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -58,7 +58,7 @@ namespace Neo4Net.Graphdb
 
 		 private Label _label;
 		 private string _key = "name";
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 		 internal IndexingStringQueryAcceptanceTestBase( string template, string[] matching, string[] nonMatching, StringSearchMode searchMode, bool withIndex )
 		 {
@@ -77,13 +77,13 @@ namespace Neo4Net.Graphdb
 			  _db = DbRule.GraphDatabaseAPI;
 			  if ( _withIndex )
 			  {
-					using ( Neo4Net.Graphdb.Transaction tx = _db.beginTx() )
+					using ( Neo4Net.GraphDb.Transaction tx = _db.beginTx() )
 					{
 						 _db.schema().indexFor(_label).on(_key).create();
 						 tx.Success();
 					}
 
-					using ( Neo4Net.Graphdb.Transaction tx = _db.beginTx() )
+					using ( Neo4Net.GraphDb.Transaction tx = _db.beginTx() )
 					{
 						 _db.schema().awaitIndexesOnline(5, TimeUnit.MINUTES);
 						 tx.Success();
@@ -286,7 +286,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private MutableLongSet CreateNodes( GraphDatabaseService db, Label label, params string[] propertyValues )
+		 private MutableLongSet CreateNodes( IGraphDatabaseService db, Label label, params string[] propertyValues )
 		 {
 			  MutableLongSet expected = new LongHashSet();
 			  using ( Transaction tx = Db.beginTx() )
@@ -308,7 +308,7 @@ namespace Neo4Net.Graphdb
 			  }
 		 }
 
-		 private Node CreateNode( GraphDatabaseService beansAPI, IDictionary<string, object> properties, params Label[] labels )
+		 private Node CreateNode( IGraphDatabaseService beansAPI, IDictionary<string, object> properties, params Label[] labels )
 		 {
 			  using ( Transaction tx = beansAPI.BeginTx() )
 			  {

@@ -33,13 +33,13 @@ namespace Neo4Net.Kernel
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
 
 	public class RecoveryCorruptedTransactionLogIT
 	{
@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel
 		 {
 			  AddCorruptedCommandsToLastLogFile();
 
-			  GraphDatabaseService recoveredDatabase = StartDbNoRecoveryOfCorruptedLogs();
+			  IGraphDatabaseService recoveredDatabase = StartDbNoRecoveryOfCorruptedLogs();
 			  recoveredDatabase.Shutdown();
 
 			  _logProvider.rawMessageMatcher().assertContains("Fail to read transaction log version 0.");
@@ -236,7 +236,7 @@ namespace Neo4Net.Kernel
 
 			  _expectedException.expectCause( new RootCauseMatcher<>( typeof( NegativeArraySizeException ) ) );
 
-			  GraphDatabaseService recoveredDatabase = _databaseFactory.newEmbeddedDatabase( _storeDir );
+			  IGraphDatabaseService recoveredDatabase = _databaseFactory.newEmbeddedDatabase( _storeDir );
 			  recoveredDatabase.Shutdown();
 		 }
 
@@ -556,7 +556,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.eclipse.collections.api.map.primitive.ObjectLongMap<Class> getLogEntriesDistribution(org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: private static org.eclipse.collections.api.map.primitive.ObjectLongMap<Class> getLogEntriesDistribution(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 private static ObjectLongMap<Type> GetLogEntriesDistribution( LogFiles logFiles )
 		 {
 			  LogFile transactionLogFile = logFiles.LogFile;
@@ -578,28 +578,28 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.files.LogFiles buildDefaultLogFiles() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.files.LogFiles buildDefaultLogFiles() throws java.io.IOException
 		 private LogFiles BuildDefaultLogFiles()
 		 {
 			  return LogFilesBuilder.builder( _directory.databaseLayout(), _fileSystemRule ).withLogVersionRepository(new SimpleLogVersionRepository()).withTransactionIdStore(new SimpleTransactionIdStore()).build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void generateTransactionsAndRotateWithCheckpoint(org.neo4j.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate) throws java.io.IOException
+//ORIGINAL LINE: private static void generateTransactionsAndRotateWithCheckpoint(org.Neo4Net.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate) throws java.io.IOException
 		 private static void GenerateTransactionsAndRotateWithCheckpoint( GraphDatabaseAPI database, int logFilesToGenerate )
 		 {
 			  GenerateTransactionsAndRotate( database, logFilesToGenerate, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void generateTransactionsAndRotate(org.neo4j.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate) throws java.io.IOException
+//ORIGINAL LINE: private static void generateTransactionsAndRotate(org.Neo4Net.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate) throws java.io.IOException
 		 private static void GenerateTransactionsAndRotate( GraphDatabaseAPI database, int logFilesToGenerate )
 		 {
 			  GenerateTransactionsAndRotate( database, logFilesToGenerate, false );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void generateTransactionsAndRotate(org.neo4j.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate, boolean checkpoint) throws java.io.IOException
+//ORIGINAL LINE: private static void generateTransactionsAndRotate(org.Neo4Net.kernel.internal.GraphDatabaseAPI database, int logFilesToGenerate, boolean checkpoint) throws java.io.IOException
 		 private static void GenerateTransactionsAndRotate( GraphDatabaseAPI database, int logFilesToGenerate, bool checkpoint )
 		 {
 			  DependencyResolver resolver = database.DependencyResolver;

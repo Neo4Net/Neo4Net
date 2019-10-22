@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using ErrorState = Neo4Net.Graphdb.@event.ErrorState;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using ErrorState = Neo4Net.GraphDb.Events.ErrorState;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.core
 
 	public class TestShutdownSequence
 	{
-		 private GraphDatabaseService _graphDb;
+		 private IGraphDatabaseService _graphDb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void createGraphDb()
@@ -95,9 +95,9 @@ namespace Neo4Net.Kernel.impl.core
 				  // do nothing
 			 }
 
-			 public Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 
@@ -148,9 +148,9 @@ namespace Neo4Net.Kernel.impl.core
 				  // do nothing
 			 }
 
-			 public Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 

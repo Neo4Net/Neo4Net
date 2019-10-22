@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using RelationshipState = Neo4Net.Storageengine.Api.txstate.RelationshipState;
 	using Value = Neo4Net.Values.Storable.Value;
 
-	internal class RelationshipStateImpl : PropertyContainerStateImpl, RelationshipState
+	internal class RelationshipStateImpl : IPropertyContainerStateImpl, RelationshipState
 	{
 		 internal const RelationshipState org;
 
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EX extends Exception> boolean accept(org.neo4j.storageengine.api.RelationshipVisitor<EX> visitor) throws EX
+//ORIGINAL LINE: public <EX extends Exception> boolean accept(org.Neo4Net.storageengine.api.RelationshipVisitor<EX> visitor) throws EX
 		 public override bool Accept<EX>( RelationshipVisitor<EX> visitor ) where EX : Exception
 		 {
 			  if ( _type != -1 )

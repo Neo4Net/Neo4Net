@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v1.runtime
 {
 
 	using BoltStateMachineSPI = Neo4Net.Bolt.runtime.BoltStateMachineSPI;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using TransactionStateMachineSPI = Neo4Net.Bolt.runtime.TransactionStateMachineSPI;
 	using Authentication = Neo4Net.Bolt.security.auth.Authentication;
 	using AuthenticationException = Neo4Net.Bolt.security.auth.AuthenticationException;
@@ -35,7 +35,7 @@ namespace Neo4Net.Bolt.v1.runtime
 
 	public class BoltStateMachineV1SPI : BoltStateMachineSPI
 	{
-		 public const string BOLT_SERVER_VERSION_PREFIX = "Neo4j/";
+		 public const string BOLT_SERVER_VERSION_PREFIX = "Neo4Net/";
 		 private readonly UsageData _usageData;
 		 private readonly ErrorReporter _errorReporter;
 		 private readonly Authentication _authentication;
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  this._errorReporter = new ErrorReporter( logging );
 			  this._authentication = authentication;
 			  this._transactionSpi = transactionStateMachineSPI;
-			  this._version = BOLT_SERVER_VERSION_PREFIX + Version.Neo4jVersion;
+			  this._version = BOLT_SERVER_VERSION_PREFIX + Version.Neo4NetVersion;
 		 }
 
 		 public override TransactionStateMachineSPI TransactionSpi()
@@ -56,13 +56,13 @@ namespace Neo4Net.Bolt.v1.runtime
 			  return _transactionSpi;
 		 }
 
-		 public override void ReportError( Neo4jError err )
+		 public override void ReportError( Neo4NetError err )
 		 {
 			  _errorReporter.report( err );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws org.neo4j.bolt.security.auth.AuthenticationException
+//ORIGINAL LINE: public org.Neo4Net.bolt.security.auth.AuthenticationResult authenticate(java.util.Map<String,Object> authToken) throws org.Neo4Net.bolt.security.auth.AuthenticationException
 		 public override AuthenticationResult Authenticate( IDictionary<string, object> authToken )
 		 {
 			  return _authentication.authenticate( authToken );

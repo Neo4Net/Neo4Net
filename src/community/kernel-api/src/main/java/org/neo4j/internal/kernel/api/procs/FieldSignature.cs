@@ -29,12 +29,12 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 	/// Represents a type and a name for a field in a record, used to define input and output record signatures. </summary>
 	public class FieldSignature
 	{
-		 public static FieldSignature InputField( string name, Neo4jTypes.AnyType type )
+		 public static FieldSignature InputField( string name, Neo4NetTypes.AnyType type )
 		 {
 			  return new FieldSignature( name, type, null, false );
 		 }
 
-		 public static FieldSignature InputField( string name, Neo4jTypes.AnyType type, DefaultParameterValue defaultValue )
+		 public static FieldSignature InputField( string name, Neo4NetTypes.AnyType type, DefaultParameterValue defaultValue )
 		 {
 			  return new FieldSignature( name, type, requireNonNull( defaultValue, "defaultValue" ), false );
 		 }
@@ -45,7 +45,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			  AnyValue Map( AnyValue input );
 		 }
 
-		 public static FieldSignature InputField( string name, Neo4jTypes.AnyType type, InputMapper mapper )
+		 public static FieldSignature InputField( string name, Neo4NetTypes.AnyType type, InputMapper mapper )
 		 {
 			  return new FieldSignatureAnonymousInnerClass( name, type, mapper );
 		 }
@@ -54,7 +54,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 		 {
 			 private Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper _mapper;
 
-			 public FieldSignatureAnonymousInnerClass( string name, Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes.AnyType type, Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper mapper ) : base( name, type, null, false )
+			 public FieldSignatureAnonymousInnerClass( string name, Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes.AnyType type, Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper mapper ) : base( name, type, null, false )
 			 {
 				 this._mapper = mapper;
 			 }
@@ -75,7 +75,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			 }
 		 }
 
-		 public static FieldSignature InputField( string name, Neo4jTypes.AnyType type, DefaultParameterValue defaultValue, InputMapper mapper )
+		 public static FieldSignature InputField( string name, Neo4NetTypes.AnyType type, DefaultParameterValue defaultValue, InputMapper mapper )
 		 {
 			  return new FieldSignatureAnonymousInnerClass2( name, type, requireNonNull( defaultValue, "defaultValue" ), mapper );
 		 }
@@ -84,7 +84,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 		 {
 			 private Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper _mapper;
 
-			 public FieldSignatureAnonymousInnerClass2( string name, Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes.AnyType type, UnknownType requireNonNull, Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper mapper ) : base( name, type, requireNonNull, false )
+			 public FieldSignatureAnonymousInnerClass2( string name, Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes.AnyType type, UnknownType requireNonNull, Neo4Net.Internal.Kernel.Api.procs.FieldSignature.InputMapper mapper ) : base( name, type, requireNonNull, false )
 			 {
 				 this._mapper = mapper;
 			 }
@@ -105,22 +105,22 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			 }
 		 }
 
-		 public static FieldSignature OutputField( string name, Neo4jTypes.AnyType type )
+		 public static FieldSignature OutputField( string name, Neo4NetTypes.AnyType type )
 		 {
 			  return OutputField( name, type, false );
 		 }
 
-		 public static FieldSignature OutputField( string name, Neo4jTypes.AnyType type, bool deprecated )
+		 public static FieldSignature OutputField( string name, Neo4NetTypes.AnyType type, bool deprecated )
 		 {
 			  return new FieldSignature( name, type, null, deprecated );
 		 }
 
 		 private readonly string _name;
-		 private readonly Neo4jTypes.AnyType _type;
+		 private readonly Neo4NetTypes.AnyType _type;
 		 private readonly DefaultParameterValue _defaultValue;
 		 private readonly bool _deprecated;
 
-		 private FieldSignature( string name, Neo4jTypes.AnyType type, DefaultParameterValue defaultValue, bool deprecated )
+		 private FieldSignature( string name, Neo4NetTypes.AnyType type, DefaultParameterValue defaultValue, bool deprecated )
 		 {
 			  this._name = requireNonNull( name, "name" );
 			  this._type = requireNonNull( type, "type" );
@@ -128,9 +128,9 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			  this._deprecated = deprecated;
 			  if ( defaultValue != null )
 			  {
-					if ( !type.Equals( defaultValue.Neo4jType() ) )
+					if ( !type.Equals( defaultValue.Neo4NetType() ) )
 					{
-						 throw new System.ArgumentException( string.Format( "Default value does not have a valid type, field type was {0}, but value type was {1}.", type.ToString(), defaultValue.Neo4jType().ToString() ) );
+						 throw new System.ArgumentException( string.Format( "Default value does not have a valid type, field type was {0}, but value type was {1}.", type.ToString(), defaultValue.Neo4NetType().ToString() ) );
 					}
 			  }
 		 }
@@ -157,7 +157,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			  return _name;
 		 }
 
-		 public virtual Neo4jTypes.AnyType Neo4jType()
+		 public virtual Neo4NetTypes.AnyType Neo4NetType()
 		 {
 			  return _type;
 		 }

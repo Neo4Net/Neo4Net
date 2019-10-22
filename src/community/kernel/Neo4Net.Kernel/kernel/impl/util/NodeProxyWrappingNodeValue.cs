@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using InvalidRecordException = Neo4Net.Kernel.impl.store.InvalidRecordException;
 	using Neo4Net.Values;
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void writeTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void writeTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  TextArray l;

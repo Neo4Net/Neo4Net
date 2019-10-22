@@ -66,7 +66,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The state of the provided index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: InternalIndexState indexGetState(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: InternalIndexState indexGetState(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 InternalIndexState IndexGetState( IndexReference index );
 
 		 /// <summary>
@@ -76,7 +76,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The population progress of the given index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 PopulationProgress IndexGetPopulationProgress( IndexReference index );
 
 		 /// <summary>
@@ -86,7 +86,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The failure message from the index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index was not found in the database </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String indexGetFailure(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: String indexGetFailure(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 string IndexGetFailure( IndexReference index );
 
 		 /// <summary>

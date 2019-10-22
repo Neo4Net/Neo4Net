@@ -21,16 +21,16 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
 
 	/// <summary>
 	/// Wraps an explicit index to prevent writes to it - exposing it as a read-only index.
 	/// </summary>
-	public class ReadOnlyIndexFacade<T> : Index<T> where T : Neo4Net.Graphdb.PropertyContainer
+	public class ReadOnlyIndexFacade<T> : Index<T> where T : Neo4Net.GraphDb.PropertyContainer
 	{
 		 private readonly ReadableIndex<T> @delegate;
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 		 }
 
-		 public override Type<T> EntityType
+		 public override Type<T> IEntityType
 		 {
 			 get
 			 {
@@ -75,27 +75,27 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  return new System.NotSupportedException( "read only index" );
 		 }
 
-		 public override void Add( T entity, string key, object value )
+		 public override void Add( T IEntity, string key, object value )
 		 {
 			  throw ReadOnlyIndex();
 		 }
 
-		 public override T PutIfAbsent( T entity, string key, object value )
+		 public override T PutIfAbsent( T IEntity, string key, object value )
 		 {
 			  throw ReadOnlyIndex();
 		 }
 
-		 public override void Remove( T entity, string key, object value )
+		 public override void Remove( T IEntity, string key, object value )
 		 {
 			  throw ReadOnlyIndex();
 		 }
 
-		 public override void Remove( T entity, string key )
+		 public override void Remove( T IEntity, string key )
 		 {
 			  throw ReadOnlyIndex();
 		 }
 
-		 public override void Remove( T entity )
+		 public override void Remove( T IEntity )
 		 {
 			  throw ReadOnlyIndex();
 		 }
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 		 }
 
-		 public override GraphDatabaseService GraphDatabase
+		 public override IGraphDatabaseService GraphDatabase
 		 {
 			 get
 			 {

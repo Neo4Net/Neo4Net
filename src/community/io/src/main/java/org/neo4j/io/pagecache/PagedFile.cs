@@ -28,7 +28,7 @@ namespace Neo4Net.Io.pagecache
 		 /// <summary>
 		 /// Pin the pages with a shared lock.
 		 /// <para>
-		 /// This implies <seealso cref="org.neo4j.io.pagecache.PagedFile.PF_NO_GROW"/>, since
+		 /// This implies <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_NO_GROW"/>, since
 		 /// pages under read locks cannot be safely written to anyway, so there's
 		 /// no point in trying to go beyond the end of the file.
 		 /// </para>
@@ -96,7 +96,7 @@ namespace Neo4Net.Io.pagecache
 		 ///         }
 		 ///     }
 		 /// </code></pre>
-		 /// <seealso cref="org.neo4j.io.pagecache.PageCursor PageCursors"/> are <seealso cref="IDisposable"/>, so interacting with them
+		 /// <seealso cref="org.Neo4Net.io.pagecache.PageCursor PageCursors"/> are <seealso cref="IDisposable"/>, so interacting with them
 		 /// using <em>try-with-resources</em> is recommended.
 		 /// </para>
 		 /// <para>
@@ -106,7 +106,7 @@ namespace Neo4Net.Io.pagecache
 		 /// <para>
 		 /// The first {@code next} call will advance the cursor to the initial page, as given by the {@code pageId}
 		 /// parameter. Until then, the cursor won't be bound to any page, the <seealso cref="PageCursor.getCurrentPageId()"/> method
-		 /// will return the <seealso cref="org.neo4j.io.pagecache.PageCursor.UNBOUND_PAGE_ID"/> constant, and attempts at reading from
+		 /// will return the <seealso cref="org.Neo4Net.io.pagecache.PageCursor.UNBOUND_PAGE_ID"/> constant, and attempts at reading from
 		 /// or writing to the cursor will throw a <seealso cref="System.NullReferenceException"/>.
 		 /// </para>
 		 /// <para>
@@ -119,8 +119,8 @@ namespace Neo4Net.Io.pagecache
 		 /// <para>
 		 /// The {@code pf_flags} argument expresses the intent of the IO operation. It is a bitmap that combines various
 		 /// {@code PF_*} constants. You must always specify your desired locking behaviour, with either
-		 /// <seealso cref="org.neo4j.io.pagecache.PagedFile.PF_SHARED_WRITE_LOCK"/> or
-		 /// <seealso cref="org.neo4j.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/>.
+		 /// <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_SHARED_WRITE_LOCK"/> or
+		 /// <seealso cref="org.Neo4Net.io.pagecache.PagedFile.PF_SHARED_READ_LOCK"/>.
 		 /// </para>
 		 /// <para>
 		 /// The two locking modes cannot be combined, but other intents can be combined with them. For instance, if you want

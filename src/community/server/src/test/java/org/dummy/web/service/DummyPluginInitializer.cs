@@ -24,7 +24,7 @@ namespace Org.Dummy.Web.Service
 {
 
 	using Configuration = org.apache.commons.configuration.Configuration;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Neo4Net.Server.plugins;
 	using PluginLifecycle = Neo4Net.Server.plugins.PluginLifecycle;
 
@@ -35,8 +35,8 @@ namespace Org.Dummy.Web.Service
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.neo4j.server.plugins.Injectable<?>> start(org.neo4j.graphdb.GraphDatabaseService graphDatabaseService, org.apache.commons.configuration.Configuration config)
-		 public override ICollection<Injectable<object>> Start( GraphDatabaseService graphDatabaseService, Configuration config )
+//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> start(org.Neo4Net.graphdb.GraphDatabaseService IGraphDatabaseService, org.apache.commons.configuration.Configuration config)
+		 public override ICollection<Injectable<object>> Start( IGraphDatabaseService IGraphDatabaseService, Configuration config )
 		 {
 			  return Collections.singleton( new InjectableAnonymousInnerClass( this ) );
 		 }

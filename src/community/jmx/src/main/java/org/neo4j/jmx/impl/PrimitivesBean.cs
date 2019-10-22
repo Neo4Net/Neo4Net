@@ -38,13 +38,13 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Neo4jMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException
-		 protected internal override Neo4jMBean CreateMBean( ManagementData management )
+//ORIGINAL LINE: protected Neo4NetMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException
+		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new PrimitivesImpl( management );
 		 }
 
-		 private class PrimitivesImpl : Neo4jMBean, Primitives
+		 private class PrimitivesImpl : Neo4NetMBean, Primitives
 		 {
 			  internal readonly IdGeneratorFactory IdGeneratorFactory;
 

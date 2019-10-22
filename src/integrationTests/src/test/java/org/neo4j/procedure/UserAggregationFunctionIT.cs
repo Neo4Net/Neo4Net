@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Procedure
 {
@@ -34,14 +34,14 @@ namespace Neo4Net.Procedure
 	using TemporaryFolder = org.junit.rules.TemporaryFolder;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
@@ -58,7 +58,7 @@ namespace Neo4Net.Procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class UserAggregationFunctionIT
 	{
@@ -70,7 +70,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException exception = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Exception = ExpectedException.none();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldHandleSingleStringArgumentAggregationFunction()
@@ -88,7 +88,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  Result result = _db.execute( "MATCH (n) RETURN org.neo4j.procedure.count(n.prop) AS count" );
+			  Result result = _db.execute( "MATCH (n) RETURN org.Neo4Net.procedure.count(n.prop) AS count" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -113,7 +113,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  Result result = _db.execute( "MATCH (n) RETURN n.prop1, org.neo4j.procedure.count(n.prop2) AS count" );
+			  Result result = _db.execute( "MATCH (n) RETURN n.prop1, org.Neo4Net.procedure.count(n.prop2) AS count" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -144,7 +144,7 @@ namespace Neo4Net.Procedure
 			  Exception.expectMessage( "Can't coerce `Long(42)` to String" );
 
 			  // When
-			  _db.execute( "MATCH (n) RETURN org.neo4j.procedure.count(n.prop) AS count" );
+			  _db.execute( "MATCH (n) RETURN org.Neo4Net.procedure.count(n.prop) AS count" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -162,7 +162,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  Result result = _db.execute( "MATCH (n) WITH org.neo4j.procedure.findBestNode(n) AS best RETURN best.level AS level" );
+			  Result result = _db.execute( "MATCH (n) WITH org.Neo4Net.procedure.findBestNode(n) AS best RETURN best.level AS level" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -186,7 +186,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  Result result = _db.execute( "MATCH ()-[r]->() WITH org.neo4j.procedure.findBestRel(r) AS best RETURN best.level AS level" );
+			  Result result = _db.execute( "MATCH ()-[r]->() WITH org.Neo4Net.procedure.findBestRel(r) AS best RETURN best.level AS level" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -209,7 +209,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  Result result = _db.execute( "MATCH p=()-[:T*]->() WITH org.neo4j.procedure.longestPath(p) AS longest RETURN length(longest) AS " + "len" );
+			  Result result = _db.execute( "MATCH p=()-[:T*]->() WITH org.Neo4Net.procedure.longestPath(p) AS longest RETURN length(longest) AS " + "len" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -223,7 +223,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldHandleNullPath()
 		 {
 			  // When
-			  Result result = _db.execute( "MATCH p=()-[:T*]->() WITH org.neo4j.procedure.longestPath(p) AS longest RETURN longest" );
+			  Result result = _db.execute( "MATCH p=()-[:T*]->() WITH org.Neo4Net.procedure.longestPath(p) AS longest RETURN longest" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -237,7 +237,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldHandleNumberArgumentAggregationFunction()
 		 {
 			  // Given, When
-			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.neo4j.procedure.near42(num) AS closest" );
+			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.Neo4Net.procedure.near42(num) AS closest" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -251,7 +251,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldHandleDoubleArgumentAggregationFunction()
 		 {
 			  // Given, When
-			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.neo4j.procedure.doubleAggregator(num) AS closest" );
+			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.Neo4Net.procedure.doubleAggregator(num) AS closest" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -265,7 +265,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldHandleLongArgumentAggregationFunction()
 		 {
 			  // Given, When
-			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.neo4j.procedure.longAggregator(num) AS closest" );
+			  Result result = _db.execute( "UNWIND [43, 42.5, 41.9, 1337] AS num RETURN org.Neo4Net.procedure.longAggregator(num) AS closest" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -278,8 +278,8 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Test public void shouldHandleNoArgumentBooleanAggregationFunction()
 		 public virtual void ShouldHandleNoArgumentBooleanAggregationFunction()
 		 {
-			  assertThat( _db.execute( "UNWIND [1,2] AS num RETURN org.neo4j.procedure.boolAggregator() AS wasCalled" ).next(), equalTo(map("wasCalled", true)) );
-			  assertThat( _db.execute( "UNWIND [] AS num RETURN org.neo4j.procedure.boolAggregator() AS wasCalled" ).next(), equalTo(map("wasCalled", false)) );
+			  assertThat( _db.execute( "UNWIND [1,2] AS num RETURN org.Neo4Net.procedure.boolAggregator() AS wasCalled" ).next(), equalTo(map("wasCalled", true)) );
+			  assertThat( _db.execute( "UNWIND [] AS num RETURN org.Neo4Net.procedure.boolAggregator() AS wasCalled" ).next(), equalTo(map("wasCalled", false)) );
 
 		 }
 
@@ -300,7 +300,7 @@ namespace Neo4Net.Procedure
 
 			  // When
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  Result result = _db.execute( "UNWIND $ids AS ids WITH org.neo4j.procedure.collectNode(ids) AS nodes RETURN nodes", map( "ids", nodes.Select( Node::getId ).ToList() ) );
+			  Result result = _db.execute( "UNWIND $ids AS ids WITH org.Neo4Net.procedure.collectNode(ids) AS nodes RETURN nodes", map( "ids", nodes.Select( Node::getId ).ToList() ) );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -331,7 +331,7 @@ namespace Neo4Net.Procedure
 			  }
 
 			  // When
-			  IList<IDictionary<string, object>> result = Iterators.asList( _db.execute( "MATCH (u:User) RETURN u.country,count(*),org.neo4j.procedure.first(u).country AS first" ) );
+			  IList<IDictionary<string, object>> result = Iterators.asList( _db.execute( "MATCH (u:User) RETURN u.country,count(*),org.Neo4Net.procedure.first(u).country AS first" ) );
 
 			  // Then
 			  assertThat( result, hasSize( 4 ) );
@@ -360,11 +360,11 @@ namespace Neo4Net.Procedure
 		 public class ClassWithFunctions
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-			  public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.logging.Log log;
+//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
 			  public Log Log;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -464,7 +464,7 @@ namespace Neo4Net.Procedure
 					internal Node AggregateNode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("node") org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("node") org.Neo4Net.graphdb.Node node)
 					public virtual void Update( Node node )
 					{
 						 if ( node != null )
@@ -483,7 +483,7 @@ namespace Neo4Net.Procedure
 					}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationResult public org.neo4j.graphdb.Node result()
+//ORIGINAL LINE: @UserAggregationResult public org.Neo4Net.graphdb.Node result()
 					public virtual Node Result()
 					{
 						 return AggregateNode;
@@ -495,7 +495,7 @@ namespace Neo4Net.Procedure
 					internal Relationship AggregateRel;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("rel") org.neo4j.graphdb.Relationship rel)
+//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("rel") org.Neo4Net.graphdb.Relationship rel)
 					public virtual void Update( Relationship rel )
 					{
 						 if ( rel != null )
@@ -514,7 +514,7 @@ namespace Neo4Net.Procedure
 					}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationResult public org.neo4j.graphdb.Relationship result()
+//ORIGINAL LINE: @UserAggregationResult public org.Neo4Net.graphdb.Relationship result()
 					public virtual Relationship Result()
 					{
 						 return AggregateRel;
@@ -527,7 +527,7 @@ namespace Neo4Net.Procedure
 					internal int Longest;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("path") org.neo4j.graphdb.Path path)
+//ORIGINAL LINE: @UserAggregationUpdate public void update(@Name("path") org.Neo4Net.graphdb.Path path)
 					public virtual void Update( Path path )
 					{
 						 if ( path != null )
@@ -541,7 +541,7 @@ namespace Neo4Net.Procedure
 					}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationResult public org.neo4j.graphdb.Path result()
+//ORIGINAL LINE: @UserAggregationResult public org.Neo4Net.graphdb.Path result()
 					public virtual Path Result()
 					{
 						 return AggregatePath;
@@ -679,9 +679,9 @@ namespace Neo4Net.Procedure
 			  public class NodeFromIdAggregator
 			  {
 					internal readonly IList<long> Ids = new List<long>();
-					internal readonly GraphDatabaseService Gds;
+					internal readonly IGraphDatabaseService Gds;
 
-					public NodeFromIdAggregator( GraphDatabaseService gds )
+					public NodeFromIdAggregator( IGraphDatabaseService gds )
 					{
 						 this.Gds = gds;
 					}
@@ -694,7 +694,7 @@ namespace Neo4Net.Procedure
 					}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserAggregationResult public java.util.List<org.neo4j.graphdb.Node> result()
+//ORIGINAL LINE: @UserAggregationResult public java.util.List<org.Neo4Net.graphdb.Node> result()
 					public virtual IList<Node> Result()
 					{
 						 return Ids.Select( Gds.getNodeById ).ToList();

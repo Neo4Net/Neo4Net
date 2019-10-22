@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
 
@@ -92,7 +92,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  IList<FieldSignature> signature = ( new MethodSignatureCompiler( new TypeMappers() ) ).SignatureFor(echo);
 
 			  // THen
-			  assertThat( signature, contains( FieldSignature.inputField( "name", Neo4jTypes.NTString ) ) );
+			  assertThat( signature, contains( FieldSignature.inputField( "name", Neo4NetTypes.NTString ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -102,10 +102,10 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  // When
 			  System.Reflection.MethodInfo echo = typeof( ClassWithProcedureWithSimpleArgs ).GetMethod( "echo", typeof( string ) );
-			  IList<Neo4jTypes.AnyType> signature = ( new MethodSignatureCompiler( new TypeMappers() ) ).InputTypesFor(echo);
+			  IList<Neo4NetTypes.AnyType> signature = ( new MethodSignatureCompiler( new TypeMappers() ) ).InputTypesFor(echo);
 
 			  // THen
-			  assertThat( signature, contains( Neo4jTypes.NTString ) );
+			  assertThat( signature, contains( Neo4NetTypes.NTString ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( string.Format( "Argument `name` at position 0 in `echoWithInvalidType` with%n" + "type `UnmappableRecord` cannot be converted to a Neo4j type: Don't know how to map " + "`org.neo4j.kernel.impl.proc.MethodSignatureCompilerTest$UnmappableRecord` to " + "the Neo4j Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are:" ) );
+			  Exception.expectMessage( string.Format( "Argument `name` at position 0 in `echoWithInvalidType` with%n" + "type `UnmappableRecord` cannot be converted to a Neo4Net type: Don't know how to map " + "`org.Neo4Net.kernel.impl.proc.MethodSignatureCompilerTest$UnmappableRecord` to " + "the Neo4Net Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are:" ) );
 
 			  // When
 			  ( new MethodSignatureCompiler( new TypeMappers() ) ).SignatureFor(echo);

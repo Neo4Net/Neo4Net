@@ -28,15 +28,15 @@ namespace Neo4Net.Kernel.Impl.@event
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 
 	/// <summary>
 	/// Test for randomly creating data and verifying transaction data seen in transaction event handlers.
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //ORIGINAL LINE: final ExpectedTransactionData expected = new ExpectedTransactionData(true);
 			  ExpectedTransactionData expected = new ExpectedTransactionData( true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.event.TransactionEventHandler<Object> handler = new VerifyingTransactionEventHandler(expected);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.event.TransactionEventHandler<Object> handler = new VerifyingTransactionEventHandler(expected);
 			  TransactionEventHandler<object> handler = new VerifyingTransactionEventHandler( expected );
 			  using ( Transaction tx = _db.beginTx() )
 			  {
@@ -352,12 +352,12 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object> GetBeforeCommitHandler( System.Action<TransactionData> dataConsumer )
+		 private Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object> GetBeforeCommitHandler( System.Action<TransactionData> dataConsumer )
 		 {
 			  return new TransactionEventHandler_AdapterAnonymousInnerClass( this, dataConsumer );
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 			 private readonly TransactionEventsIT _outerInstance;
 
@@ -370,7 +370,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object beforeCommit(org.neo4j.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public Object beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
 			 public override object beforeCommit( TransactionData data )
 			 {
 				  _dataConsumer( data );
@@ -396,25 +396,25 @@ namespace Neo4Net.Kernel.Impl.@event
 		 internal abstract class Operation
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           createNode { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.createNode(); expectations.createdNode(node); debug(node); } },
+//           createNode { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.createNode(); expectations.createdNode(node); debug(node); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           deleteNode { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.randomNode(); if(node != null) { for(org.neo4j.graphdb.Relationship relationship : node.getRelationships()) { graph.deleteRelationship(relationship); expectations.deletedRelationship(relationship); debug(relationship); } graph.deleteNode(node); expectations.deletedNode(node); debug(node); } } },
+//           deleteNode { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.randomNode(); if(node != null) { for(org.Neo4Net.graphdb.Relationship relationship : node.getRelationships()) { graph.deleteRelationship(relationship); expectations.deletedRelationship(relationship); debug(relationship); } graph.deleteNode(node); expectations.deletedNode(node); debug(node); } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           assignLabel { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.randomNode(); if(node != null) { org.neo4j.graphdb.Label label = graph.randomLabel(); if(!node.hasLabel(label)) { node.addLabel(label); expectations.assignedLabel(node, label); debug(node + " " + label); } } } },
+//           assignLabel { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.randomNode(); if(node != null) { org.Neo4Net.graphdb.Label label = graph.randomLabel(); if(!node.hasLabel(label)) { node.addLabel(label); expectations.assignedLabel(node, label); debug(node + " " + label); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           removeLabel { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.randomNode(); if(node != null) { org.neo4j.graphdb.Label label = graph.randomLabel(); if(node.hasLabel(label)) { node.removeLabel(label); expectations.removedLabel(node, label); debug(node + " " + label); } } } },
+//           removeLabel { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.randomNode(); if(node != null) { org.Neo4Net.graphdb.Label label = graph.randomLabel(); if(node.hasLabel(label)) { node.removeLabel(label); expectations.removedLabel(node, label); debug(node + " " + label); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           setNodeProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.randomNode(); if(node != null) { String key = graph.randomPropertyKey(); Object valueBefore = node.getProperty(key, null); Object value = graph.randomPropertyValue(); node.setProperty(key, value); expectations.assignedProperty(node, key, value, valueBefore); debug(node + " " + key + "=" + value + " prev " + valueBefore); } } },
+//           setNodeProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.randomNode(); if(node != null) { String key = graph.randomPropertyKey(); Object valueBefore = node.getProperty(key, null); Object value = graph.randomPropertyValue(); node.setProperty(key, value); expectations.assignedProperty(node, key, value, valueBefore); debug(node + " " + key + "=" + value + " prev " + valueBefore); } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           removeNodeProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Node node = graph.randomNode(); if(node != null) { String key = graph.randomPropertyKey(); if(node.hasProperty(key)) { Object valueBefore = node.removeProperty(key); expectations.removedProperty(node, key, valueBefore); debug(node + " " + key + "=" + valueBefore); } } } },
+//           removeNodeProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Node node = graph.randomNode(); if(node != null) { String key = graph.randomPropertyKey(); if(node.hasProperty(key)) { Object valueBefore = node.removeProperty(key); expectations.removedProperty(node, key, valueBefore); debug(node + " " + key + "=" + valueBefore); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           setRelationshipProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { String key = graph.randomPropertyKey(); Object valueBefore = relationship.getProperty(key, null); Object value = graph.randomPropertyValue(); relationship.setProperty(key, value); expectations.assignedProperty(relationship, key, value, valueBefore); debug(relationship + " " + key + "=" + value + " prev " + valueBefore); } } },
+//           setRelationshipProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { String key = graph.randomPropertyKey(); Object valueBefore = relationship.getProperty(key, null); Object value = graph.randomPropertyValue(); relationship.setProperty(key, value); expectations.assignedProperty(relationship, key, value, valueBefore); debug(relationship + " " + key + "=" + value + " prev " + valueBefore); } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           removeRelationshipProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { String key = graph.randomPropertyKey(); if(relationship.hasProperty(key)) { Object valueBefore = relationship.removeProperty(key); expectations.removedProperty(relationship, key, valueBefore); debug(relationship + " " + key + "=" + valueBefore); } } } },
+//           removeRelationshipProperty { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { String key = graph.randomPropertyKey(); if(relationship.hasProperty(key)) { Object valueBefore = relationship.removeProperty(key); expectations.removedProperty(relationship, key, valueBefore); debug(relationship + " " + key + "=" + valueBefore); } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           createRelationship { void perform(Graph graph, ExpectedTransactionData expectations) { while (graph.nodeCount() < 2) { createNode.perform(graph, expectations); } org.neo4j.graphdb.Node node1 = graph.randomNode(); org.neo4j.graphdb.Node node2 = graph.randomNode(); org.neo4j.graphdb.Relationship relationship = graph.createRelationship(node1, node2, graph.randomRelationshipType()); expectations.createdRelationship(relationship); debug(relationship); } },
+//           createRelationship { void perform(Graph graph, ExpectedTransactionData expectations) { while (graph.nodeCount() < 2) { createNode.perform(graph, expectations); } org.Neo4Net.graphdb.Node node1 = graph.randomNode(); org.Neo4Net.graphdb.Node node2 = graph.randomNode(); org.Neo4Net.graphdb.Relationship relationship = graph.createRelationship(node1, node2, graph.randomRelationshipType()); expectations.createdRelationship(relationship); debug(relationship); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           deleteRelationship { void perform(Graph graph, ExpectedTransactionData expectations) { org.neo4j.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { graph.deleteRelationship(relationship); expectations.deletedRelationship(relationship); debug(relationship); } } };
+//           deleteRelationship { void perform(Graph graph, ExpectedTransactionData expectations) { org.Neo4Net.graphdb.Relationship relationship = graph.randomRelationship(); if(relationship != null) { graph.deleteRelationship(relationship); expectations.deletedRelationship(relationship); debug(relationship); } } };
 
 			  private static readonly IList<Operation> valueList = new List<Operation>();
 
@@ -496,19 +496,19 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  internal static readonly string[] Tokens = new string[] { "A", "B", "C", "D", "E" };
 
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly RandomRule RandomConflict;
 			  internal readonly IList<Node> Nodes = new List<Node>();
 			  internal readonly IList<Relationship> Relationships = new List<Relationship>();
 
-			  internal Graph( GraphDatabaseService db, RandomRule random )
+			  internal Graph( IGraphDatabaseService db, RandomRule random )
 			  {
 					this.Db = db;
 					this.RandomConflict = random;
 			  }
 
-			  internal virtual E Random<E>( IList<E> entities ) where E : Neo4Net.Graphdb.PropertyContainer
+			  internal virtual E Random<E>( IList<E> entities ) where E : Neo4Net.GraphDb.PropertyContainer
 			  {
 					return entities.Count == 0 ? default( E ) : entities[RandomConflict.Next( entities.Count )];
 			  }
@@ -580,7 +580,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private class TransactionIdCommitTimeTracker : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionIdCommitTimeTracker : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -589,7 +589,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  internal long CommitTimeAfterCommitConflict;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object beforeCommit(org.neo4j.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public Object beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
 			  public override object BeforeCommit( TransactionData data )
 			  {
 					return base.BeforeCommit( data );

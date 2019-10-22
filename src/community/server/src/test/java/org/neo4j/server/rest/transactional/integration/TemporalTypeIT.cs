@@ -141,7 +141,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode getSingleData(org.neo4j.test.server.HTTP.Response response) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private static org.codehaus.jackson.JsonNode getSingleData(org.Neo4Net.test.server.HTTP.Response response) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private static JsonNode GetSingleData( HTTP.Response response )
 		 {
 			  JsonNode data = response.Get( "results" ).get( 0 ).get( "data" );

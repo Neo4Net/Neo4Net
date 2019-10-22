@@ -21,16 +21,16 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.RELATIONSHIP;
+//	import static org.Neo4Net.storageengine.api.EntityType.RELATIONSHIP;
 
 	public class LuceneFulltextIndexTest : LuceneFulltextTestSupport
 	{

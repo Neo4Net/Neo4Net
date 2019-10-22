@@ -23,20 +23,20 @@ namespace Neo4Net.Kernel.impl.proc
 {
 
 	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.ntList;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.proc.ParseUtil.parseList;
+//	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseList;
 
 
 	public class ListConverter : System.Func<string, DefaultParameterValue>
 	{
 		 private readonly Type _type;
-		 private readonly Neo4jTypes.AnyType _neoType;
+		 private readonly Neo4NetTypes.AnyType _neoType;
 
-		 public ListConverter( Type type, Neo4jTypes.AnyType neoType )
+		 public ListConverter( Type type, Neo4NetTypes.AnyType neoType )
 		 {
 			  this._type = type;
 			  this._neoType = neoType;

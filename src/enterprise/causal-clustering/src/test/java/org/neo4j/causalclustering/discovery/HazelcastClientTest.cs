@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -18,12 +18,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.discovery
 {
@@ -87,17 +87,17 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.CLIENT_CONNECTOR_ADDRESSES;
+//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.CLIENT_CONNECTOR_ADDRESSES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.MEMBER_DB_NAME;
+//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_DB_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.MEMBER_UUID;
+//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.MEMBER_UUID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.RAFT_SERVER;
+//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.RAFT_SERVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.HazelcastClusterTopology.TRANSACTION_SERVER;
+//	import static org.Neo4Net.causalclustering.discovery.HazelcastClusterTopology.TRANSACTION_SERVER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class HazelcastClientTest
 	{
@@ -148,7 +148,7 @@ namespace Neo4Net.causalclustering.discovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private HazelcastClient startedClientWithMembers(java.util.Set<com.hazelcast.core.Member> members, org.neo4j.kernel.configuration.Config config) throws Throwable
+//ORIGINAL LINE: private HazelcastClient startedClientWithMembers(java.util.Set<com.hazelcast.core.Member> members, org.Neo4Net.kernel.configuration.Config config) throws Throwable
 		 private HazelcastClient StartedClientWithMembers( ISet<Member> members, Config config )
 		 {
 			  OnDemandJobScheduler jobScheduler = new OnDemandJobScheduler();

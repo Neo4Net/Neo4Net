@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.configuration
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
 	using ReplacedBy = Neo4Net.Configuration.ReplacedBy;
 	using Secret = Neo4Net.Configuration.Secret;
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Log = Neo4Net.Logging.Log;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -69,13 +69,13 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.STRING;
+//	import static org.Neo4Net.kernel.configuration.Settings.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	public class ConfigTest
 	{
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.configuration
 			  public static readonly Setting<bool> BoolSetting = setting( "bool_setting", BOOLEAN, Settings.TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @DocumentedDefaultValue("<documented default value>") public static final org.neo4j.graphdb.config.Setting<bool> secretSetting = setting("secret_setting", BOOLEAN, Settings.TRUE);
+//ORIGINAL LINE: @Internal @DocumentedDefaultValue("<documented default value>") public static final org.Neo4Net.graphdb.config.Setting<bool> secretSetting = setting("secret_setting", BOOLEAN, Settings.TRUE);
 			  [DocumentedDefaultValue("<documented default value>")]
 			  public static readonly Setting<bool> SecretSetting = setting( "secret_setting", BOOLEAN, Settings.TRUE );
 
@@ -122,20 +122,20 @@ namespace Neo4Net.Kernel.configuration
 			  public static readonly Setting<string> OldSetting = setting( "some_setting", STRING, "Has no replacement" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Secret public static final org.neo4j.graphdb.config.Setting<String> password = setting("password", STRING, "This text should not appear in logs or toString");
+//ORIGINAL LINE: @Secret public static final org.Neo4Net.graphdb.config.Setting<String> password = setting("password", STRING, "This text should not appear in logs or toString");
 			  public static readonly Setting<string> Password = setting( "password", STRING, "This text should not appear in logs or toString" );
 		 }
 
-		 private class HelloHasToBeNeo4jConfigurationValidator : ConfigurationValidator
+		 private class HelloHasToBeNeo4NetConfigurationValidator : ConfigurationValidator
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Override public java.util.Map<String,String> validate(@Nonnull Config config, @Nonnull Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 			  public override IDictionary<string, string> Validate( Config config, Log log )
 			  {
-					if ( !config.Get( MySettingsWithDefaults.Hello ).Equals( "neo4j" ) )
+					if ( !config.Get( MySettingsWithDefaults.Hello ).Equals( "Neo4Net" ) )
 					{
-						 throw new InvalidSettingException( "Setting hello has to set to neo4j" );
+						 throw new InvalidSettingException( "Setting hello has to set to Neo4Net" );
 					}
 
 					return Collections.emptyMap();
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.config.InvalidSettingException.class) public void shouldNotAllowSettingInvalidValues()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.config.InvalidSettingException.class) public void shouldNotAllowSettingInvalidValues()
 		 public virtual void ShouldNotAllowSettingInvalidValues()
 		 {
 			  Config( stringMap( MySettingsWithDefaults.BoolSetting.name(), "asd" ) );
@@ -395,13 +395,13 @@ namespace Neo4Net.Kernel.configuration
 		 public virtual void ValidatorsShouldBeCalledWhenBuilding()
 		 {
 			  // Should not throw
-			  Config.Builder().withSetting(MySettingsWithDefaults.Hello, "neo4j").withValidator(new HelloHasToBeNeo4jConfigurationValidator()).withConfigClasses(Arrays.asList(_mySettingsWithDefaults, _myMigratingSettings)).build();
+			  Config.Builder().withSetting(MySettingsWithDefaults.Hello, "Neo4Net").withValidator(new HelloHasToBeNeo4NetConfigurationValidator()).withConfigClasses(Arrays.asList(_mySettingsWithDefaults, _myMigratingSettings)).build();
 
 			  Expect.expect( typeof( InvalidSettingException ) );
-			  Expect.expectMessage( "Setting hello has to set to neo4j" );
+			  Expect.expectMessage( "Setting hello has to set to Neo4Net" );
 
 			  // Should throw
-			  Config.Builder().withSetting(MySettingsWithDefaults.Hello, "not-neo4j").withValidator(new HelloHasToBeNeo4jConfigurationValidator()).withConfigClasses(Arrays.asList(_mySettingsWithDefaults, _myMigratingSettings)).build();
+			  Config.Builder().withSetting(MySettingsWithDefaults.Hello, "not-Neo4Net").withValidator(new HelloHasToBeNeo4NetConfigurationValidator()).withConfigClasses(Arrays.asList(_mySettingsWithDefaults, _myMigratingSettings)).build();
 		 }
 
 		 [Group("a.b.c")]
@@ -469,11 +469,11 @@ namespace Neo4Net.Kernel.configuration
 		 public class MyDynamicSettings : LoadableConfig
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Dynamic public static final org.neo4j.graphdb.config.Setting<bool> boolSetting = setting("bool_setting", BOOLEAN, Settings.TRUE);
+//ORIGINAL LINE: @Dynamic public static final org.Neo4Net.graphdb.config.Setting<bool> boolSetting = setting("bool_setting", BOOLEAN, Settings.TRUE);
 			  public static readonly Setting<bool> BoolSetting = setting( "bool_setting", BOOLEAN, Settings.TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Dynamic @Secret public static final org.neo4j.graphdb.config.Setting<String> secretSetting = setting("password", STRING, "secret");
+//ORIGINAL LINE: @Dynamic @Secret public static final org.Neo4Net.graphdb.config.Setting<String> secretSetting = setting("password", STRING, "secret");
 			  public static readonly Setting<string> SecretSetting = setting( "password", STRING, "secret" );
 		 }
 

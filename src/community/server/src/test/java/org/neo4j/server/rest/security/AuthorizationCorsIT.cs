@@ -37,25 +37,25 @@ namespace Neo4Net.Server.rest.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
+//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
+//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_METHODS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
+//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_ALLOW_ORIGIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
+//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_HEADERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
+//	import static org.Neo4Net.server.rest.web.CorsFilter.ACCESS_CONTROL_REQUEST_METHOD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpMethod.DELETE;
+//	import static org.Neo4Net.server.web.HttpMethod.DELETE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpMethod.GET;
+//	import static org.Neo4Net.server.web.HttpMethod.GET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpMethod.PATCH;
+//	import static org.Neo4Net.server.web.HttpMethod.PATCH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpMethod.POST;
+//	import static org.Neo4Net.server.web.HttpMethod.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class AuthorizationCorsIT : CommunityServerTestBase
 	{
@@ -80,7 +80,7 @@ namespace Neo4Net.Server.rest.security
 		 {
 			  StartServer( true );
 
-			  HTTP.Response response = RunQuery( "neo4j", "neo4j" );
+			  HTTP.Response response = RunQuery( "Neo4Net", "Neo4Net" );
 
 			  assertEquals( FORBIDDEN.StatusCode, response.Status() );
 			  AssertCorsHeaderPresent( response );
@@ -93,11 +93,11 @@ namespace Neo4Net.Server.rest.security
 		 public virtual void ShouldAddCorsHeaderWhenAuthEnabledAndPasswordChangeNotRequired()
 		 {
 			  StartServer( true );
-			  HTTP.Response passwordChangeResponse = ChangePassword( "neo4j", "neo4j", "newPassword" );
+			  HTTP.Response passwordChangeResponse = ChangePassword( "Neo4Net", "Neo4Net", "newPassword" );
 			  assertEquals( OK.StatusCode, passwordChangeResponse.Status() );
 			  AssertCorsHeaderPresent( passwordChangeResponse );
 
-			  HTTP.Response queryResponse = RunQuery( "neo4j", "newPassword" );
+			  HTTP.Response queryResponse = RunQuery( "Neo4Net", "newPassword" );
 
 			  assertEquals( OK.StatusCode, queryResponse.Status() );
 			  AssertCorsHeaderPresent( queryResponse );
@@ -111,7 +111,7 @@ namespace Neo4Net.Server.rest.security
 		 {
 			  StartServer( true );
 
-			  HTTP.Response response = RunQuery( "neo4j", "wrongPassword" );
+			  HTTP.Response response = RunQuery( "Neo4Net", "wrongPassword" );
 
 			  assertEquals( UNAUTHORIZED.StatusCode, response.Status() );
 			  AssertCorsHeaderPresent( response );
@@ -161,14 +161,14 @@ namespace Neo4Net.Server.rest.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testCorsAllowMethods(org.neo4j.server.web.HttpMethod method) throws Exception
+//ORIGINAL LINE: private void testCorsAllowMethods(org.Neo4Net.server.web.HttpMethod method) throws Exception
 		 private void TestCorsAllowMethods( HttpMethod method )
 		 {
 			  TestCorsAllowMethods( method, "*" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testCorsAllowMethods(org.neo4j.server.web.HttpMethod method, String origin) throws Exception
+//ORIGINAL LINE: private void testCorsAllowMethods(org.Neo4Net.server.web.HttpMethod method, String origin) throws Exception
 		 private void TestCorsAllowMethods( HttpMethod method, string origin )
 		 {
 			  HTTP.Builder requestBuilder = RequestWithHeaders( "authDisabled", "authDisabled" ).withHeaders( ACCESS_CONTROL_REQUEST_METHOD, method.ToString() );

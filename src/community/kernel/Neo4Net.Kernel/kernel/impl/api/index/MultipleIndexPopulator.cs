@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.collections.impl.utility.ArrayIterate.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 
 	/// <summary>
 	/// <seealso cref="IndexPopulator"/> that allow population of multiple indexes during one iteration.
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 // Concurrency queue since multiple concurrent threads may enqueue updates into it. It is important for this queue
 		 // to have fast #size() method since it might be drained in batches
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: final java.util.Queue<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updatesQueue = new java.util.concurrent.LinkedBlockingQueue<>();
+//ORIGINAL LINE: final java.util.Queue<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updatesQueue = new java.util.concurrent.LinkedBlockingQueue<>();
 		 internal readonly LinkedList<IndexEntryUpdate<object>> UpdatesQueue = new LinkedBlockingQueue<IndexEntryUpdate<object>>();
 
 		 // Populators are added into this list. The same thread adding populators will later call #indexAllEntities.
@@ -98,12 +98,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly IndexStoreView _storeView;
 		 private readonly LogProvider _logProvider;
 		 protected internal readonly Log Log;
-		 private readonly EntityType _type;
+		 private readonly IEntityType _type;
 		 private readonly SchemaState _schemaState;
 		 private readonly PhaseTracker _phaseTracker;
 		 private StoreScan<IndexPopulationFailedKernelException> _storeScan;
 
-		 public MultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState )
+		 public MultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState )
 		 {
 			  this._storeView = storeView;
 			  this._logProvider = logProvider;
@@ -151,17 +151,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 internal virtual StoreScan<IndexPopulationFailedKernelException> IndexAllEntities()
 		 {
-			  int[] entityTokenIds = entityTokenIds();
+			  int[] IEntityTokenIds = IEntityTokenIds();
 			  int[] propertyKeyIds = propertyKeyIds();
 			  System.Func<int, bool> propertyKeyIdFilter = propertyKeyId => contains( propertyKeyIds, propertyKeyId );
 
-			  if ( _type == EntityType.RELATIONSHIP )
+			  if ( _type == IEntityType.RELATIONSHIP )
 			  {
-					_storeScan = _storeView.visitRelationships( entityTokenIds, propertyKeyIdFilter, new EntityPopulationVisitor( this ) );
+					_storeScan = _storeView.visitRelationships( IEntityTokenIds, propertyKeyIdFilter, new IEntityPopulationVisitor( this ) );
 			  }
 			  else
 			  {
-					_storeScan = _storeView.visitNodes( entityTokenIds, propertyKeyIdFilter, new EntityPopulationVisitor( this ), null, false );
+					_storeScan = _storeView.visitNodes( IEntityTokenIds, propertyKeyIdFilter, new IEntityPopulationVisitor( this ), null, false );
 			  }
 			  _storeScan.PhaseTracker = _phaseTracker;
 			  return new DelegatingStoreScanAnonymousInnerClass( this, _storeScan );
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void run() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 			 public override void run()
 			 {
 				  base.run();
@@ -324,7 +324,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return IntStream.of( population.Schema().PropertyIds );
 		 }
 
-		 private int[] EntityTokenIds()
+		 private int[] IEntityTokenIds()
 		 {
 			  return Populations.stream().flatMapToInt(population => Arrays.stream(population.schema().EntityTokenIds)).toArray();
 		 }
@@ -400,7 +400,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 						 {
 							  // no need to check for null as nobody else is emptying this queue
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update = updatesQueue.poll();
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = updatesQueue.poll();
 							  IndexEntryUpdate<object> update = UpdatesQueue.RemoveFirst();
 							  _storeScan.acceptUpdate( updater, update, currentlyIndexedNodeId );
 							  if ( PrintDebug )
@@ -510,7 +510,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  internal readonly ReentrantLock PopulatorLock = new ReentrantLock();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates;
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batchedUpdates;
 			  internal IList<IndexEntryUpdate<object>> BatchedUpdates;
 
 			  internal IndexPopulation( MultipleIndexPopulator outerInstance, IndexPopulator populator, CapableIndexDescriptor capableIndexDescriptor, FlippableIndexProxy flipper, FailedIndexProxyFactory failedIndexProxyFactory, string indexUserDescription )
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void flip(boolean verifyBeforeFlipping) throws org.neo4j.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: void flip(boolean verifyBeforeFlipping) throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 			  internal virtual void Flip( bool verifyBeforeFlipping )
 			  {
 					outerInstance.phaseTracker.EnterPhase( PhaseTracker_Phase.Flip );
@@ -655,7 +655,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> takeCurrentBatch()
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> takeCurrentBatch()
 			  internal virtual IList<IndexEntryUpdate<object>> TakeCurrentBatch()
 			  {
 					if ( BatchedUpdates.Count == 0 )
@@ -663,7 +663,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 						 return Collections.emptyList();
 					}
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batch = batchedUpdates;
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch = batchedUpdates;
 					IList<IndexEntryUpdate<object>> batch = BatchedUpdates;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: batchedUpdates = new java.util.ArrayList<>(BATCH_SIZE);
@@ -672,7 +672,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void scanCompleted() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: void scanCompleted() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  internal virtual void ScanCompleted()
 			  {
 					Populator.scanCompleted( outerInstance.phaseTracker );
@@ -684,29 +684,29 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 		 }
 
-		 private class EntityPopulationVisitor : Visitor<EntityUpdates, IndexPopulationFailedKernelException>
+		 private class IEntityPopulationVisitor : Visitor<EntityUpdates, IndexPopulationFailedKernelException>
 		 {
 			 private readonly MultipleIndexPopulator _outerInstance;
 
-			 public EntityPopulationVisitor( MultipleIndexPopulator outerInstance )
+			 public IEntityPopulationVisitor( MultipleIndexPopulator outerInstance )
 			 {
 				 this._outerInstance = outerInstance;
 			 }
 
-			  public override bool Visit( EntityUpdates updates )
+			  public override bool Visit( IEntityUpdates updates )
 			  {
 					Add( updates );
 					if ( outerInstance.PrintDebug )
 					{
-						 outerInstance.Log.info( "Added scan updates for entity %d", updates.EntityId );
+						 outerInstance.Log.info( "Added scan updates for IEntity %d", updates.EntityId );
 					}
 					return outerInstance.PopulateFromQueueBatched( updates.EntityId );
 			  }
 
-			  internal virtual void Add( EntityUpdates updates )
+			  internal virtual void Add( IEntityUpdates updates )
 			  {
 					// This is called from a full store node scan, meaning that all node properties are included in the
-					// EntityUpdates object. Therefore no additional properties need to be loaded.
+					// IEntityUpdates object. Therefore no additional properties need to be loaded.
 					foreach ( IndexEntryUpdate<IndexPopulation> indexUpdate in updates.ForIndexKeys( outerInstance.Populations ) )
 					{
 						 indexUpdate.IndexKey().onUpdate(indexUpdate);

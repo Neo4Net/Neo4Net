@@ -37,7 +37,7 @@ namespace Neo4Net.Server
 		 {
 			  // By default, log the full error. The intention is that sub classes can override this and
 			  // specify less extreme logging options.
-			  log.Error( format( "Failed to start Neo4j: %s", Message ), this );
+			  log.Error( format( "Failed to start Neo4Net: %s", Message ), this );
 		 }
 	}
 

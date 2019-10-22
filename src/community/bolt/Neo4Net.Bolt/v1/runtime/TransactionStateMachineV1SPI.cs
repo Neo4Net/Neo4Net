@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltResultHandle = Neo4Net.Bolt.runtime.BoltResultHandle;
 	using TransactionStateMachineSPI = Neo4Net.Bolt.runtime.TransactionStateMachineSPI;
 	using QueryResultProvider = Neo4Net.Cypher.Internal.javacompat.QueryResultProvider;
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -38,8 +38,8 @@ namespace Neo4Net.Bolt.v1.runtime
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
-	using Neo4jTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4jTransactionalContextFactory;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
@@ -49,13 +49,13 @@ namespace Neo4Net.Bolt.v1.runtime
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
 
 	public class TransactionStateMachineV1SPI : TransactionStateMachineSPI
 	{
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 
 		 private readonly GraphDatabaseAPI _db;
 		 private readonly BoltChannel _boltChannel;
@@ -79,7 +79,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override void AwaitUpToDate( long oldestAcceptableTxId )
 		 {
 			  _transactionIdTracker.awaitUpToDate( oldestAcceptableTxId, _txAwaitDuration );
@@ -152,7 +152,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 private static TransactionalContextFactory NewTransactionalContextFactory( GraphDatabaseAPI db )
 		 {
 			  GraphDatabaseQueryService queryService = ResolveDependency( db, typeof( GraphDatabaseQueryService ) );
-			  return Neo4jTransactionalContextFactory.create( queryService, _locker );
+			  return Neo4NetTransactionalContextFactory.create( queryService, _locker );
 		 }
 
 		 private static T ResolveDependency<T>( GraphDatabaseAPI db, Type clazz )
@@ -178,7 +178,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.runtime.BoltResult start() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltResult start() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 			  public override BoltResult Start()
 			  {
 					try

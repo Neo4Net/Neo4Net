@@ -26,11 +26,11 @@ namespace Neo4Net.Consistency.checking
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.fieldPointsToDynamicRecordOfLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.firstDynamicLabelRecordId;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.firstDynamicLabelRecordId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeStore.readOwnerFromDynamicLabelsRecord;
+//	import static org.Neo4Net.kernel.impl.store.NodeStore.readOwnerFromDynamicLabelsRecord;
 
 	/// <summary>
 	/// Used by <seealso cref="FullCheck"/> to verify orphanage for node dynamic label records.

@@ -22,7 +22,7 @@
 namespace Neo4Net.Cypher.result
 {
 	using QueryStatistics = Neo4Net.Cypher.Internal.runtime.QueryStatistics;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// The result API of a Cypher runtime

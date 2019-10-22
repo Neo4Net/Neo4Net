@@ -22,8 +22,8 @@
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using Neo4Net.Graphdb;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
+	using Neo4Net.GraphDb;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -44,9 +44,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 internal const string KEY_SIMILARITY = "similarity";
 		 public const string SERVICE_NAME = "lucene";
 
-		 public static readonly IDictionary<string, string> ExactConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "exact" ) );
+		 public static readonly IDictionary<string, string> ExactConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "exact" ) );
 
-		 public static readonly IDictionary<string, string> FulltextConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.Graphdb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "fulltext", KEY_TO_LOWER_CASE, "true" ) );
+		 public static readonly IDictionary<string, string> FulltextConfig = Collections.unmodifiableMap( MapUtil.stringMap( Neo4Net.GraphDb.index.IndexManager_Fields.PROVIDER, SERVICE_NAME, KEY_TYPE, "fulltext", KEY_TO_LOWER_CASE, "true" ) );
 
 		 private LuceneDataSource _dataSource;
 		 private readonly DatabaseLayout _databaseLayout;
@@ -157,7 +157,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException
 		 public override ResourceIterator<File> ListStoreFiles()
 		 {
 			  return _dataSource.listStoreFiles();

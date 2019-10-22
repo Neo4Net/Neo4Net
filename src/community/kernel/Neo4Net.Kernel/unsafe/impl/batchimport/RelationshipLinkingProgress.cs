@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.array;
+//	import static org.Neo4Net.helpers.ArrayUtil.array;
 
 	/// <summary>
 	/// Able to provide <seealso cref="Keys.progress"/>. Mutable and thread-safe, use <seealso cref="add(long)"/> to move progress forwards.

@@ -28,11 +28,11 @@ namespace Neo4Net.Server.Security.Auth
 	using User = Neo4Net.Kernel.impl.security.User;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthenticationResult.FAILURE;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthenticationResult.SUCCESS;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.SUCCESS;
 
 	public class BasicLoginContext : LoginContext
 	{

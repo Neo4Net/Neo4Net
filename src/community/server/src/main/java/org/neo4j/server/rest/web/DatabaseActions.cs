@@ -32,33 +32,33 @@ namespace Neo4Net.Server.rest.web
 	using GraphAlgoFactory = Neo4Net.Graphalgo.GraphAlgoFactory;
 	using Neo4Net.Graphalgo;
 	using WeightedPath = Neo4Net.Graphalgo.WeightedPath;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PathExpanderBuilder = Neo4Net.Graphdb.PathExpanderBuilder;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index.UniqueFactory;
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Neo4Net.Graphdb.traversal;
-	using Paths = Neo4Net.Graphdb.traversal.Paths;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using PathExpanderBuilder = Neo4Net.GraphDb.PathExpanderBuilder;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index.UniqueFactory;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Neo4Net.GraphDb.traversal;
+	using Paths = Neo4Net.GraphDb.traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
@@ -93,15 +93,15 @@ namespace Neo4Net.Server.rest.web
 	using WeightedPathRepresentation = Neo4Net.Server.rest.repr.WeightedPathRepresentation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.filter;
+//	import static org.Neo4Net.helpers.collection.Iterables.filter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationType.CONSTRAINT_DEFINITION;
+//	import static org.Neo4Net.server.rest.repr.RepresentationType.CONSTRAINT_DEFINITION;
 
 	public class DatabaseActions
 	{
@@ -137,7 +137,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.Node node(long id) throws NodeNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Node node(long id) throws NodeNotFoundException
 		 private Node Node( long id )
 		 {
 			  try
@@ -151,7 +151,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.Relationship relationship(long id) throws RelationshipNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Relationship relationship(long id) throws RelationshipNotFoundException
 		 private Relationship Relationship( long id )
 		 {
 			  try
@@ -174,7 +174,7 @@ namespace Neo4Net.Server.rest.web
 		 // Nodes
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.NodeRepresentation createNode(java.util.Map<String,Object> properties, org.neo4j.graphdb.Label... labels) throws PropertyValueException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.NodeRepresentation createNode(java.util.Map<String,Object> properties, org.Neo4Net.graphdb.Label... labels) throws PropertyValueException
 		 public virtual NodeRepresentation CreateNode( IDictionary<string, object> properties, params Label[] labels )
 		 {
 			  Node node = _graphDb.createNode();
@@ -190,14 +190,14 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.NodeRepresentation getNode(long nodeId) throws NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.NodeRepresentation getNode(long nodeId) throws NodeNotFoundException
 		 public virtual NodeRepresentation GetNode( long nodeId )
 		 {
 			  return new NodeRepresentation( Node( nodeId ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void deleteNode(long nodeId) throws NodeNotFoundException, org.neo4j.graphdb.ConstraintViolationException
+//ORIGINAL LINE: public void deleteNode(long nodeId) throws NodeNotFoundException, org.Neo4Net.graphdb.ConstraintViolationException
 		 public virtual void DeleteNode( long nodeId )
 		 {
 			  Node node = node( nodeId );
@@ -225,7 +225,7 @@ namespace Neo4Net.Server.rest.web
 		 // Node properties
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.Representation getNodeProperty(long nodeId, String key) throws NodeNotFoundException, NoSuchPropertyException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.Representation getNodeProperty(long nodeId, String key) throws NodeNotFoundException, NoSuchPropertyException
 		 public virtual Representation GetNodeProperty( long nodeId, string key )
 		 {
 			  Node node = node( nodeId );
@@ -259,7 +259,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.PropertiesRepresentation getAllNodeProperties(long nodeId) throws NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.PropertiesRepresentation getAllNodeProperties(long nodeId) throws NodeNotFoundException
 		 public virtual PropertiesRepresentation GetAllNodeProperties( long nodeId )
 		 {
 			  return new PropertiesRepresentation( Node( nodeId ) );
@@ -282,7 +282,7 @@ namespace Neo4Net.Server.rest.web
 		 // Labels
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addLabelToNode(long nodeId, java.util.Collection<String> labelNames) throws NodeNotFoundException, org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public void addLabelToNode(long nodeId, java.util.Collection<String> labelNames) throws NodeNotFoundException, org.Neo4Net.server.rest.repr.BadInputException
 		 public virtual void AddLabelToNode( long nodeId, ICollection<string> labelNames )
 		 {
 			  try
@@ -300,7 +300,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setLabelsOnNode(long nodeId, java.util.Collection<String> labels) throws NodeNotFoundException, org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public void setLabelsOnNode(long nodeId, java.util.Collection<String> labels) throws NodeNotFoundException, org.Neo4Net.server.rest.repr.BadInputException
 		 public virtual void SetLabelsOnNode( long nodeId, ICollection<string> labels )
 
 		 {
@@ -333,7 +333,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ListRepresentation getNodeLabels(long nodeId) throws NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ListRepresentation getNodeLabels(long nodeId) throws NodeNotFoundException
 		 public virtual ListRepresentation GetNodeLabels( long nodeId )
 		 {
 			  IEnumerable<string> labels = new IterableWrapperAnonymousInnerClass( this );
@@ -473,7 +473,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation IsAutoIndexerEnabled( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> index = GetAutoIndexerForType( type );
 			  return ValueRepresentation.@bool( index.Enabled );
 		 }
@@ -481,17 +481,17 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void SetAutoIndexerEnabled( string type, bool enable )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> index = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> index = GetAutoIndexerForType( type );
 			  index.Enabled = enable;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> getAutoIndexerForType(String type)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> getAutoIndexerForType(String type)
 		 private AutoIndexer<PropertyContainer> GetAutoIndexerForType( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.IndexManager indexManager = graphDb.index();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexManager indexManager = graphDb.index();
 			  IndexManager indexManager = _graphDb.index();
 			  switch ( type )
 			  {
@@ -507,7 +507,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation GetAutoIndexedProperties( string type )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  return ListRepresentation.@string( indexer.AutoIndexedProperties );
 		 }
@@ -515,7 +515,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void StartAutoIndexingProperty( string type, string property )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  indexer.StartAutoIndexingProperty( property );
 		 }
@@ -523,7 +523,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual void StopAutoIndexingProperty( string type, string property )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.index.AutoIndexer<? extends org.neo4j.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
+//ORIGINAL LINE: org.Neo4Net.graphdb.index.AutoIndexer<? extends org.Neo4Net.graphdb.PropertyContainer> indexer = getAutoIndexerForType(type);
 			  AutoIndexer<PropertyContainer> indexer = GetAutoIndexerForType( type );
 			  indexer.StopAutoIndexingProperty( property );
 		 }
@@ -532,9 +532,9 @@ namespace Neo4Net.Server.rest.web
 
 		 public sealed class RelationshipDirection
 		 {
-			  public static readonly RelationshipDirection All = new RelationshipDirection( "All", InnerEnum.All, Neo4Net.Graphdb.Direction.Both );
-			  public static readonly RelationshipDirection In = new RelationshipDirection( "In", InnerEnum.In, Neo4Net.Graphdb.Direction.Incoming );
-			  public static readonly RelationshipDirection Out = new RelationshipDirection( "Out", InnerEnum.Out, Neo4Net.Graphdb.Direction.Outgoing );
+			  public static readonly RelationshipDirection All = new RelationshipDirection( "All", InnerEnum.All, Neo4Net.GraphDb.Direction.Both );
+			  public static readonly RelationshipDirection In = new RelationshipDirection( "In", InnerEnum.In, Neo4Net.GraphDb.Direction.Incoming );
+			  public static readonly RelationshipDirection Out = new RelationshipDirection( "Out", InnerEnum.Out, Neo4Net.GraphDb.Direction.Outgoing );
 
 			  private static readonly IList<RelationshipDirection> valueList = new List<RelationshipDirection>();
 
@@ -558,7 +558,7 @@ namespace Neo4Net.Server.rest.web
 			  private static int nextOrdinal = 0;
 			  internal Final org;
 
-			  internal RelationshipDirection( string name, InnerEnum innerEnum, Neo4Net.Graphdb.Direction @internal )
+			  internal RelationshipDirection( string name, InnerEnum innerEnum, Neo4Net.GraphDb.Direction @internal )
 			  {
 					this.Internal = @internal;
 
@@ -596,7 +596,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.RelationshipRepresentation createRelationship(long startNodeId, long endNodeId, String type, java.util.Map<String,Object> properties) throws org.neo4j.server.rest.domain.StartNodeNotFoundException, org.neo4j.server.rest.domain.EndNodeNotFoundException, PropertyValueException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.RelationshipRepresentation createRelationship(long startNodeId, long endNodeId, String type, java.util.Map<String,Object> properties) throws org.Neo4Net.server.rest.domain.StartNodeNotFoundException, org.Neo4Net.server.rest.domain.EndNodeNotFoundException, PropertyValueException
 		 public virtual RelationshipRepresentation CreateRelationship( long startNodeId, long endNodeId, string type, IDictionary<string, object> properties )
 		 {
 
@@ -627,7 +627,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.RelationshipRepresentation getRelationship(long relationshipId) throws RelationshipNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.RelationshipRepresentation getRelationship(long relationshipId) throws RelationshipNotFoundException
 		 public virtual RelationshipRepresentation GetRelationship( long relationshipId )
 		 {
 			  return new RelationshipRepresentation( Relationship( relationshipId ) );
@@ -641,7 +641,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.neo4j.server.rest.repr.ListRepresentation getNodeRelationships(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.Neo4Net.server.rest.repr.ListRepresentation getNodeRelationships(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual ListRepresentation GetNodeRelationships( long nodeId, RelationshipDirection direction, ICollection<string> types )
 		 {
@@ -666,7 +666,7 @@ namespace Neo4Net.Server.rest.web
 		 // Node degrees
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.neo4j.server.rest.repr.Representation getNodeDegree(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.Neo4Net.server.rest.repr.Representation getNodeDegree(long nodeId, RelationshipDirection direction, java.util.Collection<String> types) throws NodeNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual Representation GetNodeDegree( long nodeId, RelationshipDirection direction, ICollection<string> types )
 		 {
@@ -689,14 +689,14 @@ namespace Neo4Net.Server.rest.web
 		 // Relationship properties
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.PropertiesRepresentation getAllRelationshipProperties(long relationshipId) throws RelationshipNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.PropertiesRepresentation getAllRelationshipProperties(long relationshipId) throws RelationshipNotFoundException
 		 public virtual PropertiesRepresentation GetAllRelationshipProperties( long relationshipId )
 		 {
 			  return new PropertiesRepresentation( Relationship( relationshipId ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.Representation getRelationshipProperty(long relationshipId, String key) throws NoSuchPropertyException, RelationshipNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.Representation getRelationshipProperty(long relationshipId, String key) throws NoSuchPropertyException, RelationshipNotFoundException
 		 public virtual Representation GetRelationshipProperty( long relationshipId, string key )
 		 {
 			  Relationship relationship = relationship( relationshipId );
@@ -821,7 +821,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ListRepresentation getIndexedNodes(String indexName, final String key, final String value)
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ListRepresentation getIndexedNodes(String indexName, final String key, final String value)
 		 public virtual ListRepresentation GetIndexedNodes( string indexName, string key, string value )
 		 {
 			  if ( !_graphDb.index().existsForNodes(indexName) )
@@ -832,14 +832,14 @@ namespace Neo4Net.Server.rest.web
 			  Index<Node> index = _graphDb.index().forNodes(indexName);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.repr.IndexRepresentation indexRepresentation = new org.neo4j.server.rest.repr.NodeIndexRepresentation(indexName);
+//ORIGINAL LINE: final org.Neo4Net.server.rest.repr.IndexRepresentation indexRepresentation = new org.Neo4Net.server.rest.repr.NodeIndexRepresentation(indexName);
 			  IndexRepresentation indexRepresentation = new NodeIndexRepresentation( indexName );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.IndexHits<org.neo4j.graphdb.Node> indexHits = index.get(key, value);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> indexHits = index.get(key, value);
 			  IndexHits<Node> indexHits = index.get( key, value );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation,org.neo4j.graphdb.Node> results = new org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation,org.neo4j.graphdb.Node>(indexHits)
+//ORIGINAL LINE: final org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation,org.Neo4Net.graphdb.Node> results = new org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation,org.Neo4Net.graphdb.Node>(indexHits)
 			  IterableWrapper<Representation, Node> results = new IterableWrapperAnonymousInnerClass( this, indexHits, key, value, indexRepresentation );
 			  return new ListRepresentation( RepresentationType.NODE, results );
 		 }
@@ -896,7 +896,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.server.rest.repr.ListRepresentation toListNodeRepresentation(final org.neo4j.graphdb.index.IndexHits<org.neo4j.graphdb.Node> result, final IndexResultOrder order)
+//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListNodeRepresentation(final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Node> result, final IndexResultOrder order)
 		 private ListRepresentation ToListNodeRepresentation( IndexHits<Node> result, IndexResultOrder order )
 		 {
 			  if ( result == null )
@@ -904,7 +904,7 @@ namespace Neo4Net.Server.rest.web
 					return new ListRepresentation( RepresentationType.NODE, Collections.emptyList() );
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation,org.neo4j.graphdb.Node> results = new org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation,org.neo4j.graphdb.Node>(result)
+//ORIGINAL LINE: final org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation,org.Neo4Net.graphdb.Node> results = new org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation,org.Neo4Net.graphdb.Node>(result)
 			  IterableWrapper<Representation, Node> results = new IterableWrapperAnonymousInnerClass2( this, result, order );
 			  return new ListRepresentation( RepresentationType.NODE, results );
 		 }
@@ -926,7 +926,7 @@ namespace Neo4Net.Server.rest.web
 			 protected internal override Representation underlyingObjectToObject( Node node )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.repr.NodeRepresentation nodeRepresentation = new org.neo4j.server.rest.repr.NodeRepresentation(node);
+//ORIGINAL LINE: final org.Neo4Net.server.rest.repr.NodeRepresentation nodeRepresentation = new org.Neo4Net.server.rest.repr.NodeRepresentation(node);
 				  NodeRepresentation nodeRepresentation = new NodeRepresentation( node );
 				  if ( _order == null )
 				  {
@@ -942,7 +942,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.server.rest.repr.ListRepresentation toListRelationshipRepresentation(final org.neo4j.graphdb.index.IndexHits<org.neo4j.graphdb.Relationship> result, final IndexResultOrder order)
+//ORIGINAL LINE: private org.Neo4Net.server.rest.repr.ListRepresentation toListRelationshipRepresentation(final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Relationship> result, final IndexResultOrder order)
 		 private ListRepresentation ToListRelationshipRepresentation( IndexHits<Relationship> result, IndexResultOrder order )
 		 {
 			  if ( result == null )
@@ -950,7 +950,7 @@ namespace Neo4Net.Server.rest.web
 					return new ListRepresentation( RepresentationType.RELATIONSHIP, Collections.emptyList() );
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation,org.neo4j.graphdb.Relationship> results = new org.neo4j.helpers.collection.IterableWrapper<org.neo4j.server.rest.repr.Representation, org.neo4j.graphdb.Relationship>(result)
+//ORIGINAL LINE: final org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation,org.Neo4Net.graphdb.Relationship> results = new org.Neo4Net.helpers.collection.IterableWrapper<org.Neo4Net.server.rest.repr.Representation, org.Neo4Net.graphdb.Relationship>(result)
 			  IterableWrapper<Representation, Relationship> results = new IterableWrapperAnonymousInnerClass3( this, result, order );
 			  return new ListRepresentation( RepresentationType.RELATIONSHIP, results );
 		 }
@@ -972,7 +972,7 @@ namespace Neo4Net.Server.rest.web
 			 protected internal override Representation underlyingObjectToObject( Relationship rel )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.repr.RelationshipRepresentation relationshipRepresentation = new org.neo4j.server.rest.repr.RelationshipRepresentation(rel);
+//ORIGINAL LINE: final org.Neo4Net.server.rest.repr.RelationshipRepresentation relationshipRepresentation = new org.Neo4Net.server.rest.repr.RelationshipRepresentation(rel);
 				  RelationshipRepresentation relationshipRepresentation = new RelationshipRepresentation( rel );
 				  if ( _order != null )
 				  {
@@ -983,7 +983,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.helpers.collection.Pair<org.neo4j.server.rest.repr.IndexedEntityRepresentation,bool> getOrCreateIndexedNode(String indexName, String key, String value, System.Nullable<long> nodeOrNull, java.util.Map<String,Object> properties) throws org.neo4j.server.rest.repr.BadInputException, NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.helpers.collection.Pair<org.Neo4Net.server.rest.repr.IndexedEntityRepresentation,bool> getOrCreateIndexedNode(String indexName, String key, String value, System.Nullable<long> nodeOrNull, java.util.Map<String,Object> properties) throws org.Neo4Net.server.rest.repr.BadInputException, NodeNotFoundException
 		 public virtual Pair<IndexedEntityRepresentation, bool> GetOrCreateIndexedNode( string indexName, string key, string value, long? nodeOrNull, IDictionary<string, object> properties )
 		 {
 			  AssertIsLegalIndexName( indexName );
@@ -1001,10 +1001,10 @@ namespace Neo4Net.Server.rest.web
 					if ( created )
 					{
 						 UniqueNodeFactory factory = new UniqueNodeFactory( this, indexName, properties );
-						 UniqueFactory.UniqueEntity<Node> entity = factory.getOrCreateWithOutcome( key, value );
+						 UniqueFactory.UniqueEntity<Node> IEntity = factory.getOrCreateWithOutcome( key, value );
 						 // when given a node id, return as created if that node was newly added to the index
-						 created = entity.Entity().Id == node.Id || entity.WasCreated();
-						 result = entity.Entity();
+						 created = IEntity.Entity().Id == node.Id || IEntity.WasCreated();
+						 result = IEntity.Entity();
 					}
 			  }
 			  else
@@ -1017,15 +1017,15 @@ namespace Neo4Net.Server.rest.web
 						 }
 					}
 					UniqueNodeFactory factory = new UniqueNodeFactory( this, indexName, properties );
-					UniqueFactory.UniqueEntity<Node> entity = factory.getOrCreateWithOutcome( key, value );
-					result = entity.Entity();
-					created = entity.WasCreated();
+					UniqueFactory.UniqueEntity<Node> IEntity = factory.getOrCreateWithOutcome( key, value );
+					result = IEntity.Entity();
+					created = IEntity.WasCreated();
 			  }
 			  return Pair.of( new IndexedEntityRepresentation( result, key, value, new NodeIndexRepresentation( indexName, Collections.emptyMap() ) ), created );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.helpers.collection.Pair<org.neo4j.server.rest.repr.IndexedEntityRepresentation,bool> getOrCreateIndexedRelationship(String indexName, String key, String value, System.Nullable<long> relationshipOrNull, System.Nullable<long> startNode, String type, System.Nullable<long> endNode, java.util.Map<String,Object> properties) throws org.neo4j.server.rest.repr.BadInputException, RelationshipNotFoundException, NodeNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.helpers.collection.Pair<org.Neo4Net.server.rest.repr.IndexedEntityRepresentation,bool> getOrCreateIndexedRelationship(String indexName, String key, String value, System.Nullable<long> relationshipOrNull, System.Nullable<long> startNode, String type, System.Nullable<long> endNode, java.util.Map<String,Object> properties) throws org.Neo4Net.server.rest.repr.BadInputException, RelationshipNotFoundException, NodeNotFoundException
 		 public virtual Pair<IndexedEntityRepresentation, bool> GetOrCreateIndexedRelationship( string indexName, string key, string value, long? relationshipOrNull, long? startNode, string type, long? endNode, IDictionary<string, object> properties )
 		 {
 			  AssertIsLegalIndexName( indexName );
@@ -1042,10 +1042,10 @@ namespace Neo4Net.Server.rest.web
 					if ( created = result == null )
 					{
 						 UniqueRelationshipFactory factory = new UniqueRelationshipFactory( this, indexName, relationship.StartNode, relationship.EndNode, relationship.Type.name(), properties );
-						 UniqueFactory.UniqueEntity<Relationship> entity = factory.getOrCreateWithOutcome( key, value );
+						 UniqueFactory.UniqueEntity<Relationship> IEntity = factory.getOrCreateWithOutcome( key, value );
 						 // when given a relationship id, return as created if that relationship was newly added to the index
-						 created = entity.Entity().Id == relationship.Id || entity.WasCreated();
-						 result = entity.Entity();
+						 created = IEntity.Entity().Id == relationship.Id || IEntity.WasCreated();
+						 result = IEntity.Entity();
 					}
 			  }
 			  else if ( startNode == null || string.ReferenceEquals( type, null ) || endNode == null )
@@ -1055,9 +1055,9 @@ namespace Neo4Net.Server.rest.web
 			  else
 			  {
 					UniqueRelationshipFactory factory = new UniqueRelationshipFactory( this, indexName, Node( startNode.Value ), Node( endNode.Value ), type, properties );
-					UniqueFactory.UniqueEntity<Relationship> entity = factory.getOrCreateWithOutcome( key, value );
-					result = entity.Entity();
-					created = entity.WasCreated();
+					UniqueFactory.UniqueEntity<Relationship> IEntity = factory.getOrCreateWithOutcome( key, value );
+					result = IEntity.Entity();
+					created = IEntity.WasCreated();
 			  }
 			  return Pair.of( new IndexedEntityRepresentation( result, key, value, new RelationshipIndexRepresentation( indexName, Collections.emptyMap() ) ), created );
 		 }
@@ -1133,7 +1133,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ListRepresentation getIndexedRelationships(String indexName, final String key, final String value)
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ListRepresentation getIndexedRelationships(String indexName, final String key, final String value)
 		 public virtual ListRepresentation GetIndexedRelationships( string indexName, string key, string value )
 		 {
 			  if ( !_graphDb.index().existsForRelationships(indexName) )
@@ -1144,7 +1144,7 @@ namespace Neo4Net.Server.rest.web
 			  Index<Relationship> index = _graphDb.index().forRelationships(indexName);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.repr.IndexRepresentation indexRepresentation = new org.neo4j.server.rest.repr.RelationshipIndexRepresentation(indexName);
+//ORIGINAL LINE: final org.Neo4Net.server.rest.repr.IndexRepresentation indexRepresentation = new org.Neo4Net.server.rest.repr.RelationshipIndexRepresentation(indexName);
 			  IndexRepresentation indexRepresentation = new RelationshipIndexRepresentation( indexName );
 
 			  IterableWrapper<Representation, Relationship> result = new IterableWrapperAnonymousInnerClass( this, index.get( key, value ), key, value, indexRepresentation );
@@ -1200,7 +1200,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual Representation GetAutoIndexedRelationships( string key, string value )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.ReadableIndex<org.neo4j.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
 			  ReadableIndex<Relationship> index = _graphDb.index().RelationshipAutoIndexer.AutoIndex;
 			  return ToListRelationshipRepresentation( index.Get( key, value ), null );
 		 }
@@ -1208,10 +1208,10 @@ namespace Neo4Net.Server.rest.web
 		 public virtual ListRepresentation GetAutoIndexedRelationshipsByQuery( string query )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.ReadableIndex<org.neo4j.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.ReadableIndex<org.Neo4Net.graphdb.Relationship> index = graphDb.index().getRelationshipAutoIndexer().getAutoIndex();
 			  ReadableIndex<Relationship> index = _graphDb.index().RelationshipAutoIndexer.AutoIndex;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.IndexHits<org.neo4j.graphdb.Relationship> results = query != null ? index.query(query) : null;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.IndexHits<org.Neo4Net.graphdb.Relationship> results = query != null ? index.query(query) : null;
 			  IndexHits<Relationship> results = !string.ReferenceEquals( query, null ) ? index.Query( query ) : null;
 			  return ToListRelationshipRepresentation( results, null );
 		 }
@@ -1219,7 +1219,7 @@ namespace Neo4Net.Server.rest.web
 		 // Graph algos
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("rawtypes") public org.neo4j.server.rest.repr.PathRepresentation findSinglePath(long startId, long endId, java.util.Map<String,Object> map)
+//ORIGINAL LINE: @SuppressWarnings("rawtypes") public org.Neo4Net.server.rest.repr.PathRepresentation findSinglePath(long startId, long endId, java.util.Map<String,Object> map)
 		 public virtual PathRepresentation FindSinglePath( long startId, long endId, IDictionary<string, object> map )
 		 {
 			  FindParams findParams = ( new FindParams( this, startId, endId, map ) ).Invoke();
@@ -1236,7 +1236,7 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"rawtypes", "unchecked"}) public org.neo4j.server.rest.repr.ListRepresentation findPaths(long startId, long endId, java.util.Map<String,Object> map)
+//ORIGINAL LINE: @SuppressWarnings({"rawtypes", "unchecked"}) public org.Neo4Net.server.rest.repr.ListRepresentation findPaths(long startId, long endId, java.util.Map<String,Object> map)
 		 public virtual ListRepresentation FindPaths( long startId, long endId, IDictionary<string, object> map )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1284,7 +1284,7 @@ namespace Neo4Net.Server.rest.web
 			  internal Node EndNodeConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.graphalgo.PathFinder<? extends org.neo4j.graphdb.Path> finder;
+//ORIGINAL LINE: private org.Neo4Net.graphalgo.PathFinder<? extends org.Neo4Net.graphdb.Path> finder;
 			  internal PathFinder<Path> FinderConflict;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("rawtypes") private PathRepresentationCreator representationCreator = PATH_REPRESENTATION_CREATOR;
@@ -1317,7 +1317,7 @@ namespace Neo4Net.Server.rest.web
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.neo4j.graphalgo.PathFinder<? extends org.neo4j.graphdb.Path> getFinder()
+//ORIGINAL LINE: public org.Neo4Net.graphalgo.PathFinder<? extends org.Neo4Net.graphdb.Path> getFinder()
 			  public virtual PathFinder<Path> Finder
 			  {
 				  get
@@ -1327,7 +1327,7 @@ namespace Neo4Net.Server.rest.web
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.neo4j.server.rest.repr.PathRepresentation<? extends org.neo4j.graphdb.Path> pathRepresentationOf(org.neo4j.graphdb.Path path)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public org.Neo4Net.server.rest.repr.PathRepresentation<? extends org.Neo4Net.graphdb.Path> pathRepresentationOf(org.Neo4Net.graphdb.Path path)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  public virtual PathRepresentation<Path> PathRepresentationOf( Path path )
 			  {
@@ -1352,7 +1352,7 @@ namespace Neo4Net.Server.rest.web
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.graphalgo.PathFinder<? extends org.neo4j.graphdb.Path> getAlgorithm(String algorithm, org.neo4j.graphdb.PathExpander expander, int maxDepth)
+//ORIGINAL LINE: private org.Neo4Net.graphalgo.PathFinder<? extends org.Neo4Net.graphdb.Path> getAlgorithm(String algorithm, org.Neo4Net.graphdb.PathExpander expander, int maxDepth)
 			  internal virtual PathFinder<Path> GetAlgorithm( string algorithm, PathExpander expander, int maxDepth )
 			  {
 					switch ( algorithm )
@@ -1384,13 +1384,13 @@ namespace Neo4Net.Server.rest.web
 		 private abstract class IndexResultOrder
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           INDEX_ORDER { QueryContext updateQueryContext(org.neo4j.index.lucene.QueryContext original) { return original.sort(org.apache.lucene.search.Sort.INDEXORDER); } },
+//           INDEX_ORDER { QueryContext updateQueryContext(org.Neo4Net.index.lucene.QueryContext original) { return original.sort(org.apache.lucene.search.Sort.INDEXORDER); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELEVANCE_ORDER { QueryContext updateQueryContext(org.neo4j.index.lucene.QueryContext original) { return original.sort(org.apache.lucene.search.Sort.RELEVANCE); } },
+//           RELEVANCE_ORDER { QueryContext updateQueryContext(org.Neo4Net.index.lucene.QueryContext original) { return original.sort(org.apache.lucene.search.Sort.RELEVANCE); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SCORE_ORDER { QueryContext updateQueryContext(org.neo4j.index.lucene.QueryContext original) { return original.sortByScore(); } },
+//           SCORE_ORDER { QueryContext updateQueryContext(org.Neo4Net.index.lucene.QueryContext original) { return original.sortByScore(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NONE { Representation getRepresentationFor(org.neo4j.server.rest.repr.Representation delegate, float score) { return delegate; } QueryContext updateQueryContext(org.neo4j.index.lucene.QueryContext original) { return original; } };
+//           NONE { Representation getRepresentationFor(org.Neo4Net.server.rest.repr.Representation delegate, float score) { return delegate; } QueryContext updateQueryContext(org.Neo4Net.index.lucene.QueryContext original) { return original; } };
 
 			  private static readonly IList<IndexResultOrder> valueList = new List<IndexResultOrder>();
 
@@ -1485,7 +1485,7 @@ namespace Neo4Net.Server.rest.web
 			  }
 		 }
 
-		 private interface PathRepresentationCreator<T> where T : Neo4Net.Graphdb.Path
+		 private interface PathRepresentationCreator<T> where T : Neo4Net.GraphDb.Path
 		 {
 			  PathRepresentation<T> From( T path );
 		 }
@@ -1607,7 +1607,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual bool DropPropertyUniquenessConstraint( string labelName, IEnumerable<string> propertyKeys )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.neo4j.helpers.collection.Iterables.asSet(propertyKeys);
+//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.Neo4Net.helpers.collection.Iterables.asSet(propertyKeys);
 			  ISet<string> propertyKeysSet = Iterables.asSet( propertyKeys );
 			  ConstraintDefinition constraint = Iterables.singleOrNull( FilteredNodeConstraints( labelName, PropertyUniquenessFilter( propertyKeysSet ) ) );
 			  if ( constraint != null )
@@ -1620,7 +1620,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual bool DropNodePropertyExistenceConstraint( string labelName, IEnumerable<string> propertyKeys )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.neo4j.helpers.collection.Iterables.asSet(propertyKeys);
+//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.Neo4Net.helpers.collection.Iterables.asSet(propertyKeys);
 			  ISet<string> propertyKeysSet = Iterables.asSet( propertyKeys );
 			  ConstraintDefinition constraint = Iterables.singleOrNull( FilteredNodeConstraints( labelName, NodePropertyExistenceFilter( propertyKeysSet ) ) );
 			  if ( constraint != null )
@@ -1633,7 +1633,7 @@ namespace Neo4Net.Server.rest.web
 		 public virtual bool DropRelationshipPropertyExistenceConstraint( string typeName, IEnumerable<string> propertyKeys )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.neo4j.helpers.collection.Iterables.asSet(propertyKeys);
+//ORIGINAL LINE: final java.util.Set<String> propertyKeysSet = org.Neo4Net.helpers.collection.Iterables.asSet(propertyKeys);
 			  ISet<string> propertyKeysSet = Iterables.asSet( propertyKeys );
 			  ConstraintDefinition constraint = Iterables.singleOrNull( FilteredRelationshipConstraints( typeName, RelationshipPropertyExistenceFilter( propertyKeysSet ) ) );
 			  if ( constraint != null )
@@ -1702,35 +1702,35 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.neo4j.graphdb.schema.ConstraintDefinition> filteredNodeConstraints(String labelName, final org.neo4j.graphdb.schema.ConstraintType type)
+//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.schema.ConstraintDefinition> filteredNodeConstraints(String labelName, final org.Neo4Net.graphdb.schema.ConstraintType type)
 		 private IEnumerable<ConstraintDefinition> FilteredNodeConstraints( string labelName, ConstraintType type )
 		 {
 			  return filter( item => item.isConstraintType( type ), _graphDb.schema().getConstraints(label(labelName)) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.neo4j.graphdb.schema.ConstraintDefinition> filteredRelationshipConstraints(String typeName, final org.neo4j.graphdb.schema.ConstraintType type)
+//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.schema.ConstraintDefinition> filteredRelationshipConstraints(String typeName, final org.Neo4Net.graphdb.schema.ConstraintType type)
 		 private IEnumerable<ConstraintDefinition> FilteredRelationshipConstraints( string typeName, ConstraintType type )
 		 {
 			  return filter( item => item.isConstraintType( type ), _graphDb.schema().getConstraints(RelationshipType.withName(typeName)) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.neo4j.graphdb.schema.ConstraintDefinition> propertyUniquenessFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> propertyUniquenessFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> PropertyUniquenessFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.UNIQUENESS ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.neo4j.graphdb.schema.ConstraintDefinition> nodePropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> nodePropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> NodePropertyExistenceFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.NODE_PROPERTY_EXISTENCE ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.neo4j.graphdb.schema.ConstraintDefinition> relationshipPropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> relationshipPropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> RelationshipPropertyExistenceFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.RELATIONSHIP_PROPERTY_EXISTENCE ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );

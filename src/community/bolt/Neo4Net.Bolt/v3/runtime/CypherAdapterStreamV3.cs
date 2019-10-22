@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.v3.runtime
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 
 	internal class CypherAdapterStreamV3 : CypherAdapterStream
 	{

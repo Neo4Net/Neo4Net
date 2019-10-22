@@ -67,7 +67,7 @@ namespace Neo4Net.Server.rest.management.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ValueRepresentation getDescription() throws javax.management.IntrospectionException, javax.management.InstanceNotFoundException, javax.management.ReflectionException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ValueRepresentation getDescription() throws javax.management.IntrospectionException, javax.management.InstanceNotFoundException, javax.management.ReflectionException
 		 [Mapping("description")]
 		 public virtual ValueRepresentation Description
 		 {
@@ -79,7 +79,7 @@ namespace Neo4Net.Server.rest.management.repr
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.rest.repr.ListRepresentation getAttributes() throws javax.management.IntrospectionException, javax.management.InstanceNotFoundException, javax.management.ReflectionException
+//ORIGINAL LINE: public org.Neo4Net.server.rest.repr.ListRepresentation getAttributes() throws javax.management.IntrospectionException, javax.management.InstanceNotFoundException, javax.management.ReflectionException
 		 [Mapping("attributes")]
 		 public virtual ListRepresentation Attributes
 		 {

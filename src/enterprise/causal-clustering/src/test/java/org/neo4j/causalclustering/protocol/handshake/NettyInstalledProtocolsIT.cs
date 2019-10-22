@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.protocol.handshake
 {
@@ -67,15 +67,15 @@ namespace Neo4Net.causalclustering.protocol.handshake
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocolCategory.RAFT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_1;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_1;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_2;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ApplicationProtocols.RAFT_2;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
+//	import static org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocolCategory.COMPRESSION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NettyInstalledProtocolsIT
@@ -101,7 +101,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft1WithCompressionModifier(java.util.Optional<org.neo4j.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
+//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft1WithCompressionModifier(java.util.Optional<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
 		 private static Parameters Raft1WithCompressionModifier( Optional<Protocol_ModifierProtocol> protocol )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -110,7 +110,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft2WithCompressionModifiers(java.util.Optional<org.neo4j.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
+//ORIGINAL LINE: @SuppressWarnings("OptionalUsedAsFieldOrParameterType") private static Parameters raft2WithCompressionModifiers(java.util.Optional<org.Neo4Net.causalclustering.protocol.Protocol_ModifierProtocol> protocol)
 		 private static Parameters Raft2WithCompressionModifiers( Optional<Protocol_ModifierProtocol> protocol )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -210,7 +210,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: void start(final ApplicationProtocolRepository applicationProtocolRepository, final ModifierProtocolRepository modifierProtocolRepository, org.neo4j.logging.LogProvider logProvider)
+//ORIGINAL LINE: void start(final ApplicationProtocolRepository applicationProtocolRepository, final ModifierProtocolRepository modifierProtocolRepository, org.Neo4Net.logging.LogProvider logProvider)
 			  internal virtual void Start( ApplicationProtocolRepository applicationProtocolRepository, ModifierProtocolRepository modifierProtocolRepository, LogProvider logProvider )
 			  {
 					RaftProtocolServerInstallerV2.Factory raftFactoryV2 = new RaftProtocolServerInstallerV2.Factory( nettyHandler, PipelineBuilderFactory, logProvider );
@@ -291,7 +291,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			 private readonly NettyInstalledProtocolsIT _outerInstance;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<? extends org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage> expected;
+//ORIGINAL LINE: private final org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<? extends org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> expected;
 			  internal readonly Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> Expected;
 
 			  internal MessageMatcher<T1>( NettyInstalledProtocolsIT outerInstance, Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<T1> expected ) where T1 : Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage
@@ -303,11 +303,11 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			  public override bool Matches( object item )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (item instanceof org.neo4j.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>)
+//ORIGINAL LINE: if (item instanceof org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>)
 					if ( item is Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = (org.neo4j.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>) item;
+//ORIGINAL LINE: org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?> message = (org.Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<?>) item;
 						 Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> message = ( Neo4Net.causalclustering.core.consensus.RaftMessages_ClusterIdAwareMessage<object> ) item;
 						 return message.ClusterId().Equals(Expected.clusterId()) && message.message().Equals(Expected.message());
 					}

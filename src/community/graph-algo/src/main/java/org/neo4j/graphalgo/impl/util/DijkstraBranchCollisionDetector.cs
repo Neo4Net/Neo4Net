@@ -22,10 +22,10 @@ namespace Neo4Net.Graphalgo.impl.util
 	using MutableDouble = org.apache.commons.lang3.mutable.MutableDouble;
 
 	using Neo4Net.Graphalgo;
-	using Path = Neo4Net.Graphdb.Path;
-	using StandardBranchCollisionDetector = Neo4Net.Graphdb.impl.traversal.StandardBranchCollisionDetector;
-	using Evaluator = Neo4Net.Graphdb.traversal.Evaluator;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
+	using Path = Neo4Net.GraphDb.Path;
+	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
+	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 	/// <summary>

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -32,9 +32,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ConcurrentModificationException = Neo4Net.Server.Security.Auth.exception.ConcurrentModificationException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.trimToFlattenedList;
+//	import static org.Neo4Net.helpers.collection.MapUtil.trimToFlattenedList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.trimToList;
+//	import static org.Neo4Net.helpers.collection.MapUtil.trimToList;
 
 	public abstract class AbstractRoleRepository : LifecycleAdapter, RoleRepository
 	{
@@ -74,7 +74,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void create(RoleRecord role) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: public void create(RoleRecord role) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 		 public override void Create( RoleRecord role )
 		 {
 			  AssertValidRoleName( role.Name() );
@@ -101,7 +101,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setRoles(org.neo4j.server.security.auth.ListSnapshot<RoleRecord> rolesSnapshot) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void setRoles(org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> rolesSnapshot) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public virtual ListSnapshot<RoleRecord> Roles
 		 {
 			 set
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void update(RoleRecord existingRole, RoleRecord updatedRole) throws org.neo4j.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
+//ORIGINAL LINE: public void update(RoleRecord existingRole, RoleRecord updatedRole) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
 		 public override void Update( RoleRecord existingRole, RoleRecord updatedRole )
 		 {
 			  // Assert input is ok
@@ -219,7 +219,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void assertValidRoleName(String name) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void assertValidRoleName(String name) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override void AssertValidRoleName( string name )
 		 {
 			  if ( string.ReferenceEquals( name, null ) || name.Length == 0 )
@@ -233,7 +233,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void removeUserFromAllRoles(String username) throws org.neo4j.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
+//ORIGINAL LINE: public synchronized void removeUserFromAllRoles(String username) throws org.Neo4Net.server.security.auth.exception.ConcurrentModificationException, java.io.IOException
 		 public override void RemoveUserFromAllRoles( string username )
 		 {
 			 lock ( this )
@@ -294,7 +294,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 /// <returns> a timestamped snapshot of roles, or null if the backing file did not exist </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.neo4j.server.security.auth.ListSnapshot<RoleRecord> readPersistedRoles() throws java.io.IOException;
+//ORIGINAL LINE: protected abstract org.Neo4Net.server.security.auth.ListSnapshot<RoleRecord> readPersistedRoles() throws java.io.IOException;
 		 protected internal abstract ListSnapshot<RoleRecord> ReadPersistedRoles();
 
 		 // ------------------ helpers --------------------

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -37,8 +37,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Graphdb;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryId = Neo4Net.Kernel.enterprise.builtinprocs.QueryId;
@@ -73,23 +73,23 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.CommonMatchers.matchesOneToOneInAnyOrder;
+//	import static org.Neo4Net.test.matchers.CommonMatchers.matchesOneToOneInAnyOrder;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.concurrent.Runnables.EMPTY_RUNNABLE;
+//	import static org.Neo4Net.util.concurrent.Runnables.EMPTY_RUNNABLE;
 
 	public abstract class BuiltInProceduresInteractionTestBase<S> : ProcedureInteractionTestBase<S>
 	{
@@ -390,10 +390,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 					// Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch(3, true);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(3, true);
 					DoubleLatch latch = new DoubleLatch( 3, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 					Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 
 					// Serve CSV via local web server, let Jetty find a random port for us
@@ -647,10 +647,10 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 					// Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch(3, true);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(3, true);
 					DoubleLatch latch = new DoubleLatch( 3, true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 					Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 
 					// Serve CSV via local web server, let Jetty find a random port for us
@@ -801,7 +801,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldTerminateLongRunningProcedureThatChecksTheGuardRegularlyIfKilled()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch(2, true);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(2, true);
 			  DoubleLatch latch = new DoubleLatch( 2, true );
 			  ClassWithProcedures.VolatileLatch = latch;
 
@@ -1190,7 +1190,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldTerminateRestrictedTransaction()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch doubleLatch = new org.neo4j.test.DoubleLatch(2);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch doubleLatch = new org.Neo4Net.test.DoubleLatch(2);
 			  DoubleLatch doubleLatch = new DoubleLatch( 2 );
 
 			  ClassWithProcedures.TestLatch = new ClassWithProcedures.LatchedRunnables( doubleLatch, EMPTY_RUNNABLE, EMPTY_RUNNABLE );

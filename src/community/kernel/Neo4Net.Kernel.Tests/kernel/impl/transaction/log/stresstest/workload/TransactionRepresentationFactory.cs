@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.stresstest.workload
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.TransactionHeaderInformationFactory.DEFAULT;
+//	import static org.Neo4Net.kernel.impl.transaction.TransactionHeaderInformationFactory.DEFAULT;
 
 	internal class TransactionRepresentationFactory
 	{

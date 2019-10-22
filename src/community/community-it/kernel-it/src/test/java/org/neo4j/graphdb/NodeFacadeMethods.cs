@@ -19,19 +19,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.BOTH;
+//	import static org.Neo4Net.graphdb.Direction.BOTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.FacadeMethod.BAR;
+//	import static org.Neo4Net.graphdb.FacadeMethod.BAR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.FacadeMethod.FOO;
+//	import static org.Neo4Net.graphdb.FacadeMethod.FOO;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.FacadeMethod.QUUX;
+//	import static org.Neo4Net.graphdb.FacadeMethod.QUUX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.FacadeMethod.consume;
+//	import static org.Neo4Net.graphdb.FacadeMethod.consume;
 
 	public sealed class NodeFacadeMethods : Consumer<Node>
 	{

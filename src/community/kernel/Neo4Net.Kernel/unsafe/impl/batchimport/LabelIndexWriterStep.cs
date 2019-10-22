@@ -28,11 +28,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
+//	import static org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate.labelChanges;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.get;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.get;
 
 	public class LabelIndexWriterStep : ProcessorStep<NodeRecord[]>
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void process(org.neo4j.kernel.impl.store.record.NodeRecord[] batch, org.neo4j.unsafe.impl.batchimport.staging.BatchSender sender) throws Throwable
+//ORIGINAL LINE: protected void process(org.Neo4Net.kernel.impl.store.record.NodeRecord[] batch, org.Neo4Net.unsafe.impl.batchimport.staging.BatchSender sender) throws Throwable
 		 protected internal override void Process( NodeRecord[] batch, BatchSender sender )
 		 {
 			  foreach ( NodeRecord node in batch )

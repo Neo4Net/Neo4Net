@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 
 	public class LogHeaderReader
 	{
@@ -34,14 +34,14 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static LogHeader readLogHeader(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public static LogHeader readLogHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException
 		 public static LogHeader ReadLogHeader( FileSystemAbstraction fileSystem, File file )
 		 {
 			  return ReadLogHeader( fileSystem, file, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static LogHeader readLogHeader(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, boolean strict) throws java.io.IOException
+//ORIGINAL LINE: public static LogHeader readLogHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, boolean strict) throws java.io.IOException
 		 public static LogHeader ReadLogHeader( FileSystemAbstraction fileSystem, File file, bool strict )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ ) )

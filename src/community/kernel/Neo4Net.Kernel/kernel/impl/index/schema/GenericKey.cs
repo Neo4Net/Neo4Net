@@ -34,23 +34,23 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PageCache_Fields.PAGE_SIZE;
+//	import static org.Neo4Net.io.pagecache.PageCache_Fields.PAGE_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
+//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_DAY_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
+//	import static org.Neo4Net.kernel.impl.index.schema.DurationIndexKey.AVG_MONTH_SECONDS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.Type.booleanOf;
+//	import static org.Neo4Net.kernel.impl.index.schema.Type.booleanOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.Types.HIGHEST_BY_VALUE_GROUP;
+//	import static org.Neo4Net.kernel.impl.index.schema.Types.HIGHEST_BY_VALUE_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.Types.LOWEST_BY_VALUE_GROUP;
+//	import static org.Neo4Net.kernel.impl.index.schema.Types.LOWEST_BY_VALUE_GROUP;
 
 	/// <summary>
 	/// A key instance which can handle all types of single values, i.e. not composite keys, but all value types.
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual void InitializeToDummyValue()
 		 {
-			  EntityId = long.MinValue;
+			  IEntityId = long.MinValue;
 			  InitializeToDummyValueInternal();
 		 }
 
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /* </initializers> */
 		 internal virtual void CopyFrom( GenericKey key )
 		 {
-			  EntityId = key.EntityId;
+			  IEntityId = key.EntityId;
 			  CompareId = key.CompareId;
 			  CopyFromInternal( key );
 		 }
@@ -313,7 +313,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 			  else
 			  {
-					// There was no minimal splitter to be found so entity id will serve as divider
+					// There was no minimal splitter to be found so IEntity id will serve as divider
 					into.EntityId = right.EntityId;
 			  }
 			  MinimalSplitterInternal( left, right, into );
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual int Size()
 		 {
-			  return EntityIdSize + SizeInternal();
+			  return IEntityIdSize + SizeInternal();
 		 }
 
 		 internal virtual int SizeInternal()
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual void Put( PageCursor cursor )
 		 {
-			  cursor.PutLong( EntityId );
+			  cursor.PutLong( IEntityId );
 			  PutInternal( cursor );
 		 }
 
@@ -355,10 +355,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual bool Get( PageCursor cursor, int size )
 		 {
-			  if ( size < EntityIdSize )
+			  if ( size < IEntityIdSize )
 			  {
 					InitializeToDummyValue();
-					cursor.CursorException = format( "Failed to read " + this.GetType().Name + " due to keySize < ENTITY_ID_SIZE, more precisely %d", size );
+					cursor.CursorException = format( "Failed to read " + this.GetType().Name + " due to keySize < IEntity_ID_SIZE, more precisely %d", size );
 					return false;
 			  }
 
@@ -667,7 +667,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return "[" + ToStringInternal() + "],entityId=" + EntityId;
+			  return "[" + ToStringInternal() + "],entityId=" + IEntityId;
 		 }
 
 		 internal virtual string ToStringInternal()
@@ -677,7 +677,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 internal virtual string ToDetailedString()
 		 {
-			  return "[" + ToDetailedStringInternal() + "],entityId=" + EntityId;
+			  return "[" + ToDetailedStringInternal() + "],entityId=" + IEntityId;
 		 }
 
 		 internal virtual string ToDetailedStringInternal()

@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.impl.core
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -40,9 +40,9 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 
-	public class TestNeo4jApiExceptions
+	public class TestNeo4NetApiExceptions
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void testNotInTransactionException()
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.impl.core
 //ORIGINAL LINE: @Test public void shouldGiveNiceErrorWhenShutdownKernelApi()
 		 public virtual void ShouldGiveNiceErrorWhenShutdownKernelApi()
 		 {
-			  GraphDatabaseService graphDb = _graph;
+			  IGraphDatabaseService graphDb = _graph;
 			  Node node = graphDb.CreateNode();
 			  Commit();
 			  graphDb.Shutdown();
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.impl.core
 //ORIGINAL LINE: @Test public void shouldGiveNiceErrorWhenShutdownLegacy()
 		 public virtual void ShouldGiveNiceErrorWhenShutdownLegacy()
 		 {
-			  GraphDatabaseService graphDb = _graph;
+			  IGraphDatabaseService graphDb = _graph;
 			  Node node = graphDb.CreateNode();
 			  Commit();
 			  graphDb.Shutdown();
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 		 private Transaction _tx;
-		 private GraphDatabaseService _graph;
+		 private IGraphDatabaseService _graph;
 
 		 private void NewTransaction()
 		 {

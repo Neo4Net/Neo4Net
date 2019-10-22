@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.explicitindex
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
 	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
 	using Config = Neo4Net.Kernel.configuration.Config;

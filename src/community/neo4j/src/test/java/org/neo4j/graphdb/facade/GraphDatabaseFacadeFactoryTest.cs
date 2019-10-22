@@ -19,16 +19,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.facade
+namespace Neo4Net.GraphDb.facade
 {
 	using BeforeEach = org.junit.jupiter.api.BeforeEach;
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SchemaWriteGuard = Neo4Net.Kernel.Impl.Api.SchemaWriteGuard;
@@ -61,16 +61,16 @@ namespace Neo4Net.Graphdb.facade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.factory.DatabaseInfo.COMMUNITY;
+//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.COMMUNITY;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({EphemeralFileSystemExtension.class, TestDirectoryExtension.class}) class GraphDatabaseFacadeFactoryTest
 	internal class GraphDatabaseFacadeFactoryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 		 private readonly GraphDatabaseFacade _mockFacade = mock( typeof( GraphDatabaseFacade ) );
@@ -148,7 +148,7 @@ namespace Neo4Net.Graphdb.facade
 			 protected internal override PlatformModule createPlatform( File storeDir, Config config, Dependencies dependencies )
 			 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.lifecycle.LifeSupport lifeMock = mock(org.neo4j.kernel.lifecycle.LifeSupport.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.lifecycle.LifeSupport lifeMock = mock(org.Neo4Net.kernel.lifecycle.LifeSupport.class);
 				  LifeSupport lifeMock = mock( typeof( LifeSupport ) );
 				  doThrow( _startupError ).when( lifeMock ).start();
 				  doAnswer( invocation => invocation.getArgument( 0 ) ).when( lifeMock ).add( any( typeof( Lifecycle ) ) );
@@ -162,7 +162,7 @@ namespace Neo4Net.Graphdb.facade
 
 				 private LifeSupport _lifeMock;
 
-				 public PlatformModuleAnonymousInnerClass( GraphDatabaseFacadeFactoryAnonymousInnerClass outerInstance, File storeDir, Config config, UnknownType databaseInfo, Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies dependencies, LifeSupport lifeMock ) : base( storeDir, config, databaseInfo, dependencies )
+				 public PlatformModuleAnonymousInnerClass( GraphDatabaseFacadeFactoryAnonymousInnerClass outerInstance, File storeDir, Config config, UnknownType databaseInfo, Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies dependencies, LifeSupport lifeMock ) : base( storeDir, config, databaseInfo, dependencies )
 				 {
 					 this.outerInstance = outerInstance;
 					 this._lifeMock = lifeMock;

@@ -29,9 +29,9 @@ namespace Neo4Net.Tracers
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Cancelable = Neo4Net.Helpers.Cancelable;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
 	using PageCursorCounters = Neo4Net.Io.pagecache.tracing.cursor.PageCursorCounters;
@@ -51,9 +51,9 @@ namespace Neo4Net.Tracers
 	public class PageCacheCountersIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private ExecutorService _executors;
 		 private int _numberOfWorkers;
 
@@ -145,7 +145,7 @@ namespace Neo4Net.Tracers
 			  return nodeCreators.Select( mapper ).Sum() + initialValue;
 		 }
 
-		 private PageCacheTracer GetPageCacheTracer( GraphDatabaseService db )
+		 private PageCacheTracer GetPageCacheTracer( IGraphDatabaseService db )
 		 {
 			  Tracers tracers = ( ( GraphDatabaseAPI ) db ).DependencyResolver.resolveDependency( typeof( Tracers ) );
 			  return tracers.PageCacheTracer;
@@ -157,7 +157,7 @@ namespace Neo4Net.Tracers
 
 			  internal volatile bool Canceled;
 
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal long PinsConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -174,7 +174,7 @@ namespace Neo4Net.Tracers
 			  internal long FaultsConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal long FlushesConflict;
-			  internal NodeCreator( PageCacheCountersIT outerInstance, GraphDatabaseService db )
+			  internal NodeCreator( PageCacheCountersIT outerInstance, IGraphDatabaseService db )
 			  {
 				  this._outerInstance = outerInstance;
 					this.Db = db;

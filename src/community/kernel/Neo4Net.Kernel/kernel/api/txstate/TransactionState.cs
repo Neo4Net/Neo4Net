@@ -28,16 +28,16 @@ namespace Neo4Net.Kernel.api.txstate
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 	/// <summary>
-	/// Kernel transaction state, please see <seealso cref="org.neo4j.kernel.impl.api.state.TxState"/> for implementation details.
+	/// Kernel transaction state, please see <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState"/> for implementation details.
 	/// 
 	/// This interface defines the mutating methods for the transaction state, methods for reading are defined in
 	/// <seealso cref="ReadableTransactionState"/>. These mutating methods follow the rule that they all contain the word "Do" in the name.
 	/// This naming convention helps deciding where to set <seealso cref="hasChanges()"/> in the
-	/// <seealso cref="org.neo4j.kernel.impl.api.state.TxState main implementation class"/>.
+	/// <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState main implementation class"/>.
 	/// </summary>
 	public interface TransactionState : ReadableTransactionState
 	{
-		 // ENTITY RELATED
+		 // IEntity RELATED
 
 		 void RelationshipDoCreate( long id, int relationshipTypeId, long startNodeId, long endNodeId );
 

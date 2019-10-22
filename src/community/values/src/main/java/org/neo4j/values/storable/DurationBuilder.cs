@@ -27,7 +27,7 @@ namespace Neo4Net.Values.Storable
 	{
 		public abstract T Build( StructureBuilder<AnyValue, T> builder, IEnumerable<KeyValuePair<string, AnyValue>> entries );
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public abstract T build(final org.neo4j.values.StructureBuilder<AnyValue, T> builder, org.neo4j.values.virtual.MapValue map);
+//ORIGINAL LINE: public abstract T build(final org.Neo4Net.values.StructureBuilder<AnyValue, T> builder, org.Neo4Net.values.virtual.MapValue map);
 		public abstract T Build( StructureBuilder<AnyValue, T> builder, Neo4Net.Values.@virtual.MapValue map );
 		 private Input _years;
 		 private Input _months;

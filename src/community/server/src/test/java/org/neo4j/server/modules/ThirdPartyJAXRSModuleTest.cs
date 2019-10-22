@@ -63,7 +63,7 @@ namespace Neo4Net.Server.modules
 			  Config config = mock( typeof( Config ) );
 			  IList<ThirdPartyJaxRsPackage> jaxRsPackages = new List<ThirdPartyJaxRsPackage>();
 			  string path = "/third/party/package";
-			  jaxRsPackages.Add( new ThirdPartyJaxRsPackage( "org.example.neo4j", path ) );
+			  jaxRsPackages.Add( new ThirdPartyJaxRsPackage( "org.example.Neo4Net", path ) );
 			  when( config.Get( ServerSettings.third_party_packages ) ).thenReturn( jaxRsPackages );
 
 			  // When

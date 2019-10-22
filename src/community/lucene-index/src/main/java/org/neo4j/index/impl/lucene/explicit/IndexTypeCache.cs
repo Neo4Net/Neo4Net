@@ -37,7 +37,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexType getIndexType(IndexIdentifier identifier, boolean recovery) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexType getIndexType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexType GetIndexType( IndexIdentifier identifier, bool recovery )
 		 {
 			  Pair<int, IndexType> type = _cache[identifier];

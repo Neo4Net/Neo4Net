@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ExtendWith(RandomExtension.class) class EntityCommandGrouperTest
-	internal class EntityCommandGrouperTest
+//ORIGINAL LINE: @ExtendWith(RandomExtension.class) class IEntityCommandGrouperTest
+	internal class IEntityCommandGrouperTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 		 private long _nextPropertyId;
@@ -62,10 +62,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal virtual void ShouldHandleEmptyList( Factory factory )
 		 {
 			  // given
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
 
 			  // when
-			  EntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
+			  IEntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
 			  bool hasNext = cursor.NextEntity();
 
 			  // then
@@ -77,20 +77,20 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal virtual void ShouldSeeSingleGroupOfPropertiesWithEntity( Factory factory )
 		 {
 			  // given
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
-			  long entityId = 1;
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
+			  long IEntityId = 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity = factory.command(entityId);
-			  Command.BaseCommand<PrimitiveRecord> entity = factory.command( entityId );
-			  Command.PropertyCommand property1 = Property( entity.After );
-			  Command.PropertyCommand property2 = Property( entity.After );
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
+			  Command.BaseCommand<PrimitiveRecord> IEntity = factory.command( IEntityId );
+			  Command.PropertyCommand property1 = Property( IEntity.After );
+			  Command.PropertyCommand property2 = Property( IEntity.After );
 			  grouper.add( property1 );
 			  grouper.add( property2 );
-			  grouper.add( entity ); // <-- deliberately out-of-place
-			  EntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
+			  grouper.add( IEntity ); // <-- deliberately out-of-place
+			  IEntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
 
 			  // when/then
-			  AssertGroups( cursor, Group( entityId, entity, property1, property2 ) );
+			  AssertGroups( cursor, Group( IEntityId, IEntity, property1, property2 ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -98,20 +98,20 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal virtual void ShouldSeeSingleGroupOfPropertiesWithoutEntity( Factory factory )
 		 {
 			  // given
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
-			  long entityId = 1;
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 8 );
+			  long IEntityId = 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity = factory.command(entityId);
-			  Command.BaseCommand<PrimitiveRecord> entity = factory.command( entityId );
-			  Command.PropertyCommand property1 = Property( entity.After );
-			  Command.PropertyCommand property2 = Property( entity.After );
-			  // intentionally DO NOT add the entity command
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity = factory.command(entityId);
+			  Command.BaseCommand<PrimitiveRecord> IEntity = factory.command( IEntityId );
+			  Command.PropertyCommand property1 = Property( IEntity.After );
+			  Command.PropertyCommand property2 = Property( IEntity.After );
+			  // intentionally DO NOT add the IEntity command
 			  grouper.add( property1 );
 			  grouper.add( property2 );
-			  EntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
+			  IEntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
 
 			  // when/then
-			  AssertGroups( cursor, Group( entityId, null, property1, property2 ) );
+			  AssertGroups( cursor, Group( IEntityId, null, property1, property2 ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -119,27 +119,27 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal virtual void ShouldSeeMultipleGroupsSomeOfThemWithEntity( Factory factory )
 		 {
 			  // given
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( factory.command( 0 ).GetType(), 64 );
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 64 );
 			  Group[] groups = new Group[_random.Next( 10, 30 )];
-			  for ( int entityId = 0; entityId < groups.Length; entityId++ )
+			  for ( int IEntityId = 0; IEntityId < groups.Length; IEntityId++ )
 			  {
-					Command.BaseCommand entityCommand = _random.nextBoolean() ? factory.command(entityId) : null;
-					groups[entityId] = new Group( entityId, entityCommand );
-					if ( entityCommand != null )
+					Command.BaseCommand IEntityCommand = _random.nextBoolean() ? factory.command(entityId) : null;
+					groups[entityId] = new Group( IEntityId, IEntityCommand );
+					if ( IEntityCommand != null )
 					{
-						 grouper.add( entityCommand ); // <-- storage transaction logs are sorted such that entity commands comes before property commands
+						 grouper.add( IEntityCommand ); // <-- storage transaction logs are sorted such that IEntity commands comes before property commands
 					}
 			  }
 			  int totalNumberOfProperties = _random.Next( 10, 100 );
 			  for ( int i = 0; i < totalNumberOfProperties; i++ )
 			  {
-					int entityId = _random.Next( groups.Length );
-					Command.PropertyCommand property = property( factory.command( entityId ).After );
+					int IEntityId = _random.Next( groups.Length );
+					Command.PropertyCommand property = property( factory.command( IEntityId ).After );
 					groups[entityId].AddProperty( property );
 					grouper.add( property );
 			  }
 			  // ^^^ OK so we've generated property commands for random entities in random order, let's sort them
-			  EntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
+			  IEntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
 
 			  // then
 			  AssertGroups( cursor, groups );
@@ -150,36 +150,36 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 internal virtual void ShouldWorkOnADifferentSetOfCommandsAfterClear( Factory factory )
 		 {
 			  // given
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( factory.command( 0 ).GetType(), 16 );
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( factory.command( 0 ).GetType(), 16 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity0 = factory.command(0);
-			  Command.BaseCommand<PrimitiveRecord> entity0 = factory.command( 0 );
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity0 = factory.command(0);
+			  Command.BaseCommand<PrimitiveRecord> IEntity0 = factory.command( 0 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity1 = factory.command(1);
-			  Command.BaseCommand<PrimitiveRecord> entity1 = factory.command( 1 );
-			  grouper.add( entity0 );
-			  grouper.add( entity1 );
-			  grouper.add( Property( entity0.After ) );
-			  grouper.add( Property( entity1.After ) );
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity1 = factory.command(1);
+			  Command.BaseCommand<PrimitiveRecord> IEntity1 = factory.command( 1 );
+			  grouper.add( IEntity0 );
+			  grouper.add( IEntity1 );
+			  grouper.add( Property( IEntity0.After ) );
+			  grouper.add( Property( IEntity1.After ) );
 			  grouper.clear();
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity2 = factory.command(2);
-			  Command.BaseCommand<PrimitiveRecord> entity2 = factory.command( 2 );
-			  Command.PropertyCommand entityProperty = Property( entity2.After );
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity2 = factory.command(2);
+			  Command.BaseCommand<PrimitiveRecord> IEntity2 = factory.command( 2 );
+			  Command.PropertyCommand IEntityProperty = Property( IEntity2.After );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.command.Command.BaseCommand<? extends org.neo4j.kernel.impl.store.record.PrimitiveRecord> entity3 = factory.command(3);
-			  Command.BaseCommand<PrimitiveRecord> entity3 = factory.command( 3 );
-			  grouper.add( entity2 );
-			  grouper.add( entityProperty );
-			  grouper.add( entity3 );
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.command.Command.BaseCommand<? extends org.Neo4Net.kernel.impl.store.record.PrimitiveRecord> IEntity3 = factory.command(3);
+			  Command.BaseCommand<PrimitiveRecord> IEntity3 = factory.command( 3 );
+			  grouper.add( IEntity2 );
+			  grouper.add( IEntityProperty );
+			  grouper.add( IEntity3 );
 
 			  // then
-			  AssertGroups( grouper.sortAndAccessGroups(), Group(entity2.Key, entity2, entityProperty), Group(entity3.Key, entity3) );
+			  AssertGroups( grouper.sortAndAccessGroups(), Group(entity2.Key, IEntity2, IEntityProperty), Group(entity3.Key, IEntity3) );
 		 }
 
-		 private void AssertGroups( EntityCommandGrouper.Cursor cursor, params Group[] groups )
+		 private void AssertGroups( IEntityCommandGrouper.Cursor cursor, params Group[] groups )
 		 {
 			  foreach ( Group group in groups )
 			  {
@@ -193,9 +193,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  assertFalse( cursor.NextEntity() );
 		 }
 
-		 private Group Group<T1>( long entityId, Command.BaseCommand<T1> entityCommand, params Command.PropertyCommand[] properties ) where T1 : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord
+		 private Group Group<T1>( long IEntityId, Command.BaseCommand<T1> IEntityCommand, params Command.PropertyCommand[] properties ) where T1 : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord
 		 {
-			  return new Group( entityId, entityCommand, properties );
+			  return new Group( IEntityId, IEntityCommand, properties );
 		 }
 
 		 private Command.PropertyCommand Property( PrimitiveRecord owner )
@@ -206,14 +206,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private class Group
 		 {
-			  internal readonly long EntityId;
-			  internal readonly Command EntityCommand;
+			  internal readonly long IEntityId;
+			  internal readonly Command IEntityCommand;
 			  internal readonly ISet<Command.PropertyCommand> Properties = new HashSet<Command.PropertyCommand>();
 
-			  internal Group( long entityId, Command entityCommand, params Command.PropertyCommand[] properties )
+			  internal Group( long IEntityId, Command IEntityCommand, params Command.PropertyCommand[] properties )
 			  {
-					this.EntityId = entityId;
-					this.EntityCommand = entityCommand;
+					this.EntityId = IEntityId;
+					this.EntityCommand = IEntityCommand;
 					this.Properties.addAll( Arrays.asList( properties ) );
 			  }
 
@@ -222,10 +222,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					Properties.Add( property );
 			  }
 
-			  internal virtual void AssertGroup( EntityCommandGrouper.Cursor cursor )
+			  internal virtual void AssertGroup( IEntityCommandGrouper.Cursor cursor )
 			  {
-					assertEquals( EntityId, cursor.CurrentEntityId() );
-					assertSame( EntityCommand, cursor.CurrentEntityCommand() );
+					assertEquals( IEntityId, cursor.CurrentEntityId() );
+					assertSame( IEntityCommand, cursor.CurrentEntityCommand() );
 					ISet<Command.PropertyCommand> fromGrouper = new HashSet<Command.PropertyCommand>();
 					while ( true )
 					{
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  {
 				  get
 				  {
-						return EntityCommand == null && Properties.Count == 0;
+						return IEntityCommand == null && Properties.Count == 0;
 				  }
 			  }
 		 }
@@ -251,9 +251,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private abstract class Factory
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE { NodeCommand command(long value) { return new org.neo4j.kernel.impl.transaction.command.Command.NodeCommand(new org.neo4j.kernel.impl.store.record.NodeRecord(value), new org.neo4j.kernel.impl.store.record.NodeRecord(value)); } },
+//           NODE { NodeCommand command(long value) { return new org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand(new org.Neo4Net.kernel.impl.store.record.NodeRecord(value), new org.Neo4Net.kernel.impl.store.record.NodeRecord(value)); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP { RelationshipCommand command(long value) { return new org.neo4j.kernel.impl.transaction.command.Command.RelationshipCommand(new org.neo4j.kernel.impl.store.record.RelationshipRecord(value), new org.neo4j.kernel.impl.store.record.RelationshipRecord(value)); } };
+//           RELATIONSHIP { RelationshipCommand command(long value) { return new org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand(new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(value), new org.Neo4Net.kernel.impl.store.record.RelationshipRecord(value)); } };
 
 			  private static readonly IList<Factory> valueList = new List<Factory>();
 

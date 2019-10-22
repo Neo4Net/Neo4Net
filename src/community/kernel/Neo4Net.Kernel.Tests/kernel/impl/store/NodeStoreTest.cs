@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.store
 
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
-	using DelegatingStoreChannel = Neo4Net.Graphdb.mockfs.DelegatingStoreChannel;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingStoreChannel = Neo4Net.GraphDb.mockfs.DelegatingStoreChannel;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Neo4Net.Helpers.Collections;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
@@ -72,17 +72,17 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.contains;
+//	import static org.Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
+//	import static org.Neo4Net.kernel.impl.store.DynamicArrayStore.allocateFromNumbers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeStore.readOwnerFromDynamicLabelsRecord;
+//	import static org.Neo4Net.kernel.impl.store.NodeStore.readOwnerFromDynamicLabelsRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class NodeStoreTest
 	{
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.store
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static readonly PageCacheRule PageCacheRule = new PageCacheRule();
 
 		 private readonly EphemeralFileSystemRule _efs = new EphemeralFileSystemRule();
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.impl.store
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  return new DelegatingStoreChannelAnonymousInnerClass( this, base.open( fileName, openMode ) );
@@ -419,14 +419,14 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private NodeStore newNodeStore(org.neo4j.io.fs.FileSystemAbstraction fs) throws java.io.IOException
+//ORIGINAL LINE: private NodeStore newNodeStore(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws java.io.IOException
 		 private NodeStore NewNodeStore( FileSystemAbstraction fs )
 		 {
 			  return NewNodeStore( fs, PageCacheRule.getPageCache( fs ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private NodeStore newNodeStore(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private NodeStore newNodeStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private NodeStore NewNodeStore( FileSystemAbstraction fs, PageCache pageCache )
 		 {
 			  _idGeneratorFactory = spy( new DefaultIdGeneratorFactoryAnonymousInnerClass( this, fs ) );

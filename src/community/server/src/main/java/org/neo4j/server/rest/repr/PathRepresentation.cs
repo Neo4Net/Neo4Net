@@ -22,12 +22,12 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.Helpers.Collections;
 
-	public class PathRepresentation<P> : ObjectRepresentation where P : Neo4Net.Graphdb.Path // implements
+	public class PathRepresentation<P> : ObjectRepresentation where P : Neo4Net.GraphDb.Path // implements
 	{
 																										  // ExtensibleRepresentation
 		 private readonly P _path;

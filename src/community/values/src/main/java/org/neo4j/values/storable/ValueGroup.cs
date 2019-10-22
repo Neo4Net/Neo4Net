@@ -22,11 +22,11 @@
 namespace Neo4Net.Values.Storable
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.ValueCategory.NO_CATEGORY;
+//	import static org.Neo4Net.values.storable.ValueCategory.NO_CATEGORY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.ValueCategory.TEMPORAL;
+//	import static org.Neo4Net.values.storable.ValueCategory.TEMPORAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.ValueCategory.TEMPORAL_ARRAY;
+//	import static org.Neo4Net.values.storable.ValueCategory.TEMPORAL_ARRAY;
 
 	/// <summary>
 	/// The ValueGroup is the logical group or type of a Value. For example byte, short, int and long are all attempting

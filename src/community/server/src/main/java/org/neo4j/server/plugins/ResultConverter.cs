@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.plugins
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.Helpers.Collections;
 	using ListRepresentation = Neo4Net.Server.rest.repr.ListRepresentation;
 	using NodeRepresentation = Neo4Net.Server.rest.repr.NodeRepresentation;
@@ -231,7 +231,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.neo4j.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
 			 internal override Representation convert( object obj )
 			 {
 				  return ValueRepresentation.@bool( ( bool? ) obj.Value );
@@ -259,7 +259,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.neo4j.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("boxing") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
 			 internal override Representation convert( object obj )
 			 {
 				  return ValueRepresentation.number( ( char? ) obj );
@@ -289,7 +289,7 @@ namespace Neo4Net.Server.plugins
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") org.neo4j.server.rest.repr.Representation convert(Object obj)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") org.Neo4Net.server.rest.repr.Representation convert(Object obj)
 			  internal override Representation Convert( object obj )
 			  {
 					return new ListRepresentation( ItemConverter.type(), new IterableWrapperAnonymousInnerClass(this) );

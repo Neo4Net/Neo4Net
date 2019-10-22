@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 {
@@ -31,17 +31,17 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using Test = org.junit.Test;
 
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using Neo4jWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4jWithSocket;
+	using Neo4NetWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4NetWithSocket;
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SecureSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureSocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
 	using Neo4Net.Functions;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
@@ -51,13 +51,13 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	/*
 	 * Only run these tests when the appropriate ActiveDirectory server is in fact live.
@@ -88,14 +88,14 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 		private void InitializeInstanceFields()
 		{
-			Server = new Neo4jWithSocket( this.GetType(), TestGraphDatabaseFactory, AsSettings(SettingsFunction) );
+			Server = new Neo4NetWithSocket( this.GetType(), TestGraphDatabaseFactory, AsSettings(SettingsFunction) );
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket server = new org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket(getClass(), getTestGraphDatabaseFactory(), asSettings(getSettingsFunction()));
-		 public Neo4jWithSocket Server;
+//ORIGINAL LINE: @Rule public org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket server = new org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket(getClass(), getTestGraphDatabaseFactory(), asSettings(getSettingsFunction()));
+		 public Neo4NetWithSocket Server;
 
-		 private void RestartNeo4jServerWithOverriddenSettings<T1>( System.Action<T1> overrideSettingsFunction )
+		 private void RestartNeo4NetServerWithOverriddenSettings<T1>( System.Action<T1> overrideSettingsFunction )
 		 {
 			  Server.shutdownDatabase();
 			  Server.ensureDatabase( AsSettings( overrideSettingsFunction ) );
@@ -123,7 +123,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected System.Action<java.util.Map<org.neo4j.graphdb.config.Setting<?>,String>> getSettingsFunction()
+//ORIGINAL LINE: protected System.Action<java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String>> getSettingsFunction()
 		 protected internal virtual System.Action<IDictionary<Setting<object>, string>> SettingsFunction
 		 {
 			 get
@@ -133,22 +133,22 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 					settings.put( GraphDatabaseSettings.auth_enabled, "true" );
 					settings.put( SecuritySettings.auth_provider, "ldap" );
 					settings.put( SecuritySettings.ldap_server, "activedirectory.neohq.net" );
-					settings.put( SecuritySettings.ldap_authentication_user_dn_template, "CN={0},CN=Users,DC=neo4j,DC=com" );
+					settings.put( SecuritySettings.ldap_authentication_user_dn_template, "CN={0},CN=Users,DC=Neo4Net,DC=com" );
 					settings.put( SecuritySettings.ldap_authorization_use_system_account, "false" );
-					settings.put( SecuritySettings.ldap_authorization_user_search_base, "cn=Users,dc=neo4j,dc=com" );
+					settings.put( SecuritySettings.ldap_authorization_user_search_base, "cn=Users,dc=Neo4Net,dc=com" );
 					settings.put( SecuritySettings.ldap_authorization_user_search_filter, "(&(objectClass=*)(CN={0}))" );
 					settings.put( SecuritySettings.ldap_authorization_group_membership_attribute_names, "memberOf" );
-					settings.put( SecuritySettings.ldap_authorization_group_to_role_mapping, "'CN=Neo4j Read Only,CN=Users,DC=neo4j,DC=com'=reader;" + "CN=Neo4j Read-Write,CN=Users,DC=neo4j,DC=com=publisher;" + "CN=Neo4j Schema Manager,CN=Users,DC=neo4j,DC=com=architect;" + "CN=Neo4j Administrator,CN=Users,DC=neo4j,DC=com=admin" );
+					settings.put( SecuritySettings.ldap_authorization_group_to_role_mapping, "'CN=Neo4Net Read Only,CN=Users,DC=Neo4Net,DC=com'=reader;" + "CN=Neo4Net Read-Write,CN=Users,DC=Neo4Net,DC=com=publisher;" + "CN=Neo4Net Schema Manager,CN=Users,DC=Neo4Net,DC=com=architect;" + "CN=Neo4Net Administrator,CN=Users,DC=Neo4Net,DC=com=admin" );
 				  };
 			 }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private System.Action<java.util.Map<org.neo4j.graphdb.config.Setting<?>,String>> useSystemAccountSettings = settings ->
+//ORIGINAL LINE: private System.Action<java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String>> useSystemAccountSettings = settings ->
 		 private System.Action<IDictionary<Setting<object>, string>> _useSystemAccountSettings = settings =>
 		 {
 		  settings.put( SecuritySettings.ldap_authorization_use_system_account, "true" );
-		  settings.put( SecuritySettings.ldap_authorization_system_username, "Neo4j System" );
+		  settings.put( SecuritySettings.ldap_authorization_system_username, "Neo4Net System" );
 		  settings.put( SecuritySettings.ldap_authorization_system_password, "ProudListingsMedia1" );
 		 };
 
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 {
 			  this._client = Cf.newInstance();
 			  this._address = Server.lookupDefaultConnector();
-			  this._util = new TransportTestUtil( new Neo4jPackV1() );
+			  this._util = new TransportTestUtil( new Neo4NetPackV1() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -208,7 +208,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeReaderOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( _useSystemAccountSettings );
+			  RestartNeo4NetServerWithOverriddenSettings( _useSystemAccountSettings );
 
 			  AssertAuth( "neo", "ProudListingsMedia1" );
 			  AssertReadSucceeds();
@@ -229,7 +229,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizePublisherOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( _useSystemAccountSettings );
+			  RestartNeo4NetServerWithOverriddenSettings( _useSystemAccountSettings );
 
 			  AssertAuth( "tank", "ProudListingsMedia1" );
 			  AssertWriteSucceeds();
@@ -249,7 +249,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeNoPermissionUserOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( _useSystemAccountSettings );
+			  RestartNeo4NetServerWithOverriddenSettings( _useSystemAccountSettings );
 
 			  AssertAuth( "smith", "ProudListingsMedia1" );
 			  AssertReadFails( "'smith' with no roles" );
@@ -266,7 +266,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeReaderUsingLdapsOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( _useSystemAccountSettings.andThen( settings => settings.put( SecuritySettings.ldap_server, "ldaps://activedirectory.neohq.net:636" ) ) );
+			  RestartNeo4NetServerWithOverriddenSettings( _useSystemAccountSettings.andThen( settings => settings.put( SecuritySettings.ldap_server, "ldaps://activedirectory.neohq.net:636" ) ) );
 
 			  AssertAuth( "neo", "ProudListingsMedia1" );
 			  AssertReadSucceeds();
@@ -278,7 +278,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeReaderWithUserLdapContextUsingLDAPSOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( settings => settings.put( SecuritySettings.ldap_server, "ldaps://activedirectory.neohq.net:636" ) );
+			  RestartNeo4NetServerWithOverriddenSettings( settings => settings.put( SecuritySettings.ldap_server, "ldaps://activedirectory.neohq.net:636" ) );
 
 			  AssertAuth( "neo", "ProudListingsMedia1" );
 			  AssertReadSucceeds();
@@ -290,7 +290,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeReaderUsingStartTlsOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( _useSystemAccountSettings.andThen( settings => settings.put( SecuritySettings.ldap_use_starttls, "true" ) ) );
+			  RestartNeo4NetServerWithOverriddenSettings( _useSystemAccountSettings.andThen( settings => settings.put( SecuritySettings.ldap_use_starttls, "true" ) ) );
 
 			  AssertAuth( "neo", "ProudListingsMedia1" );
 			  AssertReadSucceeds();
@@ -302,7 +302,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToLoginAndAuthorizeReaderWithUserLdapContextUsingStartTlsOnEC2()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings( settings => settings.put( SecuritySettings.ldap_use_starttls, "true" ) );
+			  RestartNeo4NetServerWithOverriddenSettings( settings => settings.put( SecuritySettings.ldap_use_starttls, "true" ) );
 
 			  AssertAuth( "neo", "ProudListingsMedia1" );
 			  AssertReadSucceeds();
@@ -314,7 +314,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToAccessEC2ActiveDirectoryInstance()
 		 {
-			  RestartNeo4jServerWithOverriddenSettings(settings =>
+			  RestartNeo4NetServerWithOverriddenSettings(settings =>
 			  {
 			  });
 

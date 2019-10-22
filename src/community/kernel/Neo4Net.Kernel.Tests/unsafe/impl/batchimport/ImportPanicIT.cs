@@ -52,19 +52,19 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.NO_DECORATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.Configuration.COMMAS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.data;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.data;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.datas;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatNodeFileHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.DataFactories.defaultFormatRelationshipFileHeader;
 
 	public class ImportPanicIT
 	{

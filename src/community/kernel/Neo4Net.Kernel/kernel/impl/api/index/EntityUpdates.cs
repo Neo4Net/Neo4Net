@@ -35,23 +35,23 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using SchemaDescriptorSupplier = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier;
 	using Neo4Net.Kernel.Api.Index;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.EntityUpdates.PropertyValueType.Changed;
+//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.Changed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.EntityUpdates.PropertyValueType.NoValue;
+//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.NoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.EntityUpdates.PropertyValueType.UnChanged;
+//	import static org.Neo4Net.kernel.impl.api.index.EntityUpdates.PropertyValueType.UnChanged;
 
 	/// <summary>
-	/// Subclasses of this represent events related to property changes due to entity addition, deletion or update.
+	/// Subclasses of this represent events related to property changes due to IEntity addition, deletion or update.
 	/// This is of use in populating indexes that might be relevant to label/reltype and property combinations.
 	/// </summary>
-	public class EntityUpdates : PropertyLoader_PropertyLoadSink
+	public class IEntityUpdates : PropertyLoader_PropertyLoadSink
 	{
 		 private readonly long _entityId;
 		 private static readonly long[] _emptyLongArray = new long[0];
@@ -67,51 +67,51 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 public class Builder
 		 {
-			  internal EntityUpdates Updates;
+			  internal IEntityUpdates Updates;
 
-			  internal Builder( EntityUpdates updates )
+			  internal Builder( IEntityUpdates updates )
 			  {
 					this.Updates = updates;
 			  }
 
 			  public virtual Builder Added( int propertyKeyId, Value value )
 			  {
-					Updates.put( propertyKeyId, EntityUpdates.After( value ) );
+					Updates.put( propertyKeyId, IEntityUpdates.After( value ) );
 					return this;
 			  }
 
 			  public virtual Builder Removed( int propertyKeyId, Value value )
 			  {
-					Updates.put( propertyKeyId, EntityUpdates.Before( value ) );
+					Updates.put( propertyKeyId, IEntityUpdates.Before( value ) );
 					return this;
 			  }
 
 			  public virtual Builder Changed( int propertyKeyId, Value before, Value after )
 			  {
-					Updates.put( propertyKeyId, EntityUpdates.changed( before, after ) );
+					Updates.put( propertyKeyId, IEntityUpdates.changed( before, after ) );
 					return this;
 			  }
 
 			  public virtual Builder Existing( int propertyKeyId, Value value )
 			  {
-					Updates.put( propertyKeyId, EntityUpdates.Unchanged( value ) );
+					Updates.put( propertyKeyId, IEntityUpdates.Unchanged( value ) );
 					return this;
 			  }
 
-			  public virtual Builder WithTokens( params long[] entityTokens )
+			  public virtual Builder WithTokens( params long[] IEntityTokens )
 			  {
-					this.Updates.entityTokensBefore = entityTokens;
-					this.Updates.entityTokensAfter = entityTokens;
+					this.Updates.entityTokensBefore = IEntityTokens;
+					this.Updates.entityTokensAfter = IEntityTokens;
 					return this;
 			  }
 
-			  public virtual Builder WithTokensAfter( params long[] entityTokensAfter )
+			  public virtual Builder WithTokensAfter( params long[] IEntityTokensAfter )
 			  {
-					this.Updates.entityTokensAfter = entityTokensAfter;
+					this.Updates.entityTokensAfter = IEntityTokensAfter;
 					return this;
 			  }
 
-			  public virtual EntityUpdates Build()
+			  public virtual IEntityUpdates Build()
 			  {
 					return Updates;
 			  }
@@ -130,22 +130,22 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 		 }
 
-		 public static Builder ForEntity( long entityId, bool propertyListIsComplete )
+		 public static Builder ForEntity( long IEntityId, bool propertyListIsComplete )
 		 {
-			  return new Builder( new EntityUpdates( entityId, _emptyLongArray, _emptyLongArray, propertyListIsComplete ) );
+			  return new Builder( new IEntityUpdates( IEntityId, _emptyLongArray, _emptyLongArray, propertyListIsComplete ) );
 		 }
 
-		 private EntityUpdates( long entityId, long[] entityTokensBefore, long[] entityTokensAfter, bool propertyListComplete )
+		 private IEntityUpdates( long IEntityId, long[] IEntityTokensBefore, long[] IEntityTokensAfter, bool propertyListComplete )
 		 {
-			  this._entityId = entityId;
-			  this._entityTokensBefore = entityTokensBefore;
-			  this._entityTokensAfter = entityTokensAfter;
+			  this._entityId = IEntityId;
+			  this._entityTokensBefore = IEntityTokensBefore;
+			  this._entityTokensAfter = IEntityTokensAfter;
 			  this._propertyListComplete = propertyListComplete;
 			  this._knownProperties = new IntObjectHashMap<PropertyValue>();
 			  this._propertyKeyIds = new int[8];
 		 }
 
-		 public long EntityId
+		 public long IEntityId
 		 {
 			 get
 			 {
@@ -153,12 +153,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 		 }
 
-		 internal virtual long[] EntityTokensChanged()
+		 internal virtual long[] IEntityTokensChanged()
 		 {
 			  return PrimitiveArrays.symmetricDifference( _entityTokensBefore, _entityTokensAfter );
 		 }
 
-		 internal virtual long[] EntityTokensUnchanged()
+		 internal virtual long[] IEntityTokensUnchanged()
 		 {
 			  return PrimitiveArrays.intersect( _entityTokensBefore, _entityTokensAfter );
 		 }
@@ -203,10 +203,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// Matches the provided schema descriptors to the entity updates in this object, and generates an IndexEntryUpdate
+		 /// Matches the provided schema descriptors to the IEntity updates in this object, and generates an IndexEntryUpdate
 		 /// for any index that needs to be updated.
 		 /// 
-		 /// In some cases the updates to an entity are not enough to determine whether some index should be affected. For
+		 /// In some cases the updates to an IEntity are not enough to determine whether some index should be affected. For
 		 /// example if we have and index of label :A and property p1, and :A is added to this node, we cannot say whether
 		 /// this should affect the index unless we know if this node has property p1. This get even more complicated for
 		 /// composite indexes. To solve this problem, a propertyLoader is used to load any additional properties needed to
@@ -214,9 +214,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// </summary>
 		 /// <param name="indexKeys"> The index keys to generate entry updates for </param>
 		 /// <param name="propertyLoader"> The property loader used to fetch needed additional properties </param>
-		 /// <param name="type"> EntityType of the indexes </param>
+		 /// <param name="type"> IEntityType of the indexes </param>
 		 /// <returns> IndexEntryUpdates for all relevant index keys </returns>
-		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys, PropertyLoader propertyLoader, EntityType type ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 public virtual IEnumerable<IndexEntryUpdate<INDEX_KEY>> ForIndexKeys<INDEX_KEY>( IEnumerable<INDEX_KEY> indexKeys, PropertyLoader propertyLoader, IEntityType type ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
 			  IList<INDEX_KEY> potentiallyRelevant = new List<INDEX_KEY>();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends org.neo4j.internal.kernel.api.schema.SchemaDescriptorSupplier> Iterable<org.neo4j.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
+//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") private <INDEX_KEY extends org.Neo4Net.internal.kernel.api.schema.SchemaDescriptorSupplier> Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<INDEX_KEY>> gatherUpdatesForPotentials(Iterable<INDEX_KEY> potentiallyRelevant)
 		 private IEnumerable<IndexEntryUpdate<INDEX_KEY>> GatherUpdatesForPotentials<INDEX_KEY>( IEnumerable<INDEX_KEY> potentiallyRelevant ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
 			  IList<IndexEntryUpdate<INDEX_KEY>> indexUpdates = new List<IndexEntryUpdate<INDEX_KEY>>();
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return Schema.isAffected( _entityTokensAfter ) && HasPropsAfter( Schema.PropertyIds, Schema.propertySchemaType() );
 		 }
 
-		 private void LoadProperties( PropertyLoader propertyLoader, MutableIntSet additionalPropertiesToLoad, EntityType type )
+		 private void LoadProperties( PropertyLoader propertyLoader, MutableIntSet additionalPropertiesToLoad, IEntityType type )
 		 {
 			  _hasLoadedAdditionalProperties = true;
 			  propertyLoader.LoadProperties( _entityId, type, additionalPropertiesToLoad, this );
@@ -388,7 +388,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 		 /// <summary>
-		 /// This method should only be called in a context where you know that your entity is relevant both before and after
+		 /// This method should only be called in a context where you know that your IEntity is relevant both before and after
 		 /// </summary>
 		 private bool ValuesChanged( int[] propertyIds, Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType propertySchemaType )
 		 {
@@ -422,8 +422,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public override string ToString()
 		 {
 			  StringBuilder result = ( new StringBuilder( this.GetType().Name ) ).Append("[").Append(_entityId);
-			  result.Append( ", entityTokensBefore:" ).Append( Arrays.ToString( _entityTokensBefore ) );
-			  result.Append( ", entityTokensAfter:" ).Append( Arrays.ToString( _entityTokensAfter ) );
+			  result.Append( ", IEntityTokensBefore:" ).Append( Arrays.ToString( _entityTokensBefore ) );
+			  result.Append( ", IEntityTokensAfter:" ).Append( Arrays.ToString( _entityTokensAfter ) );
 			  _knownProperties.forEachKeyValue((key, propertyValue) =>
 			  {
 				result.Append( ", " );
@@ -444,7 +444,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  {
 					return false;
 			  }
-			  EntityUpdates that = ( EntityUpdates ) o;
+			  IEntityUpdates that = ( IEntityUpdates ) o;
 			  return _entityId == that._entityId && Arrays.Equals( _entityTokensBefore, that._entityTokensBefore ) && Arrays.Equals( _entityTokensAfter, that._entityTokensAfter );
 		 }
 

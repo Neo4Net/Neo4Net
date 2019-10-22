@@ -51,21 +51,21 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final KeyValueStoreFile createStore(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pages, java.io.File path, int keySize, int valueSize, Headers headers, DataProvider data) throws java.io.IOException
+//ORIGINAL LINE: public final KeyValueStoreFile createStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, java.io.File path, int keySize, int valueSize, Headers headers, DataProvider data) throws java.io.IOException
 		 public KeyValueStoreFile CreateStore( FileSystemAbstraction fs, PageCache pages, File path, int keySize, int valueSize, Headers headers, DataProvider data )
 		 {
 			  return Create( requireNonNull( fs, typeof( FileSystemAbstraction ).Name ), requireNonNull( path, "path" ), requireNonNull( pages, typeof( PageCache ).Name ), keySize, valueSize, requireNonNull( headers, "headers" ), requireNonNull( data, "data" ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void createEmptyStore(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File path, int keySize, int valueSize, Headers headers) throws java.io.IOException
+//ORIGINAL LINE: public final void createEmptyStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, int keySize, int valueSize, Headers headers) throws java.io.IOException
 		 public void CreateEmptyStore( FileSystemAbstraction fs, File path, int keySize, int valueSize, Headers headers )
 		 {
 			  Create( requireNonNull( fs, typeof( FileSystemAbstraction ).Name ), requireNonNull( path, "path" ), null, keySize, valueSize, requireNonNull( headers, "headers" ), null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final KeyValueStoreFile openStore(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pages, java.io.File path) throws java.io.IOException
+//ORIGINAL LINE: public final KeyValueStoreFile openStore(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pages, java.io.File path) throws java.io.IOException
 		 public KeyValueStoreFile OpenStore( FileSystemAbstraction fs, PageCache pages, File path )
 		 {
 			  return Open( requireNonNull( fs, typeof( FileSystemAbstraction ).Name ), requireNonNull( path, "path" ), requireNonNull( pages, typeof( PageCache ).Name ) );
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 /// <param name="dataProvider"> the data to write into the store, {@code null} is accepted to mean no data. </param>
 		 /// <returns> an opened version of the newly created store file - iff a <seealso cref="PageCache"/> was provided. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private KeyValueStoreFile create(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File path, org.neo4j.io.pagecache.PageCache pages, int keySize, int valueSize, Headers headers, DataProvider dataProvider) throws java.io.IOException
+//ORIGINAL LINE: private KeyValueStoreFile create(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, org.Neo4Net.io.pagecache.PageCache pages, int keySize, int valueSize, Headers headers, DataProvider dataProvider) throws java.io.IOException
 		 private KeyValueStoreFile Create( FileSystemAbstraction fs, File path, PageCache pages, int keySize, int valueSize, Headers headers, DataProvider dataProvider )
 		 {
 			  if ( keySize <= 0 || keySize > _maxSize || valueSize <= 0 || valueSize > _maxSize )
@@ -211,7 +211,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private KeyValueWriter newWriter(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File path, ReadableBuffer formatSpecifier, org.neo4j.io.pagecache.PageCache pages, int pageSize, int keySize, int valueSize) throws java.io.IOException
+//ORIGINAL LINE: private KeyValueWriter newWriter(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, ReadableBuffer formatSpecifier, org.Neo4Net.io.pagecache.PageCache pages, int pageSize, int keySize, int valueSize) throws java.io.IOException
 		 private KeyValueWriter NewWriter( FileSystemAbstraction fs, File path, ReadableBuffer formatSpecifier, PageCache pages, int pageSize, int keySize, int valueSize )
 		 {
 			  return KeyValueWriter.Create( Metadata( formatSpecifier, pageSize, keySize, valueSize ), fs, pages, path, pageSize );
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 /// <param name="pages"> the page cache to use for opening the store file. </param>
 		 /// <returns> the opened store file. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private KeyValueStoreFile open(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File path, org.neo4j.io.pagecache.PageCache pages) throws java.io.IOException
+//ORIGINAL LINE: private KeyValueStoreFile open(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File path, org.Neo4Net.io.pagecache.PageCache pages) throws java.io.IOException
 		 private KeyValueStoreFile Open( FileSystemAbstraction fs, File path, PageCache pages )
 		 {
 			  ByteBuffer buffer = ByteBuffer.wrap( new sbyte[_maxSize * 4] );

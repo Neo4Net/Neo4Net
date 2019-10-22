@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Test.mockito.mock
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	public class Link
 	{

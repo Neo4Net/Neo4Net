@@ -30,7 +30,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Groups.LOWEST_NONGLOBAL_ID;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Groups.LOWEST_NONGLOBAL_ID;
 
 	public class GroupsTest
 	{

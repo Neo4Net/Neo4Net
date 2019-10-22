@@ -20,7 +20,7 @@ using System.Text;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.impl.notification
+namespace Neo4Net.GraphDb.impl.notification
 {
 
 	public interface NotificationDetail

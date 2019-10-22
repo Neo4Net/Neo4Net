@@ -48,7 +48,7 @@ namespace Neo4Net.Adversaries.watcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
 		 public override WatchedResource Watch( File file )
 		 {
 			  _adversary.injectFailure( typeof( IOException ) );

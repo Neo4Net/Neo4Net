@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack_Unpacker = Neo4Net.Bolt.messaging.Neo4jPack_Unpacker;
+	using Neo4NetPack_Unpacker = Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker;
 	using RequestMessageDecoder = Neo4Net.Bolt.messaging.RequestMessageDecoder;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
@@ -71,7 +71,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeAckFailure()
 		 {
-			  assertEquals( PullAllMessage.INSTANCE, _decoder.decode( mock( typeof( Neo4jPack_Unpacker ) ) ) );
+			  assertEquals( PullAllMessage.INSTANCE, _decoder.decode( mock( typeof( Neo4NetPack_Unpacker ) ) ) );
 		 }
 	}
 

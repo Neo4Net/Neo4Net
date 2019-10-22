@@ -25,18 +25,18 @@ namespace Neo4Net.Kernel.impl.proc
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using DefaultValueConverter = Neo4Net.Kernel.impl.proc.TypeMappers.DefaultValueConverter;
 	using Name = Neo4Net.Procedure.Name;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
 
 	/// <summary>
 	/// Given a java method, figures out a valid <seealso cref="ProcedureSignature"/> field signature.
-	/// Basically, it takes the java signature and spits out the same signature described as Neo4j types.
+	/// Basically, it takes the java signature and spits out the same signature described as Neo4Net types.
 	/// </summary>
 	public class MethodSignatureCompiler
 	{
@@ -48,21 +48,21 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.neo4j.internal.kernel.api.procs.Neo4jTypes.AnyType> inputTypesFor(Method method) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
-		 public virtual IList<Neo4jTypes.AnyType> InputTypesFor( System.Reflection.MethodInfo method )
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.internal.kernel.api.procs.Neo4NetTypes.AnyType> inputTypesFor(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+		 public virtual IList<Neo4NetTypes.AnyType> InputTypesFor( System.Reflection.MethodInfo method )
 		 {
 			  Type[] types = method.GenericParameterTypes;
-			  IList<Neo4jTypes.AnyType> neoTypes = new List<Neo4jTypes.AnyType>( types.Length );
+			  IList<Neo4NetTypes.AnyType> neoTypes = new List<Neo4NetTypes.AnyType>( types.Length );
 			  foreach ( Type type in types )
 			  {
-					neoTypes.Add( _typeMappers.toNeo4jType( type ) );
+					neoTypes.Add( _typeMappers.toNeo4NetType( type ) );
 			  }
 
 			  return neoTypes;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.neo4j.internal.kernel.api.procs.FieldSignature> signatureFor(Method method) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.internal.kernel.api.procs.FieldSignature> signatureFor(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public virtual IList<FieldSignature> SignatureFor( System.Reflection.MethodInfo method )
 		 {
 			  Parameter[] @params = method.Parameters;
@@ -103,16 +103,16 @@ namespace Neo4Net.Kernel.impl.proc
 						 if ( type == typeof( sbyte[] ) )
 						 {
 							  FieldSignature.InputMapper mapper = new ByteArrayConverter();
-							  signature.Add( defaultValue.map( neo4jValue => inputField( name, valueConverter.Type(), neo4jValue, mapper ) ).orElseGet(() => inputField(name, valueConverter.Type(), mapper)) );
+							  signature.Add( defaultValue.map( Neo4NetValue => inputField( name, valueConverter.Type(), Neo4NetValue, mapper ) ).orElseGet(() => inputField(name, valueConverter.Type(), mapper)) );
 						 }
 						 else
 						 {
-							  signature.Add( defaultValue.map( neo4jValue => inputField( name, valueConverter.Type(), neo4jValue ) ).orElseGet(() => inputField(name, valueConverter.Type())) );
+							  signature.Add( defaultValue.map( Neo4NetValue => inputField( name, valueConverter.Type(), Neo4NetValue ) ).orElseGet(() => inputField(name, valueConverter.Type())) );
 						 }
 					}
 					catch ( ProcedureException e )
 					{
-						 throw new ProcedureException( e.Status(), "Argument `%s` at position %d in `%s` with%n" + "type `%s` cannot be converted to a Neo4j type: %s", name, i, method.Name, param.Type.SimpleName, e.Message );
+						 throw new ProcedureException( e.Status(), "Argument `%s` at position %d in `%s` with%n" + "type `%s` cannot be converted to a Neo4Net type: %s", name, i, method.Name, param.Type.SimpleName, e.Message );
 					}
 
 			  }

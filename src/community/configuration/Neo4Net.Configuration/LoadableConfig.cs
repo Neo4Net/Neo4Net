@@ -20,14 +20,14 @@
 namespace Neo4Net.Configuration
 {
 
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
 	/// <summary>
 	/// Every class which contains settings should implement this interface to allow the configuration to find the
 	/// settings via service loading. Note that service loading requires you to additionally list the service class
-	/// under META-INF/services/org.neo4j.configuration.LoadableConfig
+	/// under META-INF/services/org.Neo4Net.configuration.LoadableConfig
 	/// </summary>
 	public interface LoadableConfig
 	{

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	/// Exception that will be thrown in case if there was a problem during index reader close
 	/// </summary>
 	/// <seealso cref= org.apache.lucene.search.IndexSearcher </seealso>
-	/// <seealso cref= org.neo4j.kernel.api.impl.index.partition.PartitionSearcher </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.api.impl.index.partition.PartitionSearcher </seealso>
 	/// <seealso cref= SimpleIndexReader </seealso>
 	public class IndexReaderCloseException : UncheckedIOException
 	{

@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.proc
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
-	using AnyType = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes.AnyType;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using AnyType = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes.AnyType;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using DefaultValueMapper = Neo4Net.Kernel.impl.util.DefaultValueMapper;
@@ -42,65 +42,65 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.parseLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.ntBoolean;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.ntFloat;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.ntInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.DefaultParameterValue.nullValue;
+//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.nullValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTAny;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTAny;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTBoolean;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTByteArray;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTByteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDate;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDateTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDuration;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDuration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTFloat;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTList;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTLocalDateTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTLocalTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTMap;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTNumber;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTString;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTTime;
 
 	public class TypeMappers : DefaultValueMapper
 	{
 		 public abstract class TypeChecker
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly Neo4jTypes.AnyType TypeConflict;
+			  internal readonly Neo4NetTypes.AnyType TypeConflict;
 			  internal readonly Type JavaClass;
 
-			  internal TypeChecker( Neo4jTypes.AnyType type, Type javaClass )
+			  internal TypeChecker( Neo4NetTypes.AnyType type, Type javaClass )
 			  {
 					this.TypeConflict = type;
 					this.JavaClass = javaClass;
 			  }
 
-			  public virtual Neo4jTypes.AnyType Type()
+			  public virtual Neo4NetTypes.AnyType Type()
 			  {
 					return TypeConflict;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object typeCheck(Object javaValue) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object typeCheck(Object javaValue) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public virtual object TypeCheck( object javaValue )
 			  {
 					if ( javaValue == null || JavaClass.IsInstanceOfType( javaValue ) )
@@ -160,21 +160,21 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.procs.Neo4jTypes.AnyType toNeo4jType(Type type) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
-		 public virtual Neo4jTypes.AnyType ToNeo4jType( Type type )
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.Neo4NetTypes.AnyType toNeo4NetType(Type type) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+		 public virtual Neo4NetTypes.AnyType ToNeo4NetType( Type type )
 		 {
 			  return ConverterFor( type ).TypeConflict;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TypeChecker checkerFor(Type javaType) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public TypeChecker checkerFor(Type javaType) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public virtual TypeChecker CheckerFor( Type javaType )
 		 {
 			  return ConverterFor( javaType );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: DefaultValueConverter converterFor(Type javaType) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: DefaultValueConverter converterFor(Type javaType) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 internal virtual DefaultValueConverter ConverterFor( Type javaType )
 		 {
 			  DefaultValueConverter converter = _javaToNeo[javaType];
@@ -240,24 +240,24 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  IList<string> types = Iterables.asList( _javaToNeo.Keys ).Select( Type.getTypeName ).OrderBy( string.compareTo ).ToList();
 
-			  return new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Don't know how to map `%s` to the Neo4j Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are: %s", cls.TypeName, types );
+			  return new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, "Don't know how to map `%s` to the Neo4Net Type System.%n" + "Please refer to to the documentation for full details.%n" + "For your reference, known types are: %s", cls.TypeName, types );
 		 }
 
 		 public sealed class DefaultValueConverter : TypeChecker
 		 {
 			  internal readonly System.Func<string, DefaultParameterValue> Parser;
 
-			  public DefaultValueConverter( Neo4jTypes.AnyType type, Type javaClass ) : this( type, javaClass, NullParser( javaClass, type ) )
+			  public DefaultValueConverter( Neo4NetTypes.AnyType type, Type javaClass ) : this( type, javaClass, NullParser( javaClass, type ) )
 			  {
 			  }
 
-			  internal DefaultValueConverter( Neo4jTypes.AnyType type, Type javaClass, System.Func<string, DefaultParameterValue> parser ) : base( type, javaClass )
+			  internal DefaultValueConverter( Neo4NetTypes.AnyType type, Type javaClass, System.Func<string, DefaultParameterValue> parser ) : base( type, javaClass )
 			  {
 					this.Parser = parser;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Optional<org.neo4j.internal.kernel.api.procs.DefaultParameterValue> defaultValue(org.neo4j.procedure.Name parameter) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.Optional<org.Neo4Net.internal.kernel.api.procs.DefaultParameterValue> defaultValue(org.Neo4Net.procedure.Name parameter) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 			  public Optional<DefaultParameterValue> DefaultValue( Name parameter )
 			  {
 					string defaultValue = parameter.defaultValue();
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.proc
 					}
 			  }
 
-			  internal static System.Func<string, DefaultParameterValue> NullParser( Type javaType, Neo4jTypes.AnyType neoType )
+			  internal static System.Func<string, DefaultParameterValue> NullParser( Type javaType, Neo4NetTypes.AnyType neoType )
 			  {
 					return s =>
 					{

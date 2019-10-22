@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.runtime
 	/// </summary>
 	public class MutableConnectionState : BoltResponseHandler
 	{
-		 private Neo4jError _pendingError;
+		 private Neo4NetError _pendingError;
 		 private bool _pendingIgnore;
 		 private volatile bool _terminated;
 		 private bool _closed;
@@ -79,7 +79,7 @@ namespace Neo4Net.Bolt.runtime
 			  }
 		 }
 
-		 public override void MarkFailed( Neo4jError error )
+		 public override void MarkFailed( Neo4NetError error )
 		 {
 			  if ( _responseHandler != null )
 			  {
@@ -99,7 +99,7 @@ namespace Neo4Net.Bolt.runtime
 			  }
 		 }
 
-		 public virtual Neo4jError PendingError
+		 public virtual Neo4NetError PendingError
 		 {
 			 get
 			 {

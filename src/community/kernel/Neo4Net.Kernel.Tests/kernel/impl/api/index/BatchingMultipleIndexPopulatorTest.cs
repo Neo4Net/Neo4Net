@@ -69,17 +69,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.BatchingMultipleIndexPopulator.AWAIT_TIMEOUT_MINUTES_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.AWAIT_TIMEOUT_MINUTES_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.BatchingMultipleIndexPopulator.BATCH_SIZE_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.BATCH_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.BatchingMultipleIndexPopulator.TASK_QUEUE_SIZE_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.BatchingMultipleIndexPopulator.TASK_QUEUE_SIZE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.IndexPopulationFailure.failure;
+//	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
+//	import static org.Neo4Net.kernel.impl.api.index.MultipleIndexPopulator.QUEUE_THRESHOLD_NAME;
 
 	public class BatchingMultipleIndexPopulatorTest
 	{
@@ -113,10 +113,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( populator.NewPopulatingUpdater( any() ) ).thenReturn(updater);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
 			  IndexEntryUpdate<object> update1 = add( 1, _index1.schema(), "foo" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1.schema(), "bar");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index1.schema(), "bar");
 			  IndexEntryUpdate<object> update2 = add( 2, _index1.schema(), "bar" );
 			  batchingPopulator.QueueUpdate( update1 );
 			  batchingPopulator.QueueUpdate( update2 );
@@ -151,13 +151,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  batchingPopulator.IndexAllEntities();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(1, index1.schema(), "foo");
 			  IndexEntryUpdate<object> update1 = add( 1, _index1.schema(), "foo" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index42.schema(), "bar");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(2, index42.schema(), "bar");
 			  IndexEntryUpdate<object> update2 = add( 2, _index42.schema(), "bar" );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update3 = add(3, index1.schema(), "baz");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update3 = add(3, index1.schema(), "baz");
 			  IndexEntryUpdate<object> update3 = add( 3, _index1.schema(), "baz" );
 			  batchingPopulator.QueueUpdate( update1 );
 			  batchingPopulator.QueueUpdate( update2 );
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ExecutorShutdownAfterStoreScanCompletes()
 		 {
-			  EntityUpdates update = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
+			  IEntityUpdates update = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
 			  IndexStoreView storeView = NewStoreView( update );
 
 			  ExecutorService executor = ImmediateExecutor();
@@ -237,10 +237,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void PendingBatchesFlushedAfterStoreScan()
 		 {
-			  EntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
-			  EntityUpdates update2 = NodeUpdates( 2, PROPERTY_ID, "bar", LABEL_ID );
-			  EntityUpdates update3 = NodeUpdates( 3, PROPERTY_ID, "baz", LABEL_ID );
-			  EntityUpdates update42 = NodeUpdates( 4, 42, "42", 42 );
+			  IEntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
+			  IEntityUpdates update2 = NodeUpdates( 2, PROPERTY_ID, "bar", LABEL_ID );
+			  IEntityUpdates update3 = NodeUpdates( 3, PROPERTY_ID, "baz", LABEL_ID );
+			  IEntityUpdates update42 = NodeUpdates( 4, 42, "42", 42 );
 			  IndexStoreView storeView = NewStoreView( update1, update2, update3, update42 );
 
 			  BatchingMultipleIndexPopulator batchingPopulator = new BatchingMultipleIndexPopulator( storeView, SameThreadExecutor(), NullLogProvider.Instance, mock(typeof(SchemaState)) );
@@ -261,9 +261,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  SetProperty( BATCH_SIZE_NAME, 2 );
 
-			  EntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
-			  EntityUpdates update2 = NodeUpdates( 2, PROPERTY_ID, "bar", LABEL_ID );
-			  EntityUpdates update3 = NodeUpdates( 3, PROPERTY_ID, "baz", LABEL_ID );
+			  IEntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "foo", LABEL_ID );
+			  IEntityUpdates update2 = NodeUpdates( 2, PROPERTY_ID, "bar", LABEL_ID );
+			  IEntityUpdates update3 = NodeUpdates( 3, PROPERTY_ID, "baz", LABEL_ID );
 			  IndexStoreView storeView = NewStoreView( update1, update2, update3 );
 
 			  BatchingMultipleIndexPopulator batchingPopulator = new BatchingMultipleIndexPopulator( storeView, SameThreadExecutor(), NullLogProvider.Instance, mock(typeof(SchemaState)) );
@@ -283,8 +283,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  SetProperty( BATCH_SIZE_NAME, 2 );
 
-			  EntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "aaa", LABEL_ID );
-			  EntityUpdates update2 = NodeUpdates( 1, PROPERTY_ID, "bbb", LABEL_ID );
+			  IEntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "aaa", LABEL_ID );
+			  IEntityUpdates update2 = NodeUpdates( 1, PROPERTY_ID, "bbb", LABEL_ID );
 			  IndexStoreView storeView = NewStoreView( update1, update2 );
 
 			  Exception batchFlushError = new Exception( "Batch failed" );
@@ -317,11 +317,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  SetProperty( BATCH_SIZE_NAME, 2 );
 
-			  EntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "aaa", LABEL_ID );
-			  EntityUpdates update2 = NodeUpdates( 1, PROPERTY_ID, "bbb", LABEL_ID );
-			  EntityUpdates update3 = NodeUpdates( 1, PROPERTY_ID, "ccc", LABEL_ID );
-			  EntityUpdates update4 = NodeUpdates( 1, PROPERTY_ID, "ddd", LABEL_ID );
-			  EntityUpdates update5 = NodeUpdates( 1, PROPERTY_ID, "eee", LABEL_ID );
+			  IEntityUpdates update1 = NodeUpdates( 1, PROPERTY_ID, "aaa", LABEL_ID );
+			  IEntityUpdates update2 = NodeUpdates( 1, PROPERTY_ID, "bbb", LABEL_ID );
+			  IEntityUpdates update3 = NodeUpdates( 1, PROPERTY_ID, "ccc", LABEL_ID );
+			  IEntityUpdates update4 = NodeUpdates( 1, PROPERTY_ID, "ddd", LABEL_ID );
+			  IEntityUpdates update5 = NodeUpdates( 1, PROPERTY_ID, "eee", LABEL_ID );
 			  IndexStoreView storeView = NewStoreView( update1, update2, update3, update4, update5 );
 
 			  Exception batchFlushError = new Exception( "Batch failed" );
@@ -346,7 +346,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  // given
 			  SetProperty( BATCH_SIZE_NAME, 2 );
-			  EntityUpdates[] updates = new EntityUpdates[9];
+			  IEntityUpdates[] updates = new IEntityUpdates[9];
 			  for ( int i = 0; i < updates.Length; i++ )
 			  {
 					updates[i] = NodeUpdates( i, PROPERTY_ID, i.ToString(), LABEL_ID );
@@ -363,14 +363,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  verify( executor, atLeast( 5 ) ).execute( any( typeof( ThreadStart ) ) );
 		 }
 
-		 private IList<IndexEntryUpdate<IndexDescriptor>> ForUpdates( IndexDescriptor index, params EntityUpdates[] updates )
+		 private IList<IndexEntryUpdate<IndexDescriptor>> ForUpdates( IndexDescriptor index, params IEntityUpdates[] updates )
 		 {
 			  return Iterables.asList( Iterables.concat( Iterables.map( update => update.forIndexKeys( Iterables.asIterable( index ) ), Arrays.asList( updates ) ) ) );
 		 }
 
-		 private EntityUpdates NodeUpdates( int nodeId, int propertyId, string propertyValue, params long[] labelIds )
+		 private IEntityUpdates NodeUpdates( int nodeId, int propertyId, string propertyValue, params long[] labelIds )
 		 {
-			  return EntityUpdates.ForEntity( ( long ) nodeId, false ).withTokens( labelIds ).withTokensAfter( labelIds ).added( propertyId, Values.of( propertyValue ) ).build();
+			  return IEntityUpdates.ForEntity( ( long ) nodeId, false ).withTokens( labelIds ).withTokensAfter( labelIds ).added( propertyId, Values.of( propertyValue ) ).build();
 		 }
 
 		 private static IndexPopulator AddPopulator( BatchingMultipleIndexPopulator batchingPopulator, IndexDescriptor descriptor )
@@ -389,7 +389,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") private static IndexStoreView newStoreView(EntityUpdates... updates)
-		 private static IndexStoreView NewStoreView( params EntityUpdates[] updates )
+		 private static IndexStoreView NewStoreView( params IEntityUpdates[] updates )
 		 {
 			  IndexStoreView storeView = mock( typeof( IndexStoreView ) );
 			  when( storeView.VisitNodes( any(), any(), any(), any(), anyBoolean() ) ).thenAnswer(invocation =>
@@ -437,23 +437,23 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private class IndexEntryUpdateScan : StoreScan<IndexPopulationFailedKernelException>
 		 {
-			  internal readonly EntityUpdates[] Updates;
+			  internal readonly IEntityUpdates[] Updates;
 			  internal readonly Visitor<EntityUpdates, IndexPopulationFailedKernelException> Visitor;
 
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal bool StopConflict;
 
-			  internal IndexEntryUpdateScan( EntityUpdates[] updates, Visitor<EntityUpdates, IndexPopulationFailedKernelException> visitor )
+			  internal IndexEntryUpdateScan( IEntityUpdates[] updates, Visitor<EntityUpdates, IndexPopulationFailedKernelException> visitor )
 			  {
 					this.Updates = updates;
 					this.Visitor = visitor;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void run() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 			  public override void Run()
 			  {
-					foreach ( EntityUpdates update in Updates )
+					foreach ( IEntityUpdates update in Updates )
 					{
 						 if ( StopConflict )
 						 {

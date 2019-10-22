@@ -23,15 +23,15 @@ namespace Neo4Net.Index
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
@@ -49,18 +49,18 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AccessMode_Static.READ;
+//	import static org.Neo4Net.Internal.kernel.api.security.AccessMode_Static.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthSubject.ANONYMOUS;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthSubject.ANONYMOUS;
 
 	public class ExplicitIndexTest
 	{
 		 private static readonly RelationshipType _type = RelationshipType.withName( "TYPE" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
@@ -387,7 +387,7 @@ namespace Neo4Net.Index
 //ORIGINAL LINE: @Test public void shouldBeAbleToGetSingleHitAfterCallToHasNext()
 		 public virtual void ShouldBeAbleToGetSingleHitAfterCallToHasNext()
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  try
 			  {
 					// given
@@ -421,7 +421,7 @@ namespace Neo4Net.Index
 			  }
 		 }
 
-		 private void AssertFindSingleHit<T>( GraphDatabaseService db, Index<T> nodeIndex, string key, string value, T entity ) where T : Neo4Net.Graphdb.PropertyContainer
+		 private void AssertFindSingleHit<T>( IGraphDatabaseService db, Index<T> nodeIndex, string key, string value, T IEntity ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  // when get using hasNext + next, then
 			  assertEquals(entity, FindSingle(db, nodeIndex, key, value, hits =>
@@ -448,15 +448,15 @@ namespace Neo4Net.Index
 			  }));
 		 }
 
-		 private T FindSingle<T>( GraphDatabaseService db, Index<T> index, string key, string value, System.Func<IndexHits<T>, T> getter ) where T : Neo4Net.Graphdb.PropertyContainer
+		 private T FindSingle<T>( IGraphDatabaseService db, Index<T> index, string key, string value, System.Func<IndexHits<T>, T> getter ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					using ( IndexHits<T> hits = index.get( key, value ) )
 					{
-						 T entity = getter( hits );
+						 T IEntity = getter( hits );
 						 tx.Success();
-						 return entity;
+						 return IEntity;
 					}
 			  }
 		 }
@@ -549,7 +549,7 @@ namespace Neo4Net.Index
 			  return found;
 		 }
 
-		 private static void CreateNodeExplicitIndexWithSingleNode( GraphDatabaseService db, string indexName )
+		 private static void CreateNodeExplicitIndexWithSingleNode( IGraphDatabaseService db, string indexName )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -560,7 +560,7 @@ namespace Neo4Net.Index
 			  }
 		 }
 
-		 private static void CreateRelationshipExplicitIndexWithSingleRelationship( GraphDatabaseService db, string indexName )
+		 private static void CreateRelationshipExplicitIndexWithSingleRelationship( IGraphDatabaseService db, string indexName )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -574,7 +574,7 @@ namespace Neo4Net.Index
 		 private static int SizeOf<T1>( Index<T1> index )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.neo4j.graphdb.index.IndexHits<?> indexHits = index.query("_id_:*"))
+//ORIGINAL LINE: try (org.Neo4Net.graphdb.index.IndexHits<?> indexHits = index.query("_id_:*"))
 			  using ( IndexHits<object> indexHits = index.query( "_id_:*" ) )
 			  {
 					return indexHits.Size();

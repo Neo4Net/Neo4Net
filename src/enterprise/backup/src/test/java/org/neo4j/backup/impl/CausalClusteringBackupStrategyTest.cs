@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -76,7 +76,7 @@ namespace Neo4Net.backup.impl
 		 internal StoreId ExpectedStoreId = new StoreId( 11, 22, 33, 44 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -87,7 +87,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void incrementalBackupsUseCorrectResolvedAddress() throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: @Test public void incrementalBackupsUseCorrectResolvedAddress() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void IncrementalBackupsUseCorrectResolvedAddress()
 		 {
@@ -103,7 +103,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void fullBackupUsesCorrectResolvedAddress() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Test public void fullBackupUsesCorrectResolvedAddress() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FullBackupUsesCorrectResolvedAddress()
 		 {
@@ -119,7 +119,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void incrementalRunsCatchupWithTargetsStoreId() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: @Test public void incrementalRunsCatchupWithTargetsStoreId() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void IncrementalRunsCatchupWithTargetsStoreId()
 		 {
@@ -133,7 +133,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void fullRunsRetrieveStoreWithTargetsStoreId() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: @Test public void fullRunsRetrieveStoreWithTargetsStoreId() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FullRunsRetrieveStoreWithTargetsStoreId()
 		 {
@@ -149,7 +149,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failingToRetrieveStoreIdCausesFailWithStatus_incrementalBackup() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Test public void failingToRetrieveStoreIdCausesFailWithStatus_incrementalBackup() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailingToRetrieveStoreIdCausesFailWithStatusIncrementalBackup()
 		 {
@@ -166,7 +166,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failingToCopyStoresCausesFailWithStatus_incrementalBackup() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: @Test public void failingToCopyStoresCausesFailWithStatus_incrementalBackup() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException, org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailingToCopyStoresCausesFailWithStatusIncrementalBackup()
 		 {
@@ -182,7 +182,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failingToRetrieveStoreIdCausesFailWithStatus_fullBackup() throws org.neo4j.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
+//ORIGINAL LINE: @Test public void failingToRetrieveStoreIdCausesFailWithStatus_fullBackup() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreIdDownloadFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailingToRetrieveStoreIdCausesFailWithStatusFullBackup()
 		 {
@@ -199,7 +199,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failingToCopyStoresCausesFailWithStatus_fullBackup() throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
+//ORIGINAL LINE: @Test public void failingToCopyStoresCausesFailWithStatus_fullBackup() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailingToCopyStoresCausesFailWithStatusFullBackup()
 		 {
@@ -219,7 +219,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void incrementalBackupsEndingInUnacceptedCatchupStateCauseFailures() throws org.neo4j.causalclustering.catchup.storecopy.StoreCopyFailedException
+//ORIGINAL LINE: @Test public void incrementalBackupsEndingInUnacceptedCatchupStateCauseFailures() throws org.Neo4Net.causalclustering.catchup.storecopy.StoreCopyFailedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void IncrementalBackupsEndingInUnacceptedCatchupStateCauseFailures()
 		 {

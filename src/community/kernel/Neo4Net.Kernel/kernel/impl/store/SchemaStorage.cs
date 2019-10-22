@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <exception cref="IllegalStateException"> if more than one matching rule. </exception>
 		 /// <param name="descriptor"> the target IndexDescriptor </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.StoreIndexDescriptor indexGetForSchema(final org.neo4j.storageengine.api.schema.IndexDescriptor descriptor)
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexGetForSchema(final org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor)
 		 public virtual StoreIndexDescriptor IndexGetForSchema( IndexDescriptor descriptor )
 		 {
 			  return IndexGetForSchema( descriptor, true );
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="descriptor"> the target IndexDescriptor </param>
 		 /// <param name="filterOnType"> whether or not to filter on index type. If {@code false} then only <seealso cref="SchemaDescriptor"/> will be compared. </param>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.StoreIndexDescriptor indexGetForSchema(final org.neo4j.storageengine.api.schema.IndexDescriptor descriptor, boolean filterOnType)
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexGetForSchema(final org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor, boolean filterOnType)
 		 public virtual StoreIndexDescriptor IndexGetForSchema( IndexDescriptor descriptor, bool filterOnType )
 		 {
 			  System.Predicate<StoreIndexDescriptor> filter = filterOnType ? descriptor.equals : candidate => candidate.schema().Equals(descriptor.Schema());
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <exception cref="SchemaRuleNotFoundException"> if no ConstraintRule matches the given descriptor </exception>
 		 /// <exception cref="DuplicateSchemaRuleException"> if two or more ConstraintRules match the given descriptor </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.store.record.ConstraintRule constraintsGetSingle(final org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.neo4j.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.neo4j.kernel.api.exceptions.schema.DuplicateSchemaRuleException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.store.record.ConstraintRule constraintsGetSingle(final org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.kernel.api.exceptions.schema.DuplicateSchemaRuleException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual ConstraintRule ConstraintsGetSingle( ConstraintDescriptor descriptor )
 		 {
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 public override SchemaRule LoadSingleSchemaRule( long ruleId )
 		 {
 			  ICollection<DynamicRecord> records;
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.store
 		 /// <param name="ignoreMalformed"> whether or not to ignore inconsistent records (used in consistency checking). </param>
 		 /// <returns> <seealso cref="System.Collections.IEnumerator"/> of the loaded schema rules, lazily loaded when advancing the iterator. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: <ReturnType extends org.neo4j.storageengine.api.schema.SchemaRule> java.util.Iterator<ReturnType> loadAllSchemaRules(final System.Predicate<ReturnType> predicate, final Class<ReturnType> returnType, final boolean ignoreMalformed)
+//ORIGINAL LINE: <ReturnType extends org.Neo4Net.storageengine.api.schema.SchemaRule> java.util.Iterator<ReturnType> loadAllSchemaRules(final System.Predicate<ReturnType> predicate, final Class<ReturnType> returnType, final boolean ignoreMalformed)
 		 internal virtual IEnumerator<ReturnType> LoadAllSchemaRules<ReturnType>( System.Predicate<ReturnType> predicate, Type returnType, bool ignoreMalformed ) where ReturnType : Neo4Net.Storageengine.Api.schema.SchemaRule
 		 {
 				 returnType = typeof( ReturnType );

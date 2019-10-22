@@ -28,12 +28,12 @@ namespace Schema
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using IndexPopulationJob = Neo4Net.Kernel.Impl.Api.index.IndexPopulationJob;
@@ -47,16 +47,16 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class IndexPopulationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public static readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 		 private const int TEST_TIMEOUT = 120_000;
-		 private static GraphDatabaseService _database;
+		 private static IGraphDatabaseService _database;
 		 private static ExecutorService _executorService;
 		 private static AssertableLogProvider _logProvider;
 
@@ -161,7 +161,7 @@ namespace Schema
 			  File storeDir = Directory.directory( "shutdownDbTest" );
 			  Label testLabel = Label.label( "testLabel" );
 			  string propertyName = "testProperty";
-			  GraphDatabaseService shutDownDb = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(assertableLogProvider).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService shutDownDb = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(assertableLogProvider).newEmbeddedDatabase(storeDir);
 			  PrePopulateDatabase( shutDownDb, testLabel, propertyName );
 
 			  using ( Transaction transaction = shutDownDb.BeginTx() )
@@ -207,10 +207,10 @@ namespace Schema
 			  _logProvider.assertAtLeastOnce( matcher );
 		 }
 
-		 private void PrePopulateDatabase( GraphDatabaseService database, Label testLabel, string propertyName )
+		 private void PrePopulateDatabase( IGraphDatabaseService database, Label testLabel, string propertyName )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.RandomValues randomValues = org.neo4j.values.storable.RandomValues.create();
+//ORIGINAL LINE: final org.Neo4Net.values.storable.RandomValues randomValues = org.Neo4Net.values.storable.RandomValues.create();
 			  RandomValues randomValues = RandomValues.create();
 			  for ( int j = 0; j < 10_000; j++ )
 			  {

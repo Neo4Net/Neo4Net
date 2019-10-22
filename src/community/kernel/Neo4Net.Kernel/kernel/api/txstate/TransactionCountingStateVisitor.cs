@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.api.txstate
 {
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
 	using CountsRecordState = Neo4Net.Kernel.Impl.Api.CountsRecordState;
 	using DegreeVisitor = Neo4Net.Kernel.Impl.Api.DegreeVisitor;
@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.api.txstate
 	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 
 	public class TransactionCountingStateVisitor : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Delegator
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
 		 public override void VisitCreatedRelationship( long id, int type, long startNode, long endNode )
 		 {
 			  UpdateRelationshipCount( startNode, type, endNode, 1 );
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.api.txstate
 					_storageReader.relationshipVisit( id, _edge );
 					UpdateRelationshipCount( _edge.startNode(), _edge.type(), _edge.endNode(), -1 );
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new System.InvalidOperationException( "Relationship being deleted should exist along with its nodes.", e );
 			  }
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void VisitNodeLabelChanges( long id, LongSet added, LongSet removed )
 		 {

@@ -53,7 +53,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void ensureWriterInstantiated() throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: void ensureWriterInstantiated() throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual void EnsureWriterInstantiated()
 		 {
 			  if ( Searcher == null )
@@ -63,9 +63,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 internal virtual DocumentContext GetDocument( EntityId entityId, bool allowCreate )
+		 internal virtual DocumentContext GetDocument( IEntityId IEntityId, bool allowCreate )
 		 {
-			  long id = entityId.Id();
+			  long id = IEntityId.Id();
 			  DocumentContext context = Documents.get( id );
 			  if ( context != null )
 			  {
@@ -80,7 +80,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 			  else if ( allowCreate )
 			  {
-					context = new DocumentContext( IndexType.NewDocument( entityId ), false, id );
+					context = new DocumentContext( IndexType.NewDocument( IEntityId ), false, id );
 					Documents.put( id, context );
 			  }
 			  return context;
@@ -129,18 +129,18 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  internal readonly Document Document;
 			  internal readonly bool Exists;
-			  internal readonly long EntityId;
+			  internal readonly long IEntityId;
 
-			  internal DocumentContext( Document document, bool exists, long entityId )
+			  internal DocumentContext( Document document, bool exists, long IEntityId )
 			  {
 					this.Document = document;
 					this.Exists = exists;
-					this.EntityId = entityId;
+					this.EntityId = IEntityId;
 			  }
 
 			  public override string ToString()
 			  {
-					return "DocumentContext[document=" + Document + ", exists=" + Exists + ", entityId=" + EntityId + "]";
+					return "DocumentContext[document=" + Document + ", exists=" + Exists + ", IEntityId=" + IEntityId + "]";
 			  }
 		 }
 	}

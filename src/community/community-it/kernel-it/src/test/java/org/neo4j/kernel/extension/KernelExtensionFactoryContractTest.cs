@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.extension
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using EmbeddedGraphDatabase = Neo4Net.Graphdb.facade.embedded.EmbeddedGraphDatabase;
+	using EmbeddedGraphDatabase = Neo4Net.GraphDb.facade.embedded.EmbeddedGraphDatabase;
 	using Service = Neo4Net.Helpers.Service;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -42,8 +42,8 @@ namespace Neo4Net.Kernel.extension
 //	import static org.junit.Assert.fail;
 
 	/// <summary>
-	/// Base class for testing a <seealso cref="org.neo4j.kernel.extension.KernelExtensionFactory"/>. The base test cases in this
-	/// class verifies that a extension upholds the <seealso cref="org.neo4j.kernel.extension.KernelExtensionFactory"/> contract.
+	/// Base class for testing a <seealso cref="org.Neo4Net.kernel.extension.KernelExtensionFactory"/>. The base test cases in this
+	/// class verifies that a extension upholds the <seealso cref="org.Neo4Net.kernel.extension.KernelExtensionFactory"/> contract.
 	/// </summary>
 	public abstract class KernelExtensionFactoryContractTest
 	{
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.extension
 		 private readonly string _key;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory target = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory target = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Target = TestDirectory.testDirectory();
 
 		 public KernelExtensionFactoryContractTest( string key, Type extClass )
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.extension
 		 }
 
 		 /// <summary>
-		 /// Override to create default configuration for the <seealso cref="org.neo4j.kernel.extension.KernelExtensionFactory"/>
+		 /// Override to create default configuration for the <seealso cref="org.Neo4Net.kernel.extension.KernelExtensionFactory"/>
 		 /// under test.
 		 /// </summary>
 		 /// <param name="instance">   used for differentiating multiple instances that will run

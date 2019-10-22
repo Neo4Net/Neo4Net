@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.impl.core
 {
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 
-	public interface GraphProperties : PropertyContainer
+	public interface GraphProperties : IPropertyContainer
 	{
 	}
 

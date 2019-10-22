@@ -21,7 +21,7 @@ namespace Neo4Net.Internal.Kernel.Api
 {
 	/// <summary>
 	/// Enum used for two purposes:
-	/// 1. As return value for <seealso cref="IndexCapability.orderCapability(org.neo4j.values.storable.ValueCategory...)"/>.
+	/// 1. As return value for <seealso cref="IndexCapability.orderCapability(org.Neo4Net.values.storable.ValueCategory...)"/>.
 	/// Only <seealso cref="ASCENDING"/> and <seealso cref="DESCENDING"/> is valid for this.
 	/// 2. As parameter for <seealso cref="Read.nodeIndexScan(IndexReference, NodeValueIndexCursor, IndexOrder, bool)"/> and
 	/// <seealso cref="Read.nodeIndexSeek(IndexReference, NodeValueIndexCursor, IndexOrder, bool, IndexQuery...)"/>. Where <seealso cref="NONE"/> is used when

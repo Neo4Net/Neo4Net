@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Impl.Schema
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using TemporalIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.TemporalIndexProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
+//	import static org.Neo4Net.kernel.api.impl.index.storage.DirectoryFactory.directoryFactory;
 
 	internal class IndexProviderFactoryUtil
 	{

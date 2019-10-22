@@ -26,18 +26,18 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_NO_GROW;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_GROW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 
 	public class PageCacheByteArray : PageCacheNumberArray<ByteArray>, ByteArray
 	{
 		 private readonly sbyte[] _defaultValue;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: PageCacheByteArray(org.neo4j.io.pagecache.PagedFile pagedFile, long length, byte[] defaultValue, long super) throws java.io.IOException
+//ORIGINAL LINE: PageCacheByteArray(org.Neo4Net.io.pagecache.PagedFile pagedFile, long length, byte[] defaultValue, long super) throws java.io.IOException
 		 internal PageCacheByteArray( PagedFile pagedFile, long length, sbyte[] defaultValue, long @base ) : base( pagedFile, defaultValue.Length, length, @base )
 		 {
 			  // Default value is handled locally in this class, in contrast to its siblings, which lets the superclass

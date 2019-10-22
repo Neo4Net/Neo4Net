@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v1.messaging
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using AckFailureMessage = Neo4Net.Bolt.v1.messaging.request.AckFailureMessage;
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
@@ -33,15 +33,15 @@ namespace Neo4Net.Bolt.v1.messaging
 
 	public class BoltRequestMessageWriter
 	{
-		 protected internal readonly Neo4Net.Bolt.messaging.Neo4jPack_Packer Packer;
+		 protected internal readonly Neo4Net.Bolt.messaging.Neo4NetPack_Packer Packer;
 
-		 public BoltRequestMessageWriter( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer )
+		 public BoltRequestMessageWriter( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer )
 		 {
 			  this.Packer = packer;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public BoltRequestMessageWriter write(org.neo4j.bolt.messaging.RequestMessage message) throws java.io.IOException
+//ORIGINAL LINE: public BoltRequestMessageWriter write(org.Neo4Net.bolt.messaging.RequestMessage message) throws java.io.IOException
 		 public virtual BoltRequestMessageWriter Write( RequestMessage message )
 		 {
 			  if ( message is InitMessage )

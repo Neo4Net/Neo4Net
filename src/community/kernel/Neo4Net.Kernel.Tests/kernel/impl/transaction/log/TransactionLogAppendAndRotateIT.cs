@@ -64,15 +64,15 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.command.Commands.createNode;
+//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.createNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.command.Commands.createProperty;
+//	import static org.Neo4Net.kernel.impl.transaction.command.Commands.createProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.tracing.LogAppendEvent_Fields.NULL;
+//	import static org.Neo4Net.kernel.impl.transaction.tracing.LogAppendEvent_Fields.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IdOrderingQueue.BYPASS;
+//	import static org.Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
 
 	public class TransactionLogAppendAndRotateIT
 	{
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertWholeTransactionsIn(org.neo4j.kernel.impl.transaction.log.files.LogFile logFile, long logVersion) throws java.io.IOException
+//ORIGINAL LINE: private static void assertWholeTransactionsIn(org.Neo4Net.kernel.impl.transaction.log.files.LogFile logFile, long logVersion) throws java.io.IOException
 		 private static void AssertWholeTransactionsIn( LogFile logFile, long logVersion )
 		 {
 			  using ( ReadableLogChannel reader = logFile.GetReader( new LogPosition( logVersion, LOG_HEADER_SIZE ) ) )

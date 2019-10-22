@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.protocol.snapshot
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.cluster.protocol.snapshot
 	public enum SnapshotState
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: start { @Override public SnapshotState handle(SnapshotContext context, org.neo4j.cluster.com.message.Message<SnapshotMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case setSnapshotProvider: { SnapshotProvider snapshotProvider = message.getPayload(); context.setSnapshotProvider(snapshotProvider); break; } case refreshSnapshot: { if(context.getClusterContext().getConfiguration().getMembers().size() <= 1 || context.getSnapshotProvider() == null) { return start; } else { org.neo4j.cluster.InstanceId coordinator = context.getClusterContext().getConfiguration().getElected(org.neo4j.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR); if(coordinator != null) { outgoing.offer(org.neo4j.cluster.com.message.Message.to(SnapshotMessage.sendSnapshot, context.getClusterContext().getConfiguration().getUriForId(coordinator))); return refreshing; } else { return start; } } } case join: { return ready; } default: break; } return this; } },
+//ORIGINAL LINE: start { @Override public SnapshotState handle(SnapshotContext context, org.Neo4Net.cluster.com.message.Message<SnapshotMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case setSnapshotProvider: { SnapshotProvider snapshotProvider = message.getPayload(); context.setSnapshotProvider(snapshotProvider); break; } case refreshSnapshot: { if(context.getClusterContext().getConfiguration().getMembers().size() <= 1 || context.getSnapshotProvider() == null) { return start; } else { org.Neo4Net.cluster.InstanceId coordinator = context.getClusterContext().getConfiguration().getElected(org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR); if(coordinator != null) { outgoing.offer(org.Neo4Net.cluster.com.message.Message.to(SnapshotMessage.sendSnapshot, context.getClusterContext().getConfiguration().getUriForId(coordinator))); return refreshing; } else { return start; } } } case join: { return ready; } default: break; } return this; } },
 		 start
 		 {
 			 public SnapshotState handle( SnapshotContext context, Message<SnapshotMessage> message, MessageHolder outgoing )
@@ -54,7 +54,7 @@ namespace Neo4Net.cluster.protocol.snapshot
 		 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: refreshing { @Override public SnapshotState handle(SnapshotContext context, org.neo4j.cluster.com.message.Message<SnapshotMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { if(message.getMessageType() == SnapshotMessage.snapshot) { SnapshotMessage.SnapshotState state = message.getPayload(); state.setState(context.getSnapshotProvider(), context.getClusterContext().getObjectInputStreamFactory()); return ready; } return this; } },
+//ORIGINAL LINE: refreshing { @Override public SnapshotState handle(SnapshotContext context, org.Neo4Net.cluster.com.message.Message<SnapshotMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { if(message.getMessageType() == SnapshotMessage.snapshot) { SnapshotMessage.SnapshotState state = message.getPayload(); state.setState(context.getSnapshotProvider(), context.getClusterContext().getObjectInputStreamFactory()); return ready; } return this; } },
 		 refreshing
 		 {
 			 public SnapshotState handle( SnapshotContext context, Message<SnapshotMessage> message, MessageHolder outgoing )
@@ -64,7 +64,7 @@ namespace Neo4Net.cluster.protocol.snapshot
 		 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: ready { @Override public SnapshotState handle(SnapshotContext context, org.neo4j.cluster.com.message.Message<SnapshotMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case refreshSnapshot: { if(context.getClusterContext().getConfiguration().getMembers().size() <= 1 || context.getSnapshotProvider() == null) { return ready; } else { org.neo4j.cluster.InstanceId coordinator = context.getClusterContext().getConfiguration().getElected(org.neo4j.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR); if(coordinator != null && !coordinator.equals(context.getClusterContext().getMyId())) { outgoing.offer(org.neo4j.cluster.com.message.Message.to(SnapshotMessage.sendSnapshot, context.getClusterContext().getConfiguration().getUriForId(coordinator))); return refreshing; } else { return ready; } } } case sendSnapshot: { outgoing.offer(org.neo4j.cluster.com.message.Message.respond(SnapshotMessage.snapshot, message, new SnapshotMessage.SnapshotState(context.getLearnerContext().getLastDeliveredInstanceId(), context.getSnapshotProvider(), context.getClusterContext().getObjectOutputStreamFactory()))); break; } case leave: { return start; } default: break; } return this; } }
+//ORIGINAL LINE: ready { @Override public SnapshotState handle(SnapshotContext context, org.Neo4Net.cluster.com.message.Message<SnapshotMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case refreshSnapshot: { if(context.getClusterContext().getConfiguration().getMembers().size() <= 1 || context.getSnapshotProvider() == null) { return ready; } else { org.Neo4Net.cluster.InstanceId coordinator = context.getClusterContext().getConfiguration().getElected(org.Neo4Net.cluster.protocol.cluster.ClusterConfiguration.COORDINATOR); if(coordinator != null && !coordinator.equals(context.getClusterContext().getMyId())) { outgoing.offer(org.Neo4Net.cluster.com.message.Message.to(SnapshotMessage.sendSnapshot, context.getClusterContext().getConfiguration().getUriForId(coordinator))); return refreshing; } else { return ready; } } } case sendSnapshot: { outgoing.offer(org.Neo4Net.cluster.com.message.Message.respond(SnapshotMessage.snapshot, message, new SnapshotMessage.SnapshotState(context.getLearnerContext().getLastDeliveredInstanceId(), context.getSnapshotProvider(), context.getClusterContext().getObjectOutputStreamFactory()))); break; } case leave: { return start; } default: break; } return this; } }
 		 ready
 		 {
 			 public SnapshotState handle( SnapshotContext context, Message<SnapshotMessage> message, MessageHolder outgoing )

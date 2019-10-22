@@ -25,12 +25,12 @@ namespace Neo4Net.Kernel.impl.store
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
@@ -60,25 +60,25 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getPropertyKeys;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getPropertyKeys;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestGraphProperties
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static readonly PageCacheRule PageCacheRule = new PageCacheRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 		 private TestGraphDatabaseFactory _factory;
 
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void BasicProperties()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _factory.newImpermanentDatabase();
-			  PropertyContainer graphProperties = Properties( db );
+			  IPropertyContainer graphProperties = Properties( db );
 			  assertThat( graphProperties, inTx( db, not( hasProperty( "test" ) ) ) );
 
 			  Transaction tx = Db.beginTx();
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void getNonExistentGraphPropertyWithDefaultValue()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _factory.newImpermanentDatabase();
-			  PropertyContainer graphProperties = Properties( db );
+			  IPropertyContainer graphProperties = Properties( db );
 			  Transaction tx = Db.beginTx();
 			  assertEquals( "default", graphProperties.GetProperty( "test", "default" ) );
 			  tx.Success();
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.impl.store
 			  Db.shutdown();
 		 }
 
-		 private static PropertyContainer Properties( GraphDatabaseAPI db )
+		 private static IPropertyContainer Properties( GraphDatabaseAPI db )
 		 {
 			  return Db.DependencyResolver.resolveDependency( typeof( EmbeddedProxySPI ) ).newGraphPropertiesProxy();
 		 }
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.store
 			  Worker worker1 = new Worker( "W1", new State( db ) );
 			  Worker worker2 = new Worker( "W2", new State( db ) );
 
-			  PropertyContainer properties = properties( db );
+			  IPropertyContainer properties = properties( db );
 			  worker1.BeginTx();
 			  worker2.BeginTx();
 
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void TestEquals()
 		 {
 			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) _factory.newImpermanentDatabase();
-			  PropertyContainer graphProperties = Properties( db );
+			  IPropertyContainer graphProperties = Properties( db );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					graphProperties.SetProperty( "test", "test" );
@@ -306,9 +306,9 @@ namespace Neo4Net.Kernel.impl.store
 //ORIGINAL LINE: @Test public void shouldBeAbleToCreateLongGraphPropertyChainsAndReadTheCorrectNextPointerFromTheStore()
 		 public virtual void ShouldBeAbleToCreateLongGraphPropertyChainsAndReadTheCorrectNextPointerFromTheStore()
 		 {
-			  GraphDatabaseService database = _factory.newImpermanentDatabase();
+			  IGraphDatabaseService database = _factory.newImpermanentDatabase();
 
-			  PropertyContainer graphProperties = Properties( ( GraphDatabaseAPI ) database );
+			  IPropertyContainer graphProperties = Properties( ( GraphDatabaseAPI ) database );
 
 			  using ( Transaction tx = database.BeginTx() )
 			  {
@@ -355,7 +355,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private class State
 		 {
 			  internal readonly GraphDatabaseAPI Db;
-			  internal readonly PropertyContainer Properties;
+			  internal readonly IPropertyContainer Properties;
 			  internal Transaction Tx;
 
 			  internal State( GraphDatabaseAPI db )
@@ -416,7 +416,7 @@ namespace Neo4Net.Kernel.impl.store
 
 		 private EphemeralFileSystemAbstraction ProduceUncleanStore( EphemeralFileSystemAbstraction fileSystem, File storeDir )
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fileSystem).newImpermanentDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fileSystem).newImpermanentDatabase(storeDir);
 			  Transaction tx = Db.beginTx();
 			  Node node = Db.createNode();
 			  node.SetProperty( "name", "Something" );

@@ -35,7 +35,7 @@ namespace Neo4Net.Consistency.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.store.RecordReference_SkippingReference.skipReference;
+//	import static org.Neo4Net.consistency.store.RecordReference_SkippingReference.skipReference;
 
 	public class FilteringRecordAccess : DelegatingRecordAccess
 	{

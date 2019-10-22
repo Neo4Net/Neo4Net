@@ -26,9 +26,9 @@ namespace Neo4Net.Consistency.repair
 	public abstract class RelationshipNodeField
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       FIRST { public long get(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNode(); } },
+//       FIRST { public long get(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getFirstNode(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//       SECOND { public long get(org.neo4j.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNode(); } };
+//       SECOND { public long get(org.Neo4Net.kernel.impl.store.record.RelationshipRecord rel) { return rel.getSecondNode(); } };
 
 		 private static readonly IList<RelationshipNodeField> valueList = new List<RelationshipNodeField>();
 

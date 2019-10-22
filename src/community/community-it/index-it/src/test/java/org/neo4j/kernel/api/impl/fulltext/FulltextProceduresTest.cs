@@ -38,19 +38,19 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Timeout = org.junit.rules.Timeout;
 
 
-	using Entity = Neo4Net.Graphdb.Entity;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IEntity = Neo4Net.GraphDb.Entity;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using RepeatedLabelInSchemaException = Neo4Net.Kernel.Api.Exceptions.schema.RepeatedLabelInSchemaException;
@@ -97,9 +97,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.DependencyResolver_SelectionStrategy.ONLY;
+//	import static org.Neo4Net.graphdb.DependencyResolver_SelectionStrategy.ONLY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 
 	public class FulltextProceduresTest
 	{
@@ -522,12 +522,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					tx.Success();
 			  }
 
-			  int entityCount = 200;
+			  int IEntityCount = 200;
 			  LongHashSet nodeIds = new LongHashSet();
 			  LongHashSet relIds = new LongHashSet();
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					for ( int i = 0; i < entityCount; i++ )
+					for ( int i = 0; i < IEntityCount; i++ )
 					{
 						 Node node = _db.createNode( _label );
 						 node.SetProperty( PROP, value );
@@ -576,12 +576,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 			  AwaitIndexesOnline();
 
-			  int entityCount = 200;
+			  int IEntityCount = 200;
 			  LongHashSet nodeIds = new LongHashSet();
 			  LongHashSet relIds = new LongHashSet();
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					for ( int i = 0; i < entityCount; i++ )
+					for ( int i = 0; i < IEntityCount; i++ )
 					{
 						 Node node = _db.createNode( _label );
 						 node.SetProperty( PROP, value );
@@ -605,12 +605,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  string value = "bla bla";
 			  _db = CreateDatabase();
 
-			  int entityCount = 200;
+			  int IEntityCount = 200;
 			  LongHashSet nodeIds = new LongHashSet();
 			  LongHashSet relIds = new LongHashSet();
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					for ( int i = 0; i < entityCount; i++ )
+					for ( int i = 0; i < IEntityCount; i++ )
 					{
 						 Node node = _db.createNode( _label );
 						 node.SetProperty( PROP, value );
@@ -643,14 +643,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  string newValue = "green";
 			  _db = CreateDatabase();
 
-			  int entityCount = 200;
+			  int IEntityCount = 200;
 			  LongHashSet nodeIds = new LongHashSet();
 			  LongHashSet relIds = new LongHashSet();
 
 			  // First we create the nodes and relationships with the property value "red".
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					for ( int i = 0; i < entityCount; i++ )
+					for ( int i = 0; i < IEntityCount; i++ )
 					{
 						 Node node = _db.createNode( _label );
 						 node.SetProperty( PROP, oldValue );
@@ -2496,7 +2496,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _db = CreateDatabase();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label = org.neo4j.graphdb.Label.label("label");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("label");
 			  Label label = Label.label( "label" );
 			  const string prop = "prop";
 			  using ( Transaction tx = _db.beginTx() )
@@ -2533,7 +2533,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _db = CreateDatabase();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label = org.neo4j.graphdb.Label.label("label");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = org.Neo4Net.graphdb.Label.label("label");
 			  Label label = Label.label( "label" );
 			  const string prop = "prop";
 			  using ( Transaction tx = _db.beginTx() )
@@ -2580,7 +2580,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.neo4j.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedPropertyInSchemaException ) ) );
 			  }
@@ -2603,7 +2603,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.neo4j.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedLabelInSchemaException ) ) );
 			  }
@@ -2626,7 +2626,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  catch ( Exception e )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Throwable cause = org.neo4j.helpers.Exceptions.rootCause(e);
+//ORIGINAL LINE: final Throwable cause = org.Neo4Net.helpers.Exceptions.rootCause(e);
 					Exception cause = Exceptions.rootCause( e );
 					assertThat( cause, instanceOf( typeof( RepeatedRelationshipTypeInSchemaException ) ) );
 			  }
@@ -2654,7 +2654,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 		 }
 
-		 internal static void AssertQueryFindsIds( GraphDatabaseService db, bool queryNodes, string index, string query, params long[] ids )
+		 internal static void AssertQueryFindsIds( IGraphDatabaseService db, bool queryNodes, string index, string query, params long[] ids )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -2665,7 +2665,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					while ( result.MoveNext() )
 					{
 						 System.Collections.IDictionary entry = result.Current;
-						 long? nextId = ( ( Entity ) entry[queryNodes ? NODE : RELATIONSHIP] ).Id;
+						 long? nextId = ( ( IEntity ) entry[queryNodes ? NODE : RELATIONSHIP] ).Id;
 						 double? nextScore = ( double? ) entry[SCORE];
 						 assertThat( nextScore, lessThanOrEqualTo( score ) );
 						 score = nextScore;
@@ -2684,11 +2684,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 		 }
 
-		 internal static void AssertQueryFindsIds( GraphDatabaseService db, bool queryNodes, string index, string query, LongHashSet ids )
+		 internal static void AssertQueryFindsIds( IGraphDatabaseService db, bool queryNodes, string index, string query, LongHashSet ids )
 		 {
 			  ids = new LongHashSet( ids ); // Create a defensive copy, because we're going to modify this instance.
 			  string queryCall = queryNodes ? QUERY_NODES : QUERY_RELS;
-			  System.Func<long, Entity> getEntity = queryNodes ? Db.getNodeById : Db.getRelationshipById;
+			  System.Func<long, IEntity> getEntity = queryNodes ? Db.getNodeById : Db.getRelationshipById;
 			  long[] expectedIds = ids.toArray();
 			  MutableLongSet actualIds = new LongHashSet();
 			  using ( Transaction tx = Db.beginTx() )
@@ -2698,7 +2698,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					while ( result.MoveNext() )
 					{
 						 System.Collections.IDictionary entry = result.Current;
-						 long nextId = ( ( Entity ) entry[queryNodes ? NODE : RELATIONSHIP] ).Id;
+						 long nextId = ( ( IEntity ) entry[queryNodes ? NODE : RELATIONSHIP] ).Id;
 						 double? nextScore = ( double? ) entry[SCORE];
 						 assertThat( nextScore, lessThanOrEqualTo( score ) );
 						 score = nextScore;
@@ -2718,15 +2718,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 		 }
 
-		 private static void FailQuery( System.Func<long, Entity> getEntity, string index, string query, MutableLongSet ids, long[] expectedIds, MutableLongSet actualIds, string msg )
+		 private static void FailQuery( System.Func<long, IEntity> getEntity, string index, string query, MutableLongSet ids, long[] expectedIds, MutableLongSet actualIds, string msg )
 		 {
 			  StringBuilder message = ( new StringBuilder( msg ) ).Append( '\n' );
 			  MutableLongIterator itr = ids.longIterator();
 			  while ( itr.hasNext() )
 			  {
 					long id = itr.next();
-					Entity entity = getEntity( id );
-					message.Append( '\t' ).Append( entity ).Append( entity.AllProperties ).Append( '\n' );
+					Entity IEntity = getEntity( id );
+					message.Append( '\t' ).Append( IEntity ).Append( IEntity.AllProperties ).Append( '\n' );
 			  }
 			  message.Append( "for query: '" ).Append( query ).Append( "'\nin index: " ).Append( index ).Append( '\n' );
 			  message.Append( "all expected ids: " ).Append( Arrays.ToString( expectedIds ) ).Append( '\n' );
@@ -2735,8 +2735,8 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  while ( itr.hasNext() )
 			  {
 					long id = itr.next();
-					Entity entity = getEntity( id );
-					message.Append( "\n\t" ).Append( entity ).Append( entity.AllProperties );
+					Entity IEntity = getEntity( id );
+					message.Append( "\n\t" ).Append( IEntity ).Append( IEntity.AllProperties );
 			  }
 			  fail( message.ToString() );
 		 }

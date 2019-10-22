@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // Affected key state:
 		 // long0Array (nanoOfDay)
 
-		 internal LocalTimeArrayType( sbyte typeId ) : base( ValueGroup.LOCAL_TIME_ARRAY, typeId, ( o1, o2, i ) -> LocalTimeType.Compare( o1.long0Array[i], o2.long0Array[i] ), ( k, i ) -> LocalTimeType.AsValueRaw( k.long0Array[i] ), ( c, k, i ) -> LocalTimeType.put( c, k.long0Array[i] ), LocalTimeType.read, LocalTime[]::new, org.neo4j.values.storable.ValueWriter_ArrayType.LocalTime )
+		 internal LocalTimeArrayType( sbyte typeId ) : base( ValueGroup.LOCAL_TIME_ARRAY, typeId, ( o1, o2, i ) -> LocalTimeType.Compare( o1.long0Array[i], o2.long0Array[i] ), ( k, i ) -> LocalTimeType.AsValueRaw( k.long0Array[i] ), ( c, k, i ) -> LocalTimeType.put( c, k.long0Array[i] ), LocalTimeType.read, LocalTime[]::new, org.Neo4Net.values.storable.ValueWriter_ArrayType.LocalTime )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }

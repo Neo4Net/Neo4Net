@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.dbms
 {
 
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using JettyHttpConnection = Neo4Net.Server.web.JettyHttpConnection;
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest.dbms
 
 					JettyHttpConnection.updateUserForCurrentConnection( loginContext.Subject().username(), userAgent );
 
-					filterChain.doFilter( new AuthorizedRequestWrapper( BASIC_AUTH, "neo4j", request, loginContext ), servletResponse );
+					filterChain.doFilter( new AuthorizedRequestWrapper( BASIC_AUTH, "Neo4Net", request, loginContext ), servletResponse );
 			  }
 			  catch ( AuthorizationViolationException e )
 			  {

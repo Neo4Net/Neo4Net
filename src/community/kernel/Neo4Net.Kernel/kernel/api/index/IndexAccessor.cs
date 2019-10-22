@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.emptyResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	/// <summary>
 	/// Used for online operation of an index.
@@ -62,11 +62,11 @@ namespace Neo4Net.Kernel.Api.Index
 		 IndexUpdater NewUpdater( IndexUpdateMode mode );
 
 		 /// <summary>
-		 /// Forces this index to disk. Called at certain points from within Neo4j for example when
+		 /// Forces this index to disk. Called at certain points from within Neo4Net for example when
 		 /// rotating the logical log. After completion of this call there cannot be any essential state that
 		 /// hasn't been forced to disk.
 		 /// </summary>
-		 /// <param name="ioLimiter"> The <seealso cref="IOLimiter"/> to use for implementations living on top of <seealso cref="org.neo4j.io.pagecache.PageCache"/>. </param>
+		 /// <param name="ioLimiter"> The <seealso cref="IOLimiter"/> to use for implementations living on top of <seealso cref="org.Neo4Net.io.pagecache.PageCache"/>. </param>
 		 /// <exception cref="UncheckedIOException"> if there was a problem forcing the state to persistent storage. </exception>
 		 void Force( IOLimiter ioLimiter );
 
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <exception cref="IndexEntryConflictException"> for first detected uniqueness conflict, if any. </exception>
 		 /// <exception cref="UncheckedIOException"> on error reading from source files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor );
 
 		 /// <returns> true if index was not shutdown properly and its internal state is dirty, false otherwise </returns>
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// Validates the <seealso cref="Value value tuple"/> before transaction determines that it can commit.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default void validateBeforeCommit(org.neo4j.values.storable.Value[] tuple)
+//		 default void validateBeforeCommit(org.Neo4Net.values.storable.Value[] tuple)
 	//	 {
 	//		  // For most value types there are no specific validations to be made.
 	//	 }
@@ -269,7 +269,7 @@ namespace Neo4Net.Kernel.Api.Index
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		  {
 				Delegate.verifyDeferredConstraints( nodePropertyAccessor );

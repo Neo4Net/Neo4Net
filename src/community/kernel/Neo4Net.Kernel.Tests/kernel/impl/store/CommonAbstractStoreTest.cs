@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.store
 	using InOrder = org.mockito.InOrder;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseFile = Neo4Net.Io.layout.DatabaseFile;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.TestDirectory.testDirectory;
+//	import static org.Neo4Net.test.rule.TestDirectory.testDirectory;
 
 	public class CommonAbstractStoreTest
 	{

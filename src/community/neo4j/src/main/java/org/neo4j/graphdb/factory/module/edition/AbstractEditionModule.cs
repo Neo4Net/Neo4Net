@@ -20,13 +20,13 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module.edition
+namespace Neo4Net.GraphDb.factory.module.edition
 {
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using DefaultDatabaseManager = Neo4Net.Dmbs.Database.DefaultDatabaseManager;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using DatabaseEditionContext = Neo4Net.Graphdb.factory.module.edition.context.DatabaseEditionContext;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
 	using Service = Neo4Net.Helpers.Service;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -60,7 +60,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.proc.temporal.TemporalFunction.registerTemporalFunctions;
+//	import static org.Neo4Net.kernel.impl.proc.temporal.TemporalFunction.registerTemporalFunctions;
 
 	/// <summary>
 	/// Edition module for <seealso cref="GraphDatabaseFacadeFactory"/>. Implementations of this class
@@ -120,7 +120,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedures(org.neo4j.kernel.impl.proc.Procedures procedures, org.neo4j.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public virtual void RegisterProcedures( Procedures procedures, ProcedureConfig procedureConfig )
 		 {
 			  procedures.RegisterProcedure( typeof( Neo4Net.Kernel.builtinprocs.BuiltInProcedures ) );
@@ -133,7 +133,7 @@ namespace Neo4Net.Graphdb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(org.neo4j.kernel.impl.proc.Procedures procedures) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 protected internal abstract void RegisterEditionSpecificProcedures( Procedures procedures );
 
 		 protected internal virtual void PublishEditionInfo( UsageData sysInfo, DatabaseInfo databaseInfo, Config config )

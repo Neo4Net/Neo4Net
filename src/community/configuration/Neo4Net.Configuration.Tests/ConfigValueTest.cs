@@ -29,7 +29,7 @@ namespace Neo4Net.Configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.configuration.ConfigValue.valueToString;
+//	import static org.Neo4Net.configuration.ConfigValue.valueToString;
 
 	internal class ConfigValueTest
 	{

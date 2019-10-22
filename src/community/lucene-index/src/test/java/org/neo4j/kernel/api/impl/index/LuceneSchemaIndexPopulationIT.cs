@@ -62,10 +62,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 private readonly IndexDescriptor _descriptor = TestIndexDescriptorFactory.uniqueForLabel( 0, 0 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
 		 private DefaultFileSystemAbstraction _fileSystem;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void generateUpdates(org.neo4j.kernel.api.impl.schema.LuceneIndexAccessor indexAccessor, int nodesToUpdate) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void generateUpdates(org.Neo4Net.kernel.api.impl.schema.LuceneIndexAccessor indexAccessor, int nodesToUpdate) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void GenerateUpdates( LuceneIndexAccessor indexAccessor, int nodesToUpdate )
 		 {
 			  using ( IndexUpdater updater = indexAccessor.NewUpdater( IndexUpdateMode.ONLINE ) )
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> add(long nodeId, Object value)
 		 private IndexEntryUpdate<object> Add( long nodeId, object value )
 		 {
 			  return IndexEntryUpdate.add( nodeId, _descriptor.schema(), Values.of(value) );

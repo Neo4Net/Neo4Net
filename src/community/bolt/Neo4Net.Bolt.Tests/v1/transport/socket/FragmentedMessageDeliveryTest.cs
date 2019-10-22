@@ -30,17 +30,17 @@ namespace Neo4Net.Bolt.v1.transport.socket
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
 	using SynchronousBoltConnection = Neo4Net.Bolt.runtime.SynchronousBoltConnection;
 	using BoltRequestMessageWriter = Neo4Net.Bolt.v1.messaging.BoltRequestMessageWriter;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using RecordingByteChannel = Neo4Net.Bolt.v1.messaging.RecordingByteChannel;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using BufferedChannelOutput = Neo4Net.Bolt.v1.packstream.BufferedChannelOutput;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using HexPrinter = Neo4Net.Kernel.impl.util.HexPrinter;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 
@@ -61,7 +61,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	/// <summary>
 	/// This tests network fragmentation of messages. Given a set of messages, it will serialize and chunk the message up
@@ -90,14 +90,14 @@ namespace Neo4Net.Bolt.v1.transport.socket
 		 private RequestMessage[] _messages = new RequestMessage[]{ new RunMessage( "Mjölnir" ) };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameter public org.neo4j.bolt.messaging.Neo4jPack neo4jPack;
-		 public Neo4jPack Neo4jPack;
+//ORIGINAL LINE: @Parameter public org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack;
+		 public Neo4NetPack Neo4NetPack;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameters(name = "{0}") public static java.util.List<org.neo4j.bolt.messaging.Neo4jPack> parameters()
-		 public static IList<Neo4jPack> Parameters()
+//ORIGINAL LINE: @Parameters(name = "{0}") public static java.util.List<org.Neo4Net.bolt.messaging.Neo4NetPack> parameters()
+		 public static IList<Neo4NetPack> Parameters()
 		 {
-			  return Arrays.asList( new Neo4jPackV1(), new Neo4jPackV2() );
+			  return Arrays.asList( new Neo4NetPackV1(), new Neo4NetPackV2() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -190,7 +190,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private byte[] serialize(int chunkSize, org.neo4j.bolt.messaging.RequestMessage... msgs) throws java.io.IOException
+//ORIGINAL LINE: private byte[] serialize(int chunkSize, org.Neo4Net.bolt.messaging.RequestMessage... msgs) throws java.io.IOException
 		 private sbyte[] Serialize( int chunkSize, params RequestMessage[] msgs )
 		 {
 			  sbyte[][] serialized = new sbyte[msgs.Length][];
@@ -198,7 +198,7 @@ namespace Neo4Net.Bolt.v1.transport.socket
 			  {
 					RecordingByteChannel channel = new RecordingByteChannel();
 
-					BoltRequestMessageWriter writer = new BoltRequestMessageWriter( ( new Neo4jPackV1() ).newPacker(new BufferedChannelOutput(channel)) );
+					BoltRequestMessageWriter writer = new BoltRequestMessageWriter( ( new Neo4NetPackV1() ).newPacker(new BufferedChannelOutput(channel)) );
 					writer.Write( msgs[i] ).flush();
 					serialized[i] = channel.Bytes;
 			  }

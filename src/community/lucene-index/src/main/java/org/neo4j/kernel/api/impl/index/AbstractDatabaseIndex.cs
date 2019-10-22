@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		public abstract void MarkAsOnline();
 		public abstract Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter IndexWriter { get; }
 		public abstract void MaybeRefreshBlocking();
-		public abstract Neo4Net.Graphdb.ResourceIterator<java.io.File> Snapshot();
+		public abstract Neo4Net.GraphDb.ResourceIterator<java.io.File> Snapshot();
 		public abstract void Flush();
 		public abstract void Drop();
 		public abstract bool ReadOnly { get; }

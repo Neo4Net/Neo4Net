@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 
 	public class MandatoryTransactionsForSchemaTest : AbstractMandatoryTransactionsTest<Schema>
 	{
@@ -39,9 +39,9 @@ namespace Neo4Net.Graphdb
 			  AssertFacadeMethodsThrowAfterTerminate( SchemaFacadeMethods.values() );
 		 }
 
-		 protected internal override Schema ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override Schema ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService.Schema();
+			  return IGraphDatabaseService.Schema();
 		 }
 	}
 

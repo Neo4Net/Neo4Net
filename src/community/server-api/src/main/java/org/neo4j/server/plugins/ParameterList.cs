@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.plugins
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
 
@@ -42,14 +42,14 @@ namespace Neo4Net.Server.plugins
 		 private abstract class Converter<T>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract T convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: abstract T convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 			  internal abstract T Convert( GraphDatabaseAPI graphDb, object value );
 
 			  internal abstract T[] NewArray( int size );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <T> T[] getList(String name, org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Converter<T> converter) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: private <T> T[] getList(String name, org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Converter<T> converter) throws org.Neo4Net.server.rest.repr.BadInputException
 		 private T[] GetList<T>( string name, GraphDatabaseAPI graphDb, Converter<T> converter )
 		 {
 			  object value = _data[name];
@@ -84,7 +84,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getString(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public String getString(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual string GetString( string name )
 		 {
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String[] getStringList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public String[] getStringList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual string[] GetStringList( string name )
 		 {
@@ -114,7 +114,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: String convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: String convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override string convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertString( value );
@@ -127,12 +127,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract String convertString(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract String convertString(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract string ConvertString( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<int> getInteger(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<int> getInteger(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual int? GetInteger( string name )
 		 {
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<int>[] getIntegerList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<int>[] getIntegerList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual int?[] GetIntegerList( string name )
 		 {
@@ -162,7 +162,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Integer convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Integer convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Integer convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertInteger( value ).Value;
@@ -175,12 +175,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<int> convertInteger(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<int> convertInteger(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract int? ConvertInteger( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<long> getLong(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<long> getLong(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual long? GetLong( string name )
 		 {
@@ -193,7 +193,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<long>[] getLongList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<long>[] getLongList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual long?[] GetLongList( string name )
 		 {
@@ -210,7 +210,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Long convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Long convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Long convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertLong( value ).Value;
@@ -223,12 +223,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<long> convertLong(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<long> convertLong(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract long? ConvertLong( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<sbyte> getByte(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<sbyte> getByte(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual sbyte? GetByte( string name )
 		 {
@@ -241,7 +241,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<sbyte>[] getByteList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<sbyte>[] getByteList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual sbyte?[] GetByteList( string name )
 		 {
@@ -258,7 +258,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Byte convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Byte convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Byte convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertByte( value );
@@ -271,12 +271,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<sbyte> convertByte(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<sbyte> convertByte(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract sbyte? ConvertByte( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<char> getCharacter(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<char> getCharacter(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual char? GetCharacter( string name )
 		 {
@@ -289,7 +289,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<char>[] getCharacterList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<char>[] getCharacterList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual char?[] GetCharacterList( string name )
 		 {
@@ -306,7 +306,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Character convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Character convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Character convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertCharacter( value ).Value;
@@ -319,12 +319,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<char> convertCharacter(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<char> convertCharacter(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract char? ConvertCharacter( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<bool> getBoolean(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<bool> getBoolean(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual bool? GetBoolean( string name )
 		 {
@@ -337,7 +337,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<bool>[] getBooleanList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<bool>[] getBooleanList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual bool?[] GetBooleanList( string name )
 		 {
@@ -354,7 +354,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Boolean convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Boolean convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Boolean convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertBoolean( value ).Value;
@@ -367,12 +367,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<bool> convertBoolean(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<bool> convertBoolean(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract bool? ConvertBoolean( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<short> getShort(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<short> getShort(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual short? GetShort( string name )
 		 {
@@ -385,7 +385,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<short>[] getShortList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<short>[] getShortList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual short?[] GetShortList( string name )
 		 {
@@ -402,7 +402,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Short convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Short convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Short convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertShort( value ).Value;
@@ -415,12 +415,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<short> convertShort(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<short> convertShort(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract short? ConvertShort( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<float> getFloat(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<float> getFloat(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual float? GetFloat( string name )
 		 {
@@ -433,7 +433,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<float>[] getFloatList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<float>[] getFloatList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual float?[] GetFloatList( string name )
 		 {
@@ -450,7 +450,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Float convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Float convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Float convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertFloat( value ).Value;
@@ -463,12 +463,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<float> convertFloat(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<float> convertFloat(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract float? ConvertFloat( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<double> getDouble(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<double> getDouble(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual double? GetDouble( string name )
 		 {
@@ -481,7 +481,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public System.Nullable<double>[] getDoubleList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public System.Nullable<double>[] getDoubleList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual double?[] GetDoubleList( string name )
 		 {
@@ -498,7 +498,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Double convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Double convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Double convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertDouble( value ).Value;
@@ -511,12 +511,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract System.Nullable<double> convertDouble(Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract System.Nullable<double> convertDouble(Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract double? ConvertDouble( object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Node getNode(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual Node GetNode( GraphDatabaseAPI graphDb, string name )
 		 {
@@ -529,7 +529,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Node[] getNodeList(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Node[] getNodeList(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual Node[] GetNodeList( GraphDatabaseAPI graphDb, string name )
 		 {
@@ -549,7 +549,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Node convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Node convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Node convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertNode( graphDb, value );
@@ -562,12 +562,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.neo4j.graphdb.Node convertNode(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract org.Neo4Net.graphdb.Node convertNode(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract Node ConvertNode( GraphDatabaseAPI graphDb, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Relationship getRelationship(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Relationship getRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual Relationship GetRelationship( GraphDatabaseAPI graphDb, string name )
 		 {
@@ -580,7 +580,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Relationship[] getRelationshipList(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Relationship[] getRelationshipList(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual Relationship[] GetRelationshipList( GraphDatabaseAPI graphDb, string name )
 		 {
@@ -600,7 +600,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Relationship convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Relationship convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override Relationship convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertRelationship( graphDb, value );
@@ -613,12 +613,12 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.neo4j.graphdb.Relationship convertRelationship(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException;
+//ORIGINAL LINE: protected abstract org.Neo4Net.graphdb.Relationship convertRelationship(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException;
 		 [Obsolete]
 		 protected internal abstract Relationship ConvertRelationship( GraphDatabaseAPI graphDb, object value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI getUri(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI getUri(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual URI GetUri( string name )
 		 {
@@ -631,7 +631,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI[] getUriList(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI[] getUriList(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual URI[] GetUriList( string name )
 		 {
@@ -648,7 +648,7 @@ namespace Neo4Net.Server.plugins
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: URI convert(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: URI convert(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 			 internal override URI convert( GraphDatabaseAPI graphDb, object value )
 			 {
 				  return outerInstance.ConvertURI( value );
@@ -661,7 +661,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.net.URI convertURI(Object value) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: protected java.net.URI convertURI(Object value) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 protected internal virtual URI ConvertURI( object value )
 		 {
@@ -676,7 +676,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map getMap(String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map getMap(String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 [Obsolete]
 		 public virtual System.Collections.IDictionary GetMap( string name )
 		 {

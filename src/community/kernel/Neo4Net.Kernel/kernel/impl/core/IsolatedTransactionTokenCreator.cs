@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized int createToken(String name) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public synchronized int createToken(String name) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override int CreateToken( string name )
 		 {
 			 lock ( this )
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void createTokens(String[] names, int[] ids, System.Func<int, boolean> filter) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public synchronized void createTokens(String[] names, int[] ids, System.Func<int, boolean> filter) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override void CreateTokens( string[] names, int[] ids, System.Func<int, bool> filter )
 		 {
 			 lock ( this )
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract int createKey(org.neo4j.internal.kernel.api.Transaction transaction, String name) throws org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException;
+//ORIGINAL LINE: abstract int createKey(org.Neo4Net.internal.kernel.api.Transaction transaction, String name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException;
 		 internal abstract int CreateKey( Transaction transaction, string name );
 	}
 

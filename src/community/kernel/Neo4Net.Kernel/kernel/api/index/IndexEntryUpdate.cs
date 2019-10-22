@@ -42,24 +42,24 @@ namespace Neo4Net.Kernel.Api.Index
 		 private readonly Value[] _values;
 		 private readonly INDEX_KEY _indexKey;
 
-		 private IndexEntryUpdate( long entityId, INDEX_KEY indexKey, UpdateMode updateMode, params Value[] values ) : this( entityId, indexKey, updateMode, null, values )
+		 private IndexEntryUpdate( long IEntityId, INDEX_KEY indexKey, UpdateMode updateMode, params Value[] values ) : this( IEntityId, indexKey, updateMode, null, values )
 		 {
 		 }
 
-		 private IndexEntryUpdate( long entityId, INDEX_KEY indexKey, UpdateMode updateMode, Value[] before, Value[] values )
+		 private IndexEntryUpdate( long IEntityId, INDEX_KEY indexKey, UpdateMode updateMode, Value[] before, Value[] values )
 		 {
 			  // we do not support partial index entries
 			  Debug.Assert( indexKey.schema().PropertyIds.length == values.Length, format("IndexEntryUpdate values must be of same length as index compositeness. " + "Index on %s, but got values %s", indexKey.schema().ToString(), Arrays.ToString(values)) );
 			  Debug.Assert( before == null || before.Length == values.Length );
 
-			  this._entityId = entityId;
+			  this._entityId = IEntityId;
 			  this._indexKey = indexKey;
 			  this._before = before;
 			  this._values = values;
 			  this._updateMode = updateMode;
 		 }
 
-		 public long EntityId
+		 public long IEntityId
 		 {
 			 get
 			 {
@@ -131,24 +131,24 @@ namespace Neo4Net.Kernel.Api.Index
 			  return format( "IndexEntryUpdate[id=%d, mode=%s, %s, beforeValues=%s, values=%s]", _entityId, _updateMode, IndexKey().schema().userDescription(SchemaUtil.idTokenNameLookup), Arrays.ToString(_before), Arrays.ToString(_values) );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Add<INDEX_KEY>( long entityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Add<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
-			  return new IndexEntryUpdate<INDEX_KEY>( entityId, indexKey, UpdateMode.ADDED, values );
+			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.ADDED, values );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Remove<INDEX_KEY>( long entityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Remove<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, params Value[] values ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
-			  return new IndexEntryUpdate<INDEX_KEY>( entityId, indexKey, UpdateMode.REMOVED, values );
+			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.REMOVED, values );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long entityId, INDEX_KEY indexKey, Value before, Value after ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value before, Value after ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
-			  return new IndexEntryUpdate<INDEX_KEY>( entityId, indexKey, UpdateMode.CHANGED, new Value[]{ before }, new Value[]{ after } );
+			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.CHANGED, new Value[]{ before }, new Value[]{ after } );
 		 }
 
-		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long entityId, INDEX_KEY indexKey, Value[] before, Value[] after ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 public static IndexEntryUpdate<INDEX_KEY> Change<INDEX_KEY>( long IEntityId, INDEX_KEY indexKey, Value[] before, Value[] after ) where INDEX_KEY : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
 		 {
-			  return new IndexEntryUpdate<INDEX_KEY>( entityId, indexKey, UpdateMode.CHANGED, before, after );
+			  return new IndexEntryUpdate<INDEX_KEY>( IEntityId, indexKey, UpdateMode.CHANGED, before, after );
 		 }
 
 		 public virtual Value[] BeforeValues()

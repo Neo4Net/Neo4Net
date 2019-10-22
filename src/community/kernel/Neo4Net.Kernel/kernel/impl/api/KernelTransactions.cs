@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Neo4Net.Collections.Pooling;
 	using Neo4Net.Collections.Pooling;
 	using Neo4Net.Functions;
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;

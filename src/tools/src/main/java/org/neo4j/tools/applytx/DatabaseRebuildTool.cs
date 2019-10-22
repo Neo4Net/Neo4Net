@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,20 +16,20 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.applytx
 {
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using Result = Neo4Net.Consistency.ConsistencyCheckService.Result;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using Args = Neo4Net.Helpers.Args;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -45,13 +45,13 @@ namespace Neo4Net.tools.applytx
 	using ConsoleInput = Neo4Net.tools.console.input.ConsoleInput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.lifecycle.LifecycleAdapter.onShutdown;
+//	import static org.Neo4Net.kernel.lifecycle.LifecycleAdapter.onShutdown;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tools.console.input.ConsoleUtil.NO_PROMPT;
+//	import static org.Neo4Net.tools.console.input.ConsoleUtil.NO_PROMPT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tools.console.input.ConsoleUtil.oneCommand;
+//	import static org.Neo4Net.tools.console.input.ConsoleUtil.oneCommand;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tools.console.input.ConsoleUtil.staticPrompt;
+//	import static org.Neo4Net.tools.console.input.ConsoleUtil.staticPrompt;
 
 	/// <summary>
 	/// Tool for rebuilding database from transaction logs onto a new store. Transaction can be applied interactively,
@@ -128,7 +128,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File getTo(org.neo4j.helpers.Args args) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File getTo(org.Neo4Net.helpers.Args args) throws java.io.IOException
 		 private File GetTo( Args args )
 		 {
 			  string to = args.Get( "to" );
@@ -190,7 +190,7 @@ namespace Neo4Net.tools.applytx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.tools.console.input.ConsoleInput console(final java.io.File fromPath, final org.neo4j.graphdb.factory.GraphDatabaseBuilder dbBuilder, java.io.InputStream in, org.neo4j.kernel.impl.util.Listener<java.io.PrintStream> prompt, org.neo4j.kernel.lifecycle.LifeSupport life)
+//ORIGINAL LINE: private org.Neo4Net.tools.console.input.ConsoleInput console(final java.io.File fromPath, final org.Neo4Net.graphdb.factory.GraphDatabaseBuilder dbBuilder, java.io.InputStream in, org.Neo4Net.kernel.impl.util.Listener<java.io.PrintStream> prompt, org.Neo4Net.kernel.lifecycle.LifeSupport life)
 		 private ConsoleInput Console( File fromPath, GraphDatabaseBuilder dbBuilder, Stream @in, Listener<PrintStream> prompt, LifeSupport life )
 		 {
 			  // We must have this indirection here since in order to perform CC (one of the commands) we must shut down
@@ -200,10 +200,10 @@ namespace Neo4Net.tools.applytx
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<Store> store = new java.util.concurrent.atomic.AtomicReference<>(new Store(dbBuilder));
 			  AtomicReference<Store> store = new AtomicReference<Store>( new Store( dbBuilder ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.neo4j.kernel.impl.store.StoreAccess> storeAccess = () -> store.get().access;
+//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.impl.store.StoreAccess> storeAccess = () -> store.get().access;
 			  System.Func<StoreAccess> storeAccess = () => store.get().access;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final System.Func<org.neo4j.kernel.internal.GraphDatabaseAPI> dbAccess = () -> store.get().db;
+//ORIGINAL LINE: final System.Func<org.Neo4Net.kernel.internal.GraphDatabaseAPI> dbAccess = () -> store.get().db;
 			  System.Func<GraphDatabaseAPI> dbAccess = () => store.get().db;
 
 			  ConsoleInput consoleInput = life.Add( new ConsoleInput( @in, @out, prompt ) );
@@ -229,7 +229,7 @@ namespace Neo4Net.tools.applytx
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run(org.neo4j.helpers.Args action, java.io.PrintStream out) throws Exception
+//ORIGINAL LINE: public void run(org.Neo4Net.helpers.Args action, java.io.PrintStream out) throws Exception
 			 public override void run( Args action, PrintStream @out )
 			 {
 				  DatabaseLayout databaseLayout = _store.get().databaseLayout;

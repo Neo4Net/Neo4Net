@@ -53,12 +53,12 @@ namespace Neo4Net.Kernel.impl.store.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyZeroInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdContainer.NO_RESULT;
+//	import static org.Neo4Net.kernel.impl.store.id.IdContainer.NO_RESULT;
 
 	public class FreeIdKeeperTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -638,14 +638,14 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeperAggressive(org.neo4j.io.fs.StoreChannel channel, int batchSize) throws java.io.IOException
+//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeperAggressive(org.Neo4Net.io.fs.StoreChannel channel, int batchSize) throws java.io.IOException
 		 private FreeIdKeeper getFreeIdKeeperAggressive( StoreChannel channel, int batchSize )
 		 {
 			  return GetFreeIdKeeper( channel, batchSize, true );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeper(org.neo4j.io.fs.StoreChannel channel, int batchSize) throws java.io.IOException
+//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeper(org.Neo4Net.io.fs.StoreChannel channel, int batchSize) throws java.io.IOException
 		 private FreeIdKeeper GetFreeIdKeeper( StoreChannel channel, int batchSize )
 		 {
 			  return GetFreeIdKeeper( channel, batchSize, false );
@@ -659,14 +659,14 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeper(org.neo4j.io.fs.StoreChannel channel, int batchSize, boolean aggressiveMode) throws java.io.IOException
+//ORIGINAL LINE: private FreeIdKeeper getFreeIdKeeper(org.Neo4Net.io.fs.StoreChannel channel, int batchSize, boolean aggressiveMode) throws java.io.IOException
 		 private FreeIdKeeper GetFreeIdKeeper( StoreChannel channel, int batchSize, bool aggressiveMode )
 		 {
 			  return new FreeIdKeeper( channel, batchSize, aggressiveMode );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.io.fs.StoreChannel getStoreChannel() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.io.fs.StoreChannel getStoreChannel() throws java.io.IOException
 		 private StoreChannel StoreChannel
 		 {
 			 get

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.store
 	using Rule = org.junit.Rule;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using IdGenerator = Neo4Net.Kernel.impl.store.id.IdGenerator;
 	using IdGeneratorImpl = Neo4Net.Kernel.impl.store.id.IdGeneratorImpl;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;

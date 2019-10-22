@@ -88,17 +88,17 @@ namespace Neo4Net.Kernel.impl.transaction.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.rotation.LogRotation.NO_ROTATION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.rotation.LogRotation.NO_ROTATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IdOrderingQueue.BYPASS;
+//	import static org.Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
 
 	public class BatchingTransactionAppenderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.kernel.lifecycle.LifeRule life = new org.neo4j.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.CleanupRule cleanup = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 		 private readonly InMemoryVersionableReadableClosablePositionAwareChannel _channel = new InMemoryVersionableReadableClosablePositionAwareChannel();
@@ -134,7 +134,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.entry.LogEntryReader<ReadableLogChannel> logEntryReader = new org.neo4j.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryReader<ReadableLogChannel> logEntryReader = new org.Neo4Net.kernel.impl.transaction.log.entry.VersionAwareLogEntryReader<>();
 			  LogEntryReader<ReadableLogChannel> logEntryReader = new VersionAwareLogEntryReader<ReadableLogChannel>();
 			  using ( PhysicalTransactionCursor<ReadableLogChannel> reader = new PhysicalTransactionCursor<ReadableLogChannel>( _channel, logEntryReader ) )
 			  {

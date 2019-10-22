@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.impl.store
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordFormatSelector = Neo4Net.Kernel.impl.store.format.RecordFormatSelector;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.store
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static readonly PageCacheRule PageCacheRule = new PageCacheRule();
 		 private EphemeralFileSystemRule _fsRule = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;

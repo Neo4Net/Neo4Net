@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.api.schema
 {
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	public class SchemaDescriptorFactory
 	{
@@ -41,21 +41,21 @@ namespace Neo4Net.Kernel.api.schema
 			  return new RelationTypeSchemaDescriptor( relTypeId, propertyIds );
 		 }
 
-		 public static MultiTokenSchemaDescriptor MultiToken( int[] entityTokens, EntityType entityType, params int[] propertyIds )
+		 public static MultiTokenSchemaDescriptor MultiToken( int[] IEntityTokens, IEntityType IEntityType, params int[] propertyIds )
 		 {
 			  ValidatePropertyIds( propertyIds );
-			  switch ( entityType.innerEnumValue )
+			  switch ( IEntityType.innerEnumValue )
 			  {
-			  case EntityType.InnerEnum.NODE:
-					ValidateLabelIds( entityTokens );
+			  case IEntityType.InnerEnum.NODE:
+					ValidateLabelIds( IEntityTokens );
 					break;
-			  case EntityType.InnerEnum.RELATIONSHIP:
-					ValidateRelationshipTypeIds( entityTokens );
+			  case IEntityType.InnerEnum.RELATIONSHIP:
+					ValidateRelationshipTypeIds( IEntityTokens );
 					break;
 			  default:
-					throw new System.ArgumentException( "Cannot create schemadescriptor of type :" + entityType );
+					throw new System.ArgumentException( "Cannot create schemadescriptor of type :" + IEntityType );
 			  }
-			  return new MultiTokenSchemaDescriptor( entityTokens, entityType, propertyIds );
+			  return new MultiTokenSchemaDescriptor( IEntityTokens, IEntityType, propertyIds );
 		 }
 
 		 private static void ValidatePropertyIds( int[] propertyIds )

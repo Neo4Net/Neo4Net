@@ -25,17 +25,17 @@ namespace Neo4Net.Helpers
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assertions.assertEquals;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.safeCastIntToShort;
+   //	import static org.Neo4Net.helpers.Numbers.safeCastIntToShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.safeCastIntToUnsignedShort;
+   //	import static org.Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.safeCastLongToByte;
+   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToByte;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.safeCastLongToShort;
+   //	import static org.Neo4Net.helpers.Numbers.safeCastLongToShort;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.helpers.Numbers.unsignedShortToInt;
+   //	import static org.Neo4Net.helpers.Numbers.unsignedShortToInt;
 
    //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
    //ORIGINAL LINE: @EnableRuleMigrationSupport public class NumbersTest
@@ -99,61 +99,61 @@ namespace Neo4Net.Helpers
       [Fact] //ORIGINAL LINE: @Test void castLongToInt()
       internal virtual void CastLongToInt()
       {
-         assertEquals(1, safeCastLongToInt(1L));
-         assertEquals(10, safeCastLongToInt(10L));
-         assertEquals(-1, safeCastLongToInt(-1L));
-         assertEquals(int.MaxValue, safeCastLongToInt(int.MaxValue));
-         assertEquals(int.MinValue, safeCastLongToInt(int.MinValue));
+        Assert.Equals(1, safeCastLongToInt(1L));
+        Assert.Equals(10, safeCastLongToInt(10L));
+        Assert.Equals(-1, safeCastLongToInt(-1L));
+        Assert.Equals(int.MaxValue, safeCastLongToInt(int.MaxValue));
+        Assert.Equals(int.MinValue, safeCastLongToInt(int.MinValue));
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void castLongToShort()
       internal virtual void CastLongToShort()
       {
-         assertEquals(1, safeCastLongToShort(1L));
-         assertEquals(10, safeCastLongToShort(10L));
-         assertEquals(-1, safeCastLongToShort(-1L));
-         assertEquals(short.MaxValue, safeCastLongToShort(short.MaxValue));
-         assertEquals(short.MinValue, safeCastLongToShort(short.MinValue));
+        Assert.Equals(1, safeCastLongToShort(1L));
+        Assert.Equals(10, safeCastLongToShort(10L));
+        Assert.Equals(-1, safeCastLongToShort(-1L));
+        Assert.Equals(short.MaxValue, safeCastLongToShort(short.MaxValue));
+        Assert.Equals(short.MinValue, safeCastLongToShort(short.MinValue));
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void castIntToUnsignedShort()
       internal virtual void CastIntToUnsignedShort()
       {
-         assertEquals(1, safeCastIntToUnsignedShort(1));
-         assertEquals(10, safeCastIntToUnsignedShort(10));
-         assertEquals(-1, safeCastIntToUnsignedShort((short.MaxValue << 1) + 1));
+        Assert.Equals(1, safeCastIntToUnsignedShort(1));
+        Assert.Equals(10, safeCastIntToUnsignedShort(10));
+        Assert.Equals(-1, safeCastIntToUnsignedShort((short.MaxValue << 1) + 1));
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void castIntToShort()
       internal virtual void CastIntToShort()
       {
-         assertEquals(1, safeCastIntToShort(1));
-         assertEquals(10, safeCastIntToShort(10));
-         assertEquals(short.MaxValue, safeCastIntToShort(short.MaxValue));
-         assertEquals(short.MinValue, safeCastIntToShort(short.MinValue));
+        Assert.Equals(1, safeCastIntToShort(1));
+        Assert.Equals(10, safeCastIntToShort(10));
+        Assert.Equals(short.MaxValue, safeCastIntToShort(short.MaxValue));
+        Assert.Equals(short.MinValue, safeCastIntToShort(short.MinValue));
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void castLongToByte()
       internal virtual void CastLongToByte()
       {
-         assertEquals(1, safeCastLongToByte(1L));
-         assertEquals(10, safeCastLongToByte(10L));
-         assertEquals(-1, safeCastLongToByte(-1L));
-         assertEquals(sbyte.MaxValue, safeCastLongToByte(sbyte.MaxValue));
-         assertEquals(sbyte.MinValue, safeCastLongToByte(sbyte.MinValue));
+        Assert.Equals(1, safeCastLongToByte(1L));
+        Assert.Equals(10, safeCastLongToByte(10L));
+        Assert.Equals(-1, safeCastLongToByte(-1L));
+        Assert.Equals(sbyte.MaxValue, safeCastLongToByte(sbyte.MaxValue));
+        Assert.Equals(sbyte.MinValue, safeCastLongToByte(sbyte.MinValue));
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
       [Fact] //ORIGINAL LINE: @Test void castUnsignedShortToInt()
       internal virtual void CastUnsignedShortToInt()
       {
-         assertEquals(1, unsignedShortToInt((short)1));
-         assertEquals(short.MaxValue, unsignedShortToInt(short.MaxValue));
-         assertEquals((short.MaxValue << 1) | 1, unsignedShortToInt((short)-1));
+        Assert.Equals(1, unsignedShortToInt((short)1));
+        Assert.Equals(short.MaxValue, unsignedShortToInt(short.MaxValue));
+        Assert.Equals((short.MaxValue << 1) | 1, unsignedShortToInt((short)-1));
       }
    }
 }

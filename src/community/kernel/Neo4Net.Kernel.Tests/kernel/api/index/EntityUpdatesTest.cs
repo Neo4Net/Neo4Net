@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.Api.Index
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using PropertyLoader = Neo4Net.Kernel.Impl.Api.index.PropertyLoader;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -47,8 +47,8 @@ namespace Neo4Net.Kernel.Api.Index
 //	import static org.junit.Assert.fail;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class EntityUpdatesTest
-	public class EntityUpdatesTest
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class IEntityUpdatesTest
+	public class IEntityUpdatesTest
 	{
 		 private const long NODE_ID = 0;
 		 private const int LABEL_ID1 = 0;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 private static readonly LabelSchemaDescriptor _index3 = SchemaDescriptorFactory.forLabel( LABEL_ID1, PROPERTY_KEY_ID3 );
 		 private static readonly LabelSchemaDescriptor _index123 = SchemaDescriptorFactory.forLabel( LABEL_ID1, PROPERTY_KEY_ID1, PROPERTY_KEY_ID2, PROPERTY_KEY_ID3 );
 		 private static readonly IList<LabelSchemaDescriptor> _indexes = Arrays.asList( _index1, _index2, _index3, _index123 );
-		 private static readonly MultiTokenSchemaDescriptor _nonSchemaIndex = SchemaDescriptorFactory.multiToken( new int[]{ LABEL_ID1, LABEL_ID2 }, EntityType.NODE, PROPERTY_KEY_ID1, PROPERTY_KEY_ID2, PROPERTY_KEY_ID3 );
+		 private static readonly MultiTokenSchemaDescriptor _nonSchemaIndex = SchemaDescriptorFactory.multiToken( new int[]{ LABEL_ID1, LABEL_ID2 }, IEntityType.NODE, PROPERTY_KEY_ID1, PROPERTY_KEY_ID2, PROPERTY_KEY_ID3 );
 
 		 private static readonly StorageProperty _property1 = new PropertyKeyValue( PROPERTY_KEY_ID1, Values.of( "Neo" ) );
 		 private static readonly StorageProperty _property2 = new PropertyKeyValue( PROPERTY_KEY_ID2, Values.of( 100L ) );
@@ -78,10 +78,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForEmptyNodeUpdates()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -89,10 +89,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdateForMultipleExistingPropertiesAndLabels()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).existing( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).existing( PROPERTY_KEY_ID2, Values.of( 100L ) ).existing( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).existing( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).existing( PROPERTY_KEY_ID2, Values.of( 100L ) ).existing( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -100,10 +100,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForLabelAdditionWithNoProperties()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -111,10 +111,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateForLabelAdditionWithExistingProperty()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ) ) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -122,10 +122,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdatesForLabelAdditionWithExistingProperties()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).existing( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).existing( PROPERTY_KEY_ID2, Values.of( 100L ) ).existing( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).existing( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).existing( PROPERTY_KEY_ID2, Values.of( 100L ) ).existing( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Add(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Add(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Add(NODE_ID, _index123, _values123) ) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Add(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Add(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Add(NODE_ID, _index123, _values123) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -133,10 +133,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdateForPartialCompositeSchemaIndexUpdate()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).added( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).added( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _index123 ), PropertyLoader(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _index123 ), PropertyLoader(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -144,10 +144,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateForWhenCompletingCompositeSchemaIndexUpdate()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).added( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).added( PROPERTY_KEY_ID3, Values.pointValue( CoordinateReferenceSystem.WGS84, 12.3, 45.6 ) ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _index123 ), PropertyLoader( _property2 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index123, _values123 ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _index123 ), PropertyLoader( _property2 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index123, _values123 ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -155,10 +155,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForLabelRemovalWithNoProperties()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -166,10 +166,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateForLabelRemovalWithExistingProperty()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _index1, _property1.value() ) ) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _index1, _property1.value() ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -177,10 +177,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdatesForLabelRemovalWithExistingProperties()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Remove(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Remove(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Remove(NODE_ID, _index123, _values123) ) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Remove(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Remove(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Remove(NODE_ID, _index123, _values123) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -188,10 +188,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForPropertyAdditionWithNoLabels()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).added( _property1.propertyKeyId(), _property1.value() ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).added( _property1.propertyKeyId(), _property1.value() ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -199,10 +199,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdatesForSinglePropertyAdditionWithLabels()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).added( _property1.propertyKeyId(), _property1.value() ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).added( _property1.propertyKeyId(), _property1.value() ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), EntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _index1, _property1.value())) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader(), IEntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _index1, _property1.value())) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -210,10 +210,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdatesForMultiplePropertyAdditionWithLabels()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Add(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Add(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Add(NODE_ID, _index123, _values123) ) );
+			  assertThat( updates.ForIndexKeys( _indexes, PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _index1, _property1.value() ), IndexEntryUpdate.Add(NODE_ID, _index2, _property2.value()), IndexEntryUpdate.Add(NODE_ID, _index3, _property3.value()), IndexEntryUpdate.Add(NODE_ID, _index123, _values123) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -221,10 +221,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForLabelAddAndPropertyRemove()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).removed( _property1.propertyKeyId(), _property1.value() ).removed(_property2.propertyKeyId(), _property2.value()).removed(_property3.propertyKeyId(), _property3.value()).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).removed( _property1.propertyKeyId(), _property1.value() ).removed(_property2.propertyKeyId(), _property2.value()).removed(_property3.propertyKeyId(), _property3.value()).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -232,10 +232,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdatesForLabelRemoveAndPropertyAdd()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( _indexes, AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -243,10 +243,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotLoadPropertyForLabelsAndNoPropertyChanges()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _index1 ), AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _index1 ), AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -254,10 +254,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotLoadPropertyForNoLabelsAndButPropertyAddition()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).added( _property1.propertyKeyId(), _property1.value() ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).added( _property1.propertyKeyId(), _property1.value() ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _index1 ), AssertNoLoading(), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _index1 ), AssertNoLoading(), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -265,10 +265,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateForPartialNonSchemaIndexUpdate()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( PROPERTY_KEY_ID1, Values.of( "Neo" ) ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader(), EntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _nonSchemaIndex, _property1.value(), null, null)) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader(), IEntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _nonSchemaIndex, _property1.value(), null, null)) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -276,10 +276,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateForFullNonSchemaIndexUpdate()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).added( _property1.propertyKeyId(), _property1.value() ).added(_property2.propertyKeyId(), _property2.value()).added(_property3.propertyKeyId(), _property3.value()).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader(), EntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _nonSchemaIndex, _values123)) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader(), IEntityType.NODE ), containsInAnyOrder(IndexEntryUpdate.Add(NODE_ID, _nonSchemaIndex, _values123)) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -288,10 +288,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 {
 			  // When
 			  Value newValue2 = Values.of( 10L );
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).changed( _property2.propertyKeyId(), _property2.value(), newValue2 ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).changed( _property2.propertyKeyId(), _property2.value(), newValue2 ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ _property1.value(), newValue2, _property3.value() } ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ _property1.value(), newValue2, _property3.value() } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -302,10 +302,10 @@ namespace Neo4Net.Kernel.Api.Index
 			  Value newValue1 = Values.of( "Nio" );
 			  Value newValue2 = Values.of( 10L );
 			  Value newValue3 = Values.pointValue( CoordinateReferenceSystem.WGS84, 32.3, 15.6 );
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).changed( _property1.propertyKeyId(), _property1.value(), newValue1 ).changed(_property2.propertyKeyId(), _property2.value(), newValue2).changed(_property3.propertyKeyId(), _property3.value(), newValue3).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).changed( _property1.propertyKeyId(), _property1.value(), newValue1 ).changed(_property2.propertyKeyId(), _property2.value(), newValue2).changed(_property3.propertyKeyId(), _property3.value(), newValue3).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ newValue1, newValue2, newValue3 } ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ newValue1, newValue2, newValue3 } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -313,10 +313,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenRemovingLastPropForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).removed( _property2.propertyKeyId(), _property2.value() ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).removed( _property2.propertyKeyId(), _property2.value() ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property2 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, null, _property2.value(), null ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property2 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, null, _property2.value(), null ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -324,10 +324,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenRemovingOnePropertyForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).removed( _property2.propertyKeyId(), _property2.value() ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _label ).removed( _property2.propertyKeyId(), _property2.value() ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ _property1.value(), null, _property3.value() } ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Change( NODE_ID, _nonSchemaIndex, _values123, new Value[]{ _property1.value(), null, _property3.value() } ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -335,10 +335,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenAddingOneTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _label ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _nonSchemaIndex, _values123 ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _nonSchemaIndex, _values123 ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -346,10 +346,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenAddingMultipleTokensForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _allLabels ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _empty ).withTokensAfter( _allLabels ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _nonSchemaIndex, _values123 ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Add( NODE_ID, _nonSchemaIndex, _values123 ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -357,10 +357,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdateWhenAddingAnotherTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _allLabels ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _allLabels ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -368,10 +368,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdateWhenAddingAnotherUselessTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( LABEL_ID1, UNUSED_LABEL_ID ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( LABEL_ID1, UNUSED_LABEL_ID ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -379,10 +379,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenSwitchingToUselessTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( UNUSED_LABEL_ID ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( UNUSED_LABEL_ID ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, _values123 ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, _values123 ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -390,10 +390,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldNotGenerateUpdateWhenRemovingOneTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _allLabels ).withTokensAfter( _label ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _allLabels ).withTokensAfter( _label ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), emptyIterable() );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), emptyIterable() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -401,10 +401,10 @@ namespace Neo4Net.Kernel.Api.Index
 		 public virtual void ShouldGenerateUpdateWhenRemovingLastTokenForNonSchemaIndex()
 		 {
 			  // When
-			  EntityUpdates updates = EntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
+			  IEntityUpdates updates = IEntityUpdates.forEntity( NODE_ID, false ).withTokens( _label ).withTokensAfter( _empty ).build();
 
 			  // Then
-			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), EntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, _values123 ) ) );
+			  assertThat( updates.ForIndexKeys( singleton( _nonSchemaIndex ), PropertyLoader( _property1, _property2, _property3 ), IEntityType.NODE ), containsInAnyOrder( IndexEntryUpdate.Remove( NODE_ID, _nonSchemaIndex, _values123 ) ) );
 		 }
 
 		 private PropertyLoader PropertyLoader( params StorageProperty[] properties )

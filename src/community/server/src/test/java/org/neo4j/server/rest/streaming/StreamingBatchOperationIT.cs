@@ -28,15 +28,15 @@ namespace Neo4Net.Server.rest.streaming
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
 	using StreamingFormat = Neo4Net.Server.rest.repr.StreamingFormat;
 	using Graph = Neo4Net.Test.GraphDescription.Graph;
-	using Neo4jMatchers = Neo4Net.Test.mockito.matcher.Neo4jMatchers;
+	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
@@ -49,7 +49,7 @@ namespace Neo4Net.Server.rest.streaming
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class StreamingBatchOperationIT : AbstractRestFunctionalTestBase
 	{
@@ -68,8 +68,8 @@ namespace Neo4Net.Server.rest.streaming
 			  long idJoe = Data.get()["Joe"].Id;
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("PUT").key("to").value("/node/" + idJoe + "/properties").key("body").@object().key("age").value(1).endObject().key("id").value(0).endObject().@object().key("method").value("GET").key("to").value("/node/" + idJoe).key("id").value(1).endObject().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().key("id").value(2).endObject().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().key("id").value(3).endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER,"true").payload(jsonString).expectedStatus(200).post(BatchUri()).entity();
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  string IEntity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER,"true").payload(jsonString).expectedStatus(200).post(BatchUri()).entity();
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 
 			  assertEquals( 4, results.Count );
 
@@ -114,9 +114,9 @@ namespace Neo4Net.Server.rest.streaming
 		 {
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("id").value(0).key("body").@object().key("name").value("bob").endObject().endObject().@object().key("method").value("POST").key("to").value("/node").key("id").value(1).key("body").@object().key("age").value(12).endObject().endObject().@object().key("method").value("POST").key("to").value("{0}/relationships").key("id").value(3).key("body").@object().key("to").value("{1}").key("data").@object().key("since").value("2010").endObject().key("type").value("KNOWS").endObject().endObject().@object().key("method").value("POST").key("to").value("/index/relationship/my_rels").key("id").value(4).key("body").@object().key("key").value("since").key("value").value("2010").key("uri").value("{3}").endObject().endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER, "true").expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER, "true").expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 
 			  assertEquals( 4, results.Count );
 
@@ -134,7 +134,7 @@ namespace Neo4Net.Server.rest.streaming
 			  long originalNodeCount = CountNodes();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String jsonString = new org.neo4j.server.rest.PrettyJSON().array().object().key("method").value("POST").key("to").value("/node").key("body").object().key("age").value(1).endObject().endObject().endArray().toString();
+//ORIGINAL LINE: final String jsonString = new org.Neo4Net.server.rest.PrettyJSON().array().object().key("method").value("POST").key("to").value("/node").key("body").object().key("age").value(1).endObject().endObject().endArray().toString();
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().endObject().endArray().ToString();
 
 			  JaxRsResponse response = RestRequest.req().accept(APPLICATION_JSON_TYPE).header(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER, "true").post(BatchUri(), jsonString);
@@ -142,9 +142,9 @@ namespace Neo4Net.Server.rest.streaming
 			  assertEquals( 200, response.Status );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String entity = response.getEntity();
-			  string entity = response.Entity;
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+//ORIGINAL LINE: final String IEntity = response.getEntity();
+			  string IEntity = response.Entity;
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 
 			  assertEquals( originalNodeCount + 1, CountNodes() );
 			  assertEquals( 1, results.Count );
@@ -173,14 +173,14 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String, Object> singleResult(org.neo4j.server.rest.JaxRsResponse response, int i) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private java.util.Map<String, Object> singleResult(org.Neo4Net.server.rest.JaxRsResponse response, int i) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private IDictionary<string, object> SingleResult( JaxRsResponse response, int i )
 		 {
 			  return JsonHelper.jsonToList( response.Entity )[i];
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllWhenGivenIncorrectRequest() throws org.neo4j.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllWhenGivenIncorrectRequest() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllWhenGivenIncorrectRequest()
 		 {
@@ -215,10 +215,10 @@ namespace Neo4Net.Server.rest.streaming
 
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key(complicatedString).value(complicatedString).endObject().endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER,"true").expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER,"true").expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
 			  // Pull out the property value from the depths of the response
-			  IDictionary<string, object> response = ( IDictionary<string, object> ) JsonHelper.jsonToList( entity )[0]["body"];
+			  IDictionary<string, object> response = ( IDictionary<string, object> ) JsonHelper.jsonToList( IEntity )[0]["body"];
 			  string returnedValue = ( string )( ( IDictionary<string, object> )response["data"] )[complicatedString];
 
 			  // Ensure nothing was borked.
@@ -226,14 +226,14 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Graph("Peter likes Jazz")]
 		 public virtual void ShouldHandleEscapedStrings()
 		 {
 			  string @string = "Jazz";
 			  Node gnode = GetNode( @string );
-			  assertThat( gnode, inTx( Graphdb(), Neo4jMatchers.hasProperty("name").withValue(@string) ) );
+			  assertThat( gnode, inTx( Graphdb(), Neo4NetMatchers.hasProperty("name").withValue(@string) ) );
 
 			  string name = "string\\ and \"test\"";
 
@@ -241,14 +241,14 @@ namespace Neo4Net.Server.rest.streaming
 			  GenConflict.get().expectedType(APPLICATION_JSON_TYPE).withHeader(Neo4Net.Server.rest.repr.StreamingFormat_Fields.STREAM_HEADER, "true").expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
 			  jsonString = ( new PrettyJSON() ).array().@object().key("method").value("GET").key("to").value("/node/" + gnode.Id + "/properties/name").endObject().endArray().ToString();
-			  string entity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 			  assertEquals( results[0]["body"], name );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllWhenInsertingIllegalData() throws org.neo4j.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllWhenInsertingIllegalData() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllWhenInsertingIllegalData()
 		 {
@@ -265,7 +265,7 @@ namespace Neo4Net.Server.rest.streaming
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRollbackAllOnSingle404() throws org.neo4j.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
+//ORIGINAL LINE: @Test public void shouldRollbackAllOnSingle404() throws org.Neo4Net.server.rest.domain.JsonParseException, com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRollbackAllOnSingle404()
 		 {
@@ -307,9 +307,9 @@ namespace Neo4Net.Server.rest.streaming
 
 			  assertEquals( 200, response.Status );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String entity = response.getEntity();
-			  string entity = response.Entity;
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+//ORIGINAL LINE: final String IEntity = response.getEntity();
+			  string IEntity = response.Entity;
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 			  assertEquals( 6, results.Count );
 			  IDictionary<string, object> andresResult1 = results[1];
 			  IDictionary<string, object> andresResult2 = results[2];

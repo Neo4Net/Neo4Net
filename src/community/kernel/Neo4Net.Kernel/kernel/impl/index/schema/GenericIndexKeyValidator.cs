@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.BIGGEST_STATIC_SIZE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.BIGGEST_STATIC_SIZE;
 
 	/// <summary>
 	/// Validates Value[] tuples, whether or not they fit inside a <seealso cref="GBPTree"/> with a layout using <seealso cref="CompositeGenericKey"/>.

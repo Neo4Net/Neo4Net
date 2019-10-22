@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.CommandLine.dbms
 {
@@ -35,7 +35,7 @@ namespace Neo4Net.CommandLine.dbms
 	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using Usage = Neo4Net.CommandLine.Admin.Usage;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -109,7 +109,7 @@ namespace Neo4Net.CommandLine.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File createClusterStateDir(org.neo4j.io.fs.FileSystemAbstraction fs) throws org.neo4j.causalclustering.core.state.ClusterStateException
+//ORIGINAL LINE: private java.io.File createClusterStateDir(org.Neo4Net.io.fs.FileSystemAbstraction fs) throws org.Neo4Net.causalclustering.core.state.ClusterStateException
 		 private File CreateClusterStateDir( FileSystemAbstraction fs )
 		 {
 			  File dataDir = new File( _homeDir.toFile(), "data" );
@@ -153,7 +153,7 @@ namespace Neo4Net.CommandLine.dbms
 			  catch ( CommandFailed e )
 			  {
 					// then
-					assertThat( e.Message, containsString( "Database is currently locked. Please shutdown Neo4j." ) );
+					assertThat( e.Message, containsString( "Database is currently locked. Please shutdown Neo4Net." ) );
 			  }
 			  finally
 			  {
@@ -199,7 +199,7 @@ namespace Neo4Net.CommandLine.dbms
 			  {
 					PrintStream ps = new PrintStream( baos );
 
-					Usage usage = new Usage( "neo4j-admin", mock( typeof( CommandLocator ) ) );
+					Usage usage = new Usage( "Neo4Net-admin", mock( typeof( CommandLocator ) ) );
 					usage.PrintUsageForCommand( new UnbindFromClusterCommandProvider(), ps.println );
 
 					assertThat( baos.ToString(), containsString("usage") );

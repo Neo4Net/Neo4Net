@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Impl.@event
 {
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Neo4Net.Graphdb.@event;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Neo4Net.GraphDb.Events;
 	using Strings = Neo4Net.Helpers.Strings;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -33,22 +33,22 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 
-	internal class PropertyEntryImpl<T> : PropertyEntry<T> where T : Neo4Net.Graphdb.PropertyContainer
+	internal class PropertyEntryImpl<T> : PropertyEntry<T> where T : Neo4Net.GraphDb.PropertyContainer
 	{
 		 private readonly T _entity;
 		 private readonly string _key;
 		 private readonly object _value;
 		 private readonly object _valueBeforeTx;
 
-		 internal PropertyEntryImpl( T entity, string key, object value, object valueBeforeTx )
+		 internal PropertyEntryImpl( T IEntity, string key, object value, object valueBeforeTx )
 		 {
-			  this._entity = entity;
+			  this._entity = IEntity;
 			  this._key = key;
 			  this._value = value;
 			  this._valueBeforeTx = valueBeforeTx;
 		 }
 
-		 public override T Entity()
+		 public override T IEntity()
 		 {
 			  return this._entity;
 		 }
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.Impl.@event
 
 		 internal virtual void BasicCompareTo( PropertyEntry<T> entry )
 		 {
-			  assertEquals( entry.Entity(), Entity() );
+			  assertEquals( entry.Entity(), IEntity() );
 			  assertEquals( entry.Key(), Key() );
 			  AssertEqualsMaybeNull( entry.PreviouslyCommitedValue(), PreviouslyCommitedValue(), entry.Entity(), entry.Key() );
 		 }
@@ -102,16 +102,16 @@ namespace Neo4Net.Kernel.Impl.@event
 						 + _valueBeforeTx + "]";
 		 }
 
-		 public static void AssertEqualsMaybeNull<T>( object o1, object o2, T entity, string key ) where T : Neo4Net.Graphdb.PropertyContainer
+		 public static void AssertEqualsMaybeNull<T>( object o1, object o2, T IEntity, string key ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
-			  string entityDescription = "For " + entity + " and " + key;
+			  string IEntityDescription = "For " + IEntity + " and " + key;
 			  if ( o1 == null || o2 == null )
 			  {
-					assertSame( entityDescription + ". " + Strings.prettyPrint( o1 ) + " != " + Strings.prettyPrint( o2 ), o1, o2 );
+					assertSame( IEntityDescription + ". " + Strings.prettyPrint( o1 ) + " != " + Strings.prettyPrint( o2 ), o1, o2 );
 			  }
 			  else
 			  {
-					assertEquals( entityDescription, Values.of( o1 ), Values.of( o2 ) );
+					assertEquals( IEntityDescription, Values.of( o1 ), Values.of( o2 ) );
 			  }
 		 }
 	}

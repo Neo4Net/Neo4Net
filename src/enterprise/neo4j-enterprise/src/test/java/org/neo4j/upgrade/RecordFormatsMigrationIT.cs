@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.upgrade
 {
@@ -28,11 +28,11 @@ namespace Neo4Net.upgrade
 	using Test = org.junit.Test;
 	using RuleChain = org.junit.rules.RuleChain;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -137,7 +137,7 @@ namespace Neo4Net.upgrade
 			  AssertLatestHighLimitStore();
 		 }
 
-		 private static void CreateNode( GraphDatabaseService db )
+		 private static void CreateNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -147,7 +147,7 @@ namespace Neo4Net.upgrade
 			  }
 		 }
 
-		 private static void AssertNodeExists( GraphDatabaseService db )
+		 private static void AssertNodeExists( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -156,17 +156,17 @@ namespace Neo4Net.upgrade
 			  }
 		 }
 
-		 private GraphDatabaseService StartStandardFormatDb()
+		 private IGraphDatabaseService StartStandardFormatDb()
 		 {
 			  return StartDb( Standard.LATEST_NAME );
 		 }
 
-		 private GraphDatabaseService StartHighLimitFormatDb()
+		 private IGraphDatabaseService StartHighLimitFormatDb()
 		 {
 			  return StartDb( HighLimit.NAME );
 		 }
 
-		 private GraphDatabaseService StartDb( string recordFormatName )
+		 private IGraphDatabaseService StartDb( string recordFormatName )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_testDirectory.databaseDir()).setConfig(GraphDatabaseSettings.allow_upgrade, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, recordFormatName).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
 		 }
@@ -186,7 +186,7 @@ namespace Neo4Net.upgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertStoreFormat(org.neo4j.kernel.impl.store.format.RecordFormats expected) throws Exception
+//ORIGINAL LINE: private void assertStoreFormat(org.Neo4Net.kernel.impl.store.format.RecordFormats expected) throws Exception
 		 private void AssertStoreFormat( RecordFormats expected )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.pagecache_memory, "8m" );
@@ -198,7 +198,7 @@ namespace Neo4Net.upgrade
 			  }
 		 }
 
-		 private static void ExecuteAndStopDb( GraphDatabaseService db, System.Action<GraphDatabaseService> action )
+		 private static void ExecuteAndStopDb( IGraphDatabaseService db, System.Action<GraphDatabaseService> action )
 		 {
 			  try
 			  {

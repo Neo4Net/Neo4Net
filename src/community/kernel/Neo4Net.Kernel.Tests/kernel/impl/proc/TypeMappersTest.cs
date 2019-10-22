@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using TypeChecker = Neo4Net.Kernel.impl.proc.TypeMappers.TypeChecker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -36,21 +36,21 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTAny;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTAny;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTBoolean;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTFloat;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTList;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTMap;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTNumber;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTString;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class TypeMappersTest
@@ -60,8 +60,8 @@ namespace Neo4Net.Kernel.impl.proc
 //ORIGINAL LINE: @Parameterized.Parameter(0) public Type javaClass;
 		 public Type JavaClass;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.internal.kernel.api.procs.Neo4jTypes.AnyType neoType;
-		 public Neo4jTypes.AnyType NeoType;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.internal.kernel.api.procs.Neo4NetTypes.AnyType neoType;
+		 public Neo4NetTypes.AnyType NeoType;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(2) public Object javaValue;
 		 public object JavaValue;
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ShouldDetectCorrectType()
 		 {
 			  // When
-			  Neo4jTypes.AnyType type = ( new TypeMappers() ).ToNeo4jType(JavaClass);
+			  Neo4NetTypes.AnyType type = ( new TypeMappers() ).ToNeo4NetType(JavaClass);
 
 			  // Then
 			  assertEquals( NeoType, type );

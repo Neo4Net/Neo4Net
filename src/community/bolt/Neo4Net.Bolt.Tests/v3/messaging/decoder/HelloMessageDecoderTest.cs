@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using RequestMessageDecoder = Neo4Net.Bolt.messaging.RequestMessageDecoder;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
@@ -38,13 +38,13 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.BoltProtocolV3ComponentFactory.encode;
+//	import static org.Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.encode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.BoltProtocolV3ComponentFactory.newNeo4jPack;
+//	import static org.Neo4Net.bolt.v3.messaging.BoltProtocolV3ComponentFactory.newNeo4NetPack;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.AuthTokenUtil.assertAuthTokenMatches;
+//	import static org.Neo4Net.test.AuthTokenUtil.assertAuthTokenMatches;
 
 	internal class HelloMessageDecoderTest : AuthTokenDecoderTest
 	{
@@ -86,18 +86,18 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldDecodeHelloMessage()
 		 {
-			  HelloMessage originalMessage = new HelloMessage( map( "user_agent", "My Driver", "user", "neo4j", "password", "secret" ) );
+			  HelloMessage originalMessage = new HelloMessage( map( "user_agent", "My Driver", "user", "Neo4Net", "password", "secret" ) );
 			  AssertOriginalMessageEqualsToDecoded( originalMessage, _decoder );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertOriginalMessageEqualsToDecoded(org.neo4j.bolt.messaging.RequestMessage originalMessage, org.neo4j.bolt.messaging.RequestMessageDecoder decoder) throws Exception
+//ORIGINAL LINE: static void assertOriginalMessageEqualsToDecoded(org.Neo4Net.bolt.messaging.RequestMessage originalMessage, org.Neo4Net.bolt.messaging.RequestMessageDecoder decoder) throws Exception
 		 internal static void AssertOriginalMessageEqualsToDecoded( RequestMessage originalMessage, RequestMessageDecoder decoder )
 		 {
-			  Neo4jPack neo4jPack = newNeo4jPack();
+			  Neo4NetPack Neo4NetPack = newNeo4NetPack();
 
-			  PackedInputArray input = new PackedInputArray( encode( neo4jPack, originalMessage ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = neo4jPack.NewUnpacker( input );
+			  PackedInputArray input = new PackedInputArray( encode( Neo4NetPack, originalMessage ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = Neo4NetPack.NewUnpacker( input );
 
 			  // these two steps are executed before decoding in order to select a correct decoder
 			  unpacker.UnpackStructHeader();
@@ -111,12 +111,12 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 //ORIGINAL LINE: protected void testShouldDecodeAuthToken(java.util.Map<String,Object> authToken, boolean checkDecodingResult) throws Exception
 		 protected internal override void TestShouldDecodeAuthToken( IDictionary<string, object> authToken, bool checkDecodingResult )
 		 {
-			  Neo4jPack neo4jPack = newNeo4jPack();
+			  Neo4NetPack Neo4NetPack = newNeo4NetPack();
 			  authToken["user_agent"] = "My Driver";
 			  HelloMessage originalMessage = new HelloMessage( authToken );
 
-			  PackedInputArray input = new PackedInputArray( encode( neo4jPack, originalMessage ) );
-			  Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker = neo4jPack.NewUnpacker( input );
+			  PackedInputArray input = new PackedInputArray( encode( Neo4NetPack, originalMessage ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker = Neo4NetPack.NewUnpacker( input );
 
 			  // these two steps are executed before decoding in order to select a correct decoder
 			  unpacker.UnpackStructHeader();

@@ -26,7 +26,7 @@ namespace Neo4Net.Cypher.operations
 
 
 	using DbAccess = Neo4Net.Cypher.Internal.runtime.DbAccess;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using SequenceValue = Neo4Net.Values.SequenceValue;
 	using Neo4Net.Values;
@@ -54,45 +54,45 @@ namespace Neo4Net.Cypher.operations
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTAny;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTAny;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTBoolean;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDate;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDateTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTDuration;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDuration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTFloat;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTGeometry;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTGeometry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTLocalDateTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTLocalTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTMap;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTNode;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTNumber;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTPath;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTPoint;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTRelationship;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTString;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
+//	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings({"unused", "WeakerAccess"}) public final class CypherCoercions
@@ -258,7 +258,7 @@ namespace Neo4Net.Cypher.operations
 			  }
 		 }
 
-		 public static ListValue AsList( AnyValue value, Neo4jTypes.AnyType innerType, DbAccess access )
+		 public static ListValue AsList( AnyValue value, Neo4NetTypes.AnyType innerType, DbAccess access )
 		 {
 			  return ( new ListCoercer() ).Apply(value, innerType, access);
 		 }
@@ -352,11 +352,11 @@ namespace Neo4Net.Cypher.operations
 			  }
 		 }
 
-		 delegate AnyValue Coercer( AnyValue value, Neo4jTypes.AnyType coerceTo, DbAccess access );
+		 delegate AnyValue Coercer( AnyValue value, Neo4NetTypes.AnyType coerceTo, DbAccess access );
 
 		 private static readonly IDictionary<Type, Coercer> _converters = new Dictionary<Type, Coercer>();
 
-		 private AnyValue CoerceTo( AnyValue value, DbAccess access, Neo4jTypes.AnyType types )
+		 private AnyValue CoerceTo( AnyValue value, DbAccess access, Neo4NetTypes.AnyType types )
 		 {
 			  Coercer function = _converters[types.GetType()];
 
@@ -365,7 +365,7 @@ namespace Neo4Net.Cypher.operations
 
 		 private class ListCoercer : Coercer
 		 {
-			  public override ListValue Apply( AnyValue value, Neo4jTypes.AnyType innerType, DbAccess access )
+			  public override ListValue Apply( AnyValue value, Neo4NetTypes.AnyType innerType, DbAccess access )
 			  {
 					//Fast route
 					if ( innerType == NTAny )
@@ -381,7 +381,7 @@ namespace Neo4Net.Cypher.operations
 					SequenceValue listValue = ( SequenceValue ) value;
 					Coercer innerCoercer = _converters[innerType.GetType()];
 					AnyValue[] coercedValues = new AnyValue[listValue.Length()];
-					Neo4jTypes.AnyType nextInner = nextInner( innerType );
+					Neo4NetTypes.AnyType nextInner = nextInner( innerType );
 					if ( listValue.IterationPreference() == RANDOM_ACCESS )
 					{
 						 for ( int i = 0; i < coercedValues.Length; i++ )
@@ -403,11 +403,11 @@ namespace Neo4Net.Cypher.operations
 			  }
 		 }
 
-		 private static Neo4jTypes.AnyType NextInner( Neo4jTypes.AnyType type )
+		 private static Neo4NetTypes.AnyType NextInner( Neo4NetTypes.AnyType type )
 		 {
-			  if ( type is Neo4jTypes.ListType )
+			  if ( type is Neo4NetTypes.ListType )
 			  {
-					return ( ( Neo4jTypes.ListType ) type ).innerType();
+					return ( ( Neo4NetTypes.ListType ) type ).innerType();
 			  }
 			  else
 			  {
@@ -452,7 +452,7 @@ namespace Neo4Net.Cypher.operations
 			  _converters[NTTime.GetType()] = (a, ignore1, ignore2) => AsTimeValue(a);
 			  _converters[NTLocalTime.GetType()] = (a, ignore1, ignore2) => AsLocalTimeValue(a);
 			  _converters[NTDuration.GetType()] = (a, ignore1, ignore2) => AsDurationValue(a);
-			  _converters[typeof( Neo4jTypes.ListType )] = new ListCoercer();
+			  _converters[typeof( Neo4NetTypes.ListType )] = new ListCoercer();
 		 }
 	}
 

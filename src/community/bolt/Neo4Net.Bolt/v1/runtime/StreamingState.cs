@@ -29,10 +29,10 @@ namespace Neo4Net.Bolt.v1.runtime
 	using InterruptSignal = Neo4Net.Bolt.v1.messaging.request.InterruptSignal;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
-	using AuthorizationExpiredException = Neo4Net.Graphdb.security.AuthorizationExpiredException;
+	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 
 	/// <summary>
 	/// When STREAMING, a result is available as a stream of records.
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 private BoltStateMachineState _failedState;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.runtime.BoltStateMachineState process(org.neo4j.bolt.messaging.RequestMessage message, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltStateMachineState process(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override BoltStateMachineState Process( RequestMessage message, StateMachineContext context )
 		 {
 			  AssertInitialized();
@@ -99,21 +99,21 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processPullAllMessage(org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processPullAllMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessPullAllMessage( StateMachineContext context )
 		 {
 			  return ProcessStreamResultMessage( true, context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processDiscardAllMessage(org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processDiscardAllMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessDiscardAllMessage( StateMachineContext context )
 		 {
 			  return ProcessStreamResultMessage( false, context );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processResetMessage(org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processResetMessage(org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessResetMessage( StateMachineContext context )
 		 {
 			  bool success = context.ResetMachine();
@@ -121,7 +121,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processStreamResultMessage(boolean pull, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private BoltStateMachineState ProcessStreamResultMessage( bool pull, StateMachineContext context )
 		 {
 			  try

@@ -36,9 +36,9 @@ namespace Neo4Net.Server.rest.web
 	using UsageData = Neo4Net.Udc.UsageData;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKeys.Features_Fields.http_batch_endpoint;
+//	import static org.Neo4Net.udc.UsageDataKeys.Features_Fields.http_batch_endpoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.udc.UsageDataKeys.features;
+//	import static org.Neo4Net.udc.UsageDataKeys.features;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/batch") public class BatchOperationService

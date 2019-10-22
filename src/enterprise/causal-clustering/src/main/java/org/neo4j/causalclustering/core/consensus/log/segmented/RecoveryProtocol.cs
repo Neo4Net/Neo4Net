@@ -2,10 +2,10 @@
 using System.Diagnostics;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Diagnostics;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
@@ -167,7 +167,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static SegmentHeader loadHeader(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException, org.neo4j.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private static SegmentHeader loadHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private static SegmentHeader LoadHeader( FileSystemAbstraction fileSystem, File file )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ ) )
@@ -177,7 +177,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeHeader(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, SegmentHeader header) throws java.io.IOException
+//ORIGINAL LINE: private static void writeHeader(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, SegmentHeader header) throws java.io.IOException
 		 private static void WriteHeader( FileSystemAbstraction fileSystem, File file, SegmentHeader header )
 		 {
 			  using ( StoreChannel channel = fileSystem.Open( file, OpenMode.READ_WRITE ) )

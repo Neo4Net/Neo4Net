@@ -255,19 +255,19 @@ namespace Neo4Net.Consistency.checking
 					switch ( Schema.entityType() )
 					{
 					case NODE:
-						 foreach ( int entityTokenId in Schema.EntityTokenIds )
+						 foreach ( int IEntityTokenId in Schema.EntityTokenIds )
 						 {
-							  Engine.comparativeCheck( Records.label( entityTokenId ), _validLabel );
+							  Engine.comparativeCheck( Records.label( IEntityTokenId ), _validLabel );
 						 }
 						 break;
 					case RELATIONSHIP:
-						 foreach ( int entityTokenId in Schema.EntityTokenIds )
+						 foreach ( int IEntityTokenId in Schema.EntityTokenIds )
 						 {
-							  Engine.comparativeCheck( Records.relationshipType( entityTokenId ), _validRelationshipType );
+							  Engine.comparativeCheck( Records.relationshipType( IEntityTokenId ), _validRelationshipType );
 						 }
 						 break;
 					default:
-						 throw new System.ArgumentException( "Schema with given entity type is not supported: " + Schema.entityType() );
+						 throw new System.ArgumentException( "Schema with given IEntity type is not supported: " + Schema.entityType() );
 					}
 
 					CheckProperties( Schema.PropertyIds );

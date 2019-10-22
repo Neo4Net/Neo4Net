@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ThreadTestUtils = Neo4Net.Test.ThreadTestUtils;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.SchemaIndexTestHelper.mockIndexProxy;
+//	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.mockIndexProxy;
 
 	public class ContractCheckingIndexProxyTest
 	{
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexProxy inner = new IndexProxyAdapter()
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final IndexProxy inner = new IndexProxyAdapter()

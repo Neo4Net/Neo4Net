@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v1.packstream
 {
 	/// <summary>
-	/// These are the primitive types that PackStream can represent. They map to the non-graph primitives of the Neo4j
+	/// These are the primitive types that PackStream can represent. They map to the non-graph primitives of the Neo4Net
 	/// type system. Graph primitives and rich composite types are represented as <seealso cref="STRUCT"/>.
 	/// </summary>
 	public enum PackType

@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 private int _indexToReturn;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public EagerlyReversedTransactionCursor(org.neo4j.kernel.impl.transaction.log.TransactionCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public EagerlyReversedTransactionCursor(org.Neo4Net.kernel.impl.transaction.log.TransactionCursor cursor) throws java.io.IOException
 		 public EagerlyReversedTransactionCursor( TransactionCursor cursor )
 		 {
 			  this._cursor = cursor;
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.kernel.impl.transaction.log.TransactionCursor eagerlyReverse(org.neo4j.kernel.impl.transaction.log.TransactionCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.log.TransactionCursor eagerlyReverse(org.Neo4Net.kernel.impl.transaction.log.TransactionCursor cursor) throws java.io.IOException
 		 public static TransactionCursor EagerlyReverse( TransactionCursor cursor )
 		 {
 			  return new EagerlyReversedTransactionCursor( cursor );

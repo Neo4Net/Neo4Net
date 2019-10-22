@@ -20,10 +20,10 @@
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 
 	/// <summary>

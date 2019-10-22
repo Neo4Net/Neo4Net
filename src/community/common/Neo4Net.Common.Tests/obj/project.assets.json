@@ -4872,6 +4872,10 @@
       "Neo4Net.Common >= 1.0.0",
       "coverlet.collector >= 1.1.0",
       "xunit >= 2.4.1",
+      "xunit.abstractions >= 2.0.3",
+      "xunit.assert >= 2.4.1",
+      "xunit.core >= 2.4.1",
+      "xunit.extensibility.core >= 2.4.1",
       "xunit.runner.visualstudio >= 2.4.1"
     ]
   },
@@ -4945,6 +4949,22 @@
             "version": "[1.1.0, )"
           },
           "xunit": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "xunit.abstractions": {
+            "target": "Package",
+            "version": "[2.0.3, )"
+          },
+          "xunit.assert": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "xunit.core": {
+            "target": "Package",
+            "version": "[2.4.1, )"
+          },
+          "xunit.extensibility.core": {
             "target": "Package",
             "version": "[2.4.1, )"
           },

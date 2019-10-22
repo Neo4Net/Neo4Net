@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
 	using Neo4Net.Helpers.Collections;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexStoreView = Neo4Net.Kernel.Impl.Api.index.IndexStoreView;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Register = Neo4Net.Register.Register;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  return new RelationshipStoreScan<FAILURE>( new RecordStorageReader( _neoStores ), Locks, propertyUpdateVisitor, relationshipTypeIds, propertyKeyIdFilter );
 		 }
 
-		 public override EntityUpdates NodeAsUpdates( long nodeId )
+		 public override IEntityUpdates NodeAsUpdates( long nodeId )
 		 {
 			  return _neoStoreIndexStoreView.nodeAsUpdates( nodeId );
 		 }
@@ -127,15 +127,15 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public override Value GetNodePropertyValue( long nodeId, int propertyKeyId )
 		 {
 			  return _neoStoreIndexStoreView.getNodePropertyValue( nodeId, propertyKeyId );
 		 }
 
-		 public override void LoadProperties( long entityId, EntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
+		 public override void LoadProperties( long IEntityId, IEntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
 		 {
-			  _neoStoreIndexStoreView.loadProperties( entityId, type, propertyIds, sink );
+			  _neoStoreIndexStoreView.loadProperties( IEntityId, type, propertyIds, sink );
 		 }
 	}
 

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.proc.temporal
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTLocalTime;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalTime;
 
 	[Description("Create a LocalTime instant.")]
 	internal class LocalTimeFunction : TemporalFunction<LocalTimeValue>

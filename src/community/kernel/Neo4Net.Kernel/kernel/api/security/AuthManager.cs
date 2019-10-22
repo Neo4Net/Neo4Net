@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.api.security
 		 /// <returns> An AuthSubject representing the newly logged-in user </returns>
 		 /// <exception cref="InvalidAuthTokenException"> if the authentication token is malformed </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException;
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException;
 		 LoginContext Login( IDictionary<string, object> authToken );
 
 		 /// <summary>

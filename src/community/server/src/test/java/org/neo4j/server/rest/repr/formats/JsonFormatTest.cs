@@ -46,33 +46,33 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatString()
 		 public virtual void CanFormatString()
 		 {
-			  string entity = _json.assemble( ValueRepresentation.@string( "expected value" ) );
-			  assertEquals( entity, "\"expected value\"" );
+			  string IEntity = _json.assemble( ValueRepresentation.@string( "expected value" ) );
+			  assertEquals( IEntity, "\"expected value\"" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatListOfStrings()
 		 public virtual void CanFormatListOfStrings()
 		 {
-			  string entity = _json.assemble( ListRepresentation.strings( "hello", "world" ) );
+			  string IEntity = _json.assemble( ListRepresentation.strings( "hello", "world" ) );
 			  string expectedString = JsonHelper.createJsonFrom( Arrays.asList( "hello", "world" ) );
-			  assertEquals( expectedString, entity );
+			  assertEquals( expectedString, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatInteger()
 		 public virtual void CanFormatInteger()
 		 {
-			  string entity = _json.assemble( ValueRepresentation.number( 10 ) );
-			  assertEquals( "10", entity );
+			  string IEntity = _json.assemble( ValueRepresentation.number( 10 ) );
+			  assertEquals( "10", IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canFormatEmptyObject()
 		 public virtual void CanFormatEmptyObject()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass( this ) );
-			  assertEquals( JsonHelper.createJsonFrom( Collections.emptyMap() ), entity );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass( this ) );
+			  assertEquals( JsonHelper.createJsonFrom( Collections.emptyMap() ), IEntity );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass : MappingRepresentation
@@ -93,8 +93,8 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatObjectWithStringField()
 		 public virtual void CanFormatObjectWithStringField()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass2( this ) );
-			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "key", "expected string" ) ), entity );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass2( this ) );
+			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "key", "expected string" ) ), IEntity );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass2 : MappingRepresentation
@@ -116,9 +116,9 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatObjectWithUriField()
 		 public virtual void CanFormatObjectWithUriField()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass3( this ) );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass3( this ) );
 
-			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "URL", "http://localhost/subpath" ) ), entity );
+			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "URL", "http://localhost/subpath" ) ), IEntity );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass3 : MappingRepresentation
@@ -140,8 +140,8 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatObjectWithNestedObject()
 		 public virtual void CanFormatObjectWithNestedObject()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass4( this ) );
-			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "nested", Collections.singletonMap( "data", "expected data" ) ) ), entity );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass4( this ) );
+			  assertEquals( JsonHelper.createJsonFrom( Collections.singletonMap( "nested", Collections.singletonMap( "data", "expected data" ) ) ), IEntity );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass4 : MappingRepresentation
@@ -179,9 +179,9 @@ namespace Neo4Net.Server.rest.repr.formats
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CanFormatNestedMapsAndLists()
 		 {
-			  string entity = _json.assemble( new MappingRepresentationAnonymousInnerClass6( this ) );
+			  string IEntity = _json.assemble( new MappingRepresentationAnonymousInnerClass6( this ) );
 
-			  assertEquals( "bar",( ( System.Collections.IDictionary )( ( System.Collections.IList ) JsonHelper.jsonToMap( entity )["foo"] )[0] )["foo"] );
+			  assertEquals( "bar",( ( System.Collections.IDictionary )( ( System.Collections.IList ) JsonHelper.jsonToMap( IEntity )["foo"] )[0] )["foo"] );
 		 }
 
 		 private class MappingRepresentationAnonymousInnerClass6 : MappingRepresentation

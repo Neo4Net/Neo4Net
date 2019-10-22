@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Pair.of;
+//	import static org.Neo4Net.helpers.collection.Pair.of;
 
 	public class DbStructureCollectorTest
 	{

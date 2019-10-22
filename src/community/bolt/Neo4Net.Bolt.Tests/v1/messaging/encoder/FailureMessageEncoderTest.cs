@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using FatalFailureMessage = Neo4Net.Bolt.v1.messaging.response.FatalFailureMessage;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
@@ -54,7 +54,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 internal virtual void ShouldEncodeFailureMessage()
 		 {
 			  // Given
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  Log log = mock( typeof( Log ) );
 			  FailureMessageEncoder encoder = new FailureMessageEncoder( log );
 
@@ -77,7 +77,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldLogErrorIfIsFatalError()
 		 {
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  Log log = mock( typeof( Log ) );
 			  FailureMessageEncoder encoder = new FailureMessageEncoder( log );
 

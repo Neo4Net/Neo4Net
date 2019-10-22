@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.stresstest.workload
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.files.LogFiles createLogFiles(org.neo4j.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.neo4j.io.fs.FileSystemAbstraction fileSystemAbstraction) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.files.LogFiles createLogFiles(org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction) throws java.io.IOException
 		 private LogFiles CreateLogFiles( TransactionIdStore transactionIdStore, FileSystemAbstraction fileSystemAbstraction )
 		 {
 			  SimpleLogVersionRepository logVersionRepository = new SimpleLogVersionRepository();

@@ -23,16 +23,16 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.index
 {
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using NeoCommandType = Neo4Net.Kernel.impl.transaction.command.NeoCommandType;
 	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IoPrimitiveUtils.write2bLengthAndString;
+//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.write2bLengthAndString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IoPrimitiveUtils.write3bLengthAndString;
+//	import static org.Neo4Net.kernel.impl.util.IoPrimitiveUtils.write3bLengthAndString;
 
 	/// <summary>
 	/// Created from <seealso cref="IndexDefineCommand"/> or read from a logical log.
@@ -53,9 +53,9 @@ namespace Neo4Net.Kernel.impl.index
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 protected internal int IndexNameIdConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		 protected internal sbyte EntityTypeConflict;
+		 protected internal sbyte IEntityTypeConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		 protected internal long EntityIdConflict;
+		 protected internal long IEntityIdConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 protected internal int KeyIdConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -63,12 +63,12 @@ namespace Neo4Net.Kernel.impl.index
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 protected internal object ValueConflict;
 
-		 protected internal virtual void Init( sbyte commandType, int indexNameId, sbyte entityType, long entityId, int keyId, object value )
+		 protected internal virtual void Init( sbyte commandType, int indexNameId, sbyte IEntityType, long IEntityId, int keyId, object value )
 		 {
 			  this._commandType = commandType;
 			  this.IndexNameIdConflict = indexNameId;
-			  this.EntityTypeConflict = entityType;
-			  this.EntityIdConflict = entityId;
+			  this.EntityTypeConflict = IEntityType;
+			  this.EntityIdConflict = IEntityId;
 			  this.KeyIdConflict = keyId;
 			  this.ValueConflict = value;
 			  this.ValueTypeConflict = ValueTypeOf( value );
@@ -82,19 +82,19 @@ namespace Neo4Net.Kernel.impl.index
 			 }
 		 }
 
-		 public virtual sbyte EntityType
+		 public virtual sbyte IEntityType
 		 {
 			 get
 			 {
-				  return EntityTypeConflict;
+				  return IEntityTypeConflict;
 			 }
 		 }
 
-		 public virtual long EntityId
+		 public virtual long IEntityId
 		 {
 			 get
 			 {
-				  return EntityIdConflict;
+				  return IEntityIdConflict;
 			 }
 		 }
 
@@ -162,14 +162,14 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void writeToFile(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected void writeToFile(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 		 protected internal virtual void WriteToFile( WritableChannel channel )
 		 {
 			  /* c: commandType
-			   * e: entityType
+			   * e: IEntityType
 			   * n: indexNameId
 			   * k: keyId
-			   * i: entityId
+			   * i: IEntityId
 			   * v: value type
 			   * u: value
 			   * x: 0=entityId needs 4b, 1=entityId needs 8b
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.impl.index
 			   * [uuuu,uuuu] x 2-8 (depending on value type)
 			   */
 			  WriteIndexCommandHeader( channel );
-			  PutIntOrLong( channel, EntityId );
+			  PutIntOrLong( channel, IEntityId );
 			  // Value
 			  object value = Value;
 			  switch ( ValueType )
@@ -215,24 +215,24 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void writeIndexCommandHeader(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected void writeIndexCommandHeader(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 		 protected internal virtual void WriteIndexCommandHeader( WritableChannel channel )
 		 {
-			  WriteIndexCommandHeader( channel, ValueType, EntityType, NeedsLong( EntityId ), StartNodeNeedsLong(), EndNodeNeedsLong(), IndexNameId, KeyId );
+			  WriteIndexCommandHeader( channel, ValueType, IEntityType, NeedsLong( IEntityId ), StartNodeNeedsLong(), EndNodeNeedsLong(), IndexNameId, KeyId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static void writeIndexCommandHeader(org.neo4j.storageengine.api.WritableChannel channel, byte valueType, byte entityType, byte entityIdNeedsLong, byte startNodeNeedsLong, byte endNodeNeedsLong, int indexNameId, int keyId) throws java.io.IOException
-		 protected internal static void WriteIndexCommandHeader( WritableChannel channel, sbyte valueType, sbyte entityType, sbyte entityIdNeedsLong, sbyte startNodeNeedsLong, sbyte endNodeNeedsLong, int indexNameId, int keyId )
+//ORIGINAL LINE: protected static void writeIndexCommandHeader(org.Neo4Net.storageengine.api.WritableChannel channel, byte valueType, byte IEntityType, byte IEntityIdNeedsLong, byte startNodeNeedsLong, byte endNodeNeedsLong, int indexNameId, int keyId) throws java.io.IOException
+		 protected internal static void WriteIndexCommandHeader( WritableChannel channel, sbyte valueType, sbyte IEntityType, sbyte IEntityIdNeedsLong, sbyte startNodeNeedsLong, sbyte endNodeNeedsLong, int indexNameId, int keyId )
 		 {
-			  channel.Put( ( sbyte )( ( valueType << 2 ) | ( entityType << 1 ) | entityIdNeedsLong ) );
+			  channel.Put( ( sbyte )( ( valueType << 2 ) | ( IEntityType << 1 ) | IEntityIdNeedsLong ) );
 			  channel.Put( ( sbyte )( ( startNodeNeedsLong << 7 ) | ( endNodeNeedsLong << 6 ) ) );
 			  channel.PutShort( ( short ) indexNameId );
 			  channel.PutShort( ( short ) keyId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void putIntOrLong(org.neo4j.storageengine.api.WritableChannel channel, long id) throws java.io.IOException
+//ORIGINAL LINE: protected void putIntOrLong(org.Neo4Net.storageengine.api.WritableChannel channel, long id) throws java.io.IOException
 		 protected internal virtual void PutIntOrLong( WritableChannel channel, long id )
 		 {
 			  if ( NeedsLong( id ) == 1 )
@@ -247,13 +247,13 @@ namespace Neo4Net.Kernel.impl.index
 
 		 public class AddNodeCommand : IndexCommand
 		 {
-			  public virtual void Init( int indexNameId, long entityId, int keyId, object value )
+			  public virtual void Init( int indexNameId, long IEntityId, int keyId, object value )
 			  {
-					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddCommand, indexNameId, IndexEntityType.Node.id(), entityId, keyId, value );
+					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddCommand, indexNameId, IndexEntityType.Node.id(), IEntityId, keyId, value );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.neo4j.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexAddNodeCommand( this );
@@ -261,11 +261,11 @@ namespace Neo4Net.Kernel.impl.index
 
 			  public override string ToString()
 			  {
-					return "AddNode[index:" + IndexNameIdConflict + ", id:" + EntityIdConflict + ", key:" + KeyIdConflict + ", value:" + ValueConflict + "]";
+					return "AddNode[index:" + IndexNameIdConflict + ", id:" + IEntityIdConflict + ", key:" + KeyIdConflict + ", value:" + ValueConflict + "]";
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddCommand );
@@ -285,9 +285,9 @@ namespace Neo4Net.Kernel.impl.index
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal long EndNodeConflict;
 
-			  public virtual void Init( int indexNameId, long entityId, int keyId, object value, long startNode, long endNode )
+			  public virtual void Init( int indexNameId, long IEntityId, int keyId, object value, long startNode, long endNode )
 			  {
-					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddRelationshipCommand, indexNameId, IndexEntityType.Relationship.id(), entityId, keyId, value );
+					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddRelationshipCommand, indexNameId, IndexEntityType.Relationship.id(), IEntityId, keyId, value );
 					this.StartNodeConflict = startNode;
 					this.EndNodeConflict = endNode;
 			  }
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.neo4j.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexAddRelationshipCommand( this );
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.index
 
 			  public override string ToString()
 			  {
-					return "AddRelationship[index:" + IndexNameIdConflict + ", id:" + EntityIdConflict + ", key:" + KeyIdConflict +
+					return "AddRelationship[index:" + IndexNameIdConflict + ", id:" + IEntityIdConflict + ", key:" + KeyIdConflict +
 							  ", value:" + ValueConflict + "(" + ( ValueConflict != null ? ValueConflict.GetType().Name : "null" ) + ")" +
 							  ", startNode:" + StartNodeConflict +
 							  ", endNode:" + EndNodeConflict +
@@ -358,7 +358,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexAddRelationshipCommand );
@@ -370,13 +370,13 @@ namespace Neo4Net.Kernel.impl.index
 
 		 public class RemoveCommand : IndexCommand
 		 {
-			  public virtual void Init( int indexNameId, sbyte entityType, long entityId, int keyId, object value )
+			  public virtual void Init( int indexNameId, sbyte IEntityType, long IEntityId, int keyId, object value )
 			  {
-					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexRemoveCommand, indexNameId, entityType, entityId, keyId, value );
+					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexRemoveCommand, indexNameId, IEntityType, IEntityId, keyId, value );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.neo4j.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexRemoveCommand( this );
@@ -384,11 +384,11 @@ namespace Neo4Net.Kernel.impl.index
 
 			  public override string ToString()
 			  {
-					return format( "Remove%s[index:%d, id:%d, key:%d, value:%s]", IndexEntityType.byId( EntityTypeConflict ).nameToLowerCase(), IndexNameIdConflict, EntityIdConflict, KeyIdConflict, ValueConflict );
+					return format( "Remove%s[index:%d, id:%d, key:%d, value:%s]", IndexEntityType.byId( IEntityTypeConflict ).nameToLowerCase(), IndexNameIdConflict, IEntityIdConflict, KeyIdConflict, ValueConflict );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexRemoveCommand );
@@ -398,13 +398,13 @@ namespace Neo4Net.Kernel.impl.index
 
 		 public class DeleteCommand : IndexCommand
 		 {
-			  public virtual void Init( int indexNameId, sbyte entityType )
+			  public virtual void Init( int indexNameId, sbyte IEntityType )
 			  {
-					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexDeleteCommand, indexNameId, entityType, 0L, ( sbyte )0, null );
+					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexDeleteCommand, indexNameId, IEntityType, 0L, ( sbyte )0, null );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.neo4j.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexDeleteCommand( this );
@@ -412,11 +412,11 @@ namespace Neo4Net.Kernel.impl.index
 
 			  public override string ToString()
 			  {
-					return "Delete[index:" + IndexNameIdConflict + ", type:" + IndexEntityType.byId( EntityTypeConflict ).nameToLowerCase() + "]";
+					return "Delete[index:" + IndexNameIdConflict + ", type:" + IndexEntityType.byId( IEntityTypeConflict ).nameToLowerCase() + "]";
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexDeleteCommand );
@@ -429,9 +429,9 @@ namespace Neo4Net.Kernel.impl.index
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal IDictionary<string, string> ConfigConflict;
 
-			  public virtual void Init( int indexNameId, sbyte entityType, IDictionary<string, string> config )
+			  public virtual void Init( int indexNameId, sbyte IEntityType, IDictionary<string, string> config )
 			  {
-					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexCreateCommand, indexNameId, entityType, 0L, ( sbyte )0, null );
+					base.Init( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexCreateCommand, indexNameId, IEntityType, 0L, ( sbyte )0, null );
 					this.ConfigConflict = config;
 			  }
 
@@ -467,7 +467,7 @@ namespace Neo4Net.Kernel.impl.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean handle(org.neo4j.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean handle(org.Neo4Net.kernel.impl.api.CommandVisitor visitor) throws java.io.IOException
 			  public override bool Handle( CommandVisitor visitor )
 			  {
 					return visitor.VisitIndexCreateCommand( this );
@@ -475,11 +475,11 @@ namespace Neo4Net.Kernel.impl.index
 
 			  public override string ToString()
 			  {
-					return format( "Create%sIndex[index:%d, config:%s]", IndexEntityType.byId( EntityTypeConflict ).nameToLowerCase(), IndexNameIdConflict, ConfigConflict );
+					return format( "Create%sIndex[index:%d, config:%s]", IndexEntityType.byId( IEntityTypeConflict ).nameToLowerCase(), IndexNameIdConflict, ConfigConflict );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.neo4j.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
 			  public override void Serialize( WritableChannel channel )
 			  {
 					channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexCreateCommand );
@@ -508,12 +508,12 @@ namespace Neo4Net.Kernel.impl.index
 					return false;
 			  }
 			  IndexCommand that = ( IndexCommand ) o;
-			  return _commandType == that._commandType && IndexNameIdConflict == that.IndexNameIdConflict && EntityTypeConflict == that.EntityTypeConflict && EntityIdConflict == that.EntityIdConflict && KeyIdConflict == that.KeyIdConflict && ValueTypeConflict == that.ValueTypeConflict && Objects.Equals( ValueConflict, that.ValueConflict );
+			  return _commandType == that._commandType && IndexNameIdConflict == that.IndexNameIdConflict && IEntityTypeConflict == that.EntityTypeConflict && IEntityIdConflict == that.EntityIdConflict && KeyIdConflict == that.KeyIdConflict && ValueTypeConflict == that.ValueTypeConflict && Objects.Equals( ValueConflict, that.ValueConflict );
 		 }
 
 		 public override int GetHashCode()
 		 {
-			  return Objects.hash( base.GetHashCode(), _commandType, IndexNameIdConflict, EntityTypeConflict, EntityIdConflict, KeyIdConflict, ValueTypeConflict, ValueConflict );
+			  return Objects.hash( base.GetHashCode(), _commandType, IndexNameIdConflict, IEntityTypeConflict, IEntityIdConflict, KeyIdConflict, ValueTypeConflict, ValueConflict );
 		 }
 
 		 public virtual sbyte CommandType

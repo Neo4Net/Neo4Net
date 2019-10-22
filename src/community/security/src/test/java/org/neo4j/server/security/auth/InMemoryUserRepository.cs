@@ -25,7 +25,7 @@ namespace Neo4Net.Server.Security.Auth
 	using User = Neo4Net.Kernel.impl.security.User;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.ListSnapshot.FROM_MEMORY;
+//	import static org.Neo4Net.server.security.auth.ListSnapshot.FROM_MEMORY;
 
 	/// <summary>
 	/// A user repository implementation that just stores users in memory </summary>

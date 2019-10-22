@@ -22,7 +22,7 @@
 namespace Neo4Net.Cypher.Internal.codegen
 {
 
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 	using VirtualNodeValue = Neo4Net.Values.@virtual.VirtualNodeValue;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 

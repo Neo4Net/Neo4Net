@@ -24,7 +24,7 @@ using System.Text;
 namespace Neo4Net.Diagnostics
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DiagnosticsPhase = Neo4Net.Internal.Diagnostics.DiagnosticsPhase;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -35,11 +35,11 @@ namespace Neo4Net.Diagnostics
 	using BufferingLog = Neo4Net.Logging.BufferingLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
+//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
+//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsRotatingFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.diagnostics.DiagnosticsReportSources.newDiagnosticsString;
+//	import static org.Neo4Net.diagnostics.DiagnosticsReportSources.newDiagnosticsString;
 
 	public class KernelDiagnosticsOfflineReportProvider : DiagnosticsOfflineReportProvider
 	{
@@ -134,7 +134,7 @@ namespace Neo4Net.Diagnostics
 		 }
 
 		 /// <summary>
-		 /// Add {@code debug.log}, {@code neo4j.log} and {@code gc.log}. All with all available rotated files.
+		 /// Add {@code debug.log}, {@code Neo4Net.log} and {@code gc.log}. All with all available rotated files.
 		 /// </summary>
 		 /// <param name="sources"> destination of the sources. </param>
 		 private void GetLogFiles( IList<DiagnosticsReportSource> sources )
@@ -146,12 +146,12 @@ namespace Neo4Net.Diagnostics
 					( ( IList<DiagnosticsReportSource> )sources ).AddRange( newDiagnosticsRotatingFile( "logs/debug.log", _fs, debugLogFile ) );
 			  }
 
-			  // neo4j.log
+			  // Neo4Net.log
 			  File logDirectory = _config.get( GraphDatabaseSettings.logs_directory );
-			  File neo4jLog = new File( logDirectory, "neo4j.log" );
-			  if ( _fs.fileExists( neo4jLog ) )
+			  File Neo4NetLog = new File( logDirectory, "Neo4Net.log" );
+			  if ( _fs.fileExists( Neo4NetLog ) )
 			  {
-					sources.Add( newDiagnosticsFile( "logs/neo4j.log", _fs, neo4jLog ) );
+					sources.Add( newDiagnosticsFile( "logs/Neo4Net.log", _fs, Neo4NetLog ) );
 			  }
 
 			  // gc.log

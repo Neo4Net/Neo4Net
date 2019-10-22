@@ -40,7 +40,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected ByteArray getNumberArray(org.neo4j.io.pagecache.PagedFile file) throws java.io.IOException
+//ORIGINAL LINE: protected ByteArray getNumberArray(org.Neo4Net.io.pagecache.PagedFile file) throws java.io.IOException
 		 protected internal override ByteArray GetNumberArray( PagedFile file )
 		 {
 			  return new PageCacheByteArray( file, COUNT, new sbyte[]{ ( sbyte ) - 1, ( sbyte ) - 1, ( sbyte ) - 1, ( sbyte ) - 1 }, 0 );

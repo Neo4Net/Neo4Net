@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.neo4j.storageengine.api.StorageCommand element) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.storageengine.api.StorageCommand element) throws java.io.IOException
 		  public override bool Visit( StorageCommand element )
 		  {
 				return ( ( Command )element ).handle( this );

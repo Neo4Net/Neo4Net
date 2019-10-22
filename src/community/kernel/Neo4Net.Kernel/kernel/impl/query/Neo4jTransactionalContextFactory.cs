@@ -22,53 +22,53 @@
 namespace Neo4Net.Kernel.impl.query
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Suppliers.lazySingleton;
+//	import static org.Neo4Net.function.Suppliers.lazySingleton;
 
-	public class Neo4jTransactionalContextFactory : TransactionalContextFactory
+	public class Neo4NetTransactionalContextFactory : TransactionalContextFactory
 	{
 		 private readonly System.Func<Statement> _statementSupplier;
-		 private readonly Neo4jTransactionalContext.Creator _contextCreator;
+		 private readonly Neo4NetTransactionalContext.Creator _contextCreator;
 
-		 public static TransactionalContextFactory Create( GraphDatabaseFacade.SPI spi, ThreadToStatementContextBridge txBridge, PropertyContainerLocker locker )
+		 public static TransactionalContextFactory Create( GraphDatabaseFacade.SPI spi, ThreadToStatementContextBridge txBridge, IPropertyContainerLocker locker )
 		 {
 			  System.Func<GraphDatabaseQueryService> queryService = lazySingleton( spi.queryService );
 			  System.Func<Kernel> kernel = lazySingleton( spi.kernel );
-			  Neo4jTransactionalContext.Creator contextCreator = ( tx, initialStatement, executingQuery ) => new Neo4jTransactionalContext( queryService(), txBridge, locker, tx, initialStatement, executingQuery, kernel() );
+			  Neo4NetTransactionalContext.Creator contextCreator = ( tx, initialStatement, executingQuery ) => new Neo4NetTransactionalContext( queryService(), txBridge, locker, tx, initialStatement, executingQuery, kernel() );
 
-			  return new Neo4jTransactionalContextFactory( txBridge, contextCreator );
+			  return new Neo4NetTransactionalContextFactory( txBridge, contextCreator );
 		 }
 
 		 [Obsolete]
-		 public static TransactionalContextFactory Create( GraphDatabaseQueryService queryService, PropertyContainerLocker locker )
+		 public static TransactionalContextFactory Create( GraphDatabaseQueryService queryService, IPropertyContainerLocker locker )
 		 {
 			  DependencyResolver resolver = queryService.DependencyResolver;
 			  ThreadToStatementContextBridge txBridge = resolver.ResolveDependency( typeof( ThreadToStatementContextBridge ) );
 			  Kernel kernel = resolver.ResolveDependency( typeof( Kernel ) );
-			  Neo4jTransactionalContext.Creator contextCreator = ( tx, initialStatement, executingQuery ) => new Neo4jTransactionalContext( queryService, txBridge, locker, tx, initialStatement, executingQuery, kernel );
+			  Neo4NetTransactionalContext.Creator contextCreator = ( tx, initialStatement, executingQuery ) => new Neo4NetTransactionalContext( queryService, txBridge, locker, tx, initialStatement, executingQuery, kernel );
 
-			  return new Neo4jTransactionalContextFactory( txBridge, contextCreator );
+			  return new Neo4NetTransactionalContextFactory( txBridge, contextCreator );
 		 }
 
 		 // Please use the factory methods above to actually construct an instance
-		 private Neo4jTransactionalContextFactory( System.Func<Statement> statementSupplier, Neo4jTransactionalContext.Creator contextCreator )
+		 private Neo4NetTransactionalContextFactory( System.Func<Statement> statementSupplier, Neo4NetTransactionalContext.Creator contextCreator )
 		 {
 			  this._statementSupplier = statementSupplier;
 			  this._contextCreator = contextCreator;
 		 }
 
-		 public override Neo4jTransactionalContext NewContext( ClientConnectionInfo clientConnection, InternalTransaction tx, string queryText, MapValue queryParameters )
+		 public override Neo4NetTransactionalContext NewContext( ClientConnectionInfo clientConnection, InternalTransaction tx, string queryText, MapValue queryParameters )
 		 {
 			  Statement initialStatement = _statementSupplier.get();
 			  ClientConnectionInfo connectionWithUserName = clientConnection.WithUsername( tx.SecurityContext().subject().username() );

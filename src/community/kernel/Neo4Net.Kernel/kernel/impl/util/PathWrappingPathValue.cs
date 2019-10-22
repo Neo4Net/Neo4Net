@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.impl.util
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using NodeValue = Neo4Net.Values.@virtual.NodeValue;
 	using PathValue = Neo4Net.Values.@virtual.PathValue;
 	using RelationshipValue = Neo4Net.Values.@virtual.RelationshipValue;

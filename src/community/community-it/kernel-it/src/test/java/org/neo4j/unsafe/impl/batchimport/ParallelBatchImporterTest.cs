@@ -32,17 +32,17 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using Result = Neo4Net.Consistency.ConsistencyCheckService.Result;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -85,27 +85,27 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.IdMappers.longs;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMappers.longs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.IdMappers.strings;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMappers.strings;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Collectors.silentBadCollector;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.ProcessorAssignmentStrategies.eagerRandomSaturation;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ProcessorAssignmentStrategies.eagerRandomSaturation;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class ParallelBatchImporterTest
@@ -211,7 +211,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  long relationshipRandomSeed = _random.nextLong();
 			  IJobScheduler jobScheduler = new ThreadPoolJobScheduler();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final BatchImporter inserter = new ParallelBatchImporter(databaseLayout, fileSystemRule.get(), null, config, org.neo4j.logging.internal.NullLogService.getInstance(), monitor, EMPTY, org.neo4j.kernel.configuration.Config.defaults(), getFormat(), NO_MONITOR, jobScheduler);
+//ORIGINAL LINE: final BatchImporter inserter = new ParallelBatchImporter(databaseLayout, fileSystemRule.get(), null, config, org.Neo4Net.logging.internal.NullLogService.getInstance(), monitor, EMPTY, org.Neo4Net.kernel.configuration.Config.defaults(), getFormat(), NO_MONITOR, jobScheduler);
 			  BatchImporter inserter = new ParallelBatchImporter( databaseLayout, _fileSystemRule.get(), null, config, NullLogService.Instance, monitor, EMPTY, Config.defaults(), Format, NO_MONITOR, jobScheduler );
 			  LongAdder propertyCount = new LongAdder();
 			  LongAdder relationshipCount = new LongAdder();
@@ -262,7 +262,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void assertConsistent(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: protected void assertConsistent(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 protected internal virtual void AssertConsistent( DatabaseLayout databaseLayout )
 		 {
 			  ConsistencyCheckService consistencyChecker = new ConsistencyCheckService();
@@ -379,8 +379,8 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyData(int nodeCount, int relationshipCount, org.neo4j.graphdb.GraphDatabaseService db, IdGroupDistribution groups, long nodeRandomSeed, long relationshipRandomSeed) throws java.io.IOException
-		 private void VerifyData( int nodeCount, int relationshipCount, GraphDatabaseService db, IdGroupDistribution groups, long nodeRandomSeed, long relationshipRandomSeed )
+//ORIGINAL LINE: private void verifyData(int nodeCount, int relationshipCount, org.Neo4Net.graphdb.GraphDatabaseService db, IdGroupDistribution groups, long nodeRandomSeed, long relationshipRandomSeed) throws java.io.IOException
+		 private void VerifyData( int nodeCount, int relationshipCount, IGraphDatabaseService db, IdGroupDistribution groups, long nodeRandomSeed, long relationshipRandomSeed )
 		 {
 			  // Read all nodes, relationships and properties ad verify against the input data.
 			  LongAdder propertyCount = new LongAdder();
@@ -461,9 +461,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  }
 		 }
 
-		 private string UniqueId( Group group, PropertyContainer entity )
+		 private string UniqueId( Group group, IPropertyContainer IEntity )
 		 {
-			  return UniqueId( group, entity.GetProperty( "id" ) );
+			  return UniqueId( group, IEntity.GetProperty( "id" ) );
 		 }
 
 		 private string UniqueId( Group group, object id )
@@ -507,31 +507,31 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 			  assertTrue( expectedLabels.Count == 0 );
 		 }
 
-		 private void AssertPropertiesEquals( InputEntity input, PropertyContainer entity )
+		 private void AssertPropertiesEquals( InputEntity input, IPropertyContainer IEntity )
 		 {
 			  object[] properties = input.Properties();
 			  for ( int i = 0; i < properties.Length; i++ )
 			  {
 					string key = ( string ) properties[i++];
 					object value = properties[i];
-					AssertPropertyValueEquals( input, entity, key, value, entity.GetProperty( key ) );
+					AssertPropertyValueEquals( input, IEntity, key, value, IEntity.GetProperty( key ) );
 			  }
 		 }
 
-		 private void AssertPropertyValueEquals( InputEntity input, PropertyContainer entity, string key, object expected, object array )
+		 private void AssertPropertyValueEquals( InputEntity input, IPropertyContainer IEntity, string key, object expected, object array )
 		 {
 			  if ( expected.GetType().IsArray )
 			  {
 					int length = Array.getLength( expected );
-					assertEquals( input + ", " + entity, length, Array.getLength( array ) );
+					assertEquals( input + ", " + IEntity, length, Array.getLength( array ) );
 					for ( int i = 0; i < length; i++ )
 					{
-						 AssertPropertyValueEquals( input, entity, key, Array.get( expected, i ), Array.get( array, i ) );
+						 AssertPropertyValueEquals( input, IEntity, key, Array.get( expected, i ), Array.get( array, i ) );
 					}
 			  }
 			  else
 			  {
-					assertEquals( input + ", " + entity + " for key:" + key, Values.of( expected ), Values.of( array ) );
+					assertEquals( input + ", " + IEntity + " for key:" + key, Values.of( expected ), Values.of( array ) );
 			  }
 		 }
 

@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	using Stat = Neo4Net.@unsafe.Impl.Batchimport.stats.Stat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.throwIfUnchecked;
+//	import static org.Neo4Net.helpers.Exceptions.throwIfUnchecked;
 
 	/// <summary>
 	/// Default implementation of <seealso cref="StageControl"/>
@@ -117,7 +117,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 /// {@code 1.0} signals them being close to equal, and a value of for example {@code 0.5} signals that
 		 /// the value of the current step is half that of the next step. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.helpers.collection.Pair<Step<?>,float>> stepsOrderedBy(final org.neo4j.unsafe.impl.batchimport.stats.Key stat, final boolean trueForAscending)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.helpers.collection.Pair<Step<?>,float>> stepsOrderedBy(final org.Neo4Net.unsafe.impl.batchimport.stats.Key stat, final boolean trueForAscending)
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public virtual IEnumerable<Pair<Step<object>, float>> StepsOrderedBy( Key stat, bool trueForAscending )
 		 {
@@ -133,7 +133,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 			  });
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return () -> new org.neo4j.helpers.collection.PrefetchingIterator<org.neo4j.helpers.collection.Pair<Step<?>,float>>()
+//ORIGINAL LINE: return () -> new org.Neo4Net.helpers.collection.PrefetchingIterator<org.Neo4Net.helpers.collection.Pair<Step<?>,float>>()
 			  return () => new PrefetchingIteratorAnonymousInnerClass(this, steps);
 		 }
 
@@ -161,7 +161,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 			 private Step<object> next;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected org.neo4j.helpers.collection.Pair<Step<?>,float> fetchNextOrNull()
+//ORIGINAL LINE: protected org.Neo4Net.helpers.collection.Pair<Step<?>,float> fetchNextOrNull()
 			 protected internal override Pair<Step<object>, float> fetchNextOrNull()
 			 {
 				  if ( next == null )

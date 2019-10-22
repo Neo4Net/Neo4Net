@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values).
+	/// Includes value and IEntity id (to be able to handle non-unique values).
 	/// A value can be any <seealso cref="Number"/> and is represented as a {@code long} to store the raw bits and a type
 	/// to say if it's a long, double or float.
 	/// 
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	/// </summary>
 	internal class NumberIndexKey : NativeIndexSingleValueKey<NumberIndexKey>
 	{
-		 internal static readonly int Size = Byte.BYTES + Long.BYTES + ENTITY_ID_SIZE; // (Long.BYTES) entityId
+		 internal static readonly int Size = Byte.BYTES + Long.BYTES + IEntity_ID_SIZE; // (Long.BYTES) IEntityId
 
 		 internal sbyte Type;
 		 internal long RawValueBits;
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "type=%d,rawValue=%d,value=%s,entityId=%d", Type, RawValueBits, AsValue(), EntityId );
+			  return format( "type=%d,rawValue=%d,value=%s,entityId=%d", Type, RawValueBits, AsValue(), IEntityId );
 		 }
 
 		 public override void WriteInteger( sbyte value )

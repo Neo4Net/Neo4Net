@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 	internal abstract class RelationshipConstraintDefinition : SinglePropertyConstraintDefinition
 	{

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Internal
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.forced_kernel_id;
 
 	public class KernelDataTest
 	{

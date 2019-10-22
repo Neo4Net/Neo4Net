@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Utils
 {
@@ -30,22 +30,22 @@ namespace Neo4Net.Utils
 	using StreamConsumer = Neo4Net.Test.StreamConsumer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getClassPath;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getJavaExecutable;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class TestHelpers
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static int runBackupToolFromOtherJvmToGetExitCode(java.io.File neo4jHome, String... args) throws Exception
-		 public static int RunBackupToolFromOtherJvmToGetExitCode( File neo4jHome, params string[] args )
+//ORIGINAL LINE: public static int runBackupToolFromOtherJvmToGetExitCode(java.io.File Neo4NetHome, String... args) throws Exception
+		 public static int RunBackupToolFromOtherJvmToGetExitCode( File Neo4NetHome, params string[] args )
 		 {
-			  return RunBackupToolFromOtherJvmToGetExitCode( neo4jHome, System.out, System.err, true, args );
+			  return RunBackupToolFromOtherJvmToGetExitCode( Neo4NetHome, System.out, System.err, true, args );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static int runBackupToolFromOtherJvmToGetExitCode(java.io.File neo4jHome, java.io.PrintStream outPrintStream, java.io.PrintStream errPrintStream, boolean debug, String... args) throws Exception
-		 public static int RunBackupToolFromOtherJvmToGetExitCode( File neo4jHome, PrintStream outPrintStream, PrintStream errPrintStream, bool debug, params string[] args )
+//ORIGINAL LINE: public static int runBackupToolFromOtherJvmToGetExitCode(java.io.File Neo4NetHome, java.io.PrintStream outPrintStream, java.io.PrintStream errPrintStream, boolean debug, String... args) throws Exception
+		 public static int RunBackupToolFromOtherJvmToGetExitCode( File Neo4NetHome, PrintStream outPrintStream, PrintStream errPrintStream, bool debug, params string[] args )
 		 {
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
 			  IList<string> allArgs = new List<string>( Arrays.asList( JavaExecutable.ToString(), "-cp", ClassPath, typeof(AdminTool).FullName ) );
@@ -53,10 +53,10 @@ namespace Neo4Net.Utils
 			  ( ( IList<string> )allArgs ).AddRange( Arrays.asList( args ) );
 
 			  ProcessBuilder processBuilder = ( new ProcessBuilder() ).command(allArgs.ToArray());
-			  processBuilder.environment().put("NEO4J_HOME", neo4jHome.AbsolutePath);
+			  processBuilder.environment().put("Neo4Net_HOME", Neo4NetHome.AbsolutePath);
 			  if ( debug )
 			  {
-					processBuilder.environment().put("NEO4J_DEBUG", "anything_works");
+					processBuilder.environment().put("Neo4Net_DEBUG", "anything_works");
 			  }
 			  Process process = processBuilder.start();
 			  ProcessStreamHandler processStreamHandler = new ProcessStreamHandler( process, false, "", StreamConsumer.IGNORE_FAILURES, outPrintStream, errPrintStream );

@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Api.state
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 	using Memory = Neo4Net.Kernel.impl.util.collection.Memory;
 	using MemoryAllocator = Neo4Net.Kernel.impl.util.collection.MemoryAllocator;
@@ -73,63 +73,63 @@ namespace Neo4Net.Kernel.Impl.Api.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkArgument;
+//	import static org.Neo4Net.util.Preconditions.checkArgument;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.epochDate;
+//	import static org.Neo4Net.values.storable.DateValue.epochDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.booleanArray;
+//	import static org.Neo4Net.values.storable.Values.booleanArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.booleanValue;
+//	import static org.Neo4Net.values.storable.Values.booleanValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.byteArray;
+//	import static org.Neo4Net.values.storable.Values.byteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.byteValue;
+//	import static org.Neo4Net.values.storable.Values.byteValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.charArray;
+//	import static org.Neo4Net.values.storable.Values.charArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.charValue;
+//	import static org.Neo4Net.values.storable.Values.charValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.dateArray;
+//	import static org.Neo4Net.values.storable.Values.dateArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.dateTimeArray;
+//	import static org.Neo4Net.values.storable.Values.dateTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleArray;
+//	import static org.Neo4Net.values.storable.Values.doubleArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleValue;
+//	import static org.Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.durationArray;
+//	import static org.Neo4Net.values.storable.Values.durationArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.floatArray;
+//	import static org.Neo4Net.values.storable.Values.floatArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.floatValue;
+//	import static org.Neo4Net.values.storable.Values.floatValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intArray;
+//	import static org.Neo4Net.values.storable.Values.intArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.localDateTimeArray;
+//	import static org.Neo4Net.values.storable.Values.localDateTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.localTimeArray;
+//	import static org.Neo4Net.values.storable.Values.localTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longArray;
+//	import static org.Neo4Net.values.storable.Values.longArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointArray;
+//	import static org.Neo4Net.values.storable.Values.pointArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.shortArray;
+//	import static org.Neo4Net.values.storable.Values.shortArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.shortValue;
+//	import static org.Neo4Net.values.storable.Values.shortValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringArray;
+//	import static org.Neo4Net.values.storable.Values.stringArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.timeArray;
+//	import static org.Neo4Net.values.storable.Values.timeArray;
 
 	public class AppendOnlyValuesContainer : ValuesContainer
 	{
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting AppendOnlyValuesContainer(int chunkSize, org.neo4j.kernel.impl.util.collection.MemoryAllocator allocator)
+//ORIGINAL LINE: @VisibleForTesting AppendOnlyValuesContainer(int chunkSize, org.Neo4Net.kernel.impl.util.collection.MemoryAllocator allocator)
 		 internal AppendOnlyValuesContainer( int chunkSize, MemoryAllocator allocator )
 		 {
 			  this._chunkSize = chunkSize;
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.neo4j.values.storable.Value get(long ref)
+//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.values.storable.Value get(long ref)
 		 public override Value Get( long @ref )
 		 {
 			  AssertNotClosed();
@@ -209,12 +209,12 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull @Override public org.neo4j.values.storable.Value remove(long ref)
+//ORIGINAL LINE: @Nonnull @Override public org.Neo4Net.values.storable.Value remove(long ref)
 		 public override Value Remove( long @ref )
 		 {
 			  AssertNotClosed();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.Value removed = get(ref);
+//ORIGINAL LINE: final org.Neo4Net.values.storable.Value removed = get(ref);
 			  Value removed = Get( @ref );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final int chunkIdx = (int)(ref >>> 32);
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 private ByteBuffer AddNewChunk( int size )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.util.collection.Memory memory = allocator.allocate(size, false);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.util.collection.Memory memory = allocator.allocate(size, false);
 			  Memory memory = _allocator.allocate( size, false );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final ByteBuffer chunk = memory.asByteBuffer();
@@ -395,7 +395,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  int len = bb.getInt( offset );
 			  offset += Integer.BYTES;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.DurationValue[] array = new org.neo4j.values.storable.DurationValue[len];
+//ORIGINAL LINE: final org.Neo4Net.values.storable.DurationValue[] array = new org.Neo4Net.values.storable.DurationValue[len];
 			  DurationValue[] array = new DurationValue[len];
 			  for ( int i = 0; i < len; i++ )
 			  {
@@ -534,7 +534,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  int crsCode = chunk.getInt( offset );
 			  offset += Integer.BYTES;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.CoordinateReferenceSystem crs = org.neo4j.values.storable.CoordinateReferenceSystem.get(crsCode);
+//ORIGINAL LINE: final org.Neo4Net.values.storable.CoordinateReferenceSystem crs = org.Neo4Net.values.storable.CoordinateReferenceSystem.get(crsCode);
 			  CoordinateReferenceSystem crs = CoordinateReferenceSystem.get( crsCode );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final double[] coordinate = new double[crs.getDimension()];
@@ -554,12 +554,12 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  int len = bb.getInt( offset );
 			  offset += Integer.BYTES;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.PointValue[] array = new org.neo4j.values.storable.PointValue[len];
+//ORIGINAL LINE: final org.Neo4Net.values.storable.PointValue[] array = new org.Neo4Net.values.storable.PointValue[len];
 			  PointValue[] array = new PointValue[len];
 			  for ( int i = 0; i < len; i++ )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.PointValue point = readPoint(bb, offset);
+//ORIGINAL LINE: final org.Neo4Net.values.storable.PointValue point = readPoint(bb, offset);
 					PointValue point = ReadPoint( bb, offset );
 					array[i] = point;
 					offset += Integer.BYTES + point.CoordinateReferenceSystem.Dimension * Double.BYTES;
@@ -693,7 +693,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  if ( ( z & 1 ) != 0 )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String zoneId = org.neo4j.values.storable.TimeZones.map((short)(z >> 1));
+//ORIGINAL LINE: final String zoneId = org.Neo4Net.values.storable.TimeZones.map((short)(z >> 1));
 					string zoneId = TimeZones.map( ( short )( z >> 1 ) );
 					return ZoneId.of( zoneId );
 			  }
@@ -733,7 +733,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 private sealed class ValueType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NO_VALUE(org.neo4j.values.storable.NoValue.class, (unused, unused2) -> org.neo4j.values.storable.NoValue.NO_VALUE),
+//           NO_VALUE(org.Neo4Net.values.storable.NoValue.class, (unused, unused2) -> org.Neo4Net.values.storable.NoValue.NO_VALUE),
 			  public static readonly ValueType Boolean = new ValueType( "Boolean", InnerEnum.Boolean, typeof( Neo4Net.Values.Storable.BooleanValue ), AppendOnlyValuesContainer.readBoolean );
 			  public static readonly ValueType BooleanArray = new ValueType( "BooleanArray", InnerEnum.BooleanArray, typeof( Neo4Net.Values.Storable.BooleanArray ), AppendOnlyValuesContainer.readBooleanArray );
 			  public static readonly ValueType Byte = new ValueType( "Byte", InnerEnum.Byte, typeof( Neo4Net.Values.Storable.ByteValue ), AppendOnlyValuesContainer.readByte );
@@ -1099,7 +1099,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					{
 						 // lowest bit set to 1: it's a zone id
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final int zoneId = (org.neo4j.values.storable.TimeZones.map(zone.getId()) << 1) | 1;
+//ORIGINAL LINE: final int zoneId = (org.Neo4Net.values.storable.TimeZones.map(zone.getId()) << 1) | 1;
 						 int zoneId = ( TimeZones.map( zone.Id ) << 1 ) | 1;
 						 Buf.putInt( zoneId );
 					}

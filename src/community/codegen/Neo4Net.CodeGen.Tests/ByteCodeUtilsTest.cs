@@ -30,23 +30,23 @@ namespace Neo4Net.CodeGen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.desc;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.desc;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.exceptions;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.exceptions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.signature;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.signature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.typeName;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.typeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.MethodDeclaration.method;
+//	import static org.Neo4Net.codegen.MethodDeclaration.method;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.Parameter.param;
+//	import static org.Neo4Net.codegen.Parameter.param;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.extending;
+//	import static org.Neo4Net.codegen.TypeReference.extending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeParameter;
+//	import static org.Neo4Net.codegen.TypeReference.typeParameter;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeReference;
+//	import static org.Neo4Net.codegen.TypeReference.typeReference;
 
 	public class ByteCodeUtilsTest
 	{
@@ -197,7 +197,7 @@ namespace Neo4Net.CodeGen
 			  string signature = signature( declaration );
 			  string[] exceptions = exceptions( declaration );
 			  // THEN
-			  assertThat( signature, equalTo( "<E:Ljava/lang/Exception;>(Lorg/neo4j/codegen/CodeGenerationTest$Thrower<TE;>;)V^TE;" ) );
+			  assertThat( signature, equalTo( "<E:Ljava/lang/Exception;>(Lorg/Neo4Net/codegen/CodeGenerationTest$Thrower<TE;>;)V^TE;" ) );
 			  assertThat( exceptions, equalTo( new string[]{ "java/lang/Exception" } ) );
 		 }
 

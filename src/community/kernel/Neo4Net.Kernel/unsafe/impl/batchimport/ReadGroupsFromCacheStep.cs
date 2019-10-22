@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.prefetching;
+//	import static org.Neo4Net.helpers.collection.Iterators.prefetching;
 
 	/// <summary>
 	/// Reads <seealso cref="RelationshipGroupRecord group records"/> from <seealso cref="RelationshipGroupCache"/>, sending

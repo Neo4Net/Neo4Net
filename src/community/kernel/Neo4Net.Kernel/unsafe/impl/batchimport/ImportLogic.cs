@@ -65,19 +65,19 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.alwaysTrue;
+//	import static org.Neo4Net.function.Predicates.alwaysTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.IOUtils.closeAll;
+//	import static org.Neo4Net.io.IOUtils.closeAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NodeRelationshipCache.calculateMaxMemoryUsage;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NodeRelationshipCache.calculateMaxMemoryUsage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory.auto;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory.auto;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseExecution;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ExecutionSupervisors.superviseExecution;
 
 	/// <summary>
 	/// Contains all algorithms and logic for doing an import. It exposes all stages as methods so that
@@ -185,7 +185,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void initialize(org.neo4j.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
+//ORIGINAL LINE: public void initialize(org.Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
 		 public virtual void Initialize( Input input )
 		 {
 			  _log.info( "Import starting" );

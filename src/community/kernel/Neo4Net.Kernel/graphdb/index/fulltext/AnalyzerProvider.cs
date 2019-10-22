@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.index.fulltext
+namespace Neo4Net.GraphDb.index.fulltext
 {
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
@@ -46,7 +46,7 @@ namespace Neo4Net.Graphdb.index.fulltext
 	/// </code></pre>
 	/// </para>
 	/// <para>
-	/// The {@code jar} that includes this implementation must also contain a {@code META-INF/services/org.neo4j.graphdb.index.fulltext.AnalyzerProvider} file,
+	/// The {@code jar} that includes this implementation must also contain a {@code META-INF/services/org.Neo4Net.graphdb.index.fulltext.AnalyzerProvider} file,
 	/// that contains the fully-qualified class names of all of the {@code AnalyzerProvider} implementations it contains.
 	/// </para>
 	/// </summary>

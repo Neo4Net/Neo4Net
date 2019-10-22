@@ -28,7 +28,7 @@ namespace Neo4Net.Server.configuration
 
 
 	using DatabaseManagementSystemSettings = Neo4Net.Dbms.DatabaseManagementSystemSettings;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
@@ -43,12 +43,12 @@ namespace Neo4Net.Server.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppressAll;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class ConfigLoaderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = suppressAll();
 		 public readonly SuppressOutput SuppressOutput = suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TemporaryFolder folder = new org.junit.rules.TemporaryFolder();
@@ -94,7 +94,7 @@ namespace Neo4Net.Server.configuration
 			  Config testConf = Config.fromFile( configFile ).withHome( Folder.Root ).build();
 
 			  // then
-			  assertEquals( Folder.Root, testConf.Get( GraphDatabaseSettings.neo4j_home ) );
+			  assertEquals( Folder.Root, testConf.Get( GraphDatabaseSettings.Neo4Net_home ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -108,7 +108,7 @@ namespace Neo4Net.Server.configuration
 			  Config testConf = Config.fromFile( configFile ).build();
 
 			  // then
-			  assertEquals( new File( System.getProperty( "user.dir" ) ), testConf.Get( GraphDatabaseSettings.neo4j_home ) );
+			  assertEquals( new File( System.getProperty( "user.dir" ) ), testConf.Get( GraphDatabaseSettings.Neo4Net_home ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -191,7 +191,7 @@ namespace Neo4Net.Server.configuration
 		 public virtual void ShouldRetainRegistrationOrderOfThirdPartyJaxRsPackages()
 		 {
 			  // given
-			  File configFile = ConfigFileBuilder.Builder( Folder.Root ).withNameValue( ServerSettings.third_party_packages.name(), "org.neo4j.extension.extension1=/extension1,org.neo4j.extension.extension2=/extension2," + "org.neo4j.extension.extension3=/extension3" ).build();
+			  File configFile = ConfigFileBuilder.Builder( Folder.Root ).withNameValue( ServerSettings.third_party_packages.name(), "org.Neo4Net.extension.extension1=/extension1,org.Neo4Net.extension.extension2=/extension2," + "org.Neo4Net.extension.extension3=/extension3" ).build();
 
 			  // when
 			  Config config = Config.fromFile( configFile ).withHome( Folder.Root ).build();

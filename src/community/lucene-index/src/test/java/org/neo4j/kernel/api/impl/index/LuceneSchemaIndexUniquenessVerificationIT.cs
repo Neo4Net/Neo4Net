@@ -71,10 +71,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 private static readonly long _minLongValue = _maxLongValue - 20;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDir;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDir;
 		 private TestDirectory _testDir;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.io.fs.DefaultFileSystemAbstraction fileSystem;
+//ORIGINAL LINE: @Inject private org.Neo4Net.io.fs.DefaultFileSystemAbstraction fileSystem;
 		 private DefaultFileSystemAbstraction _fileSystem;
 
 		 private SchemaIndex _index;
@@ -312,7 +312,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void insert(java.util.Collection<org.neo4j.values.storable.Value> data) throws java.io.IOException
+//ORIGINAL LINE: private void insert(java.util.Collection<org.Neo4Net.values.storable.Value> data) throws java.io.IOException
 		 private void Insert( ICollection<Value> data )
 		 {
 			  Value[] dataArray = data.toArray( new Value[data.Count] );
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyUniqueness(java.util.Collection<org.neo4j.values.storable.Value> data) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyUniqueness(java.util.Collection<org.Neo4Net.values.storable.Value> data) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyUniqueness( ICollection<Value> data )
 		 {
 			  NodePropertyAccessor nodePropertyAccessor = new TestPropertyAccessor( new List<Value>( data ) );

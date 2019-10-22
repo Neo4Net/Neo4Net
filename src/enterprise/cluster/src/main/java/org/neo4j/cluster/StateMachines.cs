@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster
 {
@@ -40,9 +40,9 @@ namespace Neo4Net.cluster
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.HEADER_CONVERSATION_ID;
+//	import static org.Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.HEADER_CREATED_BY;
+//	import static org.Neo4Net.cluster.com.message.Message.HEADER_CREATED_BY;
 
 
 	/// <summary>
@@ -76,7 +76,7 @@ namespace Neo4Net.cluster
 		 private readonly string _instanceIdHeaderValue;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public StateMachines(org.neo4j.logging.LogProvider logProvider, Monitor monitor, org.neo4j.cluster.com.message.MessageSource source, final org.neo4j.cluster.com.message.MessageSender sender, org.neo4j.cluster.timeout.Timeouts timeouts, DelayedDirectExecutor executor, java.util.concurrent.Executor stateMachineExecutor, InstanceId instanceId)
+//ORIGINAL LINE: public StateMachines(org.Neo4Net.logging.LogProvider logProvider, Monitor monitor, org.Neo4Net.cluster.com.message.MessageSource source, final org.Neo4Net.cluster.com.message.MessageSender sender, org.Neo4Net.cluster.timeout.Timeouts timeouts, DelayedDirectExecutor executor, java.util.concurrent.Executor stateMachineExecutor, InstanceId instanceId)
 		 public StateMachines( LogProvider logProvider, Monitor monitor, MessageSource source, MessageSender sender, Timeouts timeouts, DelayedDirectExecutor executor, Executor stateMachineExecutor, InstanceId instanceId )
 		 {
 			  this._log = logProvider.getLog( this.GetType() );
@@ -136,7 +136,7 @@ namespace Neo4Net.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public boolean process(final org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType> message)
+//ORIGINAL LINE: public boolean process(final org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message)
 		 public override bool Process<T1>( Message<T1> message ) where T1 : Neo4Net.cluster.com.message.MessageType
 		 {
 			  _stateMachineExecutor.execute( new RunnableAnonymousInnerClass( this, message ) );
@@ -179,10 +179,10 @@ namespace Neo4Net.cluster
 							 // Process and send messages
 							 // Allow state machines to send messages to each other as well in this loop
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType> outgoingMessage;
+//ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> outgoingMessage;
 							 Message<MessageType> outgoingMessage;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType>> toSend = new java.util.LinkedList<>();
+//ORIGINAL LINE: java.util.List<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> toSend = new java.util.LinkedList<>();
 							 IList<Message<MessageType>> toSend = new LinkedList<Message<MessageType>>();
 							 try
 							 {
@@ -246,7 +246,7 @@ namespace Neo4Net.cluster
 			 {
 				  stateMachine.handle( message, temporaryOutgoing );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType> next; (next = temporaryOutgoing.nextOutgoingMessage()) != null;)
+//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> next; (next = temporaryOutgoing.nextOutgoingMessage()) != null;)
 				  for ( Message<MessageType> next; ( next = temporaryOutgoing.nextOutgoingMessage() ) != null; )
 				  {
 						_outerInstance.outgoing.offer( next );
@@ -295,7 +295,7 @@ namespace Neo4Net.cluster
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Deque<org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType>> outgoingMessages = new java.util.ArrayDeque<>();
+//ORIGINAL LINE: private java.util.Deque<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> outgoingMessages = new java.util.ArrayDeque<>();
 			  internal Deque<Message<MessageType>> OutgoingMessages = new LinkedList<Message<MessageType>>();
 
 			  public override void Offer<T1>( Message<T1> message ) where T1 : Neo4Net.cluster.com.message.MessageType
@@ -307,7 +307,7 @@ namespace Neo4Net.cluster
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public synchronized org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType> nextOutgoingMessage()
+//ORIGINAL LINE: public synchronized org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> nextOutgoingMessage()
 			  public virtual Message<MessageType> NextOutgoingMessage()
 			  {
 				  lock ( this )

@@ -59,9 +59,9 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.contains;
+//	import static org.Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.INTERNAL;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL;
 
 	public class TransactionRepresentationCommitProcessTest
 	{

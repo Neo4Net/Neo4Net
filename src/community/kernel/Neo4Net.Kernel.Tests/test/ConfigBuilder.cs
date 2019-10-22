@@ -22,7 +22,7 @@
 namespace Neo4Net.Test
 {
 
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 
 	/// <summary>
 	/// Convenience for building config for a test database.
@@ -30,7 +30,7 @@ namespace Neo4Net.Test
 	/// <para>
 	/// Usage:
 	/// <pre><code>
-	///  import static org.neo4j.test.ConfigBuilder.configure;
+	///  import static org.Neo4Net.test.ConfigBuilder.configure;
 	/// 
 	/// {@literal @}<seealso cref="org.junit.runner.RunWith RunWith"/>(<seealso cref="org.junit.runners.Parameterized Parameterized.class"/>)
 	///  public class SomeTest
@@ -41,24 +41,24 @@ namespace Neo4Net.Test
 	///          return Arrays.asList(
 	///              // First set of configuration
 	///              <seealso cref="configure(Setting, string) configure"/>( {@link
-	///              org.neo4j.graphdb.factory.GraphDatabaseSettings#query_cache_size
+	///              org.Neo4Net.graphdb.factory.GraphDatabaseSettings#query_cache_size
 	///              GraphDatabaseSettings.query_cache_size}, "42" ).<seealso cref="asParameters() asParameters"/>(),
 	///              // Second set of configuration
 	///              <seealso cref="configure(Setting, string) configure"/>( {@link
-	///              org.neo4j.graphdb.factory.GraphDatabaseSettings#query_cache_size
+	///              org.Neo4Net.graphdb.factory.GraphDatabaseSettings#query_cache_size
 	///              GraphDatabaseSettings.query_cache_size}, "12" )
 	///                   .<seealso cref="and(Setting, string) and"/>( {@link
-	///                   org.neo4j.graphdb.factory.GraphDatabaseSettings#cypher_min_replan_interval
+	///                   org.Neo4Net.graphdb.factory.GraphDatabaseSettings#cypher_min_replan_interval
 	///                   GraphDatabaseSettings.cypher_min_replan_interval}, "5000" ).<seealso cref="asParameters() asParameters"/>()
 	///          );
 	///      }
 	/// 
-	///      public final{@literal @}Rule <seealso cref="org.neo4j.test.rule.DatabaseRule DatabaseRule"/> db;
+	///      public final{@literal @}Rule <seealso cref="org.Neo4Net.test.rule.DatabaseRule DatabaseRule"/> db;
 	/// 
 	///      public SomeTest( ConfigBuilder config )
 	///      {
-	///          this.db = new {@link org.neo4j.test.rule.ImpermanentDatabaseRule
-	///          ImpermanentDatabaseRule}().{@link org.neo4j.test.rule.DatabaseRule#withConfiguration(Map)
+	///          this.db = new {@link org.Neo4Net.test.rule.ImpermanentDatabaseRule
+	///          ImpermanentDatabaseRule}().{@link org.Neo4Net.test.rule.DatabaseRule#withConfiguration(Map)
 	///          withConfiguration}( config.<seealso cref="configuration() configuration"/>() );
 	///      }
 	///  }
@@ -70,14 +70,14 @@ namespace Neo4Net.Test
 		 public static ConfigBuilder Configure<T1>( Setting<T1> key, string value )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
 			  IDictionary<Setting<object>, string> config = new Dictionary<Setting<object>, string>();
 			  config[key] = value;
 			  return new ConfigBuilder( config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> config;
+//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config;
 		 private readonly IDictionary<Setting<object>, string> _config;
 
 		 private ConfigBuilder<T1>( IDictionary<T1> config )
@@ -86,7 +86,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> configuration()
+//ORIGINAL LINE: public java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> configuration()
 		 public IDictionary<Setting<object>, string> Configuration()
 		 {
 			  return Collections.unmodifiableMap( _config );
@@ -95,7 +95,7 @@ namespace Neo4Net.Test
 		 public ConfigBuilder And<T1>( Setting<T1> key, string value )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>(this.config);
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>(this.config);
 			  IDictionary<Setting<object>, string> config = new Dictionary<Setting<object>, string>( this._config );
 			  config[key] = value;
 			  return new ConfigBuilder( config );

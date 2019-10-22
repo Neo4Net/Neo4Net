@@ -29,9 +29,9 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.KernelTransactionFactory.kernelTransaction;
+//	import static org.Neo4Net.kernel.api.KernelTransactionFactory.kernelTransaction;
 
 	public class TransactionStatementSequenceTest
 	{

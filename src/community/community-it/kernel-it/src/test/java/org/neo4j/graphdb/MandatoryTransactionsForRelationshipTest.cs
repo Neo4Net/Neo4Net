@@ -17,12 +17,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class MandatoryTransactionsForRelationshipTest : AbstractMandatoryTransactionsTest<Relationship>
 	{
@@ -40,9 +40,9 @@ namespace Neo4Net.Graphdb
 			  AssertFacadeMethodsThrowAfterTerminate( RelationshipFacadeMethods.values() );
 		 }
 
-		 protected internal override Relationship ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override Relationship ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService.CreateNode().createRelationshipTo(graphDatabaseService.CreateNode(), withName("foo"));
+			  return IGraphDatabaseService.CreateNode().createRelationshipTo(graphDatabaseService.CreateNode(), withName("foo"));
 		 }
 	}
 

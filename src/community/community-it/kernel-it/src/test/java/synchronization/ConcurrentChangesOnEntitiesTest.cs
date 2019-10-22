@@ -30,12 +30,12 @@ namespace Synchronization
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using FormattedLogProvider = Neo4Net.Logging.FormattedLogProvider;
@@ -76,7 +76,7 @@ namespace Synchronization
 
 		 private readonly CyclicBarrier _barrier = new CyclicBarrier( 2 );
 		 private readonly AtomicReference<Exception> _ex = new AtomicReference<Exception>();
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setup()
@@ -146,7 +146,7 @@ namespace Synchronization
 			  AssertDatabaseConsistent();
 		 }
 
-		 private long InitWithNode( GraphDatabaseService db )
+		 private long InitWithNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -158,7 +158,7 @@ namespace Synchronization
 
 		 }
 
-		 private long InitWithRel( GraphDatabaseService db )
+		 private long InitWithRel( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -172,7 +172,7 @@ namespace Synchronization
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Thread newThreadForNodeAction(final long nodeId, final System.Action<org.neo4j.graphdb.Node> nodeConsumer)
+//ORIGINAL LINE: private Thread newThreadForNodeAction(final long nodeId, final System.Action<org.Neo4Net.graphdb.Node> nodeConsumer)
 		 private Thread NewThreadForNodeAction( long nodeId, System.Action<Node> nodeConsumer )
 		 {
 			  return new Thread(() =>
@@ -195,7 +195,7 @@ namespace Synchronization
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Thread newThreadForRelationshipAction(final long relationshipId, final System.Action<org.neo4j.graphdb.Relationship> relConsumer)
+//ORIGINAL LINE: private Thread newThreadForRelationshipAction(final long relationshipId, final System.Action<org.Neo4Net.graphdb.Relationship> relConsumer)
 		 private Thread NewThreadForRelationshipAction( long relationshipId, System.Action<Relationship> relConsumer )
 		 {
 			  return new Thread(() =>

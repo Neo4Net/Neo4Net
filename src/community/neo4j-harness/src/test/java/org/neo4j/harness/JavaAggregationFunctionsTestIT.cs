@@ -35,16 +35,16 @@ namespace Neo4Net.Harness
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class JavaAggregationFunctionsTestIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 		 public class MyFunctions
@@ -90,7 +90,7 @@ namespace Neo4Net.Harness
 			  using ( ServerControls server = CreateServer( typeof( MyFunctions ) ).newServer() )
 			  {
 					// Then
-					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'RETURN org.neo4j.harness.myFunc() AS someNumber' } ] " + "}") );
+					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'RETURN org.Neo4Net.harness.myFunc() AS someNumber' } ] " + "}") );
 
 					JsonNode result = response.Get( "results" ).get( 0 );
 					assertEquals( "someNumber", result.get( "columns" ).get( 0 ).asText() );
@@ -113,10 +113,10 @@ namespace Neo4Net.Harness
 			  using ( ServerControls server = CreateServer( typeof( MyFunctions ) ).newServer() )
 			  {
 					// Then
-					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'RETURN org.neo4j.harness.funcThatThrows()' } ] }") );
+					HTTP.Response response = HTTP.POST( server.HttpURI().resolve("db/data/transaction/commit").ToString(), quotedJson("{ 'statements': [ { 'statement': 'RETURN org.Neo4Net.harness.funcThatThrows()' } ] }") );
 
 					string error = response.Get( "errors" ).get( 0 ).get( "message" ).asText();
-					assertEquals( "Failed to invoke function `org.neo4j.harness.funcThatThrows`: Caused by: java.lang" + ".RuntimeException: This is an exception", error );
+					assertEquals( "Failed to invoke function `org.Neo4Net.harness.funcThatThrows`: Caused by: java.lang" + ".RuntimeException: This is an exception", error );
 			  }
 		 }
 	}

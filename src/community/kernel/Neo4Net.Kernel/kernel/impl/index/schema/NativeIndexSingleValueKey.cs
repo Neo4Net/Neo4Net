@@ -24,10 +24,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.array;
+//	import static org.Neo4Net.helpers.collection.Iterators.array;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values).
+	/// Includes value and IEntity id (to be able to handle non-unique values).
 	/// This is the abstraction of what NativeSchemaIndex with friends need from a schema key.
 	/// Note that it says nothing about how keys are compared, serialized, read, written, etc. That is the job of Layout.
 	/// 

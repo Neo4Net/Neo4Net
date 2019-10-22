@@ -19,20 +19,20 @@
  */
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 
 	public class CommandState
 	{
 		 internal readonly Index<Node> Index;
-		 internal readonly GraphDatabaseService GraphDb;
+		 internal readonly IGraphDatabaseService GraphDb;
 		 public volatile Transaction Tx;
 		 public volatile bool Alive = true;
 		 public volatile Node Node;
 
-		 public CommandState( Index<Node> index, GraphDatabaseService graphDb, Node node )
+		 public CommandState( Index<Node> index, IGraphDatabaseService graphDb, Node node )
 		 {
 			  this.Index = index;
 			  this.GraphDb = graphDb;

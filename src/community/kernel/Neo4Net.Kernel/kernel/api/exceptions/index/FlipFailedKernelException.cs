@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 
 	public abstract class FlipFailedKernelException : KernelException
 	{
-		 public FlipFailedKernelException( Exception cause, string message, params object[] parameters ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, message, parameters )
+		 public FlipFailedKernelException( Exception cause, string message, params object[] parameters ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, message, parameters )
 		 {
 		 }
 
-		 public FlipFailedKernelException( string message, params object[] parameters ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexCreationFailed, message, parameters )
+		 public FlipFailedKernelException( string message, params object[] parameters ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexCreationFailed, message, parameters )
 		 {
 		 }
 	}

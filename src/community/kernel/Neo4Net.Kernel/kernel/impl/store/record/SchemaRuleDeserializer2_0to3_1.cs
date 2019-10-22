@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@string.UTF8.getDecodedStringFrom;
+//	import static org.Neo4Net.@string.UTF8.getDecodedStringFrom;
 
 	/// <summary>
 	/// Deserializes SchemaRules from a ByteBuffer.
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.neo4j.storageengine.api.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: static org.Neo4Net.storageengine.api.schema.SchemaRule deserialize(long id, int labelId, byte kindByte, ByteBuffer buffer) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		 internal static SchemaRule Deserialize( long id, int labelId, sbyte kindByte, ByteBuffer buffer )
 		 {
 			  SchemaRule_Kind kind = SchemaRule_Kind.forId( kindByte );

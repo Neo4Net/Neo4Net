@@ -3,10 +3,10 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.com
 {
@@ -58,9 +58,9 @@ namespace Neo4Net.cluster.com
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.NetworkReceiver.CLUSTER_SCHEME;
+//	import static org.Neo4Net.cluster.com.NetworkReceiver.CLUSTER_SCHEME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.daemon;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// TCP version of sending messages. This handles sending messages from state machines to other instances
@@ -201,11 +201,11 @@ namespace Neo4Net.cluster.com
 
 		 // MessageSender implementation
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void process(final java.util.List<org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType>> messages)
+//ORIGINAL LINE: public void process(final java.util.List<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>> messages)
 		 public override void Process<T1>( IList<T1> messages ) where T1 : Neo4Net.cluster.com.message.MessageType
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType> message : messages)
+//ORIGINAL LINE: for (org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType> message : messages)
 			  foreach ( Message<MessageType> message in messages )
 			  {
 					try
@@ -252,7 +252,7 @@ namespace Neo4Net.cluster.com
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private synchronized void send(final org.neo4j.cluster.com.message.Message message)
+//ORIGINAL LINE: private synchronized void send(final org.Neo4Net.cluster.com.message.Message message)
 		 private void Send( Message message )
 		 {
 			 lock ( this )
@@ -260,7 +260,7 @@ namespace Neo4Net.cluster.com
 				  _monitor.queuedMessage( message );
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.net.URI to = java.net.URI.create(message.getHeader(org.neo4j.cluster.com.message.Message.HEADER_TO));
+//ORIGINAL LINE: final java.net.URI to = java.net.URI.create(message.getHeader(org.Neo4Net.cluster.com.message.Message.HEADER_TO));
 				  URI to = URI.create( message.getHeader( Message.HEADER_TO ) );
       
 				  ExecutorService senderExecutor = _senderExecutors.computeIfAbsent( to, t => Executors.newSingleThreadExecutor( new NamedThreadFactory( "Cluster Sender " + t.toASCIIString(), _monitor ) ) );

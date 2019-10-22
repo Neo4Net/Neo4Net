@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
+//	import static org.Neo4Net.kernel.impl.coreapi.schema.IndexDefinitionImpl.labelNameList;
 
 	internal abstract class NodeConstraintDefinition : MultiPropertyConstraintDefinition
 	{

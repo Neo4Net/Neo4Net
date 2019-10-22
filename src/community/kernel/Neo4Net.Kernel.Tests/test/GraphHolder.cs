@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Test
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 
 	public interface GraphHolder
 	{
-		 GraphDatabaseService Graphdb();
+		 IGraphDatabaseService Graphdb();
 	}
 
 }

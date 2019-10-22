@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -37,11 +37,11 @@ namespace Neo4Net.causalclustering.scenarios
 	public class ConsensusGroupSettingsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation, value -> "5").withInstanceCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value -> "3").withInstanceCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.leader_election_timeout, value -> "1s").withTimeout(1000, SECONDS);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_formation, value -> "5").withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value -> "3").withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, value -> "1s").withTimeout(1000, SECONDS);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(5).withNumberOfReadReplicas(0).withInstanceCoreParam(CausalClusteringSettings.minimum_core_cluster_size_at_formation, value => "5").withInstanceCoreParam(CausalClusteringSettings.minimum_core_cluster_size_at_runtime,value => "3").withInstanceCoreParam(CausalClusteringSettings.leader_election_timeout, value => "1s").withTimeout(1000, SECONDS);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

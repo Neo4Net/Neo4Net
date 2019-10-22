@@ -22,17 +22,17 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.EMPTY_GENERATION;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.EMPTY_GENERATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.MIN_GENERATION;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.MIN_GENERATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.checksumOf;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.checksumOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.readChecksum;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.readChecksum;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.readGeneration;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.readGeneration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointer.readPointer;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointer.readPointer;
 
 	/// <summary>
 	/// Two <seealso cref="GenerationSafePointer"/> forming the basis for a B+tree becoming generate-aware.

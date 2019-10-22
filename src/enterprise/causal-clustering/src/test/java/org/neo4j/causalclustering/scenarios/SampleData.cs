@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,24 +13,24 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
 	using Neo4Net.causalclustering.discovery;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class SampleData
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void createSomeData(int items, org.neo4j.causalclustering.discovery.Cluster<?> cluster) throws Exception
+//ORIGINAL LINE: public static void createSomeData(int items, org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception
 		 public static void CreateSomeData<T1>( int items, Cluster<T1> cluster )
 		 {
 			  for ( int i = 0; i < items; i++ )
@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  }
 		 }
 
-		 internal static void CreateData( GraphDatabaseService db, int size )
+		 internal static void CreateData( IGraphDatabaseService db, int size )
 		 {
 			  for ( int i = 0; i < size; i++ )
 			  {
@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  }
 		 }
 
-		 internal static void CreateSchema( GraphDatabaseService db )
+		 internal static void CreateSchema( IGraphDatabaseService db )
 		 {
 			  Db.schema().constraintFor(_label).assertPropertyIsUnique(PROPERTY_KEY).create();
 		 }

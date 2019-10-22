@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.builtinprocs
 
 
 	using Neo4Net.Collections;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.SecurityContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.SecurityContext.AUTH_DISABLED;
 
 	public class BuiltInDbmsProceduresIT : KernelIntegrationTest
 	{
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  IList<object[]> config = CallListConfig( GraphDatabaseSettings.strict_config_validation.name() );
 
 			  assertEquals( 1, config.Count );
-			  assertArrayEquals( new object[]{ "dbms.config.strict_validation", "A strict configuration validation will prevent the database from starting up if unknown " + "configuration options are specified in the neo4j settings namespace (such as dbms., ha., " + "cypher., etc). This is currently false by default but will be true by default in 4.0.", "false", false }, config[0] );
+			  assertArrayEquals( new object[]{ "dbms.config.strict_validation", "A strict configuration validation will prevent the database from starting up if unknown " + "configuration options are specified in the Neo4Net settings namespace (such as dbms., ha., " + "cypher., etc). This is currently false by default but will be true by default in 4.0.", "false", false }, config[0] );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listDynamicSetting() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Test public void listDynamicSetting() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListDynamicSetting()
 		 {
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void listNotDynamicSetting() throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Test public void listNotDynamicSetting() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ListNotDynamicSetting()
 		 {
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<Object[]> callListConfig(String seatchString) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private java.util.List<Object[]> callListConfig(String seatchString) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 private IList<object[]> CallListConfig( string seatchString )
 		 {
 			  QualifiedName procedureName = procedureName( "dbms", "listConfig" );

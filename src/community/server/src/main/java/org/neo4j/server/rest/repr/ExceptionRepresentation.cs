@@ -23,14 +23,14 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.repr
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Neo4Net.Helpers.Collections;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 
 	public class ExceptionRepresentation : MappingRepresentation
 	{
-		 private readonly IList<Neo4jError> _errors = new LinkedList<Neo4jError>();
+		 private readonly IList<Neo4NetError> _errors = new LinkedList<Neo4NetError>();
 		 private bool _includeLegacyRepresentation;
 
 		 public ExceptionRepresentation( Exception exception ) : this( exception, true )
@@ -38,13 +38,13 @@ namespace Neo4Net.Server.rest.repr
 		 }
 		 public ExceptionRepresentation( Exception exception, bool includeLegacyRepresentation ) : base( RepresentationType.Exception )
 		 {
-			  this._errors.Add( new Neo4jError( StatusCode( exception ), exception ) );
+			  this._errors.Add( new Neo4NetError( StatusCode( exception ), exception ) );
 			  this._includeLegacyRepresentation = includeLegacyRepresentation;
 		 }
 
-		 public ExceptionRepresentation( params Neo4jError[] errors ) : base( RepresentationType.Exception )
+		 public ExceptionRepresentation( params Neo4NetError[] errors ) : base( RepresentationType.Exception )
 		 {
-			  ( ( IList<Neo4jError> )this._errors ).AddRange( Arrays.asList( errors ) );
+			  ( ( IList<Neo4NetError> )this._errors ).AddRange( Arrays.asList( errors ) );
 		 }
 
 		 protected internal override void Serialize( MappingSerializer serializer )
@@ -99,9 +99,9 @@ namespace Neo4Net.Server.rest.repr
 
 		 private class ErrorEntryRepresentation : MappingRepresentation
 		 {
-			  internal readonly Neo4jError Error;
+			  internal readonly Neo4NetError Error;
 
-			  internal ErrorEntryRepresentation( Neo4jError error ) : base( "error-entry" )
+			  internal ErrorEntryRepresentation( Neo4NetError error ) : base( "error-entry" )
 			  {
 					this.Error = error;
 			  }
@@ -116,18 +116,18 @@ namespace Neo4Net.Server.rest.repr
 					}
 			  }
 
-			  public static ListRepresentation List( ICollection<Neo4jError> errors )
+			  public static ListRepresentation List( ICollection<Neo4NetError> errors )
 			  {
 					return new ListRepresentation( "error-list", new IterableWrapperAnonymousInnerClass( errors ) );
 			  }
 
-			  private class IterableWrapperAnonymousInnerClass : IterableWrapper<ErrorEntryRepresentation, Neo4jError>
+			  private class IterableWrapperAnonymousInnerClass : IterableWrapper<ErrorEntryRepresentation, Neo4NetError>
 			  {
-				  public IterableWrapperAnonymousInnerClass( ICollection<Neo4jError> errors ) : base( errors )
+				  public IterableWrapperAnonymousInnerClass( ICollection<Neo4NetError> errors ) : base( errors )
 				  {
 				  }
 
-				  protected internal override ErrorEntryRepresentation underlyingObjectToObject( Neo4jError error )
+				  protected internal override ErrorEntryRepresentation underlyingObjectToObject( Neo4NetError error )
 				  {
 						return new ErrorEntryRepresentation( error );
 				  }

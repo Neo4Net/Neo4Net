@@ -39,8 +39,8 @@ namespace Neo4Net.Kernel.impl.store.format
 
 		 string StoreVersion();
 
-		 /// <returns> the neo4j version where this format was introduced. It is almost certainly NOT the only version of
-		 /// neo4j where this format is used. </returns>
+		 /// <returns> the Neo4Net version where this format was introduced. It is almost certainly NOT the only version of
+		 /// Neo4Net where this format is used. </returns>
 		 string IntroductionVersion();
 
 		 /// <summary>

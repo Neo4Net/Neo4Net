@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 protected internal abstract File NextFile( File previous );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final org.neo4j.helpers.collection.Pair<java.io.File, KeyValueStoreFile> open() throws java.io.IOException
+//ORIGINAL LINE: public final org.Neo4Net.helpers.collection.Pair<java.io.File, KeyValueStoreFile> open() throws java.io.IOException
 		 public Pair<File, KeyValueStoreFile> Open()
 		 {
 			  KeyValueStoreFile result = null;
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final org.neo4j.helpers.collection.Pair<java.io.File, KeyValueStoreFile> create(DataProvider initialData, long version) throws java.io.IOException
+//ORIGINAL LINE: public final org.Neo4Net.helpers.collection.Pair<java.io.File, KeyValueStoreFile> create(DataProvider initialData, long version) throws java.io.IOException
 		 public Pair<File, KeyValueStoreFile> Create( DataProvider initialData, long version )
 		 {
 			  File path = InitialFile();
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final org.neo4j.helpers.collection.Pair<java.io.File, KeyValueStoreFile> next(java.io.File file, Headers headers, DataProvider data) throws java.io.IOException
+//ORIGINAL LINE: public final org.Neo4Net.helpers.collection.Pair<java.io.File, KeyValueStoreFile> next(java.io.File file, Headers headers, DataProvider data) throws java.io.IOException
 		 public Pair<File, KeyValueStoreFile> Next( File file, Headers headers, DataProvider data )
 		 {
 			  File path = NextFile( file );

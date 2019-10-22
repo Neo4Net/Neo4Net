@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.impl.traversal
 {
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;

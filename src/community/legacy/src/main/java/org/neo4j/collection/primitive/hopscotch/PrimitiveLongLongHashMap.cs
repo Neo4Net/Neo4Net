@@ -25,7 +25,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 	using Monitor = Neo4Net.Collections.primitive.hopscotch.HopScotchHashingAlgorithm.Monitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_HASHING;
+//	import static org.Neo4Net.collection.primitive.hopscotch.HopScotchHashingAlgorithm.DEFAULT_HASHING;
 
 	public class PrimitiveLongLongHashMap : AbstractLongHopScotchCollection<long[]>, PrimitiveLongLongMap
 	{
@@ -79,7 +79,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void visitEntries(org.neo4j.collection.primitive.PrimitiveLongLongVisitor<E> visitor) throws E
+//ORIGINAL LINE: public <E extends Exception> void visitEntries(org.Neo4Net.collection.primitive.PrimitiveLongLongVisitor<E> visitor) throws E
 		 public override void VisitEntries<E>( PrimitiveLongLongVisitor<E> visitor ) where E : Exception
 		 {
 			  long nullKey = Table.nullKey();

@@ -31,12 +31,12 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using ExtensionType = Neo4Net.Kernel.extension.ExtensionType;
 	using Neo4Net.Kernel.extension;
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.Kernel.impl.locking.LockService_LockType;
 
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Api.Index
 		  *
 		  * Then, when we add data to an index, two outcomes are possible, depending on the
 		  * data:
-		  *  - The index does not contain an equivalent value, and the entity id is added to
+		  *  - The index does not contain an equivalent value, and the IEntity id is added to
 		  *    the index.
 		  *  - The index already contains an equivalent value, and the addition is rejected.
 		  *
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectChangingEntryToAlreadyIndexedValue()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectChangingEntryToAlreadyIndexedValue()
 		 public virtual void OnlineConstraintShouldRejectChangingEntryToAlreadyIndexedValue()
 		 {
 			  // Given
@@ -242,7 +242,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictsInTheSameTransaction()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictsInTheSameTransaction()
 		 public virtual void OnlineConstraintShouldRejectConflictsInTheSameTransaction()
 		 {
 			  // Given
@@ -305,7 +305,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 		 // Replaces UniqueIAC: shouldRejectEntryWithAlreadyIndexedValue
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictingPropertyChange()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictingPropertyChange()
 		 public virtual void OnlineConstraintShouldRejectConflictingPropertyChange()
 		 {
 			  // Given
@@ -316,7 +316,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictingLabelChange()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectConflictingLabelChange()
 		 public virtual void OnlineConstraintShouldRejectConflictingLabelChange()
 		 {
 			  // Given
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 		 // Replaces UniqueIAC: shouldRejectAddingEntryToValueAlreadyIndexedByPriorChange
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectAddingEntryForValueAlreadyIndexedByPriorChange()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectAddingEntryForValueAlreadyIndexedByPriorChange()
 		 public virtual void OnlineConstraintShouldRejectAddingEntryForValueAlreadyIndexedByPriorChange()
 		 {
 			  // Given
@@ -375,7 +375,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 		 // Replaces UniqueIAC: shouldRejectEntriesInSameTransactionWithDuplicateIndexedValue\
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectDuplicateEntriesAddedInSameTransaction()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void onlineConstraintShouldRejectDuplicateEntriesAddedInSameTransaction()
 		 public virtual void OnlineConstraintShouldRejectDuplicateEntriesAddedInSameTransaction()
 		 {
 			  // Given
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.ConstraintViolationException.class) public void populatingConstraintMustRejectDatasetWithDuplicateEntries()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.ConstraintViolationException.class) public void populatingConstraintMustRejectDatasetWithDuplicateEntries()
 		 public virtual void PopulatingConstraintMustRejectDatasetWithDuplicateEntries()
 		 {
 			  // Given
@@ -682,7 +682,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 private Node _c;
 		 private Node _d;
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 		 /// <summary>
 		 /// Effectively:
@@ -879,7 +879,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Action setProperty(final org.neo4j.graphdb.Node node, final Object value)
+//ORIGINAL LINE: private Action setProperty(final org.Neo4Net.graphdb.Node node, final Object value)
 		 private Action SetProperty( Node node, object value )
 		 {
 			  return new ActionAnonymousInnerClass3( this, node, value );
@@ -906,7 +906,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Action removeProperty(final org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: private Action removeProperty(final org.Neo4Net.graphdb.Node node)
 		 private Action RemoveProperty( Node node )
 		 {
 			  return new ActionAnonymousInnerClass4( this, node );
@@ -931,7 +931,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Action addLabel(final org.neo4j.graphdb.Node node, final org.neo4j.graphdb.Label label)
+//ORIGINAL LINE: private Action addLabel(final org.Neo4Net.graphdb.Node node, final org.Neo4Net.graphdb.Label label)
 		 private Action AddLabel( Node node, Label label )
 		 {
 			  return new ActionAnonymousInnerClass5( this, node, label );
@@ -983,7 +983,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Action assertLookupNode(final Object propertyValue, final org.hamcrest.Matcher<org.neo4j.graphdb.Node> matcher)
+//ORIGINAL LINE: private Action assertLookupNode(final Object propertyValue, final org.hamcrest.Matcher<org.Neo4Net.graphdb.Node> matcher)
 		 private Action AssertLookupNode( object propertyValue, Matcher<Node> matcher )
 		 {
 			  return new ActionAnonymousInnerClass7( this, propertyValue, matcher );
@@ -1061,7 +1061,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 {
 				 type = typeof( T );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") org.neo4j.kernel.internal.GraphDatabaseAPI api = (org.neo4j.kernel.internal.GraphDatabaseAPI) db;
+//ORIGINAL LINE: @SuppressWarnings("deprecation") org.Neo4Net.kernel.internal.GraphDatabaseAPI api = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) db;
 			  GraphDatabaseAPI api = ( GraphDatabaseAPI ) _db;
 			  DependencyResolver resolver = api.DependencyResolver;
 			  return resolver.ResolveDependency( type );

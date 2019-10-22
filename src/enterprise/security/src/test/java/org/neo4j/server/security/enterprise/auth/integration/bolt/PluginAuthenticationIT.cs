@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using Driver = Neo4Net.driver.v1.Driver;
 	using Session = Neo4Net.driver.v1.Session;
 	using Transaction = Neo4Net.driver.v1.Transaction;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using TestCacheableAuthPlugin = Neo4Net.Server.security.enterprise.auth.plugin.TestCacheableAuthPlugin;
 	using TestCacheableAuthenticationPlugin = Neo4Net.Server.security.enterprise.auth.plugin.TestCacheableAuthenticationPlugin;
 	using TestCustomCacheableAuthenticationPlugin = Neo4Net.Server.security.enterprise.auth.plugin.TestCustomCacheableAuthenticationPlugin;
@@ -46,7 +46,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.greaterThanOrEqualTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class PluginAuthenticationIT : EnterpriseAuthenticationTestBase
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 private static readonly string _defaultTestPluginRealms = string.join( ", ", _defaultTestPluginRealmList.stream().map(s => StringUtils.prependIfMissing(s, SecuritySettings.PLUGIN_REALM_NAME_PREFIX)).collect(Collectors.toList()) );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> getSettings()
+//ORIGINAL LINE: protected java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettings()
 		 protected internal override IDictionary<Setting<object>, string> Settings
 		 {
 			 get
@@ -68,7 +68,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //ORIGINAL LINE: @Test public void shouldAuthenticateWithTestAuthenticationPlugin()
 		 public virtual void ShouldAuthenticateWithTestAuthenticationPlugin()
 		 {
-			  AssertAuth( "neo4j", "neo4j", "plugin-TestAuthenticationPlugin" );
+			  AssertAuth( "Neo4Net", "Neo4Net", "plugin-TestAuthenticationPlugin" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -81,16 +81,16 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  TestCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.set( 0 );
 
 			  // When we log in the first time our plugin should get a call
-			  AssertAuth( "neo4j", "neo4j", "plugin-TestCacheableAuthenticationPlugin" );
+			  AssertAuth( "Neo4Net", "Neo4Net", "plugin-TestCacheableAuthenticationPlugin" );
 			  assertThat( TestCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 
 			  // When we log in the second time our plugin should _not_ get a call since authentication info should be cached
-			  AssertAuth( "neo4j", "neo4j", "plugin-TestCacheableAuthenticationPlugin" );
+			  AssertAuth( "Neo4Net", "Neo4Net", "plugin-TestCacheableAuthenticationPlugin" );
 			  assertThat( TestCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 
 			  // When we log in the with the wrong credentials it should fail and
 			  // our plugin should _not_ get a call since authentication info should be cached
-			  AssertAuthFail( "neo4j", "wrong_password", "plugin-TestCacheableAuthenticationPlugin" );
+			  AssertAuthFail( "Neo4Net", "wrong_password", "plugin-TestCacheableAuthenticationPlugin" );
 			  assertThat( TestCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 		 }
 
@@ -104,16 +104,16 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_cache_ttl.name(), "60m" );
 
 			  // When we log in the first time our plugin should get a call
-			  AssertAuth( "neo4j", "neo4j", "plugin-TestCustomCacheableAuthenticationPlugin" );
+			  AssertAuth( "Neo4Net", "Neo4Net", "plugin-TestCustomCacheableAuthenticationPlugin" );
 			  assertThat( TestCustomCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 
 			  // When we log in the second time our plugin should _not_ get a call since authentication info should be cached
-			  AssertAuth( "neo4j", "neo4j", "plugin-TestCustomCacheableAuthenticationPlugin" );
+			  AssertAuth( "Neo4Net", "Neo4Net", "plugin-TestCustomCacheableAuthenticationPlugin" );
 			  assertThat( TestCustomCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 
 			  // When we log in the with the wrong credentials it should fail and
 			  // our plugin should _not_ get a call since authentication info should be cached
-			  AssertAuthFail( "neo4j", "wrong_password", "plugin-TestCustomCacheableAuthenticationPlugin" );
+			  AssertAuthFail( "Neo4Net", "wrong_password", "plugin-TestCustomCacheableAuthenticationPlugin" );
 			  assertThat( TestCustomCacheableAuthenticationPlugin.getAuthenticationInfoCallCount.get(), equalTo(1) );
 		 }
 
@@ -121,7 +121,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //ORIGINAL LINE: @Test public void shouldAuthenticateAndAuthorizeWithTestAuthPlugin()
 		 public virtual void ShouldAuthenticateAndAuthorizeWithTestAuthPlugin()
 		 {
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestAuthPlugin" ) )
 			  {
 					AssertReadSucceeds( driver );
 					AssertWriteFails( driver );
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //ORIGINAL LINE: @Test public void shouldAuthenticateAndAuthorizeWithCacheableTestAuthPlugin()
 		 public virtual void ShouldAuthenticateAndAuthorizeWithCacheableTestAuthPlugin()
 		 {
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCacheableAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAuthPlugin" ) )
 			  {
 					AssertReadSucceeds( driver );
 					AssertWriteFails( driver );
@@ -149,7 +149,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_cache_ttl.name(), "60m" );
 
 			  // When we log in the first time our plugin should get a call
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCacheableAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAuthPlugin" ) )
 			  {
 					assertThat( TestCacheableAuthPlugin.getAuthInfoCallCount.get(), equalTo(1) );
 					AssertReadSucceeds( driver );
@@ -157,7 +157,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  }
 
 			  // When we log in the second time our plugin should _not_ get a call since auth info should be cached
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCacheableAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAuthPlugin" ) )
 			  {
 					assertThat( TestCacheableAuthPlugin.getAuthInfoCallCount.get(), equalTo(1) );
 					AssertReadSucceeds( driver );
@@ -166,7 +166,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 			  // When we log in the with the wrong credentials it should fail and
 			  // our plugin should _not_ get a call since auth info should be cached
-			  AssertAuthFail( "neo4j", "wrong_password", "plugin-TestCacheableAuthPlugin" );
+			  AssertAuthFail( "Neo4Net", "wrong_password", "plugin-TestCacheableAuthPlugin" );
 			  assertThat( TestCacheableAuthPlugin.getAuthInfoCallCount.get(), equalTo(1) );
 		 }
 
@@ -177,7 +177,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 {
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_providers.name(), "plugin-TestCombinedAuthPlugin" );
 
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCombinedAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCombinedAuthPlugin" ) )
 			  {
 					AssertReadSucceeds( driver );
 					AssertWriteFails( driver );
@@ -191,7 +191,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 {
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_providers.name(), "plugin-TestAuthenticationPlugin,plugin-TestAuthorizationPlugin" );
 
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net" ) )
 			  {
 					AssertReadSucceeds( driver );
 					AssertWriteFails( driver );
@@ -205,12 +205,12 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 {
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_providers.name(), "plugin-TestCacheableAdminAuthPlugin" );
 
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCacheableAdminAuthPlugin" ) )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAdminAuthPlugin" ) )
 			  {
 					AssertReadSucceeds( driver );
 
 					// When
-					ClearAuthCacheFromDifferentConnection( "neo4j", "neo4j", "plugin-TestCacheableAdminAuthPlugin" );
+					ClearAuthCacheFromDifferentConnection( "Neo4Net", "Neo4Net", "plugin-TestCacheableAdminAuthPlugin" );
 
 					// Then
 					AssertAuthorizationExpired( driver );
@@ -225,7 +225,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_providers.name(), "plugin-TestCacheableAdminAuthPlugin" );
 
 			  // Then
-			  using ( Driver driver = ConnectDriver( "neo4j", "neo4j", "plugin-TestCacheableAdminAuthPlugin" ), Session session = driver.session() )
+			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAdminAuthPlugin" ), Session session = driver.session() )
 			  {
 					using ( Transaction tx = session.beginTransaction() )
 					{
@@ -241,7 +241,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAuthenticateWithTestCustomParametersAuthenticationPlugin()
 		 {
-			  AuthToken token = AuthTokens.custom( "neo4j", "", "plugin-TestCustomParametersAuthenticationPlugin", "custom", map( "my_credentials", Arrays.asList( 1L, 2L, 3L, 4L ) ) );
+			  AuthToken token = AuthTokens.custom( "Neo4Net", "", "plugin-TestCustomParametersAuthenticationPlugin", "custom", map( "my_credentials", Arrays.asList( 1L, 2L, 3L, 4L ) ) );
 			  AssertAuth( token );
 		 }
 
@@ -252,7 +252,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 {
 			  RestartServerWithOverriddenSettings( SecuritySettings.auth_providers.name(), "plugin-TestCombinedAuthPlugin" );
 
-			  using ( Driver driver = ConnectDriver( "authorization_expired_user", "neo4j" ) )
+			  using ( Driver driver = ConnectDriver( "authorization_expired_user", "Neo4Net" ) )
 			  {
 					AssertAuthorizationExpired( driver );
 			  }

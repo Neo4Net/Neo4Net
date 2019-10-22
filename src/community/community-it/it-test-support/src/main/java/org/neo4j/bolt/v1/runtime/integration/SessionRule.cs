@@ -32,9 +32,9 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 	using Authentication = Neo4Net.Bolt.security.auth.Authentication;
 	using BasicAuthentication = Neo4Net.Bolt.security.auth.BasicAuthentication;
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using UserManagerSupplier = Neo4Net.Kernel.api.security.UserManagerSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -75,7 +75,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			 public override void evaluate()
 			 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> config = new java.util.HashMap<>();
 				  IDictionary<Setting<object>, string> config = new Dictionary<Setting<object>, string>();
 				  config[GraphDatabaseSettings.auth_enabled] = Convert.ToString( _outerInstance.authEnabled );
 				  _outerInstance.gdb = ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).newImpermanentDatabase(config);

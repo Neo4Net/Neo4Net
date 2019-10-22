@@ -21,15 +21,15 @@ namespace Neo4Net.Io.layout
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.getCanonicalFile;
+//	import static org.Neo4Net.io.fs.FileUtils.getCanonicalFile;
 
 	/// <summary>
-	/// File layout representation of neo4j store that provides the ability to reference any store
+	/// File layout representation of Neo4Net store that provides the ability to reference any store
 	/// specific file that can be created by particular store implementation.
 	/// <br/>
 	/// <b>Any file lookup should use provided store layout or particular <seealso cref="DatabaseLayout database layout"/>.</b>
 	/// <br/>
-	/// Store layout represent layout of whole neo4j store while particular <seealso cref="DatabaseLayout database layout"/> represent single database.
+	/// Store layout represent layout of whole Neo4Net store while particular <seealso cref="DatabaseLayout database layout"/> represent single database.
 	/// Store layout should be used as a factory of any layouts for particular database.
 	/// <br/>
 	/// Any user-provided store directory will be transformed to canonical file form and any subsequent store layout file

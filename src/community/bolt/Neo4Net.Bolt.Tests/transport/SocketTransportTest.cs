@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.transport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.transport.TransportThrottleGroup.NO_THROTTLE;
+//	import static org.Neo4Net.bolt.transport.TransportThrottleGroup.NO_THROTTLE;
 
 	internal class SocketTransportTest
 	{

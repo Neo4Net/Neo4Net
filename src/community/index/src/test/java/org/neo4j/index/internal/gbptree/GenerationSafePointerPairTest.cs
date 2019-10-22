@@ -44,25 +44,25 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.FLAG_READ;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.FLAG_READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.FLAG_WRITE;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.FLAG_WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.GENERATION_COMPARISON_MASK;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.GENERATION_COMPARISON_MASK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.READ_OR_WRITE_MASK;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.READ_OR_WRITE_MASK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.SHIFT_STATE_A;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.SHIFT_STATE_A;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.SHIFT_STATE_B;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.SHIFT_STATE_B;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.failureDescription;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.failureDescription;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.isRead;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.isRead;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointerStateFromResult;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointerStateFromResult;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointerStateName;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointerStateName;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class GenerationSafePointerPairTest
@@ -264,19 +264,19 @@ namespace Neo4Net.Index.Internal.gbptree
 		 internal abstract class State
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EMPTY(GenerationSafePointerPair.EMPTY) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { return EMPTY_POINTER; } },
+//           EMPTY(GenerationSafePointerPair.EMPTY) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { return EMPTY_POINTER; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           BROKEN(GenerationSafePointerPair.BROKEN) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { int offset = cursor.getOffset(); GenerationSafePointer.write(cursor, 10, 20); cursor.setOffset(offset + GenerationSafePointer.SIZE - GenerationSafePointer.CHECKSUM_SIZE); short checksum = GenerationSafePointer.readChecksum(cursor); cursor.setOffset(offset + GenerationSafePointer.SIZE - GenerationSafePointer.CHECKSUM_SIZE); cursor.putShort((short) ~checksum); return pointer; } void verify(org.neo4j.io.pagecache.PageCursor cursor, long expectedPointer, boolean slotA) { cursor.setOffset(slotA ? SLOT_A_OFFSET : SLOT_B_OFFSET); long generation = GenerationSafePointer.readGeneration(cursor); long pointer = GenerationSafePointer.readPointer(cursor); short checksum = GenerationSafePointer.readChecksum(cursor); assertNotEquals(GenerationSafePointer.checksumOf(generation, pointer), checksum); } },
+//           BROKEN(GenerationSafePointerPair.BROKEN) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { int offset = cursor.getOffset(); GenerationSafePointer.write(cursor, 10, 20); cursor.setOffset(offset + GenerationSafePointer.SIZE - GenerationSafePointer.CHECKSUM_SIZE); short checksum = GenerationSafePointer.readChecksum(cursor); cursor.setOffset(offset + GenerationSafePointer.SIZE - GenerationSafePointer.CHECKSUM_SIZE); cursor.putShort((short) ~checksum); return pointer; } void verify(org.Neo4Net.io.pagecache.PageCursor cursor, long expectedPointer, boolean slotA) { cursor.setOffset(slotA ? SLOT_A_OFFSET : SLOT_B_OFFSET); long generation = GenerationSafePointer.readGeneration(cursor); long pointer = GenerationSafePointer.readPointer(cursor); short checksum = GenerationSafePointer.readChecksum(cursor); assertNotEquals(GenerationSafePointer.checksumOf(generation, pointer), checksum); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           OLD_CRASH(GenerationSafePointerPair.CRASH) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, OLD_CRASH_GENERATION, pointer); return pointer; } },
+//           OLD_CRASH(GenerationSafePointerPair.CRASH) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, OLD_CRASH_GENERATION, pointer); return pointer; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CRASH(GenerationSafePointerPair.CRASH) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, CRASH_GENERATION, pointer); return pointer; } },
+//           CRASH(GenerationSafePointerPair.CRASH) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, CRASH_GENERATION, pointer); return pointer; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           OLD_STABLE(GenerationSafePointerPair.STABLE) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, OLD_STABLE_GENERATION, pointer); return pointer; } },
+//           OLD_STABLE(GenerationSafePointerPair.STABLE) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, OLD_STABLE_GENERATION, pointer); return pointer; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           STABLE(GenerationSafePointerPair.STABLE) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, STABLE_GENERATION, pointer); return pointer; } },
+//           STABLE(GenerationSafePointerPair.STABLE) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, STABLE_GENERATION, pointer); return pointer; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           UNSTABLE(GenerationSafePointerPair.UNSTABLE) { long materialize(org.neo4j.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, UNSTABLE_GENERATION, pointer); return pointer; } };
+//           UNSTABLE(GenerationSafePointerPair.UNSTABLE) { long materialize(org.Neo4Net.io.pagecache.PageCursor cursor, long pointer) { GenerationSafePointer.write(cursor, UNSTABLE_GENERATION, pointer); return pointer; } };
 
 			  private static readonly IList<State> valueList = new List<State>();
 

@@ -29,14 +29,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using RelationshipCommand = Neo4Net.Kernel.impl.transaction.command.Command.RelationshipCommand;
 
 	/// <summary>
-	/// Groups property commands by entity. The commands are provided from a list of transaction commands.
-	/// Most entity updates include both the entity command as well as property commands, but sometimes
-	/// only property commands for an entity exists in the list and this grouper handles both scenarios.
+	/// Groups property commands by IEntity. The commands are provided from a list of transaction commands.
+	/// Most IEntity updates include both the IEntity command as well as property commands, but sometimes
+	/// only property commands for an IEntity exists in the list and this grouper handles both scenarios.
 	/// Commands are appended to an array and then sorted before handed over for being processed.
-	/// Hence one entity group can look like any of these combinations:
+	/// Hence one IEntity group can look like any of these combinations:
 	/// <ul>
 	///     <li>Entity command (<seealso cref="NodeCommand"/> or <seealso cref="RelationshipCommand"/> followed by zero or more <seealso cref="PropertyCommand property commands"/>
-	///     for that entity</li>
+	///     for that IEntity</li>
 	///     <li>zero or more <seealso cref="PropertyCommand property commands"/>, all for the same node</li>
 	/// </ul>
 	/// <para>
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// </ol>
 	/// </para>
 	/// </summary>
-	public class EntityCommandGrouper<ENTITY> where ENTITY : Neo4Net.Kernel.impl.transaction.command.Command
+	public class IEntityCommandGrouper<ENTITY> where IEntity : Neo4Net.Kernel.impl.transaction.command.Command
 	{
 		 /// <summary>
 		 /// Enforces the order described on the class-level javadoc above.
@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			 public int compare( Command o1, Command o2 )
 			 {
-				  int entityIdComparison = Long.compare( entityId( o1 ), entityId( o2 ) );
-				  return entityIdComparison != 0 ? entityIdComparison : Integer.compare( commandType( o1 ), commandType( o2 ) );
+				  int IEntityIdComparison = Long.compare( IEntityId( o1 ), IEntityId( o2 ) );
+				  return IEntityIdComparison != 0 ? IEntityIdComparison : Integer.compare( commandType( o1 ), commandType( o2 ) );
 			 }
 
-			 private long entityId( Command command )
+			 private long IEntityId( Command command )
 			 {
 				  if ( command.GetType() == outerInstance.entityCommandClass )
 				  {
@@ -82,10 +82,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private Command[] _commands;
 		 private int _writeCursor;
 
-		 public EntityCommandGrouper( Type entityCommandClass, int sizeHint )
+		 public IEntityCommandGrouper( Type IEntityCommandClass, int sizeHint )
 		 {
-				 entityCommandClass = typeof( ENTITY );
-			  this._entityCommandClass = entityCommandClass;
+				 IEntityCommandClass = typeof( IEntity );
+			  this._entityCommandClass = IEntityCommandClass;
 			  this._commands = new Command[sizeHint];
 		 }
 
@@ -118,16 +118,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// Interaction goes like this:
 		 /// <ol>
 		 ///     <li>Call <seealso cref="nextEntity()"/> to go to the next group, if any</li>
-		 ///     <li>A group may or may not have the entity command, as accessed by <seealso cref="currentEntityCommand()"/>,
-		 ///         either way the entity id is accessible using <seealso cref="currentEntityId()"/></li>
+		 ///     <li>A group may or may not have the IEntity command, as accessed by <seealso cref="currentEntityCommand()"/>,
+		 ///         either way the IEntity id is accessible using <seealso cref="currentEntityId()"/></li>
 		 ///     <li>Call <seealso cref="nextProperty()"/> until it returns null, now all the <seealso cref="PropertyCommand"/> in this group have been accessed</li>
 		 /// </ol>
 		 /// </summary>
 		 public class Cursor
 		 {
-			 private readonly EntityCommandGrouper<ENTITY> _outerInstance;
+			 private readonly IEntityCommandGrouper<ENTITY> _outerInstance;
 
-			 public Cursor( EntityCommandGrouper<ENTITY> outerInstance )
+			 public Cursor( IEntityCommandGrouper<ENTITY> outerInstance )
 			 {
 				 this._outerInstance = outerInstance;
 			 }
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  internal int ReadCursor;
 			  internal long CurrentEntity;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal ENTITY CurrentEntityCommandConflict;
+			  internal IEntity CurrentEntityCommandConflict;
 
 			  public virtual bool NextEntity()
 			  {
@@ -146,13 +146,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 					if ( outerInstance.commands[ReadCursor].GetType() == outerInstance.entityCommandClass )
 					{
-						 CurrentEntityCommandConflict = ( ENTITY ) outerInstance.commands[ReadCursor++];
+						 CurrentEntityCommandConflict = ( IEntity ) outerInstance.commands[ReadCursor++];
 						 CurrentEntity = CurrentEntityCommandConflict.Key;
 					}
 					else
 					{
 						 Command.PropertyCommand firstPropertyCommand = ( Command.PropertyCommand ) outerInstance.commands[ReadCursor];
-						 CurrentEntityCommandConflict = default( ENTITY );
+						 CurrentEntityCommandConflict = default( IEntity );
 						 CurrentEntity = firstPropertyCommand.EntityId;
 					}
 					return true;
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					return CurrentEntity;
 			  }
 
-			  public virtual ENTITY CurrentEntityCommand()
+			  public virtual IEntity CurrentEntityCommand()
 			  {
 					return CurrentEntityCommandConflict;
 			  }

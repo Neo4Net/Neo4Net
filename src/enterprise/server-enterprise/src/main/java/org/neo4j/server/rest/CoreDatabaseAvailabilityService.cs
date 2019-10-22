@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,29 +13,29 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.rest
 {
 
 	using CoreGraphDatabase = Neo4Net.causalclustering.core.CoreGraphDatabase;
 	using Role = Neo4Net.causalclustering.core.consensus.roles.Role;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using AdvertisableService = Neo4Net.Server.rest.management.AdvertisableService;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
 
 
 	/// <summary>
-	/// To be deprecated by <seealso cref="org.neo4j.server.rest.causalclustering.CausalClusteringService"/>.
+	/// To be deprecated by <seealso cref="org.Neo4Net.server.rest.causalclustering.CausalClusteringService"/>.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Path(CoreDatabaseAvailabilityService.BASE_PATH) public class CoreDatabaseAvailabilityService implements org.neo4j.server.rest.management.AdvertisableService
+//ORIGINAL LINE: @Path(CoreDatabaseAvailabilityService.BASE_PATH) public class CoreDatabaseAvailabilityService implements org.Neo4Net.server.rest.management.AdvertisableService
 	public class CoreDatabaseAvailabilityService : AdvertisableService
 	{
 		 public const string BASE_PATH = "server/core";
@@ -47,8 +47,8 @@ namespace Neo4Net.Server.rest
 		 private readonly CoreGraphDatabase _coreDatabase;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public CoreDatabaseAvailabilityService(@Context OutputFormat output, @Context GraphDatabaseService db)
-		 public CoreDatabaseAvailabilityService( OutputFormat output, GraphDatabaseService db )
+//ORIGINAL LINE: public CoreDatabaseAvailabilityService(@Context OutputFormat output, @Context IGraphDatabaseService db)
+		 public CoreDatabaseAvailabilityService( OutputFormat output, IGraphDatabaseService db )
 		 {
 			  this._output = output;
 			  if ( db is CoreGraphDatabase )
@@ -138,9 +138,9 @@ namespace Neo4Net.Server.rest
 			  return PlainTextResponse( OK, "true" );
 		 }
 
-		 private Response PlainTextResponse( Response.Status status, string entityBody )
+		 private Response PlainTextResponse( Response.Status status, string IEntityBody )
 		 {
-			  return status( status ).type( TEXT_PLAIN_TYPE ).entity( entityBody ).build();
+			  return status( status ).type( TEXT_PLAIN_TYPE ).entity( IEntityBody ).build();
 		 }
 
 		 public virtual string Name

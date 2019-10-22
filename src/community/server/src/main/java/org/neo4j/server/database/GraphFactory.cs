@@ -22,7 +22,7 @@ namespace Neo4Net.Server.database
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 
-	using static Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 
 	public delegate GraphDatabaseFacade GraphFactory( Config config, Dependencies dependencies );
 

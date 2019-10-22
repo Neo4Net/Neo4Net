@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Helpers.Collections
 {
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// Wraps an <seealso cref="ResourceIterable"/> so that it returns items of another type. The

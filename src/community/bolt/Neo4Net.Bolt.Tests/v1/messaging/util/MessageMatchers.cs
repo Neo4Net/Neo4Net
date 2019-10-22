@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 	using TypeSafeMatcher = org.hamcrest.TypeSafeMatcher;
 
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using ResponseMessage = Neo4Net.Bolt.messaging.ResponseMessage;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
@@ -39,10 +39,10 @@ namespace Neo4Net.Bolt.v1.messaging.util
 	using BufferedChannelOutput = Neo4Net.Bolt.v1.packstream.BufferedChannelOutput;
 	using TestNotification = Neo4Net.Bolt.v1.transport.integration.TestNotification;
 	using QueryResult = Neo4Net.Cypher.result.QueryResult;
-	using Node = Neo4Net.Graphdb.Node;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Neo4Net.Kernel.impl.util;
 	using HexPrinter = Neo4Net.Kernel.impl.util.HexPrinter;
@@ -102,7 +102,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<java.util.List<org.neo4j.bolt.messaging.ResponseMessage>> equalsMessages(final org.hamcrest.Matcher<org.neo4j.bolt.messaging.ResponseMessage>... messageMatchers)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<java.util.List<org.Neo4Net.bolt.messaging.ResponseMessage>> equalsMessages(final org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage>... messageMatchers)
 		 public static Matcher<IList<ResponseMessage>> EqualsMessages( params Matcher<ResponseMessage>[] messageMatchers )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass( messageMatchers );
@@ -173,7 +173,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.neo4j.bolt.messaging.ResponseMessage> msgSuccess(final java.util.Map<String,Object> metadata)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage> msgSuccess(final java.util.Map<String,Object> metadata)
 		 public static Matcher<ResponseMessage> MsgSuccess( IDictionary<string, object> metadata )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass3( metadata );
@@ -202,7 +202,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.neo4j.bolt.messaging.ResponseMessage> msgSuccess(final org.hamcrest.Matcher<java.util.Map<String,?>> matcher)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage> msgSuccess(final org.hamcrest.Matcher<java.util.Map<String,?>> matcher)
 		 public static Matcher<ResponseMessage> MsgSuccess<T1>( Matcher<T1> matcher )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass4( matcher );
@@ -270,7 +270,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.neo4j.bolt.messaging.ResponseMessage> msgFailure(final org.neo4j.kernel.api.exceptions.Status status, final String message)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage> msgFailure(final org.Neo4Net.kernel.api.exceptions.Status status, final String message)
 		 public static Matcher<ResponseMessage> MsgFailure( Status status, string message )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass7( status, message );
@@ -303,7 +303,7 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.Matcher<org.neo4j.bolt.messaging.ResponseMessage> msgRecord(final org.hamcrest.Matcher<org.neo4j.cypher.result.QueryResult_Record> matcher)
+//ORIGINAL LINE: public static org.hamcrest.Matcher<org.Neo4Net.bolt.messaging.ResponseMessage> msgRecord(final org.hamcrest.Matcher<org.Neo4Net.cypher.result.QueryResult_Record> matcher)
 		 public static Matcher<ResponseMessage> MsgRecord( Matcher<Neo4Net.Cypher.result.QueryResult_Record> matcher )
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass8( matcher );
@@ -335,11 +335,11 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static byte[] serialize(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, org.neo4j.bolt.messaging.RequestMessage... messages) throws java.io.IOException
-		 public static sbyte[] Serialize( Neo4jPack neo4jPack, params RequestMessage[] messages )
+//ORIGINAL LINE: public static byte[] serialize(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.RequestMessage... messages) throws java.io.IOException
+		 public static sbyte[] Serialize( Neo4NetPack Neo4NetPack, params RequestMessage[] messages )
 		 {
 			  RecordingByteChannel rawData = new RecordingByteChannel();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = neo4jPack.NewPacker( new BufferedChannelOutput( rawData ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = Neo4NetPack.NewPacker( new BufferedChannelOutput( rawData ) );
 			  BoltRequestMessageWriter writer = new BoltRequestMessageWriter( packer );
 
 			  foreach ( RequestMessage message in messages )
@@ -352,12 +352,12 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static byte[] serialize(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, org.neo4j.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
-		 public static sbyte[] Serialize( Neo4jPack neo4jPack, params ResponseMessage[] messages )
+//ORIGINAL LINE: public static byte[] serialize(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, org.Neo4Net.bolt.messaging.ResponseMessage... messages) throws java.io.IOException
+		 public static sbyte[] Serialize( Neo4NetPack Neo4NetPack, params ResponseMessage[] messages )
 		 {
 			  RecordingByteChannel rawData = new RecordingByteChannel();
 			  BufferedChannelOutput output = new BufferedChannelOutput( rawData );
-			  BoltResponseMessageWriterV1 writer = new BoltResponseMessageWriterV1( neo4jPack.newPacker, output, NullLogService.Instance );
+			  BoltResponseMessageWriterV1 writer = new BoltResponseMessageWriterV1( Neo4NetPack.newPacker, output, NullLogService.Instance );
 
 			  foreach ( ResponseMessage message in messages )
 			  {
@@ -369,10 +369,10 @@ namespace Neo4Net.Bolt.v1.messaging.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.bolt.messaging.ResponseMessage responseMessage(org.neo4j.bolt.messaging.Neo4jPack neo4jPack, byte[] bytes) throws java.io.IOException
-		 public static ResponseMessage ResponseMessage( Neo4jPack neo4jPack, sbyte[] bytes )
+//ORIGINAL LINE: public static org.Neo4Net.bolt.messaging.ResponseMessage responseMessage(org.Neo4Net.bolt.messaging.Neo4NetPack Neo4NetPack, byte[] bytes) throws java.io.IOException
+		 public static ResponseMessage ResponseMessage( Neo4NetPack Neo4NetPack, sbyte[] bytes )
 		 {
-			  BoltResponseMessageReader unpacker = ResponseReader( neo4jPack, bytes );
+			  BoltResponseMessageReader unpacker = ResponseReader( Neo4NetPack, bytes );
 			  BoltResponseMessageRecorder consumer = new BoltResponseMessageRecorder();
 
 			  try
@@ -386,11 +386,11 @@ namespace Neo4Net.Bolt.v1.messaging.util
 			  }
 		 }
 
-		 private static BoltResponseMessageReader ResponseReader( Neo4jPack neo4jPack, sbyte[] bytes )
+		 private static BoltResponseMessageReader ResponseReader( Neo4NetPack Neo4NetPack, sbyte[] bytes )
 		 {
 			  BufferedChannelInput input = new BufferedChannelInput( 128 );
 			  input.Reset( new ArrayByteChannel( bytes ) );
-			  return new BoltResponseMessageReader( neo4jPack.NewUnpacker( input ) );
+			  return new BoltResponseMessageReader( Neo4NetPack.NewUnpacker( input ) );
 		 }
 
 	}

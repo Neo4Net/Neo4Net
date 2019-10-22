@@ -29,13 +29,13 @@ namespace Schema
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using Result = Neo4Net.Consistency.ConsistencyCheckService.Result;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -77,17 +77,17 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.progress.ProgressMonitorFactory.NONE;
+//	import static org.Neo4Net.helpers.progress.ProgressMonitorFactory.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.AdditionalInitialIds.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration.DEFAULT;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.GeneratingInputIterator.EMPTY_ITERABLE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.GeneratingInputIterator.EMPTY_ITERABLE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportLogic.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.Inputs.knownEstimates;
 
 	/// <summary>
 	/// Idea is to test a <seealso cref="MultipleIndexPopulator"/> and <seealso cref="BatchingMultipleIndexPopulator"/> with a bunch of indexes,
@@ -209,8 +209,8 @@ namespace Schema
 		 private void PopulateDbAndIndexes( int nodeCount, bool multiThreaded )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db = new org.neo4j.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(directory.databaseDir()).setConfig(org.neo4j.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_directory.databaseDir()).setConfig(GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(directory.databaseDir()).setConfig(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_directory.databaseDir()).setConfig(GraphDatabaseSettings.multi_threaded_schema_index_population_enabled, multiThreaded + "").newGraphDatabase();
 			  try
 			  {
 					CreateIndexes( db );
@@ -246,7 +246,7 @@ namespace Schema
 
 		 private void DropIndexes()
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_directory.databaseDir()).setConfig(GraphDatabaseSettings.pagecache_memory, "8m").newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_directory.databaseDir()).setConfig(GraphDatabaseSettings.pagecache_memory, "8m").newGraphDatabase();
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )
@@ -264,7 +264,7 @@ namespace Schema
 			  }
 		 }
 
-		 private bool IndexesAreOnline( GraphDatabaseService db )
+		 private bool IndexesAreOnline( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -293,7 +293,7 @@ namespace Schema
 		 /// Create a bunch of indexes in a single transaction. This will have all the indexes being built
 		 /// using a single store scan... and this is the gist of what we're testing.
 		 /// </summary>
-		 private void CreateIndexes( GraphDatabaseService db )
+		 private void CreateIndexes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -308,7 +308,7 @@ namespace Schema
 			  }
 		 }
 
-		 private void ChangeRandomNode( GraphDatabaseService db, int nodeCount, RandomValues random )
+		 private void ChangeRandomNode( IGraphDatabaseService db, int nodeCount, RandomValues random )
 		 {
 			  try
 			  {

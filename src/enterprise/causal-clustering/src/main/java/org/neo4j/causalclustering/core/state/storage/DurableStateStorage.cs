@@ -1,10 +1,10 @@
 ﻿using System.Diagnostics;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state.storage
 {
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 private void Recover()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.core.state.StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = recoveryManager.recover(fileA, fileB);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.core.state.StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = recoveryManager.recover(fileA, fileB);
 			  StateRecoveryManager.RecoveryStatus<STATE> recoveryStatus = _recoveryManager.recover( _fileA, _fileB );
 
 			  this._currentStoreFile = recoveryStatus.ActiveFile();
@@ -172,7 +172,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.log.PhysicalFlushableChannel resetStoreFile(java.io.File nextStore) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalFlushableChannel resetStoreFile(java.io.File nextStore) throws java.io.IOException
 		 private PhysicalFlushableChannel ResetStoreFile( File nextStore )
 		 {
 			  _fsa.truncate( nextStore, 0 );

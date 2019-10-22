@@ -25,7 +25,7 @@ namespace Neo4Net.CommandLine.Admin.security
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -52,7 +52,7 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class SetDefaultAdminCommandTest
 	{
@@ -81,18 +81,18 @@ namespace Neo4Net.CommandLine.Admin.security
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expect = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Expect = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory(fileSystem);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory(fileSystem);
 		 public TestDirectory TestDir;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
 			  OutsideWorld mock = mock( typeof( OutsideWorld ) );
 			  when( mock.FileSystem() ).thenReturn(_fileSystem);
 			  _setDefaultAdmin = new SetDefaultAdminCommand( TestDir.directory( "home" ).toPath(), TestDir.directory("conf").toPath(), mock );
-			  _config = _setDefaultAdmin.loadNeo4jConfig();
+			  _config = _setDefaultAdmin.loadNeo4NetConfig();
 			  UserRepository users = CommunitySecurityModule.getUserRepository( _config, NullLogProvider.Instance, _fileSystem );
 			  users.create(new User.Builder("jake", LegacyCredential.forPassword("123"))
 									.withRequiredPasswordChange( false ).build());
@@ -153,10 +153,10 @@ namespace Neo4Net.CommandLine.Admin.security
 			  {
 					PrintStream ps = new PrintStream( baos );
 
-					Usage usage = new Usage( "neo4j-admin", mock( typeof( CommandLocator ) ) );
+					Usage usage = new Usage( "Neo4Net-admin", mock( typeof( CommandLocator ) ) );
 					usage.PrintUsageForCommand( new SetDefaultAdminCommandProvider(), ps.println );
 
-					assertEquals( string.Format( "usage: neo4j-admin set-default-admin <username>%n" + "%n" + "environment variables:%n" + "    NEO4J_CONF    Path to directory which contains neo4j.conf.%n" + "    NEO4J_DEBUG   Set to anything to enable debug output.%n" + "    NEO4J_HOME    Neo4j home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to neo4j 3.1 enterprise.%n" ), baos.ToString() );
+					assertEquals( string.Format( "usage: Neo4Net-admin set-default-admin <username>%n" + "%n" + "environment variables:%n" + "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf.%n" + "    Neo4Net_DEBUG   Set to anything to enable debug output.%n" + "    Neo4Net_HOME    Neo4Net home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Sets the user to become admin if users but no roles are present, for example%n" + "when upgrading to Neo4Net 3.1 enterprise.%n" ), baos.ToString() );
 			  }
 		 }
 

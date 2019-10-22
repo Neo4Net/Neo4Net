@@ -29,22 +29,22 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using InOrder = org.mockito.InOrder;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
 	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.api.schema.RelationTypeSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using Lock = Neo4Net.Kernel.impl.locking.Lock;
@@ -83,12 +83,12 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class NeoStoreIndexStoreViewTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 
 		 private readonly IDictionary<long, Lock> _lockMocks = new Dictionary<long, Lock>();
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 private StorageReader _reader;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void before() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Before public void before() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Before()
 		 {
@@ -151,9 +151,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 public virtual void ShouldScanExistingNodesForALabel()
 		 {
 			  // given
-			  EntityUpdateCollectingVisitor visitor = new EntityUpdateCollectingVisitor( this );
+			  IEntityUpdateCollectingVisitor visitor = new IEntityUpdateCollectingVisitor( this );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.api.labelscan.NodeLabelUpdate,Exception> labelVisitor = mock(org.neo4j.helpers.collection.Visitor.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate,Exception> labelVisitor = mock(org.Neo4Net.helpers.collection.Visitor.class);
 			  Visitor<NodeLabelUpdate, Exception> labelVisitor = mock( typeof( Visitor ) );
 			  StoreScan<Exception> storeScan = _storeView.visitNodes( new int[]{ _labelId }, id => id == _propertyKeyId, visitor, labelVisitor, false );
 
@@ -170,9 +170,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 public virtual void ShouldScanExistingRelationshipsForARelationshiptype()
 		 {
 			  // given
-			  EntityUpdateCollectingVisitor visitor = new EntityUpdateCollectingVisitor( this );
+			  IEntityUpdateCollectingVisitor visitor = new IEntityUpdateCollectingVisitor( this );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.impl.api.index.StoreScan<Exception> storeScan = storeView.visitRelationships(new int[]{relTypeId}, id -> id == relPropertyKeyId, visitor);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.api.index.StoreScan<Exception> storeScan = storeView.visitRelationships(new int[]{relTypeId}, id -> id == relPropertyKeyId, visitor);
 			  StoreScan<Exception> storeScan = _storeView.visitRelationships( new int[]{ _relTypeId }, id => id == _relPropertyKeyId, visitor );
 
 			  // when
@@ -190,9 +190,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  // given
 			  DeleteAlistairAndStefanNodes();
 
-			  EntityUpdateCollectingVisitor visitor = new EntityUpdateCollectingVisitor( this );
+			  IEntityUpdateCollectingVisitor visitor = new IEntityUpdateCollectingVisitor( this );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.api.labelscan.NodeLabelUpdate,Exception> labelVisitor = mock(org.neo4j.helpers.collection.Visitor.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate,Exception> labelVisitor = mock(org.Neo4Net.helpers.collection.Visitor.class);
 			  Visitor<NodeLabelUpdate, Exception> labelVisitor = mock( typeof( Visitor ) );
 			  StoreScan<Exception> storeScan = _storeView.visitNodes( new int[]{ _labelId }, id => id == _propertyKeyId, visitor, labelVisitor, false );
 
@@ -211,9 +211,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  // given
 			  DeleteAlistairAndStefanNodes();
 
-			  EntityUpdateCollectingVisitor visitor = new EntityUpdateCollectingVisitor( this );
+			  IEntityUpdateCollectingVisitor visitor = new IEntityUpdateCollectingVisitor( this );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.kernel.impl.api.index.StoreScan<Exception> storeScan = storeView.visitRelationships(new int[]{relTypeId}, id -> id == relPropertyKeyId, visitor);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.impl.api.index.StoreScan<Exception> storeScan = storeView.visitRelationships(new int[]{relTypeId}, id -> id == relPropertyKeyId, visitor);
 			  StoreScan<Exception> storeScan = _storeView.visitRelationships( new int[]{ _relTypeId }, id => id == _relPropertyKeyId, visitor );
 
 			  // when
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 {
 			  // given
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.impl.api.index.EntityUpdates,Exception> visitor = mock(org.neo4j.helpers.collection.Visitor.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.api.index.EntityUpdates,Exception> visitor = mock(org.Neo4Net.helpers.collection.Visitor.class);
 			  Visitor<EntityUpdates, Exception> visitor = mock( typeof( Visitor ) );
 			  StoreScan<Exception> storeScan = _storeView.visitNodes( new int[]{ _labelId }, id => id == _propertyKeyId, visitor, null, false );
 
@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 {
 			  // given
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.impl.api.index.EntityUpdates,Exception> visitor = mock(org.neo4j.helpers.collection.Visitor.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.impl.api.index.EntityUpdates,Exception> visitor = mock(org.Neo4Net.helpers.collection.Visitor.class);
 			  Visitor<EntityUpdates, Exception> visitor = mock( typeof( Visitor ) );
 			  StoreScan<Exception> storeScan = _storeView.visitRelationships( new int[]{ _relTypeId }, id => id == _relPropertyKeyId, visitor );
 
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReadProperties() throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldReadProperties() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReadProperties()
 		 {
@@ -302,7 +302,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 					storeViewNodeStoreScan.process( nodeCursor );
 			  }
 
-			  EntityUpdates propertyUpdates = propertyUpdateVisitor.PropertyUpdates;
+			  IEntityUpdates propertyUpdates = propertyUpdateVisitor.PropertyUpdates;
 			  assertNotNull( "Visitor should contain container with updates.", propertyUpdates );
 
 			  LabelSchemaDescriptor index1 = SchemaDescriptorFactory.forLabel( 0, 0 );
@@ -332,7 +332,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 					relationshipStoreScan.process( relationshipScanCursor );
 			  }
 
-			  EntityUpdates propertyUpdates = propertyUpdateVisitor.PropertyUpdates;
+			  IEntityUpdates propertyUpdates = propertyUpdateVisitor.PropertyUpdates;
 			  assertNotNull( "Visitor should contain container with updates.", propertyUpdates );
 
 			  RelationTypeSchemaDescriptor index1 = SchemaDescriptorFactory.forRelType( 0, 2 );
@@ -345,9 +345,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  assertThat( Iterables.map( IndexEntryUpdate::indexKey, propertyUpdates.ForIndexKeys( indexes ) ), containsInAnyOrder( index1, index2, index3 ) );
 		 }
 
-		 internal virtual EntityUpdates Add( long nodeId, int propertyKeyId, object value, long[] labels )
+		 internal virtual IEntityUpdates Add( long nodeId, int propertyKeyId, object value, long[] labels )
 		 {
-			  return EntityUpdates.forEntity( nodeId, true ).withTokens( labels ).added( propertyKeyId, Values.of( value ) ).build();
+			  return IEntityUpdates.forEntity( nodeId, true ).withTokens( labels ).added( propertyKeyId, Values.of( value ) ).build();
 		 }
 
 		 private void CreateAlistairAndStefanNodes()
@@ -383,7 +383,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void getOrCreateIds() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void getOrCreateIds() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void getOrCreateIds()
 		 {
 			  using ( Transaction tx = _graphDb.beginTx() )
@@ -403,17 +403,17 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 {
 
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal EntityUpdates PropertyUpdatesConflict;
+			  internal IEntityUpdates PropertyUpdatesConflict;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.neo4j.kernel.impl.api.index.EntityUpdates element) throws RuntimeException
-			  public override bool Visit( EntityUpdates element )
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.api.index.EntityUpdates element) throws RuntimeException
+			  public override bool Visit( IEntityUpdates element )
 			  {
 					PropertyUpdatesConflict = element;
 					return true;
 			  }
 
-			  public virtual EntityUpdates PropertyUpdates
+			  public virtual IEntityUpdates PropertyUpdates
 			  {
 				  get
 				  {
@@ -422,11 +422,11 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  }
 		 }
 
-		 internal class EntityUpdateCollectingVisitor : Visitor<EntityUpdates, Exception>
+		 internal class IEntityUpdateCollectingVisitor : Visitor<EntityUpdates, Exception>
 		 {
 			 private readonly NeoStoreIndexStoreViewTest _outerInstance;
 
-			 public EntityUpdateCollectingVisitor( NeoStoreIndexStoreViewTest outerInstance )
+			 public IEntityUpdateCollectingVisitor( NeoStoreIndexStoreViewTest outerInstance )
 			 {
 				 this._outerInstance = outerInstance;
 			 }
@@ -434,7 +434,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly ISet<EntityUpdates> UpdatesConflict = new HashSet<EntityUpdates>();
 
-			  public override bool Visit( EntityUpdates propertyUpdates )
+			  public override bool Visit( IEntityUpdates propertyUpdates )
 			  {
 					UpdatesConflict.Add( propertyUpdates );
 					return false;

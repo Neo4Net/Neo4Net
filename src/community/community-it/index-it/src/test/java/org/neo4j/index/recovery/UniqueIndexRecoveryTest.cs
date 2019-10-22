@@ -29,13 +29,13 @@ namespace Neo4Net.Index.recovery
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using SchemaIndex = Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using SchemaIndex = Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
@@ -53,14 +53,14 @@ namespace Neo4Net.Index.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UniqueIndexRecoveryTest
 	public class UniqueIndexRecoveryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory storeDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory storeDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory StoreDir = TestDirectory.testDirectory();
 
 		 private const string PROPERTY_KEY = "key";
@@ -71,14 +71,14 @@ namespace Neo4Net.Index.recovery
 		 private GraphDatabaseAPI _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
 		 public static GraphDatabaseSettings.SchemaIndex[] Parameters()
 		 {
 			  return GraphDatabaseSettings.SchemaIndex.values();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
 		 public GraphDatabaseSettings.SchemaIndex SchemaIndex;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -148,7 +148,7 @@ namespace Neo4Net.Index.recovery
 			  _db = ( GraphDatabaseAPI ) NewDb();
 		 }
 
-		 private GraphDatabaseService NewDb()
+		 private IGraphDatabaseService NewDb()
 		 {
 			  return _factory.newEmbeddedDatabaseBuilder( StoreDir.absolutePath() ).setConfig(GraphDatabaseSettings.default_schema_provider, SchemaIndex.providerName()).newGraphDatabase();
 		 }

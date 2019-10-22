@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.Internal
 {
-	using ErrorState = Neo4Net.Graphdb.@event.ErrorState;
+	using ErrorState = Neo4Net.GraphDb.Events.ErrorState;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using DatabasePanicEventGenerator = Neo4Net.Kernel.impl.core.DatabasePanicEventGenerator;
 	using Log = Neo4Net.Logging.Log;

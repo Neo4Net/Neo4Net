@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.metrics
 {
@@ -30,13 +30,13 @@ namespace Neo4Net.metrics
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseGraphDatabaseFactory = Neo4Net.Graphdb.factory.EnterpriseGraphDatabaseFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
@@ -46,7 +46,7 @@ namespace Neo4Net.metrics
 	using ClusterMetrics = Neo4Net.metrics.source.cluster.ClusterMetrics;
 	using CheckPointingMetrics = Neo4Net.metrics.source.db.CheckPointingMetrics;
 	using CypherMetrics = Neo4Net.metrics.source.db.CypherMetrics;
-	using EntityCountMetrics = Neo4Net.metrics.source.db.EntityCountMetrics;
+	using IEntityCountMetrics = Neo4Net.metrics.source.db.EntityCountMetrics;
 	using TransactionMetrics = Neo4Net.metrics.source.db.TransactionMetrics;
 	using ThreadMetrics = Neo4Net.metrics.source.jvm.ThreadMetrics;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
@@ -64,30 +64,30 @@ namespace Neo4Net.metrics
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.check_point_interval_time;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_interval_time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.cypher_min_replan_interval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsSettings.csvEnabled;
+//	import static org.Neo4Net.metrics.MetricsSettings.csvEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsSettings.csvPath;
+//	import static org.Neo4Net.metrics.MetricsSettings.csvPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsSettings.graphiteInterval;
+//	import static org.Neo4Net.metrics.MetricsSettings.graphiteInterval;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsSettings.metricsEnabled;
+//	import static org.Neo4Net.metrics.MetricsSettings.metricsEnabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsTestHelper.metricsCsv;
+//	import static org.Neo4Net.metrics.MetricsTestHelper.metricsCsv;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.metrics.MetricsTestHelper.readLongValueAndAssert;
+//	import static org.Neo4Net.metrics.MetricsTestHelper.readLongValueAndAssert;
 
 	public class MetricsKernelExtensionFactoryIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, "1");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(GraphDatabaseSettings.record_id_batch_size, "1");
 
 		 private HighlyAvailableGraphDatabase _db;
@@ -116,7 +116,7 @@ namespace Neo4Net.metrics
 			  File metricsFile = metricsCsv( _outputPath, TransactionMetrics.TX_COMMITTED );
 
 			  // WHEN
-			  // We should at least have a "timestamp" column, and a "neo4j.transaction.committed" column
+			  // We should at least have a "timestamp" column, and a "Neo4Net.transaction.committed" column
 			  long committedTransactions = readLongValueAndAssert( metricsFile, ( newValue, currentValue ) => newValue >= currentValue );
 
 			  // THEN
@@ -132,10 +132,10 @@ namespace Neo4Net.metrics
 			  // GIVEN
 			  // Create some activity that will show up in the metrics data.
 			  AddNodes( 1000 );
-			  File metricsFile = metricsCsv( _outputPath, EntityCountMetrics.COUNTS_NODE );
+			  File metricsFile = metricsCsv( _outputPath, IEntityCountMetrics.COUNTS_NODE );
 
 			  // WHEN
-			  // We should at least have a "timestamp" column, and a "neo4j.transaction.committed" column
+			  // We should at least have a "timestamp" column, and a "Neo4Net.transaction.committed" column
 			  long committedTransactions = readLongValueAndAssert( metricsFile, ( newValue, currentValue ) => newValue >= currentValue );
 
 			  // THEN
@@ -153,7 +153,7 @@ namespace Neo4Net.metrics
 			  File metricsFile = metricsCsv( _outputPath, ClusterMetrics.IS_MASTER );
 
 			  // WHEN
-			  // We should at least have a "timestamp" column, and a "neo4j.transaction.committed" column
+			  // We should at least have a "timestamp" column, and a "Neo4Net.transaction.committed" column
 			  long committedTransactions = readLongValueAndAssert( metricsFile, ( newValue, currentValue ) => newValue >= currentValue );
 
 			  // THEN
@@ -253,7 +253,7 @@ namespace Neo4Net.metrics
 			  // Start the database
 			  File disabledTracerDb = ClusterRule.directory( "disabledTracerDb" );
 			  GraphDatabaseBuilder builder = ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(disabledTracerDb);
-			  GraphDatabaseService nullTracerDatabase = builder.SetConfig( MetricsSettings.NeoEnabled, Settings.TRUE ).setConfig( csvEnabled, Settings.TRUE ).setConfig( csvPath, _outputPath.AbsolutePath ).setConfig( GraphDatabaseSettings.tracer, "null" ).setConfig( OnlineBackupSettings.online_backup_enabled, Settings.FALSE ).newGraphDatabase();
+			  IGraphDatabaseService nullTracerDatabase = builder.SetConfig( MetricsSettings.NeoEnabled, Settings.TRUE ).setConfig( csvEnabled, Settings.TRUE ).setConfig( csvPath, _outputPath.AbsolutePath ).setConfig( GraphDatabaseSettings.tracer, "null" ).setConfig( OnlineBackupSettings.online_backup_enabled, Settings.FALSE ).newGraphDatabase();
 			  try
 			  {
 					  using ( Transaction tx = nullTracerDatabase.BeginTx() )

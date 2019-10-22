@@ -22,29 +22,29 @@
 namespace Neo4Net.Jmx
 {
 
-	[ManagementInterface(name : Kernel_Fields.NAME), Description("Information about the Neo4j kernel"), Obsolete]
+	[ManagementInterface(name : Kernel_Fields.NAME), Description("Information about the Neo4Net kernel"), Obsolete]
 	public interface Kernel
 	{
 
-		 [Description("An ObjectName that can be used as a query for getting all management " + "beans for this Neo4j instance.")]
+		 [Description("An ObjectName that can be used as a query for getting all management " + "beans for this Neo4Net instance.")]
 		 ObjectName MBeanQuery { get; }
 
 		 [Description("The name of the mounted database")]
 		 string DatabaseName { get; }
 
-		 [Description("The version of Neo4j")]
+		 [Description("The version of Neo4Net")]
 		 string KernelVersion { get; }
 
-		 [Description("The time from which this Neo4j instance was in operational mode.")]
+		 [Description("The time from which this Neo4Net instance was in operational mode.")]
 		 DateTime KernelStartTime { get; }
 
-		 [Description("The time when this Neo4j graph store was created.")]
+		 [Description("The time when this Neo4Net graph store was created.")]
 		 DateTime StoreCreationDate { get; }
 
-		 [Description("An identifier that, together with store creation time, uniquely identifies this Neo4j graph store.")]
+		 [Description("An identifier that, together with store creation time, uniquely identifies this Neo4Net graph store.")]
 		 string StoreId { get; }
 
-		 [Description("The current version of the Neo4j store logical log.")]
+		 [Description("The current version of the Neo4Net store logical log.")]
 		 long StoreLogVersion { get; }
 
 		 [Description("Whether this is a read only instance")]

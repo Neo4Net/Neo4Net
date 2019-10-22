@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdates = Neo4Net.Kernel.impl.transaction.state.IndexUpdates;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	public interface IndexingUpdateService
 	{
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// Apply updates to the relevant indexes.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void apply(org.neo4j.kernel.impl.transaction.state.IndexUpdates updates) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void apply(org.Neo4Net.kernel.impl.transaction.state.IndexUpdates updates) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void Apply( IndexUpdates updates );
 
 		 /// <summary>
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// application of the updates to the indexes, so that the properties reflect the exact state of the
 		 /// transaction.
 		 /// </summary>
-		 IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( EntityUpdates entityUpdates, EntityType type );
+		 IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, IEntityType type );
 	}
 
 }

@@ -4,10 +4,10 @@ using System.Text;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -18,12 +18,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 {
@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 
 
 	using Neo4Net.Collections.Pooling;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DeadlockResolutionStrategy = Neo4Net.Kernel.impl.enterprise.@lock.forseti.ForsetiLockManager.DeadlockResolutionStrategy;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using LockAcquisitionTimeoutException = Neo4Net.Kernel.impl.locking.LockAcquisitionTimeoutException;
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 		 public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 						 {
 							  AssertValid( waitStartMillis, resourceType, resourceId );
 
-							  // Check if there is a lock for this entity in the map
+							  // Check if there is a lock for this IEntity in the map
 							  ForsetiLockManager.Lock existingLock = lockMap.get( resourceId );
 
 							  // No lock
@@ -253,7 +253,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 									}
 							  }
 
-							  // Someone holds shared lock on this entity, try and get in on that action
+							  // Someone holds shared lock on this IEntity, try and get in on that action
 							  else if ( existingLock is SharedLock )
 							  {
 									if ( ( ( SharedLock ) existingLock ).Acquire( this ) )
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 									}
 							  }
 
-							  // Someone holds an exclusive lock on this entity
+							  // Someone holds an exclusive lock on this IEntity
 							  else if ( existingLock is ExclusiveLock )
 							  {
 									// We need to wait, just let the loop run.
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 		 public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -858,7 +858,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// 
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.LockWaitEvent waitEvent, org.neo4j.storageengine.api.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.LockWaitEvent waitEvent, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeSharedToExclusive( LockTracer tracer, LockWaitEvent waitEvent, ResourceType resourceType, ConcurrentMap<long, ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis )
 		 {
 			  int tries = 0;
@@ -899,7 +899,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// <summary>
 		 /// Attempt to upgrade a share lock that we hold to an exclusive lock. </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(org.neo4j.storageengine.api.lock.LockTracer tracer, org.neo4j.storageengine.api.lock.LockWaitEvent priorEvent, org.neo4j.storageengine.api.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws org.neo4j.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.LockWaitEvent priorEvent, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeToExclusiveWithShareLockHeld( LockTracer tracer, LockWaitEvent priorEvent, ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis )
 		 {
 			  if ( sharedLock.TryAcquireUpdateLock( this ) )

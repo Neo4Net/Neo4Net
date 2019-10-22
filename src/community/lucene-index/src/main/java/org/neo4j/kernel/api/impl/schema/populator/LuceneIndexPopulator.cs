@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 private bool UpdatesForCorrectIndex<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 			  foreach ( IndexEntryUpdate<object> update in updates )
 			  {
 					if ( !update.IndexKey().schema().Equals(LuceneIndex.Descriptor.schema()) )

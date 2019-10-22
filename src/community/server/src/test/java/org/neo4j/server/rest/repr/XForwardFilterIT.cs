@@ -66,9 +66,9 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, "jimwebber.org" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( "http://jimwebber.org" ) );
-			  assertFalse( entity.Contains( "http://localhost" ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( "http://jimwebber.org" ) );
+			  assertFalse( IEntity.Contains( "http://localhost" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -79,9 +79,9 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_PROTO, "https" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( "https://localhost" ) );
-			  assertFalse( entity.Contains( "http://localhost" ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( "https://localhost" ) );
+			  assertFalse( IEntity.Contains( "http://localhost" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -89,12 +89,12 @@ namespace Neo4Net.Server.rest.repr
 		 public virtual void ShouldPickFirstXForwardedHostHeaderValueFromCommaOrCommaAndSpaceSeparatedList()
 		 {
 			  // when
-			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, "jimwebber.org, kathwebber.com,neo4j.org" ).get( typeof( ClientResponse ) );
+			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, "jimwebber.org, kathwebber.com,Neo4Net.org" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( "http://jimwebber.org" ) );
-			  assertFalse( entity.Contains( "http://localhost" ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( "http://jimwebber.org" ) );
+			  assertFalse( IEntity.Contains( "http://localhost" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -105,8 +105,8 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, ":bad_URI" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( ServerUri ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( ServerUri ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -117,8 +117,8 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, ":bad_URI,good-host" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( ServerUri ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( ServerUri ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -129,8 +129,8 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_PROTO, "%%%DEFINITELY-NOT-A-PROTO!" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( ServerUri ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( ServerUri ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -141,9 +141,9 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ManageUri ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, "jimwebber.org" ).header( X_FORWARDED_PROTO, "https" ).get( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( "https://jimwebber.org" ) );
-			  assertFalse( entity.Contains( ServerUri ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( "https://jimwebber.org" ) );
+			  assertFalse( IEntity.Contains( ServerUri ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -157,9 +157,9 @@ namespace Neo4Net.Server.rest.repr
 			  ClientResponse response = _client.resource( ServerUri + "db/data/transaction" ).accept( APPLICATION_JSON ).header( X_FORWARDED_HOST, "jimwebber.org:2354" ).header( X_FORWARDED_PROTO, "https" ).entity( jsonString, MediaType.APPLICATION_JSON_TYPE ).post( typeof( ClientResponse ) );
 
 			  // then
-			  string entity = response.getEntity( typeof( string ) );
-			  assertTrue( entity.Contains( "https://jimwebber.org:2354" ) );
-			  assertFalse( entity.Contains( ServerUri ) );
+			  string IEntity = response.getEntity( typeof( string ) );
+			  assertTrue( IEntity.Contains( "https://jimwebber.org:2354" ) );
+			  assertFalse( IEntity.Contains( ServerUri ) );
 		 }
 
 		 private string ManageUri

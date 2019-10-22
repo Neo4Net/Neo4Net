@@ -24,7 +24,7 @@ namespace Neo4Net.Jmx.impl
 	using MutableLong = org.apache.commons.lang3.mutable.MutableLong;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Service = Neo4Net.Helpers.Service;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -41,39 +41,39 @@ namespace Neo4Net.Jmx.impl
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.COUNTS_STORE_A;
+//	import static org.Neo4Net.io.layout.DatabaseFile.COUNTS_STORE_A;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.COUNTS_STORE_B;
+//	import static org.Neo4Net.io.layout.DatabaseFile.COUNTS_STORE_B;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.LABEL_TOKEN_NAMES_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_NAMES_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.LABEL_TOKEN_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.LABEL_TOKEN_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.NODE_LABEL_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.NODE_LABEL_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.NODE_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.NODE_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.PROPERTY_ARRAY_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.PROPERTY_ARRAY_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_NAMES_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_NAMES_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.PROPERTY_KEY_TOKEN_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.PROPERTY_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.PROPERTY_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.PROPERTY_STRING_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.PROPERTY_STRING_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.RELATIONSHIP_GROUP_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_GROUP_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.RELATIONSHIP_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_NAMES_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_NAMES_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.RELATIONSHIP_TYPE_TOKEN_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.layout.DatabaseFile.SCHEMA_STORE;
+//	import static org.Neo4Net.io.layout.DatabaseFile.SCHEMA_STORE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.jmx.impl.ThrottlingBeanSnapshotProxy.newThrottlingBeanSnapshotProxy;
+//	import static org.Neo4Net.jmx.impl.ThrottlingBeanSnapshotProxy.newThrottlingBeanSnapshotProxy;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) @Deprecated public final class StoreSizeBean extends ManagementBeanProvider
@@ -180,12 +180,12 @@ namespace Neo4Net.Jmx.impl
 		 {
 		 }
 
-		 protected internal override Neo4jMBean CreateMBean( ManagementData management )
+		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return CreateBean( management, false, UPDATE_INTERVAL, Clock.systemUTC() );
 		 }
 
-		 protected internal override Neo4jMBean CreateMXBean( ManagementData management )
+		 protected internal override Neo4NetMBean CreateMXBean( ManagementData management )
 		 {
 			  return CreateBean( management, true, UPDATE_INTERVAL, Clock.systemUTC() );
 		 }
@@ -198,13 +198,13 @@ namespace Neo4Net.Jmx.impl
 //ORIGINAL LINE: final StoreSizeMBean bean = new StoreSizeMBean(management, isMxBean, updateInterval, clock);
 			  StoreSizeMBean bean = new StoreSizeMBean( management, isMxBean, updateInterval, clock );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.state.DataSourceManager dataSourceManager = management.getKernelData().getDataSourceManager();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.state.DataSourceManager dataSourceManager = management.getKernelData().getDataSourceManager();
 			  DataSourceManager dataSourceManager = management.KernelData.DataSourceManager;
 			  dataSourceManager.AddListener( bean );
 			  return bean;
 		 }
 
-		 private class StoreSizeMBean : Neo4jMBean, StoreSize, DataSourceManager.Listener
+		 private class StoreSizeMBean : Neo4NetMBean, StoreSize, DataSourceManager.Listener
 		 {
 			  internal readonly FileSystemAbstraction Fs;
 			  internal readonly long UpdateInterval;
@@ -332,7 +332,7 @@ namespace Neo4Net.Jmx.impl
 			  internal StoreSizeProvider( FileSystemAbstraction fs, NeoStoreDataSource ds )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.DependencyResolver deps = ds.getDependencyResolver();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.DependencyResolver deps = ds.getDependencyResolver();
 					DependencyResolver deps = ds.DependencyResolver;
 					this.Fs = requireNonNull( fs );
 					this.LogFiles = deps.ResolveDependency( typeof( LogFiles ) );

@@ -30,28 +30,28 @@ namespace Neo4Net.Graphalgo.impl.path
 	using Neo4Net.Graphalgo.impl.util;
 	using PathInterestFactory = Neo4Net.Graphalgo.impl.util.PathInterestFactory;
 	using TopFetchingWeightedPathIterator = Neo4Net.Graphalgo.impl.util.TopFetchingWeightedPathIterator;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using BidirectionalTraversalDescription = Neo4Net.Graphdb.traversal.BidirectionalTraversalDescription;
-	using Neo4Net.Graphdb.traversal;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
-	using Neo4Net.Graphdb.traversal;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
+	using Neo4Net.GraphDb.traversal;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.firstOrNull;
+//	import static org.Neo4Net.helpers.collection.Iterators.firstOrNull;
 
 	/// <summary>
 	/// Find (one or all) simple shortest path(s) between two nodes.
@@ -59,8 +59,8 @@ namespace Neo4Net.Graphalgo.impl.path
 	/// It starts a traversal from both ends and terminates when path(s) has been found.
 	/// 
 	/// Relationships are traversed in the specified directions from the start node,
-	/// but in the reverse direction ( <seealso cref="org.neo4j.graphdb.Direction.reverse()"/> ) from the
-	/// end node. This doesn't affect <seealso cref="org.neo4j.graphdb.Direction.BOTH"/>.
+	/// but in the reverse direction ( <seealso cref="org.Neo4Net.graphdb.Direction.reverse()"/> ) from the
+	/// end node. This doesn't affect <seealso cref="org.Neo4Net.graphdb.Direction.BOTH"/>.
 	/// 
 	/// @author Anton Persson
 	/// </summary>
@@ -96,17 +96,17 @@ namespace Neo4Net.Graphalgo.impl.path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.graphalgo.WeightedPath> findAllPaths(org.neo4j.graphdb.Node start, final org.neo4j.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node start, Node end )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.traversal.Traverser traverser = traverser(start, end, org.neo4j.graphalgo.impl.util.PathInterestFactory.allShortest(epsilon));
+//ORIGINAL LINE: final org.Neo4Net.graphdb.traversal.Traverser traverser = traverser(start, end, org.Neo4Net.graphalgo.impl.util.PathInterestFactory.allShortest(epsilon));
 			  Traverser traverser = traverser( start, end, PathInterestFactory.allShortest( _epsilon ) );
 			  return () => new TopFetchingWeightedPathIterator(traverser.GetEnumerator(), _costEvaluator);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.traversal.Traverser traverser(org.neo4j.graphdb.Node start, final org.neo4j.graphdb.Node end, org.neo4j.graphalgo.impl.util.PathInterest interest)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.traversal.Traverser traverser(org.Neo4Net.graphdb.Node start, final org.Neo4Net.graphdb.Node end, org.Neo4Net.graphalgo.impl.util.PathInterest interest)
 		 private Traverser Traverser( Node start, Node end, PathInterest interest )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -120,7 +120,7 @@ namespace Neo4Net.Graphalgo.impl.path
 			  MutableDouble endSideShortest = new MutableDouble( 0 );
 			  PathExpander dijkstraExpander = new DijkstraBidirectionalPathExpander( _expander, shortestSoFar, true, startSideShortest, endSideShortest, _epsilon );
 
-			  GraphDatabaseService db = start.GraphDatabase;
+			  IGraphDatabaseService db = start.GraphDatabase;
 
 			  TraversalDescription side = Db.traversalDescription().expand(dijkstraExpander, _stateFactory).order(new DijkstraSelectorFactory(interest, _costEvaluator)).evaluator(new DijkstraBidirectionalEvaluator(_costEvaluator)).uniqueness(Uniqueness.NODE_PATH);
 
@@ -179,7 +179,7 @@ namespace Neo4Net.Graphalgo.impl.path
 			  }
 		 }
 
-		 private class DijkstraBidirectionalEvaluator : Neo4Net.Graphdb.traversal.PathEvaluator_Adapter<double>
+		 private class DijkstraBidirectionalEvaluator : Neo4Net.GraphDb.traversal.PathEvaluator_Adapter<double>
 		 {
 			  internal readonly CostEvaluator<double> CostEvaluator;
 

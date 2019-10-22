@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.repr
 	using Test = org.junit.Test;
 
 
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 
 	public class PropertiesRepresentationTest
 	{
@@ -113,9 +113,9 @@ namespace Neo4Net.Server.rest.repr
 			  }
 		 }
 
-		 internal static PropertyContainer Container( IDictionary<string, object> values )
+		 internal static IPropertyContainer Container( IDictionary<string, object> values )
 		 {
-			  PropertyContainer container = mock( typeof( PropertyContainer ) );
+			  IPropertyContainer container = mock( typeof( IPropertyContainer ) );
 			  when( container.PropertyKeys ).thenReturn( values.Keys );
 			  when( container.AllProperties ).thenReturn( values );
 			  foreach ( KeyValuePair<string, object> entry in values.SetOfKeyValuePairs() )

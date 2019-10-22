@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.array;
+//	import static org.Neo4Net.helpers.collection.Iterators.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 
 	public class IndexEntryResourceTypesTest
 	{

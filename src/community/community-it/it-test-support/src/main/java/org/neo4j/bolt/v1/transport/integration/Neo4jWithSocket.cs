@@ -27,8 +27,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using Statement = org.junit.runners.model.Statement;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -38,9 +38,9 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 
-	public class Neo4jWithSocket : ExternalResource
+	public class Neo4NetWithSocket : ExternalResource
 	{
 		 public const string DEFAULT_CONNECTOR_KEY = "bolt";
 
@@ -48,26 +48,26 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 private readonly System.Action<IDictionary<string, string>> _configure;
 		 private readonly TestDirectory _testDirectory;
 		 private TestGraphDatabaseFactory _graphDatabaseFactory;
-		 private GraphDatabaseService _gdb;
+		 private IGraphDatabaseService _gdb;
 		 private File _workingDirectory;
 		 private ConnectorPortRegister _connectorRegister;
 
-		 public Neo4jWithSocket( Type testClass ) : this(testClass, settings ->
+		 public Neo4NetWithSocket( Type testClass ) : this(testClass, settings ->
 		 {
 		  {
 		  });
 		 }
 
-		 public Neo4jWithSocket( Type testClass, System.Action<IDictionary<string, string>> configure ) : this( testClass, new TestGraphDatabaseFactory(), configure )
+		 public Neo4NetWithSocket( Type testClass, System.Action<IDictionary<string, string>> configure ) : this( testClass, new TestGraphDatabaseFactory(), configure )
 		 {
 		 }
 
-		 public Neo4jWithSocket( Type testClass, TestGraphDatabaseFactory graphDatabaseFactory, System.Action<IDictionary<string, string>> configure ) : this( testClass, graphDatabaseFactory, EphemeralFileSystemAbstraction::new, configure )
+		 public Neo4NetWithSocket( Type testClass, TestGraphDatabaseFactory graphDatabaseFactory, System.Action<IDictionary<string, string>> configure ) : this( testClass, graphDatabaseFactory, EphemeralFileSystemAbstraction::new, configure )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 }
 
-		 public Neo4jWithSocket( Type testClass, TestGraphDatabaseFactory graphDatabaseFactory, System.Func<FileSystemAbstraction> fileSystemProvider, System.Action<IDictionary<string, string>> configure )
+		 public Neo4NetWithSocket( Type testClass, TestGraphDatabaseFactory graphDatabaseFactory, System.Func<FileSystemAbstraction> fileSystemProvider, System.Action<IDictionary<string, string>> configure )
 		 {
 			  this._testDirectory = TestDirectory.testDirectory( testClass, fileSystemProvider() );
 			  this._graphDatabaseFactory = graphDatabaseFactory;
@@ -105,12 +105,12 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 		 private class StatementAnonymousInnerClass : Statement
 		 {
-			 private readonly Neo4jWithSocket _outerInstance;
+			 private readonly Neo4NetWithSocket _outerInstance;
 
 			 private Statement _statement;
 			 private Description _description;
 
-			 public StatementAnonymousInnerClass( Neo4jWithSocket outerInstance, Statement statement, Description description )
+			 public StatementAnonymousInnerClass( Neo4NetWithSocket outerInstance, Statement statement, Description description )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._statement = statement;
@@ -191,7 +191,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			  return settings;
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabaseService()
+		 public virtual IGraphDatabaseService IGraphDatabaseService()
 		 {
 			  return _gdb;
 		 }

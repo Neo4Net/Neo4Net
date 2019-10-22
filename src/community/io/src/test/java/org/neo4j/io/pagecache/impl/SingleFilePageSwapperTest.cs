@@ -34,10 +34,10 @@ namespace Neo4Net.Io.pagecache.impl
 
 	using RandomAdversary = Neo4Net.Adversaries.RandomAdversary;
 	using AdversarialFileSystemAbstraction = Neo4Net.Adversaries.fs.AdversarialFileSystemAbstraction;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
-	using DelegatingStoreChannel = Neo4Net.Graphdb.mockfs.DelegatingStoreChannel;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingStoreChannel = Neo4Net.GraphDb.mockfs.DelegatingStoreChannel;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
@@ -72,11 +72,11 @@ namespace Neo4Net.Io.pagecache.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.ByteArrayMatcher.byteArray;
+//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getClassPath;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getJavaExecutable;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class SingleFilePageSwapperTest : PageSwapperTest
 	{
@@ -422,7 +422,7 @@ namespace Neo4Net.Io.pagecache.impl
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 			 public override StoreChannel open( File fileName, OpenMode openMode )
 			 {
 				  _openFilesCounter.AndIncrement;

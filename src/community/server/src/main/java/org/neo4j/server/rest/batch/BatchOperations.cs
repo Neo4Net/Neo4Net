@@ -55,7 +55,7 @@ namespace Neo4Net.Server.rest.batch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected void addHeaders(final org.neo4j.server.rest.web.InternalJettyServletRequest res, final javax.ws.rs.core.HttpHeaders httpHeaders)
+//ORIGINAL LINE: protected void addHeaders(final org.Neo4Net.server.rest.web.InternalJettyServletRequest res, final javax.ws.rs.core.HttpHeaders httpHeaders)
 		 protected internal virtual void AddHeaders( InternalJettyServletRequest res, HttpHeaders httpHeaders )
 		 {
 			  foreach ( KeyValuePair<string, IList<string>> header in httpHeaders.RequestHeaders.entrySet() )
@@ -200,7 +200,7 @@ namespace Neo4Net.Server.rest.batch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void performRequest(javax.ws.rs.core.UriInfo uriInfo, String method, String path, String body, System.Nullable<int> id, javax.ws.rs.core.HttpHeaders httpHeaders, java.util.Map<int, String> locations, org.neo4j.server.rest.web.InternalJettyServletRequest.RequestData requestData) throws java.io.IOException, javax.servlet.ServletException
+//ORIGINAL LINE: protected void performRequest(javax.ws.rs.core.UriInfo uriInfo, String method, String path, String body, System.Nullable<int> id, javax.ws.rs.core.HttpHeaders httpHeaders, java.util.Map<int, String> locations, org.Neo4Net.server.rest.web.InternalJettyServletRequest.RequestData requestData) throws java.io.IOException, javax.servlet.ServletException
 		 protected internal virtual void PerformRequest( UriInfo uriInfo, string method, string path, string body, int? id, HttpHeaders httpHeaders, IDictionary<int, string> locations, InternalJettyServletRequest.RequestData requestData )
 		 {
 			  path = ReplaceLocationPlaceholders( path, locations );
@@ -215,7 +215,7 @@ namespace Neo4Net.Server.rest.batch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void invoke(String method, String path, String body, System.Nullable<int> id, java.net.URI targetUri, org.neo4j.server.rest.web.InternalJettyServletRequest req, org.neo4j.server.rest.web.InternalJettyServletResponse res) throws java.io.IOException, javax.servlet.ServletException;
+//ORIGINAL LINE: protected abstract void invoke(String method, String path, String body, System.Nullable<int> id, java.net.URI targetUri, org.Neo4Net.server.rest.web.InternalJettyServletRequest req, org.Neo4Net.server.rest.web.InternalJettyServletResponse res) throws java.io.IOException, javax.servlet.ServletException;
 		 protected internal abstract void Invoke( string method, string path, string body, int? id, URI targetUri, InternalJettyServletRequest req, InternalJettyServletResponse res );
 	}
 

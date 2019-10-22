@@ -27,7 +27,7 @@ namespace Neo4Net.Cypher
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
@@ -40,7 +40,7 @@ namespace Neo4Net.Cypher
 		 private readonly AtomicBoolean _hasFailed = new AtomicBoolean( false );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule().withSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.query_cache_size, "0");
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.query_cache_size, "0");
 		 public DatabaseRule Db = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.query_cache_size, "0");
 
 		 private readonly ExecutorService _executorService = Executors.newFixedThreadPool( 10 );

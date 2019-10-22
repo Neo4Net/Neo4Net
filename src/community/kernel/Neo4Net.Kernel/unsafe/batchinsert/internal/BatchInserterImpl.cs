@@ -25,15 +25,15 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 {
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Service = Neo4Net.Helpers.Service;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
@@ -158,27 +158,27 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static bool.Parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.map;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.IndexingService.NO_MONITOR;
+//	import static org.Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
+//	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.PropertyStore.encodeString;
+//	import static org.Neo4Net.kernel.impl.store.PropertyStore.encodeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.Preconditions.checkState;
+//	import static org.Neo4Net.util.Preconditions.checkState;
 
 	public class BatchInserterImpl : BatchInserter, IndexConfigStoreProvider
 	{
@@ -236,7 +236,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 private readonly long _maxNodeId;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public BatchInserterImpl(final java.io.File databaseDirectory, final org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String, String> stringParams, Iterable<org.neo4j.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
+//ORIGINAL LINE: public BatchInserterImpl(final java.io.File databaseDirectory, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.Map<String, String> stringParams, Iterable<org.Neo4Net.kernel.extension.KernelExtensionFactory<?>> kernelExtensions) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public BatchInserterImpl<T1>( File databaseDirectory, FileSystemAbstraction fileSystem, IDictionary<string, string> stringParams, IEnumerable<T1> kernelExtensions )
 		 {
@@ -771,7 +771,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.graphdb.Label> getNodeLabels(final long node)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.graphdb.Label> getNodeLabels(final long node)
 		 public override IEnumerable<Label> GetNodeLabels( long node )
 		 {
 			  return () =>
@@ -963,7 +963,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.index.labelscan.NativeLabelScanStore buildLabelIndex() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStore buildLabelIndex() throws java.io.IOException
 		 private NativeLabelScanStore BuildLabelIndex()
 		 {
 			  NativeLabelScanStore labelIndex = new NativeLabelScanStore( _pageCache, _databaseLayout, _fileSystem, new FullLabelStream( _storeIndexStoreView ), false, _monitors, RecoveryCleanupWorkCollector.immediate() );

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -38,7 +38,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 
 	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
@@ -80,11 +80,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.AuthTestUtil.listOf;
+//	import static org.Neo4Net.server.security.enterprise.auth.AuthTestUtil.listOf;
 
 	public class InternalFlatFileRealmTest
 	{
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotCacheAuthenticationInfo() throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: @Test public void shouldNotCacheAuthenticationInfo() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotCacheAuthenticationInfo()
 		 {
@@ -133,7 +133,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotCacheAuthorizationInfo() throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: @Test public void shouldNotCacheAuthorizationInfo() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotCacheAuthorizationInfo()
 		 {
@@ -184,7 +184,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldAssignAdminRoleToSpecifiedUser()
 		 {
 			  // Given
-			  InternalFlatFileRealm realm = InternalTestRealmWithUsers( Arrays.asList( "neo4j", "morpheus", "trinity" ), Collections.singletonList( "morpheus" ) );
+			  InternalFlatFileRealm realm = InternalTestRealmWithUsers( Arrays.asList( "Neo4Net", "morpheus", "trinity" ), Collections.singletonList( "morpheus" ) );
 
 			  // When
 			  realm.Initialize();
@@ -218,11 +218,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldNotAssignAdminToNonExistentUser()
 		 {
 			  // Given
-			  InternalFlatFileRealm realm = InternalTestRealmWithUsers( Collections.singletonList( "neo4j" ), Collections.singletonList( "morpheus" ) );
+			  InternalFlatFileRealm realm = InternalTestRealmWithUsers( Collections.singletonList( "Neo4Net" ), Collections.singletonList( "morpheus" ) );
 
 			  // Expect
 			  Exception.expect( typeof( InvalidArgumentsException ) );
-			  Exception.expectMessage( "No roles defined, and default admin user 'morpheus' does not exist. Please use `neo4j-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
+			  Exception.expectMessage( "No roles defined, and default admin user 'morpheus' does not exist. Please use `Neo4Net-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
 
 			  // When
 			  realm.Initialize();
@@ -239,7 +239,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 			  // Expect
 			  Exception.expect( typeof( InvalidArgumentsException ) );
-			  Exception.expectMessage( "No roles defined, and cannot determine which user should be admin. Please use `neo4j-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select an admin." );
+			  Exception.expectMessage( "No roles defined, and cannot determine which user should be admin. Please use `Neo4Net-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select an admin." );
 
 			  // When
 			  realm.Initialize();
@@ -256,7 +256,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 			  // Expect
 			  Exception.expect( typeof( InvalidArgumentsException ) );
-			  Exception.expectMessage( "No roles defined, and multiple users defined as default admin user. Please use `neo4j-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
+			  Exception.expectMessage( "No roles defined, and multiple users defined as default admin user. Please use `Neo4Net-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
 
 			  // When
 			  realm.Initialize();
@@ -324,19 +324,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 private void AssertSetUsersAndRolesNTimes( bool usersChanged, bool rolesChanged, int nSetUsers, int nSetRoles )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository userRepository = mock(org.neo4j.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository userRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository userRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RoleRepository roleRepository = mock(RoleRepository.class);
 			  RoleRepository roleRepository = mock( typeof( RoleRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository initialUserRepository = mock(org.neo4j.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository initialUserRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository initialUserRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository defaultAdminRepository = mock(org.neo4j.server.security.auth.UserRepository.class);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository defaultAdminRepository = mock(org.Neo4Net.server.security.auth.UserRepository.class);
 			  UserRepository defaultAdminRepository = mock( typeof( UserRepository ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.security.PasswordPolicy passwordPolicy = new org.neo4j.server.security.auth.BasicPasswordPolicy();
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new org.Neo4Net.server.security.auth.BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  AuthenticationStrategy authenticationStrategy = NewRateLimitedAuthStrategy();
 			  InternalFlatFileRealmIT.TestJobScheduler jobScheduler = new InternalFlatFileRealmIT.TestJobScheduler();

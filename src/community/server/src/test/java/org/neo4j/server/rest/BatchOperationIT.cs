@@ -29,8 +29,8 @@ namespace Neo4Net.Server.rest
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
@@ -45,9 +45,9 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class BatchOperationIT : AbstractRestFunctionalDocTestBase
 	{
@@ -61,9 +61,9 @@ namespace Neo4Net.Server.rest
 			  long idJoe = Data.get()["Joe"].Id;
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("PUT").key("to").value("/node/" + idJoe + "/properties").key("body").@object().key("age").value(1).endObject().key("id").value(0).endObject().@object().key("method").value("GET").key("to").value("/node/" + idJoe).key("id").value(1).endObject().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().key("id").value(2).endObject().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key("age").value(1).endObject().key("id").value(3).endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().payload(jsonString).expectedStatus(200).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().payload(jsonString).expectedStatus(200).post(BatchUri()).entity();
 
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 
 			  assertEquals( 4, results.Count );
 
@@ -101,9 +101,9 @@ namespace Neo4Net.Server.rest
 		 {
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("id").value(0).key("body").@object().key("name").value("bob").endObject().endObject().@object().key("method").value("POST").key("to").value("/node").key("id").value(1).key("body").@object().key("age").value(12).endObject().endObject().@object().key("method").value("POST").key("to").value("{0}/relationships").key("id").value(3).key("body").@object().key("to").value("{1}").key("data").@object().key("since").value("2010").endObject().key("type").value("KNOWS").endObject().endObject().@object().key("method").value("POST").key("to").value("/index/relationship/my_rels").key("id").value(4).key("body").@object().key("key").value("since").key("value").value("2010").key("uri").value("{3}").endObject().endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 
 			  assertEquals( 4, results.Count );
 
@@ -182,14 +182,14 @@ namespace Neo4Net.Server.rest
 
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/node").key("body").@object().key(complicatedString).value(complicatedString).endObject().endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
 			  // Pull out the property value from the depths of the response
-			  IDictionary<string, object> response = ( IDictionary<string, object> ) JsonHelper.jsonToList( entity )[0]["body"];
+			  IDictionary<string, object> response = ( IDictionary<string, object> ) JsonHelper.jsonToList( IEntity )[0]["body"];
 			  string returnedValue = ( string )( ( IDictionary<string, object> )response["data"] )[complicatedString];
 
 			  // Ensure nothing was borked.
-			  assertThat( "Expected twisted unicode case to work, but response was: " + entity, returnedValue, @is( complicatedString ) );
+			  assertThat( "Expected twisted unicode case to work, but response was: " + IEntity, returnedValue, @is( complicatedString ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -199,10 +199,10 @@ namespace Neo4Net.Server.rest
 		 {
 			  string jsonString = ( new PrettyJSON() ).array().@object().key("method").value("POST").key("to").value("/cypher").key("body").@object().key("query").value("create (n) set n.foo = {maps:'not welcome'} return n").key("params").@object().key("id").value("0").endObject().endObject().endObject().@object().key("method").value("POST").key("to").value("/node").endObject().endArray().ToString();
 
-			  string entity = GenConflict.get().expectedStatus(500).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedStatus(500).payload(jsonString).post(BatchUri()).entity();
 
 			  // Pull out the property value from the depths of the response
-			  IDictionary<string, object> result = JsonHelper.jsonToMap( entity );
+			  IDictionary<string, object> result = JsonHelper.jsonToMap( IEntity );
 			  string exception = ( string ) result["exception"];
 			  assertThat( exception, @is( "BatchOperationFailedException" ) );
 			  string innerException = ( string ) JsonHelper.jsonToMap( ( string ) result["message"] )["exception"];
@@ -210,7 +210,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Graph("Peter likes Jazz") public void shouldHandleEscapedStrings() throws com.sun.jersey.api.client.ClientHandlerException, com.sun.jersey.api.client.UniformInterfaceException, org.json.JSONException, org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Graph("Peter likes Jazz")]
 		 public virtual void ShouldHandleEscapedStrings()
@@ -225,9 +225,9 @@ namespace Neo4Net.Server.rest
 			  GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
 			  jsonString = ( new PrettyJSON() ).array().@object().key("method").value("GET").key("to").value("/node/" + gnode.Id + "/properties/name").endObject().endArray().ToString();
-			  string entity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
+			  string IEntity = GenConflict.get().expectedStatus(200).payload(jsonString).post(BatchUri()).entity();
 
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 			  assertEquals( results[0]["body"], name );
 		 }
 
@@ -316,9 +316,9 @@ namespace Neo4Net.Server.rest
 			  assertEquals( 200, response.Status );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String entity = response.getEntity();
-			  string entity = response.Entity;
-			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( entity );
+//ORIGINAL LINE: final String IEntity = response.getEntity();
+			  string IEntity = response.Entity;
+			  IList<IDictionary<string, object>> results = JsonHelper.jsonToList( IEntity );
 			  assertEquals( 6, results.Count );
 			  IDictionary<string, object> andresResult1 = results[1];
 			  IDictionary<string, object> andresResult2 = results[2];

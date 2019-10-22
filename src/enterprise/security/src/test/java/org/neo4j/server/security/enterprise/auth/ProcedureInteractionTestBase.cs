@@ -4,10 +4,10 @@ using System.Text;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -18,12 +18,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -33,23 +33,23 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Rule = org.junit.Rule;
 
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionGuardException = Neo4Net.Graphdb.TransactionGuardException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionGuardException = Neo4Net.GraphDb.TransactionGuardException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
@@ -91,33 +91,33 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Transaction.TransactionTimedOut;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.TransactionTimedOut;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.READ;
+//	import static org.Neo4Net.procedure.Mode.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.WRITE;
+//	import static org.Neo4Net.procedure.Mode.WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.EDITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 
 	public abstract class ProcedureInteractionTestBase<S>
 	{
@@ -163,15 +163,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 internal S PwdSubject;
 		 internal S NoneSubject;
 
-		 internal string[] InitialUsers = new string[] { "adminSubject", "readSubject", "schemaSubject", "writeSubject", "editorSubject", "pwdSubject", "noneSubject", "neo4j" };
+		 internal string[] InitialUsers = new string[] { "adminSubject", "readSubject", "schemaSubject", "writeSubject", "editorSubject", "pwdSubject", "noneSubject", "Neo4Net" };
 		 internal string[] InitialRoles;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public readonly ThreadingRule ThreadingConflict = new ThreadingRule();
 
@@ -201,7 +201,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void SetUp()
 		 {
 			  ConfiguredSetup( DefaultConfiguration() );
-			  Util = new TransportTestUtil( new Neo4jPackV1() );
+			  Util = new TransportTestUtil( new Neo4NetPackV1() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -488,7 +488,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean userHasRole(String user, String role) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: boolean userHasRole(String user, String role) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal virtual bool UserHasRole( string user, string role )
 		 {
 			  return UserManager.getRoleNamesForUser( user ).Contains( role );
@@ -524,7 +524,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") static void assertKeyIsMap(org.neo4j.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") static void assertKeyIsMap(org.Neo4Net.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
 		 internal static void AssertKeyIsMap( ResourceIterator<IDictionary<string, object>> r, string keyKey, string valueKey, IDictionary<string, object> expected )
 		 {
 			  IList<IDictionary<string, object>> result = r.ToList();
@@ -634,7 +634,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.bolt.v1.transport.socket.client.TransportConnection startBoltSession(String username, String password) throws Exception
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection startBoltSession(String username, String password) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual TransportConnection StartBoltSession( string username, string password )
 		 {
@@ -666,11 +666,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public class ClassWithProcedures
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-			  public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.logging.Log log;
+//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
 			  public Log Log;
 
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -683,7 +683,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  public static IList<Exception> ExceptionsInProcedure = Collections.synchronizedList( new List<Exception>() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.procedure.TerminationGuard guard;
+//ORIGINAL LINE: @Context public org.Neo4Net.procedure.TerminationGuard guard;
 			  public TerminationGuard Guard;
 
 			  [Procedure(name : "test.loop")]
@@ -793,7 +793,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "test.nestedAllowedProcedure", mode = org.neo4j.procedure.Mode.READ) public java.util.stream.Stream<AuthProceduresBase.StringResult> nestedAllowedProcedure(@Name("nestedProcedure") String nestedProcedure)
+//ORIGINAL LINE: @Procedure(name = "test.nestedAllowedProcedure", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<AuthProceduresBase.StringResult> nestedAllowedProcedure(@Name("nestedProcedure") String nestedProcedure)
 			  [Procedure(name : "test.nestedAllowedProcedure", mode : Neo4Net.Procedure.Mode.READ)]
 			  public virtual Stream<AuthProceduresBase.StringResult> NestedAllowedProcedure( string nestedProcedure )
 			  {
@@ -816,7 +816,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "test.nestedReadProcedure", mode = org.neo4j.procedure.Mode.READ) public java.util.stream.Stream<AuthProceduresBase.StringResult> nestedReadProcedure(@Name("nestedProcedure") String nestedProcedure)
+//ORIGINAL LINE: @Procedure(name = "test.nestedReadProcedure", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<AuthProceduresBase.StringResult> nestedReadProcedure(@Name("nestedProcedure") String nestedProcedure)
 			  [Procedure(name : "test.nestedReadProcedure", mode : Neo4Net.Procedure.Mode.READ)]
 			  public virtual Stream<AuthProceduresBase.StringResult> NestedReadProcedure( string nestedProcedure )
 			  {
@@ -920,8 +920,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public class ClassWithFunctions
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-			  public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+			  public IGraphDatabaseService Db;
 
 			  [UserFunction(name : "test.nonAllowedFunc")]
 			  public virtual string NonAllowedFunc()

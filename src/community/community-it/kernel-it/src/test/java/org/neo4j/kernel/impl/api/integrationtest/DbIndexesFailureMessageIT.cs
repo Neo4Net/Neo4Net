@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 
 	using Neo4Net.Collections;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
@@ -47,15 +47,15 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.POPULATION;
+//	import static org.Neo4Net.kernel.impl.index.schema.FailingGenericNativeIndexProviderFactory.FailureType.POPULATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
+//	import static org.Neo4Net.test.TestGraphDatabaseFactory.INDEX_PROVIDERS_FILTER;
 
 	public class DbIndexesFailureMessageIT : KernelIntegrationTest
 	{
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  //let indexes come online
 			  try
 			  {
-					  using ( Neo4Net.Graphdb.Transaction ignored = Db.beginTx() )
+					  using ( Neo4Net.GraphDb.Transaction ignored = Db.beginTx() )
 					  {
 						Db.schema().awaitIndexesOnline(2, MINUTES);
 						fail( "Expected to fail when awaiting for index to come online" );

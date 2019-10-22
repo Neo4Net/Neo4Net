@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.configuration
 {
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 
 	/// <summary>

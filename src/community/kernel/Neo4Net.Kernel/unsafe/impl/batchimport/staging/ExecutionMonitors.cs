@@ -23,7 +23,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.HumanUnderstandableExecutionMonitor.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.HumanUnderstandableExecutionMonitor.NO_MONITOR;
 
 	/// <summary>
 	/// Common <seealso cref="ExecutionMonitor"/> implementations.

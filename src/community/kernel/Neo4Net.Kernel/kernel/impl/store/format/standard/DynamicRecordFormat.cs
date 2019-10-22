@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.store.format.standard
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.DynamicRecord.NO_DATA;
+//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.NO_DATA;
 
 	public class DynamicRecordFormat : BaseOneByteHeaderRecordFormat<DynamicRecord>
 	{

@@ -24,13 +24,13 @@ namespace Neo4Net.Storageengine.Api.txstate
 	/// <summary>
 	/// Represents the transactional changes to a relationship.
 	/// </summary>
-	/// <seealso cref= PropertyContainerState </seealso>
-	public interface RelationshipState : PropertyContainerState
+	/// <seealso cref= IPropertyContainerState </seealso>
+	public interface RelationshipState : IPropertyContainerState
 	{
 		 long Id { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <EX extends Exception> boolean accept(org.neo4j.storageengine.api.RelationshipVisitor<EX> visitor) throws EX;
+//ORIGINAL LINE: <EX extends Exception> boolean accept(org.Neo4Net.storageengine.api.RelationshipVisitor<EX> visitor) throws EX;
 		 bool accept<EX>( RelationshipVisitor<EX> visitor );
 	}
 

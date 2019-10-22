@@ -40,7 +40,7 @@ namespace Neo4Net.Consistency.checking
 
 	internal class PropertyRecordCheckTest : RecordCheckTestBase<PropertyRecord, Neo4Net.Consistency.report.ConsistencyReport_PropertyConsistencyReport, PropertyRecordCheck>
 	{
-		 internal PropertyRecordCheckTest() : base(new PropertyRecordCheck(), typeof(org.neo4j.consistency.report.ConsistencyReport_PropertyConsistencyReport), new int[0])
+		 internal PropertyRecordCheckTest() : base(new PropertyRecordCheck(), typeof(org.Neo4Net.consistency.report.ConsistencyReport_PropertyConsistencyReport), new int[0])
 		 {
 		 }
 
@@ -223,7 +223,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.GeometryType.encodePoint(keyId, org.neo4j.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.GeometryType.encodePoint(keyId, org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
 			  long[] longs = GeometryType.encodePoint( keyId, CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 } );
 			  // corrupt array
 			  long gtypeBits = 0xFL << StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS + 4;
@@ -241,7 +241,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.GeometryType.encodePoint(keyId, org.neo4j.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.GeometryType.encodePoint(keyId, org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
 			  long[] longs = GeometryType.encodePoint( keyId, CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 } );
 			  // corrupt array
 			  long dimensionBits = 0xFL << StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS + 8;
@@ -259,7 +259,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.GeometryType.encodePoint(keyId, org.neo4j.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.GeometryType.encodePoint(keyId, org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 });
 			  long[] longs = GeometryType.encodePoint( keyId, CoordinateReferenceSystem.WGS84, new double[] { 1.0, 2.0 } );
 			  // corrupt array
 			  long crsTableIdAndCodeBits = 0xFFFFL << StandardFormatSettings.PROPERTY_TOKEN_MAXIMUM_ID_BITS + 12;
@@ -277,7 +277,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDate(keyId, java.time.LocalDate.MAX.toEpochDay() + 1);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDate(keyId, java.time.LocalDate.MAX.toEpochDay() + 1);
 			  long[] longs = TemporalType.encodeDate( keyId, LocalDate.MAX.toEpochDay() + 1 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -292,7 +292,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeLocalTime(keyId, java.time.LocalTime.MAX.toNanoOfDay() + 1);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeLocalTime(keyId, java.time.LocalTime.MAX.toNanoOfDay() + 1);
 			  long[] longs = TemporalType.encodeLocalTime( keyId, LocalTime.MAX.toNanoOfDay() + 1 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -307,7 +307,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeLocalDateTime(keyId, 1, 1_000_000_000);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeLocalDateTime(keyId, 1, 1_000_000_000);
 			  long[] longs = TemporalType.encodeLocalDateTime( keyId, 1, 1_000_000_000 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -322,7 +322,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeLocalDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeLocalDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1);
 			  long[] longs = TemporalType.encodeLocalDateTime( keyId, Instant.MAX.EpochSecond + 1,1 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -337,7 +337,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1, 1_000_000_000, 0);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1, 1_000_000_000, 0);
 			  long[] longs = TemporalType.encodeDateTime( keyId, 1, 1_000_000_000, 0 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -352,7 +352,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1, 0);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1, 0);
 			  long[] longs = TemporalType.encodeDateTime( keyId, Instant.MAX.EpochSecond + 1,1, 0 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -367,7 +367,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1, 1_000_000_000, "Europe/London");
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1, 1_000_000_000, "Europe/London");
 			  long[] longs = TemporalType.encodeDateTime( keyId, 1, 1_000_000_000, "Europe/London" );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -382,7 +382,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1, "Europe/London");
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDateTime(keyId, java.time.Instant.MAX.getEpochSecond() + 1,1, "Europe/London");
 			  long[] longs = TemporalType.encodeDateTime( keyId, Instant.MAX.EpochSecond + 1,1, "Europe/London" );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -397,7 +397,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1,1, java.time.ZoneOffset.MAX.getTotalSeconds() + 1);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeDateTime(keyId, 1,1, java.time.ZoneOffset.MAX.getTotalSeconds() + 1);
 			  long[] longs = TemporalType.encodeDateTime( keyId, 1,1, ZoneOffset.MAX.TotalSeconds + 1 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -412,7 +412,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeTime(keyId, java.time.LocalTime.MAX.toNanoOfDay() + 1, 0);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeTime(keyId, java.time.LocalTime.MAX.toNanoOfDay() + 1, 0);
 			  long[] longs = TemporalType.encodeTime( keyId, LocalTime.MAX.toNanoOfDay() + 1, 0 );
 
 			  ExpectInvalidPropertyValue( property, longs );
@@ -427,7 +427,7 @@ namespace Neo4Net.Consistency.checking
 			  const int keyId = 6;
 			  Add( InUse( new PropertyKeyTokenRecord( keyId ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long[] longs = org.neo4j.kernel.impl.store.TemporalType.encodeTime(keyId, 1, java.time.ZoneOffset.MAX.getTotalSeconds() + 1);
+//ORIGINAL LINE: final long[] longs = org.Neo4Net.kernel.impl.store.TemporalType.encodeTime(keyId, 1, java.time.ZoneOffset.MAX.getTotalSeconds() + 1);
 			  long[] longs = TemporalType.encodeTime( keyId, 1, ZoneOffset.MAX.TotalSeconds + 1 );
 
 			  ExpectInvalidPropertyValue( property, longs );

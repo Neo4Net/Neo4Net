@@ -24,9 +24,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.index
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void readMap(org.neo4j.io.fs.StoreChannel channel, java.util.Map<String,java.util.Map<String,String>> map, System.Nullable<int> sizeOrTillEof) throws java.io.IOException
+//ORIGINAL LINE: private void readMap(org.Neo4Net.io.fs.StoreChannel channel, java.util.Map<String,java.util.Map<String,String>> map, System.Nullable<int> sizeOrTillEof) throws java.io.IOException
 		 private void ReadMap( StoreChannel channel, IDictionary<string, IDictionary<string, string>> map, int? sizeOrTillEof )
 		 {
 			  for ( int i = 0; sizeOrTillEof == null || i < sizeOrTillEof.Value; i++ )
@@ -325,7 +325,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeMap(org.neo4j.io.fs.StoreChannel channel, java.util.Map<String, java.util.Map<String, String>> map) throws java.io.IOException
+//ORIGINAL LINE: private void writeMap(org.Neo4Net.io.fs.StoreChannel channel, java.util.Map<String, java.util.Map<String, String>> map) throws java.io.IOException
 		 private void WriteMap( StoreChannel channel, IDictionary<string, IDictionary<string, string>> map )
 		 {
 			  IoPrimitiveUtils.writeInt( channel, Buffer( 4 ), map.Count );
@@ -342,14 +342,14 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeInt(org.neo4j.io.fs.StoreChannel channel, int value) throws java.io.IOException
+//ORIGINAL LINE: private void writeInt(org.Neo4Net.io.fs.StoreChannel channel, int value) throws java.io.IOException
 		 private void WriteInt( StoreChannel channel, int value )
 		 {
 			  IoPrimitiveUtils.writeInt( channel, Buffer( 4 ), value );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeString(org.neo4j.io.fs.StoreChannel channel, String value) throws java.io.IOException
+//ORIGINAL LINE: private void writeString(org.Neo4Net.io.fs.StoreChannel channel, String value) throws java.io.IOException
 		 private void WriteString( StoreChannel channel, string value )
 		 {
 			  IoPrimitiveUtils.writeLengthAndString( channel, Buffer( 200 ), value );

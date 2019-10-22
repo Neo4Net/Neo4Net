@@ -13,7 +13,7 @@
  */
 namespace Neo4Net.Server.enterprise
 {
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using EnterpriseEditionModule = Neo4Net.Kernel.impl.enterprise.EnterpriseEditionModule;
 
 	public class OpenEnterpriseEditionModule : EnterpriseEditionModule

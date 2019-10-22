@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.FALSE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.TRUE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
 
 	internal class BooleanType : Type
 	{

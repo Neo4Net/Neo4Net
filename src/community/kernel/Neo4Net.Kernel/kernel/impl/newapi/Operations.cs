@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using MutableInt = org.apache.commons.lang3.mutable.MutableInt;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
 	using ExplicitIndexRead = Neo4Net.Internal.Kernel.Api.ExplicitIndexRead;
 	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
 	using Token = Neo4Net.Internal.Kernel.Api.Token;
 	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using ConstraintSemantics = Neo4Net.Kernel.impl.constraints.ConstraintSemantics;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
@@ -100,31 +100,31 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.exceptions.schema.ConstraintValidationException.Phase.VALIDATION;
+//	import static org.Neo4Net.Internal.kernel.api.exceptions.schema.ConstraintValidationException.Phase.VALIDATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext.CONSTRAINT_CREATION;
+//	import static org.Neo4Net.Internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext.CONSTRAINT_CREATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor.schemaTokenLockingIds;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor.schemaTokenLockingIds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_NODE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_PROPERTY_KEY;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_PROPERTY_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.INDEX_ENTRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.indexEntryResourceId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.IndexTxStateUpdater.LabelChangeType.ADDED_LABEL;
+//	import static org.Neo4Net.kernel.impl.newapi.IndexTxStateUpdater.LabelChangeType.ADDED_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.newapi.IndexTxStateUpdater.LabelChangeType.REMOVED_LABEL;
+//	import static org.Neo4Net.kernel.impl.newapi.IndexTxStateUpdater.LabelChangeType.REMOVED_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Collects all Kernel API operations and guards them from being used outside of transaction.
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long nodeCreateWithLabels(int[] labels) throws org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public long nodeCreateWithLabels(int[] labels) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
 		 public override long NodeCreateWithLabels( int[] labels )
 		 {
 			  if ( labels == null || labels.Length == 0 )
@@ -217,7 +217,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean nodeDelete(long node) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public boolean nodeDelete(long node) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override bool NodeDelete( long node )
 		 {
 			  _ktx.assertOpen();
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int nodeDetachDelete(final long nodeId) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public int nodeDetachDelete(final long nodeId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override int NodeDetachDelete( long nodeId )
 		 {
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long relationshipCreate(long sourceNode, int relationshipType, long targetNode) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public long relationshipCreate(long sourceNode, int relationshipType, long targetNode) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public override long RelationshipCreate( long sourceNode, int relationshipType, long targetNode )
 		 {
 			  _ktx.assertOpen();
@@ -267,7 +267,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean relationshipDelete(long relationship) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public boolean relationshipDelete(long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override bool RelationshipDelete( long relationship )
 		 {
 			  _ktx.assertOpen();
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean nodeAddLabel(long node, int nodeLabel) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public boolean nodeAddLabel(long node, int nodeLabel) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
 		 public override bool NodeAddLabel( long node, int nodeLabel )
 		 {
 			  SharedSchemaLock( ResourceTypes.LABEL, nodeLabel );
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkConstraintsAndAddLabelToNode(long node, int nodeLabel) throws org.neo4j.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.neo4j.kernel.api.exceptions.schema.UnableToValidateConstraintException
+//ORIGINAL LINE: private void checkConstraintsAndAddLabelToNode(long node, int nodeLabel) throws org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.kernel.api.exceptions.schema.UnableToValidateConstraintException
 		 private void CheckConstraintsAndAddLabelToNode( long node, int nodeLabel )
 		 {
 			  // Load the property key id list for this node. We may need it for constraint validation if there are any related constraints,
@@ -348,7 +348,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean nodeDelete(long node, boolean lock) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: private boolean nodeDelete(long node, boolean lock) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 private bool NodeDelete( long node, bool @lock )
 		 {
 			  _ktx.assertOpen();
@@ -398,7 +398,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean relationshipDelete(long relationship, boolean lock) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: private boolean relationshipDelete(long relationship, boolean lock) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 private bool RelationshipDelete( long relationship, bool @lock )
 		 {
 			  _allStoreHolder.singleRelationship( relationship, _relationshipCursor ); // tx-state aware
@@ -436,24 +436,24 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void singleNode(long node) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void singleNode(long node) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private void SingleNode( long node )
 		 {
 			  _allStoreHolder.singleNode( node, _nodeCursor );
 			  if ( !_nodeCursor.next() )
 			  {
-					throw new EntityNotFoundException( NODE, node );
+					throw new IEntityNotFoundException( NODE, node );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void singleRelationship(long relationship) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void singleRelationship(long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private void SingleRelationship( long relationship )
 		 {
 			  _allStoreHolder.singleRelationship( relationship, _relationshipCursor );
 			  if ( !_relationshipCursor.next() )
 			  {
-					throw new EntityNotFoundException( EntityType.RELATIONSHIP, relationship );
+					throw new IEntityNotFoundException( IEntityType.RELATIONSHIP, relationship );
 			  }
 		 }
 
@@ -504,7 +504,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 /// Check so that there is not an existing node with the exact match of label and property
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validateNoExistingNodeWithExactValues(org.neo4j.kernel.api.schema.constraints.IndexBackedConstraintDescriptor constraint, org.neo4j.internal.kernel.api.IndexQuery.ExactPredicate[] propertyValues, long modifiedNode) throws org.neo4j.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.neo4j.kernel.api.exceptions.schema.UnableToValidateConstraintException
+//ORIGINAL LINE: private void validateNoExistingNodeWithExactValues(org.Neo4Net.kernel.api.schema.constraints.IndexBackedConstraintDescriptor constraint, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate[] propertyValues, long modifiedNode) throws org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.kernel.api.exceptions.schema.UnableToValidateConstraintException
 		 private void ValidateNoExistingNodeWithExactValues( IndexBackedConstraintDescriptor constraint, IndexQuery.ExactPredicate[] propertyValues, long modifiedNode )
 		 {
 			  IndexDescriptor schemaIndexDescriptor = constraint.OwnedIndexDescriptor();
@@ -533,7 +533,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexOnline(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.neo4j.kernel.api.exceptions.schema.IndexBrokenKernelException
+//ORIGINAL LINE: private void assertIndexOnline(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
 		 private void AssertIndexOnline( IndexDescriptor descriptor )
 		 {
 			  if ( _allStoreHolder.indexGetState( descriptor ) != InternalIndexState.ONLINE )
@@ -543,7 +543,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean nodeRemoveLabel(long node, int labelId) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public boolean nodeRemoveLabel(long node, int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public override bool NodeRemoveLabel( long node, int labelId )
 		 {
 			  AcquireExclusiveNodeLock( node );
@@ -567,7 +567,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value nodeSetProperty(long node, int propertyKey, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value nodeSetProperty(long node, int propertyKey, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override Value NodeSetProperty( long node, int propertyKey, Value value )
 		 {
 			  AcquireExclusiveNodeLock( node );
@@ -622,7 +622,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value nodeRemoveProperty(long node, int propertyKey) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value nodeRemoveProperty(long node, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override Value NodeRemoveProperty( long node, int propertyKey )
 		 {
 			  AcquireExclusiveNodeLock( node );
@@ -645,7 +645,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value relationshipSetProperty(long relationship, int propertyKey, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value relationshipSetProperty(long relationship, int propertyKey, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override Value RelationshipSetProperty( long relationship, int propertyKey, Value value )
 		 {
 			  AcquireExclusiveRelationshipLock( relationship );
@@ -673,7 +673,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.values.storable.Value relationshipRemoveProperty(long relationship, int propertyKey) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value relationshipRemoveProperty(long relationship, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
 		 public override Value RelationshipRemoveProperty( long relationship, int propertyKey )
 		 {
 			  AcquireExclusiveRelationshipLock( relationship );
@@ -717,7 +717,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeAddToExplicitIndex(String indexName, long node, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeAddToExplicitIndex(String indexName, long node, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeAddToExplicitIndex( string indexName, long node, string key, object value )
 		 {
 			  _ktx.assertOpen();
@@ -725,7 +725,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeRemoveFromExplicitIndex( string indexName, long node )
 		 {
 			  _ktx.assertOpen();
@@ -733,7 +733,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeRemoveFromExplicitIndex( string indexName, long node, string key, object value )
 		 {
 			  _ktx.assertOpen();
@@ -741,7 +741,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeRemoveFromExplicitIndex(String indexName, long node, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeRemoveFromExplicitIndex( string indexName, long node, string key )
 		 {
 			  _ktx.assertOpen();
@@ -761,7 +761,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeExplicitIndexDrop(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeExplicitIndexDrop(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeExplicitIndexDrop( string indexName )
 		 {
 			  _ktx.assertOpen();
@@ -771,7 +771,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String nodeExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String nodeExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override string NodeExplicitIndexSetConfiguration( string indexName, string key, string value )
 		 {
 			  _ktx.assertOpen();
@@ -779,7 +779,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String nodeExplicitIndexRemoveConfiguration(String indexName, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String nodeExplicitIndexRemoveConfiguration(String indexName, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override string NodeExplicitIndexRemoveConfiguration( string indexName, string key )
 		 {
 			  _ktx.assertOpen();
@@ -787,7 +787,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipAddToExplicitIndex(String indexName, long relationship, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public void relationshipAddToExplicitIndex(String indexName, long relationship, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 public override void RelationshipAddToExplicitIndex( string indexName, long relationship, string key, object value )
 		 {
 			  _ktx.assertOpen();
@@ -798,12 +798,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 			  else
 			  {
-					throw new EntityNotFoundException( EntityType.RELATIONSHIP, relationship );
+					throw new IEntityNotFoundException( IEntityType.RELATIONSHIP, relationship );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key, Object value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipRemoveFromExplicitIndex( string indexName, long relationship, string key, object value )
 		 {
 			  _ktx.assertOpen();
@@ -811,7 +811,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipRemoveFromExplicitIndex( string indexName, long relationship, string key )
 		 {
 			  _ktx.assertOpen();
@@ -820,7 +820,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipRemoveFromExplicitIndex(String indexName, long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipRemoveFromExplicitIndex( string indexName, long relationship )
 		 {
 			  _ktx.assertOpen();
@@ -840,7 +840,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipExplicitIndexDrop(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipExplicitIndexDrop(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipExplicitIndexDrop( string indexName )
 		 {
 			  _ktx.assertOpen();
@@ -968,21 +968,21 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override IndexReference IndexCreate( SchemaDescriptor descriptor )
 		 {
 			  return IndexCreate( descriptor, _config.get( GraphDatabaseSettings.default_schema_provider ), null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> indexName) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> indexName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override IndexReference IndexCreate( SchemaDescriptor descriptor, Optional<string> indexName )
 		 {
 			  return IndexCreate( descriptor, _config.get( GraphDatabaseSettings.default_schema_provider ), indexName );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.IndexReference indexCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider, java.util.Optional<String> name) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.IndexReference indexCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider, java.util.Optional<String> name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override IndexReference IndexCreate( SchemaDescriptor descriptor, string provider, Optional<string> name )
 		 {
 			  ExclusiveSchemaLock( descriptor );
@@ -999,7 +999,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 		 // Note: this will be sneakily executed by an internal transaction, so no additional locking is required.
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexDescriptor indexUniqueCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor schema, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public virtual IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider )
 		 {
 			  IndexProviderDescriptor providerDescriptor = _indexingService.indexProviderByName( provider );
@@ -1010,7 +1010,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void indexDrop(org.neo4j.internal.kernel.api.IndexReference indexReference) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public void indexDrop(org.Neo4Net.internal.kernel.api.IndexReference indexReference) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override void IndexDrop( IndexReference indexReference )
 		 {
 			  AssertValidIndex( indexReference );
@@ -1044,14 +1044,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor UniquePropertyConstraintCreate( SchemaDescriptor descriptor )
 		 {
 			  return UniquePropertyConstraintCreate( descriptor, _config.get( GraphDatabaseSettings.default_schema_provider ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor uniquePropertyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor UniquePropertyConstraintCreate( SchemaDescriptor descriptor, string provider )
 		 {
 			  //Lock
@@ -1080,14 +1080,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor NodeKeyConstraintCreate( LabelSchemaDescriptor descriptor )
 		 {
 			  return NodeKeyConstraintCreate( descriptor, _config.get( GraphDatabaseSettings.default_schema_provider ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodeKeyConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor NodeKeyConstraintCreate( LabelSchemaDescriptor descriptor, string provider )
 		 {
 			  //Lock
@@ -1123,7 +1123,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor nodePropertyExistenceConstraintCreate(org.neo4j.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor nodePropertyExistenceConstraintCreate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor NodePropertyExistenceConstraintCreate( LabelSchemaDescriptor descriptor )
 		 {
 			  ConstraintDescriptor constraint = LockAndValidatePropertyExistenceConstraint( descriptor );
@@ -1141,7 +1141,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor relationshipPropertyExistenceConstraintCreate(org.neo4j.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor relationshipPropertyExistenceConstraintCreate(org.Neo4Net.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override ConstraintDescriptor RelationshipPropertyExistenceConstraintCreate( RelationTypeSchemaDescriptor descriptor )
 		 {
 			  ConstraintDescriptor constraint = LockAndValidatePropertyExistenceConstraint( descriptor );
@@ -1156,7 +1156,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor lockAndValidatePropertyExistenceConstraint(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor lockAndValidatePropertyExistenceConstraint(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 private ConstraintDescriptor LockAndValidatePropertyExistenceConstraint( SchemaDescriptor descriptor )
 		 {
 			  // Lock constraint schema.
@@ -1179,7 +1179,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String relationshipExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String relationshipExplicitIndexSetConfiguration(String indexName, String key, String value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override string RelationshipExplicitIndexSetConfiguration( string indexName, string key, string value )
 		 {
 			  _ktx.assertOpen();
@@ -1187,7 +1187,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String relationshipExplicitIndexRemoveConfiguration(String indexName, String key) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public String relationshipExplicitIndexRemoveConfiguration(String indexName, String key) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override string RelationshipExplicitIndexRemoveConfiguration( string indexName, string key )
 		 {
 			  _ktx.assertOpen();
@@ -1195,7 +1195,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void constraintDrop(org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public void constraintDrop(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
 		 public override void ConstraintDrop( ConstraintDescriptor descriptor )
 		 {
 			  //Lock
@@ -1218,7 +1218,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexDoesNotExist(org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext context, org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> name) throws org.neo4j.kernel.api.exceptions.schema.AlreadyIndexedException, org.neo4j.kernel.api.exceptions.schema.AlreadyConstrainedException
+//ORIGINAL LINE: private void assertIndexDoesNotExist(org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext context, org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, java.util.Optional<String> name) throws org.Neo4Net.kernel.api.exceptions.schema.AlreadyIndexedException, org.Neo4Net.kernel.api.exceptions.schema.AlreadyConstrainedException
 		 private void AssertIndexDoesNotExist( SchemaKernelException.OperationContext context, SchemaDescriptor descriptor, Optional<string> name )
 		 {
 			  IndexDescriptor existingIndex = _allStoreHolder.indexGetForSchema( descriptor );
@@ -1306,12 +1306,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNodeExists(long sourceNode) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void assertNodeExists(long sourceNode) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 		 private void AssertNodeExists( long sourceNode )
 		 {
 			  if ( !_allStoreHolder.nodeExists( sourceNode ) )
 			  {
-					throw new EntityNotFoundException( NODE, sourceNode );
+					throw new IEntityNotFoundException( NODE, sourceNode );
 			  }
 		 }
 
@@ -1321,7 +1321,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertConstraintDoesNotExist(org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws org.neo4j.kernel.api.exceptions.schema.AlreadyConstrainedException
+//ORIGINAL LINE: private void assertConstraintDoesNotExist(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws org.Neo4Net.kernel.api.exceptions.schema.AlreadyConstrainedException
 		 private void AssertConstraintDoesNotExist( ConstraintDescriptor constraint )
 		 {
 			  if ( _allStoreHolder.constraintExists( constraint ) )
@@ -1336,7 +1336,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertConstraintExists(org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws org.neo4j.kernel.api.exceptions.schema.NoSuchConstraintException
+//ORIGINAL LINE: private void assertConstraintExists(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws org.Neo4Net.kernel.api.exceptions.schema.NoSuchConstraintException
 		 private void AssertConstraintExists( ConstraintDescriptor constraint )
 		 {
 			  if ( !_allStoreHolder.constraintExists( constraint ) )
@@ -1346,7 +1346,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertValidDescriptor(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext context) throws org.neo4j.kernel.api.exceptions.schema.RepeatedSchemaComponentException
+//ORIGINAL LINE: private static void assertValidDescriptor(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException.OperationContext context) throws org.Neo4Net.kernel.api.exceptions.schema.RepeatedSchemaComponentException
 		 private static void AssertValidDescriptor( SchemaDescriptor descriptor, SchemaKernelException.OperationContext context )
 		 {
 			  long numUniqueProp = java.util.descriptor.PropertyIds.Distinct().Count();
@@ -1370,7 +1370,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void indexBackedConstraintCreate(org.neo4j.kernel.api.schema.constraints.IndexBackedConstraintDescriptor constraint, String provider) throws org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: private void indexBackedConstraintCreate(org.Neo4Net.kernel.api.schema.constraints.IndexBackedConstraintDescriptor constraint, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
 		 private void IndexBackedConstraintCreate( IndexBackedConstraintDescriptor constraint, string provider )
 		 {
 			  SchemaDescriptor descriptor = constraint.Schema();
@@ -1413,7 +1413,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertValidIndex(org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.kernel.api.exceptions.schema.NoSuchIndexException
+//ORIGINAL LINE: private static void assertValidIndex(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.kernel.api.exceptions.schema.NoSuchIndexException
 		 private static void AssertValidIndex( IndexReference index )
 		 {
 			  if ( index == IndexReference.NO_INDEX )

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.flag;
+//	import static org.Neo4Net.util.FeatureToggles.flag;
 
 	public class DefaultCursors : CursorFactory
 	{

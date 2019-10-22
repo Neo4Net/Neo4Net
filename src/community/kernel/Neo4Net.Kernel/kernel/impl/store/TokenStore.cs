@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.impl.store
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NoStoreHeaderFormat.NO_STORE_HEADER_FORMAT;
+//	import static org.Neo4Net.kernel.impl.store.NoStoreHeaderFormat.NO_STORE_HEADER_FORMAT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.PropertyStore.decodeString;
+//	import static org.Neo4Net.kernel.impl.store.PropertyStore.decodeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public abstract class TokenStore<RECORD> : CommonAbstractStore<RECORD, NoStoreHeader> where RECORD : Neo4Net.Kernel.Impl.Store.Records.TokenRecord
 	{

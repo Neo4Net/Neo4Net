@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.verification.DuplicateCheckStrategy.BucketsDuplicateCheckStrategy.BUCKET_STRATEGY_ENTRIES_THRESHOLD;
+//	import static org.Neo4Net.kernel.api.impl.schema.verification.DuplicateCheckStrategy.BucketsDuplicateCheckStrategy.BUCKET_STRATEGY_ENTRIES_THRESHOLD;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class DuplicateCheckStrategyTest
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters public static java.util.List<org.neo4j.function.Factory<? extends DuplicateCheckStrategy>> duplicateCheckStrategies()
+//ORIGINAL LINE: @Parameterized.Parameters public static java.util.List<org.Neo4Net.function.Factory<? extends DuplicateCheckStrategy>> duplicateCheckStrategies()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public static IList<Factory<DuplicateCheckStrategy>> DuplicateCheckStrategies()
 		 {
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.function.Factory<DuplicateCheckStrategy> duplicateCheckStrategyFactory;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.function.Factory<DuplicateCheckStrategy> duplicateCheckStrategyFactory;
 		 public IFactory<DuplicateCheckStrategy> DuplicateCheckStrategyFactory;
 		 private DuplicateCheckStrategy _checkStrategy;
 
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueStringSingleProperty() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueStringSingleProperty() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DuplicateFoundAmongUniqueStringSingleProperty()
 		 {
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueNumberSingleProperty() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueNumberSingleProperty() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DuplicateFoundAmongUniqueNumberSingleProperty()
 		 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueStringSingleProperty() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueStringSingleProperty() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NoDuplicatesDetectedForUniqueStringSingleProperty()
 		 {
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueNumberSingleProperty() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueNumberSingleProperty() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NoDuplicatesDetectedForUniqueNumberSingleProperty()
 		 {
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueStringMultipleProperties() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueStringMultipleProperties() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DuplicateFoundAmongUniqueStringMultipleProperties()
 		 {
@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueNumberMultipleProperties() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void duplicateFoundAmongUniqueNumberMultipleProperties() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DuplicateFoundAmongUniqueNumberMultipleProperties()
 		 {
@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueStringMultipleProperties() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueStringMultipleProperties() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NoDuplicatesDetectedForUniqueStringMultipleProperties()
 		 {
@@ -272,7 +272,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueNumberMultipleProperties() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void noDuplicatesDetectedForUniqueNumberMultipleProperties() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void NoDuplicatesDetectedForUniqueNumberMultipleProperties()
 		 {

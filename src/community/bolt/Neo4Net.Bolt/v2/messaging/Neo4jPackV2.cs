@@ -23,9 +23,9 @@ namespace Neo4Net.Bolt.v2.messaging
 {
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using StructType = Neo4Net.Bolt.messaging.StructType;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using PackInput = Neo4Net.Bolt.v1.packstream.PackInput;
 	using PackOutput = Neo4Net.Bolt.v1.packstream.PackOutput;
 	using PackStream = Neo4Net.Bolt.v1.packstream.PackStream;
@@ -42,21 +42,21 @@ namespace Neo4Net.Bolt.v2.messaging
 	using TemporalUtil = Neo4Net.Values.utils.TemporalUtil;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.datetime;
+//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.epochDate;
+//	import static org.Neo4Net.values.storable.DateValue.epochDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.duration;
+//	import static org.Neo4Net.values.storable.DurationValue.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalDateTimeValue.localDateTime;
+//	import static org.Neo4Net.values.storable.LocalDateTimeValue.localDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.localTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.TimeValue.time;
+//	import static org.Neo4Net.values.storable.TimeValue.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 
-	public class Neo4jPackV2 : Neo4jPackV1
+	public class Neo4NetPackV2 : Neo4NetPackV1
 	{
 		 public new const long VERSION = 2;
 
@@ -87,12 +87,12 @@ namespace Neo4Net.Bolt.v2.messaging
 		 public const sbyte DURATION = ( sbyte )'E';
 		 public const int DURATION_SIZE = 4;
 
-		 public override Neo4Net.Bolt.messaging.Neo4jPack_Packer NewPacker( PackOutput output )
+		 public override Neo4Net.Bolt.messaging.Neo4NetPack_Packer NewPacker( PackOutput output )
 		 {
 			  return new PackerV2( output );
 		 }
 
-		 public override Neo4Net.Bolt.messaging.Neo4jPack_Unpacker NewUnpacker( PackInput input )
+		 public override Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker NewUnpacker( PackInput input )
 		 {
 			  return new UnpackerV2( input );
 		 }
@@ -102,14 +102,14 @@ namespace Neo4Net.Bolt.v2.messaging
 			  return VERSION;
 		 }
 
-		 private class PackerV2 : Neo4jPackV1.PackerV1
+		 private class PackerV2 : Neo4NetPackV1.PackerV1
 		 {
 			  internal PackerV2( PackOutput output ) : base( output )
 			  {
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void writePoint(org.neo4j.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws java.io.IOException
+//ORIGINAL LINE: public void writePoint(org.Neo4Net.values.storable.CoordinateReferenceSystem crs, double[] coordinate) throws java.io.IOException
 			  public override void WritePoint( CoordinateReferenceSystem crs, double[] coordinate )
 			  {
 					if ( coordinate.Length == 2 )
@@ -217,14 +217,14 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 		 }
 
-		 private class UnpackerV2 : Neo4jPackV1.UnpackerV1
+		 private class UnpackerV2 : Neo4NetPackV1.UnpackerV1
 		 {
 			  internal UnpackerV2( PackInput input ) : base( input )
 			  {
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.neo4j.values.AnyValue unpackStruct(char signature, long size) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.values.AnyValue unpackStruct(char signature, long size) throws java.io.IOException
 			  protected internal override AnyValue UnpackStruct( char signature, long size )
 			  {
 					try
@@ -279,7 +279,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.PointValue unpackPoint2D() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.PointValue unpackPoint2D() throws java.io.IOException
 			  internal virtual PointValue UnpackPoint2D()
 			  {
 
@@ -290,7 +290,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.PointValue unpackPoint3D() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.PointValue unpackPoint3D() throws java.io.IOException
 			  internal virtual PointValue UnpackPoint3D()
 			  {
 					int crsCode = UnpackInteger();
@@ -300,7 +300,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.DurationValue unpackDuration() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.DurationValue unpackDuration() throws java.io.IOException
 			  internal virtual DurationValue UnpackDuration()
 			  {
 					long months = UnpackLong();
@@ -311,7 +311,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.DateValue unpackDate() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.DateValue unpackDate() throws java.io.IOException
 			  internal virtual DateValue UnpackDate()
 			  {
 					long epochDay = UnpackLong();
@@ -319,7 +319,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.LocalTimeValue unpackLocalTime() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.LocalTimeValue unpackLocalTime() throws java.io.IOException
 			  internal virtual LocalTimeValue UnpackLocalTime()
 			  {
 					long nanoOfDay = UnpackLong();
@@ -327,7 +327,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.TimeValue unpackTime() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.TimeValue unpackTime() throws java.io.IOException
 			  internal virtual TimeValue UnpackTime()
 			  {
 					long nanosOfDayLocal = UnpackLong();
@@ -336,7 +336,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.LocalDateTimeValue unpackLocalDateTime() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.LocalDateTimeValue unpackLocalDateTime() throws java.io.IOException
 			  internal virtual LocalDateTimeValue UnpackLocalDateTime()
 			  {
 					long epochSecond = UnpackLong();
@@ -345,7 +345,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.DateTimeValue unpackDateTimeWithZoneOffset() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.DateTimeValue unpackDateTimeWithZoneOffset() throws java.io.IOException
 			  internal virtual DateTimeValue UnpackDateTimeWithZoneOffset()
 			  {
 					long epochSecondLocal = UnpackLong();
@@ -355,7 +355,7 @@ namespace Neo4Net.Bolt.v2.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.values.storable.DateTimeValue unpackDateTimeWithZoneName() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.values.storable.DateTimeValue unpackDateTimeWithZoneName() throws java.io.IOException
 			  internal virtual DateTimeValue UnpackDateTimeWithZoneName()
 			  {
 					long epochSecondLocal = UnpackLong();

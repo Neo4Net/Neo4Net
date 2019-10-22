@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.change;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.remove;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.remove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexQueryHelper.add;
+//	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Ignore("Not a test. This is a compatibility suite that provides test cases for verifying" + " IndexProvider implementations. Each index provider that is to be tested by this suite" + " must create their own test class extending IndexProviderCompatibilityTestSuite." + " The @Ignore annotation doesn't prevent these tests to run, it rather removes some annoying" + " errors or warnings in some IDEs about test classes needing a public zero-arg constructor.") public class SimpleRandomizedIndexAccessorCompatibility extends IndexAccessorCompatibility
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRandomRanges(org.neo4j.values.storable.ValueType[] types, java.util.TreeSet<ValueAndId> sortedValues) throws Exception
+//ORIGINAL LINE: private void verifyRandomRanges(org.Neo4Net.values.storable.ValueType[] types, java.util.TreeSet<ValueAndId> sortedValues) throws Exception
 		 private void VerifyRandomRanges( ValueType[] types, SortedSet<ValueAndId> sortedValues )
 		 {
 			  for ( int i = 0; i < 100; i++ )
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 					// Expected result based on query
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> predicate = org.neo4j.internal.kernel.api.IndexQuery.range(0, from, fromInclusive, to, toInclusive);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> predicate = org.Neo4Net.internal.kernel.api.IndexQuery.range(0, from, fromInclusive, to, toInclusive);
 					IndexQuery.RangePredicate<object> predicate = IndexQuery.range( 0, from, fromInclusive, to, toInclusive );
 					IList<long> expectedIds = expectedIds( sortedValues, from, to, fromInclusive, toInclusive );
 
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.List<IndexEntryUpdate<?>> generateUpdatesFromValues(java.util.List<org.neo4j.values.storable.Value> values, org.apache.commons.lang3.mutable.MutableLong nextId)
+//ORIGINAL LINE: private java.util.List<IndexEntryUpdate<?>> generateUpdatesFromValues(java.util.List<org.Neo4Net.values.storable.Value> values, org.apache.commons.lang3.mutable.MutableLong nextId)
 		 private IList<IndexEntryUpdate<object>> GenerateUpdatesFromValues( IList<Value> values, MutableLong nextId )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

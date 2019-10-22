@@ -30,21 +30,21 @@ namespace Neo4Net.Kernel.api.txstate
 	/// Defines transactional state for explicit indexes. Since the implementation of this enlists another transaction
 	/// management engine under the hood, these methods have been split out from
 	/// <seealso cref="TransactionState the transaction state"/> in order to be able to keep the implementation of
-	/// <seealso cref="org.neo4j.kernel.impl.api.state.TxState transaction state"/> simple with no dependencies.
+	/// <seealso cref="org.Neo4Net.kernel.impl.api.state.TxState transaction state"/> simple with no dependencies.
 	/// </summary>
 	public interface ExplicitIndexTransactionState : AuxiliaryTransactionState
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndex NodeChanges( string indexName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 ExplicitIndex RelationshipChanges( string indexName );
 
-		 void CreateIndex( IndexEntityType entityType, string indexName, IDictionary<string, string> config );
+		 void CreateIndex( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config );
 
-		 void DeleteIndex( IndexEntityType entityType, string indexName );
+		 void DeleteIndex( IndexEntityType IEntityType, string indexName );
 
 		 /// <summary>
 		 /// Checks whether or not index with specific {@code name} exists.
@@ -62,8 +62,8 @@ namespace Neo4Net.Kernel.api.txstate
 		 /// <param name="indexName"> name of the index. </param>
 		 /// <param name="config"> configuration which must match the existing index, if it exists. {@code null} means
 		 /// that the configuration doesn't need to be checked. </param>
-		 /// <returns> {@code true} if the index with the specific {@code name} and {@code entityType} exists, otherwise {@code false}. </returns>
-		 bool CheckIndexExistence( IndexEntityType entityType, string indexName, IDictionary<string, string> config );
+		 /// <returns> {@code true} if the index with the specific {@code name} and {@code IEntityType} exists, otherwise {@code false}. </returns>
+		 bool CheckIndexExistence( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config );
 	}
 
 }

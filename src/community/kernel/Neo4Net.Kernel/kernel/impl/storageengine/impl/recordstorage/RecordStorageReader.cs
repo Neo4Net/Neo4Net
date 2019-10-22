@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using Register = Neo4Net.Register.Register;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Neo4Net.Storageengine.Api;
 	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
@@ -65,9 +65,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.CHECK;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.register.Registers.newDoubleLongRegister;
+//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
 
 	/// <summary>
 	/// Default implementation of StorageReader. Delegates to NeoStores and indexes.
@@ -169,14 +169,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.InternalIndexState indexGetState(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.InternalIndexState indexGetState(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override InternalIndexState IndexGetState( IndexDescriptor descriptor )
 		 {
 			  return _indexService.getIndexProxy( descriptor.Schema() ).State;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.internal.kernel.api.IndexReference indexReference(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.IndexReference indexReference(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReference IndexReference( IndexDescriptor descriptor )
 		 {
 			  IndexProxy indexProxy = _indexService.getIndexProxy( descriptor.Schema() );
@@ -184,14 +184,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.PopulationProgress indexGetPopulationProgress(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override PopulationProgress IndexGetPopulationProgress( SchemaDescriptor descriptor )
 		 {
 			  return _indexService.getIndexProxy( descriptor ).IndexPopulationProgress;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long indexSize(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public long indexSize(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override long IndexSize( SchemaDescriptor descriptor )
 		 {
 			  Register_DoubleLongRegister result = _indexService.indexUpdatesAndSize( descriptor );
@@ -199,14 +199,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public double indexUniqueValuesPercentage(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public double indexUniqueValuesPercentage(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override double IndexUniqueValuesPercentage( SchemaDescriptor descriptor )
 		 {
 			  return _indexService.indexUniqueValuesPercentage( descriptor );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String indexGetFailure(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public String indexGetFailure(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override string IndexGetFailure( SchemaDescriptor descriptor )
 		 {
 			  return _indexService.getIndexProxy( descriptor ).PopulationFailure.asString();
@@ -238,14 +238,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, org.neo4j.storageengine.api.RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, org.Neo4Net.storageengine.api.RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, EXCEPTION
 		 public override void RelationshipVisit<EXCEPTION>( long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor ) where EXCEPTION : Exception
 		 {
 			  // TODO Please don't create a record for this, it's ridiculous
 			  RelationshipRecord record = _relationshipStore.getRecord( relationshipId, _relationshipStore.newRecord(), CHECK );
 			  if ( !record.InUse() )
 			  {
-					throw new EntityNotFoundException( EntityType.RELATIONSHIP, relationshipId );
+					throw new IEntityNotFoundException( IEntityType.RELATIONSHIP, relationshipId );
 			  }
 			  relationshipVisitor.Visit( relationshipId, record.Type, record.FirstNode, record.SecondNode );
 		 }
@@ -300,21 +300,21 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.register.Register_DoubleLongRegister indexUpdatesAndSize(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister indexUpdatesAndSize(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override Register_DoubleLongRegister IndexUpdatesAndSize( SchemaDescriptor descriptor, Register_DoubleLongRegister target )
 		 {
 			  return _counts.indexUpdatesAndSize( TryGetIndexId( descriptor ), target );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.register.Register_DoubleLongRegister indexSample(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.register.Register_DoubleLongRegister indexSample(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override Register_DoubleLongRegister IndexSample( SchemaDescriptor descriptor, Register_DoubleLongRegister target )
 		 {
 			  return _counts.indexSample( TryGetIndexId( descriptor ), target );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long tryGetIndexId(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private long tryGetIndexId(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private long TryGetIndexId( SchemaDescriptor descriptor )
 		 {
 			  return _indexService.getIndexId( descriptor );
@@ -403,14 +403,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexReader getIndexReader(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader getIndexReader(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader GetIndexReader( IndexDescriptor descriptor )
 		 {
 			  return IndexReaderFactory().newReader(descriptor);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexReader getFreshIndexReader(org.neo4j.storageengine.api.schema.IndexDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader getFreshIndexReader(org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader GetFreshIndexReader( IndexDescriptor descriptor )
 		 {
 			  return IndexReaderFactory().newUnCachedReader(descriptor);

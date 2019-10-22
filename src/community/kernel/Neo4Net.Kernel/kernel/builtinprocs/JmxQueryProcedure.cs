@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Neo4Net.Collections;
 	using CollectorsUtil = Neo4Net.Helpers.Collections.CollectorsUtil;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -35,23 +35,23 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Mode = Neo4Net.Procedure.Mode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Pair.pair;
+//	import static org.Neo4Net.helpers.collection.Pair.pair;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 	public class JmxQueryProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
 	{
 		 private readonly MBeanServer _jmxServer;
 
-		 public JmxQueryProcedure( QualifiedName name, MBeanServer jmxServer ) : base( procedureSignature( name ).@in( "query", Neo4jTypes.NTString ).@out( "name", Neo4jTypes.NTString ).@out( "description", Neo4jTypes.NTString ).@out( "attributes", Neo4jTypes.NTMap ).mode( Mode.DBMS ).description( "Query JMX management data by domain and name. For instance, \"org.neo4j:*\"" ).build() )
+		 public JmxQueryProcedure( QualifiedName name, MBeanServer jmxServer ) : base( procedureSignature( name ).@in( "query", Neo4NetTypes.NTString ).@out( "name", Neo4NetTypes.NTString ).@out( "description", Neo4NetTypes.NTString ).@out( "attributes", Neo4NetTypes.NTMap ).mode( Mode.DBMS ).description( "Query JMX management data by domain and name. For instance, \"org.Neo4Net:*\"" ).build() )
 		 {
 			  this._jmxServer = jmxServer;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.collection.RawIterator<Object[], org.neo4j.internal.kernel.api.exceptions.ProcedureException> apply(org.neo4j.kernel.api.proc.Context ctx, Object[] input, org.neo4j.kernel.api.ResourceTracker resourceTracker) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
 			  string query = input[0].ToString();
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.builtinprocs
 					// Find all beans that match the query name pattern
 					IEnumerator<ObjectName> names = _jmxServer.queryNames( new ObjectName( query ), null ).GetEnumerator();
 
-					// Then convert them to a Neo4j type system representation
+					// Then convert them to a Neo4Net type system representation
 					return RawIterator.from(() =>
 					{
 					 if ( !names.hasNext() )
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.builtinprocs
 					 try
 					 {
 						  MBeanInfo beanInfo = _jmxServer.getMBeanInfo( name );
-						  return new object[]{ name.CanonicalName, beanInfo.Description, ToNeo4jValue( name, beanInfo.Attributes ) };
+						  return new object[]{ name.CanonicalName, beanInfo.Description, ToNeo4NetValue( name, beanInfo.Attributes ) };
 					 }
 					 catch ( JMException e )
 					 {
@@ -82,33 +82,33 @@ namespace Neo4Net.Kernel.builtinprocs
 			  }
 			  catch ( MalformedObjectNameException )
 			  {
-					throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureCallFailed, "'%s' is an invalid JMX name pattern. Valid queries should use" + "the syntax outlined in the javax.management.ObjectName API documentation." + "For instance, try 'org.neo4j:*' to find all JMX beans of the 'org.neo4j' " + "domain, or '*:*' to find every JMX bean.", query );
+					throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureCallFailed, "'%s' is an invalid JMX name pattern. Valid queries should use" + "the syntax outlined in the javax.management.ObjectName API documentation." + "For instance, try 'org.Neo4Net:*' to find all JMX beans of the 'org.Neo4Net' " + "domain, or '*:*' to find every JMX bean.", query );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String,Object> toNeo4jValue(javax.management.ObjectName name, javax.management.MBeanAttributeInfo[] attributes) throws javax.management.JMException
-		 private IDictionary<string, object> ToNeo4jValue( ObjectName name, MBeanAttributeInfo[] attributes )
+//ORIGINAL LINE: private java.util.Map<String,Object> toNeo4NetValue(javax.management.ObjectName name, javax.management.MBeanAttributeInfo[] attributes) throws javax.management.JMException
+		 private IDictionary<string, object> ToNeo4NetValue( ObjectName name, MBeanAttributeInfo[] attributes )
 		 {
 			  Dictionary<string, object> @out = new Dictionary<string, object>();
 			  foreach ( MBeanAttributeInfo attribute in attributes )
 			  {
 					if ( attribute.Readable )
 					{
-						 @out[attribute.Name] = ToNeo4jValue( name, attribute );
+						 @out[attribute.Name] = ToNeo4NetValue( name, attribute );
 					}
 			  }
 			  return @out;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.Map<String,Object> toNeo4jValue(javax.management.ObjectName name, javax.management.MBeanAttributeInfo attribute) throws javax.management.JMException
-		 private IDictionary<string, object> ToNeo4jValue( ObjectName name, MBeanAttributeInfo attribute )
+//ORIGINAL LINE: private java.util.Map<String,Object> toNeo4NetValue(javax.management.ObjectName name, javax.management.MBeanAttributeInfo attribute) throws javax.management.JMException
+		 private IDictionary<string, object> ToNeo4NetValue( ObjectName name, MBeanAttributeInfo attribute )
 		 {
 			  object value;
 			  try
 			  {
-					value = toNeo4jValue( _jmxServer.getAttribute( name, attribute.Name ) );
+					value = toNeo4NetValue( _jmxServer.getAttribute( name, attribute.Name ) );
 			  }
 			  catch ( RuntimeMBeanException e )
 			  {
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  return map( "description", attribute.Description, "value", value );
 		 }
 
-		 private object ToNeo4jValue( object attributeValue )
+		 private object ToNeo4NetValue( object attributeValue )
 		 {
 			  // These branches as per {@link javax.management.openmbean.OpenType#ALLOWED_CLASSNAMES_LIST}
 			  if ( IsSimpleType( attributeValue ) )
@@ -143,12 +143,12 @@ namespace Neo4Net.Kernel.builtinprocs
 					}
 					else
 					{
-						 return toNeo4jValue( ( object[] ) attributeValue );
+						 return toNeo4NetValue( ( object[] ) attributeValue );
 					}
 			  }
 			  else if ( attributeValue is CompositeData )
 			  {
-					return ToNeo4jValue( ( CompositeData ) attributeValue );
+					return ToNeo4NetValue( ( CompositeData ) attributeValue );
 			  }
 			  else if ( attributeValue is ObjectName )
 			  {
@@ -157,8 +157,8 @@ namespace Neo4Net.Kernel.builtinprocs
 			  else if ( attributeValue is TabularData )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return toNeo4jValue((java.util.Map<?,?>) attributeValue);
-					return toNeo4jValue( ( IDictionary<object, ?> ) attributeValue );
+//ORIGINAL LINE: return toNeo4NetValue((java.util.Map<?,?>) attributeValue);
+					return toNeo4NetValue( ( IDictionary<object, ?> ) attributeValue );
 			  }
 			  else if ( attributeValue is DateTime )
 			  {
@@ -171,25 +171,25 @@ namespace Neo4Net.Kernel.builtinprocs
 			  }
 		 }
 
-		 private IDictionary<string, object> ToNeo4jValue<T1>( IDictionary<T1> attributeValue )
+		 private IDictionary<string, object> ToNeo4NetValue<T1>( IDictionary<T1> attributeValue )
 		 {
 			  // Build a new map with the same keys, but each value passed
-			  // through `toNeo4jValue`
+			  // through `toNeo4NetValue`
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  return attributeValue.SetOfKeyValuePairs().Select(e => pair(e.Key.ToString(), toNeo4jValue(e.Value))).collect(CollectorsUtil.pairsToMap());
+			  return attributeValue.SetOfKeyValuePairs().Select(e => pair(e.Key.ToString(), toNeo4NetValue(e.Value))).collect(CollectorsUtil.pairsToMap());
 		 }
 
-		 private IList<object> ToNeo4jValue( object[] array )
+		 private IList<object> ToNeo4NetValue( object[] array )
 		 {
-			  return java.util.array.Select( this.toNeo4jValue ).ToList();
+			  return java.util.array.Select( this.toNeo4NetValue ).ToList();
 		 }
 
-		 private IDictionary<string, object> ToNeo4jValue( CompositeData composite )
+		 private IDictionary<string, object> ToNeo4NetValue( CompositeData composite )
 		 {
 			  Dictionary<string, object> properties = new Dictionary<string, object>();
 			  foreach ( string key in composite.CompositeType.Keys )
 			  {
-					properties[key] = toNeo4jValue( composite.get( key ) );
+					properties[key] = toNeo4NetValue( composite.get( key ) );
 			  }
 
 			  return map( "description", composite.CompositeType.Description, "properties", properties );

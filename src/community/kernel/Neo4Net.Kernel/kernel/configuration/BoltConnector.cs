@@ -25,26 +25,26 @@ namespace Neo4Net.Kernel.configuration
 	using Description = Neo4Net.Configuration.Description;
 	using Internal = Neo4Net.Configuration.Internal;
 	using ReplacedBy = Neo4Net.Configuration.ReplacedBy;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.DURATION;
+//	import static org.Neo4Net.kernel.configuration.Settings.DURATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.INTEGER;
+//	import static org.Neo4Net.kernel.configuration.Settings.INTEGER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.advertisedAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.legacyFallback;
+//	import static org.Neo4Net.kernel.configuration.Settings.legacyFallback;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.listenAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsObeyCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	[Description("Configuration options for Bolt connectors. " + "\"(bolt-connector-key)\" is a placeholder for a unique name for the connector, for instance " + "\"bolt-public\" or some other name that describes what the connector is for.")]
 	public class BoltConnector : Connector
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.configuration
 		 public readonly Setting<Duration> ThreadPoolKeepAlive;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The queue size of the thread pool bound to this connector (-1 for unbounded, 0 for direct handoff, > 0 for bounded)") @Internal public final org.neo4j.graphdb.config.Setting<int> unsupported_thread_pool_queue_size;
+//ORIGINAL LINE: @Description("The queue size of the thread pool bound to this connector (-1 for unbounded, 0 for direct handoff, > 0 for bounded)") @Internal public final org.Neo4Net.graphdb.config.Setting<int> unsupported_thread_pool_queue_size;
 		 [Description("The queue size of the thread pool bound to this connector (-1 for unbounded, 0 for direct handoff, > 0 for bounded)")]
 		 public readonly Setting<int> UnsupportedThreadPoolQueueSize;
 

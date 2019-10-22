@@ -20,7 +20,7 @@
 namespace Neo4Net.Storageengine.Api.schema
 {
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// Reader of a label scan store which contains label-->nodes mappings.
@@ -45,12 +45,12 @@ namespace Neo4Net.Storageengine.Api.schema
 		 /// <param name="labelIds"> label token ids. </param>
 		 /// <returns> node ids with any of the given label ids. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.neo4j.collection.PrimitiveLongResourceIterator nodesWithAnyOfLabels(int[] labelIds)
+//		 default org.Neo4Net.collection.PrimitiveLongResourceIterator nodesWithAnyOfLabels(int[] labelIds)
 	//	 {
 	//		  return nodesWithAnyOfLabels(NO_ID, labelIds);
 	//	 }
 
-		 /// <param name="fromId"> entity id to start at, exclusive, i.e. the given {@code fromId} will not be included in the result. </param>
+		 /// <param name="fromId"> IEntity id to start at, exclusive, i.e. the given {@code fromId} will not be included in the result. </param>
 		 /// <param name="labelIds"> label token ids. </param>
 		 /// <returns> node ids with any of the given label ids. </returns>
 		 PrimitiveLongResourceIterator NodesWithAnyOfLabels( long fromId, int[] labelIds );

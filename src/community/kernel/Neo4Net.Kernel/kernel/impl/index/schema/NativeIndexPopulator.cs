@@ -43,11 +43,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 
 	/// <summary>
 	/// <seealso cref="IndexPopulator"/> backed by a <seealso cref="GBPTree"/>.
@@ -153,14 +153,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void add(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 			  ProcessUpdates( updates, _mainConflictDetector );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  // No-op, uniqueness is checked for each update in add(IndexEntryUpdate)
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void processUpdates(Iterable<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> indexEntryUpdates, ConflictDetectingValueMerger<KEY,VALUE,org.neo4j.values.storable.Value[]> conflictDetector) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void processUpdates(Iterable<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> indexEntryUpdates, ConflictDetectingValueMerger<KEY,VALUE,org.Neo4Net.values.storable.Value[]> conflictDetector) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ProcessUpdates<T1>( IEnumerable<T1> indexEntryUpdates, ConflictDetectingValueMerger<KEY, VALUE, Value[]> conflictDetector ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 		 {
 			  try
@@ -281,7 +281,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					  using ( Writer<KEY, VALUE> writer = tree.writer() )
 					  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> indexEntryUpdate : indexEntryUpdates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> indexEntryUpdate : indexEntryUpdates)
 						foreach ( IndexEntryUpdate<object> indexEntryUpdate in indexEntryUpdates )
 						{
 							 NativeIndexUpdater.ProcessUpdate( _treeKey, _treeValue, indexEntryUpdate, writer, conflictDetector );

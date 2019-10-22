@@ -34,7 +34,7 @@ namespace Neo4Net.Test.rule.dump
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.isIn;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.time;
+//	import static org.Neo4Net.helpers.Format.time;
 
 	public class DumpProcessInformation
 	{
@@ -77,7 +77,7 @@ namespace Neo4Net.Test.rule.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.io.File doThreadDump(org.neo4j.helpers.collection.Pair<long, String> pid) throws Exception
+//ORIGINAL LINE: public java.io.File doThreadDump(org.Neo4Net.helpers.collection.Pair<long, String> pid) throws Exception
 		 public virtual File DoThreadDump( Pair<long, string> pid )
 		 {
 			  File outputFile = new File( _outputDirectory, FileName( "threaddump", pid ) );
@@ -89,7 +89,7 @@ namespace Neo4Net.Test.rule.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doHeapDump(org.neo4j.helpers.collection.Pair<long, String> pid) throws Exception
+//ORIGINAL LINE: public void doHeapDump(org.Neo4Net.helpers.collection.Pair<long, String> pid) throws Exception
 		 public virtual void DoHeapDump( Pair<long, string> pid )
 		 {
 			  File outputFile = new File( _outputDirectory, FileName( "heapdump", pid ) );
@@ -109,7 +109,7 @@ namespace Neo4Net.Test.rule.dump
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Collection<org.neo4j.helpers.collection.Pair<long, String>> getJPids(org.hamcrest.Matcher<String> filter) throws Exception
+//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.helpers.collection.Pair<long, String>> getJPids(org.hamcrest.Matcher<String> filter) throws Exception
 		 public virtual ICollection<Pair<long, string>> GetJPids( Matcher<string> filter )
 		 {
 			  Process process = Runtime.Runtime.exec( new string[] { "jps", "-l" } );

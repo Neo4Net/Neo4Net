@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering
 {
@@ -53,9 +53,9 @@ namespace Neo4Net.causalclustering
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.BackupUtil.restoreFromBackup;
+//	import static org.Neo4Net.causalclustering.BackupUtil.restoreFromBackup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.Cluster.dataMatchesEventually;
+//	import static org.Neo4Net.causalclustering.discovery.Cluster.dataMatchesEventually;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NewMemberSeedingIT
@@ -78,11 +78,11 @@ namespace Neo4Net.causalclustering
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public org.neo4j.causalclustering.backup_stores.BackupStore seedStore;
+//ORIGINAL LINE: @Parameterized.Parameter() public org.Neo4Net.causalclustering.backup_stores.BackupStore seedStore;
 		 public BackupStore SeedStore;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.causalclustering.cluster_load.ClusterLoad intermediateLoad;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.causalclustering.cluster_load.ClusterLoad intermediateLoad;
 		 public ClusterLoad IntermediateLoad;
 
 		 private SuppressOutput _suppressOutput = SuppressOutput.suppressAll();
@@ -94,7 +94,7 @@ namespace Neo4Net.causalclustering
 		 public RuleChain Rules;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private FileCopyDetector _fileCopyDetector;
 		 private File _baseBackupDir;

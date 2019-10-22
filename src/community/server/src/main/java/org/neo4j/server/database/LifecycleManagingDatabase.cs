@@ -23,16 +23,16 @@ using System.Diagnostics;
 namespace Neo4Net.Server.database
 {
 
-	using Result = Neo4Net.Graphdb.Result;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Result = Neo4Net.GraphDb.Result;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Log = Neo4Net.Logging.Log;
 
 	/// <summary>
-	/// Wraps a neo4j database in lifecycle management. This is intermediate, and will go away once we have an internal
+	/// Wraps a Neo4Net database in lifecycle management. This is intermediate, and will go away once we have an internal
 	/// database that exposes lifecycle cleanly.
 	/// </summary>
 	public class LifecycleManagingDatabase : Database

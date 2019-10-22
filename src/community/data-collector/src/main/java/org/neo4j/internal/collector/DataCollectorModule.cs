@@ -35,7 +35,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static IDisposable setupDataCollector(org.neo4j.kernel.impl.proc.Procedures procedures, org.neo4j.scheduler.JobScheduler jobScheduler, org.neo4j.internal.kernel.api.Kernel kernel, org.neo4j.kernel.monitoring.Monitors monitors, org.neo4j.values.ValueMapper_JavaMapper valueMapper, org.neo4j.kernel.configuration.Config config) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public static IDisposable setupDataCollector(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.scheduler.JobScheduler jobScheduler, org.Neo4Net.internal.kernel.api.Kernel kernel, org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.values.ValueMapper_JavaMapper valueMapper, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public static IDisposable SetupDataCollector( Procedures procedures, IJobScheduler jobScheduler, Kernel kernel, Monitors monitors, Neo4Net.Values.ValueMapper_JavaMapper valueMapper, Config config )
 		 {
 			  Preconditions.checkState( kernel != null, "Kernel was null" );

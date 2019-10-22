@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel
 	using ReadReplica = Neo4Net.causalclustering.discovery.ReadReplica;
 	using LeaderOnlyStrategy = Neo4Net.causalclustering.upstream.strategies.LeaderOnlyStrategy;
 	using UdcSettings = Neo4Net.Ext.Udc.UdcSettings;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using PageCacheWarmerMonitorAdapter = Neo4Net.Kernel.impl.pagecache.monitor.PageCacheWarmerMonitorAdapter;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
@@ -48,11 +48,11 @@ namespace Neo4Net.Kernel
 	public class PageCacheWarmupCcIT : PageCacheWarmupTestSupport
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfReadReplicas(0).withSharedCoreParam(org.neo4j.ext.udc.UdcSettings.udc_enabled, org.neo4j.kernel.configuration.Settings.FALSE).withSharedCoreParam(org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.multi_dc_license, org.neo4j.kernel.configuration.Settings.TRUE).withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy, org.neo4j.causalclustering.upstream.strategies.LeaderOnlyStrategy.IDENTITY).withInstanceCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader, id -> id == 0 ? "false" : "true").withSharedReadReplicaParam(org.neo4j.ext.udc.UdcSettings.udc_enabled, org.neo4j.kernel.configuration.Settings.FALSE).withSharedReadReplicaParam(org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.multi_dc_license, org.neo4j.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.pull_interval, "100ms").withSharedReadReplicaParam(org.neo4j.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy, org.neo4j.causalclustering.upstream.strategies.LeaderOnlyStrategy.IDENTITY);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfReadReplicas(0).withSharedCoreParam(org.Neo4Net.ext.udc.UdcSettings.udc_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE).withSharedCoreParam(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.multi_dc_license, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy, org.Neo4Net.causalclustering.upstream.strategies.LeaderOnlyStrategy.IDENTITY).withInstanceCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.refuse_to_be_leader, id -> id == 0 ? "false" : "true").withSharedReadReplicaParam(org.Neo4Net.ext.udc.UdcSettings.udc_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE).withSharedReadReplicaParam(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.multi_dc_license, org.Neo4Net.kernel.configuration.Settings.TRUE).withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.pull_interval, "100ms").withSharedReadReplicaParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.upstream_selection_strategy, org.Neo4Net.causalclustering.upstream.strategies.LeaderOnlyStrategy.IDENTITY);
 		 public ClusterRule ClusterRule = new ClusterRule().withNumberOfReadReplicas(0).withSharedCoreParam(UdcSettings.udc_enabled, Settings.FALSE).withSharedCoreParam(GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedCoreParam(CausalClusteringSettings.multi_dc_license, Settings.TRUE).withSharedCoreParam(CausalClusteringSettings.upstream_selection_strategy, LeaderOnlyStrategy.IDENTITY).withInstanceCoreParam(CausalClusteringSettings.refuse_to_be_leader, id => id == 0 ? "false" : "true").withSharedReadReplicaParam(UdcSettings.udc_enabled, Settings.FALSE).withSharedReadReplicaParam(GraphDatabaseSettings.pagecache_warmup_profiling_interval, "100ms").withSharedReadReplicaParam(CausalClusteringSettings.multi_dc_license, Settings.TRUE).withSharedReadReplicaParam(CausalClusteringSettings.pull_interval, "100ms").withSharedReadReplicaParam(CausalClusteringSettings.upstream_selection_strategy, LeaderOnlyStrategy.IDENTITY);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private CoreClusterMember _leader;
 

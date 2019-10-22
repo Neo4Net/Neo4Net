@@ -28,7 +28,7 @@ namespace Neo4Net.Server.web.logging
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using ServerSettings = Neo4Net.Server.configuration.ServerSettings;
@@ -45,11 +45,11 @@ namespace Neo4Net.Server.web.logging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.readTextFile;
+//	import static org.Neo4Net.io.fs.FileUtils.readTextFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class HTTPLoggingIT : ExclusiveServerTestBase
 	{
@@ -145,7 +145,7 @@ namespace Neo4Net.Server.web.logging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.function.ThrowingSupplier<String, java.io.IOException> fileContentSupplier(final java.io.File file)
+//ORIGINAL LINE: private org.Neo4Net.function.ThrowingSupplier<String, java.io.IOException> fileContentSupplier(final java.io.File file)
 		 private ThrowingSupplier<string, IOException> FileContentSupplier( File file )
 		 {
 			  return () => readTextFile(file, StandardCharsets.UTF_8);

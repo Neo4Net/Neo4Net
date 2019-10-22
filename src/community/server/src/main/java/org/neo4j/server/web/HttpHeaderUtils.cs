@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.web
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Log = Neo4Net.Logging.Log;
 
 	public class HttpHeaderUtils

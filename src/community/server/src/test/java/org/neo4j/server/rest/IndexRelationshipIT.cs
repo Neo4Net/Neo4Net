@@ -26,11 +26,11 @@ namespace Neo4Net.Server.rest
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using FunctionalTestHelper = Neo4Net.Server.helpers.FunctionalTestHelper;
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.FunctionalTestHelper.CLIENT;
+//	import static org.Neo4Net.server.helpers.FunctionalTestHelper.CLIENT;
 
 	public class IndexRelationshipIT : AbstractRestFunctionalTestBase
 	{
@@ -70,15 +70,15 @@ namespace Neo4Net.Server.rest
 		 }
 
 		 /// <summary>
-		 /// POST ${org.neo4j.server.rest.web}/index/relationship {
+		 /// POST ${org.Neo4Net.server.rest.web}/index/relationship {
 		 /// "name":"index-name" "config":{ // optional map of index configuration
 		 /// params "key1":"value1", "key2":"value2" } }
 		 /// 
-		 /// POST ${org.neo4j.server.rest.web}/index/relationship/{indexName}/{key}/{
+		 /// POST ${org.Neo4Net.server.rest.web}/index/relationship/{indexName}/{key}/{
 		 /// value} "http://uri.for.node.to.index"
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateANamedRelationshipIndexAndAddToIt() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldCreateANamedRelationshipIndexAndAddToIt() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateANamedRelationshipIndexAndAddToIt()
 		 {
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldGet200AndArrayOfRelationshipRepsWhenGettingFromIndex()
 		 {
@@ -167,7 +167,7 @@ namespace Neo4Net.Server.rest
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.indexRelationshipUri(indexName, key, value));
 			  assertEquals( 200, response.Status );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.neo4j.server.rest.domain.JsonHelper.readJson(response.getEntity());
+//ORIGINAL LINE: java.util.Collection<?> items = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(response.getEntity());
 			  ICollection<object> items = ( ICollection<object> ) JsonHelper.readJson( response.Entity );
 			  int counter = 0;
 			  foreach ( object item in items )
@@ -279,7 +279,7 @@ namespace Neo4Net.Server.rest
 			  assertEquals( Status.OK.StatusCode, response.Status );
 			  string responseEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.neo4j.server.rest.domain.JsonHelper.readJson(responseEntity);
+//ORIGINAL LINE: java.util.Collection<?> hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
 			  ICollection<object> hits = ( ICollection<object> ) JsonHelper.readJson( responseEntity );
 			  assertEquals( 1, hits.Count );
 			  response.Close();
@@ -288,7 +288,7 @@ namespace Neo4Net.Server.rest
 			  assertEquals( 200, response.Status );
 			  responseEntity = response.Entity;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: hits = (java.util.Collection<?>) org.neo4j.server.rest.domain.JsonHelper.readJson(responseEntity);
+//ORIGINAL LINE: hits = (java.util.Collection<?>) org.Neo4Net.server.rest.domain.JsonHelper.readJson(responseEntity);
 			  hits = ( ICollection<object> ) JsonHelper.readJson( responseEntity );
 			  assertEquals( 0, hits.Count );
 			  response.Close();
@@ -334,7 +334,7 @@ namespace Neo4Net.Server.rest
 			  string index = _indexes.newInstance();
 			  string key = "name";
 			  string value = "Peter";
-			  GraphDatabaseService graphdb = graphdb();
+			  IGraphDatabaseService graphdb = graphdb();
 			  _helper.createRelationshipIndex( index );
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -375,7 +375,7 @@ namespace Neo4Net.Server.rest
 			  string index = _indexes.newInstance();
 			  string key = "name";
 			  string value = "Peter";
-			  GraphDatabaseService graphdb = graphdb();
+			  IGraphDatabaseService graphdb = graphdb();
 			  _helper.createRelationshipIndex( index );
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -413,7 +413,7 @@ namespace Neo4Net.Server.rest
 			  string index = _indexes.newInstance();
 			  string key = "name";
 			  string value = "Peter";
-			  GraphDatabaseService graphdb = graphdb();
+			  IGraphDatabaseService graphdb = graphdb();
 			  _helper.createRelationshipIndex( index );
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {
@@ -447,7 +447,7 @@ namespace Neo4Net.Server.rest
 			  string index = _indexes.newInstance();
 			  string key = "name";
 			  string value = "Peter";
-			  GraphDatabaseService graphdb = graphdb();
+			  IGraphDatabaseService graphdb = graphdb();
 			  _helper.createRelationshipIndex( index );
 			  Relationship rel;
 			  using ( Transaction tx = graphdb.BeginTx() )
@@ -475,7 +475,7 @@ namespace Neo4Net.Server.rest
 			  string index = _indexes.newInstance();
 			  string key = "name";
 			  string value = "Peter";
-			  GraphDatabaseService graphdb = graphdb();
+			  IGraphDatabaseService graphdb = graphdb();
 			  _helper.createRelationshipIndex( index );
 			  using ( Transaction tx = graphdb.BeginTx() )
 			  {

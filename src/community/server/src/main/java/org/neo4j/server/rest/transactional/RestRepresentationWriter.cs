@@ -24,10 +24,10 @@ namespace Neo4Net.Server.rest.transactional
 
 	using JsonGenerator = org.codehaus.jackson.JsonGenerator;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
 	using NodeRepresentation = Neo4Net.Server.rest.repr.NodeRepresentation;
 	using OutputFormat = Neo4Net.Server.rest.repr.OutputFormat;
 	using Neo4Net.Server.rest.repr;
@@ -46,8 +46,8 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.neo4j.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
-		 public override void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.Graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker )
+//ORIGINAL LINE: public void write(org.codehaus.jackson.JsonGenerator out, Iterable<String> columns, org.Neo4Net.graphdb.Result_ResultRow row, TransactionStateChecker txStateChecker) throws java.io.IOException
+		 public override void Write( JsonGenerator @out, IEnumerable<string> columns, Neo4Net.GraphDb.Result_ResultRow row, TransactionStateChecker txStateChecker )
 		 {
 			  RepresentationFormat format = new StreamingJsonFormat.StreamingRepresentationFormat( @out, null );
 			  @out.writeArrayFieldStart( "rest" );
@@ -65,7 +65,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void write(org.codehaus.jackson.JsonGenerator out, org.neo4j.server.rest.repr.RepresentationFormat format, Object value, TransactionStateChecker checker) throws java.io.IOException
+//ORIGINAL LINE: private void write(org.codehaus.jackson.JsonGenerator out, org.Neo4Net.server.rest.repr.RepresentationFormat format, Object value, TransactionStateChecker checker) throws java.io.IOException
 		 private void Write( JsonGenerator @out, RepresentationFormat format, object value, TransactionStateChecker checker )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

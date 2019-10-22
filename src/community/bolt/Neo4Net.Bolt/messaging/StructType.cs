@@ -22,24 +22,24 @@
 namespace Neo4Net.Bolt.messaging
 {
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 
 	public sealed class StructType
 	{
-		 public static readonly StructType Node = new StructType( "Node", InnerEnum.Node, Neo4Net.Bolt.v1.messaging.Neo4jPackV1.NODE, "Node" );
-		 public static readonly StructType Relationship = new StructType( "Relationship", InnerEnum.Relationship, Neo4Net.Bolt.v1.messaging.Neo4jPackV1.RELATIONSHIP, "Relationship" );
-		 public static readonly StructType UnboundRelationship = new StructType( "UnboundRelationship", InnerEnum.UnboundRelationship, Neo4Net.Bolt.v1.messaging.Neo4jPackV1.UNBOUND_RELATIONSHIP, "Relationship" );
-		 public static readonly StructType Path = new StructType( "Path", InnerEnum.Path, Neo4Net.Bolt.v1.messaging.Neo4jPackV1.PATH, "Path" );
-		 public static readonly StructType Point_2d = new StructType( "Point_2d", InnerEnum.Point_2d, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.POINT_2_D, "Point" );
-		 public static readonly StructType Point_3d = new StructType( "Point_3d", InnerEnum.Point_3d, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.POINT_3_D, "Point" );
-		 public static readonly StructType Date = new StructType( "Date", InnerEnum.Date, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.DATE, "LocalDate" );
-		 public static readonly StructType Time = new StructType( "Time", InnerEnum.Time, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.TIME, "OffsetTime" );
-		 public static readonly StructType LocalTime = new StructType( "LocalTime", InnerEnum.LocalTime, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.LOCAL_TIME, "LocalTime" );
-		 public static readonly StructType LocalDateTime = new StructType( "LocalDateTime", InnerEnum.LocalDateTime, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.LOCAL_DATE_TIME, "LocalDateTime" );
-		 public static readonly StructType DateTimeWithZoneOffset = new StructType( "DateTimeWithZoneOffset", InnerEnum.DateTimeWithZoneOffset, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.DATE_TIME_WITH_ZONE_OFFSET, "OffsetDateTime" );
-		 public static readonly StructType DateTimeWithZoneName = new StructType( "DateTimeWithZoneName", InnerEnum.DateTimeWithZoneName, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.DATE_TIME_WITH_ZONE_NAME, "ZonedDateTime" );
-		 public static readonly StructType Duration = new StructType( "Duration", InnerEnum.Duration, Neo4Net.Bolt.v2.messaging.Neo4jPackV2.DURATION, "Duration" );
+		 public static readonly StructType Node = new StructType( "Node", InnerEnum.Node, Neo4Net.Bolt.v1.messaging.Neo4NetPackV1.NODE, "Node" );
+		 public static readonly StructType Relationship = new StructType( "Relationship", InnerEnum.Relationship, Neo4Net.Bolt.v1.messaging.Neo4NetPackV1.RELATIONSHIP, "Relationship" );
+		 public static readonly StructType UnboundRelationship = new StructType( "UnboundRelationship", InnerEnum.UnboundRelationship, Neo4Net.Bolt.v1.messaging.Neo4NetPackV1.UNBOUND_RELATIONSHIP, "Relationship" );
+		 public static readonly StructType Path = new StructType( "Path", InnerEnum.Path, Neo4Net.Bolt.v1.messaging.Neo4NetPackV1.PATH, "Path" );
+		 public static readonly StructType Point_2d = new StructType( "Point_2d", InnerEnum.Point_2d, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.POINT_2_D, "Point" );
+		 public static readonly StructType Point_3d = new StructType( "Point_3d", InnerEnum.Point_3d, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.POINT_3_D, "Point" );
+		 public static readonly StructType Date = new StructType( "Date", InnerEnum.Date, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.DATE, "LocalDate" );
+		 public static readonly StructType Time = new StructType( "Time", InnerEnum.Time, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.TIME, "OffsetTime" );
+		 public static readonly StructType LocalTime = new StructType( "LocalTime", InnerEnum.LocalTime, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.LOCAL_TIME, "LocalTime" );
+		 public static readonly StructType LocalDateTime = new StructType( "LocalDateTime", InnerEnum.LocalDateTime, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.LOCAL_DATE_TIME, "LocalDateTime" );
+		 public static readonly StructType DateTimeWithZoneOffset = new StructType( "DateTimeWithZoneOffset", InnerEnum.DateTimeWithZoneOffset, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.DATE_TIME_WITH_ZONE_OFFSET, "OffsetDateTime" );
+		 public static readonly StructType DateTimeWithZoneName = new StructType( "DateTimeWithZoneName", InnerEnum.DateTimeWithZoneName, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.DATE_TIME_WITH_ZONE_NAME, "ZonedDateTime" );
+		 public static readonly StructType Duration = new StructType( "Duration", InnerEnum.Duration, Neo4Net.Bolt.v2.messaging.Neo4NetPackV2.DURATION, "Duration" );
 
 		 private static readonly IList<StructType> valueList = new List<StructType>();
 

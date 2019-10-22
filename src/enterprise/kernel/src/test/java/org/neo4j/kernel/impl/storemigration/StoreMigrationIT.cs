@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.IO;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.impl.storemigration
 {
@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.impl.storemigration
 
 	using ConsistencyCheckService = Neo4Net.Consistency.ConsistencyCheckService;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseGraphDatabaseFactory = Neo4Net.Graphdb.factory.EnterpriseGraphDatabaseFactory;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard23Factory extends org.neo4j.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard23Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard23Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard23Factory() : base(StandardV2_3.STORE_VERSION)
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard30Factory extends org.neo4j.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard30Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard30Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard30Factory() : base(StandardV3_0.STORE_VERSION)
@@ -189,7 +189,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard32Factory extends org.neo4j.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard32Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard32Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard32Factory() : base(StandardV3_2.STORE_VERSION)
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard34Factory extends org.neo4j.kernel.impl.store.format.RecordFormats_Factory
+//ORIGINAL LINE: @Service.Implementation(RecordFormats.Factory.class) public static class Standard34Factory extends org.Neo4Net.kernel.impl.store.format.RecordFormats_Factory
 		 public class Standard34Factory : Neo4Net.Kernel.impl.store.format.RecordFormats_Factory
 		 {
 			  public Standard34Factory() : base(StandardV3_4.STORE_VERSION)
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 
 		 private static void CreateDb( RecordFormats recordFormat, File storeDir )
 		 {
-			  GraphDatabaseService database = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(GraphDatabaseSettings.allow_upgrade, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, recordFormat.StoreVersion()).newGraphDatabase();
+			  IGraphDatabaseService database = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(GraphDatabaseSettings.allow_upgrade, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, recordFormat.StoreVersion()).newGraphDatabase();
 			  database.Shutdown();
 		 }
 
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 public virtual void ShouldMigrate()
 		 {
 			  DatabaseLayout databaseLayout = _testDir.databaseLayout( BaseDirName( To, From ) );
-			  GraphDatabaseService database = GetGraphDatabaseService( databaseLayout.DatabaseDirectory(), From.storeVersion() );
+			  IGraphDatabaseService database = GetGraphDatabaseService( databaseLayout.DatabaseDirectory(), From.storeVersion() );
 
 			  database.Execute( "CREATE INDEX ON :Person(name)" );
 			  database.Execute( "CREATE INDEX ON :Person(born)" );
@@ -300,14 +300,14 @@ namespace Neo4Net.Kernel.impl.storemigration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected static org.neo4j.consistency.ConsistencyCheckService.Result runConsistencyChecker(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.consistency.ConsistencyCheckService consistencyCheckService, String storeVersion) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: protected static org.Neo4Net.consistency.ConsistencyCheckService.Result runConsistencyChecker(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.consistency.ConsistencyCheckService consistencyCheckService, String storeVersion) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 protected internal static ConsistencyCheckService.Result RunConsistencyChecker( DatabaseLayout databaseLayout, FileSystemAbstraction fs, ConsistencyCheckService consistencyCheckService, string storeVersion )
 		 {
 			  Config config = Config.defaults( GraphDatabaseSettings.record_format, storeVersion );
 			  return consistencyCheckService.runFullConsistencyCheck( databaseLayout, config, ProgressMonitorFactory.NONE, NullLogProvider.Instance, fs, false );
 		 }
 
-		 protected internal static GraphDatabaseService GetGraphDatabaseService( File db, string storeVersion )
+		 protected internal static IGraphDatabaseService GetGraphDatabaseService( File db, string storeVersion )
 		 {
 			  return ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(db).setConfig(GraphDatabaseSettings.allow_upgrade, Settings.TRUE).setConfig(GraphDatabaseSettings.record_format, storeVersion).newGraphDatabase();
 		 }

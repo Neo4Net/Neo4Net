@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.roles
 {
@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void handleVoteRequest(org.neo4j.causalclustering.core.consensus.state.ReadableRaftState state, org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome, org.neo4j.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest, org.neo4j.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: static void handleVoteRequest(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest, org.Neo4Net.logging.Log log) throws java.io.IOException
 		 internal static void HandleVoteRequest( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_Vote_Request voteRequest, Log log )
 		 {
 			  if ( voteRequest.Term() > state.Term() )
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void handlePreVoteRequest(org.neo4j.causalclustering.core.consensus.state.ReadableRaftState state, org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome, org.neo4j.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, org.neo4j.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: static void handlePreVoteRequest(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, org.Neo4Net.logging.Log log) throws java.io.IOException
 		 internal static void HandlePreVoteRequest( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, Log log )
 		 {
 			  ThrowingBooleanSupplier<IOException> willVoteForCandidate = () => ShouldVoteFor(state, outcome, voteRequest, false, log);
@@ -67,14 +67,14 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void declinePreVoteRequest(org.neo4j.causalclustering.core.consensus.state.ReadableRaftState state, org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome, org.neo4j.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest) throws java.io.IOException
+//ORIGINAL LINE: static void declinePreVoteRequest(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest) throws java.io.IOException
 		 internal static void DeclinePreVoteRequest( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest )
 		 {
 			  RespondToPreVoteRequest( state, outcome, voteRequest, () => false );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void respondToPreVoteRequest(org.neo4j.causalclustering.core.consensus.state.ReadableRaftState state, org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome, org.neo4j.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, org.neo4j.function.ThrowingBooleanSupplier<java.io.IOException> willVoteFor) throws java.io.IOException
+//ORIGINAL LINE: private static void respondToPreVoteRequest(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, org.Neo4Net.function.ThrowingBooleanSupplier<java.io.IOException> willVoteFor) throws java.io.IOException
 		 private static void RespondToPreVoteRequest( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_PreVote_Request voteRequest, ThrowingBooleanSupplier<IOException> willVoteFor )
 		 {
 			  if ( voteRequest.Term() > state.Term() )
@@ -86,7 +86,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static boolean shouldVoteFor(org.neo4j.causalclustering.core.consensus.state.ReadableRaftState state, org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome, org.neo4j.causalclustering.core.consensus.RaftMessages_AnyVote_Request voteRequest, boolean committedToVotingForAnother, org.neo4j.logging.Log log) throws java.io.IOException
+//ORIGINAL LINE: private static boolean shouldVoteFor(org.Neo4Net.causalclustering.core.consensus.state.ReadableRaftState state, org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome, org.Neo4Net.causalclustering.core.consensus.RaftMessages_AnyVote_Request voteRequest, boolean committedToVotingForAnother, org.Neo4Net.logging.Log log) throws java.io.IOException
 		 private static bool ShouldVoteFor( ReadableRaftState state, Outcome outcome, Neo4Net.causalclustering.core.consensus.RaftMessages_AnyVote_Request voteRequest, bool committedToVotingForAnother, Log log )
 		 {
 			  long requestTerm = voteRequest.Term();

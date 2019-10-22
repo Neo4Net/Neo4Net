@@ -56,19 +56,19 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexCapability.NO_CAPABILITY;
+//	import static org.Neo4Net.Internal.kernel.api.IndexCapability.NO_CAPABILITY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.schema.LuceneIndexProvider.defaultDirectoryStructure;
+//	import static org.Neo4Net.kernel.api.impl.schema.LuceneIndexProvider.defaultDirectoryStructure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexProvider.EMPTY;
+//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
+//	import static org.Neo4Net.kernel.api.schema.SchemaTestUtil.simpleNameLookup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.NullLogProvider.getInstance;
+//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 
 	public class LuceneIndexSamplerReleaseTaskControlUnderFusion
 	{
@@ -89,11 +89,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.FileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.FileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public FileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory(fs.get());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory(fs.get());
 		 public TestDirectory Dir;
 
 		 private const int INDEX_ID = 1;
@@ -117,11 +117,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 /// This test come from a support case where dropping an index would block forever after index sampling failed.
 		 /// <para>
 		 /// A fusion index has multiple <seealso cref="IndexSampler index samplers"/> that are called sequentially. If one fails, then the other will never be invoked.
-		 /// This was a problem for <seealso cref="LuceneIndexSampler"/>. It owns a <seealso cref="org.neo4j.helpers.TaskControl"/> that it will try to release in try-finally
+		 /// This was a problem for <seealso cref="LuceneIndexSampler"/>. It owns a <seealso cref="org.Neo4Net.helpers.TaskControl"/> that it will try to release in try-finally
 		 /// in <seealso cref="LuceneIndexSampler.sampleIndex()"/>. But it never gets here because a prior <seealso cref="IndexSampler"/> fails.
 		 /// </para>
 		 /// <para>
-		 /// Because the <seealso cref="org.neo4j.helpers.TaskControl"/> was never released the lucene accessor would block forever, waiting for
+		 /// Because the <seealso cref="org.Neo4Net.helpers.TaskControl"/> was never released the lucene accessor would block forever, waiting for
 		 /// <seealso cref="TaskCoordinator.awaitCompletion()"/>.
 		 /// </para>
 		 /// <para>
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 /// </para>
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(timeout = 5_000L) public void failedIndexSamplingMustNotPreventIndexDrop() throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test(timeout = 5_000L) public void failedIndexSamplingMustNotPreventIndexDrop() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailedIndexSamplingMustNotPreventIndexDrop()
 		 {
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void makeSureIndexHasSomeData(org.neo4j.kernel.api.index.IndexProvider provider) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void makeSureIndexHasSomeData(org.Neo4Net.kernel.api.index.IndexProvider provider) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void MakeSureIndexHasSomeData( IndexProvider provider )
 		 {
 			  using ( IndexAccessor accessor = provider.GetOnlineAccessor( _storeIndexDescriptor, _samplingConfig ), IndexUpdater updater = accessor.NewUpdater( IndexUpdateMode.ONLINE ) )

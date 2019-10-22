@@ -40,14 +40,14 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.CrashGenerationCleaner.MAX_BATCH_SIZE;
+//	import static org.Neo4Net.index.Internal.gbptree.CrashGenerationCleaner.MAX_BATCH_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_MONITOR;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_MONITOR;
 
 	public class CrashGenerationCleanerCrashTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheAndDependenciesRule store = new org.neo4j.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule store = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public PageCacheAndDependenciesRule Store = new PageCacheAndDependenciesRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -104,7 +104,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			 internal AtomicBoolean first;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 			 public override PageCursor io( long pageId, int pfFlags )
 			 {
 				  try

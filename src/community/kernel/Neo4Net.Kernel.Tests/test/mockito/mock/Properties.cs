@@ -25,7 +25,7 @@ namespace Neo4Net.Test.mockito.mock
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 
 	public class Properties : Answer<object>, IEnumerable<string>
 	{

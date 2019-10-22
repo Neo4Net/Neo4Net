@@ -51,13 +51,13 @@ namespace Neo4Net.Server.rest.dbms
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.AuthTokenUtil.authTokenArgumentMatcher;
+//	import static org.Neo4Net.test.AuthTokenUtil.authTokenArgumentMatcher;
 
 	public class AuthorizationFilterTest
 	{
@@ -163,7 +163,7 @@ namespace Neo4Net.Server.rest.dbms
 			  // Then
 			  verifyNoMoreInteractions( _filterChain );
 			  verify( _servletResponse ).Status = 401;
-			  verify( _servletResponse ).addHeader( HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"Neo4j\"" );
+			  verify( _servletResponse ).addHeader( HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"Neo4Net\"" );
 			  verify( _servletResponse ).addHeader( HttpHeaders.CONTENT_TYPE, "application/json; charset=UTF-8" );
 			  assertThat( _outputStream.ToString( StandardCharsets.UTF_8.name() ), containsString("\"code\" : \"Neo" + ".ClientError.Security.Unauthorized\"") );
 			  assertThat( _outputStream.ToString( StandardCharsets.UTF_8.name() ), containsString("\"message\" : \"No authentication header supplied.\"") );

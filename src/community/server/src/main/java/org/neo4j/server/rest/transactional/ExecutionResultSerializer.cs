@@ -26,26 +26,26 @@ namespace Neo4Net.Server.rest.transactional
 	using JsonGenerator = org.codehaus.jackson.JsonGenerator;
 
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
-	using Result = Neo4Net.Graphdb.Result;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
+	using Result = Neo4Net.GraphDb.Result;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using RFC1123 = Neo4Net.Server.rest.repr.util.RFC1123;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.writeValue;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.writeValue;
 
 	/// <summary>
 	/// Writes directly to an output stream, therefore implicitly stateful. Methods must be invoked in the correct
 	/// order, as follows:
 	/// <ul>
 	/// <li><seealso cref="transactionCommitUri(URI) transactionId"/>{@code ?}</li>
-	/// <li><seealso cref="statementResult(org.neo4j.graphdb.Result, bool, ResultDataContent...) statementResult"/>{@code *}</li>
+	/// <li><seealso cref="statementResult(org.Neo4Net.graphdb.Result, bool, ResultDataContent...) statementResult"/>{@code *}</li>
 	/// <li><seealso cref="errors(System.Collections.IEnumerable) errors"/>{@code ?}</li>
 	/// <li><seealso cref="transactionStatus(long expiryDate)"/>{@code ?}</li>
 	/// <li><seealso cref="finish() finish"/></li>
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.rest.transactional
 			  this._baseUri = baseUri;
 			  this._log = logProvider.getLog( this.GetType() );
 			  this._container = container;
-			  _jsonFactory.Codec = new Neo4jJsonCodec( container );
+			  _jsonFactory.Codec = new Neo4NetJsonCodec( container );
 			  JsonGenerator generator = null;
 			  try
 			  {
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest.transactional
 		 /// to execute further statements.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void statementResult(org.neo4j.graphdb.Result result, boolean includeStats, ResultDataContent... resultDataContents) throws java.io.IOException
+//ORIGINAL LINE: public void statementResult(org.Neo4Net.graphdb.Result result, boolean includeStats, ResultDataContent... resultDataContents) throws java.io.IOException
 		 public virtual void StatementResult( Result result, bool includeStats, params ResultDataContent[] resultDataContents )
 		 {
 			  try
@@ -130,7 +130,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void notifications(Iterable<org.neo4j.graphdb.Notification> notifications) throws java.io.IOException
+//ORIGINAL LINE: public void notifications(Iterable<org.Neo4Net.graphdb.Notification> notifications) throws java.io.IOException
 		 public virtual void Notifications( IEnumerable<Notification> notifications )
 		 {
 			  //don't add anything if notifications are empty
@@ -177,7 +177,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePosition(org.neo4j.graphdb.InputPosition position) throws java.io.IOException
+//ORIGINAL LINE: private void writePosition(org.Neo4Net.graphdb.InputPosition position) throws java.io.IOException
 		 private void WritePosition( InputPosition position )
 		 {
 			  //do not add position if empty
@@ -200,7 +200,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeStats(org.neo4j.graphdb.QueryStatistics stats) throws java.io.IOException
+//ORIGINAL LINE: private void writeStats(org.Neo4Net.graphdb.QueryStatistics stats) throws java.io.IOException
 		 private void WriteStats( QueryStatistics stats )
 		 {
 			  @out.writeObjectFieldStart( "stats" );
@@ -226,7 +226,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRootPlanDescription(org.neo4j.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
+//ORIGINAL LINE: private void writeRootPlanDescription(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
 		 private void WriteRootPlanDescription( ExecutionPlanDescription planDescription )
 		 {
 			  @out.writeObjectFieldStart( "plan" );
@@ -249,7 +249,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePlanDescriptionObjectBody(org.neo4j.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
+//ORIGINAL LINE: private void writePlanDescriptionObjectBody(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
 		 private void WritePlanDescriptionObjectBody( ExecutionPlanDescription planDescription )
 		 {
 			  @out.writeStringField( "operatorType", planDescription.Name );
@@ -280,7 +280,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePlanArgs(org.neo4j.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
+//ORIGINAL LINE: private void writePlanArgs(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
 		 private void WritePlanArgs( ExecutionPlanDescription planDescription )
 		 {
 			  foreach ( KeyValuePair<string, object> entry in planDescription.Arguments.SetOfKeyValuePairs() )
@@ -294,7 +294,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writePlanIdentifiers(org.neo4j.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
+//ORIGINAL LINE: private void writePlanIdentifiers(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription) throws java.io.IOException
 		 private void WritePlanIdentifiers( ExecutionPlanDescription planDescription )
 		 {
 			  @out.writeArrayFieldStart( "identifiers" );
@@ -307,11 +307,11 @@ namespace Neo4Net.Server.rest.transactional
 
 		 /// <summary>
 		 /// Will get called once if any errors occurred,
-		 /// after <seealso cref="statementResult(org.neo4j.graphdb.Result, bool, ResultDataContent...)"/>  statementResults}
+		 /// after <seealso cref="statementResult(org.Neo4Net.graphdb.Result, bool, ResultDataContent...)"/>  statementResults}
 		 /// has been called This method is not allowed to throw exceptions. If there are network errors or similar, the
 		 /// handler should take appropriate action, but never fail this method. </summary>
 		 /// <param name="errors"> the errors to write </param>
-		 public virtual void Errors<T1>( IEnumerable<T1> errors ) where T1 : Neo4Net.Server.rest.transactional.error.Neo4jError
+		 public virtual void Errors<T1>( IEnumerable<T1> errors ) where T1 : Neo4Net.Server.rest.transactional.error.Neo4NetError
 		 {
 			  try
 			  {
@@ -320,7 +320,7 @@ namespace Neo4Net.Server.rest.transactional
 					@out.writeArrayFieldStart( "errors" );
 					try
 					{
-						 foreach ( Neo4jError error in errors )
+						 foreach ( Neo4NetError error in errors )
 						 {
 							  try
 							  {
@@ -459,7 +459,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeRows(final Iterable<String> columns, org.neo4j.graphdb.Result data, final ResultDataContentWriter writer) throws java.io.IOException
+//ORIGINAL LINE: private void writeRows(final Iterable<String> columns, org.Neo4Net.graphdb.Result data, final ResultDataContentWriter writer) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void WriteRows( IEnumerable<string> columns, Result data, ResultDataContentWriter writer )
 		 {

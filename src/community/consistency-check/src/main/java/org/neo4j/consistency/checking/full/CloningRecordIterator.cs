@@ -22,7 +22,7 @@
 namespace Neo4Net.Consistency.checking.full
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.Helpers.Collections;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 

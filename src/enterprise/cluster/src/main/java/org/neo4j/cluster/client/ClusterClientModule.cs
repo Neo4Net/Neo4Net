@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.client
 {
@@ -60,7 +60,7 @@ namespace Neo4Net.cluster.client
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.daemon;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.daemon;
 
 	/// <summary>
 	/// This is a builder for <seealso cref="ClusterClient"/> instances.
@@ -75,11 +75,11 @@ namespace Neo4Net.cluster.client
 		 private readonly ProtocolServer _server;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public ClusterClientModule(org.neo4j.kernel.lifecycle.LifeSupport life, org.neo4j.kernel.impl.util.Dependencies dependencies, final org.neo4j.kernel.monitoring.Monitors monitors, final org.neo4j.kernel.configuration.Config config, org.neo4j.logging.internal.LogService logService, org.neo4j.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
+//ORIGINAL LINE: public ClusterClientModule(org.Neo4Net.kernel.lifecycle.LifeSupport life, org.Neo4Net.kernel.impl.util.Dependencies dependencies, final org.Neo4Net.kernel.monitoring.Monitors monitors, final org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.internal.LogService logService, org.Neo4Net.cluster.protocol.election.ElectionCredentialsProvider electionCredentialsProvider)
 		 public ClusterClientModule( LifeSupport life, Dependencies dependencies, Monitors monitors, Config config, LogService logService, ElectionCredentialsProvider electionCredentialsProvider )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.logging.LogProvider logging = org.neo4j.cluster.logging.AsyncLogging.provider(life, logService.getInternalLogProvider());
+//ORIGINAL LINE: final org.Neo4Net.logging.LogProvider logging = org.Neo4Net.cluster.logging.AsyncLogging.provider(life, logService.getInternalLogProvider());
 			  LogProvider logging = AsyncLogging.provider( life, logService.InternalLogProvider );
 			  InternalLoggerFactory.DefaultFactory = new NettyLoggerFactory( logging );
 
@@ -91,10 +91,10 @@ namespace Neo4Net.cluster.client
 			 , logging));
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory objectInputStreamFactory = new org.neo4j.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
+//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectInputStreamFactory objectInputStreamFactory = new org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
 			  ObjectInputStreamFactory objectInputStreamFactory = new ObjectStreamFactory();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory objectOutputStreamFactory = new org.neo4j.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
+//ORIGINAL LINE: final org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectOutputStreamFactory objectOutputStreamFactory = new org.Neo4Net.cluster.protocol.atomicbroadcast.ObjectStreamFactory();
 			  ObjectOutputStreamFactory objectOutputStreamFactory = new ObjectStreamFactory();
 
 			  receiver.AddNetworkChannelsListener( new NetworkChannelsListenerAnonymousInnerClass( this, logging, objectInputStreamFactory, objectOutputStreamFactory ) );

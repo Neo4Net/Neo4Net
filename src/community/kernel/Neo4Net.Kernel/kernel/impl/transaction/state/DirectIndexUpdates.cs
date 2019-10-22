@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  return _updates.GetEnumerator();
 		 }
 
-		 public override void Feed( EntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, EntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
+		 public override void Feed( IEntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
 		 {
 			  throw new System.NotSupportedException();
 		 }

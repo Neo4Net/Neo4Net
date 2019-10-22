@@ -24,12 +24,12 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
 	using Neo4Net.Helpers.Collections;
 
 	public class TestTraversalWithIterable : TraversalTestBase
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					TraversalDescription firstTraverser = GraphDb.traversalDescription().relationships(RelationshipType.withName("FIRST")).evaluator(Evaluators.toDepth(1));
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Iterable<org.neo4j.graphdb.Path> firstResult = firstTraverser.traverse(getNodeWithName("a"));
+//ORIGINAL LINE: final Iterable<org.Neo4Net.graphdb.Path> firstResult = firstTraverser.traverse(getNodeWithName("a"));
 					IEnumerable<Path> firstResult = firstTraverser.Traverse( GetNodeWithName( "a" ) );
 
 					IEnumerable<Node> startNodesForNestedTraversal = new IterableWrapperAnonymousInnerClass( this, firstResult );

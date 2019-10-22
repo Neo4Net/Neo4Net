@@ -47,7 +47,7 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class SetInitialPasswordCommandTest
 	{
@@ -88,8 +88,8 @@ namespace Neo4Net.CommandLine.Admin.security
 			  OutsideWorld mock = mock( typeof( OutsideWorld ) );
 			  when( mock.FileSystem() ).thenReturn(_fileSystem);
 			  _setPasswordCommand = new SetInitialPasswordCommand( _testDir.directory( "home" ).toPath(), _testDir.directory("conf").toPath(), mock );
-			  _authInitFile = CommunitySecurityModule.getInitialUserRepositoryFile( _setPasswordCommand.loadNeo4jConfig() );
-			  CommunitySecurityModule.getUserRepositoryFile( _setPasswordCommand.loadNeo4jConfig() );
+			  _authInitFile = CommunitySecurityModule.getInitialUserRepositoryFile( _setPasswordCommand.loadNeo4NetConfig() );
+			  CommunitySecurityModule.getUserRepositoryFile( _setPasswordCommand.loadNeo4NetConfig() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -145,11 +145,11 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldWorkAlsoWithSamePassword()
 		 {
-			  string[] arguments = new string[] { "neo4j" };
+			  string[] arguments = new string[] { "Neo4Net" };
 			  _setPasswordCommand.execute( arguments );
 
 			  // Then
-			  AssertAuthIniFile( "neo4j" );
+			  AssertAuthIniFile( "Neo4Net" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -161,10 +161,10 @@ namespace Neo4Net.CommandLine.Admin.security
 			  {
 					PrintStream ps = new PrintStream( baos );
 
-					Usage usage = new Usage( "neo4j-admin", mock( typeof( CommandLocator ) ) );
+					Usage usage = new Usage( "Neo4Net-admin", mock( typeof( CommandLocator ) ) );
 					usage.PrintUsageForCommand( new SetInitialPasswordCommandProvider(), ps.println );
 
-					assertEquals( string.Format( "usage: neo4j-admin set-initial-password <password>%n" + "%n" + "environment variables:%n" + "    NEO4J_CONF    Path to directory which contains neo4j.conf.%n" + "    NEO4J_DEBUG   Set to anything to enable debug output.%n" + "    NEO4J_HOME    Neo4j home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Sets the initial password of the initial admin user ('neo4j').%n" ), baos.ToString() );
+					assertEquals( string.Format( "usage: Neo4Net-admin set-initial-password <password>%n" + "%n" + "environment variables:%n" + "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf.%n" + "    Neo4Net_DEBUG   Set to anything to enable debug output.%n" + "    Neo4Net_HOME    Neo4Net home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Sets the initial password of the initial admin user ('Neo4Net').%n" ), baos.ToString() );
 			  }
 		 }
 
@@ -175,10 +175,10 @@ namespace Neo4Net.CommandLine.Admin.security
 			  assertTrue( _fileSystem.fileExists( _authInitFile ) );
 			  FileUserRepository userRepository = new FileUserRepository( _fileSystem, _authInitFile, NullLogProvider.Instance );
 			  userRepository.Start();
-			  User neo4j = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
-			  assertNotNull( neo4j );
-			  assertTrue( neo4j.Credentials().matchesPassword(password) );
-			  assertFalse( neo4j.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );
+			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+			  assertNotNull( Neo4Net );
+			  assertTrue( Neo4Net.Credentials().matchesPassword(password) );
+			  assertFalse( Neo4Net.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );
 		 }
 	}
 

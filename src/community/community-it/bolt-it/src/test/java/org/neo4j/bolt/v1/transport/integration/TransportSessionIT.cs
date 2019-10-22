@@ -29,15 +29,15 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using Test = org.junit.Test;
 
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using AckFailureMessage = Neo4Net.Bolt.v1.messaging.request.AckFailureMessage;
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using SeverityLevel = Neo4Net.Graphdb.SeverityLevel;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using SeverityLevel = Neo4Net.GraphDb.SeverityLevel;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -57,29 +57,29 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assume.assumeThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.hasNotification;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.hasNotification;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class TransportSessionIT : AbstractBoltTransportsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass(), settings -> settings.put(org.neo4j.graphdb.factory.GraphDatabaseSettings.auth_enabled.name(), "false"));
-		 public Neo4jWithSocket Server = new Neo4jWithSocket( this.GetType(), settings => settings.put(GraphDatabaseSettings.auth_enabled.name(), "false") );
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass(), settings -> settings.put(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled.name(), "false"));
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket( this.GetType(), settings => settings.put(GraphDatabaseSettings.auth_enabled.name(), "false") );
 
 		 private new HostnamePort _address;
 
@@ -288,7 +288,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailNicelyOnPointsWhenProtocolDoesNotSupportThem()
 		 {
 			  // only V1 protocol does not support points
-			  assumeThat( Neo4jPack.version(), equalTo(Neo4jPackV1.VERSION) );
+			  assumeThat( Neo4NetPack.version(), equalTo(Neo4NetPackV1.VERSION) );
 
 			  // When
 			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", emptyMap()), new RunMessage("RETURN point({x:13, y:37, crs:'cartesian'}) as p"), PullAllMessage.INSTANCE));

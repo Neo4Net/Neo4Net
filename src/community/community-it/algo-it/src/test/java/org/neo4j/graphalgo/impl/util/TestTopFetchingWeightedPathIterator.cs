@@ -21,12 +21,12 @@
  */
 namespace Neo4Net.Graphalgo.impl.util
 {
-	using Neo4jAlgoTestCase = Common.Neo4jAlgoTestCase;
+	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
 	using Neo4Net.Graphalgo;
-	using Path = Neo4Net.Graphdb.Path;
+	using Path = Neo4Net.GraphDb.Path;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -39,7 +39,7 @@ namespace Neo4Net.Graphalgo.impl.util
 	/// <summary>
 	/// @author Anton Persson
 	/// </summary>
-	public class TestTopFetchingWeightedPathIterator : Neo4jAlgoTestCase
+	public class TestTopFetchingWeightedPathIterator : Neo4NetAlgoTestCase
 	{
 		private bool InstanceFieldsInitialized = false;
 

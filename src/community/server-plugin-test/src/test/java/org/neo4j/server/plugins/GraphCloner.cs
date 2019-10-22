@@ -22,15 +22,15 @@
 namespace Neo4Net.Server.plugins
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PathExpanders = Neo4Net.Graphdb.PathExpanders;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 
 	[Description("Clones a subgraph (an example taken from a community mailing list requirement)")]
 	public class GraphCloner : ServerPlugin
@@ -41,11 +41,11 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @PluginTarget(org.neo4j.graphdb.Node.class) public org.neo4j.graphdb.Node clonedSubgraph(@Source Node startNode, @Parameter(name = "depth", optional = false) System.Nullable<int> depth)
-		 [PluginTarget(Neo4Net.Graphdb.Node.class)]
+//ORIGINAL LINE: @PluginTarget(org.Neo4Net.graphdb.Node.class) public org.Neo4Net.graphdb.Node clonedSubgraph(@Source Node startNode, @Parameter(name = "depth", optional = false) System.Nullable<int> depth)
+		 [PluginTarget(Neo4Net.GraphDb.Node.class)]
 		 public virtual Node ClonedSubgraph( Node startNode, int? depth )
 		 {
-			  GraphDatabaseService graphDb = startNode.GraphDatabase;
+			  IGraphDatabaseService graphDb = startNode.GraphDatabase;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
 					Traverser traverse = TraverseToDepth( graphDb, startNode, depth.Value );
@@ -90,8 +90,8 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.traversal.Traverser traverseToDepth(org.neo4j.graphdb.GraphDatabaseService graphDb, final org.neo4j.graphdb.Node startNode, final int depth)
-		 private Traverser TraverseToDepth( GraphDatabaseService graphDb, Node startNode, int depth )
+//ORIGINAL LINE: private org.Neo4Net.graphdb.traversal.Traverser traverseToDepth(org.Neo4Net.graphdb.GraphDatabaseService graphDb, final org.Neo4Net.graphdb.Node startNode, final int depth)
+		 private Traverser TraverseToDepth( IGraphDatabaseService graphDb, Node startNode, int depth )
 		 {
 
 			  TraversalDescription traversalDescription = graphDb.TraversalDescription().expand(PathExpanders.allTypesAndDirections()).depthFirst().evaluator(path =>
@@ -110,7 +110,7 @@ namespace Neo4Net.Server.plugins
 
 		 }
 
-		 private Node CloneNodeData( GraphDatabaseService graphDb, Node node )
+		 private Node CloneNodeData( IGraphDatabaseService graphDb, Node node )
 		 {
 			  Node newNode = graphDb.CreateNode();
 			  foreach ( KeyValuePair<string, object> property in node.AllProperties.SetOfKeyValuePairs() )
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.plugins
 			  return newNode;
 		 }
 
-		 private Dictionary<Node, Node> CloneNodes( GraphDatabaseService graphDb, IEnumerator<Node> nodes )
+		 private Dictionary<Node, Node> CloneNodes( IGraphDatabaseService graphDb, IEnumerator<Node> nodes )
 		 {
 			  Dictionary<Node, Node> result = new Dictionary<Node, Node>();
 

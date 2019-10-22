@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.impl.store
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 
-	public class TestPropertyBlocks : AbstractNeo4jTestCase
+	public class TestPropertyBlocks : AbstractNeo4NetTestCase
 	{
 		 protected internal override bool RestartGraphDbBetweenTests()
 		 {
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.store
 		 private IList<Pair<string, object>> GetPropertiesFromRecord( long recordId )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.PropertyRecord record = propertyStore().getRecord(recordId, propertyStore().newRecord(), org.neo4j.kernel.impl.store.record.RecordLoad.FORCE);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.PropertyRecord record = propertyStore().getRecord(recordId, propertyStore().newRecord(), org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE);
 			  PropertyRecord record = PropertyStore().getRecord(recordId, PropertyStore().newRecord(), RecordLoad.FORCE);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.List<org.eclipse.collections.api.tuple.Pair<String, Object>> props = new java.util.ArrayList<>();
@@ -805,7 +805,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void DeleteNodeWithNewPropertyRecordShouldFreeTheNewRecord()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long propcount = getIdGenerator(org.neo4j.kernel.impl.store.id.IdType.PROPERTY).getNumberOfIdsInUse();
+//ORIGINAL LINE: final long propcount = getIdGenerator(org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY).getNumberOfIdsInUse();
 			  long propcount = GetIdGenerator( IdType.PROPERTY ).NumberOfIdsInUse;
 			  Node node = GraphDb.createNode();
 			  node.SetProperty( "one", 1 );

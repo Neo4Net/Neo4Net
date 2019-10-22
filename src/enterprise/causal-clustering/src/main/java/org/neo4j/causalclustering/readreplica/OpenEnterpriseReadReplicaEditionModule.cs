@@ -20,7 +20,7 @@ namespace Neo4Net.causalclustering.readreplica
 	using DuplexPipelineWrapperFactory = Neo4Net.causalclustering.handlers.DuplexPipelineWrapperFactory;
 	using SecurePipelineWrapperFactory = Neo4Net.causalclustering.handlers.SecurePipelineWrapperFactory;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;

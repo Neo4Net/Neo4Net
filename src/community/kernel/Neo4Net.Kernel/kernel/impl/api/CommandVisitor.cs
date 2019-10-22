@@ -46,72 +46,72 @@ namespace Neo4Net.Kernel.Impl.Api
 	{
 		 // Store commands
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitNodeCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitNodeCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException;
 		 bool VisitNodeCommand( NodeCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitRelationshipCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitRelationshipCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException;
 		 bool VisitRelationshipCommand( RelationshipCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitPropertyCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitPropertyCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException;
 		 bool VisitPropertyCommand( PropertyCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitRelationshipGroupCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitRelationshipGroupCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException;
 		 bool VisitRelationshipGroupCommand( RelationshipGroupCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitRelationshipTypeTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitRelationshipTypeTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException;
 		 bool VisitRelationshipTypeTokenCommand( RelationshipTypeTokenCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitLabelTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitLabelTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException;
 		 bool VisitLabelTokenCommand( LabelTokenCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitPropertyKeyTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitPropertyKeyTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException;
 		 bool VisitPropertyKeyTokenCommand( PropertyKeyTokenCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitSchemaRuleCommand(org.neo4j.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitSchemaRuleCommand(org.Neo4Net.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException;
 		 bool VisitSchemaRuleCommand( SchemaRuleCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitNeoStoreCommand(org.neo4j.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitNeoStoreCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException;
 		 bool VisitNeoStoreCommand( NeoStoreCommand command );
 
 		 // Index commands
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexAddNodeCommand(org.neo4j.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexAddNodeCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException;
 		 bool VisitIndexAddNodeCommand( AddNodeCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexAddRelationshipCommand(org.neo4j.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexAddRelationshipCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException;
 		 bool VisitIndexAddRelationshipCommand( AddRelationshipCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexRemoveCommand(org.neo4j.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexRemoveCommand(org.Neo4Net.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException;
 		 bool VisitIndexRemoveCommand( RemoveCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexDeleteCommand(org.neo4j.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException;
 		 bool VisitIndexDeleteCommand( DeleteCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexCreateCommand(org.neo4j.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexCreateCommand(org.Neo4Net.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException;
 		 bool VisitIndexCreateCommand( CreateCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitIndexDefineCommand(org.neo4j.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitIndexDefineCommand(org.Neo4Net.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException;
 		 bool VisitIndexDefineCommand( IndexDefineCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitNodeCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitNodeCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException;
 		 bool VisitNodeCountsCommand( NodeCountsCommand command );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visitRelationshipCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException;
+//ORIGINAL LINE: boolean visitRelationshipCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException;
 		 bool VisitRelationshipCountsCommand( RelationshipCountsCommand command );
 
 		 /// <summary>
@@ -130,119 +130,119 @@ namespace Neo4Net.Kernel.Impl.Api
 	 {
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNodeCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNodeCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException
 		  public override bool VisitNodeCommand( NodeCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipCommand( RelationshipCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitPropertyCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitPropertyCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException
 		  public override bool VisitPropertyCommand( PropertyCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipGroupCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipGroupCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipGroupCommand( RelationshipGroupCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipTypeTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipTypeTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipTypeTokenCommand( RelationshipTypeTokenCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitLabelTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitLabelTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException
 		  public override bool VisitLabelTokenCommand( LabelTokenCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitPropertyKeyTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitPropertyKeyTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException
 		  public override bool VisitPropertyKeyTokenCommand( PropertyKeyTokenCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitSchemaRuleCommand(org.neo4j.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitSchemaRuleCommand(org.Neo4Net.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException
 		  public override bool VisitSchemaRuleCommand( SchemaRuleCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNeoStoreCommand(org.neo4j.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNeoStoreCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException
 		  public override bool VisitNeoStoreCommand( NeoStoreCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.neo4j.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
 		  public override bool VisitIndexAddNodeCommand( AddNodeCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.neo4j.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
 		  public override bool VisitIndexAddRelationshipCommand( AddRelationshipCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.neo4j.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.Neo4Net.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
 		  public override bool VisitIndexRemoveCommand( RemoveCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.neo4j.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
 		  public override bool VisitIndexDeleteCommand( DeleteCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.neo4j.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.Neo4Net.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
 		  public override bool VisitIndexCreateCommand( CreateCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.neo4j.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.Neo4Net.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
 		  public override bool VisitIndexDefineCommand( IndexDefineCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNodeCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNodeCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException
 		  public override bool VisitNodeCountsCommand( NodeCountsCommand command )
 		  {
 				return false;
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipCountsCommand( RelationshipCountsCommand command )
 		  {
 				return false;
@@ -259,119 +259,119 @@ namespace Neo4Net.Kernel.Impl.Api
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNodeCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNodeCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand command) throws java.io.IOException
 		  public override bool VisitNodeCommand( NodeCommand command )
 		  {
 				return Delegate.visitNodeCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipCommand( RelationshipCommand command )
 		  {
 				return Delegate.visitRelationshipCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitPropertyCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitPropertyCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand command) throws java.io.IOException
 		  public override bool VisitPropertyCommand( PropertyCommand command )
 		  {
 				return Delegate.visitPropertyCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipGroupCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipGroupCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipGroupCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipGroupCommand( RelationshipGroupCommand command )
 		  {
 				return Delegate.visitRelationshipGroupCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipTypeTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipTypeTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipTypeTokenCommand( RelationshipTypeTokenCommand command )
 		  {
 				return Delegate.visitRelationshipTypeTokenCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitLabelTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitLabelTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.LabelTokenCommand command) throws java.io.IOException
 		  public override bool VisitLabelTokenCommand( LabelTokenCommand command )
 		  {
 				return Delegate.visitLabelTokenCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitPropertyKeyTokenCommand(org.neo4j.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitPropertyKeyTokenCommand(org.Neo4Net.kernel.impl.transaction.command.Command.PropertyKeyTokenCommand command) throws java.io.IOException
 		  public override bool VisitPropertyKeyTokenCommand( PropertyKeyTokenCommand command )
 		  {
 				return Delegate.visitPropertyKeyTokenCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitSchemaRuleCommand(org.neo4j.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitSchemaRuleCommand(org.Neo4Net.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws java.io.IOException
 		  public override bool VisitSchemaRuleCommand( SchemaRuleCommand command )
 		  {
 				return Delegate.visitSchemaRuleCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNeoStoreCommand(org.neo4j.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNeoStoreCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NeoStoreCommand command) throws java.io.IOException
 		  public override bool VisitNeoStoreCommand( NeoStoreCommand command )
 		  {
 				return Delegate.visitNeoStoreCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.neo4j.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
 		  public override bool VisitIndexAddNodeCommand( AddNodeCommand command )
 		  {
 				return Delegate.visitIndexAddNodeCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.neo4j.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
 		  public override bool VisitIndexAddRelationshipCommand( AddRelationshipCommand command )
 		  {
 				return Delegate.visitIndexAddRelationshipCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.neo4j.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.Neo4Net.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
 		  public override bool VisitIndexRemoveCommand( RemoveCommand command )
 		  {
 				return Delegate.visitIndexRemoveCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.neo4j.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
 		  public override bool VisitIndexDeleteCommand( DeleteCommand command )
 		  {
 				return Delegate.visitIndexDeleteCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.neo4j.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.Neo4Net.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
 		  public override bool VisitIndexCreateCommand( CreateCommand command )
 		  {
 				return Delegate.visitIndexCreateCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.neo4j.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.Neo4Net.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
 		  public override bool VisitIndexDefineCommand( IndexDefineCommand command )
 		  {
 				return Delegate.visitIndexDefineCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitNodeCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitNodeCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCountsCommand command) throws java.io.IOException
 		  public override bool VisitNodeCountsCommand( NodeCountsCommand command )
 		  {
 				return Delegate.visitNodeCountsCommand( command );
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitRelationshipCountsCommand(org.neo4j.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitRelationshipCountsCommand(org.Neo4Net.kernel.impl.transaction.command.Command.RelationshipCountsCommand command) throws java.io.IOException
 		  public override bool VisitRelationshipCountsCommand( RelationshipCountsCommand command )
 		  {
 				return Delegate.visitRelationshipCountsCommand( command );

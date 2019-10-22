@@ -19,30 +19,30 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
-	public sealed class IndexedEntityRepresentation : MappingRepresentation, ExtensibleRepresentation, EntityRepresentation
+	public sealed class IndexedEntityRepresentation : MappingRepresentation, ExtensibleRepresentation, IEntityRepresentation
 	{
 		 private readonly MappingRepresentation _entity;
 		 private readonly ValueRepresentation _selfUri;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.neo4j.graphdb.Node node, String key, String value, IndexRepresentation indexRepresentation)
+//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.Neo4Net.graphdb.Node node, String key, String value, IndexRepresentation indexRepresentation)
 		 public IndexedEntityRepresentation( Node node, string key, string value, IndexRepresentation indexRepresentation ) : this( new NodeRepresentation( node ), node.Id, key, value, indexRepresentation )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.neo4j.graphdb.Relationship rel, String key, String value, IndexRepresentation indexRepresentation)
+//ORIGINAL LINE: @SuppressWarnings("boxing") public IndexedEntityRepresentation(org.Neo4Net.graphdb.Relationship rel, String key, String value, IndexRepresentation indexRepresentation)
 		 public IndexedEntityRepresentation( Relationship rel, string key, string value, IndexRepresentation indexRepresentation ) : this( new RelationshipRepresentation( rel ), rel.Id, key, value, indexRepresentation )
 		 {
 		 }
 
-		 private IndexedEntityRepresentation( MappingRepresentation entity, long entityId, string key, string value, IndexRepresentation indexRepresentation ) : base( entity.Type )
+		 private IndexedEntityRepresentation( MappingRepresentation IEntity, long IEntityId, string key, string value, IndexRepresentation indexRepresentation ) : base( IEntity.Type )
 		 {
-			  this._entity = entity;
-			  _selfUri = ValueRepresentation.Uri( indexRepresentation.RelativeUriFor( key, value, entityId ) );
+			  this._entity = IEntity;
+			  _selfUri = ValueRepresentation.Uri( indexRepresentation.RelativeUriFor( key, value, IEntityId ) );
 		 }
 
 		 public string Identity

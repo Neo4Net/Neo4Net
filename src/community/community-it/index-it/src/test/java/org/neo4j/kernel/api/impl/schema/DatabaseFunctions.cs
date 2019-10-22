@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.Api.Impl.Schema
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
 
 	public sealed class DatabaseFunctions
 	{
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 public static System.Func<GraphDatabaseService, Node> CreateNode()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  return GraphDatabaseService::createNode;
+			  return IGraphDatabaseService::createNode;
 		 }
 
 		 public static System.Func<Node, Node> AddLabel( Label label )

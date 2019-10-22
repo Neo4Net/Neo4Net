@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.store.format
 	using MetaDataRecord = Neo4Net.Kernel.Impl.Store.Records.MetaDataRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.contains;
+//	import static org.Neo4Net.helpers.ArrayUtil.contains;
 
 	/// <summary>
 	/// Base class for simpler implementation of <seealso cref="RecordFormats"/>.

@@ -32,10 +32,10 @@ namespace Schema
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
@@ -58,7 +58,7 @@ namespace Schema
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
 	using IndexProxy = Neo4Net.Kernel.Impl.Api.index.IndexProxy;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
@@ -72,12 +72,12 @@ namespace Schema
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using DirectIndexUpdates = Neo4Net.Kernel.impl.transaction.state.DirectIndexUpdates;
 	using DynamicIndexStoreView = Neo4Net.Kernel.impl.transaction.state.storeview.DynamicIndexStoreView;
-	using EntityIdIterator = Neo4Net.Kernel.impl.transaction.state.storeview.EntityIdIterator;
+	using IEntityIdIterator = Neo4Net.Kernel.impl.transaction.state.storeview.EntityIdIterator;
 	using Neo4Net.Kernel.impl.transaction.state.storeview;
 	using NeoStoreIndexStoreView = Neo4Net.Kernel.impl.transaction.state.storeview.NeoStoreIndexStoreView;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
@@ -110,19 +110,19 @@ namespace Schema
 		 private const string CAR_LABEL = "car";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule embeddedDatabase = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule embeddedDatabase = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule EmbeddedDatabase = new EmbeddedDatabaseRule();
 		 private StoreIndexDescriptor[] _rules;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] parameters()
 		 public static GraphDatabaseSettings.SchemaIndex[] Parameters()
 		 {
 			  return GraphDatabaseSettings.SchemaIndex.values();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex;
 		 public GraphDatabaseSettings.SchemaIndex SchemaIndex;
 
 		 private IndexingService _indexService;
@@ -165,8 +165,8 @@ namespace Schema
 		 public virtual void ApplyConcurrentDeletesToPopulatedIndex()
 		 {
 			  IList<EntityUpdates> updates = new List<EntityUpdates>( 2 );
-			  updates.Add( EntityUpdates.forEntity( _country1.Id, false ).withTokens( Id( COUNTRY_LABEL ) ).removed( _propertyId, Values.of( "Sweden" ) ).build() );
-			  updates.Add( EntityUpdates.forEntity( _color2.Id, false ).withTokens( Id( COLOR_LABEL ) ).removed( _propertyId, Values.of( "green" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _country1.Id, false ).withTokens( Id( COUNTRY_LABEL ) ).removed( _propertyId, Values.of( "Sweden" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _color2.Id, false ).withTokens( Id( COLOR_LABEL ) ).removed( _propertyId, Values.of( "green" ) ).build() );
 
 			  LaunchCustomIndexPopulation( _labelsNameIdMap, _propertyId, new UpdateGenerator( this, updates ) );
 			  WaitAndActivateIndexes( _labelsNameIdMap, _propertyId );
@@ -193,8 +193,8 @@ namespace Schema
 		 public virtual void ApplyConcurrentAddsToPopulatedIndex()
 		 {
 			  IList<EntityUpdates> updates = new List<EntityUpdates>( 2 );
-			  updates.Add( EntityUpdates.forEntity( _otherNodes[0].Id, false ).withTokens( Id( COUNTRY_LABEL ) ).added( _propertyId, Values.of( "Denmark" ) ).build() );
-			  updates.Add( EntityUpdates.forEntity( _otherNodes[1].Id, false ).withTokens( Id( CAR_LABEL ) ).added( _propertyId, Values.of( "BMW" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _otherNodes[0].Id, false ).withTokens( Id( COUNTRY_LABEL ) ).added( _propertyId, Values.of( "Denmark" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _otherNodes[1].Id, false ).withTokens( Id( CAR_LABEL ) ).added( _propertyId, Values.of( "BMW" ) ).build() );
 
 			  LaunchCustomIndexPopulation( _labelsNameIdMap, _propertyId, new UpdateGenerator( this, updates ) );
 			  WaitAndActivateIndexes( _labelsNameIdMap, _propertyId );
@@ -221,8 +221,8 @@ namespace Schema
 		 public virtual void ApplyConcurrentChangesToPopulatedIndex()
 		 {
 			  IList<EntityUpdates> updates = new List<EntityUpdates>( 2 );
-			  updates.Add( EntityUpdates.forEntity( _color2.Id, false ).withTokens( Id( COLOR_LABEL ) ).changed( _propertyId, Values.of( "green" ), Values.of( "pink" ) ).build() );
-			  updates.Add( EntityUpdates.forEntity( _car2.Id, false ).withTokens( Id( CAR_LABEL ) ).changed( _propertyId, Values.of( "Ford" ), Values.of( "SAAB" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _color2.Id, false ).withTokens( Id( COLOR_LABEL ) ).changed( _propertyId, Values.of( "green" ), Values.of( "pink" ) ).build() );
+			  updates.Add( IEntityUpdates.forEntity( _car2.Id, false ).withTokens( Id( CAR_LABEL ) ).changed( _propertyId, Values.of( "Ford" ), Values.of( "SAAB" ) ).build() );
 
 			  LaunchCustomIndexPopulation( _labelsNameIdMap, _propertyId, new UpdateGenerator( this, updates ) );
 			  WaitAndActivateIndexes( _labelsNameIdMap, _propertyId );
@@ -281,7 +281,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void CheckIndexIsOnline( int labelId )
 		 {
 			  IndexProxy indexProxy = _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, _propertyId ) );
@@ -294,7 +294,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.storageengine.api.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private org.Neo4Net.storageengine.api.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private IndexReader GetIndexReader( int propertyId, int? countryLabelId )
 		 {
 			  return _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( countryLabelId.Value, propertyId ) ).newReader();
@@ -335,7 +335,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.neo4j.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitAndActivateIndexes( IDictionary<string, int> labelsIds, int propertyId )
 		 {
 			  using ( Transaction ignored = EmbeddedDatabase.beginTx() )
@@ -370,7 +370,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitIndexOnline(org.neo4j.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.neo4j.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitIndexOnline(org.Neo4Net.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitIndexOnline( IndexingService indexService, int propertyId, int labelId )
 		 {
 			  IndexProxy indexProxy = indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, propertyId ) );
@@ -538,7 +538,7 @@ namespace Schema
 					this.CustomAction = customAction;
 			  }
 
-			  public override EntityIdIterator EntityIdIterator
+			  public override IEntityIdIterator IEntityIdIterator
 			  {
 				  get
 				  {
@@ -548,14 +548,14 @@ namespace Schema
 			  }
 		 }
 
-		 private class DelegatingEntityIdIterator : EntityIdIterator
+		 private class DelegatingEntityIdIterator : IEntityIdIterator
 		 {
 			 private readonly MultiIndexPopulationConcurrentUpdatesIT _outerInstance;
 
 			  internal readonly ThreadStart CustomAction;
-			  internal readonly EntityIdIterator Delegate;
+			  internal readonly IEntityIdIterator Delegate;
 
-			  internal DelegatingEntityIdIterator( MultiIndexPopulationConcurrentUpdatesIT outerInstance, EntityIdIterator @delegate, ThreadStart customAction )
+			  internal DelegatingEntityIdIterator( MultiIndexPopulationConcurrentUpdatesIT outerInstance, IEntityIdIterator @delegate, ThreadStart customAction )
 			  {
 				  this._outerInstance = outerInstance;
 					this.Delegate = @delegate;
@@ -603,7 +603,7 @@ namespace Schema
 
 			  public override void Run()
 			  {
-					foreach ( EntityUpdates update in Updates )
+					foreach ( IEntityUpdates update in Updates )
 					{
 							  using ( Transaction transaction = outerInstance.EmbeddedDatabase.beginTx() )
 							  {
@@ -612,7 +612,7 @@ namespace Schema
 									{
 										 LabelSchemaDescriptor schema = SchemaDescriptorFactory.forLabel( labelId, outerInstance.propertyId );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> indexUpdate : update.forIndexKeys(java.util.Collections.singleton(schema)))
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> indexUpdate : update.forIndexKeys(java.util.Collections.singleton(schema)))
 										 foreach ( IndexEntryUpdate<object> indexUpdate in update.ForIndexKeys( Collections.singleton( schema ) ) )
 										 {
 											  switch ( indexUpdate.UpdateMode() )
@@ -636,9 +636,9 @@ namespace Schema
 					}
 						 try
 						 {
-							  foreach ( EntityUpdates update in Updates )
+							  foreach ( IEntityUpdates update in Updates )
 							  {
-									IEnumerable<IndexEntryUpdate<SchemaDescriptor>> entryUpdates = outerInstance.indexService.ConvertToIndexUpdates( update, EntityType.NODE );
+									IEnumerable<IndexEntryUpdate<SchemaDescriptor>> entryUpdates = outerInstance.indexService.ConvertToIndexUpdates( update, IEntityType.NODE );
 									DirectIndexUpdates directIndexUpdates = new DirectIndexUpdates( entryUpdates );
 									outerInstance.indexService.Apply( directIndexUpdates );
 							  }

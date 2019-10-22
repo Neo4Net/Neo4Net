@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Procedure
 {
@@ -35,19 +35,19 @@ namespace Neo4Net.Procedure
 
 
 	using OnlineBackupSettings = Neo4Net.backup.OnlineBackupSettings;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -74,23 +74,23 @@ namespace Neo4Net.Procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.plugin_dir;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.plugin_dir;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.procedure_unrestricted;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.SCHEMA;
+//	import static org.Neo4Net.procedure.Mode.SCHEMA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.WRITE;
+//	import static org.Neo4Net.procedure.Mode.WRITE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.StringMatcherIgnoresNewlines.containsStringIgnoreNewlines;
+//	import static org.Neo4Net.procedure.StringMatcherIgnoresNewlines.containsStringIgnoreNewlines;
 
 	public class ProcedureIT
 	{
@@ -102,7 +102,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException exception = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Exception = ExpectedException.none();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp() throws java.io.IOException
@@ -136,7 +136,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.simpleArgument", map( "name", 42L ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.simpleArgument", map( "name", 42L ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -151,7 +151,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.simpleArgumentWithDefault" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.simpleArgumentWithDefault" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -165,7 +165,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallYieldProcedureWithDefaultArgument()
 		 {
 			  // Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.simpleArgumentWithDefault() YIELD someVal as n RETURN n + 1295 as val" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.simpleArgumentWithDefault() YIELD someVal as n RETURN n + 1295 as val" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -179,7 +179,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithAllDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.defaultValues" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.defaultValues" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -193,7 +193,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithOneProvidedRestDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.defaultValues('another string')" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.defaultValues('another string')" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -207,7 +207,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithTwoProvidedRestDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.defaultValues('another string', 1337)" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.defaultValues('another string', 1337)" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -221,7 +221,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithThreeProvidedRestDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.defaultValues('another string', 1337, 2.718281828)" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.defaultValues('another string', 1337, 2.718281828)" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -235,7 +235,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithFourProvidedRestDefaultArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.defaultValues('another string', 1337, 2.718281828, false)" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.defaultValues('another string', 1337, 2.718281828, false)" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -256,7 +256,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					//Make sure argument here is not auto parameterized away as that will drop all type information on the floor
-					_db.execute( "CALL org.neo4j.procedure.simpleArgument('42')" );
+					_db.execute( "CALL org.Neo4Net.procedure.simpleArgument('42')" );
 			  }
 		 }
 
@@ -266,11 +266,11 @@ namespace Neo4Net.Procedure
 		 {
 			  //Expect
 			  Exception.expect( typeof( QueryExecutionException ) );
-			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 0 expected 1.%n%n" + "Procedure org.neo4j.procedure.simpleArgument has signature: " + "org.neo4j.procedure.simpleArgument(name :: INTEGER?) :: someVal :: INTEGER?%n" + "meaning that it expects 1 argument of type INTEGER?" ) ) );
+			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 0 expected 1.%n%n" + "Procedure org.Neo4Net.procedure.simpleArgument has signature: " + "org.Neo4Net.procedure.simpleArgument(name :: INTEGER?) :: someVal :: INTEGER?%n" + "meaning that it expects 1 argument of type INTEGER?" ) ) );
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.simpleArgument()" );
+					_db.execute( "CALL org.Neo4Net.procedure.simpleArgument()" );
 			  }
 		 }
 
@@ -280,11 +280,11 @@ namespace Neo4Net.Procedure
 		 {
 			  //Expect
 			  Exception.expect( typeof( QueryExecutionException ) );
-			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 1 expected 3.%n%n" + "Procedure org.neo4j.procedure.sideEffectWithDefault has signature: org.neo4j.procedure" + ".sideEffectWithDefault(label :: STRING?, propertyKey :: STRING?, value  =  Zhang Wei :: STRING?) :: VOID%n" + "meaning that it expects 3 arguments of type STRING?, STRING?, STRING? (line 1, column 1 (offset: 0))" ) ) );
+			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 1 expected 3.%n%n" + "Procedure org.Neo4Net.procedure.sideEffectWithDefault has signature: org.Neo4Net.procedure" + ".sideEffectWithDefault(label :: STRING?, propertyKey :: STRING?, value  =  Zhang Wei :: STRING?) :: VOID%n" + "meaning that it expects 3 arguments of type STRING?, STRING?, STRING? (line 1, column 1 (offset: 0))" ) ) );
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.sideEffectWithDefault()" );
+					_db.execute( "CALL org.Neo4Net.procedure.sideEffectWithDefault()" );
 			  }
 		 }
 
@@ -294,11 +294,11 @@ namespace Neo4Net.Procedure
 		 {
 			  //Expect
 			  Exception.expect( typeof( QueryExecutionException ) );
-			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 0 expected 1.%n%n" + "Procedure org.neo4j.procedure.nodeWithDescription has signature: " + "org.neo4j.procedure.nodeWithDescription(node :: NODE?) :: node :: NODE?%n" + "meaning that it expects 1 argument of type NODE?%n" + "Description: This is a description (line 1, column 1 (offset: 0))" ) ) );
+			  Exception.expectMessage( containsStringIgnoreNewlines( string.Format( "Procedure call does not provide the required number of arguments: got 0 expected 1.%n%n" + "Procedure org.Neo4Net.procedure.nodeWithDescription has signature: " + "org.Neo4Net.procedure.nodeWithDescription(node :: NODE?) :: node :: NODE?%n" + "meaning that it expects 1 argument of type NODE?%n" + "Description: This is a description (line 1, column 1 (offset: 0))" ) ) );
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.nodeWithDescription()" );
+					_db.execute( "CALL org.Neo4Net.procedure.nodeWithDescription()" );
 			  }
 		 }
 
@@ -310,7 +310,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.delegatingProcedure", map( "name", 43L ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.delegatingProcedure", map( "name", 43L ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -328,7 +328,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.recursiveSum", map( "order", 10L ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.recursiveSum", map( "order", 10L ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -346,7 +346,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.genericArguments([ ['graphs'], ['are'], ['everywhere']], " + "[ [[1, 2, 3]], [[4, 5]]] )" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.genericArguments([ ['graphs'], ['are'], ['everywhere']], " + "[ [[1, 2, 3]], [[4, 5]]] )" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -364,7 +364,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.mapArgument({foo: 42, bar: 'hello'})" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.mapArgument({foo: 42, bar: 'hello'})" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -382,7 +382,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.mapWithNullDefault()" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.mapWithNullDefault()" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -400,7 +400,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.mapWithOtherDefault" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.mapWithOtherDefault" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -418,7 +418,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.listWithDefault" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.listWithDefault" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -436,7 +436,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.genericListWithDefault" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.genericListWithDefault" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -455,7 +455,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.incrBytes($param)", map( "param", new sbyte[]{ 4, 5, 6 } ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.incrBytes($param)", map( "param", new sbyte[]{ 4, 5, 6 } ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -474,7 +474,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "WITH $param AS b CALL org.neo4j.procedure.incrBytes(b) YIELD bytes RETURN bytes", map( "param", new sbyte[]{ 7, 8, 9 } ) );
+					Result res = _db.execute( "WITH $param AS b CALL org.Neo4Net.procedure.incrBytes(b) YIELD bytes RETURN bytes", map( "param", new sbyte[]{ 7, 8, 9 } ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -493,7 +493,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "WITH $param AS param CALL org.neo4j.procedure.incrBytes(param) YIELD bytes RETURN bytes, param", map( "param", new sbyte[]{ 10, 11, 12 } ) );
+					Result res = _db.execute( "WITH $param AS param CALL org.Neo4Net.procedure.incrBytes(param) YIELD bytes RETURN bytes, param", map( "param", new sbyte[]{ 10, 11, 12 } ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -519,7 +519,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					Result result = _db.execute( "CALL org.neo4j.procedure.incrBytes([1,2,3])" );
+					Result result = _db.execute( "CALL org.Neo4Net.procedure.incrBytes([1,2,3])" );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					result.Next();
 			  }
@@ -534,7 +534,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.genericListWithDefault(null)" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.genericListWithDefault(null)" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -552,7 +552,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.genericListWithDefault([[42, null, 57]])" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.genericListWithDefault([[42, null, 57]])" );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -572,7 +572,7 @@ namespace Neo4Net.Procedure
 					long nodeId = _db.createNode().Id;
 
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.node({id})", map( "id", nodeId ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.node({id})", map( "id", nodeId ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -587,7 +587,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Test public void shouldCallProcedureReturningNull()
 		 public virtual void ShouldCallProcedureReturningNull()
 		 {
-			  Result res = _db.execute( "CALL org.neo4j.procedure.node(-1)" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.node(-1)" );
 
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertThat( res.Next()["node"], nullValue() );
@@ -599,7 +599,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Test public void shouldCallYieldProcedureReturningNull()
 		 public virtual void ShouldCallYieldProcedureReturningNull()
 		 {
-			  Result res = _db.execute( "CALL org.neo4j.procedure.node(-1) YIELD node as node RETURN node" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.node(-1) YIELD node as node RETURN node" );
 
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertThat( res.Next()["node"], nullValue() );
@@ -627,11 +627,11 @@ namespace Neo4Net.Procedure
 			  // run in tx to avoid having to wait for tx rollback on shutdown
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					Result result = _db.execute( "CALL org.neo4j.procedure.throwsExceptionInStream" );
+					Result result = _db.execute( "CALL org.Neo4Net.procedure.throwsExceptionInStream" );
 
 					// Expect
 					Exception.expect( typeof( QueryExecutionException ) );
-					Exception.expectMessage( "Failed to invoke procedure `org.neo4j.procedure.throwsExceptionInStream`: " + "Caused by: java.lang.RuntimeException: Kaboom" );
+					Exception.expectMessage( "Failed to invoke procedure `org.Neo4Net.procedure.throwsExceptionInStream`: " + "Caused by: java.lang.RuntimeException: Kaboom" );
 
 					// When
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -649,9 +649,9 @@ namespace Neo4Net.Procedure
 			  {
 					// Expect
 					Exception.expect( typeof( QueryExecutionException ) );
-					Exception.expectMessage( "Failed to invoke procedure `org.neo4j.procedure.indexOutOfBounds`: Caused by: java.lang" + ".ArrayIndexOutOfBoundsException" );
+					Exception.expectMessage( "Failed to invoke procedure `org.Neo4Net.procedure.indexOutOfBounds`: Caused by: java.lang" + ".ArrayIndexOutOfBoundsException" );
 					// When
-					_db.execute( "CALL org.neo4j.procedure.indexOutOfBounds" );
+					_db.execute( "CALL org.Neo4Net.procedure.indexOutOfBounds" );
 			  }
 		 }
 
@@ -668,7 +668,7 @@ namespace Neo4Net.Procedure
 			  // Then
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					Result res = _db.execute( "CALL org.neo4j.procedure.listCoolPeopleInDatabase" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.listCoolPeopleInDatabase" );
 
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertFalse( res.HasNext() );
@@ -683,12 +683,12 @@ namespace Neo4Net.Procedure
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 
 			  _db.shutdown();
-			  _db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).setUserLogProvider(logProvider).newImpermanentDatabaseBuilder().setConfig(plugin_dir, Plugins.Root.AbsolutePath).setConfig(procedure_unrestricted, "org.neo4j.procedure.*").setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
+			  _db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).setUserLogProvider(logProvider).newImpermanentDatabaseBuilder().setConfig(plugin_dir, Plugins.Root.AbsolutePath).setConfig(procedure_unrestricted, "org.Neo4Net.procedure.*").setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
 
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					Result res = _db.execute( "CALL org.neo4j.procedure.logAround()" );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.logAround()" );
 					while ( res.MoveNext() )
 					{
 						res.Current;
@@ -711,7 +711,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.readOnlyTryingToWrite()" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.readOnlyTryingToWrite()" ).next();
 			  }
 		 }
 
@@ -722,7 +722,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.writingProcedure()" ).close();
+					_db.execute( "CALL org.Neo4Net.procedure.writingProcedure()" ).close();
 					tx.Success();
 			  }
 
@@ -741,7 +741,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					Result result = _db.execute( "EXPLAIN CALL org.neo4j.procedure.integrationTestMe()" );
+					Result result = _db.execute( "EXPLAIN CALL org.Neo4Net.procedure.integrationTestMe()" );
 					assertEquals( result.QueryExecutionType.queryType(), QueryExecutionType.QueryType.READ_ONLY );
 					tx.Success();
 			  }
@@ -754,7 +754,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					Result result = _db.execute( "EXPLAIN CALL org.neo4j.procedure.integrationTestMe() YIELD someVal as v RETURN v" );
+					Result result = _db.execute( "EXPLAIN CALL org.Neo4Net.procedure.integrationTestMe() YIELD someVal as v RETURN v" );
 					assertEquals( result.QueryExecutionType.queryType(), QueryExecutionType.QueryType.READ_ONLY );
 					tx.Success();
 			  }
@@ -767,7 +767,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					Result result = _db.execute( "EXPLAIN CALL org.neo4j.procedure.createNode('n')" );
+					Result result = _db.execute( "EXPLAIN CALL org.Neo4Net.procedure.createNode('n')" );
 					assertEquals( result.QueryExecutionType.queryType(), QueryExecutionType.QueryType.READ_WRITE );
 					tx.Success();
 			  }
@@ -780,7 +780,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					Result result = _db.execute( "EXPLAIN CALL org.neo4j.procedure.createNode('n') YIELD node as n RETURN n.prop" );
+					Result result = _db.execute( "EXPLAIN CALL org.Neo4Net.procedure.createNode('n') YIELD node as n RETURN n.prop" );
 					assertEquals( result.QueryExecutionType.queryType(), QueryExecutionType.QueryType.READ_WRITE );
 					tx.Success();
 			  }
@@ -797,7 +797,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.readOnlyCallingWriteProcedure" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.readOnlyCallingWriteProcedure" ).next();
 			  }
 		 }
 
@@ -814,7 +814,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = gdapi.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.writeOnly() ) )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.writeProcedureCallingReadProcedure" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.writeProcedureCallingReadProcedure" ).next();
 			  }
 		 }
 
@@ -825,7 +825,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.writeProcedureCallingWriteProcedure()" ).close();
+					_db.execute( "CALL org.Neo4Net.procedure.writeProcedureCallingWriteProcedure()" ).close();
 					tx.Success();
 			  }
 
@@ -850,7 +850,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = gdapi.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.write() ) )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.writeProcedureCallingSchemaProcedure" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.writeProcedureCallingSchemaProcedure" ).next();
 			  }
 		 }
 
@@ -866,7 +866,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					_db.execute( "CALL org.neo4j.procedure.readOnlyTryingToWriteSchema" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.readOnlyTryingToWriteSchema" ).next();
 			  }
 		 }
 
@@ -882,7 +882,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					_db.execute( "CALL org.neo4j.procedure.readWriteTryingToWriteSchema" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.readWriteTryingToWriteSchema" ).next();
 			  }
 		 }
 
@@ -894,7 +894,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction tx = _db.beginTx() )
 			  {
 					// When
-					_db.execute( "CALL org.neo4j.procedure.schemaProcedure" );
+					_db.execute( "CALL org.Neo4Net.procedure.schemaProcedure" );
 					tx.Success();
 			  }
 
@@ -921,7 +921,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.schemaCallReadProcedure({id})", map( "id", nodeId ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.schemaCallReadProcedure({id})", map( "id", nodeId ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -944,7 +944,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					_db.execute( "CALL org.neo4j.procedure.schemaTryingToWrite" ).next();
+					_db.execute( "CALL org.Neo4Net.procedure.schemaTryingToWrite" ).next();
 			  }
 		 }
 
@@ -956,7 +956,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.squareDouble", map( "value", 4L ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.squareDouble", map( "value", 4L ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -974,7 +974,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.avgNumberList({param})", map( "param", Arrays.asList<Number>( 1L, 2L, 3L ) ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.avgNumberList({param})", map( "param", Arrays.asList<Number>( 1L, 2L, 3L ) ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -992,7 +992,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.avgDoubleList([{long}, {double}])", map( "long", 1L, "double", 2.0d ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.avgDoubleList([{long}, {double}])", map( "long", 1L, "double", 2.0d ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1010,7 +1010,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.squareLong", map( "value", 4L ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.squareLong", map( "value", 4L ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1026,7 +1026,7 @@ namespace Neo4Net.Procedure
 		 {
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.sideEffect('PONTUS')" );
+					_db.execute( "CALL org.Neo4Net.procedure.sideEffect('PONTUS')" );
 
 					assertThat( _db.execute( "MATCH (n:PONTUS) RETURN count(n) AS c" ).next().get("c"), equalTo(1L) );
 			  }
@@ -1038,7 +1038,7 @@ namespace Neo4Net.Procedure
 		 {
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.sideEffectWithDefault('Person','name')" );
+					_db.execute( "CALL org.Neo4Net.procedure.sideEffectWithDefault('Person','name')" );
 					Result result = _db.execute( "MATCH (n:Person) RETURN n.name AS name" );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertThat( result.Next()["name"], equalTo("Zhang Wei") );
@@ -1053,7 +1053,7 @@ namespace Neo4Net.Procedure
 		 {
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.delegatingSideEffect('SUTNOP')" );
+					_db.execute( "CALL org.Neo4Net.procedure.delegatingSideEffect('SUTNOP')" );
 
 					assertThat( _db.execute( "MATCH (n:SUTNOP) RETURN count(n) AS c" ).next().get("c"), equalTo(1L) );
 			  }
@@ -1067,7 +1067,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction tx = _db.beginTx() )
 			  {
 					long nodeId = _db.createNode().Id;
-					Node node = Iterators.single( _db.execute( "CALL org.neo4j.procedure.node", map( "id", nodeId ) ).columnAs( "node" ) );
+					Node node = Iterators.single( _db.execute( "CALL org.Neo4Net.procedure.node", map( "id", nodeId ) ).columnAs( "node" ) );
 					node.SetProperty( "name", "Stefan" );
 					tx.Success();
 			  }
@@ -1079,11 +1079,11 @@ namespace Neo4Net.Procedure
 		 {
 			  // Expect
 			  Exception.expect( typeof( QueryExecutionException ) );
-			  Exception.expectMessage( "Failed to invoke procedure `org.neo4j.procedure.shutdown`: Caused by: java.lang" + ".UnsupportedOperationException" );
+			  Exception.expectMessage( "Failed to invoke procedure `org.Neo4Net.procedure.shutdown`: Caused by: java.lang" + ".UnsupportedOperationException" );
 
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.shutdown()" );
+					_db.execute( "CALL org.Neo4Net.procedure.shutdown()" );
 			  }
 		 }
 
@@ -1093,7 +1093,7 @@ namespace Neo4Net.Procedure
 		 {
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.simpleArgument(12)" ).close();
+					_db.execute( "CALL org.Neo4Net.procedure.simpleArgument(12)" ).close();
 					_db.createNode();
 			  }
 		 }
@@ -1108,7 +1108,7 @@ namespace Neo4Net.Procedure
 			  // given
 			  ThreadStart doIt = () =>
 			  {
-				Result result = _db.execute( "CALL org.neo4j.procedure.supportedProcedure()" );
+				Result result = _db.execute( "CALL org.Neo4Net.procedure.supportedProcedure()" );
 				while ( result.hasNext() )
 				{
 					 result.next();
@@ -1156,7 +1156,7 @@ namespace Neo4Net.Procedure
 			  string url = CreateCsvFile( lines );
 
 			  //WHEN
-			  Result result = _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CALL org.neo4j.procedure.createNode(line[0]) YIELD node as n " + "RETURN n.prop" );
+			  Result result = _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CALL org.Neo4Net.procedure.createNode(line[0]) YIELD node as n " + "RETURN n.prop" );
 			  // THEN
 			  for ( int i = 1; i <= 100; i++ )
 			  {
@@ -1184,7 +1184,7 @@ namespace Neo4Net.Procedure
 			  Exception.expectMessage( "Cannot use periodic commit in a non-updating query (line 1, column 1 (offset: 0))" );
 
 			  //WHEN
-			  _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CALL org.neo4j.procedure.simpleArgument(ToInt(line[0])) YIELD someVal as val " + "RETURN val" );
+			  _db.execute( "USING PERIODIC COMMIT 1 " + "LOAD CSV FROM '" + url + "' AS line " + "CALL org.Neo4Net.procedure.simpleArgument(ToInt(line[0])) YIELD someVal as val " + "RETURN val" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1196,7 +1196,7 @@ namespace Neo4Net.Procedure
 			  string url = CreateCsvFile( "foo" );
 
 			  //WHEN
-			  Result result = _db.execute( "LOAD CSV FROM '" + url + "' AS line " + "CALL org.neo4j.procedure.createNode(line[0]) YIELD node as n " + "SET n.p = 42 " + "RETURN n.p" );
+			  Result result = _db.execute( "LOAD CSV FROM '" + url + "' AS line " + "CALL org.Neo4Net.procedure.createNode(line[0]) YIELD node as n " + "SET n.p = 42 " + "RETURN n.p" );
 			  // THEN
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 			  assertThat( result.Next()["n.p"], equalTo(42L) );
@@ -1214,7 +1214,7 @@ namespace Neo4Net.Procedure
 					Relationship rel = node1.CreateRelationshipTo( node2, RelationshipType.withName( "KNOWS" ) );
 
 					// When
-					Result res = _db.execute( "CALL org.neo4j.procedure.nodePaths({node}) YIELD path RETURN path", map( "node", node1 ) );
+					Result res = _db.execute( "CALL org.Neo4Net.procedure.nodePaths({node}) YIELD path RETURN path", map( "node", node1 ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1235,7 +1235,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Test public void shouldCallStreamCloseWhenResultExhausted()
 		 public virtual void ShouldCallStreamCloseWhenResultExhausted()
 		 {
-			  string query = "CALL org.neo4j.procedure.onCloseProcedure(0)";
+			  string query = "CALL org.Neo4Net.procedure.onCloseProcedure(0)";
 
 			  Result res = _db.execute( query );
 
@@ -1259,7 +1259,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallStreamCloseWhenResultFiltered()
 		 {
 			  // This query should return zero rows
-			  string query = "CALL org.neo4j.procedure.onCloseProcedure(1) YIELD someVal WITH someVal WHERE someVal = 1337 RETURN someVal";
+			  string query = "CALL org.Neo4Net.procedure.onCloseProcedure(1) YIELD someVal WITH someVal WHERE someVal = 1337 RETURN someVal";
 
 			  Result res = _db.execute( query );
 
@@ -1293,7 +1293,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldReturnNodeListTypedAsNodeList()
 		 {
 			  // When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.nodeList() YIELD nodes RETURN extract( x IN nodes | id(x) ) as ids" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.nodeList() YIELD nodes RETURN extract( x IN nodes | id(x) ) as ids" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1319,7 +1319,7 @@ namespace Neo4Net.Procedure
 					Exception.expect( typeof( QueryExecutionException ) );
 
 					// When
-					_db.execute( "MATCH (n:Person) CALL org.neo4j.procedure.nodeListArgument(collect(n)) YIELD someVal RETURN someVal" );
+					_db.execute( "MATCH (n:Person) CALL org.Neo4Net.procedure.nodeListArgument(collect(n)) YIELD someVal RETURN someVal" );
 			  }
 		 }
 
@@ -1333,7 +1333,7 @@ namespace Neo4Net.Procedure
 					_db.createNode( Label.label( "Person" ) );
 
 					// When
-					Result res = _db.execute( "MATCH (n:Person) WITH collect(n) as persons " + "CALL org.neo4j.procedure.nodeListArgument(persons) YIELD someVal RETURN someVal" );
+					Result res = _db.execute( "MATCH (n:Person) WITH collect(n) as persons " + "CALL org.Neo4Net.procedure.nodeListArgument(persons) YIELD someVal RETURN someVal" );
 
 					// THEN
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1354,7 +1354,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = gdapi.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.none() ) )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.integrationTestMe()" );
+					_db.execute( "CALL org.Neo4Net.procedure.integrationTestMe()" );
 					tx.Success();
 			  }
 		 }
@@ -1372,7 +1372,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = gdapi.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.read() ) )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.writingProcedure()" );
+					_db.execute( "CALL org.Neo4Net.procedure.writingProcedure()" );
 					tx.Success();
 			  }
 		 }
@@ -1390,7 +1390,7 @@ namespace Neo4Net.Procedure
 			  // When
 			  using ( Transaction tx = gdapi.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.write() ) )
 			  {
-					_db.execute( "CALL org.neo4j.procedure.schemaProcedure()" );
+					_db.execute( "CALL org.Neo4Net.procedure.schemaProcedure()" );
 					tx.Success();
 			  }
 		 }
@@ -1400,7 +1400,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldCallProcedureWithDefaultNodeArgument()
 		 {
 			  //Given/When
-			  Result res = _db.execute( "CALL org.neo4j.procedure.nodeWithDefault" );
+			  Result res = _db.execute( "CALL org.Neo4Net.procedure.nodeWithDefault" );
 
 			  // Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1414,10 +1414,10 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldIndicateDefaultValueWhenListingProcedures()
 		 {
 			  // Given/When
-			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.neo4j.procedure.nodeWithDefault" ) ).ToList();
+			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.Neo4Net.procedure.nodeWithDefault" ) ).ToList();
 			  // Then
 			  assertFalse( "Expected to find test procedure", results.Count == 0 );
-			  assertThat( results[0]["signature"], equalTo( "org.neo4j.procedure.nodeWithDefault(node = null :: NODE?) :: (node :: NODE?)" ) );
+			  assertThat( results[0]["signature"], equalTo( "org.Neo4Net.procedure.nodeWithDefault(node = null :: NODE?) :: (node :: NODE?)" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1425,7 +1425,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldShowDescriptionWhenListingProcedures()
 		 {
 			  // Given/When
-			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.neo4j.procedure.nodeWithDescription" ) ).ToList();
+			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.Neo4Net.procedure.nodeWithDescription" ) ).ToList();
 			  // Then
 			  assertFalse( "Expected to find test procedure", results.Count == 0 );
 			  assertThat( results[0]["description"], equalTo( "This is a description" ) );
@@ -1436,7 +1436,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldShowModeWhenListingProcedures()
 		 {
 			  // Given/When
-			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.neo4j.procedure.nodeWithDescription" ) ).ToList();
+			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.procedures()" ).Where( record => record.get( "name" ).Equals( "org.Neo4Net.procedure.nodeWithDescription" ) ).ToList();
 			  // Then
 			  assertFalse( "Expected to find test procedure", results.Count == 0 );
 			  assertThat( results[0]["mode"], equalTo( "WRITE" ) );
@@ -1447,10 +1447,10 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldIndicateDefaultValueWhenListingFunctions()
 		 {
 			  // Given/When
-			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.functions()" ).Where( record => record.get( "name" ).Equals( "org.neo4j.procedure.getNodeName" ) ).ToList();
+			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.functions()" ).Where( record => record.get( "name" ).Equals( "org.Neo4Net.procedure.getNodeName" ) ).ToList();
 			  // Then
 			  assertFalse( "Expected to find test function", results.Count == 0 );
-			  assertThat( results[0]["signature"], equalTo( "org.neo4j.procedure.getNodeName(node = null :: NODE?) :: (STRING?)" ) );
+			  assertThat( results[0]["signature"], equalTo( "org.Neo4Net.procedure.getNodeName(node = null :: NODE?) :: (STRING?)" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1458,7 +1458,7 @@ namespace Neo4Net.Procedure
 		 public virtual void ShouldShowDescriptionWhenListingFunctions()
 		 {
 			  // Given/When
-			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.functions()" ).Where( record => record.get( "name" ).Equals( "org.neo4j.procedure.functionWithDescription" ) ).ToList();
+			  IList<IDictionary<string, object>> results = _db.execute( "CALL dbms.functions()" ).Where( record => record.get( "name" ).Equals( "org.Neo4Net.procedure.functionWithDescription" ) ).ToList();
 			  // Then
 			  assertFalse( "Expected to find test function", results.Count == 0 );
 			  assertThat( results[0]["description"], equalTo( "This is a description" ) );
@@ -1473,7 +1473,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "RETURN org.neo4j.procedure.decrBytes($param) AS bytes", map( "param", new sbyte[]{ 4, 5, 6 } ) );
+					Result res = _db.execute( "RETURN org.Neo4Net.procedure.decrBytes($param) AS bytes", map( "param", new sbyte[]{ 4, 5, 6 } ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1492,7 +1492,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					// When
-					Result res = _db.execute( "WITH $param AS param RETURN org.neo4j.procedure.decrBytes(param) AS bytes, param", map( "param", new sbyte[]{ 10, 11, 12 } ) );
+					Result res = _db.execute( "WITH $param AS param RETURN org.Neo4Net.procedure.decrBytes(param) AS bytes, param", map( "param", new sbyte[]{ 10, 11, 12 } ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1519,7 +1519,7 @@ namespace Neo4Net.Procedure
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					//Make sure argument here is not auto parameterized away as that will drop all type information on the floor
-					Result result = _db.execute( "RETURN org.neo4j.procedure.decrBytes([1,2,5]) AS bytes" );
+					Result result = _db.execute( "RETURN org.Neo4Net.procedure.decrBytes([1,2,5]) AS bytes" );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					result.Next();
 			  }
@@ -1538,7 +1538,7 @@ namespace Neo4Net.Procedure
 					data[0] = new sbyte[]{ 1, 2, 3 };
 					data[1] = new sbyte[]{ 3, 2, 1 };
 					data[2] = new sbyte[]{ 1, 2, 1 };
-					Result res = _db.execute( "UNWIND $data AS bytes RETURN org.neo4j.procedure.aggregateByteArrays(bytes) AS bytes", map( "data", data ) );
+					Result res = _db.execute( "UNWIND $data AS bytes RETURN org.Neo4Net.procedure.aggregateByteArrays(bytes) AS bytes", map( "data", data ) );
 
 					// Then
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1557,7 +1557,7 @@ namespace Neo4Net.Procedure
 			  Exception.expectMessage( "The transaction has been terminated. Retry your operation in a new " + "transaction, and you should see a successful result. Explicitly terminated by the user. " );
 
 			  // When
-			  _db.execute( "CALL org.neo4j.procedure.guardMe" );
+			  _db.execute( "CALL org.Neo4Net.procedure.guardMe" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1569,7 +1569,7 @@ namespace Neo4Net.Procedure
 			  {
 					_db.createNode( Label.label( "Person" ) );
 			  }
-			  Result result = _db.execute( "CALL org.neo4j.procedure.failingPersonCount" );
+			  Result result = _db.execute( "CALL org.Neo4Net.procedure.failingPersonCount" );
 			  //Then
 			  Exception.expect( typeof( TransactionFailureException ) );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -1709,11 +1709,11 @@ namespace Neo4Net.Procedure
 		 public class ClassWithProcedures
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-			  public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+			  public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.logging.Log log;
+//ORIGINAL LINE: @Context public org.Neo4Net.logging.Log log;
 			  public Log Log;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1772,7 +1772,7 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Output> nodeListArgument(@Name("nodes") java.util.List<org.neo4j.graphdb.Node> nodes)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Output> nodeListArgument(@Name("nodes") java.util.List<org.Neo4Net.graphdb.Node> nodes)
 			  public virtual Stream<Output> NodeListArgument( IList<Node> nodes )
 			  {
 					return Stream.of( new Output( nodes.Count ) );
@@ -1782,7 +1782,7 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Procedure public java.util.stream.Stream<Output> delegatingProcedure(@Name("name") long someValue)
 			  public virtual Stream<Output> DelegatingProcedure( long someValue )
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.simpleArgument", map( "name", someValue ) ).Select( row => new Output( ( long? ) row.get( "someVal" ).Value ) );
+					return Db.execute( "CALL org.Neo4Net.procedure.simpleArgument", map( "name", someValue ) ).Select( row => new Output( ( long? ) row.get( "someVal" ).Value ) );
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1795,7 +1795,7 @@ namespace Neo4Net.Procedure
 					}
 					else
 					{
-						 long? prev = ( long? ) Db.execute( "CALL org.neo4j.procedure.recursiveSum", map( "order", order - 1 ) ).next().get("someVal");
+						 long? prev = ( long? ) Db.execute( "CALL org.Neo4Net.procedure.recursiveSum", map( "order", order - 1 ) ).next().get("someVal");
 						 return Stream.of( new Output( order + prev ) );
 					}
 			  }
@@ -1973,25 +1973,25 @@ namespace Neo4Net.Procedure
 //ORIGINAL LINE: @Procedure public java.util.stream.Stream<Output> readOnlyCallingWriteProcedure()
 			  public virtual Stream<Output> ReadOnlyCallingWriteProcedure()
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.writingProcedure" ).Select( row => new Output( 0 ) );
+					return Db.execute( "CALL org.Neo4Net.procedure.writingProcedure" ).Select( row => new Output( 0 ) );
 			  }
 
 			  [Procedure(mode : WRITE)]
 			  public virtual Stream<Output> WriteProcedureCallingWriteProcedure()
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.writingProcedure" ).Select( row => new Output( 0 ) );
+					return Db.execute( "CALL org.Neo4Net.procedure.writingProcedure" ).Select( row => new Output( 0 ) );
 			  }
 
 			  [Procedure(mode : WRITE)]
 			  public virtual Stream<Output> WriteProcedureCallingReadProcedure()
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.integrationTestMe" ).Select( row => new Output( 0 ) );
+					return Db.execute( "CALL org.Neo4Net.procedure.integrationTestMe" ).Select( row => new Output( 0 ) );
 			  }
 
 			  [Procedure(mode : WRITE)]
 			  public virtual Stream<Output> WriteProcedureCallingSchemaProcedure()
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.schemaProcedure" ).Select( row => new Output( 0 ) );
+					return Db.execute( "CALL org.Neo4Net.procedure.schemaProcedure" ).Select( row => new Output( 0 ) );
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -2022,7 +2022,7 @@ namespace Neo4Net.Procedure
 			  [Procedure(mode : WRITE)]
 			  public virtual void DelegatingSideEffect( string value )
 			  {
-					Db.execute( "CALL org.neo4j.procedure.sideEffect", map( "value", value ) );
+					Db.execute( "CALL org.Neo4Net.procedure.sideEffect", map( "value", value ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -2048,14 +2048,14 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<PathOutputRecord> nodePaths(@Name("node") org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<PathOutputRecord> nodePaths(@Name("node") org.Neo4Net.graphdb.Node node)
 			  public virtual Stream<PathOutputRecord> NodePaths( Node node )
 			  {
 					return Db.execute( "WITH {node} AS node MATCH p=(node)-[*]->() RETURN p", map( "node", node ) ).Select( record => new PathOutputRecord( ( Path ) record.getOrDefault( "p", null ) ) );
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(mode = WRITE) public java.util.stream.Stream<NodeOutput> nodeWithDefault(@Name(value = "node", defaultValue = "null") org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: @Procedure(mode = WRITE) public java.util.stream.Stream<NodeOutput> nodeWithDefault(@Name(value = "node", defaultValue = "null") org.Neo4Net.graphdb.Node node)
 			  [Procedure(mode : WRITE)]
 			  public virtual Stream<NodeOutput> NodeWithDefault( Node node )
 			  {
@@ -2063,7 +2063,7 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("This is a description") @Procedure(mode = WRITE) public java.util.stream.Stream<NodeOutput> nodeWithDescription(@Name("node") org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: @Description("This is a description") @Procedure(mode = WRITE) public java.util.stream.Stream<NodeOutput> nodeWithDescription(@Name("node") org.Neo4Net.graphdb.Node node)
 			  [Description("This is a description"), Procedure(mode : WRITE)]
 			  public virtual Stream<NodeOutput> NodeWithDescription( Node node )
 			  {
@@ -2104,7 +2104,7 @@ namespace Neo4Net.Procedure
 			  [Procedure(mode : SCHEMA)]
 			  public virtual Stream<NodeOutput> SchemaCallReadProcedure( long id )
 			  {
-					return Db.execute( "CALL org.neo4j.procedure.node(" + id + ")" ).Select(record =>
+					return Db.execute( "CALL org.Neo4Net.procedure.node(" + id + ")" ).Select(record =>
 					{
 					 NodeOutput n = new NodeOutput();
 					 n.Node = ( Node ) record.get( "node" );
@@ -2120,8 +2120,8 @@ namespace Neo4Net.Procedure
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.neo4j.procedure.onCloseProcedure") public java.util.stream.Stream<Output> onCloseProcedure(@Name("index") long index)
-			  [Procedure(name : "org.neo4j.procedure.onCloseProcedure")]
+//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.procedure.onCloseProcedure") public java.util.stream.Stream<Output> onCloseProcedure(@Name("index") long index)
+			  [Procedure(name : "org.Neo4Net.procedure.onCloseProcedure")]
 			  public virtual Stream<Output> OnCloseProcedure( long index )
 			  {
 					OnCloseCalled[( int ) index] = false;
@@ -2133,7 +2133,7 @@ namespace Neo4Net.Procedure
 		 public class ClassWithFunctions
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction() public String getNodeName(@Name(value = "node", defaultValue = "null") org.neo4j.graphdb.Node node)
+//ORIGINAL LINE: @UserFunction() public String getNodeName(@Name(value = "node", defaultValue = "null") org.Neo4Net.graphdb.Node node)
 			  [UserFunction()]
 			  public virtual string GetNodeName( Node node )
 			  {

@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.restore
 {
@@ -32,17 +32,17 @@ namespace Neo4Net.restore
 	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using CommandLocator = Neo4Net.CommandLine.Admin.CommandLocator;
 	using Usage = Neo4Net.CommandLine.Admin.Usage;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -78,15 +78,15 @@ namespace Neo4Net.restore
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class RestoreDatabaseCommandIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -117,7 +117,7 @@ namespace Neo4Net.restore
 			  }
 			  catch ( Exception e )
 			  {
-					assertThat( e.Message, equalTo( "the database is in use -- stop Neo4j and try again" ) );
+					assertThat( e.Message, equalTo( "the database is in use -- stop Neo4Net and try again" ) );
 			  }
 		 }
 
@@ -224,7 +224,7 @@ namespace Neo4Net.restore
 			  ( new RestoreDatabaseCommand( FileSystemRule.get(), fromPath, config, databaseName, true ) ).execute();
 
 			  // then
-			  GraphDatabaseService copiedDb = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(toPath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
+			  IGraphDatabaseService copiedDb = ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(toPath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
 
 			  using ( Transaction ignored = copiedDb.BeginTx() )
 			  {
@@ -235,7 +235,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void restoreExplicitIndexesFromBackup() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void restoreExplicitIndexesFromBackup() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RestoreExplicitIndexesFromBackup()
 		 {
@@ -248,7 +248,7 @@ namespace Neo4Net.restore
 
 			  ( new RestoreDatabaseCommand( FileSystemRule.get(), fromPath, config, databaseName, true ) ).execute();
 
-			  GraphDatabaseService restoredDatabase = CreateDatabase( toPath, toPath.AbsolutePath );
+			  IGraphDatabaseService restoredDatabase = CreateDatabase( toPath, toPath.AbsolutePath );
 
 			  using ( Transaction transaction = restoredDatabase.BeginTx() )
 			  {
@@ -271,7 +271,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void restoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void restoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RestoreTransactionLogsInCustomDirectoryForTargetDatabaseWhenConfigured()
 		 {
@@ -287,7 +287,7 @@ namespace Neo4Net.restore
 			  int toNodeCount = 20;
 			  CreateDbAt( fromPath, fromNodeCount );
 
-			  GraphDatabaseService db = CreateDatabase( toPath, customTransactionLogDirectory );
+			  IGraphDatabaseService db = CreateDatabase( toPath, customTransactionLogDirectory );
 			  CreateTestData( toNodeCount, db );
 			  Db.shutdown();
 
@@ -303,7 +303,7 @@ namespace Neo4Net.restore
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void doNotRemoveRelativeTransactionDirectoryAgain() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void doNotRemoveRelativeTransactionDirectoryAgain() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DoNotRemoveRelativeTransactionDirectoryAgain()
 		 {
@@ -332,10 +332,10 @@ namespace Neo4Net.restore
 			  {
 					PrintStream ps = new PrintStream( baos );
 
-					Usage usage = new Usage( "neo4j-admin", mock( typeof( CommandLocator ) ) );
+					Usage usage = new Usage( "Neo4Net-admin", mock( typeof( CommandLocator ) ) );
 					usage.PrintUsageForCommand( new RestoreDatabaseCliProvider(), ps.println );
 
-					assertEquals( string.Format( "usage: neo4j-admin restore --from=<backup-directory> [--database=<name>]%n" + "                           [--force[=<true|false>]]%n" + "%n" + "environment variables:%n" + "    NEO4J_CONF    Path to directory which contains neo4j.conf.%n" + "    NEO4J_DEBUG   Set to anything to enable debug output.%n" + "    NEO4J_HOME    Neo4j home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Restore a backed up database.%n" + "%n" + "options:%n" + "  --from=<backup-directory>   Path to backup to restore from.%n" + "  --database=<name>           Name of database. [default:graph.db]%n" + "  --force=<true|false>        If an existing database should be replaced.%n" + "                              [default:false]%n" ), baos.ToString() );
+					assertEquals( string.Format( "usage: Neo4Net-admin restore --from=<backup-directory> [--database=<name>]%n" + "                           [--force[=<true|false>]]%n" + "%n" + "environment variables:%n" + "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf.%n" + "    Neo4Net_DEBUG   Set to anything to enable debug output.%n" + "    Neo4Net_HOME    Neo4Net home directory.%n" + "    HEAP_SIZE     Set JVM maximum heap size during command execution.%n" + "                  Takes a number and a unit, for example 512m.%n" + "%n" + "Restore a backed up database.%n" + "%n" + "options:%n" + "  --from=<backup-directory>   Path to backup to restore from.%n" + "  --database=<name>           Name of database. [default:graph.db]%n" + "  --force=<true|false>        If an existing database should be replaced.%n" + "                              [default:false]%n" ), baos.ToString() );
 			  }
 		 }
 
@@ -362,21 +362,21 @@ namespace Neo4Net.restore
 
 		 private void CreateDbAt( File fromPath, int nodesToCreate )
 		 {
-			  GraphDatabaseService db = CreateDatabase( fromPath, fromPath.AbsolutePath );
+			  IGraphDatabaseService db = CreateDatabase( fromPath, fromPath.AbsolutePath );
 
 			  CreateTestData( nodesToCreate, db );
 
 			  Db.shutdown();
 		 }
 
-		 private GraphDatabaseService CreateDatabase( File fromPath, string absolutePath )
+		 private IGraphDatabaseService CreateDatabase( File fromPath, string absolutePath )
 		 {
 			  return ( new GraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(fromPath).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).setConfig(GraphDatabaseSettings.logical_logs_location, absolutePath).newGraphDatabase();
 		 }
 
 		 private void CreateDbWithExplicitIndexAt( File fromPath, int pairNumberOfNodesToCreate )
 		 {
-			  GraphDatabaseService db = CreateDatabase( fromPath, fromPath.AbsolutePath );
+			  IGraphDatabaseService db = CreateDatabase( fromPath, fromPath.AbsolutePath );
 
 			  Index<Node> explicitNodeIndex;
 			  RelationshipIndex explicitRelationshipIndex;
@@ -404,7 +404,7 @@ namespace Neo4Net.restore
 			  Db.shutdown();
 		 }
 
-		 private static void CreateTestData( int nodesToCreate, GraphDatabaseService db )
+		 private static void CreateTestData( int nodesToCreate, IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	public class TemporalIndexUpdater : TemporalIndexCache<NativeIndexUpdater<JavaToDotNetGenericWildcard, NativeIndexValue>>, IndexUpdater
 	{
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.neo4j.kernel.api.index.IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  IndexUpdater to = Select( update.Values()[0].valueGroup() );

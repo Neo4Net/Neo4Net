@@ -29,14 +29,14 @@ namespace Neo4Net.Server.rest.transactional
 	using Mockito = org.mockito.Mockito;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using CRS = Neo4Net.Graphdb.spatial.CRS;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using CRS = Neo4Net.GraphDb.spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using SpatialMocks = Neo4Net.Test.mockito.mock.SpatialMocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -60,25 +60,25 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
-	public class Neo4jJsonCodecTest : TxStateCheckerTestSupport
+	public class Neo4NetJsonCodecTest : TxStateCheckerTestSupport
 	{
 
-		 private Neo4jJsonCodec _jsonCodec;
+		 private Neo4NetJsonCodec _jsonCodec;
 		 private JsonGenerator _jsonGenerator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void init()
 		 public virtual void Init()
 		 {
-			  _jsonCodec = new Neo4jJsonCodec( Tptpmc );
+			  _jsonCodec = new Neo4NetJsonCodec( Tptpmc );
 			  _jsonGenerator = mock( typeof( JsonGenerator ) );
 		 }
 
@@ -88,14 +88,14 @@ namespace Neo4Net.Server.rest.transactional
 		 public virtual void TestPropertyContainerWriting()
 		 {
 			  //Given
-			  PropertyContainer propertyContainer = mock( typeof( PropertyContainer ) );
-			  when( propertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
+			  IPropertyContainer IPropertyContainer = mock( typeof( IPropertyContainer ) );
+			  when( IPropertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
 
 			  bool exceptionThrown = false;
 			  //When
 			  try
 			  {
-					_jsonCodec.writeValue( _jsonGenerator, propertyContainer );
+					_jsonCodec.writeValue( _jsonGenerator, IPropertyContainer );
 			  }
 			  catch ( System.ArgumentException )
 			  {
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.rest.transactional
 		 public virtual void TestNodeWriting()
 		 {
 			  //Given
-			  PropertyContainer node = mock( typeof( Node ) );
+			  IPropertyContainer node = mock( typeof( Node ) );
 			  when( node.AllProperties ).thenThrow( typeof( Exception ) );
 
 			  //When
@@ -136,7 +136,7 @@ namespace Neo4Net.Server.rest.transactional
 		 public virtual void TestRelationshipWriting()
 		 {
 			  //Given
-			  PropertyContainer relationship = mock( typeof( Relationship ) );
+			  IPropertyContainer relationship = mock( typeof( Relationship ) );
 			  when( relationship.AllProperties ).thenThrow( typeof( Exception ) );
 
 			  //When
@@ -160,8 +160,8 @@ namespace Neo4Net.Server.rest.transactional
 		 {
 			  //Given
 			  Path path = mock( typeof( Path ) );
-			  PropertyContainer propertyContainer = mock( typeof( PropertyContainer ) );
-			  when( propertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
+			  IPropertyContainer IPropertyContainer = mock( typeof( IPropertyContainer ) );
+			  when( IPropertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
 //JAVA TO C# CONVERTER WARNING: Unlike Java's ListIterator, enumerators in .NET do not allow altering the collection:
 			  when( path.GetEnumerator() ).thenReturn(Arrays.asList(propertyContainer).GetEnumerator());
 
@@ -185,13 +185,13 @@ namespace Neo4Net.Server.rest.transactional
 		 public virtual void TestIteratorWriting()
 		 {
 			  //Given
-			  PropertyContainer propertyContainer = mock( typeof( PropertyContainer ) );
-			  when( propertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
+			  IPropertyContainer IPropertyContainer = mock( typeof( IPropertyContainer ) );
+			  when( IPropertyContainer.AllProperties ).thenThrow( typeof( Exception ) );
 
 			  //When
 			  try
 			  {
-					_jsonCodec.writeValue( _jsonGenerator, Arrays.asList( propertyContainer ) );
+					_jsonCodec.writeValue( _jsonGenerator, Arrays.asList( IPropertyContainer ) );
 			  }
 			  catch ( Exception )
 			  {
@@ -374,7 +374,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyCRSStructure(org.neo4j.graphdb.spatial.CRS crs) throws java.io.IOException
+//ORIGINAL LINE: private void verifyCRSStructure(org.Neo4Net.graphdb.spatial.CRS crs) throws java.io.IOException
 		 private void VerifyCRSStructure( CRS crs )
 		 {
 			  // When

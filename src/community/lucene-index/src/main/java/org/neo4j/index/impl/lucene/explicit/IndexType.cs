@@ -56,7 +56,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static true;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneExplicitIndex.isValidKey;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneExplicitIndex.isValidKey;
 
 	public abstract class IndexType
 	{
@@ -451,29 +451,29 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return numericFieldValue != null ? numericFieldValue : field.stringValue();
 		 }
 
-		 public static Document NewBaseDocument( long entityId )
+		 public static Document NewBaseDocument( long IEntityId )
 		 {
 			  Document doc = new Document();
-			  doc.add( new StringField( LuceneExplicitIndex.KEY_DOC_ID, "" + entityId, Field.Store.YES ) );
-			  doc.add( new NumericDocValuesField( LuceneExplicitIndex.KEY_DOC_ID, entityId ) );
+			  doc.add( new StringField( LuceneExplicitIndex.KEY_DOC_ID, "" + IEntityId, Field.Store.YES ) );
+			  doc.add( new NumericDocValuesField( LuceneExplicitIndex.KEY_DOC_ID, IEntityId ) );
 			  return doc;
 		 }
 
-		 public static Document NewDocument( EntityId entityId )
+		 public static Document NewDocument( IEntityId IEntityId )
 		 {
-			  Document document = NewBaseDocument( entityId.Id() );
-			  entityId.Enhance( document );
+			  Document document = NewBaseDocument( IEntityId.Id() );
+			  IEntityId.Enhance( document );
 			  return document;
 		 }
 
-		 public virtual Term IdTerm( long entityId )
+		 public virtual Term IdTerm( long IEntityId )
 		 {
-			  return new Term( LuceneExplicitIndex.KEY_DOC_ID, "" + entityId );
+			  return new Term( LuceneExplicitIndex.KEY_DOC_ID, "" + IEntityId );
 		 }
 
-		 internal virtual Query IdTermQuery( long entityId )
+		 internal virtual Query IdTermQuery( long IEntityId )
 		 {
-			  return new TermQuery( IdTerm( entityId ) );
+			  return new TermQuery( IdTerm( IEntityId ) );
 		 }
 
 		 internal virtual Similarity Similarity

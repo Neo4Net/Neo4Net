@@ -26,16 +26,16 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
-	/// Includes value and entity id (to be able to handle non-unique values). A value can be any <seealso cref="TimeValue"/>.
+	/// Includes value and IEntity id (to be able to handle non-unique values). A value can be any <seealso cref="TimeValue"/>.
 	/// 
 	/// With these keys the TimeValues are sorted by UTC time of day, and then by time zone.
 	/// </summary>
 	internal class ZonedTimeIndexKey : NativeIndexSingleValueKey<ZonedTimeIndexKey>
 	{
-		 internal static readonly int Size = Long.BYTES + Integer.BYTES + ENTITY_ID_SIZE; // entityId
+		 internal static readonly int Size = Long.BYTES + Integer.BYTES + IEntity_ID_SIZE; // IEntityId
 
 		 internal long NanosOfDayUTC;
 		 internal int ZoneOffsetSeconds;
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override string ToString()
 		 {
-			  return format( "value=%s,entityId=%d,nanosOfDayUTC=%d,zoneOffsetSeconds=%d", AsValue(), EntityId, NanosOfDayUTC, ZoneOffsetSeconds );
+			  return format( "value=%s,entityId=%d,nanosOfDayUTC=%d,zoneOffsetSeconds=%d", AsValue(), IEntityId, NanosOfDayUTC, ZoneOffsetSeconds );
 		 }
 
 		 public override void WriteTime( long nanosOfDayUTC, int offsetSeconds )

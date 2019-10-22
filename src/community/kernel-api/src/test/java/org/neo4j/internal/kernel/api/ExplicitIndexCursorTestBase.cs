@@ -23,20 +23,20 @@ namespace Neo4Net.Internal.Kernel.Api
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexReadAsserts.assertFoundRelationships;
+//	import static org.Neo4Net.Internal.kernel.api.IndexReadAsserts.assertFoundRelationships;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexReadAsserts.assertNodeCount;
+//	import static org.Neo4Net.Internal.kernel.api.IndexReadAsserts.assertNodeCount;
 
 	public abstract class ExplicitIndexCursorTestBase<G> : KernelAPIReadTestBase<G> where G : KernelAPIReadTestSupport
 	{
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {

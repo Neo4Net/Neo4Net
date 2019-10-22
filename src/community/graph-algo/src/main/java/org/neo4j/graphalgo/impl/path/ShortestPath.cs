@@ -31,16 +31,16 @@ namespace Neo4Net.Graphalgo.impl.path
 	using Neo4Net.Graphalgo;
 	using PathImpl = Neo4Net.Graphalgo.impl.util.PathImpl;
 	using Builder = Neo4Net.Graphalgo.impl.util.PathImpl.Builder;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
@@ -646,7 +646,7 @@ namespace Neo4Net.Graphalgo.impl.path
 					return result;
 			  }
 			  ICollection<PathData> set = new List<PathData>();
-			  GraphDatabaseService graphDb = data.StartNode.GraphDatabase;
+			  IGraphDatabaseService graphDb = data.StartNode.GraphDatabase;
 			  foreach ( long rel in levelData.RelsToHere )
 			  {
 					set.Add( new PathData( connectingNode, new LinkedList<Relationship>( Arrays.asList( graphDb.GetRelationshipById( rel ) ) ) ) );

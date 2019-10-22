@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using QueryStatistics = Neo4Net.Graphdb.QueryStatistics;
+	using QueryStatistics = Neo4Net.GraphDb.QueryStatistics;
 
 	public class CypherStatisticsRepresentation : MappingRepresentation
 	{

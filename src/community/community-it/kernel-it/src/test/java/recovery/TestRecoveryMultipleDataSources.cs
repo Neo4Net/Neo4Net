@@ -23,10 +23,10 @@ namespace Recovery
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
@@ -39,14 +39,14 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getClassPath;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getClassPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.proc.ProcessUtil.getJavaExecutable;
+//	import static org.Neo4Net.test.proc.ProcessUtil.getJavaExecutable;
 
 	public class TestRecoveryMultipleDataSources
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 /// <summary>
@@ -69,7 +69,7 @@ namespace Recovery
 			  assertEquals( 0, Runtime.exec( new string[]{ JavaExecutable.ToString(), "-Djava.awt.headless=true", "-cp", ClassPath, this.GetType().FullName, storeDir.AbsolutePath } ).waitFor() );
 
 			  // When
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 
 			  // Then
 			  try
@@ -96,7 +96,7 @@ namespace Recovery
 			  }
 
 			  File storeDir = new File( args[0] );
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Db.createNode().createRelationshipTo(Db.createNode(), MyRelTypes.TEST);

@@ -23,14 +23,14 @@ using System.Text;
 namespace Neo4Net.Kernel.impl.traversal
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using GraphDefinition = Neo4Net.Test.GraphDefinition;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.traversal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 
-	public abstract class TraversalTestBase : AbstractNeo4jTestCase
+	public abstract class TraversalTestBase : AbstractNeo4NetTestCase
 	{
 		 private IDictionary<string, Node> _nodes;
 
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 			  internal readonly string Key;
 
-			  public override string Represent( PropertyContainer item )
+			  public override string Represent( IPropertyContainer item )
 			  {
 					return ( string ) item.GetProperty( Key );
 			  }
@@ -148,22 +148,22 @@ namespace Neo4Net.Kernel.impl.traversal
 		 protected internal sealed class RelationshipRepresentation : Representation<Relationship>
 		 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final Representation<? super org.neo4j.graphdb.Node> nodes;
+//ORIGINAL LINE: private final Representation<? super org.Neo4Net.graphdb.Node> nodes;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  internal readonly Representation<object> Nodes;
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final Representation<? super org.neo4j.graphdb.Relationship> rel;
+//ORIGINAL LINE: private final Representation<? super org.Neo4Net.graphdb.Relationship> rel;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  internal readonly Representation<object> Rel;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.neo4j.graphdb.Node> nodes)
+//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.Neo4Net.graphdb.Node> nodes)
 			  public RelationshipRepresentation<T1>( Representation<T1> nodes ) : this( nodes, RelationshipTypeRepresentation )
 			  {
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.neo4j.graphdb.Node> nodes, Representation<? super org.neo4j.graphdb.Relationship> rel)
+//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.Neo4Net.graphdb.Node> nodes, Representation<? super org.Neo4Net.graphdb.Relationship> rel)
 			  public RelationshipRepresentation<T1, T2>( Representation<T1> nodes, Representation<T2> rel )
 			  {
 					this.Nodes = nodes;
@@ -181,12 +181,12 @@ namespace Neo4Net.Kernel.impl.traversal
 		 protected internal sealed class NodePathRepresentation : Representation<Path>
 		 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final Representation<? super org.neo4j.graphdb.Node> nodes;
+//ORIGINAL LINE: private final Representation<? super org.Neo4Net.graphdb.Node> nodes;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  internal readonly Representation<object> Nodes;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public NodePathRepresentation(Representation<? super org.neo4j.graphdb.Node> nodes)
+//ORIGINAL LINE: public NodePathRepresentation(Representation<? super org.Neo4Net.graphdb.Node> nodes)
 			  public NodePathRepresentation<T1>( Representation<T1> nodes )
 			  {
 					this.Nodes = nodes;

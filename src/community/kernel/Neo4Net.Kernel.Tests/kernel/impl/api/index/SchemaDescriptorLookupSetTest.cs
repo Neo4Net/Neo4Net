@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using RandomExtension = Neo4Net.Test.extension.RandomExtension;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -44,16 +44,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class SchemaDescriptorLookupSetTest
 	internal class SchemaDescriptorLookupSetTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,23 +139,23 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(org.neo4j.storageengine.api.EntityType entityType)
-		 internal virtual void ShouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType( EntityType entityType )
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(org.Neo4Net.storageengine.api.EntityType IEntityType)
+		 internal virtual void ShouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType( IEntityType IEntityType )
 		 {
 			  // given
 			  SchemaDescriptorLookupSet<SchemaDescriptor> set = new SchemaDescriptorLookupSet<SchemaDescriptor>();
-			  MultiTokenSchemaDescriptor descriptor1 = SchemaDescriptorFactory.multiToken( Ints( 0, 1, 2 ), entityType, 3, 4, 5 );
-			  MultiTokenSchemaDescriptor descriptor2 = SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), entityType, 3, 4 );
-			  MultiTokenSchemaDescriptor descriptor3 = SchemaDescriptorFactory.multiToken( Ints( 0, 2 ), entityType, 4, 5 );
+			  MultiTokenSchemaDescriptor descriptor1 = SchemaDescriptorFactory.multiToken( Ints( 0, 1, 2 ), IEntityType, 3, 4, 5 );
+			  MultiTokenSchemaDescriptor descriptor2 = SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), IEntityType, 3, 4 );
+			  MultiTokenSchemaDescriptor descriptor3 = SchemaDescriptorFactory.multiToken( Ints( 0, 2 ), IEntityType, 4, 5 );
 			  set.Add( descriptor1 );
 			  set.Add( descriptor2 );
 			  set.Add( descriptor3 );
 
-			  // given that this test revolves around entity tokens 0,1,2 and property tokens 3,4,5 these 3 descriptors below matches either
-			  // only those tokens for entity or property or neither. I.e. these should never be included in matching results
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), entityType, 4, 5 ) );
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), entityType, 6, 7 ) );
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), entityType, 6, 7 ) );
+			  // given that this test revolves around IEntity tokens 0,1,2 and property tokens 3,4,5 these 3 descriptors below matches either
+			  // only those tokens for IEntity or property or neither. I.e. these should never be included in matching results
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), IEntityType, 4, 5 ) );
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), IEntityType, 6, 7 ) );
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), IEntityType, 6, 7 ) );
 
 			  // when matching these descriptors (in this case partial/complete list doesn't quite matter because the descriptors
 			  // themselves are partially matched anyway.
@@ -243,47 +243,47 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					int countToLookup = 20;
 					for ( int l = 0; l < countToLookup; l++ )
 					{
-						 int[] entityTokenIdsInts = RandomUniqueSortedIntArray( highEntityKeyId, _random.Next( 1, 3 ) );
-						 long[] entityTokenIds = ToLongArray( entityTokenIdsInts );
+						 int[] IEntityTokenIdsInts = RandomUniqueSortedIntArray( highEntityKeyId, _random.Next( 1, 3 ) );
+						 long[] IEntityTokenIds = ToLongArray( IEntityTokenIdsInts );
 						 int[] propertyKeyIds = RandomUniqueSortedIntArray( highPropertyKeyId, _random.Next( 1, maxNumberOfPropertyKeys ) );
 						 ISet<SchemaDescriptor> actual = new HashSet<SchemaDescriptor>();
 
-						 // lookup by only entity tokens
+						 // lookup by only IEntity tokens
 						 actual.Clear();
-						 set.MatchingDescriptors( actual, entityTokenIds );
-						 assertEquals( ExpectedDescriptors( all, FilterByEntity( entityTokenIdsInts ) ), actual );
+						 set.MatchingDescriptors( actual, IEntityTokenIds );
+						 assertEquals( ExpectedDescriptors( all, FilterByEntity( IEntityTokenIdsInts ) ), actual );
 
 						 // lookup by partial property list
 						 actual.Clear();
-						 set.MatchingDescriptorsForPartialListOfProperties( actual, entityTokenIds, propertyKeyIds );
-						 assertEquals( ExpectedDescriptors( all, FilterByEntityAndPropertyPartial( entityTokenIdsInts, propertyKeyIds ) ), actual );
+						 set.MatchingDescriptorsForPartialListOfProperties( actual, IEntityTokenIds, propertyKeyIds );
+						 assertEquals( ExpectedDescriptors( all, FilterByEntityAndPropertyPartial( IEntityTokenIdsInts, propertyKeyIds ) ), actual );
 
 						 // lookup by complete property list
 						 actual.Clear();
-						 set.MatchingDescriptorsForCompleteListOfProperties( actual, entityTokenIds, propertyKeyIds );
-						 assertEquals( ExpectedDescriptors( all, FilterByEntityAndPropertyComplete( entityTokenIdsInts, propertyKeyIds ) ), actual );
+						 set.MatchingDescriptorsForCompleteListOfProperties( actual, IEntityTokenIds, propertyKeyIds );
+						 assertEquals( ExpectedDescriptors( all, FilterByEntityAndPropertyComplete( IEntityTokenIdsInts, propertyKeyIds ) ), actual );
 					}
 			  }
 		 }
 
-		 private static System.Predicate<SchemaDescriptor> FilterByEntityAndPropertyComplete( int[] entityTokenIds, int[] propertyKeyIds )
+		 private static System.Predicate<SchemaDescriptor> FilterByEntityAndPropertyComplete( int[] IEntityTokenIds, int[] propertyKeyIds )
 		 {
 			  return descriptor =>
 			  {
 				IntPredicate propertyKeyPredicate = indexPropertyId => contains( propertyKeyIds, indexPropertyId );
 				bool propertiesAccepted = descriptor.propertySchemaType() == COMPLETE_ALL_TOKENS ? stream(descriptor.PropertyIds).allMatch(propertyKeyPredicate) : stream(descriptor.PropertyIds).anyMatch(propertyKeyPredicate);
-				return stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( entityTokenIds, indexEntityId ) ) && propertiesAccepted;
+				return stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( IEntityTokenIds, indexEntityId ) ) && propertiesAccepted;
 			  };
 		 }
 
-		 private static System.Predicate<SchemaDescriptor> FilterByEntityAndPropertyPartial( int[] entityTokenIds, int[] propertyKeyIds )
+		 private static System.Predicate<SchemaDescriptor> FilterByEntityAndPropertyPartial( int[] IEntityTokenIds, int[] propertyKeyIds )
 		 {
-			  return descriptor => stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( entityTokenIds, indexEntityId ) ) && stream( descriptor.PropertyIds ).anyMatch( indexPropertyId => contains( propertyKeyIds, indexPropertyId ) );
+			  return descriptor => stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( IEntityTokenIds, indexEntityId ) ) && stream( descriptor.PropertyIds ).anyMatch( indexPropertyId => contains( propertyKeyIds, indexPropertyId ) );
 		 }
 
-		 private static System.Predicate<SchemaDescriptor> FilterByEntity( int[] entityTokenIds )
+		 private static System.Predicate<SchemaDescriptor> FilterByEntity( int[] IEntityTokenIds )
 		 {
-			  return descriptor => stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( entityTokenIds, indexEntityId ) );
+			  return descriptor => stream( descriptor.EntityTokenIds ).anyMatch( indexEntityId => contains( IEntityTokenIds, indexEntityId ) );
 		 }
 
 		 private static ISet<SchemaDescriptor> ExpectedDescriptors( IList<SchemaDescriptor> all, System.Predicate<SchemaDescriptor> filter )
@@ -294,10 +294,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private SchemaDescriptor RandomSchemaDescriptor( int highEntityKeyId, int highPropertyKeyId, int maxNumberOfEntityKeys, int maxNumberOfPropertyKeys )
 		 {
 			  int numberOfEntityKeys = _random.Next( 1, maxNumberOfEntityKeys );
-			  int[] entityKeys = RandomUniqueUnsortedIntArray( highEntityKeyId, numberOfEntityKeys );
+			  int[] IEntityKeys = RandomUniqueUnsortedIntArray( highEntityKeyId, numberOfEntityKeys );
 			  int numberOfPropertyKeys = _random.Next( 1, maxNumberOfPropertyKeys );
 			  int[] propertyKeys = RandomUniqueUnsortedIntArray( highPropertyKeyId, numberOfPropertyKeys );
-			  return entityKeys.Length > 1 ? SchemaDescriptorFactory.multiToken( entityKeys, EntityType.NODE, propertyKeys ) : SchemaDescriptorFactory.forLabel( entityKeys[0], propertyKeys );
+			  return IEntityKeys.Length > 1 ? SchemaDescriptorFactory.multiToken( IEntityKeys, IEntityType.NODE, propertyKeys ) : SchemaDescriptorFactory.forLabel( IEntityKeys[0], propertyKeys );
 		 }
 
 		 private int[] RandomUniqueUnsortedIntArray( int maxValue, int length )
@@ -343,17 +343,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return labels;
 		 }
 
-		 private static EntityType[] NodeAndRelationshipEntityTypes()
+		 private static IEntityType[] NodeAndRelationshipEntityTypes()
 		 {
-			  return new EntityType[]{ EntityType.NODE, EntityType.RELATIONSHIP };
+			  return new IEntityType[]{ IEntityType.NODE, IEntityType.RELATIONSHIP };
 		 }
 
 		 internal abstract class DescriptorFactory
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           NODE { SchemaDescriptor descriptor(int labelId, int... propertyKeyIds) { return org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel(labelId, propertyKeyIds); } },
+//           NODE { SchemaDescriptor descriptor(int labelId, int... propertyKeyIds) { return org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel(labelId, propertyKeyIds); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           RELATIONSHIP { SchemaDescriptor descriptor(int relTypeId, int... propertyKeyIds) { return org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forRelType(relTypeId, propertyKeyIds); } };
+//           RELATIONSHIP { SchemaDescriptor descriptor(int relTypeId, int... propertyKeyIds) { return org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forRelType(relTypeId, propertyKeyIds); } };
 
 			  private static readonly IList<DescriptorFactory> valueList = new List<DescriptorFactory>();
 
@@ -381,7 +381,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal abstract Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor descriptor( int entityTokenId, params int[] propertyKeyIds );
+			  internal abstract Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor descriptor( int IEntityTokenId, params int[] propertyKeyIds );
 
 			 public static IList<DescriptorFactory> values()
 			 {

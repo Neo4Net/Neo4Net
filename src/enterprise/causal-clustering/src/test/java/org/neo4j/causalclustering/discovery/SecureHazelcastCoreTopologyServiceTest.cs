@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 /*
  *
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2019 "GraphFoundation" [https://graphfoundation.org]
@@ -17,7 +17,7 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Reference: https://raw.githubusercontent.com/neo4j/neo4j/3.4/enterprise/causal-clustering/src/test/java/org/neo4j/causalclustering/discovery/HazelcastCoreTopologyServiceTest.java
+ * Reference: https://raw.githubusercontent.com/Neo4Net/Neo4Net/3.4/enterprise/causal-clustering/src/test/java/org/Neo4Net/causalclustering/discovery/HazelcastCoreTopologyServiceTest.java
  */
 namespace Neo4Net.causalclustering.discovery
 {
@@ -28,8 +28,8 @@ namespace Neo4Net.causalclustering.discovery
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -48,20 +48,20 @@ namespace Neo4Net.causalclustering.discovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.initial_discovery_members;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.neo4j_home;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.Neo4Net_home;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.factory.DatabaseInfo.ENTERPRISE;
+//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.ENTERPRISE;
 
 	public class SecureHazelcastCoreTopologyServiceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _home;
@@ -100,7 +100,7 @@ namespace Neo4Net.causalclustering.discovery
 
 			  SslPolicyConfig policyConfig = new SslPolicyConfig( "default" );
 
-			  @params[neo4j_home.name()] = _home.AbsolutePath;
+			  @params[Neo4Net_home.name()] = _home.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/default";
 
 			  IJobScheduler jobScheduler = IJobSchedulerFactory.createInitializedScheduler();
@@ -112,7 +112,7 @@ namespace Neo4Net.causalclustering.discovery
 			  config.augment( initial_discovery_members, initialHosts );
 
 			  // Setup SslPolicy
-			  config.augment( neo4j_home.name(), _home.AbsolutePath );
+			  config.augment( Neo4Net_home.name(), _home.AbsolutePath );
 			  config.Augment( policyConfig.BaseDirectory.name(), "certificates/default" );
 
 			  SslPolicyLoader sslPolicyLoader = SslPolicyLoader.create( config, NullLogProvider.Instance );

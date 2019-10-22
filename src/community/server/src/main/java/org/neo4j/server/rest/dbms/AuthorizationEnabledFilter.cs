@@ -24,9 +24,9 @@ namespace Neo4Net.Server.rest.dbms
 {
 
 	using Neo4Net.Functions;
-	using AuthProviderFailedException = Neo4Net.Graphdb.security.AuthProviderFailedException;
-	using AuthProviderTimeoutException = Neo4Net.Graphdb.security.AuthProviderTimeoutException;
-	using AuthorizationViolationException = Neo4Net.Graphdb.security.AuthorizationViolationException;
+	using AuthProviderFailedException = Neo4Net.GraphDb.security.AuthProviderFailedException;
+	using AuthProviderTimeoutException = Neo4Net.GraphDb.security.AuthProviderTimeoutException;
+	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
@@ -38,13 +38,13 @@ namespace Neo4Net.Server.rest.dbms
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
+//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_HOST_HEADER_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
+//	import static org.Neo4Net.server.web.XForwardUtil.X_FORWARD_PROTO_HEADER_KEY;
 
 	public class AuthorizationEnabledFilter : AuthorizationFilter
 	{
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.security.LoginContext authenticate(String username, String password) throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.security.LoginContext authenticate(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Authenticate( string username, string password )
 		 {
 			  AuthManager authManager = _authManagerSupplier.get();
@@ -186,14 +186,14 @@ namespace Neo4Net.Server.rest.dbms
 		 private static readonly ThrowingConsumer<HttpServletResponse, IOException> _authProviderTimeout = Error( 504, map( "errors", singletonList( map( "code", Neo4Net.Kernel.Api.Exceptions.Status_Security.AuthProviderTimeout.code().serialize(), "message", "An auth provider request timed out." ) ) ) );
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> invalidAuthToken(final String message)
+//ORIGINAL LINE: private static org.Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> invalidAuthToken(final String message)
 		 private static ThrowingConsumer<HttpServletResponse, IOException> InvalidAuthToken( string message )
 		 {
 			  return Error( 401, map( "errors", singletonList( map( "code", Neo4Net.Kernel.Api.Exceptions.Status_Security.Unauthorized.code().serialize(), "message", message ) ) ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> passwordChangeRequired(final String username, final String baseURL)
+//ORIGINAL LINE: private static org.Neo4Net.function.ThrowingConsumer<javax.servlet.http.HttpServletResponse, java.io.IOException> passwordChangeRequired(final String username, final String baseURL)
 		 private static ThrowingConsumer<HttpServletResponse, IOException> PasswordChangeRequired( string username, string baseURL )
 		 {
 			  URI path = UriBuilder.fromUri( baseURL ).path( format( "/user/%s/password", username ) ).build();
@@ -201,9 +201,9 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 		 /// <summary>
-		 /// In order to avoid browsers popping up an auth box when using the Neo4j Browser, it sends us a special header.
+		 /// In order to avoid browsers popping up an auth box when using the Neo4Net Browser, it sends us a special header.
 		 /// When we get that special header, we send a crippled authentication challenge back that the browser does not
-		 /// understand, which lets the Neo4j Browser handle auth on its own.
+		 /// understand, which lets the Neo4Net Browser handle auth on its own.
 		 /// 
 		 /// Otherwise, we send a regular basic auth challenge. This method adds the appropriate header depending on the
 		 /// inbound request.
@@ -223,7 +223,7 @@ namespace Neo4Net.Server.rest.dbms
 					return res =>
 					{
 					 responseGen.Accept( res );
-					 res.addHeader( HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"Neo4j\"" );
+					 res.addHeader( HttpHeaders.WWW_AUTHENTICATE, "Basic realm=\"Neo4Net\"" );
 					};
 			  }
 		 }

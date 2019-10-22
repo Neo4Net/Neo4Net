@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
 
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.Impl.Api
 	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.flag;
+//	import static org.Neo4Net.util.FeatureToggles.flag;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.FeatureToggles.toggle;
+//	import static org.Neo4Net.util.FeatureToggles.toggle;
 
 	/// <summary>
 	/// A resource efficient implementation of <seealso cref="Statement"/>. Designed to be reused within a

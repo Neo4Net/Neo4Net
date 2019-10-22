@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 			  },
 			  ;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: READ_ONLY_CONCURRENT_HASH_MAP { @Override public <Key> ActiveState<Key> open(ReadableState<Key> store, java.io.File file, org.neo4j.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier) { return new ConcurrentMapState<Key>(store, file, org.neo4j.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY) { @Override protected boolean hasChanges() { return false; } }; } }
+//ORIGINAL LINE: READ_ONLY_CONCURRENT_HASH_MAP { @Override public <Key> ActiveState<Key> open(ReadableState<Key> store, java.io.File file, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContextSupplier versionContextSupplier) { return new ConcurrentMapState<Key>(store, file, org.Neo4Net.io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier.EMPTY) { @Override protected boolean hasChanges() { return false; } }; } }
 			  READ_ONLY_CONCURRENT_HASH_MAP
 			  {
 				  public <Key> ActiveState<Key> open( ReadableState<Key> store, File file, VersionContextSupplier versionContextSupplier )

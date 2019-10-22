@@ -53,10 +53,10 @@ namespace Neo4Net.Consistency.checking.full
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
 	using Neo4Net.Consistency.store;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
@@ -81,22 +81,22 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.withSettings;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
+//	import static org.Neo4Net.consistency.ConsistencyCheckService.defaultConsistencyCheckThreadsNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Property.property;
+//	import static org.Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Property.set;
+//	import static org.Neo4Net.test.Property.set;
 
 	public class ExecutionOrderIntegrationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.consistency.checking.GraphStoreFixture fixture = new org.neo4j.consistency.checking.GraphStoreFixture(getRecordFormatName())
+//ORIGINAL LINE: @Rule public final org.Neo4Net.consistency.checking.GraphStoreFixture fixture = new org.Neo4Net.consistency.checking.GraphStoreFixture(getRecordFormatName())
 		 public GraphStoreFixture fixture = new GraphStoreFixtureAnonymousInnerClass( RecordFormatName );
 
 		 private class GraphStoreFixtureAnonymousInnerClass : GraphStoreFixture
@@ -105,10 +105,10 @@ namespace Neo4Net.Consistency.checking.full
 			 {
 			 }
 
-			 protected internal override void generateInitialData( GraphDatabaseService graphDb )
+			 protected internal override void generateInitialData( IGraphDatabaseService graphDb )
 			 {
 				  // TODO: create bigger sample graph here
-				  using ( Neo4Net.Graphdb.Transaction tx = graphDb.BeginTx() )
+				  using ( Neo4Net.GraphDb.Transaction tx = graphDb.BeginTx() )
 				  {
 						Node node1 = set( graphDb.CreateNode( label( "Foo" ) ) );
 						Node node2 = set( graphDb.CreateNode( label( "Foo" ) ), property( "key", "value" ) );
@@ -165,7 +165,7 @@ namespace Neo4Net.Consistency.checking.full
 			  internal readonly IDictionary<string, int> Duplicates = new Dictionary<string, int>();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ThrowableResultOfMethodCallIgnored") void log(org.neo4j.consistency.report.PendingReferenceCheck<?> check, org.mockito.invocation.InvocationOnMock invocation)
+//ORIGINAL LINE: @SuppressWarnings("ThrowableResultOfMethodCallIgnored") void log(org.Neo4Net.consistency.report.PendingReferenceCheck<?> check, org.mockito.invocation.InvocationOnMock invocation)
 			  internal virtual void Log<T1>( PendingReferenceCheck<T1> check, InvocationOnMock invocation )
 			  {
 					System.Reflection.MethodInfo method = invocation.Method;
@@ -274,7 +274,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public org.neo4j.consistency.checking.ComparativeRecordChecker<REC,org.neo4j.kernel.impl.store.record.PrimitiveRecord,REP> ownerCheck()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public org.Neo4Net.consistency.checking.ComparativeRecordChecker<REC,org.Neo4Net.kernel.impl.store.record.PrimitiveRecord,REP> ownerCheck()
 			  public override ComparativeRecordChecker<REC, PrimitiveRecord, REP> OwnerCheck()
 			  {
 					if ( Checker is OwningRecordCheck )
@@ -298,7 +298,7 @@ namespace Neo4Net.Consistency.checking.full
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void dispatch(org.neo4j.consistency.report.PendingReferenceCheck<T> reporter)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public void dispatch(org.Neo4Net.consistency.report.PendingReferenceCheck<T> reporter)
 			  public override void Dispatch( PendingReferenceCheck<T> reporter )
 			  {
 					Reference.dispatch( mock( ( Type<PendingReferenceCheck<T>> ) reporter.GetType(), withSettings().spiedInstance(reporter).defaultAnswer(new ReporterSpy<>(Reference, reporter, Log)) ) );
@@ -323,7 +323,7 @@ namespace Neo4Net.Consistency.checking.full
 			  public override object Answer( InvocationOnMock invocation )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: if (!(reference instanceof org.neo4j.consistency.store.RecordReference_SkippingReference<?>))
+//ORIGINAL LINE: if (!(reference instanceof org.Neo4Net.consistency.store.RecordReference_SkippingReference<?>))
 					if ( !( Reference is Neo4Net.Consistency.store.RecordReference_SkippingReference<object> ) )
 					{
 						 Log.log( Reporter, invocation );

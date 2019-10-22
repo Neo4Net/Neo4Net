@@ -24,12 +24,12 @@ namespace Neo4Net.Kernel.counts
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Read = Neo4Net.Internal.Kernel.Api.Read;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -44,17 +44,17 @@ namespace Neo4Net.Kernel.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class RelationshipCountsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 		 private System.Func<KernelTransaction> _ktxSupplier;
 
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldReportTotalNumberOfRelationships()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  long before = NumberOfRelationships();
 			  long during;
 			  using ( Transaction tx = graphDb.BeginTx() )
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldAccountForDeletedRelationships()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  Relationship rel;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -142,9 +142,9 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldNotCountRelationshipsCreatedInOtherTransaction()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 			  long before = NumberOfRelationships();
 			  Future<long> tx = Threading.execute(new NamedFunctionAnonymousInnerClass(this, graphDb, barrier)
@@ -168,17 +168,17 @@ namespace Neo4Net.Kernel.counts
 		 {
 			 private readonly RelationshipCountsTest _outerInstance;
 
-			 private GraphDatabaseService _graphDb;
+			 private IGraphDatabaseService _graphDb;
 			 private Neo4Net.Test.Barrier_Control _barrier;
 
-			 public NamedFunctionAnonymousInnerClass( RelationshipCountsTest outerInstance, GraphDatabaseService graphDb, Neo4Net.Test.Barrier_Control barrier ) : base( "create-relationships" )
+			 public NamedFunctionAnonymousInnerClass( RelationshipCountsTest outerInstance, IGraphDatabaseService graphDb, Neo4Net.Test.Barrier_Control barrier ) : base( "create-relationships" )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._graphDb = graphDb;
 				 this._barrier = barrier;
 			 }
 
-			 public override long? apply( GraphDatabaseService graphDb )
+			 public override long? apply( IGraphDatabaseService graphDb )
 			 {
 				  using ( Transaction tx = graphDb.BeginTx() )
 				  {
@@ -199,9 +199,9 @@ namespace Neo4Net.Kernel.counts
 		 public virtual void ShouldNotCountRelationshipsDeletedInOtherTransaction()
 		 {
 			  // given
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Relationship rel;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Relationship rel;
 			  Relationship rel;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.counts
 					tx.Success();
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 			  long before = NumberOfRelationships();
 			  Future<long> tx = Threading.execute(new NamedFunctionAnonymousInnerClass2(this, graphDb, rel, tx, barrier)
@@ -236,12 +236,12 @@ namespace Neo4Net.Kernel.counts
 		 {
 			 private readonly RelationshipCountsTest _outerInstance;
 
-			 private GraphDatabaseService _graphDb;
+			 private IGraphDatabaseService _graphDb;
 			 private Relationship _rel;
 			 private Transaction _tx;
 			 private Neo4Net.Test.Barrier_Control _barrier;
 
-			 public NamedFunctionAnonymousInnerClass2( RelationshipCountsTest outerInstance, GraphDatabaseService graphDb, Relationship rel, Transaction tx, Neo4Net.Test.Barrier_Control barrier ) : base( "create-relationships" )
+			 public NamedFunctionAnonymousInnerClass2( RelationshipCountsTest outerInstance, IGraphDatabaseService graphDb, Relationship rel, Transaction tx, Neo4Net.Test.Barrier_Control barrier ) : base( "create-relationships" )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._graphDb = graphDb;
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.counts
 				 this._barrier = barrier;
 			 }
 
-			 public override long? apply( GraphDatabaseService graphDb )
+			 public override long? apply( IGraphDatabaseService graphDb )
 			 {
 				  using ( Transaction tx = graphDb.BeginTx() )
 				  {
@@ -269,8 +269,8 @@ namespace Neo4Net.Kernel.counts
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService graphDb = db.getGraphDatabaseAPI();
-			  GraphDatabaseService graphDb = Db.GraphDatabaseAPI;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService graphDb = db.getGraphDatabaseAPI();
+			  IGraphDatabaseService graphDb = Db.GraphDatabaseAPI;
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
 					graphDb.CreateNode().createRelationshipTo(graphDb.CreateNode(), withName("FOO"));

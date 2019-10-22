@@ -1,33 +1,50 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="concurrency\AtomicIntArray.cs" />
-    <Compile Remove="concurrency\AtomicInteger.cs" />
-    <Compile Remove="concurrency\AtomicLong.cs" />
-    <Compile Remove="concurrency\AtomicLongArray.cs" />
-    <Compile Remove="concurrency\PaddedAtomicLong.cs" />
-    <Compile Remove="concurrency\Striped64.cs" />
-    <Compile Remove="concurrency\StripedLongAdder.cs" />
-    <Compile Remove="concurrency\ThreadLocalLongAdder.cs" />
-    <Compile Remove="concurrency\ThreadLocalRandom.cs" />
-    <Compile Remove="concurrency\VolatileDouble.cs" />
+    <Compile Remove="cursors\**" />
+    
+    <Compile Remove="hashing\**" />
+    <Compile Remove="helpers\**" />
+    
+    <Compile Remove="register\**" />
+    <Compile Remove="resources\**" />
+    <Compile Remove="scheduler\**" />
+    <Compile Remove="stream\**" />
+    <Compile Remove="strings\**" />
+    <Compile Remove="time\**" />
+    
+    <EmbeddedResource Remove="cursors\**" />
+    
+    <EmbeddedResource Remove="hashing\**" />
+    <EmbeddedResource Remove="helpers\**" />
+    
+    <EmbeddedResource Remove="register\**" />
+    <EmbeddedResource Remove="resources\**" />
+    <EmbeddedResource Remove="scheduler\**" />
+    <EmbeddedResource Remove="stream\**" />
+    <EmbeddedResource Remove="strings\**" />
+    <EmbeddedResource Remove="time\**" />
+    
+    <None Remove="cursors\**" />
+    
+    <None Remove="hashing\**" />
+    <None Remove="helpers\**" />
+    
+    <None Remove="register\**" />
+    <None Remove="resources\**" />
+    <None Remove="scheduler\**" />
+    <None Remove="stream\**" />
+    <None Remove="strings\**" />
+    <None Remove="time\**" />
+    
   </ItemGroup>
 
-  <ItemGroup>
-    <None Include="concurrency\AtomicIntArray.cs" />
-    <None Include="concurrency\AtomicInteger.cs" />
-    <None Include="concurrency\AtomicLong.cs" />
-    <None Include="concurrency\AtomicLongArray.cs" />
-    <None Include="concurrency\PaddedAtomicLong.cs" />
-    <None Include="concurrency\Striped64.cs" />
-    <None Include="concurrency\StripedLongAdder.cs" />
-    <None Include="concurrency\ThreadLocalLongAdder.cs" />
-    <None Include="concurrency\ThreadLocalRandom.cs" />
-    <None Include="concurrency\VolatileDouble.cs" />
-  </ItemGroup>
+ 
+
+  
 
 </Project>

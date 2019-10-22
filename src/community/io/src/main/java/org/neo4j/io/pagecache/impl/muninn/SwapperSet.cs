@@ -26,7 +26,7 @@ namespace Neo4Net.Io.pagecache.impl.muninn
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastIntToShort;
+//	import static org.Neo4Net.helpers.Numbers.safeCastIntToShort;
 
 	/// <summary>
 	/// The SwapperSet maintains the set of allocated <seealso cref="PageSwapper"/>s, and their mapping to swapper ids.

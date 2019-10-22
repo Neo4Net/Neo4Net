@@ -65,25 +65,25 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexTestHelp.fill;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionVersion.v00;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v00;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionVersion.v10;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionVersion.v20;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionVersion.v20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.LUCENE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.NUMBER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.SPATIAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.STRING;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.IndexSlot.TEMPORAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class FusionIndexReaderTest
@@ -333,7 +333,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> stringRange = org.neo4j.internal.kernel.api.IndexQuery.range(PROP_KEY, "abc", true, "def", false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> stringRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, "abc", true, "def", false);
 			  IndexQuery.RangePredicate<object> stringRange = IndexQuery.range( PROP_KEY, "abc", true, "def", false );
 
 			  // then
@@ -347,7 +347,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> numberRange = org.neo4j.internal.kernel.api.IndexQuery.range(PROP_KEY, 0, true, 1, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> numberRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, 0, true, 1, false);
 			  IndexQuery.RangePredicate<object> numberRange = IndexQuery.range( PROP_KEY, 0, true, 1, false );
 
 			  // then
@@ -364,7 +364,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 			  PointValue from = Values.pointValue( CoordinateReferenceSystem.Cartesian, 1.0, 1.0 );
 			  PointValue to = Values.pointValue( CoordinateReferenceSystem.Cartesian, 2.0, 2.0 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> geometryRange = org.neo4j.internal.kernel.api.IndexQuery.range(PROP_KEY, from, true, to, false);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> geometryRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, from, true, to, false);
 			  IndexQuery.RangePredicate<object> geometryRange = IndexQuery.range( PROP_KEY, from, true, to, false );
 
 			  // then
@@ -433,7 +433,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInstantiatePartLazilyForSpecificValueGroupQuery()
 		 {
@@ -468,7 +468,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.neo4j.storageengine.api.schema.IndexReader expectedReader, org.neo4j.internal.kernel.api.IndexQuery... indexQuery) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.Neo4Net.storageengine.api.schema.IndexReader expectedReader, org.Neo4Net.internal.kernel.api.IndexQuery... indexQuery) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
 		 private void VerifyQueryWithCorrectReader( IndexReader expectedReader, params IndexQuery[] indexQuery )
 		 {
 			  // when

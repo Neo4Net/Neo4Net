@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static <Key> boolean performLookup(ReadableState<Key> store, org.neo4j.io.pagecache.tracing.cursor.context.VersionContext versionContext, java.util.concurrent.ConcurrentMap<Key,ChangeEntry> changes, Key key, ValueSink sink) throws java.io.IOException
+//ORIGINAL LINE: private static <Key> boolean performLookup(ReadableState<Key> store, org.Neo4Net.io.pagecache.tracing.cursor.context.VersionContext versionContext, java.util.concurrent.ConcurrentMap<Key,ChangeEntry> changes, Key key, ValueSink sink) throws java.io.IOException
 		 private static bool PerformLookup<Key>( ReadableState<Key> store, VersionContext versionContext, ConcurrentMap<Key, ChangeEntry> changes, Key key, ValueSink sink )
 		 {
 			  ChangeEntry change = changes.get( key );

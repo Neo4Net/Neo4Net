@@ -23,21 +23,21 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Evaluators = Neo4Net.Graphdb.traversal.Evaluators;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
+//	import static org.Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
+//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_CONTINUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluation.INCLUDE_AND_PRUNE;
+//	import static org.Neo4Net.graphdb.traversal.Evaluation.INCLUDE_AND_PRUNE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.includeWhereEndNodeIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.lastRelationshipTypeIs;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.lastRelationshipTypeIs;
 
 	public class TestEvaluators : TraversalTestBase
 	{

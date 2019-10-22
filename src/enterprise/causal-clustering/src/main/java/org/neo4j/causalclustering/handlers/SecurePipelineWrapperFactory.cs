@@ -13,7 +13,7 @@
  */
 namespace Neo4Net.causalclustering.handlers
 {
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SslPolicyLoader = Neo4Net.Kernel.configuration.ssl.SslPolicyLoader;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;

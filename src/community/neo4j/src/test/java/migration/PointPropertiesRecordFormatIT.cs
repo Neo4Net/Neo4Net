@@ -24,12 +24,12 @@ namespace Migration
 	using Test = org.junit.jupiter.api.Test;
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
 	using StandardV3_2 = Neo4Net.Kernel.impl.store.format.standard.StandardV3_2;
@@ -57,16 +57,16 @@ namespace Migration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointValue;
+//	import static org.Neo4Net.values.storable.Values.pointValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) public class PointPropertiesRecordFormatIT
 	public class PointPropertiesRecordFormatIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -74,7 +74,7 @@ namespace Migration
 		 internal virtual void FailToCreatePointOnOldDatabase()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  TransactionFailureException exception = assertThrows(typeof(TransactionFailureException), () =>
 			  {
 				using ( Transaction transaction = nonUpgradedStore.BeginTx() )
@@ -87,7 +87,7 @@ namespace Migration
 			  assertEquals( "Current record format does not support POINT_PROPERTIES. Please upgrade your store to the format that support requested capability.", Exceptions.rootCause( exception ).Message );
 			  nonUpgradedStore.Shutdown();
 
-			  GraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = restartedOldFormatDatabase.BeginTx() )
 			  {
 					Node node = restartedOldFormatDatabase.CreateNode();
@@ -102,7 +102,7 @@ namespace Migration
 		 internal virtual void FailToCreatePointArrayOnOldDatabase()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService nonUpgradedStore = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  PointValue point = pointValue( Cartesian, 1.0, 2.0 );
 			  TransactionFailureException exception = assertThrows(typeof(TransactionFailureException), () =>
 			  {
@@ -116,7 +116,7 @@ namespace Migration
 			  assertEquals( "Current record format does not support POINT_PROPERTIES. Please upgrade your store to the format that support requested capability.", Exceptions.rootCause( exception ).Message );
 			  nonUpgradedStore.Shutdown();
 
-			  GraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
+			  IGraphDatabaseService restartedOldFormatDatabase = startNonUpgradableDatabaseWithFormat( storeDir, StandardV3_2.NAME );
 			  using ( Transaction transaction = restartedOldFormatDatabase.BeginTx() )
 			  {
 					Node node = restartedOldFormatDatabase.CreateNode();
@@ -135,7 +135,7 @@ namespace Migration
 			  string propertyKey = "a";
 			  PointValue pointValue = pointValue( Cartesian, 1.0, 2.0 );
 
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode( pointNode );
@@ -144,7 +144,7 @@ namespace Migration
 			  }
 			  database.Shutdown();
 
-			  GraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction ignored = restartedDatabase.BeginTx() )
 			  {
 					assertNotNull( restartedDatabase.FindNode( pointNode, propertyKey, pointValue ) );
@@ -161,7 +161,7 @@ namespace Migration
 			  string propertyKey = "a";
 			  PointValue pointValue = pointValue( Cartesian, 1.0, 2.0 );
 
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode( pointNode );
@@ -170,7 +170,7 @@ namespace Migration
 			  }
 			  database.Shutdown();
 
-			  GraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
+			  IGraphDatabaseService restartedDatabase = startDatabaseWithFormat( storeDir, Standard.LATEST_NAME );
 			  using ( Transaction ignored = restartedDatabase.BeginTx() )
 			  {
 					using ( ResourceIterator<Node> nodes = restartedDatabase.FindNodes( pointNode ) )
@@ -189,7 +189,7 @@ namespace Migration
 		 internal virtual void FailToOpenStoreWithPointPropertyUsingOldFormat()
 		 {
 			  File storeDir = _testDirectory.storeDir();
-			  GraphDatabaseService database = startDatabaseWithFormat( storeDir, StandardV3_4.NAME );
+			  IGraphDatabaseService database = startDatabaseWithFormat( storeDir, StandardV3_4.NAME );
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
 					Node node = database.CreateNode();

@@ -19,14 +19,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
 	/// <summary>
 	/// Closeable Iterator with associated resources.
 	/// 
 	/// The associated resources are always released when the owning transaction is committed or rolled back.
-	/// The resource may also be released eagerly by explicitly calling <seealso cref="org.neo4j.graphdb.ResourceIterator.close()"/>
+	/// The resource may also be released eagerly by explicitly calling <seealso cref="org.Neo4Net.graphdb.ResourceIterator.close()"/>
 	/// or by exhausting the iterator.
 	/// </summary>
 	/// @param <T> type of values returned by this Iterator

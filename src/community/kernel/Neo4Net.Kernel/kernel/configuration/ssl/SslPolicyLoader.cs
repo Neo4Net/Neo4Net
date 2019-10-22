@@ -35,13 +35,13 @@ namespace Neo4Net.Kernel.configuration.ssl
 	using SslPolicy = Neo4Net.Ssl.SslPolicy;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_advertised_address;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_advertised_address;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.LEGACY_POLICY_NAME;
+//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.LEGACY_POLICY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.SslPolicyConfig.CIPHER_SUITES_DEFAULTS;
+//	import static org.Neo4Net.kernel.configuration.ssl.SslPolicyConfig.CIPHER_SUITES_DEFAULTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.SslPolicyConfig.TLS_VERSION_DEFAULTS;
+//	import static org.Neo4Net.kernel.configuration.ssl.SslPolicyConfig.TLS_VERSION_DEFAULTS;
 
 	/// <summary>
 	/// Each component which utilises SSL policies is recommended to provide a component
@@ -306,7 +306,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private javax.net.ssl.TrustManagerFactory createTrustManagerFactory(boolean trustAll, java.io.File trustedCertificatesDir, java.util.Collection<java.security.cert.X509CRL> crls, org.neo4j.ssl.ClientAuth clientAuth) throws Exception
+//ORIGINAL LINE: private javax.net.ssl.TrustManagerFactory createTrustManagerFactory(boolean trustAll, java.io.File trustedCertificatesDir, java.util.Collection<java.security.cert.X509CRL> crls, org.Neo4Net.ssl.ClientAuth clientAuth) throws Exception
 		 private TrustManagerFactory CreateTrustManagerFactory( bool trustAll, File trustedCertificatesDir, ICollection<X509CRL> crls, ClientAuth clientAuth )
 		 {
 			  if ( trustAll )

@@ -29,7 +29,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Long.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.range;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.range;
 
 	/// <summary>
 	/// Returns ids either backwards or forwards. In both directions ids are returned batch-wise, sequentially forwards
@@ -55,13 +55,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static RecordIdIterator allIn(org.neo4j.kernel.impl.store.RecordStore<JavaToDotNetGenericWildcard extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> store, Configuration config)
+//		 static RecordIdIterator allIn(org.Neo4Net.kernel.impl.store.RecordStore<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> store, Configuration config)
 	//	 {
 	//		  return forwards(store.getNumberOfReservedLowIds(), store.getHighId(), config);
 	//	 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static RecordIdIterator allInReversed(org.neo4j.kernel.impl.store.RecordStore<JavaToDotNetGenericWildcard extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> store, Configuration config)
+//		 static RecordIdIterator allInReversed(org.Neo4Net.kernel.impl.store.RecordStore<JavaToDotNetGenericWildcard extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> store, Configuration config)
 	//	 {
 	//		  return backwards(store.getNumberOfReservedLowIds(), store.getHighId(), config);
 	//	 }

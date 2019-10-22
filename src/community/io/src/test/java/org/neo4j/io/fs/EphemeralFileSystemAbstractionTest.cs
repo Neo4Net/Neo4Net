@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Io.fs
 {
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 
 	public class EphemeralFileSystemAbstractionTest : FileSystemAbstractionTest
 	{

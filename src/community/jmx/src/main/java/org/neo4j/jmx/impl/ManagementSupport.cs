@@ -108,7 +108,7 @@ namespace Neo4Net.Jmx.impl
 			  }
 			  try
 			  {
-					return new ObjectName( "org.neo4j", properties );
+					return new ObjectName( "org.Neo4Net", properties );
 			  }
 			  catch ( MalformedObjectNameException )
 			  {
@@ -126,7 +126,7 @@ namespace Neo4Net.Jmx.impl
 						 return management.name();
 					}
 			  }
-			  throw new System.ArgumentException( iface + " is not a Neo4j Management Been interface" );
+			  throw new System.ArgumentException( iface + " is not a Neo4Net Management Been interface" );
 		 }
 	}
 

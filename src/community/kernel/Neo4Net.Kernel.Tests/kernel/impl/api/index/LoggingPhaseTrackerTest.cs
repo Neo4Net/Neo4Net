@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.LoggingPhaseTracker.PERIOD_INTERVAL;
+//	import static org.Neo4Net.kernel.impl.api.index.LoggingPhaseTracker.PERIOD_INTERVAL;
 
 	public class LoggingPhaseTrackerTest
 	{

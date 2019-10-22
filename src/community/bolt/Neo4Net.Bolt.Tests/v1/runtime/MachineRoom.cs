@@ -42,9 +42,9 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.hasTransaction;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.hasTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 
 	/// <summary>
 	/// Helpers for testing the <seealso cref="BoltStateMachine"/>.
@@ -70,7 +70,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.bolt.runtime.BoltStateMachine newMachineWithTransaction() throws org.neo4j.bolt.security.auth.AuthenticationException, org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public static org.Neo4Net.bolt.runtime.BoltStateMachine newMachineWithTransaction() throws org.Neo4Net.bolt.security.auth.AuthenticationException, org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public static BoltStateMachine NewMachineWithTransaction()
 		 {
 			  BoltStateMachine machine = NewMachine();
@@ -80,7 +80,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.bolt.runtime.BoltStateMachine newMachineWithTransactionSPI(org.neo4j.bolt.runtime.TransactionStateMachineSPI transactionSPI) throws org.neo4j.bolt.security.auth.AuthenticationException, org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public static org.Neo4Net.bolt.runtime.BoltStateMachine newMachineWithTransactionSPI(org.Neo4Net.bolt.runtime.TransactionStateMachineSPI transactionSPI) throws org.Neo4Net.bolt.security.auth.AuthenticationException, org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public static BoltStateMachine NewMachineWithTransactionSPI( TransactionStateMachineSPI transactionSPI )
 		 {
 			  BoltStateMachineSPI spi = mock( typeof( BoltStateMachineSPI ), RETURNS_MOCKS );
@@ -93,14 +93,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.bolt.runtime.BoltStateMachine init(org.neo4j.bolt.runtime.BoltStateMachine machine) throws org.neo4j.bolt.security.auth.AuthenticationException, org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public static org.Neo4Net.bolt.runtime.BoltStateMachine init(org.Neo4Net.bolt.runtime.BoltStateMachine machine) throws org.Neo4Net.bolt.security.auth.AuthenticationException, org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public static BoltStateMachine Init( BoltStateMachine machine )
 		 {
 			  return Init( machine, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.bolt.runtime.BoltStateMachine init(org.neo4j.bolt.runtime.BoltStateMachine machine, String owner) throws org.neo4j.bolt.security.auth.AuthenticationException, org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private static org.Neo4Net.bolt.runtime.BoltStateMachine init(org.Neo4Net.bolt.runtime.BoltStateMachine machine, String owner) throws org.Neo4Net.bolt.security.auth.AuthenticationException, org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private static BoltStateMachine Init( BoltStateMachine machine, string owner )
 		 {
 			  machine.Process( new InitMessage( USER_AGENT, string.ReferenceEquals( owner, null ) ? emptyMap() : singletonMap(Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, owner) ), nullResponseHandler() );
@@ -108,7 +108,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void runBegin(org.neo4j.bolt.runtime.BoltStateMachine machine) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private static void runBegin(org.Neo4Net.bolt.runtime.BoltStateMachine machine) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private static void RunBegin( BoltStateMachine machine )
 		 {
 			  machine.Process( new RunMessage( "BEGIN", EmptyParams ), nullResponseHandler() );

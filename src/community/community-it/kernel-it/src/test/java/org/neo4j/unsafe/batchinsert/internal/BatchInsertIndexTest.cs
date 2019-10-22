@@ -28,14 +28,14 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
@@ -62,9 +62,9 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class BatchInsertIndexTest
@@ -87,7 +87,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 public RuleChain RuleChain;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] data()
+//ORIGINAL LINE: @Parameterized.Parameters(name = "{0}") public static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex[] data()
 		 public static GraphDatabaseSettings.SchemaIndex[] Data()
 		 {
 			  return GraphDatabaseSettings.SchemaIndex.values();
@@ -112,7 +112,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  BatchInserter inserter = NewBatchInserter( config );
 			  inserter.CreateDeferredSchemaIndex( TestLabels.LABEL_ONE ).on( "key" ).create();
 			  inserter.Shutdown();
-			  GraphDatabaseService db = GraphDatabaseService( config );
+			  IGraphDatabaseService db = IGraphDatabaseService( config );
 			  AwaitIndexesOnline( db );
 			  try
 			  {
@@ -150,7 +150,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  inserter.CreateDeferredConstraint( TestLabels.LABEL_ONE ).assertPropertyIsUnique( "prop" ).create();
 			  inserter.Shutdown();
 
-			  GraphDatabaseService db = GraphDatabaseService( config );
+			  IGraphDatabaseService db = IGraphDatabaseService( config );
 			  try
 			  {
 					AwaitIndexesOnline( db );
@@ -180,7 +180,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  inserter.CreateDeferredConstraint( TestLabels.LABEL_ONE ).assertPropertyIsUnique( "prop" ).create();
 			  inserter.Shutdown();
 
-			  GraphDatabaseService db = GraphDatabaseService( config );
+			  IGraphDatabaseService db = IGraphDatabaseService( config );
 			  try
 			  {
 					  using ( Transaction tx = Db.beginTx() )
@@ -190,8 +190,8 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 						assertTrue( indexes.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						IndexDefinition index = indexes.next();
-						Neo4Net.Graphdb.schema.Schema_IndexState indexState = Db.schema().getIndexState(index);
-						assertEquals( Neo4Net.Graphdb.schema.Schema_IndexState.Failed, indexState );
+						Neo4Net.GraphDb.schema.Schema_IndexState indexState = Db.schema().getIndexState(index);
+						assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Failed, indexState );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						assertFalse( indexes.hasNext() );
 						tx.Success();
@@ -203,7 +203,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 			  }
 		 }
 
-		 private void AssertSingleCorrectHit( GraphDatabaseService db, PointValue point )
+		 private void AssertSingleCorrectHit( IGraphDatabaseService db, PointValue point )
 		 {
 			  ResourceIterator<Node> nodes = Db.findNodes( TestLabels.LABEL_ONE, "prop", point );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
@@ -217,20 +217,20 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.unsafe.batchinsert.BatchInserter newBatchInserter(org.neo4j.kernel.configuration.Config config) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserter(org.Neo4Net.kernel.configuration.Config config) throws Exception
 		 private BatchInserter NewBatchInserter( Config config )
 		 {
 			  return BatchInserters.inserter( _storeDir.databaseDir(), _fileSystemRule.get(), config.Raw );
 		 }
 
-		 private GraphDatabaseService GraphDatabaseService( Config config )
+		 private IGraphDatabaseService IGraphDatabaseService( Config config )
 		 {
 			  TestGraphDatabaseFactory factory = new TestGraphDatabaseFactory();
 			  factory.FileSystem = _fileSystemRule.get();
 			  return factory.NewImpermanentDatabaseBuilder( _storeDir.databaseDir() ).setConfig(config.Raw).newGraphDatabase();
 		 }
 
-		 private void AwaitIndexesOnline( GraphDatabaseService db )
+		 private void AwaitIndexesOnline( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

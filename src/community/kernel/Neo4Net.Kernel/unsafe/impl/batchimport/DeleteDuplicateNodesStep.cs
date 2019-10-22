@@ -34,9 +34,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storageengine.impl.recordstorage.PropertyDeleter.deletePropertyRecordIncludingValueRecords;
+//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.PropertyDeleter.deletePropertyRecordIncludingValueRecords;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public class DeleteDuplicateNodesStep : LonelyProcessingStep
 	{

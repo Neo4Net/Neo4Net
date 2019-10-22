@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 private readonly SchemaStore _schemaStore = mock( typeof( SchemaStore ) );
 		 private readonly IndexingService _indexes = mock( typeof( IndexingService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<org.neo4j.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<org.Neo4Net.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
 		 private readonly System.Func<LabelScanWriter> _labelScanStore = mock( typeof( System.Func ) );
 		 private NeoStoreBatchTransactionApplier _storeApplier;
 		 private WorkSync<System.Func<LabelScanWriter>, LabelUpdateWork> _labelScanStoreSynchronizer = new WorkSync<System.Func<LabelScanWriter>, LabelUpdateWork>( _labelScanStore );
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void visitSchemaRuleCommand(org.neo4j.kernel.impl.api.BatchTransactionApplier applier, org.neo4j.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws Exception
+//ORIGINAL LINE: private void visitSchemaRuleCommand(org.Neo4Net.kernel.impl.api.BatchTransactionApplier applier, org.Neo4Net.kernel.impl.transaction.command.Command.SchemaRuleCommand command) throws Exception
 		 private void VisitSchemaRuleCommand( BatchTransactionApplier applier, Command.SchemaRuleCommand command )
 		 {
 			  TransactionToApply tx = new TransactionToApply( new PhysicalTransactionRepresentation( singletonList( command ) ), _txId );

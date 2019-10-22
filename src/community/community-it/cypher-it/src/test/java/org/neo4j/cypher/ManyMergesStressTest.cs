@@ -28,10 +28,10 @@ namespace Neo4Net.Cypher
 
 
 	using GraphDatabaseCypherService = Neo4Net.Cypher.Internal.javacompat.GraphDatabaseCypherService;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
@@ -50,14 +50,14 @@ namespace Neo4Net.Cypher
 		 private const int TRIES = 8000;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldWorkFine()
 		 public virtual void ShouldWorkFine()
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  GraphDatabaseQueryService graph = new GraphDatabaseCypherService( db );
 
 			  Label person = Label.label( "Person" );

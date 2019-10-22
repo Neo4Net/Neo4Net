@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Api
 						  }
 						  return true;
 					 }
-					 catch ( EntityNotFoundException )
+					 catch ( IEntityNotFoundException )
 					 {
 						  return false; // The node has been deleted but was still reported from the index. CC will catch
 											 // this through other mechanism (NodeInUseWithCorrectLabelsCheck), so we can

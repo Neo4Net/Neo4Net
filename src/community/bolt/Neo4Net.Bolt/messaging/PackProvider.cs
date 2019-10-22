@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.messaging
 
 	public interface PackProvider
 	{
-		 Neo4jPack_Packer NewPacker( PackOutput output );
+		 Neo4NetPack_Packer NewPacker( PackOutput output );
 	}
 
 }

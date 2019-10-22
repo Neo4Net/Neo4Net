@@ -38,13 +38,13 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class NodeTransactionStateTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -69,7 +69,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertEquals( nodeId, graphDb.getNodeById( nodeId ).Id );
 			  }
@@ -105,7 +105,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).Labels, equalTo( Iterables.iterable( label( labelName ) ) ) );
 			  }
@@ -133,7 +133,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).Labels, containsInAnyOrder( label( toRetainName ), label( toDeleteName ) ) );
 			  }
@@ -163,7 +163,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).Labels, containsInAnyOrder( label( toRetainName ), label( toAddName ) ) );
 			  }
@@ -289,7 +289,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).getProperty( propKey ), equalTo( "hello" ) );
 			  }
@@ -343,7 +343,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).getProperty( propKey1 ), equalTo( "hello" ) );
 					assertThat( graphDb.getNodeById( nodeId ).getProperty( propKey2 ), equalTo( "world" ) );
@@ -389,7 +389,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).getProperty( propKey ), equalTo( "world" ) );
 			  }
@@ -429,7 +429,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getNodeById( nodeId ).hasProperty( propKey ) );
 			  }
@@ -474,7 +474,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignored = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignored = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).getProperty( propKey ), equalTo( "world" ) );
 			  }

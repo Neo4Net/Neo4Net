@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Bolt.v2
 {
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using BoltConnectionFactory = Neo4Net.Bolt.runtime.BoltConnectionFactory;
 	using BoltStateMachineFactory = Neo4Net.Bolt.runtime.BoltStateMachineFactory;
 	using BoltProtocolV1 = Neo4Net.Bolt.v1.BoltProtocolV1;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 	public class BoltProtocolV2 : BoltProtocolV1
@@ -34,9 +34,9 @@ namespace Neo4Net.Bolt.v2
 		 {
 		 }
 
-		 protected internal override Neo4jPack CreatePack()
+		 protected internal override Neo4NetPack CreatePack()
 		 {
-			  return new Neo4jPackV2();
+			  return new Neo4NetPackV2();
 		 }
 
 		 public override long Version()

@@ -23,16 +23,16 @@ namespace Neo4Net.Kernel.impl.core
 {
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.standard.PropertyRecordFormat.DEFAULT_DATA_BLOCK_SIZE;
+//	import static org.Neo4Net.kernel.impl.store.format.standard.PropertyRecordFormat.DEFAULT_DATA_BLOCK_SIZE;
 
-	public class TestLengthyArrayPacking : AbstractNeo4jTestCase
+	public class TestLengthyArrayPacking : AbstractNeo4NetTestCase
 	{
 		private bool InstanceFieldsInitialized = false;
 

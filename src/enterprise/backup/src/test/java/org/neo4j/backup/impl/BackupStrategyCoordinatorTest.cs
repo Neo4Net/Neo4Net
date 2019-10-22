@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -57,7 +57,7 @@ namespace Neo4Net.backup.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.backup.ExceptionMatchers.exceptionContainsSuppressedThrowable;
+//	import static org.Neo4Net.backup.ExceptionMatchers.exceptionContainsSuppressedThrowable;
 
 	public class BackupStrategyCoordinatorTest
 	{
@@ -65,7 +65,7 @@ namespace Neo4Net.backup.impl
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 // dependencies
@@ -100,7 +100,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void backupIsValidIfAnySingleStrategyPasses_secondFails() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void backupIsValidIfAnySingleStrategyPasses_secondFails() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void BackupIsValidIfAnySingleStrategyPassesSecondFails()
 		 {
@@ -115,7 +115,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void backupIsValidIfAnySingleStrategyPasses_firstFails() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void backupIsValidIfAnySingleStrategyPasses_firstFails() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void BackupIsValidIfAnySingleStrategyPassesFirstFails()
 		 {
@@ -128,7 +128,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void backupIsInvalidIfTheCorrectMethodFailed_firstFails() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void backupIsInvalidIfTheCorrectMethodFailed_firstFails() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void BackupIsInvalidIfTheCorrectMethodFailedFirstFails()
 		 {
@@ -145,7 +145,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void backupIsInvalidIfTheCorrectMethodFailed_secondFails() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void backupIsInvalidIfTheCorrectMethodFailed_secondFails() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void BackupIsInvalidIfTheCorrectMethodFailedSecondFails()
 		 {
@@ -162,7 +162,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void backupFailsIfAllStrategiesAreIncorrect() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void backupFailsIfAllStrategiesAreIncorrect() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void BackupFailsIfAllStrategiesAreIncorrect()
 		 {
@@ -179,7 +179,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void consistencyCheckIsRunIfSpecified() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void consistencyCheckIsRunIfSpecified() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ConsistencyCheckIsRunIfSpecified()
 		 {
@@ -197,7 +197,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void consistencyCheckIsNotRunIfNotSpecified() throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void consistencyCheckIsNotRunIfNotSpecified() throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ConsistencyCheckIsNotRunIfNotSpecified()
 		 {
@@ -213,7 +213,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void allFailureCausesAreCollectedAndAttachedToCommandFailedException() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void allFailureCausesAreCollectedAndAttachedToCommandFailedException() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AllFailureCausesAreCollectedAndAttachedToCommandFailedException()
 		 {
@@ -236,7 +236,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void commandFailedWhenConsistencyCheckFails() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void commandFailedWhenConsistencyCheckFails() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CommandFailedWhenConsistencyCheckFails()
 		 {
@@ -255,7 +255,7 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void havingNoStrategiesCausesAllSolutionsFailedException() throws org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: @Test public void havingNoStrategiesCausesAllSolutionsFailedException() throws org.Neo4Net.commandline.admin.CommandFailed
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void HavingNoStrategiesCausesAllSolutionsFailedException()
 		 {

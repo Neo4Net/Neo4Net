@@ -30,13 +30,13 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class Bookmark
 	{
 		 private const string BOOKMARK_KEY = "bookmark";
 		 private const string BOOKMARKS_KEY = "bookmarks";
-		 internal const string BOOKMARK_TX_PREFIX = "neo4j:bookmark:v1:tx";
+		 internal const string BOOKMARK_TX_PREFIX = "Neo4Net:bookmark:v1:tx";
 
 		 private readonly long _txId;
 
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static Bookmark fromParamsOrNull(org.neo4j.values.virtual.MapValue params) throws BookmarkFormatException
+//ORIGINAL LINE: public static Bookmark fromParamsOrNull(org.Neo4Net.values.virtual.MapValue params) throws BookmarkFormatException
 		 public static Bookmark FromParamsOrNull( MapValue @params )
 		 {
 			  // try to parse multiple bookmarks, if available
@@ -90,7 +90,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static Bookmark parseMultipleBookmarks(org.neo4j.values.virtual.MapValue params) throws BookmarkFormatException
+//ORIGINAL LINE: private static Bookmark parseMultipleBookmarks(org.Neo4Net.values.virtual.MapValue params) throws BookmarkFormatException
 		 private static Bookmark ParseMultipleBookmarks( MapValue @params )
 		 {
 			  AnyValue bookmarksObject = @params.Get( BOOKMARKS_KEY );
@@ -124,7 +124,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static Bookmark parseSingleBookmark(org.neo4j.values.virtual.MapValue params) throws BookmarkFormatException
+//ORIGINAL LINE: private static Bookmark parseSingleBookmark(org.Neo4Net.values.virtual.MapValue params) throws BookmarkFormatException
 		 private static Bookmark ParseSingleBookmark( MapValue @params )
 		 {
 			  AnyValue bookmarkObject = @params.Get( BOOKMARK_KEY );
@@ -137,7 +137,7 @@ namespace Neo4Net.Bolt.v1.runtime.bookmarking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static long txIdFrom(org.neo4j.values.AnyValue bookmark) throws BookmarkFormatException
+//ORIGINAL LINE: private static long txIdFrom(org.Neo4Net.values.AnyValue bookmark) throws BookmarkFormatException
 		 private static long TxIdFrom( AnyValue bookmark )
 		 {
 			  if ( !( bookmark is TextValue ) )

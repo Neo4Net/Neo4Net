@@ -28,13 +28,13 @@ namespace Neo4Net.Test.server
 	using RepresentationFormat = Neo4Net.Server.rest.repr.RepresentationFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationTestAccess.serialize;
+//	import static org.Neo4Net.server.rest.repr.RepresentationTestAccess.serialize;
 
-	public class EntityOutputFormat : OutputFormat
+	public class IEntityOutputFormat : OutputFormat
 	{
 		 private Representation _representation;
 
-		 public EntityOutputFormat( RepresentationFormat format, URI baseUri, ExtensionInjector extensions ) : base( format, baseUri, extensions )
+		 public IEntityOutputFormat( RepresentationFormat format, URI baseUri, ExtensionInjector extensions ) : base( format, baseUri, extensions )
 		 {
 		 }
 

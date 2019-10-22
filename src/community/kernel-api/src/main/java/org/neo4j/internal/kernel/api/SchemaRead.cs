@@ -72,7 +72,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// - throws exception for indexes that aren't committed.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long indexGetCommittedId(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: long indexGetCommittedId(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
 		 long IndexGetCommittedId( IndexReference index );
 
 		 /// <summary>
@@ -82,7 +82,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The selectivity of the given index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: double indexUniqueValuesSelectivity(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: double indexUniqueValuesSelectivity(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 double IndexUniqueValuesSelectivity( IndexReference index );
 
 		 /// <summary>
@@ -92,7 +92,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> The size of the current index </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index is not there </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long indexSize(IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: long indexSize(IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 long IndexSize( IndexReference index );
 
 		 /// <summary>
@@ -104,7 +104,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> the property value </param>
 		 /// <returns> number of index entries for the given {@code nodeId} and {@code value}. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long nodesCountIndexed(IndexReference index, long nodeId, int propertyKeyId, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: long nodesCountIndexed(IndexReference index, long nodeId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 long NodesCountIndexed( IndexReference index, long nodeId, int propertyKeyId, Value value );
 
 		 /// <summary>
@@ -118,7 +118,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> {@code target} </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index does not exist. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.register.Register_DoubleLongRegister indexUpdatesAndSize(IndexReference index, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.register.Register_DoubleLongRegister indexUpdatesAndSize(IndexReference index, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 Neo4Net.Register.Register_DoubleLongRegister IndexUpdatesAndSize( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 
 		 /// <summary>
@@ -132,7 +132,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> {@code target} </returns>
 		 /// <exception cref="IndexNotFoundKernelException"> if the index does not exist. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.register.Register_DoubleLongRegister indexSample(IndexReference index, org.neo4j.register.Register_DoubleLongRegister target) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: org.Neo4Net.register.Register_DoubleLongRegister indexSample(IndexReference index, org.Neo4Net.register.Register_DoubleLongRegister target) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
 		 Neo4Net.Register.Register_DoubleLongRegister IndexSample( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 
 		 /// <summary>

@@ -27,7 +27,7 @@ namespace Neo4Net.Server.Security.Auth
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using User = Neo4Net.Kernel.impl.security.User;
@@ -58,7 +58,7 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class FileUserRepositoryTest
 	{
@@ -67,16 +67,16 @@ namespace Neo4Net.Server.Security.Auth
 		 private FileSystemAbstraction _fs;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.ExpectedException thrown = org.junit.rules.ExpectedException.none();
 		 public readonly ExpectedException Thrown = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -150,7 +150,7 @@ namespace Neo4Net.Server.Security.Auth
 			  FileUserRepository users = new FileUserRepository( _fs, _authFile, _logProvider );
 
 			  // When
-			  users.AssertValidUsername( "neo4j" );
+			  users.AssertValidUsername( "Neo4Net" );
 			  users.AssertValidUsername( "johnosbourne" );
 			  users.AssertValidUsername( "john_osbourne" );
 
@@ -275,7 +275,7 @@ namespace Neo4Net.Server.Security.Auth
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  _fs.mkdir( _authFile.ParentFile );
 			  // First line is correctly formatted, second line has an extra field
-			  FileRepositorySerializer.WriteToFile( _fs, _authFile, UTF8.encode( "admin:SHA-256,A42E541F276CF17036DB7818F8B09B1C229AAD52A17F69F4029617F3A554640F,FB7E8AE08A6A7C741F678AD22217808F:\n" + "neo4j:fc4c600b43ffe4d5857b4439c35df88f:SHA-256," + "A42E541F276CF17036DB7818F8B09B1C229AAD52A17F69F4029617F3A554640F,FB7E8AE08A6A7C741F678AD22217808F:\n" ) );
+			  FileRepositorySerializer.WriteToFile( _fs, _authFile, UTF8.encode( "admin:SHA-256,A42E541F276CF17036DB7818F8B09B1C229AAD52A17F69F4029617F3A554640F,FB7E8AE08A6A7C741F678AD22217808F:\n" + "Neo4Net:fc4c600b43ffe4d5857b4439c35df88f:SHA-256," + "A42E541F276CF17036DB7818F8B09B1C229AAD52A17F69F4029617F3A554640F,FB7E8AE08A6A7C741F678AD22217808F:\n" ) );
 
 			  // When
 			  FileUserRepository users = new FileUserRepository( _fs, _authFile, logProvider );

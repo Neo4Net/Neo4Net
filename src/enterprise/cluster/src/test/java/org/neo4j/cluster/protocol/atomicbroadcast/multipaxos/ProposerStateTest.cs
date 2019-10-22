@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 {
@@ -59,17 +59,17 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.to;
+//	import static org.Neo4Net.cluster.com.message.Message.to;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
+//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.phase1Timeout;
+//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.phase1Timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.promise;
+//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.promise;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.propose;
+//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.propose;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.rejectAccept;
+//	import static org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.ProposerMessage.rejectAccept;
 
 	public class ProposerStateTest
 	{
@@ -102,7 +102,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 
 			  // Verify it was resent as a propose with the same value
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: verify(mockHolder, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.neo4j.cluster.com.message.Message<? extends org.neo4j.cluster.com.message.MessageType>>(new org.neo4j.cluster.protocol.MessageArgumentMatcher().onMessageType(ProposerMessage.propose).withPayload(theTimedoutPayload)));
+//ORIGINAL LINE: verify(mockHolder, times(1)).offer(org.mockito.ArgumentMatchers.argThat<org.Neo4Net.cluster.com.message.Message<? extends org.Neo4Net.cluster.com.message.MessageType>>(new org.Neo4Net.cluster.protocol.MessageArgumentMatcher().onMessageType(ProposerMessage.propose).withPayload(theTimedoutPayload)));
 			  verify( mockHolder, times( 1 ) ).offer( ArgumentMatchers.argThat<Message<MessageType>>( ( new MessageArgumentMatcher() ).onMessageType(ProposerMessage.Propose).withPayload(theTimedoutPayload) ) );
 			  verify( context, times( 1 ) ).unbookInstance( instanceId );
 		 }

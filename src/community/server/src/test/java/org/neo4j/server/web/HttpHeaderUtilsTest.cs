@@ -37,16 +37,16 @@ namespace Neo4Net.Server.web
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpHeaderUtils.MAX_EXECUTION_TIME_HEADER;
+//	import static org.Neo4Net.server.web.HttpHeaderUtils.MAX_EXECUTION_TIME_HEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpHeaderUtils.getTransactionTimeout;
+//	import static org.Neo4Net.server.web.HttpHeaderUtils.getTransactionTimeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.web.HttpHeaderUtils.isValidHttpHeaderName;
+//	import static org.Neo4Net.server.web.HttpHeaderUtils.isValidHttpHeaderName;
 
 	public class HttpHeaderUtilsTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.logging.AssertableLogProvider logProvider = new org.neo4j.logging.AssertableLogProvider(true);
+//ORIGINAL LINE: @Rule public org.Neo4Net.logging.AssertableLogProvider logProvider = new org.Neo4Net.logging.AssertableLogProvider(true);
 		 public AssertableLogProvider LogProvider = new AssertableLogProvider( true );
 		 private HttpServletRequest _request;
 

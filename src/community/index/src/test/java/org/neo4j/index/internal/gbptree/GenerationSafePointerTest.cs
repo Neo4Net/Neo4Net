@@ -46,7 +46,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 private readonly GSP _read = new GSP();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.RandomRule random;
 		 private RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

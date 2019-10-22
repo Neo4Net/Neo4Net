@@ -66,7 +66,7 @@ namespace Neo4Net.Consistency.checking.full
 	 public interface QueueDistribution_QueueDistributor<RECORD>
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void distribute(RECORD record, org.neo4j.consistency.checking.full.RecordDistributor.RecordConsumer<RECORD> consumer) throws InterruptedException;
+//ORIGINAL LINE: void distribute(RECORD record, org.Neo4Net.consistency.checking.full.RecordDistributor.RecordConsumer<RECORD> consumer) throws InterruptedException;
 		  void Distribute( RECORD record, RecordConsumer<RECORD> consumer );
 	 }
 
@@ -81,7 +81,7 @@ namespace Neo4Net.Consistency.checking.full
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void distribute(RECORD record, org.neo4j.consistency.checking.full.RecordDistributor.RecordConsumer<RECORD> consumer) throws InterruptedException
+//ORIGINAL LINE: public void distribute(RECORD record, org.Neo4Net.consistency.checking.full.RecordDistributor.RecordConsumer<RECORD> consumer) throws InterruptedException
 		  public override void Distribute( RECORD record, RecordConsumer<RECORD> consumer )
 		  {
 				try
@@ -109,7 +109,7 @@ namespace Neo4Net.Consistency.checking.full
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void distribute(org.neo4j.kernel.impl.store.record.RelationshipRecord relationship, org.neo4j.consistency.checking.full.RecordDistributor.RecordConsumer<org.neo4j.kernel.impl.store.record.RelationshipRecord> consumer) throws InterruptedException
+//ORIGINAL LINE: public void distribute(org.Neo4Net.kernel.impl.store.record.RelationshipRecord relationship, org.Neo4Net.consistency.checking.full.RecordDistributor.RecordConsumer<org.Neo4Net.kernel.impl.store.record.RelationshipRecord> consumer) throws InterruptedException
 		  public override void Distribute( RelationshipRecord relationship, RecordConsumer<RelationshipRecord> consumer )
 		  {
 				int qIndex1 = ( int ) Math.Min( MaxAvailableThread, Math.Abs( relationship.FirstNode ) / RecordsPerCpu );

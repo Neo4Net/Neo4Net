@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 {
@@ -37,16 +37,16 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using FullSecurityLog = Neo4Net.Server.security.enterprise.auth.MultiRealmAuthManagerRule.FullSecurityLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class BoltInitChangePasswordTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.neo4j.server.security.enterprise.auth.MultiRealmAuthManagerRule(new org.neo4j.server.security.auth.InMemoryUserRepository(), new org.neo4j.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.neo4j.kernel.configuration.Config.defaults()));
+//ORIGINAL LINE: @Rule public org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule authManagerRule = new org.Neo4Net.server.security.enterprise.auth.MultiRealmAuthManagerRule(new org.Neo4Net.server.security.auth.InMemoryUserRepository(), new org.Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.Neo4Net.kernel.configuration.Config.defaults()));
 		 public MultiRealmAuthManagerRule AuthManagerRule = new MultiRealmAuthManagerRule( new InMemoryUserRepository(), new RateLimitedAuthenticationStrategy(Clock.systemUTC(), Config.defaults()) );
 		 private BasicAuthentication _authentication;
 
@@ -56,7 +56,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 public virtual void Setup()
 		 {
 			  _authentication = new BasicAuthentication( AuthManagerRule.Manager, AuthManagerRule.Manager );
-			  AuthManagerRule.Manager.UserManager.newUser( "neo4j", password( "123" ), true );
+			  AuthManagerRule.Manager.UserManager.newUser( "Neo4Net", password( "123" ), true );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -64,22 +64,22 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogInitPasswordChange()
 		 {
-			  _authentication.authenticate( AuthToken( "neo4j", "123", "secret" ) );
+			  _authentication.authenticate( AuthToken( "Neo4Net", "123", "secret" ) );
 
 			  MultiRealmAuthManagerRule.FullSecurityLog fullLog = AuthManagerRule.getFullSecurityLog();
-			  fullLog.AssertHasLine( "neo4j", "logged in (password change required)" );
-			  fullLog.AssertHasLine( "neo4j", "changed password" );
+			  fullLog.AssertHasLine( "Neo4Net", "logged in (password change required)" );
+			  fullLog.AssertHasLine( "Neo4Net", "changed password" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldLogFailedInitPasswordChange()
 		 public virtual void ShouldLogFailedInitPasswordChange()
 		 {
-			  assertException( () => _authentication.authenticate(AuthToken("neo4j", "123", "123")), typeof(AuthenticationException), "Old password and new password cannot be the same." );
+			  assertException( () => _authentication.authenticate(AuthToken("Neo4Net", "123", "123")), typeof(AuthenticationException), "Old password and new password cannot be the same." );
 
 			  MultiRealmAuthManagerRule.FullSecurityLog fullLog = AuthManagerRule.getFullSecurityLog();
-			  fullLog.AssertHasLine( "neo4j", "logged in (password change required)" );
-			  fullLog.AssertHasLine( "neo4j", "tried to change password: Old password and new password cannot be the same." );
+			  fullLog.AssertHasLine( "Neo4Net", "logged in (password change required)" );
+			  fullLog.AssertHasLine( "Neo4Net", "tried to change password: Old password and new password cannot be the same." );
 		 }
 
 		 private IDictionary<string, object> AuthToken( string username, string password, string newPassword )

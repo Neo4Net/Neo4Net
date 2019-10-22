@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.api.schema.constraints
 
 	public class NodeKeyConstraintDescriptor : IndexBackedConstraintDescriptor
 	{
-		 internal NodeKeyConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.neo4j.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.UniqueExists, schema )
+		 internal NodeKeyConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.UniqueExists, schema )
 		 {
 		 }
 

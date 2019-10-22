@@ -36,7 +36,7 @@ namespace Neo4Net.Storageengine.Api
 		 /// <returns> {@code true} if any <seealso cref="StorageCommand"/> visited returned {@code true}, otherwise {@code false}. </returns>
 		 /// <exception cref="IOException"> if there were any problem reading the commands. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean accept(org.neo4j.helpers.collection.Visitor<StorageCommand,java.io.IOException> visitor) throws java.io.IOException;
+//ORIGINAL LINE: boolean accept(org.Neo4Net.helpers.collection.Visitor<StorageCommand,java.io.IOException> visitor) throws java.io.IOException;
 		 bool Accept( Visitor<StorageCommand, IOException> visitor );
 	}
 

@@ -26,7 +26,7 @@ namespace Neo4Net.Helpers
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Strings.prettyPrint;
+//	import static org.Neo4Net.helpers.Strings.prettyPrint;
 
 	internal class StringsTest
 	{
@@ -41,9 +41,9 @@ namespace Neo4Net.Helpers
 			  assertEquals( "[false, true, true, false]", prettyPrint( new bool[]{ false, true, true, false } ) );
 			  assertEquals( "[a, b, z]", prettyPrint( new char[]{ 'a', 'b', 'z' } ) );
 			  assertEquals( "[ab, cd, zx]", prettyPrint( new string[]{ "ab", "cd", "zx" } ) );
-			  assertEquals("[Cat, [http://neo4j.com, http://neo4j.org], Dog, [1, 2, 3], [[[Wolf]]]]", prettyPrint(new object[]
+			  assertEquals("[Cat, [http://Neo4Net.com, http://Neo4Net.org], Dog, [1, 2, 3], [[[Wolf]]]]", prettyPrint(new object[]
 			  {
-				  "Cat", new URI[]{ URI.create( "http://neo4j.com" ), URI.create( "http://neo4j.org" ) },
+				  "Cat", new URI[]{ URI.create( "http://Neo4Net.com" ), URI.create( "http://Neo4Net.org" ) },
 				  "Dog", new int[]{ 1, 2, 3 },
 				  new object[]
 				  {

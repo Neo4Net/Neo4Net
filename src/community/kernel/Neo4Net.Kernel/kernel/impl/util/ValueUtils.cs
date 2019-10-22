@@ -22,13 +22,13 @@
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using Entity = Neo4Net.Graphdb.Entity;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using IEntity = Neo4Net.GraphDb.Entity;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using BooleanValue = Neo4Net.Values.Storable.BooleanValue;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.util
 		 /// <param name="object"> the object to turned into a AnyValue </param>
 		 /// <returns> the AnyValue corresponding to object. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.neo4j.values.AnyValue of(Object object)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.values.AnyValue of(Object object)
 		 public static AnyValue Of( object @object )
 		 {
 			  Value value = Values.unsafeOf( @object, true );
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.util
 			  }
 			  else
 			  {
-					if ( @object is Entity )
+					if ( @object is IEntity )
 					{
 						 if ( @object is Node )
 						 {
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.util
 						 else
 						 {
 //JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-							  throw new System.ArgumentException( "Unknown entity + " + @object.GetType().FullName );
+							  throw new System.ArgumentException( "Unknown IEntity + " + @object.GetType().FullName );
 						 }
 					}
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.impl.util
 			  return VirtualValues.fromList( values );
 		 }
 
-		 public static AnyValue AsNodeOrEdgeValue( PropertyContainer container )
+		 public static AnyValue AsNodeOrEdgeValue( IPropertyContainer container )
 		 {
 			  if ( container is Node )
 			  {

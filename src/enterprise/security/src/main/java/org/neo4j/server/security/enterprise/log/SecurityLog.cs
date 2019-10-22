@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,17 +15,17 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.log
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.log
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Strings.escape;
+//	import static org.Neo4Net.helpers.Strings.escape;
 
 	public class SecurityLog : LifecycleAdapter, Log
 	{
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.security.enterprise.log
 		 private readonly Log _inner;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SecurityLog(org.neo4j.kernel.configuration.Config config, org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.util.concurrent.Executor executor) throws java.io.IOException
+//ORIGINAL LINE: public SecurityLog(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.util.concurrent.Executor executor) throws java.io.IOException
 		 public SecurityLog( Config config, FileSystemAbstraction fileSystem, Executor executor )
 		 {
 			  ZoneId logTimeZoneId = config.Get( GraphDatabaseSettings.db_timezone ).ZoneId;

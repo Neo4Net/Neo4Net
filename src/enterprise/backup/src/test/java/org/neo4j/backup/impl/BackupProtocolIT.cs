@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -78,7 +78,7 @@ namespace Neo4Net.backup.impl
 			  TheBackupInterface backup = mock( typeof( TheBackupInterface ) );
 			  RequestContext ctx = new RequestContext( 0, 1, 0, -1, 12 );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.com.TargetCaller<org.neo4j.backup.TheBackupInterface, Void> targetCaller = (org.neo4j.com.TargetCaller<org.neo4j.backup.TheBackupInterface,Void>) org.neo4j.backup.impl.BackupClient.BackupRequestType.FULL_BACKUP.getTargetCaller();
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface, Void> targetCaller = (org.Neo4Net.com.TargetCaller<org.Neo4Net.backup.TheBackupInterface,Void>) org.Neo4Net.backup.impl.BackupClient.BackupRequestType.FULL_BACKUP.getTargetCaller();
 			  TargetCaller<TheBackupInterface, Void> targetCaller = ( TargetCaller<TheBackupInterface, Void> ) BackupRequestType.FULL_BACKUP.TargetCaller;
 			  targetCaller.Call( backup, ctx, EMPTY_BUFFER, null );
 			  verify( backup ).fullBackup( any( typeof( StoreWriter ) ), eq( false ) );

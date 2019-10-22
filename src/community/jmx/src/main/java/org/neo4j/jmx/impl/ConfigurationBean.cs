@@ -26,14 +26,14 @@ namespace Neo4Net.Jmx.impl
 	using ConfigValue = Neo4Net.Configuration.ConfigValue;
 	using KernelData = Neo4Net.Kernel.Internal.KernelData;
 
-	[Description("The configuration parameters used to configure Neo4j"), Obsolete]
-	public sealed class ConfigurationBean : Neo4jMBean
+	[Description("The configuration parameters used to configure Neo4Net"), Obsolete]
+	public sealed class ConfigurationBean : Neo4NetMBean
 	{
 		 public const string CONFIGURATION_MBEAN_NAME = "Configuration";
 		 private readonly IDictionary<string, ConfigValue> _config;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConfigurationBean(org.neo4j.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: ConfigurationBean(org.Neo4Net.kernel.internal.KernelData kernel, ManagementSupport support) throws javax.management.NotCompliantMBeanException
 		 internal ConfigurationBean( KernelData kernel, ManagementSupport support ) : base( CONFIGURATION_MBEAN_NAME, kernel, support )
 		 {
 			  this._config = kernel.Config.ConfigValues;
@@ -93,7 +93,7 @@ namespace Neo4Net.Jmx.impl
 			 {
 				  Description description = this.GetType().getAnnotation(typeof(Description));
 	//JAVA TO C# CONVERTER WARNING: The .NET Type.FullName property will not always yield results identical to the Java Class.getName method:
-				  return new MBeanInfo( this.GetType().FullName, description != null ? description.value() : "Neo4j configuration", Keys(), null, null, null );
+				  return new MBeanInfo( this.GetType().FullName, description != null ? description.value() : "Neo4Net configuration", Keys(), null, null, null );
 			 }
 		 }
 

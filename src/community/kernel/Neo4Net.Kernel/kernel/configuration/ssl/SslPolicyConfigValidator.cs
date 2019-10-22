@@ -24,15 +24,15 @@ using System.Reflection;
 namespace Neo4Net.Kernel.configuration.ssl
 {
 
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
 
 
 	public class SslPolicyConfigValidator : SettingGroup<object>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> params, System.Action<String> warningConsumer) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> params, System.Action<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public override IDictionary<string, string> Validate( IDictionary<string, string> @params, System.Action<string> warningConsumer )
 		 {
 			  IDictionary<string, string> validatedParams = new Dictionary<string, string>();

@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.core
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 
@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.core
 
 		 KernelTransaction KernelTransaction();
 
-		 GraphDatabaseService GraphDatabase { get; }
+		 IGraphDatabaseService GraphDatabase { get; }
 
 		 void AssertInUnterminatedTransaction();
 

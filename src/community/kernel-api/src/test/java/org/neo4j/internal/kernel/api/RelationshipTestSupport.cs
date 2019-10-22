@@ -22,19 +22,19 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	public class RelationshipTestSupport
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 {
 		 }
 
-		 internal static void SomeGraph( GraphDatabaseService graphDb )
+		 internal static void SomeGraph( IGraphDatabaseService graphDb )
 		 {
 			  Relationship dead;
 			  using ( Transaction tx = graphDb.BeginTx() )
@@ -83,7 +83,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  }
 		 }
 
-		 internal static StartNode Sparse( GraphDatabaseService graphDb )
+		 internal static StartNode Sparse( IGraphDatabaseService graphDb )
 		 {
 			  Node node;
 			  IDictionary<string, IList<StartRelationship>> relationshipMap;
@@ -96,7 +96,7 @@ namespace Neo4Net.Internal.Kernel.Api
 			  return new StartNode( node.Id, relationshipMap );
 		 }
 
-		 internal static StartNode Dense( GraphDatabaseService graphDb )
+		 internal static StartNode Dense( IGraphDatabaseService graphDb )
 		 {
 			  Node node;
 			  IDictionary<string, IList<StartRelationship>> relationshipMap;
@@ -123,7 +123,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.Map<String,int> count(org.neo4j.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor relationship) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: static java.util.Map<String,int> count(org.Neo4Net.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor relationship) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal static IDictionary<string, int> Count( Neo4Net.Internal.Kernel.Api.Transaction transaction, RelationshipTraversalCursor relationship )
 		 {
 			  Dictionary<string, int> counts = new Dictionary<string, int>();
@@ -136,7 +136,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void assertCount(org.neo4j.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor relationship, java.util.Map<String,int> expectedCounts, int expectedType, org.neo4j.graphdb.Direction direction) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: static void assertCount(org.Neo4Net.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor relationship, java.util.Map<String,int> expectedCounts, int expectedType, org.Neo4Net.graphdb.Direction direction) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 internal static void AssertCount( Neo4Net.Internal.Kernel.Api.Transaction transaction, RelationshipTraversalCursor relationship, IDictionary<string, int> expectedCounts, int expectedType, Direction direction )
 		 {
 			  string key = ComputeKey( transaction.Token().relationshipTypeName(expectedType), direction );
@@ -214,7 +214,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static String computeKey(org.neo4j.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor r) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static String computeKey(org.Neo4Net.internal.kernel.api.Transaction transaction, RelationshipTraversalCursor r) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private static string ComputeKey( Neo4Net.Internal.Kernel.Api.Transaction transaction, RelationshipTraversalCursor r )
 		 {
 			  Direction d;

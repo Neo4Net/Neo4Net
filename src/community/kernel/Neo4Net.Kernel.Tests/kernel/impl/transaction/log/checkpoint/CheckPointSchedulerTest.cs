@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicBoolean stoppedCompleted = new java.util.concurrent.atomic.AtomicBoolean();
 			  AtomicBoolean stoppedCompleted = new AtomicBoolean();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch checkPointerLatch = new org.neo4j.test.DoubleLatch(1);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch checkPointerLatch = new org.Neo4Net.test.DoubleLatch(1);
 			  DoubleLatch checkPointerLatch = new DoubleLatch( 1 );
 			  OtherThreadExecutor<Void> otherThreadExecutor = new OtherThreadExecutor<Void>( "scheduler stopper", null );
 			  CheckPointer checkPointer = new CheckPointerAnonymousInnerClass( this, checkPointerLatch );

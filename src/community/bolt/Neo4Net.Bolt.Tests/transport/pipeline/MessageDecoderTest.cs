@@ -34,13 +34,13 @@ namespace Neo4Net.Bolt.transport.pipeline
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using SynchronousBoltConnection = Neo4Net.Bolt.runtime.SynchronousBoltConnection;
 	using BoltRequestMessageReaderV1 = Neo4Net.Bolt.v1.messaging.BoltRequestMessageReaderV1;
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using AckFailureMessage = Neo4Net.Bolt.v1.messaging.request.AckFailureMessage;
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
@@ -48,7 +48,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using PackedOutputArray = Neo4Net.Bolt.v1.packstream.PackedOutputArray;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -89,17 +89,17 @@ namespace Neo4Net.Bolt.transport.pipeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Edges.ALICE_KNOWS_BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Paths.ALL_PATHS;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Paths.ALL_PATHS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.serialize;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.serialize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.durationValue;
+//	import static org.Neo4Net.values.storable.Values.durationValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class MessageDecoderTest
@@ -108,8 +108,8 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 private EmbeddedChannel _channel;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.neo4j.bolt.messaging.Neo4jPack packerUnderTest;
-		 public Neo4jPack PackerUnderTest;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.bolt.messaging.Neo4NetPack packerUnderTest;
+		 public Neo4NetPack PackerUnderTest;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(1) public String name;
@@ -123,12 +123,12 @@ namespace Neo4Net.Bolt.transport.pipeline
 			  {
 				  new object[]
 				  {
-					  new Neo4jPackV1(),
+					  new Neo4NetPackV1(),
 					  "V1"
 				  },
 				  new object[]
 				  {
-					  new Neo4jPackV2(),
+					  new Neo4NetPackV2(),
 					  "V2"
 				  }
 			  };
@@ -255,7 +255,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 			  _channel.writeInbound( Unpooled.wrappedBuffer( serialize( PackerUnderTest, new InitMessage( userAgent, authToken ) ) ) );
 			  _channel.finishAndReleaseAll();
 
-			  verify( stateMachine ).handleExternalFailure( eq( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Value `null` is not supported as key in maps, must be a non-nullable string." ) ), any() );
+			  verify( stateMachine ).handleExternalFailure( eq( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Value `null` is not supported as key in maps, must be a non-nullable string." ) ), any() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -269,7 +269,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 
 			  // Generate INIT message with duplicate keys
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = PackerUnderTest.newPacker( @out );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = PackerUnderTest.newPacker( @out );
 			  packer.PackStructHeader( 2, InitMessage.SIGNATURE );
 			  packer.Pack( "Test/User Agent 1.0" );
 			  packer.PackMapHeader( 3 );
@@ -283,7 +283,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 			  _channel.writeInbound( Unpooled.wrappedBuffer( @out.Bytes() ) );
 			  _channel.finishAndReleaseAll();
 
-			  verify( stateMachine ).handleExternalFailure( eq( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Duplicate map key `scheme`." ) ), any() );
+			  verify( stateMachine ).handleExternalFailure( eq( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "Duplicate map key `scheme`." ) ), any() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -320,7 +320,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), durationValue(Duration.ofDays(10)), "Duration values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), durationValue(Duration.ofDays(10)), "Duration values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -330,7 +330,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(LocalDate.now()), "LocalDate values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(LocalDate.now()), "LocalDate values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -340,7 +340,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(LocalTime.now()), "LocalTime values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(LocalTime.now()), "LocalTime values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -350,7 +350,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(OffsetTime.now()), "OffsetTime values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(OffsetTime.now()), "OffsetTime values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -360,7 +360,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(DateTime.Now), "LocalDateTime values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(DateTime.Now), "LocalDateTime values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -370,7 +370,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(OffsetDateTime.now()), "OffsetDateTime values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(OffsetDateTime.now()), "OffsetDateTime values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -380,7 +380,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 {
 			  assumeThat( PackerUnderTest.version(), equalTo(1L) );
 
-			  TestUnpackableStructParametersWithKnownType( new Neo4jPackV2(), ValueUtils.of(ZonedDateTime.now()), "ZonedDateTime values cannot be unpacked with this version of bolt." );
+			  TestUnpackableStructParametersWithKnownType( new Neo4NetPackV2(), ValueUtils.of(ZonedDateTime.now()), "ZonedDateTime values cannot be unpacked with this version of bolt." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -389,7 +389,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 public virtual void ShouldThrowOnUnknownStructType()
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = PackerUnderTest.newPacker( @out );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = PackerUnderTest.newPacker( @out );
 			  packer.PackStructHeader( 2, RunMessage.SIGNATURE );
 			  packer.Pack( "RETURN $x" );
 			  packer.PackMapHeader( 1 );
@@ -468,15 +468,15 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.neo4j.values.AnyValue parameterValue, String expectedMessage) throws Exception
+//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
 		 private void TestUnpackableStructParametersWithKnownType( AnyValue parameterValue, string expectedMessage )
 		 {
 			  TestUnpackableStructParametersWithKnownType( PackerUnderTest, parameterValue, expectedMessage );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.neo4j.bolt.messaging.Neo4jPack packerForSerialization, org.neo4j.values.AnyValue parameterValue, String expectedMessage) throws Exception
-		 private void TestUnpackableStructParametersWithKnownType( Neo4jPack packerForSerialization, AnyValue parameterValue, string expectedMessage )
+//ORIGINAL LINE: private void testUnpackableStructParametersWithKnownType(org.Neo4Net.bolt.messaging.Neo4NetPack packerForSerialization, org.Neo4Net.values.AnyValue parameterValue, String expectedMessage) throws Exception
+		 private void TestUnpackableStructParametersWithKnownType( Neo4NetPack packerForSerialization, AnyValue parameterValue, string expectedMessage )
 		 {
 			  string statement = "RETURN $x";
 			  MapValue parameters = VirtualValues.map( new string[]{ "x" }, new AnyValue[]{ parameterValue } );
@@ -488,7 +488,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 			  _channel.writeInbound( Unpooled.wrappedBuffer( serialize( packerForSerialization, new RunMessage( statement, parameters ) ) ) );
 			  _channel.finishAndReleaseAll();
 
-			  verify( stateMachine ).handleExternalFailure( eq( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, expectedMessage ) ), any() );
+			  verify( stateMachine ).handleExternalFailure( eq( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, expectedMessage ) ), any() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -508,7 +508,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 		 private sbyte[] PackMessageWithSignature( sbyte signature )
 		 {
 			  PackedOutputArray @out = new PackedOutputArray();
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = PackerUnderTest.newPacker( @out );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = PackerUnderTest.newPacker( @out );
 			  packer.PackStructHeader( 2, signature );
 			  packer.Pack( "RETURN 'Hello World!'" );
 			  packer.pack( EMPTY_MAP );

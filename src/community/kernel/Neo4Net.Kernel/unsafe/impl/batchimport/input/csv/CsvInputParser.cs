@@ -31,7 +31,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Entry = Neo4Net.@unsafe.Impl.Batchimport.input.csv.Header.Entry;
 
 	/// <summary>
-	/// CSV data to input entity parsing logic. Parsed CSV data is fed into <seealso cref="InputEntityVisitor"/>.
+	/// CSV data to input IEntity parsing logic. Parsed CSV data is fed into <seealso cref="InputEntityVisitor"/>.
 	/// </summary>
 	public class CsvInputParser : System.IDisposable
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean next(org.neo4j.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputEntityVisitor visitor) throws java.io.IOException
 		 internal virtual bool Next( InputEntityVisitor visitor )
 		 {
 			  _lineNumber++;
@@ -181,7 +181,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 
 						 if ( _mark.EndOfLine )
 						 {
-							  // We're at the end of the line, break and return an entity with what we have.
+							  // We're at the end of the line, break and return an IEntity with what we have.
 							  break;
 						 }
 					}

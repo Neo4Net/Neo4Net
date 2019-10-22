@@ -42,7 +42,7 @@ namespace Neo4Net.Server.web
 	{
 		 private readonly IList<string> _items = new List<string>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.List<org.neo4j.server.plugins.Injectable<?>> injectables = new java.util.ArrayList<>();
+//ORIGINAL LINE: private final java.util.List<org.Neo4Net.server.plugins.Injectable<?>> injectables = new java.util.ArrayList<>();
 		 private readonly IList<Injectable<object>> _injectables = new List<Injectable<object>>();
 
 		 public virtual void Add<T1>( IList<string> items, ICollection<T1> injectableProviders )
@@ -65,7 +65,7 @@ namespace Neo4Net.Server.web
 		 public virtual ServletHolder Create<T1>( ICollection<T1> defaultInjectables, bool wadlEnabled )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> injectableProviders = mergeInjectables(defaultInjectables, injectables);
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> injectableProviders = mergeInjectables(defaultInjectables, injectables);
 			  ICollection<InjectableProvider<object>> injectableProviders = MergeInjectables( defaultInjectables, _injectables );
 			  ServletContainer container = new NeoServletContainer( injectableProviders );
 			  ServletHolder servletHolder = new ServletHolder( container );
@@ -88,11 +88,11 @@ namespace Neo4Net.Server.web
 		 protected internal abstract void Configure( ServletHolder servletHolder, string commaSeparatedList );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> mergeInjectables(java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> defaultInjectables, java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectables)
+//ORIGINAL LINE: private java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> mergeInjectables(java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> defaultInjectables, java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectables)
 		 private ICollection<InjectableProvider<object>> MergeInjectables<T1, T2>( ICollection<T1> defaultInjectables, ICollection<T2> injectables )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> injectableProviders = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> injectableProviders = new java.util.ArrayList<>();
 			  ICollection<InjectableProvider<object>> injectableProviders = new List<InjectableProvider<object>>();
 			  if ( defaultInjectables != null )
 			  {
@@ -101,7 +101,7 @@ namespace Neo4Net.Server.web
 			  if ( injectables != null )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.server.plugins.Injectable<?> injectable : injectables)
+//ORIGINAL LINE: for (org.Neo4Net.server.plugins.Injectable<?> injectable : injectables)
 					foreach ( Injectable<object> injectable in injectables )
 					{
 						 injectableProviders.Add( new InjectableWrapper( injectable ) );

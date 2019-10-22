@@ -25,7 +25,7 @@ namespace Neo4Net.Server
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
@@ -44,13 +44,13 @@ namespace Neo4Net.Server
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
+//	import static org.Neo4Net.server.helpers.CommunityServerBuilder.serverOnRandomPorts;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.GET;
+//	import static org.Neo4Net.test.server.HTTP.GET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.POST;
+//	import static org.Neo4Net.test.server.HTTP.POST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class HttpsAccessIT : ExclusiveServerTestBase
 	{

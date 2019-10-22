@@ -55,7 +55,7 @@ namespace Neo4Net.Consistency.checking.full
 			  when( progressBuilder.ProgressForPart( anyString(), anyLong() ) ).thenReturn(progressListener);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.BoundedIterable<int> store = mock(org.neo4j.helpers.collection.BoundedIterable.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.BoundedIterable<int> store = mock(org.Neo4Net.helpers.collection.BoundedIterable.class);
 			  BoundedIterable<int> store = mock( typeof( BoundedIterable ) );
 
 			  when( store.GetEnumerator() ).thenReturn(asList(42, 75, 192).GetEnumerator());
@@ -84,7 +84,7 @@ namespace Neo4Net.Consistency.checking.full
 			  when( progressBuilder.ProgressForPart( anyString(), anyLong() ) ).thenReturn(progressListener);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.BoundedIterable<int> store = mock(org.neo4j.helpers.collection.BoundedIterable.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.BoundedIterable<int> store = mock(org.Neo4Net.helpers.collection.BoundedIterable.class);
 			  BoundedIterable<int> store = mock( typeof( BoundedIterable ) );
 
 			  when( store.GetEnumerator() ).thenReturn(asList(42, 75, 192).GetEnumerator());
@@ -103,7 +103,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyProcessCloseAndDone(RecordProcessor<int> recordProcessor, org.neo4j.helpers.collection.BoundedIterable<int> store, org.neo4j.helpers.progress.ProgressListener progressListener) throws Exception
+//ORIGINAL LINE: private static void verifyProcessCloseAndDone(RecordProcessor<int> recordProcessor, org.Neo4Net.helpers.collection.BoundedIterable<int> store, org.Neo4Net.helpers.progress.ProgressListener progressListener) throws Exception
 		 private static void VerifyProcessCloseAndDone( RecordProcessor<int> recordProcessor, BoundedIterable<int> store, ProgressListener progressListener )
 		 {
 			  verify( recordProcessor ).process( 42 );

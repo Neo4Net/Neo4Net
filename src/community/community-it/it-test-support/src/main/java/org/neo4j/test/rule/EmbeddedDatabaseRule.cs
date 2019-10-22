@@ -22,8 +22,8 @@ namespace Neo4Net.Test.rule
 	using Description = org.junit.runner.Description;
 	using Statement = org.junit.runners.model.Statement;
 
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 
 

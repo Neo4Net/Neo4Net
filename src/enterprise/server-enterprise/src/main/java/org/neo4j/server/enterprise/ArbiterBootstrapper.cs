@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.enterprise
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.Server.enterprise
 	using ClusterClientModule = Neo4Net.cluster.client.ClusterClientModule;
 	using NotElectableElectionCredentialsProvider = Neo4Net.cluster.protocol.election.NotElectableElectionCredentialsProvider;
 	using Predicates = Neo4Net.Functions.Predicates;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileSystemLifecycleAdapter = Neo4Net.Io.fs.FileSystemLifecycleAdapter;
@@ -47,11 +47,11 @@ namespace Neo4Net.Server.enterprise
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.peel;
+//	import static org.Neo4Net.helpers.Exceptions.peel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createScheduler;
 
 	public class ArbiterBootstrapper : Bootstrapper, IDisposable
 	{
@@ -71,7 +71,7 @@ namespace Neo4Net.Server.enterprise
 			  catch ( LifecycleException e )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"ThrowableResultOfMethodCallIgnored", "unchecked"}) Throwable cause = peel(e, org.neo4j.function.Predicates.instanceOf(org.neo4j.kernel.lifecycle.LifecycleException.class));
+//ORIGINAL LINE: @SuppressWarnings({"ThrowableResultOfMethodCallIgnored", "unchecked"}) Throwable cause = peel(e, org.Neo4Net.function.Predicates.instanceOf(org.Neo4Net.kernel.lifecycle.LifecycleException.class));
 					Exception cause = peel( e, Predicates.instanceOf( typeof( LifecycleException ) ) );
 					if ( cause is ChannelException )
 					{

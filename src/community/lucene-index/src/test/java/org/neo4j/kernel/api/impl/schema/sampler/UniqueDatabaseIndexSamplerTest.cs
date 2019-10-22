@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 private readonly TaskCoordinator _taskControl = new TaskCoordinator( 0, TimeUnit.MILLISECONDS );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void uniqueSamplingUseDocumentsNumber() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test void uniqueSamplingUseDocumentsNumber() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void UniqueSamplingUseDocumentsNumber()
 		 {

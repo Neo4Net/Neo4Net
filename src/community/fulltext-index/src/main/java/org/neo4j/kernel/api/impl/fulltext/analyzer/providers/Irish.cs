@@ -22,11 +22,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext.analyzer.providers
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 	using IrishAnalyzer = org.apache.lucene.analysis.ga.IrishAnalyzer;
 
-	using AnalyzerProvider = Neo4Net.Graphdb.index.fulltext.AnalyzerProvider;
+	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
 	using Service = Neo4Net.Helpers.Service;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class Irish extends org.neo4j.graphdb.index.fulltext.AnalyzerProvider
+//ORIGINAL LINE: @Service.Implementation(AnalyzerProvider.class) public class Irish extends org.Neo4Net.graphdb.index.fulltext.AnalyzerProvider
 	public class Irish : AnalyzerProvider
 	{
 		 public Irish() : base("irish")

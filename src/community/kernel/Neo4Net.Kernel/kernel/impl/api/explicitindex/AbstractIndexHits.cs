@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.explicitindex
 {
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb.index;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 

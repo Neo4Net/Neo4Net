@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.index.TestIndexDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class NodeSchemaMatcherTest
 	{
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.neo4j.storageengine.api.schema.IndexDescriptor> matched = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.storageengine.api.schema.IndexDescriptor> matched = new java.util.ArrayList<>();
 			  IList<IndexDescriptor> matched = new List<IndexDescriptor>();
 			  NodeSchemaMatcher.OnMatchingSchema( indexes.GetEnumerator(), UN_INDEXED_PROP_ID, _props, matched.add );
 

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 	/// <summary>
 	/// This exception is thrown when a checked exception occurs inside <seealso cref="Resource.close()"/>.

@@ -60,17 +60,17 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 public override bool VisitIndexAddNodeCommand( IndexCommand.AddNodeCommand command )
 		 {
-			  IdData entityId = new IdData( command.EntityId );
-			  return VisitIndexAddCommand( command, entityId );
+			  IdData IEntityId = new IdData( command.EntityId );
+			  return VisitIndexAddCommand( command, IEntityId );
 		 }
 
 		 public override bool VisitIndexAddRelationshipCommand( IndexCommand.AddRelationshipCommand command )
 		 {
-			  RelationshipData entityId = new RelationshipData( command.EntityId, command.StartNode, command.EndNode );
-			  return VisitIndexAddCommand( command, entityId );
+			  RelationshipData IEntityId = new RelationshipData( command.EntityId, command.StartNode, command.EndNode );
+			  return VisitIndexAddCommand( command, IEntityId );
 		 }
 
-		 private bool VisitIndexAddCommand( IndexCommand command, EntityId entityId )
+		 private bool VisitIndexAddCommand( IndexCommand command, IEntityId IEntityId )
 		 {
 			  try
 			  {
@@ -87,7 +87,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					if ( value != null )
 					{
 						 context.EnsureWriterInstantiated();
-						 context.IndexType.addToDocument( context.GetDocument( entityId, true ).Document, key, value );
+						 context.IndexType.addToDocument( context.GetDocument( IEntityId, true ).Document, key, value );
 					}
 			  }
 			  catch ( ExplicitIndexNotFoundKernelException )
@@ -119,7 +119,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.neo4j.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
 		 public override bool VisitIndexDeleteCommand( IndexCommand.DeleteCommand command )
 		 {
 			  try
@@ -177,7 +177,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private CommitContext commitContext(org.neo4j.kernel.impl.index.IndexCommand command) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private CommitContext commitContext(org.Neo4Net.kernel.impl.index.IndexCommand command) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private CommitContext CommitContext( IndexCommand command )
 		 {
 			  IDictionary<string, CommitContext> contextMap = CommitContextMap( command.EntityType );
@@ -199,17 +199,17 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return context;
 		 }
 
-		 private IDictionary<string, CommitContext> CommitContextMap( sbyte entityType )
+		 private IDictionary<string, CommitContext> CommitContextMap( sbyte IEntityType )
 		 {
-			  if ( entityType == IndexEntityType.Node.id() )
+			  if ( IEntityType == IndexEntityType.Node.id() )
 			  {
 					return _nodeContexts;
 			  }
-			  if ( entityType == IndexEntityType.Relationship.id() )
+			  if ( IEntityType == IndexEntityType.Relationship.id() )
 			  {
 					return _relationshipContexts;
 			  }
-			  throw new System.ArgumentException( "Unknown entity type " + entityType );
+			  throw new System.ArgumentException( "Unknown IEntity type " + IEntityType );
 		 }
 	}
 

@@ -29,7 +29,7 @@ namespace Neo4Net.Server.rest.domain
 	/// </summary>
 	public class HtmlHelper
 	{
-		 private const string STYLE_LOCATION = "http://resthtml.neo4j.org/style/";
+		 private const string STYLE_LOCATION = "http://resthtml.Neo4Net.org/style/";
 
 		 private HtmlHelper()
 		 {
@@ -62,7 +62,7 @@ namespace Neo4Net.Server.rest.domain
 			  {
 					builder.Append( additionalCodeInHead );
 			  }
-			  builder.Append( "<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\">\n" + "<link href='" + STYLE_LOCATION + "rest.css' rel='stylesheet' type='text/css'>\n" + "</head>\n<body onload='javascript:neo4jHtmlBrowse.start();' id='" + title.ToLower() + "'>\n" + "<div id='content'>" + "<div id='header'>" + "<h1><a title='Neo4j REST interface' href='/'><span>Neo4j REST interface</span></a></h1>" + "</div>" + "\n<div id='page-body'>\n" );
+			  builder.Append( "<meta content=\"text/html; charset=utf-8\" http-equiv=\"Content-Type\">\n" + "<link href='" + STYLE_LOCATION + "rest.css' rel='stylesheet' type='text/css'>\n" + "</head>\n<body onload='javascript:Neo4NetHtmlBrowse.start();' id='" + title.ToLower() + "'>\n" + "<div id='content'>" + "<div id='header'>" + "<h1><a title='Neo4Net REST interface' href='/'><span>Neo4Net REST interface</span></a></h1>" + "</div>" + "\n<div id='page-body'>\n" );
 			  return builder;
 		 }
 

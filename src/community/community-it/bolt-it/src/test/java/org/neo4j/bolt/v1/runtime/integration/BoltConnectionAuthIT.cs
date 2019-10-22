@@ -34,23 +34,23 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeeded;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeededWithMetadata;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeededWithMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.verifyKillsConnection;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyKillsConnection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.TRUE;
+//	import static org.Neo4Net.values.storable.Values.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class BoltConnectionAuthIT
 	{
@@ -72,7 +72,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
 
 			  // When
-			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "neo4j", "neo4j" ) );
+			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "Neo4Net", "Neo4Net" ) );
 
 			  machine.Process( init, recorder );
 			  machine.Process( new RunMessage( "CREATE ()", EMPTY_MAP ), recorder );
@@ -91,10 +91,10 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  // identify expired credentials as the cause of not being authenticated
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
-			  string version = "Neo4j/" + Version.Neo4jVersion;
+			  string version = "Neo4Net/" + Version.Neo4NetVersion;
 
 			  // When
-			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "neo4j", "neo4j" ) );
+			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "Neo4Net", "Neo4Net" ) );
 
 			  machine.Process( init, recorder );
 			  machine.Process( new RunMessage( "CREATE ()", EMPTY_MAP ), recorder );
@@ -112,7 +112,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 
 			  // When... then
-			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "neo4j", "j4oen" ) );
+			  InitMessage init = new InitMessage( USER_AGENT, newBasicAuthToken( "Neo4Net", "j4oen" ) );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
 			  verifyKillsConnection( () => machine.process(init, recorder) );
 
@@ -129,7 +129,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
 
 			  // when
-			  InitMessage message = new InitMessage( USER_AGENT, map( "scheme", "basic", "principal", "neo4j", "credentials", UTF8.encode( "neo4j" ), "new_credentials", UTF8.encode( "secret" ) ) );
+			  InitMessage message = new InitMessage( USER_AGENT, map( "scheme", "basic", "principal", "Neo4Net", "credentials", UTF8.encode( "Neo4Net" ), "new_credentials", UTF8.encode( "secret" ) ) );
 			  machine.Process( message, recorder );
 			  machine.Process( new RunMessage( "CREATE ()", EMPTY_MAP ), recorder );
 

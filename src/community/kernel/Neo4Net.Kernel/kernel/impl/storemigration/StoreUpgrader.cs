@@ -24,7 +24,7 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.impl.storemigration
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -286,9 +286,9 @@ namespace Neo4Net.Kernel.impl.storemigration
 
 		 public class UnexpectedUpgradingStoreVersionException : UnableToUpgradeException
 		 {
-			  internal const string MESSAGE = "Not possible to upgrade a store with version '%s' to current store version `%s` (Neo4j %s).";
+			  internal const string MESSAGE = "Not possible to upgrade a store with version '%s' to current store version `%s` (Neo4Net %s).";
 
-			  internal UnexpectedUpgradingStoreVersionException( string fileVersion, string currentVersion ) : base( string.format( MESSAGE, fileVersion, currentVersion, Version.Neo4jVersion ) )
+			  internal UnexpectedUpgradingStoreVersionException( string fileVersion, string currentVersion ) : base( string.format( MESSAGE, fileVersion, currentVersion, Version.Neo4NetVersion ) )
 			  {
 			  }
 		 }

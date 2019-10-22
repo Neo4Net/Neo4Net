@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -31,8 +31,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Test = org.junit.Test;
 
 
-	using DelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.DelegatingFileSystemAbstraction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using DelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.DelegatingFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -79,19 +79,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  UserStoreFile = new File( "dbms", "auth" );
 			  RoleStoreFile = new File( "dbms", "roles" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository userRepository = new org.neo4j.server.security.auth.FileUserRepository(fs, userStoreFile, logProvider);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository userRepository = new org.Neo4Net.server.security.auth.FileUserRepository(fs, userStoreFile, logProvider);
 			  UserRepository userRepository = new FileUserRepository( Fs, UserStoreFile, LogProvider );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RoleRepository roleRepository = new FileRoleRepository(fs, roleStoreFile, logProvider);
 			  RoleRepository roleRepository = new FileRoleRepository( Fs, RoleStoreFile, LogProvider );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository initialUserRepository = org.neo4j.server.security.auth.CommunitySecurityModule.getInitialUserRepository(org.neo4j.kernel.configuration.Config.defaults(), logProvider, fs);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository initialUserRepository = org.Neo4Net.server.security.auth.CommunitySecurityModule.getInitialUserRepository(org.Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
 			  UserRepository initialUserRepository = CommunitySecurityModule.getInitialUserRepository( Config.defaults(), LogProvider, Fs );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.security.auth.UserRepository defaultAdminRepository = EnterpriseSecurityModule.getDefaultAdminRepository(org.neo4j.kernel.configuration.Config.defaults(), logProvider, fs);
+//ORIGINAL LINE: final org.Neo4Net.server.security.auth.UserRepository defaultAdminRepository = EnterpriseSecurityModule.getDefaultAdminRepository(org.Neo4Net.kernel.configuration.Config.defaults(), logProvider, fs);
 			  UserRepository defaultAdminRepository = EnterpriseSecurityModule.GetDefaultAdminRepository( Config.defaults(), LogProvider, Fs );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.api.security.PasswordPolicy passwordPolicy = new org.neo4j.server.security.auth.BasicPasswordPolicy();
+//ORIGINAL LINE: final org.Neo4Net.kernel.api.security.PasswordPolicy passwordPolicy = new org.Neo4Net.server.security.auth.BasicPasswordPolicy();
 			  PasswordPolicy passwordPolicy = new BasicPasswordPolicy();
 			  AuthenticationStrategy authenticationStrategy = new RateLimitedAuthenticationStrategy( Clocks.systemClock(), Config.defaults() );
 
@@ -132,7 +132,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34", "THIS_WILL_NOT_BE_READ" );
 
 			  // now the roles file has non-existent users
-			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:neo4j,Mao\n" + "publisher:Hanna\n" );
+			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:Neo4Net,Mao\n" + "publisher:Hanna\n" );
 
 			  // finally valid files
 			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:Mia\n" + "publisher:Hanna,Carol\n" );
@@ -149,7 +149,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldEventuallyFailReloadAttempts()
 		 {
 			  // the roles file has non-existent users
-			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:neo4j,Mao\n" + "publisher:Hanna\n" );
+			  Fs.addUserRoleFilePair( "Hanna:SHA-256,FE0056C37E,A543:\n" + "Carol:SHA-256,FE0056C37E,A543:\n" + "Mia:SHA-256,0E1FFFC23E,34A4:password_change_required\n", "admin:Neo4Net,Mao\n" + "publisher:Hanna\n" );
 
 			  // perma-broken auth file
 			  for ( int i = 0; i < _largeNumber - 1; i++ )

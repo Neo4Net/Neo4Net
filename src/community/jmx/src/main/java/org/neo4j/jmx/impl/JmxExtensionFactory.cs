@@ -30,7 +30,7 @@ namespace Neo4Net.Jmx.impl
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) @Deprecated public final class JmxExtensionFactory extends org.neo4j.kernel.extension.KernelExtensionFactory<JmxExtensionFactory.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) @Deprecated public final class JmxExtensionFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<JmxExtensionFactory.Dependencies>
 	[Obsolete]
 	public sealed class JmxExtensionFactory : KernelExtensionFactory<JmxExtensionFactory.Dependencies>
 	{

@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Server.plugins
 {
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using BadInputException = Neo4Net.Server.rest.repr.BadInputException;
 
 	internal class RelationshipTypeTypeCaster : TypeCaster
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object get(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object get(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 internal override object Get( GraphDatabaseAPI graphDb, ParameterList parameters, string name )
 		 {
 			  string typeName = parameters.GetString( name );
@@ -38,7 +38,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object[] getList(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object[] getList(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, ParameterList parameters, String name) throws org.Neo4Net.server.rest.repr.BadInputException
 		 internal override object[] GetList( GraphDatabaseAPI graphDb, ParameterList parameters, string name )
 		 {
 			  string[] strings = parameters.GetStringList( name );

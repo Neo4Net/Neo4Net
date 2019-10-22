@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
@@ -113,11 +113,11 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
+//	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.RECOVERY;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.REVERSE_RECOVERY;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.REVERSE_RECOVERY;
 
 	public class RecordStorageEngine : StorageEngine, Lifecycle
 	{
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.neo4j.storageengine.api.StorageCommand> commands, org.neo4j.storageengine.api.txstate.ReadableTransactionState txState, org.neo4j.storageengine.api.StorageReader storageReader, org.neo4j.storageengine.api.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.neo4j.storageengine.api.txstate.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.schema.CreateConstraintFailureException, org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> commands, org.Neo4Net.storageengine.api.txstate.ReadableTransactionState txState, org.Neo4Net.storageengine.api.StorageReader storageReader, org.Neo4Net.storageengine.api.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.storageengine.api.txstate.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public override void CreateCommands( ICollection<StorageCommand> commands, ReadableTransactionState txState, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Decorator additionalTxStateVisitor )
 		 {
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(org.neo4j.storageengine.api.CommandsToApply batch, org.neo4j.storageengine.api.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public void apply(org.Neo4Net.storageengine.api.CommandsToApply batch, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception
 		 public override void Apply( CommandsToApply batch, TransactionApplicationMode mode )
 		 {
 			  // Have these command appliers as separate try-with-resource to have better control over
@@ -413,7 +413,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 					else
 					{
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.RecordStore<org.neo4j.kernel.impl.store.record.AbstractBaseRecord> recordStore = neoStores.getRecordStore(type);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.RecordStore<org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> recordStore = neoStores.getRecordStore(type);
 						 RecordStore<AbstractBaseRecord> recordStore = _neoStores.getRecordStore( type );
 						 StoreFileMetadata metadata = new StoreFileMetadata( recordStore.StorageFile, recordStore.RecordSize );
 						 Files.Add( metadata );
@@ -437,7 +437,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 /// are important tests which asserts details about the neo stores that are very important to test,
 		 /// but to convert all those tests might be a bigger piece of work. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting public org.neo4j.kernel.impl.store.NeoStores testAccessNeoStores()
+//ORIGINAL LINE: @VisibleForTesting public org.Neo4Net.kernel.impl.store.NeoStores testAccessNeoStores()
 		 public virtual NeoStores TestAccessNeoStores()
 		 {
 			  return _neoStores;

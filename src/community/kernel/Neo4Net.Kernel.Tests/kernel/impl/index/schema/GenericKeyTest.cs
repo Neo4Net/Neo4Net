@@ -61,45 +61,45 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.NO_ENTITY_ID;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.NO_ENTITY_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexKey.Inclusion.NEUTRAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.COMPARATOR;
+//	import static org.Neo4Net.values.storable.Values.COMPARATOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.booleanArray;
+//	import static org.Neo4Net.values.storable.Values.booleanArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.byteArray;
+//	import static org.Neo4Net.values.storable.Values.byteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.dateArray;
+//	import static org.Neo4Net.values.storable.Values.dateArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.dateTimeArray;
+//	import static org.Neo4Net.values.storable.Values.dateTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleArray;
+//	import static org.Neo4Net.values.storable.Values.doubleArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.durationArray;
+//	import static org.Neo4Net.values.storable.Values.durationArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.floatArray;
+//	import static org.Neo4Net.values.storable.Values.floatArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intArray;
+//	import static org.Neo4Net.values.storable.Values.intArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.isGeometryArray;
+//	import static org.Neo4Net.values.storable.Values.isGeometryArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.isGeometryValue;
+//	import static org.Neo4Net.values.storable.Values.isGeometryValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.localDateTimeArray;
+//	import static org.Neo4Net.values.storable.Values.localDateTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.localTimeArray;
+//	import static org.Neo4Net.values.storable.Values.localTimeArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longArray;
+//	import static org.Neo4Net.values.storable.Values.longArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.of;
+//	import static org.Neo4Net.values.storable.Values.of;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.pointArray;
+//	import static org.Neo4Net.values.storable.Values.pointArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.shortArray;
+//	import static org.Neo4Net.values.storable.Values.shortArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.timeArray;
+//	import static org.Neo4Net.values.storable.Values.timeArray;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class GenericKeyTest
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly IndexSpecificSpaceFillingCurveSettingsCache _noSpecificIndexSettings = new IndexSpecificSpaceFillingCurveSettingsCache( new ConfiguredSpaceFillingCurveSettingsCache( Config.defaults() ), new Dictionary<CoordinateReferenceSystem, SpaceFillingCurveSettings>() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private static org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject private static org.Neo4Net.test.rule.RandomRule random;
 		 private static RandomRule _random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -154,7 +154,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 }
 		 }
 
-		 /* TESTS FOR SLOT STATE (not including entityId) */
+		 /* TESTS FOR SLOT STATE (not including IEntityId) */
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ParameterizedTest @MethodSource("validValueGenerators") void readWhatIsWritten(ValueGenerator valueGenerator)
@@ -518,7 +518,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  ShouldReadBackToExactOriginalValue( _random.randomValues().nextCharArray() );
 		 }
 
-		 /* TESTS FOR KEY STATE (including entityId) */
+		 /* TESTS FOR KEY STATE (including IEntityId) */
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ParameterizedTest @MethodSource("validValueGenerators") void minimalSplitterForSameValueShouldDivideLeftAndRight(ValueGenerator valueGenerator)
@@ -531,7 +531,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  GenericKey right = layout.NewKey();
 			  GenericKey minimalSplitter = layout.NewKey();
 
-			  // keys with same value but different entityId
+			  // keys with same value but different IEntityId
 			  left.Initialize( 1 );
 			  left.InitFromValue( 0, value, NEUTRAL );
 			  right.Initialize( 2 );
@@ -569,8 +569,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // When creating minimal splitter
 			  layout.MinimalSplitter( left, right, minimalSplitter );
 
-			  // Then that minimal splitter should have entity id shaved off
-			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have entityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
+			  // Then that minimal splitter should have IEntity id shaved off
+			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have IEntityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -636,8 +636,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // When creating minimal splitter
 			  layout.MinimalSplitter( left, right, minimalSplitter );
 
-			  // Then that minimal splitter should have entity id shaved off
-			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have entityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
+			  // Then that minimal splitter should have IEntity id shaved off
+			  assertEquals( NO_ENTITY_ID, minimalSplitter.EntityId, "Expected minimal splitter to have IEntityId removed when constructed from keys with unique values: " + "left=" + leftValue + ", right=" + rightValue );
 		 }
 
 		 private void ShouldReadBackToExactOriginalValue( Value srcValue )

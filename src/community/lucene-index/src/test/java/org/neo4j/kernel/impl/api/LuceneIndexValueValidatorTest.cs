@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.LuceneIndexValueValidator.INSTANCE;
+//	import static org.Neo4Net.kernel.impl.api.LuceneIndexValueValidator.INSTANCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.LuceneIndexValueValidator.MAX_TERM_LENGTH;
+//	import static org.Neo4Net.kernel.impl.api.LuceneIndexValueValidator.MAX_TERM_LENGTH;
 
 	internal class LuceneIndexValueValidatorTest
 	{

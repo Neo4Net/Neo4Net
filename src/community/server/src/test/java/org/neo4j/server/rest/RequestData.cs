@@ -32,7 +32,7 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public int StatusConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		 public string EntityConflict;
+		 public string IEntityConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public IDictionary<string, string> RequestHeadersConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -80,8 +80,8 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public void setEntity(final String entity)
-		 public virtual string Entity
+//ORIGINAL LINE: public void setEntity(final String IEntity)
+		 public virtual string IEntity
 		 {
 			 set
 			 {
@@ -111,7 +111,7 @@ namespace Neo4Net.Server.rest
 
 		 public override string ToString()
 		 {
-			  return "DocumentationData [payload=" + _payload + ", uri=" + UriConflict + ", method=" + MethodConflict + ", status=" + StatusConflict + ", entity=" + EntityConflict + ", requestHeaders=" + RequestHeadersConflict + ", responseHeaders=" + ResponseHeadersConflict + "]";
+			  return "DocumentationData [payload=" + _payload + ", uri=" + UriConflict + ", method=" + MethodConflict + ", status=" + StatusConflict + ", IEntity=" + IEntityConflict + ", requestHeaders=" + RequestHeadersConflict + ", responseHeaders=" + ResponseHeadersConflict + "]";
 		 }
 	}
 

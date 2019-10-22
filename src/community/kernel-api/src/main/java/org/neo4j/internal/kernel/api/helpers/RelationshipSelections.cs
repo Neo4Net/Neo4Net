@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Internal.Kernel.Api.helpers
 {
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 
 	/// <summary>
 	/// Utilities for dealing with RelationshipSelectionCursor and corresponding iterators.

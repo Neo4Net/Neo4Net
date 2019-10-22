@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,17 +16,17 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Internal.cypher.acceptance
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using ComponentRegistry = Neo4Net.Kernel.impl.proc.ComponentRegistry;
 	using Context = Neo4Net.Procedure.Context;
 	using Description = Neo4Net.Procedure.Description;
@@ -50,8 +50,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-		 public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+		 public IGraphDatabaseService Db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Context public Counters counters;
@@ -112,10 +112,10 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.neo4j.test.testResourceProcedure", mode = org.neo4j.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument") public java.util.stream.Stream<Output> testResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument") public java.util.stream.Stream<Output> testResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
-		 [Procedure(name : "org.neo4j.test.testResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument")]
+		 [Procedure(name : "org.Neo4Net.test.testResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument")]
 		 public virtual Stream<Output> TestResourceProcedureConflict( long resultCount )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
@@ -129,9 +129,9 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.neo4j.test.testFailingResourceProcedure", mode = org.neo4j.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element") public java.util.stream.Stream<Output> testFailingResourceProcedure(@Name(value = "failCount", defaultValue = "3") long failCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testFailingResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element") public java.util.stream.Stream<Output> testFailingResourceProcedure(@Name(value = "failCount", defaultValue = "3") long failCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 [Procedure(name : "org.neo4j.test.testFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element")]
+		 [Procedure(name : "org.Neo4Net.test.testFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument, but throws an exception when reaching the last element")]
 		 public virtual Stream<Output> TestFailingResourceProcedure( long failCount )
 		 {
 			  IEnumerator<Output> failingIterator = new IteratorAnonymousInnerClass( this, failCount );
@@ -176,9 +176,9 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(name = "org.neo4j.test.testOnCloseFailingResourceProcedure", mode = org.neo4j.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.") public java.util.stream.Stream<Output> testOnCloseFailingResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
+//ORIGINAL LINE: @Procedure(name = "org.Neo4Net.test.testOnCloseFailingResourceProcedure", mode = org.Neo4Net.procedure.Mode.READ) @Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.") public java.util.stream.Stream<Output> testOnCloseFailingResourceProcedure(@Name(value = "resultCount", defaultValue = "4") long resultCount) throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 [Procedure(name : "org.neo4j.test.testOnCloseFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.")]
+		 [Procedure(name : "org.Neo4Net.test.testOnCloseFailingResourceProcedure", mode : Neo4Net.Procedure.Mode.READ), Description("Returns a stream of integers from 1 to the given argument. Throws an exception on close.")]
 		 public virtual Stream<Output> TestOnCloseFailingResourceProcedure( long resultCount )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
@@ -193,8 +193,8 @@ namespace Neo4Net.Internal.cypher.acceptance
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @UserFunction(name = "org.neo4j.test.fail") @Description("org.neo4j.test.fail") public String fail(@Name(value = "input") String input)
-		 [UserFunction(name : "org.neo4j.test.fail"), Description("org.neo4j.test.fail")]
+//ORIGINAL LINE: @UserFunction(name = "org.Neo4Net.test.fail") @Description("org.Neo4Net.test.fail") public String fail(@Name(value = "input") String input)
+		 [UserFunction(name : "org.Neo4Net.test.fail"), Description("org.Neo4Net.test.fail")]
 		 public virtual string Fail( string input )
 		 {
 			  throw new SimulateFailureException();

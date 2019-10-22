@@ -40,9 +40,9 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using Barrier = Neo4Net.Test.Barrier;
@@ -59,34 +59,34 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.containsRecord;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.containsRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeeded;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeededWithMetadata;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeededWithMetadata;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeededWithRecord;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeededWithRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.wasIgnored;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.wasIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 
 	public class TransactionIT
 	{
 		 private const string USER_AGENT = "TransactionIT/0.0";
-		 private static readonly Pattern _bookmarkPattern = Pattern.compile( "neo4j:bookmark:v1:tx[0-9]+" );
+		 private static readonly Pattern _bookmarkPattern = Pattern.compile( "Neo4Net:bookmark:v1:tx[0-9]+" );
 		 private static readonly BoltChannel _boltChannel = BoltTestUtil.newTestBoltChannel();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public SessionRule env = new SessionRule();
 		 public SessionRule Env = new SessionRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -260,8 +260,8 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 					machine.process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 					latch.Release();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final String bookmark = "neo4j:bookmark:v1:tx" + dbVersionAfterWrite;
-					string bookmark = "neo4j:bookmark:v1:tx" + dbVersionAfterWrite;
+//ORIGINAL LINE: final String bookmark = "Neo4Net:bookmark:v1:tx" + dbVersionAfterWrite;
+					string bookmark = "Neo4Net:bookmark:v1:tx" + dbVersionAfterWrite;
 					machine.process( new RunMessage( "BEGIN", ValueUtils.asMapValue( singletonMap( "bookmark", bookmark ) ) ), nullResponseHandler() );
 					machine.process( PullAllMessage.INSTANCE, recorder );
 					machine.process( new RunMessage( "MATCH (n:A) RETURN n.prop", EMPTY_MAP ), nullResponseHandler() );
@@ -290,12 +290,12 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  // 2. the running query
 			  // 3. the one terminating 2
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch(3, true);
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch(3, true);
 			  DoubleLatch latch = new DoubleLatch( 3, true );
 
 			  // This is used to block the http server between the first and second batch
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 			  Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 
 			  // Serve CSV via local web server, let Jetty find a random port for us
@@ -304,7 +304,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 			  int localPort = GetLocalPort( server );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine[] machine = {null};
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine[] machine = {null};
 			  BoltStateMachine[] machine = new BoltStateMachine[] { null };
 
 			  Thread thread = new Thread(() =>
@@ -364,7 +364,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  machine.Process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -387,7 +387,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  machine.Process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -414,7 +414,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  machine.Process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -441,7 +441,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  machine.Process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();
@@ -469,7 +469,7 @@ namespace Neo4Net.Bolt.v1.runtime.integration
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = env.newMachine(BOLT_CHANNEL);
 			  BoltStateMachine machine = Env.newMachine( _boltChannel );
 			  machine.Process( new InitMessage( USER_AGENT, emptyMap() ), nullResponseHandler() );
 			  BoltResponseRecorder recorder = new BoltResponseRecorder();

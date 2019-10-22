@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel
 	public class DiagnosticsLoggingTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.CleanupRule cleanupRule = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.CleanupRule cleanupRule = new org.Neo4Net.test.rule.CleanupRule();
 		 public CleanupRule CleanupRule = new CleanupRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel
 		 public virtual void ShouldSeeExpectedDiagnostics()
 		 {
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).newImpermanentDatabaseBuilder().setConfig(GraphDatabaseSettings.dump_configuration, Settings.TRUE).setConfig(GraphDatabaseSettings.pagecache_memory, "4M").newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setInternalLogProvider(logProvider).newImpermanentDatabaseBuilder().setConfig(GraphDatabaseSettings.dump_configuration, Settings.TRUE).setConfig(GraphDatabaseSettings.pagecache_memory, "4M").newGraphDatabase();
 			  CleanupRule.add( db );
 
 			  // THEN we should have logged

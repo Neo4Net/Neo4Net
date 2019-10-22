@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.storeupgrade
 {
@@ -32,16 +32,16 @@ namespace Neo4Net.storeupgrade
 
 	using OnlineBackupSettings = Neo4Net.backup.OnlineBackupSettings;
 	using Neo4Net.Functions;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using UpgradeNotAllowedByConfigurationException = Neo4Net.Kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException;
@@ -56,16 +56,16 @@ namespace Neo4Net.storeupgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.EXACT_CONFIG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
+//	import static org.Neo4Net.index.impl.lucene.@explicit.LuceneIndexImplementation.FULLTEXT_CONFIG;
 
 	public class ExplicitIndexesUpgradeIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDir = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -73,7 +73,7 @@ namespace Neo4Net.storeupgrade
 		 public readonly ExpectedException ExpectedException = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -82,7 +82,7 @@ namespace Neo4Net.storeupgrade
 		 public virtual void SuccessfulMigrationWithoutExplicitIndexes()
 		 {
 			  PrepareStore( "empty-explicit-index-db.zip" );
-			  GraphDatabaseService db = StartDatabase( true );
+			  IGraphDatabaseService db = StartDatabase( true );
 			  try
 			  {
 					CheckDbAccessible( db );
@@ -100,7 +100,7 @@ namespace Neo4Net.storeupgrade
 		 {
 			  PrepareStore( "explicit-index-db.zip" );
 
-			  GraphDatabaseService db = StartDatabase( true );
+			  IGraphDatabaseService db = StartDatabase( true );
 			  try
 			  {
 					CheckDbAccessible( db );
@@ -125,7 +125,7 @@ namespace Neo4Net.storeupgrade
 			  StartDatabase( false );
 		 }
 
-		 private static void CheckDbAccessible( GraphDatabaseService db )
+		 private static void CheckDbAccessible( IGraphDatabaseService db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
 			  {
@@ -134,7 +134,7 @@ namespace Neo4Net.storeupgrade
 			  }
 		 }
 
-		 private GraphDatabaseService StartDatabase( bool allowUpgrade )
+		 private IGraphDatabaseService StartDatabase( bool allowUpgrade )
 		 {
 			  GraphDatabaseFactory factory = new TestGraphDatabaseFactory();
 			  GraphDatabaseBuilder builder = factory.NewEmbeddedDatabaseBuilder( TestDir.databaseDir() );
@@ -144,7 +144,7 @@ namespace Neo4Net.storeupgrade
 			  return builder.NewGraphDatabase();
 		 }
 
-		 private static void CheckIndexData( GraphDatabaseService db )
+		 private static void CheckIndexData( IGraphDatabaseService db )
 		 {
 			  System.Func<int, string> keyFactory = BasicKeyFactory();
 			  IFactory<Node> readNodes = readNodes( db );
@@ -192,17 +192,17 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.function.Factory<org.neo4j.graphdb.Node> readNodes(final org.neo4j.graphdb.GraphDatabaseService db)
-		 private static IFactory<Node> ReadNodes( GraphDatabaseService db )
+//ORIGINAL LINE: private static org.Neo4Net.function.Factory<org.Neo4Net.graphdb.Node> readNodes(final org.Neo4Net.graphdb.GraphDatabaseService db)
+		 private static IFactory<Node> ReadNodes( IGraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass( db );
 		 }
 
 		 private class FactoryAnonymousInnerClass : IFactory<Node>
 		 {
-			 private GraphDatabaseService _db;
+			 private IGraphDatabaseService _db;
 
-			 public FactoryAnonymousInnerClass( GraphDatabaseService db )
+			 public FactoryAnonymousInnerClass( IGraphDatabaseService db )
 			 {
 				 this._db = db;
 			 }
@@ -216,17 +216,17 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.function.Factory<org.neo4j.graphdb.Relationship> readRelationships(final org.neo4j.graphdb.GraphDatabaseService db)
-		 private static IFactory<Relationship> ReadRelationships( GraphDatabaseService db )
+//ORIGINAL LINE: private static org.Neo4Net.function.Factory<org.Neo4Net.graphdb.Relationship> readRelationships(final org.Neo4Net.graphdb.GraphDatabaseService db)
+		 private static IFactory<Relationship> ReadRelationships( IGraphDatabaseService db )
 		 {
 			  return new FactoryAnonymousInnerClass2( db );
 		 }
 
 		 private class FactoryAnonymousInnerClass2 : IFactory<Relationship>
 		 {
-			 private GraphDatabaseService _db;
+			 private IGraphDatabaseService _db;
 
-			 public FactoryAnonymousInnerClass2( GraphDatabaseService db )
+			 public FactoryAnonymousInnerClass2( IGraphDatabaseService db )
 			 {
 				 this._db = db;
 			 }
@@ -239,7 +239,7 @@ namespace Neo4Net.storeupgrade
 			 }
 		 }
 
-		 private static Index<Node> NodeIndex( GraphDatabaseService db, string name, IDictionary<string, string> config )
+		 private static Index<Node> NodeIndex( IGraphDatabaseService db, string name, IDictionary<string, string> config )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -249,7 +249,7 @@ namespace Neo4Net.storeupgrade
 			  }
 		 }
 
-		 private static RelationshipIndex RelationshipIndex( GraphDatabaseService db, string name, IDictionary<string, string> config )
+		 private static RelationshipIndex RelationshipIndex( IGraphDatabaseService db, string name, IDictionary<string, string> config )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -259,16 +259,16 @@ namespace Neo4Net.storeupgrade
 			  }
 		 }
 
-		 private static void ReadIndex<ENTITY>( GraphDatabaseService db, Index<ENTITY> index, IFactory<ENTITY> entityFactory, System.Func<int, string> keyFactory, System.Func<int, object> valueFactory ) where ENTITY : Neo4Net.Graphdb.PropertyContainer
+		 private static void ReadIndex<ENTITY>( IGraphDatabaseService db, Index<ENTITY> index, IFactory<ENTITY> IEntityFactory, System.Func<int, string> keyFactory, System.Func<int, object> valueFactory ) where IEntity : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					for ( int i = 0; i < 10; i++ )
 					{
-						 ENTITY entity = entityFactory.NewInstance();
+						 IEntity IEntity = IEntityFactory.NewInstance();
 						 string key = keyFactory( i );
 						 object value = valueFactory( i );
-						 assertEquals( entity, single( index.get( key, value ) ) );
+						 assertEquals( IEntity, single( index.get( key, value ) ) );
 					}
 					tx.Success();
 			  }

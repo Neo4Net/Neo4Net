@@ -24,14 +24,14 @@ namespace Neo4Net.Storageengine.Api
 	/// </summary>
 	public interface StorageEntityCursor : StorageCursor
 	{
-		 /// <returns> {@code true} if the entity the cursor is at has any properties, otherwise {@code false}. </returns>
+		 /// <returns> {@code true} if the IEntity the cursor is at has any properties, otherwise {@code false}. </returns>
 		 bool HasProperties();
 
-		 /// <returns> a {@code long} reference to start reading properties for the entity this cursor is at. </returns>
+		 /// <returns> a {@code long} reference to start reading properties for the IEntity this cursor is at. </returns>
 		 long PropertiesReference();
 
-		 /// <returns> reference to the entity this cursor currently is placed at. </returns>
-		 long EntityReference();
+		 /// <returns> reference to the IEntity this cursor currently is placed at. </returns>
+		 long IEntityReference();
 	}
 
 }

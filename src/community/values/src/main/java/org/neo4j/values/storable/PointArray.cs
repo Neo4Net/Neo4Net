@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Values.Storable
 {
 
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
 	using Neo4Net.Values;
 
 	public class PointArray : NonPrimitiveArray<PointValue>

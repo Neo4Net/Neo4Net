@@ -22,20 +22,20 @@
 namespace Neo4Net.Server.rest.discovery
 {
 
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
+//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
+//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.HIGHEST;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
+//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOW;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
+//	import static org.Neo4Net.server.rest.discovery.DiscoverableURIs.Precedence.LOWEST;
 
 	/// <summary>
 	/// Repository of URIs that the REST API publicly advertises at the root endpoint.

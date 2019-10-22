@@ -22,8 +22,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 	using CompilationTracer = Neo4Net.Cypher.Internal.Tracing.CompilationTracer;
 	using TimingCompilationTracer = Neo4Net.Cypher.Internal.Tracing.TimingCompilationTracer;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Result = Neo4Net.Graphdb.Result;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Result = Neo4Net.GraphDb.Result;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using QueryExecution = Neo4Net.Kernel.impl.query.QueryExecution;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -62,7 +62,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result executeQuery(String query, org.neo4j.values.virtual.MapValue parameters, org.neo4j.kernel.impl.query.TransactionalContext context) throws org.neo4j.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result executeQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ExecuteQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  try
@@ -76,7 +76,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.Result profileQuery(String query, org.neo4j.values.virtual.MapValue parameters, org.neo4j.kernel.impl.query.TransactionalContext context) throws org.neo4j.kernel.impl.query.QueryExecutionKernelException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.Result profileQuery(String query, org.Neo4Net.values.virtual.MapValue parameters, org.Neo4Net.kernel.impl.query.TransactionalContext context) throws org.Neo4Net.kernel.impl.query.QueryExecutionKernelException
 		 public override Result ProfileQuery( string query, MapValue parameters, TransactionalContext context )
 		 {
 			  try

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using WritableIndexSnapshotFileIterator = Neo4Net.Kernel.Api.Impl.Index.backup.WritableIndexSnapshotFileIterator;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= WritableIndexSnapshotFileIterator </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshot() throws java.io.IOException;
 		 ResourceIterator<File> Snapshot();
 
 		 /// <summary>

@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.discovery.procedures
 {
@@ -45,11 +45,11 @@ namespace Neo4Net.causalclustering.discovery.procedures
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.TestTopology.addressesForCore;
+//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForCore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.TestTopology.addressesForReadReplica;
+//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForReadReplica;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 	public class ClusterOverviewProcedureTest
 	{
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService topologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.collection.RawIterator<Object[],org.neo4j.internal.kernel.api.exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
+//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
 			  RawIterator<object[], ProcedureException> members = procedure.Apply( null, new object[0], null );
 
 			  assertThat( members.Next(), new IsRecord(this, theLeader.Uuid, 5000, RoleInfo.LEADER, asSet("core", "core0")) );

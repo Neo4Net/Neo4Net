@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 {
@@ -30,11 +30,11 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	using Neo4Net.cluster.statemachine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.Internal;
+//	import static org.Neo4Net.cluster.com.message.Message.Internal;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.timeout;
+//	import static org.Neo4Net.cluster.com.message.Message.timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.com.message.Message.to;
+//	import static org.Neo4Net.cluster.com.message.Message.to;
 
 	/// <summary>
 	/// State Machine for implementation of Atomic Broadcast client interface
@@ -42,7 +42,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 	public enum AtomicBroadcastState
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: start { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.neo4j.cluster.com.message.Message<AtomicBroadcastMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case entered: { return broadcasting; } case join: { return joining; } default: { defaultHandling(context, message); } } return this; } },
+//ORIGINAL LINE: start { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.Neo4Net.cluster.com.message.Message<AtomicBroadcastMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case entered: { return broadcasting; } case join: { return joining; } default: { defaultHandling(context, message); } } return this; } },
 		 start
 		 {
 			 public AtomicBroadcastState handle( AtomicBroadcastContext context, Message<AtomicBroadcastMessage> message, MessageHolder outgoing )
@@ -56,7 +56,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 		 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: joining { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.neo4j.cluster.com.message.Message<AtomicBroadcastMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case failed: { outgoing.offer(internal(org.neo4j.cluster.protocol.cluster.ClusterMessage.joinFailure, new java.util.concurrent.TimeoutException("Could not join cluster"))); return start; } case broadcastResponse: { if(message.getPayload() instanceof org.neo4j.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState) { outgoing.offer(message.copyHeadersTo(internal(org.neo4j.cluster.protocol.cluster.ClusterMessage.configurationChanged, message.getPayload()))); } break; } case entered: { return broadcasting; } default: { defaultHandling(context, message); } } return this; } },
+//ORIGINAL LINE: joining { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.Neo4Net.cluster.com.message.Message<AtomicBroadcastMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case failed: { outgoing.offer(internal(org.Neo4Net.cluster.protocol.cluster.ClusterMessage.joinFailure, new java.util.concurrent.TimeoutException("Could not join cluster"))); return start; } case broadcastResponse: { if(message.getPayload() instanceof org.Neo4Net.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState) { outgoing.offer(message.copyHeadersTo(internal(org.Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationChanged, message.getPayload()))); } break; } case entered: { return broadcasting; } default: { defaultHandling(context, message); } } return this; } },
 		 joining
 		 {
 			 public AtomicBroadcastState handle( AtomicBroadcastContext context, Message<AtomicBroadcastMessage> message, MessageHolder outgoing )
@@ -74,7 +74,7 @@ namespace Neo4Net.cluster.protocol.atomicbroadcast.multipaxos
 		 },
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: broadcasting { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.neo4j.cluster.com.message.Message<AtomicBroadcastMessage> message, org.neo4j.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case broadcast: case failed: { if(context.hasQuorum()) { org.neo4j.cluster.InstanceId coordinator = context.getCoordinator(); if(coordinator != null) { java.net.URI coordinatorUri = context.getUriForId(coordinator); outgoing.offer(message.copyHeadersTo(to(ProposerMessage.propose, coordinatorUri, message.getPayload()))); context.setTimeout("broadcast-" + message.getHeader(org.neo4j.cluster.com.message.Message.HEADER_CONVERSATION_ID), timeout(AtomicBroadcastMessage.broadcastTimeout, message, message.getPayload())); } else { outgoing.offer(message.copyHeadersTo(internal(ProposerMessage.propose, message.getPayload()), org.neo4j.cluster.com.message.Message.HEADER_CONVERSATION_ID, org.neo4j.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE)); } } else { context.getLog(AtomicBroadcastState.class).warn("No quorum and therefor dropping broadcast msg: " + message.getPayload()); } break; } case broadcastResponse: { context.cancelTimeout("broadcast-" + message.getHeader(org.neo4j.cluster.com.message.Message.HEADER_CONVERSATION_ID)); if(message.getPayload() instanceof org.neo4j.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState) { outgoing.offer(message.copyHeadersTo(internal(org.neo4j.cluster.protocol.cluster.ClusterMessage.configurationChanged, message.getPayload()))); org.neo4j.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState change = message.getPayload(); if(change.getJoinUri() != null) { outgoing.offer(message.copyHeadersTo(org.neo4j.cluster.com.message.Message.internal(org.neo4j.cluster.protocol.heartbeat.HeartbeatMessage.i_am_alive, new org.neo4j.cluster.protocol.heartbeat.HeartbeatMessage.IAmAliveState(change.getJoin())), org.neo4j.cluster.com.message.Message.HEADER_FROM)); } } else { context.receive(message.getPayload()); } break; } case broadcastTimeout: { break; } case leave: { return start; } default: { defaultHandling(context, message); } } return this; } };
+//ORIGINAL LINE: broadcasting { @Override public AtomicBroadcastState handle(AtomicBroadcastContext context, org.Neo4Net.cluster.com.message.Message<AtomicBroadcastMessage> message, org.Neo4Net.cluster.com.message.MessageHolder outgoing) { switch(message.getMessageType()) { case broadcast: case failed: { if(context.hasQuorum()) { org.Neo4Net.cluster.InstanceId coordinator = context.getCoordinator(); if(coordinator != null) { java.net.URI coordinatorUri = context.getUriForId(coordinator); outgoing.offer(message.copyHeadersTo(to(ProposerMessage.propose, coordinatorUri, message.getPayload()))); context.setTimeout("broadcast-" + message.getHeader(org.Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID), timeout(AtomicBroadcastMessage.broadcastTimeout, message, message.getPayload())); } else { outgoing.offer(message.copyHeadersTo(internal(ProposerMessage.propose, message.getPayload()), org.Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID, org.Neo4Net.cluster.protocol.atomicbroadcast.multipaxos.InstanceId.INSTANCE)); } } else { context.getLog(AtomicBroadcastState.class).warn("No quorum and therefor dropping broadcast msg: " + message.getPayload()); } break; } case broadcastResponse: { context.cancelTimeout("broadcast-" + message.getHeader(org.Neo4Net.cluster.com.message.Message.HEADER_CONVERSATION_ID)); if(message.getPayload() instanceof org.Neo4Net.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState) { outgoing.offer(message.copyHeadersTo(internal(org.Neo4Net.cluster.protocol.cluster.ClusterMessage.configurationChanged, message.getPayload()))); org.Neo4Net.cluster.protocol.cluster.ClusterMessage.ConfigurationChangeState change = message.getPayload(); if(change.getJoinUri() != null) { outgoing.offer(message.copyHeadersTo(org.Neo4Net.cluster.com.message.Message.internal(org.Neo4Net.cluster.protocol.heartbeat.HeartbeatMessage.i_am_alive, new org.Neo4Net.cluster.protocol.heartbeat.HeartbeatMessage.IAmAliveState(change.getJoin())), org.Neo4Net.cluster.com.message.Message.HEADER_FROM)); } } else { context.receive(message.getPayload()); } break; } case broadcastTimeout: { break; } case leave: { return start; } default: { defaultHandling(context, message); } } return this; } };
 		 broadcasting
 		 {
 			 public AtomicBroadcastState handle( AtomicBroadcastContext context, Message<AtomicBroadcastMessage> message, MessageHolder outgoing )

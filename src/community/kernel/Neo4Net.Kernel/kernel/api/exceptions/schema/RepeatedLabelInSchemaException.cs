@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 
 	public class RepeatedLabelInSchemaException : RepeatedSchemaComponentException
 	{
-		 public RepeatedLabelInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.RepeatedLabelInSchema, schema, context, SchemaComponent.Label )
+		 public RepeatedLabelInSchemaException( SchemaDescriptor schema, OperationContext context ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.RepeatedLabelInSchema, schema, context, SchemaComponent.Label )
 		 {
 		 }
 	}

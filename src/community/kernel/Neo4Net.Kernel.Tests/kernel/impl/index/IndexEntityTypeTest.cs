@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.index
 	/*
 	 This seems like a weird test, but it's necessary because we have a binding between the Enum name
 	 and the name on the filesystem. On case-sensitive file systems, we need a consistent lower-cased name
-	 for the entity type.
+	 for the IEntity type.
 	 */
 	public class IndexEntityTypeTest
 	{

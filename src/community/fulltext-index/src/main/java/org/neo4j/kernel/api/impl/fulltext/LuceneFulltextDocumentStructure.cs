@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 	public class LuceneFulltextDocumentStructure
 	{
-		 public const string FIELD_ENTITY_ID = "__neo4j__lucene__fulltext__index__internal__id__";
+		 public const string FIELD_ENTITY_ID = "__Neo4Net__lucene__fulltext__index__internal__id__";
 
 //JAVA TO C# CONVERTER TODO TASK: Method reference constructor syntax is not converted by Java to C# Converter:
 		 private static readonly ThreadLocal<DocWithId> _perThreadDocument = ThreadLocal.withInitial( DocWithId::new );
@@ -79,8 +79,8 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 		 internal static long GetNodeId( Document from )
 		 {
-			  string entityId = from.get( FIELD_ENTITY_ID );
-			  return long.Parse( entityId );
+			  string IEntityId = from.get( FIELD_ENTITY_ID );
+			  return long.Parse( IEntityId );
 		 }
 
 		 internal static Term NewTermForChangeOrRemove( long id )

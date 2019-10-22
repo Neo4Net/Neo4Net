@@ -23,11 +23,11 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using Test = org.junit.Test;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -43,11 +43,11 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 
 	public class ConstraintRecoveryIT
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 private static readonly Label _label = Label.label( "label1" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public EphemeralFileSystemRule FileSystemRule = new EphemeralFileSystemRule();
 
 		 private GraphDatabaseAPI _db;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fs = fileSystemRule.get();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs = fileSystemRule.get();
 			  EphemeralFileSystemAbstraction fs = FileSystemRule.get();
 			  fs.Mkdir( new File( "/tmp" ) );
 			  File pathToDb = new File( "/tmp/bar2" );
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 			  dbFactory.FileSystem = fs;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction[1];
+//ORIGINAL LINE: final org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction[1];
 			  EphemeralFileSystemAbstraction[] storeInNeedOfRecovery = new EphemeralFileSystemAbstraction[1];
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicBoolean monitorCalled = new java.util.concurrent.atomic.AtomicBoolean(false);

@@ -27,13 +27,13 @@ namespace Neo4Net.Bolt.runtime
 	public interface BoltStateMachine : IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void process(org.neo4j.bolt.messaging.RequestMessage message, BoltResponseHandler handler) throws BoltConnectionFatality;
+//ORIGINAL LINE: void process(org.Neo4Net.bolt.messaging.RequestMessage message, BoltResponseHandler handler) throws BoltConnectionFatality;
 		 void Process( RequestMessage message, BoltResponseHandler handler );
 
 		 bool ShouldStickOnThread();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validateTransaction() throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: void validateTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 void ValidateTransaction();
 
 		 bool HasOpenStatement();
@@ -44,15 +44,15 @@ namespace Neo4Net.Bolt.runtime
 //ORIGINAL LINE: boolean reset() throws BoltConnectionFatality;
 		 bool Reset();
 
-		 void MarkFailed( Neo4jError error );
+		 void MarkFailed( Neo4NetError error );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void handleFailure(Throwable cause, boolean fatal) throws BoltConnectionFatality;
 		 void HandleFailure( Exception cause, bool fatal );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void handleExternalFailure(Neo4jError error, BoltResponseHandler handler) throws BoltConnectionFatality;
-		 void HandleExternalFailure( Neo4jError error, BoltResponseHandler handler );
+//ORIGINAL LINE: void handleExternalFailure(Neo4NetError error, BoltResponseHandler handler) throws BoltConnectionFatality;
+		 void HandleExternalFailure( Neo4NetError error, BoltResponseHandler handler );
 
 		 void MarkForTermination();
 

@@ -22,13 +22,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
@@ -44,18 +44,18 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 
 	/// <summary>
-	/// Don't extend Neo4jTestCase since these tests restarts the db in the tests.
+	/// Don't extend Neo4NetTestCase since these tests restarts the db in the tests.
 	/// </summary>
 	public class RecoveryTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly DatabaseRule Db = new EmbeddedDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -245,11 +245,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 }
 
-		 private void AssertAddFailsWithIllegalArgument<ENTITY>( Index<ENTITY> index, ENTITY entity, string key, object value ) where ENTITY : Neo4Net.Graphdb.PropertyContainer
+		 private void AssertAddFailsWithIllegalArgument<ENTITY>( Index<ENTITY> index, IEntity IEntity, string key, object value ) where IEntity : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  try
 			  {
-					index.Add( entity, key, value );
+					index.Add( IEntity, key, value );
 					fail( "Should not accept value with null toString" );
 			  }
 			  catch ( System.ArgumentException )
@@ -258,11 +258,11 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 		 }
 
-		 private void AssertRemoveFailsWithIllegalArgument<ENTITY>( Index<ENTITY> index, ENTITY entity, string key, object value ) where ENTITY : Neo4Net.Graphdb.PropertyContainer
+		 private void AssertRemoveFailsWithIllegalArgument<ENTITY>( Index<ENTITY> index, IEntity IEntity, string key, object value ) where IEntity : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  try
 			  {
-					index.Remove( entity, key, value );
+					index.Remove( IEntity, key, value );
 					fail( "Should not accept value with null toString" );
 			  }
 			  catch ( System.ArgumentException )

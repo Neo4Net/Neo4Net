@@ -28,15 +28,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ZonedDateTimeLayout.ZONE_ID_FLAG;
+//	import static org.Neo4Net.kernel.impl.index.schema.ZonedDateTimeLayout.ZONE_ID_FLAG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ZonedDateTimeLayout.ZONE_ID_MASK;
+//	import static org.Neo4Net.kernel.impl.index.schema.ZonedDateTimeLayout.ZONE_ID_MASK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ZonedDateTimeLayout.asZoneId;
+//	import static org.Neo4Net.kernel.impl.index.schema.ZonedDateTimeLayout.asZoneId;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ZonedDateTimeLayout.asZoneOffset;
+//	import static org.Neo4Net.kernel.impl.index.schema.ZonedDateTimeLayout.asZoneOffset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ZonedDateTimeLayout.isZoneId;
+//	import static org.Neo4Net.kernel.impl.index.schema.ZonedDateTimeLayout.isZoneId;
 
 	internal class ZonedDateTimeType : Type
 	{

@@ -21,7 +21,7 @@ namespace Neo4Net.Collections
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;

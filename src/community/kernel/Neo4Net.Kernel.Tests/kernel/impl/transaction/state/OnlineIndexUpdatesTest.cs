@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -82,32 +82,32 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.empty;
+//	import static org.Neo4Net.helpers.collection.Iterables.empty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexProvider.EMPTY;
+//	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.multiToken;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_LABELS_FIELD;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.RELATIONSHIP;
+//	import static org.Neo4Net.storageengine.api.EntityType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 
 	public class OnlineIndexUpdatesTest
 	{
-		 private const int ENTITY_TOKEN = 1;
+		 private const int IEntity_TOKEN = 1;
 		 private const int OTHER_ENTITY_TOKEN = 2;
-		 private static readonly int[] _entityTokens = new int[] { ENTITY_TOKEN };
+		 private static readonly int[] _entityTokens = new int[] { IEntity_TOKEN };
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheAndDependenciesRule storage = new org.neo4j.test.rule.PageCacheAndDependenciesRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule storage = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule();
 		 public PageCacheAndDependenciesRule Storage = new PageCacheAndDependenciesRule();
 		 private NodeStore _nodeStore;
 		 private RelationshipStore _relationshipStore;
@@ -199,10 +199,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  OnlineIndexUpdates onlineIndexUpdates = new OnlineIndexUpdates( _nodeStore, _relationshipStore, _indexingService, _propertyPhysicalToLogicalConverter );
 
 			  long relId = 0;
-			  RelationshipRecord inUse = GetRelationship( relId, true, ENTITY_TOKEN );
+			  RelationshipRecord inUse = GetRelationship( relId, true, IEntity_TOKEN );
 			  Value propertyValue = Values.of( "hej" );
 			  long propertyId = CreateRelationshipProperty( inUse, propertyValue, 1 );
-			  RelationshipRecord notInUse = GetRelationship( relId, false, ENTITY_TOKEN );
+			  RelationshipRecord notInUse = GetRelationship( relId, false, IEntity_TOKEN );
 			  _relationshipStore.updateRecord( inUse );
 
 			  Command.RelationshipCommand relationshipCommand = new Command.RelationshipCommand( inUse, notInUse );
@@ -247,10 +247,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  _indexingService.getIndexProxy( nodeIndexDescriptor.Schema() ).awaitStoreScanCompleted(0, MILLISECONDS);
 
 			  long relId = 0;
-			  RelationshipRecord inUse = GetRelationship( relId, true, ENTITY_TOKEN );
+			  RelationshipRecord inUse = GetRelationship( relId, true, IEntity_TOKEN );
 			  Value relationshipPropertyValue = Values.of( "da" );
 			  long propertyId = CreateRelationshipProperty( inUse, relationshipPropertyValue, 1 );
-			  RelationshipRecord notInUse = GetRelationship( relId, false, ENTITY_TOKEN );
+			  RelationshipRecord notInUse = GetRelationship( relId, false, IEntity_TOKEN );
 			  _relationshipStore.updateRecord( inUse );
 
 			  Command.RelationshipCommand relationshipCommand = new Command.RelationshipCommand( inUse, notInUse );
@@ -275,12 +275,12 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  OnlineIndexUpdates onlineIndexUpdates = new OnlineIndexUpdates( _nodeStore, _relationshipStore, _indexingService, _propertyPhysicalToLogicalConverter );
 
 			  long relId = 0;
-			  RelationshipRecord inUse = GetRelationship( relId, true, ENTITY_TOKEN );
+			  RelationshipRecord inUse = GetRelationship( relId, true, IEntity_TOKEN );
 			  Value propertyValue = Values.of( "hej" );
 			  Value propertyValue2 = Values.of( "da" );
 			  long propertyId = CreateRelationshipProperty( inUse, propertyValue, 1 );
 			  long propertyId2 = CreateRelationshipProperty( inUse, propertyValue2, 4 );
-			  RelationshipRecord notInUse = GetRelationship( relId, false, ENTITY_TOKEN );
+			  RelationshipRecord notInUse = GetRelationship( relId, false, IEntity_TOKEN );
 			  _relationshipStore.updateRecord( inUse );
 
 			  Command.RelationshipCommand relationshipCommand = new Command.RelationshipCommand( inUse, notInUse );
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 			  StoreIndexDescriptor indexDescriptor0 = forSchema( multiToken( _entityTokens, RELATIONSHIP, 1, 4, 6 ), EMPTY.ProviderDescriptor ).withId( 0 );
 			  StoreIndexDescriptor indexDescriptor1 = forSchema( multiToken( _entityTokens, RELATIONSHIP, 2, 4, 6 ), EMPTY.ProviderDescriptor ).withId( 1 );
-			  StoreIndexDescriptor indexDescriptor2 = forSchema( multiToken( new int[]{ ENTITY_TOKEN, OTHER_ENTITY_TOKEN }, RELATIONSHIP, 1 ), EMPTY.ProviderDescriptor ).withId( 2 );
+			  StoreIndexDescriptor indexDescriptor2 = forSchema( multiToken( new int[]{ IEntity_TOKEN, OTHER_ENTITY_TOKEN }, RELATIONSHIP, 1 ), EMPTY.ProviderDescriptor ).withId( 2 );
 			  StoreIndexDescriptor indexDescriptor3 = forSchema( multiToken( new int[]{ OTHER_ENTITY_TOKEN }, RELATIONSHIP, 1 ), EMPTY.ProviderDescriptor ).withId( 3 );
 			  _indexingService.createIndexes( indexDescriptor0, indexDescriptor1, indexDescriptor2 );
 			  _indexingService.getIndexProxy( indexDescriptor0.Schema() ).awaitStoreScanCompleted(0, MILLISECONDS);
@@ -307,23 +307,23 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  assertThat( onlineIndexUpdates, not( containsInAnyOrder( indexDescriptor3 ) ) ); // This index is only for a different relationship type.
 		 }
 
-		 private EntityCommandGrouper<Command.NodeCommand>.Cursor NodeGroup( Command.NodeCommand nodeCommand, params Command.PropertyCommand[] propertyCommands )
+		 private IEntityCommandGrouper<Command.NodeCommand>.Cursor NodeGroup( Command.NodeCommand nodeCommand, params Command.PropertyCommand[] propertyCommands )
 		 {
 			  return Group( nodeCommand, typeof( Command.NodeCommand ), propertyCommands );
 		 }
 
-		 private EntityCommandGrouper<Command.RelationshipCommand>.Cursor RelationshipGroup( Command.RelationshipCommand relationshipCommand, params Command.PropertyCommand[] propertyCommands )
+		 private IEntityCommandGrouper<Command.RelationshipCommand>.Cursor RelationshipGroup( Command.RelationshipCommand relationshipCommand, params Command.PropertyCommand[] propertyCommands )
 		 {
 			  return Group( relationshipCommand, typeof( Command.RelationshipCommand ), propertyCommands );
 		 }
 
-		 private EntityCommandGrouper<ENTITY>.Cursor Group<ENTITY>( ENTITY entityCommand, Type cls, params Command.PropertyCommand[] propertyCommands ) where ENTITY : Neo4Net.Kernel.impl.transaction.command.Command
+		 private IEntityCommandGrouper<ENTITY>.Cursor Group<ENTITY>( IEntity IEntityCommand, Type cls, params Command.PropertyCommand[] propertyCommands ) where IEntity : Neo4Net.Kernel.impl.transaction.command.Command
 		 {
-				 cls = typeof( ENTITY );
-			  EntityCommandGrouper<ENTITY> grouper = new EntityCommandGrouper<ENTITY>( cls, 8 );
-			  if ( entityCommand != null )
+				 cls = typeof( IEntity );
+			  IEntityCommandGrouper<ENTITY> grouper = new IEntityCommandGrouper<ENTITY>( cls, 8 );
+			  if ( IEntityCommand != null )
 			  {
-					grouper.Add( entityCommand );
+					grouper.Add( IEntityCommand );
 			  }
 			  foreach ( Command.PropertyCommand propertyCommand in propertyCommands )
 			  {
@@ -349,7 +349,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  if ( inUse )
 			  {
 					InlineNodeLabels labelFieldWriter = new InlineNodeLabels( nodeRecord );
-					labelFieldWriter.Put( new long[]{ ENTITY_TOKEN }, null, null );
+					labelFieldWriter.Put( new long[]{ IEntity_TOKEN }, null, null );
 			  }
 			  return nodeRecord;
 		 }

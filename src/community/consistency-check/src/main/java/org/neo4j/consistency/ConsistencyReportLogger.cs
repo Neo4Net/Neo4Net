@@ -61,7 +61,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override protected org.neo4j.logging.Logger getBulkLogger(@Nonnull PrintWriter out, @Nonnull Object lock)
+//ORIGINAL LINE: @Override protected org.Neo4Net.logging.Logger getBulkLogger(@Nonnull PrintWriter out, @Nonnull Object lock)
 		 protected internal override Logger GetBulkLogger( PrintWriter @out, object @lock )
 		 {
 			  return new ConsistencyReportLogger( Suppliers.singleton( @out ), @lock, _prefix, false );

@@ -29,19 +29,19 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.FALSE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.SIZE_STRING_LENGTH;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.SIZE_STRING_LENGTH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.TRUE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.setCursorException;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.setCursorException;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.toNonNegativeShortExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.StringIndexKey.lexicographicalUnsignedByteArrayCompare;
+//	import static org.Neo4Net.kernel.impl.index.schema.StringIndexKey.lexicographicalUnsignedByteArrayCompare;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	internal class TextType : Type
 	{

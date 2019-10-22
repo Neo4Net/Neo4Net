@@ -47,7 +47,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 private readonly RecordFormat _recordFormat;
 		 private readonly int _maxRecordCount;
 		 private readonly int _recordsPerPage;
-		 // Entity-locks that protect the individual records, since page write locks are not exclusive.
+		 // IEntity-locks that protect the individual records, since page write locks are not exclusive.
 		 private readonly TinyLockManager _recordLocks;
 
 		 internal CommandPrimer( Random rng, MuninnPageCache cache, File[] files, IDictionary<File, PagedFile> fileMap, int filePageCount, int filePageSize, RecordFormat recordFormat )

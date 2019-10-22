@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
 	internal class DefaultNodeCursor : NodeCursor
 	{

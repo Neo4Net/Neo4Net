@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.com.master
 {
@@ -94,9 +94,9 @@ namespace Neo4Net.Kernel.ha.com.master
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
+//	import static org.Neo4Net.com.StoreIdTestFactory.newStoreIdForCurrentVersion;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class MasterImplTest
 	{
@@ -281,7 +281,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.locking.Locks_Client newWaitingLocksClient(final java.util.concurrent.CountDownLatch latch)
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.locking.Locks_Client newWaitingLocksClient(final java.util.concurrent.CountDownLatch latch)
 		 private Locks_Client NewWaitingLocksClient( System.Threading.CountdownEvent latch )
 		 {
 			  Locks_Client client = mock( typeof( Locks_Client ) );
@@ -541,7 +541,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.neo4j.test.rule.concurrent.OtherThreadRule<>();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.OtherThreadRule<Void> otherThread = new org.Neo4Net.test.rule.concurrent.OtherThreadRule<>();
 		 public readonly OtherThreadRule<Void> OtherThread = new OtherThreadRule<Void>();
 
 		 private Config Config()
@@ -560,7 +560,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final org.neo4j.storageengine.api.StoreId storeId)
+//ORIGINAL LINE: public static org.Neo4Net.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final org.Neo4Net.storageengine.api.StoreId storeId)
 		 public static SPI MockedSpi( StoreId storeId )
 		 {
 			  MasterImpl.SPI mock = mock( typeof( MasterImpl.SPI ) );

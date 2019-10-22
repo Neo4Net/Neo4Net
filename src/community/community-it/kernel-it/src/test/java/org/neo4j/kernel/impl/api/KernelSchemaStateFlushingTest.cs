@@ -39,14 +39,14 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 
 	public class KernelSchemaStateFlushingTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 		 private GraphDatabaseAPI _db;
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldKeepSchemaStateIfSchemaIsNotModified() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldKeepSchemaStateIfSchemaIsNotModified() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldKeepSchemaStateIfSchemaIsNotModified()
 		 {
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor createConstraint() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor createConstraint() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private ConstraintDescriptor CreateConstraint()
 		 {
 
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dropConstraint(org.neo4j.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void dropConstraint(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void DropConstraint( ConstraintDescriptor descriptor )
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.IndexReference createIndex() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createIndex() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private IndexReference CreateIndex()
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dropIndex(org.neo4j.internal.kernel.api.IndexReference reference) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void dropIndex(org.Neo4Net.internal.kernel.api.IndexReference reference) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private void DropIndex( IndexReference reference )
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitIndexOnline(org.neo4j.internal.kernel.api.IndexReference descriptor, String keyForProbing) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void awaitIndexOnline(org.Neo4Net.internal.kernel.api.IndexReference descriptor, String keyForProbing) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void AwaitIndexOnline( IndexReference descriptor, string keyForProbing )
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitSchemaStateCleared(String keyForProbing) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void awaitSchemaStateCleared(String keyForProbing) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void AwaitSchemaStateCleared( string keyForProbing )
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String commitToSchemaState(String key, String value) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private String commitToSchemaState(String key, String value) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private string CommitToSchemaState( string key, string value )
 		 {
 			  using ( Transaction transaction = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -244,7 +244,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private String getOrCreateFromState(org.neo4j.internal.kernel.api.Transaction tx, String key, final String value)
+//ORIGINAL LINE: private String getOrCreateFromState(org.Neo4Net.internal.kernel.api.Transaction tx, String key, final String value)
 		 private string GetOrCreateFromState( Transaction tx, string key, string value )
 		 {
 			  return tx.SchemaRead().schemaStateGetOrCreate(key, from => value);

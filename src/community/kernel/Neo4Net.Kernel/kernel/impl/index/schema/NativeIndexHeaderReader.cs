@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Header = Neo4Net.Index.Internal.gbptree.Header;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexPopulator.BYTE_FAILED;
 
 	internal class NativeIndexHeaderReader : Header.Reader
 	{

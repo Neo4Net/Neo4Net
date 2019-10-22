@@ -20,15 +20,15 @@
 namespace Neo4Net.Bolt.v3.messaging.decoder
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using RequestMessageDecoder = Neo4Net.Bolt.messaging.RequestMessageDecoder;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
+//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.ROLLBACK_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.RollbackMessage.SIGNATURE;
+//	import static org.Neo4Net.bolt.v3.messaging.request.RollbackMessage.SIGNATURE;
 
 	public class RollbackMessageDecoder : RequestMessageDecoder
 	{
@@ -50,8 +50,8 @@ namespace Neo4Net.Bolt.v3.messaging.decoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.bolt.messaging.RequestMessage decode(org.neo4j.bolt.messaging.Neo4jPack_Unpacker unpacker) throws java.io.IOException
-		 public override RequestMessage Decode( Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker )
+//ORIGINAL LINE: public org.Neo4Net.bolt.messaging.RequestMessage decode(org.Neo4Net.bolt.messaging.Neo4NetPack_Unpacker unpacker) throws java.io.IOException
+		 public override RequestMessage Decode( Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker )
 		 {
 			  return ROLLBACK_MESSAGE;
 		 }

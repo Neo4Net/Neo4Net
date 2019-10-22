@@ -20,14 +20,14 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using NodeRelationshipCache = Neo4Net.@unsafe.Impl.Batchimport.cache.NodeRelationshipCache;
 	using StageControl = Neo4Net.@unsafe.Impl.Batchimport.staging.StageControl;
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
 
 	/// <summary>
 	/// Links relationship chains together, the "prev" pointers of them. "next" pointers are set when

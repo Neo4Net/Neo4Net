@@ -33,7 +33,7 @@ namespace Neo4Net.Internal.Collector
 		 private static readonly IntOption _durationSeconds = new IntOption( "durationSeconds", -1 );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static QueryCollectorConfig of(java.util.Map<String, Object> userMap) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: static QueryCollectorConfig of(java.util.Map<String, Object> userMap) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal static QueryCollectorConfig Of( IDictionary<string, object> userMap )
 		 {
 			  return new QueryCollectorConfig( _durationSeconds.parseOrDefault( userMap ) );

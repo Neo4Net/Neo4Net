@@ -49,7 +49,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltTestUtil.assertByteBufEquals;
+//	import static org.Neo4Net.bolt.testing.BoltTestUtil.assertByteBufEquals;
 
 	public class ProtocolHandshakerTest
 	{

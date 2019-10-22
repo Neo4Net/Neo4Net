@@ -36,13 +36,13 @@ namespace Neo4Net.Tooling
 	using StringDeserialization = Neo4Net.@unsafe.Impl.Batchimport.input.csv.StringDeserialization;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 
 	public class CsvOutput : BatchImporter
 	{
 		 private interface Deserializer
 		 {
-			  string Apply( InputEntity entity, Deserialization<string> deserialization, Header header );
+			  string Apply( InputEntity IEntity, Deserialization<string> deserialization, Header header );
 		 }
 
 		 private readonly File _targetDirectory;
@@ -63,7 +63,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doImport(org.neo4j.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
+//ORIGINAL LINE: public void doImport(org.Neo4Net.unsafe.impl.batchimport.input.Input input) throws java.io.IOException
 		 public override void DoImport( Input input )
 		 {
 			  Consume( "nodes", input.Nodes().GetEnumerator(), _nodeHeader, RandomEntityDataGenerator.convert );
@@ -71,7 +71,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void consume(String name, org.neo4j.unsafe.impl.batchimport.InputIterator entities, org.neo4j.unsafe.impl.batchimport.input.csv.Header header, Deserializer deserializer) throws java.io.IOException
+//ORIGINAL LINE: private void consume(String name, org.Neo4Net.unsafe.impl.batchimport.InputIterator entities, org.Neo4Net.unsafe.impl.batchimport.input.csv.Header header, Deserializer deserializer) throws java.io.IOException
 		 private void Consume( string name, InputIterator entities, Header header, Deserializer deserializer )
 		 {
 			  using ( PrintStream @out = File( name + "header.csv" ) )
@@ -91,12 +91,12 @@ namespace Neo4Net.Tooling
 						 StringDeserialization deserialization = new StringDeserialization( _config );
 						 using ( PrintStream @out = File( name + "-" + id + ".csv" ), InputChunk chunk = entities.NewChunk() )
 						 {
-							 InputEntity entity = new InputEntity();
+							 InputEntity IEntity = new InputEntity();
 							 while ( entities.Next( chunk ) )
 							 {
-								 while ( chunk.next( entity ) )
+								 while ( chunk.next( IEntity ) )
 								 {
-									 @out.println( deserializer.Apply( entity, deserialization, header ) );
+									 @out.println( deserializer.Apply( IEntity, deserialization, header ) );
 								 }
 							 }
 						 }

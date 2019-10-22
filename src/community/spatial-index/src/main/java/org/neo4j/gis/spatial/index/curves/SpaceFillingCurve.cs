@@ -25,7 +25,7 @@ namespace Neo4Net.Gis.Spatial.Index.curves
 {
 
 	/// <summary>
-	/// This class is also used by Neo4j Spatial
+	/// This class is also used by Neo4Net Spatial
 	/// </summary>
 
 	public abstract class SpaceFillingCurve
@@ -145,7 +145,7 @@ namespace Neo4Net.Gis.Spatial.Index.curves
 
 		 /// <summary>
 		 /// Given a coordinate in multiple dimensions, calculate its derived key for maxLevel
-		 /// Needs to be public due to dependency from Neo4j Spatial
+		 /// Needs to be public due to dependency from Neo4Net Spatial
 		 /// </summary>
 		 public virtual long? DerivedValueFor( double[] coord )
 		 {

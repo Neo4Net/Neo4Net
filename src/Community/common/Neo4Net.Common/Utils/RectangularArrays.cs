@@ -8,7 +8,7 @@
 
 namespace Neo4Net.Utils
 {
-   internal static class RectangularArrays
+   public static class RectangularArrays
    {
       public static long[][] RectangularLongArray(int size1, int size2)
       {

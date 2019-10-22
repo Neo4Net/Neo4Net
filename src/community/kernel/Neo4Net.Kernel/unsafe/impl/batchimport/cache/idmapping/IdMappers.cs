@@ -34,9 +34,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping
 	using Groups = Neo4Net.@unsafe.Impl.Batchimport.input.Groups;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.EncodingIdMapper.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.@string.TrackerFactories.dynamic;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.@string.TrackerFactories.dynamic;
 
 	/// <summary>
 	/// Place to instantiate common <seealso cref="IdMapper"/> implementations.

@@ -18,6 +18,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using Neo4Net.Concurrency;
+
 namespace Neo4Net.Memory
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -27,7 +29,7 @@ namespace Neo4Net.Memory
    /// A <seealso cref="IMemoryAllocationTracker"/> which is thread-safe, forwards allocations and deallocations to another <seealso cref="IMemoryAllocationTracker"/>
    /// and will register peak memory usage during its lifetime.
    /// </summary>
-   public class ThreadSafePeakIMemoryAllocationTracker : IMemoryAllocationTracker
+   public class ThreadSafePeakMemoryAllocationTracker : IMemoryAllocationTracker
    {
       // Why AtomicLong instead of LongAdder? AtomicLong fits this use case due to:
       // - Having much faster "sum", this is used in every call to allocate/deallocate
@@ -37,7 +39,7 @@ namespace Neo4Net.Memory
       private readonly AtomicLong _peak = new AtomicLong();
       private readonly IMemoryAllocationTracker _alsoReportTo;
 
-      public ThreadSafePeakIMemoryAllocationTracker(IMemoryAllocationTracker alsoReportTo)
+      public ThreadSafePeakMemoryAllocationTracker(IMemoryAllocationTracker alsoReportTo)
       {
          _alsoReportTo = alsoReportTo;
       }
@@ -45,38 +47,39 @@ namespace Neo4Net.Memory
       public  void Allocated(long bytes)
       {
          // Update allocated
-         long total = _allocated.addAndGet(bytes);
+         long total = _allocated.Add(bytes);
 
          // Update peak
          long currentPeak;
          long updatedPeak;
          do
          {
-            currentPeak = _peak.get();
+            currentPeak = _peak.GetValue(); //$!!$.get();
             if (currentPeak >= total)
             {
                break;
             }
-            updatedPeak = max(currentPeak, total);
-         } while (!_peak.compareAndSet(currentPeak, updatedPeak));
+            updatedPeak = (total > currentPeak) ? total : currentPeak; //$!!$ Max(currentPeak, total);
+         } while (!_peak.CompareAndSwap(currentPeak, updatedPeak));
+            //$!!$ while (!_peak.CompareAndSet(currentPeak, updatedPeak)) ;
 
-         _alsoReportTo.allocated(bytes);
+         _alsoReportTo.Allocated(bytes);
       }
 
       public  void Deallocated(long bytes)
       {
-         _allocated.addAndGet(-bytes);
-         _alsoReportTo.deallocated(bytes);
+         _allocated.Add(-bytes); //$!!$ AddAndGet(-bytes);
+         _alsoReportTo.Deallocated(bytes);
       }
 
       public  long UsedDirectMemory()
       {
-         return _allocated.get();
+         return _allocated.GetValue(); //$!!$ get();
       }
 
       public virtual long PeakMemoryUsage()
       {
-         return _peak.get();
+         return _peak.GetValue(); //$!!$get();
       }
    }
 }

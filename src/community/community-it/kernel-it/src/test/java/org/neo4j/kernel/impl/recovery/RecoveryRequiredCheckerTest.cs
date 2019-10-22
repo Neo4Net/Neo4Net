@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.impl.recovery
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_logs_location;
 
 	public class RecoveryRequiredCheckerTest
 	{
@@ -177,7 +177,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void recoverBrokenStoreWithConfig(org.neo4j.kernel.configuration.Config config) throws java.io.IOException
+//ORIGINAL LINE: private void recoverBrokenStoreWithConfig(org.Neo4Net.kernel.configuration.Config config) throws java.io.IOException
 		 private void RecoverBrokenStoreWithConfig( Config config )
 		 {
 			  using ( FileSystemAbstraction fileSystemAbstraction = CreateSomeDataAndCrash( _storeDir, _fileSystem, config ) )
@@ -212,8 +212,8 @@ namespace Neo4Net.Kernel.impl.recovery
 		 private static FileSystemAbstraction CreateSomeDataAndCrash( File store, EphemeralFileSystemAbstraction fileSystem, Config config )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db = new org.neo4j.test.TestGraphDatabaseFactory().setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.getRaw()).newGraphDatabase();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.Raw).newGraphDatabase();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.getRaw()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fileSystem).newImpermanentDatabaseBuilder(store).setConfig(config.Raw).newGraphDatabase();
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {

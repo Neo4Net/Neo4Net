@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
+//	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
+//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForVersion;
 
 	public class NativeLabelScanStoreMigrator : AbstractStoreMigrationParticipant
 	{
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void migrate(org.neo4j.io.layout.DatabaseLayout directoryLayout, org.neo4j.io.layout.DatabaseLayout migrationLayout, org.neo4j.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void migrate(org.Neo4Net.io.layout.DatabaseLayout directoryLayout, org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.kernel.impl.util.monitoring.ProgressReporter progressReporter, String versionToMigrateFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void Migrate( DatabaseLayout directoryLayout, DatabaseLayout migrationLayout, ProgressReporter progressReporter, string versionToMigrateFrom, string versionToMigrateTo )
 		 {
 			  if ( IsNativeLabelScanStoreMigrationRequired( directoryLayout ) )
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveMigratedFiles(org.neo4j.io.layout.DatabaseLayout migrationLayout, org.neo4j.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
+//ORIGINAL LINE: public void moveMigratedFiles(org.Neo4Net.io.layout.DatabaseLayout migrationLayout, org.Neo4Net.io.layout.DatabaseLayout directoryLayout, String versionToUpgradeFrom, String versionToMigrateTo) throws java.io.IOException
 		 public override void MoveMigratedFiles( DatabaseLayout migrationLayout, DatabaseLayout directoryLayout, string versionToUpgradeFrom, string versionToMigrateTo )
 		 {
 			  if ( _nativeLabelScanStoreMigrated )
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deleteNativeIndexFile(org.neo4j.io.layout.DatabaseLayout directoryStructure) throws java.io.IOException
+//ORIGINAL LINE: private void deleteNativeIndexFile(org.Neo4Net.io.layout.DatabaseLayout directoryStructure) throws java.io.IOException
 		 private void DeleteNativeIndexFile( DatabaseLayout directoryStructure )
 		 {
 			  Optional<FileHandle> indexFile = _fileSystem.streamFilesRecursive( NativeLabelScanStore.getLabelScanStoreFile( directoryStructure ) ).findFirst();
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void moveNativeIndexFile(org.neo4j.io.layout.DatabaseLayout storeStructure, java.io.File nativeLabelIndex) throws java.io.IOException
+//ORIGINAL LINE: private void moveNativeIndexFile(org.Neo4Net.io.layout.DatabaseLayout storeStructure, java.io.File nativeLabelIndex) throws java.io.IOException
 		 private void MoveNativeIndexFile( DatabaseLayout storeStructure, File nativeLabelIndex )
 		 {
 			  Optional<FileHandle> nativeIndexFileHandle = _fileSystem.streamFilesRecursive( nativeLabelIndex ).findFirst();
@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean isNativeLabelScanStoreMigrationRequired(org.neo4j.io.layout.DatabaseLayout directoryStructure) throws java.io.IOException
+//ORIGINAL LINE: private boolean isNativeLabelScanStoreMigrationRequired(org.Neo4Net.io.layout.DatabaseLayout directoryStructure) throws java.io.IOException
 		 private bool IsNativeLabelScanStoreMigrationRequired( DatabaseLayout directoryStructure )
 		 {
 			  return _fileSystem.streamFilesRecursive( directoryStructure.LabelScanStore() ).noneMatch(Predicates.alwaysTrue());
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.neo4j.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
 			  public override bool Visit( NodeLabelUpdate update )
 			  {
 					bool visit = base.Visit( update );

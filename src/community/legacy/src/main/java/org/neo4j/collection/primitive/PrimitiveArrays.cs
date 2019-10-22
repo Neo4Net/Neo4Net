@@ -24,7 +24,7 @@ namespace Neo4Net.Collections.primitive
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
+//	import static org.Neo4Net.collection.primitive.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
 
 	/// <summary>
 	/// Specialized methods for operations on primitive arrays.

@@ -42,13 +42,13 @@ namespace Neo4Net.Jmx.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected Neo4jMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException
-		 protected internal override Neo4jMBean CreateMBean( ManagementData management )
+//ORIGINAL LINE: protected Neo4NetMBean createMBean(ManagementData management) throws javax.management.NotCompliantMBeanException
+		 protected internal override Neo4NetMBean CreateMBean( ManagementData management )
 		 {
 			  return new StoreFileImpl( management );
 		 }
 
-		 internal class StoreFileImpl : Neo4jMBean, StoreFile
+		 internal class StoreFileImpl : Neo4NetMBean, StoreFile
 		 {
 			  internal File DatabaseDirectory;
 			  internal LogFiles LogFiles;

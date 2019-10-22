@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 	public sealed class CountsKeyType
 	{
 		 public static readonly CountsKeyType Empty = new CountsKeyType( "Empty", InnerEnum.Empty, 0 );
-		 public static readonly CountsKeyType EntityNode = new CountsKeyType( "EntityNode", InnerEnum.EntityNode, 2 );
-		 public static readonly CountsKeyType EntityRelationship = new CountsKeyType( "EntityRelationship", InnerEnum.EntityRelationship, 3 );
+		 public static readonly CountsKeyType IEntityNode = new CountsKeyType( "EntityNode", InnerEnum.EntityNode, 2 );
+		 public static readonly CountsKeyType IEntityRelationship = new CountsKeyType( "EntityRelationship", InnerEnum.EntityRelationship, 3 );
 		 public static readonly CountsKeyType IndexStatistics = new CountsKeyType( "IndexStatistics", InnerEnum.IndexStatistics, 4 );
 		 public static readonly CountsKeyType IndexSample = new CountsKeyType( "IndexSample", InnerEnum.IndexSample, 5 );
 
@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 		 static CountsKeyType()
 		 {
 			 valueList.Add( Empty );
-			 valueList.Add( EntityNode );
-			 valueList.Add( EntityRelationship );
+			 valueList.Add( IEntityNode );
+			 valueList.Add( IEntityRelationship );
 			 valueList.Add( IndexStatistics );
 			 valueList.Add( IndexSample );
 		 }
@@ -43,8 +43,8 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 		 public enum InnerEnum
 		 {
 			 Empty,
-			 EntityNode,
-			 EntityRelationship,
+			 IEntityNode,
+			 IEntityRelationship,
 			 IndexStatistics,
 			 IndexSample
 		 }

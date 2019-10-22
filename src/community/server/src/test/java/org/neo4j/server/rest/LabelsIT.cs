@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest
 	using Test = org.junit.Test;
 
 
-	using Node = Neo4Net.Graphdb.Node;
+	using Node = Neo4Net.GraphDb.Node;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
@@ -46,25 +46,25 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.createJsonFrom;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.createJsonFrom;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.readJson;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.GraphDescription.PropType.ARRAY;
+//	import static org.Neo4Net.test.GraphDescription.PropType.ARRAY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.GraphDescription.PropType.STRING;
+//	import static org.Neo4Net.test.GraphDescription.PropType.STRING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasLabel;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasLabels;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class LabelsIT : AbstractRestFunctionalTestBase
 	{
@@ -121,7 +121,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Listing labels for a node.") @Test @GraphDescription.Graph(nodes = {@NODE(name = "Clint Eastwood", labels = {@LABEL("Actor"), @LABEL("Director")}, setNameProperty = true)}) public void listing_node_labels() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Listing labels for a node.") @Test @GraphDescription.Graph(nodes = {@NODE(name = "Clint Eastwood", labels = {@LABEL("Actor"), @LABEL("Director")}, setNameProperty = true)}) public void listing_node_labels() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Listing labels for a node.")]
 		 public virtual void ListingNodeLabels()
@@ -167,7 +167,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get all nodes with a label.") @Test @GraphDescription.Graph(nodes = { @NODE(name = "Clint Eastwood", setNameProperty = true, labels = { @LABEL("Actor"), @LABEL("Director") }), @NODE(name = "Donald Sutherland", setNameProperty = true, labels = { @LABEL("Actor") }), @NODE(name = "Steven Spielberg", setNameProperty = true, labels = { @LABEL("Director") }) }) public void get_all_nodes_with_label() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get all nodes with a label.") @Test @GraphDescription.Graph(nodes = { @NODE(name = "Clint Eastwood", setNameProperty = true, labels = { @LABEL("Actor"), @LABEL("Director") }), @NODE(name = "Donald Sutherland", setNameProperty = true, labels = { @LABEL("Actor") }), @NODE(name = "Steven Spielberg", setNameProperty = true, labels = { @LABEL("Director") }) }) public void get_all_nodes_with_label() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all nodes with a label.")]
 		 public virtual void GetAllNodesWithLabel()
@@ -183,7 +183,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Get nodes by label and property.\n" + "\n" + "You can retrieve all nodes with a given label and property by passing one property as a query parameter.\n" + "Notice that the property value is JSON-encoded and then URL-encoded.\n" + "\n" + "If there is an index available on the label/property combination you send, that index will be used. If no\n" + "index is available, all nodes with the given label will be filtered through to find matching nodes.\n" + "\n" + "Currently, it is not possible to search using multiple properties.") @GraphDescription.Graph(nodes = {@NODE(name = "Donald Sutherland", labels = {@LABEL("Person")}), @NODE(name = "Clint Eastwood", labels = {@LABEL("Person")}, properties = { @PROP(key = "name", value = "Clint Eastwood")}), @NODE(name = "Steven Spielberg", labels = {@LABEL("Person")}, properties = { @PROP(key = "name", value = "Steven Spielberg")})}) public void get_nodes_with_label_and_property() throws org.neo4j.server.rest.domain.JsonParseException, java.io.UnsupportedEncodingException
+//ORIGINAL LINE: @Test @Documented("Get nodes by label and property.\n" + "\n" + "You can retrieve all nodes with a given label and property by passing one property as a query parameter.\n" + "Notice that the property value is JSON-encoded and then URL-encoded.\n" + "\n" + "If there is an index available on the label/property combination you send, that index will be used. If no\n" + "index is available, all nodes with the given label will be filtered through to find matching nodes.\n" + "\n" + "Currently, it is not possible to search using multiple properties.") @GraphDescription.Graph(nodes = {@NODE(name = "Donald Sutherland", labels = {@LABEL("Person")}), @NODE(name = "Clint Eastwood", labels = {@LABEL("Person")}, properties = { @PROP(key = "name", value = "Clint Eastwood")}), @NODE(name = "Steven Spielberg", labels = {@LABEL("Person")}, properties = { @PROP(key = "name", value = "Steven Spielberg")})}) public void get_nodes_with_label_and_property() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.UnsupportedEncodingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get nodes by label and property.\n" + "\n" + "You can retrieve all nodes with a given label and property by passing one property as a query parameter.\n" + "Notice that the property value is JSON-encoded and then URL-encoded.\n" + "\n" + "If there is an index available on the label/property combination you send, that index will be used. If no\n" + "index is available, all nodes with the given label will be filtered through to find matching nodes.\n" + "\n" + "Currently, it is not possible to search using multiple properties.")]
 		 public virtual void GetNodesWithLabelAndProperty()
@@ -201,7 +201,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("Get nodes by label and array property.") @GraphDescription.Graph(nodes = {@NODE(name = "Donald Sutherland", labels = {@LABEL("Person")}), @NODE(name = "Clint Eastwood", labels = {@LABEL("Person")}, properties = { @PROP(key = "names", value = "Clint,Eastwood", type = ARRAY, componentType = STRING)}), @NODE(name = "Steven Spielberg", labels = {@LABEL("Person")}, properties = { @PROP(key = "names", value = "Steven,Spielberg", type = ARRAY, componentType = STRING)})}) public void get_nodes_with_label_and_array_property() throws org.neo4j.server.rest.domain.JsonParseException, java.io.UnsupportedEncodingException
+//ORIGINAL LINE: @Test @Documented("Get nodes by label and array property.") @GraphDescription.Graph(nodes = {@NODE(name = "Donald Sutherland", labels = {@LABEL("Person")}), @NODE(name = "Clint Eastwood", labels = {@LABEL("Person")}, properties = { @PROP(key = "names", value = "Clint,Eastwood", type = ARRAY, componentType = STRING)}), @NODE(name = "Steven Spielberg", labels = {@LABEL("Person")}, properties = { @PROP(key = "names", value = "Steven,Spielberg", type = ARRAY, componentType = STRING)})}) public void get_nodes_with_label_and_array_property() throws org.Neo4Net.server.rest.domain.JsonParseException, java.io.UnsupportedEncodingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get nodes by label and array property.")]
 		 public virtual void GetNodesWithLabelAndArrayProperty()
@@ -224,7 +224,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test @Documented("List all labels.\n" + " \n" + "By default, the server will return labels in use only. If you also want to return labels not in use,\n" + "append the \"in_use=0\" query parameter.") @GraphDescription.Graph(nodes = { @NODE(name = "Clint Eastwood", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Actor"), @LABEL("Director") }), @NODE(name = "Donald Sutherland", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Actor") }), @NODE(name = "Steven Spielberg", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Director") }) }) public void list_all_labels() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test @Documented("List all labels.\n" + " \n" + "By default, the server will return labels in use only. If you also want to return labels not in use,\n" + "append the \"in_use=0\" query parameter.") @GraphDescription.Graph(nodes = { @NODE(name = "Clint Eastwood", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Actor"), @LABEL("Director") }), @NODE(name = "Donald Sutherland", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Actor") }), @NODE(name = "Steven Spielberg", setNameProperty = true, labels = { @LABEL("Person"), @LABEL("Director") }) }) public void list_all_labels() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("List all labels.\n" + " \n" + "By default, the server will return labels in use only. If you also want to return labels not in use,\n" + "append the \"in_use=0\" query parameter.")]
 		 public virtual void ListAllLabels()
@@ -234,7 +234,7 @@ namespace Neo4Net.Server.rest
 			  string body = GenConflict.get().expectedStatus(200).get(uri).entity();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Set<?> parsed = org.neo4j.helpers.collection.Iterables.asSet((java.util.List<?>) readJson(body));
+//ORIGINAL LINE: java.util.Set<?> parsed = org.Neo4Net.helpers.collection.Iterables.asSet((java.util.List<?>) readJson(body));
 			  ISet<object> parsed = Iterables.asSet( ( IList<object> ) readJson( body ) );
 			  assertTrue( parsed.Contains( "Person" ) );
 			  assertTrue( parsed.Contains( "Actor" ) );

@@ -106,7 +106,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNoNode(long nodeId) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void assertNoNode(long nodeId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void AssertNoNode( long nodeId )
 		 {
 			  using ( Transaction tx = beginTransaction(), NodeCursor cursor = tx.Cursors().allocateNodeCursor() )

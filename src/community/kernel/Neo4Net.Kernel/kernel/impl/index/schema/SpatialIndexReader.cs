@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using ExistsPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExistsPredicate;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
+//	import static org.Neo4Net.kernel.impl.index.schema.fusion.FusionIndexBase.forAll;
 
 	internal class SpatialIndexReader : SpatialIndexCache<SpatialIndexPartReader<NativeIndexValue>>, IndexReader
 	{

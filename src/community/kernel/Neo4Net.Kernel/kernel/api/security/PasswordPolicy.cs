@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.api.security
 	{
 		 // TODO: We may want to reintroduce AuthSubject here to be able to check against repeating last used passwords etc.
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validatePassword(byte[] password) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void validatePassword(byte[] password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void ValidatePassword( sbyte[] password );
 	}
 

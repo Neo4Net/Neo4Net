@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.api.schema
 	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
 	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 	public class RelationTypeSchemaDescriptor : Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor
@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.api.schema
 			  this._propertyIds = propertyIds;
 		 }
 
-		 public override bool IsAffected( long[] entityTokenIds )
+		 public override bool IsAffected( long[] IEntityTokenIds )
 		 {
-			  return ArrayUtils.contains( entityTokenIds, _relTypeId );
+			  return ArrayUtils.contains( IEntityTokenIds, _relTypeId );
 		 }
 
 		 public override R ComputeWith<R>( SchemaComputer<R> processor )
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.api.schema
 			 }
 		 }
 
-		 public virtual int[] EntityTokenIds
+		 public virtual int[] IEntityTokenIds
 		 {
 			 get
 			 {
@@ -95,9 +95,9 @@ namespace Neo4Net.Kernel.api.schema
 			  return ResourceTypes.RELATIONSHIP_TYPE;
 		 }
 
-		 public override EntityType EntityType()
+		 public override IEntityType IEntityType()
 		 {
-			  return EntityType.RELATIONSHIP;
+			  return IEntityType.RELATIONSHIP;
 		 }
 
 		 public override PropertySchemaType PropertySchemaType()

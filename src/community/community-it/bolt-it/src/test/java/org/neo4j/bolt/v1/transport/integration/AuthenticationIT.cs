@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
@@ -63,21 +63,21 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class AuthenticationIT : AbstractBoltTransportsTest
 	{
@@ -94,13 +94,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 		private void InitializeInstanceFields()
 		{
-			Server = new Neo4jWithSocket( this.GetType(), TestGraphDatabaseFactory, FsRule, SettingsFunction );
+			Server = new Neo4NetWithSocket( this.GetType(), TestGraphDatabaseFactory, FsRule, SettingsFunction );
 			RuleChain = RuleChain.outerRule( FsRule ).around( Server );
 		}
 
 		 protected internal EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 protected internal readonly AssertableLogProvider LogProvider = new AssertableLogProvider();
-		 protected internal Neo4jWithSocket Server;
+		 protected internal Neo4NetWithSocket Server;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.RuleChain ruleChain = org.junit.rules.RuleChain.outerRule(fsRule).around(server);
@@ -123,7 +123,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 		 private new HostnamePort _address;
-		 private readonly string _version = "Neo4j/" + Version.Neo4jVersion;
+		 private readonly string _version = "Neo4Net/" + Version.Neo4NetVersion;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setup()
@@ -138,7 +138,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldRespondWithCredentialsExpiredOnFirstUse()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -161,7 +161,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfWrongCredentials()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "wrong", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "wrong", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -183,14 +183,14 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfWrongCredentialsFollowingSuccessfulLogin()
 		 {
 			  // When change password
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "new_credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "new_credentials", "secret", "scheme", "basic"))));
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgSuccess() ) );
 
 			  // When login again with the new password
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "secret", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -198,7 +198,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 			  // When login again with the wrong password
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "wrong", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "wrong", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -213,7 +213,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfMalformedAuthTokenWrongType()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", singletonList("neo4j"), "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", singletonList("Neo4Net"), "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -228,7 +228,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfMalformedAuthTokenMissingKey()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "this-should-have-been-credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "this-should-have-been-credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -243,7 +243,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfMalformedAuthTokenMissingScheme()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -258,7 +258,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailIfMalformedAuthTokenUnknownScheme()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "unknown"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "unknown"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -334,7 +334,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldBeAbleToUpdateCredentials()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "new_credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "new_credentials", "secret", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -342,13 +342,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 			  // If I reconnect I cannot use the old password
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgFailure( Neo4Net.Kernel.Api.Exceptions.Status_Security.Unauthorized, "The client is unauthorized due to authentication failure." ) ) );
 
 			  // But the new password works fine
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "secret", "scheme", "basic"))));
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgSuccess() ) );
 		 }
@@ -359,7 +359,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldBeAuthenticatedAfterUpdatingCredentials()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "new_credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "new_credentials", "secret", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -378,7 +378,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldBeAbleToChangePasswordUsingBuiltInProcedure()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -392,13 +392,13 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 			  // If I reconnect I cannot use the old password
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgFailure( Neo4Net.Kernel.Api.Exceptions.Status_Security.Unauthorized, "The client is unauthorized due to authentication failure." ) ) );
 
 			  // But the new password works fine
 			  Reconnect();
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "secret", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "secret", "scheme", "basic"))));
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgSuccess() ) );
 		 }
@@ -409,7 +409,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldBeAuthenticatedAfterChangePasswordUsingBuiltInProcedure()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -434,14 +434,14 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailWhenReusingTheSamePassword()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 			  assertThat( Connection, Util.eventuallyReceives( msgSuccess( map( "credentials_expired", true, "server", _version ) ) ) );
 
 			  // When
-			  Connection.send( Util.chunk( new RunMessage( "CALL dbms.security.changePassword", SingletonMap( "password", "neo4j" ) ), PullAllMessage.INSTANCE ) );
+			  Connection.send( Util.chunk( new RunMessage( "CALL dbms.security.changePassword", SingletonMap( "password", "Neo4Net" ) ), PullAllMessage.INSTANCE ) );
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceives( msgFailure( Neo4Net.Kernel.Api.Exceptions.Status_General.InvalidArguments, "Old password and new password cannot be the same." ) ) );
@@ -457,7 +457,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldFailWhenSubmittingEmptyPassword()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -480,7 +480,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void ShouldNotBeAbleToReadWhenPasswordChangeRequired()
 		 {
 			  // When
-			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "neo4j", "scheme", "basic"))));
+			  Connection.connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "Neo4Net", "scheme", "basic"))));
 
 			  // Then
 			  assertThat( Connection, Util.eventuallyReceivesSelectedProtocolVersion() );
@@ -542,7 +542,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			  {
 					connection = NewConnection();
 
-					connection.Connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "neo4j", "credentials", "WHAT_WAS_THE_PASSWORD_AGAIN", "scheme", "basic"))));
+					connection.Connect( _address ).send( Util.defaultAcceptedVersions() ).send(Util.chunk(new InitMessage("TestClient/1.1", map("principal", "Neo4Net", "credentials", "WHAT_WAS_THE_PASSWORD_AGAIN", "scheme", "basic"))));
 
 					assertThat( connection, Util.eventuallyReceivesSelectedProtocolVersion() );
 					assertThat( connection, Util.eventuallyReceives( failureRecorder ) );

@@ -26,11 +26,11 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Test = org.junit.Test;
 
 
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Result = Neo4Net.Graphdb.Result;
-	using SeverityLevel = Neo4Net.Graphdb.SeverityLevel;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Result = Neo4Net.GraphDb.Result;
+	using SeverityLevel = Neo4Net.GraphDb.SeverityLevel;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Procedure = Neo4Net.Procedure.Procedure;
 

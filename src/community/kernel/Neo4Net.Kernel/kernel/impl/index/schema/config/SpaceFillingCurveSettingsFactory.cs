@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 	/// <summary>
 	/// <para>
 	/// This factory can be used to create new space filling curve settings for use in configuring the curves.
-	/// These settings can be created either by defaults from the neo4j.conf file (see ConfiguredSpaceFullCurveSettingsCache)
+	/// These settings can be created either by defaults from the Neo4Net.conf file (see ConfiguredSpaceFullCurveSettingsCache)
 	/// or from reading the header of an existing GBPTree based index.
 	/// </para>
 	/// </summary>
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static SpaceFillingCurveSettings fromGBPTree(java.io.File indexFile, org.neo4j.io.pagecache.PageCache pageCache, System.Func<ByteBuffer,String> onError) throws java.io.IOException
+//ORIGINAL LINE: public static SpaceFillingCurveSettings fromGBPTree(java.io.File indexFile, org.Neo4Net.io.pagecache.PageCache pageCache, System.Func<ByteBuffer,String> onError) throws java.io.IOException
 		 public static SpaceFillingCurveSettings FromGBPTree( File indexFile, PageCache pageCache, System.Func<ByteBuffer, string> onError )
 		 {
 			  SpaceFillingCurveSettings.SettingsFromIndexHeader settings = new SpaceFillingCurveSettings.SettingsFromIndexHeader();

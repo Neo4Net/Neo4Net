@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.factory
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using CommitProcessFactory = Neo4Net.Kernel.Impl.Api.CommitProcessFactory;
 	using ReadOnlyTransactionCommitProcess = Neo4Net.Kernel.Impl.Api.ReadOnlyTransactionCommitProcess;

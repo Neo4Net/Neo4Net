@@ -22,10 +22,10 @@
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 	public class Inserter
@@ -40,10 +40,10 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 {
 			  File path = new File( args[0] );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db = new org.neo4j.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(path).newGraphDatabase();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(path).newGraphDatabase();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = new org.Neo4Net.test.TestGraphDatabaseFactory().newEmbeddedDatabaseBuilder(path).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(path).newGraphDatabase();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.index.Index<org.neo4j.graphdb.Node> index = getIndex(db);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.index.Index<org.Neo4Net.graphdb.Node> index = getIndex(db);
 			  Index<Node> index = GetIndex( db );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final String[] keys = new String[]{"apoc", "zion", "morpheus"};
@@ -76,7 +76,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  ( new File( path, "started" ) ).createNewFile();
 		 }
 
-		 private static Index<Node> GetIndex( GraphDatabaseService db )
+		 private static Index<Node> GetIndex( IGraphDatabaseService db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
 			  {

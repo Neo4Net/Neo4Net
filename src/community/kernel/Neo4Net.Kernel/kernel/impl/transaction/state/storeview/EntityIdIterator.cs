@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 {
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 
-	public interface EntityIdIterator : PrimitiveLongResourceIterator
+	public interface IEntityIdIterator : PrimitiveLongResourceIterator
 	{
 		 /// <summary>
 		 /// An <seealso cref="EntityIdIterator"/> is allowed to cache some ids ahead of it for performance reasons. Although during certain

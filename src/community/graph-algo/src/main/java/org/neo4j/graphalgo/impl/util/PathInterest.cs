@@ -24,7 +24,7 @@ namespace Neo4Net.Graphalgo.impl.util
 
 	/// <summary>
 	/// PathInterest decides if a path is of interest or not in priority based traversal such as
-	/// <seealso cref="org.neo4j.graphalgo.impl.path.Dijkstra"/> or <seealso cref="org.neo4j.graphalgo.impl.path.AStar"/>.
+	/// <seealso cref="org.Neo4Net.graphalgo.impl.path.Dijkstra"/> or <seealso cref="org.Neo4Net.graphalgo.impl.path.AStar"/>.
 	/// <seealso cref="comparator()"/> provides a comparator on priority object to be used when ordering paths.
 	/// <seealso cref="canBeRuledOut(int, object, object)"/>
 	/// @author Anton Persson
@@ -59,7 +59,7 @@ namespace Neo4Net.Graphalgo.impl.util
 	 public abstract class PathInterest_PriorityBasedPathInterest<P> : PathInterest<P>
 	 {
 		 public abstract IComparer<P> Comparator();
-		  /// <returns> <seealso cref="BiFunction"/> to be used when deciding if entity can be ruled out or not. </returns>
+		  /// <returns> <seealso cref="BiFunction"/> to be used when deciding if IEntity can be ruled out or not. </returns>
 		  internal abstract System.Func<P, P, bool> InterestFunction();
 
 		  public override bool CanBeRuledOut( int numberOfVisits, P pathPriority, P oldPriority )
@@ -85,7 +85,7 @@ namespace Neo4Net.Graphalgo.impl.util
 		  internal abstract int NumberOfWantedPaths();
 
 		  /// <summary>
-		  /// Use <seealso cref="numberOfWantedPaths()"/> to decide if an entity should be ruled out or not and if an entity
+		  /// Use <seealso cref="numberOfWantedPaths()"/> to decide if an IEntity should be ruled out or not and if an IEntity
 		  /// still is of interest. </summary>
 		  /// <param name="numberOfVisits"> number of times a traversal branch ending on the same node has been traversed from. </param>
 		  /// <param name="pathPriority"> priority of traversal branch currently considered. </param>

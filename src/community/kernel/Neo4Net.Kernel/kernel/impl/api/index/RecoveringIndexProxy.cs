@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;

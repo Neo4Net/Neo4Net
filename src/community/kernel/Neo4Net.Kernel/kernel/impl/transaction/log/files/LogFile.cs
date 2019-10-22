@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 /// <returns> <seealso cref="ReadableClosableChannel"/> capable of reading log data, starting from <seealso cref="LogPosition position"/>. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.log.ReadableLogChannel getReader(org.neo4j.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel getReader(org.Neo4Net.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException;
 		 ReadableLogChannel GetReader( LogPosition position );
 
 		 /// <summary>
@@ -50,11 +50,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 /// <returns> <seealso cref="ReadableClosableChannel"/> capable of reading log data, starting from <seealso cref="LogPosition position"/>. </returns>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.log.ReadableLogChannel getReader(org.neo4j.kernel.impl.transaction.log.LogPosition position, org.neo4j.kernel.impl.transaction.log.LogVersionBridge logVersionBridge) throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.ReadableLogChannel getReader(org.Neo4Net.kernel.impl.transaction.log.LogPosition position, org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge logVersionBridge) throws java.io.IOException;
 		 ReadableLogChannel GetReader( LogPosition position, LogVersionBridge logVersionBridge );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void accept(LogFile_LogFileVisitor visitor, org.neo4j.kernel.impl.transaction.log.LogPosition startingFromPosition) throws java.io.IOException;
+//ORIGINAL LINE: void accept(LogFile_LogFileVisitor visitor, org.Neo4Net.kernel.impl.transaction.log.LogPosition startingFromPosition) throws java.io.IOException;
 		 void Accept( LogFile_LogFileVisitor visitor, LogPosition startingFromPosition );
 
 		 /// <returns> {@code true} if a rotation is needed. </returns>
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 	 public interface LogFile_LogFileVisitor
 	 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean visit(org.neo4j.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel channel) throws java.io.IOException;
+//ORIGINAL LINE: boolean visit(org.Neo4Net.kernel.impl.transaction.log.ReadableClosablePositionAwareChannel channel) throws java.io.IOException;
 		  bool Visit( ReadableClosablePositionAwareChannel channel );
 	 }
 

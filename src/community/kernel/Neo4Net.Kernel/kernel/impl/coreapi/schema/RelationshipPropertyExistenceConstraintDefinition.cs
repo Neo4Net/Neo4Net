@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 
 	public class RelationshipPropertyExistenceConstraintDefinition : RelationshipConstraintDefinition
 	{

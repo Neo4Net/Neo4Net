@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 
 	public class LoggingMonitor : IndexProvider.Monitor
 	{

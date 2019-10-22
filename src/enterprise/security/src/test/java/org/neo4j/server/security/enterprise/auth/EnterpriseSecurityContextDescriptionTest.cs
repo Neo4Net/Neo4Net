@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -27,7 +27,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -42,16 +42,16 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 
 	public class EnterpriseSecurityContextDescriptionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public MultiRealmAuthManagerRule authManagerRule = new MultiRealmAuthManagerRule(new org.neo4j.server.security.auth.InMemoryUserRepository(), new org.neo4j.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.neo4j.kernel.configuration.Config.defaults()));
+//ORIGINAL LINE: @Rule public MultiRealmAuthManagerRule authManagerRule = new MultiRealmAuthManagerRule(new org.Neo4Net.server.security.auth.InMemoryUserRepository(), new org.Neo4Net.server.security.auth.RateLimitedAuthenticationStrategy(java.time.Clock.systemUTC(), org.Neo4Net.kernel.configuration.Config.defaults()));
 		 public MultiRealmAuthManagerRule AuthManagerRule = new MultiRealmAuthManagerRule( new InMemoryUserRepository(), new RateLimitedAuthenticationStrategy(Clock.systemUTC(), Config.defaults()) );
 
 		 private EnterpriseUserManager _manager;
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.enterprise.api.security.EnterpriseSecurityContext context() throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private org.Neo4Net.kernel.enterprise.api.security.EnterpriseSecurityContext context() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private EnterpriseSecurityContext Context()
 		 {
 			  return AuthManagerRule.Manager.login( authToken( "mats", "foo" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );

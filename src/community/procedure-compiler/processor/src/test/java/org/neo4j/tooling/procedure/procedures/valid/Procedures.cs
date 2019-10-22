@@ -22,23 +22,23 @@
 namespace Neo4Net.Tooling.procedure.procedures.valid
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Name = Neo4Net.Procedure.Name;
 	using PerformsWrites = Neo4Net.Procedure.PerformsWrites;
 	using Procedure = Neo4Net.Procedure.Procedure;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.DBMS;
+//	import static org.Neo4Net.procedure.Mode.DBMS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.DEFAULT;
+//	import static org.Neo4Net.procedure.Mode.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.READ;
+//	import static org.Neo4Net.procedure.Mode.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.SCHEMA;
+//	import static org.Neo4Net.procedure.Mode.SCHEMA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.procedure.Mode.WRITE;
+//	import static org.Neo4Net.procedure.Mode.WRITE;
 
 	public class Procedures
 	{
@@ -99,19 +99,19 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void simpleInput08(@Name("foo") org.neo4j.graphdb.Node input)
+//ORIGINAL LINE: @Procedure public void simpleInput08(@Name("foo") org.Neo4Net.graphdb.Node input)
 		 public virtual void SimpleInput08( Node input )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void simpleInput09(@Name("foo") org.neo4j.graphdb.Path input)
+//ORIGINAL LINE: @Procedure public void simpleInput09(@Name("foo") org.Neo4Net.graphdb.Path input)
 		 public virtual void SimpleInput09( Path input )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void simpleInput10(@Name("foo") org.neo4j.graphdb.Relationship input)
+//ORIGINAL LINE: @Procedure public void simpleInput10(@Name("foo") org.Neo4Net.graphdb.Relationship input)
 		 public virtual void SimpleInput10( Relationship input )
 		 {
 		 }
@@ -166,21 +166,21 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput18(@Name("foo") org.neo4j.graphdb.Node input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput18(@Name("foo") org.Neo4Net.graphdb.Node input)
 		 public virtual Stream<Records.SimpleTypesWrapper> SimpleInput18( Node input )
 		 {
 			  return Stream.of( new Records.SimpleTypesWrapper() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput19(@Name("foo") org.neo4j.graphdb.Path input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput19(@Name("foo") org.Neo4Net.graphdb.Path input)
 		 public virtual Stream<Records.SimpleTypesWrapper> SimpleInput19( Path input )
 		 {
 			  return Stream.of( new Records.SimpleTypesWrapper() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput20(@Name("foo") org.neo4j.graphdb.Relationship input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.SimpleTypesWrapper> simpleInput20(@Name("foo") org.Neo4Net.graphdb.Relationship input)
 		 public virtual Stream<Records.SimpleTypesWrapper> SimpleInput20( Relationship input )
 		 {
 			  return Stream.of( new Records.SimpleTypesWrapper() );
@@ -200,13 +200,13 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void genericInput02(@Name("foo") java.util.List<java.util.List<org.neo4j.graphdb.Node>> input)
+//ORIGINAL LINE: @Procedure public void genericInput02(@Name("foo") java.util.List<java.util.List<org.Neo4Net.graphdb.Node>> input)
 		 public virtual void GenericInput02( IList<IList<Node>> input )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void genericInput03(@Name("foo") java.util.Map<String,java.util.List<org.neo4j.graphdb.Node>> input)
+//ORIGINAL LINE: @Procedure public void genericInput03(@Name("foo") java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Node>> input)
 		 public virtual void GenericInput03( IDictionary<string, IList<Node>> input )
 		 {
 		 }
@@ -218,7 +218,7 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public void genericInput05(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<org.neo4j.graphdb.Path>>>>>> input)
+//ORIGINAL LINE: @Procedure public void genericInput05(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Path>>>>>> input)
 		 public virtual void GenericInput05( IDictionary<string, IList<IList<IDictionary<string, IDictionary<string, IList<Path>>>>>> input )
 		 {
 		 }
@@ -231,14 +231,14 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput07(@Name("foo") java.util.List<java.util.List<org.neo4j.graphdb.Node>> input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput07(@Name("foo") java.util.List<java.util.List<org.Neo4Net.graphdb.Node>> input)
 		 public virtual Stream<Records.GenericTypesWrapper> GenericInput07( IList<IList<Node>> input )
 		 {
 			  return Stream.of( new Records.GenericTypesWrapper() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput08(@Name("foo") java.util.Map<String,java.util.List<org.neo4j.graphdb.Node>> input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput08(@Name("foo") java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Node>> input)
 		 public virtual Stream<Records.GenericTypesWrapper> GenericInput08( IDictionary<string, IList<Node>> input )
 		 {
 			  return Stream.of( new Records.GenericTypesWrapper() );
@@ -252,7 +252,7 @@ namespace Neo4Net.Tooling.procedure.procedures.valid
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput10(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<org.neo4j.graphdb.Path>>>>>> input)
+//ORIGINAL LINE: @Procedure public java.util.stream.Stream<Records.GenericTypesWrapper> genericInput10(@Name("foo") java.util.Map<String,java.util.List<java.util.List<java.util.Map<String,java.util.Map<String,java.util.List<org.Neo4Net.graphdb.Path>>>>>> input)
 		 public virtual Stream<Records.GenericTypesWrapper> GenericInput10( IDictionary<string, IList<IList<IDictionary<string, IDictionary<string, IList<Path>>>>>> input )
 		 {
 			  return Stream.of( new Records.GenericTypesWrapper() );

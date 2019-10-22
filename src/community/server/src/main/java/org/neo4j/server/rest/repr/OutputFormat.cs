@@ -64,7 +64,7 @@ namespace Neo4Net.Server.rest.repr
 			  return Response( Response.ok(), representation );
 		 }
 
-		 public Response OkIncludeLocation<REPR>( REPR representation ) where REPR : Representation, EntityRepresentation
+		 public Response OkIncludeLocation<REPR>( REPR representation ) where REPR : Representation, IEntityRepresentation
 		 {
 			  if ( representation.Empty )
 			  {
@@ -73,7 +73,7 @@ namespace Neo4Net.Server.rest.repr
 			  return Response( Response.ok().header(HttpHeaders.LOCATION, Uri(representation)), representation );
 		 }
 
-		 public Response Created<REPR>( REPR representation ) where REPR : Representation, EntityRepresentation
+		 public Response Created<REPR>( REPR representation ) where REPR : Representation, IEntityRepresentation
 		 {
 			  return Response( Response.created( Uri( representation ) ), representation );
 		 }
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.rest.repr
 			  return Response( Response.status( Response.Status.CONFLICT ), new ExceptionRepresentation( exception ) );
 		 }
 
-		 public Response Conflict<REPR>( REPR representation ) where REPR : Representation, EntityRepresentation
+		 public Response Conflict<REPR>( REPR representation ) where REPR : Representation, IEntityRepresentation
 		 {
 			  return Response( Response.status( Response.Status.CONFLICT ), representation );
 		 }
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.rest.repr
 			  return Response( Response.status( Response.Status.INTERNAL_SERVER_ERROR ), new ExceptionRepresentation( exception ) );
 		 }
 
-		 private URI Uri( EntityRepresentation representation )
+		 private URI Uri( IEntityRepresentation representation )
 		 {
 			  return URI.create( Assemble( representation.SelfUri() ) );
 		 }
@@ -196,15 +196,15 @@ namespace Neo4Net.Server.rest.repr
 			  representation.Serialize( format, baseUri, null );
 		 }
 
-		 private sbyte[] ToBytes( string entity, bool mustFail )
+		 private sbyte[] ToBytes( string IEntity, bool mustFail )
 		 {
-			  sbyte[] entityAsBytes = UTF8.encode( entity );
+			  sbyte[] IEntityAsBytes = UTF8.encode( IEntity );
 			  if ( !mustFail )
 			  {
 					_representationWriteHandler.onRepresentationWritten();
 			  }
 			  _representationWriteHandler.onRepresentationFinal();
-			  return entityAsBytes;
+			  return IEntityAsBytes;
 		 }
 
 		 public virtual MediaType MediaType
@@ -241,11 +241,11 @@ namespace Neo4Net.Server.rest.repr
 			  return Response.ok().build();
 		 }
 
-		 public virtual Response BadRequest( MediaType mediaType, string entity )
+		 public virtual Response BadRequest( MediaType mediaType, string IEntity )
 		 {
 			  _representationWriteHandler.onRepresentationStartWriting();
 			  _representationWriteHandler.onRepresentationFinal();
-			  return Response.status( BAD_REQUEST ).type( mediaType ).entity( entity ).build();
+			  return Response.status( BAD_REQUEST ).type( mediaType ).entity( IEntity ).build();
 		 }
 	}
 

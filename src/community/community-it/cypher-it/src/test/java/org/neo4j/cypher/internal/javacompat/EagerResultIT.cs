@@ -28,23 +28,23 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
@@ -76,9 +76,9 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	public class EagerResultIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
-		 private GraphDatabaseService _database;
+		 private IGraphDatabaseService _database;
 		 private TestTransactionVersionContextSupplier _testContextSupplier;
 		 private File _storeDir;
 		 private TestVersionContext _testCursorContext;
@@ -210,7 +210,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 {
 			  Result result = _database.execute( "MATCH (n) RETURN n.c" );
 			  IList<string> values = new List<string>();
-			  result.Accept((Neo4Net.Graphdb.Result_ResultVisitor<Exception>) row =>
+			  result.Accept((Neo4Net.GraphDb.Result_ResultVisitor<Exception>) row =>
 			  {
 				values.Add( row.getString( "n.c" ) );
 				return false;
@@ -220,13 +220,13 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.QueryExecutionException.class) public void dirtyContextDuringResultVisitResultInUnstableSnapshotException() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextDuringResultVisitResultInUnstableSnapshotException() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DirtyContextDuringResultVisitResultInUnstableSnapshotException()
 		 {
 			  Result result = _database.execute( "MATCH (n) RETURN n.c" );
 			  IList<string> values = new List<string>();
-			  result.Accept((Neo4Net.Graphdb.Result_ResultVisitor<Exception>) row =>
+			  result.Accept((Neo4Net.GraphDb.Result_ResultVisitor<Exception>) row =>
 			  {
 				_testCursorContext.markAsDirty();
 				values.Add( row.getString( "n.c" ) );
@@ -235,12 +235,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.QueryExecutionException.class) public void dirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException() throws Exception
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.QueryExecutionException.class) public void dirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DirtyContextEntityNotFoundExceptionDuringResultVisitResultInUnstableSnapshotException()
 		 {
 			  Result result = _database.execute( "MATCH (n) RETURN n.c" );
-			  result.Accept((Neo4Net.Graphdb.Result_ResultVisitor<Exception>) row =>
+			  result.Accept((Neo4Net.GraphDb.Result_ResultVisitor<Exception>) row =>
 			  {
 				_testCursorContext.markAsDirty();
 				throw new NotFoundException( new Exception() );
@@ -275,7 +275,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 			  }
 		 }
 
-		 private GraphDatabaseService StartRestartableDatabase()
+		 private IGraphDatabaseService StartRestartableDatabase()
 		 {
 			  return ( new CustomGraphDatabaseFactory( this, new CustomFacadeFactory( this ) ) ).NewEmbeddedDatabaseBuilder( _storeDir ).setConfig( GraphDatabaseSettings.snapshot_query, Settings.TRUE ).newGraphDatabase();
 		 }
@@ -321,7 +321,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 					  this._state = state;
 				  }
 
-				  public GraphDatabaseService newDatabase( Config config )
+				  public IGraphDatabaseService newDatabase( Config config )
 				  {
 						return _outerInstance.customFacadeFactory.newFacade( _storeDir, config, GraphDatabaseDependencies.newDependencies( _state.databaseDependencies() ) );
 				  }

@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	public class TestReferenceDangling
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void restartNeoDataSource(org.neo4j.kernel.internal.GraphDatabaseAPI slave) throws Throwable
+//ORIGINAL LINE: private void restartNeoDataSource(org.Neo4Net.kernel.internal.GraphDatabaseAPI slave) throws Throwable
 		 private void RestartNeoDataSource( GraphDatabaseAPI slave )
 		 {
 			  slave.DependencyResolver.resolveDependency( typeof( DataSourceManager ) ).DataSource.stop();

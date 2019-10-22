@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 {
@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using Neo4Net.Collections;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
@@ -45,17 +45,17 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.Util.asList;
+//	import static org.Neo4Net.causalclustering.routing.Util.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.Util.extractBoltAddress;
+//	import static org.Neo4Net.causalclustering.routing.Util.extractBoltAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.load_balancing.procedure.ParameterNames.SERVERS;
+//	import static org.Neo4Net.causalclustering.routing.load_balancing.procedure.ParameterNames.SERVERS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.load_balancing.procedure.ParameterNames.TTL;
+//	import static org.Neo4Net.causalclustering.routing.load_balancing.procedure.ParameterNames.TTL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V1;
+//	import static org.Neo4Net.causalclustering.routing.load_balancing.procedure.ProcedureNames.GET_SERVERS_V1;
 
 	/// <summary>
 	/// Returns endpoints and their capabilities.
@@ -67,7 +67,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 
 		private void InitializeInstanceFields()
 		{
-			_procedureSignature = ProcedureSignature.procedureSignature( GET_SERVERS_V1.fullyQualifiedProcedureName() ).@out(TTL.parameterName(), Neo4jTypes.NTInteger).@out(SERVERS.parameterName(), Neo4jTypes.NTList(Neo4jTypes.NTMap)).description(_description).build();
+			_procedureSignature = ProcedureSignature.procedureSignature( GET_SERVERS_V1.fullyQualifiedProcedureName() ).@out(TTL.parameterName(), Neo4NetTypes.NTInteger).@out(SERVERS.parameterName(), Neo4NetTypes.NTList(Neo4NetTypes.NTMap)).description(_description).build();
 		}
 
 		 private readonly string _description = "Returns cluster endpoints and their capabilities.";

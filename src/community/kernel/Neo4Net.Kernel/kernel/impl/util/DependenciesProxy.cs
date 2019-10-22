@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.util
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 
 	/// <summary>
 	/// Used to create dynamic proxies that implement dependency interfaces. Each method should have no arguments

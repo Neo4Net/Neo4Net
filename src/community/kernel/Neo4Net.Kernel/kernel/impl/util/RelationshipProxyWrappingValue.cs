@@ -21,9 +21,9 @@
  */
 namespace Neo4Net.Kernel.impl.util
 {
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;
 	using Neo4Net.Values;
 	using TextValue = Neo4Net.Values.Storable.TextValue;
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <E extends Exception> void writeTo(org.neo4j.values.AnyValueWriter<E> writer) throws E
+//ORIGINAL LINE: public <E extends Exception> void writeTo(org.Neo4Net.values.AnyValueWriter<E> writer) throws E
 		 public override void WriteTo<E>( AnyValueWriter<E> writer ) where E : Exception
 		 {
 			  if ( _relationship is RelationshipProxy )

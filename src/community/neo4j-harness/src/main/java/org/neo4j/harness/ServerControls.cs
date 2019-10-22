@@ -20,11 +20,11 @@
 namespace Neo4Net.Harness
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 
 	/// <summary>
-	/// Control panel for a Neo4j test instance.
+	/// Control panel for a Neo4Net test instance.
 	/// </summary>
 	public interface ServerControls : IDisposable
 	{
@@ -47,8 +47,8 @@ namespace Neo4Net.Harness
 		 void Close();
 
 		 /// <summary>
-		 /// Access the <seealso cref="org.neo4j.graphdb.GraphDatabaseService"/> used by the server </summary>
-		 GraphDatabaseService Graph();
+		 /// Access the <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> used by the server </summary>
+		 IGraphDatabaseService Graph();
 
 		 /// <summary>
 		 /// Returns the server's configuration </summary>

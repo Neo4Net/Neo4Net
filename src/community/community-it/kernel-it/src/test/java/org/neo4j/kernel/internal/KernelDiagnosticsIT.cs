@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.Internal
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Format = Neo4Net.Helpers.Format;
 	using DatabaseFile = Neo4Net.Io.layout.DatabaseFile;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Internal
 	public class KernelDiagnosticsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Internal
 
 		 private void CreateIndexInIsolatedDbInstance( File storeDir, GraphDatabaseSettings.SchemaIndex index )
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(GraphDatabaseSettings.default_schema_provider, index.providerName()).newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(GraphDatabaseSettings.default_schema_provider, index.providerName()).newGraphDatabase();
 			  try
 			  {
 					Label label = Label.label( "Label-" + index.providerName() );
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Internal
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.neo4j.logging.Logger> consumer)
+//ORIGINAL LINE: @Override public void bulk(@Nonnull Consumer<org.Neo4Net.logging.Logger> consumer)
 			  public override void Bulk( Consumer<Logger> consumer )
 			  {
 					throw new System.NotSupportedException();

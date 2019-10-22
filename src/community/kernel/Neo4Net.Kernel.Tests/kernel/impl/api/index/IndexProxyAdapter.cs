@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.emptyResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	public class IndexProxyAdapter : IndexProxy
 	{

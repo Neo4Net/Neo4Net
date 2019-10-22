@@ -124,7 +124,7 @@ namespace Neo4Net.CodeGen.Source
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public SourceCompiler sourceCompilerFor(org.neo4j.codegen.CodeGenerationStrategy<?> strategy) throws org.neo4j.codegen.CodeGenerationStrategyNotSupportedException
+//ORIGINAL LINE: public SourceCompiler sourceCompilerFor(org.Neo4Net.codegen.CodeGenerationStrategy<?> strategy) throws org.Neo4Net.codegen.CodeGenerationStrategyNotSupportedException
 		 public virtual SourceCompiler SourceCompilerFor<T1>( CodeGenerationStrategy<T1> strategy )
 		 {
 			  return Compiler.sourceCompilerFor( this, strategy );

@@ -22,15 +22,15 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using Lock = Neo4Net.Graphdb.Lock;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class PlaceboTransaction : InternalTransaction
 	{
-		 private static readonly PropertyContainerLocker _locker = new PropertyContainerLocker();
+		 private static readonly IPropertyContainerLocker _locker = new IPropertyContainerLocker();
 		 private readonly KernelTransaction _currentTransaction;
 		 private bool _success;
 
@@ -62,14 +62,14 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  }
 		 }
 
-		 public override Lock AcquireWriteLock( PropertyContainer entity )
+		 public override Lock AcquireWriteLock( IPropertyContainer IEntity )
 		 {
-			  return _locker.exclusiveLock( _currentTransaction, entity );
+			  return _locker.exclusiveLock( _currentTransaction, IEntity );
 		 }
 
-		 public override Lock AcquireReadLock( PropertyContainer entity )
+		 public override Lock AcquireReadLock( IPropertyContainer IEntity )
 		 {
-			  return _locker.sharedLock( _currentTransaction, entity );
+			  return _locker.sharedLock( _currentTransaction, IEntity );
 		 }
 
 		 public override KernelTransaction.Type TransactionType()

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 {
@@ -58,27 +58,27 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_allow_reads_on_followers;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.CausalClusteringSettings.cluster_routing_ttl;
+//	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.cluster_routing_ttl;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.TestTopology.addressesForCore;
+//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForCore;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.TestTopology.addressesForReadReplica;
+//	import static org.Neo4Net.causalclustering.discovery.TestTopology.addressesForReadReplica;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.discovery.TestTopology.readReplicaInfoMap;
+//	import static org.Neo4Net.causalclustering.discovery.TestTopology.readReplicaInfoMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.identity.RaftTestMember.member;
+//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTInteger;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTList;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.Neo4jTypes.NTMap;
+//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.NullLogProvider.getInstance;
+//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class GetServersProcedureV1Test
@@ -90,7 +90,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 //ORIGINAL LINE: @Parameterized.Parameter(0) public String description;
 		 public string Description;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(1) public org.neo4j.kernel.configuration.Config config;
+//ORIGINAL LINE: @Parameterized.Parameter(1) public org.Neo4Net.kernel.configuration.Config config;
 		 public Config Config;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(2) public boolean expectFollowersAsReadEndPoints;
@@ -110,13 +110,13 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService coreTopologyService = mock( typeof( CoreTopologyService ) );
 
 			  LeaderLocator leaderLocator = mock( typeof( LeaderLocator ) );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopology clusterTopology = new org.neo4j.causalclustering.discovery.CoreTopology(clusterId, false, new java.util.HashMap<>());
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopology clusterTopology = new org.Neo4Net.causalclustering.discovery.CoreTopology(clusterId, false, new java.util.HashMap<>());
 			  CoreTopology clusterTopology = new CoreTopology( _clusterId, false, new Dictionary<MemberId, CoreServerInfo>() );
 			  when( coreTopologyService.LocalCoreServers() ).thenReturn(clusterTopology);
 			  when( coreTopologyService.LocalReadReplicas() ).thenReturn(new ReadReplicaTopology(emptyMap()));
@@ -160,7 +160,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService coreTopologyService = mock( typeof( CoreTopologyService ) );
 
 			  LeaderLocator leaderLocator = mock( typeof( LeaderLocator ) );
@@ -169,7 +169,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 			  coreMembers[member( 0 )] = addressesForCore( 0, false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopology clusterTopology = new org.neo4j.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopology clusterTopology = new org.Neo4Net.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
 			  CoreTopology clusterTopology = new CoreTopology( _clusterId, false, coreMembers );
 			  when( coreTopologyService.LocalCoreServers() ).thenReturn(clusterTopology);
 			  when( coreTopologyService.LocalReadReplicas() ).thenReturn(new ReadReplicaTopology(emptyMap()));
@@ -196,7 +196,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService coreTopologyService = mock( typeof( CoreTopologyService ) );
 
 			  LeaderLocator leaderLocator = mock( typeof( LeaderLocator ) );
@@ -208,7 +208,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 			  coreMembers[member( 2 )] = addressesForCore( 2, false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopology clusterTopology = new org.neo4j.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopology clusterTopology = new org.Neo4Net.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
 			  CoreTopology clusterTopology = new CoreTopology( _clusterId, false, coreMembers );
 			  when( coreTopologyService.LocalCoreServers() ).thenReturn(clusterTopology);
 			  when( coreTopologyService.LocalReadReplicas() ).thenReturn(new ReadReplicaTopology(emptyMap()));
@@ -239,7 +239,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService coreTopologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService coreTopologyService = mock( typeof( CoreTopologyService ) );
 
 			  LeaderLocator leaderLocator = mock( typeof( LeaderLocator ) );
@@ -249,7 +249,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 			  coreMembers[member( 0 )] = addressesForCore( 0, false );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopology clusterTopology = new org.neo4j.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopology clusterTopology = new org.Neo4Net.causalclustering.discovery.CoreTopology(clusterId, false, coreMembers);
 			  CoreTopology clusterTopology = new CoreTopology( _clusterId, false, coreMembers );
 			  when( coreTopologyService.LocalCoreServers() ).thenReturn(clusterTopology);
 			  when( coreTopologyService.LocalReadReplicas() ).thenReturn(new ReadReplicaTopology(emptyMap()));
@@ -277,7 +277,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService topologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -315,7 +315,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService topologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -349,7 +349,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService topologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -381,7 +381,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.causalclustering.discovery.CoreTopologyService topologyService = mock(org.neo4j.causalclustering.discovery.CoreTopologyService.class);
+//ORIGINAL LINE: final org.Neo4Net.causalclustering.discovery.CoreTopologyService topologyService = mock(org.Neo4Net.causalclustering.discovery.CoreTopologyService.class);
 			  CoreTopologyService topologyService = mock( typeof( CoreTopologyService ) );
 
 			  IDictionary<MemberId, CoreServerInfo> coreMembers = new Dictionary<MemberId, CoreServerInfo>();
@@ -408,7 +408,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private ClusterView run(LegacyGetServersProcedure proc) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private ClusterView run(LegacyGetServersProcedure proc) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private ClusterView Run( LegacyGetServersProcedure proc )
 		 {

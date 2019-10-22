@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.@unsafe.Batchinsert
 {
@@ -32,13 +32,13 @@ namespace Neo4Net.@unsafe.Batchinsert
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseGraphDatabaseFactory = Neo4Net.Graphdb.factory.EnterpriseGraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
@@ -51,11 +51,11 @@ namespace Neo4Net.@unsafe.Batchinsert
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Just testing the <seealso cref="BatchInserter"/> in an enterprise setting, i.e. with all packages and extensions
@@ -66,10 +66,10 @@ namespace Neo4Net.@unsafe.Batchinsert
 	public class BatchInsertEnterpriseIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory directory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory directory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Directory = TestDirectory.testDirectory();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public readonly DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -109,7 +109,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 			  }
 
 			  // THEN
-			  GraphDatabaseService db = ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Directory.databaseDir()).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
+			  IGraphDatabaseService db = ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(Directory.databaseDir()).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
 
 			  try
 			  {
@@ -138,7 +138,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 		 {
 			  File storeDir = Directory.databaseDir();
 
-			  GraphDatabaseService db = NewDb( storeDir, RecordFormat );
+			  IGraphDatabaseService db = NewDb( storeDir, RecordFormat );
 			  try
 			  {
 					CreateThreeNodes( db );
@@ -171,7 +171,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 			  }
 		 }
 
-		 private static void VerifyNodeCount( GraphDatabaseService db, int expectedNodeCount )
+		 private static void VerifyNodeCount( IGraphDatabaseService db, int expectedNodeCount )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -180,7 +180,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 			  }
 		 }
 
-		 private static void CreateThreeNodes( GraphDatabaseService db )
+		 private static void CreateThreeNodes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -202,7 +202,7 @@ namespace Neo4Net.@unsafe.Batchinsert
 			  return map( "key", "value" + id, "number", 10 + id );
 		 }
 
-		 private GraphDatabaseService NewDb( File storeDir, string recordFormat )
+		 private IGraphDatabaseService NewDb( File storeDir, string recordFormat )
 		 {
 			  return ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir).setConfig(GraphDatabaseSettings.record_format, recordFormat).setConfig(OnlineBackupSettings.online_backup_enabled, Settings.FALSE).newGraphDatabase();
 		 }

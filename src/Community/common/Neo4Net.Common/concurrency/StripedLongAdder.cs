@@ -33,10 +33,7 @@
  *
  */
 
-// ReSharper disable TooWideLocalVariableScope
-// ReSharper disable InvertIf
-// ReSharper disable ForCanBeConvertedToForeach
-// ReSharper disable LoopCanBeConvertedToQuery
+
 namespace Neo4Net.Concurrency
 {
    /// <summary>

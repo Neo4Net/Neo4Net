@@ -36,7 +36,7 @@ namespace Neo4Net.Index.Internal.gbptree
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Functions;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Monitor = Neo4Net.Index.Internal.gbptree.GBPTree.Monitor;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
@@ -82,17 +82,17 @@ namespace Neo4Net.Index.Internal.gbptree
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.rules.RuleChain.outerRule;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.SimpleLongLayout.longLayout;
+//	import static org.Neo4Net.index.Internal.gbptree.SimpleLongLayout.longLayout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.ThrowingRunnable.throwing;
+//	import static org.Neo4Net.index.Internal.gbptree.ThrowingRunnable.throwing;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.IOLimiter_Fields.UNLIMITED;
+//	import static org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.PageCacheRule.config;
+//	import static org.Neo4Net.test.rule.PageCacheRule.config;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("EmptyTryBlock") public class GBPTreeTest
@@ -707,7 +707,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyHeader(org.neo4j.io.pagecache.PageCache pageCache, byte[] expectedHeader) throws java.io.IOException
+//ORIGINAL LINE: private void verifyHeader(org.Neo4Net.io.pagecache.PageCache pageCache, byte[] expectedHeader) throws java.io.IOException
 		 private void VerifyHeader( PageCache pageCache, sbyte[] expectedHeader )
 		 {
 			  // WHEN
@@ -771,7 +771,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfFileIsEmpty(org.neo4j.function.ThrowingConsumer<org.neo4j.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
+//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfFileIsEmpty(org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
 		 private void OpenMustThrowMetadataMismatchExceptionIfFileIsEmpty( ThrowingConsumer<PageCache, IOException> opener )
 		 {
 			  // given an existing empty file
@@ -807,7 +807,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfSomeMetaPageIsMissing(org.neo4j.function.ThrowingConsumer<org.neo4j.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
+//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfSomeMetaPageIsMissing(org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
 		 private void OpenMustThrowMetadataMismatchExceptionIfSomeMetaPageIsMissing( ThrowingConsumer<PageCache, IOException> opener )
 		 {
 			  // given an existing index with only the first page in it
@@ -846,7 +846,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfStatePagesAreAllZeros(org.neo4j.function.ThrowingConsumer<org.neo4j.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
+//ORIGINAL LINE: private void openMustThrowMetadataMismatchExceptionIfStatePagesAreAllZeros(org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.io.pagecache.PageCache,java.io.IOException> opener) throws Exception
 		 private void OpenMustThrowMetadataMismatchExceptionIfStatePagesAreAllZeros( ThrowingConsumer<PageCache, IOException> opener )
 		 {
 			  // given an existing index with all-zero state pages
@@ -1021,7 +1021,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.io.pagecache.PageCache pageCacheWithBarrierInClose(final java.util.concurrent.atomic.AtomicBoolean enabled, final org.neo4j.test.Barrier_Control barrier)
+//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PageCache pageCacheWithBarrierInClose(final java.util.concurrent.atomic.AtomicBoolean enabled, final org.Neo4Net.test.Barrier_Control barrier)
 		 private PageCache PageCacheWithBarrierInClose( AtomicBoolean enabled, Neo4Net.Test.Barrier_Control barrier )
 		 {
 			  return new DelegatingPageCacheAnonymousInnerClass( this, CreatePageCache( 1024 ), enabled, barrier );
@@ -1042,7 +1042,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 			 public override PagedFile map( File file, int pageSize, params OpenOption[] openOptions )
 			 {
 				  return new DelegatingPagedFileAnonymousInnerClass( this, base.map( file, pageSize, openOptions ) );
@@ -1371,7 +1371,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void mustRecognizeFailedCleaning(org.neo4j.function.ThrowingConsumer<GBPTree<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>,java.io.IOException> operation) throws Exception
+//ORIGINAL LINE: private void mustRecognizeFailedCleaning(org.Neo4Net.function.ThrowingConsumer<GBPTree<org.apache.commons.lang3.mutable.MutableLong,org.apache.commons.lang3.mutable.MutableLong>,java.io.IOException> operation) throws Exception
 		 private void MustRecognizeFailedCleaning( ThrowingConsumer<GBPTree<MutableLong, MutableLong>, IOException> operation )
 		 {
 			  // given
@@ -2069,7 +2069,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void corruptTheChild(org.neo4j.io.pagecache.PageCache pageCache, long corruptChild) throws java.io.IOException
+//ORIGINAL LINE: private void corruptTheChild(org.Neo4Net.io.pagecache.PageCache pageCache, long corruptChild) throws java.io.IOException
 		 private void CorruptTheChild( PageCache pageCache, long corruptChild )
 		 {
 			  using ( PagedFile pagedFile = pageCache.Map( _indexFile, DEFAULT_PAGE_SIZE ), PageCursor cursor = pagedFile.Io( 0, PF_SHARED_WRITE_LOCK ) )
@@ -2161,7 +2161,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.io.pagecache.PageCache pageCacheThatThrowExceptionWhenToldTo(final java.io.IOException e, final java.util.concurrent.atomic.AtomicBoolean throwOnNextIO)
+//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PageCache pageCacheThatThrowExceptionWhenToldTo(final java.io.IOException e, final java.util.concurrent.atomic.AtomicBoolean throwOnNextIO)
 		 private PageCache PageCacheThatThrowExceptionWhenToldTo( IOException e, AtomicBoolean throwOnNextIO )
 		 {
 			  return new DelegatingPageCacheAnonymousInnerClass( this, CreatePageCache( DEFAULT_PAGE_SIZE ), e, throwOnNextIO );
@@ -2182,7 +2182,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 			 public override PagedFile map( File file, int pageSize, params OpenOption[] openOptions )
 			 {
 				  return new DelegatingPagedFileAnonymousInnerClass( this, base.map( file, pageSize, openOptions ) );
@@ -2198,7 +2198,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 				 public override PageCursor io( long pageId, int pfFlags )
 				 {
 					  maybeThrow();
@@ -2206,7 +2206,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flushAndForce(org.neo4j.io.pagecache.IOLimiter limiter) throws java.io.IOException
+//ORIGINAL LINE: public void flushAndForce(org.Neo4Net.io.pagecache.IOLimiter limiter) throws java.io.IOException
 				 public override void flushAndForce( IOLimiter limiter )
 				 {
 					  maybeThrow();
@@ -2228,7 +2228,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.io.pagecache.PageCache pageCacheThatBlockWhenToldTo(final org.neo4j.test.Barrier barrier, final java.util.concurrent.atomic.AtomicBoolean blockOnNextIO)
+//ORIGINAL LINE: private org.Neo4Net.io.pagecache.PageCache pageCacheThatBlockWhenToldTo(final org.Neo4Net.test.Barrier barrier, final java.util.concurrent.atomic.AtomicBoolean blockOnNextIO)
 		 private PageCache PageCacheThatBlockWhenToldTo( Barrier barrier, AtomicBoolean blockOnNextIO )
 		 {
 			  return new DelegatingPageCacheAnonymousInnerClass2( this, CreatePageCache( DEFAULT_PAGE_SIZE ), barrier, blockOnNextIO );
@@ -2249,7 +2249,7 @@ namespace Neo4Net.Index.Internal.gbptree
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PagedFile map(java.io.File file, int pageSize, java.nio.file.OpenOption... openOptions) throws java.io.IOException
 			 public override PagedFile map( File file, int pageSize, params OpenOption[] openOptions )
 			 {
 				  return new DelegatingPagedFileAnonymousInnerClass2( this, base.map( file, pageSize, openOptions ) );
@@ -2265,7 +2265,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageCursor io(long pageId, int pf_flags) throws java.io.IOException
 				 public override PageCursor io( long pageId, int pfFlags )
 				 {
 					  maybeBlock();
@@ -2290,7 +2290,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void makeDirty(org.neo4j.io.pagecache.PageCache pageCache) throws java.io.IOException
+//ORIGINAL LINE: private void makeDirty(org.Neo4Net.io.pagecache.PageCache pageCache) throws java.io.IOException
 		 private void MakeDirty( PageCache pageCache )
 		 {
 			  using ( GBPTree<MutableLong, MutableLong> index = index( pageCache ).build() )

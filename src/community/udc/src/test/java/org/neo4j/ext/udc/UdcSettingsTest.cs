@@ -34,9 +34,9 @@ namespace Neo4Net.Ext.Udc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcSettings.udc_enabled;
+//	import static org.Neo4Net.ext.udc.UdcSettings.udc_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Configuration.DEFAULT;
+//	import static org.Neo4Net.helpers.Configuration.DEFAULT;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class UdcSettingsTest
@@ -45,7 +45,7 @@ namespace Neo4Net.Ext.Udc
 		 private const string UDC_DISABLE = "dbms.udc.disable";
 		 private static readonly UdcSettings _settingsClasses = new UdcSettings();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.helpers.Configuration configuration = new org.neo4j.helpers.Configuration();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.helpers.Configuration configuration = new org.Neo4Net.helpers.Configuration();
 		 public readonly Configuration Configuration = new Configuration();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

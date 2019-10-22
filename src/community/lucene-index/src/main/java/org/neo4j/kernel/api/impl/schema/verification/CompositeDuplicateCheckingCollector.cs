@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void doCollect(int doc) throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.KernelException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: protected void doCollect(int doc) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.KernelException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 protected internal override void DoCollect( int doc )
 		 {
 			  Document document = Reader.document( doc );

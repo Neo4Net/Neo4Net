@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 /// <param name="instances"> instances to validate. </param>
 		 /// <param name="aliveIndex"> slots to ensure have been initialized with non-empty instances. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static void validateSelectorInstances(InstanceSelector<org.neo4j.kernel.api.index.IndexProvider> instances, IndexSlot... aliveIndex)
+//		 static void validateSelectorInstances(InstanceSelector<org.Neo4Net.kernel.api.index.IndexProvider> instances, IndexSlot... aliveIndex)
 	//	 {
 	//		  for (IndexSlot indexSlot : IndexSlot.values())
 	//		  {

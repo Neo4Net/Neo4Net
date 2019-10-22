@@ -25,9 +25,9 @@ using System.Text;
 namespace Neo4Net.Server
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
 	using LegacySslPolicyConfig = Neo4Net.Kernel.configuration.ssl.LegacySslPolicyConfig;
@@ -50,7 +50,7 @@ namespace Neo4Net.Server
 //ORIGINAL LINE: public static java.io.File createTempDir() throws java.io.IOException
 		 public static File CreateTempDir()
 		 {
-			  return Files.createTempDirectory( "neo4j-test" ).toFile();
+			  return Files.createTempDirectory( "Neo4Net-test" ).toFile();
 		 }
 
 		 public static File SharedTestTemporaryFolder
@@ -72,7 +72,7 @@ namespace Neo4Net.Server
 //ORIGINAL LINE: public static java.io.File createTempConfigFile() throws java.io.IOException
 		 public static File CreateTempConfigFile()
 		 {
-			  File file = File.createTempFile( "neo4j", "conf" );
+			  File file = File.createTempFile( "Neo4Net", "conf" );
 			  file.delete();
 			  return file;
 		 }
@@ -222,7 +222,7 @@ namespace Neo4Net.Server
 			  }
 		 }
 
-		 public static void VerifyConnector( GraphDatabaseService db, string name, bool enabled )
+		 public static void VerifyConnector( IGraphDatabaseService db, string name, bool enabled )
 		 {
 			  HostnamePort address = ConnectorAddress( db, name );
 			  if ( enabled )
@@ -236,7 +236,7 @@ namespace Neo4Net.Server
 			  }
 		 }
 
-		 public static HostnamePort ConnectorAddress( GraphDatabaseService db, string name )
+		 public static HostnamePort ConnectorAddress( IGraphDatabaseService db, string name )
 		 {
 			  ConnectorPortRegister portRegister = ( ( GraphDatabaseAPI ) db ).DependencyResolver.resolveDependency( typeof( ConnectorPortRegister ) );
 			  return portRegister.GetLocalAddress( name );

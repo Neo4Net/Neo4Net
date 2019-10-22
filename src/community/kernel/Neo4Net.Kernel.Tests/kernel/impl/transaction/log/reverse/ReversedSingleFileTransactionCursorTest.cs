@@ -53,15 +53,15 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_LABELS_FIELD;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_LABELS_FIELD;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
+//	import static org.Neo4Net.kernel.impl.transaction.log.GivenTransactionCursor.exhaust;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogPosition.start;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogPosition.start;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
 
 	public class ReversedSingleFileTransactionCursorTest
 	{
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation[] readAllFromReversedCursor() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation[] readAllFromReversedCursor() throws java.io.IOException
 		 private CommittedTransactionRepresentation[] ReadAllFromReversedCursor()
 		 {
 			  using ( ReversedSingleFileTransactionCursor cursor = TxCursor( false ) )
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation[] readAllFromReversedCursorFailOnCorrupted() throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation[] readAllFromReversedCursorFailOnCorrupted() throws java.io.IOException
 		 private CommittedTransactionRepresentation[] ReadAllFromReversedCursorFailOnCorrupted()
 		 {
 			  using ( ReversedSingleFileTransactionCursor cursor = TxCursor( true ) )

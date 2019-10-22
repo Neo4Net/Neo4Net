@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ArgumentMatchers = org.mockito.ArgumentMatchers;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using LogMatcherBuilder = Neo4Net.Logging.AssertableLogProvider.LogMatcherBuilder;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
@@ -109,30 +109,30 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.genericMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.add;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.IndexingService.NO_MONITOR;
+//	import static org.Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
 	public class IndexPopulationJobTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.CleanupRule cleanup = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanup = new org.Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule Cleanup = new CleanupRule();
 
 		 private GraphDatabaseAPI _db;
@@ -184,14 +184,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long nodeId = CreateNode( map( _name, value ), _first );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  LabelSchemaDescriptor descriptor = SchemaDescriptorFactory.forLabel( 0, 0 );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
 
 			  // WHEN
 			  job.Run();
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update = org.neo4j.kernel.api.index.IndexEntryUpdate.add(nodeId, descriptor, org.neo4j.values.storable.Values.of(value));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(nodeId, descriptor, org.Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update = IndexEntryUpdate.add( nodeId, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -212,14 +212,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long relationship = CreateRelationship( map( _name, _age ), _likes, nodeId, nodeId );
 			  IndexDescriptor descriptor = IndexDescriptorFactory.forSchema( SchemaDescriptorFactory.forRelType( 0, 0 ) );
 			  IndexPopulator populator = spy( IndexPopulator( descriptor ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.RELATIONSHIP, descriptor );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.RELATIONSHIP, descriptor );
 
 			  // WHEN
 			  job.Run();
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update = org.neo4j.kernel.api.index.IndexEntryUpdate.add(relationship, descriptor, org.neo4j.values.storable.Values.of(age));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update = org.Neo4Net.kernel.api.index.IndexEntryUpdate.add(relationship, descriptor, org.Neo4Net.values.storable.Values.of(age));
 			  IndexEntryUpdate<object> update = IndexEntryUpdate.add( relationship, descriptor, Values.of( _age ) );
 
 			  verify( populator ).create();
@@ -239,7 +239,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  CreateNode( map( _name, value ), _first );
 			  _stateHolder.put( "key", "original_value" );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
 
 			  // WHEN
 			  job.Run();
@@ -262,17 +262,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long node4 = CreateNode( map( _age, 35, _name, value ), _first );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  LabelSchemaDescriptor descriptor = SchemaDescriptorFactory.forLabel( 0, 0 );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
 
 			  // WHEN
 			  job.Run();
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update1 = add(node1, descriptor, org.neo4j.values.storable.Values.of(value));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(node1, descriptor, org.Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update1 = add( node1, descriptor, Values.of( value ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update2 = add(node4, descriptor, org.neo4j.values.storable.Values.of(value));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(node4, descriptor, org.Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update2 = add( node4, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -302,17 +302,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  IndexDescriptor descriptor = IndexDescriptorFactory.forSchema( SchemaDescriptorFactory.forRelType( 0, 0 ) );
 			  IndexPopulator populator = spy( IndexPopulator( descriptor ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.RELATIONSHIP, descriptor );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.RELATIONSHIP, descriptor );
 
 			  // WHEN
 			  job.Run();
 
 			  // THEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update1 = add(rel1, descriptor, org.neo4j.values.storable.Values.of(value));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update1 = add(rel1, descriptor, org.Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update1 = add( rel1, descriptor, Values.of( value ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> update2 = add(rel4, descriptor, org.neo4j.values.storable.Values.of(value));
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update2 = add(rel4, descriptor, org.Neo4Net.values.storable.Values.of(value));
 			  IndexEntryUpdate<object> update2 = add( rel4, descriptor, Values.of( value ) );
 
 			  verify( populator ).create();
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long changeNode = node1;
 			  int propertyKeyId = GetPropertyKeyForName( _name );
 			  NodeChangingWriter populator = new NodeChangingWriter( this, changeNode, propertyKeyId, value1, changedValue, _labelId );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
 			  populator.Job = job;
 
 			  // WHEN
@@ -366,7 +366,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long node3 = CreateNode( map( _name, value3 ), _first );
 			  int propertyKeyId = GetPropertyKeyForName( _name );
 			  NodeDeletingWriter populator = new NodeDeletingWriter( this, node2, propertyKeyId, value2, _labelId );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
 			  populator.Job = job;
 
 			  // WHEN
@@ -391,7 +391,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  FlippableIndexProxy index = new FlippableIndexProxy();
 
 			  CreateNode( map( _name, "Taylor" ), _first );
-			  IndexPopulationJob job = NewIndexPopulationJob( failingPopulator, index, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( failingPopulator, index, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  // WHEN
 			  job.Run();
@@ -414,8 +414,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( storeView.VisitNodes( any( typeof( int[] ) ), any( typeof( System.Func<int, bool> ) ), ArgumentMatchers.any(), ArgumentMatchers.any<Visitor<NodeLabelUpdate, Exception>>(), anyBoolean() ) ).thenReturn(storeScan);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, org.neo4j.logging.NullLogProvider.getInstance(), org.neo4j.storageengine.api.EntityType.NODE, indexDescriptor(FIRST, name, false));
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, storeView, NullLogProvider.Instance, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
+//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.storageengine.api.EntityType.NODE, indexDescriptor(FIRST, name, false));
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, storeView, NullLogProvider.Instance, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  OtherThreadExecutor<Void> populationJobRunner = Cleanup.add( new OtherThreadExecutor<Void>( "Population job test runner", null ) );
 			  Future<Void> runFuture = populationJobRunner.ExecuteDontWait(state =>
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  try
 			  {
-					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
+					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 					// When
 					job.Run();
@@ -477,7 +477,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  try
 			  {
-					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, true ) );
+					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, true ) );
 
 					// When
 					job.Run();
@@ -502,7 +502,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  FlippableIndexProxy index = mock( typeof( FlippableIndexProxy ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  Exception failure = new System.InvalidOperationException( "not successful" );
 			  doThrow( failure ).when( populator ).create();
@@ -523,7 +523,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // Given
 			  FailedIndexProxyFactory failureDelegateFactory = mock( typeof( FailedIndexProxyFactory ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( failureDelegateFactory, populator, new FlippableIndexProxy(), _indexStoreView, NullLogProvider.Instance, EntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( failureDelegateFactory, populator, new FlippableIndexProxy(), _indexStoreView, NullLogProvider.Instance, IEntityType.NODE, IndexDescriptor(_first, _name, false) );
 
 			  System.InvalidOperationException failure = new System.InvalidOperationException( "not successful" );
 			  doThrow( failure ).when( populator ).close( true );
@@ -544,7 +544,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  LogProvider logProvider = NullLogProvider.Instance;
 			  FlippableIndexProxy index = mock( typeof( FlippableIndexProxy ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  string failureMessage = "not successful";
 			  System.InvalidOperationException failure = new System.InvalidOperationException( failureMessage );
@@ -563,7 +563,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  // given
 			  NullLogProvider logProvider = NullLogProvider.Instance;
-			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( IndexStoreView_Fields.Empty, logProvider, EntityType.NODE, new DatabaseSchemaState( logProvider ) );
+			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( IndexStoreView_Fields.Empty, logProvider, IEntityType.NODE, new DatabaseSchemaState( logProvider ) );
 			  IndexPopulationJob populationJob = new IndexPopulationJob( populator, NO_MONITOR, false );
 
 			  // when
@@ -580,7 +580,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // given
 			  NullLogProvider logProvider = NullLogProvider.Instance;
 			  IndexStoreView failingStoreView = new IndexStoreView_AdaptorAnonymousInnerClass( this );
-			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( failingStoreView, logProvider, EntityType.NODE, new DatabaseSchemaState( logProvider ) );
+			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( failingStoreView, logProvider, IEntityType.NODE, new DatabaseSchemaState( logProvider ) );
 			  IndexPopulationJob populationJob = new IndexPopulationJob( populator, NO_MONITOR, false );
 
 			  // when
@@ -687,7 +687,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 Add( update );
@@ -775,7 +775,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 Add( update );
@@ -828,7 +828,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
 		 private IndexPopulator IndexPopulator( bool constraint )
 		 {
 			  IndexDescriptor descriptor = IndexDescriptor( _first, _name, constraint );
@@ -842,17 +842,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return indexProvider.GetPopulator( descriptor.WithId( 21 ), samplingConfig, heapBufferFactory( 1024 ) );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, EntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IEntityType type, IndexDescriptor descriptor )
 		 {
 			  return NewIndexPopulationJob( populator, flipper, _indexStoreView, NullLogProvider.Instance, type, descriptor );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, EntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, IEntityType type, IndexDescriptor descriptor )
 		 {
 			  return NewIndexPopulationJob( mock( typeof( FailedIndexProxyFactory ) ), populator, flipper, storeView, logProvider, type, descriptor );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( FailedIndexProxyFactory failureDelegateFactory, IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, EntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( FailedIndexProxyFactory failureDelegateFactory, IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, IEntityType type, IndexDescriptor descriptor )
 		 {
 			  long indexId = 0;
 			  flipper.FlipTarget = mock( typeof( IndexProxyFactory ) );
@@ -864,7 +864,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.storageengine.api.schema.IndexDescriptor indexDescriptor(org.neo4j.graphdb.Label label, String propertyKey, boolean constraint) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.neo4j.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: private org.Neo4Net.storageengine.api.schema.IndexDescriptor indexDescriptor(org.Neo4Net.graphdb.Label label, String propertyKey, boolean constraint) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
 		 private IndexDescriptor IndexDescriptor( Label label, string propertyKey, bool constraint )
 		 {
 			  using ( Transaction tx = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -880,7 +880,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private long CreateNode( IDictionary<string, object> properties, params Label[] labels )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction tx = _db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = _db.beginTx() )
 			  {
 					Node node = _db.createNode( labels );
 					foreach ( KeyValuePair<string, object> property in properties.SetOfKeyValuePairs() )
@@ -894,7 +894,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private long CreateRelationship( IDictionary<string, object> properties, RelationshipType relType, long fromNode, long toNode )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction tx = _db.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction tx = _db.beginTx() )
 			  {
 					Node node1 = _db.getNodeById( fromNode );
 					Node node2 = _db.getNodeById( toNode );
@@ -909,7 +909,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private int GetPropertyKeyForName( string name )
 		 {
 			  using ( Transaction tx = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
@@ -929,7 +929,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  internal volatile bool Closed;
 
-			  internal TrackingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
+			  internal TrackingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
 			  {
 			  }
 

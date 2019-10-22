@@ -25,10 +25,10 @@ namespace Neo4Net.Server.rest.repr
 	using Test = org.junit.Test;
 
 
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using JsonFormat = Neo4Net.Server.rest.repr.formats.JsonFormat;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -49,12 +49,12 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToMap;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToMap;
 
 	public class CypherResultRepresentationTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule database = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public DatabaseRule Database = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -70,7 +70,7 @@ namespace Neo4Net.Server.rest.repr
 			  when( plan.Children ).thenReturn( asList( childPlan ) );
 			  when( plan.HasProfilerStatistics() ).thenReturn(true);
 
-			  Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics stats = mock( typeof( Neo4Net.Graphdb.ExecutionPlanDescription_ProfilerStatistics ) );
+			  Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics stats = mock( typeof( Neo4Net.GraphDb.ExecutionPlanDescription_ProfilerStatistics ) );
 			  when( stats.DbHits ).thenReturn( 13L );
 			  when( stats.Rows ).thenReturn( 25L );
 
@@ -121,7 +121,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFormatMapsProperly()
 		 {
-			  GraphDatabaseService graphdb = Database.GraphDatabaseAPI;
+			  IGraphDatabaseService graphdb = Database.GraphDatabaseAPI;
 			  Result result = graphdb.Execute( "RETURN {one:{two:['wait for it...', {three: 'GO!'}]}}" );
 			  CypherResultRepresentation representation = new CypherResultRepresentation( result, false, false );
 

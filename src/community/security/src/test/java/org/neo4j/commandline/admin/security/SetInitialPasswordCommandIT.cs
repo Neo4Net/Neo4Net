@@ -23,8 +23,8 @@ namespace Neo4Net.CommandLine.Admin.security
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;
 	using User = Neo4Net.Kernel.impl.security.User;
@@ -92,7 +92,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "abc" );
 			  AssertAuthIniFile( "abc" );
 
-			  verify( @out ).stdOutLine( "Changed password for user 'neo4j'." );
+			  verify( @out ).stdOutLine( "Changed password for user 'Neo4Net'." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -105,7 +105,7 @@ namespace Neo4Net.CommandLine.Admin.security
 			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "muchBetter" );
 			  AssertAuthIniFile( "muchBetter" );
 
-			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'neo4j'." );
+			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'Neo4Net'." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -113,12 +113,12 @@ namespace Neo4Net.CommandLine.Admin.security
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldWorkWithSamePassword()
 		 {
-			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "neo4j" );
-			  AssertAuthIniFile( "neo4j" );
-			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "neo4j" );
-			  AssertAuthIniFile( "neo4j" );
+			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "Neo4Net" );
+			  AssertAuthIniFile( "Neo4Net" );
+			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "Neo4Net" );
+			  AssertAuthIniFile( "Neo4Net" );
 
-			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'neo4j'." );
+			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'Neo4Net'." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -130,14 +130,14 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  verify( @out ).stdErrLine( "not enough arguments" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
-			  verify( @out ).stdErrLine( "usage: neo4j-admin set-initial-password <password>" );
+			  verify( @out ).stdErrLine( "usage: Neo4Net-admin set-initial-password <password>" );
 			  verify( @out ).stdErrLine( string.Format( "environment variables:" ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_CONF    Path to directory which contains neo4j.conf." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_DEBUG   Set to anything to enable debug output." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_HOME    Neo4j home directory." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_DEBUG   Set to anything to enable debug output." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_HOME    Neo4Net home directory." ) );
 			  verify( @out ).stdErrLine( string.Format( "    HEAP_SIZE     Set JVM maximum heap size during command execution." ) );
 			  verify( @out ).stdErrLine( string.Format( "                  Takes a number and a unit, for example 512m." ) );
-			  verify( @out ).stdErrLine( "Sets the initial password of the initial admin user ('neo4j')." );
+			  verify( @out ).stdErrLine( "Sets the initial password of the initial admin user ('Neo4Net')." );
 			  verify( @out ).exit( 1 );
 			  verifyNoMoreInteractions( @out );
 			  verify( @out, never() ).stdOutLine(anyString());
@@ -152,15 +152,15 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  verify( @out ).stdErrLine( "unrecognized arguments: 'bar'" );
 			  verify( @out, times( 3 ) ).stdErrLine( "" );
-			  verify( @out ).stdErrLine( "usage: neo4j-admin set-initial-password <password>" );
+			  verify( @out ).stdErrLine( "usage: Neo4Net-admin set-initial-password <password>" );
 			  verify( @out ).stdErrLine( string.Format( "environment variables:" ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_CONF    Path to directory which contains neo4j.conf." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_DEBUG   Set to anything to enable debug output." ) );
-			  verify( @out ).stdErrLine( string.Format( "    NEO4J_HOME    Neo4j home directory." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_CONF    Path to directory which contains Neo4Net.conf." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_DEBUG   Set to anything to enable debug output." ) );
+			  verify( @out ).stdErrLine( string.Format( "    Neo4Net_HOME    Neo4Net home directory." ) );
 			  verify( @out ).stdErrLine( string.Format( "    HEAP_SIZE     Set JVM maximum heap size during command execution." ) );
 			  verify( @out ).stdErrLine( string.Format( "                  Takes a number and a unit, for example 512m." ) );
 
-			  verify( @out ).stdErrLine( "Sets the initial password of the initial admin user ('neo4j')." );
+			  verify( @out ).stdErrLine( "Sets the initial password of the initial admin user ('Neo4Net')." );
 			  verify( @out ).exit( 1 );
 			  verifyNoMoreInteractions( @out );
 			  verify( @out, never() ).stdOutLine(anyString());
@@ -181,7 +181,7 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  // Then
 			  AssertNoAuthIniFile();
-			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4j users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` file if you " + "want to reset your database to only have a default user with the provided password." );
+			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4Net users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` file if you " + "want to reset your database to only have a default user with the provided password." );
 			  verify( @out ).exit( 1 );
 			  verify( @out, times( 0 ) ).stdOutLine( anyString() );
 		 }
@@ -204,7 +204,7 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  // Then
 			  AssertNoAuthIniFile();
-			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4j users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` and `roles` files if you " + "want to reset your database to only have a default user with the provided password." );
+			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4Net users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` and `roles` files if you " + "want to reset your database to only have a default user with the provided password." );
 			  verify( @out ).exit( 1 );
 		 }
 
@@ -214,7 +214,7 @@ namespace Neo4Net.CommandLine.Admin.security
 		 public virtual void ShouldErrorIfRealUsersAlreadyExistV2()
 		 {
 			  // Given
-			  // Create an `auth` file with the default neo4j user, but not the default password
+			  // Create an `auth` file with the default Neo4Net user, but not the default password
 			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, "not-the-default-password" );
 			  File authFile = GetAuthFile( "auth" );
 			  _fileSystem.mkdirs( authFile.ParentFile );
@@ -225,19 +225,19 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  // Then
 			  AssertNoAuthIniFile();
-			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4j users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` file if you " + "want to reset your database to only have a default user with the provided password." );
+			  verify( @out, times( 1 ) ).stdErrLine( "command failed: the provided initial password was not set because existing Neo4Net users were " + "detected at `" + authFile.AbsolutePath + "`. Please remove the existing `auth` file if you " + "want to reset your database to only have a default user with the provided password." );
 			  verify( @out ).exit( 1 );
 
-			  verify( @out, times( 1 ) ).stdOutLine( "Changed password for user 'neo4j'." ); // This is from the initial setup
+			  verify( @out, times( 1 ) ).stdOutLine( "Changed password for user 'Neo4Net'." ); // This is from the initial setup
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotErrorIfOnlyTheUnmodifiedDefaultNeo4jUserAlreadyExists() throws Throwable
+//ORIGINAL LINE: @Test public void shouldNotErrorIfOnlyTheUnmodifiedDefaultNeo4NetUserAlreadyExists() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShouldNotErrorIfOnlyTheUnmodifiedDefaultNeo4jUserAlreadyExists()
+		 public virtual void ShouldNotErrorIfOnlyTheUnmodifiedDefaultNeo4NetUserAlreadyExists()
 		 {
 			  // Given
-			  // Create an `auth` file with the default neo4j user
+			  // Create an `auth` file with the default Neo4Net user
 			  _tool.execute( _homeDir.toPath(), _confDir.toPath(), SET_PASSWORD, Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_PASSWORD );
 			  File authFile = GetAuthFile( "auth" );
 			  _fileSystem.mkdirs( authFile.ParentFile );
@@ -248,7 +248,7 @@ namespace Neo4Net.CommandLine.Admin.security
 
 			  // Then
 			  AssertAuthIniFile( "should-not-be-ignored" );
-			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'neo4j'." );
+			  verify( @out, times( 2 ) ).stdOutLine( "Changed password for user 'Neo4Net'." );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -259,10 +259,10 @@ namespace Neo4Net.CommandLine.Admin.security
 			  assertTrue( _fileSystem.fileExists( authIniFile ) );
 			  FileUserRepository userRepository = new FileUserRepository( _fileSystem, authIniFile, NullLogProvider.Instance );
 			  userRepository.Start();
-			  User neo4j = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
-			  assertNotNull( neo4j );
-			  assertTrue( neo4j.Credentials().matchesPassword(password) );
-			  assertFalse( neo4j.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );
+			  User Neo4Net = userRepository.GetUserByName( Neo4Net.Kernel.api.security.UserManager_Fields.INITIAL_USER_NAME );
+			  assertNotNull( Neo4Net );
+			  assertTrue( Neo4Net.Credentials().matchesPassword(password) );
+			  assertFalse( Neo4Net.HasFlag( User.PASSWORD_CHANGE_REQUIRED ) );
 		 }
 
 		 private void AssertNoAuthIniFile()

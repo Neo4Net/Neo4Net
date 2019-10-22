@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.restore
 {
@@ -30,13 +30,13 @@ namespace Neo4Net.restore
 	using MandatoryNamedArg = Neo4Net.CommandLine.Args.MandatoryNamedArg;
 	using OptionalBooleanArg = Neo4Net.CommandLine.Args.OptionalBooleanArg;
 	using Database = Neo4Net.CommandLine.Args.Common.Database;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.commandline.arguments.common.Database.ARG_DATABASE;
+//	import static org.Neo4Net.commandline.arguments.common.Database.ARG_DATABASE;
 
 	public class RestoreDatabaseCli : AdminCommand
 	{
@@ -50,13 +50,13 @@ namespace Neo4Net.restore
 			  this._configDir = configDir;
 		 }
 
-		 private static Config LoadNeo4jConfig( Path homeDir, Path configDir, string databaseName )
+		 private static Config LoadNeo4NetConfig( Path homeDir, Path configDir, string databaseName )
 		 {
 			  return Config.fromFile( configDir.resolve( Config.DEFAULT_CONFIG_FILE_NAME ) ).withHome( homeDir ).withSetting( GraphDatabaseSettings.active_database, databaseName ).withConnectorsDisabled().build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void execute(String[] incomingArguments) throws org.neo4j.commandline.admin.IncorrectUsage, org.neo4j.commandline.admin.CommandFailed
+//ORIGINAL LINE: public void execute(String[] incomingArguments) throws org.Neo4Net.commandline.admin.IncorrectUsage, org.Neo4Net.commandline.admin.CommandFailed
 		 public override void Execute( string[] incomingArguments )
 		 {
 			  string databaseName;
@@ -74,7 +74,7 @@ namespace Neo4Net.restore
 					throw new IncorrectUsage( e.Message );
 			  }
 
-			  Config config = LoadNeo4jConfig( _homeDir, _configDir, databaseName );
+			  Config config = LoadNeo4NetConfig( _homeDir, _configDir, databaseName );
 
 			  try
 			  {

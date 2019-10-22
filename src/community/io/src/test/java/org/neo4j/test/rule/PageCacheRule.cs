@@ -26,7 +26,7 @@ namespace Neo4Net.Test.rule
 
 	using Adversary = Neo4Net.Adversaries.Adversary;
 	using AdversarialPageCache = Neo4Net.Adversaries.pagecache.AdversarialPageCache;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using MemoryAllocator = Neo4Net.Io.mem.MemoryAllocator;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;

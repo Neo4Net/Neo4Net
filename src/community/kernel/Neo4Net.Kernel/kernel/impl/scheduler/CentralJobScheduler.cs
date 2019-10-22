@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.scheduler
 
 		 private class TopLevelGroup : ThreadGroup
 		 {
-			  internal TopLevelGroup() : base("Neo4j-" + _instanceCounter.incrementAndGet())
+			  internal TopLevelGroup() : base("Neo4Net-" + _instanceCounter.incrementAndGet())
 			  {
 			  }
 
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.impl.scheduler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.scheduler.JobHandle scheduleRecurring(org.neo4j.scheduler.Group group, final Runnable runnable, long period, java.util.concurrent.TimeUnit timeUnit)
+//ORIGINAL LINE: public org.Neo4Net.scheduler.JobHandle scheduleRecurring(org.Neo4Net.scheduler.Group group, final Runnable runnable, long period, java.util.concurrent.TimeUnit timeUnit)
 		 public override JobHandle ScheduleRecurring( Group group, ThreadStart runnable, long period, TimeUnit timeUnit )
 		 {
 			  return ScheduleRecurring( group, runnable, 0, period, timeUnit );
@@ -158,7 +158,7 @@ namespace Neo4Net.Kernel.impl.scheduler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.scheduler.JobHandle schedule(org.neo4j.scheduler.Group group, final Runnable runnable, long initialDelay, java.util.concurrent.TimeUnit unit)
+//ORIGINAL LINE: public org.Neo4Net.scheduler.JobHandle schedule(org.Neo4Net.scheduler.Group group, final Runnable runnable, long initialDelay, java.util.concurrent.TimeUnit unit)
 		 public override JobHandle Schedule( Group group, ThreadStart runnable, long initialDelay, TimeUnit unit )
 		 {
 			  return _scheduler.submit( group, runnable, unit.toNanos( initialDelay ), 0 );

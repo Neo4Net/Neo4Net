@@ -40,17 +40,17 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.times;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.additiveLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.decorators;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.decorators;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntityDecorators.defaultRelationshipType;
 
 	public class InputEntityDecoratorsTest
 	{
@@ -180,11 +180,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void node(InputEntityVisitor entity, String sourceDescription, long lineNumber, long position, Object id, Object[] properties, System.Nullable<long> propertyId, String[] labels, System.Nullable<long> labelField) throws java.io.IOException
-		 private static void Node( InputEntityVisitor entity, string sourceDescription, long lineNumber, long position, object id, object[] properties, long? propertyId, string[] labels, long? labelField )
+//ORIGINAL LINE: private static void node(InputEntityVisitor IEntity, String sourceDescription, long lineNumber, long position, Object id, Object[] properties, System.Nullable<long> propertyId, String[] labels, System.Nullable<long> labelField) throws java.io.IOException
+		 private static void Node( InputEntityVisitor IEntity, string sourceDescription, long lineNumber, long position, object id, object[] properties, long? propertyId, string[] labels, long? labelField )
 		 {
-			  ApplyProperties( entity, properties, propertyId );
-			  entity.Id( id, Group_Fields.Global );
+			  ApplyProperties( IEntity, properties, propertyId );
+			  IEntity.Id( id, Group_Fields.Global );
 			  if ( labelField != null )
 			  {
 					entity.LabelField( labelField.Value );
@@ -193,16 +193,16 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 			  {
 					entity.Labels( labels );
 			  }
-			  entity.EndOfEntity();
+			  IEntity.EndOfEntity();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void relationship(InputEntityVisitor entity, String sourceDescription, long lineNumber, long position, Object[] properties, System.Nullable<long> propertyId, Object startNode, Object endNode, String type, System.Nullable<int> typeId) throws java.io.IOException
-		 private static void Relationship( InputEntityVisitor entity, string sourceDescription, long lineNumber, long position, object[] properties, long? propertyId, object startNode, object endNode, string type, int? typeId )
+//ORIGINAL LINE: private static void relationship(InputEntityVisitor IEntity, String sourceDescription, long lineNumber, long position, Object[] properties, System.Nullable<long> propertyId, Object startNode, Object endNode, String type, System.Nullable<int> typeId) throws java.io.IOException
+		 private static void Relationship( InputEntityVisitor IEntity, string sourceDescription, long lineNumber, long position, object[] properties, long? propertyId, object startNode, object endNode, string type, int? typeId )
 		 {
-			  ApplyProperties( entity, properties, propertyId );
-			  entity.StartId( startNode, Group_Fields.Global );
-			  entity.EndId( endNode, Group_Fields.Global );
+			  ApplyProperties( IEntity, properties, propertyId );
+			  IEntity.StartId( startNode, Group_Fields.Global );
+			  IEntity.EndId( endNode, Group_Fields.Global );
 			  if ( typeId != null )
 			  {
 					entity.type( typeId );
@@ -211,10 +211,10 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 			  {
 					entity.Type( type );
 			  }
-			  entity.EndOfEntity();
+			  IEntity.EndOfEntity();
 		 }
 
-		 private static void ApplyProperties( InputEntityVisitor entity, object[] properties, long? propertyId )
+		 private static void ApplyProperties( InputEntityVisitor IEntity, object[] properties, long? propertyId )
 		 {
 			  if ( propertyId != null )
 			  {
@@ -228,9 +228,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 
 		 private class IdentityDecorator : Decorator
 		 {
-			  public override InputEntityVisitor Apply( InputEntityVisitor entity )
+			  public override InputEntityVisitor Apply( InputEntityVisitor IEntity )
 			  {
-					return entity;
+					return IEntity;
 			  }
 		 }
 	}

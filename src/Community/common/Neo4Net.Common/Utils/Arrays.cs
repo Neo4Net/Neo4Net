@@ -7,7 +7,7 @@
 
 namespace Neo4Net.Utils
 {
-   internal static class Arrays
+   public static class Arrays
    {
       public static T[] CopyOf<T>(T[] original, int newLength)
       {

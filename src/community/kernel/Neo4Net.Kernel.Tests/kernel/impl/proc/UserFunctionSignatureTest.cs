@@ -24,20 +24,20 @@ namespace Neo4Net.Kernel.impl.proc
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.UserFunctionSignature.functionSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.UserFunctionSignature.functionSignature;
 
 	public class UserFunctionSignatureTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException exception = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Exception = ExpectedException.none();
-		 private readonly UserFunctionSignature _signature = functionSignature( "asd" ).@in( "in", Neo4jTypes.NTAny ).@out( Neo4jTypes.NTAny ).build();
+		 private readonly UserFunctionSignature _signature = functionSignature( "asd" ).@in( "in", Neo4NetTypes.NTAny ).@out( Neo4NetTypes.NTAny ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void inputSignatureShouldNotBeModifiable()
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  Exception.expect( typeof( System.NotSupportedException ) );
 
 			  // When
-			  _signature.inputSignature().Add(FieldSignature.inputField("in2", Neo4jTypes.NTAny));
+			  _signature.inputSignature().Add(FieldSignature.inputField("in2", Neo4NetTypes.NTAny));
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ToStringShouldMatchCypherSyntax()
 		 {
 			  // When
-			  string toStr = functionSignature( "org", "myProcedure" ).@in( "in", Neo4jTypes.NTList( Neo4jTypes.NTString ) ).@out( Neo4jTypes.NTNumber ).build().ToString();
+			  string toStr = functionSignature( "org", "myProcedure" ).@in( "in", Neo4NetTypes.NTList( Neo4NetTypes.NTString ) ).@out( Neo4NetTypes.NTNumber ).build().ToString();
 
 			  // Then
 			  assertEquals( "org.myProcedure(in :: LIST? OF STRING?) :: (NUMBER?)", toStr );

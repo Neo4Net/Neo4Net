@@ -25,9 +25,9 @@ namespace Neo4Net.Configuration
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using Neo4Net.Graphdb.config;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using Neo4Net.GraphDb.config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

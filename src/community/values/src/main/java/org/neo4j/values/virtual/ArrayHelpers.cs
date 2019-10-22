@@ -26,7 +26,7 @@ namespace Neo4Net.Values.@virtual
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
-	/// This class is way too similar to org.neo4j.collection.PrimitiveArrays.
+	/// This class is way too similar to org.Neo4Net.collection.PrimitiveArrays.
 	/// <para>
 	/// Should we introduce dependency on primitive collections?
 	/// </para>

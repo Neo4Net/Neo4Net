@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
 
 	/// <summary>
 	/// This class caches the appliers for different <seealso cref="IndexCommand"/>s for performance reasons. These appliers are then
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// Get an applier suitable for the specified IndexCommand.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private TransactionApplier applier(org.neo4j.kernel.impl.index.IndexCommand command) throws java.io.IOException
+//ORIGINAL LINE: private TransactionApplier applier(org.Neo4Net.kernel.impl.index.IndexCommand command) throws java.io.IOException
 		 private TransactionApplier Applier( IndexCommand command )
 		 {
 			  // Have we got an applier for this index?
@@ -87,8 +87,8 @@ namespace Neo4Net.Kernel.Impl.Api
 			  if ( applier == null )
 			  {
 					// We don't. Have we got an applier for the provider of this index?
-					IndexEntityType entityType = IndexEntityType.byId( command.EntityType );
-					IDictionary<string, string> config = _indexConfigStore.get( entityType.entityClass(), indexName );
+					IndexEntityType IEntityType = IndexEntityType.byId( command.EntityType );
+					IDictionary<string, string> config = _indexConfigStore.get( IEntityType.entityClass(), indexName );
 					if ( config == null )
 					{
 						 // This provider doesn't even exist, return an EMPTY handler, i.e. ignore these changes.
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Impl.Api
 					}
 					return _applierByRelationshipIndex;
 			  }
-			  throw new System.NotSupportedException( "Unknown entity type " + command.EntityType );
+			  throw new System.NotSupportedException( "Unknown IEntity type " + command.EntityType );
 		 }
 
 		 private void LazyCreateApplierByprovider()
@@ -162,35 +162,35 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.neo4j.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddNodeCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddNodeCommand command) throws java.io.IOException
 		 public override bool VisitIndexAddNodeCommand( IndexCommand.AddNodeCommand command )
 		 {
 			  return Applier( command ).visitIndexAddNodeCommand( command );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.neo4j.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexAddRelationshipCommand(org.Neo4Net.kernel.impl.index.IndexCommand.AddRelationshipCommand command) throws java.io.IOException
 		 public override bool VisitIndexAddRelationshipCommand( IndexCommand.AddRelationshipCommand command )
 		 {
 			  return Applier( command ).visitIndexAddRelationshipCommand( command );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.neo4j.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexRemoveCommand(org.Neo4Net.kernel.impl.index.IndexCommand.RemoveCommand command) throws java.io.IOException
 		 public override bool VisitIndexRemoveCommand( IndexCommand.RemoveCommand command )
 		 {
 			  return Applier( command ).visitIndexRemoveCommand( command );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.neo4j.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDeleteCommand(org.Neo4Net.kernel.impl.index.IndexCommand.DeleteCommand command) throws java.io.IOException
 		 public override bool VisitIndexDeleteCommand( IndexCommand.DeleteCommand command )
 		 {
 			  return Applier( command ).visitIndexDeleteCommand( command );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.neo4j.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexCreateCommand(org.Neo4Net.kernel.impl.index.IndexCommand.CreateCommand command) throws java.io.IOException
 		 public override bool VisitIndexCreateCommand( IndexCommand.CreateCommand command )
 		 {
 			  _indexConfigStore.setIfNecessary( IndexEntityType.byId( command.EntityType ).entityClass(), _defineCommand.getIndexName(command.IndexNameId), command.Config );
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.neo4j.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visitIndexDefineCommand(org.Neo4Net.kernel.impl.index.IndexDefineCommand command) throws java.io.IOException
 		 public override bool VisitIndexDefineCommand( IndexDefineCommand command )
 		 {
 			  this._defineCommand = command;
@@ -209,7 +209,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void forward(org.neo4j.kernel.impl.index.IndexDefineCommand definitions, java.util.Map<String,TransactionApplier> appliers) throws java.io.IOException
+//ORIGINAL LINE: private void forward(org.Neo4Net.kernel.impl.index.IndexDefineCommand definitions, java.util.Map<String,TransactionApplier> appliers) throws java.io.IOException
 		 private void Forward( IndexDefineCommand definitions, IDictionary<string, TransactionApplier> appliers )
 		 {
 			  foreach ( CommandVisitor applier in appliers.Values )

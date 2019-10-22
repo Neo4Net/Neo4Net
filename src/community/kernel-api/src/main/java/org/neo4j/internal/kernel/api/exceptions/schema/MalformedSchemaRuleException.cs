@@ -29,15 +29,15 @@ namespace Neo4Net.Internal.Kernel.Api.exceptions.schema
 	/// </summary>
 	public class MalformedSchemaRuleException : SchemaKernelException
 	{
-		 public MalformedSchemaRuleException( Exception cause, string message, params object[] parameters ) : base( org.neo4j.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, cause, message, parameters )
+		 public MalformedSchemaRuleException( Exception cause, string message, params object[] parameters ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, cause, message, parameters )
 		 {
 		 }
 
-		 public MalformedSchemaRuleException( string message, Exception cause ) : base( org.neo4j.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, message, cause )
+		 public MalformedSchemaRuleException( string message, Exception cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, message, cause )
 		 {
 		 }
 
-		 public MalformedSchemaRuleException( string message ) : base( org.neo4j.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, message )
+		 public MalformedSchemaRuleException( string message ) : base( org.Neo4Net.kernel.api.exceptions.Status_General.SchemaCorruptionDetected, message )
 		 {
 		 }
 	}

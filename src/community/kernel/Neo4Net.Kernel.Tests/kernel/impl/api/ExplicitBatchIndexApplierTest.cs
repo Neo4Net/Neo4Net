@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel.Impl.Api
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using AddNodeCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddNodeCommand;
 	using AddRelationshipCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddRelationshipCommand;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
@@ -65,11 +65,11 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IdOrderingQueue.BYPASS;
+//	import static org.Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.INTERNAL;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL;
 
 	public class ExplicitBatchIndexApplierTest
 	{

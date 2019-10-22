@@ -27,7 +27,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.withMessage;
+//	import static org.Neo4Net.helpers.Exceptions.withMessage;
 
 	public class BadCollector : Collector
 	{

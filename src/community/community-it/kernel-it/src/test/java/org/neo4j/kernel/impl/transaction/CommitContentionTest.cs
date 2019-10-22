@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.impl.transaction
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseFactoryState = Neo4Net.Graphdb.factory.GraphDatabaseFactoryState;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseFactoryState = Neo4Net.GraphDb.factory.GraphDatabaseFactoryState;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using DatabaseTransactionStats = Neo4Net.Kernel.impl.transaction.stats.DatabaseTransactionStats;
@@ -41,14 +41,14 @@ namespace Neo4Net.Kernel.impl.transaction
 	public class CommitContentionTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory storeLocation = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory storeLocation = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory StoreLocation = TestDirectory.testDirectory();
 
 		 internal readonly Semaphore Semaphore1 = new Semaphore( 1 );
 		 internal readonly Semaphore Semaphore2 = new Semaphore( 1 );
 		 internal readonly AtomicReference<Exception> Reference = new AtomicReference<Exception>();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void before() throws Exception
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.transaction
 			  return thread;
 		 }
 
-		 private GraphDatabaseService CreateDb()
+		 private IGraphDatabaseService CreateDb()
 		 {
 			  GraphDatabaseFactoryState state = new GraphDatabaseFactoryState();
 			  return new GraphDatabaseFacadeFactory( DatabaseInfo.COMMUNITY, platformModule => new CommunityEditionModuleAnonymousInnerClass( this, platformModule ) )}private void waitForFirstTransactionToStartPushing() throws InterruptedException{if (!Semaphore1.tryAcquire(10, SECONDS)){throw new System.InvalidOperationException("First transaction never started pushing");

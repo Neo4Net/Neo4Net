@@ -21,8 +21,8 @@ namespace Neo4Net.Bolt.v1.messaging
 {
 
 	using BoltIOException = Neo4Net.Bolt.messaging.BoltIOException;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using IgnoredMessage = Neo4Net.Bolt.v1.messaging.response.IgnoredMessage;
@@ -35,19 +35,19 @@ namespace Neo4Net.Bolt.v1.messaging
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.spi.Records.record;
+//	import static org.Neo4Net.bolt.v1.runtime.spi.Records.record;
 
 	public class BoltResponseMessageReader
 	{
-		 private readonly Neo4Net.Bolt.messaging.Neo4jPack_Unpacker _unpacker;
+		 private readonly Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker _unpacker;
 
-		 public BoltResponseMessageReader( Neo4Net.Bolt.messaging.Neo4jPack_Unpacker unpacker )
+		 public BoltResponseMessageReader( Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker unpacker )
 		 {
 			  this._unpacker = unpacker;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void read(org.neo4j.bolt.messaging.BoltResponseMessageWriter messageWriter) throws java.io.IOException
+//ORIGINAL LINE: public void read(org.Neo4Net.bolt.messaging.BoltResponseMessageWriter messageWriter) throws java.io.IOException
 		 public virtual void Read( BoltResponseMessageWriter messageWriter )
 		 {
 			  try
@@ -68,7 +68,7 @@ namespace Neo4Net.Bolt.v1.messaging
 						 case Neo4Net.Bolt.v1.messaging.BoltResponseMessage.InnerEnum.RECORD:
 							  long length = _unpacker.unpackListHeader();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.AnyValue[] fields = new org.neo4j.values.AnyValue[(int) length];
+//ORIGINAL LINE: final org.Neo4Net.values.AnyValue[] fields = new org.Neo4Net.values.AnyValue[(int) length];
 							  AnyValue[] fields = new AnyValue[( int ) length];
 							  for ( int i = 0; i < length; i++ )
 							  {
@@ -83,7 +83,7 @@ namespace Neo4Net.Bolt.v1.messaging
 							  MapValue failureMetadata = _unpacker.unpackMap();
 							  string code = failureMetadata.ContainsKey( "code" ) ? ( ( StringValue ) failureMetadata.Get( "code" ) ).stringValue() : Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError.name();
 							  string msg = failureMetadata.ContainsKey( "message" ) ? ( ( StringValue ) failureMetadata.Get( "message" ) ).stringValue() : "<No message supplied>";
-							  messageWriter.Write( new FailureMessage( Neo4jError.codeFromString( code ), msg ) );
+							  messageWriter.Write( new FailureMessage( Neo4NetError.codeFromString( code ), msg ) );
 							  break;
 						 default:
 							  throw new BoltIOException( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Message 0x{0} is not supported.", signature.ToString( "x" ) ) );

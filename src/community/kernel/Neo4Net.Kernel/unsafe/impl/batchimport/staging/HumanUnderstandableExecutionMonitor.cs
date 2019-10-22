@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using NodeRelationshipCache = Neo4Net.@unsafe.Impl.Batchimport.cache.NodeRelationshipCache;
 	using PageCacheArrayFactoryMonitor = Neo4Net.@unsafe.Impl.Batchimport.cache.PageCacheArrayFactoryMonitor;
 	using IdMapper = Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.IdMapper;
@@ -40,21 +40,21 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.bytes;
+//	import static org.Neo4Net.helpers.Format.bytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.count;
+//	import static org.Neo4Net.helpers.Format.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.date;
+//	import static org.Neo4Net.helpers.Format.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.duration;
+//	import static org.Neo4Net.helpers.Format.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.last;
+//	import static org.Neo4Net.helpers.collection.Iterables.last;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportMemoryCalculator.defensivelyPadMemoryEstimate;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.defensivelyPadMemoryEstimate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.ImportMemoryCalculator.estimatedCacheSize;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.ImportMemoryCalculator.estimatedCacheSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.totalMemoryUsageOf;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.GatheringMemoryStatsVisitor.totalMemoryUsageOf;
 
 	/// <summary>
 	/// Prints progress you can actually understand, with capabilities to on demand print completely incomprehensible

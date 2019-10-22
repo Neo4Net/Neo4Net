@@ -23,12 +23,12 @@ using System.Collections.Generic;
 namespace Neo4Net.Cypher.Internal.javacompat
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
 
-	public class ResultRowImpl : Neo4Net.Graphdb.Result_ResultRow
+	public class ResultRowImpl : Neo4Net.GraphDb.Result_ResultRow
 	{
 		 private IDictionary<string, object> _results;
 

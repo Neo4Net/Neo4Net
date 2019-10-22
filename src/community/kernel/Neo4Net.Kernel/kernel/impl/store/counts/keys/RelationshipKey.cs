@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 	using CountsVisitor = Neo4Net.Kernel.Impl.Api.CountsVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IdPrettyPrinter.label;
+//	import static org.Neo4Net.kernel.impl.util.IdPrettyPrinter.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.IdPrettyPrinter.relationshipType;
+//	import static org.Neo4Net.kernel.impl.util.IdPrettyPrinter.relationshipType;
 
 	public sealed class RelationshipKey : CountsKey
 	{

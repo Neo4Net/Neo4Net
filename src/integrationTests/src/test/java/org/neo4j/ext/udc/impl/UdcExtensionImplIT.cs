@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Ext.Udc.impl
 {
@@ -39,8 +39,8 @@ namespace Neo4Net.Ext.Udc.impl
 
 
 	using OnlineBackupSettings = Neo4Net.backup.OnlineBackupSettings;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -69,30 +69,30 @@ namespace Neo4Net.Ext.Udc.impl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.CLUSTER_HASH;
+//	import static org.Neo4Net.ext.udc.UdcConstants.CLUSTER_HASH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.DATABASE_MODE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.DATABASE_MODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.EDITION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.EDITION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.MAC;
+//	import static org.Neo4Net.ext.udc.UdcConstants.MAC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.REGISTRATION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.REGISTRATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.SOURCE;
+//	import static org.Neo4Net.ext.udc.UdcConstants.SOURCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.TAGS;
+//	import static org.Neo4Net.ext.udc.UdcConstants.TAGS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.USER_AGENTS;
+//	import static org.Neo4Net.ext.udc.UdcConstants.USER_AGENTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.ext.udc.UdcConstants.VERSION;
+//	import static org.Neo4Net.ext.udc.UdcConstants.VERSION;
 
 	/// <summary>
 	/// Unit testing for the UDC kernel extension.
 	/// <para>
 	/// The UdcExtensionImpl is loaded when a new
 	/// GraphDatabase is instantiated, as part of
-	/// <seealso cref="org.neo4j.helpers.Service.load"/>.
+	/// <seealso cref="org.Neo4Net.helpers.Service.load"/>.
 	/// </para>
 	/// </summary>
 	public class UdcExtensionImplIT : LocalServerTestBase
@@ -102,12 +102,12 @@ namespace Neo4Net.Ext.Udc.impl
 		 private static readonly Condition<int> _isGreaterThanZero = value => value > 0;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory path = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory path = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory Path = TestDirectory.testDirectory();
 
 		 private PingerHandler _handler;
 		 private IDictionary<string, string> _config;
-		 private GraphDatabaseService _graphdb;
+		 private IGraphDatabaseService _graphdb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @Before public void setUp() throws Exception
@@ -174,8 +174,8 @@ namespace Neo4Net.Ext.Udc.impl
 		 public virtual void ShouldLoadForEachCreatedGraphdb()
 		 {
 			  IDictionary<string, string> config = Collections.singletonMap( OnlineBackupSettings.online_backup_enabled.name(), Settings.FALSE );
-			  GraphDatabaseService graphdb1 = CreateDatabase( Path.directory( "first-db" ), config );
-			  GraphDatabaseService graphdb2 = CreateDatabase( Path.directory( "second-db" ), config );
+			  IGraphDatabaseService graphdb1 = CreateDatabase( Path.directory( "first-db" ), config );
+			  IGraphDatabaseService graphdb2 = CreateDatabase( Path.directory( "second-db" ), config );
 			  ISet<string> successCountValues = UdcTimerTask.SuccessCounts.Keys;
 			  assertThat( successCountValues.Count, equalTo( 2 ) );
 			  assertThat( "this", @is( not( "that" ) ) );
@@ -559,12 +559,12 @@ namespace Neo4Net.Ext.Udc.impl
 			  fail();
 		 }
 
-		 private GraphDatabaseService CreateDatabase( IDictionary<string, string> config )
+		 private IGraphDatabaseService CreateDatabase( IDictionary<string, string> config )
 		 {
 			  return CreateDatabase( null, config );
 		 }
 
-		 private GraphDatabaseService CreateDatabase( File storeDir, IDictionary<string, string> config )
+		 private IGraphDatabaseService CreateDatabase( File storeDir, IDictionary<string, string> config )
 		 {
 			  TestEnterpriseGraphDatabaseFactory factory = new TestEnterpriseGraphDatabaseFactory();
 			  GraphDatabaseBuilder graphDatabaseBuilder = ( storeDir != null ) ? factory.NewImpermanentDatabaseBuilder( storeDir ) : factory.NewImpermanentDatabaseBuilder();
@@ -577,8 +577,8 @@ namespace Neo4Net.Ext.Udc.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void cleanup(org.neo4j.graphdb.GraphDatabaseService gdb) throws java.io.IOException
-		 private void Cleanup( GraphDatabaseService gdb )
+//ORIGINAL LINE: private void cleanup(org.Neo4Net.graphdb.GraphDatabaseService gdb) throws java.io.IOException
+		 private void Cleanup( IGraphDatabaseService gdb )
 		 {
 			  if ( gdb != null )
 			  {

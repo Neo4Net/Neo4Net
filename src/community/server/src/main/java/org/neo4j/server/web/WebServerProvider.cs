@@ -25,7 +25,7 @@ namespace Neo4Net.Server.web
 	using HttpContext = com.sun.jersey.api.core.HttpContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class WebServerProvider extends org.neo4j.server.database.InjectableProvider<WebServer>
+//ORIGINAL LINE: @Provider public class WebServerProvider extends org.Neo4Net.server.database.InjectableProvider<WebServer>
 	public class WebServerProvider : InjectableProvider<WebServer>
 	{
 

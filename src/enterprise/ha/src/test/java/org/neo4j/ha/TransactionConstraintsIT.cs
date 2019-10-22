@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.ha
 {
@@ -33,16 +33,16 @@ namespace Neo4Net.ha
 
 
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Lock = Neo4Net.Graphdb.Lock;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using NotInTransactionException = Neo4Net.Graphdb.NotInTransactionException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
@@ -65,11 +65,11 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.dump.DumpProcessInformationRule.localVm;
+//	import static org.Neo4Net.test.rule.dump.DumpProcessInformationRule.localVm;
 
 	public class TransactionConstraintsIT
 	{
@@ -92,7 +92,7 @@ namespace Neo4Net.ha
 		 private static readonly int _slaveOnlyId = ClusterManager.FIRST_SERVER_ID + 1;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.kernel.ha.HaSettings.pull_interval, "0").withInstanceSetting(org.neo4j.kernel.ha.HaSettings.slave_only, serverId -> serverId == SLAVE_ONLY_ID ? "true" : "false");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "0").withInstanceSetting(org.Neo4Net.kernel.ha.HaSettings.slave_only, serverId -> serverId == SLAVE_ONLY_ID ? "true" : "false");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.pull_interval, "0").withInstanceSetting(HaSettings.slave_only, serverId => serverId == _slaveOnlyId ? "true" : "false");
 
 		 private DumpProcessInformationRule _dumpInfo = new DumpProcessInformationRule( 1, MINUTES, localVm( System.out ) );
@@ -121,7 +121,7 @@ namespace Neo4Net.ha
 		 public virtual void StartTxAsSlaveAndFinishItAfterHavingSwitchedToMasterShouldNotSucceed()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = Cluster.getAnySlave( SlaveOnlySlave );
+			  IGraphDatabaseService db = Cluster.getAnySlave( SlaveOnlySlave );
 
 			  // WHEN
 			  Transaction tx = Db.beginTx();
@@ -313,14 +313,14 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void deadlockDetectionBetween(org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave1, final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave2) throws Exception
+//ORIGINAL LINE: private void deadlockDetectionBetween(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave1, final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave2) throws Exception
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private void DeadlockDetectionBetween( HighlyAvailableGraphDatabase slave1, HighlyAvailableGraphDatabase slave2 )
 		 {
 			  // GIVEN
-			  // -- two members acquiring a read lock on the same entity
+			  // -- two members acquiring a read lock on the same IEntity
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node commonNode;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node commonNode;
 			  Node commonNode;
 			  using ( Transaction tx = slave1.BeginTx() )
 			  {
@@ -426,12 +426,12 @@ namespace Neo4Net.ha
 			  }
 		 }
 
-		 private void TakeTheLeadInAnEventualMasterSwitch( GraphDatabaseService db )
+		 private void TakeTheLeadInAnEventualMasterSwitch( IGraphDatabaseService db )
 		 {
 			  CreateNode( db, PROPERTY_VALUE );
 		 }
 
-		 private Node CreateNode( GraphDatabaseService db, object propertyValue, params Label[] labels )
+		 private Node CreateNode( IGraphDatabaseService db, object propertyValue, params Label[] labels )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -455,7 +455,7 @@ namespace Neo4Net.ha
 			  }
 		 }
 
-		 private Node CreateMiniTree( GraphDatabaseService db )
+		 private Node CreateMiniTree( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -489,8 +489,8 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitFullyOperational(org.neo4j.graphdb.GraphDatabaseService db) throws InterruptedException
-		 private void AwaitFullyOperational( GraphDatabaseService db )
+//ORIGINAL LINE: private void awaitFullyOperational(org.Neo4Net.graphdb.GraphDatabaseService db) throws InterruptedException
+		 private void AwaitFullyOperational( IGraphDatabaseService db )
 		 {
 			  long endTime = currentTimeMillis() + MINUTES.toMillis(1);
 			  for ( int i = 0; currentTimeMillis() < endTime; i++ )
@@ -512,7 +512,7 @@ namespace Neo4Net.ha
 			  }
 		 }
 
-		 private void DoABogusTransaction( GraphDatabaseService db )
+		 private void DoABogusTransaction( IGraphDatabaseService db )
 		 {
 			  using ( Transaction ignore = Db.beginTx() )
 			  {

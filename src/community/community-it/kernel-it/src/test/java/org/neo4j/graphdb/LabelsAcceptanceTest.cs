@@ -20,19 +20,19 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using IdContextFactoryBuilder = Neo4Net.Graphdb.factory.module.id.IdContextFactoryBuilder;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
@@ -71,33 +71,33 @@ namespace Neo4Net.Graphdb
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasLabel;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasLabels;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasNoLabels;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoLabels;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasNoNodes;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNoNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasNodes;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasNodes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class LabelsAcceptanceTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private enum Labels
@@ -107,15 +107,15 @@ namespace Neo4Net.Graphdb
 		 }
 
 		 /// <summary>
-		 /// https://github.com/neo4j/neo4j/issues/1279 </summary>
+		 /// https://github.com/Neo4Net/Neo4Net/issues/1279 </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldInsertLabelsWithoutDuplicatingThem()
 		 public virtual void ShouldInsertLabelsWithoutDuplicatingThem()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Node node = dbRule.executeAndCommit((System.Func<GraphDatabaseService,Node>) GraphDatabaseService::createNode);
+//ORIGINAL LINE: final Node node = dbRule.executeAndCommit((System.Func<GraphDatabaseService,Node>) IGraphDatabaseService::createNode);
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
-			  Node node = DbRule.executeAndCommit( ( System.Func<GraphDatabaseService, Node> ) GraphDatabaseService::createNode );
+			  Node node = DbRule.executeAndCommit( ( System.Func<GraphDatabaseService, Node> ) IGraphDatabaseService::createNode );
 			  // POST "FOOBAR"
 			  DbRule.executeAndCommit(db =>
 			  {
@@ -154,7 +154,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void AddingALabelUsingAValidIdentifierShouldSucceed()
 		 {
 			  // Given
-			  GraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
 			  Node myNode;
 
 			  // When
@@ -175,7 +175,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void AddingALabelUsingAnInvalidIdentifierShouldFail()
 		 {
 			  // Given
-			  GraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
 
 			  // When I set an empty label
 			  try
@@ -209,7 +209,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void AddingALabelThatAlreadyExistsBehavesAsNoOp()
 		 {
 			  // Given
-			  GraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
 			  Node myNode;
 
 			  // When
@@ -231,7 +231,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void OversteppingMaxNumberOfLabelsShouldFailGracefully()
 		 {
 			  // Given
-			  GraphDatabaseService graphDatabase = BeansAPIWithNoMoreLabelIds();
+			  IGraphDatabaseService graphDatabase = BeansAPIWithNoMoreLabelIds();
 
 			  // When
 			  try
@@ -254,7 +254,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingCommittedLabel()
 		 {
 			  // Given
-			  GraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService graphDatabase = DbRule.GraphDatabaseAPI;
 			  Label label = Labels.MyLabel;
 			  Node myNode = CreateNode( graphDatabase, label );
 
@@ -274,7 +274,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void CreateNodeWithLabels()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  // WHEN
 			  Node node;
@@ -295,7 +295,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingNonExistentLabel()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Label label = Labels.MyLabel;
 
 			  // When
@@ -316,7 +316,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingExistingLabelFromUnlabeledNode()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Label label = Labels.MyLabel;
 			  CreateNode( beansAPI, label );
 			  Node myNode = CreateNode( beansAPI );
@@ -337,7 +337,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingUncommittedLabel()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Label label = Labels.MyLabel;
 
 			  // When
@@ -360,7 +360,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldBeAbleToListLabelsForANode()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node node;
 			  ISet<string> expected = asSet( Labels.MyLabel.name(), Labels.MyOtherLabel.name() );
 			  using ( Transaction tx = beansAPI.BeginTx() )
@@ -381,7 +381,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldReturnEmptyListIfNoLabels()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node node = CreateNode( beansAPI );
 
 			  // WHEN THEN
@@ -393,7 +393,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void getNodesWithLabelCommitted()
 		 {
 			  // Given
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 
 			  // When
 			  Node node;
@@ -414,7 +414,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void getNodesWithLabelsWithTxAddsAndRemoves()
 		 {
 			  // GIVEN
-			  GraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService beansAPI = DbRule.GraphDatabaseAPI;
 			  Node node1 = CreateNode( beansAPI, Labels.MyLabel, Labels.MyOtherLabel );
 			  Node node2 = CreateNode( beansAPI, Labels.MyLabel, Labels.MyOtherLabel );
 
@@ -442,7 +442,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldListAllExistingLabels()
 		 {
 			  // Given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  CreateNode( db, Labels.MyLabel, Labels.MyOtherLabel );
 			  IList<Label> labels;
 
@@ -463,7 +463,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldListAllLabelsInUse()
 		 {
 			  // Given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  CreateNode( db, Labels.MyLabel );
 			  Node node = CreateNode( db, Labels.MyOtherLabel );
 			  using ( Transaction tx = Db.beginTx() )
@@ -491,7 +491,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldListAllLabelsInUseEvenWhenExclusiveLabelLocksAreTaken()
 		 {
 			  // Given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  CreateNode( db, Labels.MyLabel );
 			  Node node = CreateNode( db, Labels.MyOtherLabel );
 			  using ( Transaction tx = Db.beginTx() )
@@ -536,7 +536,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void ShouldListAllRelationshipTypesInUseEvenWhenExclusiveRelationshipTypeLocksAreTaken()
 		 {
 			  // Given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  RelationshipType relType = RelationshipType.withName( "REL" );
 			  Node node = CreateNode( db, Labels.MyLabel );
 			  using ( Transaction tx = Db.beginTx() )
@@ -580,7 +580,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void DeleteAllNodesAndTheirLabels()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Label label = label("A");
 			  Label label = label( "A" );
@@ -615,7 +615,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingLabelDoesNotBreakPreviouslyCreatedLabelsIterator()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Label label1 = label( "A" );
 			  Label label2 = label( "B" );
 
@@ -636,7 +636,7 @@ namespace Neo4Net.Graphdb
 		 public virtual void RemovingPropertyDoesNotBreakPreviouslyCreatedNodePropertyKeysIterator()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -659,7 +659,7 @@ namespace Neo4Net.Graphdb
 			  // given
 			  const int totalNumberOfLabels = 200;
 			  const int numberOfPreservedLabels = 20;
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -756,7 +756,7 @@ namespace Neo4Net.Graphdb
 		 {
 			  int labels = 500;
 			  int halveLabels = labels / 2;
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  long nodeId = CreateNode( db ).Id;
 
 			  AddLabels( nodeId, 0, halveLabels );
@@ -829,11 +829,11 @@ namespace Neo4Net.Graphdb
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") private GraphDatabaseService beansAPIWithNoMoreLabelIds()
-		 private GraphDatabaseService BeansAPIWithNoMoreLabelIds()
+//ORIGINAL LINE: @SuppressWarnings("deprecation") private IGraphDatabaseService beansAPIWithNoMoreLabelIds()
+		 private IGraphDatabaseService BeansAPIWithNoMoreLabelIds()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.impl.EphemeralIdGenerator.Factory idFactory = new org.neo4j.test.impl.EphemeralIdGenerator.Factory()
+//ORIGINAL LINE: final org.Neo4Net.test.impl.EphemeralIdGenerator.Factory idFactory = new org.Neo4Net.test.impl.EphemeralIdGenerator.Factory()
 			  EphemeralIdGenerator.Factory idFactory = new FactoryAnonymousInnerClass( this );
 
 			  TestGraphDatabaseFactory dbFactory = new TestGraphDatabaseFactoryAnonymousInnerClass( this, idFactory );
@@ -899,7 +899,7 @@ namespace Neo4Net.Graphdb
 			 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.neo4j.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final org.neo4j.test.TestGraphDatabaseFactoryState state)
+//ORIGINAL LINE: protected org.Neo4Net.graphdb.factory.GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator(final java.io.File storeDir, final org.Neo4Net.test.TestGraphDatabaseFactoryState state)
 			 protected internal override GraphDatabaseBuilder.DatabaseCreator createImpermanentDatabaseCreator( File storeDir, TestGraphDatabaseFactoryState state )
 			 {
 				  return new DatabaseCreatorAnonymousInnerClass( this, storeDir, state );
@@ -920,8 +920,8 @@ namespace Neo4Net.Graphdb
 				 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public GraphDatabaseService newDatabase(@Nonnull Config config)
-				 public GraphDatabaseService newDatabase( Config config )
+//ORIGINAL LINE: public IGraphDatabaseService newDatabase(@Nonnull Config config)
+				 public IGraphDatabaseService newDatabase( Config config )
 				 {
 					  return new ImpermanentGraphDatabaseAnonymousInnerClass( this, _storeDir, config, GraphDatabaseDependencies.newDependencies( _state.databaseDependencies() ) );
 				 }
@@ -971,7 +971,7 @@ namespace Neo4Net.Graphdb
 			 }
 		 }
 
-		 private Node CreateNode( GraphDatabaseService db, params Label[] labels )
+		 private Node CreateNode( IGraphDatabaseService db, params Label[] labels )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -32,13 +32,13 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 	{
 		 private readonly QualifiedName _name;
 		 private readonly IList<FieldSignature> _inputSignature;
-		 private readonly Neo4jTypes.AnyType _type;
+		 private readonly Neo4NetTypes.AnyType _type;
 		 private readonly string[] _allowed;
 		 private readonly string _deprecated;
 		 private readonly string _description;
 		 private readonly bool _caseInsensitive;
 
-		 public UserFunctionSignature( QualifiedName name, IList<FieldSignature> inputSignature, Neo4jTypes.AnyType type, string deprecated, string[] allowed, string description, bool caseInsensitive )
+		 public UserFunctionSignature( QualifiedName name, IList<FieldSignature> inputSignature, Neo4NetTypes.AnyType type, string deprecated, string[] allowed, string description, bool caseInsensitive )
 		 {
 			  this._name = name;
 			  this._inputSignature = unmodifiableList( inputSignature );
@@ -64,7 +64,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			  return _inputSignature;
 		 }
 
-		 public Neo4jTypes.AnyType OutputType()
+		 public Neo4NetTypes.AnyType OutputType()
 		 {
 			  return _type;
 		 }
@@ -117,7 +117,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 		 {
 			  internal readonly QualifiedName Name;
 			  internal readonly IList<FieldSignature> InputSignature = new LinkedList<FieldSignature>();
-			  internal Neo4jTypes.AnyType OutputType;
+			  internal Neo4NetTypes.AnyType OutputType;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal string[] AllowedConflict = new string[0];
 			  internal string Deprecated;
@@ -143,7 +143,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 
 			  /// <summary>
 			  /// Define an input field </summary>
-			  public virtual Builder In( string name, Neo4jTypes.AnyType type )
+			  public virtual Builder In( string name, Neo4NetTypes.AnyType type )
 			  {
 					InputSignature.Add( FieldSignature.InputField( name, type ) );
 					return this;
@@ -151,7 +151,7 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 
 			  /// <summary>
 			  /// Define an output field </summary>
-			  public virtual Builder Out( Neo4jTypes.AnyType type )
+			  public virtual Builder Out( Neo4NetTypes.AnyType type )
 			  {
 					OutputType = type;
 					return this;

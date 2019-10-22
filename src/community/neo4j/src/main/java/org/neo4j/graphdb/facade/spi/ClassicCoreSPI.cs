@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.facade.spi
+namespace Neo4Net.GraphDb.facade.spi
 {
 
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
-	using Neo4Net.Graphdb.@event;
-	using DataSourceModule = Neo4Net.Graphdb.factory.module.DataSourceModule;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
+	using Neo4Net.GraphDb.Events;
+	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -46,7 +46,7 @@ namespace Neo4Net.Graphdb.facade.spi
 	/// This implements the backend for the "classic" Core API - meaning the surface-layer-of-the-database, thread bound API.
 	/// It's a thin veneer to wire the various components the kernel and related utilities expose in a way that
 	/// <seealso cref="GraphDatabaseFacade"/> likes. </summary>
-	/// <seealso cref= org.neo4j.kernel.impl.factory.GraphDatabaseFacade.SPI </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade.SPI </seealso>
 	public class ClassicCoreSPI : GraphDatabaseFacade.SPI
 	{
 		 private readonly PlatformModule _platform;
@@ -123,7 +123,7 @@ namespace Neo4Net.Graphdb.facade.spi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _platform.urlAccessRule.validate( _platform.config, url );
@@ -171,7 +171,7 @@ namespace Neo4Net.Graphdb.facade.spi
 			  }
 			  catch ( TransactionFailureException e )
 			  {
-					throw new Neo4Net.Graphdb.TransactionFailureException( e.Message, e );
+					throw new Neo4Net.GraphDb.TransactionFailureException( e.Message, e );
 			  }
 		 }
 	}

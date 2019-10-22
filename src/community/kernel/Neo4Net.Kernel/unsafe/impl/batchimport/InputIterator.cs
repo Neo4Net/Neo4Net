@@ -20,7 +20,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Input = Neo4Net.@unsafe.Impl.Batchimport.input.Input;
 	using InputChunk = Neo4Net.@unsafe.Impl.Batchimport.input.InputChunk;
 
@@ -32,7 +32,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 InputChunk NewChunk();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean next(org.neo4j.unsafe.impl.batchimport.input.InputChunk chunk) throws java.io.IOException;
+//ORIGINAL LINE: boolean next(org.Neo4Net.unsafe.impl.batchimport.input.InputChunk chunk) throws java.io.IOException;
 		 bool Next( InputChunk chunk );
 	}
 

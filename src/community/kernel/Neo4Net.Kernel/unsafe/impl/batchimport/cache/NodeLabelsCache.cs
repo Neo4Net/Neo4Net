@@ -28,7 +28,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.max;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.Bits.bitsFromLongs;
+//	import static org.Neo4Net.kernel.impl.util.Bits.bitsFromLongs;
 
 	/// <summary>
 	/// Caches labels for each node. Tries to keep memory as 8b (a long) per node. If a particular node has many labels

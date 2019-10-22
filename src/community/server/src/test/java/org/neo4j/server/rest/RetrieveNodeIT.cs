@@ -80,13 +80,13 @@ namespace Neo4Net.Server.rest
 					HttpGet httpget = new HttpGet( _nodeUri );
 
 					httpget.setHeader( "Accept", "application/json" );
-					httpget.setHeader( "Host", "dummy.neo4j.org" );
+					httpget.setHeader( "Host", "dummy.Neo4Net.org" );
 					HttpResponse response = httpclient.execute( httpget );
-					HttpEntity entity = response.Entity;
+					HttpEntity IEntity = response.Entity;
 
-					string entityBody = IOUtils.ToString( entity.Content, StandardCharsets.UTF_8 );
+					string IEntityBody = IOUtils.ToString( IEntity.Content, StandardCharsets.UTF_8 );
 
-					assertThat( entityBody, containsString( "http://dummy.neo4j.org/db/data/node/" ) );
+					assertThat( IEntityBody, containsString( "http://dummy.Neo4Net.org/db/data/node/" ) );
 
 			  }
 		 }
@@ -102,11 +102,11 @@ namespace Neo4Net.Server.rest
 
 					httpget.setHeader( "Accept", "application/json" );
 					HttpResponse response = httpclient.execute( httpget );
-					HttpEntity entity = response.Entity;
+					HttpEntity IEntity = response.Entity;
 
-					string entityBody = IOUtils.ToString( entity.Content, StandardCharsets.UTF_8 );
+					string IEntityBody = IOUtils.ToString( IEntity.Content, StandardCharsets.UTF_8 );
 
-					assertThat( entityBody, containsString( _nodeUri.ToString() ) );
+					assertThat( IEntityBody, containsString( _nodeUri.ToString() ) );
 			  }
 		 }
 
@@ -125,8 +125,8 @@ namespace Neo4Net.Server.rest
 		 public virtual void ShouldGet200WhenRetrievingNodeCompact()
 		 {
 			  string uri = _nodeUri.ToString();
-			  ResponseEntity entity = GenConflict.get().expectedType(CompactJsonFormat.MEDIA_TYPE).expectedStatus(200).get(uri);
-			  assertTrue( entity.Entity().Contains("self") );
+			  ResponseEntity IEntity = GenConflict.get().expectedType(CompactJsonFormat.MEDIA_TYPE).expectedStatus(200).get(uri);
+			  assertTrue( IEntity.Entity().Contains("self") );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -22,14 +22,14 @@
 namespace Neo4Net.Bolt.runtime
 {
 
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
 	/// An error object, represents something having gone wrong that is to be signaled to the user. This is, by design, not
 	/// using the java exception system.
 	/// </summary>
-	public class Neo4jError
+	public class Neo4NetError
 	{
 		 private readonly Status _status;
 		 private readonly string _message;
@@ -37,7 +37,7 @@ namespace Neo4Net.Bolt.runtime
 		 private readonly System.Guid _reference;
 		 private readonly bool _fatal;
 
-		 private Neo4jError( Status status, string message, Exception cause, bool fatal )
+		 private Neo4NetError( Status status, string message, Exception cause, bool fatal )
 		 {
 			  this._status = status;
 			  this._message = message;
@@ -46,11 +46,11 @@ namespace Neo4Net.Bolt.runtime
 			  this._reference = System.Guid.randomUUID();
 		 }
 
-		 private Neo4jError( Status status, string message, bool fatal ) : this( status, message, null, fatal )
+		 private Neo4NetError( Status status, string message, bool fatal ) : this( status, message, null, fatal )
 		 {
 		 }
 
-		 private Neo4jError( Status status, Exception cause, bool fatal ) : this( status, status.Code().description(), cause, fatal )
+		 private Neo4NetError( Status status, Exception cause, bool fatal ) : this( status, status.Code().description(), cause, fatal )
 		 {
 		 }
 
@@ -85,7 +85,7 @@ namespace Neo4Net.Bolt.runtime
 					return false;
 			  }
 
-			  Neo4jError that = ( Neo4jError ) o;
+			  Neo4NetError that = ( Neo4NetError ) o;
 
 			  return ( _status != null ? _status.Equals( that._status ) : that._status == null ) && !( !string.ReferenceEquals( _message, null ) ?!_message.Equals( that._message ) :!string.ReferenceEquals( that._message, null ) );
 
@@ -100,7 +100,7 @@ namespace Neo4Net.Bolt.runtime
 
 		 public override string ToString()
 		 {
-			  return "Neo4jError{" +
+			  return "Neo4NetError{" +
 						 "status=" + _status +
 						 ", message='" + _message + '\'' +
 						 ", cause=" + _cause +
@@ -143,52 +143,52 @@ namespace Neo4Net.Bolt.runtime
 			  }
 		 }
 
-		 private static Neo4jError FromThrowable( Exception any, bool isFatal )
+		 private static Neo4NetError FromThrowable( Exception any, bool isFatal )
 		 {
 			  for ( Exception cause = any; cause != null; cause = cause.InnerException )
 			  {
 					if ( cause is DatabaseShutdownException )
 					{
-						 return new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.DatabaseUnavailable, cause, isFatal );
+						 return new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.DatabaseUnavailable, cause, isFatal );
 					}
 					if ( _cause is Neo4Net.Kernel.Api.Exceptions.Status_HasStatus )
 					{
-						 return new Neo4jError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) _cause ).status(), any.Message, any, isFatal );
+						 return new Neo4NetError( ( ( Neo4Net.Kernel.Api.Exceptions.Status_HasStatus ) _cause ).status(), any.Message, any, isFatal );
 					}
 					if ( _cause is System.OutOfMemoryException )
 					{
-						 return new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.OutOfMemoryError, _cause, isFatal );
+						 return new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.OutOfMemoryError, _cause, isFatal );
 					}
 					if ( _cause is StackOverflowError )
 					{
-						 return new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.StackOverFlowError, _cause, isFatal );
+						 return new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.StackOverFlowError, _cause, isFatal );
 					}
 			  }
 
 			  // In this case, an error has "slipped out", and we don't have a good way to handle it. This indicates
 			  // a buggy code path, and we need to try to convince whoever ends up here to tell us about it.
 
-			  return new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, any != null ? any.Message : null, any, isFatal );
+			  return new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError, any != null ? any.Message : null, any, isFatal );
 		 }
 
-		 public static Neo4jError From( Status status, string message )
+		 public static Neo4NetError From( Status status, string message )
 		 {
-			  return new Neo4jError( status, message, false );
+			  return new Neo4NetError( status, message, false );
 		 }
 
-		 public static Neo4jError From( Exception any )
+		 public static Neo4NetError From( Exception any )
 		 {
 			  return FromThrowable( any, false );
 		 }
 
-		 public static Neo4jError FatalFrom( Exception any )
+		 public static Neo4NetError FatalFrom( Exception any )
 		 {
 			  return FromThrowable( any, true );
 		 }
 
-		 public static Neo4jError FatalFrom( Status status, string message )
+		 public static Neo4NetError FatalFrom( Status status, string message )
 		 {
-			  return new Neo4jError( status, message, true );
+			  return new Neo4NetError( status, message, true );
 		 }
 
 		 public virtual bool Fatal

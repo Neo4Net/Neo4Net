@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.api
 
 		 /// <summary>
 		 /// The start time of the underlying transaction. I.e. basically <seealso cref="System.nanoTime()"/> ()} when user
-		 /// called <seealso cref="org.neo4j.internal.kernel.api.Session.beginTransaction(KernelTransaction.Type)"/>.
+		 /// called <seealso cref="org.Neo4Net.internal.kernel.api.Session.beginTransaction(KernelTransaction.Type)"/>.
 		 /// 
 		 /// This can be used to measure elapsed time in a safe way that is not affected by system time changes.
 		 /// </summary>
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.api
 
 		 /// <returns> the lock requests granted for this transaction. </returns>
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.stream.Stream<? extends org.neo4j.kernel.impl.locking.ActiveLock> activeLocks();
+//ORIGINAL LINE: java.util.stream.Stream<? extends org.Neo4Net.kernel.impl.locking.ActiveLock> activeLocks();
 		 Stream<ActiveLock> ActiveLocks();
 
 		 /// <summary>

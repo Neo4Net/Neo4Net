@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_PREVIOUS_PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_PREVIOUS_PROPERTY;
 
 	/// <summary>
 	/// PropertyRecord is a container for PropertyBlocks. PropertyRecords form
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 
 
 
-		 public virtual long EntityId
+		 public virtual long IEntityId
 		 {
 			 get
 			 {

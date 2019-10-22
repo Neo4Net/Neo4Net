@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.core
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using GraphTransactionRule = Neo4Net.Test.rule.GraphTransactionRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -37,20 +37,20 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestShortStringProperties
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.DatabaseRule graphdb = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.DatabaseRule graphdb = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static DatabaseRule Graphdb = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.GraphTransactionRule tx = new org.neo4j.test.rule.GraphTransactionRule(graphdb);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.GraphTransactionRule tx = new org.Neo4Net.test.rule.GraphTransactionRule(graphdb);
 		 public GraphTransactionRule Tx = new GraphTransactionRule( Graphdb );
 
 		 public virtual void Commit()
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.core
 //ORIGINAL LINE: @Test public void canAddShortStringToRelationship()
 		 public virtual void CanAddShortStringToRelationship()
 		 {
-			  GraphDatabaseService db = Graphdb.GraphDatabaseAPI;
+			  IGraphDatabaseService db = Graphdb.GraphDatabaseAPI;
 			  Relationship rel = Db.createNode().createRelationshipTo(Db.createNode(), withName("REL_TYPE"));
 			  rel.SetProperty( "type", "dimsedut" );
 			  Commit();
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.core
 //ORIGINAL LINE: @Test public void canRemoveShortStringProperty()
 		 public virtual void CanRemoveShortStringProperty()
 		 {
-			  GraphDatabaseService db = Graphdb.GraphDatabaseAPI;
+			  IGraphDatabaseService db = Graphdb.GraphDatabaseAPI;
 			  Node node = Db.createNode();
 			  node.SetProperty( "key", "value" );
 			  NewTx();

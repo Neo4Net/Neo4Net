@@ -28,12 +28,12 @@ namespace Neo4Net.Server.Security.Auth
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
@@ -58,11 +58,11 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 
 	public class AuthProceduresIT
 	{
@@ -74,14 +74,14 @@ namespace Neo4Net.Server.Security.Auth
 		 private LoginContext _admin;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException, java.io.IOException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
 			  _fs = new EphemeralFileSystemAbstraction();
 			  Db = ( GraphDatabaseAPI ) CreateGraphDatabase( _fs );
 			  _authManager = Db.DependencyResolver.resolveDependency( typeof( BasicAuthManager ) );
-			  _admin = Login( "neo4j", "neo4j" );
+			  _admin = Login( "Neo4Net", "Neo4Net" );
 			  _admin.subject().setPasswordChangeNoLongerRequired();
 		 }
 
@@ -105,7 +105,7 @@ namespace Neo4Net.Server.Security.Auth
 			  // Given
 			  AssertEmpty( _admin, "CALL dbms.changePassword('abc')" );
 
-			  Debug.Assert( _authManager.getUser( "neo4j" ).credentials().matchesPassword("abc") );
+			  Debug.Assert( _authManager.getUser( "Neo4Net" ).credentials().matchesPassword("abc") );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.Security.Auth
 		 public virtual void ShouldNotChangeOwnPasswordIfNewPasswordInvalid()
 		 {
 			  AssertFail( _admin, "CALL dbms.changePassword( '' )", "A password cannot be empty." );
-			  AssertFail( _admin, "CALL dbms.changePassword( 'neo4j' )", "Old password and new password cannot be the same." );
+			  AssertFail( _admin, "CALL dbms.changePassword( 'Neo4Net' )", "Old password and new password cannot be the same." );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -208,8 +208,8 @@ namespace Neo4Net.Server.Security.Auth
 //ORIGINAL LINE: @Test public void shouldNotCreateExistingUser()
 		 public virtual void ShouldNotCreateExistingUser()
 		 {
-			  AssertFail( _admin, "CALL dbms.security.createUser('neo4j', '1234', true)", "The specified user 'neo4j' already exists" );
-			  AssertFail( _admin, "CALL dbms.security.createUser('neo4j', '', true)", "A password cannot be empty." );
+			  AssertFail( _admin, "CALL dbms.security.createUser('Neo4Net', '1234', true)", "The specified user 'Neo4Net' already exists" );
+			  AssertFail( _admin, "CALL dbms.security.createUser('Neo4Net', '', true)", "A password cannot be empty." );
 		 }
 
 		 //---------- delete user -----------
@@ -251,7 +251,7 @@ namespace Neo4Net.Server.Security.Auth
 		 public virtual void ShouldListUsers()
 		 {
 			  _authManager.newUser( "andres", UTF8.encode( "123" ), false );
-			  AssertSuccess( _admin, "CALL dbms.security.listUsers() YIELD username", r => assertKeyIs( r, "username", "neo4j", "andres" ) );
+			  AssertSuccess( _admin, "CALL dbms.security.listUsers() YIELD username", r => assertKeyIs( r, "username", "Neo4Net", "andres" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -260,7 +260,7 @@ namespace Neo4Net.Server.Security.Auth
 		 public virtual void ShouldReturnUsersWithFlags()
 		 {
 			  _authManager.newUser( "andres", UTF8.encode( "123" ), false );
-			  IDictionary<string, object> expected = map( "neo4j", ListOf( _pwdChange ), "andres", ListOf() );
+			  IDictionary<string, object> expected = map( "Neo4Net", ListOf( _pwdChange ), "andres", ListOf() );
 			  AssertSuccess( _admin, "CALL dbms.security.listUsers()", r => assertKeyIsMap( r, "username", "flags", expected ) );
 		 }
 
@@ -269,7 +269,7 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldShowCurrentUser()
 		 {
-			  AssertSuccess( _admin, "CALL dbms.showCurrentUser()", r => assertKeyIsMap( r, "username", "flags", map( "neo4j", ListOf( _pwdChange ) ) ) );
+			  AssertSuccess( _admin, "CALL dbms.showCurrentUser()", r => assertKeyIsMap( r, "username", "flags", map( "Neo4Net", ListOf( _pwdChange ) ) ) );
 
 			  _authManager.newUser( "andres", UTF8.encode( "123" ), false );
 			  LoginContext andres = Login( "andres", "123" );
@@ -279,12 +279,12 @@ namespace Neo4Net.Server.Security.Auth
 		 //---------- utility -----------
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.graphdb.GraphDatabaseService createGraphDatabase(org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fs) throws java.io.IOException
-		 private GraphDatabaseService CreateGraphDatabase( EphemeralFileSystemAbstraction fs )
+//ORIGINAL LINE: private org.Neo4Net.graphdb.GraphDatabaseService createGraphDatabase(org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fs) throws java.io.IOException
+		 private IGraphDatabaseService CreateGraphDatabase( EphemeralFileSystemAbstraction fs )
 		 {
 			  RemovePreviousAuthFile();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<org.neo4j.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<org.Neo4Net.graphdb.config.Setting<?>, String> settings = new java.util.HashMap<>();
 			  IDictionary<Setting<object>, string> settings = new Dictionary<Setting<object>, string>();
 			  settings[GraphDatabaseSettings.auth_enabled] = "true";
 
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.security.LoginContext login(String username, String password) throws org.neo4j.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.security.LoginContext login(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Login( string username, string password )
 		 {
 			  return _authManager.login( newBasicAuthToken( username, password ) );
@@ -378,7 +378,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static void assertKeyIsMap(org.neo4j.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static void assertKeyIsMap(org.Neo4Net.graphdb.ResourceIterator<java.util.Map<String,Object>> r, String keyKey, String valueKey, java.util.Map<String,Object> expected)
 		 public static void AssertKeyIsMap( ResourceIterator<IDictionary<string, object>> r, string keyKey, string valueKey, IDictionary<string, object> expected )
 		 {
 			  IList<IDictionary<string, object>> result = r.ToList();

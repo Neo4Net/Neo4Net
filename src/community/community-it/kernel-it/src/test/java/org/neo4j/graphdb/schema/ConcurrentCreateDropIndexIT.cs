@@ -21,7 +21,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.schema
+namespace Neo4Net.GraphDb.schema
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;
@@ -42,21 +42,21 @@ namespace Neo4Net.Graphdb.schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.singleOrNull;
+//	import static org.Neo4Net.helpers.collection.Iterables.singleOrNull;
 
 	public class ConcurrentCreateDropIndexIT
 	{
 		 private const string KEY = "key";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule Db = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.CleanupRule cleanupRule = new org.neo4j.test.rule.CleanupRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.CleanupRule cleanupRule = new org.Neo4Net.test.rule.CleanupRule();
 		 public readonly CleanupRule CleanupRule = new CleanupRule();
 
 		 private readonly int _threads = Runtime.Runtime.availableProcessors();

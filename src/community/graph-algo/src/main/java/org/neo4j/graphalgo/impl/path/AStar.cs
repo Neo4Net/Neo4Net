@@ -29,24 +29,24 @@ namespace Neo4Net.Graphalgo.impl.path
 	using Neo4Net.Graphalgo.impl.util;
 	using Neo4Net.Graphalgo.impl.util.PriorityMap;
 	using WeightedPathImpl = Neo4Net.Graphalgo.impl.util.WeightedPathImpl;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalMetadata = Neo4Net.Graphdb.traversal.TraversalMetadata;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
 	using Neo4Net.Helpers.Collections;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.option;
+//	import static org.Neo4Net.helpers.collection.Iterables.option;
 
 	public class AStar : PathFinder<WeightedPath>
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.graphdb.PathExpander<?> expander;
+//ORIGINAL LINE: private final org.Neo4Net.graphdb.PathExpander<?> expander;
 		 private readonly PathExpander<object> _expander;
 		 private readonly CostEvaluator<double> _lengthEvaluator;
 		 private readonly EstimateEvaluator<double> _estimateEvaluator;
@@ -72,7 +72,7 @@ namespace Neo4Net.Graphalgo.impl.path
 						 // Hit, return path
 						 double weight = iterator.VisitData[node.Id].wayLength;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Path path;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Path path;
 						 Path path;
 						 if ( start.Id == end.Id )
 						 {
@@ -100,7 +100,7 @@ namespace Neo4Net.Graphalgo.impl.path
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public Iterable<org.neo4j.graphalgo.WeightedPath> findAllPaths(final org.neo4j.graphdb.Node node, final org.neo4j.graphdb.Node end)
+//ORIGINAL LINE: public Iterable<org.Neo4Net.graphalgo.WeightedPath> findAllPaths(final org.Neo4Net.graphdb.Node node, final org.Neo4Net.graphdb.Node end)
 		 public override IEnumerable<WeightedPath> FindAllPaths( Node node, Node end )
 		 {
 			  return option( FindSinglePath( node, end ) );

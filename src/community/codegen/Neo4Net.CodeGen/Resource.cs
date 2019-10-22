@@ -22,7 +22,7 @@
 namespace Neo4Net.CodeGen
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.TypeReference.typeReference;
+//	import static org.Neo4Net.codegen.TypeReference.typeReference;
 
 	public class Resource
 	{

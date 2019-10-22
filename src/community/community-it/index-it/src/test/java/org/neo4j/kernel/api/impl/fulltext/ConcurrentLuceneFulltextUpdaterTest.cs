@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 
 	using Neo4Net.Functions;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
 
 	/// <summary>
 	/// Concurrent updates and index changes should result in valid state, and not create conflicts or exceptions during
@@ -68,18 +68,18 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _race = new Race();
 		 }
 
-		 private SchemaDescriptor GetNewDescriptor( string[] entityTokens )
+		 private SchemaDescriptor GetNewDescriptor( string[] IEntityTokens )
 		 {
-			  return FulltextAdapter.schemaFor( NODE, entityTokens, Settings, "otherProp" );
+			  return FulltextAdapter.schemaFor( NODE, IEntityTokens, Settings, "otherProp" );
 		 }
 
-		 private SchemaDescriptor GetExistingDescriptor( string[] entityTokens )
+		 private SchemaDescriptor GetExistingDescriptor( string[] IEntityTokens )
 		 {
-			  return FulltextAdapter.schemaFor( NODE, entityTokens, Settings, PROP );
+			  return FulltextAdapter.schemaFor( NODE, IEntityTokens, Settings, PROP );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.IndexReference createInitialIndex(org.neo4j.internal.kernel.api.schema.SchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createInitialIndex(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws Exception
 		 private IndexReference CreateInitialIndex( SchemaDescriptor descriptor )
 		 {
 			  IndexReference index;
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void raceContestantsAndVerifyResults(org.neo4j.internal.kernel.api.schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
+//ORIGINAL LINE: private void raceContestantsAndVerifyResults(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor newDescriptor, Runnable aliceWork, Runnable changeConfig, Runnable bobWork) throws Throwable
 		 private void RaceContestantsAndVerifyResults( SchemaDescriptor newDescriptor, ThreadStart aliceWork, ThreadStart changeConfig, ThreadStart bobWork )
 		 {
 			  _race.addContestants( _aliceThreads, aliceWork );
@@ -171,9 +171,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LabelledNodesCoreAPI()
 		 {
-			  string[] entityTokens = new string[] { Label.name() };
-			  SchemaDescriptor descriptor = GetExistingDescriptor( entityTokens );
-			  SchemaDescriptor newDescriptor = GetNewDescriptor( entityTokens );
+			  string[] IEntityTokens = new string[] { Label.name() };
+			  SchemaDescriptor descriptor = GetExistingDescriptor( IEntityTokens );
+			  SchemaDescriptor newDescriptor = GetNewDescriptor( IEntityTokens );
 			  IndexReference initialIndex = CreateInitialIndex( descriptor );
 
 			  ThreadStart aliceWork = Work(_nodesCreatedPerThread, () =>
@@ -195,9 +195,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LabelledNodesCypherCurrent()
 		 {
-			  string[] entityTokens = new string[] { Label.name() };
-			  SchemaDescriptor descriptor = GetExistingDescriptor( entityTokens );
-			  SchemaDescriptor newDescriptor = GetNewDescriptor( entityTokens );
+			  string[] IEntityTokens = new string[] { Label.name() };
+			  SchemaDescriptor descriptor = GetExistingDescriptor( IEntityTokens );
+			  SchemaDescriptor newDescriptor = GetNewDescriptor( IEntityTokens );
 			  IndexReference initialIndex = CreateInitialIndex( descriptor );
 
 			  ThreadStart aliceWork = Work(_nodesCreatedPerThread, () =>
@@ -219,9 +219,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LabelledNodesCypher31()
 		 {
-			  string[] entityTokens = new string[] { Label.name() };
-			  SchemaDescriptor descriptor = GetExistingDescriptor( entityTokens );
-			  SchemaDescriptor newDescriptor = GetNewDescriptor( entityTokens );
+			  string[] IEntityTokens = new string[] { Label.name() };
+			  SchemaDescriptor descriptor = GetExistingDescriptor( IEntityTokens );
+			  SchemaDescriptor newDescriptor = GetNewDescriptor( IEntityTokens );
 			  IndexReference initialIndex = CreateInitialIndex( descriptor );
 
 			  ThreadStart aliceWork = Work(_nodesCreatedPerThread, () =>
@@ -243,9 +243,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LabelledNodesCypher23()
 		 {
-			  string[] entityTokens = new string[] { Label.name() };
-			  SchemaDescriptor descriptor = GetExistingDescriptor( entityTokens );
-			  SchemaDescriptor newDescriptor = GetNewDescriptor( entityTokens );
+			  string[] IEntityTokens = new string[] { Label.name() };
+			  SchemaDescriptor descriptor = GetExistingDescriptor( IEntityTokens );
+			  SchemaDescriptor newDescriptor = GetNewDescriptor( IEntityTokens );
 			  IndexReference initialIndex = CreateInitialIndex( descriptor );
 
 			  ThreadStart aliceWork = Work(_nodesCreatedPerThread, () =>
@@ -267,9 +267,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LabelledNodesCypherRule()
 		 {
-			  string[] entityTokens = new string[] { Label.name() };
-			  SchemaDescriptor descriptor = GetExistingDescriptor( entityTokens );
-			  SchemaDescriptor newDescriptor = GetNewDescriptor( entityTokens );
+			  string[] IEntityTokens = new string[] { Label.name() };
+			  SchemaDescriptor descriptor = GetExistingDescriptor( IEntityTokens );
+			  SchemaDescriptor newDescriptor = GetNewDescriptor( IEntityTokens );
 			  IndexReference initialIndex = CreateInitialIndex( descriptor );
 
 			  ThreadStart aliceWork = Work(_nodesCreatedPerThread, () =>

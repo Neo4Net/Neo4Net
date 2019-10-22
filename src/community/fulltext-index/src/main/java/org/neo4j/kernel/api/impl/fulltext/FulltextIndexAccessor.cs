@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.documentRepresentingProperties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.newTermForChangeOrRemove;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.LuceneFulltextDocumentStructure.newTermForChangeOrRemove;
 
 	public class FulltextIndexAccessor : AbstractLuceneIndexAccessor<FulltextIndexReader, DatabaseFulltextIndex>
 	{
@@ -127,12 +127,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 				  this._outerInstance = outerInstance;
 			  }
 
-			  protected internal override void AddIdempotent( long entityId, Value[] values )
+			  protected internal override void AddIdempotent( long IEntityId, Value[] values )
 			  {
 					try
 					{
-						 Document document = documentRepresentingProperties( entityId, outerInstance.Descriptor.propertyNames(), values );
-						 outerInstance.Writer.updateDocument( newTermForChangeOrRemove( entityId ), document );
+						 Document document = documentRepresentingProperties( IEntityId, outerInstance.Descriptor.propertyNames(), values );
+						 outerInstance.Writer.updateDocument( newTermForChangeOrRemove( IEntityId ), document );
 					}
 					catch ( IOException e )
 					{
@@ -140,11 +140,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					}
 			  }
 
-			  public override void Add( long entityId, Value[] values )
+			  public override void Add( long IEntityId, Value[] values )
 			  {
 					try
 					{
-						 Document document = documentRepresentingProperties( entityId, outerInstance.Descriptor.propertyNames(), values );
+						 Document document = documentRepresentingProperties( IEntityId, outerInstance.Descriptor.propertyNames(), values );
 						 outerInstance.Writer.addDocument( document );
 					}
 					catch ( IOException e )
@@ -153,11 +153,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					}
 			  }
 
-			  protected internal override void Change( long entityId, Value[] values )
+			  protected internal override void Change( long IEntityId, Value[] values )
 			  {
 					try
 					{
-						 outerInstance.Writer.updateDocument( newTermForChangeOrRemove( entityId ), documentRepresentingProperties( entityId, outerInstance.Descriptor.propertyNames(), values ) );
+						 outerInstance.Writer.updateDocument( newTermForChangeOrRemove( IEntityId ), documentRepresentingProperties( IEntityId, outerInstance.Descriptor.propertyNames(), values ) );
 					}
 					catch ( IOException e )
 					{
@@ -165,11 +165,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 					}
 			  }
 
-			  protected internal override void Remove( long entityId )
+			  protected internal override void Remove( long IEntityId )
 			  {
 					try
 					{
-						 outerInstance.Writer.deleteDocuments( newTermForChangeOrRemove( entityId ) );
+						 outerInstance.Writer.deleteDocuments( newTermForChangeOrRemove( IEntityId ) );
 					}
 					catch ( IOException e )
 					{

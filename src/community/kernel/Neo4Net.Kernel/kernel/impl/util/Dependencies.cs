@@ -28,12 +28,12 @@ namespace Neo4Net.Kernel.impl.util
 	using Multimaps = org.eclipse.collections.impl.factory.Multimaps;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class Dependencies extends org.neo4j.graphdb.DependencyResolver_Adapter implements DependencySatisfier
-	public class Dependencies : Neo4Net.Graphdb.DependencyResolver_Adapter, DependencySatisfier
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class Dependencies extends org.Neo4Net.graphdb.DependencyResolver_Adapter implements DependencySatisfier
+	public class Dependencies : Neo4Net.GraphDb.DependencyResolver_Adapter, DependencySatisfier
 	{
 		 private readonly DependencyResolver _parent;
 		 private readonly MutableListMultimap<Type, object> _typeDependencies = Multimaps.mutable.list.empty();

@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Internal
 			 }
 		 }
 
-		 public static string Neo4jVersion
+		 public static string Neo4NetVersion
 		 {
 			 get
 			 {
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 		 /// <summary>
-		 /// A very nice to have main-method for quickly checking the version of a neo4j kernel,
+		 /// A very nice to have main-method for quickly checking the version of a Neo4Net kernel,
 		 /// for example given a kernel jar file.
 		 /// </summary>
 		 public static void Main( string[] args )
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Internal
 			  Console.WriteLine( "Version: " + kernelVersion.GetVersion() );
 		 }
 
-		 internal const string KERNEL_ARTIFACT_ID = "neo4j-kernel";
+		 internal const string KERNEL_ARTIFACT_ID = "Neo4Net-kernel";
 		 private static readonly Version _kernelVersion = new Version( KERNEL_ARTIFACT_ID, typeof( Version ).Assembly.ImplementationVersion );
 	}
 

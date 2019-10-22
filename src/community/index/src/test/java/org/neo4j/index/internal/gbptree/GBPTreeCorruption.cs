@@ -26,19 +26,19 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GBPTreeGenerationTarget_Fields.NO_GENERATION_TARGET;
+//	import static org.Neo4Net.index.Internal.gbptree.GBPTreeGenerationTarget_Fields.NO_GENERATION_TARGET;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.BYTE_POS_KEYCOUNT;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_KEYCOUNT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.BYTE_POS_LEFTSIBLING;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_LEFTSIBLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.BYTE_POS_RIGHTSIBLING;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_RIGHTSIBLING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.BYTE_POS_SUCCESSOR;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.BYTE_POS_SUCCESSOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.goTo;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.goTo;
 
 	/// <summary>
 	/// Use together with <seealso cref="GBPTree.unsafe(GBPTreeUnsafe)"/>
@@ -392,7 +392,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 internal interface PageCorruption<KEY, VALUE>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void corrupt(org.neo4j.io.pagecache.PageCursor pageCursor, Layout<KEY,VALUE> layout, TreeNode<KEY,VALUE> node, TreeState treeState) throws java.io.IOException;
+//ORIGINAL LINE: void corrupt(org.Neo4Net.io.pagecache.PageCursor pageCursor, Layout<KEY,VALUE> layout, TreeNode<KEY,VALUE> node, TreeState treeState) throws java.io.IOException;
 			  void Corrupt( PageCursor pageCursor, Layout<KEY, VALUE> layout, TreeNode<KEY, VALUE> node, TreeState treeState );
 		 }
 

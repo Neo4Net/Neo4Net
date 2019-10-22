@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.management.console
 
 	using SyntaxException = Neo4Net.Cypher.SyntaxException;
 	using ExecutionEngine = Neo4Net.Cypher.Internal.javacompat.ExecutionEngine;
-	using Result = Neo4Net.Graphdb.Result;
+	using Result = Neo4Net.GraphDb.Result;
 	using Neo4Net.Helpers.Collections;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using Log = Neo4Net.Logging.Log;
@@ -33,7 +33,7 @@ namespace Neo4Net.Server.rest.management.console
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.emptyMap;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.emptyMap;
 
 	public class CypherSession : ScriptSession
 	{

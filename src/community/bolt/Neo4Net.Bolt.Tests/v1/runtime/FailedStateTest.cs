@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
 	using BoltStateMachineState = Neo4Net.Bolt.runtime.BoltStateMachineState;
 	using MutableConnectionState = Neo4Net.Bolt.runtime.MutableConnectionState;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using StateMachineContext = Neo4Net.Bolt.runtime.StateMachineContext;
 	using AckFailureMessage = Neo4Net.Bolt.v1.messaging.request.AckFailureMessage;
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
@@ -51,7 +51,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class FailedStateTest
 	{
@@ -142,7 +142,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldProcessAckFailureMessageWithPendingError()
 		 {
-			  Neo4jError error = Neo4jError.from( new Exception() );
+			  Neo4NetError error = Neo4NetError.from( new Exception() );
 			  _connectionState.markFailed( error );
 			  assertEquals( error, _connectionState.PendingError );
 
@@ -173,7 +173,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 internal virtual void ShouldProcessResetMessageWithPerndingError()
 		 {
 			  when( _context.resetMachine() ).thenReturn(true); // reset successful
-			  Neo4jError error = Neo4jError.from( new Exception() );
+			  Neo4NetError error = Neo4NetError.from( new Exception() );
 			  _connectionState.markFailed( error );
 			  assertEquals( error, _connectionState.PendingError );
 

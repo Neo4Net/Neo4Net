@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
@@ -27,19 +27,19 @@ namespace Neo4Net.Graphdb
 //ORIGINAL LINE: @Test public void shouldRequireTransactionsWhenCallingMethodsOnGraphDatabaseService()
 		 public virtual void ShouldRequireTransactionsWhenCallingMethodsOnGraphDatabaseService()
 		 {
-			  AssertFacadeMethodsThrowNotInTransaction( ObtainEntity(), GraphDatabaseServiceFacadeMethods.values() );
+			  AssertFacadeMethodsThrowNotInTransaction( ObtainEntity(), IGraphDatabaseServiceFacadeMethods.values() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldTerminateWhenCallingMethodsOnGraphDatabaseService()
 		 public virtual void ShouldTerminateWhenCallingMethodsOnGraphDatabaseService()
 		 {
-			  AssertFacadeMethodsThrowAfterTerminate( GraphDatabaseServiceFacadeMethods.values() );
+			  AssertFacadeMethodsThrowAfterTerminate( IGraphDatabaseServiceFacadeMethods.values() );
 		 }
 
-		 protected internal override GraphDatabaseService ObtainEntityInTransaction( GraphDatabaseService graphDatabaseService )
+		 protected internal override IGraphDatabaseService ObtainEntityInTransaction( IGraphDatabaseService IGraphDatabaseService )
 		 {
-			  return graphDatabaseService;
+			  return IGraphDatabaseService;
 		 }
 	}
 

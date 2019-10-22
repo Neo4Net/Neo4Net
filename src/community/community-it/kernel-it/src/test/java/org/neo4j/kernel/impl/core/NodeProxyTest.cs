@@ -27,12 +27,12 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
@@ -55,11 +55,11 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.NamedThreadFactory.named;
+//	import static org.Neo4Net.helpers.NamedThreadFactory.named;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.DoubleLatch.awaitLatch;
+//	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
 
-	public class NodeProxyTest : PropertyContainerProxyTest
+	public class NodeProxyTest : IPropertyContainerProxyTest
 	{
 		 private readonly string _propertyKey = "PROPERTY_KEY";
 
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.impl.core
 			  return Db.createNode().Id;
 		 }
 
-		 protected internal override PropertyContainer LookupPropertyContainer( long id )
+		 protected internal override IPropertyContainer LookupPropertyContainer( long id )
 		 {
 			  return Db.getNodeById( id );
 		 }
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.NotFoundException.class) public void deletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
 		 public virtual void DeletionOfSameNodeTwiceInOneTransactionShouldNotRollbackIt()
 		 {
 			  // Given
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedNodeShouldThrow()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.NotFoundException.class) public void deletionOfAlreadyDeletedNodeShouldThrow()
 		 public virtual void DeletionOfAlreadyDeletedNodeShouldThrow()
 		 {
 			  // Given

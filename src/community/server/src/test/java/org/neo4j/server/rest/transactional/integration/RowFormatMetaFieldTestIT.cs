@@ -34,17 +34,17 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.containsNoErrors;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.matches;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.matches;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsAMetaListAtIndex;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsAMetaListAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaNodesAtIndex;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaNodesAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaRelsAtIndex;
+//	import static org.Neo4Net.server.rest.transactional.integration.TransactionMatchers.rowContainsMetaRelsAtIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class RowFormatMetaFieldTestIT : AbstractRestFunctionalTestBase
 	{

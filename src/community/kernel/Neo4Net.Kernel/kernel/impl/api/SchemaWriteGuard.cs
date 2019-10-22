@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertSchemaWritesAllowed() throws org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
+//ORIGINAL LINE: void assertSchemaWritesAllowed() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
 		 void AssertSchemaWritesAllowed();
 	}
 

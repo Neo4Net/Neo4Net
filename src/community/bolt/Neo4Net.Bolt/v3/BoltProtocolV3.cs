@@ -20,13 +20,13 @@
 namespace Neo4Net.Bolt.v3
 {
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltConnectionFactory = Neo4Net.Bolt.runtime.BoltConnectionFactory;
 	using BoltStateMachineFactory = Neo4Net.Bolt.runtime.BoltStateMachineFactory;
 	using BoltProtocolV1 = Neo4Net.Bolt.v1.BoltProtocolV1;
 	using BoltResponseMessageWriterV1 = Neo4Net.Bolt.v1.messaging.BoltResponseMessageWriterV1;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using BoltRequestMessageReaderV3 = Neo4Net.Bolt.v3.messaging.BoltRequestMessageReaderV3;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 
@@ -41,9 +41,9 @@ namespace Neo4Net.Bolt.v3
 		 {
 		 }
 
-		 protected internal override Neo4jPack CreatePack()
+		 protected internal override Neo4NetPack CreatePack()
 		 {
-			  return new Neo4jPackV2();
+			  return new Neo4NetPackV2();
 		 }
 
 		 public override long Version()
@@ -51,9 +51,9 @@ namespace Neo4Net.Bolt.v3
 			  return VERSION;
 		 }
 
-		 protected internal override BoltRequestMessageReader CreateMessageReader( BoltChannel channel, Neo4jPack neo4jPack, BoltConnection connection, LogService logging )
+		 protected internal override BoltRequestMessageReader CreateMessageReader( BoltChannel channel, Neo4NetPack Neo4NetPack, BoltConnection connection, LogService logging )
 		 {
-			  BoltResponseMessageWriterV1 responseWriter = new BoltResponseMessageWriterV1( neo4jPack, connection.Output(), logging );
+			  BoltResponseMessageWriterV1 responseWriter = new BoltResponseMessageWriterV1( Neo4NetPack, connection.Output(), logging );
 			  return new BoltRequestMessageReaderV3( connection, responseWriter, logging );
 		 }
 	}

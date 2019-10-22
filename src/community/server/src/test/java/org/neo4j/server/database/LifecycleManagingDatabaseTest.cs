@@ -21,9 +21,9 @@ namespace Neo4Net.Server.database
 {
 	using Test = org.junit.Test;
 
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.database
 		 {
 			  // Given a lifecycled database that'll try to warm up Cypher when it starts
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.factory.GraphDatabaseFacade mockDb = mock(org.neo4j.kernel.impl.factory.GraphDatabaseFacade.class);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade mockDb = mock(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade.class);
 			  GraphDatabaseFacade mockDb = mock( typeof( GraphDatabaseFacade ) );
 			  Config config = Config.defaults();
 			  GraphDatabaseFacadeFactory.Dependencies deps = GraphDatabaseDependencies.newDependencies().userLogProvider(NullLogProvider.Instance);

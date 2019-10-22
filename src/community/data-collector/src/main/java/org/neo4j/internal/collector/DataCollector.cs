@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Config = Neo4Net.Kernel.configuration.Config;

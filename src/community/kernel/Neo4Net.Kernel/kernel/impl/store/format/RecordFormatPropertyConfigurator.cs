@@ -22,22 +22,22 @@
 namespace Neo4Net.Kernel.impl.store.format
 {
 
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.DEFAULT_BLOCK_SIZE;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_BLOCK_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.DEFAULT_LABEL_BLOCK_SIZE;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_LABEL_BLOCK_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.MINIMAL_BLOCK_SIZE;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.MINIMAL_BLOCK_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.array_block_size;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.array_block_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.label_block_size;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.label_block_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.string_block_size;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.string_block_size;
 
 	/// <summary>
 	/// There are couple of configuration options that should be adapted for each particular implementation of record format.

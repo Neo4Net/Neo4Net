@@ -35,13 +35,13 @@ namespace Neo4Net.Kernel.impl.query
 		 public virtual void ConnectionDetailsForBoltQuerySource()
 		 {
 			  // given
-			  ClientConnectionInfo clientConnection = ( new BoltConnectionInfo( "bolt-42", "username", "neo4j-java-bolt-driver", new InetSocketAddress( "127.0.0.1", 56789 ), new InetSocketAddress( "127.0.0.1", 7687 ) ) ).withUsername( "username" );
+			  ClientConnectionInfo clientConnection = ( new BoltConnectionInfo( "bolt-42", "username", "Neo4Net-java-bolt-driver", new InetSocketAddress( "127.0.0.1", 56789 ), new InetSocketAddress( "127.0.0.1", 7687 ) ) ).withUsername( "username" );
 
 			  // when
 			  string connectionDetails = clientConnection.AsConnectionDetails();
 
 			  // then
-			  assertEquals( "bolt-session\tbolt\tusername\tneo4j-java-bolt-driver\t\tclient/127.0.0.1:56789\t" + "server/127.0.0.1:7687>\tusername", connectionDetails );
+			  assertEquals( "bolt-session\tbolt\tusername\tNeo4Net-java-bolt-driver\t\tclient/127.0.0.1:56789\t" + "server/127.0.0.1:7687>\tusername", connectionDetails );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

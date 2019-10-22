@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.cluster
 {
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 	public class SwitchToSlaveCopyThenBranch : SwitchToSlave
 	{
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkDataConsistency(org.neo4j.kernel.ha.com.slave.MasterClient masterClient, org.neo4j.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.neo4j.storageengine.api.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.neo4j.helpers.CancellationRequest cancellationRequest) throws Throwable
+//ORIGINAL LINE: void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.storageengine.api.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
 		 internal override void CheckDataConsistency( MasterClient masterClient, TransactionIdStore txIdStore, StoreId storeId, URI masterUri, URI me, CancellationRequest cancellationRequest )
 		 {
 			  try
@@ -111,7 +111,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void stopServicesAndHandleBranchedStore(org.neo4j.kernel.ha.BranchedDataPolicy branchPolicy, java.net.URI masterUri, java.net.URI me, org.neo4j.helpers.CancellationRequest cancellationRequest) throws Throwable
+//ORIGINAL LINE: void stopServicesAndHandleBranchedStore(org.Neo4Net.kernel.ha.BranchedDataPolicy branchPolicy, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
 		 internal virtual void StopServicesAndHandleBranchedStore( BranchedDataPolicy branchPolicy, URI masterUri, URI me, CancellationRequest cancellationRequest )
 		 {
 			  MoveAfterCopy moveWithCopyThenBranch = ( moves, fromDirectory, toDirectory ) =>
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void copyStore(java.net.URI masterUri, java.net.URI me, org.neo4j.helpers.CancellationRequest cancellationRequest, org.neo4j.com.storecopy.MoveAfterCopy moveAfterCopy) throws Throwable
+//ORIGINAL LINE: private void copyStore(java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest, org.Neo4Net.com.storecopy.MoveAfterCopy moveAfterCopy) throws Throwable
 		 private void CopyStore( URI masterUri, URI me, CancellationRequest cancellationRequest, MoveAfterCopy moveAfterCopy )
 		 {
 			  bool success = false;

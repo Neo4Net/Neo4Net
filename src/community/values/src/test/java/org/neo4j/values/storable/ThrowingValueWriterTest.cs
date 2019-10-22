@@ -26,7 +26,7 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.ThrowingValueWriter.throwing;
+//	import static org.Neo4Net.values.storable.ThrowingValueWriter.throwing;
 
 	internal class ThrowingValueWriterTest
 	{

@@ -26,17 +26,17 @@ namespace Neo4Net.Kernel.Impl.@event
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using LabelEntry = Neo4Net.Graphdb.@event.LabelEntry;
-	using Neo4Net.Graphdb.@event;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
+	using Neo4Net.GraphDb.Events;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using TestLabels = Neo4Net.Test.TestLabels;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -63,26 +63,26 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.index.IndexManager_Fields.PROVIDER;
+//	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
+//	import static org.Neo4Net.kernel.impl.index.DummyIndexExtensionFactory.IDENTIFIER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.hasProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.hasProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 
 	public class TestTransactionEvents
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.DatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly DatabaseRule DbRule = new ImpermanentDatabaseRule();
 		 private static readonly TimeUnit _awaitIndexUnit = TimeUnit.SECONDS;
 		 private const int AWAIT_INDEX_DURATION = 60;
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  DummyTransactionEventHandler<int> handler1 = new DummyTransactionEventHandler<int>( ( int? ) value1 );
 			  DummyTransactionEventHandler<double> handler2 = new DummyTransactionEventHandler<double>( ( double? ) value2 );
 
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  try
 			  {
 					Db.unregisterTransactionEventHandler( handler1 );
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void MakeSureHandlersCantBeRegisteredTwice()
 		 {
 			  DummyTransactionEventHandler<object> handler = new DummyTransactionEventHandler<object>( null );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Db.registerTransactionEventHandler( handler );
 			  Db.registerTransactionEventHandler( handler );
 			  using ( Transaction tx = Db.beginTx() )
@@ -166,7 +166,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  // Create new data, nothing modified, just added/created
 			  ExpectedTransactionData expectedData = new ExpectedTransactionData();
 			  VerifyingTransactionEventHandler handler = new VerifyingTransactionEventHandler( expectedData );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Db.registerTransactionEventHandler( handler );
 			  Node node1;
 			  Node node2;
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  handlers.Add( new FailingEventHandler<>( new DummyTransactionEventHandler<>( null ), false ) );
 			  handlers.Add( new FailingEventHandler<>( new DummyTransactionEventHandler<>( null ), true ) );
 			  handlers.Add( new FailingEventHandler<>( new DummyTransactionEventHandler<>( null ), false ) );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  foreach ( TransactionEventHandler<object> handler in handlers )
 			  {
 					Db.registerTransactionEventHandler( handler );
@@ -347,7 +347,7 @@ namespace Neo4Net.Kernel.Impl.@event
 	//		  }
 
 			  ExceptionThrowingEventHandler handler = new ExceptionThrowingEventHandler( new MyFancyException(), null, null );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Db.registerTransactionEventHandler( handler );
 
 			  try
@@ -384,7 +384,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //ORIGINAL LINE: @Test public void deleteNodeRelTriggerPropertyRemoveEvents()
 		 public virtual void DeleteNodeRelTriggerPropertyRemoveEvents()
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Node node1;
 			  Node node2;
 			  Relationship rel;
@@ -497,7 +497,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public T beforeCommit(org.neo4j.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public T beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
 			  public override T BeforeCommit( TransactionData data )
 			  {
 					try
@@ -532,7 +532,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object beforeCommit(org.neo4j.graphdb.event.TransactionData data) throws Exception
+//ORIGINAL LINE: public Object beforeCommit(org.Neo4Net.graphdb.event.TransactionData data) throws Exception
 			  public override object BeforeCommit( TransactionData data )
 			  {
 					if ( BeforeCommitException != null )
@@ -620,7 +620,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void MakeSureHandlerIsntCalledWhenTxRolledBack()
 		 {
 			  DummyTransactionEventHandler<int> handler = new DummyTransactionEventHandler<int>( 10 );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Db.registerTransactionEventHandler( handler );
 			  try
 			  {
@@ -644,12 +644,12 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  // Given
 			  // -- create node and set property on it in one transaction
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  const string key = "key";
 			  const object value1 = "the old value";
 			  const object value2 = "the new value";
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node;
 			  Node node;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -672,7 +672,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  Db.unregisterTransactionEventHandler( handler );
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<Void>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<Void>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -702,7 +702,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void NodeCanBecomeSchemaIndexableInBeforeCommitByAddingProperty()
 		 {
 			  // Given we have a schema index...
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  Label label = label( "Label" );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -730,7 +730,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass2 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass2 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -758,9 +758,9 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void NodeCanBecomeSchemaIndexableInBeforeCommitByAddingLabel()
 		 {
 			  // Given we have a schema index...
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label = label("Label");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label = label("Label");
 			  Label label = label( "Label" );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -789,7 +789,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass3 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass3 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -820,7 +820,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void ShouldAccessAssignedLabels()
 		 {
 			  // given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  ChangedLabels labels = ( ChangedLabels ) Db.registerTransactionEventHandler( new ChangedLabels() );
 			  try
@@ -854,7 +854,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 public virtual void ShouldAccessRemovedLabels()
 		 {
 			  // given
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  ChangedLabels labels = ( ChangedLabels ) Db.registerTransactionEventHandler( new ChangedLabels() );
 			  try
@@ -903,8 +903,8 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db = dbRule.getGraphDatabaseAPI();
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db = dbRule.getGraphDatabaseAPI();
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.concurrent.atomic.AtomicInteger accessCount = new java.util.concurrent.atomic.AtomicInteger();
 			  AtomicInteger accessCount = new AtomicInteger();
@@ -953,15 +953,15 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass4 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<Void>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass4 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<Void>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
-			 private GraphDatabaseService _db;
+			 private IGraphDatabaseService _db;
 			 private AtomicInteger _accessCount;
 			 private IDictionary<long, RelationshipData> _expectedRelationshipData;
 
-			 public TransactionEventHandler_AdapterAnonymousInnerClass4( TestTransactionEvents outerInstance, GraphDatabaseService db, AtomicInteger accessCount, IDictionary<long, RelationshipData> expectedRelationshipData )
+			 public TransactionEventHandler_AdapterAnonymousInnerClass4( TestTransactionEvents outerInstance, IGraphDatabaseService db, AtomicInteger accessCount, IDictionary<long, RelationshipData> expectedRelationshipData )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._db = db;
@@ -1005,7 +1005,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //ORIGINAL LINE: @Test public void shouldProvideTheCorrectRelationshipData()
 		 public virtual void ShouldProvideTheCorrectRelationshipData()
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 
 			  // create a rel type so the next type id is non zero
 			  using ( Transaction tx = Db.beginTx() )
@@ -1045,7 +1045,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  assertTrue( livesIn + " not in " + changedRelationships.ToString(), changedRelationships.Contains(livesIn.Name()) );
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass5 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<Void>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass5 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<Void>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -1141,7 +1141,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  assertEquals( 3, counter.get() );
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass6 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<Void>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass6 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<Void>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -1167,7 +1167,7 @@ namespace Neo4Net.Kernel.Impl.@event
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node node = createNode("one", "Two", "three", "Four");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = createNode("one", "Two", "three", "Four");
 			  Node node = CreateNode( "one", "Two", "three", "Four" );
 			  DbRule.GraphDatabaseAPI.registerTransactionEventHandler( new TransactionEventHandler_AdapterAnonymousInnerClass7( this, node ) );
 
@@ -1180,7 +1180,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass7 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass7 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -1238,7 +1238,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  assertThat( deletedToString.get(), containsString(format("(%d)", endNode.Id)) );
 		 }
 
-		 private class TransactionEventHandler_AdapterAnonymousInnerClass8 : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<object>
+		 private class TransactionEventHandler_AdapterAnonymousInnerClass8 : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<object>
 		 {
 			 private readonly TestTransactionEvents _outerInstance;
 
@@ -1345,7 +1345,7 @@ namespace Neo4Net.Kernel.Impl.@event
 			  }
 		 }
 
-		 private sealed class ChangedLabels : Neo4Net.Graphdb.@event.TransactionEventHandler_Adapter<Void>
+		 private sealed class ChangedLabels : Neo4Net.GraphDb.Events.TransactionEventHandler_Adapter<Void>
 		 {
 			  internal readonly IDictionary<Node, ISet<string>> Added = new Dictionary<Node, ISet<string>>();
 			  internal readonly IDictionary<Node, ISet<string>> Removed = new Dictionary<Node, ISet<string>>();

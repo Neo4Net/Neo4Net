@@ -27,11 +27,11 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PagedFile = Neo4Net.Io.pagecache.PagedFile;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.GenerationSafePointerPair.pointer;
+//	import static org.Neo4Net.index.Internal.gbptree.GenerationSafePointerPair.pointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.INTERNAL;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.INTERNAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.TreeNode.Type.LEAF;
+//	import static org.Neo4Net.index.Internal.gbptree.TreeNode.Type.LEAF;
 
 	/// <summary>
 	/// Utility class for printing a <seealso cref="GBPTree"/>, either whole or sub-tree.
@@ -61,7 +61,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="visitor"> <seealso cref="GBPTreeVisitor"/> that shall visit header. </param>
 		 /// <exception cref="IOException"> on I/O error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void visitHeader(org.neo4j.io.pagecache.PageCache pageCache, java.io.File file, GBPTreeVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: public static void visitHeader(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File file, GBPTreeVisitor visitor) throws java.io.IOException
 		 public static void VisitHeader( PageCache pageCache, File file, GBPTreeVisitor visitor )
 		 {
 			  using ( PagedFile pagedFile = pageCache.Map( file, pageCache.PageSize(), StandardOpenOption.READ ) )
@@ -75,7 +75,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void visitMeta(org.neo4j.io.pagecache.PageCursor cursor, GBPTreeVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: private static void visitMeta(org.Neo4Net.io.pagecache.PageCursor cursor, GBPTreeVisitor visitor) throws java.io.IOException
 		 private static void VisitMeta( PageCursor cursor, GBPTreeVisitor visitor )
 		 {
 			  PageCursorUtil.GoTo( cursor, "meta page", IdSpace.META_PAGE_ID );
@@ -84,7 +84,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void visitTreeState(org.neo4j.io.pagecache.PageCursor cursor, GBPTreeVisitor visitor) throws java.io.IOException
+//ORIGINAL LINE: static void visitTreeState(org.Neo4Net.io.pagecache.PageCursor cursor, GBPTreeVisitor visitor) throws java.io.IOException
 		 internal static void VisitTreeState( PageCursor cursor, GBPTreeVisitor visitor )
 		 {
 			  Pair<TreeState, TreeState> statePair = TreeStatePair.ReadStatePages( cursor, IdSpace.STATE_PAGE_A, IdSpace.STATE_PAGE_B );
@@ -99,7 +99,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 /// <param name="visitor"> <seealso cref="GBPTreeVisitor"/> that should visit the tree. </param>
 		 /// <exception cref="IOException"> on page cache access error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void visitTree(org.neo4j.io.pagecache.PageCursor cursor, org.neo4j.io.pagecache.PageCursor writeCursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
+//ORIGINAL LINE: void visitTree(org.Neo4Net.io.pagecache.PageCursor cursor, org.Neo4Net.io.pagecache.PageCursor writeCursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
 		 internal virtual void VisitTree( PageCursor cursor, PageCursor writeCursor, GBPTreeVisitor<KEY, VALUE> visitor )
 		 {
 			  // TreeState
@@ -131,7 +131,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertOnTreeNode(org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private static void assertOnTreeNode(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private static void AssertOnTreeNode( PageCursor cursor )
 		 {
 			  sbyte nodeType;
@@ -155,7 +155,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void visitTreeNode(org.neo4j.io.pagecache.PageCursor cursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
+//ORIGINAL LINE: void visitTreeNode(org.Neo4Net.io.pagecache.PageCursor cursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
 		 internal virtual void VisitTreeNode( PageCursor cursor, GBPTreeVisitor<KEY, VALUE> visitor )
 		 {
 			  //[TYPE][GEN][KEYCOUNT] ([RIGHTSIBLING][LEFTSIBLING][SUCCESSOR]))
@@ -218,7 +218,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean goToLeftmostChild(org.neo4j.io.pagecache.PageCursor readCursor, org.neo4j.io.pagecache.PageCursor writeCursor) throws java.io.IOException
+//ORIGINAL LINE: private boolean goToLeftmostChild(org.Neo4Net.io.pagecache.PageCursor readCursor, org.Neo4Net.io.pagecache.PageCursor writeCursor) throws java.io.IOException
 		 private bool GoToLeftmostChild( PageCursor readCursor, PageCursor writeCursor )
 		 {
 			  bool isInternal;
@@ -241,7 +241,7 @@ namespace Neo4Net.Index.Internal.gbptree
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void visitLevel(org.neo4j.io.pagecache.PageCursor readCursor, org.neo4j.io.pagecache.PageCursor writeCursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
+//ORIGINAL LINE: private void visitLevel(org.Neo4Net.io.pagecache.PageCursor readCursor, org.Neo4Net.io.pagecache.PageCursor writeCursor, GBPTreeVisitor<KEY,VALUE> visitor) throws java.io.IOException
 		 private void VisitLevel( PageCursor readCursor, PageCursor writeCursor, GBPTreeVisitor<KEY, VALUE> visitor )
 		 {
 			  long rightSibling = -1;

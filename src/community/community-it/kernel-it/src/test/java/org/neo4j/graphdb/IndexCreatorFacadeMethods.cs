@@ -19,16 +19,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 
 	public sealed class IndexCreatorFacadeMethods : Consumer<IndexCreator>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       ON(new FacadeMethod<>("IndexCreator on( String propertyKey )", self -> self.on("property"))),
-		 public static readonly IndexCreatorFacadeMethods Create = new IndexCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "IndexDefinition create()", Neo4Net.Graphdb.schema.IndexCreator::create ) );
+		 public static readonly IndexCreatorFacadeMethods Create = new IndexCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "IndexDefinition create()", Neo4Net.GraphDb.schema.IndexCreator::create ) );
 
 		 private static readonly IList<IndexCreatorFacadeMethods> valueList = new List<IndexCreatorFacadeMethods>();
 
@@ -51,7 +51,7 @@ namespace Neo4Net.Graphdb
 
 		 internal Private readonly;
 
-		 internal IndexCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.Graphdb.schema.IndexCreator> facadeMethod )
+		 internal IndexCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.IndexCreator> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -60,7 +60,7 @@ namespace Neo4Net.Graphdb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.Graphdb.schema.IndexCreator indexCreator )
+		 public void Accept( Neo4Net.GraphDb.schema.IndexCreator indexCreator )
 		 {
 			  _facadeMethod.accept( indexCreator );
 		 }

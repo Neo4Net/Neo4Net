@@ -20,14 +20,14 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	/// <summary>
 	/// Builder for <seealso cref="GraphDatabaseService"/>s that allows for setting and loading
@@ -44,7 +44,7 @@ namespace Neo4Net.Graphdb.factory
 			  /// @deprecated this method will go away in 4.0. See <seealso cref="newDatabase(Config)"/> instead. 
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
 [Obsolete("this method will go away in 4.0. See <seealso cref=\"newDatabase(Config)\"/> instead.")]
-//			  default org.neo4j.graphdb.GraphDatabaseService newDatabase(java.util.Map<String, String> config)
+//			  default org.Neo4Net.graphdb.GraphDatabaseService newDatabase(java.util.Map<String, String> config)
 	//		  {
 	//				return newDatabase(Config.defaults(config));
 	//		  }
@@ -52,9 +52,9 @@ namespace Neo4Net.Graphdb.factory
 			  /// <param name="config"> initial configuration for the database. </param>
 			  /// <returns> an instance of <seealso cref="GraphDatabaseService"/>. </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: default org.neo4j.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+//ORIGINAL LINE: default org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default org.neo4j.graphdb.GraphDatabaseService newDatabase( Config config)
+//			  default org.Neo4Net.graphdb.GraphDatabaseService newDatabase( Config config)
 	//		  {
 	//				return newDatabase(config.getRaw());
 	//		  }
@@ -194,8 +194,8 @@ namespace Neo4Net.Graphdb.factory
 		 /// Create a new database with the configuration registered
 		 /// through the builder.
 		 /// </summary>
-		 /// <returns> an instance of GraphDatabaseService </returns>
-		 public virtual GraphDatabaseService NewGraphDatabase()
+		 /// <returns> an instance of IGraphDatabaseService </returns>
+		 public virtual IGraphDatabaseService NewGraphDatabase()
 		 {
 			  return Creator.newDatabase( Config.defaults( ConfigConflict ) );
 		 }
@@ -247,7 +247,7 @@ namespace Neo4Net.Graphdb.factory
 					return this;
 			  }
 
-			  public override GraphDatabaseService NewGraphDatabase()
+			  public override IGraphDatabaseService NewGraphDatabase()
 			  {
 					return Actual.newGraphDatabase();
 			  }

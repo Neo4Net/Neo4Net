@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Neo4Net.Graphdb;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Neo4Net.GraphDb;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
@@ -153,53 +153,53 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE_BTREE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.multi_threaded_schema_index_population_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asCollection;
+//	import static org.Neo4Net.helpers.collection.Iterators.asCollection;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.iterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.loop;
+//	import static org.Neo4Net.helpers.collection.Iterators.loop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.IndexUpdateMode.RECOVERY;
+//	import static org.Neo4Net.kernel.impl.api.index.IndexUpdateMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.MultiPopulatorFactory.forConfig;
+//	import static org.Neo4Net.kernel.impl.api.index.MultiPopulatorFactory.forConfig;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
+//	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.sampling.IndexSamplingMode.TRIGGER_REBUILD_ALL;
+//	import static org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode.TRIGGER_REBUILD_ALL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.register.Registers.newDoubleLongRegister;
+//	import static org.Neo4Net.register.Registers.newDoubleLongRegister;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class IndexingServiceTest
 	{
@@ -221,16 +221,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.kernel.lifecycle.LifeRule life = new org.neo4j.kernel.lifecycle.LifeRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule();
 		 public readonly LifeRule Life = new LifeRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException expectedException = org.junit.rules.ExpectedException.none();
 		 public ExpectedException ExpectedException = ExpectedException.none();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.VerboseTimeout timeoutThreadDumpRule = org.neo4j.test.rule.VerboseTimeout.builder().build();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.VerboseTimeout timeoutThreadDumpRule = org.Neo4Net.test.rule.VerboseTimeout.builder().build();
 		 public VerboseTimeout TimeoutThreadDumpRule = VerboseTimeout.builder().build();
 
 		 private static readonly AssertableLogProvider.LogMatcherBuilder _logMatch = inLog( typeof( IndexingService ) );
@@ -352,7 +352,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  populationStartBarrier.Release();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.kernel.api.index.IndexEntryUpdate<?> value2 = add(2, "value2");
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> value2 = add(2, "value2");
 			  IndexEntryUpdate<object> value2 = Add( 2, "value2" );
 			  using ( IndexUpdater updater = proxy.NewUpdater( IndexUpdateMode.Online ) )
 			  {
@@ -801,7 +801,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void applicationOfIndexUpdatesShouldThrowIfServiceIsShutdown() throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void applicationOfIndexUpdatesShouldThrowIfServiceIsShutdown() throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ApplicationOfIndexUpdatesShouldThrowIfServiceIsShutdown()
 		 {
@@ -899,14 +899,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitForIndexesToComeOnline(IndexingService indexing, long... indexRuleIds) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void waitForIndexesToComeOnline(IndexingService indexing, long... indexRuleIds) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void WaitForIndexesToComeOnline( IndexingService indexing, params long[] indexRuleIds )
 		 {
 			  WaitForIndexesToGetIntoState( indexing, ONLINE, indexRuleIds );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitForIndexesToGetIntoState(IndexingService indexing, org.neo4j.internal.kernel.api.InternalIndexState state, long... indexRuleIds) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void waitForIndexesToGetIntoState(IndexingService indexing, org.Neo4Net.internal.kernel.api.InternalIndexState state, long... indexRuleIds) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void WaitForIndexesToGetIntoState( IndexingService indexing, InternalIndexState state, params long[] indexRuleIds )
 		 {
 			  long end = currentTimeMillis() + SECONDS.toMillis(30);
@@ -920,7 +920,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean allInState(IndexingService indexing, org.neo4j.internal.kernel.api.InternalIndexState state, long[] indexRuleIds) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private boolean allInState(IndexingService indexing, org.Neo4Net.internal.kernel.api.InternalIndexState state, long[] indexRuleIds) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private bool AllInState( IndexingService indexing, InternalIndexState state, long[] indexRuleIds )
 		 {
 			  foreach ( long indexRuleId in indexRuleIds )
@@ -960,7 +960,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				  return updates.GetEnumerator();
 			 }
 
-			 public void feed( EntityCommandGrouper<NodeCommand>.Cursor nodeCommands, EntityCommandGrouper<RelationshipCommand>.Cursor relationshipCommands )
+			 public void feed( IEntityCommandGrouper<NodeCommand>.Cursor nodeCommands, IEntityCommandGrouper<RelationshipCommand>.Cursor relationshipCommands )
 			 {
 				  throw new System.NotSupportedException();
 			 }
@@ -983,7 +983,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long nodeId = 0;
 			  long indexId = 1;
 			  long otherIndexId = 2;
-			  EntityUpdates update = AddNodeUpdate( nodeId, "value" );
+			  IEntityUpdates update = AddNodeUpdate( nodeId, "value" );
 			  when( _storeView.nodeAsUpdates( eq( nodeId ) ) ).thenReturn( update );
 			  Register_DoubleLongRegister register = mock( typeof( Register_DoubleLongRegister ) );
 			  when( register.ReadSecond() ).thenReturn(42L);
@@ -1020,7 +1020,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.DoubleLatch latch = new org.neo4j.test.DoubleLatch();
+//ORIGINAL LINE: final org.Neo4Net.test.DoubleLatch latch = new org.Neo4Net.test.DoubleLatch();
 			  DoubleLatch latch = new DoubleLatch();
 			  ControlledIndexPopulator populator = new ControlledIndexPopulator( latch );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -1154,7 +1154,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(timeout = 60_000L) public void shouldReportCauseOfPopulationFailureIfPopulationFailsDuringRecovery() throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, InterruptedException
+//ORIGINAL LINE: @Test(timeout = 60_000L) public void shouldReportCauseOfPopulationFailureIfPopulationFailsDuringRecovery() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReportCauseOfPopulationFailureIfPopulationFailsDuringRecovery()
 		 {
@@ -1431,7 +1431,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotHaveToWaitForOrphanedUniquenessIndexInRecovery() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException
+//ORIGINAL LINE: @Test public void shouldNotHaveToWaitForOrphanedUniquenessIndexInRecovery() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotHaveToWaitForOrphanedUniquenessIndexInRecovery()
 		 {
@@ -1555,20 +1555,20 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.mockito.stubbing.Answer<org.neo4j.graphdb.ResourceIterator<java.io.File>> newResourceIterator(final java.io.File theFile)
+//ORIGINAL LINE: private static org.mockito.stubbing.Answer<org.Neo4Net.graphdb.ResourceIterator<java.io.File>> newResourceIterator(final java.io.File theFile)
 		 private static Answer<ResourceIterator<File>> NewResourceIterator( File theFile )
 		 {
 			  return invocationOnMock => asResourceIterator( iterator( theFile ) );
 		 }
 
-		 private EntityUpdates AddNodeUpdate( long nodeId, object propertyValue )
+		 private IEntityUpdates AddNodeUpdate( long nodeId, object propertyValue )
 		 {
 			  return AddNodeUpdate( nodeId, propertyValue, _labelId );
 		 }
 
-		 private EntityUpdates AddNodeUpdate( long nodeId, object propertyValue, int labelId )
+		 private IEntityUpdates AddNodeUpdate( long nodeId, object propertyValue, int labelId )
 		 {
-			  return EntityUpdates.ForEntity( nodeId, false ).withTokens( labelId ).added( _index.schema().PropertyId, Values.of(propertyValue) ).build();
+			  return IEntityUpdates.ForEntity( nodeId, false ).withTokens( labelId ).added( _index.schema().PropertyId, Values.of(propertyValue) ).build();
 		 }
 
 		 private IndexEntryUpdate<SchemaDescriptor> Add( long nodeId, object propertyValue )
@@ -1583,14 +1583,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private IndexingService newIndexingServiceWithMockedDependencies(org.neo4j.kernel.api.index.IndexPopulator populator, org.neo4j.kernel.api.index.IndexAccessor accessor, DataUpdates data, org.neo4j.storageengine.api.schema.StoreIndexDescriptor... rules) throws java.io.IOException
+//ORIGINAL LINE: private IndexingService newIndexingServiceWithMockedDependencies(org.Neo4Net.kernel.api.index.IndexPopulator populator, org.Neo4Net.kernel.api.index.IndexAccessor accessor, DataUpdates data, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor... rules) throws java.io.IOException
 		 private IndexingService NewIndexingServiceWithMockedDependencies( IndexPopulator populator, IndexAccessor accessor, DataUpdates data, params StoreIndexDescriptor[] rules )
 		 {
 			  return NewIndexingServiceWithMockedDependencies( populator, accessor, data, IndexingService.NoMonitor, rules );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private IndexingService newIndexingServiceWithMockedDependencies(org.neo4j.kernel.api.index.IndexPopulator populator, org.neo4j.kernel.api.index.IndexAccessor accessor, DataUpdates data, IndexingService.Monitor monitor, org.neo4j.storageengine.api.schema.StoreIndexDescriptor... rules) throws java.io.IOException
+//ORIGINAL LINE: private IndexingService newIndexingServiceWithMockedDependencies(org.Neo4Net.kernel.api.index.IndexPopulator populator, org.Neo4Net.kernel.api.index.IndexAccessor accessor, DataUpdates data, IndexingService.Monitor monitor, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor... rules) throws java.io.IOException
 		 private IndexingService NewIndexingServiceWithMockedDependencies( IndexPopulator populator, IndexAccessor accessor, DataUpdates data, IndexingService.Monitor monitor, params StoreIndexDescriptor[] rules )
 		 {
 			  when( _indexProvider.getInitialState( any( typeof( StoreIndexDescriptor ) ) ) ).thenReturn( ONLINE );
@@ -1610,21 +1610,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return Life.add( IndexingServiceFactory.CreateIndexingService( config, Life.add( IJobSchedulerFactory.createScheduler() ), providerMap, _storeView, _nameLookup, loop(iterator(rules)), _internalLogProvider, _userLogProvider, monitor, _schemaState, false ) );
 		 }
 
-		 private static DataUpdates WithData( params EntityUpdates[] updates )
+		 private static DataUpdates WithData( params IEntityUpdates[] updates )
 		 {
 			  return new DataUpdates( updates );
 		 }
 
 		 private class DataUpdates : Answer<StoreScan<IndexPopulationFailedKernelException>>
 		 {
-			  internal readonly EntityUpdates[] Updates;
+			  internal readonly IEntityUpdates[] Updates;
 
 			  internal DataUpdates()
 			  {
-					this.Updates = new EntityUpdates[0];
+					this.Updates = new IEntityUpdates[0];
 			  }
 
-			  internal DataUpdates( EntityUpdates[] updates )
+			  internal DataUpdates( IEntityUpdates[] updates )
 			  {
 					this.Updates = updates;
 			  }
@@ -1639,7 +1639,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  public override StoreScan<IndexPopulationFailedKernelException> Answer( InvocationOnMock invocation )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.collection.Visitor<EntityUpdates,org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException> visitor = visitor(invocation.getArgument(2));
+//ORIGINAL LINE: final org.Neo4Net.helpers.collection.Visitor<EntityUpdates,org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException> visitor = visitor(invocation.getArgument(2));
 					Visitor<EntityUpdates, IndexPopulationFailedKernelException> visitor = visitor( invocation.getArgument( 2 ) );
 					return new StoreScanAnonymousInnerClass( this, visitor );
 			  }
@@ -1659,10 +1659,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				  private volatile bool stop;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void run() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: public void run() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 				  public void run()
 				  {
-						foreach ( EntityUpdates update in _outerInstance.updates )
+						foreach ( IEntityUpdates update in _outerInstance.updates )
 						{
 							 if ( stop )
 							 {
@@ -1692,7 +1692,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings({"unchecked", "rawtypes"}) private static org.neo4j.helpers.collection.Visitor<EntityUpdates, org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException> visitor(Object v)
+//ORIGINAL LINE: @SuppressWarnings({"unchecked", "rawtypes"}) private static org.Neo4Net.helpers.collection.Visitor<EntityUpdates, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException> visitor(Object v)
 			  internal static Visitor<EntityUpdates, IndexPopulationFailedKernelException> Visitor( object v )
 			  {
 					return ( Visitor ) v;
@@ -1784,7 +1784,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.kernel.api.index.IndexProvider mockIndexProviderWithAccessor(org.neo4j.internal.kernel.api.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexProvider mockIndexProviderWithAccessor(org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
 		 private IndexProvider MockIndexProviderWithAccessor( IndexProviderDescriptor descriptor )
 		 {
 			  IndexProvider provider = mock( typeof( IndexProvider ) );

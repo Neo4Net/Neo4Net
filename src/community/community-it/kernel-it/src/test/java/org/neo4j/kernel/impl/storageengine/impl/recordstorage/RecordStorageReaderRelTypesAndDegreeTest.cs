@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using Neo4Net.Kernel.impl.store;
@@ -54,33 +54,33 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Read_Fields.ANY_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.Internal.kernel.api.Read_Fields.ANY_RELATIONSHIP_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storageengine.impl.recordstorage.TestRelType.IN;
+//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.TestRelType.IN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storageengine.impl.recordstorage.TestRelType.LOOP;
+//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.TestRelType.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.storageengine.impl.recordstorage.TestRelType.OUT;
+//	import static org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.TestRelType.OUT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.RelationshipDirection.INCOMING;
+//	import static org.Neo4Net.storageengine.api.RelationshipDirection.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.RelationshipDirection.OUTGOING;
+//	import static org.Neo4Net.storageengine.api.RelationshipDirection.OUTGOING;
 
 	public class RecordStorageReaderRelTypesAndDegreeTest : RecordStorageReaderTestBase
 	{
 		 private const int RELATIONSHIPS_COUNT = 20;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 
-		 protected internal override GraphDatabaseService CreateGraphDatabase()
+		 protected internal override IGraphDatabaseService CreateGraphDatabase()
 		 {
 			  return ( new TestGraphDatabaseFactory() ).newImpermanentDatabaseBuilder().setConfig(GraphDatabaseSettings.dense_node_threshold, RELATIONSHIPS_COUNT.ToString()).newGraphDatabase();
 		 }
@@ -501,7 +501,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.storageengine.api.StorageNodeCursor newCursor(long nodeId)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.storageengine.api.StorageNodeCursor newCursor(long nodeId)
 		 private StorageNodeCursor NewCursor( long nodeId )
 		 {
 			  StorageNodeCursor nodeCursor = StorageReader.allocateNodeCursor();

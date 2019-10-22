@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using RelationshipStore = Neo4Net.Kernel.impl.store.RelationshipStore;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 	using Neo4Net.Utils.Concurrent;
@@ -55,9 +55,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.DynamicRecord.dynamicRecord;
+//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
 
 	public class NeoTransactionIndexApplierTest
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 		 private readonly IndexingService _indexingService = mock( typeof( IndexingService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<org.neo4j.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private final System.Func<org.Neo4Net.kernel.api.labelscan.LabelScanWriter> labelScanStore = mock(System.Func.class);
 		 private readonly System.Func<LabelScanWriter> _labelScanStore = mock( typeof( System.Func ) );
 		 private readonly ICollection<DynamicRecord> _emptyDynamicRecords = Collections.emptySet();
 		 private WorkSync<System.Func<LabelScanWriter>, LabelUpdateWork> _labelScanStoreSynchronizer = new WorkSync<System.Func<LabelScanWriter>, LabelUpdateWork>( _labelScanStore );
@@ -107,11 +107,11 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final IndexBatchTransactionApplier applier = newIndexTransactionApplier();
 			  IndexBatchTransactionApplier applier = NewIndexTransactionApplier();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.NodeRecord before = new org.neo4j.kernel.impl.store.record.NodeRecord(11);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord before = new org.Neo4Net.kernel.impl.store.record.NodeRecord(11);
 			  NodeRecord before = new NodeRecord( 11 );
 			  before.SetLabelField( 17, _emptyDynamicRecords );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.NodeRecord after = new org.neo4j.kernel.impl.store.record.NodeRecord(12);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord after = new org.Neo4Net.kernel.impl.store.record.NodeRecord(12);
 			  NodeRecord after = new NodeRecord( 12 );
 			  after.SetLabelField( 18, _emptyDynamicRecords );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
 			  StoreIndexDescriptor indexRule = indexRule( 1, 42, 42, _indexDescriptor );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
 			  StoreIndexDescriptor indexRule = indexRule( 1, 42, 42, _indexDescriptor );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

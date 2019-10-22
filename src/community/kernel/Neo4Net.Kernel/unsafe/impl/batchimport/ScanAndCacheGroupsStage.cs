@@ -27,9 +27,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StatsProvider = Neo4Net.@unsafe.Impl.Batchimport.stats.StatsProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.RecordIdIterator.allInReversed;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.RecordIdIterator.allInReversed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Scans <seealso cref="RelationshipGroupRecord"/> from store in reverse, this because during import the relationships
@@ -48,7 +48,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new BatchFeedStep( Control(), config, allInReversed(store, config), store.RecordSize ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.neo4j.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, store));
+//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, false, store));
 			  Add( new ReadRecordsStep<object>( Control(), config, false, store ) );
 			  Add( new CacheGroupsStep( Control(), config, cache, additionalStatsProviders ) );
 		 }

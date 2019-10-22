@@ -21,11 +21,11 @@
  */
 namespace Neo4Net.Cypher.export
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 
 	/// <summary>
 	/// @author mh
@@ -33,14 +33,14 @@ namespace Neo4Net.Cypher.export
 	/// </summary>
 	public class DatabaseSubGraph : SubGraph
 	{
-		 private readonly GraphDatabaseService _gdb;
+		 private readonly IGraphDatabaseService _gdb;
 
-		 public DatabaseSubGraph( GraphDatabaseService gdb )
+		 public DatabaseSubGraph( IGraphDatabaseService gdb )
 		 {
 			  this._gdb = gdb;
 		 }
 
-		 public static SubGraph From( GraphDatabaseService gdb )
+		 public static SubGraph From( IGraphDatabaseService gdb )
 		 {
 			  return new DatabaseSubGraph( gdb );
 		 }

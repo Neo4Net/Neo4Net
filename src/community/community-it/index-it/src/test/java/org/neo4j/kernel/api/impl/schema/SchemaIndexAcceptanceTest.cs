@@ -27,40 +27,40 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.Graphdb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema_IndexState = Neo4Net.Graphdb.schema.Schema_IndexState;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema_IndexState = Neo4Net.GraphDb.schema.Schema_IndexState;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.loop;
+//	import static org.Neo4Net.helpers.collection.Iterators.loop;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.containsOnly;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.containsOnly;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.createIndex;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.createIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.findNodesByLabelAndProperty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.findNodesByLabelAndProperty;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.getIndexes;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.getIndexes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.haveState;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.haveState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.inTx;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.inTx;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.isEmpty;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.isEmpty;
 
 	public class SchemaIndexAcceptanceTest
 	{
@@ -81,10 +81,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private Label _label;
 		 private readonly string _propertyKey = "key";
 
@@ -210,7 +210,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 			  assertThat( getIndexes( _db, _label ), Empty );
 		 }
 
-		 private GraphDatabaseService NewDb()
+		 private IGraphDatabaseService NewDb()
 		 {
 			  return ( new TestGraphDatabaseFactory() ).setFileSystem(new UncloseableDelegatingFileSystemAbstraction(FsRule.get())).newImpermanentDatabase();
 		 }
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 			  }
 		 }
 
-		 private static void DoStuff( GraphDatabaseService db, Label label, string propertyKey )
+		 private static void DoStuff( IGraphDatabaseService db, Label label, string propertyKey )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

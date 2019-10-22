@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 {
 
 	using Neo4Net.Cursors;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.Index.Internal.gbptree;
 	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
 

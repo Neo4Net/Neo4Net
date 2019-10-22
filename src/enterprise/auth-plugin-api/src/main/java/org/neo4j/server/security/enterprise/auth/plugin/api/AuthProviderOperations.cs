@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,59 +15,59 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.plugin.api
 {
 
 	/// <summary>
-	/// These are the methods that the plugin can perform on Neo4j.
+	/// These are the methods that the plugin can perform on Neo4Net.
 	/// </summary>
 	public interface AuthProviderOperations
 	{
 		 /// <summary>
-		 /// Returns the path to the Neo4j home directory.
+		 /// Returns the path to the Neo4Net home directory.
 		 /// </summary>
-		 /// <returns> the path to the Neo4j home directory </returns>
-		 Path Neo4jHome();
+		 /// <returns> the path to the Neo4Net home directory </returns>
+		 Path Neo4NetHome();
 
 		 /// <summary>
-		 /// Returns the path to the Neo4j configuration file if one exists.
+		 /// Returns the path to the Neo4Net configuration file if one exists.
 		 /// </summary>
-		 /// <returns> the path to the Neo4j configuration file if one exists
+		 /// <returns> the path to the Neo4Net configuration file if one exists
 		 /// 
 		 /// @deprecated
-		 /// Settings are recommended to be stored in a separate file. You can use <seealso cref="AuthProviderOperations.neo4jHome()"/>
-		 /// to resolve your configuration file, e.g. {@code neo4jHome().resolve("conf/myPlugin.conf" );} </returns>
+		 /// Settings are recommended to be stored in a separate file. You can use <seealso cref="AuthProviderOperations.Neo4NetHome()"/>
+		 /// to resolve your configuration file, e.g. {@code Neo4NetHome().resolve("conf/myPlugin.conf" );} </returns>
 		 [Obsolete]
-		 Optional<Path> Neo4jConfigFile();
+		 Optional<Path> Neo4NetConfigFile();
 
 		 /// <summary>
-		 /// Returns the Neo4j version.
+		 /// Returns the Neo4Net version.
 		 /// </summary>
-		 /// <returns> the Neo4j version </returns>
-		 string Neo4jVersion();
+		 /// <returns> the Neo4Net version </returns>
+		 string Neo4NetVersion();
 
 		 /// <summary>
-		 /// Returns the clock that is used by the Neo4j security module within which this auth provider plugin is running.
+		 /// Returns the clock that is used by the Neo4Net security module within which this auth provider plugin is running.
 		 /// </summary>
-		 /// <returns> the clock that is used by the Neo4j security module </returns>
+		 /// <returns> the clock that is used by the Neo4Net security module </returns>
 		 Clock Clock();
 
 		 /// <summary>
-		 /// Returns the security log that is used by the Neo4j security module within which this auth provider plugin is
+		 /// Returns the security log that is used by the Neo4Net security module within which this auth provider plugin is
 		 /// running.
 		 /// </summary>
-		 /// <returns> the security log that is used by the Neo4j security module </returns>
+		 /// <returns> the security log that is used by the Neo4Net security module </returns>
 		 AuthProviderOperations_Log Log();
 
 		 /// <summary>
-		 /// An interface to the security log that is used by the Neo4j security module.
+		 /// An interface to the security log that is used by the Neo4Net security module.
 		 /// </summary>
 
 		 /// <summary>

@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -100,7 +100,7 @@ namespace Neo4Net.Kernel.ha
 	/// </para>
 	/// <para>
 	/// <ol>
-	/// <li>Slave issues request to master, for example for locking an entity</li>
+	/// <li>Slave issues request to master, for example for locking an IEntity</li>
 	/// <li>Master responds with a <seealso cref="TransactionObligationResponse transaction obligation"/> telling the slave
 	/// which transaction it must have applied before continuing</li>
 	/// <li>The response from the master gets unpacked by the response unpacker...</li>
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.ha
 	/// 
 	/// </para>
 	/// </summary>
-	/// <seealso cref= org.neo4j.kernel.ha.UpdatePuller </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.ha.UpdatePuller </seealso>
 	public class SlaveUpdatePuller : ThreadStart, UpdatePuller, CancelListener
 	{
 		 public interface Monitor
@@ -132,9 +132,9 @@ namespace Neo4Net.Kernel.ha
 			  void PulledUpdates( long lastAppliedTxId );
 		 }
 
-		 public static readonly int LogCap = Integer.getInteger( "org.neo4j.kernel.ha.SlaveUpdatePuller.LOG_CAP", 10 );
-		 public static readonly long ParkNanos = TimeUnit.MILLISECONDS.toNanos( Integer.getInteger( "org.neo4j.kernel.ha.SlaveUpdatePuller.PARK_MILLIS", 100 ) );
-		 public static readonly int AvailabilityAwaitMillis = Integer.getInteger( "org.neo4j.kernel.ha.SlaveUpdatePuller.AVAILABILITY_AWAIT_MILLIS", 5000 );
+		 public static readonly int LogCap = Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.LOG_CAP", 10 );
+		 public static readonly long ParkNanos = TimeUnit.MILLISECONDS.toNanos( Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.PARK_MILLIS", 100 ) );
+		 public static readonly int AvailabilityAwaitMillis = Integer.getInteger( "org.Neo4Net.kernel.ha.SlaveUpdatePuller.AVAILABILITY_AWAIT_MILLIS", 5000 );
 		 public const string UPDATE_PULLER_THREAD_PREFIX = "UpdatePuller@";
 
 		 private static readonly UpdatePuller_Condition _nextTicket = ( _currentTicket, _targetTicket ) => _currentTicket >= _targetTicket;

@@ -25,13 +25,13 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 
 	/// <summary>
-	/// For databases in dbms.read_only mode, the implementation of <seealso cref="org.neo4j.kernel.impl.api.TransactionCommitProcess"/>
+	/// For databases in dbms.read_only mode, the implementation of <seealso cref="org.Neo4Net.kernel.impl.api.TransactionCommitProcess"/>
 	/// will simply always throw an exception on commit, to ensure that no changes are made.
 	/// </summary>
 	public class ReadOnlyTransactionCommitProcess : TransactionCommitProcess
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(TransactionToApply batch, org.neo4j.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.neo4j.storageengine.api.TransactionApplicationMode mode) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {
 			  throw new ReadOnlyDbException();

@@ -35,11 +35,11 @@ namespace Neo4Net.Server
 	using DisabledTransactionRegistry = Neo4Net.Server.rest.transactional.DisabledTransactionRegistry;
 	using TransactionRegistry = Neo4Net.Server.rest.transactional.TransactionRegistry;
 
-	using static Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory.Dependencies;
+	using static Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory.Dependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.AbstractNeoServer.NEO4J_IS_STARTING_MESSAGE;
+//	import static org.Neo4Net.server.AbstractNeoServer.Neo4Net_IS_STARTING_MESSAGE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.exception.ServerStartupErrors.translateToServerStartupError;
+//	import static org.Neo4Net.server.exception.ServerStartupErrors.translateToServerStartupError;
 
 	public class DisabledNeoServer : NeoServer
 	{
@@ -54,7 +54,7 @@ namespace Neo4Net.Server
 			  this._config = config;
 
 			  _life.add( _db );
-			  dependencies.userLogProvider().getLog(this.GetType()).info(NEO4J_IS_STARTING_MESSAGE);
+			  dependencies.userLogProvider().getLog(this.GetType()).info(Neo4Net_IS_STARTING_MESSAGE);
 		 }
 
 		 public override void Start()
@@ -109,7 +109,7 @@ namespace Neo4Net.Server
 
 		 public override URI BaseUri()
 		 {
-			  throw new System.NotSupportedException( "Neo4j server is disabled" );
+			  throw new System.NotSupportedException( "Neo4Net server is disabled" );
 		 }
 
 		 public virtual IEnumerable<AdvertisableService> Services

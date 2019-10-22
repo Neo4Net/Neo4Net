@@ -26,9 +26,9 @@ namespace Neo4Net.Test
 	using StreamExceptionHandler = Neo4Net.Test.StreamConsumer.StreamExceptionHandler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.StreamConsumer.IGNORE_FAILURES;
+//	import static org.Neo4Net.test.StreamConsumer.IGNORE_FAILURES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.StreamConsumer.PRINT_FAILURES;
+//	import static org.Neo4Net.test.StreamConsumer.PRINT_FAILURES;
 
 	/// <summary>
 	/// Having trouble with your <seealso cref="Process"/>'s output and error streams?

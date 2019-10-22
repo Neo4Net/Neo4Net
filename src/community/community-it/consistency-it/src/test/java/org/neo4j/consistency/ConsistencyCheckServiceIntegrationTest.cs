@@ -31,14 +31,14 @@ namespace Neo4Net.Consistency
 	using Result = Neo4Net.Consistency.ConsistencyCheckService.Result;
 	using GraphStoreFixture = Neo4Net.Consistency.checking.GraphStoreFixture;
 	using ConsistencyCheckIncompleteException = Neo4Net.Consistency.checking.full.ConsistencyCheckIncompleteException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using Strings = Neo4Net.Helpers.Strings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
@@ -74,15 +74,15 @@ namespace Neo4Net.Consistency
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.LUCENE10;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex.NATIVE20;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Property.property;
+//	import static org.Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Property.set;
+//	import static org.Neo4Net.test.Property.set;
 
 	public class ConsistencyCheckServiceIntegrationTest
 	{
@@ -111,7 +111,7 @@ namespace Neo4Net.Consistency
 			 {
 			 }
 
-			 protected internal override void generateInitialData( GraphDatabaseService graphDb )
+			 protected internal override void generateInitialData( IGraphDatabaseService graphDb )
 			 {
 				  using ( Transaction tx = graphDb.BeginTx() )
 				  {
@@ -170,7 +170,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void ableToDeleteDatabaseDirectoryAfterConsistencyCheckRun() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
+//ORIGINAL LINE: @Test public void ableToDeleteDatabaseDirectoryAfterConsistencyCheckRun() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AbleToDeleteDatabaseDirectoryAfterConsistencyCheckRun()
 		 {
@@ -231,7 +231,7 @@ namespace Neo4Net.Consistency
 			  // given
 			  ConsistencyCheckService service = new ConsistencyCheckService();
 			  Config configuration = Config.defaults( Settings() );
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_testDirectory.storeDir()).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).setConfig("dbms.backup.enabled", "false").newGraphDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(_testDirectory.storeDir()).setConfig(GraphDatabaseSettings.record_format, RecordFormatName).setConfig("dbms.backup.enabled", "false").newGraphDatabase();
 
 			  string propertyKey = "itemId";
 			  Label label = Label.label( "Item" );
@@ -256,11 +256,11 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAllowGraphCheckDisabled() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: @Test public void shouldAllowGraphCheckDisabled() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAllowGraphCheckDisabled()
 		 {
-			  GraphDatabaseService gds = GraphDatabaseService;
+			  IGraphDatabaseService gds = IGraphDatabaseService;
 
 			  using ( Transaction tx = gds.BeginTx() )
 			  {
@@ -287,7 +287,7 @@ namespace Neo4Net.Consistency
 		 {
 			  // given
 			  DatabaseLayout databaseLayout = _testDirectory.databaseLayout();
-			  GraphDatabaseService gds = GetGraphDatabaseService( databaseLayout.DatabaseDirectory() );
+			  IGraphDatabaseService gds = GetGraphDatabaseService( databaseLayout.DatabaseDirectory() );
 
 			  Label label = Label.label( "label" );
 			  string propKey = "propKey";
@@ -321,7 +321,7 @@ namespace Neo4Net.Consistency
 			  string propKey = "propKey";
 
 			  // Given a lucene index
-			  GraphDatabaseService db = GetGraphDatabaseService( databaseLayout.DatabaseDirectory(), defaultSchemaProvider, LUCENE10.providerName() );
+			  IGraphDatabaseService db = GetGraphDatabaseService( databaseLayout.DatabaseDirectory(), defaultSchemaProvider, LUCENE10.providerName() );
 			  CreateIndex( db, label, propKey );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -337,7 +337,7 @@ namespace Neo4Net.Consistency
 			  assertTrue( result.Successful );
 		 }
 
-		 private static void CreateIndex( GraphDatabaseService gds, Label label, string propKey )
+		 private static void CreateIndex( IGraphDatabaseService gds, Label label, string propKey )
 		 {
 			  IndexDefinition indexDefinition;
 
@@ -364,7 +364,7 @@ namespace Neo4Net.Consistency
 			  return file;
 		 }
 
-		 private GraphDatabaseService GraphDatabaseService
+		 private IGraphDatabaseService IGraphDatabaseService
 		 {
 			 get
 			 {
@@ -372,12 +372,12 @@ namespace Neo4Net.Consistency
 			 }
 		 }
 
-		 private GraphDatabaseService getGraphDatabaseService( File storeDir )
+		 private IGraphDatabaseService getGraphDatabaseService( File storeDir )
 		 {
 			  return GetGraphDatabaseService( storeDir, new string[0] );
 		 }
 
-		 private GraphDatabaseService getGraphDatabaseService( File storeDir, params string[] settings )
+		 private IGraphDatabaseService getGraphDatabaseService( File storeDir, params string[] settings )
 		 {
 			  GraphDatabaseBuilder builder = ( new TestGraphDatabaseFactory() ).newEmbeddedDatabaseBuilder(storeDir);
 			  builder.Config = settings( settings );
@@ -464,7 +464,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void breakNodeStore() throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void breakNodeStore() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void BreakNodeStore()
 		 {
 			  fixture.apply( new TransactionAnonymousInnerClass( this ) );
@@ -486,14 +486,14 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.neo4j.kernel.configuration.Config configuration) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private org.Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.Neo4Net.kernel.configuration.Config configuration) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private Result RunFullConsistencyCheck( ConsistencyCheckService service, Config configuration )
 		 {
 			  return RunFullConsistencyCheck( service, configuration, fixture.databaseLayout() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.neo4j.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.neo4j.kernel.configuration.Config configuration, org.neo4j.io.layout.DatabaseLayout databaseLayout) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private static org.Neo4Net.consistency.ConsistencyCheckService.Result runFullConsistencyCheck(ConsistencyCheckService service, org.Neo4Net.kernel.configuration.Config configuration, org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private static Result RunFullConsistencyCheck( ConsistencyCheckService service, Config configuration, DatabaseLayout databaseLayout )
 		 {
 			  return service.RunFullConsistencyCheck( databaseLayout, configuration, ProgressMonitorFactory.NONE, NullLogProvider.Instance, false );

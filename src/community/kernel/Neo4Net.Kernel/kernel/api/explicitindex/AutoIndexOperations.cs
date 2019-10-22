@@ -27,32 +27,32 @@ namespace Neo4Net.Kernel.api.explicitindex
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
-	/// Abstract interface for accessing legacy auto indexing facilities for a given type of entity (nodes or relationships)
+	/// Abstract interface for accessing legacy auto indexing facilities for a given type of IEntity (nodes or relationships)
 	/// 
 	/// Instances have three main concerns:
-	/// - Controlling if auto indexing of the underlying entity type (node/relationship) is enabled or disabled
+	/// - Controlling if auto indexing of the underlying IEntity type (node/relationship) is enabled or disabled
 	/// - Controlling which properties are being indexed currently
 	/// - Tracking updates
 	/// </summary>
 	/// <seealso cref= AutoIndexing </seealso>
-	/// <seealso cref= org.neo4j.kernel.impl.api.explicitindex.InternalAutoIndexOperations </seealso>
+	/// <seealso cref= org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexOperations </seealso>
 	public interface AutoIndexOperations
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyAdded(org.neo4j.internal.kernel.api.ExplicitIndexWrite write, long entityId, int propertyKeyId, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
-		 void PropertyAdded( ExplicitIndexWrite write, long entityId, int propertyKeyId, Value value );
+//ORIGINAL LINE: void propertyAdded(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+		 void PropertyAdded( ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyChanged(org.neo4j.internal.kernel.api.ExplicitIndexWrite write, long entityId, int propertyKeyId, org.neo4j.values.storable.Value oldValue, org.neo4j.values.storable.Value newValue) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
-		 void PropertyChanged( ExplicitIndexWrite write, long entityId, int propertyKeyId, Value oldValue, Value newValue );
+//ORIGINAL LINE: void propertyChanged(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value oldValue, org.Neo4Net.values.storable.Value newValue) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+		 void PropertyChanged( ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value oldValue, Value newValue );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyRemoved(org.neo4j.internal.kernel.api.ExplicitIndexWrite write, long entityId, int propertyKey) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
-		 void PropertyRemoved( ExplicitIndexWrite write, long entityId, int propertyKey );
+//ORIGINAL LINE: void propertyRemoved(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+		 void PropertyRemoved( ExplicitIndexWrite write, long IEntityId, int propertyKey );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void entityRemoved(org.neo4j.internal.kernel.api.ExplicitIndexWrite write, long entityId) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
-		 void EntityRemoved( ExplicitIndexWrite write, long entityId );
+//ORIGINAL LINE: void IEntityRemoved(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+		 void IEntityRemoved( ExplicitIndexWrite write, long IEntityId );
 
 		 bool Enabled();
 
@@ -71,22 +71,22 @@ namespace Neo4Net.Kernel.api.explicitindex
 	//	 AutoIndexOperations UNSUPPORTED = new AutoIndexOperations()
 	//	 {
 	//
-	//		  @@Override public void propertyAdded(ExplicitIndexWrite write, long entityId, int propertyKeyId, Value value)
+	//		  @@Override public void propertyAdded(ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value value)
 	//		  {
 	//				throw new UnsupportedOperationException();
 	//		  }
 	//
-	//		  @@Override public void propertyChanged(ExplicitIndexWrite write, long entityId, int propertyKeyId, Value oldValue, Value newValue)
+	//		  @@Override public void propertyChanged(ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value oldValue, Value newValue)
 	//		  {
 	//				throw new UnsupportedOperationException();
 	//		  }
 	//
-	//		  @@Override public void propertyRemoved(ExplicitIndexWrite write, long entityId, int propertyKey)
+	//		  @@Override public void propertyRemoved(ExplicitIndexWrite write, long IEntityId, int propertyKey)
 	//		  {
 	//				throw new UnsupportedOperationException();
 	//		  }
 	//
-	//		  @@Override public void entityRemoved(ExplicitIndexWrite write, long entityId)
+	//		  @@Override public void IEntityRemoved(ExplicitIndexWrite write, long IEntityId)
 	//		  {
 	//				throw new UnsupportedOperationException();
 	//		  }

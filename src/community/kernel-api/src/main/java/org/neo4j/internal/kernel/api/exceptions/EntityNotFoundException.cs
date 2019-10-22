@@ -20,33 +20,33 @@
 namespace Neo4Net.Internal.Kernel.Api.exceptions
 {
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
-	public class EntityNotFoundException : KernelException
+	public class IEntityNotFoundException : KernelException
 	{
-		 private readonly EntityType _entityType;
+		 private readonly IEntityType _entityType;
 		 private readonly long _entityId;
 
-		 public EntityNotFoundException( EntityType entityType, long entityId ) : base( org.neo4j.kernel.api.exceptions.Status_Statement.EntityNotFound, "Unable to load %s with id %s.", entityType.name(), entityId )
+		 public IEntityNotFoundException( IEntityType IEntityType, long IEntityId ) : base( org.Neo4Net.kernel.api.exceptions.Status_Statement.EntityNotFound, "Unable to load %s with id %s.", IEntityType.name(), IEntityId )
 		 {
-			  this._entityType = entityType;
-			  this._entityId = entityId;
+			  this._entityType = IEntityType;
+			  this._entityId = IEntityId;
 		 }
 
-		 public virtual EntityType EntityType()
+		 public virtual IEntityType IEntityType()
 		 {
 			  if ( _entityType == null )
 			  {
-					throw new System.InvalidOperationException( "No entity type specified for this exception", this );
+					throw new System.InvalidOperationException( "No IEntity type specified for this exception", this );
 			  }
 			  return _entityType;
 		 }
 
-		 public virtual long EntityId()
+		 public virtual long IEntityId()
 		 {
 			  if ( _entityId == -1 )
 			  {
-					throw new System.InvalidOperationException( "No entity id specified for this exception", this );
+					throw new System.InvalidOperationException( "No IEntity id specified for this exception", this );
 			  }
 			  return _entityId;
 		 }

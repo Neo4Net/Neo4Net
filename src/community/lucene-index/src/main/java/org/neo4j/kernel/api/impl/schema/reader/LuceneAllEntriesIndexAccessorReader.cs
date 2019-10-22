@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 private readonly BoundedIterable<Document> _documents;
 		 private readonly System.Func<Document, long> _entityIdReader;
 
-		 public LuceneAllEntriesIndexAccessorReader( BoundedIterable<Document> documents, System.Func<Document, long> entityIdReader )
+		 public LuceneAllEntriesIndexAccessorReader( BoundedIterable<Document> documents, System.Func<Document, long> IEntityIdReader )
 		 {
 			  this._documents = documents;
-			  this._entityIdReader = entityIdReader;
+			  this._entityIdReader = IEntityIdReader;
 		 }
 
 		 public override long MaxCount()

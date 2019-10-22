@@ -25,14 +25,14 @@ namespace Neo4Net.Index
 	using ExpectedException = org.junit.rules.ExpectedException;
 	using TestName = org.junit.rules.TestName;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Neo4jMatchers = Neo4Net.Test.mockito.matcher.Neo4jMatchers;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -43,7 +43,7 @@ namespace Neo4Net.Index
 	public class BigPropertyIndexValidationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testName = new org.junit.rules.TestName();
@@ -72,8 +72,8 @@ namespace Neo4Net.Index
 		 public virtual void ShouldFailTransactionThatIndexesLargePropertyDuringNodeCreation()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
-			  IndexDefinition index = Neo4jMatchers.createIndex( db, _label, _propertyKey );
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IndexDefinition index = Neo4NetMatchers.createIndex( db, _label, _propertyKey );
 
 			  //We expect this transaction to fail due to the huge property
 			  ExpectedException.expect( typeof( TransactionFailureException ) );
@@ -105,8 +105,8 @@ namespace Neo4Net.Index
 		 public virtual void ShouldFailTransactionThatIndexesLargePropertyAfterNodeCreation()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
-			  IndexDefinition index = Neo4jMatchers.createIndex( db, _label, _propertyKey );
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IndexDefinition index = Neo4NetMatchers.createIndex( db, _label, _propertyKey );
 
 			  //We expect this transaction to fail due to the huge property
 			  ExpectedException.expect( typeof( TransactionFailureException ) );
@@ -139,8 +139,8 @@ namespace Neo4Net.Index
 		 public virtual void ShouldFailTransactionThatIndexesLargePropertyOnLabelAdd()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
-			  IndexDefinition index = Neo4jMatchers.createIndex( db, _label, _propertyKey );
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IndexDefinition index = Neo4NetMatchers.createIndex( db, _label, _propertyKey );
 
 			  //We expect this transaction to fail due to the huge property
 			  ExpectedException.expect( typeof( TransactionFailureException ) );

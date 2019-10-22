@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.configuration
 
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 
@@ -33,11 +33,11 @@ namespace Neo4Net.Kernel.configuration
 //	import static org.junit.Assert.assertEquals;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.advertisedAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.listenAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
 
 	public class AdvertisedAddressSettingsTest
 	{

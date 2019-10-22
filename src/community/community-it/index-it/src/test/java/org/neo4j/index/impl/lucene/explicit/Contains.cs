@@ -25,7 +25,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Factory = org.hamcrest.Factory;
 	using TypeSafeMatcher = org.hamcrest.TypeSafeMatcher;
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
 	public class Contains<T> : TypeSafeMatcher<IndexHits<T>>

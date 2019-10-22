@@ -28,9 +28,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using StorePrepareIdSequence = Neo4Net.@unsafe.Impl.Batchimport.store.StorePrepareIdSequence;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.RECYCLE_BATCHES;
 
 	/// <summary>
 	/// Updates sparse <seealso cref="NodeRecord node records"/> with relationship heads after relationship linking. Steps:
@@ -51,13 +51,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  Add( new ReadNodeIdsByCacheStep( Control(), config, cache, NodeType.NODE_TYPE_SPARSE ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new org.neo4j.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, nodeStore));
+//ORIGINAL LINE: add(new org.Neo4Net.unsafe.impl.batchimport.staging.ReadRecordsStep<>(control(), config, true, nodeStore));
 			  Add( new ReadRecordsStep<object>( Control(), config, true, nodeStore ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: add(new RecordProcessorStep<>(control(), "LINK", config, new SparseNodeFirstRelationshipProcessor(cache), false));
 			  Add( new RecordProcessorStep<object>( Control(), "LINK", config, new SparseNodeFirstRelationshipProcessor(cache), false ) );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, nodeStore, new org.neo4j.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
+//ORIGINAL LINE: add(new UpdateRecordsStep<>(control(), config, nodeStore, new org.Neo4Net.unsafe.impl.batchimport.store.StorePrepareIdSequence()));
 			  Add( new UpdateRecordsStep<object>( Control(), config, nodeStore, new StorePrepareIdSequence() ) );
 		 }
 	}

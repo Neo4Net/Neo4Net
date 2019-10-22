@@ -25,7 +25,7 @@ namespace Neo4Net.Internal.Kernel.Api.exceptions
 
 	public class InvalidTransactionTypeKernelException : KernelException
 	{
-		 public InvalidTransactionTypeKernelException( string message ) : base( org.neo4j.kernel.api.exceptions.Status_Transaction.ForbiddenDueToTransactionType, ( Exception ) null, message )
+		 public InvalidTransactionTypeKernelException( string message ) : base( org.Neo4Net.kernel.api.exceptions.Status_Transaction.ForbiddenDueToTransactionType, ( Exception ) null, message )
 		 {
 		 }
 	}

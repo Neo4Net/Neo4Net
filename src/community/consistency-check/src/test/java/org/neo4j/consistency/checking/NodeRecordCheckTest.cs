@@ -53,7 +53,7 @@ namespace Neo4Net.Consistency.checking
 
 	internal class NodeRecordCheckTest : RecordCheckTestBase<NodeRecord, Neo4Net.Consistency.report.ConsistencyReport_NodeConsistencyReport, NodeRecordCheck>
 	{
-		 internal NodeRecordCheckTest() : base(new NodeRecordCheck(RelationshipField.NEXT_REL, LabelsField.LABELS, new PropertyChain<>(from -> null)), typeof(org.neo4j.consistency.report.ConsistencyReport_NodeConsistencyReport), new int[0])
+		 internal NodeRecordCheckTest() : base(new NodeRecordCheck(RelationshipField.NEXT_REL, LabelsField.LABELS, new PropertyChain<>(from -> null)), typeof(org.Neo4Net.consistency.report.ConsistencyReport_NodeConsistencyReport), new int[0])
 		 {
 		 }
 
@@ -335,7 +335,7 @@ namespace Neo4Net.Consistency.checking
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.NodeRecord node = inUse(new org.neo4j.kernel.impl.store.record.NodeRecord(42, false, NONE, NONE));
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord node = inUse(new org.Neo4Net.kernel.impl.store.record.NodeRecord(42, false, NONE, NONE));
 			  NodeRecord node = InUse( new NodeRecord( 42, false, NONE, NONE ) );
 			  // We need to do this override so we can put the labels unsorted, since InlineNodeLabels always sorts on insert
 			  new InlineNodeLabelsAnonymousInnerClass( this, node )
@@ -380,7 +380,7 @@ namespace Neo4Net.Consistency.checking
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.record.NodeRecord node = inUse(new org.neo4j.kernel.impl.store.record.NodeRecord(42, false, NONE, NONE));
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.record.NodeRecord node = inUse(new org.Neo4Net.kernel.impl.store.record.NodeRecord(42, false, NONE, NONE));
 			  NodeRecord node = InUse( new NodeRecord( 42, false, NONE, NONE ) );
 			  // We need to do this override so we can put the labels unsorted, since InlineNodeLabels always sorts on insert
 			  new InlineNodeLabelsAnonymousInnerClass2( this, node )

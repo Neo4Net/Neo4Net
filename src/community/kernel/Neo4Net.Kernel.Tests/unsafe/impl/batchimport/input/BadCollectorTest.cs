@@ -35,20 +35,20 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.NullOutputStream.NULL_OUTPUT_STREAM;
+//	import static org.Neo4Net.io.NullOutputStream.NULL_OUTPUT_STREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.OtherThreadExecutor.command;
+//	import static org.Neo4Net.test.OtherThreadExecutor.command;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.COLLECT_ALL;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.COLLECT_ALL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.NO_MONITOR;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.BadCollector.UNLIMITED_TOLERANCE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.BadCollector.UNLIMITED_TOLERANCE;
 
 	public class BadCollectorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fs = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fs = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule Fs = new EphemeralFileSystemRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -243,7 +243,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File badDataFile(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File badDataPath) throws java.io.IOException
+//ORIGINAL LINE: private java.io.File badDataFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File badDataPath) throws java.io.IOException
 		 private File BadDataFile( FileSystemAbstraction fileSystem, File badDataPath )
 		 {
 			  fileSystem.Mkdir( badDataPath.ParentFile );

@@ -31,12 +31,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 	using Primitive = Neo4Net.Collections.primitive.Primitive;
 	using PrimitiveLongSet = Neo4Net.Collections.primitive.PrimitiveLongSet;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using KernelImpl = Neo4Net.Kernel.Impl.Api.KernelImpl;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
@@ -67,30 +67,30 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextIndexProviderFactory.DESCRIPTOR;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexProviderFactory.DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.assertQueryFindsIds;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.assertQueryFindsIds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.multiToken;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.multiToken;
 
 	public class FulltextIndexProviderTest
 	{
 		 private const string NAME = "fulltext";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.junit.rules.Timeout timeout = org.neo4j.test.rule.VerboseTimeout.builder().withTimeout(1, java.util.concurrent.TimeUnit.MINUTES).build();
+//ORIGINAL LINE: @Rule public org.junit.rules.Timeout timeout = org.Neo4Net.test.rule.VerboseTimeout.builder().withTimeout(1, java.util.concurrent.TimeUnit.MINUTES).build();
 		 public Timeout Timeout = VerboseTimeout.builder().withTimeout(1, TimeUnit.MINUTES).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public DatabaseRule Db = new EmbeddedDatabaseRule();
 
 		 private Node _node1;
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  IndexReference indexReference;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, EntityType.RELATIONSHIP, 0, 1, 2, 3 );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, IEntityType.RELATIONSHIP, 0, 1, 2, 3 );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					indexReference = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), "fulltext");
 					transaction.Success();
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  IndexReference indexReference;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, EntityType.RELATIONSHIP, 0, 1, 2, 3 );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, IEntityType.RELATIONSHIP, 0, 1, 2, 3 );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					indexReference = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), "fulltext");
 					transaction.Success();
@@ -387,14 +387,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.IndexReference createIndex(int[] entityTokens, int[] propertyIds) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException, org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException, org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
-		 private IndexReference CreateIndex( int[] entityTokens, int[] propertyIds )
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createIndex(int[] IEntityTokens, int[] propertyIds) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+		 private IndexReference CreateIndex( int[] IEntityTokens, int[] propertyIds )
 
 		 {
 			  IndexReference fulltext;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( entityTokens, EntityType.NODE, propertyIds );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( IEntityTokens, IEntityType.NODE, propertyIds );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					fulltext = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), NAME);
 					transaction.Success();
@@ -403,7 +403,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(org.neo4j.internal.kernel.api.IndexReference fulltextIndexDescriptor) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(org.Neo4Net.internal.kernel.api.IndexReference fulltextIndexDescriptor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private void VerifyThatFulltextIndexIsPresent( IndexReference fulltextIndexDescriptor )
 		 {
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
@@ -509,7 +509,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void await(org.neo4j.internal.kernel.api.IndexReference descriptor) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void await(org.Neo4Net.internal.kernel.api.IndexReference descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 private void Await( IndexReference descriptor )
 		 {
 			  try

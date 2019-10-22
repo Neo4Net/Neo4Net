@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Internal.Kernel.Api
 {
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
 	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
@@ -48,7 +48,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="labels"> The labels to assign to the newly created node. </param>
 		 /// <returns> The internal id of the created node. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long nodeCreateWithLabels(int[] labels) throws org.neo4j.internal.kernel.api.exceptions.schema.ConstraintValidationException;
+//ORIGINAL LINE: long nodeCreateWithLabels(int[] labels) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException;
 		 long NodeCreateWithLabels( int[] labels );
 
 		 /// <summary>
@@ -57,7 +57,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="node"> the internal id of the node to delete </param>
 		 /// <returns> returns true if it deleted a node or false if no node was found for this id </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean nodeDelete(long node) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: boolean nodeDelete(long node) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
 		 bool NodeDelete( long node );
 
 		 /// <summary>
@@ -66,7 +66,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="node"> the node to delete </param>
 		 /// <returns> the number of deleted relationships </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int nodeDetachDelete(long node) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: int nodeDetachDelete(long node) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 int NodeDetachDelete( long node );
 
 		 /// <summary>
@@ -77,7 +77,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="targetNode"> the target internal node id </param>
 		 /// <returns> the internal id of the created relationship </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long relationshipCreate(long sourceNode, int relationshipType, long targetNode) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException;
+//ORIGINAL LINE: long relationshipCreate(long sourceNode, int relationshipType, long targetNode) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException;
 		 long RelationshipCreate( long sourceNode, int relationshipType, long targetNode );
 
 		 /// <summary>
@@ -85,7 +85,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// </summary>
 		 /// <param name="relationship"> the internal id of the relationship to delete </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean relationshipDelete(long relationship) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: boolean relationshipDelete(long relationship) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
 		 bool RelationshipDelete( long relationship );
 
 		 /// <summary>
@@ -96,7 +96,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <returns> {@code true} if a label was added otherwise {@code false} </returns>
 		 /// <exception cref="ConstraintValidationException"> if adding the label to node breaks a constraint </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean nodeAddLabel(long node, int nodeLabel) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: boolean nodeAddLabel(long node, int nodeLabel) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 bool NodeAddLabel( long node, int nodeLabel );
 
 		 /// <summary>
@@ -106,7 +106,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="nodeLabel"> the internal id of the label to remove </param>
 		 /// <returns> {@code true} if node was removed otherwise {@code false} </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean nodeRemoveLabel(long node, int nodeLabel) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException;
+//ORIGINAL LINE: boolean nodeRemoveLabel(long node, int nodeLabel) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException;
 		 bool NodeRemoveLabel( long node, int nodeLabel );
 
 		 /// <summary>
@@ -117,7 +117,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> the value to set </param>
 		 /// <returns> The replaced value, or Values.NO_VALUE if the node did not have the property before </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.storable.Value nodeSetProperty(long node, int propertyKey, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: org.Neo4Net.values.storable.Value nodeSetProperty(long node, int propertyKey, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
 		 Value NodeSetProperty( long node, int propertyKey, Value value );
 
 		 /// <summary>
@@ -127,7 +127,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="propertyKey"> the property key id </param>
 		 /// <returns> The removed value, or Values.NO_VALUE if the node did not have the property before </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.storable.Value nodeRemoveProperty(long node, int propertyKey) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: org.Neo4Net.values.storable.Value nodeRemoveProperty(long node, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
 		 Value NodeRemoveProperty( long node, int propertyKey );
 
 		 /// <summary>
@@ -138,7 +138,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="value"> the value to set </param>
 		 /// <returns> The replaced value, or Values.NO_VALUE if the relationship did not have the property before </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.storable.Value relationshipSetProperty(long relationship, int propertyKey, org.neo4j.values.storable.Value value) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: org.Neo4Net.values.storable.Value relationshipSetProperty(long relationship, int propertyKey, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
 		 Value RelationshipSetProperty( long relationship, int propertyKey, Value value );
 
 		 /// <summary>
@@ -148,7 +148,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 /// <param name="propertyKey"> the property key id </param>
 		 /// <returns> The removed value, or Values.NO_VALUE if the relationship did not have the property before </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.values.storable.Value relationshipRemoveProperty(long relationship, int propertyKey) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException, org.neo4j.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: org.Neo4Net.values.storable.Value relationshipRemoveProperty(long relationship, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
 		 Value RelationshipRemoveProperty( long relationship, int propertyKey );
 
 		 /// <summary>

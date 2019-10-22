@@ -22,9 +22,9 @@
 namespace Neo4Net.Configuration
 {
 
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
+	using Neo4Net.GraphDb.config;
 
 	/// <summary>
 	/// Describes one or several configuration options.
@@ -32,7 +32,7 @@ namespace Neo4Net.Configuration
 	public class ConfigOptions
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.graphdb.config.SettingGroup<?> settingGroup;
+//ORIGINAL LINE: private final org.Neo4Net.graphdb.config.SettingGroup<?> settingGroup;
 		 private readonly SettingGroup<object> _settingGroup;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -43,7 +43,7 @@ namespace Neo4Net.Configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public org.neo4j.graphdb.config.SettingGroup<?> settingGroup()
+//ORIGINAL LINE: @Nonnull public org.Neo4Net.graphdb.config.SettingGroup<?> settingGroup()
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 public virtual SettingGroup<object> SettingGroup()
 		 {
@@ -55,7 +55,7 @@ namespace Neo4Net.Configuration
 		 public virtual IList<ConfigValue> AsConfigValues( IDictionary<string, string> validConfig )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<String,org.neo4j.graphdb.config.Setting<?>> settings = settingGroup.settings(validConfig).stream().collect(java.util.stream.Collectors.toMap(org.neo4j.graphdb.config.Setting::name, s -> s));
+//ORIGINAL LINE: java.util.Map<String,org.Neo4Net.graphdb.config.Setting<?>> settings = settingGroup.settings(validConfig).stream().collect(java.util.stream.Collectors.toMap(org.Neo4Net.graphdb.config.Setting::name, s -> s));
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 			  IDictionary<string, Setting<object>> settings = _settingGroup.settings( validConfig ).ToDictionary( Setting::name, s => s );
 

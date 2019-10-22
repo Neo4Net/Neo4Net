@@ -30,20 +30,20 @@ namespace Neo4Net.Kernel
 
 	using ClassGuardedAdversary = Neo4Net.Adversaries.ClassGuardedAdversary;
 	using CountingAdversary = Neo4Net.Adversaries.CountingAdversary;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using DatabaseCreator = Neo4Net.Graphdb.factory.GraphDatabaseBuilder.DatabaseCreator;
-	using PlatformModule = Neo4Net.Graphdb.factory.module.PlatformModule;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using DatabaseCreator = Neo4Net.GraphDb.factory.GraphDatabaseBuilder.DatabaseCreator;
+	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
@@ -125,19 +125,19 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.facade.GraphDatabaseDependencies.newDependencies;
+//	import static org.Neo4Net.graphdb.facade.GraphDatabaseDependencies.newDependencies;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.array;
+//	import static org.Neo4Net.helpers.ArrayUtil.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.count;
+//	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.defaults;
+//	import static org.Neo4Net.kernel.configuration.Config.defaults;
 
 	public class RecoveryIT
 	{
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void IdGeneratorsRebuildAfterRecovery()
 		 {
-			  GraphDatabaseService database = StartDatabase( _directory.databaseDir() );
+			  IGraphDatabaseService database = StartDatabase( _directory.databaseDir() );
 			  int numberOfNodes = 10;
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -187,7 +187,7 @@ namespace Neo4Net.Kernel
 			  // copying only transaction log simulate non clean shutdown db that should be able to recover just from logs
 			  File restoreDbStoreDir = CopyTransactionLogs();
 
-			  GraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
+			  IGraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
 			  using ( Transaction tx = recoveredDatabase.BeginTx() )
 			  {
 					assertEquals( numberOfNodes, count( recoveredDatabase.AllNodes ) );
@@ -205,7 +205,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ReportProgressOnRecovery()
 		 {
-			  GraphDatabaseService database = StartDatabase( _directory.databaseDir() );
+			  IGraphDatabaseService database = StartDatabase( _directory.databaseDir() );
 			  for ( int i = 0; i < 10; i++ )
 			  {
 					using ( Transaction transaction = database.BeginTx() )
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel
 			  }
 
 			  File restoreDbStoreDir = CopyTransactionLogs();
-			  GraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
+			  IGraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
 			  using ( Transaction transaction = recoveredDatabase.BeginTx() )
 			  {
 					assertEquals( 10, count( recoveredDatabase.AllNodes ) );
@@ -233,7 +233,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRecoverIdsCorrectlyWhenWeCreateAndDeleteANodeInTheSameRecoveryRun()
 		 {
-			  GraphDatabaseService database = StartDatabase( _directory.databaseDir() );
+			  IGraphDatabaseService database = StartDatabase( _directory.databaseDir() );
 			  Label testLabel = Label.label( "testLabel" );
 			  const string propertyToDelete = "propertyToDelete";
 			  const string validPropertyName = "validProperty";
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel
 			  File restoreDbStoreDir = CopyTransactionLogs();
 
 			  // database should be restored and node should have expected properties
-			  GraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
+			  IGraphDatabaseService recoveredDatabase = StartDatabase( restoreDbStoreDir );
 			  using ( Transaction ignored = recoveredDatabase.BeginTx() )
 			  {
 					Node node = FindNodeByLabel( recoveredDatabase, testLabel );
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel
 			  adversary.Disable();
 
 			  File databaseDir = _directory.databaseDir();
-			  GraphDatabaseService db = AdversarialPageCacheGraphDatabaseFactory.create( _fileSystemRule.get(), adversary ).newEmbeddedDatabaseBuilder(databaseDir).newGraphDatabase();
+			  IGraphDatabaseService db = AdversarialPageCacheGraphDatabaseFactory.create( _fileSystemRule.get(), adversary ).newEmbeddedDatabaseBuilder(databaseDir).newGraphDatabase();
 			  try
 			  {
 					using ( Transaction tx = Db.beginTx() )
@@ -366,7 +366,7 @@ namespace Neo4Net.Kernel
 			  File storeDir = _directory.absolutePath();
 			  EphemeralFileSystemAbstraction fs = new EphemeralFileSystemAbstraction();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: UpdateCapturingIndexProvider updateCapturingIndexProvider = new UpdateCapturingIndexProvider(org.neo4j.kernel.api.index.IndexProvider.EMPTY, new java.util.HashMap<>());
+//ORIGINAL LINE: UpdateCapturingIndexProvider updateCapturingIndexProvider = new UpdateCapturingIndexProvider(org.Neo4Net.kernel.api.index.IndexProvider.EMPTY, new java.util.HashMap<>());
 			  UpdateCapturingIndexProvider updateCapturingIndexProvider = new UpdateCapturingIndexProvider( this, IndexProvider.EMPTY, new Dictionary<long, ICollection<IndexEntryUpdate<object>>>() );
 			  GraphDatabaseAPI db = StartDatabase( storeDir, fs, updateCapturingIndexProvider );
 			  Label label = TestLabels.LABEL_ONE;
@@ -388,7 +388,7 @@ namespace Neo4Net.Kernel
 			  ProduceRandomNodePropertyAndLabelUpdates( db, _random.intBetween( 20, 40 ), label, key1, key2 );
 			  CheckPoint( db );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> updatesAtLastCheckPoint = updateCapturingIndexProvider.snapshot();
+//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> updatesAtLastCheckPoint = updateCapturingIndexProvider.snapshot();
 			  IDictionary<long, ICollection<IndexEntryUpdate<object>>> updatesAtLastCheckPoint = updateCapturingIndexProvider.Snapshot();
 
 			  // when
@@ -398,7 +398,7 @@ namespace Neo4Net.Kernel
 			  Flush( db );
 			  EphemeralFileSystemAbstraction crashedFs = fs.Snapshot();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> updatesAtCrash = updateCapturingIndexProvider.snapshot();
+//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> updatesAtCrash = updateCapturingIndexProvider.snapshot();
 			  IDictionary<long, ICollection<IndexEntryUpdate<object>>> updatesAtCrash = updateCapturingIndexProvider.Snapshot();
 
 			  // Crash and start anew
@@ -410,7 +410,7 @@ namespace Neo4Net.Kernel
 			  db = StartDatabase( storeDir, crashedFs, recoveredUpdateCapturingIndexProvider );
 			  long lastCommittedTxIdAfterRecovered = LastCommittedTxId( db );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> updatesAfterRecovery = recoveredUpdateCapturingIndexProvider.snapshot();
+//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> updatesAfterRecovery = recoveredUpdateCapturingIndexProvider.snapshot();
 			  IDictionary<long, ICollection<IndexEntryUpdate<object>>> updatesAfterRecovery = recoveredUpdateCapturingIndexProvider.Snapshot();
 
 			  // then
@@ -427,7 +427,7 @@ namespace Neo4Net.Kernel
 		 {
 			  // given
 			  EphemeralFileSystemAbstraction fs = new EphemeralFileSystemAbstraction();
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(_directory.databaseDir());
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).setFileSystem(fs).newImpermanentDatabase(_directory.databaseDir());
 			  ProduceRandomGraphUpdates( db, 100 );
 			  CheckPoint( db );
 			  EphemeralFileSystemAbstraction checkPointFs = fs.Snapshot();
@@ -531,8 +531,8 @@ namespace Neo4Net.Kernel
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: public org.neo4j.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
-				 public GraphDatabaseService newDatabase( Config config )
+//ORIGINAL LINE: public org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+				 public IGraphDatabaseService newDatabase( Config config )
 				 {
 					  TestGraphDatabaseFacadeFactory factory = new TestGraphDatabaseFacadeFactoryAnonymousInnerClass( this, _state, config );
 					  return factory.NewFacade( _storeDir, config, newDependencies( _state.databaseDependencies() ) );
@@ -561,7 +561,7 @@ namespace Neo4Net.Kernel
 			 }
 		 }
 
-		 private static long LastCommittedTxId( GraphDatabaseService db )
+		 private static long LastCommittedTxId( IGraphDatabaseService db )
 		 {
 			  return ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( TransactionIdStore ) ).LastClosedTransactionId;
 		 }
@@ -601,19 +601,19 @@ namespace Neo4Net.Kernel
 			  }
 		 }
 
-		 private static void Flush( GraphDatabaseService db )
+		 private static void Flush( IGraphDatabaseService db )
 		 {
 			  ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( StorageEngine ) ).flushAndForce( Neo4Net.Io.pagecache.IOLimiter_Fields.Unlimited );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkPoint(org.neo4j.graphdb.GraphDatabaseService db) throws java.io.IOException
-		 private static void CheckPoint( GraphDatabaseService db )
+//ORIGINAL LINE: private static void checkPoint(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+		 private static void CheckPoint( IGraphDatabaseService db )
 		 {
 			  ( ( GraphDatabaseAPI )db ).DependencyResolver.resolveDependency( typeof( CheckPointer ) ).forceCheckPoint( new SimpleTriggerInfo( "Manual trigger" ) );
 		 }
 
-		 private void ProduceRandomGraphUpdates( GraphDatabaseService db, int numberOfTransactions )
+		 private void ProduceRandomGraphUpdates( IGraphDatabaseService db, int numberOfTransactions )
 		 {
 			  // Load all existing nodes
 			  IList<Node> nodes = new List<Node>();
@@ -743,37 +743,37 @@ namespace Neo4Net.Kernel
 			  // regardless of ordering differences within the transaction.
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>>> crashUpdatesPerNode = splitPerNode(updatesAtCrash);
+//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>>> crashUpdatesPerNode = splitPerNode(updatesAtCrash);
 			  IDictionary<long, IDictionary<long, ICollection<IndexEntryUpdate<object>>>> crashUpdatesPerNode = SplitPerNode( updatesAtCrash );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>>> recoveredUpdatesPerNode = splitPerNode(recoveredUpdatesSnapshot);
+//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>>> recoveredUpdatesPerNode = splitPerNode(recoveredUpdatesSnapshot);
 			  IDictionary<long, IDictionary<long, ICollection<IndexEntryUpdate<object>>>> recoveredUpdatesPerNode = SplitPerNode( recoveredUpdatesSnapshot );
 			  assertEquals( crashUpdatesPerNode, recoveredUpdatesPerNode );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Map<long,java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>>> splitPerNode(java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> updates)
+//ORIGINAL LINE: private static java.util.Map<long,java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>>> splitPerNode(java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> updates)
 		 private static IDictionary<long, IDictionary<long, ICollection<IndexEntryUpdate<object>>>> SplitPerNode<T1>( IDictionary<T1> updates )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>>> result = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<long,java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>>> result = new java.util.HashMap<>();
 			  IDictionary<long, IDictionary<long, ICollection<IndexEntryUpdate<object>>>> result = new Dictionary<long, IDictionary<long, ICollection<IndexEntryUpdate<object>>>>();
 			  updates.forEach( ( indexId, indexUpdates ) => result.put( indexId, SplitPerNode( indexUpdates ) ) );
 			  return result;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private static java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> splitPerNode(java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates)
+//ORIGINAL LINE: private static java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> splitPerNode(java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates)
 		 private static IDictionary<long, ICollection<IndexEntryUpdate<object>>> SplitPerNode<T1>( ICollection<T1> updates )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> perNode = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> perNode = new java.util.HashMap<>();
 			  IDictionary<long, ICollection<IndexEntryUpdate<object>>> perNode = new Dictionary<long, ICollection<IndexEntryUpdate<object>>>();
 			  updates.forEach( update => perNode.computeIfAbsent( update.EntityId, nodeId => new List<>() ).add(update) );
 			  return perNode;
 		 }
 
-		 private void ProduceRandomNodePropertyAndLabelUpdates( GraphDatabaseService db, int numberOfTransactions, Label label, params string[] keys )
+		 private void ProduceRandomNodePropertyAndLabelUpdates( IGraphDatabaseService db, int numberOfTransactions, Label label, params string[] keys )
 		 {
 			  // Load all existing nodes
 			  IList<Node> nodes = new List<Node>();
@@ -838,7 +838,7 @@ namespace Neo4Net.Kernel
 			  }
 		 }
 
-		 private static Node FindNodeByLabel( GraphDatabaseService database, Label testLabel )
+		 private static Node FindNodeByLabel( IGraphDatabaseService database, Label testLabel )
 		 {
 			  using ( ResourceIterator<Node> nodes = database.FindNodes( testLabel ) )
 			  {
@@ -847,7 +847,7 @@ namespace Neo4Net.Kernel
 			  }
 		 }
 
-		 private static Node FindNode( GraphDatabaseService db, Label label, string property, string value )
+		 private static Node FindNode( IGraphDatabaseService db, Label label, string property, string value )
 		 {
 			  using ( ResourceIterator<Node> nodes = Db.findNodes( label, property, value ) )
 			  {
@@ -855,7 +855,7 @@ namespace Neo4Net.Kernel
 			  }
 		 }
 
-		 private static long CreateRelationship( GraphDatabaseService db )
+		 private static long CreateRelationship( IGraphDatabaseService db )
 		 {
 			  long relationshipId;
 			  using ( Transaction tx = Db.beginTx() )
@@ -868,7 +868,7 @@ namespace Neo4Net.Kernel
 			  return relationshipId;
 		 }
 
-		 private static void AssertRelationshipNotExist( GraphDatabaseService db, long id )
+		 private static void AssertRelationshipNotExist( IGraphDatabaseService db, long id )
 		 {
 			  try
 			  {
@@ -881,7 +881,7 @@ namespace Neo4Net.Kernel
 			  }
 		 }
 
-		 private static DatabaseHealth HealthOf( GraphDatabaseService db )
+		 private static DatabaseHealth HealthOf( IGraphDatabaseService db )
 		 {
 			  DependencyResolver resolver = ( ( GraphDatabaseAPI ) db ).DependencyResolver;
 			  return resolver.ResolveDependency( typeof( DatabaseHealth ) );
@@ -905,7 +905,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void move(org.neo4j.io.fs.FileSystemAbstraction fs, java.io.File fromDirectory, java.io.File toDirectory) throws java.io.IOException
+//ORIGINAL LINE: private static void move(org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File fromDirectory, java.io.File toDirectory) throws java.io.IOException
 		 private static void Move( FileSystemAbstraction fs, File fromDirectory, File toDirectory )
 		 {
 			  assertTrue( fs.IsDirectory( fromDirectory ) );
@@ -924,7 +924,7 @@ namespace Neo4Net.Kernel
 			  return ( GraphDatabaseAPI ) ( new TestGraphDatabaseFactory() ).setFileSystem(fs).setKernelExtensions(singletonList(new IndexExtensionFactory(indexProvider))).newImpermanentDatabaseBuilder(storeDir).setConfig(default_schema_provider, indexProvider.ProviderDescriptor.name()).newGraphDatabase();
 		 }
 
-		 private GraphDatabaseService StartDatabase( File storeDir )
+		 private IGraphDatabaseService StartDatabase( File storeDir )
 		 {
 			  return ( new TestGraphDatabaseFactory() ).setInternalLogProvider(_logProvider).newEmbeddedDatabase(storeDir);
 		 }
@@ -936,7 +936,7 @@ namespace Neo4Net.Kernel
 			  internal readonly IndexProvider Actual;
 			  internal readonly IDictionary<long, UpdateCapturingIndexAccessor> Indexes = new ConcurrentDictionary<long, UpdateCapturingIndexAccessor>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> initialUpdates;
+//ORIGINAL LINE: private final java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> initialUpdates;
 			  internal readonly IDictionary<long, ICollection<IndexEntryUpdate<object>>> InitialUpdates;
 
 			  internal UpdateCapturingIndexProvider<T1>( RecoveryIT outerInstance, IndexProvider actual, IDictionary<T1> initialUpdates ) : base( actual )
@@ -952,7 +952,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexAccessor getOnlineAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 			  public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 			  {
 					IndexAccessor actualAccessor = Actual.getOnlineAccessor( descriptor, samplingConfig );
@@ -960,7 +960,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			  public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 			  {
 					return Actual.getPopulationFailure( descriptor );
@@ -982,11 +982,11 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> snapshot()
+//ORIGINAL LINE: public java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> snapshot()
 			  public virtual IDictionary<long, ICollection<IndexEntryUpdate<object>>> Snapshot()
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> result = new java.util.HashMap<>();
+//ORIGINAL LINE: java.util.Map<long,java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> result = new java.util.HashMap<>();
 					IDictionary<long, ICollection<IndexEntryUpdate<object>>> result = new Dictionary<long, ICollection<IndexEntryUpdate<object>>>();
 					Indexes.forEach( ( indexId, index ) => result.put( indexId, index.snapshot() ) );
 					return result;
@@ -999,7 +999,7 @@ namespace Neo4Net.Kernel
 
 			  internal readonly IndexAccessor Actual;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: private final java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 			  internal readonly ICollection<IndexEntryUpdate<object>> Updates = new List<IndexEntryUpdate<object>>();
 
 			  internal UpdateCapturingIndexAccessor<T1>( RecoveryIT outerInstance, IndexAccessor actual, ICollection<T1> initialUpdates )
@@ -1058,7 +1058,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor propertyAccessor )
 			  {
 					Actual.verifyDeferredConstraints( propertyAccessor );
@@ -1073,7 +1073,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> snapshot()
+//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> snapshot()
 			  public virtual ICollection<IndexEntryUpdate<object>> Snapshot()
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -1093,7 +1093,7 @@ namespace Neo4Net.Kernel
 
 			  internal readonly IndexUpdater Actual;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updatesTarget;
+//ORIGINAL LINE: private final java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updatesTarget;
 			  internal readonly ICollection<IndexEntryUpdate<object>> UpdatesTarget;
 
 			  internal UpdateCapturingIndexUpdater<T1>( RecoveryIT outerInstance, IndexUpdater actual, ICollection<T1> updatesTarget )
@@ -1104,7 +1104,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.neo4j.kernel.api.index.IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void Process<T1>( IndexEntryUpdate<T1> update )
 			  {
 					Actual.process( update );
@@ -1112,7 +1112,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void Close()
 			  {
 					Actual.close();

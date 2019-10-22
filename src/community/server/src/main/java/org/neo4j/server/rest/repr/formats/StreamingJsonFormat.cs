@@ -35,18 +35,18 @@ namespace Neo4Net.Server.rest.repr.formats
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.assertSupportedPropertyValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.readJson;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(RepresentationFormat.class) public class StreamingJsonFormat extends org.neo4j.server.rest.repr.RepresentationFormat implements org.neo4j.server.rest.repr.StreamingFormat
+//ORIGINAL LINE: @Service.Implementation(RepresentationFormat.class) public class StreamingJsonFormat extends org.Neo4Net.server.rest.repr.RepresentationFormat implements org.Neo4Net.server.rest.repr.StreamingFormat
 	public class StreamingJsonFormat : RepresentationFormat, StreamingFormat
 	{
 
 		 private readonly JsonFactory _factory;
 
-		 public StreamingJsonFormat() : base(org.neo4j.server.rest.repr.StreamingFormat_Fields.MediaType)
+		 public StreamingJsonFormat() : base(org.Neo4Net.server.rest.repr.StreamingFormat_Fields.MediaType)
 		 {
 			  this._factory = CreateJsonFactory();
 		 }
@@ -127,7 +127,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
 		 public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 		 {
 			  if ( Empty( input ) )
@@ -151,7 +151,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object readValue(String input) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public Object readValue(String input) throws org.Neo4Net.server.rest.repr.BadInputException
 		 public override object ReadValue( string input )
 		 {
 			  if ( Empty( input ) )
@@ -169,7 +169,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.Neo4Net.server.rest.repr.BadInputException
 		 public override URI ReadUri( string input )
 		 {
 			  try
@@ -327,7 +327,7 @@ namespace Neo4Net.Server.rest.repr.formats
 			  internal readonly JsonGenerator G;
 			  internal readonly InputFormat InputFormat;
 
-			  public StreamingRepresentationFormat( JsonGenerator g, InputFormat inputFormat ) : base( org.neo4j.server.rest.repr.StreamingFormat_Fields.MediaType )
+			  public StreamingRepresentationFormat( JsonGenerator g, InputFormat inputFormat ) : base( org.Neo4Net.server.rest.repr.StreamingFormat_Fields.MediaType )
 			  {
 					this.G = g;
 					this.InputFormat = inputFormat;
@@ -387,28 +387,28 @@ namespace Neo4Net.Server.rest.repr.formats
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object readValue(String input) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public Object readValue(String input) throws org.Neo4Net.server.rest.repr.BadInputException
 			  public override object ReadValue( string input )
 			  {
 					return InputFormat.readValue( input );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
 			  public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 			  {
 					return InputFormat.readMap( input, requiredKeys );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<Object> readList(String input) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.List<Object> readList(String input) throws org.Neo4Net.server.rest.repr.BadInputException
 			  public override IList<object> ReadList( string input )
 			  {
 					return InputFormat.readList( input );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.net.URI readUri(String input) throws org.Neo4Net.server.rest.repr.BadInputException
 			  public override URI ReadUri( string input )
 			  {
 					return InputFormat.readUri( input );

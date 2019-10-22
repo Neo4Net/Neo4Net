@@ -28,7 +28,7 @@ namespace Neo4Net.Values.Storable
 	using ListValue = Neo4Net.Values.@virtual.ListValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.list;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.list;
 
 	public sealed class CharValue : TextValue
 	{

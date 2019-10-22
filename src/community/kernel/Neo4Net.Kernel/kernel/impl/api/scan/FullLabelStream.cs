@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.scan
 	using Neo4Net.Kernel.Impl.Api.index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.ALWAYS_TRUE_INT;
+//	import static org.Neo4Net.function.Predicates.ALWAYS_TRUE_INT;
 
 	/// <summary>
 	/// <seealso cref="FullStoreChangeStream"/> using a <seealso cref="IndexStoreView"/> to get its data.
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Impl.Api.scan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long applyTo(org.neo4j.kernel.api.labelscan.LabelScanWriter writer) throws java.io.IOException
+//ORIGINAL LINE: public long applyTo(org.Neo4Net.kernel.api.labelscan.LabelScanWriter writer) throws java.io.IOException
 		 public override long ApplyTo( LabelScanWriter writer )
 		 {
 			  // Keep the write for using it in visit
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.Api.scan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.neo4j.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate update) throws java.io.IOException
 		 public override bool Visit( NodeLabelUpdate update )
 		 {
 			  _writer.write( update );

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 	using Neo4Net.Functions;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using StubCursorFactory = Neo4Net.Internal.Kernel.Api.helpers.StubCursorFactory;
 	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
@@ -51,11 +51,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.set;
+//	import static org.Neo4Net.helpers.collection.Iterators.set;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.NODE;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.@lock.LockTracer.NONE;
+//	import static org.Neo4Net.storageengine.api.@lock.LockTracer.NONE;
 
 	public class TwoPhaseNodeForRelationshipLockingTest
 	{
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void returnRelationships(org.neo4j.internal.kernel.api.Transaction transaction, final boolean skipFirst, final org.neo4j.internal.kernel.api.helpers.TestRelationshipChain relIds) throws org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: static void returnRelationships(org.Neo4Net.internal.kernel.api.Transaction transaction, final boolean skipFirst, final org.Neo4Net.internal.kernel.api.helpers.TestRelationshipChain relIds) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal static void ReturnRelationships( Transaction transaction, bool skipFirst, TestRelationshipChain relIds )
 		 {
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  public readonly ISet<long> Set = new HashSet<long>();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(System.Nullable<long> input) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void accept(System.Nullable<long> input) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 			  public override void Accept( long? input )
 			  {
 					assertNotNull( input );

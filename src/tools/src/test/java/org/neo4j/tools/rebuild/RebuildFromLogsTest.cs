@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.rebuild
 {
@@ -34,10 +34,10 @@ namespace Neo4Net.tools.rebuild
 
 	using InconsistentStoreException = Neo4Net.Consistency.checking.InconsistentStoreException;
 	using ConsistencySummaryStatistics = Neo4Net.Consistency.report.ConsistencySummaryStatistics;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -53,7 +53,7 @@ namespace Neo4Net.tools.rebuild
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RebuildFromLogsTest
@@ -85,7 +85,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildFromLog() throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: @Test public void shouldRebuildFromLog() throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildFromLog()
 		 {
@@ -102,7 +102,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failRebuildFromLogIfStoreIsInconsistentAfterRebuild() throws org.neo4j.consistency.checking.InconsistentStoreException, Exception
+//ORIGINAL LINE: @Test public void failRebuildFromLogIfStoreIsInconsistentAfterRebuild() throws org.Neo4Net.consistency.checking.InconsistentStoreException, Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailRebuildFromLogIfStoreIsInconsistentAfterRebuild()
 		 {
@@ -117,7 +117,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRebuildFromLogUpToATx() throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: @Test public void shouldRebuildFromLogUpToATx() throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRebuildFromLogUpToATx()
 		 {
@@ -130,7 +130,7 @@ namespace Neo4Net.tools.rebuild
 			  GraphDatabaseAPI db = db( copy );
 			  try
 			  {
-					  using ( Neo4Net.Graphdb.Transaction tx = Db.beginTx() )
+					  using ( Neo4Net.GraphDb.Transaction tx = Db.beginTx() )
 					  {
 						Db.createNode();
 						tx.Success();
@@ -197,15 +197,15 @@ namespace Neo4Net.tools.rebuild
 		 internal sealed class Transaction
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CREATE_NODE { void applyTx(org.neo4j.graphdb.GraphDatabaseService graphDb) { graphDb.createNode(); } },
+//           CREATE_NODE { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode(); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CREATE_NODE_WITH_PROPERTY { void applyTx(org.neo4j.graphdb.GraphDatabaseService graphDb) { graphDb.createNode().setProperty(name(), "value"); } },
+//           CREATE_NODE_WITH_PROPERTY { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { graphDb.createNode().setProperty(name(), "value"); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SET_PROPERTY(CREATE_NODE) { void applyTx(org.neo4j.graphdb.GraphDatabaseService graphDb) { firstNode(graphDb).setProperty(name(), "value"); } },
+//           SET_PROPERTY(CREATE_NODE) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { firstNode(graphDb).setProperty(name(), "value"); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           CHANGE_PROPERTY(CREATE_NODE_WITH_PROPERTY) { void applyTx(org.neo4j.graphdb.GraphDatabaseService graphDb) { org.neo4j.graphdb.ResourceIterable<org.neo4j.graphdb.Node> nodes = graphDb.getAllNodes(); try(org.neo4j.graphdb.ResourceIterator<org.neo4j.graphdb.Node> iterator = nodes.iterator()) { while (iterator.hasNext()) { org.neo4j.graphdb.Node node = iterator.next(); if("value".equals(node.getProperty(CREATE_NODE_WITH_PROPERTY.name(), null))) { node.setProperty(CREATE_NODE_WITH_PROPERTY.name(), "other"); break; } } } } },
+//           CHANGE_PROPERTY(CREATE_NODE_WITH_PROPERTY) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Node> nodes = graphDb.getAllNodes(); try(org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.graphdb.Node> iterator = nodes.iterator()) { while (iterator.hasNext()) { org.Neo4Net.graphdb.Node node = iterator.next(); if("value".equals(node.getProperty(CREATE_NODE_WITH_PROPERTY.name(), null))) { node.setProperty(CREATE_NODE_WITH_PROPERTY.name(), "other"); break; } } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXPLICIT_INDEX_NODE(CREATE_NODE) { void applyTx(org.neo4j.graphdb.GraphDatabaseService graphDb) { org.neo4j.graphdb.Node node = firstNode(graphDb); graphDb.index().forNodes(name()).add(node, "foo", "bar"); } };
+//           EXPLICIT_INDEX_NODE(CREATE_NODE) { void applyTx(org.Neo4Net.graphdb.GraphDatabaseService graphDb) { org.Neo4Net.graphdb.Node node = firstNode(graphDb); graphDb.index().forNodes(name()).add(node, "foo", "bar"); } };
 
 			  private static readonly IList<Transaction> valueList = new List<Transaction>();
 
@@ -239,7 +239,7 @@ namespace Neo4Net.tools.rebuild
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal static Neo4Net.Graphdb.Node FirstNode( Neo4Net.Graphdb.GraphDatabaseService graphDb )
+			  internal static Neo4Net.GraphDb.Node FirstNode( Neo4Net.GraphDb.GraphDatabaseService graphDb )
 			  {
 					return Iterables.firstOrNull( graphDb.AllNodes );
 			  }
@@ -255,9 +255,9 @@ namespace Neo4Net.tools.rebuild
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal void ApplyTo( Neo4Net.Graphdb.GraphDatabaseService graphDb )
+			  internal void ApplyTo( Neo4Net.GraphDb.GraphDatabaseService graphDb )
 			  {
-					using ( Neo4Net.Graphdb.Transaction tx = graphDb.BeginTx() )
+					using ( Neo4Net.GraphDb.Transaction tx = graphDb.BeginTx() )
 					{
 						 ApplyTx( graphDb );
 
@@ -265,7 +265,7 @@ namespace Neo4Net.tools.rebuild
 					}
 			  }
 
-			  internal void ApplyTx( Neo4Net.Graphdb.GraphDatabaseService graphDb )
+			  internal void ApplyTx( Neo4Net.GraphDb.GraphDatabaseService graphDb )
 			  {
 			  }
 
@@ -374,7 +374,7 @@ namespace Neo4Net.tools.rebuild
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkConsistency(java.io.File target, org.neo4j.io.pagecache.PageCache pageCache) throws org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: void checkConsistency(java.io.File target, org.Neo4Net.io.pagecache.PageCache pageCache) throws org.Neo4Net.consistency.checking.InconsistentStoreException
 			  internal override void CheckConsistency( File target, PageCache pageCache )
 			  {
 					throw new InconsistentStoreException( new ConsistencySummaryStatistics() );

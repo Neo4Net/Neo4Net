@@ -1,6 +1,6 @@
 ﻿/*
  *
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2019 "GraphFoundation" [https://graphfoundation.org]
@@ -14,7 +14,7 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Reference: https://raw.githubusercontent.com/neo4j/neo4j/3.4/enterprise/causal-clustering/src/test/java/org/neo4j/causalclustering/handlers/VoidPipelineWrapperFactoryTest.java
+ * Reference: https://raw.githubusercontent.com/Neo4Net/Neo4Net/3.4/enterprise/causal-clustering/src/test/java/org/Neo4Net/causalclustering/handlers/VoidPipelineWrapperFactoryTest.java
  */
 namespace Neo4Net.causalclustering.handlers
 {
@@ -35,13 +35,13 @@ namespace Neo4Net.causalclustering.handlers
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.neo4j_home;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.Neo4Net_home;
 
 	public class SecurePipelineWrapperFactoryTest
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 		 private File _home;
@@ -130,7 +130,7 @@ namespace Neo4Net.causalclustering.handlers
 			  Config config = Config.defaults();
 
 			  // Setup SslPolicy
-			  config.augment( neo4j_home.name(), _home.AbsolutePath );
+			  config.augment( Neo4Net_home.name(), _home.AbsolutePath );
 			  config.Augment( policyConfig.BaseDirectory.name(), "certificates/default" );
 
 			  // and

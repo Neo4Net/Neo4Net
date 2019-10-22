@@ -22,13 +22,13 @@ namespace Neo4Net.Kernel.impl.store.stats
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.NODE;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
 
 	public class IdBasedStoreEntityCounters : StoreEntityCounters
 	{

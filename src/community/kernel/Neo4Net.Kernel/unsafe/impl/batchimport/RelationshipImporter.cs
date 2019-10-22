@@ -38,12 +38,12 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	using PrepareIdSequence = Neo4Net.@unsafe.Impl.Batchimport.store.PrepareIdSequence;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.idmapping.IdMapper_Fields.ID_NOT_FOUND;
 
 	/// <summary>
 	/// Imports relationships using data from <seealso cref="InputChunk"/>.
 	/// </summary>
-	public class RelationshipImporter : EntityImporter
+	public class RelationshipImporter : IEntityImporter
 	{
 		 private readonly BatchingRelationshipTypeTokenRepository _relationshipTypeTokenRepository;
 		 private readonly IdMapper _idMapper;

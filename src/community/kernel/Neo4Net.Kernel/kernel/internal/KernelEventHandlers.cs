@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Internal
 {
 
-	using ErrorState = Neo4Net.Graphdb.@event.ErrorState;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
+	using ErrorState = Neo4Net.GraphDb.Events.ErrorState;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 
@@ -59,14 +59,14 @@ namespace Neo4Net.Kernel.Internal
 			  // Some algo for putting it in the right place
 			  foreach ( KernelEventHandler registeredHandler in this._kernelEventHandlers )
 			  {
-					Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder order = handler.OrderComparedTo( registeredHandler );
+					Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder order = handler.OrderComparedTo( registeredHandler );
 					int index = this._kernelEventHandlers.IndexOf( registeredHandler );
-					if ( order == Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.Before )
+					if ( order == Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.Before )
 					{
 						 this._kernelEventHandlers.Insert( index, handler );
 						 return handler;
 					}
-					else if ( order == Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.After )
+					else if ( order == Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.After )
 					{
 						 this._kernelEventHandlers.Insert( index + 1, handler );
 						 return handler;

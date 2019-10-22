@@ -25,10 +25,10 @@ namespace Common
 	using BeforeClass = org.junit.BeforeClass;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -38,7 +38,7 @@ namespace Common
 
 	public abstract class AbstractTestBase
 	{
-		 private static GraphDatabaseService _graphdb;
+		 private static IGraphDatabaseService _graphdb;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @BeforeClass public static void beforeSuite()
@@ -73,16 +73,16 @@ namespace Common
 		 protected internal sealed class RelationshipRepresentation : Representation<Relationship>
 		 {
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final Representation<? super org.neo4j.graphdb.Node> nodes;
+//ORIGINAL LINE: private final Representation<? super org.Neo4Net.graphdb.Node> nodes;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  internal readonly Representation<object> Nodes;
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: private final Representation<? super org.neo4j.graphdb.Relationship> rel;
+//ORIGINAL LINE: private final Representation<? super org.Neo4Net.graphdb.Relationship> rel;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 			  internal readonly Representation<object> Rel;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
-//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.neo4j.graphdb.Node> nodes, Representation<? super org.neo4j.graphdb.Relationship> rel)
+//ORIGINAL LINE: public RelationshipRepresentation(Representation<? super org.Neo4Net.graphdb.Node> nodes, Representation<? super org.Neo4Net.graphdb.Relationship> rel)
 			  public RelationshipRepresentation<T1, T2>( Representation<T1> nodes, Representation<T2> rel )
 			  {
 					this.Nodes = nodes;

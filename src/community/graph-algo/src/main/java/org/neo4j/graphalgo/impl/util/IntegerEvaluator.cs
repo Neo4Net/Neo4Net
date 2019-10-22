@@ -20,8 +20,8 @@
 namespace Neo4Net.Graphalgo.impl.util
 {
 	using Neo4Net.Graphalgo;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	public class IntegerEvaluator : CostEvaluator<int>
 	{

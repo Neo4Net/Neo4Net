@@ -22,23 +22,23 @@
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
 	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
 	using RelationshipGroupCursor = Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
@@ -53,24 +53,24 @@ namespace Neo4Net.Kernel.impl.core
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.RelationshipSelections.allIterator;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.allIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.RelationshipSelections.incomingIterator;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.incomingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.helpers.RelationshipSelections.outgoingIterator;
+//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.outgoingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP_TYPE;
 
 	public class NodeProxy : Node, RelationshipFactory<Relationship>
 	{
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.impl.core
 			 }
 		 }
 
-		 public virtual GraphDatabaseService GraphDatabase
+		 public virtual IGraphDatabaseService GraphDatabase
 		 {
 			 get
 			 {
@@ -143,7 +143,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterable<org.neo4j.graphdb.Relationship> getRelationships(final org.neo4j.graphdb.Direction direction)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> getRelationships(final org.Neo4Net.graphdb.Direction direction)
 		 public virtual ResourceIterable<Relationship> getRelationships( Direction direction )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction();
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterable<org.neo4j.graphdb.Relationship> getRelationships(final org.neo4j.graphdb.Direction direction, org.neo4j.graphdb.RelationshipType... types)
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> getRelationships(final org.Neo4Net.graphdb.Direction direction, org.Neo4Net.graphdb.RelationshipType... types)
 		 public virtual ResourceIterable<Relationship> getRelationships( Direction direction, params RelationshipType[] types )
 		 {
 			  KernelTransaction transaction = SafeAcquireTransaction();
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.ResourceIterable<org.neo4j.graphdb.Relationship> innerGetRelationships(org.neo4j.kernel.api.KernelTransaction transaction, final org.neo4j.graphdb.Direction direction, int[] typeIds)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.ResourceIterable<org.Neo4Net.graphdb.Relationship> innerGetRelationships(org.Neo4Net.kernel.api.KernelTransaction transaction, final org.Neo4Net.graphdb.Direction direction, int[] typeIds)
 		 private ResourceIterable<Relationship> InnerGetRelationships( KernelTransaction transaction, Direction direction, int[] typeIds )
 		 {
 			  return () => GetRelationshipSelectionIterator(transaction, direction, typeIds);
@@ -205,7 +205,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private boolean innerHasRelationships(final org.neo4j.kernel.api.KernelTransaction transaction, final org.neo4j.graphdb.Direction direction, int[] typeIds)
+//ORIGINAL LINE: private boolean innerHasRelationships(final org.Neo4Net.kernel.api.KernelTransaction transaction, final org.Neo4Net.graphdb.Direction direction, int[] typeIds)
 		 private bool InnerHasRelationships( KernelTransaction transaction, Direction direction, int[] typeIds )
 		 {
 			  using ( ResourceIterator<Relationship> iterator = GetRelationshipSelectionIterator( transaction, direction, typeIds ) )
@@ -269,7 +269,7 @@ namespace Neo4Net.Kernel.impl.core
 					_spi.failTransaction();
 					throw e;
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( e );
 			  }
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object removeProperty(String key) throws org.neo4j.graphdb.NotFoundException
+//ORIGINAL LINE: public Object removeProperty(String key) throws org.Neo4Net.graphdb.NotFoundException
 		 public override object RemoveProperty( string key )
 		 {
 			  KernelTransaction transaction = _spi.kernelTransaction();
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.impl.core
 						return transaction.DataWrite().nodeRemoveProperty(_nodeId, propertyKeyId).asObjectCopy();
 					  }
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( e );
 			  }
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object getProperty(String key) throws org.neo4j.graphdb.NotFoundException
+//ORIGINAL LINE: public Object getProperty(String key) throws org.Neo4Net.graphdb.NotFoundException
 		 public override object GetProperty( string key )
 		 {
 			  if ( null == key )
@@ -568,7 +568,7 @@ namespace Neo4Net.Kernel.impl.core
 			  {
 					throw new System.ArgumentException( e );
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( "Node[" + e.entityId() + "] is deleted and cannot be used to create a relationship" );
 			  }
@@ -600,7 +600,7 @@ namespace Neo4Net.Kernel.impl.core
 			  {
 					throw new ConstraintViolationException( "Unable to add label.", e );
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( "No node with id " + Id + " found.", e );
 			  }
@@ -624,7 +624,7 @@ namespace Neo4Net.Kernel.impl.core
 						}
 					  }
 			  }
-			  catch ( EntityNotFoundException e )
+			  catch ( IEntityNotFoundException e )
 			  {
 					throw new NotFoundException( "No node with id " + Id + " found.", e );
 			  }
@@ -843,7 +843,7 @@ namespace Neo4Net.Kernel.impl.core
 			  transaction.DataRead().singleNode(_nodeId, nodes);
 			  if ( !nodes.Next() )
 			  {
-					throw new NotFoundException( new EntityNotFoundException( EntityType.NODE, _nodeId ) );
+					throw new NotFoundException( new IEntityNotFoundException( IEntityType.NODE, _nodeId ) );
 			  }
 		 }
 

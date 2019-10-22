@@ -43,8 +43,8 @@ namespace Neo4Net.Bolt
 	using SocketTransport = Neo4Net.Bolt.transport.SocketTransport;
 	using TransportThrottleGroup = Neo4Net.Bolt.transport.TransportThrottleGroup;
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;

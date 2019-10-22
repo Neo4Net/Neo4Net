@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.recovery
 	using CheckPoint = Neo4Net.Kernel.impl.transaction.log.entry.CheckPoint;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository_Fields.INITIAL_LOG_VERSION;
 
 	/// <summary>
 	/// Utility class to find the log position to start recovery from
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.recovery
 			  /// </summary>
 			  /// <param name="logPosition"> <seealso cref="LogPosition"/> of the last check point. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default void noCommitsAfterLastCheckPoint(org.neo4j.kernel.impl.transaction.log.LogPosition logPosition)
+//			  default void noCommitsAfterLastCheckPoint(org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition)
 	//		  { // no-op by default
 	//		  }
 
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.recovery
 			  /// check pointed transaction. </param>
 			  /// <param name="firstTxIdAfterLastCheckPoint"> transaction id of the first transaction after the last check point. </param>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//			  default void commitsAfterLastCheckPoint(org.neo4j.kernel.impl.transaction.log.LogPosition logPosition, long firstTxIdAfterLastCheckPoint)
+//			  default void commitsAfterLastCheckPoint(org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition, long firstTxIdAfterLastCheckPoint)
 	//		  { // no-op by default
 	//		  }
 

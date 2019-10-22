@@ -29,14 +29,14 @@ namespace Neo4Net.Tooling
 
 
 	using IllegalMultilineFieldException = Neo4Net.Csv.Reader.IllegalMultilineFieldException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
@@ -76,35 +76,35 @@ namespace Neo4Net.Tooling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.RelationshipType.withName;
+//	import static org.Neo4Net.graphdb.RelationshipType.withName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.logs_directory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logs_directory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.join;
+//	import static org.Neo4Net.helpers.ArrayUtil.join;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.contains;
+//	import static org.Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Exceptions.withMessage;
+//	import static org.Neo4Net.helpers.Exceptions.withMessage;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.count;
+//	import static org.Neo4Net.helpers.collection.Iterators.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.store;
+//	import static org.Neo4Net.helpers.collection.MapUtil.store;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.writeToFile;
+//	import static org.Neo4Net.io.fs.FileUtils.writeToFile;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.tooling.ImportTool.MULTI_FILE_DELIMITER;
+//	import static org.Neo4Net.tooling.ImportTool.MULTI_FILE_DELIMITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.Configuration_Fields.BAD_FILE_NAME;
 
 	public class ImportToolTest
 	{
@@ -114,13 +114,13 @@ namespace Neo4Net.Tooling
 		 private static readonly System.Func<int, bool> @true = i => true;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule dbRule = new org.neo4j.test.rule.EmbeddedDatabaseRule().startLazily();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule dbRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule().startLazily();
 		 public readonly EmbeddedDatabaseRule DbRule = new EmbeddedDatabaseRule().startLazily();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 		 private int _dataIndex;
 
@@ -715,7 +715,7 @@ namespace Neo4Net.Tooling
 			  // no relationships
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					int nodeCount = 0;
@@ -747,7 +747,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", NodeHeader( config, groupOne ) + MULTI_FILE_DELIMITER + NodeData( false, config, groupOneNodeIds, @true ), "--nodes", NodeHeader( config, groupTwo ) + MULTI_FILE_DELIMITER + NodeData( false, config, groupTwoNodeIds, @true ), "--relationships", RelationshipHeader( config, groupOne, groupTwo, true ) + MULTI_FILE_DELIMITER + RelationshipData( false, config, rels.GetEnumerator(), @true, true ) );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					int nodeCount = 0;
@@ -837,7 +837,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--skip-duplicate-nodes", "--nodes", nodeHeaderFile.AbsolutePath + MULTI_FILE_DELIMITER + nodeData1.AbsolutePath + MULTI_FILE_DELIMITER + nodeData2.AbsolutePath );
 
 			  // THEN there should not be duplicates of any node
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  ISet<string> expectedNodeIds = new HashSet<string>( nodeIds );
 			  try
 			  {
@@ -986,10 +986,10 @@ namespace Neo4Net.Tooling
 			  IList<string> nodeIds = nodeIds();
 			  Configuration config = Configuration.COMMAS;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label1 = label("My First Label");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label1 = label("My First Label");
 			  Label label1 = label( "My First Label" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Label label2 = label("My Other Label");
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Label label2 = label("My Other Label");
 			  Label label2 = label( "My Other Label" );
 
 			  // WHEN
@@ -1056,7 +1056,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", NodeData( true, config, nodeIds, @true ).AbsolutePath, "--relationships", relationshipData( true, config, relationshipData.GetEnumerator(), @true, true ).AbsolutePath );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					IEnumerable<Node> allNodes = Db.AllNodes;
@@ -1111,7 +1111,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", data.AbsolutePath );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					ResourceIterator<Node> allNodes = Db.AllNodes.GetEnumerator();
@@ -1137,7 +1137,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", data.AbsolutePath, "--trim-strings", "true" );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx(), ResourceIterator<Node> allNodes = Db.AllNodes.GetEnumerator() )
 			  {
 					ISet<string> names = new HashSet<string>();
@@ -1158,14 +1158,14 @@ namespace Neo4Net.Tooling
 //ORIGINAL LINE: @Test public void shouldPrintReferenceLinkOnDataImportErrors()
 		 public virtual void ShouldPrintReferenceLinkOnDataImportErrors()
 		 {
-			  string[] versionParts = Version.Neo4jVersion.Split( "-", true );
+			  string[] versionParts = Version.Neo4NetVersion.Split( "-", true );
 			  versionParts[0] = versionParts[0].Substring( 0, 3 );
 			  string docsVersion = string.join( "-", versionParts );
 
-			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("1", "", "type", "name")), "Relationship missing mandatory field 'END_ID', read more about relationship " + "format in the manual:  https://neo4j.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
-			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("", "1", "type", "name")), "Relationship missing mandatory field 'START_ID', read more about relationship " + "format in the manual:  https://neo4j.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
-			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("1", "2", "", "name")), "Relationship missing mandatory field 'TYPE', read more about relationship " + "format in the manual:  https://neo4j.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
-			  ShouldPrintReferenceLinkAsPartOfErrorMessage( Arrays.asList( "1", "1" ), Iterators.iterator( new RelationshipDataLine( "1", "2", "type", "name" ) ), "Duplicate input ids that would otherwise clash can be put into separate id space, read more " + "about how to use id spaces in the manual: https://neo4j.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-id-spaces" );
+			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("1", "", "type", "name")), "Relationship missing mandatory field 'END_ID', read more about relationship " + "format in the manual:  https://Neo4Net.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
+			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("", "1", "type", "name")), "Relationship missing mandatory field 'START_ID', read more about relationship " + "format in the manual:  https://Neo4Net.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
+			  ShouldPrintReferenceLinkAsPartOfErrorMessage( NodeIds(), Iterators.iterator(new RelationshipDataLine("1", "2", "", "name")), "Relationship missing mandatory field 'TYPE', read more about relationship " + "format in the manual:  https://Neo4Net.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-header-format-rels" );
+			  ShouldPrintReferenceLinkAsPartOfErrorMessage( Arrays.asList( "1", "1" ), Iterators.iterator( new RelationshipDataLine( "1", "2", "type", "name" ) ), "Duplicate input ids that would otherwise clash can be put into separate id space, read more " + "about how to use id spaces in the manual: https://Neo4Net.com/docs/operations-manual/" + docsVersion + "/tools/import/file-header-format/#import-tool-id-spaces" );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -1219,7 +1219,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", data.AbsolutePath, "--multiline-fields", "true" );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					ResourceIterator<Node> allNodes = Db.AllNodes.GetEnumerator();
@@ -1244,10 +1244,10 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", data.AbsolutePath );
 
 			  // THEN
-			  GraphDatabaseService graphDatabaseService = DbRule.GraphDatabaseAPI;
-			  using ( Transaction tx = graphDatabaseService.BeginTx() )
+			  IGraphDatabaseService IGraphDatabaseService = DbRule.GraphDatabaseAPI;
+			  using ( Transaction tx = IGraphDatabaseService.BeginTx() )
 			  {
-					ResourceIterator<Node> allNodes = graphDatabaseService.AllNodes.GetEnumerator();
+					ResourceIterator<Node> allNodes = IGraphDatabaseService.AllNodes.GetEnumerator();
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					assertFalse( "Expected database to be empty", allNodes.hasNext() );
 					tx.Success();
@@ -1266,7 +1266,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", data.AbsolutePath, "--ignore-empty-strings", "true" );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Node node = Iterables.single( Db.AllNodes );
@@ -1314,7 +1314,7 @@ namespace Neo4Net.Tooling
 
 			  // THEN
 			  ISet<string> names = asSet( "Weird", name2 );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					foreach ( Node node in Db.AllNodes )
@@ -1402,7 +1402,7 @@ namespace Neo4Net.Tooling
 
 			  // THEN
 			  ISet<string> names = asSet( "Weird", name2 );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					foreach ( Node node in Db.AllNodes )
@@ -1456,7 +1456,7 @@ namespace Neo4Net.Tooling
 			  assertEquals( "~"[0], weirdDelimiter );
 
 			  ISet<string> names = asSet( "Weird", name2 );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					foreach ( Node node in Db.AllNodes )
@@ -1534,7 +1534,7 @@ namespace Neo4Net.Tooling
 			  assertEquals( weirdStringDelimiter[0], weirdDelimiter );
 
 			  ISet<string> names = asSet( "Weird", name2 );
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					foreach ( Node node in Db.AllNodes )
@@ -1555,7 +1555,7 @@ namespace Neo4Net.Tooling
 			  // GIVEN
 			  int arrayBlockSize = 10;
 			  int stringBlockSize = 12;
-			  File dbConfig = File( "neo4j.properties" );
+			  File dbConfig = File( "Neo4Net.properties" );
 			  store( stringMap( GraphDatabaseSettings.array_block_size.name(), arrayBlockSize.ToString(), GraphDatabaseSettings.string_block_size.name(), stringBlockSize.ToString() ), dbConfig );
 			  IList<string> nodeIds = nodeIds();
 
@@ -1577,7 +1577,7 @@ namespace Neo4Net.Tooling
 			  // GIVEN
 			  int arrayBlockSize = 10;
 			  int stringBlockSize = 12;
-			  File dbConfig = File( "neo4j.properties" );
+			  File dbConfig = File( "Neo4Net.properties" );
 			  store( stringMap( GraphDatabaseSettings.array_block_size.name(), arrayBlockSize.ToString(), GraphDatabaseSettings.string_block_size.name(), stringBlockSize.ToString() ), dbConfig );
 			  IList<string> nodeIds = nodeIds();
 
@@ -1599,7 +1599,7 @@ namespace Neo4Net.Tooling
 			  // GIVEN
 			  int arrayBlockSize = 10;
 			  int stringBlockSize = 12;
-			  File dbConfig = File( "neo4j.properties" );
+			  File dbConfig = File( "Neo4Net.properties" );
 			  File additionalConfig = File( "additional.properties" );
 			  store( stringMap( GraphDatabaseSettings.string_block_size.name(), stringBlockSize.ToString() ), dbConfig );
 			  store( stringMap( GraphDatabaseSettings.array_block_size.name(), arrayBlockSize.ToString() ), additionalConfig );
@@ -1657,7 +1657,7 @@ namespace Neo4Net.Tooling
 			  ImportTool( "--into", DbRule.DatabaseDirAbsolutePath, "--nodes", Data( lines.ToArray() ).AbsolutePath, "--legacy-style-quoting", "false", "--stacktrace" );
 
 			  // THEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					assertNotNull( Db.findNode( label( labelName ), "name", "abc\"def\\\"ghi" ) );
@@ -1942,7 +1942,7 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.neo4j.graphdb.Node> nodeFilter(final String id)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.Node> nodeFilter(final String id)
 		 private System.Predicate<Node> NodeFilter( string id )
 		 {
 			  return node => node.getProperty( "id", "" ).Equals( id );
@@ -1960,7 +1960,7 @@ namespace Neo4Net.Tooling
 
 		 private void VerifyData( int expectedNodeCount, int expectedRelationshipCount, Validator<Node> nodeAdditionalValidation, Validator<Relationship> relationshipAdditionalValidation )
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					int nodeCount = 0;
@@ -1985,7 +1985,7 @@ namespace Neo4Net.Tooling
 
 		 private void VerifyRelationships( IList<RelationshipDataLine> relationships )
 		 {
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  IDictionary<string, Node> nodesById = AllNodesById( db );
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -2005,13 +2005,13 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.graphdb.Relationship findRelationship(org.neo4j.graphdb.Node startNode, final org.neo4j.graphdb.Node endNode, final RelationshipDataLine relationship)
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Relationship findRelationship(org.Neo4Net.graphdb.Node startNode, final org.Neo4Net.graphdb.Node endNode, final RelationshipDataLine relationship)
 		 private Relationship FindRelationship( Node startNode, Node endNode, RelationshipDataLine relationship )
 		 {
 			  return Iterators.singleOrNull( Iterators.filter( item => item.EndNode.Equals( endNode ) && item.getProperty( "name" ).Equals( relationship.Name ), startNode.GetRelationships( withName( relationship.Type ) ).GetEnumerator() ) );
 		 }
 
-		 private IDictionary<string, Node> AllNodesById( GraphDatabaseService db )
+		 private IDictionary<string, Node> AllNodesById( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -2051,21 +2051,21 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate )
 		 {
 			  return NodeData( includeHeader, config, nodeIds, linePredicate, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, Charset encoding )
 		 {
 			  return NodeData( includeHeader, config, nodeIds, linePredicate, encoding, 0 );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding, int extraColumns) throws Exception
+//ORIGINAL LINE: private java.io.File nodeData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, java.nio.charset.Charset encoding, int extraColumns) throws Exception
 		 private File NodeData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, Charset encoding, int extraColumns )
 		 {
 			  File file = file( FileName( "nodes.csv" ) );
@@ -2088,21 +2088,21 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
 		 private File NodeHeader( Configuration config )
 		 {
 			  return NodeHeader( config, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup) throws Exception
 		 private File NodeHeader( Configuration config, string idGroup )
 		 {
 			  return NodeHeader( config, idGroup, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File nodeHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File nodeHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String idGroup, java.nio.charset.Charset encoding) throws Exception
 		 private File NodeHeader( Configuration config, string idGroup, Charset encoding )
 		 {
 			  File file = file( FileName( "nodes-header.csv" ) );
@@ -2181,28 +2181,28 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, bool specifyType )
 		 {
 			  return RelationshipData( includeHeader, config, nodeIds, linePredicate, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.List<String> nodeIds, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IList<string> nodeIds, System.Func<int, bool> linePredicate, bool specifyType, Charset encoding )
 		 {
 			  return RelationshipData( includeHeader, config, RandomRelationships( nodeIds ), linePredicate, specifyType, encoding );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IEnumerator<RelationshipDataLine> data, System.Func<int, bool> linePredicate, bool specifyType )
 		 {
 			  return RelationshipData( includeHeader, config, data, linePredicate, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipData(boolean includeHeader, org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.util.Iterator<RelationshipDataLine> data, System.Func<int, boolean> linePredicate, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipData( bool includeHeader, Configuration config, IEnumerator<RelationshipDataLine> data, System.Func<int, bool> linePredicate, bool specifyType, Charset encoding )
 		 {
 			  File file = file( FileName( "relationships.csv" ) );
@@ -2218,28 +2218,28 @@ namespace Neo4Net.Tooling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config) throws Exception
 		 private File RelationshipHeader( Configuration config )
 		 {
 			  return RelationshipHeader( config, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipHeader( Configuration config, Charset encoding )
 		 {
 			  return RelationshipHeader( config, null, null, true, encoding );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType) throws Exception
 		 private File RelationshipHeader( Configuration config, string startIdGroup, string endIdGroup, bool specifyType )
 		 {
 			  return RelationshipHeader( config, startIdGroup, endIdGroup, specifyType, Charset.defaultCharset() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.io.File relationshipHeader(org.neo4j.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
+//ORIGINAL LINE: private java.io.File relationshipHeader(org.Neo4Net.unsafe.impl.batchimport.input.csv.Configuration config, String startIdGroup, String endIdGroup, boolean specifyType, java.nio.charset.Charset encoding) throws Exception
 		 private File RelationshipHeader( Configuration config, string startIdGroup, string endIdGroup, bool specifyType, Charset encoding )
 		 {
 			  File file = file( FileName( "relationships-header.csv" ) );

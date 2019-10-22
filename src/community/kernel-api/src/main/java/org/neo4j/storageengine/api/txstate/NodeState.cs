@@ -30,7 +30,7 @@ namespace Neo4Net.Storageengine.Api.txstate
 	/// <li><seealso cref="PropertyContainerState Changes to properties"/>.</li>
 	/// </ul>
 	/// </summary>
-	public interface NodeState : PropertyContainerState
+	public interface NodeState : IPropertyContainerState
 	{
 		 LongDiffSets LabelDiffSets();
 

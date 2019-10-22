@@ -47,20 +47,20 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  InMemoryClosableChannel data = new InMemoryClosableChannel();
 			  AddRelationshipCommand command = new AddRelationshipCommand();
 			  sbyte indexNameId = ( sbyte )12;
-			  long entityId = 123;
+			  long IEntityId = 123;
 			  sbyte keyId = ( sbyte )1;
 			  object value = "test value";
 			  long startNode = 14;
 			  long endNode = 15;
 
 			  // WHEN
-			  command.Init( indexNameId, entityId, keyId, value, startNode, endNode );
+			  command.Init( indexNameId, IEntityId, keyId, value, startNode, endNode );
 			  command.Serialize( data );
 
 			  // THEN
 			  AddRelationshipCommand readCommand = ( AddRelationshipCommand ) reader.Read( data );
 			  assertEquals( indexNameId, readCommand.IndexNameId );
-			  assertEquals( entityId, readCommand.EntityId );
+			  assertEquals( IEntityId, readCommand.EntityId );
 			  assertEquals( keyId, readCommand.KeyId );
 			  assertEquals( value, readCommand.Value );
 			  assertEquals( startNode, readCommand.StartNode );
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  InMemoryClosableChannel data = new InMemoryClosableChannel();
 			  // Here we take advantage of the fact that all index commands have the same header written out
 			  AddRelationshipCommand command = new AddRelationshipCommand();
-			  long entityId = 123;
+			  long IEntityId = 123;
 			  sbyte keyId = ( sbyte )1;
 			  object value = "test value";
 			  long startNode = 14;
@@ -94,13 +94,13 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  for ( sbyte indexByteId = 0; indexByteId < 63; indexByteId++ )
 			  {
 					// WHEN
-					command.Init( indexByteId, entityId, keyId, value, startNode, endNode );
+					command.Init( indexByteId, IEntityId, keyId, value, startNode, endNode );
 					command.Serialize( data );
 
 					// THEN
 					AddRelationshipCommand readCommand = ( AddRelationshipCommand ) reader.Read( data );
 					assertEquals( indexByteId, readCommand.IndexNameId );
-					assertEquals( entityId, readCommand.EntityId );
+					assertEquals( IEntityId, readCommand.EntityId );
 					assertEquals( keyId, readCommand.KeyId );
 					assertEquals( value, readCommand.Value );
 					assertEquals( startNode, readCommand.StartNode );

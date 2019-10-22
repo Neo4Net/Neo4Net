@@ -23,9 +23,9 @@ namespace Neo4Net.Server.rest.repr.formats
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
@@ -52,13 +52,13 @@ namespace Neo4Net.Server.rest.repr.formats
 //ORIGINAL LINE: @Test public void canFormatNode()
 		 public virtual void CanFormatNode()
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  try
 			  {
 					  using ( Transaction transaction = Db.beginTx() )
 					  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Node n = db.createNode();
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Node n = db.createNode();
 						Node n = Db.createNode();
 						_json.assemble( new NodeRepresentation( n ) );
 					  }

@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	using IndexCommit = Org.Apache.Lucene.Index.IndexCommit;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 
 	/// <summary>

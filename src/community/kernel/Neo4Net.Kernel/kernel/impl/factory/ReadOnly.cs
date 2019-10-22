@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.impl.factory
 {
-	using WriteOperationsNotAllowedException = Neo4Net.Graphdb.security.WriteOperationsNotAllowedException;
+	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class ReadOnly : AccessCapability
 	{
 		 public override void AssertCanWrite()
 		 {
-			  throw new WriteOperationsNotAllowedException( "No write operations are allowed on this database. This is a read only Neo4j instance.", Neo4Net.Kernel.Api.Exceptions.Status_General.ForbiddenOnReadOnlyDatabase );
+			  throw new WriteOperationsNotAllowedException( "No write operations are allowed on this database. This is a read only Neo4Net instance.", Neo4Net.Kernel.Api.Exceptions.Status_General.ForbiddenOnReadOnlyDatabase );
 		 }
 	}
 

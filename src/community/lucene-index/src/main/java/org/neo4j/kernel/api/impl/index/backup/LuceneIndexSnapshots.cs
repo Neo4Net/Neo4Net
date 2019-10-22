@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 	using Directory = org.apache.lucene.store.Directory;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.emptyResourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 
 	/// <summary>
 	/// Create iterators over Lucene index files for a particular <seealso cref="IndexCommit index commit"/>.
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 /// <returns> index file name iterator </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.index.IndexWriter indexWriter) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.index.IndexWriter indexWriter) throws java.io.IOException
 		 public static ResourceIterator<File> ForIndex( File indexFolder, IndexWriter indexWriter )
 		 {
 			  IndexDeletionPolicy deletionPolicy = indexWriter.Config.IndexDeletionPolicy;
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.backup
 		 /// <returns> index file name resource iterator </returns>
 		 /// <exception cref="IOException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.neo4j.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.store.Directory directory) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.graphdb.ResourceIterator<java.io.File> forIndex(java.io.File indexFolder, org.apache.lucene.store.Directory directory) throws java.io.IOException
 		 public static ResourceIterator<File> ForIndex( File indexFolder, Directory directory )
 		 {
 			  if ( !HasCommits( directory ) )

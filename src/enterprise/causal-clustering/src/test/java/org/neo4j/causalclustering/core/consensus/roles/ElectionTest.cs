@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.roles
 {
@@ -53,17 +53,17 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.TestMessageBuilders.voteRequest;
+//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.TestMessageBuilders.voteResponse;
+//	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.voteResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.roles.Role.CANDIDATE;
+//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.roles.Role.LEADER;
+//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.identity.RaftTestMember.member;
+//	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -77,10 +77,10 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 private MemberId _member2 = member( 2 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.neo4j.causalclustering.messaging.Inbound inbound;
+//ORIGINAL LINE: @Mock private org.Neo4Net.causalclustering.messaging.Inbound inbound;
 		 private Inbound _inbound;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.neo4j.causalclustering.messaging.Outbound<org.neo4j.causalclustering.identity.MemberId, org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound;
+//ORIGINAL LINE: @Mock private org.Neo4Net.causalclustering.messaging.Outbound<org.Neo4Net.causalclustering.identity.MemberId, org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound;
 		 private Outbound<MemberId, Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> _outbound;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogPosition.start;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogPosition.start;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
+//	import static org.Neo4Net.kernel.impl.transaction.log.LogVersionBridge_Fields.NO_MORE_CHANNELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.reverse.EagerlyReversedTransactionCursor.eagerlyReverse;
+//	import static org.Neo4Net.kernel.impl.transaction.log.reverse.EagerlyReversedTransactionCursor.eagerlyReverse;
 
 	/// <summary>
 	/// Similar to <seealso cref="PhysicalTransactionCursor"/> and actually uses it internally. This main difference is that transactions

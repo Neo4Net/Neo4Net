@@ -23,10 +23,10 @@ namespace Neo4Net.Collections.primitive
 {
 
 	using Empty = Neo4Net.Collections.primitive.@base.Empty;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.primitive.PrimitiveCommons.closeSafely;
+//	import static org.Neo4Net.collection.primitive.PrimitiveCommons.closeSafely;
 
 	/// <summary>
 	/// Basic and common primitive int collection utils and manipulations.
@@ -56,14 +56,14 @@ namespace Neo4Net.Collections.primitive
 //ORIGINAL LINE: public static PrimitiveLongIterator iterator(final long... items)
 		 public static PrimitiveLongIterator Iterator( params long[] items )
 		 {
-			  return new PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Neo4Net.Graphdb.Resource_Fields.Empty, items );
+			  return new PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Neo4Net.GraphDb.Resource_Fields.Empty, items );
 		 }
 
 		 private class PrimitiveLongBaseResourceIteratorAnonymousInnerClass : PrimitiveLongResourceCollections.PrimitiveLongBaseResourceIterator
 		 {
 			 private long[] _items;
 
-			 public PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Resource org, long[] items ) : base( org.neo4j.graphdb.Resource_Fields.Empty )
+			 public PrimitiveLongBaseResourceIteratorAnonymousInnerClass( Resource org, long[] items ) : base( org.Neo4Net.graphdb.Resource_Fields.Empty )
 			 {
 				 this._items = items;
 			 }
@@ -424,7 +424,7 @@ namespace Neo4Net.Collections.primitive
 		 /// <param name="resource"> <seealso cref="Resource"/> to close in <seealso cref="PrimitiveLongResourceIterator.close()"/> </param>
 		 /// <returns> Wrapped <seealso cref="PrimitiveLongIterator"/>. </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static PrimitiveLongResourceIterator resourceIterator(final PrimitiveLongIterator iterator, final org.neo4j.graphdb.Resource resource)
+//ORIGINAL LINE: public static PrimitiveLongResourceIterator resourceIterator(final PrimitiveLongIterator iterator, final org.Neo4Net.graphdb.Resource resource)
 		 public static PrimitiveLongResourceIterator ResourceIterator( PrimitiveLongIterator iterator, Resource resource )
 		 {
 			  return new PrimitiveLongResourceIteratorAnonymousInnerClass( iterator, resource );

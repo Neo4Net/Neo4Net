@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -63,14 +63,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 StoreScan<FAILURE> visitRelationships<FAILURE>( int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdateVisitor );
 
 		 /// <summary>
-		 /// Produces <seealso cref="EntityUpdates"/> objects from reading node {@code entityId}, its labels and properties
+		 /// Produces <seealso cref="EntityUpdates"/> objects from reading node {@code IEntityId}, its labels and properties
 		 /// and puts those updates into node updates container.
 		 /// </summary>
-		 /// <param name="entityId"> id of entity to load. </param>
+		 /// <param name="entityId"> id of IEntity to load. </param>
 		 /// <returns> node updates container </returns>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @VisibleForTesting EntityUpdates nodeAsUpdates(long entityId);
-		 EntityUpdates NodeAsUpdates( long entityId );
+//ORIGINAL LINE: @VisibleForTesting IEntityUpdates nodeAsUpdates(long IEntityId);
+		 IEntityUpdates NodeAsUpdates( long IEntityId );
 
 		 Register_DoubleLongRegister IndexUpdatesAndSize( long indexId, Register_DoubleLongRegister output );
 
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	 public class IndexStoreView_Adaptor : IndexStoreView
 	 {
-		  public override void LoadProperties( long nodeId, EntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink )
+		  public override void LoadProperties( long nodeId, IEntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink )
 		  {
 		  }
 
@@ -119,14 +119,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitNodes(int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, org.neo4j.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor, org.neo4j.helpers.collection.Visitor<org.neo4j.kernel.api.labelscan.NodeLabelUpdate,FAILURE> labelUpdateVisitor, boolean forceStoreScan)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitNodes(int[] labelIds, System.Func<int, boolean> propertyKeyIdFilter, org.Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor, org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.kernel.api.labelscan.NodeLabelUpdate,FAILURE> labelUpdateVisitor, boolean forceStoreScan)
 		  public override StoreScan<FAILURE> VisitNodes<FAILURE>( int[] labelIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdateVisitor, Visitor<NodeLabelUpdate, FAILURE> labelUpdateVisitor, bool forceStoreScan ) where FAILURE : Exception
 		  {
 				return EMPTY_SCAN;
 		  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitRelationships(int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, org.neo4j.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public <FAILURE extends Exception> StoreScan<FAILURE> visitRelationships(int[] relationshipTypeIds, System.Func<int, boolean> propertyKeyIdFilter, org.Neo4Net.helpers.collection.Visitor<EntityUpdates,FAILURE> propertyUpdateVisitor)
 		  public override StoreScan<FAILURE> VisitRelationships<FAILURE>( int[] relationshipTypeIds, System.Func<int, bool> propertyKeyIdFilter, Visitor<EntityUpdates, FAILURE> propertyUpdateVisitor ) where FAILURE : Exception
 		  {
 				return EMPTY_SCAN;
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		  {
 		  }
 
-		  public override EntityUpdates NodeAsUpdates( long nodeId )
+		  public override IEntityUpdates NodeAsUpdates( long nodeId )
 		  {
 				return null;
 		  }

@@ -19,7 +19,7 @@
 
 namespace Neo4Net.Server.enterprise
 {
-	// See https://github.com/neo4j/neo4j/blob/3.2/enterprise/server-enterprise/src/main/java/org/neo4j/server/enterprise/EnterpriseEntryPoint.java
+	// See https://github.com/Neo4Net/Neo4Net/blob/3.2/enterprise/server-enterprise/src/main/java/org/Neo4Net/server/enterprise/EnterpriseEntryPoint.java
 
 	public class EnterpriseEntryPoint
 	{

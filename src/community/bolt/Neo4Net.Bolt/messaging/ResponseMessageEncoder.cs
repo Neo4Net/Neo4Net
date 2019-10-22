@@ -23,8 +23,8 @@ namespace Neo4Net.Bolt.messaging
 	public interface ResponseMessageEncoder<T> where T : ResponseMessage
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void encode(Neo4jPack_Packer packer, T message) throws java.io.IOException;
-		 void Encode( Neo4jPack_Packer packer, T message );
+//ORIGINAL LINE: void encode(Neo4NetPack_Packer packer, T message) throws java.io.IOException;
+		 void Encode( Neo4NetPack_Packer packer, T message );
 	}
 
 }

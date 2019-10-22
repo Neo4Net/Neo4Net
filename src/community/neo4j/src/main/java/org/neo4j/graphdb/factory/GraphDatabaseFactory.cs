@@ -20,12 +20,12 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
-	using URLAccessRule = Neo4Net.Graphdb.security.URLAccessRule;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
+	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
@@ -34,13 +34,13 @@ namespace Neo4Net.Graphdb.factory
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	/// <summary>
-	/// Creates a <seealso cref="org.neo4j.graphdb.GraphDatabaseService"/> with Community Edition features.
+	/// Creates a <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> with Community Edition features.
 	/// <para>
 	/// Use <seealso cref="newEmbeddedDatabase(File)"/> or
 	/// <seealso cref="newEmbeddedDatabaseBuilder(File)"/> to create a database instance.
 	/// </para>
 	/// <para>
-	/// <strong>Note:</strong> If you are using the Enterprise Edition of Neo4j in embedded mode, you have to create your
+	/// <strong>Note:</strong> If you are using the Enterprise Edition of Neo4Net in embedded mode, you have to create your
 	/// database with the <a href="EnterpriseGraphDatabaseFactory.html">{@code EnterpriseGraphDatabaseFactory}</a>
 	/// to enable the Enterprise Edition features, or the
 	/// <a href="HighlyAvailableGraphDatabaseFactory.html">{@code HighlyAvailableGraphDatabaseFactory}</a> for the
@@ -78,7 +78,7 @@ namespace Neo4Net.Graphdb.factory
 		 }
 
 		 /// <param name="storeDir"> desired embedded database store dir </param>
-		 public virtual GraphDatabaseService NewEmbeddedDatabase( File storeDir )
+		 public virtual IGraphDatabaseService NewEmbeddedDatabase( File storeDir )
 		 {
 			  return NewEmbeddedDatabaseBuilder( storeDir ).newGraphDatabase();
 		 }
@@ -116,17 +116,17 @@ namespace Neo4Net.Graphdb.factory
 		 /// See <seealso cref="newDatabase(File, Config, GraphDatabaseFacadeFactory.Dependencies)"/> instead.
 		 /// </summary>
 		 [Obsolete]
-		 protected internal virtual GraphDatabaseService NewDatabase( File storeDir, IDictionary<string, string> settings, GraphDatabaseFacadeFactory.Dependencies dependencies )
+		 protected internal virtual IGraphDatabaseService NewDatabase( File storeDir, IDictionary<string, string> settings, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {
 			  return NewDatabase( storeDir, Config.defaults( settings ), dependencies );
 		 }
 
-		 protected internal virtual GraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+		 protected internal virtual IGraphDatabaseService NewEmbeddedDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {
 			  return GraphDatabaseFactory.this.NewDatabase( storeDir, config, dependencies );
 		 }
 
-		 protected internal virtual GraphDatabaseService NewDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
+		 protected internal virtual IGraphDatabaseService NewDatabase( File storeDir, Config config, GraphDatabaseFacadeFactory.Dependencies dependencies )
 		 {
 			  File absoluteStoreDir = storeDir.AbsoluteFile;
 			  File databasesRoot = absoluteStoreDir.ParentFile;
@@ -186,8 +186,8 @@ namespace Neo4Net.Graphdb.factory
 			  }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override public org.neo4j.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
-			  public override GraphDatabaseService NewDatabase( Config config )
+//ORIGINAL LINE: @Override public org.Neo4Net.graphdb.GraphDatabaseService newDatabase(@Nonnull Config config)
+			  public override IGraphDatabaseService NewDatabase( Config config )
 			  {
 					return outerInstance.NewEmbeddedDatabase( StoreDir, config, State.databaseDependencies() );
 			  }

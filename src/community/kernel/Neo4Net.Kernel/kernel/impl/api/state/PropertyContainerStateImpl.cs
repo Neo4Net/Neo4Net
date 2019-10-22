@@ -31,14 +31,14 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
 	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using PropertyContainerState = Neo4Net.Storageengine.Api.txstate.PropertyContainerState;
+	using IPropertyContainerState = Neo4Net.Storageengine.Api.txstate.PropertyContainerState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 
-	internal class PropertyContainerStateImpl : PropertyContainerState
+	internal class IPropertyContainerStateImpl : IPropertyContainerState
 	{
 		 private readonly long _id;
 		 private MutableLongObjectMap<Value> _addedProperties;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 		 protected internal readonly CollectionsFactory CollectionsFactory;
 
-		 internal PropertyContainerStateImpl( long id, CollectionsFactory collectionsFactory )
+		 internal IPropertyContainerStateImpl( long id, CollectionsFactory collectionsFactory )
 		 {
 			  this._id = id;
 			  this.CollectionsFactory = requireNonNull( collectionsFactory );

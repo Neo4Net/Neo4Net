@@ -63,7 +63,7 @@ namespace Neo4Net.Server
 			  Client nonRedirectingClient = Client.create();
 			  nonRedirectingClient.FollowRedirects = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.JaxRsResponse response = new org.neo4j.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).accept(javax.ws.rs.core.MediaType.TEXT_HTML_TYPE).get(server.baseUri().toString());
+//ORIGINAL LINE: final org.Neo4Net.server.rest.JaxRsResponse response = new org.Neo4Net.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).accept(javax.ws.rs.core.MediaType.TEXT_HTML_TYPE).get(server.baseUri().toString());
 			  JaxRsResponse response = ( new RestRequest( _server.baseUri(), nonRedirectingClient ) ).accept(MediaType.TEXT_HTML_TYPE).get(_server.baseUri().ToString());
 
 			  assertEquals( 303, response.Status );
@@ -79,7 +79,7 @@ namespace Neo4Net.Server
 			  Client nonRedirectingClient = Client.create();
 			  nonRedirectingClient.FollowRedirects = false;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.server.rest.JaxRsResponse response = new org.neo4j.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).accept(javax.ws.rs.core.MediaType.TEXT_HTML_TYPE).header("X-Forwarded-Host", "foo.bar:8734").header("X-Forwarded-Proto", "https").get(server.baseUri().toString());
+//ORIGINAL LINE: final org.Neo4Net.server.rest.JaxRsResponse response = new org.Neo4Net.server.rest.RestRequest(server.baseUri(), nonRedirectingClient).accept(javax.ws.rs.core.MediaType.TEXT_HTML_TYPE).header("X-Forwarded-Host", "foo.bar:8734").header("X-Forwarded-Proto", "https").get(server.baseUri().toString());
 			  JaxRsResponse response = ( new RestRequest( _server.baseUri(), nonRedirectingClient ) ).accept(MediaType.TEXT_HTML_TYPE).header("X-Forwarded-Host", "foo.bar:8734").header("X-Forwarded-Proto", "https").get(_server.baseUri().ToString());
 
 			  assertEquals( 303, response.Status );

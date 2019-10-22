@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.domain
 {
 
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using PropertyValueException = Neo4Net.Server.rest.web.PropertyValueException;
 
@@ -41,40 +41,40 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 		 /// <summary>
-		 /// Set all properties on an entity, deleting any properties that existed on the entity but not in the
+		 /// Set all properties on an IEntity, deleting any properties that existed on the IEntity but not in the
 		 /// provided map.
 		 /// </summary>
 		 /// <param name="entity"> </param>
 		 /// <param name="properties"> </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setAllProperties(org.neo4j.graphdb.PropertyContainer entity, java.util.Map<String, Object> properties) throws org.neo4j.server.rest.web.PropertyValueException
-		 public virtual void SetAllProperties( PropertyContainer entity, IDictionary<string, object> properties )
+//ORIGINAL LINE: public void setAllProperties(org.Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws org.Neo4Net.server.rest.web.PropertyValueException
+		 public virtual void SetAllProperties( IPropertyContainer IEntity, IDictionary<string, object> properties )
 		 {
 			  IDictionary<string, object> propsToSet = properties == null ? new Dictionary<string, object>() : properties;
 
 			  using ( Transaction tx = _db.beginTx() )
 			  {
-					SetProperties( entity, properties );
-					EnsureHasOnlyTheseProperties( entity, propsToSet.Keys );
+					SetProperties( IEntity, properties );
+					EnsureHasOnlyTheseProperties( IEntity, propsToSet.Keys );
 
 					tx.Success();
 			  }
 		 }
 
-		 private void EnsureHasOnlyTheseProperties( PropertyContainer entity, ISet<string> propertiesThatShouldExist )
+		 private void EnsureHasOnlyTheseProperties( IPropertyContainer IEntity, ISet<string> propertiesThatShouldExist )
 		 {
-			  foreach ( string entityPropertyKey in entity.PropertyKeys )
+			  foreach ( string IEntityPropertyKey in IEntity.PropertyKeys )
 			  {
-					if ( !propertiesThatShouldExist.Contains( entityPropertyKey ) )
+					if ( !propertiesThatShouldExist.Contains( IEntityPropertyKey ) )
 					{
-						 entity.RemoveProperty( entityPropertyKey );
+						 IEntity.RemoveProperty( IEntityPropertyKey );
 					}
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setProperties(org.neo4j.graphdb.PropertyContainer entity, java.util.Map<String, Object> properties) throws org.neo4j.server.rest.web.PropertyValueException
-		 public virtual void SetProperties( PropertyContainer entity, IDictionary<string, object> properties )
+//ORIGINAL LINE: public void setProperties(org.Neo4Net.graphdb.PropertyContainer IEntity, java.util.Map<String, Object> properties) throws org.Neo4Net.server.rest.web.PropertyValueException
+		 public virtual void SetProperties( IPropertyContainer IEntity, IDictionary<string, object> properties )
 		 {
 			  if ( properties != null )
 			  {
@@ -82,7 +82,7 @@ namespace Neo4Net.Server.rest.domain
 					{
 						 foreach ( KeyValuePair<string, object> property in properties.SetOfKeyValuePairs() )
 						 {
-							  SetProperty( entity, property.Key, property.Value );
+							  SetProperty( IEntity, property.Key, property.Value );
 						 }
 						 tx.Success();
 					}
@@ -90,8 +90,8 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setProperty(org.neo4j.graphdb.PropertyContainer entity, String key, Object value) throws org.neo4j.server.rest.web.PropertyValueException
-		 public virtual void SetProperty( PropertyContainer entity, string key, object value )
+//ORIGINAL LINE: public void setProperty(org.Neo4Net.graphdb.PropertyContainer IEntity, String key, Object value) throws org.Neo4Net.server.rest.web.PropertyValueException
+		 public virtual void SetProperty( IPropertyContainer IEntity, string key, object value )
 		 {
 			  if ( value is System.Collections.ICollection )
 			  {
@@ -101,9 +101,9 @@ namespace Neo4Net.Server.rest.domain
 					{
 						 // Special case: Trying to set an empty array property. We cannot determine the type
 						 // of the collection now, so we fall back to checking if there already is a collection
-						 // on the entity, and either leave it intact if it is empty, or set it to an empty collection
+						 // on the IEntity, and either leave it intact if it is empty, or set it to an empty collection
 						 // of the same type as the original
-						 object currentValue = entity.GetProperty( key, null );
+						 object currentValue = IEntity.GetProperty( key, null );
 						 if ( currentValue != null && currentValue.GetType().IsArray )
 						 {
 							  if ( Array.getLength( currentValue ) == 0 )
@@ -142,7 +142,7 @@ namespace Neo4Net.Server.rest.domain
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object convert(Object value) throws org.neo4j.server.rest.web.PropertyValueException
+//ORIGINAL LINE: public Object convert(Object value) throws org.Neo4Net.server.rest.web.PropertyValueException
 		 public virtual object Convert( object value )
 		 {
 			  if ( !( value is System.Collections.ICollection ) )

@@ -22,17 +22,17 @@
 namespace Neo4Net.Kernel.impl.traversal
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using BranchSelector = Neo4Net.Graphdb.traversal.BranchSelector;
-	using Evaluation = Neo4Net.Graphdb.traversal.Evaluation;
-	using Neo4Net.Graphdb.traversal;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using UniquenessFactory = Neo4Net.Graphdb.traversal.UniquenessFactory;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
+	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Neo4Net.GraphDb.traversal;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using UniquenessFactory = Neo4Net.GraphDb.traversal.UniquenessFactory;
 
 	/// <summary>
 	/// A <seealso cref="TraversalBranch"/> that abstracts the fact that it is actually

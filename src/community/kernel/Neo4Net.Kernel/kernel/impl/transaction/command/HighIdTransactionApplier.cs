@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	{
 		 private readonly NeoStores _neoStores;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Map<org.neo4j.kernel.impl.store.RecordStore<?>,HighId> highIds = new java.util.HashMap<>();
+//ORIGINAL LINE: private final java.util.Map<org.Neo4Net.kernel.impl.store.RecordStore<?>,HighId> highIds = new java.util.HashMap<>();
 		 private readonly IDictionary<RecordStore<object>, HighId> _highIds = new Dictionary<RecordStore<object>, HighId>();
 
 		 public HighIdTransactionApplier( NeoStores neoStores )
@@ -134,7 +134,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 			  // Notifies the stores about the recovered ids and will bump those high ids atomically if
 			  // they surpass the current high ids
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (java.util.Map.Entry<org.neo4j.kernel.impl.store.RecordStore<?>,HighId> highId : highIds.entrySet())
+//ORIGINAL LINE: for (java.util.Map.Entry<org.Neo4Net.kernel.impl.store.RecordStore<?>,HighId> highId : highIds.entrySet())
 			  foreach ( KeyValuePair<RecordStore<object>, HighId> highId in _highIds.SetOfKeyValuePairs() )
 			  {
 					highId.Key.HighestPossibleIdInUse = highId.Value.id;

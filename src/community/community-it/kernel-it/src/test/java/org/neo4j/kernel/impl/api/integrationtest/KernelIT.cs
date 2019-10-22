@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
 	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
 	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
@@ -44,11 +44,11 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
 	public class KernelIT : KernelIntegrationTest
 	{
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  assertFalse( tx.Open );
 		 }
 
-		 private static void ExecuteDummyTxs( GraphDatabaseService db, int count )
+		 private static void ExecuteDummyTxs( IGraphDatabaseService db, int count )
 		 {
 			  for ( int i = 0; i < count; i++ )
 			  {
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.IndexReference createIndex(org.neo4j.internal.kernel.api.Transaction transaction) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException, org.neo4j.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createIndex(org.Neo4Net.internal.kernel.api.Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException, org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
 		 private IndexReference CreateIndex( Neo4Net.Internal.Kernel.Api.Transaction transaction )
 		 {
 			  TokenWrite tokenWrite = transaction.TokenWrite();

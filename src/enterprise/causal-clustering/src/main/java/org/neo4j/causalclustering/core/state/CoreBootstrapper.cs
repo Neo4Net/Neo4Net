@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.state
 {
@@ -59,37 +59,37 @@ namespace Neo4Net.causalclustering.core.state
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.LAST_TRANSACTION_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.ARRAY_BLOCK;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.ARRAY_BLOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.LABEL_TOKEN;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.LABEL_TOKEN_NAME;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.LABEL_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.NEOSTORE_BLOCK;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.NEOSTORE_BLOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.NODE;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.NODE_LABELS;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.NODE_LABELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.PROPERTY;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN_NAME;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.PROPERTY_KEY_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP_GROUP;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_GROUP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN_NAME;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.RELATIONSHIP_TYPE_TOKEN_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.SCHEMA;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.SCHEMA;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdType.STRING_BLOCK;
+//	import static org.Neo4Net.kernel.impl.store.id.IdType.STRING_BLOCK;
 
 	public class CoreBootstrapper
 	{
@@ -116,13 +116,13 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.core.state.snapshot.CoreSnapshot bootstrap(java.util.Set<org.neo4j.causalclustering.identity.MemberId> members) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot bootstrap(java.util.Set<org.Neo4Net.causalclustering.identity.MemberId> members) throws Exception
 		 public virtual CoreSnapshot Bootstrap( ISet<MemberId> members )
 		 {
 			  if ( _recoveryRequiredChecker.isRecoveryRequiredAt( _databaseLayout ) )
 			  {
 					string message = "Cannot bootstrap. Recovery is required. Please ensure that the store being seeded comes from a cleanly shutdown " +
-							  "instance of Neo4j or a Neo4j backup";
+							  "instance of Neo4Net or a Neo4Net backup";
 					_log.error( message );
 					throw new System.InvalidOperationException( message );
 			  }

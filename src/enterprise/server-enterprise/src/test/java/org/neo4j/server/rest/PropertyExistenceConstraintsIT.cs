@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.rest
 {
@@ -31,11 +31,11 @@ namespace Neo4Net.Server.rest
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using EnterpriseServerBuilder = Neo4Net.Server.enterprise.helpers.EnterpriseServerBuilder;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;
@@ -52,15 +52,15 @@ namespace Neo4Net.Server.rest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonToList;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonToList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
+//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_CONSTRAINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.web.Surface_Fields.PATH_SCHEMA_RELATIONSHIP_CONSTRAINT;
+//	import static org.Neo4Net.server.rest.web.Surface_Fields.PATH_SCHEMA_RELATIONSHIP_CONSTRAINT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.SuppressOutput.suppressAll;
+//	import static org.Neo4Net.test.rule.SuppressOutput.suppressAll;
 
 	public class PropertyExistenceConstraintsIT : GraphHolder
 	{
@@ -85,15 +85,15 @@ namespace Neo4Net.Server.rest
 		 private readonly IFactory<string> _relationshipTypes = UniqueStrings.WithPrefix( "relationshipType" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<java.util.Map<String,org.neo4j.graphdb.Node>> data = org.neo4j.test.TestData.producedThrough(org.neo4j.test.GraphDescription.createGraphFor(this, true));
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<java.util.Map<String,org.Neo4Net.graphdb.Node>> data = org.Neo4Net.test.TestData.producedThrough(org.Neo4Net.test.GraphDescription.createGraphFor(this, true));
 		 public TestData<IDictionary<string, Node>> Data;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.TestData<RESTRequestGenerator> gen = org.neo4j.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.TestData<RESTRequestGenerator> gen = org.Neo4Net.test.TestData.producedThrough(RESTRequestGenerator.PRODUCER);
 		 public TestData<RESTRequestGenerator> Gen = TestData.producedThrough( RESTRequestGenerator.PRODUCER );
 
 		 private static NeoServer _server;
 
-		 public override GraphDatabaseService Graphdb()
+		 public override IGraphDatabaseService Graphdb()
 		 {
 			  return _server.Database.Graph;
 		 }
@@ -128,7 +128,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get a specific node property existence constraint.\n" + "Get a specific node property existence constraint for a label and a property.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyExistenceConstraint() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get a specific node property existence constraint.\n" + "Get a specific node property existence constraint for a label and a property.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyExistenceConstraint() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get a specific node property existence constraint.\n" + "Get a specific node property existence constraint for a label and a property.")]
 		 public virtual void getLabelPropertyExistenceConstraint()
@@ -152,7 +152,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get a specific relationship property existence constraint.\n" + "Get a specific relationship property existence constraint for a label and a property.") @Test @GraphDescription.Graph(nodes = {}) public void getRelationshipTypePropertyExistenceConstraint() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get a specific relationship property existence constraint.\n" + "Get a specific relationship property existence constraint for a label and a property.") @Test @GraphDescription.Graph(nodes = {}) public void getRelationshipTypePropertyExistenceConstraint() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get a specific relationship property existence constraint.\n" + "Get a specific relationship property existence constraint for a label and a property.")]
 		 public virtual void getRelationshipTypePropertyExistenceConstraint()
@@ -176,7 +176,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all node property existence constraints for a label.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyExistenceConstraints() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all node property existence constraints for a label.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyExistenceConstraints() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all node property existence constraints for a label.")]
 		 public virtual void getLabelPropertyExistenceConstraints()
@@ -207,7 +207,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all relationship property existence constraints for a type.") @Test @GraphDescription.Graph(nodes = {}) public void getRelationshipTypePropertyExistenceConstraints() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all relationship property existence constraints for a type.") @Test @GraphDescription.Graph(nodes = {}) public void getRelationshipTypePropertyExistenceConstraints() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all relationship property existence constraints for a type.")]
 		 public virtual void getRelationshipTypePropertyExistenceConstraints()
@@ -238,7 +238,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all constraints for a label.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyConstraints() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all constraints for a label.") @Test @GraphDescription.Graph(nodes = {}) public void getLabelPropertyConstraints() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all constraints for a label.")]
 		 public virtual void getLabelPropertyConstraints()
@@ -269,7 +269,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all constraints.") @Test @GraphDescription.Graph(nodes = {}) public void get_constraints() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") @Documented("Get all constraints.") @Test @GraphDescription.Graph(nodes = {}) public void get_constraints() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all constraints.")]
 		 public virtual void GetConstraints()

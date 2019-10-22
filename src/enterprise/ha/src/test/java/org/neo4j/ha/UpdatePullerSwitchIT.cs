@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.ha
 {
@@ -31,10 +31,10 @@ namespace Neo4Net.ha
 
 	using ClusterSettings = Neo4Net.cluster.ClusterSettings;
 	using InstanceId = Neo4Net.cluster.InstanceId;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
@@ -50,20 +50,20 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.tx_push_factor;
+//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_factor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.SlaveUpdatePuller.UPDATE_PULLER_THREAD_PREFIX;
+//	import static org.Neo4Net.kernel.ha.SlaveUpdatePuller.UPDATE_PULLER_THREAD_PREFIX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.clusterOfSize;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.clusterOfSize;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 
 	public class UpdatePullerSwitchIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(org.neo4j.kernel.ha.HaSettings.pull_interval, "100s").withFirstInstanceId(6);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(org.Neo4Net.kernel.ha.HaSettings.pull_interval, "100s").withFirstInstanceId(6);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withCluster(clusterOfSize(2)).withSharedSetting(tx_push_factor, "0").withSharedSetting(HaSettings.pull_interval, "100s").withFirstInstanceId(6);
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -129,7 +129,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void pullUpdatesOnSlave(org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws InterruptedException
+//ORIGINAL LINE: private void pullUpdatesOnSlave(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster) throws InterruptedException
 		 private void PullUpdatesOnSlave( ClusterManager.ManagedCluster cluster )
 		 {
 			  UpdatePuller updatePuller = cluster.AnySlave.DependencyResolver.resolveDependency( typeof( UpdatePuller ) );

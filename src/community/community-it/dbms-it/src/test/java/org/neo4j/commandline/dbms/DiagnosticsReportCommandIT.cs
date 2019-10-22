@@ -30,8 +30,8 @@ namespace Neo4Net.CommandLine.dbms
 	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using RealOutsideWorld = Neo4Net.CommandLine.Admin.RealOutsideWorld;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -49,13 +49,13 @@ namespace Neo4Net.CommandLine.dbms
 	public class DiagnosticsReportCommandIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
-		 private GraphDatabaseService _database;
+		 private IGraphDatabaseService _database;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setUp()
@@ -72,7 +72,7 @@ namespace Neo4Net.CommandLine.dbms
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldBeAbleToAttachToPidAndRunThreadDump() throws java.io.IOException, org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
+//ORIGINAL LINE: @Test public void shouldBeAbleToAttachToPidAndRunThreadDump() throws java.io.IOException, org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldBeAbleToAttachToPidAndRunThreadDump()
 		 {
@@ -80,11 +80,11 @@ namespace Neo4Net.CommandLine.dbms
 			  assertThat( pid, @is( not( 0 ) ) );
 
 			  // Write config file
-			  Files.createFile( TestDirectory.file( "neo4j.conf" ).toPath() );
+			  Files.createFile( TestDirectory.file( "Neo4Net.conf" ).toPath() );
 
-			  // write neo4j.pid file
+			  // write Neo4Net.pid file
 			  File run = TestDirectory.directory( "run" );
-			  Files.write( Paths.get( run.AbsolutePath, "neo4j.pid" ), pid.ToString().GetBytes() );
+			  Files.write( Paths.get( run.AbsolutePath, "Neo4Net.pid" ), pid.ToString().GetBytes() );
 
 			  // Run command, should detect running instance
 			  try

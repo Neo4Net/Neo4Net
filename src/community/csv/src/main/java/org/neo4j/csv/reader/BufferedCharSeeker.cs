@@ -26,7 +26,7 @@ namespace Neo4Net.Csv.Reader
 	using CSVHeaderInformation = Neo4Net.Values.Storable.CSVHeaderInformation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.csv.reader.Mark.END_OF_LINE_CHARACTER;
+//	import static org.Neo4Net.csv.reader.Mark.END_OF_LINE_CHARACTER;
 
 	/// <summary>
 	/// Much like a <seealso cref="System.IO.StreamReader_BufferedReader"/> for a <seealso cref="Reader"/>.

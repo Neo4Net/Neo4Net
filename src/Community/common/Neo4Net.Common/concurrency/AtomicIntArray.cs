@@ -16,7 +16,7 @@
 // To make them public define you have to define the conditional compilation symbol CONCURRENCY_UTILS_PUBLIC in your project properties.
 //
 
-#pragma warning disable 1591
+
 
 // ReSharper disable All
 

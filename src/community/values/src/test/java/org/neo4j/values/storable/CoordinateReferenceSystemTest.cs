@@ -34,9 +34,9 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.WGS84;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84;
 
 	internal class CoordinateReferenceSystemTest
 	{
@@ -106,7 +106,7 @@ namespace Neo4Net.Values.Storable
 			  assertThat( "2D distance should match", crs.Calculator.distance( Geo( 0.0, -45.0 ), Geo( 0.0, 45.0 ) ), closeTo( 10000000.0, 20000.0 ) );
 			  assertThat( "2D distance should match", crs.Calculator.distance( Geo( -45.0, 0.0 ), Geo( 45.0, 0.0 ) ), closeTo( 10000000.0, 20000.0 ) );
 			  assertThat( "2D distance should match", crs.Calculator.distance( Geo( -45.0, 0.0 ), Geo( 45.0, 0.0 ) ), closeTo( 10000000.0, 20000.0 ) );
-			  //"distance function should measure distance from Copenhagen train station to Neo4j in Malmö"
+			  //"distance function should measure distance from Copenhagen train station to Neo4Net in Malmö"
 			  PointValue cph = Geo( 12.564590, 55.672874 );
 			  PointValue malmo = Geo( 12.994341, 55.611784 );
 			  double expected = 27842.0;
@@ -118,7 +118,7 @@ namespace Neo4Net.Values.Storable
 		 internal virtual void ShouldCalculateGeographicDistance3D()
 		 {
 			  CoordinateReferenceSystem crs = CoordinateReferenceSystem.Wgs84_3d;
-			  //"distance function should measure distance from Copenhagen train station to Neo4j in Malmö"
+			  //"distance function should measure distance from Copenhagen train station to Neo4Net in Malmö"
 			  PointValue cph = Geo( 12.564590, 55.672874, 0.0 );
 			  PointValue cphHigh = Geo( 12.564590, 55.672874, 1000.0 );
 			  PointValue malmo = Geo( 12.994341, 55.611784, 0.0 );

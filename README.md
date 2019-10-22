@@ -1,2 +1,2 @@
 # Neo4Net
-Neo4Net - Neo4j Enterprise (OngDb) Port for .NET ... Graphs Everywhere!
+Neo4Net - Neo4Net Enterprise (OngDb) Port for .NET ... Graphs Everywhere!

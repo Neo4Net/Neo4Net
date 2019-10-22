@@ -26,7 +26,7 @@ namespace Neo4Net.Io.pagecache
 
 	/// <summary>
 	/// A tiny dumb lock manager built specifically for the page cache stress test, because it needs something to represent
-	/// the entity locks since page write locks are not exclusive. Also, for the stress test, a simple array of
+	/// the IEntity locks since page write locks are not exclusive. Also, for the stress test, a simple array of
 	/// ReentrantLocks would take up too much memory.
 	/// </summary>
 	public class TinyLockManager

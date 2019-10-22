@@ -6,7 +6,7 @@
 //-------------------------------------------------------------------------------------------
 namespace Neo4Net.Utils
 {
-   internal static class StringHelper
+   public static class StringHelper
    {
       //----------------------------------------------------------------------------------
       //	This method replaces the Java String.substring method when 'start' is a

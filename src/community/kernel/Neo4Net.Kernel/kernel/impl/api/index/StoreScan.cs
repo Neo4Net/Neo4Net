@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 void Stop();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: void acceptUpdate(MultipleIndexPopulator.MultipleIndexUpdater updater, org.neo4j.kernel.api.index.IndexEntryUpdate<?> update, long currentlyIndexedNodeId);
+//ORIGINAL LINE: void acceptUpdate(MultipleIndexPopulator.MultipleIndexUpdater updater, org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update, long currentlyIndexedNodeId);
 		 void acceptUpdate<T1>( MultipleIndexPopulator.MultipleIndexUpdater updater, IndexEntryUpdate<T1> update, long currentlyIndexedNodeId );
 
 		 PopulationProgress Progress { get; }

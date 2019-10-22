@@ -34,7 +34,7 @@ namespace Neo4Net.Adversaries.fs
 	/// Used by the robustness suite to check for partial failures.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialFileSystemAbstraction implements org.neo4j.io.fs.FileSystemAbstraction
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public class AdversarialFileSystemAbstraction implements org.Neo4Net.io.fs.FileSystemAbstraction
 	public class AdversarialFileSystemAbstraction : FileSystemAbstraction
 	{
 		 private readonly FileSystemAbstraction @delegate;
@@ -51,7 +51,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.FileWatcher fileWatcher() throws java.io.IOException
 		 public override FileWatcher FileWatcher()
 		 {
 			  _adversary.injectFailure( typeof( System.NotSupportedException ), typeof( IOException ) );
@@ -59,7 +59,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel open(java.io.File fileName, org.neo4j.io.fs.OpenMode openMode) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel open(java.io.File fileName, org.Neo4Net.io.fs.OpenMode openMode) throws java.io.IOException
 		 public override StoreChannel Open( File fileName, OpenMode openMode )
 		 {
 			  _adversary.injectFailure( typeof( FileNotFoundException ), typeof( IOException ), typeof( SecurityException ) );
@@ -83,7 +83,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.StoreChannel create(java.io.File fileName) throws java.io.IOException
 		 public override StoreChannel Create( File fileName )
 		 {
 			  _adversary.injectFailure( typeof( FileNotFoundException ), typeof( IOException ), typeof( SecurityException ) );
@@ -227,7 +227,7 @@ namespace Neo4Net.Adversaries.fs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<org.neo4j.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
+//ORIGINAL LINE: public java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> streamFilesRecursive(java.io.File directory) throws java.io.IOException
 		 public override Stream<FileHandle> StreamFilesRecursive( File directory )
 		 {
 			  return StreamFilesRecursive.streamFilesRecursive( directory, this );

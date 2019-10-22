@@ -25,7 +25,7 @@ namespace Neo4Net.Server.Security.Auth
 	public class BasicPasswordPolicy : PasswordPolicy
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validatePassword(byte[] password) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: public void validatePassword(byte[] password) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 public override void ValidatePassword( sbyte[] password )
 		 {
 			  if ( password == null || password.Length == 0 )

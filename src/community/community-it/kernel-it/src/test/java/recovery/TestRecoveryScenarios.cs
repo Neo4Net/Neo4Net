@@ -29,11 +29,11 @@ namespace Recovery
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -54,9 +54,9 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 
 	/// <summary>
 	/// Arbitrary recovery scenarios boiled down to as small tests as possible
@@ -73,7 +73,7 @@ namespace Recovery
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 		 private Label _label;
 		 private GraphDatabaseAPI _db;
@@ -216,7 +216,7 @@ namespace Recovery
 			  {
 					assertEquals( 0, tx.DataRead().countsForNode(-1) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.core.TokenHolder holder = db.getDependencyResolver().resolveDependency(org.neo4j.kernel.impl.core.TokenHolders.class).labelTokens();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.core.TokenHolder holder = db.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.core.TokenHolders.class).labelTokens();
 					TokenHolder holder = _db.DependencyResolver.resolveDependency( typeof( TokenHolders ) ).labelTokens();
 					int labelId = holder.GetIdByName( _label.name() );
 					assertEquals( 0, tx.DataRead().countsForNode(labelId) );
@@ -306,9 +306,9 @@ namespace Recovery
 		 public abstract class FlushStrategy
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORCE_EVERYTHING { void flush(org.neo4j.kernel.internal.GraphDatabaseAPI db) { org.neo4j.io.pagecache.IOLimiter limiter = org.neo4j.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(org.neo4j.storageengine.api.StorageEngine.class).flushAndForce(limiter); } },
+//           FORCE_EVERYTHING { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) { org.Neo4Net.io.pagecache.IOLimiter limiter = org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(org.Neo4Net.storageengine.api.StorageEngine.class).flushAndForce(limiter); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FLUSH_PAGE_CACHE { void flush(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException { db.getDependencyResolver().resolveDependency(org.neo4j.io.pagecache.PageCache.class).flushAndForce(); } };
+//           FLUSH_PAGE_CACHE { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException { db.getDependencyResolver().resolveDependency(org.Neo4Net.io.pagecache.PageCache.class).flushAndForce(); } };
 
 			  private static readonly IList<FlushStrategy> valueList = new List<FlushStrategy>();
 
@@ -338,7 +338,7 @@ namespace Recovery
 			  internal object[] parameters = new object[]{ this };
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void flush(org.neo4j.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException;
+//ORIGINAL LINE: abstract void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException;
 			  internal abstract void flush( Neo4Net.Kernel.Internal.GraphDatabaseAPI db );
 
 			 public static IList<FlushStrategy> values()
@@ -406,8 +406,8 @@ namespace Recovery
 		 private void CrashAndRestart()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.GraphDatabaseService db1 = db;
-			  GraphDatabaseService db1 = _db;
+//ORIGINAL LINE: final org.Neo4Net.graphdb.GraphDatabaseService db1 = db;
+			  IGraphDatabaseService db1 = _db;
 			  FileSystemAbstraction uncleanFs = FsRule.snapshot( db1.shutdown );
 			  _db = ( GraphDatabaseAPI ) DatabaseFactory( uncleanFs ).newImpermanentDatabase();
 		 }

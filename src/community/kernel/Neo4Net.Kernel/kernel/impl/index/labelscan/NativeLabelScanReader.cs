@@ -26,14 +26,14 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using Neo4Net.Cursors;
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
 	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
 	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
+//	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
 
 	/// <summary>
 	/// <seealso cref="LabelScanReader"/> for reading data from <seealso cref="NativeLabelScanStore"/>.
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> seekerForLabel(long startId, int labelId) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<LabelScanKey,LabelScanValue>,java.io.IOException> seekerForLabel(long startId, int labelId) throws java.io.IOException
 		 private IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> SeekerForLabel( long startId, int labelId )
 		 {
 			  LabelScanKey from = new LabelScanKey( labelId, rangeOf( startId ) );

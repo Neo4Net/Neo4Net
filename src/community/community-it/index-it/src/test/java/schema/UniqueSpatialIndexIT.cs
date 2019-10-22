@@ -26,13 +26,13 @@ namespace Schema
 	using MethodSource = org.junit.jupiter.@params.provider.MethodSource;
 
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using SpatialIndexValueTestUtil = Neo4Net.Kernel.Impl.Index.Schema.config.SpatialIndexValueTestUtil;
@@ -60,9 +60,9 @@ namespace Schema
 		 private const TestLabels LABEL = TestLabels.LABEL_ONE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private PointValue _point1;
 		 private PointValue _point2;
 
@@ -86,7 +86,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve(org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldPopulateIndexWithUniquePointsThatCollideOnSpaceFillingCurve( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -101,7 +101,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx(org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldAddPointsThatCollideOnSpaceFillingCurveToUniqueIndexInSameTx( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -116,7 +116,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenPopulatingWithNonUniquePoints(org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenPopulatingWithNonUniquePoints(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldThrowWhenPopulatingWithNonUniquePoints( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given
@@ -128,7 +128,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenAddingNonUniquePoints(org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("providerSettings") void shouldThrowWhenAddingNonUniquePoints(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex schemaIndex)
 		 internal virtual void ShouldThrowWhenAddingNonUniquePoints( GraphDatabaseSettings.SchemaIndex schemaIndex )
 		 {
 			  // given

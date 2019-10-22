@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.repr
 
 	public class RepresentationTestAccess
 	{
-		 private static readonly URI _baseUri = URI.create( "http://neo4j.org/" );
+		 private static readonly URI _baseUri = URI.create( "http://Neo4Net.org/" );
 
 		 private RepresentationTestAccess()
 		 {

@@ -33,11 +33,11 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	internal class ExhaustingEntityImporterRunnable : ThreadStart
 	{
 		 private readonly InputIterator _data;
-		 private readonly EntityImporter _visitor;
+		 private readonly IEntityImporter _visitor;
 		 private readonly LongAdder _roughEntityCountProgress;
 		 private readonly StageControl _control;
 
-		 internal ExhaustingEntityImporterRunnable( StageControl control, InputIterator data, EntityImporter visitor, LongAdder roughEntityCountProgress )
+		 internal ExhaustingEntityImporterRunnable( StageControl control, InputIterator data, IEntityImporter visitor, LongAdder roughEntityCountProgress )
 		 {
 			  this._control = control;
 			  this._data = data;

@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 	using Test = org.junit.jupiter.api.Test;
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using SuccessMessage = Neo4Net.Bolt.v1.messaging.response.SuccessMessage;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
@@ -42,7 +42,7 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 internal virtual void ShouldEncodeSuccessMessage()
 		 {
 			  // Given
-			  Neo4Net.Bolt.messaging.Neo4jPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4jPack_Packer ) );
+			  Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer = mock( typeof( Neo4Net.Bolt.messaging.Neo4NetPack_Packer ) );
 			  SuccessMessageEncoder encoder = new SuccessMessageEncoder();
 
 			  // When

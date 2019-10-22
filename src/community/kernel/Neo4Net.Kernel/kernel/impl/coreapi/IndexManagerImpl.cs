@@ -22,16 +22,16 @@
 namespace Neo4Net.Kernel.impl.coreapi
 {
 
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Neo4Net.Graphdb.index;
-	using Neo4Net.Graphdb.index;
-	using IndexManager = Neo4Net.Graphdb.index.IndexManager;
-	using RelationshipAutoIndexer = Neo4Net.Graphdb.index.RelationshipAutoIndexer;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Neo4Net.GraphDb.index;
+	using Neo4Net.GraphDb.index;
+	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
+	using RelationshipAutoIndexer = Neo4Net.GraphDb.index.RelationshipAutoIndexer;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
 	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
 	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  return _transactionBridge.get().indexRead().relationshipExplicitIndexesGetAll();
 		 }
 
-		 public override IDictionary<string, string> GetConfiguration<T1>( Index<T1> index ) where T1 : Neo4Net.Graphdb.PropertyContainer
+		 public override IDictionary<string, string> GetConfiguration<T1>( Index<T1> index ) where T1 : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  try
 			  {
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					{
 						 return transaction.IndexRead().relationshipExplicitIndexGetConfiguration(index.Name);
 					}
-					throw new System.ArgumentException( "Unknown entity type " + index.EntityType.SimpleName );
+					throw new System.ArgumentException( "Unknown IEntity type " + index.EntityType.SimpleName );
 			  }
 			  catch ( ExplicitIndexNotFoundKernelException )
 			  {
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  }
 		 }
 
-		 public override string SetConfiguration<T1>( Index<T1> index, string key, string value ) where T1 : Neo4Net.Graphdb.PropertyContainer
+		 public override string SetConfiguration<T1>( Index<T1> index, string key, string value ) where T1 : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  // Configuration changes should be done transactionally. However this
 			  // has always been done non-transactionally, so it's not a regression.
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					{
 						 return transaction.IndexWrite().relationshipExplicitIndexSetConfiguration(index.Name, key, value);
 					}
-					throw new System.ArgumentException( "Unknown entity type " + index.EntityType.SimpleName );
+					throw new System.ArgumentException( "Unknown IEntity type " + index.EntityType.SimpleName );
 			  }
 			  catch ( InvalidTransactionTypeKernelException e )
 			  {
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  }
 		 }
 
-		 public override string RemoveConfiguration<T1>( Index<T1> index, string key ) where T1 : Neo4Net.Graphdb.PropertyContainer
+		 public override string RemoveConfiguration<T1>( Index<T1> index, string key ) where T1 : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  // Configuration changes should be done transactionally. However this
 			  // has always been done non-transactionally, so it's not a regression.
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					{
 						 return transaction.IndexWrite().relationshipExplicitIndexRemoveConfiguration(index.Name, key);
 					}
-					throw new System.ArgumentException( "Unknown entity type " + index.EntityType.SimpleName );
+					throw new System.ArgumentException( "Unknown IEntity type " + index.EntityType.SimpleName );
 			  }
 			  catch ( InvalidTransactionTypeKernelException e )
 			  {

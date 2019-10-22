@@ -26,12 +26,12 @@ namespace Neo4Net.Kernel.impl.proc
 	using ProcedureTransaction = Neo4Net.Procedure.ProcedureTransaction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
+//	import static org.Neo4Net.kernel.api.proc.Context_Fields.KERNEL_TRANSACTION;
 
 	public class ProcedureTransactionProvider : ComponentRegistry.Provider<ProcedureTransaction>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.procedure.ProcedureTransaction apply(org.neo4j.kernel.api.proc.Context ctx) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.procedure.ProcedureTransaction apply(org.Neo4Net.kernel.api.proc.Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override ProcedureTransaction Apply( Context ctx )
 		 {
 			  KernelTransaction ktx = ctx.Get( KERNEL_TRANSACTION );

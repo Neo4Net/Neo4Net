@@ -42,7 +42,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object extract(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList parameters) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: Object extract(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object source, ParameterList parameters) throws org.Neo4Net.server.rest.repr.BadInputException
 		 internal override object Extract( GraphDatabaseAPI graphDb, object source, ParameterList parameters )
 		 {
 			  object result = Caster.get( graphDb, parameters, Name );

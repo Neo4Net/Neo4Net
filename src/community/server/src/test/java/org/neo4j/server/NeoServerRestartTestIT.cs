@@ -116,7 +116,7 @@ namespace Neo4Net.Server
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.pagecache.PageSwapper createPageSwapper(java.io.File file, int filePageSize, org.neo4j.io.pagecache.PageEvictionCallback onEviction, boolean createIfNotExist, boolean noChannelStriping) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.pagecache.PageSwapper createPageSwapper(java.io.File file, int filePageSize, org.Neo4Net.io.pagecache.PageEvictionCallback onEviction, boolean createIfNotExist, boolean noChannelStriping) throws java.io.IOException
 			  public override PageSwapper CreatePageSwapper( File file, int filePageSize, PageEvictionCallback onEviction, bool createIfNotExist, bool noChannelStriping )
 			  {
 					// This will be called early in the startup sequence. Notifies that we can call stop on the server.

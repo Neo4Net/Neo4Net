@@ -30,7 +30,7 @@ namespace Neo4Net.Bolt.runtime
 	using BoltStateMachineV3 = Neo4Net.Bolt.v3.BoltStateMachineV3;
 	using TransactionStateMachineV3SPI = Neo4Net.Bolt.v3.runtime.TransactionStateMachineV3SPI;
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using LogService = Neo4Net.Logging.Internal.LogService;

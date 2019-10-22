@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.FALSE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.GenericKey.TRUE;
+//	import static org.Neo4Net.kernel.impl.index.schema.GenericKey.TRUE;
 
 	// <Boolean> as generic raw type is mostly for show, this class overrides default object:y behaviour to create primitive boolean[] array
 	internal class BooleanArrayType : AbstractArrayType<bool>
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 // Affected key state:
 		 // long0Array
 
-		 internal BooleanArrayType( sbyte typeId ) : base( ValueGroup.BOOLEAN_ARRAY, typeId, ( o1, o2, i ) -> BooleanType.Compare( o1.long0Array[i], o2.long0Array[i] ), null, ( c, k, i ) -> BooleanType.put( c, k.long0Array[i] ), BooleanType.read, null, org.neo4j.values.storable.ValueWriter_ArrayType.Boolean )
+		 internal BooleanArrayType( sbyte typeId ) : base( ValueGroup.BOOLEAN_ARRAY, typeId, ( o1, o2, i ) -> BooleanType.Compare( o1.long0Array[i], o2.long0Array[i] ), null, ( c, k, i ) -> BooleanType.put( c, k.long0Array[i] ), BooleanType.read, null, org.Neo4Net.values.storable.ValueWriter_ArrayType.Boolean )
 		 {
 		 }
 

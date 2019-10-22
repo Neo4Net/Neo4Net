@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,34 +13,34 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.helpers
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 	using Standard = Neo4Net.Kernel.impl.store.format.standard.Standard;
 	using TransactionLogFiles = Neo4Net.Kernel.impl.transaction.log.files.TransactionLogFiles;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
-	public class ClassicNeo4jStore
+	public class ClassicNeo4NetStore
 	{
 		 private readonly File _storeDir;
 		 private readonly File _logicalLogsDir;
 
-		 private ClassicNeo4jStore( File storeDir, File logicalLogsDir )
+		 private ClassicNeo4NetStore( File storeDir, File logicalLogsDir )
 		 {
 			  this._storeDir = storeDir;
 			  this._logicalLogsDir = logicalLogsDir;
@@ -62,12 +62,12 @@ namespace Neo4Net.causalclustering.helpers
 			 }
 		 }
 
-		 public static Neo4jStoreBuilder Builder( File baseDir, FileSystemAbstraction fsa )
+		 public static Neo4NetStoreBuilder Builder( File baseDir, FileSystemAbstraction fsa )
 		 {
-			  return new Neo4jStoreBuilder( baseDir, fsa );
+			  return new Neo4NetStoreBuilder( baseDir, fsa );
 		 }
 
-		 public class Neo4jStoreBuilder
+		 public class Neo4NetStoreBuilder
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal string DbNameConflict = "graph.db";
@@ -79,54 +79,54 @@ namespace Neo4Net.causalclustering.helpers
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal string LogicalLogsLocationConflict = "";
 
-			  internal Neo4jStoreBuilder( File baseDir, FileSystemAbstraction fsa )
+			  internal Neo4NetStoreBuilder( File baseDir, FileSystemAbstraction fsa )
 			  {
 
 					this.BaseDir = baseDir;
 					this.Fsa = fsa;
 			  }
 
-			  public virtual Neo4jStoreBuilder DbName( string @string )
+			  public virtual Neo4NetStoreBuilder DbName( string @string )
 			  {
 					DbNameConflict = @string;
 					return this;
 			  }
 
-			  public virtual Neo4jStoreBuilder NeedToRecover()
+			  public virtual Neo4NetStoreBuilder NeedToRecover()
 			  {
 					NeedRecover = true;
 					return this;
 			  }
 
-			  public virtual Neo4jStoreBuilder AmountOfNodes( int nodes )
+			  public virtual Neo4NetStoreBuilder AmountOfNodes( int nodes )
 			  {
 					NrOfNodes = nodes;
 					return this;
 			  }
 
-			  public virtual Neo4jStoreBuilder RecordFormats( string format )
+			  public virtual Neo4NetStoreBuilder RecordFormats( string format )
 			  {
 					RecordsFormat = format;
 					return this;
 			  }
 
-			  public virtual Neo4jStoreBuilder LogicalLogsLocation( string logicalLogsLocation )
+			  public virtual Neo4NetStoreBuilder LogicalLogsLocation( string logicalLogsLocation )
 			  {
 					this.LogicalLogsLocationConflict = logicalLogsLocation;
 					return this;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClassicNeo4jStore build() throws java.io.IOException
-			  public virtual ClassicNeo4jStore Build()
+//ORIGINAL LINE: public ClassicNeo4NetStore build() throws java.io.IOException
+			  public virtual ClassicNeo4NetStore Build()
 			  {
 					CreateStore( BaseDir, Fsa, DbNameConflict, NrOfNodes, RecordsFormat, NeedRecover, LogicalLogsLocationConflict );
 					File storeDir = new File( BaseDir, DbNameConflict );
-					return new ClassicNeo4jStore( storeDir, new File( storeDir, LogicalLogsLocationConflict ) );
+					return new ClassicNeo4NetStore( storeDir, new File( storeDir, LogicalLogsLocationConflict ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void createStore(java.io.File super, org.neo4j.io.fs.FileSystemAbstraction fileSystem, String dbName, int nodesToCreate, String recordFormat, boolean recoveryNeeded, String logicalLogsLocation) throws java.io.IOException
+//ORIGINAL LINE: private static void createStore(java.io.File super, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, String dbName, int nodesToCreate, String recordFormat, boolean recoveryNeeded, String logicalLogsLocation) throws java.io.IOException
 			  internal static void CreateStore( File @base, FileSystemAbstraction fileSystem, string dbName, int nodesToCreate, string recordFormat, bool recoveryNeeded, string logicalLogsLocation )
 			  {
 					File storeDir = new File( @base, dbName );

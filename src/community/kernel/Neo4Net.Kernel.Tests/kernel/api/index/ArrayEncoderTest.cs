@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Race = Neo4Net.Test.Race;
 	using ThreadingRule = Neo4Net.Test.rule.concurrent.ThreadingRule;
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.Api.Index
 	public class ArrayEncoderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threads = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threads = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threads = new ThreadingRule();
 
 		 private static readonly char?[] _base64chars = new char?[]{ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '/' };
@@ -118,14 +118,14 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void raceEncode(String[] INPUT, System.Func<org.neo4j.values.storable.Value, String> encodeFunction) throws Throwable
+//ORIGINAL LINE: private void raceEncode(String[] INPUT, System.Func<org.Neo4Net.values.storable.Value, String> encodeFunction) throws Throwable
 		 private void RaceEncode( string[] input, System.Func<Value, string> encodeFunction )
 		 {
 			  Race race = new Race();
 			  foreach ( string input in input )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.values.storable.Value inputValue = org.neo4j.values.storable.Values.of(new String[]{input});
+//ORIGINAL LINE: final org.Neo4Net.values.storable.Value inputValue = org.Neo4Net.values.storable.Values.of(new String[]{input});
 					Value inputValue = Values.of( new string[]{ input } );
 					race.AddContestant(() =>
 					{

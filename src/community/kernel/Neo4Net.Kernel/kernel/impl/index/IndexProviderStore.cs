@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.index
 	using UpgradeNotAllowedByConfigurationException = Neo4Net.Kernel.impl.storemigration.UpgradeNotAllowedByConfigurationException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.versionLongToString;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.versionLongToString;
 
 	public class IndexProviderStore
 	{
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private System.Nullable<long>[] readRecordsWithNullDefaults(org.neo4j.io.fs.StoreChannel fileChannel, int count, boolean allowUpgrade) throws java.io.IOException
+//ORIGINAL LINE: private System.Nullable<long>[] readRecordsWithNullDefaults(org.Neo4Net.io.fs.StoreChannel fileChannel, int count, boolean allowUpgrade) throws java.io.IOException
 		 private long?[] ReadRecordsWithNullDefaults( StoreChannel fileChannel, int count, bool allowUpgrade )
 		 {
 			  _buf.clear();
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void create(java.io.File file, org.neo4j.io.fs.FileSystemAbstraction fileSystem, long indexVersion) throws java.io.IOException
+//ORIGINAL LINE: private void create(java.io.File file, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, long indexVersion) throws java.io.IOException
 		 private void Create( File file, FileSystemAbstraction fileSystem, long indexVersion )
 		 {
 			  if ( fileSystem.FileExists( file ) && fileSystem.GetFileSize( file ) > 0 )
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void write(org.neo4j.io.fs.StoreChannel channel, long time, long identifier, long version, long lastCommittedTxId, long indexVersion) throws java.io.IOException
+//ORIGINAL LINE: private void write(org.Neo4Net.io.fs.StoreChannel channel, long time, long identifier, long version, long lastCommittedTxId, long indexVersion) throws java.io.IOException
 		 private void Write( StoreChannel channel, long time, long identifier, long version, long lastCommittedTxId, long indexVersion )
 		 {
 			  _buf.clear();

@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 	public class LuceneFulltextIndex : AbstractLuceneIndex<FulltextIndexReader>, System.IDisposable
 	{
 		 private readonly Analyzer _analyzer;
 		 private readonly string _identifier;
-		 private readonly EntityType _type;
+		 private readonly IEntityType _type;
 		 private readonly ICollection<string> _properties;
 		 private readonly TokenHolder _propertyKeyTokenHolder;
 		 private readonly File _transactionsFolder;
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected FulltextIndexReader createSimpleReader(java.util.List<org.neo4j.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected FulltextIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override FulltextIndexReader CreateSimpleReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  AbstractIndexPartition singlePartition = GetFirstPartition( partitions );
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected FulltextIndexReader createPartitionedReader(java.util.List<org.neo4j.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected FulltextIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 		 protected internal override FulltextIndexReader CreatePartitionedReader( IList<AbstractIndexPartition> partitions )
 		 {
 			  IList<PartitionSearcher> searchers = AcquireSearchers( partitions );

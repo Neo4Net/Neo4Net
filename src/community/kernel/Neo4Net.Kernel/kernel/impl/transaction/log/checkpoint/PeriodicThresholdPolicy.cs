@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogPruning = Neo4Net.Kernel.impl.transaction.log.pruning.LogPruning;
@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
+//	import static org.Neo4Net.kernel.impl.transaction.log.checkpoint.CheckPointThreshold.or;
 
 	/// <summary>
 	/// The {@code periodic} check point threshold policy uses the <seealso cref="GraphDatabaseSettings.check_point_interval_time"/>

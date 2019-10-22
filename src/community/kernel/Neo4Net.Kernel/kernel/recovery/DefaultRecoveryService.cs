@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.recovery
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
+//	import static org.Neo4Net.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
 
 	public class DefaultRecoveryService : RecoveryService
 	{
@@ -72,21 +72,21 @@ namespace Neo4Net.Kernel.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RecoveryApplier getRecoveryApplier(org.neo4j.storageengine.api.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public RecoveryApplier getRecoveryApplier(org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception
 		 public override RecoveryApplier GetRecoveryApplier( TransactionApplicationMode mode )
 		 {
 			  return new RecoveryVisitor( _storageEngine, mode );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.TransactionCursor getTransactions(org.neo4j.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.TransactionCursor getTransactions(org.Neo4Net.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
 		 public override TransactionCursor GetTransactions( LogPosition position )
 		 {
 			  return _logicalTransactionStore.getTransactions( position );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.TransactionCursor getTransactionsInReverseOrder(org.neo4j.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.TransactionCursor getTransactionsInReverseOrder(org.Neo4Net.kernel.impl.transaction.log.LogPosition position) throws java.io.IOException
 		 public override TransactionCursor GetTransactionsInReverseOrder( LogPosition position )
 		 {
 			  return _logicalTransactionStore.getTransactionsInReverseOrder( position );
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.recovery
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.neo4j.kernel.impl.transaction.CommittedTransactionRepresentation transaction) throws Exception
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation transaction) throws Exception
 			  public override bool Visit( CommittedTransactionRepresentation transaction )
 			  {
 					TransactionRepresentation txRepresentation = transaction.TransactionRepresentation;

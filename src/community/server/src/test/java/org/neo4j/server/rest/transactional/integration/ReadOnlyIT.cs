@@ -37,12 +37,12 @@ namespace Neo4Net.Server.rest.transactional.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 
 	public class ReadOnlyIT : ExclusiveServerTestBase
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory dir = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory dir = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory Dir = TestDirectory.testDirectory();
 		 private NeoServer _readOnlyServer;
 		 private HTTP.Builder _http;
@@ -81,7 +81,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 			  string message = error.get( "message" ).asText();
 
 			  assertEquals( "Neo.ClientError.General.ForbiddenOnReadOnlyDatabase", code );
-			  assertThat( message, containsString( "This is a read only Neo4j instance" ) );
+			  assertThat( message, containsString( "This is a read only Neo4Net instance" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -99,7 +99,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 			  string message = error.get( "message" ).asText();
 
 			  assertEquals( "Neo.ClientError.General.ForbiddenOnReadOnlyDatabase", code );
-			  assertThat( message, containsString( "This is a read only Neo4j instance" ) );
+			  assertThat( message, containsString( "This is a read only Neo4Net instance" ) );
 		 }
 
 	}

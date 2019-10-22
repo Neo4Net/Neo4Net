@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 				 }
 			 }
 
-			 public void feed( EntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, EntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
+			 public void feed( IEntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
 			 {
 				  throw new System.NotSupportedException();
 			 }

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordFormats = Neo4Net.Kernel.impl.store.format.RecordFormats;
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <FAILURE extends Exception> void accept(RecordStore_Processor<FAILURE> processor, org.neo4j.kernel.impl.store.record.RelationshipGroupRecord record) throws FAILURE
+//ORIGINAL LINE: public <FAILURE extends Exception> void accept(RecordStore_Processor<FAILURE> processor, org.Neo4Net.kernel.impl.store.record.RelationshipGroupRecord record) throws FAILURE
 		 public override void Accept<FAILURE>( RecordStore_Processor<FAILURE> processor, RelationshipGroupRecord record ) where FAILURE : Exception
 		 {
 			  processor.ProcessRelationshipGroup( this, record );

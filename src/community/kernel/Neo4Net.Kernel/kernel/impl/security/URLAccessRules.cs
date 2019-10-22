@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.security
 {
 
-	using URLAccessRule = Neo4Net.Graphdb.security.URLAccessRule;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 
 	public class URLAccessRules
 	{
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.graphdb.security.URLAccessRule combined(final java.util.Map<String,org.neo4j.graphdb.security.URLAccessRule> urlAccessRules)
+//ORIGINAL LINE: public static org.Neo4Net.graphdb.security.URLAccessRule combined(final java.util.Map<String,org.Neo4Net.graphdb.security.URLAccessRule> urlAccessRules)
 		 public static URLAccessRule Combined( IDictionary<string, URLAccessRule> urlAccessRules )
 		 {
 			  return ( config, url ) =>

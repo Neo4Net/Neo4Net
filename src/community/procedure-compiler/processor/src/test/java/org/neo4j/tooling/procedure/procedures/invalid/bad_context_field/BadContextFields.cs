@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_context_field
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Context = Neo4Net.Procedure.Context;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
@@ -32,18 +32,18 @@ namespace Neo4Net.Tooling.procedure.procedures.invalid.bad_context_field
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public static org.neo4j.graphdb.GraphDatabaseService shouldBeNonStatic;
-		 public static GraphDatabaseService ShouldBeNonStatic;
+//ORIGINAL LINE: @Context public static org.Neo4Net.graphdb.GraphDatabaseService shouldBeNonStatic;
+		 public static IGraphDatabaseService ShouldBeNonStatic;
 		 public static string Value;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public final org.neo4j.graphdb.GraphDatabaseService shouldBeNonFinal = null;
-		 public readonly GraphDatabaseService ShouldBeNonFinal = null;
+//ORIGINAL LINE: @Context public final org.Neo4Net.graphdb.GraphDatabaseService shouldBeNonFinal = null;
+		 public readonly IGraphDatabaseService ShouldBeNonFinal = null;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.neo4j.graphdb.GraphDatabaseService db;
-		 public GraphDatabaseService Db;
+//ORIGINAL LINE: @Context public org.Neo4Net.graphdb.GraphDatabaseService db;
+		 public IGraphDatabaseService Db;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context protected org.neo4j.graphdb.GraphDatabaseService shouldBePublic;
-		 protected internal GraphDatabaseService ShouldBePublic;
+//ORIGINAL LINE: @Context protected org.Neo4Net.graphdb.GraphDatabaseService shouldBePublic;
+		 protected internal IGraphDatabaseService ShouldBePublic;
 		 internal string ShouldBeStatic;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

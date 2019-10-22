@@ -20,8 +20,8 @@
 namespace Neo4Net.Graphalgo.impl.util
 {
 	using Neo4Net.Graphalgo;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 

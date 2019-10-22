@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -37,15 +37,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasItem;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
+//	import static org.Neo4Net.graphdb.security.AuthorizationViolationException.PERMISSION_DENIED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ADMIN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.ARCHITECT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.PUBLISHER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
+//	import static org.Neo4Net.server.security.enterprise.auth.plugin.api.PredefinedRoles.READER;
 
 	public abstract class AuthScenariosInteractionTestBase<S> : ProcedureInteractionTestBase<S>
 	{
@@ -99,18 +99,18 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLogSecurityEvents()
 		 {
-			  S mats = Neo.login( "mats", "neo4j" );
+			  S mats = Neo.login( "mats", "Neo4Net" );
 			  // for REST, login doesn't happen until the subject does something
 			  Neo.executeQuery(mats, "UNWIND [] AS i RETURN 1", Collections.emptyMap(), r =>
 			  {
 			  });
-			  AssertEmpty( AdminSubject, "CALL dbms.security.createUser('mats', 'neo4j', false)" );
+			  AssertEmpty( AdminSubject, "CALL dbms.security.createUser('mats', 'Neo4Net', false)" );
 			  AssertEmpty( AdminSubject, "CALL dbms.security.createRole('role1')" );
 			  AssertEmpty( AdminSubject, "CALL dbms.security.deleteRole('role1')" );
 			  AssertEmpty( AdminSubject, "CALL dbms.security.addRoleToUser('reader', 'mats')" );
-			  mats = Neo.login( "mats", "neo4j" );
+			  mats = Neo.login( "mats", "Neo4Net" );
 			  AssertEmpty( mats, "MATCH (n) WHERE id(n) < 0 RETURN 1" );
-			  AssertFail( mats, "CALL dbms.security.changeUserPassword('neo4j', 'hackerPassword')", PERMISSION_DENIED );
+			  AssertFail( mats, "CALL dbms.security.changeUserPassword('Neo4Net', 'hackerPassword')", PERMISSION_DENIED );
 			  AssertFail( mats, "CALL dbms.security.changeUserPassword('mats', '')", "A password cannot be empty." );
 			  AssertEmpty( mats, "CALL dbms.security.changeUserPassword('mats', 'hackerPassword')" );
 			  AssertEmpty( AdminSubject, "CALL dbms.security.removeRoleFromUser('reader', 'mats')" );
@@ -129,7 +129,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  log.AssertHasLine( "adminSubject", "deleted role `role1`" );
 			  log.AssertHasLine( "mats", "logged in" );
 			  log.AssertHasLine( "adminSubject", "added role `reader` to user `mats`" );
-			  log.AssertHasLine( "mats", "tried to change password for user `neo4j`: " + PERMISSION_DENIED );
+			  log.AssertHasLine( "mats", "tried to change password for user `Neo4Net`: " + PERMISSION_DENIED );
 			  log.AssertHasLine( "mats", "tried to change password: A password cannot be empty." );
 			  log.AssertHasLine( "mats", "changed password" );
 			  log.AssertHasLine( "adminSubject", "removed role `reader` from user `mats`" );
@@ -475,8 +475,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CustomRoleWithProcedureAccess()
 		 {
-			  AssertEmpty( AdminSubject, "CALL dbms.security.createUser('mats', 'neo4j', false)" );
-			  S mats = Neo.login( "mats", "neo4j" );
+			  AssertEmpty( AdminSubject, "CALL dbms.security.createUser('mats', 'Neo4Net', false)" );
+			  S mats = Neo.login( "mats", "Neo4Net" );
 			  TestFailTestProcs( mats );
 			  AssertEmpty( AdminSubject, "CALL dbms.security.createRole('role1')" );
 			  TestFailTestProcs( mats );

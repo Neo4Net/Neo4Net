@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using Neo4Net.Helpers.Collections;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 
@@ -42,11 +42,11 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  this._labelScanStore = labelScanStore;
 		 }
 
-		 public override EntityIdIterator EntityIdIterator
+		 public override IEntityIdIterator IEntityIdIterator
 		 {
 			 get
 			 {
-				  return new LabelScanViewIdIterator<>( _labelScanStore.newReader(), labelIds, entityCursor );
+				  return new LabelScanViewIdIterator<>( _labelScanStore.newReader(), labelIds, IEntityCursor );
 			 }
 		 }
 	}

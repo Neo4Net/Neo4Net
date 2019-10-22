@@ -21,7 +21,7 @@
 namespace Neo4Net.Ports.Allocation
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.ports.allocation.PortConstants.EphemeralPortMaximum;
+   //	import static org.Neo4Net.ports.allocation.PortConstants.EphemeralPortMaximum;
 
    /// <summary>
    /// Port provider that relies on state in a single JVM. Not suitable for parallel test execution (as in, several JVM

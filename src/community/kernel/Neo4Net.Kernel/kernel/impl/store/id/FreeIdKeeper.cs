@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store.id
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.id.IdContainer.NO_RESULT;
+//	import static org.Neo4Net.kernel.impl.store.id.IdContainer.NO_RESULT;
 
 	/// <summary>
 	/// Instances of this class maintain a list of free ids with the potential of overflowing to disk if the number
@@ -90,7 +90,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 /// <param name="aggressiveMode"> whether to reuse freed IDs during this lifecycle. </param>
 		 /// <exception cref="IOException"> if an I/O error occurs. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: FreeIdKeeper(org.neo4j.io.fs.StoreChannel channel, int batchSize, boolean aggressiveMode) throws java.io.IOException
+//ORIGINAL LINE: FreeIdKeeper(org.Neo4Net.io.fs.StoreChannel channel, int batchSize, boolean aggressiveMode) throws java.io.IOException
 		 internal FreeIdKeeper( StoreChannel channel, int batchSize, bool aggressiveMode )
 		 {
 			  this._channel = channel;
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.store.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static long countFreeIds(org.neo4j.io.fs.StoreChannel channel) throws java.io.IOException
+//ORIGINAL LINE: static long countFreeIds(org.Neo4Net.io.fs.StoreChannel channel) throws java.io.IOException
 		 internal static long CountFreeIds( StoreChannel channel )
 		 {
 			  return channel.size() / _idEntrySize;

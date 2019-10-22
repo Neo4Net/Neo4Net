@@ -30,17 +30,17 @@ namespace Neo4Net.Kernel.Impl.Api
 	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_LABEL;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexSampleKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.indexStatisticsKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.nodeKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
+//	import static org.Neo4Net.kernel.impl.store.counts.keys.CountsKeyFactory.relationshipKey;
 
 	public class CountsRecordState : CountsAccessor, RecordState, CountsAccessor_Updater, CountsAccessor_IndexStatsUpdater
 	{

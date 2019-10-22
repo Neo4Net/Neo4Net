@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using RepeatRule = Neo4Net.Test.rule.RepeatRule;
 
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterables.asSet;
 
 	/// <summary>
 	/// Token creation should be able to handle cases of concurrent token creation
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel
 	public class TokenCreationIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.EmbeddedDatabaseRule databaseRule = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.EmbeddedDatabaseRule databaseRule = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public readonly EmbeddedDatabaseRule DatabaseRule = new EmbeddedDatabaseRule();
 
 		 private volatile bool _stop;
@@ -93,10 +93,10 @@ namespace Neo4Net.Kernel
 		 {
 			 private readonly TokenCreationIT _outerInstance;
 
-			  internal readonly GraphDatabaseService Database;
+			  internal readonly IGraphDatabaseService Database;
 			  internal readonly System.Threading.CountdownEvent CreateLatch;
 
-			  internal LabelCreator( TokenCreationIT outerInstance, GraphDatabaseService database, System.Threading.CountdownEvent createLatch )
+			  internal LabelCreator( TokenCreationIT outerInstance, IGraphDatabaseService database, System.Threading.CountdownEvent createLatch )
 			  {
 				  this._outerInstance = outerInstance;
 					this.Database = database;

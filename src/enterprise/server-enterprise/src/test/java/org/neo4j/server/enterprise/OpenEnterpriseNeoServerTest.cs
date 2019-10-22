@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.enterprise
 {
@@ -26,8 +26,8 @@ namespace Neo4Net.Server.enterprise
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Mode = Neo4Net.Kernel.impl.enterprise.configuration.EnterpriseEditionSettings.Mode;
@@ -40,21 +40,21 @@ namespace Neo4Net.Server.enterprise
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.mode;
+//	import static org.Neo4Net.kernel.impl.enterprise.configuration.EnterpriseEditionSettings.mode;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class OpenEnterpriseNeoServerTest
 	internal class OpenEnterpriseNeoServerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test void checkExpectedDatabaseDirectory()
 		 internal virtual void CheckExpectedDatabaseDirectory()
 		 {
-			  Config config = Config.builder().withServerDefaults().withSetting(mode, Mode.SINGLE.name()).withSetting(GraphDatabaseSettings.neo4j_home, _testDirectory.storeDir().AbsolutePath).withSetting((new BoltConnector("bolt")).listen_address.name(), "localhost:0").withSetting((new BoltConnector("http")).listen_address.name(), "localhost:0").withSetting((new BoltConnector("https")).listen_address.name(), "localhost:0").build();
+			  Config config = Config.builder().withServerDefaults().withSetting(mode, Mode.SINGLE.name()).withSetting(GraphDatabaseSettings.Neo4Net_home, _testDirectory.storeDir().AbsolutePath).withSetting((new BoltConnector("bolt")).listen_address.name(), "localhost:0").withSetting((new BoltConnector("http")).listen_address.name(), "localhost:0").withSetting((new BoltConnector("https")).listen_address.name(), "localhost:0").build();
 			  GraphDatabaseDependencies dependencies = GraphDatabaseDependencies.newDependencies().userLogProvider(NullLogProvider.Instance);
 			  OpenEnterpriseNeoServer server = new OpenEnterpriseNeoServer( config, dependencies );
 

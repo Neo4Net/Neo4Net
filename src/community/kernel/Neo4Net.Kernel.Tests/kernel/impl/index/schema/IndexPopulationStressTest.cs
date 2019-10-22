@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -73,29 +73,29 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.RecoveryCleanupWorkCollector.immediate;
+//	import static org.Neo4Net.index.Internal.gbptree.RecoveryCleanupWorkCollector.immediate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesByProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.directoriesBySubProvider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.add;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.change;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.change;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexEntryUpdate.remove;
+//	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.remove;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
+//	import static org.Neo4Net.kernel.api.index.IndexProvider.Monitor_Fields.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.schema.SchemaDescriptorFactory.forLabel;
+//	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Config.defaults;
+//	import static org.Neo4Net.kernel.configuration.Config.defaults;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
+//	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Race.throwing;
+//	import static org.Neo4Net.test.Race.throwing;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class IndexPopulationStressTest
@@ -135,10 +135,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.RandomRule random = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.RandomRule random = new org.Neo4Net.test.rule.RandomRule();
 		 public readonly RandomRule Random = new RandomRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheAndDependenciesRule rules = new org.neo4j.test.rule.PageCacheAndDependenciesRule().with(new org.neo4j.test.rule.fs.DefaultFileSystemRule());
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheAndDependenciesRule rules = new org.Neo4Net.test.rule.PageCacheAndDependenciesRule().with(new org.Neo4Net.test.rule.fs.DefaultFileSystemRule());
 		 public PageCacheAndDependenciesRule Rules = new PageCacheAndDependenciesRule().with(new DefaultFileSystemRule());
 
 		 protected internal readonly StoreIndexDescriptor Descriptor = forSchema( forLabel( 0, 0 ), _provider ).withId( 0 );
@@ -152,10 +152,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //ORIGINAL LINE: @Parameterized.Parameter(1) public boolean hasValues;
 		 public bool HasValues;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(2) public System.Func<org.neo4j.values.storable.RandomValues,org.neo4j.values.storable.Value> valueGenerator;
+//ORIGINAL LINE: @Parameterized.Parameter(2) public System.Func<org.Neo4Net.values.storable.RandomValues,org.Neo4Net.values.storable.Value> valueGenerator;
 		 public System.Func<RandomValues, Value> ValueGenerator;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(3) public System.Func<IndexPopulationStressTest,org.neo4j.kernel.api.index.IndexProvider> providerCreator;
+//ORIGINAL LINE: @Parameterized.Parameter(3) public System.Func<IndexPopulationStressTest,org.Neo4Net.kernel.api.index.IndexProvider> providerCreator;
 		 public System.Func<IndexPopulationStressTest, IndexProvider> ProviderCreator;
 
 		 private IndexPopulator _populator;
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.neo4j.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  Race race = new Race();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.concurrent.atomic.AtomicReferenceArray<java.util.List<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>>> lastBatches = new java.util.concurrent.atomic.AtomicReferenceArray<>(THREADS);
+//ORIGINAL LINE: java.util.concurrent.atomic.AtomicReferenceArray<java.util.List<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>>> lastBatches = new java.util.concurrent.atomic.AtomicReferenceArray<>(THREADS);
 			  AtomicReferenceArray<IList<IndexEntryUpdate<object>>> lastBatches = new AtomicReferenceArray<IList<IndexEntryUpdate<object>>>( THREADS );
 			  Generator[] generators = new Generator[THREADS];
 
@@ -210,7 +210,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					race.AddContestant( Inserter( lastBatches, generators, insertersDone, updateLock, i ), 1 );
 			  }
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>();
 			  ICollection<IndexEntryUpdate<object>> updates = new List<IndexEntryUpdate<object>>();
 			  race.AddContestant( Updater( lastBatches, insertersDone, updateLock, updates ) );
 
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  return throwing(() =>
 			  {
-				// Entity ids that have been removed, so that additions can reuse them
+				// IEntity ids that have been removed, so that additions can reuse them
 				IList<long> removed = new List<long>();
 				RandomValues randomValues = RandomValues.create( new Random( Random.seed() + THREADS ) );
 				while ( insertersDone.CurrentCount > 0 )
@@ -331,7 +331,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void buildReferencePopulatorSingleThreaded(Generator[] generators, java.util.Collection<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void buildReferencePopulatorSingleThreaded(Generator[] generators, java.util.Collection<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void BuildReferencePopulatorSingleThreaded<T1>( Generator[] generators, ICollection<T1> updates )
 		 {
 			  IndexPopulator referencePopulator = _indexProvider.getPopulator( _descriptor2, _samplingConfig, heapBufferFactory( 1024 ) );
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					using ( IndexUpdater updater = referencePopulator.NewPopulatingUpdater( _nodePropertyAccessor ) )
 					{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 						 foreach ( IndexEntryUpdate<object> update in updates )
 						 {
 							  updater.Process( update );
@@ -392,12 +392,12 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> batch()
+//ORIGINAL LINE: java.util.List<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> batch()
 			  internal virtual IList<IndexEntryUpdate<object>> Batch()
 			  {
 					int n = RandomValues.Next( MaxBatchSize ) + 1;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.List<org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>(n);
+//ORIGINAL LINE: java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates = new java.util.ArrayList<>(n);
 					IList<IndexEntryUpdate<object>> updates = new List<IndexEntryUpdate<object>>( n );
 					for ( int i = 0; i < n; i++ )
 					{

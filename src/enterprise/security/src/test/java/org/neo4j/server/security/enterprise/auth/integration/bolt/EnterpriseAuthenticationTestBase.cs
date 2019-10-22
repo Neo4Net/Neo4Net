@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 {
@@ -44,8 +44,8 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using AuthenticationException = Neo4Net.driver.v1.exceptions.AuthenticationException;
 	using ClientException = Neo4Net.driver.v1.exceptions.ClientException;
 	using ServiceUnavailableException = Neo4Net.driver.v1.exceptions.ServiceUnavailableException;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
@@ -66,11 +66,11 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
+//	import static org.Neo4Net.driver.Internal.logging.DevNullLogging.DEV_NULL_LOGGING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
+//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.OPTIONAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 
 	public abstract class EnterpriseAuthenticationTestBase : AbstractLdapTestUnit
 	{
@@ -113,7 +113,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: protected abstract java.util.Map<org.neo4j.graphdb.config.Setting<?>,String> getSettings();
+//ORIGINAL LINE: protected abstract java.util.Map<org.Neo4Net.graphdb.config.Setting<?>,String> getSettings();
 		 protected internal abstract IDictionary<Setting<object>, string> Settings { get; }
 
 		 protected internal virtual DatabaseRule GetDatabaseTestRule( TestDirectory testDirectory )
@@ -258,7 +258,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 		 internal virtual void ClearAuthCacheFromDifferentConnection()
 		 {
-			  ClearAuthCacheFromDifferentConnection( "neo4j", "abc123", null );
+			  ClearAuthCacheFromDifferentConnection( "Neo4Net", "abc123", null );
 		 }
 
 		 internal virtual void ClearAuthCacheFromDifferentConnection( string username, string password, string realm )
@@ -349,7 +349,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createNativeUser(String username, String password, String... roles) throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: void createNativeUser(String username, String password, String... roles) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 		 internal virtual void CreateNativeUser( string username, string password, params string[] roles )
 		 {
 			  EnterpriseAuthAndUserManager authManager = DbRule.resolveDependency( typeof( EnterpriseAuthAndUserManager ) );
@@ -378,7 +378,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 			  internal EmbeddedTestCertificates()
 			  {
-					URL url = this.GetType().getResource("/neo4j_ldap_test_keystore.jks");
+					URL url = this.GetType().getResource("/Neo4Net_ldap_test_keystore.jks");
 					File keyStoreFile = new File( url.File );
 					string keyStorePath = keyStoreFile.AbsolutePath;
 

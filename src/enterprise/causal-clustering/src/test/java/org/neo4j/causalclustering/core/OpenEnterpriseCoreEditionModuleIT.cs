@@ -1,6 +1,6 @@
 ﻿/*
  *
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
  * Modifications Copyright (c) 2019 "GraphFoundation" [https://graphfoundation.org]
@@ -14,8 +14,8 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Reference: https://github.com/neo4j/neo4j/blob/3.4/enterprise/causal-clustering/src/test/java/org/neo4j/causalclustering/core/EnterpriseCoreEditionModuleIT.java
- * https://github.com/neo4j/neo4j/blob/fc43ec9b0d751b2a1654866a6cd1927268294351/community/neo4j/src/test/java/org/neo4j/graphdb/factory/module/edition/CommunityEditionModuleIntegrationTest.java
+ * Reference: https://github.com/Neo4Net/Neo4Net/blob/3.4/enterprise/causal-clustering/src/test/java/org/Neo4Net/causalclustering/core/EnterpriseCoreEditionModuleIT.java
+ * https://github.com/Neo4Net/Neo4Net/blob/fc43ec9b0d751b2a1654866a6cd1927268294351/community/Neo4Net/src/test/java/org/Neo4Net/graphdb/factory/module/edition/CommunityEditionModuleIntegrationTest.java
  */
 
 namespace Neo4Net.causalclustering.core
@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core
 	using FreeIdFilteredIdGeneratorFactory = Neo4Net.causalclustering.core.state.machines.id.FreeIdFilteredIdGeneratorFactory;
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using PageCacheWarmer = Neo4Net.Kernel.impl.pagecache.PageCacheWarmer;
@@ -49,8 +49,8 @@ namespace Neo4Net.causalclustering.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 
-	//import org.neo4j.kernel.impl.store.StoreFile;
-	//import org.neo4j.kernel.impl.storemigration.StoreFileType;
+	//import org.Neo4Net.kernel.impl.store.StoreFile;
+	//import org.Neo4Net.kernel.impl.storemigration.StoreFileType;
 	//import static org.junit.Assert.assertFalse;
 	//import static org.junit.Assert.assertThat;
 	//import static org.junit.Assert.assertTrue;
@@ -61,11 +61,11 @@ namespace Neo4Net.causalclustering.core
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory testDirectory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory testDirectory;
 		 private TestDirectory _testDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

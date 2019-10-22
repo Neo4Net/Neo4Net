@@ -28,7 +28,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 
 
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
-	using Neo4jWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4jWithSocket;
+	using Neo4NetWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4NetWithSocket;
 	using BeginMessage = Neo4Net.Bolt.v3.messaging.request.BeginMessage;
 	using RunMessage = Neo4Net.Bolt.v3.messaging.request.RunMessage;
 	using Predicates = Neo4Net.Functions.Predicates;
@@ -52,15 +52,15 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.hasKey;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.serverImmediatelyDisconnects;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.serverImmediatelyDisconnects;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
+//	import static org.Neo4Net.bolt.v3.messaging.request.GoodbyeMessage.GOODBYE_MESSAGE;
 
 	public class GoodbyeMessageIT : BoltV3TransportBase
 	{
@@ -191,19 +191,19 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 			  assertThat( Connection, serverImmediatelyDisconnects() );
 		 }
 
-		 private static Matcher<Neo4jWithSocket> EventuallyClosesTransaction()
+		 private static Matcher<Neo4NetWithSocket> EventuallyClosesTransaction()
 		 {
 			  return new TypeSafeMatcherAnonymousInnerClass();
 		 }
 
-		 private class TypeSafeMatcherAnonymousInnerClass : TypeSafeMatcher<Neo4jWithSocket>
+		 private class TypeSafeMatcherAnonymousInnerClass : TypeSafeMatcher<Neo4NetWithSocket>
 		 {
 			 public override void describeTo( org.hamcrest.Description description )
 			 {
 				  description.appendText( "Eventually close all transactions" );
 			 }
 
-			 protected internal override bool matchesSafely( Neo4jWithSocket server )
+			 protected internal override bool matchesSafely( Neo4NetWithSocket server )
 			 {
 				  System.Func<bool> condition = () => getActiveTransactions(server).size() == 0;
 				  try
@@ -217,7 +217,7 @@ namespace Neo4Net.Bolt.v3.runtime.integration
 				  }
 			 }
 
-			 private ISet<KernelTransactionHandle> getActiveTransactions( Neo4jWithSocket server )
+			 private ISet<KernelTransactionHandle> getActiveTransactions( Neo4NetWithSocket server )
 			 {
 				  GraphDatabaseAPI gdb = ( GraphDatabaseAPI ) server.GraphDatabaseService();
 				  return gdb.DependencyResolver.resolveDependency( typeof( KernelTransactions ) ).activeTransactions();

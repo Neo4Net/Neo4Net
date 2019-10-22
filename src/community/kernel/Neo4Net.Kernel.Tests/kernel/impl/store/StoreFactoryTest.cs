@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.store
 	using RuleChain = org.junit.rules.RuleChain;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
+//	import static org.Neo4Net.kernel.impl.store.format.RecordFormatSelector.selectForStoreOrConfig;
 
 	public class StoreFactoryTest
 	{

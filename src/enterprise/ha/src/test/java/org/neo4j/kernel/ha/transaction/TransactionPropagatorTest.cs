@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.transaction
 {
@@ -57,16 +57,16 @@ namespace Neo4Net.Kernel.ha.transaction
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
+//	import static org.Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_ascending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.TxPushStrategy.fixed_descending;
+//	import static org.Neo4Net.kernel.ha.HaSettings.TxPushStrategy.fixed_descending;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.tx_push_strategy;
+//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_strategy;
 
 	public class TransactionPropagatorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.kernel.lifecycle.LifeRule life = new org.neo4j.kernel.lifecycle.LifeRule(true);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.kernel.lifecycle.LifeRule life = new org.Neo4Net.kernel.lifecycle.LifeRule(true);
 		 public readonly LifeRule Life = new LifeRule( true );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.ha.transaction
 			  // GIVEN
 			  int serverId = 1;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.InstanceId instanceId = new org.neo4j.cluster.InstanceId(serverId);
+//ORIGINAL LINE: final org.Neo4Net.cluster.InstanceId instanceId = new org.Neo4Net.cluster.InstanceId(serverId);
 			  InstanceId instanceId = new InstanceId( serverId );
 			  Configuration config = new ConfigurationAnonymousInnerClass( this, instanceId );
 			  Log logger = mock( typeof( Log ) );
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.ha.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.kernel.ha.com.master.Slave slave(final int id)
+//ORIGINAL LINE: private org.Neo4Net.kernel.ha.com.master.Slave slave(final int id)
 		 private Slave Slave( int id )
 		 {
 			  return new SlaveAnonymousInnerClass( this, id );

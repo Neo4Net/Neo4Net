@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.helpers
 {
 
-	using GraphDatabaseDependencies = Neo4Net.Graphdb.facade.GraphDatabaseDependencies;
-	using GraphDatabaseFacadeFactory = Neo4Net.Graphdb.facade.GraphDatabaseFacadeFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseDependencies = Neo4Net.GraphDb.facade.GraphDatabaseDependencies;
+	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ListenSocketAddress = Neo4Net.Helpers.ListenSocketAddress;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
@@ -43,9 +43,9 @@ namespace Neo4Net.Server.helpers
 	using DatabaseActions = Neo4Net.Server.rest.web.DatabaseActions;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.ServerTestUtils.asOneLine;
+//	import static org.Neo4Net.server.ServerTestUtils.asOneLine;
 
 	public class CommunityServerBuilder
 	{
@@ -90,7 +90,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.server.CommunityNeoServer build() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.server.CommunityNeoServer build() throws java.io.IOException
 		 public virtual CommunityNeoServer Build()
 		 {
 			  if ( string.ReferenceEquals( _dataDir, null ) && _persistent )

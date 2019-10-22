@@ -22,19 +22,19 @@
 namespace Neo4Net.Storageengine.Api
 {
 	/// <summary>
-	/// Type of graph entity. The three types, Nodes, Relationships and Graphs, represent objects that can have properties
+	/// Type of graph IEntity. The three types, Nodes, Relationships and Graphs, represent objects that can have properties
 	/// associated with them, as well as labeled with additional type information. Nodes have labels, and relationships
 	/// have relationship types. Graphs can have properties, but are not labeled.
 	/// </summary>
-	public sealed class EntityType
+	public sealed class IEntityType
 	{
-		 public static readonly EntityType Node = new EntityType( "Node", InnerEnum.Node, "label" );
-		 public static readonly EntityType Relationship = new EntityType( "Relationship", InnerEnum.Relationship, "relationship type" );
-		 public static readonly EntityType Graph = new EntityType( "Graph", InnerEnum.Graph, "" );
+		 public static readonly IEntityType Node = new IEntityType( "Node", InnerEnum.Node, "label" );
+		 public static readonly IEntityType Relationship = new IEntityType( "Relationship", InnerEnum.Relationship, "relationship type" );
+		 public static readonly IEntityType Graph = new IEntityType( "Graph", InnerEnum.Graph, "" );
 
 		 private static readonly IList<EntityType> valueList = new List<EntityType>();
 
-		 static EntityType()
+		 static IEntityType()
 		 {
 			 valueList.Add( Node );
 			 valueList.Add( Relationship );
@@ -55,7 +55,7 @@ namespace Neo4Net.Storageengine.Api
 
 		 internal Private readonly;
 
-		 internal EntityType( string name, InnerEnum innerEnum, string labelingType )
+		 internal IEntityType( string name, InnerEnum innerEnum, string labelingType )
 		 {
 			  this._labelingType = labelingType;
 
@@ -64,7 +64,7 @@ namespace Neo4Net.Storageengine.Api
 			 innerEnumValue = innerEnum;
 		 }
 
-		 /// <returns> the name of the labeling type for this entity type </returns>
+		 /// <returns> the name of the labeling type for this IEntity type </returns>
 		 public string LabelingType
 		 {
 			 get
@@ -88,9 +88,9 @@ namespace Neo4Net.Storageengine.Api
 			return nameValue;
 		}
 
-		public static EntityType valueOf( string name )
+		public static IEntityType valueOf( string name )
 		{
-			foreach ( EntityType enumInstance in EntityType.valueList )
+			foreach ( IEntityType enumInstance in IEntityType.valueList )
 			{
 				if ( enumInstance.nameValue == name )
 				{

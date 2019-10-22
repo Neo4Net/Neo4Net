@@ -158,9 +158,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 {
 			  int propertiesPerEntity = sample[0].PropertyCount();
 			  long propertiesSize = 0;
-			  foreach ( InputEntity entity in sample )
+			  foreach ( InputEntity IEntity in sample )
 			  {
-					propertiesSize += Inputs.CalculatePropertySize( entity, valueSizeCalculator );
+					propertiesSize += Inputs.CalculatePropertySize( IEntity, valueSizeCalculator );
 			  }
 			  double propertySizePerEntity = ( double ) propertiesSize / sample.Length;
 			  return new double[] { propertiesPerEntity, propertySizePerEntity };

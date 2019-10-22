@@ -34,7 +34,7 @@ namespace Neo4Net.Consistency.checking.full
 	using TokenRecord = Neo4Net.Kernel.Impl.Store.Records.TokenRecord;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.store.RecordReference_SkippingReference.skipReference;
+//	import static org.Neo4Net.consistency.store.RecordReference_SkippingReference.skipReference;
 
 	internal abstract class DynamicOwner<RECORD> : Owner where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 	{
@@ -143,7 +143,7 @@ namespace Neo4Net.Consistency.checking.full
 		 {
 			 public abstract void CheckReference( RECORD record, REFERRED referred, CheckerEngine<RECORD, REPORT> engine, RecordAccess records );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") @Override public void checkReference(RECORD name, org.neo4j.kernel.impl.store.record.AbstractBaseRecord record, org.neo4j.consistency.checking.CheckerEngine<RECORD, REPORT> engine, org.neo4j.consistency.store.RecordAccess records)
+//ORIGINAL LINE: @SuppressWarnings("ConstantConditions") @Override public void checkReference(RECORD name, org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord record, org.Neo4Net.consistency.checking.CheckerEngine<RECORD, REPORT> engine, org.Neo4Net.consistency.store.RecordAccess records)
 			  public override void CheckReference( RECORD name, AbstractBaseRecord record, CheckerEngine<RECORD, REPORT> engine, RecordAccess records )
 			  {
 					Neo4Net.Consistency.report.ConsistencyReport_NameConsistencyReport report = engine.Report();

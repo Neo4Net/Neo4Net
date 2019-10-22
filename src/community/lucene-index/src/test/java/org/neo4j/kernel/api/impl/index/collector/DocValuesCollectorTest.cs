@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using Neo4Net.Graphdb.index;
+	using Neo4Net.GraphDb.index;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertArrayEquals;

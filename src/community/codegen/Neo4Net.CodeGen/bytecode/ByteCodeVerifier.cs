@@ -44,7 +44,7 @@ namespace Neo4Net.CodeGen.ByteCode
 //	import static org.objectweb.asm.ClassReader.SKIP_DEBUG;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") class ByteCodeVerifier implements ByteCodeChecker, org.neo4j.codegen.CodeGeneratorOption
+//ORIGINAL LINE: @SuppressWarnings("unused") class ByteCodeVerifier implements ByteCodeChecker, org.Neo4Net.codegen.CodeGeneratorOption
 	internal class ByteCodeVerifier : ByteCodeChecker, CodeGeneratorOption
 	{
 		 /// <summary>
@@ -84,7 +84,7 @@ namespace Neo4Net.CodeGen.ByteCode
 		 /// <exception cref="CompilationFailureException">
 		 ///         if any issue is discovered in the verification. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void check(ClassLoader classpathLoader, java.util.Collection<org.neo4j.codegen.ByteCodes> byteCodes) throws org.neo4j.codegen.CompilationFailureException
+//ORIGINAL LINE: public void check(ClassLoader classpathLoader, java.util.Collection<org.Neo4Net.codegen.ByteCodes> byteCodes) throws org.Neo4Net.codegen.CompilationFailureException
 		 public override void Check( ClassLoader classpathLoader, ICollection<ByteCodes> byteCodes )
 		 {
 			  IList<ClassNode> classes = new List<ClassNode>( byteCodes.Count );

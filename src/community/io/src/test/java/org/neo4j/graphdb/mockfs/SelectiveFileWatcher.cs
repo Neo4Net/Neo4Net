@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.mockfs
+namespace Neo4Net.GraphDb.mockfs
 {
 
 	using FileWatchEventListener = Neo4Net.Io.fs.watcher.FileWatchEventListener;
@@ -42,7 +42,7 @@ namespace Neo4Net.Graphdb.mockfs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.io.fs.watcher.resource.WatchedResource watch(java.io.File file) throws java.io.IOException
 		 public override WatchedResource Watch( File file )
 		 {
 			  return ChooseFileWatcher( file ).watch( file );

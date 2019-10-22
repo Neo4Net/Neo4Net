@@ -20,7 +20,7 @@
 namespace Neo4Net.Internal.Kernel.Api
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 
 	/// <summary>
 	/// This interface defines the functionality that's needed to run Kernel API Read tests (tests that extends

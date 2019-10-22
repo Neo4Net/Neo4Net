@@ -51,10 +51,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	public class GenericKeyStateFormatTest : FormatCompatibilityVerifier
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public PageCacheRule PageCacheRule = new PageCacheRule();
 
-		 private const int ENTITY_ID = 19570320;
+		 private const int IEntity_ID = 19570320;
 		 private const int NUMBER_OF_SLOTS = 2;
 		 private IList<Value> _values;
 
@@ -208,7 +208,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 private void InitializeFromValue( GenericKey key, Value value )
 		 {
-			  key.Initialize( ENTITY_ID );
+			  key.Initialize( IEntity_ID );
 			  for ( int i = 0; i < NUMBER_OF_SLOTS; i++ )
 			  {
 					key.InitFromValue( i, value, NativeIndexKey.Inclusion.Neutral );
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void withCursor(java.io.File storeFile, boolean create, System.Action<org.neo4j.io.pagecache.PageCursor> cursorConsumer) throws java.io.IOException
+//ORIGINAL LINE: private void withCursor(java.io.File storeFile, boolean create, System.Action<org.Neo4Net.io.pagecache.PageCursor> cursorConsumer) throws java.io.IOException
 		 private void WithCursor( File storeFile, bool create, System.Action<PageCursor> cursorConsumer )
 		 {
 			  OpenOption[] openOptions = create ? new OpenOption[]{ StandardOpenOption.WRITE, StandardOpenOption.CREATE } : new OpenOption[]{ StandardOpenOption.WRITE };

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.messaging
 {
@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.messaging
 	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.mebiBytes;
+//	import static org.Neo4Net.io.ByteUnit.mebiBytes;
 
 	public class BoundedNetworkWritableChannel : WritableChannel, ByteBufBacked
 	{
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel put(byte value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel put(byte value) throws MessageTooBigException
 		 public override WritableChannel Put( sbyte value )
 		 {
 			  CheckSize( Byte.BYTES );
@@ -64,7 +64,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel putShort(short value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putShort(short value) throws MessageTooBigException
 		 public override WritableChannel PutShort( short value )
 		 {
 			  CheckSize( Short.BYTES );
@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel putInt(int value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putInt(int value) throws MessageTooBigException
 		 public override WritableChannel PutInt( int value )
 		 {
 			  CheckSize( Integer.BYTES );
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel putLong(long value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putLong(long value) throws MessageTooBigException
 		 public override WritableChannel PutLong( long value )
 		 {
 			  CheckSize( Long.BYTES );
@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel putFloat(float value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putFloat(float value) throws MessageTooBigException
 		 public override WritableChannel PutFloat( float value )
 		 {
 			  CheckSize( Float.BYTES );
@@ -100,7 +100,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel putDouble(double value) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putDouble(double value) throws MessageTooBigException
 		 public override WritableChannel PutDouble( double value )
 		 {
 			  CheckSize( Double.BYTES );
@@ -109,7 +109,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.WritableChannel put(byte[] value, int length) throws MessageTooBigException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel put(byte[] value, int length) throws MessageTooBigException
 		 public override WritableChannel Put( sbyte[] value, int length )
 		 {
 			  CheckSize( length );

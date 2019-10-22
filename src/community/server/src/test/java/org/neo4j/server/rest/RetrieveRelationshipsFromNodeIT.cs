@@ -89,7 +89,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyRelReps(int expectedSize, String json) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private void verifyRelReps(int expectedSize, String json) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private void VerifyRelReps( int expectedSize, string json )
 		 {
 			  IList<IDictionary<string, object>> relreps = JsonHelper.jsonToList( json );
@@ -110,16 +110,16 @@ namespace Neo4Net.Server.rest
 			  {
 					HttpGet httpget = new HttpGet( ServerUri + "db/data/relationship/" + _likes );
 					httpget.setHeader( "Accept", "application/json" );
-					httpget.setHeader( "Host", "dummy.neo4j.org" );
+					httpget.setHeader( "Host", "dummy.Neo4Net.org" );
 					HttpResponse response = httpclient.execute( httpget );
-					HttpEntity entity = response.Entity;
+					HttpEntity IEntity = response.Entity;
 
-					string entityBody = IOUtils.ToString( entity.Content, StandardCharsets.UTF_8 );
+					string IEntityBody = IOUtils.ToString( IEntity.Content, StandardCharsets.UTF_8 );
 
-					Console.WriteLine( entityBody );
+					Console.WriteLine( IEntityBody );
 
-					assertThat( entityBody, containsString( "http://dummy.neo4j.org/db/data/relationship/" + _likes ) );
-					assertThat( entityBody, not( containsString( ServerUri ) ) );
+					assertThat( IEntityBody, containsString( "http://dummy.Neo4Net.org/db/data/relationship/" + _likes ) );
+					assertThat( IEntityBody, not( containsString( ServerUri ) ) );
 			  }
 			  finally
 			  {
@@ -139,11 +139,11 @@ namespace Neo4Net.Server.rest
 
 					httpget.setHeader( "Accept", "application/json" );
 					HttpResponse response = httpclient.execute( httpget );
-					HttpEntity entity = response.Entity;
+					HttpEntity IEntity = response.Entity;
 
-					string entityBody = IOUtils.ToString( entity.Content, StandardCharsets.UTF_8 );
+					string IEntityBody = IOUtils.ToString( IEntity.Content, StandardCharsets.UTF_8 );
 
-					assertThat( entityBody, containsString( ServerUri + "db/data/relationship/" + _likes ) );
+					assertThat( IEntityBody, containsString( ServerUri + "db/data/relationship/" + _likes ) );
 			  }
 			  finally
 			  {
@@ -152,56 +152,56 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get all relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get all relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get all relationships.")]
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANode()
 		 {
-			  string entity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all").entity();
-			  VerifyRelReps( 3, entity );
+			  string IEntity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all").entity();
+			  VerifyRelReps( 3, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeStreaming() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeStreaming() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeStreaming()
 		 {
-			  string entity = GenConflict.get().withHeader(StreamingJsonFormat.STREAM_HEADER,"true").expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all").entity();
-			  VerifyRelReps( 3, entity );
+			  string IEntity = GenConflict.get().withHeader(StreamingJsonFormat.STREAM_HEADER,"true").expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all").entity();
+			  VerifyRelReps( 3, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get incoming relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get incoming relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get incoming relationships.")]
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANode()
 		 {
-			  string entity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/in").entity();
-			  VerifyRelReps( 1, entity );
+			  string IEntity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/in").entity();
+			  VerifyRelReps( 1, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get outgoing relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get outgoing relationships.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get outgoing relationships.")]
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANode()
 		 {
-			  string entity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/out").entity();
-			  VerifyRelReps( 2, entity );
+			  string IEntity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/out").entity();
+			  VerifyRelReps( 2, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get typed relationships.\n" + "\n" + "Note that the \"+&+\" needs to be encoded like \"+%26+\" for example when\n" + "using http://curl.haxx.se/[cURL] from the terminal.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllTypedRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get typed relationships.\n" + "\n" + "Note that the \"+&+\" needs to be encoded like \"+%26+\" for example when\n" + "using http://curl.haxx.se/[cURL] from the terminal.") @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllTypedRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get typed relationships.\n" + "\n" + "Note that the \"+&+\" needs to be encoded like \"+%26+\" for example when\n" + "using http://curl.haxx.se/[cURL] from the terminal.")]
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingAllTypedRelationshipsForANode()
 		 {
-			  string entity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all/LIKES&HATES").entity();
-			  VerifyRelReps( 3, entity );
+			  string IEntity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithRelationships + "/relationships" + "/all/LIKES&HATES").entity();
+			  VerifyRelReps( 3, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingTypedRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingTypedRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingIncomingTypedRelationshipsForANode()
 		 {
@@ -213,7 +213,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingTypedRelationshipsForANode() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingTypedRelationshipsForANode() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespondWith200AndListOfRelationshipRepresentationsWhenGettingOutgoingTypedRelationshipsForANode()
 		 {
@@ -225,17 +225,17 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Documented("Get relationships on a node without relationships.") @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeWithoutRelationships() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Documented("Get relationships on a node without relationships.") @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeWithoutRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Documented("Get relationships on a node without relationships.")]
 		 public virtual void ShouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingAllRelationshipsForANodeWithoutRelationships()
 		 {
-			  string entity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithoutRelationships + "/relationships" + "/all").entity();
-			  VerifyRelReps( 0, entity );
+			  string IEntity = GenConflict.get().expectedStatus(200).get(_functionalTestHelper.nodeUri() + "/" + _nodeWithoutRelationships + "/relationships" + "/all").entity();
+			  VerifyRelReps( 0, IEntity );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANodeWithoutRelationships() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANodeWithoutRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingIncomingRelationshipsForANodeWithoutRelationships()
 		 {
@@ -247,7 +247,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANodeWithoutRelationships() throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @Test public void shouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANodeWithoutRelationships() throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRespondWith200AndEmptyListOfRelationshipRepresentationsWhenGettingOutgoingRelationshipsForANodeWithoutRelationships()
 		 {
@@ -315,9 +315,9 @@ namespace Neo4Net.Server.rest
 
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.relationshipUri(relationshipId));
 
-			  string entity = response.Entity;
-			  assertNotNull( entity );
-			  IsLegalJson( entity );
+			  string IEntity = response.Entity;
+			  assertNotNull( IEntity );
+			  IsLegalJson( IEntity );
 			  response.Close();
 		 }
 
@@ -330,10 +330,10 @@ namespace Neo4Net.Server.rest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void isLegalJson(String entity) throws org.neo4j.server.rest.domain.JsonParseException
-		 private void IsLegalJson( string entity )
+//ORIGINAL LINE: private void isLegalJson(String IEntity) throws org.Neo4Net.server.rest.domain.JsonParseException
+		 private void IsLegalJson( string IEntity )
 		 {
-			  JsonHelper.jsonToMap( entity );
+			  JsonHelper.jsonToMap( IEntity );
 		 }
 	}
 

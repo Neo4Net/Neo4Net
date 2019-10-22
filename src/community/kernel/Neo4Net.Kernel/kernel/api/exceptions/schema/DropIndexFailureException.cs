@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 		 private readonly SchemaDescriptor _descriptor;
 		 private const string MESSAGE = "Unable to drop index on %s: %s";
 
-		 public DropIndexFailureException( SchemaDescriptor descriptor, SchemaKernelException cause ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexDropFailed, format( MESSAGE, descriptor.UserDescription( SchemaUtil.idTokenNameLookup ), cause.Message ), cause )
+		 public DropIndexFailureException( SchemaDescriptor descriptor, SchemaKernelException cause ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexDropFailed, format( MESSAGE, descriptor.UserDescription( SchemaUtil.idTokenNameLookup ), cause.Message ), cause )
 		 {
 			  this._descriptor = descriptor;
 		 }

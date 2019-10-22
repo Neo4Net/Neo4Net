@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -32,14 +32,14 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 	public class ProcedureSignatureTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public org.junit.rules.ExpectedException exception = org.junit.rules.ExpectedException.none();
 		 public ExpectedException Exception = ExpectedException.none();
-		 private readonly ProcedureSignature _signature = procedureSignature( "asd" ).@in( "a", Neo4jTypes.NTAny ).build();
+		 private readonly ProcedureSignature _signature = procedureSignature( "asd" ).@in( "a", Neo4NetTypes.NTAny ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void inputSignatureShouldNotBeModifiable()
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  Exception.expect( typeof( System.NotSupportedException ) );
 
 			  // When
-			  _signature.inputSignature().Add(FieldSignature.inputField("b", Neo4jTypes.NTAny));
+			  _signature.inputSignature().Add(FieldSignature.inputField("b", Neo4NetTypes.NTAny));
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -60,16 +60,16 @@ namespace Neo4Net.Kernel.impl.proc
 			  Exception.expect( typeof( System.NotSupportedException ) );
 
 			  // When
-			  _signature.outputSignature().Add(FieldSignature.outputField("b", Neo4jTypes.NTAny));
+			  _signature.outputSignature().Add(FieldSignature.outputField("b", Neo4NetTypes.NTAny));
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldHonorVoidInEquals()
 		 public virtual void ShouldHonorVoidInEquals()
 		 {
-			  ProcedureSignature sig1 = procedureSignature( "foo" ).@in( "a", Neo4jTypes.NTAny ).build();
-			  ProcedureSignature sig2 = procedureSignature( "foo" ).@in( "a", Neo4jTypes.NTAny ).@out( ProcedureSignature.VOID ).build();
-			  ProcedureSignature sig2clone = procedureSignature( "foo" ).@in( "a", Neo4jTypes.NTAny ).@out( ProcedureSignature.VOID ).build();
+			  ProcedureSignature sig1 = procedureSignature( "foo" ).@in( "a", Neo4NetTypes.NTAny ).build();
+			  ProcedureSignature sig2 = procedureSignature( "foo" ).@in( "a", Neo4NetTypes.NTAny ).@out( ProcedureSignature.VOID ).build();
+			  ProcedureSignature sig2clone = procedureSignature( "foo" ).@in( "a", Neo4NetTypes.NTAny ).@out( ProcedureSignature.VOID ).build();
 
 			  assertEquals( sig2, sig2clone );
 			  assertNotEquals( sig1, sig2 );
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ToStringShouldMatchCypherSyntax()
 		 {
 			  // When
-			  string toStr = procedureSignature( "org", "myProcedure" ).@in( "inputArg", Neo4jTypes.NTList( Neo4jTypes.NTString ) ).@out( "outputArg", Neo4jTypes.NTNumber ).build().ToString();
+			  string toStr = procedureSignature( "org", "myProcedure" ).@in( "inputArg", Neo4NetTypes.NTList( Neo4NetTypes.NTString ) ).@out( "outputArg", Neo4NetTypes.NTNumber ).build().ToString();
 
 			  // Then
 			  assertEquals( "org.myProcedure(inputArg :: LIST? OF STRING?) :: (outputArg :: NUMBER?)", toStr );
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 public virtual void ToStringForVoidProcedureShouldMatchCypherSyntax()
 		 {
 			  // Given
-			  ProcedureSignature proc = procedureSignature( "org", "myProcedure" ).@in( "inputArg", Neo4jTypes.NTList( Neo4jTypes.NTString ) ).@out( ProcedureSignature.VOID ).build();
+			  ProcedureSignature proc = procedureSignature( "org", "myProcedure" ).@in( "inputArg", Neo4NetTypes.NTList( Neo4NetTypes.NTString ) ).@out( ProcedureSignature.VOID ).build();
 
 			  // When
 			  string toStr = proc.ToString();

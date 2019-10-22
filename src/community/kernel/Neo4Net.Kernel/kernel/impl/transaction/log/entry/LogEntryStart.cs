@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using Format = Neo4Net.Helpers.Format;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.TX_START;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryVersion.CURRENT;
 
 	public class LogEntryStart : AbstractLogEntry
 	{

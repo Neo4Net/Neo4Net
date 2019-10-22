@@ -22,7 +22,7 @@
 namespace Neo4Net.Storageengine.Api.schema
 {
 
-	using IndexPopulationProgress = Neo4Net.Graphdb.index.IndexPopulationProgress;
+	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
 	using Neo4Net.Helpers.Collections;
 
 	public interface PopulationProgress

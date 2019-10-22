@@ -26,8 +26,8 @@ namespace Neo4Net.Io.pagecache.randomharness
 
 	using RandomAdversary = Neo4Net.Adversaries.RandomAdversary;
 	using AdversarialFileSystemAbstraction = Neo4Net.Adversaries.fs.AdversarialFileSystemAbstraction;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
@@ -544,7 +544,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void runVerificationPhase(org.neo4j.io.pagecache.impl.muninn.MuninnPageCache cache) throws Exception
+//ORIGINAL LINE: private void runVerificationPhase(org.Neo4Net.io.pagecache.impl.muninn.MuninnPageCache cache) throws Exception
 		 private void RunVerificationPhase( MuninnPageCache cache )
 		 {
 			  if ( _verification != null )

@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.messaging.marshalling.v2
 {
@@ -91,7 +91,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2
 		 private static readonly MemberId _memberId = new MemberId( System.Guid.randomUUID() );
 		 private static readonly int[] _protocols = new int[] { 1, 2 };
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter() public org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage raftMessage;
+//ORIGINAL LINE: @Parameterized.Parameter() public org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage raftMessage;
 		 public Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage RaftMessage;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(1) public int raftProtocol;
@@ -127,7 +127,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2
 		 private static object[] setUpParams( Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage[] messages )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return java.util.Arrays.stream(messages).flatMap((System.Func<org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage,java.util.stream.Stream<?>>) RaftMessageEncoderDecoderTest::params).toArray();
+//ORIGINAL LINE: return java.util.Arrays.stream(messages).flatMap((System.Func<org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage,java.util.stream.Stream<?>>) RaftMessageEncoderDecoderTest::params).toArray();
 			  return Arrays.stream( messages ).flatMap( ( System.Func<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage, Stream<object>> ) RaftMessageEncoderDecoderTest.@params ).toArray();
 		 }
 
@@ -201,7 +201,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void raftMessageEquals(org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage raftMessage, org.neo4j.causalclustering.core.consensus.RaftMessages_RaftMessage message) throws Exception
+//ORIGINAL LINE: private void raftMessageEquals(org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage raftMessage, org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message) throws Exception
 		 private void RaftMessageEquals( Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage raftMessage, Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage message )
 		 {
 			  if ( raftMessage is Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request )
@@ -227,7 +227,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void contentEquals(org.neo4j.causalclustering.core.replication.ReplicatedContent one, org.neo4j.causalclustering.core.replication.ReplicatedContent two) throws Exception
+//ORIGINAL LINE: private void contentEquals(org.Neo4Net.causalclustering.core.replication.ReplicatedContent one, org.Neo4Net.causalclustering.core.replication.ReplicatedContent two) throws Exception
 		 private void ContentEquals( ReplicatedContent one, ReplicatedContent two )
 		 {
 			  if ( one is ReplicatedTransaction )

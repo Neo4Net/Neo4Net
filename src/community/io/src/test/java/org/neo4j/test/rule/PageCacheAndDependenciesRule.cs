@@ -32,7 +32,7 @@ namespace Neo4Net.Test.rule
 	using Neo4Net.Test.rule.fs;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.PageCacheRule.config;
+//	import static org.Neo4Net.test.rule.PageCacheRule.config;
 
 	/// <summary>
 	/// Very often when you want a <seealso cref="PageCacheRule"/> you also want <seealso cref="TestDirectory"/> and some <seealso cref="FileSystemRule"/>.
@@ -43,7 +43,7 @@ namespace Neo4Net.Test.rule
 	{
 		 private RuleChain _chain;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.test.rule.fs.FileSystemRule<? extends org.neo4j.io.fs.FileSystemAbstraction> fs;
+//ORIGINAL LINE: private org.Neo4Net.test.rule.fs.FileSystemRule<? extends org.Neo4Net.io.fs.FileSystemAbstraction> fs;
 		 private FileSystemRule<FileSystemAbstraction> _fs;
 		 private TestDirectory _directory;
 		 private PageCacheRule _pageCacheRule;
@@ -85,7 +85,7 @@ namespace Neo4Net.Test.rule
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public org.neo4j.test.rule.fs.FileSystemRule<? extends org.neo4j.io.fs.FileSystemAbstraction> fileSystemRule()
+//ORIGINAL LINE: public org.Neo4Net.test.rule.fs.FileSystemRule<? extends org.Neo4Net.io.fs.FileSystemAbstraction> fileSystemRule()
 		 public virtual FileSystemRule<FileSystemAbstraction> FileSystemRule()
 		 {
 			  return _fs;

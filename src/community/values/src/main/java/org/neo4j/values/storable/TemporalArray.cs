@@ -22,7 +22,7 @@
 namespace Neo4Net.Values.Storable
 {
 
-	using Geometry = Neo4Net.Graphdb.spatial.Geometry;
+	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:
 //ORIGINAL LINE: public abstract class TemporalArray<T extends java.time.temporal.Temporal & Comparable<? super T>, V extends TemporalValue<T,V>> extends NonPrimitiveArray<T>

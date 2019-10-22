@@ -36,7 +36,7 @@ namespace Neo4Net.Bolt.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	internal class MutableConnectionStateTest
 	{
@@ -124,7 +124,7 @@ namespace Neo4Net.Bolt.runtime
 		 {
 			  _state.ResponseHandler = null;
 
-			  Neo4jError error = Neo4jError.From( new Exception() );
+			  Neo4NetError error = Neo4NetError.From( new Exception() );
 			  _state.markFailed( error );
 
 			  assertEquals( error, _state.PendingError );
@@ -137,7 +137,7 @@ namespace Neo4Net.Bolt.runtime
 		 {
 			  _state.ResponseHandler = _responseHandler;
 
-			  Neo4jError error = Neo4jError.From( new Exception() );
+			  Neo4NetError error = Neo4NetError.From( new Exception() );
 			  _state.markFailed( error );
 
 			  verify( _responseHandler ).markFailed( error );
@@ -174,7 +174,7 @@ namespace Neo4Net.Bolt.runtime
 		 {
 			  _state.ResponseHandler = null;
 
-			  Neo4jError error = Neo4jError.From( new Exception() );
+			  Neo4NetError error = Neo4NetError.From( new Exception() );
 			  _state.markIgnored();
 			  _state.markFailed( error );
 
@@ -204,7 +204,7 @@ namespace Neo4Net.Bolt.runtime
 		 {
 			  _state.ResponseHandler = null;
 
-			  _state.markFailed( Neo4jError.From( new Exception() ) );
+			  _state.markFailed( Neo4NetError.From( new Exception() ) );
 
 			  assertFalse( _state.canProcessMessage() );
 		 }

@@ -23,15 +23,15 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Result = Neo4Net.Graphdb.Result;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using Result = Neo4Net.GraphDb.Result;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
-	using Neo4jTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4jTransactionalContextFactory;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using Neo4NetTransactionalContextFactory = Neo4Net.Kernel.impl.query.Neo4NetTransactionalContextFactory;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using TransactionalContextFactory = Neo4Net.Kernel.impl.query.TransactionalContextFactory;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
@@ -47,14 +47,14 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	public class ExecutionEngineTest
 	{
 		 private static readonly MapValue _noParams = VirtualValues.emptyMap();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule database = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public DatabaseRule Database = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -100,8 +100,8 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 		 private TransactionalContext CreateTransactionContext( GraphDatabaseQueryService graph, InternalTransaction tx, string query )
 		 {
-			  PropertyContainerLocker locker = new PropertyContainerLocker();
-			  TransactionalContextFactory contextFactory = Neo4jTransactionalContextFactory.create( graph, locker );
+			  IPropertyContainerLocker locker = new IPropertyContainerLocker();
+			  TransactionalContextFactory contextFactory = Neo4NetTransactionalContextFactory.create( graph, locker );
 			  return contextFactory.NewContext( ClientConnectionInfo.EMBEDDED_CONNECTION, tx, query, EMPTY_MAP );
 		 }
 	}

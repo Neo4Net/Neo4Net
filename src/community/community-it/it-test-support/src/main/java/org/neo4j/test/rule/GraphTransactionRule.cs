@@ -21,7 +21,7 @@ namespace Neo4Net.Test.rule
 {
 	using ExternalResource = org.junit.rules.ExternalResource;
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	/// <summary>
 	/// JUnit @Rule for running a transaction for the duration of a test. Requires an EmbeddedDatabaseRule with

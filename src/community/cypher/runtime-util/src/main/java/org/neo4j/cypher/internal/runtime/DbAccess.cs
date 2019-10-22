@@ -28,7 +28,7 @@ namespace Neo4Net.Cypher.Internal.runtime
 	/// <summary>
 	/// Used to expose db access to expressions
 	/// </summary>
-	public interface DbAccess : EntityById
+	public interface DbAccess : IEntityById
 	{
 		 Value NodeProperty( long node, int property );
 

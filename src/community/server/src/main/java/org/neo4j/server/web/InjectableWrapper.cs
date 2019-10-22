@@ -25,7 +25,7 @@ namespace Neo4Net.Server.web
 	using Neo4Net.Server.plugins;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Provider public class InjectableWrapper extends org.neo4j.server.database.InjectableProvider<Object>
+//ORIGINAL LINE: @Provider public class InjectableWrapper extends org.Neo4Net.server.database.InjectableProvider<Object>
 	public class InjectableWrapper : InjectableProvider<object>
 	{
 		 private readonly Injectable _injectable;

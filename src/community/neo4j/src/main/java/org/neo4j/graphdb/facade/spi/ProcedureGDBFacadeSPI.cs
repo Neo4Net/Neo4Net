@@ -17,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.facade.spi
+namespace Neo4Net.GraphDb.facade.spi
 {
 
 	using Neo4Net.Functions;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
-	using Neo4Net.Graphdb.@event;
-	using DataSourceModule = Neo4Net.Graphdb.factory.module.DataSourceModule;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
+	using Neo4Net.GraphDb.Events;
+	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -126,7 +126,7 @@ namespace Neo4Net.Graphdb.facade.spi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError
+//ORIGINAL LINE: public java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError
 		 public override URL ValidateURLAccess( URL url )
 		 {
 			  return _urlValidator.apply( url );
@@ -159,7 +159,7 @@ namespace Neo4Net.Graphdb.facade.spi
 			  }
 			  catch ( TransactionFailureException e )
 			  {
-					throw new Neo4Net.Graphdb.TransactionFailureException( e.Message, e );
+					throw new Neo4Net.GraphDb.TransactionFailureException( e.Message, e );
 			  }
 		 }
 	}

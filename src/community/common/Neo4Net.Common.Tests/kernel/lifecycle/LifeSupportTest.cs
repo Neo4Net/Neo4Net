@@ -60,34 +60,34 @@ namespace Neo4Net.Kernel.Lifecycle
          lifeSupport.Add(instance3);
 
          lifeSupport.Init();
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
-         assertEquals(LifecycleStatus.Stopped, instance2.Status);
-         assertEquals(LifecycleStatus.Stopped, instance3.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance2.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance3.Status);
 
          lifeSupport.Start();
-         assertEquals(LifecycleStatus.Started, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Started, instance1.Status);
-         assertEquals(LifecycleStatus.Started, instance2.Status);
-         assertEquals(LifecycleStatus.Started, instance3.Status);
+        Assert.Equals(LifecycleStatus.Started, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Started, instance1.Status);
+        Assert.Equals(LifecycleStatus.Started, instance2.Status);
+        Assert.Equals(LifecycleStatus.Started, instance3.Status);
 
          lifeSupport.Stop();
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
-         assertEquals(LifecycleStatus.Stopped, instance2.Status);
-         assertEquals(LifecycleStatus.Stopped, instance3.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance2.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance3.Status);
 
          lifeSupport.Start();
-         assertEquals(LifecycleStatus.Started, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Started, instance1.Status);
-         assertEquals(LifecycleStatus.Started, instance2.Status);
-         assertEquals(LifecycleStatus.Started, instance3.Status);
+        Assert.Equals(LifecycleStatus.Started, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Started, instance1.Status);
+        Assert.Equals(LifecycleStatus.Started, instance2.Status);
+        Assert.Equals(LifecycleStatus.Started, instance3.Status);
 
          lifeSupport.Shutdown();
-         assertEquals(LifecycleStatus.Shutdown, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance1.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance2.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance3.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance1.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance2.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -111,12 +111,12 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException throwable)
          {
-            assertEquals(initThrowable, throwable.InnerException);
+           Assert.Equals(initThrowable, throwable.InnerException);
          }
-         assertEquals(LifecycleStatus.Shutdown, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance1.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance2.Status);
-         assertEquals(LifecycleStatus.None, instance3.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance1.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance2.Status);
+        Assert.Equals(LifecycleStatus.None, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -140,12 +140,12 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException throwable)
          {
-            assertEquals(startThrowable, throwable.InnerException);
+           Assert.Equals(startThrowable, throwable.InnerException);
          }
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
-         assertEquals(LifecycleStatus.Stopped, instance2.Status);
-         assertEquals(LifecycleStatus.Stopped, instance3.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance2.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -170,16 +170,16 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException throwable)
          {
-            assertEquals(startThrowable, throwable.InnerException);
-            assertEquals(1, throwable.Suppressed.length);
+           Assert.Equals(startThrowable, throwable.InnerException);
+           Assert.Equals(1, throwable.Suppressed.length);
             assertThat(throwable.Suppressed[0], instanceOf(typeof(LifecycleException)));
-            assertEquals(stopThrowable, throwable.Suppressed[0].Cause);
+           Assert.Equals(stopThrowable, throwable.Suppressed[0].Cause);
          }
 
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
-         assertEquals(LifecycleStatus.Stopped, instance2.Status);
-         assertEquals(LifecycleStatus.Stopped, instance3.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance2.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -206,12 +206,12 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException throwable)
          {
-            assertEquals(stopThrowable, throwable.InnerException);
+           Assert.Equals(stopThrowable, throwable.InnerException);
          }
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
-         assertEquals(LifecycleStatus.Stopped, instance2.Status);
-         assertEquals(LifecycleStatus.Stopped, instance3.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance2.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -238,12 +238,12 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException throwable)
          {
-            assertEquals(shutdownThrowable, throwable.InnerException);
+           Assert.Equals(shutdownThrowable, throwable.InnerException);
          }
-         assertEquals(LifecycleStatus.Shutdown, lifeSupport.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance1.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance2.Status);
-         assertEquals(LifecycleStatus.Shutdown, instance3.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance1.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance2.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, instance3.Status);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -259,10 +259,10 @@ namespace Neo4Net.Kernel.Lifecycle
 
          support.Add(instance1);
 
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
 
-         assertEquals(LifecycleStatus.None, instance1.Transitions[0]);
-         assertEquals(2, instance1.Transitions.Count);
+        Assert.Equals(LifecycleStatus.None, instance1.Transitions[0]);
+        Assert.Equals(2, instance1.Transitions.Count);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -279,12 +279,12 @@ namespace Neo4Net.Kernel.Lifecycle
 
          support.Add(instance1);
 
-         assertEquals(LifecycleStatus.Started, instance1.Status);
+        Assert.Equals(LifecycleStatus.Started, instance1.Status);
 
-         assertEquals(LifecycleStatus.None, instance1.Transitions[0]);
-         assertEquals(LifecycleStatus.Stopped, instance1.Transitions[1]);
+        Assert.Equals(LifecycleStatus.None, instance1.Transitions[0]);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Transitions[1]);
 
-         assertEquals(3, instance1.Transitions.Count);
+        Assert.Equals(3, instance1.Transitions.Count);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -302,12 +302,12 @@ namespace Neo4Net.Kernel.Lifecycle
 
          support.Add(instance1);
 
-         assertEquals(LifecycleStatus.Stopped, instance1.Status);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Status);
 
-         assertEquals(LifecycleStatus.None, instance1.Transitions[0]);
-         assertEquals(LifecycleStatus.Stopped, instance1.Transitions[1]);
+        Assert.Equals(LifecycleStatus.None, instance1.Transitions[0]);
+        Assert.Equals(LifecycleStatus.Stopped, instance1.Transitions[1]);
 
-         assertEquals(2, instance1.Transitions.Count);
+        Assert.Equals(2, instance1.Transitions.Count);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -326,9 +326,9 @@ namespace Neo4Net.Kernel.Lifecycle
 
          support.Add(instance1);
 
-         assertEquals(LifecycleStatus.None, instance1.Status);
+        Assert.Equals(LifecycleStatus.None, instance1.Status);
 
-         assertEquals(1, instance1.Transitions.Count);
+        Assert.Equals(1, instance1.Transitions.Count);
       }
 
       //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -351,8 +351,8 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(runtimeException, e.InnerException);
-            assertEquals(0, e.Suppressed.length);
+           Assert.Equals(runtimeException, e.InnerException);
+           Assert.Equals(0, e.Suppressed.length);
          }
       }
 
@@ -377,9 +377,9 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(initRuntimeException, e.InnerException);
-            assertEquals(1, e.Suppressed.length);
-            assertEquals(shutdownRuntimeException, e.Suppressed[0].Cause);
+           Assert.Equals(initRuntimeException, e.InnerException);
+           Assert.Equals(1, e.Suppressed.length);
+           Assert.Equals(shutdownRuntimeException, e.Suppressed[0].Cause);
             assertThat(e.Suppressed[0], instanceOf(typeof(LifecycleException)));
          }
       }
@@ -401,8 +401,8 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(runtimeException, e.InnerException);
-            assertEquals(0, e.Suppressed.length);
+           Assert.Equals(runtimeException, e.InnerException);
+           Assert.Equals(0, e.Suppressed.length);
          }
       }
 
@@ -427,9 +427,9 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(startRuntimeException, e.InnerException);
-            assertEquals(1, e.Suppressed.length);
-            assertEquals(stopRuntimeException, e.Suppressed[0].Cause);
+           Assert.Equals(startRuntimeException, e.InnerException);
+           Assert.Equals(1, e.Suppressed.length);
+           Assert.Equals(stopRuntimeException, e.Suppressed[0].Cause);
             assertThat(e.Suppressed[0], instanceOf(typeof(LifecycleException)));
          }
       }
@@ -452,8 +452,8 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(runtimeException, e.InnerException);
-            assertEquals(0, e.Suppressed.length);
+           Assert.Equals(runtimeException, e.InnerException);
+           Assert.Equals(0, e.Suppressed.length);
          }
       }
 
@@ -479,9 +479,9 @@ namespace Neo4Net.Kernel.Lifecycle
          }
          catch (LifecycleException e)
          {
-            assertEquals(stopRuntimeException, e.InnerException);
-            assertEquals(1, e.Suppressed.length);
-            assertEquals(shutdownRuntimeException, e.Suppressed[0].Cause);
+           Assert.Equals(stopRuntimeException, e.InnerException);
+           Assert.Equals(1, e.Suppressed.length);
+           Assert.Equals(shutdownRuntimeException, e.Suppressed[0].Cause);
             assertThat(e.Suppressed[0], instanceOf(typeof(LifecycleException)));
          }
       }
@@ -508,7 +508,7 @@ namespace Neo4Net.Kernel.Lifecycle
             assertThat(message, containsString("Exception during graceful attempt to stop partially started component. " + "Please use non suppressed exception to see original component failure."));
          }
 
-         assertEquals(LifecycleStatus.Stopped, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Stopped, lifeSupport.Status);
          verify(component).stop();
       }
 
@@ -534,7 +534,7 @@ namespace Neo4Net.Kernel.Lifecycle
             assertThat(message, containsString("Exception during graceful attempt to shutdown partially initialized component. " + "Please use non suppressed exception to see original component failure."));
          }
 
-         assertEquals(LifecycleStatus.Shutdown, lifeSupport.Status);
+        Assert.Equals(LifecycleStatus.Shutdown, lifeSupport.Status);
          verify(component).shutdown();
       }
 

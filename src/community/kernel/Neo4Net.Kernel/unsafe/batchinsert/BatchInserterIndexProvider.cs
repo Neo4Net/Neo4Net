@@ -23,9 +23,9 @@ using System.Collections.Generic;
 namespace Neo4Net.@unsafe.Batchinsert
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	/// <summary>
 	/// A place to access <seealso cref="BatchInserterIndex"/>s from a certain index provider.

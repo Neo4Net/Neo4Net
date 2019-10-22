@@ -27,15 +27,15 @@ namespace Migration
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
@@ -74,11 +74,11 @@ namespace Migration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.concat;
+//	import static org.Neo4Net.helpers.ArrayUtil.concat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asList;
+//	import static org.Neo4Net.helpers.collection.Iterables.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Unzip.unzip;
+//	import static org.Neo4Net.test.Unzip.unzip;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(TestDirectoryExtension.class) class StartOldDbOnCurrentVersionAndCreateFusionIndexIT
@@ -94,10 +94,10 @@ namespace Migration
 		 private sealed class Provider
 		 {
 			  // in order of appearance
-			  public static readonly Provider Lucene_10 = new Provider( "Lucene_10", InnerEnum.Lucene_10, "Label1", Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex.Lucene10, Neo4Net.Kernel.Api.Impl.Schema.LuceneIndexProviderFactory.ProviderDescriptor );
-			  public static readonly Provider Fusion_10 = new Provider( "Fusion_10", InnerEnum.Fusion_10, "Label2", Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex.Native10, Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory10.Descriptor );
-			  public static readonly Provider Fusion_20 = new Provider( "Fusion_20", InnerEnum.Fusion_20, "Label3", Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex.Native20, Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory20.Descriptor );
-			  public static readonly Provider Btree_10 = new Provider( "Btree_10", InnerEnum.Btree_10, "Label4", Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex.NativeBtree10, Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProvider.Descriptor );
+			  public static readonly Provider Lucene_10 = new Provider( "Lucene_10", InnerEnum.Lucene_10, "Label1", Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex.Lucene10, Neo4Net.Kernel.Api.Impl.Schema.LuceneIndexProviderFactory.ProviderDescriptor );
+			  public static readonly Provider Fusion_10 = new Provider( "Fusion_10", InnerEnum.Fusion_10, "Label2", Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex.Native10, Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory10.Descriptor );
+			  public static readonly Provider Fusion_20 = new Provider( "Fusion_20", InnerEnum.Fusion_20, "Label3", Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex.Native20, Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory20.Descriptor );
+			  public static readonly Provider Btree_10 = new Provider( "Btree_10", InnerEnum.Btree_10, "Label4", Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex.NativeBtree10, Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProvider.Descriptor );
 
 			  private static readonly IList<Provider> valueList = new List<Provider>();
 
@@ -126,7 +126,7 @@ namespace Migration
 			  internal Private readonly;
 			  internal Private readonly;
 
-			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.Graphdb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor descriptor )
+			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor descriptor )
 			  {
 					this._label = Label.label( labelName );
 					this._setting = setting;
@@ -168,7 +168,7 @@ namespace Migration
 		 private const Provider DEFAULT_PROVIDER = Provider.Btree_10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject private org.neo4j.test.rule.TestDirectory directory;
+//ORIGINAL LINE: @Inject private org.Neo4Net.test.rule.TestDirectory directory;
 		 private TestDirectory _directory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -177,7 +177,7 @@ namespace Migration
 		 internal virtual void Create3_2Database()
 		 {
 			  File storeDir = TempStoreDirectory();
-			  GraphDatabaseService db = ( new GraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
+			  IGraphDatabaseService db = ( new GraphDatabaseFactory() ).newEmbeddedDatabase(storeDir);
 			  CreateIndexData( db, Provider.Lucene_10.label );
 			  Db.shutdown();
 
@@ -196,7 +196,7 @@ namespace Migration
 			  GraphDatabaseBuilder builder = factory.NewEmbeddedDatabaseBuilder( storeDir );
 
 			  builder.SetConfig( GraphDatabaseSettings.enable_native_schema_index, Settings.FALSE );
-			  GraphDatabaseService db = builder.NewGraphDatabase();
+			  IGraphDatabaseService db = builder.NewGraphDatabase();
 			  CreateIndexData( db, Provider.Lucene_10.label );
 			  Db.shutdown();
 
@@ -338,7 +338,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyExpectedProvider(org.neo4j.kernel.internal.GraphDatabaseAPI db, org.neo4j.graphdb.Label label, org.neo4j.internal.kernel.api.schema.IndexProviderDescriptor expectedDescriptor) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static void verifyExpectedProvider(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor expectedDescriptor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 private static void VerifyExpectedProvider( GraphDatabaseAPI db, Label label, IndexProviderDescriptor expectedDescriptor )
 		 {
 			  using ( Transaction tx = Db.beginTx(), KernelTransaction kernelTransaction = Db.DependencyResolver.resolveDependency(typeof(ThreadToStatementContextBridge)).getKernelTransactionBoundToThisThread(true) )
@@ -374,7 +374,7 @@ namespace Migration
 		 private static void CreateIndexDataAndShutdown( GraphDatabaseBuilder builder, string indexProvider, Label label, System.Action<GraphDatabaseService> otherActions )
 		 {
 			  builder.SetConfig( GraphDatabaseSettings.default_schema_provider, indexProvider );
-			  GraphDatabaseService db = builder.NewGraphDatabase();
+			  IGraphDatabaseService db = builder.NewGraphDatabase();
 			  try
 			  {
 					otherActions( db );
@@ -386,7 +386,7 @@ namespace Migration
 			  }
 		 }
 
-		 private static void CreateIndexData( GraphDatabaseService db, Label label )
+		 private static void CreateIndexData( IGraphDatabaseService db, Label label )
 		 {
 			  CreateIndexesAndData( db, label );
 		 }
@@ -395,13 +395,13 @@ namespace Migration
 //ORIGINAL LINE: private static java.io.File tempStoreDirectory() throws java.io.IOException
 		 private static File TempStoreDirectory()
 		 {
-			  File file = File.createTempFile( "create-db", "neo4j" );
+			  File file = File.createTempFile( "create-db", "Neo4Net" );
 			  File storeDir = new File( file.AbsoluteFile.ParentFile, file.Name );
 			  FileUtils.deleteFile( file );
 			  return storeDir;
 		 }
 
-		 private static void CreateIndexesAndData( GraphDatabaseService db, Label label )
+		 private static void CreateIndexesAndData( IGraphDatabaseService db, Label label )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -418,7 +418,7 @@ namespace Migration
 			  CreateData( db, label );
 		 }
 
-		 private static void CreateData( GraphDatabaseService db, Label label )
+		 private static void CreateData( IGraphDatabaseService db, Label label )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -461,7 +461,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyIndexes(org.neo4j.kernel.internal.GraphDatabaseAPI db, org.neo4j.graphdb.Label label) throws Exception
+//ORIGINAL LINE: private static void verifyIndexes(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label) throws Exception
 		 private static void VerifyIndexes( GraphDatabaseAPI db, Label label )
 		 {
 			  assertTrue( HasIndex( db, label, KEY1 ) );
@@ -472,7 +472,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyAfterAdditionalUpdate(org.neo4j.kernel.internal.GraphDatabaseAPI db, org.neo4j.graphdb.Label label) throws Exception
+//ORIGINAL LINE: private static void verifyAfterAdditionalUpdate(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label) throws Exception
 		 private static void VerifyAfterAdditionalUpdate( GraphDatabaseAPI db, Label label )
 		 {
 			  assertTrue( HasIndex( db, label, KEY1 ) );
@@ -483,7 +483,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int countIndexedNodes(org.neo4j.kernel.internal.GraphDatabaseAPI db, org.neo4j.graphdb.Label label, String... keys) throws Exception
+//ORIGINAL LINE: private static int countIndexedNodes(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, String... keys) throws Exception
 		 private static int CountIndexedNodes( GraphDatabaseAPI db, Label label, params string[] keys )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
@@ -516,7 +516,7 @@ namespace Migration
 			  }
 		 }
 
-		 private static bool HasIndex( GraphDatabaseService db, Label label, params string[] keys )
+		 private static bool HasIndex( IGraphDatabaseService db, Label label, params string[] keys )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.configuration.ssl
 	using Description = Neo4Net.Configuration.Description;
 	using Internal = Neo4Net.Configuration.Internal;
 	using LoadableConfig = Neo4Net.Configuration.LoadableConfig;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.PATH;
+//	import static org.Neo4Net.kernel.configuration.Settings.PATH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.derivedSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.derivedSetting;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.pathSetting;
+//	import static org.Neo4Net.kernel.configuration.Settings.pathSetting;
 
 	/// <summary>
 	/// To be removed in favour of <seealso cref="SslPolicyConfig"/>. The settings below are still
@@ -41,18 +41,18 @@ namespace Neo4Net.Kernel.configuration.ssl
 	{
 		 public const string LEGACY_POLICY_NAME = "legacy";
 
-		 [Description("Directory for storing certificates to be used by Neo4j for TLS connections")]
+		 [Description("Directory for storing certificates to be used by Neo4Net for TLS connections")]
 		 public static readonly Setting<File> CertificatesDirectory = pathSetting( "dbms.directories.certificates", "certificates" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Path to the X.509 public certificate to be used by Neo4j for TLS connections") public static final org.neo4j.graphdb.config.Setting<java.io.File> tls_certificate_file = derivedSetting("unsupported.dbms.security.tls_certificate_file", certificates_directory, certificates -> new java.io.File(certificates, "neo4j.cert"), PATH);
-		 [Description("Path to the X.509 public certificate to be used by Neo4j for TLS connections")]
-		 public static readonly Setting<File> TlsCertificateFile = derivedSetting( "unsupported.dbms.security.tls_certificate_file", CertificatesDirectory, certificates => new File( certificates, "neo4j.cert" ), PATH );
+//ORIGINAL LINE: @Internal @Description("Path to the X.509 public certificate to be used by Neo4Net for TLS connections") public static final org.Neo4Net.graphdb.config.Setting<java.io.File> tls_certificate_file = derivedSetting("unsupported.dbms.security.tls_certificate_file", certificates_directory, certificates -> new java.io.File(certificates, "Neo4Net.cert"), PATH);
+		 [Description("Path to the X.509 public certificate to be used by Neo4Net for TLS connections")]
+		 public static readonly Setting<File> TlsCertificateFile = derivedSetting( "unsupported.dbms.security.tls_certificate_file", CertificatesDirectory, certificates => new File( certificates, "Neo4Net.cert" ), PATH );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Internal @Description("Path to the X.509 private key to be used by Neo4j for TLS connections") public static final org.neo4j.graphdb.config.Setting<java.io.File> tls_key_file = derivedSetting("unsupported.dbms.security.tls_key_file", certificates_directory, certificates -> new java.io.File(certificates, "neo4j.key"), PATH);
-		 [Description("Path to the X.509 private key to be used by Neo4j for TLS connections")]
-		 public static readonly Setting<File> TlsKeyFile = derivedSetting( "unsupported.dbms.security.tls_key_file", CertificatesDirectory, certificates => new File( certificates, "neo4j.key" ), PATH );
+//ORIGINAL LINE: @Internal @Description("Path to the X.509 private key to be used by Neo4Net for TLS connections") public static final org.Neo4Net.graphdb.config.Setting<java.io.File> tls_key_file = derivedSetting("unsupported.dbms.security.tls_key_file", certificates_directory, certificates -> new java.io.File(certificates, "Neo4Net.key"), PATH);
+		 [Description("Path to the X.509 private key to be used by Neo4Net for TLS connections")]
+		 public static readonly Setting<File> TlsKeyFile = derivedSetting( "unsupported.dbms.security.tls_key_file", CertificatesDirectory, certificates => new File( certificates, "Neo4Net.key" ), PATH );
 	}
 
 }

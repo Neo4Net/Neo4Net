@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus.log
 {
@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 
 	using CoreLogPruningStrategyFactory = Neo4Net.causalclustering.core.consensus.log.segmented.CoreLogPruningStrategyFactory;
 	using SegmentedRaftLog = Neo4Net.causalclustering.core.consensus.log.segmented.SegmentedRaftLog;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using OnDemandJobScheduler = Neo4Net.Test.OnDemandJobScheduler;
@@ -42,20 +42,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
+//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.log.RaftLogHelper.hasNoContent;
+//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.hasNoContent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
+//	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.NullLogProvider.getInstance;
+//	import static org.Neo4Net.logging.NullLogProvider.getInstance;
 
 	public class SegmentedRaftLogDurabilityTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.fs.EphemeralFileSystemRule fsRule = new org.neo4j.test.rule.fs.EphemeralFileSystemRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.fs.EphemeralFileSystemRule fsRule = new org.Neo4Net.test.rule.fs.EphemeralFileSystemRule();
 		 public readonly EphemeralFileSystemRule FsRule = new EphemeralFileSystemRule();
 
 		 private readonly RaftLogFactory _logFactory = fileSystem =>
@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntry = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
+//ORIGINAL LINE: final RaftLogEntry logEntry = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
 			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
 			  log.Append( logEntry );
 
@@ -151,19 +151,19 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
+//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
 			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(2));
+//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(2));
 			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 2 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryC = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(3));
+//ORIGINAL LINE: final RaftLogEntry logEntryC = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(3));
 			  RaftLogEntry logEntryC = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 3 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryD = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(4));
+//ORIGINAL LINE: final RaftLogEntry logEntryD = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(4));
 			  RaftLogEntry logEntryD = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 4 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryE = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(5));
+//ORIGINAL LINE: final RaftLogEntry logEntryE = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(5));
 			  RaftLogEntry logEntryE = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 5 ) );
 
 			  log.Append( logEntryA );
@@ -192,10 +192,10 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
+//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
 			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.neo4j.causalclustering.core.consensus.ReplicatedString.valueOf("hejzxcjkzhxcjkxz"));
+//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedString.valueOf("hejzxcjkzhxcjkxz"));
 			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedString.valueOf( "hejzxcjkzhxcjkxz" ) );
 
 			  log.Append( logEntryA );
@@ -251,7 +251,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyCurrentLogAndNewLogLoadedFromFileSystem(RaftLog log, org.neo4j.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem, LogVerifier logVerifier) throws Exception
+//ORIGINAL LINE: private void verifyCurrentLogAndNewLogLoadedFromFileSystem(RaftLog log, org.Neo4Net.graphdb.mockfs.EphemeralFileSystemAbstraction fileSystem, LogVerifier logVerifier) throws Exception
 		 private void VerifyCurrentLogAndNewLogLoadedFromFileSystem( RaftLog log, EphemeralFileSystemAbstraction fileSystem, LogVerifier logVerifier )
 		 {
 			  logVerifier.VerifyLog( log );
@@ -263,7 +263,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 private interface RaftLogFactory
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RaftLog createBasedOn(org.neo4j.io.fs.FileSystemAbstraction fileSystem) throws Exception;
+//ORIGINAL LINE: RaftLog createBasedOn(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem) throws Exception;
 			  RaftLog CreateBasedOn( FileSystemAbstraction fileSystem );
 		 }
 

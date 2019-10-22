@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.security.auth
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -46,7 +46,7 @@ namespace Neo4Net.Bolt.security.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class BasicAuthenticationTest
 	{

@@ -62,18 +62,18 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.security.AuthToken.newBasicAuthToken;
+//	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.TRUE;
+//	import static org.Neo4Net.values.storable.Values.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.EMPTY_MAP;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.EMPTY_MAP;
 
 	internal class ConnectedStateTest
 	{
 		 private const string USER_AGENT = "Driver 2.0";
-		 private static readonly IDictionary<string, object> _authToken = newBasicAuthToken( "neo4j", "password" );
+		 private static readonly IDictionary<string, object> _authToken = newBasicAuthToken( "Neo4Net", "password" );
 		 private static readonly InitMessage _initMessage = new InitMessage( USER_AGENT, _authToken );
 
 		 private readonly ConnectedState _state = new ConnectedState();

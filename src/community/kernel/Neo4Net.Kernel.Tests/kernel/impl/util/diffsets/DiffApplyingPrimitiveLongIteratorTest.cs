@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 	using Mockito = org.mockito.Mockito;
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using Resource = Neo4Net.Graphdb.Resource;
+	using Resource = Neo4Net.GraphDb.Resource;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.arrayContainingInAnyOrder;
@@ -42,13 +42,13 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.asArray;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.asArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.iterator;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.iterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.resourceIterator;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.resourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.collection.PrimitiveLongCollections.toSet;
+//	import static org.Neo4Net.collection.PrimitiveLongCollections.toSet;
 
 	public class DiffApplyingPrimitiveLongIteratorTest
 	{

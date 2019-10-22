@@ -23,12 +23,12 @@ namespace Neo4Net.Index
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Schema = Neo4Net.Graphdb.schema.Schema;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
@@ -43,7 +43,7 @@ namespace Neo4Net.Index
 	public class ShutdownOnIndexUpdateIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule database = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule database = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public DatabaseRule Database = new ImpermanentDatabaseRule();
 
 		 private const string UNIQUE_PROPERTY_NAME = "uniquePropertyName";
@@ -73,7 +73,7 @@ namespace Neo4Net.Index
 			  }
 		 }
 
-		 private void WaitIndexesOnline( GraphDatabaseService database )
+		 private void WaitIndexesOnline( IGraphDatabaseService database )
 		 {
 			  using ( Transaction ignored = database.BeginTx() )
 			  {
@@ -81,7 +81,7 @@ namespace Neo4Net.Index
 			  }
 		 }
 
-		 private void CreateConstraint( GraphDatabaseService database )
+		 private void CreateConstraint( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {

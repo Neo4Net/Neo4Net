@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Kernel.impl.transaction.state.storeview;
 	using Neo4Net.Kernel.impl.util;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
 	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
 	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
@@ -70,11 +70,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	public class MultipleIndexPopulatorUpdatesTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private org.neo4j.logging.LogProvider logProvider;
+//ORIGINAL LINE: @Mock(answer = org.mockito.Answers.RETURNS_MOCKS) private org.Neo4Net.logging.LogProvider logProvider;
 		 private LogProvider _logProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void updateForHigherNodeIgnoredWhenUsingFullNodeStoreScan() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void updateForHigherNodeIgnoredWhenUsingFullNodeStoreScan() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void UpdateForHigherNodeIgnoredWhenUsingFullNodeStoreScan()
 		 {
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( neoStores.NodeStore ).thenReturn( nodeStore );
 
 			  ProcessListenableNeoStoreIndexView storeView = new ProcessListenableNeoStoreIndexView( this, LockService.NO_LOCK_SERVICE, neoStores );
-			  MultipleIndexPopulator indexPopulator = new MultipleIndexPopulator( storeView, _logProvider, EntityType.NODE, mock( typeof( SchemaState ) ) );
+			  MultipleIndexPopulator indexPopulator = new MultipleIndexPopulator( storeView, _logProvider, IEntityType.NODE, mock( typeof( SchemaState ) ) );
 
 			  storeView.ProcessListener = new NodeUpdateProcessListener( indexPopulator );
 
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean process(org.neo4j.storageengine.api.StorageNodeCursor cursor) throws FAILURE
+//ORIGINAL LINE: public boolean process(org.Neo4Net.storageengine.api.StorageNodeCursor cursor) throws FAILURE
 			  public override bool Process( StorageNodeCursor cursor )
 			  {
 					ProcessListener.receive( cursor );

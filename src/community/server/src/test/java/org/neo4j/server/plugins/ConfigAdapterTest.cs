@@ -43,7 +43,7 @@ namespace Neo4Net.Server.plugins
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Object propertyValue = wrappingConfiguration.getProperty(org.neo4j.server.configuration.ServerSettings.rest_api_path.name());
+//ORIGINAL LINE: final Object propertyValue = wrappingConfiguration.getProperty(org.Neo4Net.server.configuration.ServerSettings.rest_api_path.name());
 			  object propertyValue = wrappingConfiguration.GetProperty( ServerSettings.rest_api_path.name() );
 
 			  // THEN
@@ -62,7 +62,7 @@ namespace Neo4Net.Server.plugins
 			  // WHEN
 			  wrappingConfiguration.setProperty( ServerSettings.rest_api_path.name(), "http://localhost:7474///db///data///" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final Object dataPath = wrappingConfiguration.getProperty(org.neo4j.server.configuration.ServerSettings.rest_api_path.name());
+//ORIGINAL LINE: final Object dataPath = wrappingConfiguration.getProperty(org.Neo4Net.server.configuration.ServerSettings.rest_api_path.name());
 			  object dataPath = wrappingConfiguration.GetProperty( ServerSettings.rest_api_path.name() );
 
 			  // THEN

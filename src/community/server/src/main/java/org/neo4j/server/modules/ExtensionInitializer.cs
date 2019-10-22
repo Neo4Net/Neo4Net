@@ -46,14 +46,14 @@ namespace Neo4Net.Server.modules
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public java.util.Collection<org.neo4j.server.plugins.Injectable<?>> initializePackages(Iterable<String> packageNames)
+//ORIGINAL LINE: public java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> initializePackages(Iterable<String> packageNames)
 		 public virtual ICollection<Injectable<object>> InitializePackages( IEnumerable<string> packageNames )
 		 {
-			  GraphDatabaseAPI graphDatabaseService = _neoServer.Database.Graph;
+			  GraphDatabaseAPI IGraphDatabaseService = _neoServer.Database.Graph;
 			  Config configuration = _neoServer.Config;
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectables = new java.util.HashSet<>();
+//ORIGINAL LINE: java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectables = new java.util.HashSet<>();
 			  ICollection<Injectable<object>> injectables = new HashSet<Injectable<object>>();
 			  foreach ( PluginLifecycle lifecycle in _lifecycles )
 			  {
@@ -66,7 +66,7 @@ namespace Neo4Net.Server.modules
 						 }
 						 else
 						 {
-							  injectables.addAll( lifecycle.Start( graphDatabaseService, new ConfigAdapter( configuration ) ) );
+							  injectables.addAll( lifecycle.Start( IGraphDatabaseService, new ConfigAdapter( configuration ) ) );
 						 }
 					}
 			  }

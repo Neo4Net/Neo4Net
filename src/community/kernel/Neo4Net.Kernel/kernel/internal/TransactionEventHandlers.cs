@@ -23,12 +23,12 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Internal
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using LabelEntry = Neo4Net.Graphdb.@event.LabelEntry;
-	using Neo4Net.Graphdb.@event;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
-	using Neo4Net.Graphdb.@event;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
+	using Neo4Net.GraphDb.Events;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
+	using Neo4Net.GraphDb.Events;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Neo4Net.Kernel.api;
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Internal
 			  while ( handlers.MoveNext() )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.graphdb.event.TransactionEventHandler<?> handler = handlers.Current;
+//ORIGINAL LINE: org.Neo4Net.graphdb.event.TransactionEventHandler<?> handler = handlers.Current;
 					TransactionEventHandler<object> handler = handlers.Current;
 					try
 					{
@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(org.neo4j.storageengine.api.txstate.ReadableTransactionState state, org.neo4j.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterCommit( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(org.neo4j.storageengine.api.txstate.ReadableTransactionState state, org.neo4j.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterRollback( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )

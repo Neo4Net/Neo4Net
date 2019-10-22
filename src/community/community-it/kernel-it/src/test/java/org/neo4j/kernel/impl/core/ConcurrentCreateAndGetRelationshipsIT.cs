@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using RelationshipIterator = Neo4Net.Kernel.Impl.Api.store.RelationshipIterator;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.core
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.sleep;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Direction.OUTGOING;
+//	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 
 	/// <summary>
 	/// Ensures the absence of an issue where iterating through a <seealso cref="RelationshipIterator"/> would result in
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.impl.core
 	public class ConcurrentCreateAndGetRelationshipsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 		 private const RelationshipType RELTYPE = MyRelTypes.TEST;
 
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.core
 		 public virtual void TryToReproduceTheIssue()
 		 {
 			  // GIVEN
-			  GraphDatabaseService db = DbRule.GraphDatabaseAPI;
+			  IGraphDatabaseService db = DbRule.GraphDatabaseAPI;
 			  System.Threading.CountdownEvent startSignal = new System.Threading.CountdownEvent( 1 );
 			  AtomicBoolean stopSignal = new AtomicBoolean();
 			  AtomicReference<Exception> failure = new AtomicReference<Exception>();
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 		 }
 
-		 private ICollection<Worker> CreateWorkers( GraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
+		 private ICollection<Worker> CreateWorkers( IGraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
 		 {
 			  ICollection<Worker> workers = new List<Worker>();
 			  for ( int i = 0; i < 2; i++ )
@@ -104,14 +104,14 @@ namespace Neo4Net.Kernel.impl.core
 			  return workers;
 		 }
 
-		 private Worker NewWorker( GraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
+		 private Worker NewWorker( IGraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
 		 {
 			  Worker worker = new Worker( db, startSignal, stopSignal, failure, parentNode );
 			  worker.Start();
 			  return worker;
 		 }
 
-		 private Node CreateNode( GraphDatabaseService db )
+		 private Node CreateNode( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -123,13 +123,13 @@ namespace Neo4Net.Kernel.impl.core
 
 		 private class Worker : Thread
 		 {
-			  internal readonly GraphDatabaseService Db;
+			  internal readonly IGraphDatabaseService Db;
 			  internal readonly System.Threading.CountdownEvent StartSignal;
 			  internal readonly AtomicReference<Exception> Failure;
 			  internal readonly Node ParentNode;
 			  internal readonly AtomicBoolean StopSignal;
 
-			  internal Worker( GraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
+			  internal Worker( IGraphDatabaseService db, System.Threading.CountdownEvent startSignal, AtomicBoolean stopSignal, AtomicReference<Exception> failure, Node parentNode )
 			  {
 					this.Db = db;
 					this.StartSignal = startSignal;

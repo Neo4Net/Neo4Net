@@ -23,14 +23,14 @@ using System.Collections.Generic;
 namespace Neo4Net.Server.rest.repr
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
 
 	public sealed class RepresentationType
@@ -52,7 +52,7 @@ namespace Neo4Net.Server.rest.repr
 		 private static readonly IDictionary<string, RepresentationType> _types = new Dictionary<string, RepresentationType>();
 		 private static readonly IDictionary<Type, RepresentationType> _extended = new Dictionary<Type, RepresentationType>();
 		 // Graph database types
-		 public static readonly RepresentationType Graphdb = new RepresentationType( "graphdb", null, typeof( GraphDatabaseService ) );
+		 public static readonly RepresentationType Graphdb = new RepresentationType( "graphdb", null, typeof( IGraphDatabaseService ) );
 		 public static readonly RepresentationType Node = new RepresentationType( "node", "nodes", typeof( Node ) );
 		 public static readonly RepresentationType Relationship = new RepresentationType( "relationship", "relationships", typeof( Relationship ) );
 		 public static readonly RepresentationType Path = new RepresentationType( "path", "paths", typeof( Path ) );

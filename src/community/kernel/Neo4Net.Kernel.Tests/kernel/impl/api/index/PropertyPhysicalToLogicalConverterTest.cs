@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static PageCacheRule PageCacheRule = new PageCacheRule();
 		 private readonly EphemeralFileSystemRule _fs = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord( Property( key, value ) );
 
 			  // WHEN
-			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( EntityUpdates.ForEntity( 0, false ).added( key, value ).build() ) );
+			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( IEntityUpdates.ForEntity( 0, false ).added( key, value ).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -130,10 +130,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord( Property( key, valueAfter ) );
 
 			  // WHEN
-			  EntityUpdates update = Convert( _none, _none, Change( before, after ) );
+			  IEntityUpdates update = Convert( _none, _none, Change( before, after ) );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.ForEntity( 0, false ).changed( key, valueBefore, valueAfter ).build();
+			  IEntityUpdates expected = IEntityUpdates.ForEntity( 0, false ).changed( key, valueBefore, valueAfter ).build();
 			  assertEquals( expected, update );
 		 }
 
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord( Property( key, value ) );
 
 			  // WHEN
-			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( EntityUpdates.ForEntity( 0, false ).build() ) );
+			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( IEntityUpdates.ForEntity( 0, false ).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -162,10 +162,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord();
 
 			  // WHEN
-			  EntityUpdates update = Convert( _none, _none, Change( before, after ) );
+			  IEntityUpdates update = Convert( _none, _none, Change( before, after ) );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.ForEntity( 0, false ).removed( key, value ).build();
+			  IEntityUpdates expected = IEntityUpdates.ForEntity( 0, false ).removed( key, value ).build();
 			  assertEquals( expected, update );
 		 }
 
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord( Property( key, _longString ) );
 
 			  // THEN
-			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( EntityUpdates.ForEntity( 0, false ).added( key, _longString ).build() ) );
+			  assertThat( Convert( _none, _none, Change( before, after ) ), equalTo( IEntityUpdates.ForEntity( 0, false ).added( key, _longString ).build() ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -192,10 +192,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord( Property( key, _longerString ) );
 
 			  // WHEN
-			  EntityUpdates update = Convert( _none, _none, Change( before, after ) );
+			  IEntityUpdates update = Convert( _none, _none, Change( before, after ) );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.ForEntity( 0, false ).changed( key, _longString, _longerString ).build();
+			  IEntityUpdates expected = IEntityUpdates.ForEntity( 0, false ).changed( key, _longString, _longerString ).build();
 			  assertEquals( expected, update );
 		 }
 
@@ -209,10 +209,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  PropertyRecord after = PropertyRecord();
 
 			  // WHEN
-			  EntityUpdates update = Convert( _none, _none, Change( before, after ) );
+			  IEntityUpdates update = Convert( _none, _none, Change( before, after ) );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.ForEntity( 0, false ).removed( key, _longString ).build();
+			  IEntityUpdates expected = IEntityUpdates.ForEntity( 0, false ).removed( key, _longString ).build();
 			  assertEquals( expected, update );
 		 }
 
@@ -228,10 +228,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  Command.PropertyCommand movedTo = Change( PropertyRecord(), PropertyRecord(Property(key, newValue)) );
 
 			  // WHEN
-			  EntityUpdates update = Convert( _none, _none, movedFrom, movedTo );
+			  IEntityUpdates update = Convert( _none, _none, movedFrom, movedTo );
 
 			  // THEN
-			  EntityUpdates expected = EntityUpdates.ForEntity( 0, false ).changed( key, oldValue, newValue ).build();
+			  IEntityUpdates expected = IEntityUpdates.ForEntity( 0, false ).changed( key, oldValue, newValue ).build();
 			  assertEquals( expected, update );
 		 }
 
@@ -257,24 +257,24 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return block;
 		 }
 
-		 private EntityUpdates Convert( long[] labelsBefore, long[] labelsAfter, params Command.PropertyCommand[] changes )
+		 private IEntityUpdates Convert( long[] labelsBefore, long[] labelsAfter, params Command.PropertyCommand[] changes )
 		 {
 			  long nodeId = 0;
-			  EntityUpdates.Builder updates = EntityUpdates.ForEntity( ( long ) 0, false ).withTokens( labelsBefore ).withTokensAfter( labelsAfter );
-			  EntityCommandGrouper grouper = new EntityCommandGrouper<>( typeof( Command.NodeCommand ), 8 );
+			  IEntityUpdates.Builder updates = IEntityUpdates.ForEntity( ( long ) 0, false ).withTokens( labelsBefore ).withTokensAfter( labelsAfter );
+			  IEntityCommandGrouper grouper = new IEntityCommandGrouper<>( typeof( Command.NodeCommand ), 8 );
 			  grouper.add( new Command.NodeCommand( new NodeRecord( nodeId ), new NodeRecord( nodeId ) ) );
 			  foreach ( Command.PropertyCommand change in changes )
 			  {
 					grouper.add( change );
 			  }
-			  EntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
+			  IEntityCommandGrouper.Cursor cursor = grouper.sortAndAccessGroups();
 			  assertTrue( cursor.NextEntity() );
 			  _converter.convertPropertyRecord( cursor, updates );
 			  return updates.Build();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.kernel.impl.transaction.command.Command.PropertyCommand change(final org.neo4j.kernel.impl.store.record.PropertyRecord before, final org.neo4j.kernel.impl.store.record.PropertyRecord after)
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.command.Command.PropertyCommand change(final org.Neo4Net.kernel.impl.store.record.PropertyRecord before, final org.Neo4Net.kernel.impl.store.record.PropertyRecord after)
 		 private Command.PropertyCommand Change( PropertyRecord before, PropertyRecord after )
 		 {
 			  return new Command.PropertyCommand( before, after );

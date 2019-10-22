@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.configuration
 	using ExpectedException = org.junit.rules.ExpectedException;
 	using Mockito = org.mockito.Mockito;
 
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
 	using Log = Neo4Net.Logging.Log;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -40,13 +40,13 @@ namespace Neo4Net.Kernel.configuration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.strict_config_validation;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.strict_config_validation;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 
 	public class IndividualSettingsValidatorTest
 	{

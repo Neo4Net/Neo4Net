@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.api.schema.constraints
 	{
 		 private LabelSchemaDescriptor _schema;
 
-		 internal NodeExistenceConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.neo4j.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.Exists )
+		 internal NodeExistenceConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.Exists )
 		 {
 			  this._schema = schema;
 		 }

@@ -29,16 +29,16 @@ namespace Neo4Net.Storageengine.Api.schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.PopulationProgress.multiple;
+//	import static org.Neo4Net.storageengine.api.schema.PopulationProgress.multiple;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.PopulationProgress.single;
+//	import static org.Neo4Net.storageengine.api.schema.PopulationProgress.single;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class PopulationProgressTest
 	internal class PopulationProgressTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.test.rule.RandomRule random;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.RandomRule random;
 		 protected internal RandomRule Random;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

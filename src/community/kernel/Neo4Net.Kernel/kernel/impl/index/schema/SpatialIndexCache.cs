@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 internal interface IFactory<T>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: T newSpatial(org.neo4j.values.storable.CoordinateReferenceSystem crs) throws java.io.IOException;
+//ORIGINAL LINE: T newSpatial(org.Neo4Net.values.storable.CoordinateReferenceSystem crs) throws java.io.IOException;
 			  T NewSpatial( CoordinateReferenceSystem crs );
 		 }
 	}

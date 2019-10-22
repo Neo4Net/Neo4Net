@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using Neo4Net.Helpers.Collections;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;

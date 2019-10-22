@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.query
 {
-	using Lock = Neo4Net.Graphdb.Lock;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
@@ -66,14 +66,14 @@ namespace Neo4Net.Kernel.impl.query
 
 		 /// <summary>
 		 /// Check that current context satisfy current execution guard.
-		 /// In case if guard criteria is not satisfied <seealso cref="org.neo4j.graphdb.TransactionGuardException"/> will be
+		 /// In case if guard criteria is not satisfied <seealso cref="org.Neo4Net.graphdb.TransactionGuardException"/> will be
 		 /// thrown.
 		 /// </summary>
 		 void Check();
 
 		 TxStateHolder StateView();
 
-		 Lock AcquireWriteLock( PropertyContainer p );
+		 Lock AcquireWriteLock( IPropertyContainer p );
 
 		 SecurityContext SecurityContext();
 

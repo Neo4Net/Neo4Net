@@ -49,12 +49,12 @@ namespace Neo4Net.Server.web
 		 void Stop();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: void addJAXRSPackages(java.util.List<String> packageNames, String serverMountPoint, java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectables);
+//ORIGINAL LINE: void addJAXRSPackages(java.util.List<String> packageNames, String serverMountPoint, java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectables);
 		 void addJAXRSPackages<T1>( IList<string> packageNames, string serverMountPoint, ICollection<T1> injectables );
 		 void RemoveJAXRSPackages( IList<string> packageNames, string serverMountPoint );
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: void addJAXRSClasses(java.util.List<String> classNames, String serverMountPoint, java.util.Collection<org.neo4j.server.plugins.Injectable<?>> injectables);
+//ORIGINAL LINE: void addJAXRSClasses(java.util.List<String> classNames, String serverMountPoint, java.util.Collection<org.Neo4Net.server.plugins.Injectable<?>> injectables);
 		 void addJAXRSClasses<T1>( IList<string> classNames, string serverMountPoint, ICollection<T1> injectables );
 		 void RemoveJAXRSClasses( IList<string> classNames, string serverMountPoint );
 
@@ -72,7 +72,7 @@ namespace Neo4Net.Server.web
 		 bool WadlEnabled { set; }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: void setDefaultInjectables(java.util.Collection<org.neo4j.server.database.InjectableProvider<?>> defaultInjectables);
+//ORIGINAL LINE: void setDefaultInjectables(java.util.Collection<org.Neo4Net.server.database.InjectableProvider<?>> defaultInjectables);
 		 ICollection<T1> DefaultInjectables<T1> { set; }
 
 		 System.Action<Server> JettyCreatedCallback { set; }

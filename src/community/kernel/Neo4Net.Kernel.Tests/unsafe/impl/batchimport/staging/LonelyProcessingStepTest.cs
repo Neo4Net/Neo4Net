@@ -36,7 +36,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	public class LonelyProcessingStepTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.SuppressOutput mute = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.SuppressOutput mute = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public static SuppressOutput Mute = SuppressOutput.suppressAll();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

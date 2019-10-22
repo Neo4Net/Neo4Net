@@ -22,9 +22,9 @@
 namespace Neo4Net.Bolt.v1.transport.integration
 {
 
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using SeverityLevel = Neo4Net.Graphdb.SeverityLevel;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using SeverityLevel = Neo4Net.GraphDb.SeverityLevel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -49,7 +49,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.neo4j.graphdb.Notification fromMap(java.util.Map<String,Object> notification)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.graphdb.Notification fromMap(java.util.Map<String,Object> notification)
 		 public static Notification FromMap( IDictionary<string, object> notification )
 		 {
 			  assertThat( notification, hasKey( "code" ) );

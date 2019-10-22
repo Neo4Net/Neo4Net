@@ -22,13 +22,13 @@
 namespace Neo4Net.Server.rest.repr
 {
 
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.Graphdb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.map;
+//	import static org.Neo4Net.helpers.collection.Iterables.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.repr.RepresentationType.CONSTRAINT_DEFINITION;
+//	import static org.Neo4Net.server.rest.repr.RepresentationType.CONSTRAINT_DEFINITION;
 
 	public class ConstraintDefinitionRepresentation : MappingRepresentation
 	{

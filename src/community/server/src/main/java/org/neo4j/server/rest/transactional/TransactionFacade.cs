@@ -28,7 +28,7 @@ namespace Neo4Net.Server.rest.transactional
 	using TransactionUriScheme = Neo4Net.Server.rest.web.TransactionUriScheme;
 
 	/// <summary>
-	/// Transactional actions contains the business logic for executing statements against Neo4j across long-running
+	/// Transactional actions contains the business logic for executing statements against Neo4Net across long-running
 	/// transactions.
 	/// <para>
 	/// The idiom for the public methods here is:
@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.transactional
 	/// response.begin()
 	/// try {
 	/// // Do internal calls, saving errors into a common error list
-	/// } catch ( Neo4jError e )
+	/// } catch ( Neo4NetError e )
 	/// {
 	/// errors.add(e);
 	/// } finally
@@ -73,14 +73,14 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle findTransactionHandle(long txId) throws org.neo4j.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle findTransactionHandle(long txId) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public virtual TransactionHandle FindTransactionHandle( long txId )
 		 {
 			  return _registry.acquire( txId );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionHandle terminate(long txId) throws org.neo4j.server.rest.transactional.error.TransactionLifecycleException
+//ORIGINAL LINE: public TransactionHandle terminate(long txId) throws org.Neo4Net.server.rest.transactional.error.TransactionLifecycleException
 		 public virtual TransactionHandle Terminate( long txId )
 		 {
 			  return _registry.terminate( txId );

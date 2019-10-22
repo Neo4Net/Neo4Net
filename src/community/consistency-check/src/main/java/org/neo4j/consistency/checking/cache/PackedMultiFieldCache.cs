@@ -23,9 +23,9 @@ namespace Neo4Net.Consistency.checking.cache
 	using ByteArray = Neo4Net.@unsafe.Impl.Batchimport.cache.ByteArray;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
+//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
 
 	/// <summary>
 	/// Simply combining a <seealso cref="ByteArray"/> with <seealso cref="ByteArrayBitsManipulator"/>, so that each byte[] index can be split up into

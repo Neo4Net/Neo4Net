@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.scenarios
 {
@@ -31,8 +31,8 @@ namespace Neo4Net.causalclustering.scenarios
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
-	using Node = Neo4Net.Graphdb.Node;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using Node = Neo4Net.GraphDb.Node;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IdController = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.id.IdController;
 	using IdGenerator = Neo4Net.Kernel.impl.store.id.IdGenerator;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
@@ -49,10 +49,10 @@ namespace Neo4Net.causalclustering.scenarios
 	public class ClusterIdReuseIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(org.neo4j.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.neo4j.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, System.Convert.ToString(1)).withNumberOfReadReplicas(0);
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(org.Neo4Net.causalclustering.core.CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.record_id_batch_size, System.Convert.ToString(1)).withNumberOfReadReplicas(0);
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withSharedCoreParam(CausalClusteringSettings.leader_election_timeout, "2s").withSharedCoreParam(GraphDatabaseSettings.record_id_batch_size, Convert.ToString(1)).withNumberOfReadReplicas(0);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  IdMaintenanceOnLeader( leader1 );
 			  IdGeneratorFactory idGeneratorFactory = ResolveDependency( leader1, typeof( IdGeneratorFactory ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.id.IdGenerator idGenerator = idGeneratorFactory.get(org.neo4j.kernel.impl.store.id.IdType.NODE);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.id.IdGenerator idGenerator = idGeneratorFactory.get(org.Neo4Net.kernel.impl.store.id.IdType.NODE);
 			  IdGenerator idGenerator = idGeneratorFactory.Get( IdType.NODE );
 			  assertEquals( 2, idGenerator.DefragCount );
 
@@ -147,7 +147,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  IdGeneratorFactory newLeaderIdGeneratorFactory = ResolveDependency( newLeader, typeof( IdGeneratorFactory ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.id.IdGenerator idGenerator = newLeaderIdGeneratorFactory.get(org.neo4j.kernel.impl.store.id.IdType.NODE);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.id.IdGenerator idGenerator = newLeaderIdGeneratorFactory.get(org.Neo4Net.kernel.impl.store.id.IdType.NODE);
 			  IdGenerator idGenerator = newLeaderIdGeneratorFactory.Get( IdType.NODE );
 			  assertEquals( 0, idGenerator.DefragCount );
 
@@ -236,7 +236,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.CoreClusterMember removeTwoNodes(org.neo4j.causalclustering.discovery.Cluster<?> cluster, org.apache.commons.lang3.mutable.MutableLong first, org.apache.commons.lang3.mutable.MutableLong second) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.CoreClusterMember removeTwoNodes(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.apache.commons.lang3.mutable.MutableLong first, org.apache.commons.lang3.mutable.MutableLong second) throws Exception
 		 private CoreClusterMember RemoveTwoNodes<T1>( Cluster<T1> cluster, MutableLong first, MutableLong second )
 		 {
 			  return cluster.CoreTx((db, tx) =>
@@ -251,7 +251,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.CoreClusterMember createThreeNodes(org.neo4j.causalclustering.discovery.Cluster<?> cluster, org.apache.commons.lang3.mutable.MutableLong first, org.apache.commons.lang3.mutable.MutableLong second) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.CoreClusterMember createThreeNodes(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.apache.commons.lang3.mutable.MutableLong first, org.apache.commons.lang3.mutable.MutableLong second) throws Exception
 		 private CoreClusterMember CreateThreeNodes<T1>( Cluster<T1> cluster, MutableLong first, MutableLong second )
 		 {
 			  return cluster.CoreTx((db, tx) =>

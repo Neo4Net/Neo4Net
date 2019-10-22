@@ -58,7 +58,7 @@ namespace Neo4Net.Bolt.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 
 	public class BoltConnectionReadLimiterTest
 	{

@@ -32,7 +32,7 @@ namespace Neo4Net.Server.rest.repr
 		 {
 		 }
 
-		 public override string PropertyContainerType()
+		 public override string IPropertyContainerType()
 		 {
 			  return "node";
 		 }

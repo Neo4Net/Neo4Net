@@ -24,23 +24,23 @@ namespace Neo4Net.Bolt.v1.messaging.example
 	using RelationshipValue = Neo4Net.Values.@virtual.RelationshipValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.ALICE;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.ALICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.BOB;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.BOB;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.CAROL;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.CAROL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Nodes.DAVE;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Nodes.DAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.example.Support.NO_PROPERTIES;
+//	import static org.Neo4Net.bolt.v1.messaging.example.Support.NO_PROPERTIES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.relationshipValue;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.relationshipValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.@virtual.VirtualValues.map;
+//	import static org.Neo4Net.values.@virtual.VirtualValues.map;
 
 	public class Edges
 	{

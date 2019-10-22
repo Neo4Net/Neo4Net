@@ -21,13 +21,13 @@ namespace Examples
 {
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -44,7 +44,7 @@ namespace Examples
 //ORIGINAL LINE: @Test public void question5346011()
 		 public virtual void Question5346011()
 		 {
-			  GraphDatabaseService service = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService service = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  using ( Transaction tx = service.BeginTx() )
 			  {
 					RelationshipIndex index = service.Index().forRelationships("exact");

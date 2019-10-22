@@ -50,9 +50,9 @@ namespace Neo4Net.Kernel.impl.store.format
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.kibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.NORMAL;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 
 	public abstract class AbstractRecordFormatTest
 	{
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 private readonly EphemeralFileSystemRule _fsRule = new EphemeralFileSystemRule();
 		 private readonly PageCacheRule _pageCacheRule = new PageCacheRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName name = new org.junit.rules.TestName();
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 private readonly int _propertyBits;
 		 private RecordGenerators _generators;
 
-		 protected internal AbstractRecordFormatTest( RecordFormats formats, int entityBits, int propertyBits )
+		 protected internal AbstractRecordFormatTest( RecordFormats formats, int IEntityBits, int propertyBits )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.impl.store.format
 				 InstanceFieldsInitialized = true;
 			 }
 			  this._formats = formats;
-			  this._entityBits = entityBits;
+			  this._entityBits = IEntityBits;
 			  this._propertyBits = propertyBits;
 		 }
 
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> void verifyWriteAndRead(System.Func<RecordFormat<R>> formatSupplier, System.Func<org.neo4j.kernel.impl.store.format.RecordGenerators_Generator<R>> generatorSupplier, System.Func<RecordKey<R>> keySupplier, boolean assertPostReadOffset) throws java.io.IOException
+//ORIGINAL LINE: private <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void verifyWriteAndRead(System.Func<RecordFormat<R>> formatSupplier, System.Func<org.Neo4Net.kernel.impl.store.format.RecordGenerators_Generator<R>> generatorSupplier, System.Func<RecordKey<R>> keySupplier, boolean assertPostReadOffset) throws java.io.IOException
 		 private void VerifyWriteAndRead<R>( System.Func<RecordFormat<R>> formatSupplier, System.Func<RecordGenerators_Generator<R>> generatorSupplier, System.Func<RecordKey<R>> keySupplier, bool assertPostReadOffset ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  // GIVEN
@@ -220,7 +220,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> void readAndVerifyRecord(R written, R read, RecordFormat<R> format, RecordKey<R> key, org.neo4j.io.pagecache.PagedFile storeFile, int recordSize, boolean assertPostReadOffset) throws java.io.IOException
+//ORIGINAL LINE: private <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void readAndVerifyRecord(R written, R read, RecordFormat<R> format, RecordKey<R> key, org.Neo4Net.io.pagecache.PagedFile storeFile, int recordSize, boolean assertPostReadOffset) throws java.io.IOException
 		 private void ReadAndVerifyRecord<R>( R written, R read, RecordFormat<R> format, RecordKey<R> key, PagedFile storeFile, int recordSize, bool assertPostReadOffset ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  using ( PageCursor cursor = storeFile.Io( 0, Neo4Net.Io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK ) )
@@ -230,7 +230,7 @@ namespace Neo4Net.Kernel.impl.store.format
 
 					/*
 					 Retry loop is needed here because format does not handle retries on the primary cursor.
-					 Same retry is done on the store level in {@link org.neo4j.kernel.impl.store.CommonAbstractStore}
+					 Same retry is done on the store level in {@link org.Neo4Net.kernel.impl.store.CommonAbstractStore}
 					 */
 					int offset = Math.toIntExact( written.Id * recordSize );
 					do
@@ -261,7 +261,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <R extends org.neo4j.kernel.impl.store.record.AbstractBaseRecord> void writeRecord(R record, RecordFormat<R> format, org.neo4j.io.pagecache.PagedFile storeFile, int recordSize, org.neo4j.kernel.impl.store.id.BatchingIdSequence idSequence) throws java.io.IOException
+//ORIGINAL LINE: private <R extends org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord> void writeRecord(R record, RecordFormat<R> format, org.Neo4Net.io.pagecache.PagedFile storeFile, int recordSize, org.Neo4Net.kernel.impl.store.id.BatchingIdSequence idSequence) throws java.io.IOException
 		 private void WriteRecord<R>( R record, RecordFormat<R> format, PagedFile storeFile, int recordSize, BatchingIdSequence idSequence ) where R : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord
 		 {
 			  using ( PageCursor cursor = storeFile.Io( 0, Neo4Net.Io.pagecache.PagedFile_Fields.PfSharedWriteLock ) )
@@ -288,7 +288,7 @@ namespace Neo4Net.Kernel.impl.store.format
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertedNext(org.neo4j.io.pagecache.PageCursor cursor) throws java.io.IOException
+//ORIGINAL LINE: private void assertedNext(org.Neo4Net.io.pagecache.PageCursor cursor) throws java.io.IOException
 		 private void AssertedNext( PageCursor cursor )
 		 {
 			  assertTrue( cursor.Next() );

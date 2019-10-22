@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.Impl.@event
 	using BeforeClass = org.junit.BeforeClass;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using ErrorState = Neo4Net.Graphdb.@event.ErrorState;
-	using KernelEventHandler = Neo4Net.Graphdb.@event.KernelEventHandler;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using ErrorState = Neo4Net.GraphDb.Events.ErrorState;
+	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.AbstractNeo4jTestCase.deleteFileOrDirectory;
+//	import static org.Neo4Net.kernel.impl.AbstractNeo4NetTestCase.deleteFileOrDirectory;
 
 	public class TestKernelEvents
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //ORIGINAL LINE: @Test public void testRegisterUnregisterHandlers()
 		 public virtual void TestRegisterUnregisterHandlers()
 		 {
-			  GraphDatabaseService graphDb = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService graphDb = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  KernelEventHandler handler1 = new DummyKernelEventHandlerAnonymousInnerClass( this, _resource1 );
 			  KernelEventHandler handler2 = new DummyKernelEventHandlerAnonymousInnerClass2( this, _resource2 );
 
@@ -99,9 +99,9 @@ namespace Neo4Net.Kernel.Impl.@event
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public override Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 
@@ -114,9 +114,9 @@ namespace Neo4Net.Kernel.Impl.@event
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public override Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.Impl.@event
 //ORIGINAL LINE: @Test public void testShutdownEvents()
 		 public virtual void TestShutdownEvents()
 		 {
-			  GraphDatabaseService graphDb = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService graphDb = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  DummyKernelEventHandler handler1 = new DummyKernelEventHandlerAnonymousInnerClass3( this, _resource1 );
 			  DummyKernelEventHandler handler2 = new DummyKernelEventHandlerAnonymousInnerClass4( this, _resource1 );
 			  graphDb.RegisterKernelEventHandler( handler1 );
@@ -145,13 +145,13 @@ namespace Neo4Net.Kernel.Impl.@event
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public override Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
 				  if ( ( ( DummyKernelEventHandler ) other ).ResourceConflict == _resource2 )
 				  {
-						return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.After;
+						return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.After;
 				  }
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 
@@ -164,13 +164,13 @@ namespace Neo4Net.Kernel.Impl.@event
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
+			 public override Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder orderComparedTo( KernelEventHandler other )
 			 {
 				  if ( ( ( DummyKernelEventHandler ) other ).ResourceConflict == _resource1 )
 				  {
-						return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.Before;
+						return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.Before;
 				  }
-				  return Neo4Net.Graphdb.@event.KernelEventHandler_ExecutionOrder.DoesntMatter;
+				  return Neo4Net.GraphDb.Events.KernelEventHandler_ExecutionOrder.DoesntMatter;
 			 }
 		 }
 

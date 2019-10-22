@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.recovery
 	using RecoveryStartInformationProvider = Neo4Net.Kernel.recovery.RecoveryStartInformationProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.recovery.RecoveryStartInformationProvider.NO_MONITOR;
+//	import static org.Neo4Net.kernel.recovery.RecoveryStartInformationProvider.NO_MONITOR;
 
 	/// <summary>
 	/// An external tool that can determine if a given store will need recovery.
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean isRecoveryRequiredAt(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public boolean isRecoveryRequiredAt(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public virtual bool IsRecoveryRequiredAt( DatabaseLayout databaseLayout )
 		 {
 			  // We need config to determine where the logical log files are
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.impl.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void assertRecoveryIsNotRequired(org.neo4j.io.fs.FileSystemAbstraction fs, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.kernel.configuration.Config config, org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.monitoring.Monitors monitors) throws RecoveryRequiredException, java.io.IOException
+//ORIGINAL LINE: public static void assertRecoveryIsNotRequired(org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.monitoring.Monitors monitors) throws RecoveryRequiredException, java.io.IOException
 		 public static void AssertRecoveryIsNotRequired( FileSystemAbstraction fs, PageCache pageCache, Config config, DatabaseLayout databaseLayout, Monitors monitors )
 		 {
 			  if ( ( new RecoveryRequiredChecker( fs, pageCache, config, monitors ) ).IsRecoveryRequiredAt( databaseLayout ) )

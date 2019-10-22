@@ -68,7 +68,7 @@ namespace Neo4Net.Server.plugins
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.neo4j.server.rest.repr.Representation invoke(org.neo4j.kernel.internal.GraphDatabaseAPI graphDb, Object context, ParameterList params) throws org.neo4j.server.rest.repr.BadInputException, BadPluginInvocationException, PluginInvocationFailureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.server.rest.repr.Representation invoke(org.Neo4Net.kernel.internal.GraphDatabaseAPI graphDb, Object context, ParameterList params) throws org.Neo4Net.server.rest.repr.BadInputException, BadPluginInvocationException, PluginInvocationFailureException;
 		 [Obsolete]
 		 public abstract Representation Invoke( GraphDatabaseAPI graphDb, object context, ParameterList @params );
 

@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.impl.util
 {
 
 	using Neo4Net.Cursors;
-	using Neo4Net.Graphdb;
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
+	using Neo4Net.GraphDb;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
 	public class IOCursorAsResourceIterable<T> : ResourceIterable<T>

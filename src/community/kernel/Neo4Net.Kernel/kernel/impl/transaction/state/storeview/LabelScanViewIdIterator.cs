@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	/// <summary>
 	/// Node id iterator used during index population when we go over node ids indexed in label scan store.
 	/// </summary>
-	internal class LabelScanViewIdIterator<CURSOR> : EntityIdIterator where CURSOR : Neo4Net.Storageengine.Api.StorageEntityScanCursor
+	internal class LabelScanViewIdIterator<CURSOR> : IEntityIdIterator where CURSOR : Neo4Net.Storageengine.Api.StorageEntityScanCursor
 	{
 		 private readonly int[] _labelIds;
 		 private readonly LabelScanReader _labelScanReader;
@@ -35,10 +35,10 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 private PrimitiveLongResourceIterator _idIterator;
 		 private long _lastReturnedId = -1;
 
-		 internal LabelScanViewIdIterator( LabelScanReader labelScanReader, int[] labelIds, CURSOR entityCursor )
+		 internal LabelScanViewIdIterator( LabelScanReader labelScanReader, int[] labelIds, CURSOR IEntityCursor )
 		 {
 			  this._labelScanReader = labelScanReader;
-			  this._entityCursor = entityCursor;
+			  this._entityCursor = IEntityCursor;
 			  this._idIterator = labelScanReader.NodesWithAnyOfLabels( labelIds );
 			  this._labelIds = labelIds;
 		 }

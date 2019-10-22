@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.api
 {
@@ -32,17 +32,17 @@ namespace Neo4Net.Kernel.api
 
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using ConstraintViolationException = Neo4Net.Graphdb.ConstraintViolationException;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
-	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.TestHighlyAvailableGraphDatabaseFactory;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
-	using Schema_IndexState = Neo4Net.Graphdb.schema.Schema_IndexState;
+	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
+	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using Schema_IndexState = Neo4Net.GraphDb.schema.Schema_IndexState;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
@@ -86,21 +86,21 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.single;
+//	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asUniqueSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asUniqueSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.fs.FileUtils.deleteRecursively;
+//	import static org.Neo4Net.io.fs.FileUtils.deleteRecursively;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.index.IndexDirectoryStructure.given;
+//	import static org.Neo4Net.kernel.api.index.IndexDirectoryStructure.given;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 
 	public class SchemaIndexHaIT
 	{
@@ -121,10 +121,10 @@ namespace Neo4Net.Kernel.api
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.neo4j.test.rule.fs.DefaultFileSystemRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.fs.DefaultFileSystemRule fileSystemRule = new org.Neo4Net.test.rule.fs.DefaultFileSystemRule();
 		 public static DefaultFileSystemRule FileSystemRule = new DefaultFileSystemRule();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
 		 public ClusterRule ClusterRule = new ClusterRule();
 
 		 private static readonly IndexProviderDescriptor _controlledProviderDescriptor = new IndexProviderDescriptor( "controlled", "1.0" );
@@ -349,7 +349,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("ResultOfMethodCallIgnored") private org.neo4j.kernel.impl.ha.ClusterManager.RepairKit bringSlaveOfflineAndRemoveStoreFiles(org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave) throws java.io.IOException
+//ORIGINAL LINE: @SuppressWarnings("ResultOfMethodCallIgnored") private org.Neo4Net.kernel.impl.ha.ClusterManager.RepairKit bringSlaveOfflineAndRemoveStoreFiles(org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private ClusterManager.RepairKit BringSlaveOfflineAndRemoveStoreFiles( ClusterManager.ManagedCluster cluster, HighlyAvailableGraphDatabase slave )
 		 {
@@ -361,7 +361,7 @@ namespace Neo4Net.Kernel.api
 			  return slaveDown;
 		 }
 
-		 private IDictionary<object, Node> CreateSomeData( GraphDatabaseService db )
+		 private IDictionary<object, Node> CreateSomeData( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -378,7 +378,7 @@ namespace Neo4Net.Kernel.api
 			  }
 		 }
 
-		 private IndexDefinition CreateIndex( GraphDatabaseService db )
+		 private IndexDefinition CreateIndex( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -389,16 +389,16 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void awaitIndexOnline(org.neo4j.graphdb.schema.IndexDefinition index, org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster, java.util.Map<Object,org.neo4j.graphdb.Node> expectedDdata) throws InterruptedException
+//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.graphdb.schema.IndexDefinition index, org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedDdata) throws InterruptedException
 		 private static void AwaitIndexOnline( IndexDefinition index, ClusterManager.ManagedCluster cluster, IDictionary<object, Node> expectedDdata )
 		 {
-			  foreach ( GraphDatabaseService db in cluster.AllMembers )
+			  foreach ( IGraphDatabaseService db in cluster.AllMembers )
 			  {
 					AwaitIndexOnline( index, db, expectedDdata );
 			  }
 		 }
 
-		 private static IndexDefinition ReHomedIndexDefinition( GraphDatabaseService db, IndexDefinition definition )
+		 private static IndexDefinition ReHomedIndexDefinition( IGraphDatabaseService db, IndexDefinition definition )
 		 {
 			  foreach ( IndexDefinition candidate in Db.schema().Indexes )
 			  {
@@ -411,8 +411,8 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void awaitIndexOnline(org.neo4j.graphdb.schema.IndexDefinition requestedIndex, org.neo4j.graphdb.GraphDatabaseService db, java.util.Map<Object,org.neo4j.graphdb.Node> expectedData) throws InterruptedException
-		 private static void AwaitIndexOnline( IndexDefinition requestedIndex, GraphDatabaseService db, IDictionary<object, Node> expectedData )
+//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.graphdb.schema.IndexDefinition requestedIndex, org.Neo4Net.graphdb.GraphDatabaseService db, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedData) throws InterruptedException
+		 private static void AwaitIndexOnline( IndexDefinition requestedIndex, IGraphDatabaseService db, IDictionary<object, Node> expectedData )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -433,7 +433,7 @@ namespace Neo4Net.Kernel.api
 			  }
 		 }
 
-		 private static void AssertIndexContents( IndexDefinition index, GraphDatabaseService db, IDictionary<object, Node> expectedData )
+		 private static void AssertIndexContents( IndexDefinition index, IGraphDatabaseService db, IDictionary<object, Node> expectedData )
 		 {
 			  foreach ( KeyValuePair<object, Node> entry in expectedData.SetOfKeyValuePairs() )
 			  {
@@ -441,7 +441,7 @@ namespace Neo4Net.Kernel.api
 			  }
 		 }
 
-		 private static bool IndexOnline( IndexDefinition index, GraphDatabaseService db )
+		 private static bool IndexOnline( IndexDefinition index, IGraphDatabaseService db )
 		 {
 			  try
 			  {
@@ -475,7 +475,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void add(java.util.Collection<? extends org.neo4j.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void add(java.util.Collection<? extends org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void Add<T1>( ICollection<T1> updates ) where T1 : Neo4Net.Kernel.Api.Index.IndexEntryUpdate<T1>
 			  {
 					Delegate.add( updates );
@@ -483,7 +483,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					Delegate.verifyDeferredConstraints( nodePropertyAccessor );
@@ -534,7 +534,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.index.IndexAccessor getOnlineAccessor(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor, org.neo4j.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 			  public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 			  {
 					return Delegate.getOnlineAccessor( descriptor, samplingConfig );
@@ -556,7 +556,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.neo4j.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			  public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 			  {
 					return Delegate.getPopulationFailure( descriptor );
@@ -565,7 +565,7 @@ namespace Neo4Net.Kernel.api
 
 		 internal interface IndexProviderDependencies
 		 {
-			  GraphDatabaseService Db();
+			  IGraphDatabaseService Db();
 			  Config Config();
 			  PageCache PageCache();
 			  RecoveryCleanupWorkCollector RecoveryCleanupWorkCollector();
@@ -611,7 +611,7 @@ namespace Neo4Net.Kernel.api
 		 {
 			  internal readonly IDictionary<GraphDatabaseService, IndexProvider> PerDbIndexProvider = new ConcurrentDictionary<GraphDatabaseService, IndexProvider>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final org.neo4j.kernel.extension.KernelExtensionFactory<?> factory;
+//ORIGINAL LINE: private final org.Neo4Net.kernel.extension.KernelExtensionFactory<?> factory;
 			  internal readonly KernelExtensionFactory<object> Factory;
 
 			  internal ControlledGraphDatabaseFactory() : this(Predicates.alwaysTrue())
@@ -630,7 +630,7 @@ namespace Neo4Net.Kernel.api
 					return base.NewEmbeddedDatabaseBuilder( file );
 			  }
 
-			  internal virtual void AwaitPopulationStarted( GraphDatabaseService db )
+			  internal virtual void AwaitPopulationStarted( IGraphDatabaseService db )
 			  {
 					ControlledIndexProvider provider = ( ControlledIndexProvider ) PerDbIndexProvider[db];
 					if ( provider != null )
@@ -639,7 +639,7 @@ namespace Neo4Net.Kernel.api
 					}
 			  }
 
-			  internal virtual void TriggerFinish( GraphDatabaseService db )
+			  internal virtual void TriggerFinish( IGraphDatabaseService db )
 			  {
 					ControlledIndexProvider provider = ( ControlledIndexProvider ) PerDbIndexProvider[db];
 					if ( provider != null )

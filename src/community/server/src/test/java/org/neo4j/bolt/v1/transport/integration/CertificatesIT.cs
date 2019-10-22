@@ -27,7 +27,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using Test = org.junit.Test;
 
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using SecureSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureSocketConnection;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using PkiUtils = Neo4Net.Ssl.PkiUtils;
@@ -39,11 +39,11 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.tls_certificate_file;
+//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_certificate_file;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.ssl.LegacySslPolicyConfig.tls_key_file;
+//	import static org.Neo4Net.kernel.configuration.ssl.LegacySslPolicyConfig.tls_key_file;
 
 	public class CertificatesIT
 	{
@@ -53,8 +53,8 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 private static TransportTestUtil _util;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass(), settings ->
-		 public Neo4jWithSocket Server = new Neo4jWithSocket(this.GetType(), settings =>
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass(), settings ->
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket(this.GetType(), settings =>
 		 {
 		  settings.put( tls_certificate_file.name(), _certFile.AbsolutePath );
 		  settings.put( tls_key_file.name(), _keyFile.AbsolutePath );
@@ -112,7 +112,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 
 			  _certFactory.createSelfSignedCertificate( _certFile, _keyFile, "my.domain" );
 
-			  _util = new TransportTestUtil( new Neo4jPackV1() );
+			  _util = new TransportTestUtil( new Neo4NetPackV1() );
 		 }
 
 	}

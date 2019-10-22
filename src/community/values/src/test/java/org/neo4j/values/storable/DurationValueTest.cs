@@ -40,31 +40,31 @@ namespace Neo4Net.Values.Storable
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertThrows;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Pair.pair;
+//	import static org.Neo4Net.helpers.collection.Pair.pair;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateTimeValue.datetime;
+//	import static org.Neo4Net.values.storable.DateTimeValue.datetime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DateValue.date;
+//	import static org.Neo4Net.values.storable.DateValue.date;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.between;
+//	import static org.Neo4Net.values.storable.DurationValue.between;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.duration;
+//	import static org.Neo4Net.values.storable.DurationValue.duration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.durationBetween;
+//	import static org.Neo4Net.values.storable.DurationValue.durationBetween;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.DurationValue.parse;
+//	import static org.Neo4Net.values.storable.DurationValue.parse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.LocalTimeValue.localTime;
+//	import static org.Neo4Net.values.storable.LocalTimeValue.localTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.TimeValue.time;
+//	import static org.Neo4Net.values.storable.TimeValue.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.doubleValue;
+//	import static org.Neo4Net.values.storable.Values.doubleValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.longValue;
+//	import static org.Neo4Net.values.storable.Values.longValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertEqual;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.utils.AnyValueTestUtil.assertNotEqual;
+//	import static org.Neo4Net.values.utils.AnyValueTestUtil.assertNotEqual;
 
 	internal class DurationValueTest
 	{
@@ -498,7 +498,7 @@ namespace Neo4Net.Values.Storable
 		 {
 			  // given
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.neo4j.helpers.collection.Pair<java.time.temporal.Temporal, java.time.temporal.Temporal>[] input = new org.neo4j.helpers.collection.Pair[]{ pair(datetime(date(2017, 3, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 3, 26), localTime(19, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 3, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 3, 26), localTime(11, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 10, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 10, 29), localTime(19, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 10, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 10, 29), localTime(11, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm")))};
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.helpers.collection.Pair<java.time.temporal.Temporal, java.time.temporal.Temporal>[] input = new org.Neo4Net.helpers.collection.Pair[]{ pair(datetime(date(2017, 3, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 3, 26), localTime(19, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 3, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 3, 26), localTime(11, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 10, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 10, 29), localTime(19, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm"))), pair(datetime(date(2017, 10, 20), localTime(13, 37, 0, 0), java.time.ZoneId.of("Europe/Stockholm")), datetime(date(2017, 10, 29), localTime(11, 40, 0, 0), java.time.ZoneId.of("Europe/Stockholm")))};
 			  Pair<Temporal, Temporal>[] input = new Pair[]{ pair( datetime( date( 2017, 3, 20 ), localTime( 13, 37, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ), datetime( date( 2017, 3, 26 ), localTime( 19, 40, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ) ), pair( datetime( date( 2017, 3, 20 ), localTime( 13, 37, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ), datetime( date( 2017, 3, 26 ), localTime( 11, 40, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ) ), pair( datetime( date( 2017, 10, 20 ), localTime( 13, 37, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ), datetime( date( 2017, 10, 29 ), localTime( 19, 40, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ) ), pair( datetime( date( 2017, 10, 20 ), localTime( 13, 37, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ), datetime( date( 2017, 10, 29 ), localTime( 11, 40, 0, 0 ), ZoneId.of( "Europe/Stockholm" ) ) ) };
 			  foreach ( Pair<Temporal, Temporal> pair in input )
 			  {

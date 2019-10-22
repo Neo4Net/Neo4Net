@@ -20,17 +20,17 @@
 namespace Neo4Net.Graphalgo.impl.path
 {
 	using LiteDepthFirstSelector = Neo4Net.Graphalgo.impl.util.LiteDepthFirstSelector;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
-	using Uniqueness = Neo4Net.Graphdb.traversal.Uniqueness;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.atDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.atDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.toDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
 
 	/// <summary>
 	/// Tries to find paths in a graph from a start node to an end node where the
@@ -61,7 +61,7 @@ namespace Neo4Net.Graphalgo.impl.path
 
 		 protected internal override Traverser InstantiateTraverser( Node start, Node end )
 		 {
-			  GraphDatabaseService db = start.GraphDatabase;
+			  IGraphDatabaseService db = start.GraphDatabase;
 			  TraversalDescription side = Db.traversalDescription().breadthFirst().uniqueness(_uniqueness).order((startSource, _expander) => new LiteDepthFirstSelector(startSource, _startThreshold, _expander));
 			  return Db.bidirectionalTraversalDescription().startSide(side.Expand(_expander).evaluator(toDepth(_onDepth / 2))).endSide(side.Expand(_expander.reverse()).evaluator(toDepth(_onDepth - _onDepth / 2))).collisionEvaluator(atDepth(_onDepth)).traverse(start, end);
 		 }

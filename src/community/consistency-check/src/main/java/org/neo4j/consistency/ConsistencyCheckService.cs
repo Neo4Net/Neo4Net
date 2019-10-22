@@ -32,7 +32,7 @@ namespace Neo4Net.Consistency
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
 	using VerboseStatistics = Neo4Net.Consistency.statistics.VerboseStatistics;
 	using Suppliers = Neo4Net.Functions.Suppliers;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
@@ -69,17 +69,17 @@ namespace Neo4Net.Consistency
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.Internal.SchemaIndexExtensionLoader.instantiateKernelExtensions;
+//	import static org.Neo4Net.consistency.Internal.SchemaIndexExtensionLoader.instantiateKernelExtensions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.file.Files.createOrOpenAsOutputStream;
+//	import static org.Neo4Net.io.file.Files.createOrOpenAsOutputStream;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.FALSE;
+//	import static org.Neo4Net.kernel.configuration.Settings.FALSE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.TRUE;
+//	import static org.Neo4Net.kernel.configuration.Settings.TRUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.factory.DatabaseInfo.TOOL;
+//	import static org.Neo4Net.kernel.impl.factory.DatabaseInfo.TOOL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
+//	import static org.Neo4Net.kernel.impl.recovery.RecoveryRequiredChecker.assertRecoveryIsNotRequired;
 
 	public class ConsistencyCheckService
 	{
@@ -95,7 +95,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, boolean verbose) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, boolean verbose) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 [Obsolete]
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, bool verbose )
 		 {
@@ -103,7 +103,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, boolean verbose, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, boolean verbose, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, bool verbose, ConsistencyFlags consistencyFlags )
 		 {
 			  FileSystemAbstraction fileSystem = new DefaultFileSystemAbstraction();
@@ -126,7 +126,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, org.neo4j.io.fs.FileSystemAbstraction fileSystem, boolean verbose) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, boolean verbose) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 [Obsolete]
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose )
 		 {
@@ -134,14 +134,14 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, org.neo4j.io.fs.FileSystemAbstraction fileSystem, boolean verbose, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, boolean verbose, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose, ConsistencyFlags consistencyFlags )
 		 {
 			  return RunFullConsistencyCheck( databaseLayout, config, progressFactory, logProvider, fileSystem, verbose, DefaultReportDir( config, databaseLayout.DatabaseDirectory() ), consistencyFlags );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, org.neo4j.io.fs.FileSystemAbstraction fileSystem, boolean verbose, java.io.File reportDir) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, boolean verbose, java.io.File reportDir) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 [Obsolete]
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose, File reportDir )
 		 {
@@ -149,7 +149,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, org.neo4j.logging.LogProvider logProvider, org.neo4j.io.fs.FileSystemAbstraction fileSystem, boolean verbose, java.io.File reportDir, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, boolean verbose, java.io.File reportDir, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, bool verbose, File reportDir, ConsistencyFlags consistencyFlags )
 		 {
 			  Log log = logProvider.getLog( this.GetType() );
@@ -183,7 +183,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, final org.neo4j.logging.LogProvider logProvider, final org.neo4j.io.fs.FileSystemAbstraction fileSystem, final org.neo4j.io.pagecache.PageCache pageCache, final boolean verbose) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, final org.Neo4Net.io.pagecache.PageCache pageCache, final boolean verbose) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 [Obsolete]
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose )
@@ -192,7 +192,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, final org.neo4j.logging.LogProvider logProvider, final org.neo4j.io.fs.FileSystemAbstraction fileSystem, final org.neo4j.io.pagecache.PageCache pageCache, final boolean verbose, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, final org.Neo4Net.io.pagecache.PageCache pageCache, final boolean verbose, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose, ConsistencyFlags consistencyFlags )
 		 {
@@ -200,7 +200,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config tuningConfiguration, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, final org.neo4j.logging.LogProvider logProvider, final org.neo4j.io.fs.FileSystemAbstraction fileSystem, final org.neo4j.io.pagecache.PageCache pageCache, final boolean verbose, java.io.File reportDir) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config tuningConfiguration, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, final org.Neo4Net.io.pagecache.PageCache pageCache, final boolean verbose, java.io.File reportDir) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 [Obsolete]
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config tuningConfiguration, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose, File reportDir )
@@ -209,7 +209,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Result runFullConsistencyCheck(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.helpers.progress.ProgressMonitorFactory progressFactory, final org.neo4j.logging.LogProvider logProvider, final org.neo4j.io.fs.FileSystemAbstraction fileSystem, final org.neo4j.io.pagecache.PageCache pageCache, final boolean verbose, java.io.File reportDir, org.neo4j.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public Result runFullConsistencyCheck(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.helpers.progress.ProgressMonitorFactory progressFactory, final org.Neo4Net.logging.LogProvider logProvider, final org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, final org.Neo4Net.io.pagecache.PageCache pageCache, final boolean verbose, java.io.File reportDir, org.Neo4Net.consistency.checking.full.ConsistencyFlags consistencyFlags) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public virtual Result RunFullConsistencyCheck( DatabaseLayout databaseLayout, Config config, ProgressMonitorFactory progressFactory, LogProvider logProvider, FileSystemAbstraction fileSystem, PageCache pageCache, bool verbose, File reportDir, ConsistencyFlags consistencyFlags )
 		 {
@@ -287,7 +287,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertRecovered(org.neo4j.io.layout.DatabaseLayout databaseLayout, org.neo4j.kernel.configuration.Config config, org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.io.pagecache.PageCache pageCache) throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException
+//ORIGINAL LINE: private void assertRecovered(org.Neo4Net.io.layout.DatabaseLayout databaseLayout, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.io.pagecache.PageCache pageCache) throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException
 		 private void AssertRecovered( DatabaseLayout databaseLayout, Config config, FileSystemAbstraction fileSystem, PageCache pageCache )
 		 {
 			  try
@@ -322,9 +322,9 @@ namespace Neo4Net.Consistency
 
 		 private static File DefaultReportDir( Config tuningConfiguration, File storeDir )
 		 {
-			  if ( tuningConfiguration.Get( GraphDatabaseSettings.neo4j_home ) == null )
+			  if ( tuningConfiguration.Get( GraphDatabaseSettings.Neo4Net_home ) == null )
 			  {
-					tuningConfiguration.augment( GraphDatabaseSettings.neo4j_home, storeDir.AbsolutePath );
+					tuningConfiguration.augment( GraphDatabaseSettings.Neo4Net_home, storeDir.AbsolutePath );
 					tuningConfiguration.augment( GraphDatabaseSettings.database_path, storeDir.AbsolutePath );
 			  }
 

@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -18,12 +18,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.net
 {
@@ -39,17 +39,17 @@ namespace Neo4Net.net
 	using TransportTestUtil = Neo4Net.Bolt.v1.transport.integration.TransportTestUtil;
 	using SocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using Neo4jPackV2 = Neo4Net.Bolt.v2.messaging.Neo4jPackV2;
+	using Neo4NetPackV2 = Neo4Net.Bolt.v2.messaging.Neo4NetPackV2;
 	using Predicates = Neo4Net.Functions.Predicates;
 	using Neo4Net.Functions;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Lock = Neo4Net.Graphdb.Lock;
-	using Node = Neo4Net.Graphdb.Node;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseNeo4jRule = Neo4Net.Harness.junit.EnterpriseNeo4jRule;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using Node = Neo4Net.GraphDb.Node;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseNeo4NetRule = Neo4Net.Harness.junit.EnterpriseNeo4NetRule;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
 	using TrackedNetworkConnection = Neo4Net.Kernel.api.net.TrackedNetworkConnection;
@@ -75,43 +75,43 @@ namespace Neo4Net.net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgRecord;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
+//	import static org.Neo4Net.bolt.v1.runtime.spi.StreamMatchers.eqRecord;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.auth_enabled;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.auth_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.single;
+//	import static org.Neo4Net.helpers.collection.Iterators.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.exceptions.Status_Transaction.Terminated;
+//	import static org.Neo4Net.kernel.api.exceptions.Status_Transaction.Terminated;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
+//	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_enabled;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.net.ConnectionTrackingIT.TestConnector.BOLT;
+//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.BOLT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.net.ConnectionTrackingIT.TestConnector.HTTP;
+//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.net.ConnectionTrackingIT.TestConnector.HTTPS;
+//	import static org.Neo4Net.net.ConnectionTrackingIT.TestConnector.HTTPS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.configuration.ServerSettings.webserver_max_threads;
+//	import static org.Neo4Net.server.configuration.ServerSettings.webserver_max_threads;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertEventually;
+//	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 	using static Neo4Net.Test.server.HTTP.RawPayload;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.quotedJson;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.quotedJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.RawPayload.rawPayload;
+//	import static org.Neo4Net.test.server.HTTP.RawPayload.rawPayload;
 	using static Neo4Net.Test.server.HTTP.Response;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.server.HTTP.withBasicAuth;
+//	import static org.Neo4Net.test.server.HTTP.withBasicAuth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringOrNoValue;
+//	import static org.Neo4Net.values.storable.Values.stringOrNoValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 	public class ConnectionTrackingIT
 	{
@@ -122,20 +122,20 @@ namespace Neo4Net.net
 		 private static readonly IList<string> _listConnectionsProcedureColumns = Arrays.asList( "connectionId", "connectTime", "connector", "username", "userAgent", "serverAddress", "clientAddress" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static final org.neo4j.harness.junit.Neo4jRule neo4j = new org.neo4j.harness.junit.EnterpriseNeo4jRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, org.neo4j.kernel.configuration.Settings.FALSE);
-		 public static readonly Neo4jRule Neo4j = new EnterpriseNeo4jRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, Settings.FALSE);
+//ORIGINAL LINE: @ClassRule public static final org.Neo4Net.harness.junit.Neo4NetRule Neo4Net = new org.Neo4Net.harness.junit.EnterpriseNeo4NetRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, org.Neo4Net.kernel.configuration.Settings.FALSE);
+		 public static readonly Neo4NetRule Neo4Net = new EnterpriseNeo4NetRule().withConfig(auth_enabled, "true").withConfig("dbms.connector.https.enabled", "true").withConfig(webserver_max_threads, "50").withConfig(online_backup_enabled, Settings.FALSE);
 
 		 private static long _dummyNodeId;
 
 		 private readonly ExecutorService _executor = Executors.newCachedThreadPool();
 		 private readonly ISet<TransportConnection> _connections = ConcurrentDictionary.newKeySet();
-		 private readonly TransportTestUtil _util = new TransportTestUtil( new Neo4jPackV2() );
+		 private readonly TransportTestUtil _util = new TransportTestUtil( new Neo4NetPackV2() );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @BeforeClass public static void beforeAll()
 		 public static void BeforeAll()
 		 {
-			  ChangeDefaultPasswordForUserNeo4j( NEO4_J_USER_PWD );
+			  ChangeDefaultPasswordForUserNeo4Net( NEO4_J_USER_PWD );
 			  CreateNewUser( OTHER_USER, OTHER_USER_PWD );
 			  _dummyNodeId = CreateDummyNode();
 		 }
@@ -221,7 +221,7 @@ namespace Neo4Net.net
 			  {
 				for ( int i = 0; i < 4; i++ )
 				{
-					 UpdateNodeViaHttp( _dummyNodeId, "neo4j", NEO4_J_USER_PWD );
+					 UpdateNodeViaHttp( _dummyNodeId, "Neo4Net", NEO4_J_USER_PWD );
 				}
 				for ( int i = 0; i < 3; i++ )
 				{
@@ -229,7 +229,7 @@ namespace Neo4Net.net
 				}
 
 				AwaitNumberOfAuthenticatedConnectionsToBe( 7 );
-				VerifyAuthenticatedConnectionCount( HTTP, "neo4j", 4 );
+				VerifyAuthenticatedConnectionCount( HTTP, "Neo4Net", 4 );
 				VerifyAuthenticatedConnectionCount( HTTP, OTHER_USER, 3 );
 			  });
 		 }
@@ -243,7 +243,7 @@ namespace Neo4Net.net
 			  {
 				for ( int i = 0; i < 4; i++ )
 				{
-					 UpdateNodeViaHttps( _dummyNodeId, "neo4j", NEO4_J_USER_PWD );
+					 UpdateNodeViaHttps( _dummyNodeId, "Neo4Net", NEO4_J_USER_PWD );
 				}
 				for ( int i = 0; i < 5; i++ )
 				{
@@ -251,7 +251,7 @@ namespace Neo4Net.net
 				}
 
 				AwaitNumberOfAuthenticatedConnectionsToBe( 9 );
-				VerifyAuthenticatedConnectionCount( HTTPS, "neo4j", 4 );
+				VerifyAuthenticatedConnectionCount( HTTPS, "Neo4Net", 4 );
 				VerifyAuthenticatedConnectionCount( HTTPS, OTHER_USER, 5 );
 			  });
 		 }
@@ -265,7 +265,7 @@ namespace Neo4Net.net
 			  {
 				for ( int i = 0; i < 2; i++ )
 				{
-					 UpdateNodeViaBolt( _dummyNodeId, "neo4j", NEO4_J_USER_PWD );
+					 UpdateNodeViaBolt( _dummyNodeId, "Neo4Net", NEO4_J_USER_PWD );
 				}
 				for ( int i = 0; i < 5; i++ )
 				{
@@ -273,7 +273,7 @@ namespace Neo4Net.net
 				}
 
 				AwaitNumberOfAuthenticatedConnectionsToBe( 7 );
-				VerifyAuthenticatedConnectionCount( BOLT, "neo4j", 2 );
+				VerifyAuthenticatedConnectionCount( BOLT, "Neo4Net", 2 );
 				VerifyAuthenticatedConnectionCount( BOLT, OTHER_USER, 5 );
 			  });
 		 }
@@ -291,17 +291,17 @@ namespace Neo4Net.net
 				}
 				for ( int i = 0; i < 1; i++ )
 				{
-					 UpdateNodeViaHttp( _dummyNodeId, "neo4j", NEO4_J_USER_PWD );
+					 UpdateNodeViaHttp( _dummyNodeId, "Neo4Net", NEO4_J_USER_PWD );
 				}
 				for ( int i = 0; i < 5; i++ )
 				{
-					 UpdateNodeViaHttps( _dummyNodeId, "neo4j", NEO4_J_USER_PWD );
+					 UpdateNodeViaHttps( _dummyNodeId, "Neo4Net", NEO4_J_USER_PWD );
 				}
 
 				AwaitNumberOfAuthenticatedConnectionsToBe( 10 );
 				VerifyConnectionCount( BOLT, OTHER_USER, 4 );
-				VerifyConnectionCount( HTTP, "neo4j", 1 );
-				VerifyConnectionCount( HTTPS, "neo4j", 5 );
+				VerifyConnectionCount( HTTP, "Neo4Net", 1 );
+				VerifyConnectionCount( HTTPS, "Neo4Net", 5 );
 			  });
 		 }
 
@@ -310,7 +310,7 @@ namespace Neo4Net.net
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldKillHttpConnection()
 		 {
-			  TestKillingOfConnections( Neo4j.httpURI(), HTTP, 4 );
+			  TestKillingOfConnections( Neo4Net.httpURI(), HTTP, 4 );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -318,7 +318,7 @@ namespace Neo4Net.net
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldKillHttpsConnection()
 		 {
-			  TestKillingOfConnections( Neo4j.httpsURI(), HTTPS, 2 );
+			  TestKillingOfConnections( Neo4Net.httpsURI(), HTTPS, 2 );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -326,7 +326,7 @@ namespace Neo4Net.net
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldKillBoltConnection()
 		 {
-			  TestKillingOfConnections( Neo4j.boltURI(), BOLT, 3 );
+			  TestKillingOfConnections( Neo4Net.boltURI(), BOLT, 3 );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -335,17 +335,17 @@ namespace Neo4Net.net
 		 {
 			  for ( int i = 0; i < httpCount; i++ )
 			  {
-					ConnectSocketTo( Neo4j.httpURI() );
+					ConnectSocketTo( Neo4Net.httpURI() );
 			  }
 
 			  for ( int i = 0; i < httpsCount; i++ )
 			  {
-					ConnectSocketTo( Neo4j.httpsURI() );
+					ConnectSocketTo( Neo4Net.httpsURI() );
 			  }
 
 			  for ( int i = 0; i < boltCount; i++ )
 			  {
-					ConnectSocketTo( Neo4j.boltURI() );
+					ConnectSocketTo( Neo4Net.boltURI() );
 			  }
 
 			  AwaitNumberOfAcceptedConnectionsToBe( httpCount + httpsCount + boltCount );
@@ -378,7 +378,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.v1.transport.socket.client.TransportConnection connectSocketTo(java.net.URI uri) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectSocketTo(java.net.URI uri) throws java.io.IOException
 		 private TransportConnection ConnectSocketTo( URI uri )
 		 {
 			  SocketConnection connection = new SocketConnection();
@@ -424,7 +424,7 @@ namespace Neo4Net.net
 
 		 private static IList<IDictionary<string, object>> ListMatchingConnection( TestConnector connector, string username, bool expectAuthenticated )
 		 {
-			  Result result = Neo4j.GraphDatabaseService.execute( "CALL dbms.listConnections()" );
+			  Result result = Neo4Net.GraphDatabaseService.execute( "CALL dbms.listConnections()" );
 			  assertEquals( _listConnectionsProcedureColumns, result.Columns() );
 			  IList<IDictionary<string, object>> records = result.ToList();
 
@@ -460,15 +460,15 @@ namespace Neo4Net.net
 
 		 private static IList<TrackedNetworkConnection> AcceptedConnectionsFromConnectionTracker()
 		 {
-			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) Neo4j.GraphDatabaseService;
+			  GraphDatabaseAPI db = ( GraphDatabaseAPI ) Neo4Net.GraphDatabaseService;
 			  NetworkConnectionTracker connectionTracker = Db.DependencyResolver.resolveDependency( typeof( NetworkConnectionTracker ) );
 			  return connectionTracker.ActiveConnections();
 		 }
 
-		 private static void ChangeDefaultPasswordForUserNeo4j( string newPassword )
+		 private static void ChangeDefaultPasswordForUserNeo4Net( string newPassword )
 		 {
-			  string changePasswordUri = Neo4j.httpURI().resolve("user/neo4j/password").ToString();
-			  Response response = withBasicAuth( "neo4j", "neo4j" ).POST( changePasswordUri, quotedJson( "{'password':'" + newPassword + "'}" ) );
+			  string changePasswordUri = Neo4Net.httpURI().resolve("user/Neo4Net/password").ToString();
+			  Response response = withBasicAuth( "Neo4Net", "Neo4Net" ).POST( changePasswordUri, quotedJson( "{'password':'" + newPassword + "'}" ) );
 
 			  assertEquals( 200, response.status() );
 		 }
@@ -477,16 +477,16 @@ namespace Neo4Net.net
 		 {
 			  string uri = TxCommitUri( false );
 
-			  Response response1 = withBasicAuth( "neo4j", NEO4_J_USER_PWD ).POST( uri, Query( "CALL dbms.security.createUser(\\\"" + username + "\\\", \\\"" + password + "\\\", false)" ) );
+			  Response response1 = withBasicAuth( "Neo4Net", NEO4_J_USER_PWD ).POST( uri, Query( "CALL dbms.security.createUser(\\\"" + username + "\\\", \\\"" + password + "\\\", false)" ) );
 			  assertEquals( 200, response1.status() );
 
-			  Response response2 = withBasicAuth( "neo4j", NEO4_J_USER_PWD ).POST( uri, Query( "CALL dbms.security.addRoleToUser(\\\"admin\\\", \\\"" + username + "\\\")" ) );
+			  Response response2 = withBasicAuth( "Neo4Net", NEO4_J_USER_PWD ).POST( uri, Query( "CALL dbms.security.addRoleToUser(\\\"admin\\\", \\\"" + username + "\\\")" ) );
 			  assertEquals( 200, response2.status() );
 		 }
 
 		 private static long CreateDummyNode()
 		 {
-			  using ( Result result = Neo4j.GraphDatabaseService.execute( "CREATE (n:Dummy) RETURN id(n) AS i" ) )
+			  using ( Result result = Neo4Net.GraphDatabaseService.execute( "CREATE (n:Dummy) RETURN id(n) AS i" ) )
 			  {
 					IDictionary<string, object> record = single( result );
 					return ( long ) record["i"];
@@ -494,10 +494,10 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void lockNodeAndExecute(long id, org.neo4j.function.ThrowingAction<Exception> action) throws Exception
+//ORIGINAL LINE: private static void lockNodeAndExecute(long id, org.Neo4Net.function.ThrowingAction<Exception> action) throws Exception
 		 private static void LockNodeAndExecute( long id, ThrowingAction<Exception> action )
 		 {
-			  GraphDatabaseService db = Neo4j.GraphDatabaseService;
+			  IGraphDatabaseService db = Neo4Net.GraphDatabaseService;
 			  using ( Transaction tx = Db.beginTx() )
 			  {
 					Node node = Db.getNodeById( id );
@@ -536,7 +536,7 @@ namespace Neo4Net.net
 		 {
 			  return _executor.submit(() =>
 			  {
-				ConnectSocketTo( Neo4j.boltURI() ).send(_util.defaultAcceptedVersions()).send(_util.chunk(InitMessage(username, password))).send(_util.chunk(new RunMessage("MATCH (n) WHERE id(n) = " + id + " SET n.prop = 42"), PullAllMessage.INSTANCE));
+				ConnectSocketTo( Neo4Net.boltURI() ).send(_util.defaultAcceptedVersions()).send(_util.chunk(InitMessage(username, password))).send(_util.chunk(new RunMessage("MATCH (n) WHERE id(n) = " + id + " SET n.prop = 42"), PullAllMessage.INSTANCE));
 
 				return null;
 			  });
@@ -553,16 +553,16 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void killConnectionViaBolt(org.neo4j.kernel.api.net.TrackedNetworkConnection trackedConnection) throws Exception
+//ORIGINAL LINE: private void killConnectionViaBolt(org.Neo4Net.kernel.api.net.TrackedNetworkConnection trackedConnection) throws Exception
 		 private void KillConnectionViaBolt( TrackedNetworkConnection trackedConnection )
 		 {
 			  string id = trackedConnection.Id();
 			  string user = trackedConnection.Username();
 
-			  TransportConnection connection = ConnectSocketTo( Neo4j.boltURI() );
+			  TransportConnection connection = ConnectSocketTo( Neo4Net.boltURI() );
 			  try
 			  {
-					connection.Send( _util.defaultAcceptedVersions() ).send(_util.chunk(InitMessage("neo4j", NEO4_J_USER_PWD))).send(_util.chunk(new RunMessage("CALL dbms.killConnection('" + id + "')"), PullAllMessage.INSTANCE));
+					connection.Send( _util.defaultAcceptedVersions() ).send(_util.chunk(InitMessage("Neo4Net", NEO4_J_USER_PWD))).send(_util.chunk(new RunMessage("CALL dbms.killConnection('" + id + "')"), PullAllMessage.INSTANCE));
 
 					assertThat( connection, _util.eventuallyReceivesSelectedProtocolVersion() );
 					assertThat( connection, _util.eventuallyReceives( msgSuccess(), msgSuccess(), msgRecord(eqRecord(any(typeof(Value)), equalTo(stringOrNoValue(user)), equalTo(stringValue("Connection found")))), msgSuccess() ) );
@@ -574,7 +574,7 @@ namespace Neo4Net.net
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertConnectionBreaks(org.neo4j.bolt.v1.transport.socket.client.TransportConnection connection) throws java.util.concurrent.TimeoutException
+//ORIGINAL LINE: private static void assertConnectionBreaks(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws java.util.concurrent.TimeoutException
 		 private static void AssertConnectionBreaks( TransportConnection connection )
 		 {
 			  Predicates.await( () => ConnectionIsBroken(connection), 1, MINUTES );
@@ -605,14 +605,14 @@ namespace Neo4Net.net
 
 		 private static void TerminateAllTransactions()
 		 {
-			  DependencyResolver dependencyResolver = ( ( GraphDatabaseAPI ) Neo4j.GraphDatabaseService ).DependencyResolver;
+			  DependencyResolver dependencyResolver = ( ( GraphDatabaseAPI ) Neo4Net.GraphDatabaseService ).DependencyResolver;
 			  KernelTransactions kernelTransactions = dependencyResolver.ResolveDependency( typeof( KernelTransactions ) );
 			  kernelTransactions.ActiveTransactions().forEach(h => h.markForTermination(Terminated));
 		 }
 
 		 private static string TxCommitUri( bool encrypted )
 		 {
-			  URI baseUri = encrypted ? Neo4j.httpsURI() : Neo4j.httpURI();
+			  URI baseUri = encrypted ? Neo4Net.httpsURI() : Neo4Net.httpURI();
 			  return baseUri.resolve( "db/data/transaction/commit" ).ToString();
 		 }
 

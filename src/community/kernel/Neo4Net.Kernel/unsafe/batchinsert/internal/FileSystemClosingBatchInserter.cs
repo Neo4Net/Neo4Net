@@ -22,10 +22,10 @@
 namespace Neo4Net.@unsafe.Batchinsert.Internal
 {
 
-	using Label = Neo4Net.Graphdb.Label;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using ConstraintCreator = Neo4Net.Graphdb.schema.ConstraintCreator;
-	using IndexCreator = Neo4Net.Graphdb.schema.IndexCreator;
+	using Label = Neo4Net.GraphDb.Label;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 

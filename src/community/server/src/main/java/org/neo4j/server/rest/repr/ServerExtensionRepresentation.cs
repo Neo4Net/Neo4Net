@@ -24,31 +24,31 @@ namespace Neo4Net.Server.rest.repr
 
 	public sealed class ServerExtensionRepresentation : MappingRepresentation
 	{
-		 private readonly IDictionary<string, EntityExtensionRepresentation> _extended;
+		 private readonly IDictionary<string, IEntityExtensionRepresentation> _extended;
 
 		 public ServerExtensionRepresentation( string name, IList<ExtensionPointRepresentation> methods ) : base( RepresentationType.ServerPluginDescription )
 		 {
-			  this._extended = new Dictionary<string, EntityExtensionRepresentation>();
+			  this._extended = new Dictionary<string, IEntityExtensionRepresentation>();
 			  foreach ( ExtensionPointRepresentation extension in methods )
 			  {
-					EntityExtensionRepresentation entity = _extended.computeIfAbsent( extension.ExtendedEntity, k => new EntityExtensionRepresentation() );
+					EntityExtensionRepresentation IEntity = _extended.computeIfAbsent( extension.ExtendedEntity, k => new IEntityExtensionRepresentation() );
 					entity.Add( extension );
 			  }
 		 }
 
 		 protected internal override void Serialize( MappingSerializer serializer )
 		 {
-			  foreach ( KeyValuePair<string, EntityExtensionRepresentation> entity in _extended.SetOfKeyValuePairs() )
+			  foreach ( KeyValuePair<string, IEntityExtensionRepresentation> IEntity in _extended.SetOfKeyValuePairs() )
 			  {
-					serializer.PutMapping( entity.Key, entity.Value );
+					serializer.PutMapping( IEntity.Key, IEntity.Value );
 			  }
 		 }
 
-		 private class EntityExtensionRepresentation : MappingRepresentation
+		 private class IEntityExtensionRepresentation : MappingRepresentation
 		 {
 			  internal readonly IList<ExtensionPointRepresentation> Extensions;
 
-			  internal EntityExtensionRepresentation() : base("entity-extensions")
+			  internal IEntityExtensionRepresentation() : base("entity-extensions")
 			  {
 					this.Extensions = new List<ExtensionPointRepresentation>();
 			  }

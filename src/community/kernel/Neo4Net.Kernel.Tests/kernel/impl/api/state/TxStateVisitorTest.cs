@@ -91,22 +91,22 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 {
 			  internal class PropertyChange
 			  {
-					internal readonly long EntityId;
+					internal readonly long IEntityId;
 					internal readonly IList<StorageProperty> Added;
 					internal readonly IList<StorageProperty> Changed;
 					internal readonly IntList Removed;
 
-					internal PropertyChange( long entityId, ICollection<StorageProperty> added, ICollection<StorageProperty> changed, IntIterable removed )
+					internal PropertyChange( long IEntityId, ICollection<StorageProperty> added, ICollection<StorageProperty> changed, IntIterable removed )
 					{
-						 this.EntityId = entityId;
+						 this.EntityId = IEntityId;
 						 this.Added = Iterables.asList( added );
 						 this.Changed = Iterables.asList( changed );
 						 this.Removed = removed.toList();
 					}
 
-					internal PropertyChange( long entityId, IEnumerator<StorageProperty> added, IEnumerator<StorageProperty> changed, IntIterable removed )
+					internal PropertyChange( long IEntityId, IEnumerator<StorageProperty> added, IEnumerator<StorageProperty> changed, IntIterable removed )
 					{
-						 this.EntityId = entityId;
+						 this.EntityId = IEntityId;
 						 this.Added = Iterators.asList( added );
 						 this.Changed = Iterators.asList( changed );
 						 this.Removed = removed.toList();
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					public override string ToString()
 					{
 						 return "PropertyChange{" +
-									"entityId=" + EntityId +
+									"entityId=" + IEntityId +
 									", added=" + Added +
 									", changed=" + Changed +
 									", removed=" + Removed +
@@ -135,7 +135,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 						 PropertyChange that = ( PropertyChange ) o;
 
-						 if ( EntityId != that.EntityId )
+						 if ( IEntityId != that.EntityId )
 						 {
 							  return false;
 						 }
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 					public override int GetHashCode()
 					{
-						 int result = ( int )( EntityId ^ ( ( long )( ( ulong )EntityId >> 32 ) ) );
+						 int result = ( int )( IEntityId ^ ( ( long )( ( ulong )EntityId >> 32 ) ) );
 						 result = 31 * result + Added.GetHashCode();
 						 result = 31 * result + Changed.GetHashCode();
 						 result = 31 * result + Removed.GetHashCode();

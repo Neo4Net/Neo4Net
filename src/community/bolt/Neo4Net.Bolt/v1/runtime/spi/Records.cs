@@ -29,7 +29,7 @@ namespace Neo4Net.Bolt.v1.runtime.spi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.cypher.result.QueryResult_Record record(final org.neo4j.values.AnyValue... fields)
+//ORIGINAL LINE: public static org.Neo4Net.cypher.result.QueryResult_Record record(final org.Neo4Net.values.AnyValue... fields)
 		 public static Neo4Net.Cypher.result.QueryResult_Record Record( params AnyValue[] fields )
 		 {
 			  return new ImmutableRecord( fields );

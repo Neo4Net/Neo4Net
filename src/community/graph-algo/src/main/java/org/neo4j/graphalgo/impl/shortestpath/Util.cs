@@ -22,9 +22,9 @@
 namespace Neo4Net.Graphalgo.impl.shortestpath
 {
 
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	/// <summary>
 	/// This is a holder for some utility functions regarding paths, such as

@@ -31,7 +31,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
 	using BoltStateMachine = Neo4Net.Bolt.runtime.BoltStateMachine;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using TransactionStateMachineSPI = Neo4Net.Bolt.runtime.TransactionStateMachineSPI;
 	using BoltResponseRecorder = Neo4Net.Bolt.testing.BoltResponseRecorder;
 	using AckFailureMessage = Neo4Net.Bolt.v1.messaging.request.AckFailureMessage;
@@ -41,8 +41,8 @@ namespace Neo4Net.Bolt.v1.runtime
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
 	using Neo4Net.Functions;
-	using TransactionFailureException = Neo4Net.Graphdb.TransactionFailureException;
-	using AuthorizationExpiredException = Neo4Net.Graphdb.security.AuthorizationExpiredException;
+	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
+	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
@@ -81,37 +81,37 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.canReset;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.canReset;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.failedWithStatus;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.failedWithStatus;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.hasNoTransaction;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.hasNoTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.hasTransaction;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.hasTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.inState;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.inState;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.isClosed;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.isClosed;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.succeeded;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.succeeded;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.verifyOneResponse;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.verifyOneResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.BoltMatchers.wasIgnored;
+//	import static org.Neo4Net.bolt.testing.BoltMatchers.wasIgnored;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.testing.NullResponseHandler.nullResponseHandler;
+//	import static org.Neo4Net.bolt.testing.NullResponseHandler.nullResponseHandler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.EMPTY_PARAMS;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.EMPTY_PARAMS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.USER_AGENT;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.USER_AGENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.init;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.init;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.newMachine;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachine;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.newMachineWithTransaction;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransaction;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.runtime.MachineRoom.newMachineWithTransactionSPI;
+//	import static org.Neo4Net.bolt.v1.runtime.MachineRoom.newMachineWithTransactionSPI;
 
 	public class BoltStateMachineV1Test
 	{
@@ -142,9 +142,9 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a FAILED machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // When RESET occurs
 			  machine.Process( ResetMessage.INSTANCE, nullResponseHandler() );
@@ -163,7 +163,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // When the machine is shut down
@@ -198,7 +198,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction...
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // ...and an open result
@@ -215,7 +215,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine...
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // ...and an open result
@@ -232,9 +232,9 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a failed machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachine();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
 			  BoltStateMachine machine = newMachine();
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // When
 			  machine.Process( new RunMessage( "ROLLBACK", EMPTY_PARAMS ), nullResponseHandler() );
@@ -250,9 +250,9 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a failed machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachine();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachine();
 			  BoltStateMachine machine = newMachine();
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // When
 			  machine.Process( AckFailureMessage.INSTANCE, nullResponseHandler() );
@@ -268,11 +268,11 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine with an open transaction
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = newMachineWithTransaction();
 			  BoltStateMachine machine = newMachineWithTransaction();
 
 			  // ...and (for some reason) a FAILED state
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // When the failure is acknowledged
 			  machine.Process( AckFailureMessage.INSTANCE, nullResponseHandler() );
@@ -288,7 +288,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a ready machine
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // ...which is subsequently closed
@@ -310,7 +310,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // When
@@ -335,7 +335,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.bolt.runtime.BoltStateMachine machine = init(newMachine());
+//ORIGINAL LINE: final org.Neo4Net.bolt.runtime.BoltStateMachine machine = init(newMachine());
 			  BoltStateMachine machine = init( newMachine() );
 
 			  // When
@@ -454,7 +454,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given a FAILED machine
 			  BoltStateMachine machine = init( newMachine() );
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // Then no RUN...
 			  machine.Process( new RunMessage( "RETURN 1", EMPTY_PARAMS ), nullResponseHandler() );
@@ -477,7 +477,7 @@ namespace Neo4Net.Bolt.v1.runtime
 
 			  // Given a FAILED machine
 			  BoltStateMachine machine = init( newMachine() );
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 
 			  // When I RESET...
 			  machine.Process( ResetMessage.INSTANCE, recorder );
@@ -629,7 +629,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  BoltStateMachineV1SPI spi = mock( typeof( BoltStateMachineV1SPI ) );
 			  BoltChannel boltChannel = mock( typeof( BoltChannel ) );
 			  BoltStateMachine machine = new BoltStateMachineV1( spi, boltChannel, Clock.systemUTC() );
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 
 			  machine.MarkFailed( error );
 
@@ -690,7 +690,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInvokeResponseHandlerOnNextExternalErrorMessageOnMarkFailedIfNoHandler()
 		 {
-			  TestMarkFailedOnNextMessage( ( machine, handler ) => machine.handleExternalFailure( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "invalid" ), handler ) );
+			  TestMarkFailedOnNextMessage( ( machine, handler ) => machine.handleExternalFailure( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "invalid" ), handler ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -699,10 +699,10 @@ namespace Neo4Net.Bolt.v1.runtime
 		 public virtual void ShouldSetPendingIgnoreOnMarkFailedIfAlreadyFailedAndNoHandler()
 		 {
 			  BoltStateMachine machine = newMachine();
-			  Neo4jError error1 = Neo4jError.from( new Exception() );
+			  Neo4NetError error1 = Neo4NetError.from( new Exception() );
 			  machine.MarkFailed( error1 );
 
-			  Neo4jError error2 = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error2 = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 			  machine.MarkFailed( error2 );
 
 			  assertTrue( PendingIgnore( machine ) );
@@ -763,7 +763,7 @@ namespace Neo4Net.Bolt.v1.runtime
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInvokeResponseHandlerOnNextExternalErrorMessageOnMarkFailedIfAlreadyFailedAndNoHandler()
 		 {
-			  TestMarkFailedShouldYieldIgnoredIfAlreadyFailed( ( machine, handler ) => machine.handleExternalFailure( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "invalid" ), handler ) );
+			  TestMarkFailedShouldYieldIgnoredIfAlreadyFailed( ( machine, handler ) => machine.handleExternalFailure( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, "invalid" ), handler ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -772,7 +772,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 public virtual void ShouldInvokeResponseHandlerOnMarkFailedIfThereIsHandler()
 		 {
 			  BoltStateMachine machine = init( newMachine() );
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 
 			  BoltResponseHandler responseHandler = mock( typeof( BoltResponseHandler ) );
 			  ( ( BoltStateMachineV1 ) machine ).ConnectionState().ResponseHandler = responseHandler;
@@ -814,12 +814,12 @@ namespace Neo4Net.Bolt.v1.runtime
 			  // Given a FAILED machine
 			  BoltStateMachine machine = init( newMachine() );
 
-			  machine.MarkFailed( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
+			  machine.MarkFailed( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
 			  machine.Process( PullAllMessage.INSTANCE, recorder );
 
 			  // When I RESET...
 			  machine.Interrupt();
-			  machine.MarkFailed( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
+			  machine.MarkFailed( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
 			  machine.Process( ResetMessage.INSTANCE, recorder );
 
 			  assertThat( recorder.NextResponse(), failedWithStatus(Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable) );
@@ -838,15 +838,15 @@ namespace Neo4Net.Bolt.v1.runtime
 			  // Given a FAILED machine
 			  BoltStateMachine machine = init( newMachine() );
 
-			  machine.MarkFailed( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
+			  machine.MarkFailed( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
 			  machine.Process( PullAllMessage.INSTANCE, recorder );
 
 			  // When I RESET...
 			  machine.Interrupt();
 			  machine.Interrupt();
-			  machine.MarkFailed( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
+			  machine.MarkFailed( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
 			  machine.Process( ResetMessage.INSTANCE, recorder );
-			  machine.MarkFailed( Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
+			  machine.MarkFailed( Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "No Threads Available" ) );
 			  machine.Process( ResetMessage.INSTANCE, recorder );
 
 			  assertThat( recorder.NextResponse(), failedWithStatus(Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable) );
@@ -856,14 +856,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedOnNextMessage(org.neo4j.function.ThrowingBiConsumer<org.neo4j.bolt.runtime.BoltStateMachine,org.neo4j.bolt.runtime.BoltResponseHandler,org.neo4j.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedOnNextMessage(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedOnNextMessage( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
 			  BoltStateMachine machine = init( newMachine() );
 			  BoltResponseHandler responseHandler = mock( typeof( BoltResponseHandler ) );
 
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 			  machine.MarkFailed( error );
 
 			  // When
@@ -877,14 +877,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testReadyStateAfterMarkFailedOnNextMessage(org.neo4j.function.ThrowingBiConsumer<org.neo4j.bolt.runtime.BoltStateMachine,org.neo4j.bolt.runtime.BoltResponseHandler,org.neo4j.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testReadyStateAfterMarkFailedOnNextMessage(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestReadyStateAfterMarkFailedOnNextMessage( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
 			  BoltStateMachine machine = init( newMachine() );
 			  BoltResponseHandler responseHandler = mock( typeof( BoltResponseHandler ) );
 
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 			  machine.MarkFailed( error );
 
 			  // When
@@ -899,15 +899,15 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedShouldYieldIgnoredIfAlreadyFailed(org.neo4j.function.ThrowingBiConsumer<org.neo4j.bolt.runtime.BoltStateMachine,org.neo4j.bolt.runtime.BoltResponseHandler,org.neo4j.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedShouldYieldIgnoredIfAlreadyFailed(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedShouldYieldIgnoredIfAlreadyFailed( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
 			  BoltStateMachine machine = init( newMachine() );
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 			  BoltResponseHandler responseHandler = mock( typeof( BoltResponseHandler ) );
 
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 			  machine.MarkFailed( error );
 
 			  // When
@@ -921,15 +921,15 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void testMarkFailedShouldYieldSuccessIfAlreadyFailed(org.neo4j.function.ThrowingBiConsumer<org.neo4j.bolt.runtime.BoltStateMachine,org.neo4j.bolt.runtime.BoltResponseHandler,org.neo4j.bolt.runtime.BoltConnectionFatality> action) throws Exception
+//ORIGINAL LINE: private static void testMarkFailedShouldYieldSuccessIfAlreadyFailed(org.Neo4Net.function.ThrowingBiConsumer<org.Neo4Net.bolt.runtime.BoltStateMachine,org.Neo4Net.bolt.runtime.BoltResponseHandler,org.Neo4Net.bolt.runtime.BoltConnectionFatality> action) throws Exception
 		 private static void TestMarkFailedShouldYieldSuccessIfAlreadyFailed( ThrowingBiConsumer<BoltStateMachine, BoltResponseHandler, BoltConnectionFatality> action )
 		 {
 			  // Given
 			  BoltStateMachine machine = init( newMachine() );
-			  machine.MarkFailed( Neo4jError.from( new Exception() ) );
+			  machine.MarkFailed( Neo4NetError.from( new Exception() ) );
 			  BoltResponseHandler responseHandler = mock( typeof( BoltResponseHandler ) );
 
-			  Neo4jError error = Neo4jError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
+			  Neo4NetError error = Neo4NetError.from( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, "no threads" );
 			  machine.MarkFailed( error );
 
 			  // When
@@ -948,7 +948,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  return ( TransactionStateMachine )( ( BoltStateMachineV1 ) machine ).StatementProcessor();
 		 }
 
-		 private static Neo4jError PendingError( BoltStateMachine machine )
+		 private static Neo4NetError PendingError( BoltStateMachine machine )
 		 {
 			  return ( ( BoltStateMachineV1 ) machine ).ConnectionState().PendingError;
 		 }

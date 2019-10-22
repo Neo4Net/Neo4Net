@@ -24,12 +24,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Neo4Net.Graphdb;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Point = Neo4Net.Graphdb.spatial.Point;
+	using Node = Neo4Net.GraphDb.Node;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Neo4Net.GraphDb;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Point = Neo4Net.GraphDb.spatial.Point;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using TopLevelTransaction = Neo4Net.Kernel.impl.coreapi.TopLevelTransaction;
@@ -51,12 +51,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsNull.nullValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 
 	public class ExecutionResultTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.ImpermanentDatabaseRule db = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.ImpermanentDatabaseRule db = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public readonly ImpermanentDatabaseRule Db = new ImpermanentDatabaseRule();
 
 		 //TODO this test is not valid for compiled runtime as the transaction will be closed when the iterator was created
@@ -116,7 +116,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.cypher.ArithmeticException.class) public void shouldThrowAppropriateExceptionAlsoWhenVisiting()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.cypher.ArithmeticException.class) public void shouldThrowAppropriateExceptionAlsoWhenVisiting()
 		 public virtual void ShouldThrowAppropriateExceptionAlsoWhenVisiting()
 		 {
 			  Db.execute( "RETURN rand()/0" ).accept( row => true );

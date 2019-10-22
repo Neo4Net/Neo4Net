@@ -20,22 +20,22 @@
 /// <summary>
 /// <h1>The GBPTree</h1>
 /// B+tree implementation with arbitrary key:value entries. Index implementation is
-/// <seealso cref="org.neo4j.index.internal.gbptree.GBPTree"/>, which works on a <seealso cref="org.neo4j.io.pagecache.PageCache"/>.
+/// <seealso cref="org.Neo4Net.index.internal.gbptree.GBPTree"/>, which works on a <seealso cref="org.Neo4Net.io.pagecache.PageCache"/>.
 /// Implementation supports single writer together with concurrent lock-free and garbage-free readers.
 /// <para>
-/// To create an index with a custom layout (type of key:value), implement a custom <seealso cref="org.neo4j.index.internal.gbptree.Layout"/>.
+/// To create an index with a custom layout (type of key:value), implement a custom <seealso cref="org.Neo4Net.index.internal.gbptree.Layout"/>.
 /// </para>
 /// <para>
 /// See https://en.wikipedia.org/wiki/B%2B_tree
 /// <h1>Entries move from left to right</h1>
 /// When we make structural changes to the tree we are only allowed to move entries to the right, never to the left.
-/// <seealso cref="org.neo4j.index.internal.gbptree.SeekCursor Readers"/> rely on this assumption being true to read correct
+/// <seealso cref="org.Neo4Net.index.internal.gbptree.SeekCursor Readers"/> rely on this assumption being true to read correct
 /// entries without missing anything. This is also why backwards seek needs to be done with extra care. Moving entries
-/// to the left within a page (during remove) is acceptable and readers use <seealso cref="org.neo4j.io.pagecache.PageCursor.shouldRetry()"/>
+/// to the left within a page (during remove) is acceptable and readers use <seealso cref="org.Neo4Net.io.pagecache.PageCursor.shouldRetry()"/>
 /// to handle this case.
 /// <h1>Split, merge and rebalance</h1>
-/// The interesting classes for this section are <seealso cref="org.neo4j.index.internal.gbptree.StructurePropagation"/> and
-/// <seealso cref="org.neo4j.index.internal.gbptree.InternalTreeLogic"/>.
+/// The interesting classes for this section are <seealso cref="org.Neo4Net.index.internal.gbptree.StructurePropagation"/> and
+/// <seealso cref="org.Neo4Net.index.internal.gbptree.InternalTreeLogic"/>.
 /// </para>
 /// <para>
 /// We can think of the tree as a tree, but we can think of the content as ranges divided by the internal keys.

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi
 {
-	using DatabaseShutdownException = Neo4Net.Graphdb.DatabaseShutdownException;
+	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using UnavailableException = Neo4Net.Kernel.availability.UnavailableException;
 
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					{
 						 throw new DatabaseShutdownException();
 					}
-					throw new Neo4Net.Graphdb.TransactionFailureException( e.Message, e );
+					throw new Neo4Net.GraphDb.TransactionFailureException( e.Message, e );
 			  }
 		 }
 	}

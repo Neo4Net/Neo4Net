@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.check_point_policy;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.check_point_policy;
 
 
 	/// <summary>
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 		 /// Create and configure a <seealso cref="CheckPointThreshold"/> based on the given configurations.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static CheckPointThreshold createThreshold(org.neo4j.kernel.configuration.Config config, org.neo4j.time.SystemNanoClock clock, org.neo4j.kernel.impl.transaction.log.pruning.LogPruning logPruning, org.neo4j.logging.LogProvider logProvider)
+//		 static CheckPointThreshold createThreshold(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.time.SystemNanoClock clock, org.Neo4Net.kernel.impl.transaction.log.pruning.LogPruning logPruning, org.Neo4Net.logging.LogProvider logProvider)
 	//	 {
 	//		  String policyName = config.get(check_point_policy);
 	//		  CheckPointThresholdPolicy policy;

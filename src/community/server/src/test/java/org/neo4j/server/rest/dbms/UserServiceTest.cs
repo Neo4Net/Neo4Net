@@ -40,7 +40,7 @@ namespace Neo4Net.Server.rest.dbms
 	using BasicPasswordPolicy = Neo4Net.Server.Security.Auth.BasicPasswordPolicy;
 	using InMemoryUserRepository = Neo4Net.Server.Security.Auth.InMemoryUserRepository;
 	using UserRepository = Neo4Net.Server.Security.Auth.UserRepository;
-	using EntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
+	using IEntityOutputFormat = Neo4Net.Test.server.EntityOutputFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
@@ -59,32 +59,32 @@ namespace Neo4Net.Server.rest.dbms
 
 	public class UserServiceTest
 	{
-		 protected internal static readonly User Neo4jUser = new User.Builder( "neo4j", LegacyCredential.forPassword( "neo4j" ) ).withRequiredPasswordChange( true ).build();
+		 protected internal static readonly User Neo4NetUser = new User.Builder( "Neo4Net", LegacyCredential.forPassword( "Neo4Net" ) ).withRequiredPasswordChange( true ).build();
 
 		 protected internal readonly PasswordPolicy PasswordPolicy = new BasicPasswordPolicy();
 		 protected internal readonly UserRepository UserRepository = new InMemoryUserRepository();
 
 		 protected internal UserManagerSupplier UserManagerSupplier;
-		 protected internal LoginContext Neo4jContext;
-		 protected internal Principal Neo4jPrinciple;
+		 protected internal LoginContext Neo4NetContext;
+		 protected internal Principal Neo4NetPrinciple;
 		 private HttpServletRequest _request;
 
 		 protected internal virtual void SetupAuthManagerAndSubject()
 		 {
 
 			  UserManagerSupplier = new BasicAuthManager( UserRepository, PasswordPolicy, mock( typeof( AuthenticationStrategy ) ), new InMemoryUserRepository() );
-			  Neo4jContext = new BasicLoginContext( Neo4jUser, AuthenticationResult.SUCCESS );
+			  Neo4NetContext = new BasicLoginContext( Neo4NetUser, AuthenticationResult.SUCCESS );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
+//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, java.io.IOException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {
 			  _request = mock( typeof( HttpServletRequest ) );
-			  UserRepository.create( Neo4jUser );
+			  UserRepository.create( Neo4NetUser );
 			  SetupAuthManagerAndSubject();
-			  Neo4jPrinciple = new DelegatingPrincipal( "neo4j", Neo4jContext );
+			  Neo4NetPrinciple = new DelegatingPrincipal( "Neo4Net", Neo4NetContext );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -92,7 +92,7 @@ namespace Neo4Net.Server.rest.dbms
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TearDown()
 		 {
-			  UserRepository.delete( Neo4jUser );
+			  UserRepository.delete( Neo4NetUser );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -101,20 +101,20 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturnValidUserRepresentation()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.GetUser( "neo4j", _request );
+			  Response response = userService.GetUser( "Neo4Net", _request );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 200 ) );
 			  string json = StringHelper.NewString( ( sbyte[] ) response.Entity );
 			  assertNotNull( json );
-			  assertThat( json, containsString( "\"username\" : \"neo4j\"" ) );
-			  assertThat( json, containsString( "\"password_change\" : \"http://www.example.com/user/neo4j/password\"" ) );
+			  assertThat( json, containsString( "\"username\" : \"Neo4Net\"" ) );
+			  assertThat( json, containsString( "\"password_change\" : \"http://www.example.com/user/Neo4Net/password\"" ) );
 			  assertThat( json, containsString( "\"password_change_required\" : true" ) );
 		 }
 
@@ -126,11 +126,11 @@ namespace Neo4Net.Server.rest.dbms
 			  // Given
 			  when( _request.UserPrincipal ).thenReturn( null );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.GetUser( "neo4j", _request );
+			  Response response = userService.GetUser( "Neo4Net", _request );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 404 ) );
@@ -142,9 +142,9 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn404WhenRequestingUserIfDifferentUser()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( mock( typeof( BasicAuthManager ) ), new JsonFormat(), outputFormat );
 
 			  // When
@@ -160,15 +160,15 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn404WhenRequestingUserIfUnknownUser()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  UserManagerSupplier.UserManager.deleteUser( "neo4j" );
+			  UserManagerSupplier.UserManager.deleteUser( "Neo4Net" );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.GetUser( "neo4j", _request );
+			  Response response = userService.GetUser( "Neo4Net", _request );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 404 ) );
@@ -180,17 +180,17 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldChangePasswordAndReturnSuccess()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : \"test\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : \"test\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 200 ) );
-			  UserManagerSupplier.UserManager.getUser( "neo4j" ).credentials().matchesPassword("test");
+			  UserManagerSupplier.UserManager.getUser( "Neo4Net" ).credentials().matchesPassword("test");
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -201,11 +201,11 @@ namespace Neo4Net.Server.rest.dbms
 			  // Given
 			  when( _request.UserPrincipal ).thenReturn( null );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( mock( typeof( BasicAuthManager ) ), new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : \"test\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : \"test\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 404 ) );
@@ -217,11 +217,11 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn404WhenChangingPasswordIfDifferentUser()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
 			  UserManager userManager = mock( typeof( UserManager ) );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
@@ -238,15 +238,15 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn422WhenChangingPasswordIfUnknownUser()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
-			  UserRepository.delete( Neo4jUser );
+			  UserRepository.delete( Neo4NetUser );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : \"test\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : \"test\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 422 ) );
@@ -258,13 +258,13 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn400IfPayloadIsInvalid()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( mock( typeof( BasicAuthManager ) ), new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "xxx" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "xxx" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 400 ) );
@@ -279,13 +279,13 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn422IfMissingPassword()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( mock( typeof( BasicAuthManager ) ), new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"unknown\" : \"unknown\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"unknown\" : \"unknown\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 422 ) );
@@ -301,13 +301,13 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn422IfInvalidPasswordType()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( mock( typeof( BasicAuthManager ) ), new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : 1 }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : 1 }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 422 ) );
@@ -323,13 +323,13 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn422IfEmptyPassword()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : \"\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : \"\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 422 ) );
@@ -345,13 +345,13 @@ namespace Neo4Net.Server.rest.dbms
 		 public virtual void ShouldReturn422IfPasswordIdentical()
 		 {
 			  // Given
-			  when( _request.UserPrincipal ).thenReturn( Neo4jPrinciple );
+			  when( _request.UserPrincipal ).thenReturn( Neo4NetPrinciple );
 
-			  OutputFormat outputFormat = new EntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
+			  OutputFormat outputFormat = new IEntityOutputFormat( new JsonFormat(), new URI("http://www.example.com"), null );
 			  UserService userService = new UserService( UserManagerSupplier, new JsonFormat(), outputFormat );
 
 			  // When
-			  Response response = userService.SetPassword( "neo4j", _request, "{ \"password\" : \"neo4j\" }" );
+			  Response response = userService.SetPassword( "Neo4Net", _request, "{ \"password\" : \"Neo4Net\" }" );
 
 			  // Then
 			  assertThat( response.Status, equalTo( 422 ) );

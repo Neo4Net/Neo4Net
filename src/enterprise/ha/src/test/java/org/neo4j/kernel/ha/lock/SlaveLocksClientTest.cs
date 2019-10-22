@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha.@lock
 {
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using Neo4Net.com;
 	using TransactionStream = Neo4Net.com.TransactionStream;
 	using Neo4Net.com;
-	using TransientFailureException = Neo4Net.Graphdb.TransientFailureException;
+	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
@@ -89,17 +89,17 @@ namespace Neo4Net.Kernel.ha.@lock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.ResourceReleaser_Fields.NO_OP;
+//	import static org.Neo4Net.com.ResourceReleaser_Fields.NO_OP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.DEFAULT_DATABASE_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.locking.ResourceTypes.NODE;
+//	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.NullLog.getInstance;
+//	import static org.Neo4Net.logging.NullLog.getInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.StoreId.DEFAULT;
+//	import static org.Neo4Net.storageengine.api.StoreId.DEFAULT;
 
 	public class SlaveLocksClientTest
 	{
@@ -352,7 +352,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test(expected = org.neo4j.graphdb.TransientDatabaseFailureException.class) public void mustThrowTransientTransactionFailureIfDatabaseUnavailable()
+//ORIGINAL LINE: @Test(expected = org.Neo4Net.graphdb.TransientDatabaseFailureException.class) public void mustThrowTransientTransactionFailureIfDatabaseUnavailable()
 		 public virtual void MustThrowTransientTransactionFailureIfDatabaseUnavailable()
 		 {
 			  _databaseAvailabilityGuard.shutdown();

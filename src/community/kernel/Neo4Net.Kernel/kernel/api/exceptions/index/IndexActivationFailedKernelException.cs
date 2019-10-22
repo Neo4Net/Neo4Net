@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 
 	public class IndexActivationFailedKernelException : KernelException
 	{
-		 public IndexActivationFailedKernelException( Exception cause, string message ) : base( org.neo4j.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, message )
+		 public IndexActivationFailedKernelException( Exception cause, string message ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.IndexCreationFailed, cause, message )
 		 {
 		 }
 	}

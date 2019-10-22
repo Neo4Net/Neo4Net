@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory
+namespace Neo4Net.GraphDb.factory
 {
 	using StringUtils = org.apache.commons.lang3.StringUtils;
 
-	using CommunityEditionModule = Neo4Net.Graphdb.factory.module.edition.CommunityEditionModule;
+	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using Service = Neo4Net.Helpers.Service;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DynamicLocksFactory = Neo4Net.Kernel.impl.locking.DynamicLocksFactory;

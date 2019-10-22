@@ -38,28 +38,28 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.neo4j.server.rest.repr.ListWriter serializeList(final String type)
+//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.ListWriter serializeList(final String type)
 		 protected internal override ListWriter SerializeList( string type )
 		 {
 			  throw new Exception( "Not implemented!" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected org.neo4j.server.rest.repr.MappingWriter serializeMapping(final String type)
+//ORIGINAL LINE: protected org.Neo4Net.server.rest.repr.MappingWriter serializeMapping(final String type)
 		 protected internal override MappingWriter SerializeMapping( string type )
 		 {
 			  throw new Exception( "Not implemented!" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected String complete(final org.neo4j.server.rest.repr.ListWriter serializer)
+//ORIGINAL LINE: protected String complete(final org.Neo4Net.server.rest.repr.ListWriter serializer)
 		 protected internal override string Complete( ListWriter serializer )
 		 {
 			  throw new Exception( "Not implemented!" );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected String complete(final org.neo4j.server.rest.repr.MappingWriter serializer)
+//ORIGINAL LINE: protected String complete(final org.Neo4Net.server.rest.repr.MappingWriter serializer)
 		 protected internal override string Complete( MappingWriter serializer )
 		 {
 			  throw new Exception( "Not implemented!" );
@@ -73,7 +73,7 @@ namespace Neo4Net.Server.rest.repr.formats
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String, Object> readMap(final String input, String... requiredKeys) throws org.neo4j.server.rest.repr.BadInputException
+//ORIGINAL LINE: public java.util.Map<String, Object> readMap(final String input, String... requiredKeys) throws org.Neo4Net.server.rest.repr.BadInputException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override IDictionary<string, object> ReadMap( string input, params string[] requiredKeys )
 		 {

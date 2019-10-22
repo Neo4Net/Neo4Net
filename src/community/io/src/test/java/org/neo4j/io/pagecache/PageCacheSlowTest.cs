@@ -29,7 +29,7 @@ namespace Neo4Net.Io.pagecache
 
 	using RandomAdversary = Neo4Net.Adversaries.RandomAdversary;
 	using AdversarialFileSystemAbstraction = Neo4Net.Adversaries.fs.AdversarialFileSystemAbstraction;
-	using EphemeralFileSystemAbstraction = Neo4Net.Graphdb.mockfs.EphemeralFileSystemAbstraction;
+	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileIsNotMappedException = Neo4Net.Io.pagecache.impl.FileIsNotMappedException;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;
@@ -58,11 +58,11 @@ namespace Neo4Net.Io.pagecache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assumptions.assumeTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
+//	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_WRITE_LOCK;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.matchers.ByteArrayMatcher.byteArray;
+//	import static org.Neo4Net.test.matchers.ByteArrayMatcher.byteArray;
 
 	public abstract class PageCacheSlowTest<T> : PageCacheTestSupport<T> where T : PageCache
 	{

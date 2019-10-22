@@ -30,8 +30,8 @@ namespace Neo4Net.Server.rest.transactional
 
 
 	using SyntaxException = Neo4Net.Cypher.SyntaxException;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Result = Neo4Net.Graphdb.Result;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Result = Neo4Net.GraphDb.Result;
 	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 	using TransactionUriScheme = Neo4Net.Server.rest.web.TransactionUriScheme;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
@@ -87,13 +87,13 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.hamcrest.MockitoHamcrest.argThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.transactional.StubStatementDeserializer.statements;
+//	import static org.Neo4Net.server.rest.transactional.StubStatementDeserializer.statements;
 
 	public class TransactionHandleTest
 	{
@@ -576,21 +576,21 @@ namespace Neo4Net.Server.rest.transactional
 			  return kernel;
 		 }
 
-		 private static Matcher<IEnumerable<Neo4jError>> HasNoErrors()
+		 private static Matcher<IEnumerable<Neo4NetError>> HasNoErrors()
 		 {
 			  return HasErrors();
 		 }
 
-		 private static Matcher<IEnumerable<Neo4jError>> HasErrors( params Status[] codes )
+		 private static Matcher<IEnumerable<Neo4NetError>> HasErrors( params Status[] codes )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Set<org.neo4j.kernel.api.exceptions.Status> expectedErrorsCodes = new java.util.HashSet<>(asList(codes));
+//ORIGINAL LINE: final java.util.Set<org.Neo4Net.kernel.api.exceptions.Status> expectedErrorsCodes = new java.util.HashSet<>(asList(codes));
 			  ISet<Status> expectedErrorsCodes = new HashSet<Status>( asList( codes ) );
 
 			  return new TypeSafeMatcherAnonymousInnerClass( expectedErrorsCodes );
 		 }
 
-		 private class TypeSafeMatcherAnonymousInnerClass : TypeSafeMatcher<IEnumerable<Neo4jError>>
+		 private class TypeSafeMatcherAnonymousInnerClass : TypeSafeMatcher<IEnumerable<Neo4NetError>>
 		 {
 			 private ISet<Status> _expectedErrorsCodes;
 
@@ -599,12 +599,12 @@ namespace Neo4Net.Server.rest.transactional
 				 this._expectedErrorsCodes = expectedErrorsCodes;
 			 }
 
-			 protected internal override bool matchesSafely( IEnumerable<Neo4jError> item )
+			 protected internal override bool matchesSafely( IEnumerable<Neo4NetError> item )
 			 {
 				  ISet<Status> actualErrorCodes = new HashSet<Status>();
-				  foreach ( Neo4jError neo4jError in item )
+				  foreach ( Neo4NetError Neo4NetError in item )
 				  {
-						actualErrorCodes.Add( neo4jError.Status() );
+						actualErrorCodes.Add( Neo4NetError.Status() );
 				  }
 				  return _expectedErrorsCodes.SetEquals( actualErrorCodes );
 			 }

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.store
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NoStoreHeaderFormat.NO_STORE_HEADER_FORMAT;
+//	import static org.Neo4Net.kernel.impl.store.NoStoreHeaderFormat.NO_STORE_HEADER_FORMAT;
 
 	/// <summary>
 	/// Implementation of the node store.
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <FAILURE extends Exception> void accept(RecordStore_Processor<FAILURE> processor, org.neo4j.kernel.impl.store.record.NodeRecord record) throws FAILURE
+//ORIGINAL LINE: public <FAILURE extends Exception> void accept(RecordStore_Processor<FAILURE> processor, org.Neo4Net.kernel.impl.store.record.NodeRecord record) throws FAILURE
 		 public override void Accept<FAILURE>( RecordStore_Processor<FAILURE> processor, NodeRecord record ) where FAILURE : Exception
 		 {
 			  processor.ProcessNode( this, record );

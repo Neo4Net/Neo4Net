@@ -25,13 +25,13 @@ namespace Neo4Net.Graphalgo.impl.util
 
 	using Neo4Net.Graphalgo.impl.util.PriorityMap;
 	using Neo4Net.Graphalgo.impl.util.PriorityMap;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using Neo4Net.Graphdb;
-	using BranchOrderingPolicy = Neo4Net.Graphdb.traversal.BranchOrderingPolicy;
-	using BranchSelector = Neo4Net.Graphdb.traversal.BranchSelector;
-	using TraversalBranch = Neo4Net.Graphdb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.Graphdb.traversal.TraversalContext;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using Neo4Net.GraphDb;
+	using BranchOrderingPolicy = Neo4Net.GraphDb.traversal.BranchOrderingPolicy;
+	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
+	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
 
 	public abstract class BestFirstSelectorFactory<P, D> : BranchOrderingPolicy where P : IComparable<P>
 	{

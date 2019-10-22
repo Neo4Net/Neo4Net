@@ -25,12 +25,12 @@ namespace Neo4Net.Test.mockito.mock
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -44,7 +44,7 @@ namespace Neo4Net.Test.mockito.mock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.reverse;
+//	import static org.Neo4Net.helpers.collection.Iterables.reverse;
 
 	public class GraphMock
 	{
@@ -143,7 +143,7 @@ namespace Neo4Net.Test.mockito.mock
 			  return relationship;
 		 }
 
-		 private static T MockPropertyContainer<T>( Type type, Properties properties ) where T : Neo4Net.Graphdb.PropertyContainer
+		 private static T MockPropertyContainer<T>( Type type, Properties properties ) where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 				 type = typeof( T );
 			  T container = mock( type );

@@ -32,15 +32,15 @@ namespace Neo4Net.Kernel.api.security
 		 /// NOTE: The initialPassword byte array will be cleared (overwritten with zeroes)
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.security.User newUser(String username, byte[] initialPassword, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 User NewUser( string username, sbyte[] initialPassword, bool requirePasswordChange );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: boolean deleteUser(String username) throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: boolean deleteUser(String username) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 bool DeleteUser( string username );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.security.User getUser(String username) throws org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.security.User getUser(String username) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 User GetUser( string username );
 
 		 User SilentlyGetUser( string username );
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.api.security
 		 /// NOTE: The password byte array will be cleared (overwritten with zeroes)
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, org.neo4j.kernel.api.exceptions.InvalidArgumentsException;
+//ORIGINAL LINE: void setUserPassword(String username, byte[] password, boolean requirePasswordChange) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException;
 		 void SetUserPassword( string username, sbyte[] password, bool requirePasswordChange );
 
 		 ISet<string> AllUsernames { get; }
@@ -98,8 +98,8 @@ namespace Neo4Net.Kernel.api.security
 
 	public static class UserManager_Fields
 	{
-		 public const string INITIAL_USER_NAME = "neo4j";
-		 public const string INITIAL_PASSWORD = "neo4j";
+		 public const string INITIAL_USER_NAME = "Neo4Net";
+		 public const string INITIAL_PASSWORD = "Neo4Net";
 	}
 
 }

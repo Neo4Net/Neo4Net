@@ -20,15 +20,15 @@
 namespace Neo4Net.Kernel
 {
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using URLAccessValidationError = Neo4Net.Graphdb.security.URLAccessValidationError;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 
 	/*
-	 * This is a trimmed down version of GraphDatabaseService and GraphDatabaseAPI, limited to a subset of functions needed
+	 * This is a trimmed down version of IGraphDatabaseService and GraphDatabaseAPI, limited to a subset of functions needed
 	 * by implementations of QueryExecutionEngine.
 	 */
 	public interface GraphDatabaseQueryService
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel
 		 InternalTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout, TimeUnit unit );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.neo4j.graphdb.security.URLAccessValidationError;
+//ORIGINAL LINE: java.net.URL validateURLAccess(java.net.URL url) throws org.Neo4Net.graphdb.security.URLAccessValidationError;
 		 URL ValidateURLAccess( URL url );
 
 		 DbmsOperations DbmsOperations { get; }

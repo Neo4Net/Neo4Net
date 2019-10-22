@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.ha
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TransactionTemplate = Neo4Net.Helpers.TransactionTemplate;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
@@ -41,14 +41,14 @@ namespace Neo4Net.Kernel.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.parseLongWithUnit;
+//	import static org.Neo4Net.kernel.configuration.Settings.parseLongWithUnit;
 
 	public class BiggerThanLogTxIT
 	{
 		 private const string ROTATION_THRESHOLD = "1M";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(org.neo4j.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(GraphDatabaseSettings.logical_log_rotation_threshold, ROTATION_THRESHOLD);
 
 		 protected internal ClusterManager.ManagedCluster Cluster;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void ShouldHandleSlaveCommittingLargeTx()
 		 {
 			  // GIVEN
-			  GraphDatabaseService slave = Cluster.AnySlave;
+			  IGraphDatabaseService slave = Cluster.AnySlave;
 			  long initialNodeCount = NodeCount( slave );
 
 			  // WHEN
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.ha
 		 public virtual void ShouldHandleMasterCommittingLargeTx()
 		 {
 			  // GIVEN
-			  GraphDatabaseService slave = Cluster.AnySlave;
+			  IGraphDatabaseService slave = Cluster.AnySlave;
 			  long initialNodeCount = NodeCount( slave );
 
 			  // WHEN
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.ha
 			  AssertAllMembersHasNodeCount( initialNodeCount + nodeCount + 1 );
 		 }
 
-		 private void CommitSmallTx( GraphDatabaseService db )
+		 private void CommitSmallTx( IGraphDatabaseService db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
 			  {
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.ha
 			  }
 		 }
 
-		 private long NodeCount( GraphDatabaseService db )
+		 private long NodeCount( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.ha
 
 		 private void AssertAllMembersHasNodeCount( long expectedNodeCount )
 		 {
-			  foreach ( GraphDatabaseService db in Cluster.AllMembers )
+			  foreach ( IGraphDatabaseService db in Cluster.AllMembers )
 			  {
 					// Try again with sync, it will clear up...
 					if ( expectedNodeCount != NodeCount( db ) )
@@ -160,8 +160,8 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private int commitLargeTx(final org.neo4j.graphdb.GraphDatabaseService db)
-		 private int CommitLargeTx( GraphDatabaseService db )
+//ORIGINAL LINE: private int commitLargeTx(final org.Neo4Net.graphdb.GraphDatabaseService db)
+		 private int CommitLargeTx( IGraphDatabaseService db )
 		 {
 			  return _template.with( db ).execute(transaction =>
 			  {

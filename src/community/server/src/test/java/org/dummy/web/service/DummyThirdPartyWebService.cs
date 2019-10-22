@@ -23,9 +23,9 @@ using System.Text;
 namespace Org.Dummy.Web.Service
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Path("/") public class DummyThirdPartyWebService
@@ -49,8 +49,8 @@ namespace Org.Dummy.Web.Service
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @GET @Path("inject-test") @Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN) public javax.ws.rs.core.Response countNodes(@Context GraphDatabaseService db)
-		 public virtual Response CountNodes( GraphDatabaseService db )
+//ORIGINAL LINE: @GET @Path("inject-test") @Produces(javax.ws.rs.core.MediaType.TEXT_PLAIN) public javax.ws.rs.core.Response countNodes(@Context IGraphDatabaseService db)
+		 public virtual Response CountNodes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
 			  {
@@ -82,7 +82,7 @@ namespace Org.Dummy.Web.Service
 			  return Response.ok().entity(theEntity.ToString()).build();
 		 }
 
-		 private int CountNodesIn( GraphDatabaseService db )
+		 private int CountNodesIn( IGraphDatabaseService db )
 		 {
 			  int count = 0;
 			  foreach ( Node ignore in Db.AllNodes )

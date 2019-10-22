@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.ScoreEntityIterator.mergeIterators;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.ScoreEntityIterator.mergeIterators;
 
 	internal class TransactionStateFulltextIndexReader : FulltextIndexReader
 	{

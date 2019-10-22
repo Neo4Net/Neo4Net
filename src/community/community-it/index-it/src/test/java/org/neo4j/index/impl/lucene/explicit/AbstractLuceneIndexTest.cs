@@ -29,20 +29,20 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Rule = org.junit.Rule;
 	using TestName = org.junit.rules.TestName;
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.index;
-	using RelationshipIndex = Neo4Net.Graphdb.index.RelationshipIndex;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.index;
+	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public abstract class AbstractLuceneIndexTest
 	{
@@ -50,9 +50,9 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 //ORIGINAL LINE: @Rule public final org.junit.rules.TestName testname = new org.junit.rules.TestName();
 		 public readonly TestName Testname = new TestName();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory(AbstractLuceneIndexTest.class);
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory(AbstractLuceneIndexTest.class);
 		 public static TestDirectory TestDirectory = TestDirectory.testDirectory( typeof( AbstractLuceneIndexTest ) );
-		 protected internal static GraphDatabaseService GraphDb;
+		 protected internal static IGraphDatabaseService GraphDb;
 		 protected internal Transaction Tx;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -110,18 +110,18 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  BeginTx();
 		 }
 
-		 protected internal interface EntityCreator<T> where T : Neo4Net.Graphdb.PropertyContainer
+		 protected internal interface IEntityCreator<T> where T : Neo4Net.GraphDb.PropertyContainer
 		 {
 			  T Create( params object[] properties );
 
-			  void Delete( T entity );
+			  void Delete( T IEntity );
 		 }
 
 		 private static readonly RelationshipType _testType = RelationshipType.withName( "TEST_TYPE" );
 
-		 protected internal static readonly EntityCreator<Node> NODE_CREATOR = new EntityCreatorAnonymousInnerClass();
+		 protected internal static readonly IEntityCreator<Node> NODE_CREATOR = new IEntityCreatorAnonymousInnerClass();
 
-		 private class EntityCreatorAnonymousInnerClass : EntityCreator<Node>
+		 private class IEntityCreatorAnonymousInnerClass : IEntityCreator<Node>
 		 {
 			 public Node create( params object[] properties )
 			 {
@@ -130,14 +130,14 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 				  return node;
 			 }
 
-			 public void delete( Node entity )
+			 public void delete( Node IEntity )
 			 {
-				  entity.Delete();
+				  IEntity.Delete();
 			 }
 		 }
-		 protected internal static readonly EntityCreator<Relationship> RELATIONSHIP_CREATOR = new EntityCreatorAnonymousInnerClass2();
+		 protected internal static readonly IEntityCreator<Relationship> RELATIONSHIP_CREATOR = new IEntityCreatorAnonymousInnerClass2();
 
-		 private class EntityCreatorAnonymousInnerClass2 : EntityCreator<Relationship>
+		 private class IEntityCreatorAnonymousInnerClass2 : IEntityCreator<Relationship>
 		 {
 			 public Relationship create( params object[] properties )
 			 {
@@ -146,13 +146,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 				  return rel;
 			 }
 
-			 public void delete( Relationship entity )
+			 public void delete( Relationship IEntity )
 			 {
-				  entity.Delete();
+				  IEntity.Delete();
 			 }
 		 }
 
-		 private static void SetProperties( PropertyContainer entity, params object[] properties )
+		 private static void SetProperties( IPropertyContainer IEntity, params object[] properties )
 		 {
 			  foreach ( KeyValuePair<string, object> entry in MapUtil.map( properties ).SetOfKeyValuePairs() )
 			  {

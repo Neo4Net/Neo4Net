@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  if ( _nodeExplicitIndexChanges == null )
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.neo4j.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  if ( _relationshipExplicitIndexChanges == null )
@@ -77,9 +77,9 @@ namespace Neo4Net.Kernel.Impl.Api
 			  _txState.createIndex( node, name, config );
 		 }
 
-		 public override void DeleteIndex( IndexEntityType entityType, string indexName )
+		 public override void DeleteIndex( IndexEntityType IEntityType, string indexName )
 		 {
-			  _txState.deleteIndex( entityType, indexName );
+			  _txState.deleteIndex( IEntityType, indexName );
 		 }
 
 		 public override bool HasChanges()
@@ -88,15 +88,15 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.neo4j.storageengine.api.StorageCommand> target) throws org.neo4j.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> target) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
 		 public override void ExtractCommands( ICollection<StorageCommand> target )
 		 {
 			  _txState.extractCommands( target );
 		 }
 
-		 public override bool CheckIndexExistence( IndexEntityType entityType, string indexName, IDictionary<string, string> config )
+		 public override bool CheckIndexExistence( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
 		 {
-			  return _txState.checkIndexExistence( entityType, indexName, config );
+			  return _txState.checkIndexExistence( IEntityType, indexName, config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

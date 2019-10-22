@@ -23,32 +23,32 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.configuration
 {
 
-	using Neo4Net.Graphdb.config;
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
-	using Neo4Net.Graphdb.config;
+	using Neo4Net.GraphDb.config;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
+	using Neo4Net.GraphDb.config;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Connector.ConnectorType.HTTP;
+//	import static org.Neo4Net.kernel.configuration.Connector.ConnectorType.HTTP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.HttpConnector.Encryption.NONE;
+//	import static org.Neo4Net.kernel.configuration.HttpConnector.Encryption.NONE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.HttpConnector.Encryption.TLS;
+//	import static org.Neo4Net.kernel.configuration.HttpConnector.Encryption.TLS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BOOLEAN;
+//	import static org.Neo4Net.kernel.configuration.Settings.BOOLEAN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.NO_DEFAULT;
+//	import static org.Neo4Net.kernel.configuration.Settings.NO_DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.advertisedAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.advertisedAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.describeOneOf;
+//	import static org.Neo4Net.kernel.configuration.Settings.describeOneOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.listenAddress;
+//	import static org.Neo4Net.kernel.configuration.Settings.listenAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.optionsObeyCase;
+//	import static org.Neo4Net.kernel.configuration.Settings.optionsObeyCase;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.setting;
+//	import static org.Neo4Net.kernel.configuration.Settings.setting;
 
 	public class HttpConnectorValidator : ConnectorValidator
 	{
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull protected java.util.Optional<org.neo4j.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params)
+//ORIGINAL LINE: @Override @Nonnull protected java.util.Optional<org.Neo4Net.graphdb.config.Setting<Object>> getSettingFor(@Nonnull String settingName, @Nonnull Map<String,String> params)
 		 protected internal override Optional<Setting<object>> GetSettingFor( string settingName, IDictionary<string, string> @params )
 		 {
 			  // owns has already verified that 'type' is correct and that this split is possible
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.configuration
 			  string subsetting = parts[3];
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final boolean encrypted = encryptionSetting(name).apply(params::get) == org.neo4j.kernel.configuration.HttpConnector.Encryption.TLS;
+//ORIGINAL LINE: final boolean encrypted = encryptionSetting(name).apply(params::get) == org.Neo4Net.kernel.configuration.HttpConnector.Encryption.TLS;
 			  bool encrypted = EncryptionSetting( name ).apply( @params.get ) == Encryption.TLS;
 			  BaseSetting setting;
 
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull private static java.util.Map<String,String> assertEncryption(@Nonnull String name, @Nonnull Setting<?> setting, @Nonnull Map<String,String> rawConfig) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: @Nonnull private static java.util.Map<String,String> assertEncryption(@Nonnull String name, @Nonnull Setting<?> setting, @Nonnull Map<String,String> rawConfig) throws org.Neo4Net.graphdb.config.InvalidSettingException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static IDictionary<string, string> AssertEncryption<T1>( string name, Setting<T1> setting, IDictionary<string, string> rawConfig )
 		 {
@@ -170,14 +170,14 @@ namespace Neo4Net.Kernel.configuration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static org.neo4j.graphdb.config.BaseSetting<HttpConnector.Encryption> encryptionSetting(@Nonnull String name)
+//ORIGINAL LINE: @Nonnull public static org.Neo4Net.graphdb.config.BaseSetting<HttpConnector.Encryption> encryptionSetting(@Nonnull String name)
 		 public static BaseSetting<HttpConnector.Encryption> EncryptionSetting( string name )
 		 {
 			  return EncryptionSetting( name, Encryption.NONE );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nonnull public static org.neo4j.graphdb.config.BaseSetting<HttpConnector.Encryption> encryptionSetting(@Nonnull String name, org.neo4j.kernel.configuration.HttpConnector.Encryption defaultValue)
+//ORIGINAL LINE: @Nonnull public static org.Neo4Net.graphdb.config.BaseSetting<HttpConnector.Encryption> encryptionSetting(@Nonnull String name, org.Neo4Net.kernel.configuration.HttpConnector.Encryption defaultValue)
 		 public static BaseSetting<HttpConnector.Encryption> EncryptionSetting( string name, Encryption defaultValue )
 		 {
 			  Setting<Encryption> s = setting( "dbms.connector." + name + ".encryption", optionsObeyCase( typeof( Encryption ) ), defaultValue.name() );
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.configuration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> rawConfig, System.Action<String> warningConsumer) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public java.util.Map<String,String> validate(java.util.Map<String,String> rawConfig, System.Action<String> warningConsumer) throws org.Neo4Net.graphdb.config.InvalidSettingException
 			 public override IDictionary<string, string> validate( IDictionary<string, string> rawConfig, System.Action<string> warningConsumer )
 			 {
 				  IDictionary<string, string> result = _s.validate( rawConfig, warningConsumer );

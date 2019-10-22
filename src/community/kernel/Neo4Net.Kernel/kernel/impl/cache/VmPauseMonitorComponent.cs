@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.cache
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using VmPauseMonitor = Neo4Net.Kernel.monitoring.VmPauseMonitor;

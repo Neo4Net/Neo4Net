@@ -22,7 +22,7 @@
 namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 {
 
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 	using BigIdTracker = Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string.BigIdTracker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -30,9 +30,9 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastIntToUnsignedShort;
+//	import static org.Neo4Net.helpers.Numbers.safeCastIntToUnsignedShort;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.unsignedShortToInt;
+//	import static org.Neo4Net.helpers.Numbers.unsignedShortToInt;
 
 	/// <summary>
 	/// Caches of parts of node store and relationship group store. A crucial part of batch import where

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.ArrayUtil.array;
+//	import static org.Neo4Net.helpers.ArrayUtil.array;
 
 	public class ThrowingConflictDetectorTest
 	{
@@ -44,11 +44,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  // given
 			  Value value = Values.of( 123 );
-			  long entityId1 = 10;
-			  long entityId2 = 20;
+			  long IEntityId1 = 10;
+			  long IEntityId2 = 20;
 
 			  // when
-			  NativeIndexValue merged = _detector.merge( Key( entityId1, value ), Key( entityId2, value ), NativeIndexValue.Instance, NativeIndexValue.Instance );
+			  NativeIndexValue merged = _detector.merge( Key( IEntityId1, value ), Key( IEntityId2, value ), NativeIndexValue.Instance, NativeIndexValue.Instance );
 
 			  // then
 			  assertNull( merged );
@@ -59,33 +59,33 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 			  catch ( IndexEntryConflictException e )
 			  {
-					assertEquals( entityId1, e.ExistingNodeId );
-					assertEquals( entityId2, e.AddedNodeId );
+					assertEquals( IEntityId1, e.ExistingNodeId );
+					assertEquals( IEntityId2, e.AddedNodeId );
 					assertEquals( value, e.SinglePropertyValue );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldNotReportConflictOnSameValueSameEntityId() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @Test public void shouldNotReportConflictOnSameValueSameEntityId() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotReportConflictOnSameValueSameEntityId()
 		 {
 			  // given
 			  Value value = Values.of( 123 );
-			  long entityId = 10;
+			  long IEntityId = 10;
 
 			  // when
-			  NativeIndexValue merged = _detector.merge( Key( entityId, value ), Key( entityId, value ), NativeIndexValue.Instance, NativeIndexValue.Instance );
+			  NativeIndexValue merged = _detector.merge( Key( IEntityId, value ), Key( IEntityId, value ), NativeIndexValue.Instance, NativeIndexValue.Instance );
 
 			  // then
 			  assertNull( merged );
 			  _detector.checkConflict( array() ); // <-- should not throw conflict exception
 		 }
 
-		 private static NumberIndexKey Key( long entityId, Value value )
+		 private static NumberIndexKey Key( long IEntityId, Value value )
 		 {
 			  NumberIndexKey key = new NumberIndexKey();
-			  key.initialize( entityId );
+			  key.initialize( IEntityId );
 			  key.initFromValue( 0, value, NativeIndexKey.Inclusion.Low );
 			  return key;
 		 }

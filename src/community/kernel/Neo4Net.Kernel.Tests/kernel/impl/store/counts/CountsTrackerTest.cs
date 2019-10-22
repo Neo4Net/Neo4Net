@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 
 
 	using Neo4Net.Functions;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
@@ -68,23 +68,23 @@ namespace Neo4Net.Kernel.impl.store.counts
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.function.Predicates.all;
+//	import static org.Neo4Net.function.Predicates.all;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.DebugUtil.classNameContains;
+//	import static org.Neo4Net.kernel.impl.util.DebugUtil.classNameContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.DebugUtil.methodIs;
+//	import static org.Neo4Net.kernel.impl.util.DebugUtil.methodIs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.util.DebugUtil.stackTraceContains;
+//	import static org.Neo4Net.kernel.impl.util.DebugUtil.stackTraceContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.rule.Resources.InitialLifecycle.STARTED;
+//	import static org.Neo4Net.test.rule.Resources.InitialLifecycle.STARTED;
 
 	public class CountsTrackerTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.Resources resourceManager = new org.neo4j.test.rule.Resources();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.Resources resourceManager = new org.Neo4Net.test.rule.Resources();
 		 public readonly Resources ResourceManager = new Resources();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.concurrent.ThreadingRule threading = new org.neo4j.test.rule.concurrent.ThreadingRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.concurrent.ThreadingRule threading = new org.Neo4Net.test.rule.concurrent.ThreadingRule();
 		 public readonly ThreadingRule Threading = new ThreadingRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.CountsOracle delta = new org.neo4j.kernel.impl.store.CountsOracle();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.CountsOracle delta = new org.Neo4Net.kernel.impl.store.CountsOracle();
 			  CountsOracle delta = new CountsOracle();
 			  {
 					CountsOracle.Node n1 = delta.Node( 1 );
@@ -291,7 +291,7 @@ namespace Neo4Net.Kernel.impl.store.counts
 			  using ( Lifespan life = new Lifespan() )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.test.Barrier_Control barrier = new org.neo4j.test.Barrier_Control();
+//ORIGINAL LINE: final org.Neo4Net.test.Barrier_Control barrier = new org.Neo4Net.test.Barrier_Control();
 					Neo4Net.Test.Barrier_Control barrier = new Neo4Net.Test.Barrier_Control();
 					CountsTracker tracker = life.Add( new CountsTrackerAnonymousInnerClass( this, ResourceManager.logProvider(), ResourceManager.fileSystem(), ResourceManager.pageCache(), Config.defaults(), EmptyVersionContextSupplier.EMPTY, barrier ) );
 					Future<Void> task = Threading.execute(t =>

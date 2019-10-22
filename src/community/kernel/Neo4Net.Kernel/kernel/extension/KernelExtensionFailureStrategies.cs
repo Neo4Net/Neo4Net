@@ -50,9 +50,9 @@ namespace Neo4Net.Kernel.extension
 						 message.Append( " because it a reflective access to a class, method, or field, that is not in the class path: " );
 					}
 					message.Append( '\'' ).Append( e.Message ).Append( '\'' );
-					message.Append( ". The most common cause of this problem, is that Neo4j has been upgraded without also upgrading all" );
+					message.Append( ". The most common cause of this problem, is that Neo4Net has been upgraded without also upgrading all" );
 					message.Append( "installed extensions, such as APOC. " );
-					message.Append( "Make sure that all of your extensions are build against your specific version of Neo4j." );
+					message.Append( "Make sure that all of your extensions are build against your specific version of Neo4Net." );
 			  }
 			  else
 			  {

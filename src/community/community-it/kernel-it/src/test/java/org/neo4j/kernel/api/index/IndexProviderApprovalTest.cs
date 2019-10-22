@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.Api.Index
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Strings = Neo4Net.Helpers.Strings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
@@ -44,11 +44,11 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.matcher.Neo4jMatchers.createIndex;
+//	import static org.Neo4Net.test.mockito.matcher.Neo4NetMatchers.createIndex;
 
 	/*
 	 * The purpose of this test class is to make sure all index providers produce the same results.
@@ -119,13 +119,13 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //           ARRAY_OF_CHAR(new char[]{'1', '2', '3'}),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           ARRAY_OF_POINTS_GPS(new org.neo4j.values.storable.PointValue[]{org.neo4j.values.storable.Values.pointValue(org.neo4j.values.storable.CoordinateReferenceSystem.WGS84, 12.3, 45.6)}),
+//           ARRAY_OF_POINTS_GPS(new org.Neo4Net.values.storable.PointValue[]{org.Neo4Net.values.storable.Values.pointValue(org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84, 12.3, 45.6)}),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           ARRAY_OF_POINTS_CAR(new org.neo4j.values.storable.PointValue[]{org.neo4j.values.storable.Values.pointValue(org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian, 123, 456)}),
+//           ARRAY_OF_POINTS_CAR(new org.Neo4Net.values.storable.PointValue[]{org.Neo4Net.values.storable.Values.pointValue(org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian, 123, 456)}),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           ARRAY_OF_POINTS_GPS_3D(new org.neo4j.values.storable.PointValue[]{org.neo4j.values.storable.Values.pointValue(org.neo4j.values.storable.CoordinateReferenceSystem.WGS84_3D, 12.3, 45.6, 78.9)}),
+//           ARRAY_OF_POINTS_GPS_3D(new org.Neo4Net.values.storable.PointValue[]{org.Neo4Net.values.storable.Values.pointValue(org.Neo4Net.values.storable.CoordinateReferenceSystem.WGS84_3D, 12.3, 45.6, 78.9)}),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           ARRAY_OF_POINTS_CAR_3D(new org.neo4j.values.storable.PointValue[]{org.neo4j.values.storable.Values.pointValue(org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian_3D, 123, 456, 789)});
+//           ARRAY_OF_POINTS_CAR_3D(new org.Neo4Net.values.storable.PointValue[]{org.Neo4Net.values.storable.Values.pointValue(org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian_3D, 123, 456, 789)});
 
 			  private static readonly IList<TestValue> valueList = new List<TestValue>();
 
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.Api.Index
 //ORIGINAL LINE: @BeforeClass public static void init()
 		 public static void Init()
 		 {
-			  GraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
+			  IGraphDatabaseService db = ( new TestGraphDatabaseFactory() ).newImpermanentDatabase();
 			  foreach ( TestValue value in TestValue.values() )
 			  {
 					CreateNode( db, PROPERTY_KEY, value.value );
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  assertEquals( errorMessage, noIndexResult, indexResult );
 		 }
 
-		 private static IDictionary<TestValue, ISet<object>> RunFindByLabelAndProperty( GraphDatabaseService db )
+		 private static IDictionary<TestValue, ISet<object>> RunFindByLabelAndProperty( IGraphDatabaseService db )
 		 {
 			  Dictionary<TestValue, ISet<object>> results = new Dictionary<TestValue, ISet<object>>();
 			  using ( Transaction tx = Db.beginTx() )
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  return results;
 		 }
 
-		 private static Node CreateNode( GraphDatabaseService db, string propertyKey, object value )
+		 private static Node CreateNode( IGraphDatabaseService db, string propertyKey, object value )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -353,7 +353,7 @@ namespace Neo4Net.Kernel.Api.Index
 			  }
 		 }
 
-		 private static void AddToResults( GraphDatabaseService db, Dictionary<TestValue, ISet<object>> results, TestValue value )
+		 private static void AddToResults( IGraphDatabaseService db, Dictionary<TestValue, ISet<object>> results, TestValue value )
 		 {
 			  ResourceIterator<Node> foundNodes = Db.findNodes( label( LABEL ), PROPERTY_KEY, value.value );
 			  ISet<object> propertyValues = asSet( Iterators.map( PropertyExtractor, foundNodes ) );

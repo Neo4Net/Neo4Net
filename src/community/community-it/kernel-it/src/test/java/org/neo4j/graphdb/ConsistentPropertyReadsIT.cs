@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb
+namespace Neo4Net.GraphDb
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -32,13 +32,13 @@ namespace Neo4Net.Graphdb
 //	import static org.junit.Assert.assertTrue;
 
 	/// <summary>
-	/// Test for how properties are read and that they should be read consistently, i.e. adhere to neo4j's
+	/// Test for how properties are read and that they should be read consistently, i.e. adhere to Neo4Net's
 	/// interpretation of the ACID guarantees.
 	/// </summary>
 	public class ConsistentPropertyReadsIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.DatabaseRule db = new org.neo4j.test.rule.EmbeddedDatabaseRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.DatabaseRule db = new org.Neo4Net.test.rule.EmbeddedDatabaseRule();
 		 public DatabaseRule Db = new EmbeddedDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

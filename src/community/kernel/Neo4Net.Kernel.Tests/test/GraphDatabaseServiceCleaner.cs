@@ -19,27 +19,27 @@
  */
 namespace Neo4Net.Test
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using ConstraintDefinition = Neo4Net.Graphdb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 
-	public class GraphDatabaseServiceCleaner
+	public class IGraphDatabaseServiceCleaner
 	{
-		 private GraphDatabaseServiceCleaner()
+		 private IGraphDatabaseServiceCleaner()
 		 {
 			  throw new System.NotSupportedException();
 		 }
 
-		 public static void CleanDatabaseContent( GraphDatabaseService db )
+		 public static void CleanDatabaseContent( IGraphDatabaseService db )
 		 {
 			  CleanupSchema( db );
 			  CleanupAllRelationshipsAndNodes( db );
 		 }
 
-		 public static void CleanupSchema( GraphDatabaseService db )
+		 public static void CleanupSchema( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -56,7 +56,7 @@ namespace Neo4Net.Test
 			  }
 		 }
 
-		 public static void CleanupAllRelationshipsAndNodes( GraphDatabaseService db )
+		 public static void CleanupAllRelationshipsAndNodes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

@@ -39,7 +39,7 @@ namespace Neo4Net.Ext.Udc.impl
 	/// </para>
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class UdcKernelExtensionFactory extends org.neo4j.kernel.extension.KernelExtensionFactory<UdcKernelExtensionFactory.Dependencies>
+//ORIGINAL LINE: @Service.Implementation(KernelExtensionFactory.class) public class UdcKernelExtensionFactory extends org.Neo4Net.kernel.extension.KernelExtensionFactory<UdcKernelExtensionFactory.Dependencies>
 	public class UdcKernelExtensionFactory : KernelExtensionFactory<UdcKernelExtensionFactory.Dependencies>
 	{
 		 internal const string KEY = "kernel udc";
@@ -58,7 +58,7 @@ namespace Neo4Net.Ext.Udc.impl
 		 public override Lifecycle NewInstance( KernelContext kernelContext, UdcKernelExtensionFactory.Dependencies dependencies )
 		 {
 			  Config config = dependencies.Config();
-			  return new UdcKernelExtension( config, dependencies.DataSourceManager(), dependencies.UsageData(), new Timer("Neo4j UDC Timer", true) );
+			  return new UdcKernelExtension( config, dependencies.DataSourceManager(), dependencies.UsageData(), new Timer("Neo4Net UDC Timer", true) );
 		 }
 	}
 

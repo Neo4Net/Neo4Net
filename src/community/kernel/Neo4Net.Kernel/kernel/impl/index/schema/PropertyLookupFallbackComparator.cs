@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -54,10 +54,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					return Values.COMPARATOR.Compare( _propertyAccessor.getNodePropertyValue( k1.EntityId, _propertyKeyId ), _propertyAccessor.getNodePropertyValue( k2.EntityId, _propertyKeyId ) );
 			  }
-			  catch ( EntityNotFoundException )
+			  catch ( IEntityNotFoundException )
 			  {
 					// We don't want this operation to fail since it's merely counting distinct values.
-					// This entity not being there is most likely a result of a concurrent deletion happening as we speak.
+					// This IEntity not being there is most likely a result of a concurrent deletion happening as we speak.
 					return comparison;
 			  }
 		 }

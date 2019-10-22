@@ -33,7 +33,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Integer.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.InputEntity.NO_LABELS;
 
 	/// <summary>
 	/// Data generator as <seealso cref="InputIterator"/>, parallelizable
@@ -161,7 +161,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 		 /// <param name="deserialization"> <seealso cref="Deserialization"/>. </param>
 		 /// <param name="header"> <seealso cref="Header"/> to deserialize from. </param>
 		 /// <returns> data from <seealso cref="InputEntity"/> converted into something else. </returns>
-		 public static T Convert<T>( InputEntity entity, Deserialization<T> deserialization, Header header )
+		 public static T Convert<T>( InputEntity IEntity, Deserialization<T> deserialization, Header header )
 		 {
 			  deserialization.Clear();
 			  foreach ( Header.Entry entry in header.Entries() )
@@ -169,22 +169,22 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input
 					switch ( entry.Type() )
 					{
 					case ID:
-						 deserialization.Handle( entry, entity.HasLongId ? entity.LongId : entity.ObjectId );
+						 deserialization.Handle( entry, IEntity.HasLongId ? IEntity.LongId : IEntity.ObjectId );
 						 break;
 					case PROPERTY:
-						 deserialization.Handle( entry, Property( entity.PropertiesConflict, entry.Name() ) );
+						 deserialization.Handle( entry, Property( IEntity.PropertiesConflict, entry.Name() ) );
 						 break;
 					case LABEL:
-						 deserialization.Handle( entry, entity.Labels() );
+						 deserialization.Handle( entry, IEntity.Labels() );
 						 break;
 					case TYPE:
-						 deserialization.Handle( entry, entity.HasIntType ? entity.IntType : entity.StringType );
+						 deserialization.Handle( entry, IEntity.HasIntType ? IEntity.IntType : IEntity.StringType );
 						 break;
 					case START_ID:
-						 deserialization.Handle( entry, entity.HasLongStartId ? entity.LongStartId : entity.ObjectStartId );
+						 deserialization.Handle( entry, IEntity.HasLongStartId ? IEntity.LongStartId : IEntity.ObjectStartId );
 						 break;
 					case END_ID:
-						 deserialization.Handle( entry, entity.HasLongEndId ? entity.LongEndId : entity.ObjectEndId );
+						 deserialization.Handle( entry, IEntity.HasLongEndId ? IEntity.LongEndId : IEntity.ObjectEndId );
 						 break;
 					default: // ignore other types
 				break;

@@ -45,13 +45,13 @@ namespace Neo4Net.Consistency.Internal
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.neo4j.kernel.extension.DatabaseKernelExtensions instantiateKernelExtensions(java.io.File databaseDirectory, org.neo4j.io.fs.FileSystemAbstraction fileSystem, org.neo4j.kernel.configuration.Config config, org.neo4j.logging.internal.LogService logService, org.neo4j.io.pagecache.PageCache pageCache, org.neo4j.scheduler.JobScheduler jobScheduler, org.neo4j.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCollector, org.neo4j.kernel.impl.factory.DatabaseInfo databaseInfo, org.neo4j.kernel.monitoring.Monitors monitors, org.neo4j.kernel.impl.core.TokenHolders tokenHolders)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static org.Neo4Net.kernel.extension.DatabaseKernelExtensions instantiateKernelExtensions(java.io.File databaseDirectory, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.internal.LogService logService, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.scheduler.JobScheduler jobScheduler, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCollector, org.Neo4Net.kernel.impl.factory.DatabaseInfo databaseInfo, org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.kernel.impl.core.TokenHolders tokenHolders)
 		 public static DatabaseKernelExtensions InstantiateKernelExtensions( File databaseDirectory, FileSystemAbstraction fileSystem, Config config, LogService logService, PageCache pageCache, IJobScheduler jobScheduler, RecoveryCleanupWorkCollector recoveryCollector, DatabaseInfo databaseInfo, Monitors monitors, TokenHolders tokenHolders )
 		 {
 			  Dependencies deps = new Dependencies();
 			  deps.SatisfyDependencies( fileSystem, config, logService, pageCache, recoveryCollector, monitors, jobScheduler, tokenHolders );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("rawtypes") Iterable kernelExtensions = org.neo4j.helpers.Service.load(org.neo4j.kernel.extension.KernelExtensionFactory.class);
+//ORIGINAL LINE: @SuppressWarnings("rawtypes") Iterable kernelExtensions = org.Neo4Net.helpers.Service.load(org.Neo4Net.kernel.extension.KernelExtensionFactory.class);
 			  System.Collections.IEnumerable kernelExtensions = Service.load( typeof( KernelExtensionFactory ) );
 			  KernelContext kernelContext = new SimpleKernelContext( databaseDirectory, databaseInfo, deps );
 			  return new DatabaseKernelExtensions( kernelContext, kernelExtensions, deps, KernelExtensionFailureStrategies.ignore() );

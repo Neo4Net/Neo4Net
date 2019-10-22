@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 	using SimpleChannelInboundHandler = io.netty.channel.SimpleChannelInboundHandler;
 
 	using BoltRequestMessageReader = Neo4Net.Bolt.messaging.BoltRequestMessageReader;
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using UnpackerProvider = Neo4Net.Bolt.messaging.UnpackerProvider;
 	using ByteBufInput = Neo4Net.Bolt.v1.packstream.ByteBufInput;
 	using Log = Neo4Net.Logging.Log;
@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt.transport.pipeline
 	public class MessageDecoder : SimpleChannelInboundHandler<ByteBuf>
 	{
 		 private readonly ByteBufInput _input;
-		 private readonly Neo4Net.Bolt.messaging.Neo4jPack_Unpacker _unpacker;
+		 private readonly Neo4Net.Bolt.messaging.Neo4NetPack_Unpacker _unpacker;
 		 private readonly BoltRequestMessageReader _reader;
 		 private readonly Log _log;
 

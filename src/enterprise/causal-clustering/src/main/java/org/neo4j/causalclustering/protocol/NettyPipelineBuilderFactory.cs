@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.protocol
 {
@@ -38,21 +38,21 @@ namespace Neo4Net.causalclustering.protocol
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ClientNettyPipelineBuilder client(io.netty.channel.Channel channel, org.neo4j.logging.Log log) throws Exception
+//ORIGINAL LINE: public ClientNettyPipelineBuilder client(io.netty.channel.Channel channel, org.Neo4Net.logging.Log log) throws Exception
 		 public virtual ClientNettyPipelineBuilder Client( Channel channel, Log log )
 		 {
 			  return Create( channel, NettyPipelineBuilder.Client( channel.pipeline(), log ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ServerNettyPipelineBuilder server(io.netty.channel.Channel channel, org.neo4j.logging.Log log) throws Exception
+//ORIGINAL LINE: public ServerNettyPipelineBuilder server(io.netty.channel.Channel channel, org.Neo4Net.logging.Log log) throws Exception
 		 public virtual ServerNettyPipelineBuilder Server( Channel channel, Log log )
 		 {
 			  return Create( channel, NettyPipelineBuilder.Server( channel.pipeline(), log ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private <O extends org.neo4j.causalclustering.protocol.ProtocolInstaller_Orientation, BUILDER extends NettyPipelineBuilder<O,BUILDER>> BUILDER create(io.netty.channel.Channel channel, BUILDER nettyPipelineBuilder) throws Exception
+//ORIGINAL LINE: private <O extends org.Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation, BUILDER extends NettyPipelineBuilder<O,BUILDER>> BUILDER create(io.netty.channel.Channel channel, BUILDER nettyPipelineBuilder) throws Exception
 		 private BUILDER Create<O, BUILDER>( Channel channel, BUILDER nettyPipelineBuilder ) where O : Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation where BUILDER : NettyPipelineBuilder<O,BUILDER>
 		 {
 			  int i = 0;

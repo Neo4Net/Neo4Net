@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.IO;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.IO;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.backup.impl
 {
@@ -37,7 +37,7 @@ namespace Neo4Net.backup.impl
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 	/// <summary>
-	/// This class encapsulates the information needed to perform an online backup against a running Neo4j instance
+	/// This class encapsulates the information needed to perform an online backup against a running Neo4Net instance
 	/// configured to act as a backup server.
 	/// <para>
 	/// All backup methods return the same instance, allowing for chaining calls.
@@ -145,10 +145,10 @@ namespace Neo4Net.backup.impl
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean backup(java.io.File neo4jHome, String backupName) throws org.neo4j.commandline.admin.CommandFailed, org.neo4j.commandline.admin.IncorrectUsage
-		 public virtual bool Backup( File neo4jHome, string backupName )
+//ORIGINAL LINE: public boolean backup(java.io.File Neo4NetHome, String backupName) throws org.Neo4Net.commandline.admin.CommandFailed, org.Neo4Net.commandline.admin.IncorrectUsage
+		 public virtual bool Backup( File Neo4NetHome, string backupName )
 		 {
-			  File targetLocation = new File( neo4jHome, backupName );
+			  File targetLocation = new File( Neo4NetHome, backupName );
 			  string[] args;
 			  if ( _rawArgs.Present )
 			  {
@@ -165,7 +165,7 @@ namespace Neo4Net.backup.impl
 						 throw new CommandFailed( "Failed to resolve arguments", e );
 					}
 			  }
-			  ( new OnlineBackupCommandProvider() ).Create(neo4jHome.toPath(), ConfigDirFromTarget(neo4jHome.toPath()), ResolveOutsideWorld()).execute(args);
+			  ( new OnlineBackupCommandProvider() ).Create(Neo4NetHome.toPath(), ConfigDirFromTarget(Neo4NetHome.toPath()), ResolveOutsideWorld()).execute(args);
 			  return true;
 		 }
 
@@ -260,14 +260,14 @@ namespace Neo4Net.backup.impl
 			  {
 					return "";
 			  }
-			  File configFile = backupTarget.toPath().resolve("../additional_neo4j.conf").toFile();
+			  File configFile = backupTarget.toPath().resolve("../additional_Neo4Net.conf").toFile();
 			  WriteConfigToFile( _additionalConfig, configFile );
 
 			  return format( "--additional-config=%s", configFile );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void writeConfigToFile(org.neo4j.kernel.configuration.Config config, java.io.File file) throws java.io.IOException
+//ORIGINAL LINE: static void writeConfigToFile(org.Neo4Net.kernel.configuration.Config config, java.io.File file) throws java.io.IOException
 		 internal static void WriteConfigToFile( Config config, File file )
 		 {
 			  using ( Writer fileWriter = new StreamWriter( file ) )
@@ -299,9 +299,9 @@ namespace Neo4Net.backup.impl
 			  return Stream.of( args ).filter( StringUtils.isNoneEmpty ).toArray( string[]::new );
 		 }
 
-		 private static Path ConfigDirFromTarget( Path neo4jHome )
+		 private static Path ConfigDirFromTarget( Path Neo4NetHome )
 		 {
-			  return neo4jHome.resolve( "conf" );
+			  return Neo4NetHome.resolve( "conf" );
 		 }
 	}
 

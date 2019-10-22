@@ -1,8 +1,8 @@
 ﻿/*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -13,12 +13,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -56,21 +56,21 @@ namespace Neo4Net.Kernel.ha
 	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.EMPTY_SERIALIZER;
+//	import static org.Neo4Net.com.Protocol.EMPTY_SERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.VOID_DESERIALIZER;
+//	import static org.Neo4Net.com.Protocol.VOID_DESERIALIZER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.readString;
+//	import static org.Neo4Net.com.Protocol.readString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.Protocol.writeString;
+//	import static org.Neo4Net.com.Protocol.writeString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
+//	import static org.Neo4Net.com.ProtocolVersion.INTERNAL_PROTOCOL_VERSION;
 
 	/// <summary>
-	/// The <seealso cref="org.neo4j.kernel.ha.com.master.Master"/> a slave should use to communicate with its master. It
+	/// The <seealso cref="org.Neo4Net.kernel.ha.com.master.Master"/> a slave should use to communicate with its master. It
 	/// serializes requests and sends them to the master, more specifically
-	/// <seealso cref="org.neo4j.kernel.ha.com.master.MasterServer"/> (which delegates to
-	/// <seealso cref="org.neo4j.kernel.ha.com.master.MasterImpl"/>
+	/// <seealso cref="org.Neo4Net.kernel.ha.com.master.MasterServer"/> (which delegates to
+	/// <seealso cref="org.Neo4Net.kernel.ha.com.master.MasterImpl"/>
 	/// on the master side.
 	/// </summary>
 	public class MasterClient214 : Client<Master>, MasterClient
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<org.neo4j.kernel.ha.id.IdAllocation> allocateIds(org.neo4j.com.RequestContext context, final org.neo4j.kernel.impl.store.id.IdType idType)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.id.IdAllocation> allocateIds(org.Neo4Net.com.RequestContext context, final org.Neo4Net.kernel.impl.store.id.IdType idType)
 		 public override Response<IdAllocation> AllocateIds( RequestContext context, IdType idType )
 		 {
 			  Serializer serializer = buffer => buffer.writeByte( ( int )idType );
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<int> createRelationshipType(org.neo4j.com.RequestContext context, final String name)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createRelationshipType(org.Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreateRelationshipType( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<int> createPropertyKey(org.neo4j.com.RequestContext context, final String name)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createPropertyKey(org.Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreatePropertyKey( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -188,7 +188,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<int> createLabel(org.neo4j.com.RequestContext context, final String name)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<int> createLabel(org.Neo4Net.com.RequestContext context, final String name)
 		 public override Response<int> CreateLabel( RequestContext context, string name )
 		 {
 			  Serializer serializer = buffer => writeString( buffer, name );
@@ -219,7 +219,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<Void> endLockSession(org.neo4j.com.RequestContext context, final boolean success)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> endLockSession(org.Neo4Net.com.RequestContext context, final boolean success)
 		 public override Response<Void> EndLockSession( RequestContext context, bool success )
 		 {
 			  Serializer serializer = buffer => buffer.writeByte( success ? 1 : 0 );
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<org.neo4j.kernel.ha.com.master.HandshakeResult> handshake(final long txId, org.neo4j.storageengine.api.StoreId storeId)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.com.master.HandshakeResult> handshake(final long txId, org.Neo4Net.storageengine.api.StoreId storeId)
 		 public override Response<HandshakeResult> Handshake( long txId, StoreId storeId )
 		 {
 			  Serializer serializer = buffer => buffer.writeLong( txId );
@@ -246,7 +246,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.neo4j.com.Response<Void> copyStore(org.neo4j.com.RequestContext context, final org.neo4j.com.storecopy.StoreWriter writer)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> copyStore(org.Neo4Net.com.RequestContext context, final org.Neo4Net.com.storecopy.StoreWriter writer)
 		 public override Response<Void> CopyStore( RequestContext context, StoreWriter writer )
 		 {
 			  context = StripFromTransactions( context );
@@ -293,9 +293,9 @@ namespace Neo4Net.Kernel.ha
 			  {
 					buffer.writeInt( Type.typeId() );
 					buffer.writeInt( ResourceIds.Length );
-					foreach ( long entity in ResourceIds )
+					foreach ( long IEntity in ResourceIds )
 					{
-						 buffer.writeLong( entity );
+						 buffer.writeLong( IEntity );
 					}
 			  }
 		 }

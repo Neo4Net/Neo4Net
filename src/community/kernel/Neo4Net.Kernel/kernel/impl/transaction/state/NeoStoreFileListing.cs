@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.transaction.state
 {
 
-	using Resource = Neo4Net.Graphdb.Resource;
-	using Neo4Net.Graphdb;
+	using Resource = Neo4Net.GraphDb.Resource;
+	using Neo4Net.GraphDb;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.resourceIterator;
+//	import static org.Neo4Net.helpers.collection.Iterators.resourceIterator;
 
 	public class NeoStoreFileListing
 	{
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  /// <returns> A <seealso cref="Resource"/> that should be closed when we are done working with the files added to the collection </returns>
 			  /// <exception cref="IOException"> if the provider is unable to prepare the file listing </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.graphdb.Resource addFilesTo(java.util.Collection<org.neo4j.storageengine.api.StoreFileMetadata> fileMetadataCollection) throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<org.Neo4Net.storageengine.api.StoreFileMetadata> fileMetadataCollection) throws java.io.IOException;
 			  Resource AddFilesTo( ICollection<StoreFileMetadata> fileMetadataCollection );
 		 }
 
@@ -251,7 +251,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<org.neo4j.storageengine.api.StoreFileMetadata> build() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.storageengine.api.StoreFileMetadata> build() throws java.io.IOException
 			  public virtual ResourceIterator<StoreFileMetadata> Build()
 			  {
 					IList<StoreFileMetadata> files = new List<StoreFileMetadata>();
@@ -306,7 +306,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void gatherNeoStoreFiles(final java.util.Collection<org.neo4j.storageengine.api.StoreFileMetadata> targetFiles)
+//ORIGINAL LINE: private void gatherNeoStoreFiles(final java.util.Collection<org.Neo4Net.storageengine.api.StoreFileMetadata> targetFiles)
 		 private void GatherNeoStoreFiles( ICollection<StoreFileMetadata> targetFiles )
 		 {
 			  targetFiles.addAll( _storageEngine.listStorageFiles() );

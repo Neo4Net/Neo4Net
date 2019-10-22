@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterCommit(org.neo4j.storageengine.api.txstate.ReadableTransactionState state, org.neo4j.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
 		 public virtual void AfterCommit( ReadableTransactionState state, KernelTransaction tx, TransactionHooksState hooksState )
 		 {
 			  if ( hooksState == null )
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterRollback(org.neo4j.storageengine.api.txstate.ReadableTransactionState state, org.neo4j.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction tx, TransactionHooksState hooksState)
 		 public virtual void AfterRollback( ReadableTransactionState state, KernelTransaction tx, TransactionHooksState hooksState )
 		 {
 			  if ( hooksState == null )

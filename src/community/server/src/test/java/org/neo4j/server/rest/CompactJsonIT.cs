@@ -99,18 +99,18 @@ namespace Neo4Net.Server.rest
 		 {
 			  JaxRsResponse response = RestRequest.Req().get(_functionalTestHelper.nodeUri(_thomasAnderson), CompactJsonFormat.MEDIA_TYPE);
 			  assertEquals( Status.OK.StatusCode, response.Status );
-			  string entity = response.Entity;
-			  assertTrue( entity.Contains( "Thomas Anderson" ) );
-			  AssertValidJson( entity );
+			  string IEntity = response.Entity;
+			  assertTrue( IEntity.Contains( "Thomas Anderson" ) );
+			  AssertValidJson( IEntity );
 			  response.Close();
 		 }
 
-		 private void AssertValidJson( string entity )
+		 private void AssertValidJson( string IEntity )
 		 {
 			  try
 			  {
-					assertTrue( JsonHelper.jsonToMap( entity ).ContainsKey( "self" ) );
-					assertFalse( JsonHelper.jsonToMap( entity ).ContainsKey( "properties" ) );
+					assertTrue( JsonHelper.jsonToMap( IEntity ).ContainsKey( "self" ) );
+					assertFalse( JsonHelper.jsonToMap( IEntity ).ContainsKey( "properties" ) );
 			  }
 			  catch ( JsonParseException e )
 			  {

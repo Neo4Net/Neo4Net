@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.rebuild
 {
@@ -34,8 +34,8 @@ namespace Neo4Net.tools.rebuild
 	using ConsistencySummaryStatistics = Neo4Net.Consistency.report.ConsistencySummaryStatistics;
 	using Statistics = Neo4Net.Consistency.statistics.Statistics;
 	using Neo4Net.Cursors;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseFactory = Neo4Net.Graphdb.factory.GraphDatabaseFactory;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using Args = Neo4Net.Helpers.Args;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
@@ -73,13 +73,13 @@ namespace Neo4Net.tools.rebuild
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
+//	import static org.Neo4Net.kernel.impl.scheduler.JobSchedulerFactory.createInitializedScheduler;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
+//	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.tracing.CommitEvent.NULL;
+//	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// Tool to rebuild store based on available transaction logs.
@@ -96,7 +96,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void main(String[] args) throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: public static void main(String[] args) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
 		 public static void Main( string[] args )
 		 {
 			  if ( args == null )
@@ -156,7 +156,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void rebuild(java.io.File source, java.io.File target, long txId) throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: public void rebuild(java.io.File source, java.io.File target, long txId) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
 		 public virtual void Rebuild( File source, File target, long txId )
 		 {
 			  using ( PageCache pageCache = StandalonePageCacheFactory.createPageCache( _fs, createInitializedScheduler() ) )
@@ -183,7 +183,7 @@ namespace Neo4Net.tools.rebuild
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkConsistency(java.io.File target, org.neo4j.io.pagecache.PageCache pageCache) throws Exception, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: void checkConsistency(java.io.File target, org.Neo4Net.io.pagecache.PageCache pageCache) throws Exception, org.Neo4Net.consistency.checking.InconsistentStoreException
 		 internal virtual void CheckConsistency( File target, PageCache pageCache )
 		 {
 			  using ( ConsistencyChecker checker = new ConsistencyChecker( target, pageCache ) )
@@ -268,7 +268,7 @@ namespace Neo4Net.tools.rebuild
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkConsistency() throws org.neo4j.consistency.checking.full.ConsistencyCheckIncompleteException, org.neo4j.consistency.checking.InconsistentStoreException
+//ORIGINAL LINE: private void checkConsistency() throws org.Neo4Net.consistency.checking.full.ConsistencyCheckIncompleteException, org.Neo4Net.consistency.checking.InconsistentStoreException
 			  internal virtual void CheckConsistency()
 			  {
 					StoreAccess nativeStores = ( new StoreAccess( Graphdb.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).testAccessNeoStores() ) ).initialize();

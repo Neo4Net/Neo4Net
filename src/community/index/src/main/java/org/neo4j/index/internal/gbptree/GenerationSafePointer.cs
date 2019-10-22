@@ -22,11 +22,11 @@ namespace Neo4Net.Index.Internal.gbptree
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PageCursorUtil.get6BLong;
+//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.get6BLong;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PageCursorUtil.getUnsignedInt;
+//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.getUnsignedInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.index.Internal.gbptree.PageCursorUtil.put6BLong;
+//	import static org.Neo4Net.index.Internal.gbptree.PageCursorUtil.put6BLong;
 
 	/// <summary>
 	/// Provides static methods for getting and manipulating GSP (generation-safe pointer) data.

@@ -92,7 +92,7 @@ namespace Neo4Net.Storageengine.Api.schema
 
 		 /// <summary>
 		 /// This enum is used for the legacy schema store, and should not be extended. </summary>
-		 /// <seealso cref= org.neo4j.kernel.impl.store.record.SchemaRuleSerialization for the new (de)serialisation code instead. </seealso>
+		 /// <seealso cref= org.Neo4Net.kernel.impl.store.record.SchemaRuleSerialization for the new (de)serialisation code instead. </seealso>
 	}
 
 	 public sealed class SchemaRule_Kind
@@ -152,7 +152,7 @@ namespace Neo4Net.Storageengine.Api.schema
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws org.neo4j.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: public static SchemaRule_Kind forId(byte id) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
 		  public static SchemaRule_Kind ForId( sbyte id )
 		  {
 				if ( id >= 1 && id <= All.Length )

@@ -34,9 +34,9 @@ namespace Neo4Net.Bolt.runtime.integration
 	using DiscardAllMessage = Neo4Net.Bolt.v1.messaging.request.DiscardAllMessage;
 	using InitMessage = Neo4Net.Bolt.v1.messaging.request.InitMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using Neo4jWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4jWithSocket;
+	using Neo4NetWithSocket = Neo4Net.Bolt.v1.transport.integration.Neo4NetWithSocket;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
@@ -52,16 +52,16 @@ namespace Neo4Net.Bolt.runtime.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgFailure;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgFailure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
+//	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
+//	import static org.Neo4Net.bolt.v1.transport.integration.TransportTestUtil.eventuallyReceives;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltSchedulerBusyIT extends org.neo4j.bolt.AbstractBoltTransportsTest
+//ORIGINAL LINE: @RunWith(Parameterized.class) public class BoltSchedulerBusyIT extends org.Neo4Net.bolt.AbstractBoltTransportsTest
 	public class BoltSchedulerBusyIT : AbstractBoltTransportsTest
 	{
 		private bool InstanceFieldsInitialized = false;
@@ -77,14 +77,14 @@ namespace Neo4Net.Bolt.runtime.integration
 
 		private void InitializeInstanceFields()
 		{
-			_server = new Neo4jWithSocket( this.GetType(), TestGraphDatabaseFactory, _fsRule.get, SettingsFunction );
+			_server = new Neo4NetWithSocket( this.GetType(), TestGraphDatabaseFactory, _fsRule.get, SettingsFunction );
 			RuleChain = RuleChain.outerRule( _fsRule ).around( _server );
 		}
 
 		 private AssertableLogProvider _internalLogProvider = new AssertableLogProvider();
 		 private AssertableLogProvider _userLogProvider = new AssertableLogProvider();
 		 private EphemeralFileSystemRule _fsRule = new EphemeralFileSystemRule();
-		 private Neo4jWithSocket _server;
+		 private Neo4NetWithSocket _server;
 		 private TransportConnection _connection1;
 		 private TransportConnection _connection2;
 		 private TransportConnection _connection3;
@@ -195,7 +195,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.v1.transport.socket.client.TransportConnection enterStreaming() throws Throwable
+//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection enterStreaming() throws Throwable
 		 private TransportConnection EnterStreaming()
 		 {
 			  TransportConnection connection = null;
@@ -237,7 +237,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void enterStreaming(org.neo4j.bolt.v1.transport.socket.client.TransportConnection connection, int sleepSeconds) throws Exception
+//ORIGINAL LINE: private void enterStreaming(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection, int sleepSeconds) throws Exception
 		 private void EnterStreaming( TransportConnection connection, int sleepSeconds )
 		 {
 			  ConnectAndPerformBoltHandshake( connection );
@@ -252,7 +252,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.bolt.v1.transport.socket.client.TransportConnection connectAndPerformBoltHandshake(org.neo4j.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connectAndPerformBoltHandshake(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
 		 private TransportConnection ConnectAndPerformBoltHandshake( TransportConnection connection )
 		 {
 			  connection.Connect( Address ).send( Util.acceptedVersions( 1, 0, 0, 0 ) );
@@ -261,7 +261,7 @@ namespace Neo4Net.Bolt.runtime.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void exitStreaming(org.neo4j.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
+//ORIGINAL LINE: private void exitStreaming(org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection connection) throws Exception
 		 private void ExitStreaming( TransportConnection connection )
 		 {
 			  connection.Send( Util.chunk( DiscardAllMessage.INSTANCE ) );

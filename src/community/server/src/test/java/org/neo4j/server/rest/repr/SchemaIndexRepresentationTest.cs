@@ -23,7 +23,7 @@ namespace Neo4Net.Server.rest.repr
 {
 	using Test = org.junit.Test;
 
-	using IndexDefinition = Neo4Net.Graphdb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -32,7 +32,7 @@ namespace Neo4Net.Server.rest.repr
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 
 	public class SchemaIndexRepresentationTest
 	{

@@ -111,15 +111,15 @@ namespace Neo4Net.Test.rule
 					return this;
 			  }
 
-			  public virtual VerboseTimeoutBuilder DescribeOnFailure<T>( T entity, System.Func<T, string> descriptor )
+			  public virtual VerboseTimeoutBuilder DescribeOnFailure<T>( T IEntity, System.Func<T, string> descriptor )
 			  {
-					AdditionalParametersConflict.Add( new FailureParameter<>( this, entity, descriptor ) );
+					AdditionalParametersConflict.Add( new FailureParameter<>( this, IEntity, descriptor ) );
 					return this;
 			  }
 
-			  public virtual VerboseTimeoutBuilder DescribeOnFailure<T>( T entity )
+			  public virtual VerboseTimeoutBuilder DescribeOnFailure<T>( T IEntity )
 			  {
-					return DescribeOnFailure( entity, ToStringFunction() );
+					return DescribeOnFailure( IEntity, ToStringFunction() );
 			  }
 
 			  public override VerboseTimeout Build()
@@ -157,19 +157,19 @@ namespace Neo4Net.Test.rule
 			  {
 				  private readonly VerboseTimeout.VerboseTimeoutBuilder _outerInstance;
 
-					internal readonly T Entity;
+					internal readonly T IEntity;
 					internal readonly System.Func<T, string> Descriptor;
 
-					internal FailureParameter( VerboseTimeout.VerboseTimeoutBuilder outerInstance, T entity, System.Func<T, string> descriptor )
+					internal FailureParameter( VerboseTimeout.VerboseTimeoutBuilder outerInstance, T IEntity, System.Func<T, string> descriptor )
 					{
 						this._outerInstance = outerInstance;
-						 this.Entity = entity;
+						 this.Entity = IEntity;
 						 this.Descriptor = descriptor;
 					}
 
 					internal virtual string Describe()
 					{
-						 return Descriptor.apply( Entity );
+						 return Descriptor.apply( IEntity );
 					}
 			  }
 		 }

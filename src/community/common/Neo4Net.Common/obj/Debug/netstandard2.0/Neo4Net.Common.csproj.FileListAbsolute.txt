@@ -7,3 +7,6 @@ C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Commo
 C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.AssemblyInfo.cs
 C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\Community\common\Neo4Net.Common\bin\Debug\netstandard2.0\Neo4Net.Common.deps.json
 C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\Community\common\Neo4Net.Common\bin\Debug\netstandard2.0\Neo4Net.Common.dll
+C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\Community\common\Neo4Net.Common\bin\Debug\netstandard2.0\Neo4Net.Common.pdb
+C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\Community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.dll
+C:\Users\tcorvin\Source\Repos\Neo4Net\Neo4Net\src\Community\common\Neo4Net.Common\obj\Debug\netstandard2.0\Neo4Net.Common.pdb

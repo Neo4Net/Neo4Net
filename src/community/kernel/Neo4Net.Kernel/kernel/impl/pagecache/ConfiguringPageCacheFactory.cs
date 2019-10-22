@@ -39,13 +39,13 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.mapped_memory_page_size;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.mapped_memory_page_size;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_swapper;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_swapper;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.Settings.BYTES;
+//	import static org.Neo4Net.kernel.configuration.Settings.BYTES;
 
 	public class ConfiguringPageCacheFactory
 	{
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 			  if ( string.ReferenceEquals( pageCacheMemorySetting, null ) )
 			  {
 					long heuristic = DefaultHeuristicPageCacheMemory();
-					_log.warn( "The " + pagecache_memory.name() + " setting has not been configured. It is recommended that this " + "setting is always explicitly configured, to ensure the system has a balanced configuration. " + "Until then, a computed heuristic value of " + heuristic + " bytes will be used instead. " + "Run `neo4j-admin memrec` for memory configuration suggestions." );
+					_log.warn( "The " + pagecache_memory.name() + " setting has not been configured. It is recommended that this " + "setting is always explicitly configured, to ensure the system has a balanced configuration. " + "Until then, a computed heuristic value of " + heuristic + " bytes will be used instead. " + "Run `Neo4Net-admin memrec` for memory configuration suggestions." );
 					pageCacheMemorySetting = "" + heuristic;
 			  }
 

@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.query
 {
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 

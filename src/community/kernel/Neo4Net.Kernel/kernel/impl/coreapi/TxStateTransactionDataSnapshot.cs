@@ -27,14 +27,14 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
 
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using LabelEntry = Neo4Net.Graphdb.@event.LabelEntry;
-	using Neo4Net.Graphdb.@event;
-	using TransactionData = Neo4Net.Graphdb.@event.TransactionData;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
+	using Neo4Net.GraphDb.Events;
+	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
 	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 //	import static Math.toIntExact;
 
 	/// <summary>
-	/// Transform for <seealso cref="org.neo4j.storageengine.api.txstate.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
+	/// Transform for <seealso cref="org.Neo4Net.storageengine.api.txstate.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
 	/// </summary>
 	public class TxStateTransactionDataSnapshot : TransactionData
 	{
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 							 });
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.storageengine.api.txstate.LongDiffSets labels = nodeState.labelDiffSets();
+//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.LongDiffSets labels = nodeState.labelDiffSets();
 							 LongDiffSets labels = nodeState.LabelDiffSets();
 							 AddLabelEntriesTo( nodeId, labels.Added, _assignedLabels );
 							 AddLabelEntriesTo( nodeId, labels.Removed, _removedLabels );
@@ -293,7 +293,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			  }
 			  catch ( PropertyKeyIdNotFoundKernelException e )
 			  {
-					throw new System.InvalidOperationException( "An entity that does not exist was modified.", e );
+					throw new System.InvalidOperationException( "An IEntity that does not exist was modified.", e );
 			  }
 		 }
 
@@ -329,7 +329,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 						 _store.relationshipVisit( relId, relationship );
 						 _relationshipsReadFromStore.put( relId, relationship );
 					}
-					catch ( EntityNotFoundException e )
+					catch ( IEntityNotFoundException e )
 					{
 						 throw new System.InvalidOperationException( "Getting deleted relationship data should have been covered by the tx state", e );
 					}
@@ -412,7 +412,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					this.OldValue = oldValue;
 			  }
 
-			  public override Node Entity()
+			  public override Node IEntity()
 			  {
 					return new NodeProxy( outerInstance.proxySpi, NodeId );
 			  }
@@ -463,7 +463,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 					this.OldValue = oldValue;
 			  }
 
-			  public override Relationship Entity()
+			  public override Relationship IEntity()
 			  {
 					return Relationship;
 			  }

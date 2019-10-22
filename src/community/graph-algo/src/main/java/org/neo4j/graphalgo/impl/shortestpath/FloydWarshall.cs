@@ -24,9 +24,9 @@ namespace Neo4Net.Graphalgo.impl.shortestpath
 
 	using Neo4Net.Graphalgo;
 	using Neo4Net.Graphalgo;
-	using Direction = Neo4Net.Graphdb.Direction;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
+	using Direction = Neo4Net.GraphDb.Direction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
 
 	/// <summary>
 	/// This provides an implementation of the Floyd Warshall algorithm solving the

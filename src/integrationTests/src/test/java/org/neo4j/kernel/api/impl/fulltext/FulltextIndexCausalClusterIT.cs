@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
@@ -37,17 +37,17 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Neo4Net.causalclustering.discovery;
 	using CoreClusterMember = Neo4Net.causalclustering.discovery.CoreClusterMember;
 	using ReadReplica = Neo4Net.causalclustering.discovery.ReadReplica;
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using Entity = Neo4Net.Graphdb.Entity;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using QueryExecutionException = Neo4Net.Graphdb.QueryExecutionException;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Result = Neo4Net.Graphdb.Result;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IEntity = Neo4Net.GraphDb.Entity;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Result = Neo4Net.GraphDb.Result;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
@@ -57,28 +57,28 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.AWAIT_REFRESH;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.AWAIT_REFRESH;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.NODE_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_NODES;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.QUERY_RELS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.RELATIONSHIP_CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.api.impl.fulltext.FulltextProceduresTest.array;
+//	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextProceduresTest.array;
 
 	public class FulltextIndexCausalClusterIT
 	{
 		 private static readonly Label _label = Label.label( "LABEL" );
 		 private const string PROP = "prop";
 		 private const string PROP2 = "otherprop";
-		 // The "ec_prop" property is added because the EC indexes cannot have exactly the same entity-token/property-token sets as the non-EC indexes:
+		 // The "ec_prop" property is added because the EC indexes cannot have exactly the same IEntity-token/property-token sets as the non-EC indexes:
 		 private const string EC_PROP = "ec_prop";
 		 private static readonly RelationshipType _rel = RelationshipType.withName( "REL" );
 		 private const string NODE_INDEX = "nodeIndex";
@@ -88,11 +88,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 private static readonly string _eventuallyConsistentSetting = ", {" + FulltextIndexSettings.INDEX_CONFIG_EVENTUALLY_CONSISTENT + ": 'true'}";
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.causalclustering.ClusterRule clusterRule = new org.neo4j.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.causalclustering.ClusterRule clusterRule = new org.Neo4Net.test.causalclustering.ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 		 public ClusterRule ClusterRule = new ClusterRule().withNumberOfCoreMembers(3).withNumberOfReadReplicas(1);
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.neo4j.causalclustering.discovery.Cluster<?> cluster;
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.discovery.Cluster<?> cluster;
 		 private Cluster<object> _cluster;
 		 private long _nodeId1;
 		 private long _nodeId2;
@@ -250,31 +250,31 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyIndexContents(String index, String queryString, boolean queryNodes, long... entityIds) throws Exception
-		 private void VerifyIndexContents( string index, string queryString, bool queryNodes, params long[] entityIds )
+//ORIGINAL LINE: private void verifyIndexContents(String index, String queryString, boolean queryNodes, long... IEntityIds) throws Exception
+		 private void VerifyIndexContents( string index, string queryString, bool queryNodes, params long[] IEntityIds )
 		 {
 			  foreach ( CoreClusterMember member in _cluster.coreMembers() )
 			  {
-					VerifyIndexContents( member.Database(), index, queryString, entityIds, queryNodes );
+					VerifyIndexContents( member.Database(), index, queryString, IEntityIds, queryNodes );
 			  }
 			  foreach ( ReadReplica member in _cluster.readReplicas() )
 			  {
-					VerifyIndexContents( member.Database(), index, queryString, entityIds, queryNodes );
+					VerifyIndexContents( member.Database(), index, queryString, IEntityIds, queryNodes );
 			  }
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyIndexContents(org.neo4j.graphdb.GraphDatabaseService db, String index, String queryString, long[] entityIds, boolean queryNodes) throws Exception
-		 private void VerifyIndexContents( GraphDatabaseService db, string index, string queryString, long[] entityIds, bool queryNodes )
+//ORIGINAL LINE: private void verifyIndexContents(org.Neo4Net.graphdb.GraphDatabaseService db, String index, String queryString, long[] IEntityIds, boolean queryNodes) throws Exception
+		 private void VerifyIndexContents( IGraphDatabaseService db, string index, string queryString, long[] IEntityIds, bool queryNodes )
 		 {
-			  IList<long> expected = Arrays.stream( entityIds ).boxed().collect(Collectors.toList());
+			  IList<long> expected = Arrays.stream( IEntityIds ).boxed().collect(Collectors.toList());
 			  string queryCall = queryNodes ? QUERY_NODES : QUERY_RELS;
 			  using ( Result result = Db.execute( format( queryCall, index, queryString ) ) )
 			  {
 					ISet<long> results = new HashSet<long>();
 					while ( result.MoveNext() )
 					{
-						 results.Add( ( ( Entity ) result.Current.get( queryNodes ? NODE : RELATIONSHIP ) ).Id );
+						 results.Add( ( ( IEntity ) result.Current.get( queryNodes ? NODE : RELATIONSHIP ) ).Id );
 					}
 					string errorMessage = errorMessage( results, expected ) + " (" + db + ", leader is " + _cluster.awaitLeader() + ") query = " + queryString;
 					assertEquals( errorMessage, expected.Count, results.Count );

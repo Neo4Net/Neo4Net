@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using Neo4Net.Bolt.messaging;
 	using IgnoredMessage = Neo4Net.Bolt.v1.messaging.response.IgnoredMessage;
 
@@ -31,8 +31,8 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void encode(org.neo4j.bolt.messaging.Neo4jPack_Packer packer, org.neo4j.bolt.v1.messaging.response.IgnoredMessage message) throws java.io.IOException
-		 public override void Encode( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer, IgnoredMessage message )
+//ORIGINAL LINE: public void encode(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer, org.Neo4Net.bolt.v1.messaging.response.IgnoredMessage message) throws java.io.IOException
+		 public override void Encode( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer, IgnoredMessage message )
 		 {
 			  packer.PackStructHeader( 0, message.Signature() );
 		 }

@@ -18,6 +18,9 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+using System.Threading;
+
+
 namespace Neo4Net.Test
 {
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -41,8 +44,8 @@ namespace Neo4Net.Test
 
       private ExecutorService _commandExecutor;
 
-      //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-      protected internal readonly T StateConflict;
+      
+      protected internal readonly T _stateConflict;
 
       private volatile Thread _thread;
       private volatile ExecutionState _executionState;
@@ -131,7 +134,7 @@ namespace Neo4Net.Test
             InstanceFieldsInitialized = true;
          }
          this._name = name;
-         this.StateConflict = initialState;
+         this._stateConflict = initialState;
          this._timeout = MILLISECONDS.convert(timeout, unit);
       }
 
@@ -145,7 +148,7 @@ namespace Neo4Net.Test
             _executionState = ExecutionState.Executing;
             try
             {
-               return cmd.DoWork(StateConflict);
+               return cmd.DoWork(_stateConflict);
             }
             finally
             {
@@ -207,7 +210,7 @@ namespace Neo4Net.Test
          R DoWork(T state);
       }
 
-      public static WorkerCommand<T, R> Command<T, R>(Race.ThrowingRunnable runnable)
+      public static WorkerCommand<T, R> Command<T, R>(Race.IThrowingRunnable runnable)
       {
          return StateConflict =>
          {
@@ -253,8 +256,7 @@ namespace Neo4Net.Test
       return format("%s[%s,state=%s]", this.GetType().Name, _name, thread == null ? "dead" : thread.State);
    }
 
-   //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-   //ORIGINAL LINE: public WaitDetails waitUntilWaiting() throws java.util.concurrent.TimeoutException
+
    public virtual WaitDetails WaitUntilWaiting()
    {
       return WaitUntilWaiting(details => true);

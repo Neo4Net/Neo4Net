@@ -29,7 +29,7 @@ namespace Neo4Net.Jmx.impl
 	using StoreId = Neo4Net.Storageengine.Api.StoreId;
 
 	[Obsolete]
-	public class KernelBean : Neo4jMBean, Kernel
+	public class KernelBean : Neo4NetMBean, Kernel
 	{
 		 private readonly long _kernelStartTime;
 		 private readonly string _kernelVersion;
@@ -43,7 +43,7 @@ namespace Neo4Net.Jmx.impl
 		 private long _storeLogVersion;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: KernelBean(org.neo4j.kernel.internal.KernelData kernel, org.neo4j.kernel.impl.transaction.state.DataSourceManager dataSourceManager, ManagementSupport support) throws javax.management.NotCompliantMBeanException
+//ORIGINAL LINE: KernelBean(org.Neo4Net.kernel.internal.KernelData kernel, org.Neo4Net.kernel.impl.transaction.state.DataSourceManager dataSourceManager, ManagementSupport support) throws javax.management.NotCompliantMBeanException
 		 internal KernelBean( KernelData kernel, DataSourceManager dataSourceManager, ManagementSupport support ) : base( typeof( Kernel ), kernel, support )
 		 {
 			  dataSourceManager.AddListener( new DataSourceInfo( this ) );

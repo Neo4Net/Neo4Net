@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	internal class MergingBlockEntryReaderTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Inject protected org.neo4j.test.rule.RandomRule rnd;
+//ORIGINAL LINE: @Inject protected org.Neo4Net.test.rule.RandomRule rnd;
 		 protected internal RandomRule Rnd;
 
 		 private static readonly SimpleLongLayout _layout = SimpleLongLayout.longLayout().build();

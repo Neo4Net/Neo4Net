@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.tools.txlog.checktypes
 {
@@ -34,7 +34,7 @@ namespace Neo4Net.tools.txlog.checktypes
 	/// Type of command (<seealso cref="NodeCommand"/>, <seealso cref="PropertyCommand"/>, ...) to check during transaction log verification.
 	/// This class exists to mitigate the absence of interfaces for commands with before and after state.
 	/// It also provides an alternative equality check instead of <seealso cref="AbstractBaseRecord.equals(object)"/> that only
-	/// checks <seealso cref="AbstractBaseRecord.getId() entity id"/>.
+	/// checks <seealso cref="AbstractBaseRecord.getId() IEntity id"/>.
 	/// </summary>
 	/// @param <C> the type of command to check </param>
 	/// @param <R> the type of records that this command contains </param>

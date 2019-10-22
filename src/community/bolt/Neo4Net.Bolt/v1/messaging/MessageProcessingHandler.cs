@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	using BoltConnection = Neo4Net.Bolt.runtime.BoltConnection;
 	using BoltResponseHandler = Neo4Net.Bolt.runtime.BoltResponseHandler;
 	using BoltResult = Neo4Net.Bolt.runtime.BoltResult;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using BoltResponseMessageWriter = Neo4Net.Bolt.messaging.BoltResponseMessageWriter;
 	using FailureMessage = Neo4Net.Bolt.v1.messaging.response.FailureMessage;
 	using FatalFailureMessage = Neo4Net.Bolt.v1.messaging.response.FatalFailureMessage;
@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.v1.messaging
 	using MapValueBuilder = Neo4Net.Values.@virtual.MapValueBuilder;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
+//	import static org.Neo4Net.bolt.v1.messaging.response.IgnoredMessage.IGNORED_MESSAGE;
 
 	public class MessageProcessingHandler : BoltResponseHandler
 	{
@@ -51,7 +51,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 protected internal readonly BoltConnection Connection;
 		 protected internal readonly BoltResponseMessageWriter MessageWriter;
 
-		 private Neo4jError _error;
+		 private Neo4NetError _error;
 		 private bool _ignored;
 
 		 public MessageProcessingHandler( BoltResponseMessageWriter messageWriter, BoltConnection connection, Log logger )
@@ -62,7 +62,7 @@ namespace Neo4Net.Bolt.v1.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void onRecords(org.neo4j.bolt.runtime.BoltResult result, boolean pull) throws Exception
+//ORIGINAL LINE: public void onRecords(org.Neo4Net.bolt.runtime.BoltResult result, boolean pull) throws Exception
 		 public override void OnRecords( BoltResult result, bool pull )
 		 {
 		 }
@@ -77,7 +77,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  this._ignored = true;
 		 }
 
-		 public override void MarkFailed( Neo4jError error )
+		 public override void MarkFailed( Neo4NetError error )
 		 {
 			  this._error = error;
 		 }
@@ -125,7 +125,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  _metadata.clear();
 		 }
 
-		 private void PublishError( BoltResponseMessageWriter messageWriter, Neo4jError error )
+		 private void PublishError( BoltResponseMessageWriter messageWriter, Neo4NetError error )
 		 {
 			  try
 			  {

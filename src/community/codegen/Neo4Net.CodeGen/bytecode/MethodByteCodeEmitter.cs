@@ -28,17 +28,17 @@ namespace Neo4Net.CodeGen.ByteCode
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.byteCodeName;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.byteCodeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.desc;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.desc;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.exceptions;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.exceptions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.outerName;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.outerName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.signature;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.signature;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.codegen.ByteCodeUtils.typeName;
+//	import static org.Neo4Net.codegen.ByteCodeUtils.typeName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.objectweb.asm.Opcodes.ACC_PUBLIC;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -91,7 +91,7 @@ namespace Neo4Net.Collections.primitive.hopscotch
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.neo4j.test.randomized.RandomizedTester.ActionFactory<Sets, String> actionFactory(final java.util.Random random)
+//ORIGINAL LINE: private static org.Neo4Net.test.randomized.RandomizedTester.ActionFactory<Sets, String> actionFactory(final java.util.Random random)
 		 private static RandomizedTester.ActionFactory<Sets, string> ActionFactory( Random random )
 		 {
 			  return from => GenerateAction( random, from );

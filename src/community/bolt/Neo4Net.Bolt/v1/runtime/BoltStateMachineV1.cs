@@ -32,13 +32,13 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltStateMachineSPI = Neo4Net.Bolt.runtime.BoltStateMachineSPI;
 	using BoltStateMachineState = Neo4Net.Bolt.runtime.BoltStateMachineState;
 	using MutableConnectionState = Neo4Net.Bolt.runtime.MutableConnectionState;
-	using Neo4jError = Neo4Net.Bolt.runtime.Neo4jError;
+	using Neo4NetError = Neo4Net.Bolt.runtime.Neo4NetError;
 	using StateMachineContext = Neo4Net.Bolt.runtime.StateMachineContext;
 	using StatementProcessor = Neo4Net.Bolt.runtime.StatementProcessor;
 	using AuthenticationException = Neo4Net.Bolt.security.auth.AuthenticationException;
 	using BoltStateMachineV1Context = Neo4Net.Bolt.v1.messaging.BoltStateMachineV1Context;
 	using InterruptSignal = Neo4Net.Bolt.v1.messaging.request.InterruptSignal;
-	using AuthorizationExpiredException = Neo4Net.Graphdb.security.AuthorizationExpiredException;
+	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -83,7 +83,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.neo4j.bolt.messaging.RequestMessage message, org.neo4j.bolt.runtime.BoltResponseHandler handler) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public void process(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.BoltResponseHandler handler) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override void Process( RequestMessage message, BoltResponseHandler handler )
 		 {
 			  Before( handler );
@@ -101,7 +101,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void before(org.neo4j.bolt.runtime.BoltResponseHandler handler) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private void before(org.Neo4Net.bolt.runtime.BoltResponseHandler handler) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private void Before( BoltResponseHandler handler )
 		 {
 			  if ( ConnectionStateConflict.Terminated )
@@ -121,7 +121,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  {
 					try
 					{
-						 Neo4jError pendingError = ConnectionStateConflict.PendingError;
+						 Neo4NetError pendingError = ConnectionStateConflict.PendingError;
 						 if ( pendingError != null )
 						 {
 							  ConnectionStateConflict.markFailed( pendingError );
@@ -143,7 +143,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void nextState(org.neo4j.bolt.messaging.RequestMessage message, org.neo4j.bolt.runtime.StateMachineContext context) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: private void nextState(org.Neo4Net.bolt.messaging.RequestMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 private void NextState( RequestMessage message, StateMachineContext context )
 		 {
 			  BoltStateMachineState preState = _state;
@@ -151,12 +151,12 @@ namespace Neo4Net.Bolt.v1.runtime
 			  if ( _state == null )
 			  {
 					string msg = "Message '" + message + "' cannot be handled by a session in the " + preState.Name() + " state.";
-					Fail( Neo4jError.fatalFrom( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, msg ) );
+					Fail( Neo4NetError.fatalFrom( Neo4Net.Kernel.Api.Exceptions.Status_Request.Invalid, msg ) );
 					throw new BoltProtocolBreachFatality( msg );
 			  }
 		 }
 
-		 public override void MarkFailed( Neo4jError error )
+		 public override void MarkFailed( Neo4NetError error )
 		 {
 			  Fail( error );
 			  _state = _failedState;
@@ -189,15 +189,15 @@ namespace Neo4Net.Bolt.v1.runtime
 		 /// while releasing the related transactional resources.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateTransaction() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void validateTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 public override void ValidateTransaction()
 		 {
 			  StatementProcessor().validateTransaction();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handleExternalFailure(org.neo4j.bolt.runtime.Neo4jError error, org.neo4j.bolt.runtime.BoltResponseHandler handler) throws org.neo4j.bolt.runtime.BoltConnectionFatality
-		 public override void HandleExternalFailure( Neo4jError error, BoltResponseHandler handler )
+//ORIGINAL LINE: public void handleExternalFailure(org.Neo4Net.bolt.runtime.Neo4NetError error, org.Neo4Net.bolt.runtime.BoltResponseHandler handler) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
+		 public override void HandleExternalFailure( Neo4NetError error, BoltResponseHandler handler )
 		 {
 			  Before( handler );
 			  try
@@ -267,7 +267,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean reset() throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public boolean reset() throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override bool Reset()
 		 {
 			  try
@@ -283,7 +283,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void handleFailure(Throwable cause, boolean fatal) throws org.neo4j.bolt.runtime.BoltConnectionFatality
+//ORIGINAL LINE: public void handleFailure(Throwable cause, boolean fatal) throws org.Neo4Net.bolt.runtime.BoltConnectionFatality
 		 public override void HandleFailure( Exception cause, bool fatal )
 		 {
 			  if ( ExceptionUtils.indexOfType( cause, typeof( BoltConnectionFatality ) ) != -1 )
@@ -291,7 +291,7 @@ namespace Neo4Net.Bolt.v1.runtime
 					fatal = true;
 			  }
 
-			  Neo4jError error = fatal ? Neo4jError.fatalFrom( cause ) : Neo4jError.from( cause );
+			  Neo4NetError error = fatal ? Neo4NetError.fatalFrom( cause ) : Neo4NetError.from( cause );
 			  Fail( error );
 
 			  if ( error.Fatal )
@@ -324,16 +324,16 @@ namespace Neo4Net.Bolt.v1.runtime
 			  return ConnectionStateConflict;
 		 }
 
-		 private void Fail( Neo4jError neo4jError )
+		 private void Fail( Neo4NetError Neo4NetError )
 		 {
-			  _spi.reportError( neo4jError );
+			  _spi.reportError( Neo4NetError );
 			  if ( _state == _failedState )
 			  {
 					ConnectionStateConflict.markIgnored();
 			  }
 			  else
 			  {
-					ConnectionStateConflict.markFailed( neo4jError );
+					ConnectionStateConflict.markFailed( Neo4NetError );
 			  }
 		 }
 

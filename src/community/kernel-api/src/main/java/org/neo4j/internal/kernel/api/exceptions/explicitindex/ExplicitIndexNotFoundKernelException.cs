@@ -23,7 +23,7 @@ namespace Neo4Net.Internal.Kernel.Api.exceptions.explicitindex
 
 	public class ExplicitIndexNotFoundKernelException : KernelException
 	{
-		 public ExplicitIndexNotFoundKernelException( string message, params object[] parameters ) : base( org.neo4j.kernel.api.exceptions.Status_LegacyIndex.LegacyIndexNotFound, message, parameters )
+		 public ExplicitIndexNotFoundKernelException( string message, params object[] parameters ) : base( org.Neo4Net.kernel.api.exceptions.Status_LegacyIndex.LegacyIndexNotFound, message, parameters )
 		 {
 		 }
 	}

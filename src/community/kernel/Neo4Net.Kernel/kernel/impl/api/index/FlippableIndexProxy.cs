@@ -24,7 +24,7 @@ using System.Threading;
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
 	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// we don't care about waiting threads, only about whether the exclusive lock is held or not.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void force(org.neo4j.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
+//ORIGINAL LINE: public void force(org.Neo4Net.io.pagecache.IOLimiter ioLimiter) throws java.io.IOException
 		 public override void Force( IOLimiter ioLimiter )
 		 {
 			  Barge( @lock.readLock() ); // see javadoc of this method (above) for rationale on why we use barge(...) here
@@ -255,7 +255,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.storageengine.api.schema.IndexReader newReader() throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader newReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader NewReader()
 		 {
 			  @lock.readLock().@lock();
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean awaitStoreScanCompleted(long time, java.util.concurrent.TimeUnit unit) throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException
+//ORIGINAL LINE: public boolean awaitStoreScanCompleted(long time, java.util.concurrent.TimeUnit unit) throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException
 		 public override bool AwaitStoreScanCompleted( long time, TimeUnit unit )
 		 {
 			  IndexProxy proxy;
@@ -295,7 +295,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void activate() throws org.neo4j.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: public void activate() throws org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 public override void Activate()
 		 {
 			  // use write lock, since activate() might call flip*() which acquires a write lock itself.
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validate() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.neo4j.kernel.api.exceptions.schema.UniquePropertyValueValidationException
+//ORIGINAL LINE: public void validate() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException
 		 public override void Validate()
 		 {
 			  @lock.readLock().@lock();
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.graphdb.ResourceIterator<java.io.File> snapshotFiles() throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<java.io.File> snapshotFiles() throws java.io.IOException
 		 public override ResourceIterator<File> SnapshotFiles()
 		 {
 			  @lock.readLock().@lock();
@@ -430,7 +430,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void flip(java.util.concurrent.Callable<bool> actionDuringFlip, FailedIndexProxyFactory failureDelegate) throws org.neo4j.kernel.api.exceptions.index.FlipFailedKernelException
+//ORIGINAL LINE: public void flip(java.util.concurrent.Callable<bool> actionDuringFlip, FailedIndexProxyFactory failureDelegate) throws org.Neo4Net.kernel.api.exceptions.index.FlipFailedKernelException
 		 public virtual void Flip( Callable<bool> actionDuringFlip, FailedIndexProxyFactory failureDelegate )
 		 {
 			  @lock.writeLock().@lock();
@@ -466,7 +466,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertOpen() throws org.neo4j.kernel.api.exceptions.index.IndexProxyAlreadyClosedKernelException
+//ORIGINAL LINE: private void assertOpen() throws org.Neo4Net.kernel.api.exceptions.index.IndexProxyAlreadyClosedKernelException
 		 private void AssertOpen()
 		 {
 			  if ( _closed )
@@ -476,7 +476,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor accessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor accessor )
 		 {
 			  @lock.readLock().@lock();
@@ -501,7 +501,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void Close()
 			  {
 					try

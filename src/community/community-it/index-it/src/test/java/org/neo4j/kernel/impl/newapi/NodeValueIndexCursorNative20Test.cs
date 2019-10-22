@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 
 	public class NodeValueIndexCursorNative20Test : AbstractNodeValueIndexCursorTest
 	{

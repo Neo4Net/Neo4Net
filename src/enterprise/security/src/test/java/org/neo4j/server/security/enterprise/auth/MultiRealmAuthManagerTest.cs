@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Server.security.enterprise.auth
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 
 	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
 	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
@@ -82,19 +82,19 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Strings.escape;
+//	import static org.Neo4Net.helpers.Strings.escape;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.logging.AssertableLogProvider.inLog;
+//	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.clearedPasswordWithSameLenghtAs;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.clearedPasswordWithSameLenghtAs;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.BasicAuthManagerTest.password;
+//	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.security.auth.SecurityTestUtils.authToken;
+//	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.assertion.Assert.assertException;
+//	import static org.Neo4Net.test.assertion.Assert.assertException;
 
 	public class MultiRealmAuthManagerTest : InitialUserTest
 	{
@@ -162,33 +162,33 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldMakeNeo4jUserAdminIfNoRolesFileButManyUsers() throws Throwable
+//ORIGINAL LINE: @Test public void shouldMakeNeo4NetUserAdminIfNoRolesFileButManyUsers() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShouldMakeNeo4jUserAdminIfNoRolesFileButManyUsers()
+		 public virtual void ShouldMakeNeo4NetUserAdminIfNoRolesFileButManyUsers()
 		 {
 			  // Given
 			  Users.create( NewUser( "jake", "abc123", false ) );
-			  Users.create( NewUser( "neo4j", "neo4j", false ) );
+			  Users.create( NewUser( "Neo4Net", "Neo4Net", false ) );
 
 			  // When
 			  _manager.start();
 
 			  // Then
-			  assertThat( _manager.UserManager.getRoleNamesForUser( "neo4j" ), contains( PredefinedRoles.ADMIN ) );
+			  assertThat( _manager.UserManager.getRoleNamesForUser( "Neo4Net" ), contains( PredefinedRoles.ADMIN ) );
 			  assertThat( _manager.UserManager.getRoleNamesForUser( "jake" ).Count, equalTo( 0 ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailIfNoRolesFileButManyUsersAndNoDefaultAdminOrNeo4j() throws Throwable
+//ORIGINAL LINE: @Test public void shouldFailIfNoRolesFileButManyUsersAndNoDefaultAdminOrNeo4Net() throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public virtual void ShouldFailIfNoRolesFileButManyUsersAndNoDefaultAdminOrNeo4j()
+		 public virtual void ShouldFailIfNoRolesFileButManyUsersAndNoDefaultAdminOrNeo4Net()
 		 {
 			  // Given
 			  Users.create( NewUser( "jake", "abc123", false ) );
 			  Users.create( NewUser( "jane", "123abc", false ) );
 
 			  Expect.expect( typeof( InvalidArgumentsException ) );
-			  Expect.expectMessage( "No roles defined, and cannot determine which user should be admin. " + "Please use `neo4j-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select an admin." );
+			  Expect.expectMessage( "No roles defined, and cannot determine which user should be admin. " + "Please use `Neo4Net-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select an admin." );
 
 			  _manager.start();
 		 }
@@ -208,7 +208,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  Users.create( NewUser( "jane", "123abc", false ) );
 
 			  Expect.expect( typeof( InvalidArgumentsException ) );
-			  Expect.expectMessage( "No roles defined, and default admin user 'foo' does not exist. " + "Please use `neo4j-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
+			  Expect.expectMessage( "No roles defined, and default admin user 'foo' does not exist. " + "Please use `Neo4Net-admin " + SetDefaultAdminCommand.COMMAND_NAME + "` to select a valid admin." );
 
 			  _manager.start();
 		 }
@@ -296,13 +296,13 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  _manager.start();
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "supercool", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "neo4j")), typeof(InvalidAuthTokenException), "Unsupported authentication token: { scheme='supercool', principal='neo4j' }" );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "supercool", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token: { scheme='supercool', principal='Neo4Net' }" );
 
 			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "none")), typeof(InvalidAuthTokenException), "Unsupported authentication token, scheme='none' only allowed when auth is disabled: { scheme='none' }" );
 
 			  assertException( () => _manager.login(map("key", "value")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `scheme`: { key='value' }" );
 
-			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "neo4j")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `credentials`: { scheme='basic', principal='neo4j' }" );
+			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.api.security.AuthToken_Fields.PRINCIPAL, "Neo4Net")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `credentials`: { scheme='basic', principal='Neo4Net' }" );
 
 			  assertException( () => _manager.login(map(Neo4Net.Kernel.api.security.AuthToken_Fields.SCHEME_KEY, "basic", Neo4Net.Kernel.api.security.AuthToken_Fields.CREDENTIALS, "very-secret")), typeof(InvalidAuthTokenException), "Unsupported authentication token, missing key `principal`: { scheme='basic', credentials='******' }" );
 		 }
@@ -366,11 +366,11 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = newUser("jake", "abc123", true);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = newUser("jake", "abc123", true);
 			  User user = NewUser( "jake", "abc123", true );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user2 = newUser("neo4j", "321cba", true);
-			  User user2 = NewUser( "neo4j", "321cba", true );
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user2 = newUser("Neo4Net", "321cba", true);
+			  User user2 = NewUser( "Neo4Net", "321cba", true );
 			  Users.create( user );
 			  Users.create( user2 );
 			  _manager.start();
@@ -380,7 +380,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 			  // Then
 			  assertNull( Users.getUserByName( "jake" ) );
-			  assertNotNull( Users.getUserByName( "neo4j" ) );
+			  assertNotNull( Users.getUserByName( "Neo4Net" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -390,7 +390,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = newUser("jake", "abc123", true);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = newUser("jake", "abc123", true);
 			  User user = NewUser( "jake", "abc123", true );
 			  Users.create( user );
 			  _manager.start();
@@ -409,7 +409,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = newUser("jake", "abc123", true);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = newUser("jake", "abc123", true);
 			  User user = NewUser( "jake", "abc123", true );
 			  Users.create( user );
 			  _manager.start();
@@ -450,7 +450,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = newUser("jake", "abc123", false);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = newUser("jake", "abc123", false);
 			  User user = NewUser( "jake", "abc123", false );
 			  Users.create( user );
 			  _manager.start();
@@ -472,7 +472,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = newUser("jake", "abc123", false);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = newUser("jake", "abc123", false);
 			  User user = NewUser( "jake", "abc123", false );
 			  Users.create( user );
 			  _manager.start();
@@ -617,15 +617,15 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  // Given
 			  _manager.start();
-			  SetMockAuthenticationStrategyResult( "neo4j", "neo4j", AuthenticationResult.SUCCESS );
+			  SetMockAuthenticationStrategyResult( "Neo4Net", "Neo4Net", AuthenticationResult.SUCCESS );
 
 			  // When
-			  SecurityContext securityContext = _manager.login( authToken( "neo4j", "neo4j" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );
-			  _userManager.setUserPassword( "neo4j", password( "1234" ), false );
+			  SecurityContext securityContext = _manager.login( authToken( "Neo4Net", "Neo4Net" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );
+			  _userManager.setUserPassword( "Neo4Net", password( "1234" ), false );
 			  securityContext.Subject().logout();
 
-			  SetMockAuthenticationStrategyResult( "neo4j", "1234", AuthenticationResult.SUCCESS );
-			  securityContext = _manager.login( authToken( "neo4j", "1234" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );
+			  SetMockAuthenticationStrategyResult( "Neo4Net", "1234", AuthenticationResult.SUCCESS );
+			  securityContext = _manager.login( authToken( "Neo4Net", "1234" ) ).authorize( _token, GraphDatabaseSettings.DEFAULT_DATABASE_NAME );
 
 			  // Then
 			  assertTrue( securityContext.Mode().allowsReads() );
@@ -899,7 +899,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 private void SetMockAuthenticationStrategyResult( string username, string password, AuthenticationResult result )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.security.User user = users.getUserByName(username);
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.security.User user = users.getUserByName(username);
 			  User user = Users.getUserByName( username );
 			  when( _authStrategy.authenticate( user, password( password ) ) ).thenReturn( result );
 		 }

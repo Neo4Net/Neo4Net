@@ -25,7 +25,7 @@ namespace Neo4Net.Helpers
 {
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.asArray;
+//	import static org.Neo4Net.helpers.collection.Iterables.asArray;
 
 	[Obsolete]
 	public class RunCarefully

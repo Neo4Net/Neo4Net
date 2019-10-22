@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Format.date;
+//	import static org.Neo4Net.helpers.Format.date;
 
 	/// <summary>
 	/// A chain of transactions to apply. Transactions form a linked list, each pointing to the <seealso cref="next()"/>
@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean accept(org.neo4j.helpers.collection.Visitor<org.neo4j.storageengine.api.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
 		 public override bool Accept( Visitor<StorageCommand, IOException> visitor )
 		 {
 			  return _transactionRepresentation.accept( visitor );
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private string CountCommands()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Local classes are not converted by Java to C# Converter:
-//			  class Counter implements org.neo4j.helpers.collection.Visitor<org.neo4j.storageengine.api.StorageCommand, java.io.IOException>
+//			  class Counter implements org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand, java.io.IOException>
 	//		  {
 	//				private int count;
 	//

@@ -33,9 +33,9 @@ namespace Neo4Net.Test
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
 
 	/// <summary>
 	/// Utility for reading and filtering logical logs as well as tx logs.
@@ -87,7 +87,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.io.File[] filterNeostoreLogicalLog(org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles, org.neo4j.io.fs.FileSystemAbstraction fileSystem, LogHook<org.neo4j.kernel.impl.transaction.log.entry.LogEntry> filter) throws java.io.IOException
+//ORIGINAL LINE: public static java.io.File[] filterNeostoreLogicalLog(org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, LogHook<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> filter) throws java.io.IOException
 		 public static File[] FilterNeostoreLogicalLog( LogFiles logFiles, FileSystemAbstraction fileSystem, LogHook<LogEntry> filter )
 		 {
 			  File[] files = logFiles.LogFilesConflict();
@@ -100,7 +100,7 @@ namespace Neo4Net.Test
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void filterTransactionLogFile(org.neo4j.io.fs.FileSystemAbstraction fileSystem, java.io.File file, final LogHook<org.neo4j.kernel.impl.transaction.log.entry.LogEntry> filter) throws java.io.IOException
+//ORIGINAL LINE: static void filterTransactionLogFile(org.Neo4Net.io.fs.FileSystemAbstraction fileSystem, java.io.File file, final LogHook<org.Neo4Net.kernel.impl.transaction.log.entry.LogEntry> filter) throws java.io.IOException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal static void FilterTransactionLogFile( FileSystemAbstraction fileSystem, File file, LogHook<LogEntry> filter )
 		 {

@@ -33,13 +33,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verify;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.ControlledStep.stepWithStats;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.ControlledStep.stepWithStats;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.staging.Step_Fields.ORDER_SEND_DOWNSTREAM;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.stats.Keys.avg_processing_time;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.stats.Keys.avg_processing_time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.stats.Keys.done_batches;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.stats.Keys.done_batches;
 
 	public class DynamicProcessorAssignerTest
 	{
@@ -206,7 +206,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.neo4j.unsafe.impl.batchimport.Configuration config(final int movingAverage, int processors)
+//ORIGINAL LINE: private org.Neo4Net.unsafe.impl.batchimport.Configuration config(final int movingAverage, int processors)
 		 private Configuration Config( int movingAverage, int processors )
 		 {
 			  return new ConfigurationAnonymousInnerClass( this, movingAverage, processors );
@@ -238,7 +238,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private StageExecution executionOf(org.neo4j.unsafe.impl.batchimport.Configuration config, Step<?>... steps)
+//ORIGINAL LINE: private StageExecution executionOf(org.Neo4Net.unsafe.impl.batchimport.Configuration config, Step<?>... steps)
 		 private StageExecution ExecutionOf( Configuration config, params Step<object>[] steps )
 		 {
 			  return new StageExecution( "Test", null, config, Arrays.asList( steps ), ORDER_SEND_DOWNSTREAM );

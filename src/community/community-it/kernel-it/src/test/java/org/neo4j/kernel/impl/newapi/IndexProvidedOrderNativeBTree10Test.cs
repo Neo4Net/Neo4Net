@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
 	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
@@ -44,19 +44,19 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.ValueTuple.COMPARATOR;
+//	import static org.Neo4Net.values.storable.ValueTuple.COMPARATOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends org.neo4j.internal.kernel.api.KernelAPIReadTestBase<ReadTestSupport>
+//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends org.Neo4Net.internal.kernel.api.KernelAPIReadTestBase<ReadTestSupport>
 	public class IndexProvidedOrderNativeBTree10Test : KernelAPIReadTestBase<ReadTestSupport>
 	{
 		 private static int _nNodes = 10000;
 		 private static int _nIterations = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.RandomRule randomRule = new org.neo4j.test.rule.RandomRule();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.RandomRule randomRule = new org.Neo4Net.test.rule.RandomRule();
 		 public RandomRule RandomRule = new RandomRule();
 
 		 private SortedSet<NodeValueTuple> _singlePropValues = new SortedSet<NodeValueTuple>( COMPARATOR );
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  return readTestSupport;
 		 }
 
-		 public override void CreateTestGraph( GraphDatabaseService graphDb )
+		 public override void CreateTestGraph( IGraphDatabaseService graphDb )
 		 {
 			  using ( Transaction tx = graphDb.BeginTx() )
 			  {
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideResultInOrderIfCapable()
 		 {
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 						 bool fromInclusive = randomValues.NextBoolean();
 						 bool toInclusive = randomValues.NextBoolean();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.neo4j.internal.kernel.api.IndexQuery.RangePredicate<?> range = org.neo4j.internal.kernel.api.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
+//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> range = org.Neo4Net.internal.kernel.api.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
 						 IndexQuery.RangePredicate<object> range = IndexQuery.range( prop, from.OnlyValue, fromInclusive, to.OnlyValue, toInclusive );
 
 						 using ( NodeValueIndexCursor node = Cursors.allocateNodeValueIndexCursor() )

@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Collections.Generic;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Test.ha
 {
@@ -33,9 +33,9 @@ namespace Neo4Net.Test.ha
 
 
 	using Cluster = Neo4Net.cluster.client.Cluster;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Neo4Net.Graphdb.config;
-	using HighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.HighlyAvailableGraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Neo4Net.GraphDb.config;
+	using HighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.HighlyAvailableGraphDatabaseFactory;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using Builder = Neo4Net.Kernel.impl.ha.ClusterManager.Builder;
@@ -46,17 +46,17 @@ namespace Neo4Net.Test.ha
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.ClusterSettings.default_timeout;
+//	import static org.Neo4Net.cluster.ClusterSettings.default_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.cluster.ClusterSettings.join_timeout;
+//	import static org.Neo4Net.cluster.ClusterSettings.join_timeout;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.pagecache_memory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
+//	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.store_internal_log_level;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.ha.HaSettings.tx_push_factor;
+//	import static org.Neo4Net.kernel.ha.HaSettings.tx_push_factor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 
 	/// <summary>
 	/// Starts, manages and in the end shuts down an HA cluster as a JUnit {@code Rule} or <seealso cref="ClassRule"/>.
@@ -147,7 +147,7 @@ namespace Neo4Net.Test.ha
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs @Override public final ClusterRule withAvailabilityChecks(System.Predicate<org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster>... checks)
+//ORIGINAL LINE: @SafeVarargs @Override public final ClusterRule withAvailabilityChecks(System.Predicate<org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster>... checks)
 		 public override ClusterRule WithAvailabilityChecks( params System.Predicate<ClusterManager.ManagedCluster>[] checks )
 		 {
 			  return Set( _clusterManagerBuilder.withAvailabilityChecks( checks ) );

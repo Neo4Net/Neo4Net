@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.currentThread;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.FutureAdapter.latchGuardedValue;
+//	import static org.Neo4Net.helpers.FutureAdapter.latchGuardedValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.BlockBasedIndexPopulator.parseBlockSize;
+//	import static org.Neo4Net.kernel.impl.index.schema.BlockBasedIndexPopulator.parseBlockSize;
 
 	/// <summary>
 	/// A background job for initially populating one or more index over existing data in the database.
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void indexAllEntities() throws org.neo4j.kernel.api.exceptions.index.IndexPopulationFailedKernelException
+//ORIGINAL LINE: private void indexAllEntities() throws org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException
 		 private void IndexAllEntities()
 		 {
 			  _storeScan = _multiPopulator.indexAllEntities();

@@ -41,7 +41,7 @@ namespace Neo4Net.Server.exception
 			  {
 					return new UpgradeDisallowedStartupException( ( UpgradeNotAllowedException ) rootCause );
 			  }
-			  return new ServerStartupException( format( "Starting Neo4j failed: %s", cause.Message ), cause );
+			  return new ServerStartupException( format( "Starting Neo4Net failed: %s", cause.Message ), cause );
 		 }
 	}
 

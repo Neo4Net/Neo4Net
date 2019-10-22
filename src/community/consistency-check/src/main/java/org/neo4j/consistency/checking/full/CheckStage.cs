@@ -22,9 +22,9 @@
 namespace Neo4Net.Consistency.checking.full
 {
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
+//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_Fields.ID_SLOT_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.checking.cache.CacheSlots_Fields.LABELS_SLOT_SIZE;
+//	import static org.Neo4Net.consistency.checking.cache.CacheSlots_Fields.LABELS_SLOT_SIZE;
 
 	/// <summary>
 	/// The different stages a consistency check goes through. A stage typically focuses one one store.

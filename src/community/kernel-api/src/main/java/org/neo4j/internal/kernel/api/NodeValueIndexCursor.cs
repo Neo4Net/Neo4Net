@@ -22,7 +22,7 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 
 	/// <summary>
 	/// Cursor for scanning the property values of nodes in a schema index.

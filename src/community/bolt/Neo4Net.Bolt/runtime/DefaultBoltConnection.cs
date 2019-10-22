@@ -231,15 +231,15 @@ namespace Neo4Net.Bolt.runtime
 			  if ( !WillClose() )
 			  {
 					string message;
-					Neo4jError error;
+					Neo4NetError error;
 					if ( ExceptionUtils.hasCause( t, typeof( RejectedExecutionException ) ) )
 					{
-						 error = Neo4jError.From( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable.code().description() );
+						 error = Neo4NetError.From( Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable, Neo4Net.Kernel.Api.Exceptions.Status_Request.NoThreadsAvailable.code().description() );
 						 message = string.Format( "Unable to schedule bolt session '{0}' for execution since there are no available threads to " + "serve it at the moment. You can retry at a later time or consider increasing max thread pool size for bolt connector(s).", Id() );
 					}
 					else
 					{
-						 error = Neo4jError.FatalFrom( t );
+						 error = Neo4NetError.FatalFrom( t );
 						 message = string.Format( "Unexpected error during scheduling of bolt session '{0}'.", Id() );
 					}
 

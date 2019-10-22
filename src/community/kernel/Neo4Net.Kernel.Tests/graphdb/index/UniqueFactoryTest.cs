@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.index
+namespace Neo4Net.GraphDb.index
 {
 	using Test = org.junit.jupiter.api.Test;
 
 
-	using Neo4Net.Graphdb.index.UniqueFactory;
+	using Neo4Net.GraphDb.index.UniqueFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -52,15 +52,15 @@ namespace Neo4Net.Graphdb.index
 		 internal virtual void ShouldUseConcurrentlyCreatedNode()
 		 {
 			  // given
-			  GraphDatabaseService graphdb = mock( typeof( GraphDatabaseService ) );
+			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.neo4j.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.neo4j.graphdb.Node> getHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
 			  IndexHits<Node> getHits = mock( typeof( IndexHits ) );
 			  when( index.get( "key1", "value1" ) ).thenReturn( getHits );
 			  Node createdNode = mock( typeof( Node ) );
@@ -85,7 +85,7 @@ namespace Neo4Net.Graphdb.index
 		 {
 			 private readonly UniqueFactoryTest _outerInstance;
 
-			 public UniqueNodeFactoryAnonymousInnerClass( UniqueFactoryTest outerInstance, Neo4Net.Graphdb.index.Index<Node> index ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 			 }
@@ -101,15 +101,15 @@ namespace Neo4Net.Graphdb.index
 		 internal virtual void ShouldCreateNodeAndIndexItIfMissing()
 		 {
 			  // given
-			  GraphDatabaseService graphdb = mock( typeof( GraphDatabaseService ) );
+			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.neo4j.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.neo4j.graphdb.Node> indexHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
 			  IndexHits<Node> indexHits = mock( typeof( IndexHits ) );
 
 			  when( index.get( "key1", "value1" ) ).thenReturn( indexHits );
@@ -138,7 +138,7 @@ namespace Neo4Net.Graphdb.index
 
 			 private AtomicBoolean _initializeCalled;
 
-			 public UniqueNodeFactoryAnonymousInnerClass2( UniqueFactoryTest outerInstance, Neo4Net.Graphdb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass2( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._initializeCalled = initializeCalled;
@@ -156,15 +156,15 @@ namespace Neo4Net.Graphdb.index
 		 internal virtual void ShouldCreateNodeWithOutcomeAndIndexItIfMissing()
 		 {
 			  // given
-			  GraphDatabaseService graphdb = mock( typeof( GraphDatabaseService ) );
+			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.neo4j.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  Transaction tx = mock( typeof( Transaction ) );
 			  when( graphdb.BeginTx() ).thenReturn(tx);
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.neo4j.graphdb.Node> indexHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> indexHits = mock(IndexHits.class);
 			  IndexHits<Node> indexHits = mock( typeof( IndexHits ) );
 
 			  when( index.get( "key1", "value1" ) ).thenReturn( indexHits );
@@ -194,7 +194,7 @@ namespace Neo4Net.Graphdb.index
 
 			 private AtomicBoolean _initializeCalled;
 
-			 public UniqueNodeFactoryAnonymousInnerClass3( UniqueFactoryTest outerInstance, Neo4Net.Graphdb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass3( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index, AtomicBoolean initializeCalled ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._initializeCalled = initializeCalled;
@@ -211,13 +211,13 @@ namespace Neo4Net.Graphdb.index
 //ORIGINAL LINE: @Test void shouldNotTouchTransactionsIfAlreadyInIndex()
 		 internal virtual void ShouldNotTouchTransactionsIfAlreadyInIndex()
 		 {
-			  GraphDatabaseService graphdb = mock( typeof( GraphDatabaseService ) );
+			  IGraphDatabaseService graphdb = mock( typeof( IGraphDatabaseService ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.neo4j.graphdb.Node> index = mock(Index.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Index<org.Neo4Net.graphdb.Node> index = mock(Index.class);
 			  Index<Node> index = mock( typeof( Index ) );
 			  when( index.GraphDatabase ).thenReturn( graphdb );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.neo4j.graphdb.Node> getHits = mock(IndexHits.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") IndexHits<org.Neo4Net.graphdb.Node> getHits = mock(IndexHits.class);
 			  IndexHits<Node> getHits = mock( typeof( IndexHits ) );
 			  when( index.get( "key1", "value1" ) ).thenReturn( getHits );
 			  Node indexedNode = mock( typeof( Node ) );
@@ -237,7 +237,7 @@ namespace Neo4Net.Graphdb.index
 		 {
 			 private readonly UniqueFactoryTest _outerInstance;
 
-			 public UniqueNodeFactoryAnonymousInnerClass4( UniqueFactoryTest outerInstance, Neo4Net.Graphdb.index.Index<Node> index ) : base( index )
+			 public UniqueNodeFactoryAnonymousInnerClass4( UniqueFactoryTest outerInstance, Neo4Net.GraphDb.index.Index<Node> index ) : base( index )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

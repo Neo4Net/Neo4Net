@@ -16,8 +16,6 @@
 // To make them public define you have to define the conditional compilation symbol CONCURRENCY_UTILS_PUBLIC in your project properties.
 //
 
-#pragma warning disable 1591
-
 // ReSharper disable All
 
 using System.Threading;
@@ -31,11 +29,7 @@ namespace Neo4Net.Concurrency
    /// <remarks>
    /// The AtomicLong is a struct not a class and members of this type should *not* be declared readonly or changes will not be reflected in the member instance.
    /// </remarks>
-   //#if CONCURRENCY_UTILS_PUBLIC
-   //public
-   //#else
-   //internal
-   //#endif
+
    public struct AtomicLong
    {
       private long value;

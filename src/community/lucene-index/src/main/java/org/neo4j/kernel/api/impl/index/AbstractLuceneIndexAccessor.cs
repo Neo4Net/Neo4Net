@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using Document = org.apache.lucene.document.Document;
 
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -128,9 +128,9 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 			  }
 		 }
 
-		 public virtual BoundedIterable<long> NewAllEntriesReader( System.Func<Document, long> entityIdReader )
+		 public virtual BoundedIterable<long> NewAllEntriesReader( System.Func<Document, long> IEntityIdReader )
 		 {
-			  return new LuceneAllEntriesIndexAccessorReader( LuceneIndex.allDocumentsReader(), entityIdReader );
+			  return new LuceneAllEntriesIndexAccessorReader( LuceneIndex.allDocumentsReader(), IEntityIdReader );
 		 }
 
 		 public override ResourceIterator<File> SnapshotFiles()
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void verifyDeferredConstraints(org.neo4j.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: public abstract void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 public override abstract void VerifyDeferredConstraints( NodePropertyAccessor propertyAccessor );
 
 		 public virtual bool Dirty

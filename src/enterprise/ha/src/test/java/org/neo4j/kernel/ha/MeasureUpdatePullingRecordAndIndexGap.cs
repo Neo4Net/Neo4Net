@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Kernel.ha
 {
@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.ha
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using ManagedCluster = Neo4Net.Kernel.impl.ha.ClusterManager.ManagedCluster;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha
 		 private readonly int _numberOfIndexes = 10;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "0");
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule().withSharedSetting(HaSettings.tx_push_factor, "0");
 		 public readonly ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.TxPushFactor, "0");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startMeasuringTheGap(final java.util.concurrent.atomic.AtomicInteger good, final java.util.concurrent.atomic.AtomicInteger bad, final java.util.concurrent.atomic.AtomicInteger ugly, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final org.neo4j.kernel.internal.GraphDatabaseAPI db)
+//ORIGINAL LINE: private void startMeasuringTheGap(final java.util.concurrent.atomic.AtomicInteger good, final java.util.concurrent.atomic.AtomicInteger bad, final java.util.concurrent.atomic.AtomicInteger ugly, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final org.Neo4Net.kernel.internal.GraphDatabaseAPI db)
 		 private void StartMeasuringTheGap( AtomicInteger good, AtomicInteger bad, AtomicInteger ugly, AtomicBoolean halter, AtomicLong[] highIdNodes, GraphDatabaseAPI db )
 		 {
 			  (new Thread(() =>
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.ha
 
 		 private void AwaitIndexes( ManagedCluster cluster )
 		 {
-			  foreach ( GraphDatabaseService db in cluster.AllMembers )
+			  foreach ( IGraphDatabaseService db in cluster.AllMembers )
 			  {
 					using ( Transaction tx = Db.beginTx() )
 					{
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startCatchingUp(final org.neo4j.kernel.internal.GraphDatabaseAPI db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.CountDownLatch endLatch)
+//ORIGINAL LINE: private void startCatchingUp(final org.Neo4Net.kernel.internal.GraphDatabaseAPI db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.CountDownLatch endLatch)
 		 private void StartCatchingUp( GraphDatabaseAPI db, AtomicBoolean halter, System.Threading.CountdownEvent endLatch )
 		 {
 			  (new Thread(() =>
@@ -209,7 +209,7 @@ namespace Neo4Net.Kernel.ha
 			  })).Start();
 		 }
 
-		 private void CreateIndexes( GraphDatabaseService db )
+		 private void CreateIndexes( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -232,8 +232,8 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void startLoadOn(final org.neo4j.graphdb.GraphDatabaseService db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final java.util.concurrent.CountDownLatch endLatch)
-		 private void StartLoadOn( GraphDatabaseService db, AtomicBoolean halter, AtomicLong[] highIdNodes, System.Threading.CountdownEvent endLatch )
+//ORIGINAL LINE: private void startLoadOn(final org.Neo4Net.graphdb.GraphDatabaseService db, final java.util.concurrent.atomic.AtomicBoolean halter, final java.util.concurrent.atomic.AtomicLong[] highIdNodes, final java.util.concurrent.CountDownLatch endLatch)
+		 private void StartLoadOn( IGraphDatabaseService db, AtomicBoolean halter, AtomicLong[] highIdNodes, System.Threading.CountdownEvent endLatch )
 		 {
 			  for ( int i = 0; i < _numberOfIndexes; i++ )
 			  {

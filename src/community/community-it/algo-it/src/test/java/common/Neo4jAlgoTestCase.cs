@@ -28,12 +28,12 @@ namespace Common
 	using BeforeClass = org.junit.BeforeClass;
 
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Path = Neo4Net.Graphdb.Path;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Neo4Net.Graphdb;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Path = Neo4Net.GraphDb.Path;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Neo4Net.GraphDb;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
@@ -49,9 +49,9 @@ namespace Common
 	/// and a transaction.
 	/// @author Patrik Larsson
 	/// </summary>
-	public abstract class Neo4jAlgoTestCase
+	public abstract class Neo4NetAlgoTestCase
 	{
-		 protected internal static GraphDatabaseService GraphDb;
+		 protected internal static IGraphDatabaseService GraphDb;
 		 protected internal static SimpleGraphBuilder Graph;
 		 protected internal Transaction Tx;
 
@@ -156,11 +156,11 @@ namespace Common
 			  return builder.ToString();
 		 }
 
-		 public virtual void AssertPaths<T1>( IEnumerable<T1> paths, IList<string> pathDefs ) where T1 : Neo4Net.Graphdb.Path
+		 public virtual void AssertPaths<T1>( IEnumerable<T1> paths, IList<string> pathDefs ) where T1 : Neo4Net.GraphDb.Path
 		 {
 			  IList<string> unexpectedDefs = new List<string>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: try (org.neo4j.graphdb.ResourceIterator<? extends org.neo4j.graphdb.Path> iterator = org.neo4j.helpers.collection.Iterators.asResourceIterator(paths.iterator()))
+//ORIGINAL LINE: try (org.Neo4Net.graphdb.ResourceIterator<? extends org.Neo4Net.graphdb.Path> iterator = org.Neo4Net.helpers.collection.Iterators.asResourceIterator(paths.iterator()))
 			  using ( ResourceIterator<Path> iterator = Iterators.asResourceIterator( paths.GetEnumerator() ) )
 			  {
 					while ( iterator.MoveNext() )
@@ -183,12 +183,12 @@ namespace Common
 			  assertTrue( "These were expected, but not found: " + pathDefs.ToString(), pathDefs.Count == 0 );
 		 }
 
-		 public virtual void AssertPaths<T1>( IEnumerable<T1> paths, params string[] pathDefinitions ) where T1 : Neo4Net.Graphdb.Path
+		 public virtual void AssertPaths<T1>( IEnumerable<T1> paths, params string[] pathDefinitions ) where T1 : Neo4Net.GraphDb.Path
 		 {
 			  AssertPaths( paths, new List<string>( Arrays.asList( pathDefinitions ) ) );
 		 }
 
-		 public virtual void AssertPathsWithPaths<T1>( IEnumerable<T1> actualPaths, params Path[] expectedPaths ) where T1 : Neo4Net.Graphdb.Path
+		 public virtual void AssertPathsWithPaths<T1>( IEnumerable<T1> actualPaths, params Path[] expectedPaths ) where T1 : Neo4Net.GraphDb.Path
 		 {
 			  IList<string> pathDefs = new List<string>();
 			  foreach ( Path path in expectedPaths )

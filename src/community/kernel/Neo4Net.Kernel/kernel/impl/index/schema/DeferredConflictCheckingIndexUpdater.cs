@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.api.index.UpdateMode.REMOVED;
+//	import static org.Neo4Net.kernel.impl.api.index.UpdateMode.REMOVED;
 
 	/// <summary>
 	/// This deferring conflict checker solves e.g. a problem of applying updates to an index that is aware of,
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void process(org.neo4j.kernel.api.index.IndexEntryUpdate<?> update) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void process(org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Process<T1>( IndexEntryUpdate<T1> update )
 		 {
 			  _actual.process( update );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void Close()
 		 {
 			  _actual.close();

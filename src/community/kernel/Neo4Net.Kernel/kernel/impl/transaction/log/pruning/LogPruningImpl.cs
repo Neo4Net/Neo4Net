@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log.pruning
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;

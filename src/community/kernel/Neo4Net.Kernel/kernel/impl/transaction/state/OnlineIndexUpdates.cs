@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using Neo4Net.Kernel.Impl.Api.index;
-	using EntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
+	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using IndexingUpdateService = Neo4Net.Kernel.Impl.Api.index.IndexingUpdateService;
 	using PropertyPhysicalToLogicalConverter = Neo4Net.Kernel.Impl.Api.index.PropertyPhysicalToLogicalConverter;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
@@ -37,14 +37,14 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
 	using PropertyCommand = Neo4Net.Kernel.impl.transaction.command.Command.PropertyCommand;
 	using RelationshipCommand = Neo4Net.Kernel.impl.transaction.command.Command.RelationshipCommand;
-	using EntityType = Neo4Net.Storageengine.Api.EntityType;
+	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.command.Command.Mode.CREATE;
+//	import static org.Neo4Net.kernel.impl.transaction.command.Command.Mode.CREATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.command.Command.Mode.DELETE;
+//	import static org.Neo4Net.kernel.impl.transaction.command.Command.Mode.DELETE;
 
 	/// <summary>
 	/// Derives logical index updates from physical records, provided by <seealso cref="NodeCommand node commands"/>,
@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  return _updates.GetEnumerator();
 		 }
 
-		 public override void Feed( EntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, EntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
+		 public override void Feed( IEntityCommandGrouper<Command.NodeCommand>.Cursor nodeCommands, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor relationshipCommands )
 		 {
 			  while ( nodeCommands.nextEntity() )
 			  {
@@ -96,33 +96,33 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  return _updates.Count > 0;
 		 }
 
-		 private void GatherUpdatesFor( long nodeId, Command.NodeCommand nodeCommand, EntityCommandGrouper<Command.NodeCommand>.Cursor propertyCommands )
+		 private void GatherUpdatesFor( long nodeId, Command.NodeCommand nodeCommand, IEntityCommandGrouper<Command.NodeCommand>.Cursor propertyCommands )
 		 {
-			  EntityUpdates.Builder nodePropertyUpdate = GatherUpdatesFromCommandsForNode( nodeId, nodeCommand, propertyCommands );
+			  IEntityUpdates.Builder nodePropertyUpdate = GatherUpdatesFromCommandsForNode( nodeId, nodeCommand, propertyCommands );
 
-			  EntityUpdates entityUpdates = nodePropertyUpdate.Build();
+			  IEntityUpdates IEntityUpdates = nodePropertyUpdate.Build();
 			  // we need to materialize the IndexEntryUpdates here, because when we
 			  // consume (later in separate thread) the store might have changed.
-			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( entityUpdates, EntityType.NODE ) )
+			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, IEntityType.NODE ) )
 			  {
 					_updates.Add( update );
 			  }
 		 }
 
-		 private void GatherUpdatesFor( long relationshipId, Command.RelationshipCommand relationshipCommand, EntityCommandGrouper<Command.RelationshipCommand>.Cursor propertyCommands )
+		 private void GatherUpdatesFor( long relationshipId, Command.RelationshipCommand relationshipCommand, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor propertyCommands )
 		 {
-			  EntityUpdates.Builder relationshipPropertyUpdate = GatherUpdatesFromCommandsForRelationship( relationshipId, relationshipCommand, propertyCommands );
+			  IEntityUpdates.Builder relationshipPropertyUpdate = GatherUpdatesFromCommandsForRelationship( relationshipId, relationshipCommand, propertyCommands );
 
-			  EntityUpdates entityUpdates = relationshipPropertyUpdate.Build();
+			  IEntityUpdates IEntityUpdates = relationshipPropertyUpdate.Build();
 			  // we need to materialize the IndexEntryUpdates here, because when we
 			  // consume (later in separate thread) the store might have changed.
-			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( entityUpdates, EntityType.RELATIONSHIP ) )
+			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, IEntityType.RELATIONSHIP ) )
 			  {
 					_updates.Add( update );
 			  }
 		 }
 
-		 private EntityUpdates.Builder GatherUpdatesFromCommandsForNode( long nodeId, Command.NodeCommand nodeChanges, EntityCommandGrouper<Command.NodeCommand>.Cursor propertyCommandsForNode )
+		 private IEntityUpdates.Builder GatherUpdatesFromCommandsForNode( long nodeId, Command.NodeCommand nodeChanges, IEntityCommandGrouper<Command.NodeCommand>.Cursor propertyCommandsForNode )
 		 {
 			  long[] nodeLabelsBefore;
 			  long[] nodeLabelsAfter;
@@ -154,19 +154,19 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 			  // First get possible Label changes
 			  bool complete = ProvidesCompleteListOfProperties( nodeChanges );
-			  EntityUpdates.Builder nodePropertyUpdates = EntityUpdates.forEntity( nodeId, complete ).withTokens( nodeLabelsBefore ).withTokensAfter( nodeLabelsAfter );
+			  IEntityUpdates.Builder nodePropertyUpdates = IEntityUpdates.forEntity( nodeId, complete ).withTokens( nodeLabelsBefore ).withTokensAfter( nodeLabelsAfter );
 
 			  // Then look for property changes
 			  _converter.convertPropertyRecord( propertyCommandsForNode, nodePropertyUpdates );
 			  return nodePropertyUpdates;
 		 }
 
-		 private static bool ProvidesCompleteListOfProperties( Command entityCommand )
+		 private static bool ProvidesCompleteListOfProperties( Command IEntityCommand )
 		 {
-			  return entityCommand != null && ( entityCommand.GetMode() == CREATE || entityCommand.GetMode() == DELETE );
+			  return IEntityCommand != null && ( IEntityCommand.GetMode() == CREATE || IEntityCommand.GetMode() == DELETE );
 		 }
 
-		 private EntityUpdates.Builder GatherUpdatesFromCommandsForRelationship( long relationshipId, Command.RelationshipCommand relationshipCommand, EntityCommandGrouper<Command.RelationshipCommand>.Cursor propertyCommands )
+		 private IEntityUpdates.Builder GatherUpdatesFromCommandsForRelationship( long relationshipId, Command.RelationshipCommand relationshipCommand, IEntityCommandGrouper<Command.RelationshipCommand>.Cursor propertyCommands )
 		 {
 			  long reltypeBefore;
 			  long reltypeAfter;
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 					reltypeBefore = reltypeAfter = relationshipRecord.Type;
 			  }
 			  bool complete = ProvidesCompleteListOfProperties( relationshipCommand );
-			  EntityUpdates.Builder relationshipPropertyUpdates = EntityUpdates.forEntity( relationshipId, complete ).withTokens( reltypeBefore ).withTokensAfter( reltypeAfter );
+			  IEntityUpdates.Builder relationshipPropertyUpdates = IEntityUpdates.forEntity( relationshipId, complete ).withTokens( reltypeBefore ).withTokensAfter( reltypeAfter );
 			  _converter.convertPropertyRecord( propertyCommands, relationshipPropertyUpdates );
 			  return relationshipPropertyUpdates;
 		 }

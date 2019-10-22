@@ -29,7 +29,7 @@ namespace Neo4Net.Tooling.procedure
 	using GraphDatabase = Neo4Net.driver.v1.GraphDatabase;
 	using Session = Neo4Net.driver.v1.Session;
 	using StatementResult = Neo4Net.driver.v1.StatementResult;
-	using Neo4jRule = Neo4Net.Harness.junit.Neo4jRule;
+	using Neo4NetRule = Neo4Net.Harness.junit.Neo4NetRule;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using Procedures = Neo4Net.Tooling.procedure.procedures.valid.Procedures;
 
@@ -42,11 +42,11 @@ namespace Neo4Net.Tooling.procedure
 		 private static readonly Type _proceduresClass = typeof( Procedures );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.SuppressOutput suppressOutput = org.neo4j.test.rule.SuppressOutput.suppressAll();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.SuppressOutput suppressOutput = org.Neo4Net.test.rule.SuppressOutput.suppressAll();
 		 public readonly SuppressOutput SuppressOutput = SuppressOutput.suppressAll();
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.harness.junit.Neo4jRule graphDb = new org.neo4j.harness.junit.Neo4jRule().dumpLogsOnFailure(() -> System.out).withProcedure(PROCEDURES_CLASS);
-		 public Neo4jRule GraphDb = new Neo4jRule().dumpLogsOnFailure(() => System.out).withProcedure(_proceduresClass);
+//ORIGINAL LINE: @Rule public org.Neo4Net.harness.junit.Neo4NetRule graphDb = new org.Neo4Net.harness.junit.Neo4NetRule().dumpLogsOnFailure(() -> System.out).withProcedure(PROCEDURES_CLASS);
+		 public Neo4NetRule GraphDb = new Neo4NetRule().dumpLogsOnFailure(() => System.out).withProcedure(_proceduresClass);
 		 private string _procedureNamespace = _proceduresClass.Assembly.GetName().Name;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

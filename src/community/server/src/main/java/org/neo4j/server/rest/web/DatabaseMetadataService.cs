@@ -23,7 +23,7 @@ using System.Text;
 namespace Neo4Net.Server.rest.web
 {
 
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Database = Neo4Net.Server.database.Database;
 	using RepresentationWriteHandler = Neo4Net.Server.rest.repr.RepresentationWriteHandler;

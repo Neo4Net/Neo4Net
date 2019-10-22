@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 	public class IndexSamplingConfig

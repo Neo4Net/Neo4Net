@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphdb.factory.module
+namespace Neo4Net.GraphDb.factory.module
 {
 
-	using AbstractEditionModule = Neo4Net.Graphdb.factory.module.edition.AbstractEditionModule;
-	using DatabaseEditionContext = Neo4Net.Graphdb.factory.module.edition.context.DatabaseEditionContext;
+	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
+	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
 	using CoreAPIAvailabilityGuard = Neo4Net.Kernel.impl.coreapi.CoreAPIAvailabilityGuard;
@@ -52,7 +52,7 @@ namespace Neo4Net.Graphdb.factory.module
 			  this.KernelAPI = NeoStoreDataSource.getKernel;
 
 			  ProcedureGDSFactory gdsFactory = new ProcedureGDSFactory( platformModule, this, CoreAPIAvailabilityGuardConflict, context.TokenHolders, editionModule.ThreadToTransactionBridge );
-			  procedures.RegisterComponent( typeof( GraphDatabaseService ), gdsFactory.apply, true );
+			  procedures.RegisterComponent( typeof( IGraphDatabaseService ), gdsFactory.apply, true );
 		 }
 
 		 public virtual CoreAPIAvailabilityGuard CoreAPIAvailabilityGuard

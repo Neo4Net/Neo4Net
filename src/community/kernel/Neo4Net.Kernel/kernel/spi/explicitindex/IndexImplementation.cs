@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.spi.explicitindex
 {
 
-	using Neo4Net.Graphdb;
+	using Neo4Net.GraphDb;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.spi.explicitindex
 		 /// <returns> list of store files managed by this index provider </returns>
 		 /// <exception cref="IOException"> depends on the implementation </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException;
+//ORIGINAL LINE: org.Neo4Net.graphdb.ResourceIterator<java.io.File> listStoreFiles() throws java.io.IOException;
 		 ResourceIterator<File> ListStoreFiles();
 	}
 

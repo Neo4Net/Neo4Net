@@ -57,11 +57,11 @@ namespace Neo4Net.Consistency.checking.full
 	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.consistency.report.ConsistencyReporter.NO_MONITOR;
+//	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.RecordLoad.FORCE;
+//	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.FORCE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.cache.NumberArrayFactory_Fields.AUTO_WITHOUT_PAGECACHE;
 
 	public class FullCheck
 	{
@@ -95,14 +95,14 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.consistency.report.ConsistencySummaryStatistics execute(org.neo4j.kernel.api.direct.DirectStoreAccess stores, org.neo4j.logging.Log log) throws ConsistencyCheckIncompleteException
+//ORIGINAL LINE: public org.Neo4Net.consistency.report.ConsistencySummaryStatistics execute(org.Neo4Net.kernel.api.direct.DirectStoreAccess stores, org.Neo4Net.logging.Log log) throws ConsistencyCheckIncompleteException
 		 public virtual ConsistencySummaryStatistics Execute( DirectStoreAccess stores, Log log )
 		 {
 			  return Execute( stores, log, NO_MONITOR );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.consistency.report.ConsistencySummaryStatistics execute(org.neo4j.kernel.api.direct.DirectStoreAccess stores, org.neo4j.logging.Log log, org.neo4j.consistency.report.ConsistencyReporter.Monitor reportMonitor) throws ConsistencyCheckIncompleteException
+//ORIGINAL LINE: org.Neo4Net.consistency.report.ConsistencySummaryStatistics execute(org.Neo4Net.kernel.api.direct.DirectStoreAccess stores, org.Neo4Net.logging.Log log, org.Neo4Net.consistency.report.ConsistencyReporter.Monitor reportMonitor) throws ConsistencyCheckIncompleteException
 		 internal virtual ConsistencySummaryStatistics Execute( DirectStoreAccess stores, Log log, ConsistencyReporter.Monitor reportMonitor )
 		 {
 			  ConsistencySummaryStatistics summary = new ConsistencySummaryStatistics();
@@ -152,17 +152,17 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void execute(final org.neo4j.kernel.api.direct.DirectStoreAccess directStoreAccess, final org.neo4j.consistency.checking.CheckDecorator decorator, final org.neo4j.consistency.store.RecordAccess recordAccess, final org.neo4j.consistency.report.InconsistencyReport report, org.neo4j.consistency.checking.cache.CacheAccess cacheAccess, org.neo4j.consistency.report.ConsistencyReporter.Monitor reportMonitor) throws ConsistencyCheckIncompleteException
+//ORIGINAL LINE: void execute(final org.Neo4Net.kernel.api.direct.DirectStoreAccess directStoreAccess, final org.Neo4Net.consistency.checking.CheckDecorator decorator, final org.Neo4Net.consistency.store.RecordAccess recordAccess, final org.Neo4Net.consistency.report.InconsistencyReport report, org.Neo4Net.consistency.checking.cache.CacheAccess cacheAccess, org.Neo4Net.consistency.report.ConsistencyReporter.Monitor reportMonitor) throws ConsistencyCheckIncompleteException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal virtual void Execute( DirectStoreAccess directStoreAccess, CheckDecorator decorator, RecordAccess recordAccess, InconsistencyReport report, CacheAccess cacheAccess, ConsistencyReporter.Monitor reportMonitor )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.consistency.report.ConsistencyReporter reporter = new org.neo4j.consistency.report.ConsistencyReporter(recordAccess, report, reportMonitor);
+//ORIGINAL LINE: final org.Neo4Net.consistency.report.ConsistencyReporter reporter = new org.Neo4Net.consistency.report.ConsistencyReporter(recordAccess, report, reportMonitor);
 			  ConsistencyReporter reporter = new ConsistencyReporter( recordAccess, report, reportMonitor );
 			  StoreProcessor processEverything = new StoreProcessor( decorator, reporter, Stage_Fields.SequentialForward, cacheAccess );
 			  ProgressMonitorFactory.MultiPartBuilder progress = _progressFactory.multipleParts( "Full Consistency Check" );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.store.StoreAccess nativeStores = directStoreAccess.nativeStores();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.store.StoreAccess nativeStores = directStoreAccess.nativeStores();
 			  StoreAccess nativeStores = directStoreAccess.NativeStores();
 			  try
 			  {
@@ -195,14 +195,14 @@ namespace Neo4Net.Consistency.checking.full
 		 private static void ConsistencyCheckIndexStructure( LabelScanStore labelScanStore, IndexAccessors indexes, ConsistencyReporter report, ProgressMonitorFactory progressMonitorFactory )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final long schemaIndexCount = org.neo4j.helpers.collection.Iterables.count(indexes.onlineRules());
+//ORIGINAL LINE: final long schemaIndexCount = org.Neo4Net.helpers.collection.Iterables.count(indexes.onlineRules());
 			  long schemaIndexCount = Iterables.count( indexes.OnlineRules() );
 			  const long additionalCount = 1; // LabelScanStore
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long totalCount = schemaIndexCount + additionalCount;
 			  long totalCount = schemaIndexCount + additionalCount;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.helpers.progress.ProgressListener listener = progressMonitorFactory.singlePart("Index structure consistency check", totalCount);
+//ORIGINAL LINE: final org.Neo4Net.helpers.progress.ProgressListener listener = progressMonitorFactory.singlePart("Index structure consistency check", totalCount);
 			  ProgressListener listener = progressMonitorFactory.SinglePart( "Index structure consistency check", totalCount );
 			  listener.Started();
 

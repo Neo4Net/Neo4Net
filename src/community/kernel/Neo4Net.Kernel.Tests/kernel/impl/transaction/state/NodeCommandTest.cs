@@ -53,17 +53,17 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.core.IsEqual.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.Numbers.safeCastLongToInt;
+//	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
+//	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.NodeLabelsField.parseLabelsField;
+//	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.ShortArray.LONG;
+//	import static org.Neo4Net.kernel.impl.store.ShortArray.LONG;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
+//	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.record.DynamicRecord.dynamicRecord;
+//	import static org.Neo4Net.kernel.impl.store.record.DynamicRecord.dynamicRecord;
 
 	public class NodeCommandTest
 	{
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		}
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.PageCacheRule pageCacheRule = new org.neo4j.test.rule.PageCacheRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.PageCacheRule pageCacheRule = new org.Neo4Net.test.rule.PageCacheRule();
 		 public static PageCacheRule PageCacheRule = new PageCacheRule();
 		 private readonly EphemeralFileSystemRule _fs = new EphemeralFileSystemRule();
 		 private TestDirectory _testDirectory;
@@ -254,7 +254,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertSerializationWorksFor(org.neo4j.kernel.impl.transaction.command.Command.NodeCommand cmd) throws java.io.IOException
+//ORIGINAL LINE: private void assertSerializationWorksFor(org.Neo4Net.kernel.impl.transaction.command.Command.NodeCommand cmd) throws java.io.IOException
 		 private void AssertSerializationWorksFor( Command.NodeCommand cmd )
 		 {
 			  _channel.reset();

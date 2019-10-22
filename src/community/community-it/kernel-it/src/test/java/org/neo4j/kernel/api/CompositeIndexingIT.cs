@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.api
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
 	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CompositeIndexingIT
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.api
 		 private const int LABEL_ID = 1;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ClassRule public static org.neo4j.test.rule.ImpermanentDatabaseRule dbRule = new org.neo4j.test.rule.ImpermanentDatabaseRule();
+//ORIGINAL LINE: @ClassRule public static org.Neo4Net.test.rule.ImpermanentDatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule();
 		 public static ImpermanentDatabaseRule DbRule = new ImpermanentDatabaseRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode() throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private long CreateNode()
 		 {
 			  long nodeID;
@@ -359,7 +359,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.internal.kernel.api.NodeValueIndexCursor seek(KernelTransaction transaction) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.NodeValueIndexCursor seek(KernelTransaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private NodeValueIndexCursor Seek( KernelTransaction transaction )
 		 {
 			  NodeValueIndexCursor cursor = transaction.Cursors().allocateNodeValueIndexCursor();

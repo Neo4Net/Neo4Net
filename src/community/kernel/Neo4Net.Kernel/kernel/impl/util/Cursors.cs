@@ -55,14 +55,14 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> org.neo4j.cursor.Cursor<T> empty()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static <T> org.Neo4Net.cursor.Cursor<T> empty()
 		 public static ICursor<T> Empty<T>()
 		 {
 			  return ( ICursor<T> ) EMPTY;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static <E extends Exception> int count(org.neo4j.cursor.RawCursor<?,E> cursor) throws E
+//ORIGINAL LINE: public static <E extends Exception> int count(org.Neo4Net.cursor.RawCursor<?,E> cursor) throws E
 		 public static int Count<E, T1>( IRawCursor<T1> cursor ) where E : Exception
 		 {
 			  try

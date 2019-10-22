@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,19 +16,19 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Harness
 {
 
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using Neo4Net.causalclustering.discovery;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EnterpriseInProcessServerBuilder = Neo4Net.Harness.Internal.EnterpriseInProcessServerBuilder;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
 	using HttpConnector = Neo4Net.Kernel.configuration.HttpConnector;
@@ -77,7 +77,7 @@ namespace Neo4Net.Harness
 
 			  public override WithPath WithLogger( LogProvider l )
 			  {
-					Log = l.GetLog( "org.neo4j.harness.CausalCluster" );
+					Log = l.GetLog( "org.Neo4Net.harness.CausalCluster" );
 					return this;
 			  }
 
@@ -308,7 +308,7 @@ namespace Neo4Net.Harness
 						 EnterpriseInProcessServerBuilder builder = new EnterpriseInProcessServerBuilder( ClusterPath.toFile(), homeDir );
 
 						 string homePath = Paths.get( ClusterPath.ToString(), homeDir ).toAbsolutePath().ToString();
-						 builder.WithConfig( GraphDatabaseSettings.neo4j_home.name(), homePath );
+						 builder.WithConfig( GraphDatabaseSettings.Neo4Net_home.name(), homePath );
 						 builder.WithConfig( GraphDatabaseSettings.pagecache_memory.name(), "8m" );
 
 						 builder.withConfig( EnterpriseEditionSettings.mode.name(), EnterpriseEditionSettings.Mode.CORE.name() );
@@ -362,7 +362,7 @@ namespace Neo4Net.Harness
 						 EnterpriseInProcessServerBuilder builder = new EnterpriseInProcessServerBuilder( ClusterPath.toFile(), homeDir );
 
 						 string homePath = Paths.get( ClusterPath.ToString(), homeDir ).toAbsolutePath().ToString();
-						 builder.WithConfig( GraphDatabaseSettings.neo4j_home.name(), homePath );
+						 builder.WithConfig( GraphDatabaseSettings.Neo4Net_home.name(), homePath );
 						 builder.WithConfig( GraphDatabaseSettings.pagecache_memory.name(), "8m" );
 
 						 builder.withConfig( EnterpriseEditionSettings.mode.name(), EnterpriseEditionSettings.Mode.READ_REPLICA.name() );

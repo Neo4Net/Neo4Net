@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.modules
 {
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using UserService = Neo4Net.Server.rest.dbms.UserService;
 	using DiscoverableURIs = Neo4Net.Server.rest.discovery.DiscoverableURIs;
@@ -30,7 +30,7 @@ namespace Neo4Net.Server.modules
 	using WebServer = Neo4Net.Server.web.WebServer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.plugins.Injectable.injectable;
+//	import static org.Neo4Net.server.plugins.Injectable.injectable;
 
 	/// <summary>
 	/// Mounts the DBMS REST API.

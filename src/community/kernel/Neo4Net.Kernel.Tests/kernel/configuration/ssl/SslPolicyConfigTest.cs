@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 	using Test = org.junit.Test;
 
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using ClientAuth = Neo4Net.Ssl.ClientAuth;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
@@ -42,12 +42,12 @@ namespace Neo4Net.Kernel.configuration.ssl
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.stringMap;
+//	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 
 	public class SslPolicyConfigTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  File homeDir = TestDirectory.directory( "home" );
 
-			  @params[GraphDatabaseSettings.neo4j_home.name()] = homeDir.AbsolutePath;
+			  @params[GraphDatabaseSettings.Neo4Net_home.name()] = homeDir.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/XYZ";
 			  Config config = Config.defaults( @params );
 
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  File homeDir = TestDirectory.directory( "home" );
 
-			  @params[GraphDatabaseSettings.neo4j_home.name()] = homeDir.AbsolutePath;
+			  @params[GraphDatabaseSettings.Neo4Net_home.name()] = homeDir.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates/XYZ";
 
 			  File privateKey = TestDirectory.directory( "/path/to/my.key" );
@@ -171,7 +171,7 @@ namespace Neo4Net.Kernel.configuration.ssl
 
 			  File homeDir = TestDirectory.directory( "home" );
 
-			  @params[GraphDatabaseSettings.neo4j_home.name()] = homeDir.AbsolutePath;
+			  @params[GraphDatabaseSettings.Neo4Net_home.name()] = homeDir.AbsolutePath;
 			  @params[policyConfig.BaseDirectory.name()] = "certificates";
 
 			  @params[policyConfig.PrivateKey.name()] = "my.key";

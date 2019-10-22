@@ -21,13 +21,13 @@
  */
 namespace Neo4Net.Server.rest.domain
 {
-	using Direction = Neo4Net.Graphdb.Direction;
+	using Direction = Neo4Net.GraphDb.Direction;
 
 	public sealed class RelationshipDirection
 	{
-		 public static readonly RelationshipDirection All = new RelationshipDirection( "All", InnerEnum.All, Neo4Net.Graphdb.Direction.Both );
-		 public static readonly RelationshipDirection In = new RelationshipDirection( "In", InnerEnum.In, Neo4Net.Graphdb.Direction.Incoming );
-		 public static readonly RelationshipDirection Out = new RelationshipDirection( "Out", InnerEnum.Out, Neo4Net.Graphdb.Direction.Outgoing );
+		 public static readonly RelationshipDirection All = new RelationshipDirection( "All", InnerEnum.All, Neo4Net.GraphDb.Direction.Both );
+		 public static readonly RelationshipDirection In = new RelationshipDirection( "In", InnerEnum.In, Neo4Net.GraphDb.Direction.Incoming );
+		 public static readonly RelationshipDirection Out = new RelationshipDirection( "Out", InnerEnum.Out, Neo4Net.GraphDb.Direction.Outgoing );
 
 		 private static readonly IList<RelationshipDirection> valueList = new List<RelationshipDirection>();
 
@@ -51,7 +51,7 @@ namespace Neo4Net.Server.rest.domain
 		 private static int nextOrdinal = 0;
 		 internal Final org;
 
-		 internal RelationshipDirection( string name, InnerEnum innerEnum, Neo4Net.Graphdb.Direction @internal )
+		 internal RelationshipDirection( string name, InnerEnum innerEnum, Neo4Net.GraphDb.Direction @internal )
 		 {
 			  this.Internal = @internal;
 

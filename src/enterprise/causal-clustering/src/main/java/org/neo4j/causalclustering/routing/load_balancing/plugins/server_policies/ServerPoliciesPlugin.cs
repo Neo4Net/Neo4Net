@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies
 {
@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	using ReadReplicaTopology = Neo4Net.causalclustering.discovery.ReadReplicaTopology;
 	using TopologyService = Neo4Net.causalclustering.discovery.TopologyService;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using InvalidSettingException = Neo4Net.Graphdb.config.InvalidSettingException;
+	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
 	using Service = Neo4Net.Helpers.Service;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -41,11 +41,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.Util.asList;
+//	import static org.Neo4Net.causalclustering.routing.Util.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.Util.extractBoltAddress;
+//	import static org.Neo4Net.causalclustering.routing.Util.extractBoltAddress;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.routing.load_balancing.plugins.server_policies.FilteringPolicyLoader.load;
+//	import static org.Neo4Net.causalclustering.routing.load_balancing.plugins.server_policies.FilteringPolicyLoader.load;
 
 	/// <summary>
 	/// The server policies plugin defines policies on the server-side which
@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	/// An example would be to define different policies for different regions.
 	/// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Service.Implementation(LoadBalancingPlugin.class) public class ServerPoliciesPlugin implements org.neo4j.causalclustering.routing.load_balancing.LoadBalancingPlugin
+//ORIGINAL LINE: @Service.Implementation(LoadBalancingPlugin.class) public class ServerPoliciesPlugin implements org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingPlugin
 	public class ServerPoliciesPlugin : LoadBalancingPlugin
 	{
 		 public const string PLUGIN_NAME = "server_policies";
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 private Policies _policies;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validate(org.neo4j.kernel.configuration.Config config, org.neo4j.logging.Log log) throws org.neo4j.graphdb.config.InvalidSettingException
+//ORIGINAL LINE: public void validate(org.Neo4Net.kernel.configuration.Config config, org.Neo4Net.logging.Log log) throws org.Neo4Net.graphdb.config.InvalidSettingException
 		 public override void Validate( Config config, Log log )
 		 {
 			  try
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void init(org.neo4j.causalclustering.discovery.TopologyService topologyService, org.neo4j.causalclustering.core.consensus.LeaderLocator leaderLocator, org.neo4j.logging.LogProvider logProvider, org.neo4j.kernel.configuration.Config config) throws InvalidFilterSpecification
+//ORIGINAL LINE: public void init(org.Neo4Net.causalclustering.discovery.TopologyService topologyService, org.Neo4Net.causalclustering.core.consensus.LeaderLocator leaderLocator, org.Neo4Net.logging.LogProvider logProvider, org.Neo4Net.kernel.configuration.Config config) throws InvalidFilterSpecification
 		 public override void Init( TopologyService topologyService, LeaderLocator leaderLocator, LogProvider logProvider, Config config )
 		 {
 			  this._topologyService = topologyService;
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.neo4j.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
 		 public override Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result Run( IDictionary<string, string> context )
 		 {
 			  Policy policy = _policies.selectFor( context );

@@ -25,9 +25,9 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 	public class DefaultParameterValue
 	{
 		 private readonly object _value;
-		 private readonly Neo4jTypes.AnyType _type;
+		 private readonly Neo4NetTypes.AnyType _type;
 
-		 public DefaultParameterValue( object value, Neo4jTypes.AnyType type )
+		 public DefaultParameterValue( object value, Neo4NetTypes.AnyType type )
 		 {
 			  this._value = value;
 			  this._type = type;
@@ -38,47 +38,47 @@ namespace Neo4Net.Internal.Kernel.Api.procs
 			  return _value;
 		 }
 
-		 public virtual Neo4jTypes.AnyType Neo4jType()
+		 public virtual Neo4NetTypes.AnyType Neo4NetType()
 		 {
 			  return _type;
 		 }
 
 		 public static DefaultParameterValue NtString( string value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTString );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTString );
 		 }
 
 		 public static DefaultParameterValue NtInteger( long value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTInteger );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTInteger );
 		 }
 
 		 public static DefaultParameterValue NtFloat( double value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTFloat );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTFloat );
 		 }
 
 		 public static DefaultParameterValue NtBoolean( bool value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTBoolean );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTBoolean );
 		 }
 
 		 public static DefaultParameterValue NtMap( IDictionary<string, object> value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTMap );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTMap );
 		 }
 
 		 public static DefaultParameterValue NtByteArray( sbyte[] value )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTByteArray );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTByteArray );
 		 }
 
-		 public static DefaultParameterValue NtList<T1>( IList<T1> value, Neo4jTypes.AnyType inner )
+		 public static DefaultParameterValue NtList<T1>( IList<T1> value, Neo4NetTypes.AnyType inner )
 		 {
-			  return new DefaultParameterValue( value, Neo4jTypes.NTList( inner ) );
+			  return new DefaultParameterValue( value, Neo4NetTypes.NTList( inner ) );
 		 }
 
-		 public static DefaultParameterValue NullValue( Neo4jTypes.AnyType type )
+		 public static DefaultParameterValue NullValue( Neo4NetTypes.AnyType type )
 		 {
 			  return new DefaultParameterValue( null, type );
 		 }

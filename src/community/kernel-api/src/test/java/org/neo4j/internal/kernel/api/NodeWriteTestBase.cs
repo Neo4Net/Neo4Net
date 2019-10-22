@@ -23,10 +23,10 @@ namespace Neo4Net.Internal.Kernel.Api
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using EntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -46,13 +46,13 @@ namespace Neo4Net.Internal.Kernel.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.Label.label;
+//	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.NO_VALUE;
+//	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.intValue;
+//	import static org.Neo4Net.values.storable.Values.intValue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.stringValue;
+//	import static org.Neo4Net.values.storable.Values.stringValue;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("Duplicates") public abstract class NodeWriteTestBase<G extends KernelAPIWriteTestSupport> extends KernelAPIWriteTestBase<G>
@@ -77,7 +77,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.Success();
 			  }
 
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertEquals( node, graphDb.getNodeById( node ).Id );
 			  }
@@ -97,7 +97,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 			  try
 			  {
-					  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+					  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 					  {
 						graphDb.getNodeById( node );
 						fail( "There should be no node" );
@@ -121,7 +121,7 @@ namespace Neo4Net.Internal.Kernel.Api
 					tx.DataWrite().nodeDelete(node);
 					tx.Success();
 			  }
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					try
 					{
@@ -305,10 +305,10 @@ namespace Neo4Net.Internal.Kernel.Api
 					  {
 						int token = tx.Token().propertyKeyGetOrCreateForName(PROPERTY_KEY);
 						tx.DataWrite().nodeSetProperty(node, token, stringValue("hello"));
-						fail( "Expected EntityNotFoundException" );
+						fail( "Expected IEntityNotFoundException" );
 					  }
 			  }
-			  catch ( EntityNotFoundException )
+			  catch ( IEntityNotFoundException )
 			  {
 					// wanted
 			  }
@@ -494,7 +494,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 private long CreateNode()
 		 {
 			  long node;
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					node = graphDb.createNode().Id;
 					ctx.Success();
@@ -504,7 +504,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void DeleteNode( long node )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					graphDb.getNodeById( node ).delete();
 					ctx.Success();
@@ -514,7 +514,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 private long CreateNodeWithLabel( string labelName )
 		 {
 			  long node;
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					node = graphDb.createNode( label( labelName ) ).Id;
 					ctx.Success();
@@ -525,7 +525,7 @@ namespace Neo4Net.Internal.Kernel.Api
 		 private long CreateNodeWithProperty( string propertyKey, object value )
 		 {
 			  Node node;
-			  using ( Neo4Net.Graphdb.Transaction ctx = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ctx = graphDb.beginTx() )
 			  {
 					node = graphDb.createNode();
 					node.SetProperty( propertyKey, value );
@@ -536,7 +536,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void AssertNoLabels( long nodeId )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).Labels, equalTo( Iterables.empty() ) );
 			  }
@@ -544,7 +544,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void AssertLabels( long nodeId, string label )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( nodeId ).Labels, containsInAnyOrder( label( label ) ) );
 			  }
@@ -552,7 +552,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void AssertNoProperty( long node, string propertyKey )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertFalse( graphDb.getNodeById( node ).hasProperty( propertyKey ) );
 			  }
@@ -560,7 +560,7 @@ namespace Neo4Net.Internal.Kernel.Api
 
 		 private void AssertProperty( long node, string propertyKey, object value )
 		 {
-			  using ( Neo4Net.Graphdb.Transaction ignore = graphDb.beginTx() )
+			  using ( Neo4Net.GraphDb.Transaction ignore = graphDb.beginTx() )
 			  {
 					assertThat( graphDb.getNodeById( node ).getProperty( propertyKey ), equalTo( value ) );
 			  }

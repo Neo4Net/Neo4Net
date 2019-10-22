@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Io.pagecache.impl.muninn
 {
-	using Configuration = Neo4Net.Graphdb.config.Configuration;
+	using Configuration = Neo4Net.GraphDb.config.Configuration;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using MemoryAllocator = Neo4Net.Io.mem.MemoryAllocator;
 	using PageCacheTracer = Neo4Net.Io.pagecache.tracing.PageCacheTracer;

@@ -35,12 +35,12 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPositionMarker marker = new org.neo4j.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
 			  LogPosition logPosition = marker.NewPosition();
 
 			  // given
@@ -53,13 +53,13 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPositionMarker marker = new org.neo4j.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 			  // when
 			  marker.Mark( 1, 2 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
 			  LogPosition logPosition = marker.NewPosition();
 
 			  // given
@@ -72,14 +72,14 @@ namespace Neo4Net.Kernel.impl.transaction
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPositionMarker marker = new org.neo4j.kernel.impl.transaction.log.LogPositionMarker();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker marker = new org.Neo4Net.kernel.impl.transaction.log.LogPositionMarker();
 			  LogPositionMarker marker = new LogPositionMarker();
 
 			  // when
 			  marker.Mark( 1, 2 );
 			  marker.Unspecified();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.log.LogPosition logPosition = marker.newPosition();
 			  LogPosition logPosition = marker.NewPosition();
 
 			  // given

@@ -22,11 +22,11 @@
 namespace Common
 {
 
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using RelationshipType = Neo4Net.Graphdb.RelationshipType;
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 
 	public class GraphDescription : GraphDefinition
 	{
@@ -49,14 +49,14 @@ namespace Common
 					End = parts[2];
 			  }
 
-			  public virtual Relationship Create( GraphDatabaseService graphdb, IDictionary<string, Node> nodes )
+			  public virtual Relationship Create( IGraphDatabaseService graphdb, IDictionary<string, Node> nodes )
 			  {
 					Node startNode = GetNode( graphdb, nodes, Start );
 					Node endNode = GetNode( graphdb, nodes, End );
 					return startNode.CreateRelationshipTo( endNode, Type );
 			  }
 
-			  internal virtual Node GetNode( GraphDatabaseService graphdb, IDictionary<string, Node> nodes, string name )
+			  internal virtual Node GetNode( IGraphDatabaseService graphdb, IDictionary<string, Node> nodes, string name )
 			  {
 					Node node = nodes[name];
 					if ( node == null )
@@ -91,7 +91,7 @@ namespace Common
 			  this._description = lines.ToArray();
 		 }
 
-		 public override Node Create( GraphDatabaseService graphdb )
+		 public override Node Create( IGraphDatabaseService graphdb )
 		 {
 			  IDictionary<string, Node> nodes = new Dictionary<string, Node>();
 			  Node node = null;

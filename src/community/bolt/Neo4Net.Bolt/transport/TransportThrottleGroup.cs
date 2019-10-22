@@ -21,7 +21,7 @@ namespace Neo4Net.Bolt.transport
 {
 	using Channel = io.netty.channel.Channel;
 
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 	/// <summary>

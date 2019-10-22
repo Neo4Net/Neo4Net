@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 	using Mockito = org.mockito.Mockito;
 
 
-	using Transaction = Neo4Net.Graphdb.Transaction;
+	using Transaction = Neo4Net.GraphDb.Transaction;
 	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
 	using Clocks = Neo4Net.Time.Clocks;
 
@@ -70,13 +70,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 //ORIGINAL LINE: final RagManager ragManager = new RagManager();
 			  RagManager ragManager = new RagManager();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LockResource resource = new LockResource(org.neo4j.kernel.impl.locking.ResourceTypes.NODE, 0);
+//ORIGINAL LINE: final LockResource resource = new LockResource(org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
 			  LockResource resource = new LockResource( ResourceTypes.NODE, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RWLock lock = createRWLock(ragManager, resource);
 			  RWLock @lock = CreateRWLock( ragManager, resource );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Transaction tx1 = mock(org.neo4j.graphdb.Transaction.class);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction tx1 = mock(org.Neo4Net.graphdb.Transaction.class);
 			  Transaction tx1 = mock( typeof( Transaction ) );
 
 			  @lock.Mark();
@@ -96,13 +96,13 @@ namespace Neo4Net.Kernel.impl.locking.community
 //ORIGINAL LINE: final RagManager ragManager = new RagManager();
 			  RagManager ragManager = new RagManager();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final LockResource resource = new LockResource(org.neo4j.kernel.impl.locking.ResourceTypes.NODE, 0);
+//ORIGINAL LINE: final LockResource resource = new LockResource(org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, 0);
 			  LockResource resource = new LockResource( ResourceTypes.NODE, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final RWLock lock = createRWLock(ragManager, resource);
 			  RWLock @lock = CreateRWLock( ragManager, resource );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.graphdb.Transaction tx1 = mock(org.neo4j.graphdb.Transaction.class);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction tx1 = mock(org.Neo4Net.graphdb.Transaction.class);
 			  Transaction tx1 = mock( typeof( Transaction ) );
 
 			  @lock.Mark();

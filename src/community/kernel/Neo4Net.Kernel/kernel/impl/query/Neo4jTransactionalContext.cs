@@ -21,9 +21,9 @@
  */
 namespace Neo4Net.Kernel.impl.query
 {
-	using Lock = Neo4Net.Graphdb.Lock;
-	using PropertyContainer = Neo4Net.Graphdb.PropertyContainer;
-	using TransactionTerminatedException = Neo4Net.Graphdb.TransactionTerminatedException;
+	using Lock = Neo4Net.GraphDb.Lock;
+	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
+	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
 	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
 	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
@@ -37,14 +37,14 @@ namespace Neo4Net.Kernel.impl.query
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using PropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
+	using IPropertyContainerLocker = Neo4Net.Kernel.impl.coreapi.PropertyContainerLocker;
 	using StatisticProvider = Neo4Net.Kernel.impl.query.statistic.StatisticProvider;
 
-	public class Neo4jTransactionalContext : TransactionalContext
+	public class Neo4NetTransactionalContext : TransactionalContext
 	{
 		 private readonly GraphDatabaseQueryService _graph;
 		 private readonly ThreadToStatementContextBridge _txBridge;
-		 private readonly PropertyContainerLocker _locker;
+		 private readonly IPropertyContainerLocker _locker;
 
 		 public readonly KernelTransaction.Type TransactionType;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.impl.query
 		 private long _pageHits;
 		 private long _pageMisses;
 
-		 public Neo4jTransactionalContext( GraphDatabaseQueryService graph, ThreadToStatementContextBridge txBridge, PropertyContainerLocker locker, InternalTransaction initialTransaction, Statement initialStatement, ExecutingQuery executingQuery, Kernel kernel )
+		 public Neo4NetTransactionalContext( GraphDatabaseQueryService graph, ThreadToStatementContextBridge txBridge, IPropertyContainerLocker locker, InternalTransaction initialTransaction, Statement initialStatement, ExecutingQuery executingQuery, Kernel kernel )
 		 {
 			  this._graph = graph;
 			  this._txBridge = txBridge;
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.impl.query
 			  return ( KernelTransactionImplementation ) KernelTransaction();
 		 }
 
-		 public override Lock AcquireWriteLock( PropertyContainer p )
+		 public override Lock AcquireWriteLock( IPropertyContainer p )
 		 {
 			  return _locker.exclusiveLock( KernelTransaction(), p );
 		 }
@@ -298,23 +298,23 @@ namespace Neo4Net.Kernel.impl.query
 			  _pageMisses += stats.PageFaults();
 		 }
 
-		 public virtual Neo4jTransactionalContext CopyFrom( GraphDatabaseQueryService graph, ThreadToStatementContextBridge txBridge, PropertyContainerLocker locker, InternalTransaction initialTransaction, Statement initialStatement, ExecutingQuery executingQuery )
+		 public virtual Neo4NetTransactionalContext CopyFrom( GraphDatabaseQueryService graph, ThreadToStatementContextBridge txBridge, IPropertyContainerLocker locker, InternalTransaction initialTransaction, Statement initialStatement, ExecutingQuery executingQuery )
 		 {
-			  return new Neo4jTransactionalContext( graph, txBridge, locker, initialTransaction, initialStatement, executingQuery, _kernel );
+			  return new Neo4NetTransactionalContext( graph, txBridge, locker, initialTransaction, initialStatement, executingQuery, _kernel );
 		 }
 
 		 internal interface Creator
 		 {
-			  Neo4jTransactionalContext Create( InternalTransaction tx, Statement initialStatement, ExecutingQuery executingQuery );
+			  Neo4NetTransactionalContext Create( InternalTransaction tx, Statement initialStatement, ExecutingQuery executingQuery );
 		 }
 
 		 private class TransactionalContextStatisticProvider : StatisticProvider
 		 {
-			 private readonly Neo4jTransactionalContext _outerInstance;
+			 private readonly Neo4NetTransactionalContext _outerInstance;
 
 			  internal readonly ExecutionStatistics ExecutionStatistics;
 
-			  internal TransactionalContextStatisticProvider( Neo4jTransactionalContext outerInstance, ExecutionStatistics executionStatistics )
+			  internal TransactionalContextStatisticProvider( Neo4NetTransactionalContext outerInstance, ExecutionStatistics executionStatistics )
 			  {
 				  this._outerInstance = outerInstance;
 					this.ExecutionStatistics = executionStatistics;

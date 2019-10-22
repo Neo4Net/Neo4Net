@@ -34,13 +34,13 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.min;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader.LOG_HEADER_SIZE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderReader.readLogHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogHeaderWriter.writeLogHeader;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
+//	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogVersions.CURRENT_LOG_VERSION;
 
 	/// <summary>
 	/// Used to figure out what logical log file to open when the database
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.entry.LogHeader extractHeader(long version) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.entry.LogHeader extractHeader(long version) throws java.io.IOException
 		 public override LogHeader ExtractHeader( long version )
 		 {
 			  return readLogHeader( _fileSystem, GetLogFileForVersion( version ) );
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openForVersion(long version) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel openForVersion(long version) throws java.io.IOException
 		 public override PhysicalLogVersionedStoreChannel OpenForVersion( long version )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -242,7 +242,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 /// <returns> <seealso cref="PhysicalLogVersionedStoreChannel"/> for newly created/opened log file. </returns>
 		 /// <exception cref="IOException"> if there's any I/O related error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.neo4j.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel createLogChannelForVersion(long forVersion, org.neo4j.io.fs.OpenMode mode, System.Func<long> lastTransactionIdSupplier) throws java.io.IOException
+//ORIGINAL LINE: org.Neo4Net.kernel.impl.transaction.log.PhysicalLogVersionedStoreChannel createLogChannelForVersion(long forVersion, org.Neo4Net.io.fs.OpenMode mode, System.Func<long> lastTransactionIdSupplier) throws java.io.IOException
 		 internal virtual PhysicalLogVersionedStoreChannel CreateLogChannelForVersion( long forVersion, OpenMode mode, System.Func<long> lastTransactionIdSupplier )
 		 {
 			  File toOpen = GetLogFileForVersion( forVersion );
@@ -314,7 +314,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.io.fs.StoreChannel openLogFileChannel(java.io.File file, org.neo4j.io.fs.OpenMode mode) throws java.io.IOException
+//ORIGINAL LINE: private org.Neo4Net.io.fs.StoreChannel openLogFileChannel(java.io.File file, org.Neo4Net.io.fs.OpenMode mode) throws java.io.IOException
 		 private StoreChannel OpenLogFileChannel( File file, OpenMode mode )
 		 {
 			  return _fileSystem.open( file, mode );

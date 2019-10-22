@@ -20,7 +20,7 @@
 namespace Neo4Net.Bolt.v1.messaging.encoder
 {
 
-	using Neo4jPack = Neo4Net.Bolt.messaging.Neo4jPack;
+	using Neo4NetPack = Neo4Net.Bolt.messaging.Neo4NetPack;
 	using Neo4Net.Bolt.messaging;
 	using RecordMessage = Neo4Net.Bolt.v1.messaging.response.RecordMessage;
 	using AnyValue = Neo4Net.Values.AnyValue;
@@ -28,8 +28,8 @@ namespace Neo4Net.Bolt.v1.messaging.encoder
 	public class RecordMessageEncoder : ResponseMessageEncoder<RecordMessage>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void encode(org.neo4j.bolt.messaging.Neo4jPack_Packer packer, org.neo4j.bolt.v1.messaging.response.RecordMessage message) throws java.io.IOException
-		 public override void Encode( Neo4Net.Bolt.messaging.Neo4jPack_Packer packer, RecordMessage message )
+//ORIGINAL LINE: public void encode(org.Neo4Net.bolt.messaging.Neo4NetPack_Packer packer, org.Neo4Net.bolt.v1.messaging.response.RecordMessage message) throws java.io.IOException
+		 public override void Encode( Neo4Net.Bolt.messaging.Neo4NetPack_Packer packer, RecordMessage message )
 		 {
 			  AnyValue[] fields = message.Fields();
 			  packer.PackStructHeader( 1, message.Signature() );

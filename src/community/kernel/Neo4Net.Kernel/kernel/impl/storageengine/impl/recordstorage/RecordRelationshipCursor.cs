@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  this.RelationshipStore = relationshipStore;
 		 }
 
-		 public override long EntityReference()
+		 public override long IEntityReference()
 		 {
 			  return Id;
 		 }
@@ -94,8 +94,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  // traverse over relationship records which have been concurrently deleted
 			  // (flagged as inUse = false).
 			  // see
-			  //      org.neo4j.kernel.impl.store.RelationshipChainPointerChasingTest
-			  //      org.neo4j.kernel.impl.locking.RelationshipCreateDeleteIT
+			  //      org.Neo4Net.kernel.impl.store.RelationshipChainPointerChasingTest
+			  //      org.Neo4Net.kernel.impl.locking.RelationshipCreateDeleteIT
 			  RelationshipStore.getRecordByCursor( reference, record, RecordLoad.FORCE, pageCursor );
 		 }
 

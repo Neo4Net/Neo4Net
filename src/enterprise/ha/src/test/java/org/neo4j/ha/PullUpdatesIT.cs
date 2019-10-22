@@ -2,10 +2,10 @@
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -16,12 +16,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.ha
 {
@@ -33,12 +33,12 @@ namespace Neo4Net.ha
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using ClusterClient = Neo4Net.cluster.client.ClusterClient;
 	using ClusterListener = Neo4Net.cluster.protocol.cluster.ClusterListener;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using NotFoundException = Neo4Net.Graphdb.NotFoundException;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using TransientTransactionFailureException = Neo4Net.Graphdb.TransientTransactionFailureException;
-	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.Graphdb.factory.TestHighlyAvailableGraphDatabaseFactory;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
+	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
@@ -65,18 +65,18 @@ namespace Neo4Net.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
+//	import static org.Neo4Net.kernel.impl.ha.ClusterManager.masterSeesSlavesAsAvailable;
 
 	public class PullUpdatesIT
 	{
 		 private const int PULL_INTERVAL = 100;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.ha.ClusterRule clusterRule = new org.neo4j.test.ha.ClusterRule();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.ha.ClusterRule clusterRule = new org.Neo4Net.test.ha.ClusterRule();
 		 public readonly ClusterRule ClusterRule = new ClusterRule();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -124,7 +124,7 @@ namespace Neo4Net.ha
 
 			  HighlyAvailableGraphDatabase master = cluster.Master;
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
+//ORIGINAL LINE: final org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase slave = cluster.getAnySlave();
 			  HighlyAvailableGraphDatabase slave = cluster.AnySlave;
 
 			  CreateNodeOn( master );
@@ -140,7 +140,7 @@ namespace Neo4Net.ha
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch slaveShouldCommit = new java.util.concurrent.CountDownLatch(1);
 			  System.Threading.CountdownEvent slaveShouldCommit = new System.Threading.CountdownEvent( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.neo4j.graphdb.Transaction> slaveTx = new java.util.concurrent.atomic.AtomicReference<>();
+//ORIGINAL LINE: final java.util.concurrent.atomic.AtomicReference<org.Neo4Net.graphdb.Transaction> slaveTx = new java.util.concurrent.atomic.AtomicReference<>();
 			  AtomicReference<Transaction> slaveTx = new AtomicReference<Transaction>();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: java.util.concurrent.Future<?> slaveCommit = java.util.concurrent.Executors.newSingleThreadExecutor().submit(() ->
@@ -200,7 +200,7 @@ namespace Neo4Net.ha
 //ORIGINAL LINE: final java.util.concurrent.CountDownLatch slaveLeftLatch = new java.util.concurrent.CountDownLatch(1);
 					System.Threading.CountdownEvent slaveLeftLatch = new System.Threading.CountdownEvent( 1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.neo4j.cluster.client.ClusterClient masterClusterClient = master.getDependencyResolver().resolveDependency(org.neo4j.cluster.client.ClusterClient.class);
+//ORIGINAL LINE: final org.Neo4Net.cluster.client.ClusterClient masterClusterClient = master.getDependencyResolver().resolveDependency(org.Neo4Net.cluster.client.ClusterClient.class);
 					ClusterClient masterClusterClient = master.DependencyResolver.resolveDependency( typeof( ClusterClient ) );
 					masterClusterClient.AddClusterListener( new ClusterListener_AdapterAnonymousInnerClass( this, slaveLeftLatch, masterClusterClient ) );
 
@@ -270,7 +270,7 @@ namespace Neo4Net.ha
 			  return CreateNodeOn( cluster.Master );
 		 }
 
-		 private static void CreateNodesOn( GraphDatabaseService db, int count )
+		 private static void CreateNodesOn( IGraphDatabaseService db, int count )
 		 {
 			  for ( int i = 0; i < count; i++ )
 			  {
@@ -278,7 +278,7 @@ namespace Neo4Net.ha
 			  }
 		 }
 
-		 private static long CreateNodeOn( GraphDatabaseService db )
+		 private static long CreateNodeOn( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -296,7 +296,7 @@ namespace Neo4Net.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void awaitPropagation(int expectedPropertyValue, long nodeId, org.neo4j.kernel.impl.ha.ClusterManager.ManagedCluster cluster, org.neo4j.kernel.ha.HighlyAvailableGraphDatabase... excepts) throws Exception
+//ORIGINAL LINE: private void awaitPropagation(int expectedPropertyValue, long nodeId, org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase... excepts) throws Exception
 		 private void AwaitPropagation( int expectedPropertyValue, long nodeId, ClusterManager.ManagedCluster cluster, params HighlyAvailableGraphDatabase[] excepts )
 		 {
 			  long endTime = currentTimeMillis() + PULL_INTERVAL * 20;

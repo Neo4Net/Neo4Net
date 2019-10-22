@@ -28,23 +28,23 @@ namespace Neo4Net.Server.rest.transactional
 
 
 	using MapRow = Neo4Net.Cypher.Internal.javacompat.MapRow;
-	using ExecutionPlanDescription = Neo4Net.Graphdb.ExecutionPlanDescription;
-	using InputPosition = Neo4Net.Graphdb.InputPosition;
-	using Node = Neo4Net.Graphdb.Node;
-	using Notification = Neo4Net.Graphdb.Notification;
-	using Path = Neo4Net.Graphdb.Path;
-	using QueryExecutionType = Neo4Net.Graphdb.QueryExecutionType;
-	using Relationship = Neo4Net.Graphdb.Relationship;
-	using Result = Neo4Net.Graphdb.Result;
-	using NotificationCode = Neo4Net.Graphdb.impl.notification.NotificationCode;
-	using Coordinate = Neo4Net.Graphdb.spatial.Coordinate;
+	using ExecutionPlanDescription = Neo4Net.GraphDb.ExecutionPlanDescription;
+	using InputPosition = Neo4Net.GraphDb.InputPosition;
+	using Node = Neo4Net.GraphDb.Node;
+	using Notification = Neo4Net.GraphDb.Notification;
+	using Path = Neo4Net.GraphDb.Path;
+	using QueryExecutionType = Neo4Net.GraphDb.QueryExecutionType;
+	using Relationship = Neo4Net.GraphDb.Relationship;
+	using Result = Neo4Net.GraphDb.Result;
+	using NotificationCode = Neo4Net.GraphDb.impl.notification.NotificationCode;
+	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
-	using Neo4jError = Neo4Net.Server.rest.transactional.error.Neo4jError;
+	using Neo4NetError = Neo4Net.Server.rest.transactional.error.Neo4NetError;
 	using GraphMock = Neo4Net.Test.mockito.mock.GraphMock;
 	using Link = Neo4Net.Test.mockito.mock.Link;
 	using SpatialMocks = Neo4Net.Test.mockito.mock.SpatialMocks;
@@ -72,33 +72,33 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asSet;
+//	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.MapUtil.map;
+//	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.jsonNode;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.jsonNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.server.rest.domain.JsonHelper.readJson;
+//	import static org.Neo4Net.server.rest.domain.JsonHelper.readJson;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.Property.property;
+//	import static org.Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.link;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.link;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.node;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.node;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.path;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.path;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.GraphMock.relationship;
+//	import static org.Neo4Net.test.mockito.mock.GraphMock.relationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.Properties.properties;
+//	import static org.Neo4Net.test.mockito.mock.Properties.properties;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockCartesian_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockCartesian_3D;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.test.mockito.mock.SpatialMocks.mockWGS84_3D;
+//	import static org.Neo4Net.test.mockito.mock.SpatialMocks.mockWGS84_3D;
 
 	public class ExecutionResultSerializerTest : TxStateCheckerTestSupport
 	{
@@ -191,7 +191,7 @@ namespace Neo4Net.Server.rest.transactional
 			  // when
 			  serializer.TransactionCommitUri( URI.create( "commit/uri/1" ) );
 			  serializer.StatementResult( executionResult, false );
-			  serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
+			  serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
 			  serializer.Finish();
 
 			  // then
@@ -212,7 +212,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			  // when
 			  serializer.StatementResult( executionResult, false );
-			  serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
+			  serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
 			  serializer.Finish();
 
 			  // then
@@ -231,7 +231,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			  // when
 			  serializer.TransactionCommitUri( URI.create( "commit/uri/1" ) );
-			  serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
+			  serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
 			  serializer.Finish();
 
 			  // then
@@ -249,7 +249,7 @@ namespace Neo4Net.Server.rest.transactional
 			  ExecutionResultSerializer serializer = GetSerializerWith( output );
 
 			  // when
-			  serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
+			  serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, new Exception( "cause1" ) ) ) );
 			  serializer.Finish();
 
 			  // then
@@ -441,7 +441,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( Exception e )
 			  {
-					serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
+					serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
 			  }
 
 			  // then
@@ -475,7 +475,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( Exception e )
 			  {
-					serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
+					serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
 			  }
 			  serializer.Finish();
 
@@ -510,7 +510,7 @@ namespace Neo4Net.Server.rest.transactional
 			  }
 			  catch ( Exception e )
 			  {
-					serializer.Errors( asList( new Neo4jError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
+					serializer.Errors( asList( new Neo4NetError( Neo4Net.Kernel.Api.Exceptions.Status_Statement.ExecutionFailed, e ) ) );
 			  }
 			  serializer.Finish();
 
@@ -786,7 +786,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.codehaus.jackson.JsonNode assertIsPlanRoot(String result) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: private org.codehaus.jackson.JsonNode assertIsPlanRoot(String result) throws org.Neo4Net.server.rest.domain.JsonParseException
 		 private JsonNode AssertIsPlanRoot( string result )
 		 {
 			  JsonNode json = jsonNode( result );
@@ -802,7 +802,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.Map<String, ?> planRootMap(String resultString) throws org.neo4j.server.rest.domain.JsonParseException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.Map<String, ?> planRootMap(String resultString) throws org.Neo4Net.server.rest.domain.JsonParseException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private IDictionary<string, ?> PlanRootMap( string resultString )
@@ -927,21 +927,21 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.neo4j.graphdb.Result mockExecutionResult(java.util.Map<String, Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(java.util.Map<String, Object>... rows)
 		 private static Result MockExecutionResult( params IDictionary<string, object>[] rows )
 		 {
 			  return MockExecutionResult( null, rows );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.neo4j.graphdb.Result mockExecutionResult(org.neo4j.graphdb.ExecutionPlanDescription planDescription, java.util.Map<String,Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription, java.util.Map<String,Object>... rows)
 		 private static Result MockExecutionResult( ExecutionPlanDescription planDescription, params IDictionary<string, object>[] rows )
 		 {
 			  return MockExecutionResult( planDescription, Collections.emptyList(), rows );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private static org.neo4j.graphdb.Result mockExecutionResult(org.neo4j.graphdb.ExecutionPlanDescription planDescription, Iterable<org.neo4j.graphdb.Notification> notifications, java.util.Map<String, Object>... rows)
+//ORIGINAL LINE: @SafeVarargs private static org.Neo4Net.graphdb.Result mockExecutionResult(org.Neo4Net.graphdb.ExecutionPlanDescription planDescription, Iterable<org.Neo4Net.graphdb.Notification> notifications, java.util.Map<String, Object>... rows)
 		 private static Result MockExecutionResult( ExecutionPlanDescription planDescription, IEnumerable<Notification> notifications, params IDictionary<string, object>[] rows )
 		 {
 			  ISet<string> keys = new SortedSet<string>();

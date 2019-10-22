@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus
 {
@@ -63,14 +63,14 @@ namespace Neo4Net.causalclustering.core.consensus
 		 private Monitors _monitors = new Monitors();
 		 private RaftMessageProcessingMonitor _monitor = mock( typeof( RaftMessageProcessingMonitor ) );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.neo4j.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstream = mock(org.neo4j.causalclustering.messaging.LifecycleMessageHandler.class);
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<?>> downstream = mock(org.Neo4Net.causalclustering.messaging.LifecycleMessageHandler.class);
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 		 private LifecycleMessageHandler<RaftMessages_ReceivedInstantClusterIdAwareMessage<object>> _downstream = mock( typeof( LifecycleMessageHandler ) );
 
 		 private Duration _messageQueueDelay = Duration.ofMillis( 5 );
 		 private Duration _messageProcessingDelay = Duration.ofMillis( 7 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now.minus(messageQueueDelay), new org.neo4j.causalclustering.identity.ClusterId(java.util.UUID.randomUUID()), new RaftMessages_Heartbeat(new org.neo4j.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0, 0, 0)
+//ORIGINAL LINE: private RaftMessages_ReceivedInstantClusterIdAwareMessage<?> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(now.minus(messageQueueDelay), new org.Neo4Net.causalclustering.identity.ClusterId(java.util.UUID.randomUUID()), new RaftMessages_Heartbeat(new org.Neo4Net.causalclustering.identity.MemberId(java.util.UUID.randomUUID()), 0, 0, 0)
 		 private RaftMessages_ReceivedInstantClusterIdAwareMessage<object> message = RaftMessages_ReceivedInstantClusterIdAwareMessage.of(_now.minus(_messageQueueDelay), new ClusterId(System.Guid.randomUUID()), new RaftMessages_Heartbeat(new MemberId(System.Guid.randomUUID()), 0, 0, 0)
 		);
 		 private Clock _clock = Clocks.tickOnAccessClock( _now, _messageProcessingDelay );

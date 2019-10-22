@@ -49,17 +49,17 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterables.first;
+//	import static org.Neo4Net.helpers.collection.Iterables.first;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.io.ByteUnit.kibiBytes;
+//	import static org.Neo4Net.io.ByteUnit.kibiBytes;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
+//	import static org.Neo4Net.kernel.impl.index.schema.BlockStorage.Monitor_Fields.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyFromUpdate;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexUpdater.initializeKeyFromUpdate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.index.schema.NativeIndexes.deleteIndex;
+//	import static org.Neo4Net.kernel.impl.index.schema.NativeIndexes.deleteIndex;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.util.concurrent.Runnables.runAll;
+//	import static org.Neo4Net.util.concurrent.Runnables.runAll;
 
 	/// <summary>
 	/// <seealso cref="IndexPopulator"/> for native indexes that stores scan updates in parallel append-only files. When all scan updates have been collected
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					BlockStorage<KEY, VALUE> blockStorage = _scanUpdates.get().blockStorage;
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: for (org.neo4j.kernel.api.index.IndexEntryUpdate<?> update : updates)
+//ORIGINAL LINE: for (org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> update : updates)
 					foreach ( IndexEntryUpdate<object> update in updates )
 					{
 						 StoreUpdate( update, blockStorage );
@@ -198,13 +198,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 private void StoreUpdate( long entityId, Value[] values, BlockStorage<KEY, VALUE> blockStorage )
+		 private void StoreUpdate( long IEntityId, Value[] values, BlockStorage<KEY, VALUE> blockStorage )
 		 {
 			  try
 			  {
 					KEY key = layout.newKey();
 					VALUE value = layout.newValue();
-					initializeKeyFromUpdate( key, entityId, values );
+					initializeKeyFromUpdate( key, IEntityId, values );
 					value.From( values );
 					blockStorage.Add( key, value );
 			  }
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void scanCompleted(org.neo4j.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void scanCompleted(org.Neo4Net.kernel.impl.api.index.PhaseTracker phaseTracker) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void ScanCompleted( PhaseTracker phaseTracker )
 		 {
 			  if ( !MarkMergeStarted() )
@@ -348,7 +348,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <exception cref="IOException"> If something goes wrong while reading from index. </exception>
 		 /// <exception cref="IndexEntryConflictException"> If a duplicate is found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeExternalUpdatesToTree(RecordingConflictDetector<KEY,VALUE> recordingConflictDetector) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void writeExternalUpdatesToTree(RecordingConflictDetector<KEY,VALUE> recordingConflictDetector) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void WriteExternalUpdatesToTree( RecordingConflictDetector<KEY, VALUE> recordingConflictDetector )
 		 {
 			  using ( Writer<KEY, VALUE> writer = tree.writer(), IndexUpdateCursor<KEY, VALUE> updates = _externalUpdates.reader() )
@@ -376,7 +376,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyUniqueKeys(IndexKeyStorage.KeyEntryCursor<KEY> allConflictingKeys) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyUniqueKeys(IndexKeyStorage.KeyEntryCursor<KEY> allConflictingKeys) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyUniqueKeys( IndexKeyStorage.KeyEntryCursor<KEY> allConflictingKeys )
 		 {
 			  while ( allConflictingKeys.Next() && !_cancellation.cancelled() )
@@ -388,7 +388,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyUniqueSeek(org.neo4j.cursor.RawCursor<org.neo4j.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> seek) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyUniqueSeek(org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> seek) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyUniqueSeek( IRawCursor<Hit<KEY, VALUE>, IOException> seek )
 		 {
 			  if ( seek != null )
@@ -406,7 +406,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeScanUpdatesToTree(RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, org.neo4j.kernel.impl.index.schema.ByteBufferFactory.Allocator allocator, int bufferSize) throws java.io.IOException, org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void writeScanUpdatesToTree(RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.Allocator allocator, int bufferSize) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void WriteScanUpdatesToTree( RecordingConflictDetector<KEY, VALUE> recordingConflictDetector, Allocator allocator, int bufferSize )
 		 {
 			  using ( MergingBlockEntryReader<KEY, VALUE> allEntries = new MergingBlockEntryReader<KEY, VALUE>( layout ) )
@@ -593,7 +593,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// Write key and value to tree and record duplicates if any.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void writeToTree(org.neo4j.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void writeToTree(org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void WriteToTree( Writer<KEY, VALUE> writer, RecordingConflictDetector<KEY, VALUE> recordingConflictDetector, KEY key, VALUE value )
 		 {
 			  recordingConflictDetector.controlConflictDetection( key );
@@ -607,7 +607,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// conflict checker which means it will throw if we see same value AND same id in one key.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void handleMergeConflict(org.neo4j.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.neo4j.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void handleMergeConflict(org.Neo4Net.index.internal.gbptree.Writer<KEY,VALUE> writer, RecordingConflictDetector<KEY,VALUE> recordingConflictDetector, KEY key, VALUE value) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void HandleMergeConflict( Writer<KEY, VALUE> writer, RecordingConflictDetector<KEY, VALUE> recordingConflictDetector, KEY key, VALUE value )
 		 {
 			  if ( recordingConflictDetector.wasConflicting() )

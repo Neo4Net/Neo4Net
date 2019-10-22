@@ -42,7 +42,7 @@ namespace Neo4Net.Bolt.v1.messaging
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.Values.values;
+//	import static org.Neo4Net.values.storable.Values.values;
 
 	internal class ResultHandlerTest
 	{
@@ -103,7 +103,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.neo4j.bolt.runtime.BoltResult_Visitor visitor) throws Exception
+//ORIGINAL LINE: public void accept(org.Neo4Net.bolt.runtime.BoltResult_Visitor visitor) throws Exception
 			  public override void Accept( Neo4Net.Bolt.runtime.BoltResult_Visitor visitor )
 			  {
 					foreach ( QueryResult_Record record in Records )

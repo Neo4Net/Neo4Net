@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using MetaDataRecordFormat = Neo4Net.Kernel.impl.store.format.standard.MetaDataRecordFormat;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
+//	import static org.Neo4Net.kernel.impl.store.MetaDataStore.Position.STORE_VERSION;
 	using static Neo4Net.Kernel.impl.storemigration.StoreVersionCheck.Result.Outcome;
 
 	public class StoreVersionCheck

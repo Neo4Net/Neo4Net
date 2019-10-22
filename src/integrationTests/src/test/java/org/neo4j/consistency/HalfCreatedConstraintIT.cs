@@ -1,10 +1,10 @@
 ﻿using System;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.Consistency
 {
@@ -28,13 +28,13 @@ namespace Neo4Net.Consistency
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Node = Neo4Net.Graphdb.Node;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using EnterpriseGraphDatabaseFactory = Neo4Net.Graphdb.factory.EnterpriseGraphDatabaseFactory;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Node = Neo4Net.GraphDb.Node;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
@@ -54,7 +54,7 @@ namespace Neo4Net.Consistency
 	public class HalfCreatedConstraintIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public readonly TestDirectory TestDirectory = TestDirectory.testDirectory();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -66,7 +66,7 @@ namespace Neo4Net.Consistency
 			  Label marker = Label.label( "MARKER" );
 			  string property = "property";
 
-			  GraphDatabaseService database = ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabase(databaseDir);
+			  IGraphDatabaseService database = ( new EnterpriseGraphDatabaseFactory() ).newEmbeddedDatabase(databaseDir);
 			  try
 			  {
 					CreateNodes( marker, property, database );
@@ -87,7 +87,7 @@ namespace Neo4Net.Consistency
 			  assertTrue( string.join( Environment.NewLine, Files.readAllLines( checkResult.ReportFile().toPath() ) ), checkResult.Successful );
 		 }
 
-		 private static void WaitForIndexPopulationFailure( GraphDatabaseService database )
+		 private static void WaitForIndexPopulationFailure( IGraphDatabaseService database )
 		 {
 			  try
 			  {
@@ -105,8 +105,8 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void addIndex(org.neo4j.graphdb.GraphDatabaseService database) throws org.neo4j.internal.kernel.api.exceptions.schema.SchemaKernelException
-		 private static void AddIndex( GraphDatabaseService database )
+//ORIGINAL LINE: private static void addIndex(org.Neo4Net.graphdb.GraphDatabaseService database) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+		 private static void AddIndex( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {
@@ -120,7 +120,7 @@ namespace Neo4Net.Consistency
 			  }
 		 }
 
-		 private static void CreateNodes( Label marker, string property, GraphDatabaseService database )
+		 private static void CreateNodes( Label marker, string property, IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )
 			  {

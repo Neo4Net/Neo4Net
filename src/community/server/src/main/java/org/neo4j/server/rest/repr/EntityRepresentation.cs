@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	public interface EntityRepresentation
+	public interface IEntityRepresentation
 	{
 		 ValueRepresentation SelfUri();
 	}

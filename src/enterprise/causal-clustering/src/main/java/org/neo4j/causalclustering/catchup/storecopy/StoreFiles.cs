@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -15,12 +15,12 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void delete(java.io.File storeDir, org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: public void delete(java.io.File storeDir, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 public virtual void Delete( File storeDir, LogFiles logFiles )
 		 {
 			  // 'files' can be null if the directory doesn't exist. This is fine, we just ignore it then.
@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.stream.Stream<org.neo4j.io.fs.FileHandle> acceptedPageCachedFiles(java.io.File databaseDirectory) throws java.io.IOException
+//ORIGINAL LINE: private java.util.stream.Stream<org.Neo4Net.io.fs.FileHandle> acceptedPageCachedFiles(java.io.File databaseDirectory) throws java.io.IOException
 		 private Stream<FileHandle> AcceptedPageCachedFiles( File databaseDirectory )
 		 {
 			  try
@@ -104,7 +104,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void moveTo(java.io.File source, java.io.File target, org.neo4j.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
+//ORIGINAL LINE: public void moveTo(java.io.File source, java.io.File target, org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles) throws java.io.IOException
 		 public virtual void MoveTo( File source, File target, LogFiles logFiles )
 		 {
 			  _fs.mkdirs( logFiles.LogFilesDirectory() );
@@ -151,7 +151,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.identity.StoreId readStoreId(org.neo4j.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.StoreId readStoreId(org.Neo4Net.io.layout.DatabaseLayout databaseLayout) throws java.io.IOException
 		 public virtual StoreId ReadStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();

@@ -23,15 +23,15 @@ namespace Neo4Net.Values.Storable
 {
 
 
-	internal sealed class Neo4JTemporalField : TemporalField
+	internal sealed class Neo4NetTemporalField : TemporalField
 	{
-		 public static readonly Neo4JTemporalField YearOfDecade = new Neo4JTemporalField( "YearOfDecade", InnerEnum.YearOfDecade, "Year of decade", YEARS, DECADES, 10 );
-		 public static readonly Neo4JTemporalField YearOfCentury = new Neo4JTemporalField( "YearOfCentury", InnerEnum.YearOfCentury, "Year of century", YEARS, CENTURIES, 100 );
-		 public static readonly Neo4JTemporalField YearOfMillennium = new Neo4JTemporalField( "YearOfMillennium", InnerEnum.YearOfMillennium, "Millennium", YEARS, MILLENNIA, 1000 );
+		 public static readonly Neo4NetTemporalField YearOfDecade = new Neo4NetTemporalField( "YearOfDecade", InnerEnum.YearOfDecade, "Year of decade", YEARS, DECADES, 10 );
+		 public static readonly Neo4NetTemporalField YearOfCentury = new Neo4NetTemporalField( "YearOfCentury", InnerEnum.YearOfCentury, "Year of century", YEARS, CENTURIES, 100 );
+		 public static readonly Neo4NetTemporalField YearOfMillennium = new Neo4NetTemporalField( "YearOfMillennium", InnerEnum.YearOfMillennium, "Millennium", YEARS, MILLENNIA, 1000 );
 
-		 private static readonly IList<Neo4JTemporalField> valueList = new List<Neo4JTemporalField>();
+		 private static readonly IList<Neo4NetTemporalField> valueList = new List<Neo4NetTemporalField>();
 
-		 static Neo4JTemporalField()
+		 static Neo4NetTemporalField()
 		 {
 			 valueList.Add( YearOfDecade );
 			 valueList.Add( YearOfCentury );
@@ -56,7 +56,7 @@ namespace Neo4Net.Values.Storable
 		 internal Private readonly;
 		 internal Private readonly;
 
-		 internal Neo4JTemporalField( string name, InnerEnum innerEnum, string name, java.time.temporal.TemporalUnit baseUnit, java.time.temporal.TemporalUnit rangeUnit, int years )
+		 internal Neo4NetTemporalField( string name, InnerEnum innerEnum, string name, java.time.temporal.TemporalUnit baseUnit, java.time.temporal.TemporalUnit rangeUnit, int years )
 		 {
 			  this._name = name;
 			  this._baseUnit = baseUnit;
@@ -142,7 +142,7 @@ namespace Neo4Net.Values.Storable
 		 }
 
 
-		public static IList<Neo4JTemporalField> values()
+		public static IList<Neo4NetTemporalField> values()
 		{
 			return valueList;
 		}
@@ -152,9 +152,9 @@ namespace Neo4Net.Values.Storable
 			return ordinalValue;
 		}
 
-		public static Neo4JTemporalField valueOf( string name )
+		public static Neo4NetTemporalField valueOf( string name )
 		{
-			foreach ( Neo4JTemporalField enumInstance in Neo4JTemporalField.valueList )
+			foreach ( Neo4NetTemporalField enumInstance in Neo4NetTemporalField.valueList )
 			{
 				if ( enumInstance.nameValue == name )
 				{

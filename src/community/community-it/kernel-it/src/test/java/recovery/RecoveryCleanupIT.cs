@@ -30,13 +30,13 @@ namespace Recovery
 	using Test = org.junit.Test;
 
 
-	using DependencyResolver = Neo4Net.Graphdb.DependencyResolver;
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Label = Neo4Net.Graphdb.Label;
-	using Transaction = Neo4Net.Graphdb.Transaction;
-	using Neo4Net.Graphdb.config;
-	using GraphDatabaseBuilder = Neo4Net.Graphdb.factory.GraphDatabaseBuilder;
-	using GraphDatabaseSettings = Neo4Net.Graphdb.factory.GraphDatabaseSettings;
+	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Label = Neo4Net.GraphDb.Label;
+	using Transaction = Neo4Net.GraphDb.Transaction;
+	using Neo4Net.GraphDb.config;
+	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
+	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
@@ -55,15 +55,15 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.values.storable.CoordinateReferenceSystem.Cartesian;
+//	import static org.Neo4Net.values.storable.CoordinateReferenceSystem.Cartesian;
 
 	public class RecoveryCleanupIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public org.neo4j.test.rule.TestDirectory testDirectory = org.neo4j.test.rule.TestDirectory.testDirectory();
+//ORIGINAL LINE: @Rule public org.Neo4Net.test.rule.TestDirectory testDirectory = org.Neo4Net.test.rule.TestDirectory.testDirectory();
 		 public TestDirectory TestDirectory = TestDirectory.testDirectory();
 
-		 private GraphDatabaseService _db;
+		 private IGraphDatabaseService _db;
 		 private File _storeDir;
 		 private readonly TestGraphDatabaseFactory _factory = new TestGraphDatabaseFactory();
 		 private readonly ExecutorService _executor = Executors.newFixedThreadPool( 2 );
@@ -174,7 +174,7 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void nativeIndexMustLogCrashPointerCleanupDuringRecovery(org.neo4j.graphdb.factory.GraphDatabaseSettings.SchemaIndex setting, String... subTypes) throws Exception
+//ORIGINAL LINE: private void nativeIndexMustLogCrashPointerCleanupDuringRecovery(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.SchemaIndex setting, String... subTypes) throws Exception
 		 private void NativeIndexMustLogCrashPointerCleanupDuringRecovery( GraphDatabaseSettings.SchemaIndex setting, params string[] subTypes )
 		 {
 			  // given
@@ -242,7 +242,7 @@ namespace Recovery
 			 }
 		 }
 
-		 private void Index( GraphDatabaseService db )
+		 private void Index( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -269,14 +269,14 @@ namespace Recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkpoint(org.neo4j.graphdb.GraphDatabaseService db) throws java.io.IOException
-		 private void Checkpoint( GraphDatabaseService db )
+//ORIGINAL LINE: private void checkpoint(org.Neo4Net.graphdb.GraphDatabaseService db) throws java.io.IOException
+		 private void Checkpoint( IGraphDatabaseService db )
 		 {
 			  CheckPointer checkPointer = checkPointer( db );
 			  checkPointer.ForceCheckPoint( new SimpleTriggerInfo( "test" ) );
 		 }
 
-		 private void SomeData( GraphDatabaseService db )
+		 private void SomeData( IGraphDatabaseService db )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {
@@ -303,25 +303,25 @@ namespace Recovery
 			  }
 		 }
 
-		 private GraphDatabaseService StartDatabase()
+		 private IGraphDatabaseService StartDatabase()
 		 {
 			  GraphDatabaseBuilder builder = _factory.newEmbeddedDatabaseBuilder( _storeDir );
 			  _testSpecificConfig.forEach( builder.setConfig );
 			  return builder.NewGraphDatabase();
 		 }
 
-		 private DatabaseHealth DatabaseHealth( GraphDatabaseService db )
+		 private DatabaseHealth DatabaseHealth( IGraphDatabaseService db )
 		 {
 			  return DependencyResolver( db ).resolveDependency( typeof( DatabaseHealth ) );
 		 }
 
-		 private CheckPointer CheckPointer( GraphDatabaseService db )
+		 private CheckPointer CheckPointer( IGraphDatabaseService db )
 		 {
 			  DependencyResolver dependencyResolver = dependencyResolver( db );
 			  return dependencyResolver.ResolveDependency( typeof( NeoStoreDataSource ) ).DependencyResolver.resolveDependency( typeof( CheckPointer ) );
 		 }
 
-		 private DependencyResolver DependencyResolver( GraphDatabaseService db )
+		 private DependencyResolver DependencyResolver( IGraphDatabaseService db )
 		 {
 			  return ( ( GraphDatabaseAPI ) db ).DependencyResolver;
 		 }

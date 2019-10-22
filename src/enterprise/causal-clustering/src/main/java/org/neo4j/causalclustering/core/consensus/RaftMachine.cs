@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Threading;
 
 /*
- * Copyright (c) 2002-2018 "Neo4j,"
+ * Copyright (c) 2002-2018 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
- * This file is part of Neo4j Enterprise Edition. The included source
+ * This file is part of Neo4Net Enterprise Edition. The included source
  * code can be redistributed and/or modified under the terms of the
  * GNU AFFERO GENERAL PUBLIC LICENSE Version 3
  * (http://www.fsf.org/licensing/licenses/agpl-3.0.html) with the
@@ -17,12 +17,12 @@ using System.Threading;
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU Affero General Public License for more details.
  *
- * Neo4j object code can be licensed independently from the source
+ * Neo4Net object code can be licensed independently from the source
  * under separate terms from the AGPL. Inquiries can be directed to:
- * licensing@neo4j.com
+ * licensing@Neo4Net.com
  *
  * More information is also available at:
- * https://neo4j.com/licensing/
+ * https://Neo4Net.com/licensing/
  */
 namespace Neo4Net.causalclustering.core.consensus
 {
@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.core.consensus
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.causalclustering.core.consensus.roles.Role.LEADER;
+//	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.LEADER;
 
 	/// <summary>
 	/// Implements the Raft Consensus Algorithm.
@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized void installCoreState(org.neo4j.causalclustering.core.state.snapshot.RaftCoreState coreState) throws java.io.IOException
+//ORIGINAL LINE: public synchronized void installCoreState(org.Neo4Net.causalclustering.core.state.snapshot.RaftCoreState coreState) throws java.io.IOException
 		 public virtual void InstallCoreState( RaftCoreState coreState )
 		 {
 			 lock ( this )
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.neo4j.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.identity.MemberId getLeader() throws NoLeaderFoundException
 		 public virtual MemberId Leader
 		 {
 			 get
@@ -192,7 +192,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.neo4j.causalclustering.identity.MemberId waitForLeader(long timeoutMillis, System.Predicate<org.neo4j.causalclustering.identity.MemberId> predicate) throws NoLeaderFoundException
+//ORIGINAL LINE: private org.Neo4Net.causalclustering.identity.MemberId waitForLeader(long timeoutMillis, System.Predicate<org.Neo4Net.causalclustering.identity.MemberId> predicate) throws NoLeaderFoundException
 		 private MemberId WaitForLeader( long timeoutMillis, System.Predicate<MemberId> predicate )
 		 {
 			  try
@@ -274,7 +274,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.neo4j.causalclustering.core.consensus.outcome.ConsensusOutcome handle(RaftMessages_RaftMessage incomingMessage) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.causalclustering.core.consensus.outcome.ConsensusOutcome handle(RaftMessages_RaftMessage incomingMessage) throws java.io.IOException
 		 public virtual ConsensusOutcome Handle( RaftMessages_RaftMessage incomingMessage )
 		 {
 			 lock ( this )
@@ -302,7 +302,7 @@ namespace Neo4Net.causalclustering.core.consensus
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void driveMembership(org.neo4j.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
+//ORIGINAL LINE: private void driveMembership(org.Neo4Net.causalclustering.core.consensus.outcome.Outcome outcome) throws java.io.IOException
 		 private void DriveMembership( Outcome outcome )
 		 {
 			  _membershipManager.processLog( outcome.CommitIndex, outcome.LogCommands );

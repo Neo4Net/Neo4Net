@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.copyOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
+//	import static org.Neo4Net.@unsafe.impl.batchimport.input.csv.CsvGroupInputIterator.extractors;
 
 	/// <summary>
 	/// Iterates over one stream of data, where all data items conform to the same <seealso cref="Header"/>.
@@ -71,13 +71,13 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: CsvInputIterator(org.neo4j.csv.reader.CharReadable stream, Decorator decorator, Header.Factory headerFactory, IdType idType, Configuration config, org.neo4j.unsafe.impl.batchimport.input.Groups groups, org.neo4j.unsafe.impl.batchimport.input.Collector badCollector, org.neo4j.csv.reader.Extractors extractors, int groupId) throws java.io.IOException
+//ORIGINAL LINE: CsvInputIterator(org.Neo4Net.csv.reader.CharReadable stream, Decorator decorator, Header.Factory headerFactory, IdType idType, Configuration config, org.Neo4Net.unsafe.impl.batchimport.input.Groups groups, org.Neo4Net.unsafe.impl.batchimport.input.Collector badCollector, org.Neo4Net.csv.reader.Extractors extractors, int groupId) throws java.io.IOException
 		 internal CsvInputIterator( CharReadable stream, Decorator decorator, Header.Factory headerFactory, IdType idType, Configuration config, Groups groups, Collector badCollector, Extractors extractors, int groupId ) : this( stream, decorator, ExtractHeader( stream, headerFactory, idType, config, groups ), config, idType, badCollector, extractors, groupId )
 		 {
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static Header extractHeader(org.neo4j.csv.reader.CharReadable stream, Header.Factory headerFactory, IdType idType, Configuration config, org.neo4j.unsafe.impl.batchimport.input.Groups groups) throws java.io.IOException
+//ORIGINAL LINE: static Header extractHeader(org.Neo4Net.csv.reader.CharReadable stream, Header.Factory headerFactory, IdType idType, Configuration config, org.Neo4Net.unsafe.impl.batchimport.input.Groups groups) throws java.io.IOException
 		 internal static Header ExtractHeader( CharReadable stream, Header.Factory headerFactory, IdType idType, Configuration config, Groups groups )
 		 {
 			  if ( !headerFactory.Defined )

@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Neo4Net.Collections;
 	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
 	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4jTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4jTypes;
+	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
@@ -46,9 +46,9 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.helpers.collection.Iterators.asList;
+//	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
 
 	public class ReflectiveProcedureWithArgumentsTest
 	{
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 			  // Then
 			  assertEquals( 1, procedures.Count );
-			  assertThat( procedures[0].Signature(), equalTo(procedureSignature("org", "neo4j", "kernel", "impl", "proc", "listCoolPeople").@in("name", Neo4jTypes.NTString).@in("age", Neo4jTypes.NTInteger).@out("name", Neo4jTypes.NTString).build()) );
+			  assertThat( procedures[0].Signature(), equalTo(procedureSignature("org", "Neo4Net", "kernel", "impl", "proc", "listCoolPeople").@in("name", Neo4NetTypes.NTString).@in("age", Neo4NetTypes.NTInteger).@out("name", Neo4NetTypes.NTString).build()) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 {
 			  // Expect
 			  Exception.expect( typeof( ProcedureException ) );
-			  Exception.expectMessage( string.Format( "Argument `a` at position 0 in `defaultValues` with%n" + "type `long` cannot be converted to a Neo4j type: Default value `forty-two` could not be parsed as a " + "Long" ) );
+			  Exception.expectMessage( string.Format( "Argument `a` at position 0 in `defaultValues` with%n" + "type `long` cannot be converted to a Neo4Net type: Default value `forty-two` could not be parsed as a " + "Long" ) );
 
 			  // When
 			  Compile( typeof( ClassWithProcedureWithBadlyTypedDefault ) );
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.neo4j.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.neo4j.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
 		 private IList<CallableProcedure> Compile( Type clazz )
 		 {
 			  return ( new ReflectiveProcedureCompiler( new TypeMappers(), new ComponentRegistry(), new ComponentRegistry(), NullLog.Instance, ProcedureConfig.Default ) ).compileProcedure(clazz, null, true);

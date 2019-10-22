@@ -35,9 +35,9 @@ namespace Neo4Net.Resources
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
    //	import static org.junit.jupiter.api.Assumptions.assumeFalse;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.resources.HeapAllocation.HEAP_ALLOCATION;
+   //	import static org.Neo4Net.resources.HeapAllocation.HEAP_ALLOCATION;
    //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-   //	import static org.neo4j.resources.HeapAllocation.NOT_AVAILABLE;
+   //	import static org.Neo4Net.resources.HeapAllocation.NOT_AVAILABLE;
 
    internal class SunManagementHeapAllocationTest
    {
@@ -72,7 +72,7 @@ namespace Neo4Net.Resources
 
          // then
          assertThat(allocatedBytes, Matchers.lessThan(HEAP_ALLOCATION.allocatedBytes(currentThread())));
-         assertEquals(17, objects.Count);
+        Assert.Equals(17, objects.Count);
       }
    }
 }

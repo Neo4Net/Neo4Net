@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.neo4j.kernel.extension.KernelExtensionFactory<SingleInstanceIndexProviderFactoryDependencies> singleInstanceIndexProviderFactory(String key, final org.neo4j.kernel.api.index.IndexProvider provider)
+//ORIGINAL LINE: public static org.Neo4Net.kernel.extension.KernelExtensionFactory<SingleInstanceIndexProviderFactoryDependencies> singleInstanceIndexProviderFactory(String key, final org.Neo4Net.kernel.api.index.IndexProvider provider)
 		 public static KernelExtensionFactory<SingleInstanceIndexProviderFactoryDependencies> SingleInstanceIndexProviderFactory( string key, IndexProvider provider )
 		 {
 			  return new SingleInstanceIndexProviderFactory( key, provider );
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void awaitIndexOnline(org.neo4j.internal.kernel.api.SchemaRead schemaRead, org.neo4j.internal.kernel.api.IndexReference index) throws org.neo4j.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public static void awaitIndexOnline(org.Neo4Net.internal.kernel.api.SchemaRead schemaRead, org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
 		 public static void AwaitIndexOnline( SchemaRead schemaRead, IndexReference index )
 		 {
 			  long start = DateTimeHelper.CurrentUnixTimeMillis();

@@ -31,7 +31,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4jPackV1 = Neo4Net.Bolt.v1.messaging.Neo4jPackV1;
+	using Neo4NetPackV1 = Neo4Net.Bolt.v1.messaging.Neo4NetPackV1;
 	using SecureSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureSocketConnection;
 	using SecureWebSocketConnection = Neo4Net.Bolt.v1.transport.socket.client.SecureWebSocketConnection;
 	using TransportConnection = Neo4Net.Bolt.v1.transport.socket.client.TransportConnection;
@@ -45,17 +45,17 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.apache.commons.lang3.SystemUtils.isJavaVersionAtLeast;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.bolt.v1.transport.integration.Neo4jWithSocket.DEFAULT_CONNECTOR_KEY;
+//	import static org.Neo4Net.bolt.v1.transport.integration.Neo4NetWithSocket.DEFAULT_CONNECTOR_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.kernel.configuration.BoltConnector.EncryptionLevel.DISABLED;
+//	import static org.Neo4Net.kernel.configuration.BoltConnector.EncryptionLevel.DISABLED;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RejectTransportEncryptionIT
 	public class RejectTransportEncryptionIT
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public Neo4jWithSocket server = new Neo4jWithSocket(getClass(), settings ->
-		 public Neo4jWithSocket Server = new Neo4jWithSocket(this.GetType(), settings =>
+//ORIGINAL LINE: @Rule public Neo4NetWithSocket server = new Neo4NetWithSocket(getClass(), settings ->
+		 public Neo4NetWithSocket Server = new Neo4NetWithSocket(this.GetType(), settings =>
 		 {
 					 settings.put( ( new BoltConnector( DEFAULT_CONNECTOR_KEY ) ).type.name(), "BOLT" );
 					 settings.put( ( new BoltConnector( DEFAULT_CONNECTOR_KEY ) ).encryption_level.name(), DISABLED.name() );
@@ -65,7 +65,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public ExpectedException Exception = ExpectedException.none();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(0) public org.neo4j.function.Factory<org.neo4j.bolt.v1.transport.socket.client.TransportConnection> cf;
+//ORIGINAL LINE: @Parameterized.Parameter(0) public org.Neo4Net.function.Factory<org.Neo4Net.bolt.v1.transport.socket.client.TransportConnection> cf;
 		 public IFactory<TransportConnection> Cf;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -88,7 +88,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 public virtual void Setup()
 		 {
 			  this._client = Cf.newInstance();
-			  this._util = new TransportTestUtil( new Neo4jPackV1() );
+			  this._util = new TransportTestUtil( new Neo4NetPackV1() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

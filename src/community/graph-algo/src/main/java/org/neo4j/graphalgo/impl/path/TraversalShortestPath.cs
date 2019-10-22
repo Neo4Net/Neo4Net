@@ -19,18 +19,18 @@
  */
 namespace Neo4Net.Graphalgo.impl.path
 {
-	using GraphDatabaseService = Neo4Net.Graphdb.GraphDatabaseService;
-	using Node = Neo4Net.Graphdb.Node;
-	using Neo4Net.Graphdb;
-	using TraversalDescription = Neo4Net.Graphdb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.Graphdb.traversal.Traverser;
+	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
+	using Node = Neo4Net.GraphDb.Node;
+	using Neo4Net.GraphDb;
+	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Evaluators.toDepth;
+//	import static org.Neo4Net.graphdb.traversal.Evaluators.toDepth;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.SideSelectorPolicies.LEVEL_STOP_DESCENT_ON_RESULT;
+//	import static org.Neo4Net.graphdb.traversal.SideSelectorPolicies.LEVEL_STOP_DESCENT_ON_RESULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.neo4j.graphdb.traversal.Uniqueness.NODE_PATH;
+//	import static org.Neo4Net.graphdb.traversal.Uniqueness.NODE_PATH;
 
 	/// <summary>
 	/// Implements shortest path algorithm, see <seealso cref="ShortestPath"/>, but using
@@ -61,7 +61,7 @@ namespace Neo4Net.Graphalgo.impl.path
 
 		 protected internal override Traverser InstantiateTraverser( Node start, Node end )
 		 {
-			  GraphDatabaseService db = start.GraphDatabase;
+			  IGraphDatabaseService db = start.GraphDatabase;
 			  TraversalDescription sideBase = Db.traversalDescription().breadthFirst().uniqueness(NODE_PATH);
 			  return Db.bidirectionalTraversalDescription().mirroredSides(sideBase.Expand(_expander)).sideSelector(LEVEL_STOP_DESCENT_ON_RESULT, _maxDepth).collisionEvaluator(toDepth(_maxDepth)).traverse(start, end);
 		 }
