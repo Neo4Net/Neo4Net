@@ -20,7 +20,7 @@
  * More information is also available at:
  * https://Neo4Net.com/licensing/
  */
-namespace Neo4Net.CommandLine.dbms
+namespace Neo4Net.Dbms.CommandLine
 {
 	using After = org.junit.After;
 	using Before = org.junit.Before;

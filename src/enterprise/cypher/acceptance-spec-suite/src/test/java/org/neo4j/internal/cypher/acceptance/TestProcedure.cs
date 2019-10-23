@@ -25,9 +25,9 @@
 namespace Neo4Net.Internal.cypher.acceptance
 {
 
-	using GraphAlgoFactory = Neo4Net.Graphalgo.GraphAlgoFactory;
-	using Neo4Net.Graphalgo;
-	using WeightedPath = Neo4Net.Graphalgo.WeightedPath;
+	using GraphAlgoFactory = Neo4Net.GraphAlgo.GraphAlgoFactory;
+	using Neo4Net.GraphAlgo;
+	using WeightedPath = Neo4Net.GraphAlgo.WeightedPath;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Label = Neo4Net.GraphDb.Label;
@@ -38,11 +38,11 @@ namespace Neo4Net.Internal.cypher.acceptance
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 	using Context = Neo4Net.Procedure.Context;
 	using Description = Neo4Net.Procedure.Description;
 	using Name = Neo4Net.Procedure.Name;
