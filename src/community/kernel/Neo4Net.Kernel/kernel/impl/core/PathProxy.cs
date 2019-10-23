@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.iteratorsEqual;

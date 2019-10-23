@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using TraversalMetadata = Neo4Net.GraphDb.traversal.TraversalMetadata;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using TraversalMetadata = Neo4Net.GraphDb.Traversal.TraversalMetadata;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 	using Neo4Net.Helpers.Collections;
 
 	public class DefaultTraverser : Traverser

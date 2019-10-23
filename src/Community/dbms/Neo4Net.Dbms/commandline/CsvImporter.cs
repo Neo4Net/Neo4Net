@@ -19,13 +19,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CommandLine.dbms
+namespace Neo4Net.Dbms.CommandLine
 {
 
 	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
-	using WrappedBatchImporterConfigurationForNeo4NetAdmin = Neo4Net.CommandLine.dbms.config.WrappedBatchImporterConfigurationForNeo4NetAdmin;
-	using WrappedCsvInputConfigurationForNeo4NetAdmin = Neo4Net.CommandLine.dbms.config.WrappedCsvInputConfigurationForNeo4NetAdmin;
+	using WrappedBatchImporterConfigurationForNeo4NetAdmin = Neo4Net.Dbms.CommandLine.Config.WrappedBatchImporterConfigurationForNeo4NetAdmin;
+	using WrappedCsvInputConfigurationForNeo4NetAdmin = Neo4Net.Dbms.CommandLine.Config.WrappedCsvInputConfigurationForNeo4NetAdmin;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Args = Neo4Net.Helpers.Args;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;

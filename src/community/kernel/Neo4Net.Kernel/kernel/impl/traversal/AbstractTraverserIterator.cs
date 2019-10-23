@@ -25,9 +25,9 @@ namespace Neo4Net.Kernel.impl.traversal
 
 	internal abstract class AbstractTraverserIterator : PrefetchingResourceIterator<Path>, TraverserIterator
 	{
-		public abstract Evaluation Evaluate( Neo4Net.GraphDb.traversal.TraversalBranch branch, Neo4Net.GraphDb.traversal.BranchState<STATE> state );
-		public abstract bool IsUnique( Neo4Net.GraphDb.traversal.TraversalBranch branch );
-		public abstract bool IsUniqueFirst( Neo4Net.GraphDb.traversal.TraversalBranch branch );
+		public abstract Evaluation Evaluate( Neo4Net.GraphDb.Traversal.TraversalBranch branch, Neo4Net.GraphDb.Traversal.BranchState<STATE> state );
+		public abstract bool IsUnique( Neo4Net.GraphDb.Traversal.TraversalBranch branch );
+		public abstract bool IsUniqueFirst( Neo4Net.GraphDb.Traversal.TraversalBranch branch );
 		public abstract ResourceIterator<R> Map( System.Func<T, R> map );
 		public override abstract java.util.stream.Stream<T> Stream();
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:

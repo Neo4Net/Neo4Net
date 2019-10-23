@@ -25,15 +25,15 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
 	using Resource = Neo4Net.GraphDb.Resource;
-	using BranchOrderingPolicy = Neo4Net.GraphDb.traversal.BranchOrderingPolicy;
-	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
-	using Neo4Net.GraphDb.traversal;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using UniquenessFactory = Neo4Net.GraphDb.traversal.UniquenessFactory;
-	using UniquenessFilter = Neo4Net.GraphDb.traversal.UniquenessFilter;
+	using BranchOrderingPolicy = Neo4Net.GraphDb.Traversal.BranchOrderingPolicy;
+	using BranchSelector = Neo4Net.GraphDb.Traversal.BranchSelector;
+	using Neo4Net.GraphDb.Traversal;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using UniquenessFactory = Neo4Net.GraphDb.Traversal.UniquenessFactory;
+	using UniquenessFilter = Neo4Net.GraphDb.Traversal.UniquenessFilter;
 
 	internal class MonoDirectionalTraverserIterator : AbstractTraverserIterator
 	{

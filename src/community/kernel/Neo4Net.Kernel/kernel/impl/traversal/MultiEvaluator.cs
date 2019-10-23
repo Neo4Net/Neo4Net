@@ -22,16 +22,16 @@
 namespace Neo4Net.Kernel.impl.traversal
 {
 	using Path = Neo4Net.GraphDb.Path;
-	using Neo4Net.GraphDb.traversal;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using Neo4Net.GraphDb.Traversal;
 
 	/// <summary>
 	/// Evaluator which can hold multiple <seealso cref="Evaluator"/>s and delegate to them
 	/// all for evaluation requests.
 	/// </summary>
-	public class MultiEvaluator<STATE> : Neo4Net.GraphDb.traversal.PathEvaluator_Adapter<STATE>
+	public class MultiEvaluator<STATE> : Neo4Net.GraphDb.Traversal.PathEvaluator_Adapter<STATE>
 	{
 		 private readonly PathEvaluator[] _evaluators;
 

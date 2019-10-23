@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-/*
+﻿/*
  * Copyright © 2018-2020 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
@@ -19,17 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CommandLine.dbms
+namespace Neo4Net.Dbms.CommandLine
 {
 
 	using AdminCommand = Neo4Net.CommandLine.Admin.AdminCommand;
 	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
 	using Arguments = Neo4Net.CommandLine.Args.Arguments;
+	using Loader = Neo4Net.Dbms.archive.Loader;
 
-	public class ImportCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
+	public class LoadCommandProvider : Neo4Net.CommandLine.Admin.AdminCommand_Provider
 	{
-		 public ImportCommandProvider() : base("import")
+		 public LoadCommandProvider() : base("load")
 		 {
 		 }
 
@@ -37,43 +36,38 @@ namespace Neo4Net.CommandLine.dbms
 //ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.arguments.Arguments allArguments()
 		 public override Arguments AllArguments()
 		 {
-			  return ImportCommand.AllArguments();
-		 }
-
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @Nonnull public java.util.List<org.Neo4Net.commandline.arguments.Arguments> possibleArguments()
-		 public override IList<Arguments> PossibleArguments()
-		 {
-			  return Arrays.asList( ImportCommand.CsvArguments(), ImportCommand.DatabaseArguments() );
+			  return LoadCommand.Arguments();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @Nonnull public String description()
 		 public override string Description()
 		 {
-			  return "Import a collection of CSV files with --mode=csv (default), or a database from " +
-						 "a pre-3.0 installation with --mode=database.";
+			  return "Load a database from an archive. <archive-path> must be an archive created with the dump " +
+						 "command. <database> is the name of the database to create. Existing databases can be replaced " +
+						 "by specifying --force. It is not possible to replace a database that is mounted in a running " +
+						 "Neo4Net server.";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @Nonnull public String summary()
 		 public override string Summary()
 		 {
-			  return "Import from a collection of CSV files or a pre-3.0 database.";
+			  return "Load a database from an archive created with the dump command.";
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommandSection commandSection()
 		 public override AdminCommandSection CommandSection()
 		 {
-			  return AdminCommandSection.general();
+			  return OfflineBackupCommandSection.Instance();
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @Nonnull public org.Neo4Net.commandline.admin.AdminCommand create(java.nio.file.Path homeDir, java.nio.file.Path configDir, org.Neo4Net.commandline.admin.OutsideWorld outsideWorld)
 		 public override AdminCommand Create( Path homeDir, Path configDir, OutsideWorld outsideWorld )
 		 {
-			  return new ImportCommand( homeDir, configDir, outsideWorld );
+			  return new LoadCommand( homeDir, configDir, new Loader( outsideWorld.ErrorStream() ) );
 		 }
 	}
 

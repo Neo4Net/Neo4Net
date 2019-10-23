@@ -17,23 +17,25 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CommandLine.dbms.config
+namespace Neo4Net.Dbms.CommandLine
 {
-	using Configuration = Neo4Net.@unsafe.Impl.Batchimport.Configuration;
 
-	/// <summary>
-	/// Provides a wrapper around <seealso cref="Configuration"/> with overridden defaults for Neo4Net-admin import
-	/// Use all available processors
-	/// </summary>
-	public class WrappedBatchImporterConfigurationForNeo4NetAdmin : Neo4Net.@unsafe.Impl.Batchimport.Configuration_Overridden
+	using AdminCommandSection = Neo4Net.CommandLine.Admin.AdminCommandSection;
+
+	public class OfflineBackupCommandSection : AdminCommandSection
 	{
-		 public WrappedBatchImporterConfigurationForNeo4NetAdmin( Configuration defaults ) : base( defaults )
+		 private static readonly OfflineBackupCommandSection _offineBackupCommandSection = new OfflineBackupCommandSection();
+
+		 public static AdminCommandSection Instance()
 		 {
+			  return _offineBackupCommandSection;
 		 }
 
-		 public override int MaxNumberOfProcessors()
+//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+//ORIGINAL LINE: @Override @Nonnull public String printable()
+		 public override string Printable()
 		 {
-			  return Configuration.allAvailableProcessors();
+			  return "Offline backup";
 		 }
 	}
 

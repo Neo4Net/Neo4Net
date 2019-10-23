@@ -24,14 +24,14 @@ namespace Neo4Net.Kernel.impl.traversal
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Resource = Neo4Net.GraphDb.Resource;
-	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
-	using BranchCollisionPolicy = Neo4Net.GraphDb.traversal.BranchCollisionPolicy;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using Neo4Net.GraphDb.traversal;
-	using SideSelectorPolicy = Neo4Net.GraphDb.traversal.SideSelectorPolicy;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+	using BranchCollisionPolicy = Neo4Net.GraphDb.Traversal.BranchCollisionPolicy;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using Neo4Net.GraphDb.Traversal;
+	using SideSelectorPolicy = Neo4Net.GraphDb.Traversal.SideSelectorPolicy;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.traversal.BranchCollisionPolicies.STANDARD;
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 public override BidirectionalTraversalDescription CollisionEvaluator( Evaluator collisionEvaluator )
 		 {
-			  return collisionEvaluator( new Neo4Net.GraphDb.traversal.Evaluator_AsPathEvaluator( collisionEvaluator ) );
+			  return collisionEvaluator( new Neo4Net.GraphDb.Traversal.Evaluator_AsPathEvaluator( collisionEvaluator ) );
 		 }
 
 		 public override BidirectionalTraversalDescription SideSelector( SideSelectorPolicy sideSelector, int maxDepth )

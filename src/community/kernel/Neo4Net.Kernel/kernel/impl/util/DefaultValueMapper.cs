@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;

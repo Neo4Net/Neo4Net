@@ -27,11 +27,11 @@ namespace Neo4Net.Kernel.impl.traversal
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.traversal;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
+	using Neo4Net.GraphDb.Traversal;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 

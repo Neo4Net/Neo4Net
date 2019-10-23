@@ -45,8 +45,8 @@ namespace Neo4Net.Kernel.impl.factory
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;

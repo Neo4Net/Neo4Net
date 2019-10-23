@@ -31,16 +31,16 @@ namespace Neo4Net.Kernel.impl.traversal
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Resource = Neo4Net.GraphDb.Resource;
 	using StandardExpander = Neo4Net.GraphDb.impl.StandardExpander;
-	using BranchOrderingPolicies = Neo4Net.GraphDb.traversal.BranchOrderingPolicies;
-	using BranchOrderingPolicy = Neo4Net.GraphDb.traversal.BranchOrderingPolicy;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
-	using UniquenessFactory = Neo4Net.GraphDb.traversal.UniquenessFactory;
+	using BranchOrderingPolicies = Neo4Net.GraphDb.Traversal.BranchOrderingPolicies;
+	using BranchOrderingPolicy = Neo4Net.GraphDb.Traversal.BranchOrderingPolicy;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
+	using UniquenessFactory = Neo4Net.GraphDb.Traversal.UniquenessFactory;
 
 	public sealed class MonoDirectionalTraversalDescription : TraversalDescription
 	{
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 		 public override TraversalDescription Evaluator( Evaluator evaluator )
 		 {
-			  return evaluator( new Neo4Net.GraphDb.traversal.Evaluator_AsPathEvaluator( evaluator ) );
+			  return evaluator( new Neo4Net.GraphDb.Traversal.Evaluator_AsPathEvaluator( evaluator ) );
 		 }
 
 		 public override TraversalDescription Evaluator( PathEvaluator evaluator )

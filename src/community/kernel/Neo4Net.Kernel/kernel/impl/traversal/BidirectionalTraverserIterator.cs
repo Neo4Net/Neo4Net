@@ -26,17 +26,17 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Resource = Neo4Net.GraphDb.Resource;
-	using BidirectionalUniquenessFilter = Neo4Net.GraphDb.traversal.BidirectionalUniquenessFilter;
-	using BranchCollisionDetector = Neo4Net.GraphDb.traversal.BranchCollisionDetector;
-	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
-	using Neo4Net.GraphDb.traversal;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Neo4Net.GraphDb.traversal;
-	using SideSelector = Neo4Net.GraphDb.traversal.SideSelector;
-	using SideSelectorPolicy = Neo4Net.GraphDb.traversal.SideSelectorPolicy;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
-	using UniquenessFilter = Neo4Net.GraphDb.traversal.UniquenessFilter;
+	using BidirectionalUniquenessFilter = Neo4Net.GraphDb.Traversal.BidirectionalUniquenessFilter;
+	using BranchCollisionDetector = Neo4Net.GraphDb.Traversal.BranchCollisionDetector;
+	using BranchSelector = Neo4Net.GraphDb.Traversal.BranchSelector;
+	using Neo4Net.GraphDb.Traversal;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Neo4Net.GraphDb.Traversal;
+	using SideSelector = Neo4Net.GraphDb.Traversal.SideSelector;
+	using SideSelectorPolicy = Neo4Net.GraphDb.Traversal.SideSelectorPolicy;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
+	using UniquenessFilter = Neo4Net.GraphDb.Traversal.UniquenessFilter;
 
 	internal class BidirectionalTraverserIterator : AbstractTraverserIterator
 	{
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  }
 		 }
 
-		 internal BidirectionalTraverserIterator( Resource resource, MonoDirectionalTraversalDescription start, MonoDirectionalTraversalDescription end, SideSelectorPolicy sideSelector, Neo4Net.GraphDb.traversal.BranchCollisionPolicy collisionPolicy, PathEvaluator collisionEvaluator, int maxDepth, IEnumerable<Node> startNodes, IEnumerable<Node> endNodes ) : base( resource )
+		 internal BidirectionalTraverserIterator( Resource resource, MonoDirectionalTraversalDescription start, MonoDirectionalTraversalDescription end, SideSelectorPolicy sideSelector, Neo4Net.GraphDb.Traversal.BranchCollisionPolicy collisionPolicy, PathEvaluator collisionEvaluator, int maxDepth, IEnumerable<Node> startNodes, IEnumerable<Node> endNodes ) : base( resource )
 		 {
 			  this._sides[Direction.OUTGOING] = new Side( start );
 			  this._sides[Direction.INCOMING] = new Side( end );

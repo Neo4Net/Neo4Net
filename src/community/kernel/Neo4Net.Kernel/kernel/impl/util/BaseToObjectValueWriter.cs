@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.util
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Point = Neo4Net.GraphDb.spatial.Point;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Values;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

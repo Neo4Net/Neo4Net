@@ -1,6 +1,4 @@
-﻿using System;
-
-/*
+﻿/*
  * Copyright © 2018-2020 "Neo4Net,"
  * Team NeoN [http://neo4net.com]. All Rights Reserved.
  *
@@ -19,14 +17,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CommandLine.dbms
+namespace Neo4Net.Dbms.CommandLine
 {
 
-	internal class CannotWriteException : Exception
+	internal interface Importer
 	{
-		 internal CannotWriteException( Path file ) : base( format( "Could not write to: %s", file.toAbsolutePath().ToString() ) )
-		 {
-		 }
+//JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
+//ORIGINAL LINE: void doImport() throws java.io.IOException;
+		 void DoImport();
 	}
 
 }

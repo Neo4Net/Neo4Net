@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
 	public class TraversalBranchWithState : TraversalBranchImpl, BranchState
