@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

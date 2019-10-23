@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

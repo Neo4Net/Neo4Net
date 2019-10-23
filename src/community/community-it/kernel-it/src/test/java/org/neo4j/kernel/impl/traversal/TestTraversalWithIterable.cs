@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Path = Neo4Net.GraphDb.Path;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Neo4Net.Helpers.Collections;
 
 	public class TestTraversalWithIterable : TraversalTestBase

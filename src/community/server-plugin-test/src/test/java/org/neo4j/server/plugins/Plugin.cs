@@ -22,8 +22,8 @@
 namespace Neo4Net.Server.plugins
 {
 
-	using GraphAlgoFactory = Neo4Net.Graphalgo.GraphAlgoFactory;
-	using Neo4Net.Graphalgo;
+	using GraphAlgoFactory = Neo4Net.GraphAlgo.GraphAlgoFactory;
+	using Neo4Net.GraphAlgo;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;

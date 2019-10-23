@@ -20,15 +20,15 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.path
+namespace Neo4Net.GraphAlgo.path
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Graphalgo;
-	using Dijkstra = Neo4Net.Graphalgo.impl.path.Dijkstra;
-	using PathInterestFactory = Neo4Net.Graphalgo.impl.util.PathInterestFactory;
+	using Neo4Net.GraphAlgo;
+	using Dijkstra = Neo4Net.GraphAlgo.Path.Dijkstra;
+	using PathInterestFactory = Neo4Net.GraphAlgo.Utils.PathInterestFactory;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
@@ -37,8 +37,8 @@ namespace Neo4Net.Graphalgo.path
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
@@ -277,7 +277,7 @@ namespace Neo4Net.Graphalgo.path
 			  SetWeight( "b", "c", 2 );
 			  SetWeight( "c", "d", 5 );
 
-			  InitialBranchState<int> state = new Neo4Net.GraphDb.traversal.InitialBranchState_State<int>( 0, 0 );
+			  InitialBranchState<int> state = new Neo4Net.GraphDb.Traversal.InitialBranchState_State<int>( 0, 0 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final java.util.Map<org.Neo4Net.graphdb.Node, int> encounteredState = new java.util.HashMap<>();
 			  IDictionary<Node, int> encounteredState = new Dictionary<Node, int>();

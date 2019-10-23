@@ -19,14 +19,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo
+namespace Neo4Net.GraphAlgo
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
-	using Util = Neo4Net.Graphalgo.impl.shortestpath.Util;
-	using PathCounter = Neo4Net.Graphalgo.impl.shortestpath.Util.PathCounter;
+	using Util = Neo4Net.GraphAlgo.ShortestPath.Util;
+	using PathCounter = Neo4Net.GraphAlgo.ShortestPath.Util.PathCounter;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 

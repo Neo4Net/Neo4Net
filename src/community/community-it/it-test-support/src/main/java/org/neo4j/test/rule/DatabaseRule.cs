@@ -43,8 +43,8 @@ namespace Neo4Net.Test.rule
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using Schema = Neo4Net.GraphDb.schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;

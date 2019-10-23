@@ -28,11 +28,11 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Neo4Net.GraphDb.traversal;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
+	using Neo4Net.GraphDb.Traversal;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			  using ( Transaction tx = BeginTx() )
 			  {
 					DepthStateExpander expander = new DepthStateExpander();
-					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
+					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.Traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
 					tx.Success();
 			  }
 		 }
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.traversal
 			   * set new state for every step.
 			   */
 					IncrementEveryOtherDepthCountingExpander expander = new IncrementEveryOtherDepthCountingExpander();
-					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
+					Iterables.count( GraphDb.traversalDescription().expand(expander, new Neo4Net.GraphDb.Traversal.InitialBranchState_State<>(0, 0)).traverse(GetNodeWithName("a")) );
 					tx.Success();
 			  }
 		 }
@@ -101,12 +101,12 @@ namespace Neo4Net.Kernel.impl.traversal
 			  {
 					PathEvaluator<int> evaluator = new PathEvaluator_AdapterAnonymousInnerClass( this );
 
-					ExpectPaths( GraphDb.traversalDescription().uniqueness(Uniqueness.NODE_PATH).expand(new RelationshipWeightExpander(), new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(1, 1)).evaluator(evaluator).traverse(GetNodeWithName("a")), "a,b,c" );
+					ExpectPaths( GraphDb.traversalDescription().uniqueness(Uniqueness.NODE_PATH).expand(new RelationshipWeightExpander(), new Neo4Net.GraphDb.Traversal.InitialBranchState_State<>(1, 1)).evaluator(evaluator).traverse(GetNodeWithName("a")), "a,b,c" );
 					tx.Success();
 			  }
 		 }
 
-		 private class PathEvaluator_AdapterAnonymousInnerClass : Neo4Net.GraphDb.traversal.PathEvaluator_Adapter<int>
+		 private class PathEvaluator_AdapterAnonymousInnerClass : Neo4Net.GraphDb.Traversal.PathEvaluator_Adapter<int>
 		 {
 			 private readonly TestBranchState _outerInstance;
 

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Node = Neo4Net.GraphDb.Node;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.traversal.Evaluation.EXCLUDE_AND_CONTINUE;

@@ -28,9 +28,9 @@ namespace Neo4Net.Server.plugins
 	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 
 	[Description("Clones a subgraph (an example taken from a community mailing list requirement)")]
 	public class GraphCloner : ServerPlugin

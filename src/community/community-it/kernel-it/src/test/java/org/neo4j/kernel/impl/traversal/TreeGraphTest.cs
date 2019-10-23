@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.impl.traversal
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 
 	public class TestTraversalWithLoops : TraversalTestBase
 	{

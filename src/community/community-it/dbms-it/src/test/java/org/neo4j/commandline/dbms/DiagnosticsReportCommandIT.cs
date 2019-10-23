@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.CommandLine.dbms
+namespace Neo4Net.Dbms.CommandLine
 {
 	using After = org.junit.After;
 	using Before = org.junit.Before;

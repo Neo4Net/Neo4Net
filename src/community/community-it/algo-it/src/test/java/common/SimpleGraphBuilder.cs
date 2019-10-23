@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Common
 {
 
-	using PathImpl = Neo4Net.Graphalgo.impl.util.PathImpl;
+	using PathImpl = Neo4Net.GraphAlgo.Utils.PathImpl;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;

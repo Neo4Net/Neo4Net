@@ -20,7 +20,7 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.path
+namespace Neo4Net.GraphAlgo.path
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
@@ -29,17 +29,17 @@ namespace Neo4Net.Graphalgo.path
 	using Parameters = org.junit.runners.Parameterized.Parameters;
 
 
-	using Neo4Net.Graphalgo;
-	using Neo4Net.Graphalgo;
-	using TraversalAStar = Neo4Net.Graphalgo.impl.path.TraversalAStar;
+	using Neo4Net.GraphAlgo;
+	using Neo4Net.GraphAlgo;
+	using TraversalAStar = Neo4Net.GraphAlgo.Path.TraversalAStar;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
 	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.traversal;
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
+	using Neo4Net.GraphDb.Traversal;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 
@@ -205,7 +205,7 @@ namespace Neo4Net.Graphalgo.path
 			  PathExpander<double> expander = new PathExpanderAnonymousInnerClass( this, seenBranchStates );
 
 			  double initialStateValue = 0D;
-			  PathFinder<WeightedPath> traversalFinder = new TraversalAStar( expander, new Neo4Net.GraphDb.traversal.InitialBranchState_State( initialStateValue, initialStateValue ), doubleCostEvaluator( "length" ), EstimateEvaluator );
+			  PathFinder<WeightedPath> traversalFinder = new TraversalAStar( expander, new Neo4Net.GraphDb.Traversal.InitialBranchState_State( initialStateValue, initialStateValue ), doubleCostEvaluator( "length" ), EstimateEvaluator );
 			  WeightedPath path = traversalFinder.FindSinglePath( nodeA, nodeC );
 			  assertEquals( ( double? ) 5.0D, ( double? ) path.Weight() );
 			  AssertPathDef( path, "A", "B", "C" );

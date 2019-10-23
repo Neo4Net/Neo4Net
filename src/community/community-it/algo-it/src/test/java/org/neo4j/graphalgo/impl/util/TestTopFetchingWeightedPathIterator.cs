@@ -19,13 +19,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.impl.util
+namespace Neo4Net.GraphAlgo.Utils
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Graphalgo;
+	using Neo4Net.GraphAlgo;
 	using Path = Neo4Net.GraphDb.Path;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 

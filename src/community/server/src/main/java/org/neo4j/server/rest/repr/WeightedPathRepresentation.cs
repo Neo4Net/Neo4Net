@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.repr
 {
-	using WeightedPath = Neo4Net.Graphalgo.WeightedPath;
+	using WeightedPath = Neo4Net.GraphAlgo.WeightedPath;
 
 	public class WeightedPathRepresentation : PathRepresentation<WeightedPath>
 	{

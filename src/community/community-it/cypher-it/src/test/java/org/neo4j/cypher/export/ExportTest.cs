@@ -28,7 +28,7 @@ namespace Neo4Net.Cypher.export
 
 
 	using ExecutionResult = Neo4Net.Cypher.Internal.javacompat.ExecutionResult;
-	using PathImpl = Neo4Net.Graphalgo.impl.util.PathImpl;
+	using PathImpl = Neo4Net.GraphAlgo.Utils.PathImpl;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;

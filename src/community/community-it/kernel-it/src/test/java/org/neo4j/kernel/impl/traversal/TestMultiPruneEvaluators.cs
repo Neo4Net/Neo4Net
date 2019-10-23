@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Path = Neo4Net.GraphDb.Path;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

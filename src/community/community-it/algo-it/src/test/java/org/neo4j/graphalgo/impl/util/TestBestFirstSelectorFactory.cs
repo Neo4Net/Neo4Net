@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.impl.util
+namespace Neo4Net.GraphAlgo.Utils
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Before = org.junit.Before;
@@ -28,16 +28,16 @@ namespace Neo4Net.Graphalgo.impl.util
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4Net.Graphalgo;
+	using Neo4Net.GraphAlgo;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
 	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 	using Neo4Net.GraphDb;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 	using MonoDirectionalTraversalDescription = Neo4Net.Kernel.impl.traversal.MonoDirectionalTraversalDescription;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -133,7 +133,7 @@ namespace Neo4Net.Graphalgo.impl.util
 		 {
 			 private readonly TestBestFirstSelectorFactory _outerInstance;
 
-			 public BestFirstSelectorFactoryAnonymousInnerClass( TestBestFirstSelectorFactory outerInstance, Neo4Net.Graphalgo.impl.util.PathInterest<int> interest ) : base( interest )
+			 public BestFirstSelectorFactoryAnonymousInnerClass( TestBestFirstSelectorFactory outerInstance, Neo4Net.GraphAlgo.Utils.PathInterest<int> interest ) : base( interest )
 			 {
 				 this.outerInstance = outerInstance;
 				 evaluator = CommonEvaluators.intCostEvaluator( outerInstance.length );

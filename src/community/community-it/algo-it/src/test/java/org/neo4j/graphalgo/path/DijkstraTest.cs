@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.path
+namespace Neo4Net.GraphAlgo.path
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
@@ -27,17 +27,17 @@ namespace Neo4Net.Graphalgo.path
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using Neo4Net.Graphalgo;
-	using Neo4Net.Graphalgo;
-	using Dijkstra = Neo4Net.Graphalgo.impl.path.Dijkstra;
-	using DijkstraBidirectional = Neo4Net.Graphalgo.impl.path.DijkstraBidirectional;
+	using Neo4Net.GraphAlgo;
+	using Neo4Net.GraphAlgo;
+	using Dijkstra = Neo4Net.GraphAlgo.Path.Dijkstra;
+	using DijkstraBidirectional = Neo4Net.GraphAlgo.Path.DijkstraBidirectional;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
 	using Neo4Net.GraphDb;
 	using PathExpanders = Neo4Net.GraphDb.PathExpanders;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
 	using NoneStrictMath = Neo4Net.Kernel.impl.util.NoneStrictMath;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

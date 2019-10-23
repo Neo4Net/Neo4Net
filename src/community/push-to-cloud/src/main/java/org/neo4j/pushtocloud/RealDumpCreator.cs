@@ -20,7 +20,7 @@ namespace Neo4Net.Pushtocloud
 	using CommandFailed = Neo4Net.CommandLine.Admin.CommandFailed;
 	using IncorrectUsage = Neo4Net.CommandLine.Admin.IncorrectUsage;
 	using OutsideWorld = Neo4Net.CommandLine.Admin.OutsideWorld;
-	using DumpCommandProvider = Neo4Net.CommandLine.dbms.DumpCommandProvider;
+	using DumpCommandProvider = Neo4Net.Dbms.CommandLine.DumpCommandProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.array;

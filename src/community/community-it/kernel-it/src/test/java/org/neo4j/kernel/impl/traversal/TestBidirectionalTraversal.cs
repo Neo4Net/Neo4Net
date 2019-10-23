@@ -33,15 +33,15 @@ namespace Neo4Net.Kernel.impl.traversal
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using StandardBranchCollisionDetector = Neo4Net.GraphDb.impl.traversal.StandardBranchCollisionDetector;
-	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
-	using BranchCollisionPolicy = Neo4Net.GraphDb.traversal.BranchCollisionPolicy;
-	using Evaluators = Neo4Net.GraphDb.traversal.Evaluators;
-	using Neo4Net.GraphDb.traversal;
-	using SideSelectorPolicies = Neo4Net.GraphDb.traversal.SideSelectorPolicies;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
-	using Traverser = Neo4Net.GraphDb.traversal.Traverser;
-	using Uniqueness = Neo4Net.GraphDb.traversal.Uniqueness;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+	using BranchCollisionPolicy = Neo4Net.GraphDb.Traversal.BranchCollisionPolicy;
+	using Evaluators = Neo4Net.GraphDb.Traversal.Evaluators;
+	using Neo4Net.GraphDb.Traversal;
+	using SideSelectorPolicies = Neo4Net.GraphDb.Traversal.SideSelectorPolicies;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
+	using Traverser = Neo4Net.GraphDb.Traversal.Traverser;
+	using Uniqueness = Neo4Net.GraphDb.Traversal.Uniqueness;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 
@@ -200,7 +200,7 @@ namespace Neo4Net.Kernel.impl.traversal
 
 			  BranchCollisionPolicy collisionPolicy = ( evaluator, pathPredicate ) => new StandardBranchCollisionDetectorAnonymousInnerClass( this );
 
-			  Iterables.count( GraphDb.bidirectionalTraversalDescription().mirroredSides(GraphDb.traversalDescription().uniqueness(NODE_PATH).expand(PathExpanders.forType(To), new Neo4Net.GraphDb.traversal.InitialBranchState_State<>(0, 10))).collisionPolicy(collisionPolicy).traverse(GetNodeWithName("a"), GetNodeWithName("d")) );
+			  Iterables.count( GraphDb.bidirectionalTraversalDescription().mirroredSides(GraphDb.traversalDescription().uniqueness(NODE_PATH).expand(PathExpanders.forType(To), new Neo4Net.GraphDb.Traversal.InitialBranchState_State<>(0, 10))).collisionPolicy(collisionPolicy).traverse(GetNodeWithName("a"), GetNodeWithName("d")) );
 		 }
 
 		 private class StandardBranchCollisionDetectorAnonymousInnerClass : StandardBranchCollisionDetector

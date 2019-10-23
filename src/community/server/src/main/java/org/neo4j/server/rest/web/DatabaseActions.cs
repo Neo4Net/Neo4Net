@@ -27,11 +27,11 @@ namespace Neo4Net.Server.rest.web
 
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using CommonEvaluators = Neo4Net.Graphalgo.CommonEvaluators;
-	using Neo4Net.Graphalgo;
-	using GraphAlgoFactory = Neo4Net.Graphalgo.GraphAlgoFactory;
-	using Neo4Net.Graphalgo;
-	using WeightedPath = Neo4Net.Graphalgo.WeightedPath;
+	using CommonEvaluators = Neo4Net.GraphAlgo.CommonEvaluators;
+	using Neo4Net.GraphAlgo;
+	using GraphAlgoFactory = Neo4Net.GraphAlgo.GraphAlgoFactory;
+	using Neo4Net.GraphAlgo;
+	using WeightedPath = Neo4Net.GraphAlgo.WeightedPath;
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Label = Neo4Net.GraphDb.Label;
@@ -57,8 +57,8 @@ namespace Neo4Net.Server.rest.web
 	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
 	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
 	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Neo4Net.GraphDb.traversal;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using Neo4Net.GraphDb.Traversal;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;

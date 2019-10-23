@@ -364,7 +364,7 @@ namespace Neo4Net.Server.rest
 		 public class ResponseEntity
 		 {
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-			  internal readonly string IEntityConflict;
+			  internal readonly string EntityConflict;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 			  internal readonly JaxRsResponse ResponseConflict;
 
@@ -379,7 +379,7 @@ namespace Neo4Net.Server.rest
 			  /// </summary>
 			  public virtual string IEntity()
 			  {
-					return IEntityConflict;
+					return EntityConflict;
 			  }
 
 			  /// <summary>

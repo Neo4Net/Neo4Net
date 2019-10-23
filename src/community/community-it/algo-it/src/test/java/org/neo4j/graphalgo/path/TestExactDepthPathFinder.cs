@@ -19,14 +19,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.path
+namespace Neo4Net.GraphAlgo.path
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
 
-	using Neo4Net.Graphalgo;
-	using ExactDepthPathFinder = Neo4Net.Graphalgo.impl.path.ExactDepthPathFinder;
+	using Neo4Net.GraphAlgo;
+	using ExactDepthPathFinder = Neo4Net.GraphAlgo.Path.ExactDepthPathFinder;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using Path = Neo4Net.GraphDb.Path;
