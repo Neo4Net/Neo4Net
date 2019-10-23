@@ -19,16 +19,16 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	public class PropertyNotFoundException : KernelException
 	{
 		 private readonly string _entity;
 		 private readonly int _propertyKeyId;
 
-		 public PropertyNotFoundException( int propertyKeyId, IEntityType IEntityType, long IEntityId ) : this( IEntityType == IEntityType.GRAPH ? "GraphProperties" : IEntityType.name() + "[" + IEntityId + "]", propertyKeyId )
+		 public PropertyNotFoundException( int propertyKeyId, EntityType EntityType, long IEntityId ) : this( EntityType == EntityType.GRAPH ? "GraphProperties" : EntityType.name() + "[" + IEntityId + "]", propertyKeyId )
 		 {
 		 }
 

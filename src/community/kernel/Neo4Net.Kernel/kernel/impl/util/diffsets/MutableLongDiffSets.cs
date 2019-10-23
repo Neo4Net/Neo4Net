@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 {
 	using LongIterable = org.eclipse.collections.api.LongIterable;
 
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
 
 	public interface MutableLongDiffSets : LongDiffSets
 	{

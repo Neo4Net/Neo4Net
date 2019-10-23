@@ -17,18 +17,18 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.schema
-{
-	/// <summary>
-	/// Constraint type. Used with <seealso cref="ConstraintDefinition.getConstraintType()"/> to see
-	/// of which type a constraint is.
-	/// </summary>
-	public enum ConstraintType
-	{
-		 Uniqueness,
-		 NodePropertyExistence,
-		 RelationshipPropertyExistence,
-		 NodeKey
-	}
 
+namespace Neo4Net.GraphDb.Schema
+{
+   /// <summary>
+   /// Constraint type. Used with <seealso cref="IConstraintDefinition.ConstraintType"/> to see
+   /// of which type a constraint is.
+   /// </summary>
+   public enum ConstraintType
+   {
+      Uniqueness,
+      NodePropertyExistence,
+      RelationshipPropertyExistence,
+      NodeKey
+   }
 }

@@ -41,7 +41,7 @@ namespace Neo4Net.causalclustering.core.consensus
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -75,7 +75,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  // when
 			  fixture.Members().withId(leader).timerService().invoke(RaftMachine.Timeouts.Election);
 			  net.ProcessMessages();
-			  fixture.Members().withId(leader).raftInstance().handle(new RaftMessages_NewEntry_Request(leaderMember, valueOf(42)));
+			  fixture.Members().withId(leader).raftInstance().handle(new RaftMessages_NewEntry_Request(leaderMember, ValueOf(42)));
 			  net.ProcessMessages();
 
 			  // then
@@ -121,10 +121,10 @@ namespace Neo4Net.causalclustering.core.consensus
 			  net.Disconnect( sleepyId );
 
 			  // when
-			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, valueOf(10)));
-			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, valueOf(20)));
-			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, valueOf(30)));
-			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, valueOf(40)));
+			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, ValueOf(10)));
+			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, ValueOf(20)));
+			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, ValueOf(30)));
+			  fixture.Members().withId(leaderId).raftInstance().handle(new RaftMessages_NewEntry_Request(leader, ValueOf(40)));
 			  net.ProcessMessages();
 
 			  // then

@@ -21,11 +21,11 @@ namespace Neo4Net.Cypher.Internal.codegen
 {
 	using Test = org.junit.Test;
 
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
@@ -48,7 +48,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 	{
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCallIndexSeek() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldCallIndexSeek() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCallIndexSeek()
 		 {
@@ -66,7 +66,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldHandleNullInIndexSeek() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldHandleNullInIndexSeek() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldHandleNullInIndexSeek()
 		 {

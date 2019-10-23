@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using PhysicalLogCommandReaderV3_0 = Neo4Net.Kernel.impl.transaction.command.PhysicalLogCommandReaderV3_0;
 	using PhysicalLogCommandReaderV3_0_2 = Neo4Net.Kernel.impl.transaction.command.PhysicalLogCommandReaderV3_0_2;
 	using LogEntryVersion = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryVersion;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
-	using CommandReaderFactory = Neo4Net.Storageengine.Api.CommandReaderFactory;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
+	using CommandReaderFactory = Neo4Net.Kernel.Api.StorageEngine.CommandReaderFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.abs;

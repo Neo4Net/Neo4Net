@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.locking
 {
 	using Log = Neo4Net.Logging.Log;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class DumpLocksVisitor : Locks_Visitor
 	{

@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurve = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurve;
 	using StandardConfiguration = Neo4Net.Gis.Spatial.Index.curves.StandardConfiguration;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using SimpleNodeValueClient = Neo4Net.Storageengine.Api.schema.SimpleNodeValueClient;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// We verify this by asserting that we always get exactly one hit on an exact match and that the value is what we expect.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void mustHandlePointsWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void mustHandlePointsWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustHandlePointsWithinSameTile()
 		 {
@@ -180,7 +180,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// We verify this by asserting that we always get exactly one hit on an exact match and that the value is what we expect.
 		 /// </summary>
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void mustHandlePointArraysWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void mustHandlePointArraysWithinSameTile() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void MustHandlePointArraysWithinSameTile()
 		 {
@@ -285,7 +285,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void exactMatchOnAllValues(java.util.List<org.Neo4Net.values.storable.Value> values) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void exactMatchOnAllValues(java.util.List<org.Neo4Net.values.storable.Value> values) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 private void ExactMatchOnAllValues( IList<Value> values )
 		 {
 			  using ( IndexReader indexReader = _accessor.newReader() )

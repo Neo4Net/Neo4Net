@@ -20,8 +20,8 @@
 namespace Neo4Net.Kernel.api.proc
 {
 	using Neo4Net.Collections;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class FailedLoadProcedure : CallableProcedure_BasicProcedure
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.api.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker )
 		 {
 			  throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureRegistrationFailed, Signature().description().orElse("Failed to load " + Signature().name()) );

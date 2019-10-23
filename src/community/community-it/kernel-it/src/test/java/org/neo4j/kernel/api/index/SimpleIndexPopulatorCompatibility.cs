@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel.Api.Index
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.Api.Index
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using NodeValueIterator = Neo4Net.Kernel.Impl.Index.Schema.NodeValueIterator;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using QueryResultComparingIndexReader = Neo4Net.Storageengine.Api.schema.QueryResultComparingIndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using QueryResultComparingIndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.QueryResultComparingIndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -342,7 +342,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHasAllValues(java.util.List<NodeAndValue> values) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void assertHasAllValues(java.util.List<NodeAndValue> values) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 private void AssertHasAllValues( IList<NodeAndValue> values )
 		 {
 			  using ( IndexAccessor accessor = IndexProvider.getOnlineAccessor( Descriptor, IndexSamplingConfig ) )

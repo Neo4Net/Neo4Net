@@ -168,7 +168,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			return nameValue;
 		}
 
-		public static RelationshipReferenceEncoding valueOf( string name )
+		public static RelationshipReferenceEncoding ValueOf( string name )
 		{
 			foreach ( RelationshipReferenceEncoding enumInstance in RelationshipReferenceEncoding.valueList )
 			{

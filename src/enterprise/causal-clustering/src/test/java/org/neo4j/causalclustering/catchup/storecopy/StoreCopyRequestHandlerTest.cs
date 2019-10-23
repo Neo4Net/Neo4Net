@@ -47,7 +47,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using JobHandle = Neo4Net.Scheduler.JobHandle;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
 	using IJobSchedulerAdapter = Neo4Net.Scheduler.JobSchedulerAdapter;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -98,7 +98,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  _catchupServerProtocol.expect( CatchupServerProtocol.State.GET_STORE_FILE );
 			  StoreCopyRequestHandler storeCopyRequestHandler = new NiceStoreCopyRequestHandler( this, _catchupServerProtocol, () => _neoStoreDataSource, new StoreFileStreamingProtocol(), _fileSystemAbstraction, NullLogProvider.Instance );
 			  Dependencies dependencies = new Dependencies();
-			  when( _neoStoreDataSource.StoreId ).thenReturn( new Neo4Net.Storageengine.Api.StoreId( 1, 2, 5, 3, 4 ) );
+			  when( _neoStoreDataSource.StoreId ).thenReturn( new Neo4Net.Kernel.Api.StorageEngine.StoreId( 1, 2, 5, 3, 4 ) );
 			  when( _neoStoreDataSource.DependencyResolver ).thenReturn( dependencies );
 			  when( _neoStoreDataSource.DatabaseLayout ).thenReturn( DatabaseLayout.of( new File( "." ) ) );
 			  _embeddedChannel = new EmbeddedChannel( storeCopyRequestHandler );

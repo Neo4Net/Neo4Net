@@ -24,15 +24,15 @@ namespace Neo4Net.Cypher.Internal.codegen
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 
@@ -49,7 +49,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class CompiledExpandUtilsTest
 	{
@@ -58,11 +58,11 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 public DatabaseRule Db = new EmbeddedDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, "1");
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.Transaction transaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.Transaction transaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Transaction Transaction()
 		 {
 			  DependencyResolver resolver = this.Db.DependencyResolver;
-			  return resolver.ResolveDependency( typeof( Kernel ) ).beginTransaction( @implicit, LoginContext.AUTH_DISABLED );
+			  return resolver.ResolveDependency( typeof( Kernel ) ).BeginTransaction( @implicit, LoginContext.AUTH_DISABLED );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

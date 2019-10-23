@@ -35,8 +35,8 @@ namespace Recovery
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;

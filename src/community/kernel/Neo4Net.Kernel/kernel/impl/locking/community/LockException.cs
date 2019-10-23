@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.impl.locking.community
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 	/// <summary>
 	/// TODO: Consolidate into a standardized hierarchy of lock exceptions, extending from

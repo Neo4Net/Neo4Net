@@ -28,10 +28,10 @@ namespace Neo4Net.Cypher
 
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Name = Neo4Net.Procedure.Name;
@@ -260,11 +260,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.graphdb.spatial.Point makeFakePoint(double x, double y, final org.Neo4Net.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private static org.Neo4Net.GraphDb.Spatial.Point makeFakePoint(double x, double y, final org.Neo4Net.GraphDb.Spatial.CRS crs)
 		 private static Point MakeFakePoint( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.spatial.Coordinate coord = new org.Neo4Net.graphdb.spatial.Coordinate(x, y);
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Spatial.Coordinate coord = new org.Neo4Net.GraphDb.Spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new PointAnonymousInnerClass( crs, coord );
 		 }
@@ -307,11 +307,11 @@ namespace Neo4Net.Cypher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.graphdb.spatial.Geometry makeFakePointAsGeometry(double x, double y, final org.Neo4Net.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private static org.Neo4Net.GraphDb.Spatial.Geometry makeFakePointAsGeometry(double x, double y, final org.Neo4Net.GraphDb.Spatial.CRS crs)
 		 private static Geometry MakeFakePointAsGeometry( double x, double y, CRS crs )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.spatial.Coordinate coord = new org.Neo4Net.graphdb.spatial.Coordinate(x, y);
+//ORIGINAL LINE: final org.Neo4Net.GraphDb.Spatial.Coordinate coord = new org.Neo4Net.GraphDb.Spatial.Coordinate(x, y);
 			  Coordinate coord = new Coordinate( x, y );
 			  return new GeometryAnonymousInnerClass( crs, coord );
 		 }

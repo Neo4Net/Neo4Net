@@ -77,7 +77,7 @@ namespace Neo4Net.Server.web
 		 internal Private const;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Nullable public static HttpMethod valueOfOrNull(String name)
+//ORIGINAL LINE: @Nullable public static HttpMethod ValueOfOrNull(String name)
 		 public static HttpMethod ValueOfOrNull( string name )
 		 {
 			  return _methodsByName.get( name );
@@ -109,7 +109,7 @@ namespace Neo4Net.Server.web
 			return nameValue;
 		}
 
-		public static HttpMethod valueOf( string name )
+		public static HttpMethod ValueOf( string name )
 		{
 			foreach ( HttpMethod enumInstance in HttpMethod.valueList )
 			{

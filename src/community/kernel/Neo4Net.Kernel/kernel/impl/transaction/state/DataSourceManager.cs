@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;

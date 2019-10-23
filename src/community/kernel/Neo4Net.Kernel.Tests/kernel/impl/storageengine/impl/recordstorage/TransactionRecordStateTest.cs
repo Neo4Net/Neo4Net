@@ -36,8 +36,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Direction = Neo4Net.GraphDb.Direction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
@@ -87,9 +87,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using PrepareTrackingRecordFormats = Neo4Net.Kernel.impl.transaction.state.PrepareTrackingRecordFormats;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using RecordChangeSet = Neo4Net.Kernel.impl.transaction.state.RecordChangeSet;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 	using NeoStoresRule = Neo4Net.Test.rule.NeoStoresRule;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.NORMAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class TransactionRecordStateTest
 	{
@@ -1331,7 +1331,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Iterable<org.Neo4Net.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.Neo4Net.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private Iterable<org.Neo4Net.kernel.impl.api.index.EntityUpdates> indexUpdatesOf(org.Neo4Net.kernel.impl.store.NeoStores neoStores, TransactionRecordState state) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private IEnumerable<EntityUpdates> IndexUpdatesOf( NeoStores neoStores, TransactionRecordState state )
 		 {
 			  return IndexUpdatesOf( neoStores, TransactionRepresentationOf( state ) );
@@ -1351,7 +1351,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState writeTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState writeTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private PhysicalTransactionRepresentation TransactionRepresentationOf( TransactionRecordState writeTransaction )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();
@@ -1452,7 +1452,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction(TransactionRecordState recordState) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.TransactionRepresentation transaction(TransactionRecordState recordState) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private TransactionRepresentation Transaction( TransactionRecordState recordState )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();
@@ -1519,7 +1519,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  {
 			  }
 
-			  public override IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, IEntityType type )
+			  public override IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, EntityType type )
 			  {
 					EntityUpdatesList.Add( IEntityUpdates );
 					return Iterables.empty();

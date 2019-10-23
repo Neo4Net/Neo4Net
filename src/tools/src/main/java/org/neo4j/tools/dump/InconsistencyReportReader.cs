@@ -91,7 +91,7 @@ namespace Neo4Net.tools.dump
 							  return; // Unexpected end of report.
 						 }
 						 line = line.Trim();
-						 inconsistentRecordType = ToRecordType( IEntityType( line ) );
+						 inconsistentRecordType = ToRecordType( EntityType( line ) );
 						 inconsistentRecordId = Id( line );
 
 						 // Then get the Inconsistent With line:
@@ -105,7 +105,7 @@ namespace Neo4Net.tools.dump
 						 else
 						 {
 							  line = line.Substring( INCONSISTENT_WITH.Length ).Trim();
-							  inconsistentWithRecordType = ToRecordType( IEntityType( line ) );
+							  inconsistentWithRecordType = ToRecordType( EntityType( line ) );
 							  inconsistentWithRecordId = Id( line );
 							  _inconsistencies.reportInconsistency( inconsistentRecordType, inconsistentRecordId, inconsistentWithRecordType, inconsistentWithRecordId );
 							  line = bufferedReader.ReadLine(); // Prepare a line for the next iteration of the loop.
@@ -120,15 +120,15 @@ namespace Neo4Net.tools.dump
 			  }
 		 }
 
-		 private RecordType ToRecordType( string IEntityType )
+		 private RecordType ToRecordType( string EntityType )
 		 {
-			  if ( string.ReferenceEquals( IEntityType, null ) )
+			  if ( string.ReferenceEquals( EntityType, null ) )
 			  {
 					// Skip unrecognizable lines.
 					return null;
 			  }
 
-			  switch ( IEntityType )
+			  switch ( EntityType )
 			  {
 			  case "Relationship":
 					return RecordType.RELATIONSHIP;
@@ -185,7 +185,7 @@ namespace Neo4Net.tools.dump
 			  return ( equally > bracket ) && ( equally < comma );
 		 }
 
-		 private string IEntityType( string line )
+		 private string EntityType( string line )
 		 {
 			  int bracket = line.IndexOf( '[' );
 			  return bracket == -1 ? null : line.Substring( 0, bracket );

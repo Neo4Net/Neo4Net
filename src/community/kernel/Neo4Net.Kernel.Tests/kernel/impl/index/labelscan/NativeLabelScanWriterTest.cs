@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanStoreIT.nodesWithLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.LabelScanReader_Fields.NO_ID;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader_Fields.NO_ID;
 
 	public class NativeLabelScanWriterTest
 	{

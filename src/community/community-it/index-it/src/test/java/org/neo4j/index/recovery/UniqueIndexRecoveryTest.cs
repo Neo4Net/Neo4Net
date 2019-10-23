@@ -35,14 +35,14 @@ namespace Neo4Net.Index.recovery
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using SchemaIndex = Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using LogRotation = Neo4Net.Kernel.impl.transaction.log.rotation.LogRotation;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 

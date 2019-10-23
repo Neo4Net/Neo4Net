@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.messaging.marshalling
 {
 
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class OutputStreamWritableChannel : WritableChannel
 	{
@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel put(byte value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel put(byte value) throws java.io.IOException
 		 public override WritableChannel Put( sbyte value )
 		 {
 			  _dataOutputStream.writeByte( value );
@@ -43,7 +43,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putShort(short value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel putShort(short value) throws java.io.IOException
 		 public override WritableChannel PutShort( short value )
 		 {
 			  _dataOutputStream.writeShort( value );
@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putInt(int value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel putInt(int value) throws java.io.IOException
 		 public override WritableChannel PutInt( int value )
 		 {
 			  _dataOutputStream.writeInt( value );
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putLong(long value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel putLong(long value) throws java.io.IOException
 		 public override WritableChannel PutLong( long value )
 		 {
 			  _dataOutputStream.writeLong( value );
@@ -67,7 +67,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putFloat(float value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel putFloat(float value) throws java.io.IOException
 		 public override WritableChannel PutFloat( float value )
 		 {
 			  _dataOutputStream.writeFloat( value );
@@ -75,7 +75,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel putDouble(double value) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel putDouble(double value) throws java.io.IOException
 		 public override WritableChannel PutDouble( double value )
 		 {
 			  _dataOutputStream.writeDouble( value );
@@ -83,7 +83,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.WritableChannel put(byte[] value, int length) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel put(byte[] value, int length) throws java.io.IOException
 		 public override WritableChannel Put( sbyte[] value, int length )
 		 {
 			  _dataOutputStream.write( value, 0, length );

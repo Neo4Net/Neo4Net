@@ -17,26 +17,26 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
-	/// <summary>
-	/// An Entity is a <seealso cref="PropertyContainer"/> that is persisted in the database, and identified by an <seealso cref="getId() id"/>.
-	/// <para>
-	/// <seealso cref="INode Nodes"/> and <seealso cref="IRelationship Relationships"/> are Entities.
-	/// </para>
-	/// </summary>
-	public interface IEntity : IPropertyContainer
-	{
-		 /// <summary>
-		 /// Returns the unique id of this Entity. Id's are garbage
-		 /// collected over time so they are only guaranteed to be unique during a
-		 /// specific time span: if the Entity is deleted, it's
-		 /// likely that a new Entity at some point will get the old
-		 /// id. <b>Note</b>: this makes Entity id's brittle as
-		 /// public APIs.
-		 /// </summary>
-		 /// <returns> The id of this Entity. </returns>
-		 long Id { get; }
-	}
-
+   /// <summary>
+   /// An Entity is a <seealso cref="PropertyContainer"/> that is persisted in the database, and identified by an <seealso cref="getId() id"/>.
+   /// <para>
+   /// <seealso cref="INode Nodes"/> and <seealso cref="IRelationship Relationships"/> are Entities.
+   /// </para>
+   /// </summary>
+   public interface IEntity : IPropertyContainer
+   {
+      /// <summary>
+      /// Returns the unique id of this Entity. Id's are garbage
+      /// collected over time so they are only guaranteed to be unique during a
+      /// specific time span: if the Entity is deleted, it's
+      /// likely that a new Entity at some point will get the old
+      /// id. <b>Note</b>: this makes Entity id's brittle as
+      /// public APIs.
+      /// </summary>
+      /// <returns> The id of this Entity. </returns>
+      long Id { get; }
+   }
 }

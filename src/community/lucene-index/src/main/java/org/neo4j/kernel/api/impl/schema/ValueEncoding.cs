@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 			return nameValue;
 		}
 
-		public static ValueEncoding valueOf( string name )
+		public static ValueEncoding ValueOf( string name )
 		{
 			foreach ( ValueEncoding enumInstance in ValueEncoding.valueList )
 			{

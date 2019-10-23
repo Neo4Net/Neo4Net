@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
 	using Test = org.junit.Test;
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

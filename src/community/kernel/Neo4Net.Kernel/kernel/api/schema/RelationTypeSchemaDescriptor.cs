@@ -21,16 +21,16 @@ namespace Neo4Net.Kernel.api.schema
 {
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using Neo4Net.Internal.Kernel.Api.schema;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using Neo4Net.Kernel.Api.Internal.schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
-	public class RelationTypeSchemaDescriptor : Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor
+	public class RelationTypeSchemaDescriptor : Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor
 	{
 		 private readonly int _relTypeId;
 		 private readonly int[] _propertyIds;
@@ -95,9 +95,9 @@ namespace Neo4Net.Kernel.api.schema
 			  return ResourceTypes.RELATIONSHIP_TYPE;
 		 }
 
-		 public override IEntityType IEntityType()
+		 public override EntityType EntityType()
 		 {
-			  return IEntityType.RELATIONSHIP;
+			  return EntityType.RELATIONSHIP;
 		 }
 
 		 public override PropertySchemaType PropertySchemaType()

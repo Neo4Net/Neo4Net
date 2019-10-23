@@ -24,7 +24,7 @@ namespace Neo4Net.Server.helpers
 {
 
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Neo4Net.Helpers.Collections;
 
 	/*
@@ -1015,7 +1015,7 @@ namespace Neo4Net.Server.helpers
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected T dispatchPointArrayProperty(final org.Neo4Net.graphdb.spatial.Point[] property, K param)
+//ORIGINAL LINE: protected T dispatchPointArrayProperty(final org.Neo4Net.GraphDb.Spatial.Point[] property, K param)
 		 protected internal virtual T DispatchPointArrayProperty( Point[] property, K param )
 		 {
 			  return dispatchPointArrayProperty(new BoxedArrayAnonymousInnerClass10(this, property)

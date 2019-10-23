@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.index
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using NeoCommandType = Neo4Net.Kernel.impl.transaction.command.NeoCommandType;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void serialize(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void serialize(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Serialize( WritableChannel channel )
 		 {
 			  channel.Put( Neo4Net.Kernel.impl.transaction.command.NeoCommandType_Fields.IndexDefineCommand );
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeMap(org.Neo4Net.storageengine.api.WritableChannel channel, org.eclipse.collections.api.map.primitive.ObjectIntMap<String> map) throws java.io.IOException
+//ORIGINAL LINE: private static void writeMap(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, org.eclipse.collections.api.map.primitive.ObjectIntMap<String> map) throws java.io.IOException
 		 private static void WriteMap( WritableChannel channel, ObjectIntMap<string> map )
 		 {
 			  Debug.Assert( map.size() <= HighestPossibleId, "Can not write map with size larger than 2 bytes. Actual size " + map.size() );

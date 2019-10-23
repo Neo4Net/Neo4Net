@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Consistency.checking.cache
 {
-	public interface CacheSlots
+	public interface ICacheSlots
 	{
 	}
 
@@ -29,7 +29,7 @@ namespace Neo4Net.Consistency.checking.cache
 		 public const int ID_SLOT_SIZE = 40;
 	}
 
-	 public interface CacheSlots_NodeLabel
+	 public interface ICacheSlots_NodeLabel
 	 {
 	 }
 
@@ -39,7 +39,7 @@ namespace Neo4Net.Consistency.checking.cache
 		  public const int SLOT_IN_USE = 1;
 	 }
 
-	 public interface CacheSlots_NextRelationship
+	 public interface ICacheSlots_NextRelationship
 	 {
 	 }
 
@@ -50,7 +50,7 @@ namespace Neo4Net.Consistency.checking.cache
 		  public const int SLOT_FIRST_IN_TARGET = 2;
 	 }
 
-	 public interface CacheSlots_RelationshipLink
+	 public interface ICacheSlots_RelationshipLink
 	 {
 	 }
 

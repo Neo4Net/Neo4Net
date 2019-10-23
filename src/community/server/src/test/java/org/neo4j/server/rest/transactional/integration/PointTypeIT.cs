@@ -25,8 +25,8 @@ namespace Neo4Net.Server.rest.transactional.integration
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using GeometryType = Neo4Net.Kernel.impl.store.GeometryType;

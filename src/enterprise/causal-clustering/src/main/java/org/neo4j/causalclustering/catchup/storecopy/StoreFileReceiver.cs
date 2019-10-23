@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.catchup.storecopy
 {
-	public interface StoreFileReceiver
+	public interface IStoreFileReceiver
 	{
 		 StoreFileStream StoreFileStreams { get; }
 	}

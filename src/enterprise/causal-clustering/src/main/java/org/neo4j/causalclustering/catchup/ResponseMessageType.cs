@@ -113,7 +113,7 @@ namespace Neo4Net.causalclustering.catchup
 			return ordinalValue;
 		}
 
-		public static ResponseMessageType valueOf( string name )
+		public static ResponseMessageType ValueOf( string name )
 		{
 			foreach ( ResponseMessageType enumInstance in ResponseMessageType.valueList )
 			{

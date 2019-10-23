@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 			return nameValue;
 		}
 
-		public static SpatialIndexType valueOf( string name )
+		public static SpatialIndexType ValueOf( string name )
 		{
 			foreach ( SpatialIndexType enumInstance in SpatialIndexType.valueList )
 			{

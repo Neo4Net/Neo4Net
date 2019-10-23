@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 			return nameValue;
 		}
 
-		public static IndexSamplingMode valueOf( string name )
+		public static IndexSamplingMode ValueOf( string name )
 		{
 			foreach ( IndexSamplingMode enumInstance in IndexSamplingMode.valueList )
 			{

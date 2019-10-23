@@ -32,11 +32,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 
 
 	using TaskControl = Neo4Net.Helpers.TaskControl;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using DefaultNonUniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.DefaultNonUniqueIndexSampler;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using NonUniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.NonUniqueIndexSampler;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	/// <summary>
 	/// Sampler for non-unique Lucene schema index.
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexSample sampleIndex() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample sampleIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override IndexSample SampleIndex()
 		 {
 			  NonUniqueIndexSampler sampler = new DefaultNonUniqueIndexSampler( _indexSamplingConfig.sampleSizeLimit() );

@@ -22,7 +22,7 @@
 namespace Neo4Net.Jmx
 {
 	[ManagementInterface(name : StoreFile_Fields.NAME), Description("This bean is deprecated, use StoreSize bean instead; " + "Information about the sizes of the different parts of the Neo4Net graph store"), Obsolete]
-	public interface StoreFile
+	public interface IStoreFile
 	{
 
 		 [Description("The amount of disk space used by the current Neo4Net logical log, in bytes.")]

@@ -49,8 +49,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  MonitoredRaftLog log = new MonitoredRaftLog( new InMemoryRaftLog(), monitors );
 
 			  // When
-			  log.Append( new RaftLogEntry( 0, ReplicatedInteger.valueOf( 1 ) ) );
-			  log.Append( new RaftLogEntry( 0, ReplicatedInteger.valueOf( 1 ) ) );
+			  log.Append( new RaftLogEntry( 0, ReplicatedInteger.ValueOf( 1 ) ) );
+			  log.Append( new RaftLogEntry( 0, ReplicatedInteger.ValueOf( 1 ) ) );
 
 			  assertEquals( 1, appendMonitor.AppendIndex() );
 			  assertEquals( 0, commitMonitor.CommitIndex() );

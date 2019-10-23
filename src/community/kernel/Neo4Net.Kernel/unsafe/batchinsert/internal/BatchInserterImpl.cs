@@ -30,22 +30,22 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Service = Neo4Net.Helpers.Service;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using MisconfiguredIndexException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MisconfiguredIndexException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -148,10 +148,10 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using NullLog = Neo4Net.Logging.NullLog;
 	using StoreLogService = Neo4Net.Logging.Internal.StoreLogService;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -168,7 +168,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.Numbers.safeCastLongToInt;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.IndexingService.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

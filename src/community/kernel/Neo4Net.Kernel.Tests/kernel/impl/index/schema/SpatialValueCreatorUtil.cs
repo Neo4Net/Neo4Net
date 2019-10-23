@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using ValueType = Neo4Net.Values.Storable.ValueType;
 
 	internal class SpatialValueCreatorUtil : ValueCreatorUtil<SpatialIndexKey, NativeIndexValue>

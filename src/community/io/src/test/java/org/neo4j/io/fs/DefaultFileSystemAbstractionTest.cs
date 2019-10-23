@@ -56,7 +56,7 @@ namespace Neo4Net.Io.fs
 		 {
 			 private readonly DefaultFileSystemAbstractionTest _outerInstance;
 
-			 public FileAnonymousInnerClass( DefaultFileSystemAbstractionTest outerInstance, File directory, UnknownType valueOf ) : base( directory, valueOf )
+			 public FileAnonymousInnerClass( DefaultFileSystemAbstractionTest outerInstance, File directory, UnknownType ValueOf ) : base( directory, ValueOf )
 			 {
 				 this.outerInstance = outerInstance;
 			 }

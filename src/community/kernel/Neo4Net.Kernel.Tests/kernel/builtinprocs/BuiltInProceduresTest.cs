@@ -35,20 +35,20 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaReadCore = Neo4Net.Internal.Kernel.Api.SchemaReadCore;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -62,8 +62,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Log = Neo4Net.Logging.Log;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -88,11 +88,11 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNode;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPath;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTRelationship;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.index.IndexProvider.EMPTY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -484,7 +484,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<Object[]> call(String name, Object... args) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private java.util.List<Object[]> call(String name, Object... args) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private IList<object[]> Call( string name, params object[] args )
 		 {
 			  BasicContext ctx = new BasicContext();
@@ -496,7 +496,7 @@ namespace Neo4Net.Kernel.builtinprocs
 			  when( _graphDatabaseAPI.DependencyResolver ).thenReturn( _resolver );
 			  when( _resolver.resolveDependency( typeof( Procedures ) ) ).thenReturn( _procs );
 			  when( _resolver.resolveDependency( typeof( IndexingService ) ) ).thenReturn( _indexingService );
-			  when( _schemaReadCore.indexGetPopulationProgress( any( typeof( IndexReference ) ) ) ).thenReturn( Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done );
+			  when( _schemaReadCore.indexGetPopulationProgress( any( typeof( IndexReference ) ) ) ).thenReturn( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done );
 			  return Iterators.asList( _procs.callProcedure( ctx, ProcedureSignature.procedureName( name.Split( "\\.", true ) ), args, _resourceTracker ) );
 		 }
 	}

@@ -39,9 +39,9 @@ namespace Neo4Net.Server.rest.web
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;

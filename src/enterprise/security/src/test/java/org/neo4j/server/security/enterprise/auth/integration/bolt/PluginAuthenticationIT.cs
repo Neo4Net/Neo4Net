@@ -227,7 +227,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  // Then
 			  using ( Driver driver = ConnectDriver( "Neo4Net", "Neo4Net", "plugin-TestCacheableAdminAuthPlugin" ), Session session = driver.session() )
 			  {
-					using ( Transaction tx = session.beginTransaction() )
+					using ( Transaction tx = session.BeginTransaction() )
 					{
 						 tx.run( "CALL dbms.security.clearAuthCache()" );
 						 assertThat( tx.run( "MATCH (n) RETURN count(n)" ).single().get(0).asInt(), greaterThanOrEqualTo(0) );

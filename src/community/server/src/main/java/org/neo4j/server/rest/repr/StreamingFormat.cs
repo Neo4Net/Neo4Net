@@ -22,7 +22,7 @@ namespace Neo4Net.Server.rest.repr
 
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 
-	public interface StreamingFormat
+	public interface IStreamingFormat
 	{
 
 		 RepresentationFormat WriteTo( Stream output );

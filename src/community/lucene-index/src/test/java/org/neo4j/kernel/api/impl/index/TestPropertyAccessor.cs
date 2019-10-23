@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Index
 {
 
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class TestPropertyAccessor : NodePropertyAccessor

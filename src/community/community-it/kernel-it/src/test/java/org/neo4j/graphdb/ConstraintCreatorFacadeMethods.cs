@@ -22,13 +22,13 @@
 namespace Neo4Net.GraphDb
 {
 
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 
 	public sealed class ConstraintCreatorFacadeMethods : Consumer<ConstraintCreator>
 	{
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       UNIQUE(new FacadeMethod<>("ConstraintCreator assertPropertyIsUnique()", self -> self.assertPropertyIsUnique("property"))),
-		 public static readonly ConstraintCreatorFacadeMethods Create = new ConstraintCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "ConstraintDefinition create()", Neo4Net.GraphDb.schema.ConstraintCreator::create ) );
+		 public static readonly ConstraintCreatorFacadeMethods Create = new ConstraintCreatorFacadeMethods( "Create", InnerEnum.Create, new FacadeMethod<>( "ConstraintDefinition create()", Neo4Net.GraphDb.Schema.ConstraintCreator::create ) );
 
 		 private static readonly IList<ConstraintCreatorFacadeMethods> valueList = new List<ConstraintCreatorFacadeMethods>();
 
@@ -51,7 +51,7 @@ namespace Neo4Net.GraphDb
 
 		 internal Private readonly;
 
-		 internal ConstraintCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.ConstraintCreator> facadeMethod )
+		 internal ConstraintCreatorFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Schema.ConstraintCreator> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -60,7 +60,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.schema.ConstraintCreator constraintCreator )
+		 public void Accept( Neo4Net.GraphDb.Schema.ConstraintCreator constraintCreator )
 		 {
 			  _facadeMethod.accept( constraintCreator );
 		 }
@@ -80,7 +80,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static ConstraintCreatorFacadeMethods valueOf( string name )
+		public static ConstraintCreatorFacadeMethods ValueOf( string name )
 		{
 			foreach ( ConstraintCreatorFacadeMethods enumInstance in ConstraintCreatorFacadeMethods.valueList )
 			{

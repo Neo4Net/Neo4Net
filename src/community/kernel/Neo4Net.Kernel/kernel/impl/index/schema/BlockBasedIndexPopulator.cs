@@ -42,8 +42,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Allocator = Neo4Net.Kernel.Impl.Index.Schema.ByteBufferFactory.Allocator;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using SpaceFillingCurveSettingsWriter = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsWriter;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using Preconditions = Neo4Net.Utils.Preconditions;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -550,7 +550,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  // The weights will not be absolutely correct in all environments, but they don't have to be either, it will just result in some
 			  // slices of the percentage progression range progressing at slightly different paces. However, progression of progress reporting
 			  // naturally fluctuates anyway due to data set and I/O etc. so this is not an actual problem.
-			  Neo4Net.Storageengine.Api.schema.PopulationProgress_MultiBuilder builder = PopulationProgress.multiple();
+			  Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_MultiBuilder builder = PopulationProgress.multiple();
 
 			  // Add scan progress (this one weights a bit heavier than the others)
 			  builder.Add( scanProgress, 4 );
@@ -582,7 +582,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 			  else
 			  {
-					treeBuildProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.None;
+					treeBuildProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.None;
 			  }
 			  builder.Add( treeBuildProgress, 2 );
 

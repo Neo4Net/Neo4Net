@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.Kernel.ha.com.master
 {
-	public interface Slaves
+	public interface ISlaves
 	{
 		 IEnumerable<Slave> GetSlaves();
 	}

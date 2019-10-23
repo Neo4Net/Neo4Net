@@ -20,23 +20,23 @@ using System.Collections.Generic;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Storageengine.Api
+namespace Neo4Net.Kernel.Api.StorageEngine
 {
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using DelegatingTokenHolder = Neo4Net.Kernel.impl.core.DelegatingTokenHolder;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using Register = Neo4Net.Register.Register;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
@@ -275,13 +275,13 @@ namespace Neo4Net.Storageengine.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException, EXCEPTION
+//ORIGINAL LINE: public <EXCEPTION extends Exception> void relationshipVisit(long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException, EXCEPTION
 		 public override void RelationshipVisit<EXCEPTION>( long relationshipId, RelationshipVisitor<EXCEPTION> relationshipVisitor ) where EXCEPTION : Exception
 		 {
 			  RelationshipData data = this._relationshipData[relationshipId];
 			  if ( data == null )
 			  {
-					throw new IEntityNotFoundException( IEntityType.Relationship, relationshipId );
+					throw new IEntityNotFoundException( EntityType.Relationship, relationshipId );
 			  }
 			  relationshipVisitor.Visit( relationshipId, data.Type, data.StartNode, data.EndNode );
 		 }

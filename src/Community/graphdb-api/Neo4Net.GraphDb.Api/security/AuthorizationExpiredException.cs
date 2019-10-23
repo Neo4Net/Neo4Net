@@ -19,31 +19,31 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.security
 {
-	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
+   using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
-	/// <summary>
-	/// Thrown when required authorization info has expired in the Neo4Net auth cache
-	/// </summary>
-	public class AuthorizationExpiredException : Exception, Neo4Net.Kernel.Api.Exceptions.Status_HasStatus
-	{
-		 private const Status STATUS_CODE = Neo4Net.Kernel.Api.Exceptions.Status_Security.AuthorizationExpired;
+   /// <summary>
+   /// Thrown when required authorization info has expired in the Neo4Net auth cache
+   /// </summary>
+   public class AuthorizationExpiredException : Exception, Neo4Net.Kernel.Api.Exceptions.Status_HasStatus
+   {
+      private const Status STATUS_CODE = Neo4Net.Kernel.Api.Exceptions.Status_Security.AuthorizationExpired;
 
-		 public AuthorizationExpiredException( string msg ) : base( msg )
-		 {
-		 }
+      public AuthorizationExpiredException(string msg) : base(msg)
+      {
+      }
 
-		 public AuthorizationExpiredException( string msg, Exception cause ) : base( msg, cause )
-		 {
-		 }
+      public AuthorizationExpiredException(string msg, Exception cause) : base(msg, cause)
+      {
+      }
 
-		 /// <summary>
-		 /// The Neo4Net status code associated with this exception type. </summary>
-		 public override Status Status()
-		 {
-			  return STATUS_CODE;
-		 }
-	}
-
+      /// <summary>
+      /// The Neo4Net status code associated with this exception type. </summary>
+      public override Status Status()
+      {
+         return STATUS_CODE;
+      }
+   }
 }

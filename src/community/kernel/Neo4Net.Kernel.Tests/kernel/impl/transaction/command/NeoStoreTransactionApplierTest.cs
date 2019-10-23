@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using Test = org.junit.Test;
 
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexActivationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexActivationFailedKernelException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
@@ -65,8 +65,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using PropertyKeyTokenCommand = Neo4Net.Kernel.impl.transaction.command.Command.PropertyKeyTokenCommand;
 	using RelationshipTypeTokenCommand = Neo4Net.Kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand;
 	using ApplyFunction = Neo4Net.Kernel.impl.transaction.command.CommandHandlerContract.ApplyFunction;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -625,7 +625,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.RelationshipTypeTokenCommand command = new Command.RelationshipTypeTokenCommand(before, after);
 			  Command.RelationshipTypeTokenCommand command = new Command.RelationshipTypeTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.NamedToken token = new org.Neo4Net.internal.kernel.api.NamedToken("token", 21);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _relationshipTypeTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -693,7 +693,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.LabelTokenCommand command = new Command.LabelTokenCommand(before, after);
 			  Command.LabelTokenCommand command = new Command.LabelTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.NamedToken token = new org.Neo4Net.internal.kernel.api.NamedToken("token", 21);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _labelTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -762,7 +762,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final Command.PropertyKeyTokenCommand command = new Command.PropertyKeyTokenCommand(before, after);
 			  Command.PropertyKeyTokenCommand command = new Command.PropertyKeyTokenCommand( before, after );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.NamedToken token = new org.Neo4Net.internal.kernel.api.NamedToken("token", 21);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.NamedToken token = new org.Neo4Net.Kernel.Api.Internal.NamedToken("token", 21);
 			  NamedToken token = new NamedToken( "token", 21 );
 			  when( _propertyKeyTokenStore.getToken( ( int ) command.Key ) ).thenReturn( token );
 
@@ -794,7 +794,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -828,7 +828,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -862,7 +862,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -895,7 +895,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -914,7 +914,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: @Test public void shouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldApplyUpdateIndexRuleSchemaRuleCommandToTheStoreThrowingIndexProblem()
 		 {
@@ -931,7 +931,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = constraintIndexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"), 42L);
 			  StoreIndexDescriptor rule = ConstraintIndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ), 42L );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -973,7 +973,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);
@@ -1007,7 +1007,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //ORIGINAL LINE: final java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> recordsAfter = singletonList(record);
 			  ICollection<DynamicRecord> recordsAfter = singletonList( record );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor("K", "X.Y"));
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor rule = indexRule(0, 1, 2, new org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor("K", "X.Y"));
 			  StoreIndexDescriptor rule = IndexRule( 0, 1, 2, new IndexProviderDescriptor( "K", "X.Y" ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final Command.SchemaRuleCommand command = new Command.SchemaRuleCommand(java.util.Collections.emptyList(), recordsAfter, rule);

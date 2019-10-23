@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// <summary>
 	/// Represents the serialization and the writing of commands to the transaction log, for a particular transaction.
 	/// </summary>
-	public interface SerializeTransactionEvent : IDisposable
+	public interface ISerializeTransactionEvent : IDisposable
 	{
 
 		 /// <summary>

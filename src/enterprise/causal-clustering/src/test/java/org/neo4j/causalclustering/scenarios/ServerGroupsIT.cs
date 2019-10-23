@@ -195,7 +195,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 private IList<IList<string>> GetServerGroups( CoreGraphDatabase db )
 		 {
 			  IList<IList<string>> serverGroups = new List<IList<string>>();
-			  using ( InternalTransaction tx = Db.beginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ) )
+			  using ( InternalTransaction tx = Db.BeginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ) )
 			  {
 					using ( Result result = Db.execute( tx, "CALL dbms.cluster.overview", EMPTY_MAP ) )
 					{

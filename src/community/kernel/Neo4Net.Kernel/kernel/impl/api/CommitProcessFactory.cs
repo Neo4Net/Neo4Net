@@ -21,9 +21,9 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
-	public interface CommitProcessFactory
+	public interface ICommitProcessFactory
 	{
 		 TransactionCommitProcess Create( TransactionAppender appender, StorageEngine storageEngine, Config config );
 	}

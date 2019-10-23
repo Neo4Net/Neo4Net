@@ -26,7 +26,7 @@ namespace Neo4Net.Server.database
 	using ExecutionEngine = Neo4Net.Cypher.Internal.javacompat.ExecutionEngine;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
@@ -47,7 +47,7 @@ namespace Neo4Net.Server.database
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class CypherExecutorTest
 	{
@@ -82,7 +82,7 @@ namespace Neo4Net.Server.database
 
 			  cypherExecutor.CreateTransactionContext( QUERY, VirtualValues.emptyMap(), _request );
 
-			  verify( _databaseQueryService ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
+			  verify( _databaseQueryService ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
 			  _logProvider.assertNoLoggingOccurred();
 		 }
 
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.database
 
 			  cypherExecutor.CreateTransactionContext( QUERY, VirtualValues.emptyMap(), _request );
 
-			  verify( _databaseQueryService ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, CUSTOM_TRANSACTION_TIMEOUT, TimeUnit.MILLISECONDS );
+			  verify( _databaseQueryService ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, CUSTOM_TRANSACTION_TIMEOUT, TimeUnit.MILLISECONDS );
 			  _logProvider.assertNoLoggingOccurred();
 		 }
 
@@ -112,7 +112,7 @@ namespace Neo4Net.Server.database
 
 			  cypherExecutor.CreateTransactionContext( QUERY, VirtualValues.emptyMap(), _request );
 
-			  verify( _databaseQueryService ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
+			  verify( _databaseQueryService ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
 			  _logProvider.rawMessageMatcher().assertContains("Fail to parse `max-execution-time` header with value: 'not a number'. Should be a positive number.");
 		 }
 
@@ -127,7 +127,7 @@ namespace Neo4Net.Server.database
 
 			  cypherExecutor.CreateTransactionContext( QUERY, VirtualValues.emptyMap(), _request );
 
-			  verify( _databaseQueryService ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
+			  verify( _databaseQueryService ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
 			  _logProvider.assertNoLoggingOccurred();
 		 }
 
@@ -162,8 +162,8 @@ namespace Neo4Net.Server.database
 			  when( _resolver.resolveDependency( typeof( QueryExecutionEngine ) ) ).thenReturn( _executionEngine );
 			  when( _resolver.resolveDependency( typeof( ThreadToStatementContextBridge ) ) ).thenReturn( _statementBridge );
 			  when( _resolver.resolveDependency( typeof( GraphDatabaseQueryService ) ) ).thenReturn( _databaseQueryService );
-			  when( _databaseQueryService.beginTransaction( type, loginContext ) ).thenReturn( transaction );
-			  when( _databaseQueryService.beginTransaction( type, loginContext, CUSTOM_TRANSACTION_TIMEOUT, TimeUnit.MILLISECONDS ) ).thenReturn( transaction );
+			  when( _databaseQueryService.BeginTransaction( type, loginContext ) ).thenReturn( transaction );
+			  when( _databaseQueryService.BeginTransaction( type, loginContext, CUSTOM_TRANSACTION_TIMEOUT, TimeUnit.MILLISECONDS ) ).thenReturn( transaction );
 			  when( _databaseQueryService.DependencyResolver ).thenReturn( _resolver );
 			  when( _request.Scheme ).thenReturn( "http" );
 			  when( _request.RemoteAddr ).thenReturn( "127.0.0.1" );

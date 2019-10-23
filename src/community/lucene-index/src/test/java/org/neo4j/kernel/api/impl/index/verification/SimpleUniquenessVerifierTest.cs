@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 	using LuceneDocumentStructure = Neo4Net.Kernel.Api.Impl.Schema.LuceneDocumentStructure;
 	using SimpleUniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.SimpleUniquenessVerifier;
 	using UniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.UniquenessVerifier;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void runUniquenessVerification(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, org.apache.lucene.search.IndexSearcher indexSearcher) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void runUniquenessVerification(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, org.apache.lucene.search.IndexSearcher indexSearcher) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void RunUniquenessVerification( NodePropertyAccessor nodePropertyAccessor, IndexSearcher indexSearcher )
 		 {
 			  try
@@ -260,7 +260,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNoDuplicates(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws Exception
+//ORIGINAL LINE: private void assertNoDuplicates(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws Exception
 		 private void AssertNoDuplicates( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -270,7 +270,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertNoDuplicatesCreated(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws Exception
+//ORIGINAL LINE: private void assertNoDuplicatesCreated(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws Exception
 		 private void AssertNoDuplicatesCreated( NodePropertyAccessor nodePropertyAccessor, IList<Value[]> updatedPropertyValues )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -280,7 +280,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertHasDuplicates(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws java.io.IOException
+//ORIGINAL LINE: private void assertHasDuplicates(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws java.io.IOException
 		 private void AssertHasDuplicates( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )
@@ -290,7 +290,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertDuplicatesCreated(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws java.io.IOException
+//ORIGINAL LINE: private void assertDuplicatesCreated(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor, java.util.List<org.Neo4Net.values.storable.Value[]> updatedPropertyValues) throws java.io.IOException
 		 private void AssertDuplicatesCreated( NodePropertyAccessor nodePropertyAccessor, IList<Value[]> updatedPropertyValues )
 		 {
 			  using ( UniquenessVerifier verifier = NewSimpleUniquenessVerifier() )

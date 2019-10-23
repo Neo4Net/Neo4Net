@@ -32,7 +32,7 @@ namespace Neo4Net.GraphDb.Traversal
 //ORIGINAL LINE: PREORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PreorderDepthFirstSelector(startSource, expander); } },
 		 PREORDER_DEPTH_FIRST
 		 {
-			 public BranchSelector create( TraversalBranch startSource, IPathExpander expander ) { return new PreorderDepthFirstSelector( startSource, expander ); }
+			 public BranchSelector create( ITraversalBranch startSource, IPathExpander expander ) { return new PreorderDepthFirstSelector( startSource, expander ); }
 		 },
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: POSTORDER_DEPTH_FIRST { @Override public BranchSelector create(TraversalBranch startSource, org.Neo4Net.graphdb.PathExpander expander) { return new PostorderDepthFirstSelector(startSource, expander); } },

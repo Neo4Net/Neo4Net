@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.factory
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.MockedNeoStores.mockedTokenHolders;
 
@@ -76,22 +76,22 @@ namespace Neo4Net.Kernel.impl.factory
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void beginTransactionWithCustomTimeout()
+//ORIGINAL LINE: @Test void BeginTransactionWithCustomTimeout()
 		 internal virtual void BeginTransactionWithCustomTimeout()
 		 {
 			  _graphDatabaseFacade.beginTx( 10, TimeUnit.MILLISECONDS );
 
-			  verify( _spi ).beginTransaction( KernelTransaction.Type.@explicit, AUTH_DISABLED, 10L );
+			  verify( _spi ).BeginTransaction( KernelTransaction.Type.@explicit, AUTH_DISABLED, 10L );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void beginTransaction()
+//ORIGINAL LINE: @Test void BeginTransaction()
 		 internal virtual void BeginTransaction()
 		 {
 			  _graphDatabaseFacade.beginTx();
 
 			  long timeout = Config.defaults().get(GraphDatabaseSettings.transaction_timeout).toMillis();
-			  verify( _spi ).beginTransaction( KernelTransaction.Type.@explicit, AUTH_DISABLED, timeout );
+			  verify( _spi ).BeginTransaction( KernelTransaction.Type.@explicit, AUTH_DISABLED, timeout );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -99,10 +99,10 @@ namespace Neo4Net.Kernel.impl.factory
 		 internal virtual void ExecuteQueryWithCustomTimeoutShouldStartTransactionWithRequestedTimeout()
 		 {
 			  _graphDatabaseFacade.execute( "create (n)", 157L, TimeUnit.SECONDS );
-			  verify( _spi ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, TimeUnit.SECONDS.toMillis( 157L ) );
+			  verify( _spi ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, TimeUnit.SECONDS.toMillis( 157L ) );
 
 			  _graphDatabaseFacade.execute( "create (n)", new Dictionary<string, object>(), 247L, TimeUnit.MINUTES );
-			  verify( _spi ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, TimeUnit.MINUTES.toMillis( 247L ) );
+			  verify( _spi ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, TimeUnit.MINUTES.toMillis( 247L ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -112,13 +112,13 @@ namespace Neo4Net.Kernel.impl.factory
 			  KernelTransaction kernelTransaction = mock( typeof( KernelTransaction ) );
 			  InternalTransaction transaction = new TopLevelTransaction( kernelTransaction );
 
-			  when( _queryService.beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED ) ).thenReturn( transaction );
+			  when( _queryService.BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED ) ).thenReturn( transaction );
 
 			  _graphDatabaseFacade.execute( "create (n)" );
 			  _graphDatabaseFacade.execute( "create (n)", new Dictionary<string, object>() );
 
 			  long timeout = Config.defaults().get(GraphDatabaseSettings.transaction_timeout).toMillis();
-			  verify( _spi, times( 2 ) ).beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, timeout );
+			  verify( _spi, times( 2 ) ).BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, timeout );
 		 }
 	}
 

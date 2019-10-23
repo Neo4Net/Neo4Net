@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.instanceOf;
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertCanReadRelGroup(org.Neo4Net.storageengine.api.CommandReader reader) throws java.io.IOException
+//ORIGINAL LINE: private void assertCanReadRelGroup(org.Neo4Net.Kernel.Api.StorageEngine.CommandReader reader) throws java.io.IOException
 		 private void AssertCanReadRelGroup( CommandReader reader )
 		 {
 			  StorageCommand command = reader.Read( ChannelWithRelGroupRecord() );
@@ -138,14 +138,14 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.storageengine.api.ReadableChannel channelWithRelGroupRecord() throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord() throws java.io.IOException
 		 private static ReadableChannel ChannelWithRelGroupRecord()
 		 {
 			  return ChannelWithRelGroupRecord( ID, _inUseFlag, _type, NEXT, FIRST_OUT, FIRST_IN, FIRST_LOOP, OWNING_NODE );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.storageengine.api.ReadableChannel channelWithRelGroupRecord(long id, byte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode) throws java.io.IOException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channelWithRelGroupRecord(long id, byte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode) throws java.io.IOException
 		 private static ReadableChannel ChannelWithRelGroupRecord( long id, sbyte inUse, short type, long next, long firstOut, long firstIn, long firstLoop, long owningNode )
 		 {
 			  ReadableChannel channel = mock( typeof( ReadableChannel ) );

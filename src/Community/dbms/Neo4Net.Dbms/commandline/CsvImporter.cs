@@ -97,7 +97,7 @@ namespace Neo4Net.Dbms.CommandLine
 					throw new IncorrectUsage( e.Message );
 			  }
 
-			  _idType = args.InterpretOption( "id-type", withDefault( IdType.STRING ), from => IdType.valueOf( from.ToUpper() ) );
+			  _idType = args.InterpretOption( "id-type", withDefault( IdType.STRING ), from => IdType.ValueOf( from.ToUpper() ) );
 			  _inputEncoding = Charset.forName( args.Get( "input-encoding", defaultCharset().name() ) );
 			  _highIO = args.GetBoolean( "high-io", null, true ); // intentionally left as null if not specified
 			  this._databaseConfig = databaseConfig;

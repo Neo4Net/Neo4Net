@@ -16,7 +16,7 @@
  */
 namespace Neo4Net.Cypher.Internal.v3_5.frontend.phases
 {
-	public interface CompilationPhaseTracer
+	public interface ICompilationPhaseTracer
 	{
 
 		 CompilationPhaseTracer_CompilationPhaseEvent BeginPhase( CompilationPhaseTracer_CompilationPhase phase );
@@ -50,7 +50,7 @@ namespace Neo4Net.Cypher.Internal.v3_5.frontend.phases
 		  PipeBuilding,
 	 }
 
-	 public interface CompilationPhaseTracer_CompilationPhaseEvent : IDisposable
+	 public interface ICompilationPhaseTracer_CompilationPhaseEvent : IDisposable
 	 {
 		  void Close();
 	 }

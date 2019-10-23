@@ -53,7 +53,7 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	public class TransactionBatchCommitterTest
 	{

@@ -234,7 +234,7 @@ namespace Neo4Net.Utils
          enumClass = typeof(E);
          try
          {
-            return Enum.valueOf(enumClass, System.getProperty(name, defaultValue.name()));
+            return Enum.ValueOf(enumClass, System.getProperty(name, defaultValue.name()));
          }
          catch (System.ArgumentException)
          {

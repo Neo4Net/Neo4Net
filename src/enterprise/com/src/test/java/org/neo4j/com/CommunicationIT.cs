@@ -38,7 +38,7 @@ namespace Neo4Net.com
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;

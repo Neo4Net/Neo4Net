@@ -22,26 +22,26 @@
 namespace Neo4Net.GraphDb
 {
 
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.FacadeMethod.consume;
 
 	public sealed class IndexDefinitionFacadeMethods : Consumer<IndexDefinition>
 	{
-		 public static readonly IndexDefinitionFacadeMethods GetLabel = new IndexDefinitionFacadeMethods( "GetLabel", InnerEnum.GetLabel, new FacadeMethod<>( "Label getLabel()", Neo4Net.GraphDb.schema.IndexDefinition::getLabel ) );
+		 public static readonly IndexDefinitionFacadeMethods GetLabel = new IndexDefinitionFacadeMethods( "GetLabel", InnerEnum.GetLabel, new FacadeMethod<>( "Label getLabel()", Neo4Net.GraphDb.Schema.IndexDefinition::getLabel ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       GET_LABELS(new FacadeMethod<>("Iterable<Label> getLabels()", self -> consume(self.getLabels()))),
-		 public static readonly IndexDefinitionFacadeMethods GetRelationshipType = new IndexDefinitionFacadeMethods( "GetRelationshipType", InnerEnum.GetRelationshipType, new FacadeMethod<>( "RelationshipType getRelationshipType()", Neo4Net.GraphDb.schema.IndexDefinition::getRelationshipType ) );
+		 public static readonly IndexDefinitionFacadeMethods GetRelationshipType = new IndexDefinitionFacadeMethods( "GetRelationshipType", InnerEnum.GetRelationshipType, new FacadeMethod<>( "RelationshipType getRelationshipType()", Neo4Net.GraphDb.Schema.IndexDefinition::getRelationshipType ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       GET_RELATIONSHIP_TYPES(new FacadeMethod<>("Iterable<RelationshipType> getRelationshipTypes()", self -> consume(self.getRelationshipTypes()))),
-		 public static readonly IndexDefinitionFacadeMethods GetPropertyKeys = new IndexDefinitionFacadeMethods( "GetPropertyKeys", InnerEnum.GetPropertyKeys, new FacadeMethod<>( "Iterable<String> getPropertyKeys()", Neo4Net.GraphDb.schema.IndexDefinition::getPropertyKeys ) );
-		 public static readonly IndexDefinitionFacadeMethods Drop = new IndexDefinitionFacadeMethods( "Drop", InnerEnum.Drop, new FacadeMethod<>( "void drop()", Neo4Net.GraphDb.schema.IndexDefinition.drop ) );
-		 public static readonly IndexDefinitionFacadeMethods IsConstraintIndex = new IndexDefinitionFacadeMethods( "IsConstraintIndex", InnerEnum.IsConstraintIndex, new FacadeMethod<>( "boolean isConstraintIndex()", Neo4Net.GraphDb.schema.IndexDefinition::isConstraintIndex ) );
-		 public static readonly IndexDefinitionFacadeMethods IsNodeIndex = new IndexDefinitionFacadeMethods( "IsNodeIndex", InnerEnum.IsNodeIndex, new FacadeMethod<>( "boolean isNodeIndex()", Neo4Net.GraphDb.schema.IndexDefinition::isNodeIndex ) );
-		 public static readonly IndexDefinitionFacadeMethods IsRelationshipIndex = new IndexDefinitionFacadeMethods( "IsRelationshipIndex", InnerEnum.IsRelationshipIndex, new FacadeMethod<>( "boolean isRelationshipIndex()", Neo4Net.GraphDb.schema.IndexDefinition::isRelationshipIndex ) );
-		 public static readonly IndexDefinitionFacadeMethods IsMultiTokenIndex = new IndexDefinitionFacadeMethods( "IsMultiTokenIndex", InnerEnum.IsMultiTokenIndex, new FacadeMethod<>( "boolean isMultiTokenIndex()", Neo4Net.GraphDb.schema.IndexDefinition::isMultiTokenIndex ) );
-		 public static readonly IndexDefinitionFacadeMethods IsCompositeIndex = new IndexDefinitionFacadeMethods( "IsCompositeIndex", InnerEnum.IsCompositeIndex, new FacadeMethod<>( "boolean isCompositeIndex()", Neo4Net.GraphDb.schema.IndexDefinition::isCompositeIndex ) );
+		 public static readonly IndexDefinitionFacadeMethods GetPropertyKeys = new IndexDefinitionFacadeMethods( "GetPropertyKeys", InnerEnum.GetPropertyKeys, new FacadeMethod<>( "Iterable<String> getPropertyKeys()", Neo4Net.GraphDb.Schema.IndexDefinition::getPropertyKeys ) );
+		 public static readonly IndexDefinitionFacadeMethods Drop = new IndexDefinitionFacadeMethods( "Drop", InnerEnum.Drop, new FacadeMethod<>( "void drop()", Neo4Net.GraphDb.Schema.IndexDefinition.drop ) );
+		 public static readonly IndexDefinitionFacadeMethods IsConstraintIndex = new IndexDefinitionFacadeMethods( "IsConstraintIndex", InnerEnum.IsConstraintIndex, new FacadeMethod<>( "boolean isConstraintIndex()", Neo4Net.GraphDb.Schema.IndexDefinition::isConstraintIndex ) );
+		 public static readonly IndexDefinitionFacadeMethods IsNodeIndex = new IndexDefinitionFacadeMethods( "IsNodeIndex", InnerEnum.IsNodeIndex, new FacadeMethod<>( "boolean isNodeIndex()", Neo4Net.GraphDb.Schema.IndexDefinition::isNodeIndex ) );
+		 public static readonly IndexDefinitionFacadeMethods IsRelationshipIndex = new IndexDefinitionFacadeMethods( "IsRelationshipIndex", InnerEnum.IsRelationshipIndex, new FacadeMethod<>( "boolean isRelationshipIndex()", Neo4Net.GraphDb.Schema.IndexDefinition::isRelationshipIndex ) );
+		 public static readonly IndexDefinitionFacadeMethods IsMultiTokenIndex = new IndexDefinitionFacadeMethods( "IsMultiTokenIndex", InnerEnum.IsMultiTokenIndex, new FacadeMethod<>( "boolean isMultiTokenIndex()", Neo4Net.GraphDb.Schema.IndexDefinition::isMultiTokenIndex ) );
+		 public static readonly IndexDefinitionFacadeMethods IsCompositeIndex = new IndexDefinitionFacadeMethods( "IsCompositeIndex", InnerEnum.IsCompositeIndex, new FacadeMethod<>( "boolean isCompositeIndex()", Neo4Net.GraphDb.Schema.IndexDefinition::isCompositeIndex ) );
 
 		 private static readonly IList<IndexDefinitionFacadeMethods> valueList = new List<IndexDefinitionFacadeMethods>();
 
@@ -82,7 +82,7 @@ namespace Neo4Net.GraphDb
 
 		 internal Private readonly;
 
-		 internal IndexDefinitionFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.IndexDefinition> facadeMethod )
+		 internal IndexDefinitionFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Schema.IndexDefinition> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -91,7 +91,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.schema.IndexDefinition indexDefinition )
+		 public void Accept( Neo4Net.GraphDb.Schema.IndexDefinition indexDefinition )
 		 {
 			  _facadeMethod.accept( indexDefinition );
 		 }
@@ -111,7 +111,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static IndexDefinitionFacadeMethods valueOf( string name )
+		public static IndexDefinitionFacadeMethods ValueOf( string name )
 		{
 			foreach ( IndexDefinitionFacadeMethods enumInstance in IndexDefinitionFacadeMethods.valueList )
 			{

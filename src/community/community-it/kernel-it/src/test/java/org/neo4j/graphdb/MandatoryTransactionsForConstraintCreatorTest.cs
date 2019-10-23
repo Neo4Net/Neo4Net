@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 
 	public class MandatoryTransactionsForConstraintCreatorTest : AbstractMandatoryTransactionsTest<ConstraintCreator>
 	{

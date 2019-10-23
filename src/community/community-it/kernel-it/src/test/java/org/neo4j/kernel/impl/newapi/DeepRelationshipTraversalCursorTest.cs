@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using Neo4Net.Internal.Kernel.Api;
+	using Neo4Net.Kernel.Api.Internal;
 
 	public class DeepRelationshipTraversalCursorTest : DeepRelationshipTraversalCursorTestBase<ReadTestSupport>
 	{

@@ -41,8 +41,8 @@ namespace Neo4Net.Ext.Udc.impl
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

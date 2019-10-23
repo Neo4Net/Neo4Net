@@ -25,24 +25,24 @@ namespace Neo4Net.GraphDb.Traversal
 	using Neo4Net.GraphDb;
 
 	/// <summary>
-	/// Selects <seealso cref="TraversalBranch"/>s according to postorder breadth first
+	/// Selects <seealso cref="ITraversalBranch"/>s according to postorder breadth first
 	/// pattern which basically is a reverse to preorder breadth first in that
 	/// deepest levels are returned first, see
 	/// http://en.wikipedia.org/wiki/Breadth-first_search
 	/// </summary>
 	internal class PostorderBreadthFirstSelector : BranchSelector
 	{
-		 private IEnumerator<TraversalBranch> _sourceIterator;
-		 private readonly TraversalBranch _current;
+		 private IEnumerator<ITraversalBranch> _sourceIterator;
+		 private readonly ITraversalBranch _current;
 		 private readonly IPathExpander _expander;
 
-		 internal PostorderBreadthFirstSelector( TraversalBranch startSource, IPathExpander expander )
+		 internal PostorderBreadthFirstSelector( ITraversalBranch startSource, IPathExpander expander )
 		 {
-			  this._current = startSource;
-			  this._expander = expander;
+			  _current = startSource;
+			  _expander = expander;
 		 }
 
-		 public override TraversalBranch Next( TraversalContext metadata )
+		 public override ITraversalBranch Next( TraversalContext metadata )
 		 {
 			  if ( _sourceIterator == null )
 			  {
@@ -52,13 +52,13 @@ namespace Neo4Net.GraphDb.Traversal
 			  return _sourceIterator.hasNext() ? _sourceIterator.next() : null;
 		 }
 
-		 private IEnumerator<TraversalBranch> GatherSourceIterator( TraversalContext metadata )
+		 private IEnumerator<ITraversalBranch> GatherSourceIterator( TraversalContext metadata )
 		 {
-			  LinkedList<TraversalBranch> queue = new LinkedList<TraversalBranch>();
+			  LinkedList<ITraversalBranch> queue = new LinkedList<ITraversalBranch>();
 			  queue.AddLast( _current.next( _expander, metadata ) );
 			  while ( true )
 			  {
-					IList<TraversalBranch> level = GatherOneLevel( queue, metadata );
+					IList<ITraversalBranch> level = GatherOneLevel( queue, metadata );
 					if ( level.Count == 0 )
 					{
 						 break;
@@ -68,24 +68,24 @@ namespace Neo4Net.GraphDb.Traversal
 			  return queue.GetEnumerator();
 		 }
 
-		 private IList<TraversalBranch> GatherOneLevel( IList<TraversalBranch> queue, TraversalContext metadata )
+		 private IList<ITraversalBranch> GatherOneLevel( IList<ITraversalBranch> queue, TraversalContext metadata )
 		 {
-			  IList<TraversalBranch> level = new LinkedList<TraversalBranch>();
+			  IList<ITraversalBranch> level = new LinkedList<ITraversalBranch>();
 			  int? depth = null;
-			  foreach ( TraversalBranch source in queue )
+			  foreach ( ITraversalBranch source in queue )
 			  {
 					if ( depth == null )
 					{
-						 depth = source.Length();
+						 depth = source.Length;
 					}
-					else if ( source.Length() != depth.Value )
+					else if ( source.Length!= depth.Value )
 					{
 						 break;
 					}
 
 					while ( true )
 					{
-						 TraversalBranch next = source.Next( _expander, metadata );
+						 ITraversalBranch next = source.Next( _expander, metadata );
 						 if ( next == null )
 						 {
 							  break;

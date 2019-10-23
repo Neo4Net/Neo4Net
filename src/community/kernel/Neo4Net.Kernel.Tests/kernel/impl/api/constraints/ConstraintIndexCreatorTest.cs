@@ -26,20 +26,20 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
@@ -56,11 +56,11 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 	using SimpleStatementLocks = Neo4Net.Kernel.impl.locking.SimpleStatementLocks;
 	using TransactionHeaderInformationFactory = Neo4Net.Kernel.impl.transaction.TransactionHeaderInformationFactory;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -344,7 +344,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void logMessagesAboutConstraintCreation() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException, org.Neo4Net.kernel.api.exceptions.schema.UniquePropertyValueValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void LogMessagesAboutConstraintCreation()
 		 {
@@ -382,7 +382,7 @@ namespace Neo4Net.Kernel.Impl.Api.constraints
 					return kernelTransaction;
 			  }
 
-			  public override Transaction BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type type, LoginContext loginContext )
+			  public override Transaction BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type type, LoginContext loginContext )
 			  {
 					return Remember( outerInstance.createTransaction() );
 			  }

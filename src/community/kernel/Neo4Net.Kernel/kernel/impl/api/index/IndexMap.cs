@@ -32,12 +32,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ObjectLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap;
 
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Bundles various mappings to IndexProxy. Used by IndexingService via IndexMapReference.
@@ -149,40 +149,40 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  }
 		 }
 
-		 private SchemaDescriptorLookupSet<IndexBackedConstraintDescriptor> SelectConstraintsByEntityType( IEntityType IEntityType )
+		 private SchemaDescriptorLookupSet<IndexBackedConstraintDescriptor> SelectConstraintsByEntityType( EntityType EntityType )
 		 {
-			  switch ( IEntityType.innerEnumValue )
+			  switch ( EntityType.innerEnumValue )
 			  {
-			  case IEntityType.InnerEnum.NODE:
+			  case EntityType.InnerEnum.NODE:
 					return _constraintsByLabelThenProperty;
-			  case IEntityType.InnerEnum.RELATIONSHIP:
+			  case EntityType.InnerEnum.RELATIONSHIP:
 					return _constraintsByRelTypeThenProperty;
 			  default:
-					throw new System.ArgumentException( "Unknown IEntity type " + IEntityType );
+					throw new System.ArgumentException( "Unknown IEntity type " + EntityType );
 			  }
 		 }
 
-		 private SchemaDescriptorLookupSet<SchemaDescriptor> SelectIndexesByEntityType( IEntityType IEntityType )
+		 private SchemaDescriptorLookupSet<SchemaDescriptor> SelectIndexesByEntityType( EntityType EntityType )
 		 {
-			  switch ( IEntityType.innerEnumValue )
+			  switch ( EntityType.innerEnumValue )
 			  {
-			  case IEntityType.InnerEnum.NODE:
+			  case EntityType.InnerEnum.NODE:
 					return _descriptorsByLabelThenProperty;
-			  case IEntityType.InnerEnum.RELATIONSHIP:
+			  case EntityType.InnerEnum.RELATIONSHIP:
 					return _descriptorsByReltypeThenProperty;
 			  default:
-					throw new System.ArgumentException( "Unknown IEntity type " + IEntityType );
+					throw new System.ArgumentException( "Unknown IEntity type " + EntityType );
 			  }
 		 }
 
-		 internal bool HasRelatedSchema( long[] labels, int propertyKey, IEntityType IEntityType )
+		 internal bool HasRelatedSchema( long[] labels, int propertyKey, EntityType EntityType )
 		 {
-			  return SelectIndexesByEntityType( IEntityType ).has( labels, propertyKey ) || SelectConstraintsByEntityType( IEntityType ).has( labels, propertyKey );
+			  return SelectIndexesByEntityType( EntityType ).has( labels, propertyKey ) || SelectConstraintsByEntityType( EntityType ).has( labels, propertyKey );
 		 }
 
-		 internal bool HasRelatedSchema( int label, IEntityType IEntityType )
+		 internal bool HasRelatedSchema( int label, EntityType EntityType )
 		 {
-			  return SelectIndexesByEntityType( IEntityType ).has( label ) || SelectConstraintsByEntityType( IEntityType ).has( label );
+			  return SelectIndexesByEntityType( EntityType ).has( label ) || SelectConstraintsByEntityType( EntityType ).has( label );
 		 }
 
 		 /// <summary>
@@ -195,9 +195,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="sortedProperties"> sorted list of properties </param>
 		 /// <param name="entityType"> type of indexes to get </param>
 		 /// <returns> set of SchemaDescriptors describing the potentially affected indexes </returns>
-		 public ISet<SchemaDescriptor> GetRelatedIndexes( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, IEntityType IEntityType )
+		 public ISet<SchemaDescriptor> GetRelatedIndexes( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, EntityType EntityType )
 		 {
-			  return GetRelatedDescriptors( SelectIndexesByEntityType( IEntityType ), changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete );
+			  return GetRelatedDescriptors( SelectIndexesByEntityType( EntityType ), changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete );
 		 }
 
 		 /// <summary>
@@ -210,9 +210,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="sortedProperties"> sorted list of properties </param>
 		 /// <param name="entityType"> type of indexes to get </param>
 		 /// <returns> set of SchemaDescriptors describing the potentially affected indexes </returns>
-		 public ISet<IndexBackedConstraintDescriptor> GetRelatedConstraints( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, IEntityType IEntityType )
+		 public ISet<IndexBackedConstraintDescriptor> GetRelatedConstraints( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, EntityType EntityType )
 		 {
-			  return GetRelatedDescriptors( SelectConstraintsByEntityType( IEntityType ), changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete );
+			  return GetRelatedDescriptors( SelectConstraintsByEntityType( EntityType ), changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete );
 		 }
 
 		 /// <param name="changedLabels"> set of labels that have changed </param>
@@ -220,7 +220,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="sortedProperties"> set of properties </param>
 		 /// <param name="propertyListIsComplete"> whether or not the property list is complete. For CREATE/DELETE the list is complete, but may not be for UPDATEs. </param>
 		 /// <returns> set of SchemaDescriptors describing the potentially affected indexes </returns>
-		 private ISet<T> GetRelatedDescriptors<T>( SchemaDescriptorLookupSet<T> set, long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete ) where T : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+		 private ISet<T> GetRelatedDescriptors<T>( SchemaDescriptorLookupSet<T> set, long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete ) where T : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
 		 {
 			  if ( set.Empty )
 			  {
@@ -308,7 +308,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private static MutableObjectLongMap<SchemaDescriptor> IndexIdsByDescriptor( LongObjectMap<IndexProxy> indexesById )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
+//ORIGINAL LINE: final org.eclipse.collections.api.map.primitive.MutableObjectLongMap<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor> map = new org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap<>(indexesById.size());
 			  MutableObjectLongMap<SchemaDescriptor> map = new ObjectLongHashMap<SchemaDescriptor>( indexesById.size() );
 			  indexesById.forEachKeyValue( ( id, indexProxy ) => map.put( indexProxy.Descriptor.schema(), id ) );
 			  return map;

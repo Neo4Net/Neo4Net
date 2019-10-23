@@ -36,7 +36,7 @@ namespace Neo4Net.com.storecopy
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using StoreCopyCheckPointMutex = Neo4Net.Kernel.impl.transaction.log.checkpoint.StoreCopyCheckPointMutex;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.RequestContext.anonymous;

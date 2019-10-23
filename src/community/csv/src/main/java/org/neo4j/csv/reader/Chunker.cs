@@ -26,7 +26,7 @@ namespace Neo4Net.Csv.Reader
 	/// next chunk from the stream. This design allows for efficient reuse of chunks when there are multiple concurrent
 	/// processors, each processing chunks of data.
 	/// </summary>
-	public interface Chunker : System.IDisposable
+	public interface IChunker : System.IDisposable
 	{
 		 /// <returns> a new allocated <seealso cref="Chunk"/> which is to be later passed into <seealso cref="nextChunk(Chunk)"/>
 		 /// to fill it with data. When a <seealso cref="Chunk"/> has been fully processed then it can be passed into

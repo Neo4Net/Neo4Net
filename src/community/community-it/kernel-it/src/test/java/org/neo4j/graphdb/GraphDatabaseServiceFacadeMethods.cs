@@ -124,7 +124,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static IGraphDatabaseServiceFacadeMethods valueOf( string name )
+		public static IGraphDatabaseServiceFacadeMethods ValueOf( string name )
 		{
 			foreach ( IGraphDatabaseServiceFacadeMethods enumInstance in IGraphDatabaseServiceFacadeMethods.valueList )
 			{

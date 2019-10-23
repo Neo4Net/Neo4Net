@@ -32,28 +32,28 @@ namespace Neo4Net.Locking
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
-	using ExplicitIndexRead = Neo4Net.Internal.Kernel.Api.ExplicitIndexRead;
-	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
-	using Locks = Neo4Net.Internal.Kernel.Api.Locks;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Procedures = Neo4Net.Internal.Kernel.Api.Procedures;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
+	using ExplicitIndexRead = Neo4Net.Kernel.Api.Internal.ExplicitIndexRead;
+	using ExplicitIndexWrite = Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite;
+	using Locks = Neo4Net.Kernel.Api.Internal.Locks;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Procedures = Neo4Net.Kernel.Api.Internal.Procedures;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
@@ -75,8 +75,8 @@ namespace Neo4Net.Locking
 	using TransactionalContextFactory = Neo4Net.Kernel.impl.query.TransactionalContextFactory;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using StatisticProvider = Neo4Net.Kernel.impl.query.statistic.StatisticProvider;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
@@ -562,7 +562,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.Write dataWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.Write dataWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override Write DataWrite()
 			  {
 					return Internal.dataWrite();
@@ -574,7 +574,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.ExplicitIndexWrite indexWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite indexWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override ExplicitIndexWrite IndexWrite()
 			  {
 					return Internal.indexWrite();
@@ -590,7 +590,7 @@ namespace Neo4Net.Locking
 					return Internal.tokenWrite();
 			  }
 
-			  public override Neo4Net.Internal.Kernel.Api.Token Token()
+			  public override Neo4Net.Kernel.Api.Internal.Token Token()
 			  {
 					return Internal.token();
 			  }
@@ -601,7 +601,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.SchemaWrite schemaWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  public override SchemaWrite SchemaWrite()
 			  {
 					return Internal.schemaWrite();
@@ -633,7 +633,7 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
 			  public override IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider )
 			  {
 					string defaultProvider = Config.defaults().get(GraphDatabaseSettings.default_schema_provider);
@@ -641,14 +641,14 @@ namespace Neo4Net.Locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long closeTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long closeTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override long CloseTransaction()
 			  {
 					return Internal.closeTransaction();
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void close() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void close() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override void Close()
 			  {
 					Internal.close();
@@ -723,7 +723,7 @@ namespace Neo4Net.Locking
 					Internal.registerCloseListener( listener );
 			  }
 
-			  public override Neo4Net.Internal.Kernel.Api.Transaction_Type TransactionType()
+			  public override Neo4Net.Kernel.Api.Internal.Transaction_Type TransactionType()
 			  {
 					return Internal.transactionType();
 			  }

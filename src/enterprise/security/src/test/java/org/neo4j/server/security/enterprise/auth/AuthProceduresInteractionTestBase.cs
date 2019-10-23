@@ -58,7 +58,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

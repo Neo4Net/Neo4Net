@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.api.txstate
 {
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 

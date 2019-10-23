@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesRequest;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -53,7 +53,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 internal RaftMachineBuilder.CommitListener CommitListener;
 
 		 private MemberId _myself = member( 0 );
-		 private ReplicatedContent _content = valueOf( 1 );
+		 private ReplicatedContent _content = ValueOf( 1 );
 		 private RaftLog _testEntryLog;
 
 		 private RaftMachine _raft;
@@ -102,12 +102,12 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldRemoveLaterEntryFromLogConflictingWithNewEntry()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 4 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 7 ) ) ); // conflicting entry
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 4 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 7 ) ) ); // conflicting entry
 
 			  // when
-			  ReplicatedInteger newData = valueOf( 11 );
+			  ReplicatedInteger newData = ValueOf( 11 );
 			  _raft.handle( appendEntriesRequest().leaderTerm(2).prevLogIndex(2).prevLogTerm(1).logEntry(new RaftLogEntry(2, newData)).build() );
 
 			  // then
@@ -120,20 +120,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotTouchTheLogIfWeDoMatchEverywhere()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) ); // 0
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) ); // 1
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) ); // 5
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) ); // 10
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) ); // 0
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) ); // 1
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) ); // 5
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) ); // 10
 
 			  // when instance A as leader
-			  ReplicatedInteger newData = valueOf( 99 );
+			  ReplicatedInteger newData = ValueOf( 99 );
 
 			  // Matches everything in the given range
 			  _raft.handle( appendEntriesRequest().leaderTerm(8).prevLogIndex(5).prevLogTerm(2).logEntry(new RaftLogEntry(2, newData)).logEntry(new RaftLogEntry(3, newData)).logEntry(new RaftLogEntry(3, newData)).logEntry(new RaftLogEntry(3, newData)).build() );
@@ -149,20 +149,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotTouchTheLogIfWeDoNotMatchAnywhere()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
 
 			  // when instance A as leader
-			  ReplicatedInteger newData = valueOf( 99 );
+			  ReplicatedInteger newData = ValueOf( 99 );
 
 			  // Will not match as the entry at index 5 has term  2
 			  _raft.handle( appendEntriesRequest().leaderTerm(8).prevLogIndex(6).prevLogTerm(5).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).build() );
@@ -177,20 +177,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTruncateOnFirstMismatchAndThenAppendOtherEntries()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
 
 			  // when instance A as leader
-			  ReplicatedInteger newData = valueOf( 99 );
+			  ReplicatedInteger newData = ValueOf( 99 );
 
 			  _raft.handle( appendEntriesRequest().leaderTerm(8).prevLogIndex(0).prevLogTerm(0).logEntry(new RaftLogEntry(1, newData)).logEntry(new RaftLogEntry(1, newData)).logEntry(new RaftLogEntry(1, newData)).logEntry(new RaftLogEntry(4, newData)).logEntry(new RaftLogEntry(4, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).build() );
 
@@ -213,20 +213,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldNotTruncateLogIfHistoryDoesNotMatch()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
 
 			  // when instance A as leader
-			  ReplicatedInteger newData = valueOf( 99 );
+			  ReplicatedInteger newData = ValueOf( 99 );
 			  _raft.handle( appendEntriesRequest().leaderTerm(8).prevLogIndex(4).prevLogTerm(4).logEntry(new RaftLogEntry(4, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).build() );
 
 			  // then
@@ -238,20 +238,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTruncateLogIfFirstEntryMatchesAndSecondEntryMismatchesOnTerm()
 		 {
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 1, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 2, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
-			  _testEntryLog.append( new RaftLogEntry( 3, valueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 1, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 2, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
+			  _testEntryLog.append( new RaftLogEntry( 3, ValueOf( 99 ) ) );
 
 			  // when instance A as leader
-			  ReplicatedInteger newData = valueOf( 99 );
+			  ReplicatedInteger newData = ValueOf( 99 );
 			  _raft.handle( appendEntriesRequest().leaderTerm(8).prevLogIndex(2).prevLogTerm(1).logEntry(new RaftLogEntry(1, newData)).logEntry(new RaftLogEntry(4, newData)).logEntry(new RaftLogEntry(4, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(5, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).logEntry(new RaftLogEntry(6, newData)).build() );
 
 			  // then

@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.api.proc
 {
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 
 	/// <summary>
@@ -36,11 +36,11 @@ namespace Neo4Net.Kernel.api.proc
 	/// The context is entirely defined by the caller of the procedure,
 	/// so what is available in the context depends on the context of the call.
 	/// </summary>
-	public interface Context
+	public interface IContext
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: <T> T get(Key<T> key) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: <T> T get(Key<T> key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 T get<T>( Key<T> key );
 		 T getOrElse<T>( Key<T> key, T orElse );
 	}

@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.api.schema.constraints
 {
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor;
-	using Neo4Net.Internal.Kernel.Api.schema;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
+	using Neo4Net.Kernel.Api.Internal.schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 
 	public class ConstraintDescriptorFactory
 	{

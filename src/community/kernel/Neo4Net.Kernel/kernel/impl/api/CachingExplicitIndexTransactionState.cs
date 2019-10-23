@@ -22,12 +22,12 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	public class CachingExplicitIndexTransactionState : ExplicitIndexTransactionState
 	{
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  if ( _nodeExplicitIndexChanges == null )
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  if ( _relationshipExplicitIndexChanges == null )
@@ -77,9 +77,9 @@ namespace Neo4Net.Kernel.Impl.Api
 			  _txState.createIndex( node, name, config );
 		 }
 
-		 public override void DeleteIndex( IndexEntityType IEntityType, string indexName )
+		 public override void DeleteIndex( IndexEntityType EntityType, string indexName )
 		 {
-			  _txState.deleteIndex( IEntityType, indexName );
+			  _txState.deleteIndex( EntityType, indexName );
 		 }
 
 		 public override bool HasChanges()
@@ -88,15 +88,15 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> target) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void ExtractCommands( ICollection<StorageCommand> target )
 		 {
 			  _txState.extractCommands( target );
 		 }
 
-		 public override bool CheckIndexExistence( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
+		 public override bool CheckIndexExistence( IndexEntityType EntityType, string indexName, IDictionary<string, string> config )
 		 {
-			  return _txState.checkIndexExistence( IEntityType, indexName, config );
+			  return _txState.checkIndexExistence( EntityType, indexName, config );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

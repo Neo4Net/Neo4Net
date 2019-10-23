@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.api.schema.RelationTypeSchemaDescriptor;
@@ -49,16 +49,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testManualIndexPopulation() throws InterruptedException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestManualIndexPopulation()
 		 {
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual void TestManualRelationshipIndexPopulation()
 		 {
 			  RelationTypeSchemaDescriptor descriptor;
-			  using ( Neo4Net.Internal.Kernel.Api.Transaction tx = ( ( GraphDatabaseAPI ) _database ).DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = ( ( GraphDatabaseAPI ) _database ).DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 			  {
 					int foodId = tx.TokenWrite().relationshipTypeGetOrCreateForName(FOOD_LABEL);
 					int propertyId = tx.TokenWrite().propertyKeyGetOrCreateForName(PROPERTY_NAME);
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void testSchemaIndexMatchIndexingService() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TestSchemaIndexMatchIndexingService()
 		 {

@@ -22,12 +22,12 @@
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
 
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using Log = Neo4Net.Logging.Log;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// The fulltext auxiliary transaction state manages the aggregate transaction state of <em>all</em> fulltext indexes in a transaction.

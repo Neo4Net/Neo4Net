@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using Neo4Net.Collections.Pooling;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
@@ -64,14 +64,14 @@ namespace Neo4Net.Kernel.Impl.Api
 	using MemoryTracker = Neo4Net.Memory.MemoryTracker;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using Clocks = Neo4Net.Time.Clocks;
 	using FakeClock = Neo4Net.Time.FakeClock;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -142,7 +142,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  when( HeaderInformationFactory.create() ).thenReturn(HeaderInformation);
 			  when( NeoStores.MetaDataStore ).thenReturn( MetaDataStore );
 			  when( StorageEngine.newReader() ).thenReturn(ReadLayer);
-			  doAnswer( invocation => ( ( ICollection<StorageCommand> ) invocation.getArgument( 0 ) ).Add( new Command.RelationshipCountsCommand( 1, 2,3, 4L ) ) ).when( StorageEngine ).createCommands( anyCollection(), any(typeof(ReadableTransactionState)), any(typeof(StorageReader)), any(typeof(ResourceLocker)), anyLong(), any(typeof(Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Decorator)) );
+			  doAnswer( invocation => ( ( ICollection<StorageCommand> ) invocation.getArgument( 0 ) ).Add( new Command.RelationshipCountsCommand( 1, 2,3, 4L ) ) ).when( StorageEngine ).createCommands( anyCollection(), any(typeof(ReadableTransactionState)), any(typeof(StorageReader)), any(typeof(ResourceLocker)), anyLong(), any(typeof(Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator)) );
 		 }
 
 		 public virtual KernelTransactionImplementation NewTransaction( long transactionTimeoutMillis )

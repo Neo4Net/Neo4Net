@@ -24,21 +24,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Test = org.junit.Test;
 
 	using Neo4Net.Helpers.Collections;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  OnlineIndexProxy onlineProxy = OnlineIndexProxy( storeView );
 			  FlippableIndexProxy flipper = new FlippableIndexProxy();
 			  flipper.FlipTarget = () => onlineProxy;
-			  MultipleIndexPopulator multipleIndexPopulator = new MultipleIndexPopulator( storeView, logProvider, IEntityType.NODE, mock( typeof( SchemaState ) ) );
+			  MultipleIndexPopulator multipleIndexPopulator = new MultipleIndexPopulator( storeView, logProvider, EntityType.NODE, mock( typeof( SchemaState ) ) );
 
 			  MultipleIndexPopulator.IndexPopulation indexPopulation = multipleIndexPopulator.AddPopulator( populator, DummyMeta(), flipper, t => failedProxy, "userDescription" );
 			  multipleIndexPopulator.QueueUpdate( SomeUpdate() );

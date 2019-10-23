@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 {
 
 	using Label = Neo4Net.GraphDb.Label;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 
 	public class NodePropertyUniqueConstraintCreator : BaseNodeConstraintCreator
 	{

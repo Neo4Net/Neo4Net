@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.hasNoContent;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -74,13 +74,13 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  // given
 			  RaftLog log = CreateRaftLog();
-			  log.Append( new RaftLogEntry( 45, valueOf( 99 ) ), new RaftLogEntry( 46, valueOf( 99 ) ), new RaftLogEntry( 47, valueOf( 99 ) ) );
+			  log.Append( new RaftLogEntry( 45, ValueOf( 99 ) ), new RaftLogEntry( 46, ValueOf( 99 ) ), new RaftLogEntry( 47, ValueOf( 99 ) ) );
 
 			  // truncate the last 2
 			  log.Truncate( 1 );
 
 			  // then
-			  log.Append( new RaftLogEntry( 46, valueOf( 9999 ) ) );
+			  log.Append( new RaftLogEntry( 46, ValueOf( 9999 ) ) );
 
 			  assertThat( log.ReadEntryTerm( 1 ), @is( 46L ) );
 			  assertThat( log.AppendIndex(), @is(1L) );
@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = CreateRaftLog();
 
-			  RaftLogEntry logEntry = new RaftLogEntry( 1, valueOf( 1 ) );
+			  RaftLogEntry logEntry = new RaftLogEntry( 1, ValueOf( 1 ) );
 			  log.Append( logEntry );
 
 			  assertThat( log.AppendIndex(), @is(0L) );
@@ -107,8 +107,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = CreateRaftLog();
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, valueOf( 1 ) );
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, valueOf( 2 ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ValueOf( 1 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ValueOf( 2 ) );
 
 			  log.Append( logEntryA, logEntryB );
 
@@ -126,11 +126,11 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = CreateRaftLog();
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, valueOf( 1 ) );
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, valueOf( 2 ) );
-			  RaftLogEntry logEntryC = new RaftLogEntry( 1, valueOf( 3 ) );
-			  RaftLogEntry logEntryD = new RaftLogEntry( 1, valueOf( 4 ) );
-			  RaftLogEntry logEntryE = new RaftLogEntry( 1, valueOf( 5 ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ValueOf( 1 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ValueOf( 2 ) );
+			  RaftLogEntry logEntryC = new RaftLogEntry( 1, ValueOf( 3 ) );
+			  RaftLogEntry logEntryD = new RaftLogEntry( 1, ValueOf( 4 ) );
+			  RaftLogEntry logEntryE = new RaftLogEntry( 1, ValueOf( 5 ) );
 
 			  log.Append( logEntryA, logEntryB, logEntryC );
 
@@ -152,8 +152,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  // Given
 			  RaftLog log = CreateRaftLog();
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, valueOf( 1 ) );
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, valueOf( 2 ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ValueOf( 1 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ValueOf( 2 ) );
 
 			  log.Append( logEntryA, logEntryB );
 
@@ -182,8 +182,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = CreateRaftLog();
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, valueOf( 1 ) );
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedString.valueOf( "hejzxcjkzhxcjkxz" ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ValueOf( 1 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedString.ValueOf( "hejzxcjkzhxcjkxz" ) );
 
 			  log.Append( logEntryA, logEntryB );
 
@@ -200,12 +200,12 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  // given
 			  RaftLog log = CreateRaftLog();
-			  log.Append( new RaftLogEntry( 0, valueOf( 1 ) ), new RaftLogEntry( 1, valueOf( 2 ) ) );
+			  log.Append( new RaftLogEntry( 0, ValueOf( 1 ) ), new RaftLogEntry( 1, ValueOf( 2 ) ) );
 
 			  try
 			  {
 					// when the term has a lower value
-					log.Append( new RaftLogEntry( 0, valueOf( 3 ) ) );
+					log.Append( new RaftLogEntry( 0, ValueOf( 3 ) ) );
 					// then an exception should be thrown
 					fail( "Should have failed because of non-monotonic terms" );
 			  }
@@ -222,9 +222,9 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  // given
 			  RaftLog log = CreateRaftLog();
-			  log.Append( new RaftLogEntry( 0, valueOf( 0 ) ) );
-			  long toBeSpared = log.Append( new RaftLogEntry( 0, valueOf( 1 ) ) );
-			  long toTruncate = log.Append( new RaftLogEntry( 1, valueOf( 2 ) ) );
+			  log.Append( new RaftLogEntry( 0, ValueOf( 0 ) ) );
+			  long toBeSpared = log.Append( new RaftLogEntry( 0, ValueOf( 1 ) ) );
+			  long toTruncate = log.Append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
 
 			  // when
 			  log.Truncate( toTruncate );
@@ -241,13 +241,13 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  // given
 			  RaftLog log = CreateRaftLog();
-			  log.Append( new RaftLogEntry( 0, valueOf( 0 ) ) );
-			  long toCommit = log.Append( new RaftLogEntry( 0, valueOf( 1 ) ) );
-			  long toTruncate = log.Append( new RaftLogEntry( 1, valueOf( 2 ) ) );
+			  log.Append( new RaftLogEntry( 0, ValueOf( 0 ) ) );
+			  long toCommit = log.Append( new RaftLogEntry( 0, ValueOf( 1 ) ) );
+			  long toTruncate = log.Append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
 
 			  // when
 			  log.Truncate( toTruncate );
-			  long lastAppended = log.Append( new RaftLogEntry( 2, valueOf( 3 ) ) );
+			  long lastAppended = log.Append( new RaftLogEntry( 2, ValueOf( 3 ) ) );
 
 			  // then
 			  assertThat( log.AppendIndex(), @is(lastAppended) );
@@ -272,7 +272,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  {
 					for ( int i = 0; i < 100; i++ )
 					{
-						 log.Append( new RaftLogEntry( term, valueOf( 10 * term ) ) );
+						 log.Append( new RaftLogEntry( term, ValueOf( 10 * term ) ) );
 						 term++;
 					}
 					safeIndex = log.AppendIndex() - 50;
@@ -288,7 +288,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final long[] expectedVal = {prunedIndex + 1};
 			  long[] expectedVal = new long[] { prunedIndex + 1 };
-			  log.GetEntryCursor( prunedIndex + 1 ).forAll( entry => assertThat( entry.content(), @is(valueOf(10 * (int)expectedVal[0]++)) ) );
+			  log.GetEntryCursor( prunedIndex + 1 ).forAll( entry => assertThat( entry.content(), @is(ValueOf(10 * (int)expectedVal[0]++)) ) );
 
 			  assertThat( log, hasNoContent( prunedIndex ) );
 		 }
@@ -323,7 +323,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  int entryCount = 5;
 			  for ( int i = 0; i < entryCount; i++ )
 			  {
-					log.Append( new RaftLogEntry( term, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( term, ValueOf( i ) ) );
 			  }
 
 			  // when
@@ -348,7 +348,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  int entryCount = 5;
 			  for ( int i = 0; i < entryCount; i++ )
 			  {
-					log.Append( new RaftLogEntry( term, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( term, ValueOf( i ) ) );
 			  }
 			  long lastIndex = log.AppendIndex();
 
@@ -376,7 +376,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 
 			  int newContentValue = 100;
 			  long newEntryIndex = skipIndex + 1;
-			  long appendedIndex = log.Append( new RaftLogEntry( term, valueOf( newContentValue ) ) );
+			  long appendedIndex = log.Append( new RaftLogEntry( term, ValueOf( newContentValue ) ) );
 
 			  // then
 			  assertEquals( newEntryIndex, log.AppendIndex() );
@@ -391,7 +391,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  {
 					// expected
 			  }
-			  assertThat( readLogEntry( log, newEntryIndex ).content(), @is(valueOf(newContentValue)) );
+			  assertThat( readLogEntry( log, newEntryIndex ).content(), @is(ValueOf(newContentValue)) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -416,7 +416,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  long term = 0;
 			  for ( int i = 0; i < 2000; i++ )
 			  {
-					log.Append( new RaftLogEntry( term, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( term, ValueOf( i ) ) );
 			  }
 
 			  long skipIndex = 3000;
@@ -438,7 +438,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  // given
 			  RaftLog log = CreateRaftLog();
 			  long term = 0;
-			  long existingEntryIndex = log.Append( new RaftLogEntry( term, valueOf( 100 ) ) );
+			  long existingEntryIndex = log.Append( new RaftLogEntry( term, ValueOf( 100 ) ) );
 
 			  long skipIndex = 15;
 
@@ -496,7 +496,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  {
 					builder.Append( i.ToString() );
 			  }
-			  return ReplicatedString.valueOf( builder.ToString() );
+			  return ReplicatedString.ValueOf( builder.ToString() );
 		 }
 
 		 // TODO: Test what happens when the log has rotated, *not* pruned and then skipping happens which causes

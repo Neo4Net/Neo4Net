@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using Neo4Net.Kernel.impl.transaction.command.Command;
-	using CommandVersion = Neo4Net.Storageengine.Api.CommandVersion;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using CommandVersion = Neo4Net.Kernel.Api.StorageEngine.CommandVersion;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	/// <summary>
 	/// Visits commands targeted towards the <seealso cref="NeoStores"/> and update corresponding stores.

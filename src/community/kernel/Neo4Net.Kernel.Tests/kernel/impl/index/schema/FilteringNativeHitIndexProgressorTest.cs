@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TextValue = Neo4Net.Values.Storable.TextValue;

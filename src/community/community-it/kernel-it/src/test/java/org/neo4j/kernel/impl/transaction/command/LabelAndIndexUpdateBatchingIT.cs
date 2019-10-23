@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using TransactionCursor = Neo4Net.Kernel.impl.transaction.log.TransactionCursor;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// This test is for an issue with transaction batching where there would be a batch of transactions

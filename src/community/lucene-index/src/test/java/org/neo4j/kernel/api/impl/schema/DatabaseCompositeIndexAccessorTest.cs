@@ -34,8 +34,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using Neo4Net.Functions;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using Neo4Net.Kernel.Api.Index;
@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 	using ThreadingRule = Neo4Net.Test.rule.concurrent.ThreadingRule;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
@@ -57,7 +57,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.rule.concurrent.ThreadingRule.waitingWhileIn;
 

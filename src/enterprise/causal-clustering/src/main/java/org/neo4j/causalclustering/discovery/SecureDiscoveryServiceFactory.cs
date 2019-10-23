@@ -18,7 +18,7 @@ namespace Neo4Net.causalclustering.discovery
 	/// <summary>
 	/// Implement an interface to allow for future expansion from just Hazelcast for clustering. I.E. AKKA, etc.
 	/// </summary>
-	public interface SecureDiscoveryServiceFactory : DiscoveryServiceFactory
+	public interface ISecureDiscoveryServiceFactory : DiscoveryServiceFactory
 	{
 		 SslPolicy SslPolicy { set; }
 	}

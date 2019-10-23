@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.state.machines.token.TokenType.RELATIONSHIP;

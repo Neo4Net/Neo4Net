@@ -96,7 +96,7 @@ namespace Neo4Net.Io.pagecache.impl
 				 return nameValue;
 			 }
 
-			 public static Operation valueOf( string name )
+			 public static Operation ValueOf( string name )
 			 {
 				 foreach ( Operation enumInstance in Operation.valueList )
 				 {

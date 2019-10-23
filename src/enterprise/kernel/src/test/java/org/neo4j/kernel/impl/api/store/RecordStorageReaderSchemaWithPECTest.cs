@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api.store
 	using Label = Neo4Net.GraphDb.Label;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using RecordStorageReaderTestBase = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReaderTestBase;

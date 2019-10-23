@@ -67,7 +67,7 @@ namespace Neo4Net.backup.impl
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.RequestContext.anonymous;

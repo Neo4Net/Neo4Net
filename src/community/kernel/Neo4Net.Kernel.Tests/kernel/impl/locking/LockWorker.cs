@@ -20,8 +20,8 @@
 namespace Neo4Net.Kernel.impl.locking
 {
 
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using Neo4Net.Test;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.locking
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void acquireLock(LockWorkerState state) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: protected void acquireLock(LockWorkerState state) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			 protected internal override void acquireLock( LockWorkerState state )
 			 {
 				  state.Doing( "+R " + _resource + ", wait:" + _wait );
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.impl.locking
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void acquireLock(LockWorkerState state) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: protected void acquireLock(LockWorkerState state) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			 protected internal override void acquireLock( LockWorkerState state )
 			 {
 				  state.Doing( "+W " + _resource + ", wait:" + _wait );
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void acquireLock(LockWorkerState state) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException;
+//ORIGINAL LINE: protected abstract void acquireLock(LockWorkerState state) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException;
 			  protected internal abstract void AcquireLock( LockWorkerState state );
 		 }
 	}

@@ -75,7 +75,7 @@ namespace Neo4Net.Server.rest.domain
 			return nameValue;
 		}
 
-		public static RelationshipDirection valueOf( string name )
+		public static RelationshipDirection ValueOf( string name )
 		{
 			foreach ( RelationshipDirection enumInstance in RelationshipDirection.valueList )
 			{

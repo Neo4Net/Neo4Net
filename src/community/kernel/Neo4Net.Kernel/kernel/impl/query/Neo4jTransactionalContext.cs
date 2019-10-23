@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.impl.query
 	using Lock = Neo4Net.GraphDb.Lock;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
@@ -165,7 +165,7 @@ namespace Neo4Net.Kernel.impl.query
 			  _txBridge.unbindTransactionFromCurrentThread();
 
 			  // (2) Create, bind, register, and unbind new transaction
-			  _transaction = _graph.beginTransaction( TransactionType, SecurityContextConflict );
+			  _transaction = _graph.BeginTransaction( TransactionType, SecurityContextConflict );
 			  _kernelTransaction = _txBridge.getKernelTransactionBoundToThisThread( true );
 			  _statement = _kernelTransaction.acquireStatement();
 			  _statement.queryRegistration().registerExecutingQuery(_executingQuery);
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.impl.query
    
 				  if ( !_isOpen )
 				  {
-						_transaction = _graph.beginTransaction( TransactionType, SecurityContextConflict );
+						_transaction = _graph.BeginTransaction( TransactionType, SecurityContextConflict );
 						_kernelTransaction = _txBridge.getKernelTransactionBoundToThisThread( true );
 						_statement = _kernelTransaction.acquireStatement();
 						_statement.queryRegistration().registerExecutingQuery(_executingQuery);

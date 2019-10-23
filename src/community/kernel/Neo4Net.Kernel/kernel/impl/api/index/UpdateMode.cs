@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			return nameValue;
 		}
 
-		public static UpdateMode valueOf( string name )
+		public static UpdateMode ValueOf( string name )
 		{
 			foreach ( UpdateMode enumInstance in UpdateMode.valueList )
 			{

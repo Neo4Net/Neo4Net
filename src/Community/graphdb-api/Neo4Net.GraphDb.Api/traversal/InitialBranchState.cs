@@ -22,7 +22,7 @@ namespace Neo4Net.GraphDb.Traversal
 	using Neo4Net.GraphDb;
 
 	/// <summary>
-	/// Factory for initial state of <seealso cref="TraversalBranch"/>es in a traversal.
+	/// Factory for initial state of <seealso cref="ITraversalBranch"/>es in a traversal.
 	/// </summary>
 	/// @param <STATE> type of initial state to produce. </param>
 	public interface InitialBranchState<STATE>

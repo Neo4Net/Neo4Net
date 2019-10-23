@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -81,8 +81,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntry = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
-			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntry = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(1));
+			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 			  log.Append( logEntry );
 
 			  VerifyCurrentLogAndNewLogLoadedFromFileSystem(log, FsRule.get(), myLog =>
@@ -99,7 +99,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
-			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 			  log.Append( logEntry );
 
 			  VerifyCurrentLogAndNewLogLoadedFromFileSystem( log, FsRule.get(), myLog => assertThat(myLog.appendIndex(), @is(0L)) );
@@ -112,13 +112,13 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 			  log.Append( logEntryA );
 
 			  FsRule.get().crash();
 			  log = _logFactory.createBasedOn( FsRule.get() );
 
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 2 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 2 ) );
 			  log.Append( logEntryB );
 
 			  assertThat( log.AppendIndex(), @is(1L) );
@@ -133,8 +133,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 2 ) );
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 2 ) );
 
 			  log.Append( logEntryA );
 			  log.Append( logEntryB );
@@ -151,20 +151,20 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(1));
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(2));
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 2 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(2));
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 2 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryC = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(3));
-			  RaftLogEntry logEntryC = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 3 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryC = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(3));
+			  RaftLogEntry logEntryC = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 3 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryD = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(4));
-			  RaftLogEntry logEntryD = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 4 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryD = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(4));
+			  RaftLogEntry logEntryD = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 4 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryE = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(5));
-			  RaftLogEntry logEntryE = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 5 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryE = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(5));
+			  RaftLogEntry logEntryE = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 5 ) );
 
 			  log.Append( logEntryA );
 			  log.Append( logEntryB );
@@ -192,11 +192,11 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  RaftLog log = _logFactory.createBasedOn( FsRule.get() );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf(1));
-			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryA = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf(1));
+			  RaftLogEntry logEntryA = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedString.valueOf("hejzxcjkzhxcjkxz"));
-			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedString.valueOf( "hejzxcjkzhxcjkxz" ) );
+//ORIGINAL LINE: final RaftLogEntry logEntryB = new RaftLogEntry(1, org.Neo4Net.causalclustering.core.consensus.ReplicatedString.ValueOf("hejzxcjkzhxcjkxz"));
+			  RaftLogEntry logEntryB = new RaftLogEntry( 1, ReplicatedString.ValueOf( "hejzxcjkzhxcjkxz" ) );
 
 			  log.Append( logEntryA );
 			  log.Append( logEntryB );
@@ -227,7 +227,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 			  {
 					for ( int i = 0; i < 100; i++ )
 					{
-						 log.Append( new RaftLogEntry( term, valueOf( val++ ) ) );
+						 log.Append( new RaftLogEntry( term, ValueOf( val++ ) ) );
 					}
 					safeIndex = log.AppendIndex() - 50;
 					// when
@@ -246,7 +246,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 				assertThat( log, hasNoContent( finalPrunedIndex ) );
 				assertThat( myLog.prevIndex(), equalTo(finalPrunedIndex) );
 				assertThat( myLog.appendIndex(), @is(finalAppendIndex) );
-				assertThat( readLogEntry( myLog, finalPrunedIndex + 1 ).content(), equalTo(valueOf((int) finalPrunedIndex + 1)) );
+				assertThat( readLogEntry( myLog, finalPrunedIndex + 1 ).content(), equalTo(ValueOf((int) finalPrunedIndex + 1)) );
 			  });
 		 }
 

@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.discovery
 {
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 
-	public interface CatchupServerAddress
+	public interface ICatchupServerAddress
 	{
 		 AdvertisedSocketAddress CatchupServer { get; }
 	}

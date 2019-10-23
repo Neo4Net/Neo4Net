@@ -27,7 +27,7 @@ namespace Neo4Net.Server.rest.dbms
 	using AuthProviderFailedException = Neo4Net.GraphDb.security.AuthProviderFailedException;
 	using AuthProviderTimeoutException = Neo4Net.GraphDb.security.AuthProviderTimeoutException;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.rest.dbms
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.security.LoginContext authenticate(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.security.LoginContext authenticate(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Authenticate( string username, string password )
 		 {
 			  AuthManager authManager = _authManagerSupplier.get();

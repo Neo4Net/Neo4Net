@@ -23,16 +23,16 @@ namespace Neo4Net.Kernel.impl.proc
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	public class ProcedureSignatureTest
 	{

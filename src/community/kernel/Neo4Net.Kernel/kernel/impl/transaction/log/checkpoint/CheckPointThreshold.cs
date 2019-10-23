@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	/// <summary>
 	/// A check point threshold provides information if a check point is required or not.
 	/// </summary>
-	public interface CheckPointThreshold
+	public interface ICheckPointThreshold
 	{
 
 		 /// <summary>

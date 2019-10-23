@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// <summary>
 	/// A trace event that represents the commit process of a transaction.
 	/// </summary>
-	public interface CommitEvent : IDisposable
+	public interface ICommitEvent : IDisposable
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 CommitEvent NULL = new CommitEvent()

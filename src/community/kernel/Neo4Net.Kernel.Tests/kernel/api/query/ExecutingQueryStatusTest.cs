@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.api.query
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 	using FakeCpuClock = Neo4Net.Test.FakeCpuClock;
 	using Clocks = Neo4Net.Time.Clocks;
 	using FakeClock = Neo4Net.Time.FakeClock;

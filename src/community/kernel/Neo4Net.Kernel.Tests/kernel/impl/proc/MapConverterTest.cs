@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
+	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntMap;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntMap;
 
 	public class MapConverterTest
 	{

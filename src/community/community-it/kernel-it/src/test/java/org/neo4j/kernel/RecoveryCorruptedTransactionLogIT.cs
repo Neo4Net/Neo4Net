@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using CorruptedLogsTruncator = Neo4Net.Kernel.recovery.CorruptedLogsTruncator;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using Neo4Net.Test.mockito.matcher;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;

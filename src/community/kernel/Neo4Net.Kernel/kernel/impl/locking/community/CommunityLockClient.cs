@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.impl.locking.community
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
 
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 
 	// Please note. Except separate test cases for particular classes related to community locking

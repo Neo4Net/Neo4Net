@@ -61,7 +61,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 		 private MemberId _myself = member( 0 );
 		 private MemberId _otherMember = member( 1 );
 
-		 private ReplicatedInteger _data = ReplicatedInteger.valueOf( 1 );
+		 private ReplicatedInteger _data = ReplicatedInteger.ValueOf( 1 );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Mock private org.Neo4Net.causalclustering.messaging.Outbound<org.Neo4Net.causalclustering.identity.MemberId, org.Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound;
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 
 		 internal virtual ReplicatedInteger Data( int value )
 		 {
-			  return ReplicatedInteger.valueOf( value );
+			  return ReplicatedInteger.ValueOf( value );
 		 }
 
 		 private RaftMachine _raft;

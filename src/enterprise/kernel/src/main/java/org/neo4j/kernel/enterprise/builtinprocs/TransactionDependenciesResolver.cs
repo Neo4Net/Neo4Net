@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 
 	public class TransactionDependenciesResolver

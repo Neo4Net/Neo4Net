@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.api.security
 {
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 
 	public interface UserManagerSupplier : Lifecycle

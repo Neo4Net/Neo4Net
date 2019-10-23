@@ -22,14 +22,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.Test;
 
 	using StandardConfiguration = Neo4Net.Gis.Spatial.Index.curves.StandardConfiguration;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void mustHandleNestedQueries() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void mustHandleNestedQueries() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 public override void MustHandleNestedQueries()
 		 {
 			  // It ok to not use random values here because we are only testing nesting of queries

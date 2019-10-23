@@ -37,11 +37,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.GraphDb.config;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelImpl = Neo4Net.Kernel.Impl.Api.KernelImpl;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			 {
 				  try
 				  {
-						return ( KernelTransactionImplementation ) Db.resolveDependency( typeof( KernelImpl ) ).beginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED );
+						return ( KernelTransactionImplementation ) Db.resolveDependency( typeof( KernelImpl ) ).BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED );
 				  }
 				  catch ( TransactionFailureException )
 				  {
@@ -193,7 +193,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertQueryFindsIdsInOrder(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
+//ORIGINAL LINE: void assertQueryFindsIdsInOrder(org.Neo4Net.kernel.api.KernelTransaction ktx, String indexName, String query, long... ids) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.apache.lucene.queryparser.classic.ParseException
 		 internal virtual void AssertQueryFindsIdsInOrder( KernelTransaction ktx, string indexName, string query, params long[] ids )
 		 {
 			  ScoreEntityIterator result = FulltextAdapter.query( ktx, indexName, query );
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void await(org.Neo4Net.internal.kernel.api.IndexReference descriptor) throws Exception
+//ORIGINAL LINE: void await(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws Exception
 		 internal virtual void Await( IndexReference descriptor )
 		 {
 			  try

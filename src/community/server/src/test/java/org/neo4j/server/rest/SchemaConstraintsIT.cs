@@ -26,8 +26,8 @@ namespace Neo4Net.Server.rest
 
 	using Neo4Net.Functions;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using GraphDescription = Neo4Net.Test.GraphDescription;

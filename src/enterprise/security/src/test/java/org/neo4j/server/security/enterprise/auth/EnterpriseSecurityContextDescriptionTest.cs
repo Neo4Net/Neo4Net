@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
@@ -94,7 +94,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  _manager.newRole( "role1", "mats" );
 			  _manager.addRoleToUser( PUBLISHER, "mats" );
 
-			  EnterpriseSecurityContext modified = Context().withMode(Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.CredentialsExpired);
+			  EnterpriseSecurityContext modified = Context().withMode(Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.CredentialsExpired);
 			  assertThat( modified.Description(), equalTo("user 'mats' with CREDENTIALS_EXPIRED") );
 		 }
 
@@ -107,7 +107,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  _manager.addRoleToUser( PUBLISHER, "mats" );
 
 			  EnterpriseSecurityContext context = context();
-			  EnterpriseSecurityContext restricted = context.WithMode( new RestrictedAccessMode( context.Mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  EnterpriseSecurityContext restricted = context.WithMode( new RestrictedAccessMode( context.Mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( restricted.Description(), equalTo("user 'mats' with roles [publisher,role1] restricted to READ") );
 		 }
 
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  _manager.addRoleToUser( PUBLISHER, "mats" );
 
 			  EnterpriseSecurityContext context = context();
-			  EnterpriseSecurityContext overridden = context.WithMode( new OverriddenAccessMode( context.Mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  EnterpriseSecurityContext overridden = context.WithMode( new OverriddenAccessMode( context.Mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( overridden.Description(), equalTo("user 'mats' with roles [publisher,role1] overridden by READ") );
 		 }
 
@@ -137,7 +137,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 public virtual void ShouldMakeNiceDescriptionAuthDisabledAndRestricted()
 		 {
 			  EnterpriseSecurityContext disabled = EnterpriseSecurityContext.AUTH_DISABLED;
-			  EnterpriseSecurityContext restricted = disabled.WithMode( new RestrictedAccessMode( disabled.Mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  EnterpriseSecurityContext restricted = disabled.WithMode( new RestrictedAccessMode( disabled.Mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( restricted.Description(), equalTo("AUTH_DISABLED with FULL restricted to READ") );
 		 }
 

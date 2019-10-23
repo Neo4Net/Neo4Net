@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.IOUtils.closeAllUnchecked;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.IndexReader createReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader createReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 internal virtual IndexReader CreateReader()
 		 {
 			  IndexReader indexReader = _read.indexReader( _indexReference, true );

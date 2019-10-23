@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.com
 {
-	public interface ServerInterface
+	public interface IServerInterface
 	{
 		 void Shutdown();
 

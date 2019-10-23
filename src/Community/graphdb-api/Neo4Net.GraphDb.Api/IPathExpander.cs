@@ -36,12 +36,12 @@ namespace Neo4Net.GraphDb
 		 /// </summary>
 		 /// <param name="path"> the path to expand (most commonly the end node). </param>
 		 /// <param name="state"> the state of this branch in the current traversal.
-		 /// <seealso cref="BranchState.getState()"/> returns the state and
-		 /// <seealso cref="BranchState.setState(object)"/> optionally sets the state for
+		 /// <seealso cref="IBranchState.getState()"/> returns the state and
+		 /// <seealso cref="IBranchState.setState(object)"/> optionally sets the state for
 		 /// the children of this branch. If state isn't altered the children
 		 /// of this path will see the state of the parent. </param>
 		 /// <returns> the relationships to return for the {@code path}. </returns>
-		 IEnumerable<IRelationship> Expand( IPath path, BranchState<STATE> state );
+		 IEnumerable<IRelationship> Expand( IPath path, IBranchState<STATE> state );
 
 		 /// <summary>
 		 /// Returns a new instance with the exact expansion logic, but reversed.

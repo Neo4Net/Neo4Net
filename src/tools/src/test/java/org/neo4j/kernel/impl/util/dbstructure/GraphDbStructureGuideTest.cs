@@ -31,16 +31,16 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createSchemaIndex(int labelId, int pkId) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createSchemaIndex(int labelId, int pkId) throws Exception
 		 private IndexReference CreateSchemaIndex( int labelId, int pkId )
 		 {
 			  KernelTransaction ktx = ktx();
@@ -266,7 +266,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor createUniqueConstraint(int labelId, int pkId) throws Exception
 		 private ConstraintDescriptor CreateUniqueConstraint( int labelId, int pkId )
 		 {
 			  KernelTransaction ktx = ktx();

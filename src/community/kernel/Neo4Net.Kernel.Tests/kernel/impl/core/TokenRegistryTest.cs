@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

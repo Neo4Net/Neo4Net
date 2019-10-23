@@ -69,7 +69,7 @@ namespace Neo4Net.GraphDb
          {
             throw new System.ArgumentException("A relationship type cannot " + "have a null name");
          }
-         this._name = name;
+         _name = name;
       }
 
       /// <summary>
@@ -97,9 +97,9 @@ namespace Neo4Net.GraphDb
       /// names.
       /// </summary>
       /// <returns> the name of the relationship type </returns>
-      public  string Name()
+      public string Name()
       {
-         return this._name;
+         return _name;
       }
 
       /// <summary>
@@ -109,7 +109,7 @@ namespace Neo4Net.GraphDb
       /// <seealso cref= java.lang.Object#toString() </seealso>
       public override string ToString()
       {
-         return this._name;
+         return _name;
       }
 
       /// <summary>

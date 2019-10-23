@@ -39,11 +39,11 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		public abstract void PutAllNoOverwrite( IDictionary<string, Neo4Net.Values.Storable.Value> target, IDictionary<string, Neo4Net.Values.Storable.Value> source );
 		public abstract IDictionary<string, Neo4Net.Values.Storable.Value> IndexConfig();
 		public abstract void ScanCompleted( Neo4Net.Kernel.Impl.Api.index.PhaseTracker phaseTracker );
-		public abstract Neo4Net.Storageengine.Api.schema.PopulationProgress Progress( Neo4Net.Storageengine.Api.schema.PopulationProgress scanProgress );
-		public abstract Neo4Net.Storageengine.Api.schema.IndexSample SampleResult();
+		public abstract Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress Progress( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress scanProgress );
+		public abstract Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample SampleResult();
 		public abstract void includeSample<T1>( IndexEntryUpdate<T1> update );
-		public abstract IndexUpdater NewPopulatingUpdater( Neo4Net.Storageengine.Api.NodePropertyAccessor accessor );
-		public abstract void VerifyDeferredConstraints( Neo4Net.Storageengine.Api.NodePropertyAccessor nodePropertyAccessor );
+		public abstract IndexUpdater NewPopulatingUpdater( Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor );
+		public abstract void VerifyDeferredConstraints( Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor );
 		 protected internal INDEX LuceneIndex;
 		 protected internal LuceneIndexWriter Writer;
 

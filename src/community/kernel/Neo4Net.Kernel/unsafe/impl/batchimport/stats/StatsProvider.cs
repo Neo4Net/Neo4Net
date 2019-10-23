@@ -22,7 +22,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.stats
 	/// <summary>
 	/// Ability to provide statistics.
 	/// </summary>
-	public interface StatsProvider
+	public interface IStatsProvider
 	{
 		 Stat Stat( Key key );
 

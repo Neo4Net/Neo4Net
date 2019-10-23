@@ -20,11 +20,11 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using ExactPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate;
-	using Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using ExactPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate;
+	using Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					break;
 			  case range:
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?>) predicate;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?>) predicate;
 					IndexQuery.RangePredicate<object> rangePredicate = ( IndexQuery.RangePredicate<object> ) predicate;
 					InitFromForRange( rangePredicate, treeKeyFrom );
 					InitToForRange( rangePredicate, treeKeyTo );

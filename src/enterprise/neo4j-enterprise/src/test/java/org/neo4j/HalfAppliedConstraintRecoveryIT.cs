@@ -34,10 +34,10 @@ namespace Neo4Net
 	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
@@ -64,7 +64,7 @@ namespace Neo4Net
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.single;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// It's master creating a constraint. There are two mini transactions in creating a constraint:

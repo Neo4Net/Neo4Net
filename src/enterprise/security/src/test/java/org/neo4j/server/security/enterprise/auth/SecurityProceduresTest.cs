@@ -28,7 +28,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Test = org.junit.Test;
 
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
 	using UserResult = Neo4Net.Server.security.enterprise.auth.AuthProceduresBase.UserResult;
 

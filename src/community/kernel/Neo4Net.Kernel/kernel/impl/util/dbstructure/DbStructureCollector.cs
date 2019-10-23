@@ -27,18 +27,18 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
-	using LabelSchemaSupplier = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaSupplier;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using NodeExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeExistenceConstraintDescriptor;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.UNIQUE;
 
 	public class DbStructureCollector : DbStructureVisitor
 	{
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 				  return indexSize / nodesWithLabelCardinality( labelId );
 			 }
 
-			 private IEnumerator<Pair<string, string[]>> idsToNames<T1>( IEnumerable<T1> nodeConstraints ) where T1 : Neo4Net.Internal.Kernel.Api.schema.LabelSchemaSupplier
+			 private IEnumerator<Pair<string, string[]>> idsToNames<T1>( IEnumerable<T1> nodeConstraints ) where T1 : Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier
 			 {
 				  return Iterators.map(nodeConstraint =>
 				  {
@@ -350,7 +350,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			  public override IEnumerator<Pair<string[], string[]>> Iterator()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
+//ORIGINAL LINE: final java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor> iterator = indexMap.keySet().iterator();
 					IEnumerator<SchemaDescriptor> iterator = IndexMap.Keys.GetEnumerator();
 					return new IteratorAnonymousInnerClass( this, iterator );
 			  }
@@ -382,14 +382,14 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 						string[] IEntityTokens;
 						switch ( type.innerEnumValue )
 						{
-						case IEntityType.InnerEnum.NODE:
+						case EntityType.InnerEnum.NODE:
 							 IEntityTokens = _outerInstance._outerInstance.labels.byIdOrFail( next.EntityTokenIds );
 							 break;
-						case IEntityType.InnerEnum.RELATIONSHIP:
+						case EntityType.InnerEnum.RELATIONSHIP:
 							 IEntityTokens = _outerInstance._outerInstance.relationshipTypes.byIdOrFail( next.EntityTokenIds );
 							 break;
 						default:
-							 throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + type );
+							 throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + type );
 						}
 						string[] propertyKeyNames = _outerInstance._outerInstance.propertyKeys.byIdOrFail( next.PropertyIds );
 						return Pair.of( IEntityTokens, propertyKeyNames );

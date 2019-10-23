@@ -31,11 +31,11 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// Instantiates a <seealso cref="BranchSelector"/> with {@code startBranch} as the
 		 /// first branch to base a decision on "where to go next".
 		 /// </summary>
-		 /// <param name="startBranch"> the <seealso cref="TraversalBranch"/> to start from. </param>
+		 /// <param name="startBranch"> the <seealso cref="ITraversalBranch"/> to start from. </param>
 		 /// <param name="expander"> <seealso cref="PathExpander"/> to use for expanding the branch. </param>
 		 /// <returns> a new <seealso cref="BranchSelector"/> used to decide "where to go next" in
 		 ///         the traversal. </returns>
-		 BranchSelector Create( TraversalBranch startBranch, IPathExpander expander );
+		 BranchSelector Create( ITraversalBranch startBranch, IPathExpander expander );
 	}
 
 }

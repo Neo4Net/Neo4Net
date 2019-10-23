@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.web
 {
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Log = Neo4Net.Logging.Log;
 	using AuthorizedRequestWrapper = Neo4Net.Server.rest.dbms.AuthorizedRequestWrapper;
 	using ExecutionResultSerializer = Neo4Net.Server.rest.transactional.ExecutionResultSerializer;

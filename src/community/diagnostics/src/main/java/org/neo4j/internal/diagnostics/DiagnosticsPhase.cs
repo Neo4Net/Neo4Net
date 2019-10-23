@@ -126,7 +126,7 @@ namespace Neo4Net.Internal.Diagnostics
 			return ordinalValue;
 		}
 
-		public static DiagnosticsPhase valueOf( string name )
+		public static DiagnosticsPhase ValueOf( string name )
 		{
 			foreach ( DiagnosticsPhase enumInstance in DiagnosticsPhase.valueList )
 			{

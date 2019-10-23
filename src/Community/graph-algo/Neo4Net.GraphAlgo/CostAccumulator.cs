@@ -32,7 +32,7 @@ namespace Neo4Net.GraphAlgo
 	/// 
 	/// @author Patrik Larsson </summary>
 	/// @param <T> The data type the edge weights are represented by. </param>
-	public interface CostAccumulator<T>
+	public interface ICostAccumulator<T>
 	{
 		 /// <summary>
 		 /// This is the accumulating method. This should return the results of

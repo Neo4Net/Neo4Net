@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb.Traversal
 {
     internal abstract class AbstractUniquenessFilter : BidirectionalUniquenessFilter
     {
-        public abstract bool Check(TraversalBranch branch);
+        public abstract bool Check(ITraversalBranch branch);
         public abstract bool CheckFull(Neo4Net.GraphDb.IPath path);
         internal readonly PrimitiveTypeFetcher Type;
 
@@ -30,7 +30,7 @@ namespace Neo4Net.GraphDb.Traversal
             this.Type = type;
         }
 
-        public override bool CheckFirst(TraversalBranch branch)
+        public override bool CheckFirst(ITraversalBranch branch)
         {
             return Type == PrimitiveTypeFetcher.Relationship || Check(branch);
         }

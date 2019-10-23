@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 	public class NodeKeyConstraintDefinition : NodeConstraintDefinition
 	{

@@ -17,15 +17,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
-	/// <summary>
-	/// SeverityLevel indicates to a client the severity of a notification.
-	/// </summary>
-	public enum SeverityLevel
-	{
-		 Warning,
-		 Information
-	}
-
+   /// <summary>
+   /// SeverityLevel indicates to a client the severity of a notification.
+   /// </summary>
+   public enum SeverityLevel
+   {
+      Warning,
+      Information
+   }
 }

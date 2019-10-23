@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using LockType = Neo4Net.Kernel.impl.locking.LockType;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	/// <summary>
 	/// Temporary exception to aid in driving out a nasty "lock get stuck" issue in HA. Since it's subclasses

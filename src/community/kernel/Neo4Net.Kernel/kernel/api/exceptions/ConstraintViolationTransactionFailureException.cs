@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 
 	/// <summary>
 	/// This exception is thrown when committing a transaction contains

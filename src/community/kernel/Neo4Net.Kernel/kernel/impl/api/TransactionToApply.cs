@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.Impl.Api
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using HexPrinter = Neo4Net.Kernel.impl.util.HexPrinter;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.Format.date;
@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: public boolean accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand,java.io.IOException> visitor) throws java.io.IOException
 		 public override bool Accept( Visitor<StorageCommand, IOException> visitor )
 		 {
 			  return _transactionRepresentation.accept( visitor );
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private string CountCommands()
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Local classes are not converted by Java to C# Converter:
-//			  class Counter implements org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand, java.io.IOException>
+//			  class Counter implements org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand, java.io.IOException>
 	//		  {
 	//				private int count;
 	//

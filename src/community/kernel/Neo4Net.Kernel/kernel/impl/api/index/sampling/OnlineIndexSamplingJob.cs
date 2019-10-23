@@ -19,16 +19,16 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using DurationLogger = Neo4Net.Kernel.impl.util.DurationLogger;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
 
 	internal class OnlineIndexSamplingJob : IndexSamplingJob
 	{

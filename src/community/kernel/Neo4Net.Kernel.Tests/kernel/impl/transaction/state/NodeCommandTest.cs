@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using PhysicalLogCommandReaderV3_0 = Neo4Net.Kernel.impl.transaction.command.PhysicalLogCommandReaderV3_0;
 	using InMemoryClosableChannel = Neo4Net.Kernel.impl.transaction.log.InMemoryClosableChannel;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;

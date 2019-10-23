@@ -52,7 +52,7 @@ namespace Neo4Net.backup
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.enterprise.configuration.OnlineBackupSettings.online_backup_server;

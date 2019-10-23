@@ -213,7 +213,7 @@ namespace Neo4Net.Kernel.impl.store.kvstore
 				 return nameValue;
 			 }
 
-			 public static State valueOf( string name )
+			 public static State ValueOf( string name )
 			 {
 				 foreach ( State enumInstance in State.valueList )
 				 {

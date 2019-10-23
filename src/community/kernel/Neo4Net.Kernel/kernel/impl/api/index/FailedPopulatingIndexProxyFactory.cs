@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.IndexPopulationFailure.failure;

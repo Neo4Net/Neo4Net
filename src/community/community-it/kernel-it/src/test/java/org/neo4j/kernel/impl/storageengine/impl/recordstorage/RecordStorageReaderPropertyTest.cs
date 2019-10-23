@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 	using Test = org.junit.Test;
 
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

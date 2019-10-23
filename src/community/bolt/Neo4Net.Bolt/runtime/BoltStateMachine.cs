@@ -22,7 +22,7 @@
 namespace Neo4Net.Bolt.runtime
 {
 	using RequestMessage = Neo4Net.Bolt.messaging.RequestMessage;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 	public interface BoltStateMachine : IDisposable
 	{
@@ -33,7 +33,7 @@ namespace Neo4Net.Bolt.runtime
 		 bool ShouldStickOnThread();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void validateTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: void validateTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 void ValidateTransaction();
 
 		 bool HasOpenStatement();

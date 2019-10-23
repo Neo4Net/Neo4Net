@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexTransactionState = Neo4Net.Kernel.api.txstate.ExplicitIndexTransactionState;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using ExplicitIndexProviderTransaction = Neo4Net.Kernel.spi.explicitindex.ExplicitIndexProviderTransaction;
 	using IndexCommandFactory = Neo4Net.Kernel.spi.explicitindex.IndexCommandFactory;
 	using IndexImplementation = Neo4Net.Kernel.spi.explicitindex.IndexImplementation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.index.ExplicitIndexStore.assertConfigMatches;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex nodeChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex NodeChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Node ), indexName );
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndex relationshipChanges(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndex RelationshipChanges( string indexName )
 		 {
 			  IDictionary<string, string> configuration = _indexConfigStore.get( typeof( Relationship ), indexName );
@@ -195,17 +195,17 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  AddCommand( indexName, command );
 		 }
 
-		 public override void DeleteIndex( IndexEntityType IEntityType, string indexName )
+		 public override void DeleteIndex( IndexEntityType EntityType, string indexName )
 		 {
 			  IndexCommand.DeleteCommand command = new IndexCommand.DeleteCommand();
-			  command.Init( Definitions().getOrAssignIndexNameId(indexName), IEntityType.id() );
+			  command.Init( Definitions().getOrAssignIndexNameId(indexName), EntityType.id() );
 			  AddCommand( indexName, command, true );
 		 }
 
-		 public override void CreateIndex( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
+		 public override void CreateIndex( IndexEntityType EntityType, string indexName, IDictionary<string, string> config )
 		 {
 			  IndexCommand.CreateCommand command = new IndexCommand.CreateCommand();
-			  command.Init( Definitions().getOrAssignIndexNameId(indexName), IEntityType.id(), config );
+			  command.Init( Definitions().getOrAssignIndexNameId(indexName), EntityType.id(), config );
 			  AddCommand( indexName, command );
 		 }
 
@@ -214,9 +214,9 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  return _defineCommand != null;
 		 }
 
-		 public override bool CheckIndexExistence( IndexEntityType IEntityType, string indexName, IDictionary<string, string> config )
+		 public override bool CheckIndexExistence( IndexEntityType EntityType, string indexName, IDictionary<string, string> config )
 		 {
-			  IDictionary<string, string> configuration = _indexConfigStore.get( IEntityType.entityClass(), indexName );
+			  IDictionary<string, string> configuration = _indexConfigStore.get( EntityType.entityClass(), indexName );
 			  if ( configuration == null )
 			  {
 					return false;

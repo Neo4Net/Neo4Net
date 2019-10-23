@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexLimitation = Neo4Net.Internal.Kernel.Api.IndexLimitation;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexLimitation = Neo4Net.Kernel.Api.Internal.IndexLimitation;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -139,13 +139,13 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  UnionIndexCapability union;
 
 			  // given
-			  union = UnionOfIndexLimitations( Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.LimitiationNone, Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.LimitiationNone );
+			  union = UnionOfIndexLimitations( Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.LimitiationNone, Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.LimitiationNone );
 
 			  // then
 			  assertEquals( Collections.emptySet(), asSet(union.Limitations()) );
 
 			  // given
-			  union = UnionOfIndexLimitations( Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.LimitiationNone, array( IndexLimitation.SLOW_CONTAINS ) );
+			  union = UnionOfIndexLimitations( Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.LimitiationNone, array( IndexLimitation.SLOW_CONTAINS ) );
 
 			  // then
 			  assertEquals( asSet( IndexLimitation.SLOW_CONTAINS ), asSet( union.Limitations() ) );
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private IndexCapability MockedIndexCapability()
 		 {
 			  IndexCapability mock = mock( typeof( IndexCapability ) );
-			  when( mock.Limitations() ).thenReturn(Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.LimitiationNone);
+			  when( mock.Limitations() ).thenReturn(Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.LimitiationNone);
 			  return mock;
 		 }
 

@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using Neo4Net.Test.rule.concurrent;
 
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Direction.OUTGOING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class RelationshipIT : KernelIntegrationTest
 	{
@@ -205,7 +205,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  assertTrue(OtherThread.execute(state =>
 			  {
-				using ( Transaction ktx = Kernel.beginTransaction( @implicit, LoginContext.AUTH_DISABLED ) )
+				using ( Transaction ktx = Kernel.BeginTransaction( @implicit, LoginContext.AUTH_DISABLED ) )
 				{
 					 AssertRels( NodeGetRelationships( ktx, refNode, both ), longs );
 				}

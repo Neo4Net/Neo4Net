@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.api.txstate.auxiliary
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// The container of, and facade to, the auxiliary transaction state that a transaction may hold.
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.api.txstate.auxiliary
 		 /// <param name="extractedCommands"> The collection to add the extracted commands to. </param>
 		 /// <exception cref="TransactionFailureException"> If the transaction state wanted to produce commands, but is somehow unable to do so. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> extractedCommands) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void ExtractCommands( ICollection<StorageCommand> extractedCommands );
 
 		 /// <summary>

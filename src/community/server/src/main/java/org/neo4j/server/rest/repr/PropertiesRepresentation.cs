@@ -21,8 +21,8 @@ namespace Neo4Net.Server.rest.repr
 {
 
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Neo4Net.Server.helpers;
 
 	public sealed class PropertiesRepresentation : MappingRepresentation

@@ -30,8 +30,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using User = Neo4Net.Kernel.impl.security.User;

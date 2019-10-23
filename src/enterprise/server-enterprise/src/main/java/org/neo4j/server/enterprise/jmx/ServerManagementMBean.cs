@@ -23,7 +23,7 @@
 namespace Neo4Net.Server.enterprise.jmx
 {
 
-	public interface ServerManagementMBean
+	public interface IServerManagementMBean
 	{
 		 void RestartServer();
 	}

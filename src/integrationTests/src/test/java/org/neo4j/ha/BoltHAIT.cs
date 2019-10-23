@@ -83,7 +83,7 @@ namespace Neo4Net.ha
 			   */
 			  string lastBookmark = InExpirableSession(driver, Driver.session, s =>
 			  {
-				using ( Transaction tx = s.beginTransaction() )
+				using ( Transaction tx = s.BeginTransaction() )
 				{
 					 tx.run( "CREATE (person:Person {name: {name}, title: {title}})", parameters( "name", "Webber", "title", "Mr" ) );
 					 tx.success();
@@ -102,7 +102,7 @@ namespace Neo4Net.ha
 			  int? count = InExpirableSession(driver, Driver.session, s =>
 			  {
 				Record record;
-				using ( Transaction tx = s.beginTransaction( lastBookmark ) )
+				using ( Transaction tx = s.BeginTransaction( lastBookmark ) )
 				{
 					 record = tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 					 tx.success();

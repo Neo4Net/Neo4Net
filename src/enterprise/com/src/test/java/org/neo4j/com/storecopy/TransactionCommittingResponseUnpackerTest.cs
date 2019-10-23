@@ -44,8 +44,8 @@ namespace Neo4Net.com.storecopy
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

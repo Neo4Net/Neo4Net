@@ -35,7 +35,7 @@ namespace Neo4Net.GraphDb
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;

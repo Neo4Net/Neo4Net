@@ -26,7 +26,7 @@ namespace Neo4Net.tools.console.input
 	/// <summary>
 	/// Action to be run for a specific command, read from <seealso cref="ConsoleInput"/>.
 	/// </summary>
-	public interface Command
+	public interface ICommand
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void run(String[] args, java.io.PrintStream out) throws Exception;

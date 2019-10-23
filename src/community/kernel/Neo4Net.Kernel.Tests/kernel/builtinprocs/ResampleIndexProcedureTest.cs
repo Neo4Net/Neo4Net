@@ -22,18 +22,18 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.@is;
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookUpTheCompositeIndexByLabelIdAndPropertyKeyId()
 		 {
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldTriggerResampling() throws org.Neo4Net.kernel.api.exceptions.schema.SchemaRuleNotFoundException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldTriggerResampling()
 		 {

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.store.kvstore
 {
-	public interface SearchKey
+	public interface ISearchKey
 	{
 		 void SearchKey( WritableBuffer key );
 	}

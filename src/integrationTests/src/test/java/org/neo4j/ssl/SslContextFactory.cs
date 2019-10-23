@@ -35,7 +35,7 @@ namespace Neo4Net.Ssl
 
 	public class SslContextFactory
 	{
-		 public interface Ciphers
+		 public interface ICiphers
 		 {
 			  SslParameters Ciphers( params string[] ciphers );
 		 }

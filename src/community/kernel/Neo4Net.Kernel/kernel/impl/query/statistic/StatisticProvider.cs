@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.query.statistic
 {
-	public interface StatisticProvider
+	public interface IStatisticProvider
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 StatisticProvider EMPTY = new StatisticProvider()

@@ -23,7 +23,7 @@
 namespace Neo4Net.Kernel.ha.@lock.trace
 {
 
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class LockRecord
 	{

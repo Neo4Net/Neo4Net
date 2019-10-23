@@ -368,7 +368,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static State valueOf( string name )
+			 public static State ValueOf( string name )
 			 {
 				 foreach ( State enumInstance in State.valueList )
 				 {
@@ -489,7 +489,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static Success valueOf( string name )
+			 public static Success ValueOf( string name )
 			 {
 				 foreach ( Success enumInstance in Success.valueList )
 				 {
@@ -573,7 +573,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static Fail valueOf( string name )
+			 public static Fail ValueOf( string name )
 			 {
 				 foreach ( Fail enumInstance in Fail.valueList )
 				 {

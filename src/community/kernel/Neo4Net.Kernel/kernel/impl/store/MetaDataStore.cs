@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.store
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Logger = Neo4Net.Logging.Logger;
 	using CappedLogger = Neo4Net.Logging.Internal.CappedLogger;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_SHARED_READ_LOCK;
@@ -173,7 +173,7 @@ namespace Neo4Net.Kernel.impl.store
 				 return nameValue;
 			 }
 
-			 public static Position valueOf( string name )
+			 public static Position ValueOf( string name )
 			 {
 				 foreach ( Position enumInstance in Position.valueList )
 				 {
@@ -398,7 +398,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.storageengine.api.StoreId getStoreId(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.StorageEngine.StoreId getStoreId(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File neoStore) throws java.io.IOException
 		 public static StoreId getStoreId( PageCache pageCache, File neoStore )
 		 {
 			  return new StoreId( GetRecord( pageCache, neoStore, Position.Time ), GetRecord( pageCache, neoStore, Position.RandomNumber ), GetRecord( pageCache, neoStore, Position.StoreVersion ), GetRecord( pageCache, neoStore, Position.UpgradeTime ), GetRecord( pageCache, neoStore, Position.UpgradeTransactionId ) );

@@ -28,18 +28,18 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using TransactionObligationFulfiller = Neo4Net.com.storecopy.TransactionObligationFulfiller;
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionRepresentationCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionRepresentationCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	/// <summary>
 	/// Receives and unpacks <seealso cref="Response responses"/>.
@@ -62,7 +62,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void appendToLogAndApplyToStore(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void appendToLogAndApplyToStore(org.Neo4Net.kernel.impl.transaction.CommittedTransactionRepresentation tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void AppendToLogAndApplyToStore( CommittedTransactionRepresentation tx )
 		 {
 			  _commitProcess.commit( new TransactionToApply( tx.TransactionRepresentation, tx.CommitEntry.TxId, _versionContextSupplier.VersionContext ), NULL, EXTERNAL );

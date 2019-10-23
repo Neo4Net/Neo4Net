@@ -23,11 +23,11 @@
 namespace Neo4Net.causalclustering.core.state.machines.tx
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	/// <summary>
 	/// Counts transactions, and only applies new transactions once it has already seen enough transactions to reproduce
@@ -46,7 +46,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {
 			  long txId = _lastLocalTxId.incrementAndGet();

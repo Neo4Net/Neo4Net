@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.locking
 	using Test = org.junit.Test;
 
 
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Neo4Net.Test;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

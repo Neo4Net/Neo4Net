@@ -25,9 +25,9 @@
 namespace Neo4Net.Kernel.ha.@lock.trace
 {
 
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using LockWaitEvent = Neo4Net.Storageengine.Api.@lock.LockWaitEvent;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using LockWaitEvent = Neo4Net.Kernel.Api.StorageEngine.@lock.LockWaitEvent;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class RecordingLockTracer : LockTracer
 	{

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.Cursors;
 	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 	/// <summary>
 	/// <seealso cref="IndexProgressor"/> which steps over multiple <seealso cref="LabelScanValue"/> and for each
@@ -36,9 +36,9 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	public class LabelScanValueIndexProgressor : LabelScanValueIndexAccessor, IndexProgressor, Resource
 	{
 
-		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient _client;
+		 private readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient _client;
 
-		 internal LabelScanValueIndexProgressor( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client ) : base( toRemoveFromWhenClosed, cursor )
+		 internal LabelScanValueIndexProgressor( IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor, ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFromWhenClosed, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient client ) : base( toRemoveFromWhenClosed, cursor )
 		 {
 			  this._client = client;
 		 }

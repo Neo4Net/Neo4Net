@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;

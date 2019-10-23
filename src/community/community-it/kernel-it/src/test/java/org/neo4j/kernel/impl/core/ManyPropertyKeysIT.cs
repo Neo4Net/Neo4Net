@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.core
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static int propertyKeyCount(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static int propertyKeyCount(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private static int PropertyKeyCount( GraphDatabaseAPI db )
 		 {
 			  InwardKernel kernelAPI = Db.DependencyResolver.resolveDependency( typeof( InwardKernel ) );

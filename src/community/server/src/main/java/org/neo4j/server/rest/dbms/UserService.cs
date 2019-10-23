@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.rest.dbms
 {
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;

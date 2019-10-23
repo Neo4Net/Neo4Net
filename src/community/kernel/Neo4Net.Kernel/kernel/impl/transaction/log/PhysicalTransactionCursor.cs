@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using LogEntryStart = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryStart;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	public class PhysicalTransactionCursor<T> : TransactionCursor where T : ReadableClosablePositionAwareChannel
 	{

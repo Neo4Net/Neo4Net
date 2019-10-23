@@ -100,7 +100,7 @@ namespace Neo4Net.Io.pagecache.randomharness
 			return nameValue;
 		}
 
-		public static Command valueOf( string name )
+		public static Command ValueOf( string name )
 		{
 			foreach ( Command enumInstance in Command.valueList )
 			{

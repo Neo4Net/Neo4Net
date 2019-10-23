@@ -166,9 +166,9 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  assertEquals( intValue( 12 ), _map.getIfAbsentPutWithKey( 2, function ) );
 			  assertEquals( intValue( 12 ), _map.getIfAbsentPutWithKey( 2, function ) );
 
-			  verify( function ).valueOf( eq( 0L ) );
-			  verify( function ).valueOf( eq( 1L ) );
-			  verify( function ).valueOf( eq( 2L ) );
+			  verify( function ).ValueOf( eq( 0L ) );
+			  verify( function ).ValueOf( eq( 1L ) );
+			  verify( function ).ValueOf( eq( 2L ) );
 			  verifyNoMoreInteractions( function );
 		 }
 
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Value valueOf( long x )
+			 public override Value ValueOf( long x )
 			 {
 				  return intValue( 10 + ( int ) x );
 			 }
@@ -203,9 +203,9 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  assertEquals( intValue( 12 ), _map.getIfAbsentPutWith( 2, function, "12" ) );
 			  assertEquals( intValue( 12 ), _map.getIfAbsentPutWith( 2, function, "12" ) );
 
-			  verify( function ).valueOf( eq( "10" ) );
-			  verify( function ).valueOf( eq( "11" ) );
-			  verify( function ).valueOf( eq( "12" ) );
+			  verify( function ).ValueOf( eq( "10" ) );
+			  verify( function ).ValueOf( eq( "11" ) );
+			  verify( function ).ValueOf( eq( "12" ) );
 			  verifyNoMoreInteractions( function );
 		 }
 
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override Value valueOf( string s )
+			 public override Value ValueOf( string s )
 			 {
 				  return intValue( Convert.ToInt32( s ) );
 			 }

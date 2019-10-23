@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.messaging.marshalling.storeid
 
 	using Neo4Net.causalclustering.core.state.storage;
 	using StoreId = Neo4Net.causalclustering.identity.StoreId;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public sealed class StoreIdMarshal : SafeChannelMarshal<StoreId>
 	{
@@ -38,7 +38,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.storeid
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.identity.StoreId storeId, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.identity.StoreId storeId, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Marshal( StoreId storeId, WritableChannel channel )
 		 {
 			  if ( storeId == null )
@@ -55,7 +55,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.storeid
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.causalclustering.identity.StoreId unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.causalclustering.identity.StoreId unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 protected internal override StoreId Unmarshal0( ReadableChannel channel )
 		 {
 			  sbyte exists = channel.Get();

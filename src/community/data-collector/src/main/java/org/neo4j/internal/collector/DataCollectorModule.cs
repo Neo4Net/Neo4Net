@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Internal.Collector
 {
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
@@ -35,7 +35,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static IDisposable setupDataCollector(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.scheduler.JobScheduler jobScheduler, org.Neo4Net.internal.kernel.api.Kernel kernel, org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.values.ValueMapper_JavaMapper valueMapper, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public static IDisposable setupDataCollector(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.scheduler.JobScheduler jobScheduler, org.Neo4Net.Kernel.Api.Internal.Kernel kernel, org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.values.ValueMapper_JavaMapper valueMapper, org.Neo4Net.kernel.configuration.Config config) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public static IDisposable SetupDataCollector( Procedures procedures, IJobScheduler jobScheduler, Kernel kernel, Monitors monitors, Neo4Net.Values.ValueMapper_JavaMapper valueMapper, Config config )
 		 {
 			  Preconditions.checkState( kernel != null, "Kernel was null" );

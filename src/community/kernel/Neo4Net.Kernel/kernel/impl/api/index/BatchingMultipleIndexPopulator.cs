@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using Neo4Net.Kernel.Api.Index;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -82,7 +82,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="logProvider"> the log provider </param>
 		 /// <param name="type"> IEntity type to populate </param>
 		 /// <param name="schemaState"> the schema state </param>
-		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
+		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <param name="executor"> the thread pool to use for batched index insertions </param>
 		 /// <param name="logProvider"> the log provider </param>
 		 /// <param name="schemaState"> the schema state </param>
-		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, ExecutorService executor, LogProvider logProvider, SchemaState schemaState ) : base( storeView, logProvider, IEntityType.NODE, schemaState )
+		 internal BatchingMultipleIndexPopulator( IndexStoreView storeView, ExecutorService executor, LogProvider logProvider, SchemaState schemaState ) : base( storeView, logProvider, EntityType.NODE, schemaState )
 		 {
 			 if ( !InstanceFieldsInitialized )
 			 {

@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.core
 	using Test = org.junit.Test;
 
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void mockAssignNewTokenIdsInBatch(java.util.concurrent.atomic.AtomicInteger nextId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void mockAssignNewTokenIdsInBatch(java.util.concurrent.atomic.AtomicInteger nextId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void MockAssignNewTokenIdsInBatch( AtomicInteger nextId )
 		 {
 			  doAnswer(inv =>
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void initialTokensABC() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void initialTokensABC() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void InitialTokensABC()
 		 {
 			  _holder.InitialTokens = new IList<NamedToken> { Token( "a", 1 ), Token( "b", 2 ) };

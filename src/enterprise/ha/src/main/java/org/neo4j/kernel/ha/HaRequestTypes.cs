@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.ha
 			 return nameValue;
 		 }
 
-		 public static HaRequestTypes_Type valueOf( string name )
+		 public static HaRequestTypes_Type ValueOf( string name )
 		 {
 			 foreach ( HaRequestTypes_Type enumInstance in HaRequestTypes_Type.valueList )
 			 {

@@ -23,11 +23,11 @@ using System.Text;
  */
 namespace Neo4Net.Kernel.Api.Exceptions.index
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 

@@ -111,7 +111,7 @@ namespace Neo4Net.Consistency.checking
 			return nameValue;
 		}
 
-		public static NodeField valueOf( string name )
+		public static NodeField ValueOf( string name )
 		{
 			foreach ( NodeField enumInstance in NodeField.valueList )
 			{

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Context = Neo4Net.Procedure.Context;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

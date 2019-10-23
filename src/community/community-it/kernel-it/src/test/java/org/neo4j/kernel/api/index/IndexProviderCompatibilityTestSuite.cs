@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.Api.Index
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

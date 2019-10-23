@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	/// <summary>
 	/// Given a set of values selects a slot to use.
 	/// </summary>
-	public interface SlotSelector
+	public interface ISlotSelector
 	{
 
 		 void ValidateSatisfied( InstanceSelector<IndexProvider> instances );

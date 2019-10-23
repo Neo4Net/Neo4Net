@@ -29,7 +29,7 @@ namespace Neo4Net.GraphDb.impl.traversal
 
 	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
 	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
-	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -56,12 +56,12 @@ namespace Neo4Net.GraphDb.impl.traversal
 //ORIGINAL LINE: final org.Neo4Net.graphdb.Node startNode = mock(org.Neo4Net.graphdb.Node.class);
 			  Node startNode = mock( typeof( Node ) );
 			  Evaluator evaluator = mock( typeof( Evaluator ) );
-			  TraversalBranch branch = mock( typeof( TraversalBranch ) );
-			  TraversalBranch alternativeBranch = mock( typeof( TraversalBranch ) );
+			  ITraversalBranch branch = mock( typeof( ITraversalBranch ) );
+			  ITraversalBranch alternativeBranch = mock( typeof( ITraversalBranch ) );
 
 			  when( branch.GetEnumerator() ).thenAnswer(new IteratorAnswer(endNode));
 			  when( alternativeBranch.GetEnumerator() ).thenAnswer(new IteratorAnswer(alternativeEndNode));
-			  when( alternativeBranch.StartNode() ).thenReturn(startNode);
+			  when( alternativeBranch.StartNode).thenReturn(startNode);
 			  when( evaluator.Evaluate( Mockito.any( typeof( Path ) ) ) ).thenReturn( Evaluation.INCLUDE_AND_CONTINUE );
 			  StandardBranchCollisionDetector collisionDetector = new StandardBranchCollisionDetector( evaluator, path => alternativeEndNode.Equals( path.endNode() ) && startNode.Equals(path.startNode()) );
 

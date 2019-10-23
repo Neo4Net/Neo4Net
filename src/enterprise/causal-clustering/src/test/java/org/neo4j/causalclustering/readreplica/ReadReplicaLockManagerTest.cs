@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.readreplica
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.@lock.LockTracer.NONE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer.NONE;
 
 	public class ReadReplicaLockManagerTest
 	{

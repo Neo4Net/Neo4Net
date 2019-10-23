@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log
 {
 
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 
 	public interface ReadableClosableChannel : ReadableChannel, System.IDisposable
 	{

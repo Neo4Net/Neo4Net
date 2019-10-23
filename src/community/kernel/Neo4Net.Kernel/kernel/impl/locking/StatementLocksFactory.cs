@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// <summary>
 	/// Factory to create <seealso cref="StatementLocks"/> instances.
 	/// </summary>
-	public interface StatementLocksFactory
+	public interface IStatementLocksFactory
 	{
 		 /// <summary>
 		 /// Initialize this factory with the given {@code locks} and {@code config}. Callers should ensure this method

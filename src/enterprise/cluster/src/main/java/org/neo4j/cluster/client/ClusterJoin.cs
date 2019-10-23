@@ -45,7 +45,7 @@ namespace Neo4Net.cluster.client
 	/// </summary>
 	public class ClusterJoin : LifecycleAdapter
 	{
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  IList<HostnamePort> InitialHosts { get; }
 

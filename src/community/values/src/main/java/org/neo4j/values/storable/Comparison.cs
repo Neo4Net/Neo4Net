@@ -90,7 +90,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static Comparison valueOf( string name )
+		public static Comparison ValueOf( string name )
 		{
 			foreach ( Comparison enumInstance in Comparison.valueList )
 			{

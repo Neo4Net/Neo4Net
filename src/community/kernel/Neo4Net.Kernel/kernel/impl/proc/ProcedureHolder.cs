@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
+	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 
 	/// <summary>
 	/// Simple in memory store for procedures.

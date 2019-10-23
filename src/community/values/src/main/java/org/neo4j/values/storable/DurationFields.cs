@@ -162,7 +162,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static DurationFields valueOf( string name )
+		public static DurationFields ValueOf( string name )
 		{
 			foreach ( DurationFields enumInstance in DurationFields.valueList )
 			{

@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.state
 	using ReplicatedTransaction = Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransaction;
 	using ReplicatedLockTokenRequest = Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest;
 
-	public interface CommandDispatcher : IDisposable
+	public interface ICommandDispatcher : IDisposable
 	{
 		 void Dispatch( ReplicatedTransaction transaction, long commandIndex, System.Action<Result> callback );
 

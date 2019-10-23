@@ -39,7 +39,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using SetDefaultAdminCommand = Neo4Net.CommandLine.Admin.security.SetDefaultAdminCommand;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;

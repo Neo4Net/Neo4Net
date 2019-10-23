@@ -19,12 +19,12 @@
  */
 namespace Neo4Net.Kernel.impl.cache
 {
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
 	using SchemaCache = Neo4Net.Kernel.Impl.Api.store.SchemaCache;
 	using CacheAccessBackDoor = Neo4Net.Kernel.impl.core.CacheAccessBackDoor;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	public class BridgingCacheAccess : CacheAccessBackDoor
 	{

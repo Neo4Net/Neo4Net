@@ -29,8 +29,12 @@
     </PackageReference>
   </ItemGroup>
 
+  
+
+
+
   <ItemGroup>
-    <ProjectReference Include="..\Neo4Net.Common\Neo4Net.Common.csproj" />
+    <ProjectReference Include="..\Neo4Net.GraphDb.Api\Neo4Net.GraphDb.Api.csproj" />
   </ItemGroup>
 
 </Project>

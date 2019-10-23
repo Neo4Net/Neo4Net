@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	/// when <seealso cref="publishAsCommitted() committed"/> (which happens when appending to log), but also
 	/// when <seealso cref="publishAsClosed() closing"/>.
 	/// </summary>
-	public interface Commitment
+	public interface ICommitment
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 Commitment NO_COMMITMENT = new Commitment()

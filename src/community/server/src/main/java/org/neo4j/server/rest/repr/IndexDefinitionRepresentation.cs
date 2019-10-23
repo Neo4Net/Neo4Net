@@ -23,8 +23,8 @@ namespace Neo4Net.Server.rest.repr
 {
 
 	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.map;
@@ -35,14 +35,14 @@ namespace Neo4Net.Server.rest.repr
 	{
 		 private readonly IndexDefinition _indexDefinition;
 		 private readonly IndexPopulationProgress _indexPopulationProgress;
-		 private readonly Neo4Net.GraphDb.schema.Schema_IndexState _indexState;
+		 private readonly Neo4Net.GraphDb.Schema.Schema_IndexState _indexState;
 
-		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition ) : this( indexDefinition, org.Neo4Net.graphdb.schema.Schema_IndexState.Online, IndexPopulationProgress.DONE )
+		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition ) : this( indexDefinition, org.Neo4Net.GraphDb.Schema.Schema_IndexState.Online, IndexPopulationProgress.DONE )
 		 {
 			  // Online state will mean progress is ignored
 		 }
 
-		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition, Neo4Net.GraphDb.schema.Schema_IndexState indexState, IndexPopulationProgress indexPopulationProgress ) : base( RepresentationType.IndexDefinition )
+		 public IndexDefinitionRepresentation( IndexDefinition indexDefinition, Neo4Net.GraphDb.Schema.Schema_IndexState indexState, IndexPopulationProgress indexPopulationProgress ) : base( RepresentationType.IndexDefinition )
 		 {
 			  this._indexDefinition = indexDefinition;
 			  this._indexPopulationProgress = indexPopulationProgress;
@@ -72,7 +72,7 @@ namespace Neo4Net.Server.rest.repr
 			  IEnumerable<Representation> propertyKeyRepresentations = map( converter, _indexDefinition.PropertyKeys );
 			  serializer.PutList( "property_keys", new ListRepresentation( RepresentationType.String, propertyKeyRepresentations ) );
 			  // Only print state and progress if progress is a valid value and not yet online
-			  if ( _indexState == Neo4Net.GraphDb.schema.Schema_IndexState.Populating )
+			  if ( _indexState == Neo4Net.GraphDb.Schema.Schema_IndexState.Populating )
 			  {
 					serializer.PutString( "state", _indexState.name() );
 					serializer.PutString( "population_progress", string.Format( "{0,1:F0}%", _indexPopulationProgress.CompletedPercentage ) );

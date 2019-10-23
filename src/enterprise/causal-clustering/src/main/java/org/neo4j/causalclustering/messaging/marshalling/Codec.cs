@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using ByteBuf = io.netty.buffer.ByteBuf;
 
 
-	public interface Codec<CONTENT>
+	public interface ICodec<CONTENT>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void encode(CONTENT type, java.util.List<Object> output) throws java.io.IOException;

@@ -70,7 +70,7 @@ namespace Neo4Net.causalclustering.stresstests
 			return nameValue;
 		}
 
-		public static Preparations valueOf( string name )
+		public static Preparations ValueOf( string name )
 		{
 			foreach ( Preparations enumInstance in Preparations.valueList )
 			{

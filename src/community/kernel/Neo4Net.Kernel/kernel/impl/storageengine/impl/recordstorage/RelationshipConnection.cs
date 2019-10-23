@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			return nameValue;
 		}
 
-		public static RelationshipConnection valueOf( string name )
+		public static RelationshipConnection ValueOf( string name )
 		{
 			foreach ( RelationshipConnection enumInstance in RelationshipConnection.valueList )
 			{

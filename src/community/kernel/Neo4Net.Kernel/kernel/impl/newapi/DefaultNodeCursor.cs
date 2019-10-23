@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using ImmutableEmptyLongIterator = org.eclipse.collections.impl.iterator.ImmutableEmptyLongIterator;
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipGroupCursor = Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor;
-	using RelationshipTraversalCursor = Neo4Net.Internal.Kernel.Api.RelationshipTraversalCursor;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipGroupCursor = Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor;
+	using RelationshipTraversalCursor = Neo4Net.Kernel.Api.Internal.RelationshipTraversalCursor;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;

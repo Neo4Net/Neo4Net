@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using SpaceFillingCurveSettingsWriter = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsWriter;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -24,21 +24,21 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using SwallowingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.SwallowingIndexUpdater;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
 	public abstract class AbstractSwallowingIndexProxy : IndexProxy
 	{
 		public abstract void PutAllNoOverwrite( IDictionary<string, Neo4Net.Values.Storable.Value> target, IDictionary<string, Neo4Net.Values.Storable.Value> source );
 		public abstract IDictionary<string, Neo4Net.Values.Storable.Value> IndexConfig();
-		public abstract void VerifyDeferredConstraints( Neo4Net.Storageengine.Api.NodePropertyAccessor accessor );
+		public abstract void VerifyDeferredConstraints( Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor );
 		public abstract Neo4Net.GraphDb.ResourceIterator<java.io.File> SnapshotFiles();
 		public abstract void ValidateBeforeCommit( Neo4Net.Values.Storable.Value[] tuple );
 		public abstract void Validate();
 		public abstract void Activate();
 		public abstract bool AwaitStoreScanCompleted( long time, java.util.concurrent.TimeUnit unit );
-		public abstract Neo4Net.Internal.Kernel.Api.InternalIndexState State { get; }
+		public abstract Neo4Net.Kernel.Api.Internal.InternalIndexState State { get; }
 		public abstract void Drop();
 		 private readonly CapableIndexDescriptor _capableIndexDescriptor;
 		 private readonly IndexPopulationFailure _populationFailure;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			 get
 			 {
-				  return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.None;
+				  return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.None;
 			 }
 		 }
 

@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using RelationshipDirection = Neo4Net.Storageengine.Api.RelationshipDirection;
+	using RelationshipDirection = Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
 
@@ -59,11 +59,11 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.INCOMING;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.LOOP;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.OUTGOING;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class RecordRelationshipTraversalCursorTest
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 private NeoStores _neoStores;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.storageengine.api.RelationshipDirection direction;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection direction;
 		 public RelationshipDirection Direction;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Parameterized.Parameter(value = 1) public boolean dense;

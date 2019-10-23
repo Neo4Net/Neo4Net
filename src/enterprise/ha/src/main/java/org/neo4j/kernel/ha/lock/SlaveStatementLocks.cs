@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using StatementLocks = Neo4Net.Kernel.impl.locking.StatementLocks;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 	/// <summary>
 	/// Slave specific statement locks that in addition to standard functionality provided by configured delegate

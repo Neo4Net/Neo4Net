@@ -77,7 +77,7 @@ namespace Neo4Net.Tooling.procedure.testutils
 			return nameValue;
 		}
 
-		public static JavaFileObjectUtils valueOf( string name )
+		public static JavaFileObjectUtils ValueOf( string name )
 		{
 			foreach ( JavaFileObjectUtils enumInstance in JavaFileObjectUtils.valueList )
 			{

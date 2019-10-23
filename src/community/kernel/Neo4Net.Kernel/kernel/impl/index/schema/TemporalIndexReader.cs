@@ -24,16 +24,16 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using Resource = Neo4Net.GraphDb.Resource;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using ExistsPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExistsPredicate;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using ExistsPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExistsPredicate;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
 	using FusionIndexSampler = Neo4Net.Kernel.Impl.Index.Schema.fusion.FusionIndexSampler;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return nodeValueIterator;
 		 }
 
-		 public override void Query( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
+		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
 		 {
 			  if ( predicates.Length != 1 )
 			  {
@@ -128,7 +128,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return true;
 		 }
 
-		 public override void DistinctValues( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient cursor, NodePropertyAccessor propertyAccessor, bool needsValues )
+		 public override void DistinctValues( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, NodePropertyAccessor propertyAccessor, bool needsValues )
 		 {
 			  LoadAll();
 			  BridgingIndexProgressor multiProgressor = new BridgingIndexProgressor( cursor, _descriptor.schema().PropertyIds );

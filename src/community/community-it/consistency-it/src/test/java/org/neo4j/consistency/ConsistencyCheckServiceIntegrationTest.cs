@@ -38,10 +38,10 @@ namespace Neo4Net.Consistency
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Strings = Neo4Net.Helpers.Strings;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -464,7 +464,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void breakNodeStore() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void breakNodeStore() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void BreakNodeStore()
 		 {
 			  fixture.apply( new TransactionAnonymousInnerClass( this ) );

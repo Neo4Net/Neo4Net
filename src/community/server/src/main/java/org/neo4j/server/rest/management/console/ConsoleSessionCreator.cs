@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.management.console
 	using CypherExecutor = Neo4Net.Server.database.CypherExecutor;
 	using Database = Neo4Net.Server.database.Database;
 
-	public interface ConsoleSessionCreator
+	public interface IConsoleSessionCreator
 	{
 		 string Name();
 

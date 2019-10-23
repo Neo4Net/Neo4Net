@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Log = Neo4Net.Logging.Log;
 

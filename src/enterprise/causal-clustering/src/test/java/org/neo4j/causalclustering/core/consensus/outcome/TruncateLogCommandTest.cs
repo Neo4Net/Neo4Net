@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 
@@ -55,10 +55,10 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 			  TruncateLogCommand truncateLogCommand = new TruncateLogCommand( fromIndex );
 			  InFlightCache inFlightCache = new ConsecutiveInFlightCache();
 
-			  inFlightCache.Put( 0L, new RaftLogEntry( 0L, valueOf( 0 ) ) );
-			  inFlightCache.Put( 1L, new RaftLogEntry( 1L, valueOf( 1 ) ) );
-			  inFlightCache.Put( 2L, new RaftLogEntry( 2L, valueOf( 2 ) ) );
-			  inFlightCache.Put( 3L, new RaftLogEntry( 3L, valueOf( 3 ) ) );
+			  inFlightCache.Put( 0L, new RaftLogEntry( 0L, ValueOf( 0 ) ) );
+			  inFlightCache.Put( 1L, new RaftLogEntry( 1L, ValueOf( 1 ) ) );
+			  inFlightCache.Put( 2L, new RaftLogEntry( 2L, ValueOf( 2 ) ) );
+			  inFlightCache.Put( 3L, new RaftLogEntry( 3L, ValueOf( 3 ) ) );
 
 			  //when
 			  truncateLogCommand.ApplyTo( inFlightCache, log );
@@ -82,14 +82,14 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 
 			  InFlightCache inFlightCache = new ConsecutiveInFlightCache();
 
-			  inFlightCache.Put( 0L, new RaftLogEntry( 0L, valueOf( 0 ) ) );
-			  inFlightCache.Put( 2L, new RaftLogEntry( 1L, valueOf( 1 ) ) );
-			  inFlightCache.Put( 4L, new RaftLogEntry( 2L, valueOf( 2 ) ) );
+			  inFlightCache.Put( 0L, new RaftLogEntry( 0L, ValueOf( 0 ) ) );
+			  inFlightCache.Put( 2L, new RaftLogEntry( 1L, ValueOf( 1 ) ) );
+			  inFlightCache.Put( 4L, new RaftLogEntry( 2L, ValueOf( 2 ) ) );
 
 			  truncateLogCommand.ApplyTo( inFlightCache, NullLog.Instance );
 
-			  inFlightCache.Put( 1L, new RaftLogEntry( 3L, valueOf( 1 ) ) );
-			  inFlightCache.Put( 2L, new RaftLogEntry( 4L, valueOf( 2 ) ) );
+			  inFlightCache.Put( 1L, new RaftLogEntry( 3L, ValueOf( 1 ) ) );
+			  inFlightCache.Put( 2L, new RaftLogEntry( 4L, ValueOf( 2 ) ) );
 
 			  assertNotNull( inFlightCache.Get( 1L ) );
 			  assertNotNull( inFlightCache.Get( 2L ) );

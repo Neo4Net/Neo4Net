@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static StoreType valueOf( string name )
+		public static StoreType ValueOf( string name )
 		{
 			foreach ( StoreType enumInstance in StoreType.valueList )
 			{

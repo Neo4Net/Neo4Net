@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

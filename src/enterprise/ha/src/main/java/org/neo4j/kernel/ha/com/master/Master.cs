@@ -25,13 +25,13 @@ namespace Neo4Net.Kernel.ha.com.master
 	using RequestContext = Neo4Net.com.RequestContext;
 	using Neo4Net.com;
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IdAllocation = Neo4Net.Kernel.ha.id.IdAllocation;
 	using LockResult = Neo4Net.Kernel.ha.@lock.LockResult;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	/// <summary>
 	/// Represents the master-side of the HA communication between master and slave.
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 /// the master.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation channel) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation channel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 Response<long> Commit( RequestContext context, TransactionRepresentation channel );
 
 		 /// <summary>
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 /// session with the provided <seealso cref="RequestContext"/>.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 Response<Void> NewLockSession( RequestContext context );
 
 		 /// <summary>

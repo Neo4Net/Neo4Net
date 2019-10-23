@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
 
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
@@ -35,12 +35,12 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using SchemaState = Neo4Net.Kernel.Impl.Api.SchemaState;
 	using ConstraintSemantics = Neo4Net.Kernel.impl.constraints.ConstraintSemantics;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 
-	internal class TransactionToRecordStateVisitor : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+	internal class TransactionToRecordStateVisitor : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 	{
 		 private bool _clearSchemaState;
 		 private readonly TransactionRecordState _recordState;
@@ -181,7 +181,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitAddedConstraint(org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void visitAddedConstraint(org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 		 public override void VisitAddedConstraint( ConstraintDescriptor constraint )
 		 {
 			  _clearSchemaState = true;
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void visitAddedNodeKeyConstraint(org.Neo4Net.kernel.api.schema.constraints.NodeKeyConstraintDescriptor uniqueConstraint, long constraintId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: private void visitAddedNodeKeyConstraint(org.Neo4Net.kernel.api.schema.constraints.NodeKeyConstraintDescriptor uniqueConstraint, long constraintId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 		 private void VisitAddedNodeKeyConstraint( NodeKeyConstraintDescriptor uniqueConstraint, long constraintId )
 		 {
 			  StoreIndexDescriptor indexRule = _schemaStorage.indexGetForSchema( uniqueConstraint.OwnedIndexDescriptor() );

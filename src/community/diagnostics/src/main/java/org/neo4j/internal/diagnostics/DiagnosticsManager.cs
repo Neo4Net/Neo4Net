@@ -218,7 +218,7 @@ namespace Neo4Net.Internal.Diagnostics
 				 return nameValue;
 			 }
 
-			 public static State valueOf( string name )
+			 public static State ValueOf( string name )
 			 {
 				 foreach ( State enumInstance in State.valueList )
 				 {

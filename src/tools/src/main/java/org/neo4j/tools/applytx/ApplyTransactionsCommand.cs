@@ -47,7 +47,7 @@ namespace Neo4Net.tools.applytx
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using ArgsCommand = Neo4Net.tools.console.input.ArgsCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -57,7 +57,7 @@ namespace Neo4Net.tools.applytx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	public class ApplyTransactionsCommand : ArgsCommand
 	{

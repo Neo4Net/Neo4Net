@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.core.state.storage
 {
 
-	public interface StateStorage<STATE>
+	public interface IStateStorage<STATE>
 	{
 		 STATE InitialState { get; }
 

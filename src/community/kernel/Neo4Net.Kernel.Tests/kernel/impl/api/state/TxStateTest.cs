@@ -42,9 +42,9 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Predicates = Neo4Net.Functions.Predicates;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
@@ -55,12 +55,12 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using OffHeapCollectionsFactory = Neo4Net.Kernel.impl.util.collection.OffHeapCollectionsFactory;
 	using MutableLongDiffSets = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSets;
 	using MutableLongDiffSetsImpl = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSetsImpl;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using Neo4Net.Storageengine.Api.txstate;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using Neo4Net.Kernel.Api.StorageEngine.TxState;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using RepeatRule = Neo4Net.Test.rule.RepeatRule;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -281,7 +281,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 {
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
 			  UnmodifiableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getIndexUpdates( _indexOn_1_1.schema() );
 
 			  // THEN
@@ -294,7 +294,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 {
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getSortedIndexUpdates( _indexOn_1_1.schema() );
 
 			  // THEN
@@ -310,7 +310,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
 			  UnmodifiableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getIndexUpdates( _indexOn_1_1.schema() );
 
 			  // THEN
@@ -326,7 +326,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getSortedIndexUpdates( _indexOn_1_1.schema() );
 
 			  // THEN
@@ -344,7 +344,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: org.eclipse.collections.impl.UnmodifiableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getIndexUpdates(indexOn_1_1.schema());
 			  UnmodifiableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getIndexUpdates( _indexOn_1_1.schema() );
 
 			  // THEN
@@ -364,7 +364,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 
 			  // WHEN
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.storageengine.api.txstate.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
+//ORIGINAL LINE: java.util.NavigableMap<org.Neo4Net.values.storable.ValueTuple,? extends org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets> diffSets = state.getSortedIndexUpdates(indexOn_1_1.schema());
 			  NavigableMap<ValueTuple, ? extends LongDiffSets> diffSets = _state.getSortedIndexUpdates( _indexOn_1_1.schema() );
 
 			  SortedDictionary<ValueTuple, LongDiffSets> expected = SortedAddedNodesDiffSets( 42, 41, 43 );
@@ -575,7 +575,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  _state.accept( new TxStateVisitor_AdapterAnonymousInnerClass( this ) );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -607,7 +607,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  _state.accept( new TxStateVisitor_AdapterAnonymousInnerClass2( this ) );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass2 : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass2 : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -666,7 +666,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  _state.accept( new TxStateVisitor_AdapterAnonymousInnerClass3( this ) );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass3 : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass3 : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -687,7 +687,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void doNotVisitNotModifiedPropertiesOnModifiedNodes() throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException, org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: @Test public void doNotVisitNotModifiedPropertiesOnModifiedNodes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DoNotVisitNotModifiedPropertiesOnModifiedNodes()
 		 {
@@ -697,7 +697,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  assertTrue( labelsChecked.booleanValue() );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass4 : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass4 : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -725,7 +725,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void doNotVisitNotModifiedLabelsOnModifiedNodes() throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException, org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: @Test public void doNotVisitNotModifiedLabelsOnModifiedNodes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DoNotVisitNotModifiedLabelsOnModifiedNodes()
 		 {
@@ -735,7 +735,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  assertTrue( propertiesChecked.booleanValue() );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass5 : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass5 : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -775,7 +775,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  _state.accept( new TxStateVisitor_AdapterAnonymousInnerClass6( this ) );
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass6 : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass6 : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -1078,7 +1078,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  return map;
 		 }
 
-		 internal abstract class VisitationOrder : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 internal abstract class VisitationOrder : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly TxStateTest _outerInstance;
 
@@ -1151,7 +1151,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private IndexUpdater addNodesToIndex(final org.Neo4Net.storageengine.api.schema.IndexDescriptor descriptor)
+//ORIGINAL LINE: private IndexUpdater addNodesToIndex(final org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor descriptor)
 		 private IndexUpdater AddNodesToIndex( IndexDescriptor descriptor )
 		 {
 			  return new IndexUpdaterAnonymousInnerClass( this, descriptor );

@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using AbstractTokenHolderBase = Neo4Net.Kernel.impl.core.AbstractTokenHolderBase;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 

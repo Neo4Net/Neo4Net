@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.util.IdOrderingQueue.BYPASS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL;
 
 	public class ExplicitBatchIndexApplierTest
 	{
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api
 					 {
 						 using ( ExplicitBatchIndexApplier applier = new ExplicitBatchIndexApplier( config, applierLookup, queue, INTERNAL ) )
 						 {
-							  TransactionToApply txToApply = new TransactionToApply( new PhysicalTransactionRepresentation( new List<Neo4Net.Storageengine.Api.StorageCommand>() ) );
+							  TransactionToApply txToApply = new TransactionToApply( new PhysicalTransactionRepresentation( new List<Neo4Net.Kernel.Api.StorageEngine.StorageCommand>() ) );
 							  FakeCommitment commitment = new FakeCommitment( txId, mock( typeof( TransactionIdStore ) ) );
 							  commitment.HasExplicitIndexChanges = true;
 							  txToApply.Commitment( commitment, txId );

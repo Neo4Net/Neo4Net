@@ -27,8 +27,8 @@ namespace Neo4Net.causalclustering.core.consensus.vote
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using Neo4Net.causalclustering.core.state.storage;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class VoteState
 	{
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.core.consensus.vote
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(VoteState state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(VoteState state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( VoteState state, WritableChannel channel )
 			  {
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.core.consensus.vote
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public VoteState unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public VoteState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override VoteState Unmarshal0( ReadableChannel channel )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

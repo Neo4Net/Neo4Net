@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_READER;

@@ -298,7 +298,7 @@ namespace Neo4Net.Cypher.Internal.compiler.v3_5.common
 				 return nameValue;
 			 }
 
-			 public static SuperType valueOf( string name )
+			 public static SuperType ValueOf( string name )
 			 {
 				 foreach ( SuperType enumInstance in SuperType.valueList )
 				 {

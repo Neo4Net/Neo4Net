@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.messaging.marshalling
 {
 
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public interface Marshal
 	{
@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 /// </summary>
 		 /// <param name="channel"> to where data is written. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void marshal(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException;
+//ORIGINAL LINE: void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException;
 		 void Marshal( WritableChannel channel );
 	}
 

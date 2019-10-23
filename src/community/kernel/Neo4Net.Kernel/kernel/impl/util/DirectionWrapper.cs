@@ -79,7 +79,7 @@ namespace Neo4Net.Kernel.impl.util
 			return nameValue;
 		}
 
-		public static DirectionWrapper valueOf( string name )
+		public static DirectionWrapper ValueOf( string name )
 		{
 			foreach ( DirectionWrapper enumInstance in DirectionWrapper.valueList )
 			{

@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using IdContextFactory = Neo4Net.GraphDb.factory.module.id.IdContextFactory;
 	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
 	using SecurityModule = Neo4Net.Kernel.api.security.SecurityModule;
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 	public class EnterpriseEditionModule : CommunityEditionModule
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );

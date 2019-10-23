@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Api
 
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using Values = Neo4Net.Values.Storable.Values;

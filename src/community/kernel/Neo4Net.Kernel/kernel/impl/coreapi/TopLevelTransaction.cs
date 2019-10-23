@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

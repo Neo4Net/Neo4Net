@@ -140,7 +140,7 @@ namespace Neo4Net.Kernel.configuration
 				 return nameValue;
 			 }
 
-			 public static Encryption valueOf( string name )
+			 public static Encryption ValueOf( string name )
 			 {
 				 foreach ( Encryption enumInstance in Encryption.valueList )
 				 {

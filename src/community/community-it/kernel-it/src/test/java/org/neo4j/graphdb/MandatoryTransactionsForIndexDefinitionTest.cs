@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 	public class MandatoryTransactionsForIndexDefinitionTest : AbstractMandatoryTransactionsTest<IndexDefinition>
 	{

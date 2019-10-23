@@ -21,7 +21,7 @@ namespace Neo4Net.Server.rest.dbms
 {
 
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using JettyHttpConnection = Neo4Net.Server.web.JettyHttpConnection;
 
 	public class AuthorizationDisabledFilter : AuthorizationFilter

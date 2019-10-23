@@ -21,7 +21,7 @@ using System.Threading;
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.schema
+namespace Neo4Net.GraphDb.Schema
 {
 	using Before = org.junit.Before;
 	using Rule = org.junit.Rule;

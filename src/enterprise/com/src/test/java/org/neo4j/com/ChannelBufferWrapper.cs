@@ -31,7 +31,7 @@ namespace Neo4Net.com
 
 
 	using InMemoryClosableChannel = Neo4Net.Kernel.impl.transaction.log.InMemoryClosableChannel;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 
 	/// <summary>
 	/// Wraps an <seealso cref="InMemoryClosableChannel"/>, making it look like one <seealso cref="ChannelBuffer"/>.

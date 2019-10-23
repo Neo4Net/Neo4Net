@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 {
-	public interface CheckPointerMonitor
+	public interface ICheckPointerMonitor
 	{
 		 long NumberOfCheckPointEvents();
 

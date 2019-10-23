@@ -21,15 +21,15 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_NodeValueClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_NodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

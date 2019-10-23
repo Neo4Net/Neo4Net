@@ -23,9 +23,9 @@ using System.Threading;
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using IDisposablePlus = Neo4Net.Internal.Kernel.Api.IDisposablePlus;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
+	using IDisposablePlus = Neo4Net.Kernel.Api.Internal.IDisposablePlus;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.util.FeatureToggles.flag;
@@ -334,7 +334,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 		 }
 
-		 private T Trace<T>( T closeable ) where T : Neo4Net.Internal.Kernel.Api.IDisposablePlus
+		 private T Trace<T>( T closeable ) where T : Neo4Net.Kernel.Api.Internal.IDisposablePlus
 		 {
 			  if ( _debugClosing )
 			  {

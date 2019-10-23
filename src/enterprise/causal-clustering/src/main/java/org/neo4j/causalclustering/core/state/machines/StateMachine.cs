@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.core.state.machines
 {
 
-	public interface StateMachine<Command>
+	public interface IStateMachine<Command>
 	{
 		 /// <summary>
 		 /// Apply command to state machine, modifying its internal state.

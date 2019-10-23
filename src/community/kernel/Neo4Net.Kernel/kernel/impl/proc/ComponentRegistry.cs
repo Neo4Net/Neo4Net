@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.proc
 {
 
 	using Neo4Net.Functions;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Context = Neo4Net.Kernel.api.proc.Context;
 
 	/// <summary>

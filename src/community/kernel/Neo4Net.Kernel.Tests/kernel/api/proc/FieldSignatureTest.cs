@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.api.proc
 {
 	using Test = org.junit.Test;
 
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.api.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntString;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.outputField;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
 
 	public class FieldSignatureTest
 	{

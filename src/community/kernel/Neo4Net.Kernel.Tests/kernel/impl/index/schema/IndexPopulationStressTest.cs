@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -43,10 +43,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using SimpleNodeValueClient = Neo4Net.Storageengine.Api.schema.SimpleNodeValueClient;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Race = Neo4Net.Test.Race;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.index.schema.ByteBufferFactory.heapBufferFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.Race.throwing;
 
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Before public void setup() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {

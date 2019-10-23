@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

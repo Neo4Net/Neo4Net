@@ -31,11 +31,11 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
 	using Neo4Net.GraphDb.Events;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
-	using StubStorageCursors = Neo4Net.Storageengine.Api.StubStorageCursors;
+	using StubStorageCursors = Neo4Net.Kernel.Api.StorageEngine.StubStorageCursors;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 private readonly TransactionState _state = new TxState();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.internal.kernel.api.exceptions.PropertyKeyIdNotFoundKernelException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {
@@ -343,7 +343,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 		 {
 			  AuthSubject authSubject = mock( typeof( AuthSubject ) );
 			  when( authSubject.Username() ).thenReturn("Christof");
-			  when( _transaction.securityContext() ).thenReturn(new SecurityContext(authSubject, Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full));
+			  when( _transaction.securityContext() ).thenReturn(new SecurityContext(authSubject, Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full));
 
 			  TxStateTransactionDataSnapshot transactionDataSnapshot = Snapshot();
 			  assertEquals( "Christof", transactionDataSnapshot.Username() );

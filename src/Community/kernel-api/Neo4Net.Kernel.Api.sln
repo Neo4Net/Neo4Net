@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.106
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Kernel.Api", "Neo4Net.Kernel.Api\Neo4Net.Kernel.Api.csproj", "{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Neo4Net.Kernel.Api.Tests", "Neo4Net.Kernel.Api.Tests\Neo4Net.Kernel.Api.Tests.csproj", "{52537985-1E71-49DB-BCCB-CF87A3001986}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8862DC00-03E5-4FCE-9589-6BC3BA93C1D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52537985-1E71-49DB-BCCB-CF87A3001986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52537985-1E71-49DB-BCCB-CF87A3001986}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52537985-1E71-49DB-BCCB-CF87A3001986}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52537985-1E71-49DB-BCCB-CF87A3001986}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A5069ADE-738F-4C67-BC77-3F0C4216904F}
+	EndGlobalSection
+EndGlobal

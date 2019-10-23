@@ -25,8 +25,8 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 
 	using Neo4Net.causalclustering.core.state.storage;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// An in-memory representation of the IDs allocated to this core instance.
@@ -117,7 +117,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 public class Marshal : SafeStateMarshal<IdAllocationState>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(IdAllocationState state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(IdAllocationState state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( IdAllocationState state, WritableChannel channel )
 			  {
@@ -131,7 +131,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IdAllocationState unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public IdAllocationState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  public override IdAllocationState Unmarshal0( ReadableChannel channel )
 			  {
 					long[] firstNotAllocated = new long[( int ) channel.Long];

@@ -37,8 +37,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using TransactionLogFiles = Neo4Net.Kernel.impl.transaction.log.files.TransactionLogFiles;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

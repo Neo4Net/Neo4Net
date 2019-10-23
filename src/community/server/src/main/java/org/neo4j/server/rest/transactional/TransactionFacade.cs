@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.transactional
 {
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
 	using LogProvider = Neo4Net.Logging.LogProvider;

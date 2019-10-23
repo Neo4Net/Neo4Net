@@ -23,13 +23,13 @@
 namespace Neo4Net.cluster.member
 {
 
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// This can be used to signal that a cluster member can now actively
 	/// participate with a given role, accompanied by a URI for accessing that role.
 	/// </summary>
-	public interface ClusterMemberAvailability
+	public interface IClusterMemberAvailability
 	{
 		 /// <summary>
 		 /// When a member has finished a transition to a particular role, i.e. master or slave,

@@ -30,15 +30,15 @@ namespace Neo4Net.Kernel.Impl.Api.store
 
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaDescriptorPredicates = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
 	using ConstraintSemantics = Neo4Net.Kernel.impl.constraints.ConstraintSemantics;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// A cache of <seealso cref="SchemaRule schema rules"/> as well as enforcement of schema consistency.
@@ -98,14 +98,14 @@ namespace Neo4Net.Kernel.Impl.Api.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> constraintsForLabel(final int label)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForLabel( int label )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasLabel( label ), Constraints() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
+//ORIGINAL LINE: public java.util.Iterator<org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> constraintsForRelationshipType(final int relTypeId)
 		 public virtual IEnumerator<ConstraintDescriptor> ConstraintsForRelationshipType( int relTypeId )
 		 {
 			  return Iterators.filter( SchemaDescriptorPredicates.hasRelType( relTypeId ), Constraints() );

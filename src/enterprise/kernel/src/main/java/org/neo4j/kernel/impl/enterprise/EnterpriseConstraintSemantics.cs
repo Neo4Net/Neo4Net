@@ -22,28 +22,28 @@
  */
 namespace Neo4Net.Kernel.impl.enterprise
 {
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using NodeLabelIndexCursor = Neo4Net.Internal.Kernel.Api.NodeLabelIndexCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using NodeLabelIndexCursor = Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using NodePropertyExistenceException = Neo4Net.Kernel.Api.Exceptions.schema.NodePropertyExistenceException;
 	using RelationshipPropertyExistenceException = Neo4Net.Kernel.Api.Exceptions.schema.RelationshipPropertyExistenceException;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using StandardConstraintSemantics = Neo4Net.Kernel.impl.constraints.StandardConstraintSemantics;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.exceptions.schema.ConstraintValidationException.Phase.VERIFICATION;
+//	import static org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException.Phase.VERIFICATION;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.enterprise.PropertyExistenceEnforcer.getOrCreatePropertyExistenceEnforcerFrom;
 
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodePropertyExistenceConstraint(org.Neo4Net.internal.kernel.api.NodeLabelIndexCursor allNodes, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateNodePropertyExistenceConstraint(org.Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor allNodes, org.Neo4Net.Kernel.Api.Internal.NodeCursor nodeCursor, org.Neo4Net.Kernel.Api.Internal.PropertyCursor propertyCursor, org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateNodePropertyExistenceConstraint( NodeLabelIndexCursor allNodes, NodeCursor nodeCursor, PropertyCursor propertyCursor, LabelSchemaDescriptor descriptor )
 		 {
 			  while ( allNodes.Next() )
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodeKeyConstraint(org.Neo4Net.internal.kernel.api.NodeLabelIndexCursor allNodes, org.Neo4Net.internal.kernel.api.NodeCursor nodeCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateNodeKeyConstraint(org.Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor allNodes, org.Neo4Net.Kernel.Api.Internal.NodeCursor nodeCursor, org.Neo4Net.Kernel.Api.Internal.PropertyCursor propertyCursor, org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateNodeKeyConstraint( NodeLabelIndexCursor allNodes, NodeCursor nodeCursor, PropertyCursor propertyCursor, LabelSchemaDescriptor descriptor )
 		 {
 			  ValidateNodePropertyExistenceConstraint( allNodes, nodeCursor, propertyCursor, descriptor );
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateRelationshipPropertyExistenceConstraint(org.Neo4Net.internal.kernel.api.RelationshipScanCursor relationshipCursor, org.Neo4Net.internal.kernel.api.PropertyCursor propertyCursor, org.Neo4Net.internal.kernel.api.schema.RelationTypeSchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException
+//ORIGINAL LINE: public void validateRelationshipPropertyExistenceConstraint(org.Neo4Net.Kernel.Api.Internal.RelationshipScanCursor relationshipCursor, org.Neo4Net.Kernel.Api.Internal.PropertyCursor propertyCursor, org.Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException
 		 public override void ValidateRelationshipPropertyExistenceConstraint( RelationshipScanCursor relationshipCursor, PropertyCursor propertyCursor, RelationTypeSchemaDescriptor descriptor )
 		 {
 			  while ( relationshipCursor.Next() )

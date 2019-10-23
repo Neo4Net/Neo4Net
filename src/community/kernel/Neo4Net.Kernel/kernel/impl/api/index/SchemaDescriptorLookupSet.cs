@@ -26,17 +26,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IntObjectMaps = org.eclipse.collections.impl.factory.primitive.IntObjectMaps;
 
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.collection.PrimitiveArrays.isSortedSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.PARTIAL_ANY_TOKEN;
 
 	/// <summary>
 	/// Collects and provides efficient access to <seealso cref="SchemaDescriptor"/>, based on complete list of IEntity tokens and partial or complete list of property keys.
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	/// </pre>
 	/// </para>
 	/// </summary>
-	public class SchemaDescriptorLookupSet<T> where T : Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier
+	public class SchemaDescriptorLookupSet<T> where T : Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier
 	{
 		 private readonly MutableIntObjectMap<PropertyMultiSet> _byEntityToken = IntObjectMaps.mutable.empty();
 
@@ -256,7 +256,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					// Add optimized path for when property list is fully known
 					Descriptors.Add( schemaDescriptor );
 					int[] propertyKeyIds = SortedPropertyKeyIds( schemaDescriptor.schema() );
-					Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType propertySchemaType = schemaDescriptor.schema().propertySchemaType();
+					Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType = schemaDescriptor.schema().propertySchemaType();
 					if ( propertySchemaType == COMPLETE_ALL_TOKENS )
 					{
 						 // Just add the first token id to the top level set
@@ -296,7 +296,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 					// Remove from the optimized path
 					Descriptors.remove( schemaDescriptor );
 					int[] propertyKeyIds = SortedPropertyKeyIds( schemaDescriptor.schema() );
-					Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType propertySchemaType = schemaDescriptor.schema().propertySchemaType();
+					Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType = schemaDescriptor.schema().propertySchemaType();
 					if ( propertySchemaType == COMPLETE_ALL_TOKENS )
 					{
 						 int firstPropertyKeyId = propertyKeyIds[0];

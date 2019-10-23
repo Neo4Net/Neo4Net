@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 	/// <summary>
 	/// Store scan view that will try to minimize amount of scanned nodes by using label scan store <seealso cref="LabelScanStore"/>

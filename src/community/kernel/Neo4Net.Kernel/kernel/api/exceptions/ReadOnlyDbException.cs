@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 
 	/// <summary>
 	/// This exception is thrown when committing an updating transaction in a read only database. Can also be thrown when

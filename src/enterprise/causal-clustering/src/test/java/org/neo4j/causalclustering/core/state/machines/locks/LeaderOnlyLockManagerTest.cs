@@ -30,8 +30,8 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.fail;

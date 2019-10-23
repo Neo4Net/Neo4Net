@@ -24,15 +24,15 @@ namespace Neo4Net.Kernel.Impl.Api
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNotNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class KernelTransactionSecurityContextTest : KernelTransactionTestBase
 	{

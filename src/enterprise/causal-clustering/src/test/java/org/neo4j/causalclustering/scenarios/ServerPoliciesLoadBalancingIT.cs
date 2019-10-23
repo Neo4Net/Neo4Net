@@ -218,7 +218,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 private LoadBalancingResult GetServers( CoreGraphDatabase db, IDictionary<string, string> context )
 		 {
 			  LoadBalancingResult lbResult = null;
-			  using ( InternalTransaction tx = Db.beginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ) )
+			  using ( InternalTransaction tx = Db.BeginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ) )
 			  {
 					IDictionary<string, object> parameters = MapUtil.map( ParameterNames.CONTEXT.parameterName(), context );
 					using ( Result result = Db.execute( tx, "CALL " + GET_SERVERS_V2.callName(), ValueUtils.asMapValue(parameters) ) )

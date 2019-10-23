@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.ha
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.ArrayUtil.contains;
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.ha
 		 private const long DEFAULT_TIMEOUT_SECONDS = 600L;
 		 public static readonly IDictionary<string, string> ConfigForSingleJvmCluster = unmodifiableMap( stringMap( GraphDatabaseSettings.pagecache_memory.name(), "8m", GraphDatabaseSettings.shutdown_transaction_end_timeout.name(), "1s", new BoltConnector("bolt").type.name(), "BOLT", new BoltConnector("bolt").enabled.name(), "false" ) );
 
-		 public interface StoreDirInitializer
+		 public interface IStoreDirInitializer
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void initializeStoreDir(int serverId, java.io.File storeDir) throws java.io.IOException;
@@ -618,7 +618,7 @@ namespace Neo4Net.Kernel.impl.ha
 			 }
 		 }
 
-		 public interface ClusterBuilder<SELF>
+		 public interface IClusterBuilder<SELF>
 		 {
 			  SELF WithRootDirectory( File root );
 

@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static System.currentTimeMillis;

@@ -31,12 +31,12 @@ namespace Neo4Net.causalclustering.scenarios
 
 
 	using Neo4Net.causalclustering.discovery;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -57,7 +57,7 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class ClusterDiscoveryIT
@@ -134,7 +134,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<java.util.Map<String,Object>> getMembers(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<java.util.Map<String,Object>> getMembers(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<IDictionary<string, object>> GetMembers( GraphDatabaseFacade db )
 		 {

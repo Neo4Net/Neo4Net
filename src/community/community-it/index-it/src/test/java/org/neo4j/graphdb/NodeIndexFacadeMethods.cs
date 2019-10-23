@@ -108,7 +108,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static NodeIndexFacadeMethods valueOf( string name )
+		public static NodeIndexFacadeMethods ValueOf( string name )
 		{
 			foreach ( NodeIndexFacadeMethods enumInstance in NodeIndexFacadeMethods.valueList )
 			{

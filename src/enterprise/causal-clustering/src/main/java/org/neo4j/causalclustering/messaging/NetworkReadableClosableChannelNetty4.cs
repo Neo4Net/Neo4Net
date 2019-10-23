@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.messaging
 
 	using LogPositionMarker = Neo4Net.Kernel.impl.transaction.log.LogPositionMarker;
 	using ReadableClosablePositionAwareChannel = Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 
 	public class NetworkReadableClosableChannelNetty4 : ReadableClosablePositionAwareChannel
 	{
@@ -110,7 +110,7 @@ namespace Neo4Net.causalclustering.messaging
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void ensureBytes(int byteCount) throws org.Neo4Net.storageengine.api.ReadPastEndException
+//ORIGINAL LINE: private void ensureBytes(int byteCount) throws org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException
 		 private void EnsureBytes( int byteCount )
 		 {
 			  if ( @delegate.readableBytes() < byteCount )

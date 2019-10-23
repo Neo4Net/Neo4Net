@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.cluster.ClusterSettings.INSTANCE_ID;

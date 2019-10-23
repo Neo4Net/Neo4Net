@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using BuiltInProcedures = Neo4Net.Kernel.builtinprocs.BuiltInProcedures;
 	using IndexProcedures = Neo4Net.Kernel.builtinprocs.IndexProcedures;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public DependencyResolver Resolver;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createNodeKey", mode = SCHEMA) public java.util.stream.Stream<org.Neo4Net.kernel.builtinprocs.BuiltInProcedures.SchemaIndexInfo> createNodeKey(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createNodeKey", mode = SCHEMA) public java.util.stream.Stream<org.Neo4Net.kernel.builtinprocs.BuiltInProcedures.SchemaIndexInfo> createNodeKey(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a node key constraint with index backed by specified index provider " + "(for example: CALL db.createNodeKey(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status"), Procedure(name : "db.createNodeKey", mode : SCHEMA)]
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateNodeKey( string index, string providerName )

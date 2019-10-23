@@ -330,7 +330,7 @@ namespace Neo4Net
 
 			  using ( Driver driver = GraphDatabase.driver( "bolt://localhost:" + _boltPortDatabaseWithTimeout, driverConfig ), Session session = driver.session() )
 			  {
-					Neo4Net.driver.v1.Transaction transaction = session.beginTransaction();
+					Neo4Net.driver.v1.Transaction transaction = session.BeginTransaction();
 					transaction.run( "create (n)" ).consume();
 					transaction.success();
 					_fakeClock.forward( 3, TimeUnit.SECONDS );

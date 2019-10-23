@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.messaging
 {
 	using StoreId = Neo4Net.causalclustering.identity.StoreId;
 
-	public interface StoreCopyRequest : CatchUpRequest
+	public interface IStoreCopyRequest : CatchUpRequest
 	{
 		 long RequiredTransactionId();
 

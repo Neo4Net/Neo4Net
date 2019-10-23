@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Test = org.junit.Test;
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;

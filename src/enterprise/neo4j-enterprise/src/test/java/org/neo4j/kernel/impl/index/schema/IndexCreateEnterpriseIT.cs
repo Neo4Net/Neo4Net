@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 	using Test = org.junit.Test;
 
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using TestEnterpriseGraphDatabaseFactory = Neo4Net.Test.TestEnterpriseGraphDatabaseFactory;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldCreateNodeKeyConstraintWithSpecificExistingProviderName() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldCreateNodeKeyConstraintWithSpecificExistingProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldCreateNodeKeyConstraintWithSpecificExistingProviderName()
 		 {
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldFailCreateNodeKeyWithNonExistentProviderName() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldFailCreateNodeKeyWithNonExistentProviderName() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldFailCreateNodeKeyWithNonExistentProviderName()
 		 {

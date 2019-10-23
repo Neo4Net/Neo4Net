@@ -25,7 +25,7 @@ namespace Neo4Net.GraphAlgo.Utils
 
 	public class PriorityMap<E, K, P>
 	{
-		 public interface Converter<T, S>
+		 public interface IConverter<T, S>
 		 {
 			  T Convert( S source );
 		 }

@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 	using IndexSearcher = org.apache.lucene.search.IndexSearcher;
 
 	using TaskControl = Neo4Net.Helpers.TaskControl;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using UniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.UniqueIndexSampler;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	/// <summary>
 	/// Sampler for unique Lucene schema index.
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexSample sampleIndex() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample sampleIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override IndexSample SampleIndex()
 		 {
 			  UniqueIndexSampler sampler = new UniqueIndexSampler();

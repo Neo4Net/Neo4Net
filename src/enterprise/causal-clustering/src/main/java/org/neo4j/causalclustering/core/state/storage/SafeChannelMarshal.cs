@@ -25,8 +25,8 @@ namespace Neo4Net.causalclustering.core.state.storage
 
 	using Neo4Net.causalclustering.messaging.marshalling;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 
 	/// <summary>
 	/// Wrapper class to handle ReadPastEndExceptions in a safe manner transforming it
@@ -35,9 +35,9 @@ namespace Neo4Net.causalclustering.core.state.storage
 	/// @param <STATE> The type of state marshalled. </param>
 	public abstract class SafeChannelMarshal<STATE> : ChannelMarshal<STATE>
 	{
-		public abstract void Marshal( STATE state, Neo4Net.Storageengine.Api.WritableChannel channel );
+		public abstract void Marshal( STATE state, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel );
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final STATE unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public final STATE unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public override STATE Unmarshal( ReadableChannel channel )
 		 {
 			  try
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 /// <exception cref="IOException"> </exception>
 		 /// <exception cref="EndOfStreamException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract STATE unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
+//ORIGINAL LINE: protected abstract STATE unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
 		 protected internal abstract STATE Unmarshal0( ReadableChannel channel );
 	}
 

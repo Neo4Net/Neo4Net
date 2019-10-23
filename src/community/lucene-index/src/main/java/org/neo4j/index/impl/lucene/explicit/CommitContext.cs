@@ -26,7 +26,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
 
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 
 	/// <summary>
@@ -53,7 +53,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void ensureWriterInstantiated() throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: void ensureWriterInstantiated() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual void EnsureWriterInstantiated()
 		 {
 			  if ( Searcher == null )

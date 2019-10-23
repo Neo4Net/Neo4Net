@@ -97,7 +97,7 @@ namespace Neo4Net.Tooling
 			  Configuration config = Configuration.COMMAS;
 
 			  Extractors extractors = new Extractors( config.ArrayDelimiter() );
-			  IdType idType = IdType.valueOf( args.Get( "id-type", IdType.INTEGER.name() ) );
+			  IdType idType = IdType.ValueOf( args.Get( "id-type", IdType.INTEGER.name() ) );
 
 			  Groups groups = new Groups();
 			  Header nodeHeader = ParseNodeHeader( args, idType, extractors, groups );

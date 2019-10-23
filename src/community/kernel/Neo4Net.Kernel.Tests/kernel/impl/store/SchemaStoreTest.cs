@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.store
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -40,10 +40,10 @@ namespace Neo4Net.Kernel.impl.store
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using SchemaRuleSerialization = Neo4Net.Kernel.Impl.Store.Records.SchemaRuleSerialization;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.TestIndexProviderDescriptor.PROVIDER_DESCRIPTOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class SchemaStoreTest
 	{
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.impl.store
 			  // GIVEN
 			  int[] propertyIds = new int[] { 4, 5, 6, 7 };
 			  int[] IEntityTokens = new int[] { 2, 3, 4 };
-			  StoreIndexDescriptor indexRule = forSchema( multiToken( IEntityTokens, IEntityType.RELATIONSHIP, propertyIds ), PROVIDER_DESCRIPTOR ).withId( _store.nextId() );
+			  StoreIndexDescriptor indexRule = forSchema( multiToken( IEntityTokens, EntityType.RELATIONSHIP, propertyIds ), PROVIDER_DESCRIPTOR ).withId( _store.nextId() );
 
 			  // WHEN
 			  StoreIndexDescriptor readIndexRule = ( StoreIndexDescriptor ) SchemaRuleSerialization.deserialize( indexRule.Id, wrap( SchemaRuleSerialization.serialize( indexRule ) ) );
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.store
 			  // GIVEN
 			  int[] propertyIds = new int[] { 4, 5, 6, 7 };
 			  int[] IEntityTokens = new int[] {};
-			  StoreIndexDescriptor indexRule = forSchema( multiToken( IEntityTokens, IEntityType.NODE, propertyIds ), PROVIDER_DESCRIPTOR ).withId( _store.nextId() );
+			  StoreIndexDescriptor indexRule = forSchema( multiToken( IEntityTokens, EntityType.NODE, propertyIds ), PROVIDER_DESCRIPTOR ).withId( _store.nextId() );
 
 			  // WHEN
 			  StoreIndexDescriptor readIndexRule = ( StoreIndexDescriptor ) SchemaRuleSerialization.deserialize( indexRule.Id, wrap( SchemaRuleSerialization.serialize( indexRule ) ) );
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.store
 		 public virtual void StoreAndLoadBigCompositeMultiTokenSchemaRule()
 		 {
 			  // GIVEN
-			  StoreIndexDescriptor indexRule = forSchema( multiToken( IntStream.range( 1, 200 ).toArray(), IEntityType.RELATIONSHIP, IntStream.range(1, 200).toArray() ), PROVIDER_DESCRIPTOR ).withId(_store.nextId());
+			  StoreIndexDescriptor indexRule = forSchema( multiToken( IntStream.range( 1, 200 ).toArray(), EntityType.RELATIONSHIP, IntStream.range(1, 200).toArray() ), PROVIDER_DESCRIPTOR ).withId(_store.nextId());
 
 			  // WHEN
 			  StoreIndexDescriptor readIndexRule = ( StoreIndexDescriptor ) SchemaRuleSerialization.deserialize( indexRule.Id, wrap( SchemaRuleSerialization.serialize( indexRule ) ) );

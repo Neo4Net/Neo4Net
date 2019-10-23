@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  System.Func<NeoStoreDataSource> dataSource = () => graphDb.DependencyResolver.resolveDependency(typeof(NeoStoreDataSource));
 			  LogProvider logProvider = NullLogProvider.Instance;
 
-			  Neo4Net.Storageengine.Api.StoreId kernelStoreId = dataSource().StoreId;
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId kernelStoreId = dataSource().StoreId;
 			  StoreId storeId = new StoreId( kernelStoreId.CreationTime, kernelStoreId.RandomId, kernelStoreId.UpgradeTime, kernelStoreId.UpgradeId );
 
 			  CheckPointerService checkPointerService = new CheckPointerService( checkPointer, createInitializedScheduler(), Group.CHECKPOINT );

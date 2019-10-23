@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb.index;
 	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 

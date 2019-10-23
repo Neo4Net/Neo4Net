@@ -34,8 +34,8 @@ namespace Neo4Net.Server.rest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using EnterpriseServerBuilder = Neo4Net.Server.enterprise.helpers.EnterpriseServerBuilder;
 	using CommunityServerBuilder = Neo4Net.Server.helpers.CommunityServerBuilder;

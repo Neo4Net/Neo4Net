@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using ByteBufferFactory = Neo4Net.Kernel.Impl.Index.Schema.ByteBufferFactory;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.DoubleLatch.awaitLatch;
 
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  throw new System.InvalidOperationException();

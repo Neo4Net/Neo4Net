@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.recovery
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
 	using LogPosition = Neo4Net.Kernel.impl.transaction.log.LogPosition;
 	using TransactionCursor = Neo4Net.Kernel.impl.transaction.log.TransactionCursor;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	public interface RecoveryService
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.recovery
 		 RecoveryStartInformation RecoveryStartInformation { get; }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: RecoveryApplier getRecoveryApplier(org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception;
+//ORIGINAL LINE: RecoveryApplier getRecoveryApplier(org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception;
 		 RecoveryApplier GetRecoveryApplier( TransactionApplicationMode mode );
 
 		 void TransactionsRecovered( CommittedTransactionRepresentation lastRecoveredTransaction, LogPosition positionAfterLastRecoveredTransaction );

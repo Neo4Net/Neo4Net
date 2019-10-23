@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.messaging
 
 	public class ReconnectingChannel : Channel
 	{
-		 public static readonly AttributeKey<ProtocolStack> ProtocolStackKey = AttributeKey.valueOf( "PROTOCOL_STACK" );
+		 public static readonly AttributeKey<ProtocolStack> ProtocolStackKey = AttributeKey.ValueOf( "PROTOCOL_STACK" );
 
 		 private readonly Log _log;
 		 private readonly Bootstrap _bootstrap;

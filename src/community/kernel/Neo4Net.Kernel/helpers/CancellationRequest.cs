@@ -27,7 +27,7 @@ namespace Neo4Net.Helpers
 	/// requested.
 	/// </summary>
 	[Obsolete]
-	public interface CancellationRequest
+	public interface ICancellationRequest
 	{
 		 /// <returns> True iff a request for cancellation has been issued. It is assumed that the request cannot be withdrawn
 		 /// so once this method returns true it must always return true on all subsequent calls. </returns>

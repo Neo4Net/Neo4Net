@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
 	using Log = Neo4Net.Logging.Log;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 	/// <summary>

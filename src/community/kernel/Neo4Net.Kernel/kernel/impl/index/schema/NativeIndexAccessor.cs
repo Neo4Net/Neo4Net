@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 { // Not needed since uniqueness is verified automatically w/o cost for every update.
 		 }

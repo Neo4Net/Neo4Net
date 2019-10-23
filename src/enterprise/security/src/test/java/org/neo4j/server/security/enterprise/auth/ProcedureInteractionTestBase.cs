@@ -49,7 +49,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using NetworkConnectionTracker = Neo4Net.Kernel.api.net.NetworkConnectionTracker;
@@ -508,7 +508,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 		 {
 			  IList<object> results = GetObjectsAsList( r, key );
 			  assertEquals( Arrays.asList( items ).size(), results.Count );
-			  assertThat( results, containsInAnyOrder( java.util.items.Select( this.valueOf ).ToArray() ) );
+			  assertThat( results, containsInAnyOrder( java.util.items.Select( this.ValueOf ).ToArray() ) );
 		 }
 
 		 internal static void AssertKeyIsMap( ResourceIterator<IDictionary<string, object>> r, string keyKey, string valueKey, object expected )

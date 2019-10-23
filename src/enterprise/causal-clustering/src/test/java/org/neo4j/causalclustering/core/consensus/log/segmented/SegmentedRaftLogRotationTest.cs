@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 			  {
 					SegmentedRaftLog log = lifespan.Add( CreateRaftLog( ROTATE_AT_SIZE_IN_BYTES ) );
 					log.Append( new RaftLogEntry( term, ReplicatedStringOfBytes( ROTATE_AT_SIZE_IN_BYTES - 40 ) ) );
-					indexToRestoreTo = log.Append( new RaftLogEntry( term, ReplicatedInteger.valueOf( 1 ) ) );
+					indexToRestoreTo = log.Append( new RaftLogEntry( term, ReplicatedInteger.ValueOf( 1 ) ) );
 			  }
 
 			  // When

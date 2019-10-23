@@ -25,7 +25,7 @@ namespace Neo4Net.com
 
 	using ChannelBuffer = org.jboss.netty.buffer.ChannelBuffer;
 
-	public interface Serializer
+	public interface ISerializer
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void write(org.jboss.netty.buffer.ChannelBuffer buffer) throws java.io.IOException;

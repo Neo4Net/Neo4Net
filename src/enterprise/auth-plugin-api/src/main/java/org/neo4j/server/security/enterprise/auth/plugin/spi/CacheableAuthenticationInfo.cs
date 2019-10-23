@@ -43,7 +43,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	/// <seealso cref= AuthenticationPlugin#authenticate(AuthToken) </seealso>
 	/// <seealso cref= AuthProviderOperations#setAuthenticationCachingEnabled(boolean) </seealso>
 	/// <seealso cref= CustomCacheableAuthenticationInfo </seealso>
-	public interface CacheableAuthenticationInfo : AuthenticationInfo
+	public interface ICacheableAuthenticationInfo : AuthenticationInfo
 	{
 		 /// <summary>
 		 /// Should return a principal that uniquely identifies the authenticated subject within this authentication provider.

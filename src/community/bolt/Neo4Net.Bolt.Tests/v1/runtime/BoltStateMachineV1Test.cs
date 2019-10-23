@@ -520,7 +520,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  // Given
 			  TransactionStateMachineSPI transactionSPI = mock( typeof( TransactionStateMachineSPI ) );
-			  doThrow( new AuthorizationExpiredException( "Auth expired!" ) ).when( transactionSPI ).beginTransaction( any(), any(), any() );
+			  doThrow( new AuthorizationExpiredException( "Auth expired!" ) ).when( transactionSPI ).BeginTransaction( any(), any(), any() );
 
 			  BoltStateMachine machine = newMachineWithTransactionSPI( transactionSPI );
 

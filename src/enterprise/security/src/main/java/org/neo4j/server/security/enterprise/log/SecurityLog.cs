@@ -26,7 +26,7 @@ namespace Neo4Net.Server.security.enterprise.log
 {
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;

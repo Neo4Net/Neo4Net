@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using ReadReplicaTopology = Neo4Net.causalclustering.discovery.ReadReplicaTopology;
 	using ClusterId = Neo4Net.causalclustering.identity.ClusterId;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -124,7 +124,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object[] getEndpoints(LegacyGetServersProcedure proc) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private Object[] getEndpoints(LegacyGetServersProcedure proc) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private object[] GetEndpoints( LegacyGetServersProcedure proc )
 		 {
 			  IList<object[]> results = new IList<object[]> { proc.Apply( null, new object[0], null ) };

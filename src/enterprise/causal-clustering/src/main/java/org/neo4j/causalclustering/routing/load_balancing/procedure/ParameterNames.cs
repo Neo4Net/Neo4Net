@@ -113,7 +113,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 			return nameValue;
 		}
 
-		public static ParameterNames valueOf( string name )
+		public static ParameterNames ValueOf( string name )
 		{
 			foreach ( ParameterNames enumInstance in ParameterNames.valueList )
 			{

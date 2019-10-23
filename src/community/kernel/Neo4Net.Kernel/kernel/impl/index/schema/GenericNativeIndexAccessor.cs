@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using SpaceFillingCurveSettingsWriter = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsWriter;
 	using Neo4Net.Kernel.impl.util;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class GenericNativeIndexAccessor : NativeIndexAccessor<GenericKey, NativeIndexValue>

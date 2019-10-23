@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v1.messaging.decoder
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Neo4Net.Kernel.impl.util;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using Neo4Net.Values;

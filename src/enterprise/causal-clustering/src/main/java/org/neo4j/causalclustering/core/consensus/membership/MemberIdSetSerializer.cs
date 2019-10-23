@@ -27,8 +27,8 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Format:
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(MemberIdSet memberSet, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(MemberIdSet memberSet, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public static void Marshal( MemberIdSet memberSet, WritableChannel channel )
 		 {
 			  ISet<MemberId> members = memberSet.Members;
@@ -67,7 +67,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static MemberIdSet unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static MemberIdSet unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static MemberIdSet Unmarshal( ReadableChannel channel )
 		 {
 			  HashSet<MemberId> members = new HashSet<MemberId>();

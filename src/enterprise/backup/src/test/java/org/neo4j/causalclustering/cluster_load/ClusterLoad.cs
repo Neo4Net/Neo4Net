@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.cluster_load
 {
 	using Neo4Net.causalclustering.discovery;
 
-	public interface ClusterLoad
+	public interface IClusterLoad
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void start(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster) throws Exception;

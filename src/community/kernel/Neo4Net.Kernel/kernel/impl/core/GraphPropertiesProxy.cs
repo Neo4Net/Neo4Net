@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.impl.core
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.core
 
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return false;
 			  }
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					throw new NotFoundException( format( "No such property, '%s'.", key ) );
 			  }
@@ -120,7 +120,7 @@ namespace Neo4Net.Kernel.impl.core
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  PropertyCursor properties = transaction.AmbientPropertyCursor();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return defaultValue;
 			  }

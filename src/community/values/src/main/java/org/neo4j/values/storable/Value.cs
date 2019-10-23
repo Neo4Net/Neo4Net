@@ -22,7 +22,7 @@
 namespace Neo4Net.Values.Storable
 {
 
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Neo4Net.Values;
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;

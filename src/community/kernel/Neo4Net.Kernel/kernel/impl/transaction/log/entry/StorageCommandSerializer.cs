@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 {
 
 	using Neo4Net.Helpers.Collections;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.entry.LogEntryByteCodes.COMMAND;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.storageengine.api.StorageCommand command) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand command) throws java.io.IOException
 		 public override bool Visit( StorageCommand command )
 		 {
 			  LogEntryWriter.WriteLogEntryHeader( COMMAND, _channel );

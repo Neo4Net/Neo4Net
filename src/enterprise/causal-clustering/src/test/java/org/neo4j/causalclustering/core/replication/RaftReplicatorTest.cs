@@ -146,7 +146,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, monitors );
 			  replicator.OnLeaderSwitch( _leaderInfo );
 
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  Thread replicatingThread = replicatingThread( replicator, content, false );
 
 			  // when
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, monitors );
 			  replicator.OnLeaderSwitch( _leaderInfo );
 
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  Thread replicatingThread = replicatingThread( replicator, content, false );
 
 			  // when
@@ -211,7 +211,7 @@ namespace Neo4Net.causalclustering.core.replication
 
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, new Monitors() );
 			  replicator.OnLeaderSwitch( _leaderInfo );
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  Thread replicatingThread = replicatingThread( replicator, content, true );
 
 			  // when
@@ -244,7 +244,7 @@ namespace Neo4Net.causalclustering.core.replication
 
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, monitors );
 			  replicator.OnLeaderSwitch( _leaderInfo );
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  ReplicatingThread replicatingThread = replicatingThread( replicator, content, true );
 
 			  // when
@@ -271,7 +271,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, new Monitors() );
 			  replicator.OnLeaderSwitch( _leaderInfo );
 
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  ReplicatingThread replicatingThread = replicatingThread( replicator, content, true );
 
 			  // when
@@ -293,7 +293,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, new Monitors() );
 			  replicator.OnLeaderSwitch( _leaderInfo );
 
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  ReplicatingThread replicatingThread = replicatingThread( replicator, content, true );
 
 			  // when
@@ -313,7 +313,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  CapturingOutbound<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound = new CapturingOutbound<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>();
 
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, new Monitors() );
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 
 			  // when
 			  assertThrows( typeof( ReplicationFailureException ), () => replicator.Replicate(content, true) );
@@ -328,7 +328,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  oneProgressTracker.Last.setReplicated();
 			  CapturingOutbound<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage> outbound = new CapturingOutbound<Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage>();
 			  RaftReplicator replicator = GetReplicator( outbound, oneProgressTracker, new Monitors() );
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 
 			  LeaderInfo lastLeader = _leaderInfo;
 
@@ -355,7 +355,7 @@ namespace Neo4Net.causalclustering.core.replication
 			  RaftReplicator replicator = GetReplicator( outbound, capturedProgress, new Monitors() );
 			  replicator.OnLeaderSwitch( _leaderInfo );
 
-			  ReplicatedInteger content = ReplicatedInteger.valueOf( 5 );
+			  ReplicatedInteger content = ReplicatedInteger.ValueOf( 5 );
 			  ReplicatingThread replicatingThread = replicatingThread( replicator, content, false );
 
 			  // when

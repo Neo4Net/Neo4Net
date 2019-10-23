@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Server.rest.web
 {
-	public interface Surface
+	public interface ISurface
 	{
 	}
 

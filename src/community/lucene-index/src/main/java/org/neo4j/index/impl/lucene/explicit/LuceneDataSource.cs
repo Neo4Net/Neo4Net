@@ -57,7 +57,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -142,7 +142,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertValidType(String key, Object value, IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: void assertValidType(String key, Object value, IndexIdentifier identifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual void AssertValidType( string key, object value, IndexIdentifier identifier )
 		 {
 			  DocValuesType expectedType;
@@ -187,7 +187,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexType getType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexType GetType( IndexIdentifier identifier, bool recovery )
 		 {
 			  return _typeCache.getIndexType( identifier, recovery );
@@ -290,7 +290,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference getIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexReference getIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexReference GetIndexSearcher( IndexIdentifier identifier )
 		 {
 			  AssertNotClosed();
@@ -326,7 +326,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private synchronized IndexReference syncGetIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private synchronized IndexReference syncGetIndexSearcher(IndexIdentifier identifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexReference SyncGetIndexSearcher( IndexIdentifier identifier )
 		 {
 			 lock ( this )
@@ -371,7 +371,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private IndexReference refreshSearcherIfNeeded(IndexReference searcher) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private IndexReference refreshSearcherIfNeeded(IndexReference searcher) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private IndexReference RefreshSearcherIfNeeded( IndexReference searcher )
 		 {
 			  if ( searcher.CheckAndClearStale() )
@@ -688,7 +688,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 				 return nameValue;
 			 }
 
-			 public static LuceneFilesystemFacade valueOf( string name )
+			 public static LuceneFilesystemFacade ValueOf( string name )
 			 {
 				 foreach ( LuceneFilesystemFacade enumInstance in LuceneFilesystemFacade.valueList )
 				 {

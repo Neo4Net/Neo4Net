@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using Neo4Net.Kernel.impl.util;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// Keeps list of members, their roles and availability.

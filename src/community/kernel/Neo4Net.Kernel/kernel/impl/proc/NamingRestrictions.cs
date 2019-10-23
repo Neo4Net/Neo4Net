@@ -19,13 +19,13 @@
  */
 namespace Neo4Net.Kernel.impl.proc
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 
 	internal interface NamingRestrictions
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verify(org.Neo4Net.internal.kernel.api.procs.QualifiedName name) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void verify(org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void Verify( QualifiedName name );
 	}
 

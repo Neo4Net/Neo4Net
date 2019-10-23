@@ -26,7 +26,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 {
 		 }
 
-		 public override bool Check( TraversalBranch source )
+		 public override bool Check( ITraversalBranch source )
 		 {
 			  return true;
 		 }

@@ -22,7 +22,7 @@
 namespace Neo4Net.Helpers
 {
 	[Obsolete]
-	public interface Cancelable
+	public interface ICancelable
 	{
 		 [Obsolete]
 		 void Cancel();

@@ -190,7 +190,7 @@ namespace Neo4Net.Ext.Udc
 				 return ordinalValue;
 			 }
 
-			 public static Enabled valueOf( string name )
+			 public static Enabled ValueOf( string name )
 			 {
 				 foreach ( Enabled enumInstance in Enabled.valueList )
 				 {

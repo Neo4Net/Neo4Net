@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 	using Test = org.junit.Test;
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -44,10 +44,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
 	using FusionIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.fusion.FusionIndexProvider;
 	using SlotSelector = Neo4Net.Kernel.Impl.Index.Schema.fusion.SlotSelector;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 	using Neo4Net.Test.rule.fs;
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertSame;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexCapability.NO_CAPABILITY;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexCapability.NO_CAPABILITY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.impl.schema.LuceneIndexProvider.defaultDirectoryStructure;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.NullLogProvider.getInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class LuceneIndexSamplerReleaseTaskControlUnderFusion
 	{
@@ -255,7 +255,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 				  return new IndexReader_AdaptorAnonymousInnerClass( this );
 			 }
 
-			 private class IndexReader_AdaptorAnonymousInnerClass : Neo4Net.Storageengine.Api.schema.IndexReader_Adaptor
+			 private class IndexReader_AdaptorAnonymousInnerClass : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader_Adaptor
 			 {
 				 private readonly IndexAccessor_AdapterAnonymousInnerClass _outerInstance;
 

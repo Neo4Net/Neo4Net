@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.tracing
 	/// Represents the process of applying transaction changes to the stores. Because we apply transactions in parallel,
 	/// the individual stores and indexes are not further specified.
 	/// </summary>
-	public interface StoreApplyEvent : IDisposable
+	public interface IStoreApplyEvent : IDisposable
 	{
 
 		 /// <summary>

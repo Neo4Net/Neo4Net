@@ -48,7 +48,7 @@ namespace Neo4Net.causalclustering.core.replication
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using PhysicalTransactionRepresentation = Neo4Net.Kernel.impl.transaction.log.PhysicalTransactionRepresentation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.equalTo;

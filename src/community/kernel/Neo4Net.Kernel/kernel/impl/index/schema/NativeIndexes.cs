@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
 	using Neo4Net.Index.Internal.gbptree;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using ZipUtils = Neo4Net.Io.compress.ZipUtils;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.internal.kernel.api.InternalIndexState readState(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
+//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.Internal.InternalIndexState readState(org.Neo4Net.io.pagecache.PageCache pageCache, java.io.File indexFile) throws java.io.IOException
 		 public static InternalIndexState ReadState( PageCache pageCache, File indexFile )
 		 {
 			  NativeIndexHeaderReader headerReader = new NativeIndexHeaderReader( NO_HEADER_READER );

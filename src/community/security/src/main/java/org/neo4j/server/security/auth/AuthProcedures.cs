@@ -24,8 +24,8 @@ namespace Neo4Net.Server.Security.Auth
 {
 
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;
 	using User = Neo4Net.Kernel.impl.security.User;
@@ -43,7 +43,7 @@ namespace Neo4Net.Server.Security.Auth
 	public class AuthProcedures
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

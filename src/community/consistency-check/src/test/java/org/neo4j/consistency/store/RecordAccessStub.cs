@@ -323,7 +323,7 @@ namespace Neo4Net.Consistency.store
 				 return nameValue;
 			 }
 
-			 public static Version valueOf( string name )
+			 public static Version ValueOf( string name )
 			 {
 				 foreach ( Version enumInstance in Version.valueList )
 				 {

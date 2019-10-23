@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.jupiter.api.Test;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexProviderNotFoundException = Neo4Net.Kernel.Impl.Api.index.IndexProviderNotFoundException;

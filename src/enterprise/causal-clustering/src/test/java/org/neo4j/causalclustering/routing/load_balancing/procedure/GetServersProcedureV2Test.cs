@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 {
 	using Test = org.junit.Test;
 
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -44,11 +44,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTMap;
 
 	public class GetServersProcedureV2Test
 	{

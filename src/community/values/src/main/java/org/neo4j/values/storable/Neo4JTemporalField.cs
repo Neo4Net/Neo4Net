@@ -152,7 +152,7 @@ namespace Neo4Net.Values.Storable
 			return ordinalValue;
 		}
 
-		public static Neo4NetTemporalField valueOf( string name )
+		public static Neo4NetTemporalField ValueOf( string name )
 		{
 			foreach ( Neo4NetTemporalField enumInstance in Neo4NetTemporalField.valueList )
 			{

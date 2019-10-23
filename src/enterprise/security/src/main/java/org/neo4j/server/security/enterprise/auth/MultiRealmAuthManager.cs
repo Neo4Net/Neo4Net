@@ -50,8 +50,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using AuthProviderFailedException = Neo4Net.GraphDb.security.AuthProviderFailedException;
 	using AuthProviderTimeoutException = Neo4Net.GraphDb.security.AuthProviderTimeoutException;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;

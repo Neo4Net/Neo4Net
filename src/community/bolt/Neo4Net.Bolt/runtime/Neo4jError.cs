@@ -123,21 +123,21 @@ namespace Neo4Net.Bolt.runtime
 			  switch ( category )
 			  {
 			  case "Schema":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Schema.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Schema.ValueOf( error );
 			  case "LegacyIndex":
-					return Neo4Net.Kernel.Api.Exceptions.Status_LegacyIndex.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_LegacyIndex.ValueOf( error );
 			  case "General":
-					return Neo4Net.Kernel.Api.Exceptions.Status_General.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_General.ValueOf( error );
 			  case "Statement":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Statement.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Statement.ValueOf( error );
 			  case "Transaction":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Transaction.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Transaction.ValueOf( error );
 			  case "Request":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Request.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Request.ValueOf( error );
 			  case "Network":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Network.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Network.ValueOf( error );
 			  case "Security":
-					return Neo4Net.Kernel.Api.Exceptions.Status_Security.valueOf( error );
+					return Neo4Net.Kernel.Api.Exceptions.Status_Security.ValueOf( error );
 			  default:
 					return Neo4Net.Kernel.Api.Exceptions.Status_General.UnknownError;
 			  }

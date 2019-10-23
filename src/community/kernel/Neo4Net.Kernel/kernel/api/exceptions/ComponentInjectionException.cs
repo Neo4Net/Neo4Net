@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 
 	public class ComponentInjectionException : ProcedureException
 	{

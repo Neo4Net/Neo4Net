@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Neo4Net.GraphDb;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.fs.FileUtils.relativePath;

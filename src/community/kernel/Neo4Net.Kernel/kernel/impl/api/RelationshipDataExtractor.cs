@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using Neo4Net.Storageengine.Api;
+	using Neo4Net.Kernel.Api.StorageEngine;
 
 	public class RelationshipDataExtractor : RelationshipVisitor<Exception>
 	{

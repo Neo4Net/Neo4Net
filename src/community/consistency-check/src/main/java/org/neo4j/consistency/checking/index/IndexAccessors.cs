@@ -26,7 +26,7 @@ namespace Neo4Net.Consistency.checking.index
 	using LongObjectHashMap = org.eclipse.collections.impl.map.mutable.primitive.LongObjectHashMap;
 
 
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
@@ -34,7 +34,7 @@ namespace Neo4Net.Consistency.checking.index
 	using Neo4Net.Kernel.impl.store;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	public class IndexAccessors : System.IDisposable
 	{

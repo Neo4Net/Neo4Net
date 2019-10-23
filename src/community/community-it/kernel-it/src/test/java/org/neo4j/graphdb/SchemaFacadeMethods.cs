@@ -22,7 +22,7 @@
 namespace Neo4Net.GraphDb
 {
 
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.FacadeMethod.INDEX_DEFINITION;
@@ -35,7 +35,7 @@ namespace Neo4Net.GraphDb
 //       INDEX_FOR(new FacadeMethod<>("IndexCreator indexFor( Label label )", s -> s.indexFor(LABEL))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       GET_INDEXES_BY_LABEL(new FacadeMethod<>("Iterable<IndexDefinition> getIndexes( Label label )", s -> s.getIndexes(LABEL))),
-		 public static readonly SchemaFacadeMethods GetIndexes = new SchemaFacadeMethods( "GetIndexes", InnerEnum.GetIndexes, new FacadeMethod<>( "Iterable<IndexDefinition> getIndexes()", Neo4Net.GraphDb.schema.Schema::getIndexes ) );
+		 public static readonly SchemaFacadeMethods GetIndexes = new SchemaFacadeMethods( "GetIndexes", InnerEnum.GetIndexes, new FacadeMethod<>( "Iterable<IndexDefinition> getIndexes()", Neo4Net.GraphDb.Schema.Schema::getIndexes ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       GET_INDEX_STATE(new FacadeMethod<>("IndexState getIndexState( IndexDefinition index )", s -> s.getIndexState(INDEX_DEFINITION))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
@@ -44,7 +44,7 @@ namespace Neo4Net.GraphDb
 //       CONSTRAINT_FOR(new FacadeMethod<>("ConstraintCreator constraintFor( Label label )", s -> s.constraintFor(LABEL))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       GET_CONSTRAINTS_BY_LABEL(new FacadeMethod<>("Iterable<ConstraintDefinition> getConstraints( Label label )", s -> s.getConstraints(LABEL))),
-		 public static readonly SchemaFacadeMethods GetConstraints = new SchemaFacadeMethods( "GetConstraints", InnerEnum.GetConstraints, new FacadeMethod<>( "Iterable<ConstraintDefinition> getConstraints()", Neo4Net.GraphDb.schema.Schema::getConstraints ) );
+		 public static readonly SchemaFacadeMethods GetConstraints = new SchemaFacadeMethods( "GetConstraints", InnerEnum.GetConstraints, new FacadeMethod<>( "Iterable<ConstraintDefinition> getConstraints()", Neo4Net.GraphDb.Schema.Schema::getConstraints ) );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //       AWAIT_INDEX_ONLINE(new FacadeMethod<>("void awaitIndexOnline( IndexDefinition index, long duration, TimeUnit unit )", s -> s.awaitIndexOnline(INDEX_DEFINITION, 1L, java.util.concurrent.TimeUnit.SECONDS))),
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
@@ -85,9 +85,9 @@ namespace Neo4Net.GraphDb
 		 private readonly int ordinalValue;
 		 private static int nextOrdinal = 0;
 
-		 private readonly FacadeMethod<Neo4Net.GraphDb.schema.Schema> facadeMethod;
+		 private readonly FacadeMethod<Neo4Net.GraphDb.Schema.Schema> facadeMethod;
 
-		 internal SchemaFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.schema.Schema> facadeMethod )
+		 internal SchemaFacadeMethods( string name, InnerEnum innerEnum, FacadeMethod<Neo4Net.GraphDb.Schema.Schema> facadeMethod )
 		 {
 			  this._facadeMethod = facadeMethod;
 
@@ -96,7 +96,7 @@ namespace Neo4Net.GraphDb
 			 innerEnumValue = innerEnum;
 		 }
 
-		 public void Accept( Neo4Net.GraphDb.schema.Schema schema )
+		 public void Accept( Neo4Net.GraphDb.Schema.Schema schema )
 		 {
 			  _facadeMethod.accept( schema );
 		 }
@@ -116,7 +116,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static SchemaFacadeMethods valueOf( string name )
+		public static SchemaFacadeMethods ValueOf( string name )
 		{
 			foreach ( SchemaFacadeMethods enumInstance in SchemaFacadeMethods.valueList )
 			{

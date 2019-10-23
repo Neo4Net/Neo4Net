@@ -37,7 +37,7 @@
 ////////////	/// @param <T> type of value this setting will parse input string into and return. </param>
 ////////////	/// @deprecated The settings API will be completely rewritten in 4.0 
 ////////////	[Obsolete("The settings API will be completely rewritten in 4.0")]
-////////////	public interface Setting<T> : System.Func<System.Func<string, string>, T>, SettingValidator, SettingGroup<T>
+////////////	public interface ISetting<T> : System.Func<System.Func<string, string>, T>, SettingValidator, SettingGroup<T>
 ////////////	{
 ////////////		 /// <summary>
 ////////////		 /// Get the name of the setting. This typically corresponds to a key in a properties file, or similar.

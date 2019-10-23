@@ -19,107 +19,106 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
+   /// <summary>
+   /// Represents a path in the graph. A path starts with a node followed by
+   /// pairs of <seealso cref="IRelationship"/> and <seealso cref="INode"/> objects. The shortest path
+   /// is of length 0. Such a path contains only one node and no relationships.
+   ///
+   /// During a traversal <seealso cref="Path"/> instances are emitted where the current
+   /// position of the traverser is represented by each such path. The current
+   /// node in such a traversal is reached via <seealso cref="IPath.endNode()"/>.
+   /// </summary>
+   public interface IPath : IEnumerable<IPropertyContainer>
+   {
+      /// <summary>
+      /// Returns the start node of this path. It's also the first node returned
+      /// from the <seealso cref="nodes()"/> iterable. </summary>
+      /// <returns> the start node. </returns>
+      INode StartNode { get; }
 
-	/// <summary>
-	/// Represents a path in the graph. A path starts with a node followed by
-	/// pairs of <seealso cref="IRelationship"/> and <seealso cref="INode"/> objects. The shortest path
-	/// is of length 0. Such a path contains only one node and no relationships.
-	/// 
-	/// During a traversal <seealso cref="IPath"/> instances are emitted where the current
-	/// position of the traverser is represented by each such path. The current
-	/// node in such a traversal is reached via <seealso cref="IPath.endNode()"/>.
-	/// </summary>
-	public interface IPath : IEnumerable<IPropertyContainer>
-	{
-		 /// <summary>
-		 /// Returns the start node of this path. It's also the first node returned
-		 /// from the <seealso cref="nodes()"/> iterable. </summary>
-		 /// <returns> the start node. </returns>
-		 INode StartNode();
+      /// <summary>
+      /// Returns the end node of this path. It's also the last node returned
+      /// from <seealso cref="nodes()"/> iterable. If the <seealso cref="length()"/> of this path
+      /// is 0 the end node returned by this method is the same as the start node.
+      ///
+      /// If a path is emitted from a traverser the end node is the current node
+      /// where the traverser is at the moment.
+      /// </summary>
+      /// <returns> the end node. </returns>
+      INode EndNode { get; }
 
-		 /// <summary>
-		 /// Returns the end node of this path. It's also the last node returned
-		 /// from <seealso cref="nodes()"/> iterable. If the <seealso cref="length()"/> of this path
-		 /// is 0 the end node returned by this method is the same as the start node.
-		 /// 
-		 /// If a path is emitted from a traverser the end node is the current node
-		 /// where the traverser is at the moment.
-		 /// </summary>
-		 /// <returns> the end node. </returns>
-		 INode EndNode();
+      /// <summary>
+      /// Returns the last <seealso cref="IRelationship"/> in this path.
+      /// </summary>
+      /// <returns> the last <seealso cref="IRelationship"/> in this path, or <code>null</code>
+      ///         if this path contains no <seealso cref="IRelationship"/>s. </returns>
+      IRelationship LastRelationship { get; }
 
-		 /// <summary>
-		 /// Returns the last <seealso cref="IRelationship"/> in this path.
-		 /// </summary>
-		 /// <returns> the last <seealso cref="IRelationship"/> in this path, or <code>null</code>
-		 ///         if this path contains no <seealso cref="IRelationship"/>s. </returns>
-		 IRelationship LastRelationship();
+      /// <summary>
+      /// Returns all the relationships in between the nodes which this path
+      /// consists of. For a path with <seealso cref="length()"/> 0 this will be an
+      /// empty <seealso cref="System.Collections.IEnumerable"/>. </summary>
+      /// <returns> the relationships in this path. </returns>
+      IEnumerable<IRelationship> Relationships { get; }
 
-		 /// <summary>
-		 /// Returns all the relationships in between the nodes which this path
-		 /// consists of. For a path with <seealso cref="length()"/> 0 this will be an
-		 /// empty <seealso cref="System.Collections.IEnumerable"/>. </summary>
-		 /// <returns> the relationships in this path. </returns>
-		 IEnumerable<IRelationship> Relationships();
+      /// <summary>
+      /// Returns all the relationships in between the nodes which this path
+      /// consists of in reverse order, i.e. starting from the <seealso cref="lastRelationship()"/>
+      /// going backwards towards the first relationship in the path.
+      /// For a path with <seealso cref="length()"/> 0 this will be an empty <seealso cref="System.Collections.IEnumerable"/>. </summary>
+      /// <returns> the relationships in this path in reverse order. </returns>
+      IEnumerable<IRelationship> ReverseRelationships { get; }
 
-		 /// <summary>
-		 /// Returns all the relationships in between the nodes which this path
-		 /// consists of in reverse order, i.e. starting from the <seealso cref="lastRelationship()"/>
-		 /// going backwards towards the first relationship in the path.
-		 /// For a path with <seealso cref="length()"/> 0 this will be an empty <seealso cref="System.Collections.IEnumerable"/>. </summary>
-		 /// <returns> the relationships in this path in reverse order. </returns>
-		 IEnumerable<IRelationship> ReverseRelationships();
+      /// <summary>
+      /// Returns all the nodes in this path starting from the start node going
+      /// forward towards the end node. The first node is the same as
+      /// <seealso cref="startNode()"/> and the last node is the same as <seealso cref="endNode()"/>.
+      /// In between those nodes there can be an arbitrary number of nodes. The
+      /// shortest path possible is just one node, where also the the start node is
+      /// the same as the end node.
+      /// </summary>
+      /// <returns> the nodes in this path. </returns>
+      IEnumerable<INode> Nodes { get; }
 
-		 /// <summary>
-		 /// Returns all the nodes in this path starting from the start node going
-		 /// forward towards the end node. The first node is the same as
-		 /// <seealso cref="startNode()"/> and the last node is the same as <seealso cref="endNode()"/>.
-		 /// In between those nodes there can be an arbitrary number of nodes. The
-		 /// shortest path possible is just one node, where also the the start node is
-		 /// the same as the end node.
-		 /// </summary>
-		 /// <returns> the nodes in this path. </returns>
-		 IEnumerable<INode> Nodes();
+      /// <summary>
+      /// Returns all the nodes in this path in reversed order, i.e. starting from the
+      /// end node going backwards instead of from the start node going forwards.
+      /// The first node is the same as <seealso cref="endNode()"/> and the last node is the
+      /// same as <seealso cref="startNode()"/>. In between those nodes there can be an arbitrary
+      /// number of nodes. The shortest path possible is just one node, where also the
+      /// the start node is the same as the end node.
+      /// </summary>
+      /// <returns> the nodes in this path starting from the end node going backwards
+      /// towards the start node. </returns>
+      IEnumerable<INode> ReverseNodes { get; }
 
-		 /// <summary>
-		 /// Returns all the nodes in this path in reversed order, i.e. starting from the
-		 /// end node going backwards instead of from the start node going forwards.
-		 /// The first node is the same as <seealso cref="endNode()"/> and the last node is the
-		 /// same as <seealso cref="startNode()"/>. In between those nodes there can be an arbitrary
-		 /// number of nodes. The shortest path possible is just one node, where also the
-		 /// the start node is the same as the end node.
-		 /// </summary>
-		 /// <returns> the nodes in this path starting from the end node going backwards
-		 /// towards the start node. </returns>
-		 IEnumerable<INode> ReverseNodes();
+      /// <summary>
+      /// Returns the length of this path. That is the number of relationships
+      /// (which is the same as the number of nodes minus one). The shortest path
+      /// possible is of length 0.
+      /// </summary>
+      /// <returns> the length (i.e. the number of relationships) in the path. </returns>
+      int Length { get; }
 
-		 /// <summary>
-		 /// Returns the length of this path. That is the number of relationships
-		 /// (which is the same as the number of nodes minus one). The shortest path
-		 /// possible is of length 0.
-		 /// </summary>
-		 /// <returns> the length (i.e. the number of relationships) in the path. </returns>
-		 int Length();
+      /// <summary>
+      /// Returns a natural string representation of this path.
+      ///
+      /// The string representation shows the nodes with relationships
+      /// (and their directions) in between them.
+      /// </summary>
+      /// <returns> A string representation of the path. </returns>
+      string Path { get; }
 
-		 /// <summary>
-		 /// Returns a natural string representation of this path.
-		 /// 
-		 /// The string representation shows the nodes with relationships
-		 /// (and their directions) in between them.
-		 /// </summary>
-		 /// <returns> A string representation of the path. </returns>
-		 IPath ();
-
-		 /// <summary>
-		 /// Iterates through both the <seealso cref="INode"/>s and <seealso cref="IRelationship"/>s of this
-		 /// path in order. Interleaving <seealso cref="INode"/>s with <seealso cref="IRelationship"/>s,
-		 /// starting and ending with a <seealso cref="INode"/> (the <seealso cref="startNode()"/> and
-		 /// <seealso cref="endNode()"/> respectively).
-		 /// </summary>
-		 /// <seealso cref= Iterable#iterator() </seealso>
-		 IEnumerator<PropertyContainer> Iterator();
-	}
-
+      /// <summary>
+      /// Iterates through both the <seealso cref="INode"/>s and <seealso cref="IRelationship"/>s of this
+      /// path in order. Interleaving <seealso cref="INode"/>s with <seealso cref="IRelationship"/>s,
+      /// starting and ending with a <seealso cref="INode"/> (the <seealso cref="startNode()"/> and
+      /// <seealso cref="endNode()"/> respectively).
+      /// </summary>
+      /// <seealso cref= Iterable#iterator() </seealso>
+      IEnumerator<IPropertyContainer> Iterator();
+   }
 }

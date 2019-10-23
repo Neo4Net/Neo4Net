@@ -27,19 +27,19 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using Test = org.junit.Test;
 
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using IdGenerator = Neo4Net.Kernel.impl.store.id.IdGenerator;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
 	using LabelTokenRecord = Neo4Net.Kernel.Impl.Store.Records.LabelTokenRecord;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;
@@ -129,7 +129,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.storageengine.api.StorageEngine mockedStorageEngine() throws Exception
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine mockedStorageEngine() throws Exception
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private StorageEngine MockedStorageEngine()
 		 {
@@ -147,7 +147,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 			  return storageEngine;
 		 }
 
-		 private class AdapterAnonymousInnerClass : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class AdapterAnonymousInnerClass : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly ReplicatedTokenHolderTest _outerInstance;
 

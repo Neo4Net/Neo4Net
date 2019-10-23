@@ -36,7 +36,7 @@ namespace Neo4Net.Consistency.checking
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -88,9 +88,9 @@ namespace Neo4Net.Consistency.checking
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using ConfigurablePageCacheRule = Neo4Net.Test.rule.ConfigurablePageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -160,7 +160,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void Apply( Transaction transaction )
 		 {
 			  ApplyTransaction( transaction );
@@ -521,7 +521,7 @@ namespace Neo4Net.Consistency.checking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void apply(Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public virtual void Apply( Transaction transaction )
 			  {
 					TransactionRepresentation representation = transaction.Representation( outerInstance.IdGenerator(), outerInstance.masterId(), outerInstance.myId(), TransactionIdStore.LastCommittedTransactionId, NeoStores );
@@ -540,7 +540,7 @@ namespace Neo4Net.Consistency.checking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void applyTransaction(Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void applyTransaction(Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void ApplyTransaction( Transaction transaction )
 		 {
 			  // TODO you know... we could have just appended the transaction representation to the log

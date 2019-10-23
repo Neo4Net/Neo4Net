@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.net.URI startHaCommunication(org.Neo4Net.kernel.lifecycle.LifeSupport haCommunicationLife, org.Neo4Net.kernel.NeoStoreDataSource neoDataSource, java.net.URI me, java.net.URI masterUri, org.Neo4Net.storageengine.api.StoreId storeId, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws IllegalArgumentException, InterruptedException
+//ORIGINAL LINE: private java.net.URI startHaCommunication(org.Neo4Net.kernel.lifecycle.LifeSupport haCommunicationLife, org.Neo4Net.kernel.NeoStoreDataSource neoDataSource, java.net.URI me, java.net.URI masterUri, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws IllegalArgumentException, InterruptedException
 		 private URI StartHaCommunication( LifeSupport haCommunicationLife, NeoStoreDataSource neoDataSource, URI me, URI masterUri, StoreId storeId, CancellationRequest cancellationRequest )
 		 {
 			  MasterClient master = NewMasterClient( masterUri, me, neoDataSource.StoreId, haCommunicationLife );
@@ -444,7 +444,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean executeConsistencyChecks(org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, java.net.URI masterUri, java.net.URI me, org.Neo4Net.storageengine.api.StoreId storeId, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
+//ORIGINAL LINE: private boolean executeConsistencyChecks(org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, java.net.URI masterUri, java.net.URI me, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
 		 private bool ExecuteConsistencyChecks( TransactionIdStore txIdStore, URI masterUri, URI me, StoreId storeId, CancellationRequest cancellationRequest )
 		 {
 			  LifeSupport consistencyCheckLife = new LifeSupport();
@@ -468,7 +468,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.storageengine.api.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable;
+//ORIGINAL LINE: abstract void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable;
 		 internal abstract void CheckDataConsistency( MasterClient masterClient, TransactionIdStore txIdStore, StoreId storeId, URI masterUri, URI me, CancellationRequest cancellationRequest );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

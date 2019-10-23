@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 	using TxState = Neo4Net.Kernel.Impl.Api.state.TxState;
-	using StorageRelationshipTraversalCursor = Neo4Net.Storageengine.Api.StorageRelationshipTraversalCursor;
+	using StorageRelationshipTraversalCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipTraversalCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;

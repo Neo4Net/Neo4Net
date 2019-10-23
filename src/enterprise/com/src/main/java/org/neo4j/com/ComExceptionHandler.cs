@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.com
 {
-	public interface ComExceptionHandler
+	public interface IComExceptionHandler
 	{
 		 void Handle( ComException exception );
 	}

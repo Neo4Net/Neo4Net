@@ -25,14 +25,14 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 
 	public class NodeGetUniqueFromIndexSeekIT : KernelIntegrationTest
 	{
@@ -185,7 +185,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  DoubleLatch latch = new DoubleLatch();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.internal.kernel.api.IndexReference index = createUniquenessConstraint(labelId, propertyId1);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.Internal.IndexReference index = createUniquenessConstraint(labelId, propertyId1);
 			  IndexReference index = CreateUniquenessConstraint( _labelId, _propertyId1 );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = org.Neo4Net.values.storable.Values.of("value");
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 				latch.WaitForAllToStart();
 				try
 				{
-					using ( Transaction tx = Kernel.beginTransaction( Transaction.Type.@implicit, LoginContext.AUTH_DISABLED ) )
+					using ( Transaction tx = Kernel.BeginTransaction( Transaction.Type.@implicit, LoginContext.AUTH_DISABLED ) )
 					{
 						 tx.dataRead().lockingNodeUniqueIndexSeek(index, exact(_propertyId1, value));
 						 tx.success();
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNodeWithValue(org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNodeWithValue(org.Neo4Net.values.storable.Value value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNodeWithValue( Value value )
 		 {
 			  Write write = DataWriteInNewTransaction();
@@ -249,7 +249,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNodeWithValues(org.Neo4Net.values.storable.Value value1, org.Neo4Net.values.storable.Value value2) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNodeWithValues(org.Neo4Net.values.storable.Value value1, org.Neo4Net.values.storable.Value value2) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNodeWithValues( Value value1, Value value2 )
 		 {
 			  Write write = DataWriteInNewTransaction();
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createUniquenessConstraint(int labelId, int... propertyIds) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createUniquenessConstraint(int labelId, int... propertyIds) throws Exception
 		 private IndexReference CreateUniquenessConstraint( int labelId, params int[] propertyIds )
 		 {
 			  Transaction transaction = NewTransaction( LoginContext.AUTH_DISABLED );

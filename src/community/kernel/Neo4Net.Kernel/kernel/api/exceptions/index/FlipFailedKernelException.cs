@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.index
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 	public abstract class FlipFailedKernelException : KernelException
 	{

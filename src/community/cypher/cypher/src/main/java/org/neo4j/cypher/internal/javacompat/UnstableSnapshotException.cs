@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Cypher.Internal.javacompat
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	internal class UnstableSnapshotException : KernelException

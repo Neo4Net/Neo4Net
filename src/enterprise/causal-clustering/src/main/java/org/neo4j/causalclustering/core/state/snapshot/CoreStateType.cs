@@ -86,7 +86,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			return nameValue;
 		}
 
-		public static CoreStateType valueOf( string name )
+		public static CoreStateType ValueOf( string name )
 		{
 			foreach ( CoreStateType enumInstance in CoreStateType.valueList )
 			{

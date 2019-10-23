@@ -496,7 +496,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 				}
 		  }
 
-		 public interface Cancellation
+		 public interface ICancellation
 		 {
 			  bool Cancelled();
 		 }

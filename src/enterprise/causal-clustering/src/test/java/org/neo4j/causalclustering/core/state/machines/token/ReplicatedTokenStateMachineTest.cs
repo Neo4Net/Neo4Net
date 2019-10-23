@@ -39,9 +39,9 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -141,7 +141,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.graphdb.TransactionFailureException
+//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.graphdb.TransactionFailureException
 			  public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 			  {
 					TransactionsToApply.Add( batch.TransactionRepresentation() );

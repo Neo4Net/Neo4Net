@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using RandomExtension = Neo4Net.Test.extension.RandomExtension;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith(RandomExtension.class) class SchemaDescriptorLookupSetTest
@@ -139,23 +139,23 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(org.Neo4Net.storageengine.api.EntityType IEntityType)
-		 internal virtual void ShouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType( IEntityType IEntityType )
+//ORIGINAL LINE: @ParameterizedTest @MethodSource("nodeAndRelationshipEntityTypes") void shouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType(org.Neo4Net.Kernel.Api.StorageEngine.EntityType EntityType)
+		 internal virtual void ShouldMatchOnAnyEntityAndPropertyTokenForPartialPropertySchemaType( EntityType EntityType )
 		 {
 			  // given
 			  SchemaDescriptorLookupSet<SchemaDescriptor> set = new SchemaDescriptorLookupSet<SchemaDescriptor>();
-			  MultiTokenSchemaDescriptor descriptor1 = SchemaDescriptorFactory.multiToken( Ints( 0, 1, 2 ), IEntityType, 3, 4, 5 );
-			  MultiTokenSchemaDescriptor descriptor2 = SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), IEntityType, 3, 4 );
-			  MultiTokenSchemaDescriptor descriptor3 = SchemaDescriptorFactory.multiToken( Ints( 0, 2 ), IEntityType, 4, 5 );
+			  MultiTokenSchemaDescriptor descriptor1 = SchemaDescriptorFactory.multiToken( Ints( 0, 1, 2 ), EntityType, 3, 4, 5 );
+			  MultiTokenSchemaDescriptor descriptor2 = SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), EntityType, 3, 4 );
+			  MultiTokenSchemaDescriptor descriptor3 = SchemaDescriptorFactory.multiToken( Ints( 0, 2 ), EntityType, 4, 5 );
 			  set.Add( descriptor1 );
 			  set.Add( descriptor2 );
 			  set.Add( descriptor3 );
 
 			  // given that this test revolves around IEntity tokens 0,1,2 and property tokens 3,4,5 these 3 descriptors below matches either
 			  // only those tokens for IEntity or property or neither. I.e. these should never be included in matching results
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), IEntityType, 4, 5 ) );
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), IEntityType, 6, 7 ) );
-			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), IEntityType, 6, 7 ) );
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), EntityType, 4, 5 ) );
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 0, 1 ), EntityType, 6, 7 ) );
+			  set.Add( SchemaDescriptorFactory.multiToken( Ints( 3, 4 ), EntityType, 6, 7 ) );
 
 			  // when matching these descriptors (in this case partial/complete list doesn't quite matter because the descriptors
 			  // themselves are partially matched anyway.
@@ -297,7 +297,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  int[] IEntityKeys = RandomUniqueUnsortedIntArray( highEntityKeyId, numberOfEntityKeys );
 			  int numberOfPropertyKeys = _random.Next( 1, maxNumberOfPropertyKeys );
 			  int[] propertyKeys = RandomUniqueUnsortedIntArray( highPropertyKeyId, numberOfPropertyKeys );
-			  return IEntityKeys.Length > 1 ? SchemaDescriptorFactory.multiToken( IEntityKeys, IEntityType.NODE, propertyKeys ) : SchemaDescriptorFactory.forLabel( IEntityKeys[0], propertyKeys );
+			  return IEntityKeys.Length > 1 ? SchemaDescriptorFactory.multiToken( IEntityKeys, EntityType.NODE, propertyKeys ) : SchemaDescriptorFactory.forLabel( IEntityKeys[0], propertyKeys );
 		 }
 
 		 private int[] RandomUniqueUnsortedIntArray( int maxValue, int length )
@@ -343,9 +343,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return labels;
 		 }
 
-		 private static IEntityType[] NodeAndRelationshipEntityTypes()
+		 private static EntityType[] NodeAndRelationshipEntityTypes()
 		 {
-			  return new IEntityType[]{ IEntityType.NODE, IEntityType.RELATIONSHIP };
+			  return new EntityType[]{ EntityType.NODE, EntityType.RELATIONSHIP };
 		 }
 
 		 internal abstract class DescriptorFactory
@@ -381,7 +381,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal abstract Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor descriptor( int IEntityTokenId, params int[] propertyKeyIds );
+			  internal abstract Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor( int IEntityTokenId, params int[] propertyKeyIds );
 
 			 public static IList<DescriptorFactory> values()
 			 {
@@ -398,7 +398,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				 return nameValue;
 			 }
 
-			 public static DescriptorFactory valueOf( string name )
+			 public static DescriptorFactory ValueOf( string name )
 			 {
 				 foreach ( DescriptorFactory enumInstance in DescriptorFactory.valueList )
 				 {

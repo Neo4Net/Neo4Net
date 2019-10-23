@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Test = org.junit.Test;
 
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.rest.transactional
 			  TransactionFacade actions = new TransactionFacade( kernel, null, queryService, registry, NullLogProvider.Instance );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, org.Neo4Net.internal.kernel.api.security.LoginContext.AUTH_DISABLED, -1);
+//ORIGINAL LINE: final TransactionHandle transactionHandle = actions.newTransactionHandle(new DisgustingUriScheme(), true, org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED, -1);
 			  TransactionHandle transactionHandle = actions.NewTransactionHandle( new DisgustingUriScheme(), true, LoginContext.AUTH_DISABLED, -1 );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

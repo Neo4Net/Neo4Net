@@ -36,7 +36,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	/// as part of their state.
 	/// </summary>
 	/// <seealso cref= ClusterState </seealso>
-	public interface ClusterContext : LoggingContext, TimeoutsContext, ConfigurationContext
+	public interface IClusterContext : LoggingContext, TimeoutsContext, ConfigurationContext
 	{
 
 		 // Cluster API

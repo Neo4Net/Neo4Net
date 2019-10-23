@@ -99,7 +99,7 @@ namespace Neo4Net.causalclustering.protocol
 			 return nameValue;
 		 }
 
-		 public static Protocol_ApplicationProtocolCategory valueOf( string name )
+		 public static Protocol_ApplicationProtocolCategory ValueOf( string name )
 		 {
 			 foreach ( Protocol_ApplicationProtocolCategory enumInstance in Protocol_ApplicationProtocolCategory.valueList )
 			 {
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.protocol
 			 return nameValue;
 		 }
 
-		 public static Protocol_ApplicationProtocols valueOf( string name )
+		 public static Protocol_ApplicationProtocols ValueOf( string name )
 		 {
 			 foreach ( Protocol_ApplicationProtocols enumInstance in Protocol_ApplicationProtocols.valueList )
 			 {
@@ -251,7 +251,7 @@ namespace Neo4Net.causalclustering.protocol
 			 return nameValue;
 		 }
 
-		 public static Protocol_ModifierProtocolCategory valueOf( string name )
+		 public static Protocol_ModifierProtocolCategory ValueOf( string name )
 		 {
 			 foreach ( Protocol_ModifierProtocolCategory enumInstance in Protocol_ModifierProtocolCategory.valueList )
 			 {
@@ -359,7 +359,7 @@ namespace Neo4Net.causalclustering.protocol
 			 return nameValue;
 		 }
 
-		 public static Protocol_ModifierProtocols valueOf( string name )
+		 public static Protocol_ModifierProtocols ValueOf( string name )
 		 {
 			 foreach ( Protocol_ModifierProtocols enumInstance in Protocol_ModifierProtocols.valueList )
 			 {

@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using LogEntryWriter = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryWriter;
 	using Neo4Net.Kernel.impl.transaction.log.entry;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

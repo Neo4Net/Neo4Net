@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.index
 	using RecordStorageCommandReaderFactory = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageCommandReaderFactory;
 	using InMemoryClosableChannel = Neo4Net.Kernel.impl.transaction.log.InMemoryClosableChannel;
 	using LogEntryVersion = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryVersion;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

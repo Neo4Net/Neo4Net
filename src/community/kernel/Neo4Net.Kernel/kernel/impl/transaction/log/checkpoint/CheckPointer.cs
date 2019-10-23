@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	/// <summary>
 	/// This interface represent a check pointer which is responsible to write check points in the transaction log.
 	/// </summary>
-	public interface CheckPointer
+	public interface ICheckPointer
 	{
 		 /// <summary>
 		 /// This method will verify that the conditions for triggering a check point hold and in such a case it will write

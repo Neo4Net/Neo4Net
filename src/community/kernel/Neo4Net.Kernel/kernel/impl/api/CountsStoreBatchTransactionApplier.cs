@@ -23,8 +23,8 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using CountsTracker = Neo4Net.Kernel.impl.store.counts.CountsTracker;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	public class CountsStoreBatchTransactionApplier : BatchTransactionApplier_Adapter
 	{

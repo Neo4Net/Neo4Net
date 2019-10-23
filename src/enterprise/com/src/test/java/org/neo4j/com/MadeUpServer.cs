@@ -260,7 +260,7 @@ namespace Neo4Net.com
 				 return nameValue;
 			 }
 
-			 public static MadeUpRequestType valueOf( string name )
+			 public static MadeUpRequestType ValueOf( string name )
 			 {
 				 foreach ( MadeUpRequestType enumInstance in MadeUpRequestType.valueList )
 				 {

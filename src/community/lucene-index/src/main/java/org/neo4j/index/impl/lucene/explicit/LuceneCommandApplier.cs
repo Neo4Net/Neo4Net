@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using AddNodeCommand = Neo4Net.Kernel.impl.index.IndexCommand.AddNodeCommand;
@@ -177,7 +177,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private CommitContext commitContext(org.Neo4Net.kernel.impl.index.IndexCommand command) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: private CommitContext commitContext(org.Neo4Net.kernel.impl.index.IndexCommand command) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 private CommitContext CommitContext( IndexCommand command )
 		 {
 			  IDictionary<string, CommitContext> contextMap = CommitContextMap( command.EntityType );
@@ -199,17 +199,17 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  return context;
 		 }
 
-		 private IDictionary<string, CommitContext> CommitContextMap( sbyte IEntityType )
+		 private IDictionary<string, CommitContext> CommitContextMap( sbyte EntityType )
 		 {
-			  if ( IEntityType == IndexEntityType.Node.id() )
+			  if ( EntityType == IndexEntityType.Node.id() )
 			  {
 					return _nodeContexts;
 			  }
-			  if ( IEntityType == IndexEntityType.Relationship.id() )
+			  if ( EntityType == IndexEntityType.Relationship.id() )
 			  {
 					return _relationshipContexts;
 			  }
-			  throw new System.ArgumentException( "Unknown IEntity type " + IEntityType );
+			  throw new System.ArgumentException( "Unknown IEntity type " + EntityType );
 		 }
 	}
 

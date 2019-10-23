@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	/// Conversation part of HA master SPI.
 	/// Allows to hide dependencies from conversation management.
 	/// </summary>
-	public interface ConversationSPI
+	public interface IConversationSPI
 	{
 		 Neo4Net.Kernel.impl.locking.Locks_Client AcquireClient();
 

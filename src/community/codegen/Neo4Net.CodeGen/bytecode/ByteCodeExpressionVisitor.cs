@@ -597,28 +597,28 @@ namespace Neo4Net.CodeGen.ByteCode
 					switch ( expression.Type().name() )
 					{
 					case "byte":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Byte", "valueOf", "(B)Ljava/lang/Byte;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Byte", "ValueOf", "(B)Ljava/lang/Byte;", false );
 						 break;
 					case "short":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Short", "valueOf", "(S)Ljava/lang/Short;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Short", "ValueOf", "(S)Ljava/lang/Short;", false );
 						 break;
 					case "int":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Integer", "valueOf", "(I)Ljava/lang/Integer;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Integer", "ValueOf", "(I)Ljava/lang/Integer;", false );
 						 break;
 					case "long":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Long", "valueOf", "(J)Ljava/lang/Long;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Long", "ValueOf", "(J)Ljava/lang/Long;", false );
 						 break;
 					case "char":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Character", "valueOf", "(C)Ljava/lang/Character;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Character", "ValueOf", "(C)Ljava/lang/Character;", false );
 						 break;
 					case "boolean":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Boolean", "valueOf", "(Z)Ljava/lang/Boolean;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Boolean", "ValueOf", "(Z)Ljava/lang/Boolean;", false );
 						 break;
 					case "float":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Float", "valueOf", "(F)Ljava/lang/Float;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Float", "ValueOf", "(F)Ljava/lang/Float;", false );
 						 break;
 					case "double":
-						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Double", "valueOf", "(D)Ljava/lang/Double;", false );
+						 _methodVisitor.visitMethodInsn( INVOKESTATIC, "java/lang/Double", "ValueOf", "(D)Ljava/lang/Double;", false );
 						 break;
 					default:
 						 //do nothing, expression is already boxed

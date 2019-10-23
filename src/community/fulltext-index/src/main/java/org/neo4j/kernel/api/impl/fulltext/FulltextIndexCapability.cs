@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	internal class FulltextIndexCapability : IndexCapability
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 		 public override IndexOrder[] OrderCapability( params ValueCategory[] valueCategories )
 		 {
-			  return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderNone;
+			  return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderNone;
 		 }
 
 		 public override IndexValueCapability ValueCapability( params ValueCategory[] valueCategories )

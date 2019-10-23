@@ -33,7 +33,7 @@ namespace Neo4Net.Values
 	/// Note that even though SequenceValue extends Iterable iterating over the sequence using iterator() might not be the
 	/// most performant method. Branch using iterationPreference() in performance critical code paths.
 	/// </summary>
-	public interface SequenceValue : IEnumerable<AnyValue>
+	public interface ISequenceValue : IEnumerable<AnyValue>
 	{
 		 /// <summary>
 		 /// The preferred way to iterate this sequence. Preferred in this case means the method which is expected to be

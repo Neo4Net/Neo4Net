@@ -31,7 +31,7 @@ namespace Neo4Net.Cypher.Internal
 	/// Implements the following interface:
 	/// (since the code is generated it does not actually need to declare it with implements)
 	/// 
-	/// public interface SortTable<T>
+	/// public interface ISortTable<T>
 	/// {
 	///     boolean add( T e );
 	/// 

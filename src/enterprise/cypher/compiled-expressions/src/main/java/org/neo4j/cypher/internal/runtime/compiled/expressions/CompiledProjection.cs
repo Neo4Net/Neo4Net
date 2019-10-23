@@ -28,7 +28,7 @@ namespace Neo4Net.Cypher.Internal.runtime.compiled.expressions
 	/// <summary>
 	/// Interface implemented by compiled projection.
 	/// </summary>
-	public interface CompiledProjection
+	public interface ICompiledProjection
 	{
 		 /// <summary>
 		 /// Performs a projection

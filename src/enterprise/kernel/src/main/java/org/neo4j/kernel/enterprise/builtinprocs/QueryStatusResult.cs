@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
 	using QuerySnapshot = Neo4Net.Kernel.api.query.QuerySnapshot;

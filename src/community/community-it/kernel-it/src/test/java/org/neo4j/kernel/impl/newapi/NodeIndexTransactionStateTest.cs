@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using Neo4Net.Internal.Kernel.Api;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
+	using Neo4Net.Kernel.Api.Internal;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 

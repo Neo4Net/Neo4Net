@@ -78,7 +78,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			return nameValue;
 		}
 
-		public static Role valueOf( string name )
+		public static Role ValueOf( string name )
 		{
 			foreach ( Role enumInstance in Role.valueList )
 			{

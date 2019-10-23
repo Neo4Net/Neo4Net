@@ -27,11 +27,11 @@ namespace Neo4Net.Index
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
@@ -50,9 +50,9 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class IndexSamplingIntegrationTest
 	{
@@ -197,7 +197,7 @@ namespace Neo4Net.Index
 			  assertEquals( _nodes - deletedNodes, indexSizeRegister.ReadSecond() );
 		 }
 
-		 private IndexReference IndexId( Neo4Net.Internal.Kernel.Api.Transaction tx )
+		 private IndexReference IndexId( Neo4Net.Kernel.Api.Internal.Transaction tx )
 		 {
 			  int labelId = tx.TokenRead().nodeLabel(_label.name());
 			  int propertyKeyId = tx.TokenRead().propertyKey(_property);
@@ -205,7 +205,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSamplingValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSamplingValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Register_DoubleLongRegister FetchIndexSamplingValues( IGraphDatabaseService db )
 		 {
 			  try
@@ -215,7 +215,7 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("deprecation") org.Neo4Net.kernel.internal.GraphDatabaseAPI api = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) db;
 					GraphDatabaseAPI api = ( GraphDatabaseAPI ) db;
-					using ( Neo4Net.Internal.Kernel.Api.Transaction tx = api.DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+					using ( Neo4Net.Kernel.Api.Internal.Transaction tx = api.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 					{
 						 return tx.SchemaRead().indexSample(IndexId(tx), Registers.newDoubleLongRegister());
 					}
@@ -230,7 +230,7 @@ namespace Neo4Net.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSizeValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.register.Register_DoubleLongRegister fetchIndexSizeValues(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Register_DoubleLongRegister FetchIndexSizeValues( IGraphDatabaseService db )
 		 {
 			  try
@@ -240,7 +240,7 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("deprecation") org.Neo4Net.kernel.internal.GraphDatabaseAPI api = (org.Neo4Net.kernel.internal.GraphDatabaseAPI) db;
 					GraphDatabaseAPI api = ( GraphDatabaseAPI ) db;
-					using ( Neo4Net.Internal.Kernel.Api.Transaction tx = api.DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+					using ( Neo4Net.Kernel.Api.Internal.Transaction tx = api.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 					{
 						 return tx.SchemaRead().indexUpdatesAndSize(IndexId(tx), Registers.newDoubleLongRegister());
 					}

@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 			return nameValue;
 		}
 
-		public static DeadlockStrategies valueOf( string name )
+		public static DeadlockStrategies ValueOf( string name )
 		{
 			foreach ( DeadlockStrategies enumInstance in DeadlockStrategies.valueList )
 			{

@@ -31,7 +31,7 @@ namespace Neo4Net.GraphDb.Exceptions
 
 		 public QueryExecutionException( string message, Exception cause, string statusCode ) : base( message, cause )
 		 {
-			  this._statusCode = statusCode;
+			  _statusCode = statusCode;
 		 }
 
 		 /// <summary>

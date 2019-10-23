@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Bolt.security.auth
 {
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 	public class BasicAuthenticationResult : AuthenticationResult
 	{
@@ -40,7 +40,7 @@ namespace Neo4Net.Bolt.security.auth
 
 		 public override bool CredentialsExpired()
 		 {
-			  return _loginContext.subject().AuthenticationResult == Neo4Net.Internal.Kernel.Api.security.AuthenticationResult.PasswordChangeRequired;
+			  return _loginContext.subject().AuthenticationResult == Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PasswordChangeRequired;
 		 }
 	}
 

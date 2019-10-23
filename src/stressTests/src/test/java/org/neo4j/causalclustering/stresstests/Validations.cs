@@ -74,7 +74,7 @@ namespace Neo4Net.causalclustering.stresstests
 			return nameValue;
 		}
 
-		public static Validations valueOf( string name )
+		public static Validations ValueOf( string name )
 		{
 			foreach ( Validations enumInstance in Validations.valueList )
 			{

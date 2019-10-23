@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asResourceIterator;

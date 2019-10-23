@@ -114,7 +114,7 @@ namespace Neo4Net.Consistency.checking
 				 return nameValue;
 			 }
 
-			 public static NodeField valueOf( string name )
+			 public static NodeField ValueOf( string name )
 			 {
 				 foreach ( NodeField enumInstance in NodeField.valueList )
 				 {
@@ -195,7 +195,7 @@ namespace Neo4Net.Consistency.checking
 				 return nameValue;
 			 }
 
-			 public static RelationshipTypeField valueOf( string name )
+			 public static RelationshipTypeField ValueOf( string name )
 			 {
 				 foreach ( RelationshipTypeField enumInstance in RelationshipTypeField.valueList )
 				 {
@@ -283,7 +283,7 @@ namespace Neo4Net.Consistency.checking
 				 return nameValue;
 			 }
 
-			 public static GroupField valueOf( string name )
+			 public static GroupField ValueOf( string name )
 			 {
 				 foreach ( GroupField enumInstance in GroupField.valueList )
 				 {
@@ -363,7 +363,7 @@ namespace Neo4Net.Consistency.checking
 				 return nameValue;
 			 }
 
-			 public static RelationshipField valueOf( string name )
+			 public static RelationshipField ValueOf( string name )
 			 {
 				 foreach ( RelationshipField enumInstance in RelationshipField.valueList )
 				 {

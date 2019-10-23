@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.Protocol.VOID_SERIALIZER;
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.ha.com.master
 				 return nameValue;
 			 }
 
-			 public static SlaveRequestType valueOf( string name )
+			 public static SlaveRequestType ValueOf( string name )
 			 {
 				 foreach ( SlaveRequestType enumInstance in SlaveRequestType.valueList )
 				 {

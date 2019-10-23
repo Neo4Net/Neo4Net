@@ -38,17 +38,17 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLogHelper.readLogEntry;
 
 	public class BatchAppendLogEntriesTest
 	{
 		 private readonly Log _log = NullLog.Instance;
-		 private RaftLogEntry _entryA = new RaftLogEntry( 0, valueOf( 100 ) );
-		 private RaftLogEntry _entryB = new RaftLogEntry( 1, valueOf( 200 ) );
-		 private RaftLogEntry _entryC = new RaftLogEntry( 2, valueOf( 300 ) );
-		 private RaftLogEntry _entryD = new RaftLogEntry( 3, valueOf( 400 ) );
+		 private RaftLogEntry _entryA = new RaftLogEntry( 0, ValueOf( 100 ) );
+		 private RaftLogEntry _entryB = new RaftLogEntry( 1, ValueOf( 200 ) );
+		 private RaftLogEntry _entryC = new RaftLogEntry( 2, ValueOf( 300 ) );
+		 private RaftLogEntry _entryD = new RaftLogEntry( 3, ValueOf( 400 ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldApplyMultipleEntries() throws Exception
@@ -98,9 +98,9 @@ namespace Neo4Net.causalclustering.core.consensus.outcome
 			  int offset = 1;
 			  RaftLogEntry[] entries = new RaftLogEntry[]
 			  {
-				  new RaftLogEntry( 0L, valueOf( 0 ) ),
-				  new RaftLogEntry( 1L, valueOf( 1 ) ),
-				  new RaftLogEntry( 2L, valueOf( 2 ) )
+				  new RaftLogEntry( 0L, ValueOf( 0 ) ),
+				  new RaftLogEntry( 1L, ValueOf( 1 ) ),
+				  new RaftLogEntry( 2L, ValueOf( 2 ) )
 			  };
 
 			  BatchAppendLogEntries batchAppend = new BatchAppendLogEntries( baseIndex, offset, entries );

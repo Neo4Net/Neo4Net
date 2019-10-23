@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.ha.com.master
 {
 	using Neo4Net.com;
 
-	public interface Slave
+	public interface ISlave
 	{
 		 Response<Void> PullUpdates( long upToAndIncludingTxId );
 

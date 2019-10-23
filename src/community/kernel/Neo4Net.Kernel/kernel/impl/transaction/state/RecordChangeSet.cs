@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using SchemaRecord = Neo4Net.Kernel.Impl.Store.Records.SchemaRecord;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using IntCounter = Neo4Net.Kernel.impl.util.statistics.IntCounter;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	public class RecordChangeSet : RecordAccessSet
 	{

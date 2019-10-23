@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.security
 {
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 
 	/// <summary>
 	/// Access mode that overrides the original access mode with the overriding mode. Allows exactly what the overriding

@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Test = org.junit.Test;
 	using ExpectedException = org.junit.rules.ExpectedException;
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using OutputMapper = Neo4Net.Kernel.impl.proc.OutputMappers.OutputMapper;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.outputField;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.outputField;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
 
 	public class OutputMappersTest
 	{
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.proc.OutputMappers.OutputMapper mapper(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.proc.OutputMappers.OutputMapper mapper(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private OutputMapper Mapper( Type clazz )
 		 {
 			  return ( new OutputMappers( new TypeMappers() ) ).Mapper(clazz);

@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using WritableIndexPartitionFactory = Neo4Net.Kernel.Api.Impl.Index.partition.WritableIndexPartitionFactory;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
-	using AbstractIndexReader = Neo4Net.Storageengine.Api.schema.AbstractIndexReader;
+	using AbstractIndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
@@ -265,14 +265,14 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.storageengine.api.schema.AbstractIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createSimpleReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 			  protected internal override AbstractIndexReader CreateSimpleReader( IList<AbstractIndexPartition> partitions )
 			  {
 					return null;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.storageengine.api.schema.AbstractIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader createPartitionedReader(java.util.List<org.Neo4Net.kernel.api.impl.index.partition.AbstractIndexPartition> partitions) throws java.io.IOException
 			  protected internal override AbstractIndexReader CreatePartitionedReader( IList<AbstractIndexPartition> partitions )
 			  {
 					return null;

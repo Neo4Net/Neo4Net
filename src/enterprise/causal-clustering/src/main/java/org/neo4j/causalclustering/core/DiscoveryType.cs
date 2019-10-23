@@ -117,7 +117,7 @@ namespace Neo4Net.causalclustering.core
 			return nameValue;
 		}
 
-		public static DiscoveryType valueOf( string name )
+		public static DiscoveryType ValueOf( string name )
 		{
 			foreach ( DiscoveryType enumInstance in DiscoveryType.valueList )
 			{

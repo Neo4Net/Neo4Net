@@ -109,7 +109,7 @@ namespace Neo4Net.CodeGen.ByteCode
 			return nameValue;
 		}
 
-		public static ByteCode valueOf( string name )
+		public static ByteCode ValueOf( string name )
 		{
 			foreach ( ByteCode enumInstance in ByteCode.valueList )
 			{

@@ -33,24 +33,24 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using LabelEntry = Neo4Net.GraphDb.Events.LabelEntry;
 	using Neo4Net.GraphDb.Events;
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using LabelNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using NodeProxy = Neo4Net.Kernel.impl.core.NodeProxy;
 	using RelationshipProxy = Neo4Net.Kernel.impl.core.RelationshipProxy;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
-	using NodeState = Neo4Net.Storageengine.Api.txstate.NodeState;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using RelationshipState = Neo4Net.Storageengine.Api.txstate.RelationshipState;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
+	using NodeState = Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using RelationshipState = Neo4Net.Kernel.Api.StorageEngine.TxState.RelationshipState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 //	import static Math.toIntExact;
 
 	/// <summary>
-	/// Transform for <seealso cref="org.Neo4Net.storageengine.api.txstate.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
+	/// Transform for <seealso cref="org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState"/> to make it accessible as <seealso cref="TransactionData"/>.
 	/// </summary>
 	public class TxStateTransactionDataSnapshot : TransactionData
 	{
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 							 });
       
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.LongDiffSets labels = nodeState.labelDiffSets();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets labels = nodeState.labelDiffSets();
 							 LongDiffSets labels = nodeState.LabelDiffSets();
 							 AddLabelEntriesTo( nodeId, labels.Added, _assignedLabels );
 							 AddLabelEntriesTo( nodeId, labels.Removed, _removedLabels );

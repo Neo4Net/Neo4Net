@@ -33,10 +33,10 @@ namespace Neo4Net.Server.rest.transactional
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using SpatialMocks = Neo4Net.Test.mockito.mock.SpatialMocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -374,7 +374,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyCRSStructure(org.Neo4Net.graphdb.spatial.CRS crs) throws java.io.IOException
+//ORIGINAL LINE: private void verifyCRSStructure(org.Neo4Net.GraphDb.Spatial.CRS crs) throws java.io.IOException
 		 private void VerifyCRSStructure( CRS crs )
 		 {
 			  // When

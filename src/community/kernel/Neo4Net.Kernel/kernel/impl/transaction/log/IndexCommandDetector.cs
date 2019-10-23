@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 {
 
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	internal sealed class IndexCommandDetector : Neo4Net.Helpers.Collections.Visitor<StorageCommand, IOException>
 	{

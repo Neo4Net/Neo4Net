@@ -34,7 +34,7 @@ namespace Neo4Net.Cypher.Internal.codegen.profiling
 
 	public class ProfilingTracer : QueryExecutionTracer, QueryProfile
 	{
-		 public interface Clock
+		 public interface IClock
 		 {
 			  long NanoTime();
 		 }

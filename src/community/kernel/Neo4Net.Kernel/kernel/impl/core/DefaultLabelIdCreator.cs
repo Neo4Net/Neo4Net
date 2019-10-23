@@ -20,10 +20,10 @@
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
-	using TooManyLabelsException = Neo4Net.Internal.Kernel.Api.exceptions.schema.TooManyLabelsException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
 
 	public class DefaultLabelIdCreator : IsolatedTransactionTokenCreator
 	{
@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected int createKey(org.Neo4Net.internal.kernel.api.Transaction transaction, String name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: protected int createKey(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 protected internal override int CreateKey( Transaction transaction, string name )
 		 {
 			  return transaction.TokenWrite().labelCreateForName(name);

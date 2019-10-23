@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	public interface CountsVisitor
+	public interface ICountsVisitor
 	{
 
 		 void VisitNodeCount( int labelId, long count );
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 void VisitIndexSample( long indexId, long unique, long size );
 	}
 
-	 public interface CountsVisitor_Visitable
+	 public interface ICountsVisitor_Visitable
 	 {
 		  void Accept( CountsVisitor visitor );
 	 }

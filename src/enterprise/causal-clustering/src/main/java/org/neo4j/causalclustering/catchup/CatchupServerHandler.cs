@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.catchup
 {
 	using ChannelHandler = io.netty.channel.ChannelHandler;
 
-	public interface CatchupServerHandler
+	public interface ICatchupServerHandler
 	{
 		 ChannelHandler TxPullRequestHandler( CatchupServerProtocol catchupServerProtocol );
 

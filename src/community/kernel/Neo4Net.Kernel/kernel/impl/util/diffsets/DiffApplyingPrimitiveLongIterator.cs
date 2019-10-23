@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.impl.util.diffsets
 				 return nameValue;
 			 }
 
-			 public static Phase valueOf( string name )
+			 public static Phase ValueOf( string name )
 			 {
 				 foreach ( Phase enumInstance in Phase.valueList )
 				 {

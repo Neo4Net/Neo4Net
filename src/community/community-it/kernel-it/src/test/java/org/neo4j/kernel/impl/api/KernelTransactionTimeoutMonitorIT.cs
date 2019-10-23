@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  return () =>
 			  {
-				using ( InternalTransaction ignored = Database.beginTransaction( KernelTransaction.Type.@implicit, LoginContext.AUTH_DISABLED, 1, TimeUnit.SECONDS ) )
+				using ( InternalTransaction ignored = Database.BeginTransaction( KernelTransaction.Type.@implicit, LoginContext.AUTH_DISABLED, 1, TimeUnit.SECONDS ) )
 				{
 					 Node node = Database.getNodeById( NODE_ID );
 					 node.setProperty( "c", "d" );

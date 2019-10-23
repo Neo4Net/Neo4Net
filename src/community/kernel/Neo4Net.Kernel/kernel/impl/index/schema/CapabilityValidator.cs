@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	internal class CapabilityValidator

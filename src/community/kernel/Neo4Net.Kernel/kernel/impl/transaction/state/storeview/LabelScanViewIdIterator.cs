@@ -20,13 +20,13 @@
 namespace Neo4Net.Kernel.impl.transaction.state.storeview
 {
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using StorageEntityScanCursor = Neo4Net.Storageengine.Api.StorageEntityScanCursor;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using StorageEntityScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageEntityScanCursor;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 	/// <summary>
 	/// Node id iterator used during index population when we go over node ids indexed in label scan store.
 	/// </summary>
-	internal class LabelScanViewIdIterator<CURSOR> : IEntityIdIterator where CURSOR : Neo4Net.Storageengine.Api.StorageEntityScanCursor
+	internal class LabelScanViewIdIterator<CURSOR> : IEntityIdIterator where CURSOR : Neo4Net.Kernel.Api.StorageEngine.StorageEntityScanCursor
 	{
 		 private readonly int[] _labelIds;
 		 private readonly LabelScanReader _labelScanReader;

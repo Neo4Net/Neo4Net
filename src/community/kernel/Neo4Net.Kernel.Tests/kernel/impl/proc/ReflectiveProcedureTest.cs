@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using Neo4Net.Collections;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using ResourceCloseFailureException = Neo4Net.Kernel.Api.Exceptions.ResourceCloseFailureException;
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("WeakerAccess") public class ReflectiveProcedureTest
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInjectLogging()
 		 {
@@ -692,7 +692,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableProcedure> Compile( Type clazz )
 		 {
 			  return _procedureCompiler.compileProcedure( clazz, null, true );

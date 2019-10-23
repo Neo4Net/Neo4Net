@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 	using Mockito = org.mockito.Mockito;
 
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

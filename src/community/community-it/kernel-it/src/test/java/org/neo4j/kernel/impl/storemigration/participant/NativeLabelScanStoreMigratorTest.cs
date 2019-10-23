@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using ProgressReporter = Neo4Net.Kernel.impl.util.monitoring.ProgressReporter;
 	using Lifespan = Neo4Net.Kernel.Lifecycle.Lifespan;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

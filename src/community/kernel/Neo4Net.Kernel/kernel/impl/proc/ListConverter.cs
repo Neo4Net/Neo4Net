@@ -22,11 +22,11 @@
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntList;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseList;
 

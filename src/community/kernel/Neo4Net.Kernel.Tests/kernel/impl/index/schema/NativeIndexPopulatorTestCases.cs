@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using ValueType = Neo4Net.Values.Storable.ValueType;
@@ -122,7 +122,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 public interface PopulatorFactory<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NativeIndexPopulator<KEY,VALUE> create(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws java.io.IOException;
+//ORIGINAL LINE: NativeIndexPopulator<KEY,VALUE> create(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws java.io.IOException;
 			  NativeIndexPopulator<KEY, VALUE> Create( PageCache pageCache, FileSystemAbstraction fs, File storeFile, IndexLayout<KEY, VALUE> layout, IndexProvider.Monitor monitor, StoreIndexDescriptor descriptor );
 		 }
 	}

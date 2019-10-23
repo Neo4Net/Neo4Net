@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.core
 {
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 
 	/// <summary>
 	/// Token registry provide id -> TOKEN and name -> id mappings.
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void putAll(java.util.List<org.Neo4Net.internal.kernel.api.NamedToken> tokens) throws NonUniqueTokenException
+//ORIGINAL LINE: public void putAll(java.util.List<org.Neo4Net.Kernel.Api.Internal.NamedToken> tokens) throws NonUniqueTokenException
 		 public virtual void PutAll( IList<NamedToken> tokens )
 		 {
 			  IDictionary<string, int> newNameToId = new Dictionary<string, int>();
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.impl.core
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void put(org.Neo4Net.internal.kernel.api.NamedToken token) throws NonUniqueTokenException
+//ORIGINAL LINE: public void put(org.Neo4Net.Kernel.Api.Internal.NamedToken token) throws NonUniqueTokenException
 		 public virtual void Put( NamedToken token )
 		 {
 			  _idToToken[token.Id()] = token;

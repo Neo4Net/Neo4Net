@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	/// <summary>
 	/// Used in lock clients for cases when we unable to acquire a lock for a time that exceed configured

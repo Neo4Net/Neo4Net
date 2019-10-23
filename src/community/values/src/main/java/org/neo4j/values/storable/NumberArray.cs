@@ -22,7 +22,7 @@
 namespace Neo4Net.Values.Storable
 {
 
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
 
 	public abstract class NumberArray : ArrayValue
 	{

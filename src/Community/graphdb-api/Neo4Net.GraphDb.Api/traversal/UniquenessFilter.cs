@@ -34,15 +34,15 @@ namespace Neo4Net.GraphDb.Traversal
         ///               the start node in the traversal. </param>
         /// <returns> whether or not {@code branch} is unique, and hence can be
         ///         visited in this traversal. </returns>
-        bool CheckFirst(TraversalBranch branch);
+        bool CheckFirst(ITraversalBranch branch);
 
         /// <summary>
         /// Checks whether or not {@code branch} is unique, and hence can be
         /// visited in this traversal.
         /// </summary>
-        /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for uniqueness. </param>
+        /// <param name="branch"> the <seealso cref="ITraversalBranch"/> to check for uniqueness. </param>
         /// <returns> whether or not {@code branch} is unique, and hence can be
         ///         visited in this traversal. </returns>
-        bool Check(TraversalBranch branch);
+        bool Check(ITraversalBranch branch);
     }
 }

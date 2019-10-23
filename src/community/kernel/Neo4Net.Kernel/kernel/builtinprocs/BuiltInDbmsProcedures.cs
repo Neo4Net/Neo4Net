@@ -20,9 +20,9 @@
 namespace Neo4Net.Kernel.builtinprocs
 {
 
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using QueryExecutionEngine = Neo4Net.Kernel.impl.query.QueryExecutionEngine;
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public GraphDatabaseAPI Graph;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

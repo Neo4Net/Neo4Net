@@ -23,10 +23,10 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Api.Impl.Index.sampler
 {
 
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 
 	/// <summary>
 	/// Index sampler implementation that provide total sampling result of multiple provided samples, by aggregating their

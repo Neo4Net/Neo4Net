@@ -23,7 +23,7 @@
 namespace Neo4Net.com
 {
 	using ResponseUnpacker = Neo4Net.com.storecopy.ResponseUnpacker;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// <seealso cref="Response"/> that carries <seealso cref="TransactionStream transaction data"/> as a side-effect, to be applied

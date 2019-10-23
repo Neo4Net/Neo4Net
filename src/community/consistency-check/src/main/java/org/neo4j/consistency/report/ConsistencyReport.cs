@@ -35,10 +35,10 @@ namespace Neo4Net.Consistency.report
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
-	public interface ConsistencyReport
+	public interface IConsistencyReport
 	{
 	}
 
@@ -46,7 +46,7 @@ namespace Neo4Net.Consistency.report
 	 {
 	 }
 
-	 public interface ConsistencyReport_Reporter
+	 public interface IConsistencyReport_Reporter
 	 {
 		  void ForSchema( DynamicRecord schema, RecordCheck<DynamicRecord, ConsistencyReport_SchemaConsistencyReport> checker );
 
@@ -75,7 +75,7 @@ namespace Neo4Net.Consistency.report
 		  void ForCounts( CountsEntry countsEntry, RecordCheck<CountsEntry, ConsistencyReport_CountsConsistencyReport> checker );
 	 }
 
-	 public interface ConsistencyReport_PrimitiveConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_PrimitiveConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The referenced property record is not in use.")]
 		  void PropertyNotInUse( PropertyRecord property );
@@ -102,11 +102,11 @@ namespace Neo4Net.Consistency.report
 		  void PropertyChainContainsCircularReference( PropertyRecord propertyRecord );
 	 }
 
-	 public interface ConsistencyReport_NeoStoreConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
+	 public interface IConsistencyReport_NeoStoreConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
 	 {
 	 }
 
-	 public interface ConsistencyReport_SchemaConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_SchemaConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The label token record referenced from the schema is not in use.")]
 		  void LabelNotInUse( LabelTokenRecord label );
@@ -124,7 +124,7 @@ namespace Neo4Net.Consistency.report
 		  void ConstraintIndexRuleNotReferencingBack( DynamicRecord ruleRecord );
 
 		  [Documented("This record is required to reference some other record of the given kind but no such obligation " + "was found")]
-		  void MissingObligation( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind );
+		  void MissingObligation( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind );
 
 		  [Documented("This record requires some other record to reference back to it but there already was such " + "a conflicting obligation created by the record given as a parameter")]
 		  void DuplicateObligation( DynamicRecord record );
@@ -136,15 +136,15 @@ namespace Neo4Net.Consistency.report
 		  void MalformedSchemaRule();
 
 		  [Documented("The schema rule contained in the DynamicRecord chain is of an unrecognized Kind")]
-		  void UnsupportedSchemaRuleKind( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind );
+		  void UnsupportedSchemaRuleKind( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Warning @Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.") void schemaRuleNotOnline(org.Neo4Net.storageengine.api.schema.SchemaRule schemaRule);
+//ORIGINAL LINE: @Warning @Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.") void schemaRuleNotOnline(org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule schemaRule);
 		  [Documented("The schema rule contained in the DynamicRecord chain has a reference to a schema rule that is not online.")]
 		  void SchemaRuleNotOnline( SchemaRule schemaRule );
 	 }
 
-	 public interface ConsistencyReport_NodeConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
+	 public interface IConsistencyReport_NodeConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
 	 {
 		  [Documented("The referenced relationship record is not in use.")]
 		  void RelationshipNotInUse( RelationshipRecord referenced );
@@ -189,7 +189,7 @@ namespace Neo4Net.Consistency.report
 		  void RelationshipGroupHasOtherOwner( RelationshipGroupRecord group );
 	 }
 
-	 public interface ConsistencyReport_RelationshipConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
+	 public interface IConsistencyReport_RelationshipConsistencyReport : ConsistencyReport_PrimitiveConsistencyReport
 	 {
 		  [Documented("The relationship record is not in use, but referenced from relationships chain.")]
 		  void NotUsedRelationshipReferencedInChain( RelationshipRecord relationshipRecord );
@@ -255,7 +255,7 @@ namespace Neo4Net.Consistency.report
 		  void IndexedMultipleTimes( StoreIndexDescriptor index, object[] propertyValues, long count );
 	 }
 
-	 public interface ConsistencyReport_PropertyConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_PropertyConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The property key as an invalid value.")]
 		  void InvalidPropertyKey( PropertyBlock block );
@@ -321,7 +321,7 @@ namespace Neo4Net.Consistency.report
 		  void ArrayMultipleOwners( DynamicRecord dynamic );
 	 }
 
-	 public interface ConsistencyReport_NameConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_NameConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The name block is not in use.")]
 		  void NameBlockNotInUse( DynamicRecord record );
@@ -335,25 +335,25 @@ namespace Neo4Net.Consistency.report
 		  void NameMultipleOwners( DynamicRecord otherOwner );
 	 }
 
-	 public interface ConsistencyReport_RelationshipTypeConsistencyReport : ConsistencyReport_NameConsistencyReport
+	 public interface IConsistencyReport_RelationshipTypeConsistencyReport : ConsistencyReport_NameConsistencyReport
 	 {
 		  [Documented("The string record referred from this relationship type is also referred from a another relationship type.")]
 		  void NameMultipleOwners( RelationshipTypeTokenRecord otherOwner );
 	 }
 
-	 public interface ConsistencyReport_LabelTokenConsistencyReport : ConsistencyReport_NameConsistencyReport
+	 public interface IConsistencyReport_LabelTokenConsistencyReport : ConsistencyReport_NameConsistencyReport
 	 {
 		  [Documented("The string record referred from this label name is also referred from a another label name.")]
 		  void NameMultipleOwners( LabelTokenRecord otherOwner );
 	 }
 
-	 public interface ConsistencyReport_PropertyKeyTokenConsistencyReport : ConsistencyReport_NameConsistencyReport
+	 public interface IConsistencyReport_PropertyKeyTokenConsistencyReport : ConsistencyReport_NameConsistencyReport
 	 {
 		  [Documented("The string record referred from this key is also referred from a another key.")]
 		  void NameMultipleOwners( PropertyKeyTokenRecord otherOwner );
 	 }
 
-	 public interface ConsistencyReport_RelationshipGroupConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_RelationshipGroupConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The relationship type field has an illegal value.")]
 		  void IllegalRelationshipType();
@@ -404,7 +404,7 @@ namespace Neo4Net.Consistency.report
 		  void NextHasOtherOwner( RelationshipGroupRecord referred );
 	 }
 
-	 public interface ConsistencyReport_DynamicConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_DynamicConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The next block is not in use.")]
 		  void NextNotInUse( DynamicRecord next );
@@ -446,7 +446,7 @@ namespace Neo4Net.Consistency.report
 		  void OrphanDynamicRecord();
 	 }
 
-	 public interface ConsistencyReport_DynamicLabelConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_DynamicLabelConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("This label record is not referenced by its owning node record or that record is not in use.")]
 		  void OrphanDynamicLabelRecordDueToInvalidOwner( NodeRecord owningNodeRecord );
@@ -455,7 +455,7 @@ namespace Neo4Net.Consistency.report
 		  void OrphanDynamicLabelRecord();
 	 }
 
-	 public interface ConsistencyReport_NodeInUseWithCorrectLabelsReport : ConsistencyReport
+	 public interface IConsistencyReport_NodeInUseWithCorrectLabelsReport : ConsistencyReport
 	 {
 		  void NodeNotInUse( NodeRecord referredNodeRecord );
 
@@ -464,14 +464,14 @@ namespace Neo4Net.Consistency.report
 		  void NodeLabelNotInIndex( NodeRecord referredNodeRecord, long missingLabelId );
 	 }
 
-	 public interface ConsistencyReport_RelationshipInUseWithCorrectRelationshipTypeReport : ConsistencyReport
+	 public interface IConsistencyReport_RelationshipInUseWithCorrectRelationshipTypeReport : ConsistencyReport
 	 {
 		  void RelationshipNotInUse( RelationshipRecord referredRelationshipRecord );
 
 		  void RelationshipDoesNotHaveExpectedRelationshipType( RelationshipRecord referredRelationshipRecord, long expectedRelationshipTypeId );
 	 }
 
-	 public interface ConsistencyReport_LabelScanConsistencyReport : ConsistencyReport_NodeInUseWithCorrectLabelsReport
+	 public interface IConsistencyReport_LabelScanConsistencyReport : ConsistencyReport_NodeInUseWithCorrectLabelsReport
 	 {
 		  [Documented("This label scan document refers to a node record that is not in use.")]
 		  void NodeNotInUse( NodeRecord referredNodeRecord );
@@ -488,7 +488,7 @@ namespace Neo4Net.Consistency.report
 		  void DirtyIndex();
 	 }
 
-	 public interface ConsistencyReport_IndexConsistencyReport : ConsistencyReport_NodeInUseWithCorrectLabelsReport, ConsistencyReport_RelationshipInUseWithCorrectRelationshipTypeReport
+	 public interface IConsistencyReport_IndexConsistencyReport : ConsistencyReport_NodeInUseWithCorrectLabelsReport, ConsistencyReport_RelationshipInUseWithCorrectRelationshipTypeReport
 	 {
 		  [Documented("This index entry refers to a node record that is not in use.")]
 		  void NodeNotInUse( NodeRecord referredNodeRecord );
@@ -514,7 +514,7 @@ namespace Neo4Net.Consistency.report
 		  void RelationshipConstraintIndex();
 	 }
 
-	 public interface ConsistencyReport_CountsConsistencyReport : ConsistencyReport
+	 public interface IConsistencyReport_CountsConsistencyReport : ConsistencyReport
 	 {
 		  [Documented("The node count does not correspond with the expected count.")]
 		  void InconsistentNodeCount( long expectedCount );

@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static TestStringCharset valueOf( string name )
+		public static TestStringCharset ValueOf( string name )
 		{
 			foreach ( TestStringCharset enumInstance in TestStringCharset.valueList )
 			{

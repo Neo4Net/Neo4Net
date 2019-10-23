@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 {
 
 	using Neo4Net.causalclustering.routing.load_balancing.filters;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Log = Neo4Net.Logging.Log;
 
@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Policy selectFor(java.util.Map<String,String> context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: Policy selectFor(java.util.Map<String,String> context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 internal virtual Policy SelectFor( IDictionary<string, string> context )
 		 {
 			  string policyName = context[POLICY_KEY];

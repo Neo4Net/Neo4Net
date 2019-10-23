@@ -38,17 +38,17 @@ namespace Neo4Net.Consistency.checking.full
 	using IndexAccessors = Neo4Net.Consistency.checking.index.IndexAccessors;
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using LookupFilter = Neo4Net.Kernel.Impl.Api.LookupFilter;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using PropertyBlock = Neo4Net.Kernel.Impl.Store.Records.PropertyBlock;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -96,7 +96,7 @@ namespace Neo4Net.Consistency.checking.full
 			  foreach ( StoreIndexDescriptor indexRule in _indexes.onlineRules() )
 			  {
 					SchemaDescriptor schema = indexRule.Schema();
-					if ( Schema.entityType() == IEntityType.NODE && Schema.isAffected(labels) )
+					if ( Schema.entityType() == EntityType.NODE && Schema.isAffected(labels) )
 					{
 						 if ( nodePropertyMap == null )
 						 {
@@ -250,7 +250,7 @@ namespace Neo4Net.Consistency.checking.full
 
 		 internal static bool IEntityIntersectsSchema( IntObjectMap<PropertyBlock> IEntityPropertyMap, SchemaDescriptor schema )
 		 {
-			  bool requireAllTokens = Schema.propertySchemaType() == Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType.CompleteAllTokens;
+			  bool requireAllTokens = Schema.propertySchemaType() == Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.CompleteAllTokens;
 			  if ( requireAllTokens )
 			  {
 					return HasAllProperties( IEntityPropertyMap, Schema.PropertyIds );

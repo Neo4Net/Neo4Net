@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 

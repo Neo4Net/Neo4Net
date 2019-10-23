@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
+	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
 	using DefaultValueMapper = Neo4Net.Kernel.impl.util.DefaultValueMapper;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using SequenceValue = Neo4Net.Values.SequenceValue;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.proc
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.DefaultParameterValue.ntByteArray;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue.ntByteArray;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.proc.ParseUtil.parseList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.impl.query
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthSubject.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthSubject.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 

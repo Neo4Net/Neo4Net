@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.locking
 	/// </summary>
 	public abstract class DynamicLocksFactory : Service, LocksFactory
 	{
-		public abstract Locks NewInstance( Neo4Net.Kernel.configuration.Config config, java.time.Clock clock, Neo4Net.Storageengine.Api.@lock.ResourceType[] resourceTypes );
+		public abstract Locks NewInstance( Neo4Net.Kernel.configuration.Config config, java.time.Clock clock, Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType[] resourceTypes );
 		 public DynamicLocksFactory( string key, params string[] altKeys ) : base( key, altKeys )
 		 {
 		 }

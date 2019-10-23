@@ -32,7 +32,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Statement = org.junit.runners.model.Statement;
 
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 	using Log = Neo4Net.Logging.Log;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;

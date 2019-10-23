@@ -156,7 +156,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 			  config.Augment( GraphDatabaseSettings.logical_log_rotation_threshold, "1M" ); // 1 mebibyte
 
 			  // and
-			  Neo4Net.Storageengine.Api.StoreId storeId = SimulateStoreCopy();
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = SimulateStoreCopy();
 
 			  // and
 			  long fromTxId = BASE_TX_ID;
@@ -184,7 +184,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 			  config.Augment( GraphDatabaseSettings.logical_log_rotation_threshold, "1M" ); // 1 mebibyte
 
 			  // and
-			  Neo4Net.Storageengine.Api.StoreId storeId = SimulateStoreCopy();
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = SimulateStoreCopy();
 
 			  // and
 			  long fromTxId = BASE_TX_ID;
@@ -204,7 +204,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 //ORIGINAL LINE: private void createTransactionLogWithCheckpoint(org.Neo4Net.kernel.configuration.Config config, boolean logsInStoreDir) throws java.io.IOException
 		 private void CreateTransactionLogWithCheckpoint( Config config, bool logsInStoreDir )
 		 {
-			  Neo4Net.Storageengine.Api.StoreId storeId = SimulateStoreCopy();
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = SimulateStoreCopy();
 
 			  int fromTxId = 37;
 			  int endTxId = fromTxId + 5;
@@ -276,11 +276,11 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.storageengine.api.StoreId simulateStoreCopy() throws java.io.IOException
-		 private Neo4Net.Storageengine.Api.StoreId SimulateStoreCopy()
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.StoreId simulateStoreCopy() throws java.io.IOException
+		 private Neo4Net.Kernel.Api.StorageEngine.StoreId SimulateStoreCopy()
 		 {
 			  // create an empty store
-			  Neo4Net.Storageengine.Api.StoreId storeId;
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId;
 			  NeoStoreDataSource ds = DsRule.getDataSource( _databaseLayout, _fs, _pageCache );
 			  using ( Lifespan ignored = new Lifespan( ds ) )
 			  {
@@ -295,7 +295,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 			  return storeId;
 		 }
 
-		 private StoreId ToCasualStoreId( Neo4Net.Storageengine.Api.StoreId storeId )
+		 private StoreId ToCasualStoreId( Neo4Net.Kernel.Api.StorageEngine.StoreId storeId )
 		 {
 			  return new StoreId( storeId.CreationTime, storeId.RandomId, storeId.UpgradeTime, storeId.UpgradeId );
 		 }

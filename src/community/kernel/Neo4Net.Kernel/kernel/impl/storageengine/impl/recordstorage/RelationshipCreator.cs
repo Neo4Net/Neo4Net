@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Neo4Net.Kernel.impl.transaction.state;
 	using RecordAccessSet = Neo4Net.Kernel.impl.transaction.state.RecordAccessSet;
 	using DirectionWrapper = Neo4Net.Kernel.impl.util.DirectionWrapper;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
 
 	public class RelationshipCreator
 	{

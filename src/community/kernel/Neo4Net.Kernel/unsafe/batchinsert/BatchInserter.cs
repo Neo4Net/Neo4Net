@@ -24,8 +24,8 @@ namespace Neo4Net.@unsafe.Batchinsert
 
 	using Label = Neo4Net.GraphDb.Label;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
 
 	/// <summary>
 	/// The batch inserter drops support for transactions and concurrency in favor

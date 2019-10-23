@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 			  _state = new TxState();
 		 }
 
-		 internal class GatheringVisitor : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 internal class GatheringVisitor : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			  internal class PropertyChange
 			  {

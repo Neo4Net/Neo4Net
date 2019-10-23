@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.api.security
 {
 
 	using Service = Neo4Net.Helpers.Service;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.api.security
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, java.io.IOException;
+//ORIGINAL LINE: public abstract void setup(Dependencies dependencies) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, java.io.IOException;
 		 public abstract void Setup( Dependencies dependencies );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

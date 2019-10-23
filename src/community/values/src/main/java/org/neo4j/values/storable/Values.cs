@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Values.Storable
 {
 
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.DateTimeValue.datetime;

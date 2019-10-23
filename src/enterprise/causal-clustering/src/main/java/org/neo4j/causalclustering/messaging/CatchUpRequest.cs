@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.messaging
 {
 	using RequestMessageType = Neo4Net.causalclustering.catchup.RequestMessageType;
 
-	public interface CatchUpRequest : Message
+	public interface ICatchUpRequest : Message
 	{
 		 RequestMessageType MessageType();
 	}

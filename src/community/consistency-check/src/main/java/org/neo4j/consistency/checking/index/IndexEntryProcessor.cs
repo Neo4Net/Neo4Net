@@ -23,8 +23,8 @@ namespace Neo4Net.Consistency.checking.index
 	using Neo4Net.Consistency.checking.full;
 	using ConsistencyReporter = Neo4Net.Consistency.report.ConsistencyReporter;
 	using IndexEntry = Neo4Net.Consistency.store.synthetic.IndexEntry;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	public class IndexEntryProcessor : Neo4Net.Consistency.checking.full.RecordProcessor_Adapter<long>
 	{

@@ -105,7 +105,7 @@ namespace Neo4Net.Helpers
             {
                return lhs < 0 ? -1 : +1;
             }
-            return decimal.valueOf(lhs).CompareTo(decimal.valueOf(rhs));
+            return decimal.ValueOf(lhs).CompareTo(decimal.ValueOf(rhs));
          }
          return lhs.CompareTo(rhs);
       }

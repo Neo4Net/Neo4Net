@@ -24,18 +24,18 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal abstract class NativeIndexProgressor<KEY, VALUE> : IndexProgressor where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
 		public abstract bool Next();
 		 internal readonly IRawCursor<Hit<KEY, VALUE>, IOException> Seeker;
-		 internal readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient Client;
+		 internal readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient Client;
 		 private readonly ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> _toRemoveFromOnClose;
 		 private bool _closed;
 
-		 internal NativeIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose )
+		 internal NativeIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose )
 		 {
 			  this.Seeker = seeker;
 			  this.Client = client;

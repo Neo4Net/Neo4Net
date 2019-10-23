@@ -39,7 +39,7 @@ namespace Neo4Net.backup.impl
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.jboss.netty.buffer.ChannelBuffers.EMPTY_BUFFER;

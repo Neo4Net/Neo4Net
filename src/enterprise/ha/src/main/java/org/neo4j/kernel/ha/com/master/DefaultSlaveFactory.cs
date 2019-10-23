@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class DefaultSlaveFactory : SlaveFactory
 	{

@@ -31,7 +31,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 	{
 		public abstract long Ordinal( STATE state );
 		public abstract STATE StartState();
-		public override abstract void Marshal( STATE state, Neo4Net.Storageengine.Api.WritableChannel channel );
+		public override abstract void Marshal( STATE state, Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel );
 	}
 
 }

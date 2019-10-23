@@ -26,10 +26,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using WritableIndexPartitionFactory = Neo4Net.Kernel.Api.Impl.Index.partition.WritableIndexPartitionFactory;
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds )
 		 {
 			  luceneIndex.verifyUniqueness( accessor, propertyKeyIds );
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// {@inheritDoc}
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds, IList<Value[]> updatedValueTuples )
 		 {
 			  luceneIndex.verifyUniqueness( accessor, propertyKeyIds, updatedValueTuples );

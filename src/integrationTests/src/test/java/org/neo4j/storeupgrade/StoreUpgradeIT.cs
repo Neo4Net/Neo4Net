@@ -44,9 +44,9 @@ namespace Neo4Net.storeupgrade
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -91,7 +91,7 @@ namespace Neo4Net.storeupgrade
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.count;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.ha.ClusterManager.allSeesAllAsAvailable;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -411,7 +411,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkInstance(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static void checkInstance(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static void CheckInstance( Store store, GraphDatabaseAPI db )
 		 {
 			  CheckProvidedParameters( store, db );
@@ -421,7 +421,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void checkIndexCounts(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static void checkIndexCounts(Store store, org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static void CheckIndexCounts( Store store, GraphDatabaseAPI db )
 		 {
 			  InwardKernel kernel = Db.DependencyResolver.resolveDependency( typeof( InwardKernel ) );
@@ -542,7 +542,7 @@ namespace Neo4Net.storeupgrade
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static org.Neo4Net.internal.kernel.api.IndexReference awaitOnline(org.Neo4Net.internal.kernel.api.SchemaRead schemRead, org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.IndexReference awaitOnline(org.Neo4Net.Kernel.Api.Internal.SchemaRead schemRead, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private static IndexReference AwaitOnline( SchemaRead schemRead, IndexReference index )
 		 {
 			  long start = DateTimeHelper.CurrentUnixTimeMillis();

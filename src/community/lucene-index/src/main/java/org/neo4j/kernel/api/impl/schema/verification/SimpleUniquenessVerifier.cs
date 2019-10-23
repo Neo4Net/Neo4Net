@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verify(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propKeyIds) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verify(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void Verify( NodePropertyAccessor accessor, int[] propKeyIds )
 		 {
 			  try
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verify(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verify(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void Verify( NodePropertyAccessor accessor, int[] propKeyIds, IList<Value[]> updatedValueTuples )
 		 {
 			  try

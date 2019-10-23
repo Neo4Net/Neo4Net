@@ -23,13 +23,13 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 	using ImmutableEmptyLongIterator = org.eclipse.collections.impl.iterator.ImmutableEmptyLongIterator;
 
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using NodeLabelIndexCursor = Neo4Net.Internal.Kernel.Api.NodeLabelIndexCursor;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using NodeLabelIndexCursor = Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor;
 	using LabelScanValueIndexProgressor = Neo4Net.Kernel.impl.index.labelscan.LabelScanValueIndexProgressor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_NodeLabelClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_NodeLabelClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.collection.PrimitiveLongCollections.mergeToSet;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  if ( _read.hasTxStateWithChanges() )
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.LongDiffSets changes = read.txState().nodesWithLabelChanged(label);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets changes = read.txState().nodesWithLabelChanged(label);
 					LongDiffSets changes = _read.txState().nodesWithLabelChanged(label);
 					_added = changes.Augment( ImmutableEmptyLongIterator.INSTANCE );
 					_removed = mergeToSet( _read.txState().addedAndRemovedNodes().Removed, changes.Removed );

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Io.pagecache.stress
 {
-	public interface Condition
+	public interface ICondition
 	{
 		 bool Fulfilled();
 	}

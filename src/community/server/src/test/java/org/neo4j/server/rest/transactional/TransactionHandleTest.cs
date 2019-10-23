@@ -32,8 +32,8 @@ namespace Neo4Net.Server.rest.transactional
 	using SyntaxException = Neo4Net.Cypher.SyntaxException;
 	using Notification = Neo4Net.GraphDb.Notification;
 	using Result = Neo4Net.GraphDb.Result;
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -89,9 +89,9 @@ namespace Neo4Net.Server.rest.transactional
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.rest.transactional.StubStatementDeserializer.statements;
 

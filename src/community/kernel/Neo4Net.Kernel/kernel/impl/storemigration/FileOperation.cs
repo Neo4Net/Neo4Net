@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 			return nameValue;
 		}
 
-		public static FileOperation valueOf( string name )
+		public static FileOperation ValueOf( string name )
 		{
 			foreach ( FileOperation enumInstance in FileOperation.valueList )
 			{

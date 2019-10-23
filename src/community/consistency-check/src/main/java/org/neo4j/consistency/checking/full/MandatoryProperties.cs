@@ -31,10 +31,10 @@ namespace Neo4Net.Consistency.checking.full
 
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using ConsistencyReporter = Neo4Net.Consistency.report.ConsistencyReporter;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
@@ -157,7 +157,7 @@ namespace Neo4Net.Consistency.checking.full
 			  storage.put( labelOrRelType, propertyKeys );
 		 }
 
-		 public interface Check<RECORD, REPORT> : IDisposable where RECORD : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_PrimitiveConsistencyReport
+		 public interface ICheck<RECORD, REPORT> : IDisposable where RECORD : Neo4Net.Kernel.Impl.Store.Records.PrimitiveRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_PrimitiveConsistencyReport
 		 {
 			  void Receive( int[] keys );
 

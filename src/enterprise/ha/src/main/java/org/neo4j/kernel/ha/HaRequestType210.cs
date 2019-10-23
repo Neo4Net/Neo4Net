@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.ha
 	using ReadableClosablePositionAwareChannel = Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel;
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.Protocol.INTEGER_SERIALIZER;

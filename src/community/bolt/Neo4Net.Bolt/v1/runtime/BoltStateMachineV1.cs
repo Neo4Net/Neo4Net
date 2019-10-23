@@ -39,8 +39,8 @@ namespace Neo4Net.Bolt.v1.runtime
 	using BoltStateMachineV1Context = Neo4Net.Bolt.v1.messaging.BoltStateMachineV1Context;
 	using InterruptSignal = Neo4Net.Bolt.v1.messaging.request.InterruptSignal;
 	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
@@ -189,7 +189,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 /// while releasing the related transactional resources.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void validateTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void ValidateTransaction()
 		 {
 			  StatementProcessor().validateTransaction();

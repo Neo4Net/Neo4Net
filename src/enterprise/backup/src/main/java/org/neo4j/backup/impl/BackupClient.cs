@@ -42,7 +42,7 @@ namespace Neo4Net.backup.impl
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.backup.impl.BackupServer.BACKUP_PROTOCOL_VERSION;
@@ -183,7 +183,7 @@ namespace Neo4Net.backup.impl
 				 return nameValue;
 			 }
 
-			 public static BackupRequestType valueOf( string name )
+			 public static BackupRequestType ValueOf( string name )
 			 {
 				 foreach ( BackupRequestType enumInstance in BackupRequestType.valueList )
 				 {

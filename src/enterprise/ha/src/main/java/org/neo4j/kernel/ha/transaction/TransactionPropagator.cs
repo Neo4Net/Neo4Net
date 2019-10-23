@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.ha.transaction
 	/// </summary>
 	public class TransactionPropagator : Lifecycle
 	{
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  int TxPushFactor { get; }
 

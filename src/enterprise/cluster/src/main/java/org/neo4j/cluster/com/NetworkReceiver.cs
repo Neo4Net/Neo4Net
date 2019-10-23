@@ -71,7 +71,7 @@ namespace Neo4Net.cluster.com
 			  void ProcessedMessage( Message message );
 		 }
 
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  HostnamePort ClusterServer();
 

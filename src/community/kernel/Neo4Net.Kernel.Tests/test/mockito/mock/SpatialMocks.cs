@@ -22,10 +22,10 @@
 namespace Neo4Net.Test.mockito.mock
 {
 
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 
 	public class SpatialMocks
 	{
@@ -65,7 +65,7 @@ namespace Neo4Net.Test.mockito.mock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.graphdb.spatial.CRS mockCRS(final int code, final String type, final String href)
+//ORIGINAL LINE: private static org.Neo4Net.GraphDb.Spatial.CRS mockCRS(final int code, final String type, final String href)
 		 private static CRS MockCRS( int code, string type, string href )
 		 {
 			  return new CRSAnonymousInnerClass( code, type, href );
@@ -114,7 +114,7 @@ namespace Neo4Net.Test.mockito.mock
 			  internal readonly Coordinate Coordinate;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private MockPoint(final double x, final double y, final org.Neo4Net.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private MockPoint(final double x, final double y, final org.Neo4Net.GraphDb.Spatial.CRS crs)
 			  internal MockPoint( double x, double y, CRS crs ) : base( "Point", new List<Coordinate>(), crs )
 			  {
 					this.Coordinate = new Coordinate( x, y );
@@ -127,7 +127,7 @@ namespace Neo4Net.Test.mockito.mock
 			  internal readonly Coordinate Coordinate;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private MockPoint3D(final double x, final double y, double z, final org.Neo4Net.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private MockPoint3D(final double x, final double y, double z, final org.Neo4Net.GraphDb.Spatial.CRS crs)
 			  internal MockPoint3D( double x, double y, double z, CRS crs ) : base( "Point", new List<Coordinate>(), crs )
 			  {
 					this.Coordinate = new Coordinate( x, y, z );
@@ -144,7 +144,7 @@ namespace Neo4Net.Test.mockito.mock
 			  protected internal readonly CRS Crs;
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private MockGeometry(String geometryType, final java.util.List<org.Neo4Net.graphdb.spatial.Coordinate> coordinates, final org.Neo4Net.graphdb.spatial.CRS crs)
+//ORIGINAL LINE: private MockGeometry(String geometryType, final java.util.List<org.Neo4Net.GraphDb.Spatial.Coordinate> coordinates, final org.Neo4Net.GraphDb.Spatial.CRS crs)
 			  internal MockGeometry( string geometryType, IList<Coordinate> coordinates, CRS crs )
 			  {
 					this.GeometryTypeConflict = geometryType;

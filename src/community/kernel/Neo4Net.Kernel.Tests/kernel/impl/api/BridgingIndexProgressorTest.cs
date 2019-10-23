@@ -21,11 +21,11 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 	using Test = org.junit.Test;
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;

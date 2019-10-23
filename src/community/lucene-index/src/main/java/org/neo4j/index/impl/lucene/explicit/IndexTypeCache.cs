@@ -23,7 +23,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 {
 
 	using Neo4Net.Helpers.Collections;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 
 	internal class IndexTypeCache
@@ -37,7 +37,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexType getIndexType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexType getIndexType(IndexIdentifier identifier, boolean recovery) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal virtual IndexType GetIndexType( IndexIdentifier identifier, bool recovery )
 		 {
 			  Pair<int, IndexType> type = _cache[identifier];

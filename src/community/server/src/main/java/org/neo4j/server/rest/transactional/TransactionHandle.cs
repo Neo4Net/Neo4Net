@@ -28,9 +28,9 @@ namespace Neo4Net.Server.rest.transactional
 	using Result = Neo4Net.GraphDb.Result;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using WriteOperationsNotAllowedException = Neo4Net.GraphDb.security.WriteOperationsNotAllowedException;
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DeadlockDetectedException = Neo4Net.Kernel.DeadlockDetectedException;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

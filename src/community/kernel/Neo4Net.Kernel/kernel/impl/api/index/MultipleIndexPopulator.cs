@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Neo4Net.Functions;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaDescriptorSupplier = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
 	using FlipFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.FlipFailedKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
@@ -38,11 +38,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -98,12 +98,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly IndexStoreView _storeView;
 		 private readonly LogProvider _logProvider;
 		 protected internal readonly Log Log;
-		 private readonly IEntityType _type;
+		 private readonly EntityType _type;
 		 private readonly SchemaState _schemaState;
 		 private readonly PhaseTracker _phaseTracker;
 		 private StoreScan<IndexPopulationFailedKernelException> _storeScan;
 
-		 public MultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState )
+		 public MultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState )
 		 {
 			  this._storeView = storeView;
 			  this._logProvider = logProvider;
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  int[] propertyKeyIds = propertyKeyIds();
 			  System.Func<int, bool> propertyKeyIdFilter = propertyKeyId => contains( propertyKeyIds, propertyKeyId );
 
-			  if ( _type == IEntityType.RELATIONSHIP )
+			  if ( _type == EntityType.RELATIONSHIP )
 			  {
 					_storeScan = _storeView.visitRelationships( IEntityTokenIds, propertyKeyIdFilter, new IEntityPopulationVisitor( this ) );
 			  }

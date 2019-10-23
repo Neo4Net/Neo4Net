@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Before = org.junit.Before;
 	using Test = org.junit.Test;
 
-	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using ExplicitIndexWrite = Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
 	using InternalAutoIndexOperations = Neo4Net.Kernel.Impl.Api.explicitindex.InternalAutoIndexOperations;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;

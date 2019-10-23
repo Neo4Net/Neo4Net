@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.dbms
 {
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 	public class DelegatingPrincipal : Principal
 	{

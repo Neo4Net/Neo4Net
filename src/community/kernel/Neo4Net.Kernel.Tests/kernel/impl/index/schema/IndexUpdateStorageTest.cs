@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using SchemaDescriptorSupplier = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorSupplier;
+	using SchemaDescriptorSupplier = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier;
 	using Neo4Net.Kernel.Api.Index;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void storeAll(IndexUpdateStorage<GenericKey,NativeIndexValue> storage, java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected) throws java.io.IOException
+//ORIGINAL LINE: private static void storeAll(IndexUpdateStorage<GenericKey,NativeIndexValue> storage, java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier>> expected) throws java.io.IOException
 		 private static void StoreAll( IndexUpdateStorage<GenericKey, NativeIndexValue> storage, IList<IndexEntryUpdate<SchemaDescriptorSupplier>> expected )
 		 {
 			  foreach ( IndexEntryUpdate<SchemaDescriptorSupplier> update in expected )
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verify(java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.internal.kernel.api.schema.SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey,NativeIndexValue> storage) throws java.io.IOException
+//ORIGINAL LINE: private static void verify(java.util.List<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey,NativeIndexValue> storage) throws java.io.IOException
 		 private static void Verify( IList<IndexEntryUpdate<SchemaDescriptorSupplier>> expected, IndexUpdateStorage<GenericKey, NativeIndexValue> storage )
 		 {
 			  using ( IndexUpdateCursor<GenericKey, NativeIndexValue> reader = storage.reader() )

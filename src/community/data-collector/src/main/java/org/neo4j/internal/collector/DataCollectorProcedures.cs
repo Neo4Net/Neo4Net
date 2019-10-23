@@ -22,8 +22,8 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using Admin = Neo4Net.Procedure.Admin;
@@ -46,7 +46,7 @@ namespace Neo4Net.Internal.Collector
 		 public KernelTransaction Transaction;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Retrieve statistical data about the current database. Valid sections are '" + Sections.GRAPH_COUNTS + "', '" + Sections.TOKENS + "', '" + Sections.QUERIES + "', '" + Sections.META + "'") @Procedure(name = "db.stats.retrieve", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<RetrieveResult> retrieve(@Name(value = "section") String section, @Name(value = "config", defaultValue = "") java.util.Map<String, Object> config) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Admin @Description("Retrieve statistical data about the current database. Valid sections are '" + Sections.GRAPH_COUNTS + "', '" + Sections.TOKENS + "', '" + Sections.QUERIES + "', '" + Sections.META + "'") @Procedure(name = "db.stats.retrieve", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<RetrieveResult> retrieve(@Name(value = "section") String section, @Name(value = "config", defaultValue = "") java.util.Map<String, Object> config) throws org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Retrieve statistical data about the current database. Valid sections are '" + Sections.GRAPH_COUNTS + "', '" + Sections.TOKENS + "', '" + Sections.QUERIES + "', '" + Sections.META + "'"), Procedure(name : "db.stats.retrieve", mode : Neo4Net.Procedure.Mode.READ)]
 		 public virtual Stream<RetrieveResult> Retrieve( string section, IDictionary<string, object> config )
@@ -72,7 +72,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Admin @Description("Retrieve all available statistical data about the current database, in an anonymized form.") @Procedure(name = "db.stats.retrieveAllAnonymized", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<RetrieveResult> retrieveAllAnonymized(@Name(value = "graphToken") String graphToken, @Name(value = "config", defaultValue = "") java.util.Map<String, Object> config) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
+//ORIGINAL LINE: @Admin @Description("Retrieve all available statistical data about the current database, in an anonymized form.") @Procedure(name = "db.stats.retrieveAllAnonymized", mode = org.Neo4Net.procedure.Mode.READ) public java.util.stream.Stream<RetrieveResult> retrieveAllAnonymized(@Name(value = "graphToken") String graphToken, @Name(value = "config", defaultValue = "") java.util.Map<String, Object> config) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.kernel.api.exceptions.InvalidArgumentsException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Retrieve all available statistical data about the current database, in an anonymized form."), Procedure(name : "db.stats.retrieveAllAnonymized", mode : Neo4Net.Procedure.Mode.READ)]
 		 public virtual Stream<RetrieveResult> RetrieveAllAnonymized( string graphToken, IDictionary<string, object> config )

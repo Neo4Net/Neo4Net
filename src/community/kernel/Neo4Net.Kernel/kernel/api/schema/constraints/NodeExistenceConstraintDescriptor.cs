@@ -19,16 +19,16 @@
  */
 namespace Neo4Net.Kernel.api.schema.constraints
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using LabelSchemaSupplier = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaSupplier;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 
 	public class NodeExistenceConstraintDescriptor : ConstraintDescriptor, LabelSchemaSupplier
 	{
 		 private LabelSchemaDescriptor _schema;
 
-		 internal NodeExistenceConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.Exists )
+		 internal NodeExistenceConstraintDescriptor( LabelSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.Exists )
 		 {
 			  this._schema = schema;
 		 }

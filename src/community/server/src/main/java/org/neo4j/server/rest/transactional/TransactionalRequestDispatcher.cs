@@ -25,7 +25,7 @@ namespace Neo4Net.Server.rest.transactional
 	using RequestDispatcher = com.sun.jersey.spi.dispatch.RequestDispatcher;
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Database = Neo4Net.Server.database.Database;
@@ -67,7 +67,7 @@ namespace Neo4Net.Server.rest.transactional
 					RestfulGraphDatabase restfulGraphDatabase = ( RestfulGraphDatabase ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.beginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@implicit, loginContext );
 
 					restfulGraphDatabase.OutputFormat.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.rest.transactional
 					BatchOperationService batchOperationService = ( BatchOperationService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.beginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@explicit, loginContext );
 
 					batchOperationService.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -87,7 +87,7 @@ namespace Neo4Net.Server.rest.transactional
 					CypherService cypherService = ( CypherService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.beginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.explicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@explicit, loginContext );
 
 					cypherService.OutputFormat.RepresentationWriteHandler = representationWriteHandler = new CommitOnSuccessfulStatusCodeRepresentationWriteHandler( httpContext, transaction );
@@ -97,7 +97,7 @@ namespace Neo4Net.Server.rest.transactional
 					DatabaseMetadataService databaseMetadataService = ( DatabaseMetadataService ) o;
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.beginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
+//ORIGINAL LINE: final org.Neo4Net.graphdb.Transaction transaction = graph.BeginTransaction(org.Neo4Net.kernel.api.KernelTransaction.Type.implicit, loginContext);
 					Transaction transaction = graph.BeginTransaction( KernelTransaction.Type.@implicit, loginContext );
 
 					databaseMetadataService.RepresentationWriteHandler = representationWriteHandler = new RepresentationWriteHandlerAnonymousInnerClass( this, transaction );
@@ -166,7 +166,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			 public void onRepresentationStartWriting()
 			 {
-				  transaction = _graph.beginTransaction( KernelTransaction.Type.@implicit, _loginContext );
+				  transaction = _graph.BeginTransaction( KernelTransaction.Type.@implicit, _loginContext );
 			 }
 
 			 public void onRepresentationWritten()

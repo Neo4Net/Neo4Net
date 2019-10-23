@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 	using SchemaRecord = Neo4Net.Kernel.Impl.Store.Records.SchemaRecord;
 	using Neo4Net.Kernel.impl.transaction.state;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.SchemaRecord,org.Neo4Net.storageengine.api.schema.SchemaRule> schemaRuleLoader(final org.Neo4Net.kernel.impl.store.SchemaStore store)
+//ORIGINAL LINE: public static org.Neo4Net.kernel.impl.transaction.state.RecordAccess_Loader<org.Neo4Net.kernel.impl.store.record.SchemaRecord,org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule> schemaRuleLoader(final org.Neo4Net.kernel.impl.store.SchemaStore store)
 		 public static RecordAccess_Loader<SchemaRecord, SchemaRule> SchemaRuleLoader( SchemaStore store )
 		 {
 			  return new RecordAccess_LoaderAnonymousInnerClass5( store );

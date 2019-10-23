@@ -21,25 +21,25 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using NodeExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.NodeExplicitIndexCursor;
-	using NodeLabelIndexCursor = Neo4Net.Internal.Kernel.Api.NodeLabelIndexCursor;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.RelationshipExplicitIndexCursor;
-	using RelationshipGroupCursor = Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using RelationshipTraversalCursor = Neo4Net.Internal.Kernel.Api.RelationshipTraversalCursor;
-	using Neo4Net.Internal.Kernel.Api;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using NodeExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor;
+	using NodeLabelIndexCursor = Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor;
+	using RelationshipGroupCursor = Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using RelationshipTraversalCursor = Neo4Net.Kernel.Api.Internal.RelationshipTraversalCursor;
+	using Neo4Net.Kernel.Api.Internal;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using AssertOpen = Neo4Net.Kernel.api.AssertOpen;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
@@ -51,55 +51,55 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor.schemaTokenLockingIds;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor.schemaTokenLockingIds;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.ValueGroup.GEOMETRY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.ValueGroup.NUMBER;
 
-	internal abstract class Read : TxStateHolder, Neo4Net.Internal.Kernel.Api.Read, Neo4Net.Internal.Kernel.Api.ExplicitIndexRead, Neo4Net.Internal.Kernel.Api.SchemaRead, Neo4Net.Internal.Kernel.Api.Procedures, Neo4Net.Internal.Kernel.Api.Locks, AssertOpen, LockingNodeUniqueIndexSeek.UniqueNodeIndexSeeker<DefaultNodeValueIndexCursor>
+	internal abstract class Read : TxStateHolder, Neo4Net.Kernel.Api.Internal.Read, Neo4Net.Kernel.Api.Internal.ExplicitIndexRead, Neo4Net.Kernel.Api.Internal.SchemaRead, Neo4Net.Kernel.Api.Internal.Procedures, Neo4Net.Kernel.Api.Internal.Locks, AssertOpen, LockingNodeUniqueIndexSeek.UniqueNodeIndexSeeker<DefaultNodeValueIndexCursor>
 	{
 		public abstract void NodeIndexSeekWithFreshIndexReader( CURSOR cursor, IndexReader indexReader, params IndexQuery.ExactPredicate[] predicates );
 		public abstract Neo4Net.Values.ValueMapper<object> ValueMapper();
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserAggregator AggregationFunctionOverride( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name );
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserAggregator AggregationFunctionOverride( int id );
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserAggregator AggregationFunction( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name );
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserAggregator AggregationFunction( int id );
-		public abstract Neo4Net.Values.AnyValue FunctionCallOverride( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, Neo4Net.Values.AnyValue[] arguments );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserAggregator AggregationFunctionOverride( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserAggregator AggregationFunctionOverride( int id );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserAggregator AggregationFunction( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserAggregator AggregationFunction( int id );
+		public abstract Neo4Net.Values.AnyValue FunctionCallOverride( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Neo4Net.Values.AnyValue[] arguments );
 		public abstract Neo4Net.Values.AnyValue FunctionCallOverride( int id, Neo4Net.Values.AnyValue[] arguments );
-		public abstract Neo4Net.Values.AnyValue FunctionCall( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, Neo4Net.Values.AnyValue[] arguments );
+		public abstract Neo4Net.Values.AnyValue FunctionCall( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Neo4Net.Values.AnyValue[] arguments );
 		public abstract Neo4Net.Values.AnyValue FunctionCall( int id, Neo4Net.Values.AnyValue[] arguments );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchemaOverride( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallSchema( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWriteOverride( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallWrite( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallReadOverride( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException> ProcedureCallRead( int id, object[] arguments, Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext context );
-		public abstract ISet<Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature> ProceduresGetAll();
-		public abstract Neo4Net.Internal.Kernel.Api.procs.ProcedureHandle ProcedureGet( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name );
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserFunctionHandle AggregationFunctionGet( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name );
-		public abstract Neo4Net.Internal.Kernel.Api.procs.UserFunctionHandle FunctionGet( Neo4Net.Internal.Kernel.Api.procs.QualifiedName name );
-		public abstract IEnumerator<Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor> ConstraintsGetAll();
-		public abstract IEnumerator<Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor> ConstraintsGetForRelationshipType( int typeId );
-		public abstract IEnumerator<Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor> ConstraintsGetForLabel( int labelId );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallSchemaOverride( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallSchema( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallWriteOverride( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallWrite( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallReadOverride( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallRead( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallSchemaOverride( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallSchema( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallWriteOverride( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallWrite( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallReadOverride( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract Neo4Net.Collections.RawIterator<object[], Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> ProcedureCallRead( int id, object[] arguments, Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context );
+		public abstract ISet<Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature> ProceduresGetAll();
+		public abstract Neo4Net.Kernel.Api.Internal.procs.ProcedureHandle ProcedureGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserFunctionHandle AggregationFunctionGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
+		public abstract Neo4Net.Kernel.Api.Internal.procs.UserFunctionHandle FunctionGet( Neo4Net.Kernel.Api.Internal.procs.QualifiedName name );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetAll();
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForRelationshipType( int typeId );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForLabel( int labelId );
 		public abstract string IndexGetFailure( IndexReference index );
-		public abstract Neo4Net.Storageengine.Api.schema.PopulationProgress IndexGetPopulationProgress( IndexReference index );
+		public abstract Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress IndexGetPopulationProgress( IndexReference index );
 		public abstract InternalIndexState IndexGetState( IndexReference index );
 		public abstract IEnumerator<IndexReference> IndexesGetAll();
 		public abstract IEnumerator<IndexReference> IndexesGetForRelationshipType( int relationshipType );
@@ -109,8 +109,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		public abstract V SchemaStateGetOrCreate( K key, System.Func<K, V> creator );
 		public abstract long? IndexGetOwningUniquenessConstraintId( IndexReference index );
 		public abstract SchemaReadCore Snapshot();
-		public abstract bool ConstraintExists( Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor descriptor );
-		public abstract IEnumerator<Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor> ConstraintsGetForSchema( SchemaDescriptor descriptor );
+		public abstract bool ConstraintExists( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor descriptor );
+		public abstract IEnumerator<Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> ConstraintsGetForSchema( SchemaDescriptor descriptor );
 		public abstract Neo4Net.Register.Register_DoubleLongRegister IndexSample( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 		public abstract Neo4Net.Register.Register_DoubleLongRegister IndexUpdatesAndSize( IndexReference index, Neo4Net.Register.Register_DoubleLongRegister target );
 		public abstract long NodesCountIndexed( IndexReference index, long nodeId, int propertyKeyId, Value value );
@@ -149,7 +149,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeIndexSeek(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.NodeValueIndexCursor cursor, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.internal.kernel.api.IndexQuery... query) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public final void nodeIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override void NodeIndexSeek( IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		 {
 			  Ktx.assertOpen();
@@ -162,12 +162,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  DefaultNodeValueIndexCursor cursorImpl = ( DefaultNodeValueIndexCursor ) cursor;
 			  IndexReader reader = IndexReader( index, false );
 			  cursorImpl.Read = this;
-			  Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient withFullPrecision = InjectFullValuePrecision( cursorImpl, query, reader );
+			  Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient withFullPrecision = InjectFullValuePrecision( cursorImpl, query, reader );
 			  reader.Query( withFullPrecision, indexOrder, needsValues, query );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeIndexDistinctValues(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public void nodeIndexDistinctValues(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override void NodeIndexDistinctValues( IndexReference index, NodeValueIndexCursor cursor, bool needsValues )
 		 {
 			  Ktx.assertOpen();
@@ -180,9 +180,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  }
 		 }
 
-		 private Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient InjectFullValuePrecision( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient cursor, IndexQuery[] query, IndexReader reader )
+		 private Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient InjectFullValuePrecision( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, IndexQuery[] query, IndexReader reader )
 		 {
-			  Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient target = cursor;
+			  Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient target = cursor;
 			  if ( !reader.HasFullValuePrecision( query ) )
 			  {
 					IndexQuery[] filters = new IndexQuery[query.Length];
@@ -226,7 +226,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
+//ORIGINAL LINE: public long lockingNodeUniqueIndexSeek(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
 		 public override long LockingNodeUniqueIndexSeek( IndexReference index, params IndexQuery.ExactPredicate[] predicates )
 		 {
 			  AssertIndexOnline( index );
@@ -239,17 +239,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void nodeIndexSeekWithFreshIndexReader(DefaultNodeValueIndexCursor cursor, org.Neo4Net.storageengine.api.schema.IndexReader indexReader, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate... query) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void nodeIndexSeekWithFreshIndexReader(DefaultNodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 public override void NodeIndexSeekWithFreshIndexReader( DefaultNodeValueIndexCursor cursor, IndexReader indexReader, params IndexQuery.ExactPredicate[] query )
 		 {
 			  cursor.Read = this;
-			  Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient target = InjectFullValuePrecision( cursor, query, indexReader );
+			  Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient target = InjectFullValuePrecision( cursor, query, indexReader );
 			  // we never need values for exact predicates
 			  indexReader.Query( target, IndexOrder.NONE, false, query );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeIndexScan(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.NodeValueIndexCursor cursor, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder, boolean needsValues) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public final void nodeIndexScan(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor cursor, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void NodeIndexScan( IndexReference index, NodeValueIndexCursor cursor, IndexOrder indexOrder, bool needsValues )
 		 {
 			  Ktx.assertOpen();
@@ -390,7 +390,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal abstract long GraphPropertiesReference();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeExplicitIndexLookup(org.Neo4Net.internal.kernel.api.NodeExplicitIndexCursor cursor, String index, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public final void nodeExplicitIndexLookup(org.Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor cursor, String index, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeExplicitIndexLookup( NodeExplicitIndexCursor cursor, string index, string key, object value )
 		 {
 			  Ktx.assertOpen();
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeExplicitIndexQuery(org.Neo4Net.internal.kernel.api.NodeExplicitIndexCursor cursor, String index, Object query) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public final void nodeExplicitIndexQuery(org.Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor cursor, String index, Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeExplicitIndexQuery( NodeExplicitIndexCursor cursor, string index, object query )
 		 {
 			  Ktx.assertOpen();
@@ -408,7 +408,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final void nodeExplicitIndexQuery(org.Neo4Net.internal.kernel.api.NodeExplicitIndexCursor cursor, String index, String key, Object query) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public final void nodeExplicitIndexQuery(org.Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor cursor, String index, String key, Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void NodeExplicitIndexQuery( NodeExplicitIndexCursor cursor, string index, string key, object query )
 		 {
 			  Ktx.assertOpen();
@@ -417,7 +417,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipExplicitIndexLookup(org.Neo4Net.internal.kernel.api.RelationshipExplicitIndexCursor cursor, String index, String key, Object value, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipExplicitIndexLookup(org.Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor cursor, String index, String key, Object value, long source, long target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipExplicitIndexLookup( RelationshipExplicitIndexCursor cursor, string index, string key, object value, long source, long target )
 		 {
 			  Ktx.assertOpen();
@@ -426,7 +426,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipExplicitIndexQuery(org.Neo4Net.internal.kernel.api.RelationshipExplicitIndexCursor cursor, String index, Object query, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipExplicitIndexQuery(org.Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor cursor, String index, Object query, long source, long target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipExplicitIndexQuery( RelationshipExplicitIndexCursor cursor, string index, object query, long source, long target )
 		 {
 			  Ktx.assertOpen();
@@ -435,7 +435,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipExplicitIndexQuery(org.Neo4Net.internal.kernel.api.RelationshipExplicitIndexCursor cursor, String index, String key, Object query, long source, long target) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void relationshipExplicitIndexQuery(org.Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor cursor, String index, String key, Object query, long source, long target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void RelationshipExplicitIndexQuery( RelationshipExplicitIndexCursor cursor, string index, string key, object query, long source, long target )
 		 {
 			  Ktx.assertOpen();
@@ -443,7 +443,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  ExplicitIndex( ( DefaultRelationshipExplicitIndexCursor ) cursor, ExplicitRelationshipIndex( index ).query( key, query is Value ? ( ( Value ) query ).asObject() : query, source, target ) );
 		 }
 
-		 private static void ExplicitIndex( Neo4Net.Storageengine.Api.schema.IndexProgressor_ExplicitClient client, ExplicitIndexHits hits )
+		 private static void ExplicitIndex( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient client, ExplicitIndexHits hits )
 		 {
 			  client.Initialize( new ExplicitIndexProgressor( hits, client ), hits.Size() );
 		 }
@@ -469,17 +469,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.storageengine.api.schema.IndexReader indexReader(org.Neo4Net.internal.kernel.api.IndexReference index, boolean fresh) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException;
+//ORIGINAL LINE: public abstract org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader indexReader(org.Neo4Net.Kernel.Api.Internal.IndexReference index, boolean fresh) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 		 public abstract IndexReader IndexReader( IndexReference index, bool fresh );
 
 		 internal abstract LabelScanReader LabelScanReader();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.kernel.api.ExplicitIndex explicitNodeIndex(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: abstract org.Neo4Net.kernel.api.ExplicitIndex explicitNodeIndex(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 internal abstract ExplicitIndex ExplicitNodeIndex( string indexName );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract org.Neo4Net.kernel.api.ExplicitIndex explicitRelationshipIndex(String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+//ORIGINAL LINE: abstract org.Neo4Net.kernel.api.ExplicitIndex explicitRelationshipIndex(String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 		 internal abstract ExplicitIndex ExplicitRelationshipIndex( string indexName );
 
 		 public override abstract IndexReference Index( int label, params int[] properties );
@@ -632,7 +632,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexOnline(org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
+//ORIGINAL LINE: private void assertIndexOnline(org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.schema.IndexBrokenKernelException
 		 private void AssertIndexOnline( IndexReference index )
 		 {
 			  switch ( IndexGetState( index ) )
@@ -645,7 +645,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertPredicatesMatchSchema(org.Neo4Net.internal.kernel.api.IndexReference index, org.Neo4Net.internal.kernel.api.IndexQuery.ExactPredicate[] predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private static void assertPredicatesMatchSchema(org.Neo4Net.Kernel.Api.Internal.IndexReference index, org.Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 private static void AssertPredicatesMatchSchema( IndexReference index, IndexQuery.ExactPredicate[] predicates )
 		 {
 			  int[] propertyIds = index.Properties();

@@ -33,10 +33,10 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using IndexPopulationProgress = Neo4Net.GraphDb.index.IndexPopulationProgress;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemExtension = Neo4Net.Test.extension.EphemeralFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 			  using ( Transaction ignore = _db.beginTx() )
 			  {
 					Schema schema = _db.schema();
-					Neo4Net.GraphDb.schema.Schema_IndexState state;
+					Neo4Net.GraphDb.Schema.Schema_IndexState state;
 
 					IndexPopulationProgress progress;
 					do
@@ -130,9 +130,9 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 						 assertTrue( progress.CompletedPercentage >= 0 );
 						 assertTrue( progress.CompletedPercentage <= 100 );
 						 Thread.Sleep( 10 );
-					} while ( state == Neo4Net.GraphDb.schema.Schema_IndexState.Populating );
+					} while ( state == Neo4Net.GraphDb.Schema.Schema_IndexState.Populating );
 
-					assertSame( state, Neo4Net.GraphDb.schema.Schema_IndexState.Online );
+					assertSame( state, Neo4Net.GraphDb.Schema.Schema_IndexState.Online );
 					assertEquals( 100.0, progress.CompletedPercentage, 0.0001 );
 			  }
 		 }
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 			  using ( Transaction tx = _db.beginTx() )
 			  {
 					IndexDefinition index = _db.schema().indexFor(_userLabel).on("name").create();
-					assertThat( index.Name, @is( Neo4Net.Internal.Kernel.Api.IndexReference_Fields.UNNAMED_INDEX ) );
+					assertThat( index.Name, @is( Neo4Net.Kernel.Api.Internal.IndexReference_Fields.UNNAMED_INDEX ) );
 					tx.Success();
 			  }
 		 }

@@ -25,15 +25,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurve = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurve;
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using ExactPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate;
-	using Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using StringPrefixPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.StringPrefixPredicate;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using ExactPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate;
+	using Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using StringPrefixPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringPrefixPredicate;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  CapabilityValidator.ValidateQuery( GenericNativeIndexProvider.Capability, indexOrder, predicates );
 		 }
 
-		 public override void Query( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
+		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		 {
 			  IndexQuery.GeometryRangePredicate geometryRangePredicate = GetGeometryRangePredicateIfAny( query );
 			  if ( geometryRangePredicate != null )
@@ -161,7 +161,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 						 else
 						 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?>) predicate;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> rangePredicate = (org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?>) predicate;
 							  IndexQuery.RangePredicate<object> rangePredicate = ( IndexQuery.RangePredicate<object> ) predicate;
 							  InitFromForRange( i, rangePredicate, treeKeyFrom );
 							  InitToForRange( i, rangePredicate, treeKeyTo );

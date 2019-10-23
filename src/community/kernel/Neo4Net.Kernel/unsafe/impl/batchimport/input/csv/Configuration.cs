@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	/// <summary>
 	/// Configuration for <seealso cref="CsvInput"/>.
 	/// </summary>
-	public interface Configuration : Neo4Net.Csv.Reader.Configuration
+	public interface IConfiguration : Neo4Net.Csv.Reader.Configuration
 	{
 		 /// <summary>
 		 /// Delimiting character between each values in a CSV input line.

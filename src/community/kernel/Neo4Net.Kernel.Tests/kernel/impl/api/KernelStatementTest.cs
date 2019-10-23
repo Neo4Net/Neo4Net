@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

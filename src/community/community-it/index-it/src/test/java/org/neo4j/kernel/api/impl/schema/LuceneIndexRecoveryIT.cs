@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using ExtensionType = Neo4Net.Kernel.extension.ExtensionType;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using LogRotation = Neo4Net.Kernel.impl.transaction.log.rotation.LogRotation;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 

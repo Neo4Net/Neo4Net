@@ -24,7 +24,7 @@ namespace Neo4Net.GraphDb
 
 
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Neo4Net.Kernel.extension;
 	using ControlledPopulationIndexProvider = Neo4Net.Kernel.Impl.Api.index.ControlledPopulationIndexProvider;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;

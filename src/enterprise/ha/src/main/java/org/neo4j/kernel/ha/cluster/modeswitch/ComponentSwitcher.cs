@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 	/// Represents a component that differs between master, slave and pending HA instance states and can be switched to
 	/// either of three.
 	/// </summary>
-	public interface ComponentSwitcher
+	public interface IComponentSwitcher
 	{
 		 void SwitchToMaster();
 

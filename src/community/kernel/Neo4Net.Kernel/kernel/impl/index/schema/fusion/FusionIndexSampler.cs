@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 {
 
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterables.asCollection;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexSample sampleIndex() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample sampleIndex() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override IndexSample SampleIndex()
 		 {
 			  IList<IndexSample> samples = new List<IndexSample>();

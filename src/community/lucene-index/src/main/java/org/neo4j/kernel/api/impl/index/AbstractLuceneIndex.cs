@@ -39,8 +39,8 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
 	using PartitionedIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.PartitionedIndexWriter;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 
 	/// <summary>
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	/// wrapper. </summary>
 	/// <seealso cref= WritableAbstractDatabaseIndex </seealso>
 	/// <seealso cref= ReadOnlyAbstractDatabaseIndex </seealso>
-	public abstract class AbstractLuceneIndex<READER> where READER : Neo4Net.Storageengine.Api.schema.IndexReader
+	public abstract class AbstractLuceneIndex<READER> where READER : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 	{
 		 private const string KEY_STATUS = "status";
 		 private const string ONLINE = "online";

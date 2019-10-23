@@ -26,18 +26,18 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
 
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
 	using Log = Neo4Net.Logging.Log;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Manages the transaction state of a specific individual fulltext index, in a given transaction.
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _toCloseLater = new List<IDisposable>();
 			  _writer = accessor.TransactionStateIndexWriter;
 			  _modifiedEntityIdsInThisTransaction = new LongHashSet();
-			  _visitingNodes = Schema.entityType() == IEntityType.NODE;
+			  _visitingNodes = Schema.entityType() == EntityType.NODE;
 			  _txStateVisitor = new FulltextIndexTransactionStateVisitor( _descriptor, _modifiedEntityIdsInThisTransaction, _writer );
 		 }
 

@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.checkpoint
 	using LogCheckPointEvent = Neo4Net.Kernel.impl.transaction.tracing.LogCheckPointEvent;
 	using DatabaseHealth = Neo4Net.Kernel.Internal.DatabaseHealth;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

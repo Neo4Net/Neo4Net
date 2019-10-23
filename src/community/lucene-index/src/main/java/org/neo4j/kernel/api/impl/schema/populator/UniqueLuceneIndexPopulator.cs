@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using UniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.UniqueIndexSampler;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	/// <summary>
 	/// A <seealso cref="LuceneIndexPopulator"/> used for unique Lucene schema indexes.
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor accessor )
 		 {
 			  try
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newPopulatingUpdater(final org.Neo4Net.storageengine.api.NodePropertyAccessor accessor)
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexUpdater newPopulatingUpdater(final org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor)
 		 public override IndexUpdater NewPopulatingUpdater( NodePropertyAccessor accessor )
 		 {
 			  return new UniqueLuceneIndexPopulatingUpdater( Writer, _propertyKeyIds, LuceneIndex, accessor, _sampler );

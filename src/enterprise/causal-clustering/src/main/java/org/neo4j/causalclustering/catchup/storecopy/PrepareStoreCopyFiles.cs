@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.fs.FileUtils.relativePath;
@@ -102,7 +102,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private StoreResource toStoreResource(org.Neo4Net.storageengine.api.StoreFileMetadata storeFileMetadata) throws java.io.IOException
+//ORIGINAL LINE: private StoreResource toStoreResource(org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata storeFileMetadata) throws java.io.IOException
 		 private StoreResource ToStoreResource( StoreFileMetadata storeFileMetadata )
 		 {
 			  File databaseDirectory = _neoStoreDataSource.DatabaseLayout.databaseDirectory();

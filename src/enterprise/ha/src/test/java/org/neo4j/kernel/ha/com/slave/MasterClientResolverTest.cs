@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.ha.com.slave
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.instanceOf;

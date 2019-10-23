@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.api.query
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using LockWaitEvent = Neo4Net.Storageengine.Api.@lock.LockWaitEvent;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using LockWaitEvent = Neo4Net.Kernel.Api.StorageEngine.@lock.LockWaitEvent;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 	using FakeCpuClock = Neo4Net.Test.FakeCpuClock;
 	using FakeHeapAllocation = Neo4Net.Test.FakeHeapAllocation;
 	using Clocks = Neo4Net.Time.Clocks;

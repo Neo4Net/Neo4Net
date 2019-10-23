@@ -26,7 +26,7 @@ namespace Neo4Net.causalclustering.messaging
 	using ByteBuf = io.netty.buffer.ByteBuf;
 
 	using FlushableChannel = Neo4Net.Kernel.impl.transaction.log.FlushableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class NetworkWritableChannel : WritableChannel, ByteBufBacked
 	{

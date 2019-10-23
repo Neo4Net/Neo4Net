@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 			return nameValue;
 		}
 
-		public static FusionVersion valueOf( string name )
+		public static FusionVersion ValueOf( string name )
 		{
 			foreach ( FusionVersion enumInstance in FusionVersion.valueList )
 			{

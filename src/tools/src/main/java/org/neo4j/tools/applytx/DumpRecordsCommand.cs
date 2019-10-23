@@ -27,7 +27,7 @@ namespace Neo4Net.tools.applytx
 	using CliBuilder = io.airlift.airline.Cli.CliBuilder;
 
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using LabelTokenStore = Neo4Net.Kernel.impl.store.LabelTokenStore;
 	using PropertyKeyTokenStore = Neo4Net.Kernel.impl.store.PropertyKeyTokenStore;
 	using Neo4Net.Kernel.impl.store;

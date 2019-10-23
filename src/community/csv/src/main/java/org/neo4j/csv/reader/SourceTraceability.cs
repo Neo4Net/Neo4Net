@@ -29,7 +29,7 @@ namespace Neo4Net.Csv.Reader
 	/// say the name of the database and table and <seealso cref="position()"/> some sort of absolute position saying
 	/// the byte offset to the field.
 	/// </summary>
-	public interface SourceTraceability
+	public interface ISourceTraceability
 	{
 		 /// <returns> description of the source being read from. </returns>
 		 string SourceDescription();

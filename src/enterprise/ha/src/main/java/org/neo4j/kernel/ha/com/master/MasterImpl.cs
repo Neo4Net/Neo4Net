@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Neo4Net.com;
 	using TransactionNotPresentOnMasterException = Neo4Net.com.TransactionNotPresentOnMasterException;
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IdAllocation = Neo4Net.Kernel.ha.id.IdAllocation;
@@ -44,9 +44,9 @@ namespace Neo4Net.Kernel.ha.com.master
 	using ConcurrentAccessException = Neo4Net.Kernel.impl.util.collection.ConcurrentAccessException;
 	using NoSuchEntryException = Neo4Net.Kernel.impl.util.collection.NoSuchEntryException;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	/// <summary>
 	/// This is the real master code that executes on a master. The actual
@@ -64,7 +64,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 // up into many smaller APIs implemented by other services so that this is not needed.
 		 // This SPI allows MasterImpl to have no direct dependencies, and instead puts those dependencies into the
 		 // SPI implementation, thus making it easier to test this class by mocking the SPI.
-		 public interface SPI
+		 public interface ISPI
 		 {
 			  bool Accessible { get; }
 
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.ha.com.master
 			  StoreId StoreId();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 			  long ApplyPreparedTransaction( TransactionRepresentation preparedTransaction );
 
 			  int? CreateRelationshipType( string name );
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public org.Neo4Net.com.Response<long> commit(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override Response<long> Commit( RequestContext context, TransactionRepresentation preparedTransaction )
 		 {
 			  AssertCorrectEpoch( context );
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.com.Response<long> commit0(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.com.Response<long> commit0(org.Neo4Net.com.RequestContext context, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Response<long> Commit0( RequestContext context, TransactionRepresentation preparedTransaction )
 		 {
 			  long txId = _spi.applyPreparedTransaction( preparedTransaction );
@@ -252,7 +252,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public org.Neo4Net.com.Response<Void> newLockSession(org.Neo4Net.com.RequestContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override Response<Void> NewLockSession( RequestContext context )
 		 {
 			  _monitor.initializeTx( context );

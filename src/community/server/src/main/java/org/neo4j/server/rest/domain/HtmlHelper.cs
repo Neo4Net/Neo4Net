@@ -274,7 +274,7 @@ namespace Neo4Net.Server.rest.domain
 				 return nameValue;
 			 }
 
-			 public static ObjectType valueOf( string name )
+			 public static ObjectType ValueOf( string name )
 			 {
 				 foreach ( ObjectType enumInstance in ObjectType.valueList )
 				 {

@@ -19,13 +19,13 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -51,13 +51,13 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 public override Value GetNodePropertyValue( long nodeId, int propertyKeyId )
 		 {
 			  _read.singleNode( nodeId, _nodeCursor );
 			  if ( !_nodeCursor.next() )
 			  {
-					throw new IEntityNotFoundException( IEntityType.NODE, nodeId );
+					throw new IEntityNotFoundException( EntityType.NODE, nodeId );
 			  }
 
 			  _nodeCursor.properties( _propertyCursor );

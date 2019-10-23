@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.util.diffsets
 {
 
-	using Neo4Net.Storageengine.Api.txstate;
+	using Neo4Net.Kernel.Api.StorageEngine.TxState;
 
 	public interface MutableDiffSets<T> : DiffSets<T>
 	{

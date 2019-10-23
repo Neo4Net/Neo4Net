@@ -46,7 +46,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <returns> an <seealso cref="Evaluation"/> containing information about whether or not
 		 /// to return it from the <seealso cref="Traverser"/> and whether or not to continue
 		 /// down that path. </returns>
-		 Evaluation Evaluate( IPath path, BranchState<STATE> state );
+		 Evaluation Evaluate( IPath path, IBranchState<STATE> state );
 
 		 /// <summary>
 		 /// Adapter for <seealso cref="PathEvaluator"/>. </summary>
@@ -55,12 +55,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 	 public abstract class PathEvaluator_Adapter<STATE> : PathEvaluator<STATE>
 	 {
-		 public abstract Evaluation Evaluate( IPath path, BranchState<STATE> state );
+		 public abstract Evaluation Evaluate( IPath path, IBranchState<STATE> state );
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public Evaluation evaluate(org.Neo4Net.graphdb.Path path)
 		  public override Evaluation Evaluate( IPath path )
 		  {
-				return Evaluate( path, BranchState.NO_STATE );
+				return Evaluate( path, IBranchState.NO_STATE );
 		  }
 	 }
 

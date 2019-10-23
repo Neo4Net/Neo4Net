@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.counts
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.counts
 			  }
 			  else
 			  {
-					if ( Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN == ( labelId = transaction.TokenRead().nodeLabel(label.Name()) ) )
+					if ( Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN == ( labelId = transaction.TokenRead().nodeLabel(label.Name()) ) )
 					{
 						 return 0;
 					}

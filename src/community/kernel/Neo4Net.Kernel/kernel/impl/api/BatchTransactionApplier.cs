@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using LockGroup = Neo4Net.Kernel.impl.locking.LockGroup;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	/// <summary>
 	/// Responsible for dealing with batches of transactions. See also <seealso cref="TransactionApplier"/>
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// <returns> a <seealso cref="TransactionApplier"/> which can apply this transaction and other commands to the store. </returns>
 		 /// <exception cref="IOException"> on error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction) throws java.io.IOException;
+//ORIGINAL LINE: TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException;
 		 TransactionApplier StartTx( CommandsToApply transaction );
 
 		 /// <summary>
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// <returns> a <seealso cref="TransactionApplier"/> which can apply this transaction and other commands to the store. </returns>
 		 /// <exception cref="IOException"> on error. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException;
+//ORIGINAL LINE: TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException;
 		 TransactionApplier StartTx( CommandsToApply transaction, LockGroup lockGroup );
 
 		 /// <summary>
@@ -118,7 +118,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	 {
 		 public abstract TransactionApplier StartTx( CommandsToApply transaction );
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
+//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
 		  public override TransactionApplier StartTx( CommandsToApply transaction, LockGroup lockGroup )
 		  {
 				return StartTx( transaction );

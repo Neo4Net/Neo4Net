@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using Neo4Net.Test.rule.concurrent;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

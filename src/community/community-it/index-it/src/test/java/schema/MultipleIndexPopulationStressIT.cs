@@ -35,7 +35,7 @@ namespace Schema
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using TimeUtil = Neo4Net.Helpers.TimeUtil;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Config = Neo4Net.Kernel.configuration.Config;

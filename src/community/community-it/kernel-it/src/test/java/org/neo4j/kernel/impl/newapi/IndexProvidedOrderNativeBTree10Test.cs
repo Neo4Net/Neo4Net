@@ -29,12 +29,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Neo4Net.Internal.Kernel.Api;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Neo4Net.Kernel.Api.Internal;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //	import static org.Neo4Net.values.storable.ValueTuple.COMPARATOR;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends org.Neo4Net.internal.kernel.api.KernelAPIReadTestBase<ReadTestSupport>
+//ORIGINAL LINE: @SuppressWarnings("FieldCanBeLocal") public class IndexProvidedOrderNativeBTree10Test extends org.Neo4Net.Kernel.Api.Internal.KernelAPIReadTestBase<ReadTestSupport>
 	public class IndexProvidedOrderNativeBTree10Test : KernelAPIReadTestBase<ReadTestSupport>
 	{
 		 private static int _nNodes = 10000;
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldProvideResultInOrderIfCapable() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldProvideResultInOrderIfCapable()
 		 {
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 						 bool fromInclusive = randomValues.NextBoolean();
 						 bool toInclusive = randomValues.NextBoolean();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> range = org.Neo4Net.internal.kernel.api.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> range = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(prop, from.getOnlyValue(), fromInclusive, to.getOnlyValue(), toInclusive);
 						 IndexQuery.RangePredicate<object> range = IndexQuery.range( prop, from.OnlyValue, fromInclusive, to.OnlyValue, toInclusive );
 
 						 using ( NodeValueIndexCursor node = Cursors.allocateNodeValueIndexCursor() )

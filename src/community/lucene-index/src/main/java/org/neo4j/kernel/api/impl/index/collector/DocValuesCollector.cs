@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Index.impl.lucene.@explicit;
 	using Neo4Net.Kernel.Impl.Api.explicitindex;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 			  return new LongValuesIterator( GetMatchingDocs(), TotalHits, field );
 		 }
 
-		 public virtual IndexProgressor GetIndexProgressor( string field, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client )
+		 public virtual IndexProgressor GetIndexProgressor( string field, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client )
 		 {
 			  return new LongValuesIndexProgressor( GetMatchingDocs(), TotalHits, field, client );
 		 }
@@ -492,9 +492,9 @@ namespace Neo4Net.Kernel.Api.Impl.Index.collector
 
 		 private class LongValuesIndexProgressor : LongValuesSource, IndexProgressor
 		 {
-			  internal readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient Client;
+			  internal readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient Client;
 
-			  internal LongValuesIndexProgressor( IEnumerable<MatchingDocs> allMatchingDocs, int totalHits, string field, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client ) : base( allMatchingDocs, totalHits, field )
+			  internal LongValuesIndexProgressor( IEnumerable<MatchingDocs> allMatchingDocs, int totalHits, string field, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client ) : base( allMatchingDocs, totalHits, field )
 			  {
 					this.Client = client;
 			  }

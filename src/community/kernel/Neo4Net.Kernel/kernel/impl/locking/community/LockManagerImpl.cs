@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 	using Neo4Net.Helpers.Collections;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IllegalResourceException = Neo4Net.Kernel.impl.transaction.IllegalResourceException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
 	public class LockManagerImpl
@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean getReadLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean getReadLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool GetReadLock( LockTracer tracer, LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).acquireReadLock( tracer, tx ) );
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean getWriteLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
+//ORIGINAL LINE: public boolean getWriteLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, LockResource resource, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException, org.Neo4Net.kernel.impl.transaction.IllegalResourceException
 		 public virtual bool GetWriteLock( LockTracer tracer, LockResource resource, object tx )
 		 {
 			  return UnusedResourceGuard( resource, tx, GetRWLockForAcquiring( resource, tx ).acquireWriteLock( tracer, tx ) );

@@ -24,18 +24,18 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Test = org.junit.Test;
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using RelationshipDirection = Neo4Net.Storageengine.Api.RelationshipDirection;
+	using RelationshipDirection = Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.INCOMING;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.INCOMING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.LOOP;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.LOOP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.RelationshipDirection.OUTGOING;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection.OUTGOING;
 
 	public class RelationshipChangesForNodeTest
 	{

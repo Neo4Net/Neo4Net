@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 
 	public abstract class RaftLogVerificationIT
 	{
@@ -71,7 +71,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  for ( int i = 0; i < Operations(); i++ )
 			  {
-					_raftLog.append( new RaftLogEntry( i * 3, valueOf( i * 7 ) ) );
+					_raftLog.append( new RaftLogEntry( i * 3, ValueOf( i * 7 ) ) );
 			  }
 		 }
 
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 {
 			  for ( int i = 0; i < Operations(); i++ )
 			  {
-					_raftLog.append( new RaftLogEntry( i * 3, valueOf( i * 7 ) ) );
+					_raftLog.append( new RaftLogEntry( i * 3, ValueOf( i * 7 ) ) );
 					if ( i > 0 && i % 13 == 0 )
 					{
 						 _raftLog.truncate( _raftLog.appendIndex() - 10 );
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 					int appendIndex = finalAppendIndex;
 					while ( appendIndex-- > 0 )
 					{
-						 _raftLog.append( new RaftLogEntry( i, valueOf( i ) ) );
+						 _raftLog.append( new RaftLogEntry( i, ValueOf( i ) ) );
 					}
 
 					int truncateIndex = tlr.Next( finalAppendIndex ); // truncate index must be strictly less than append index
@@ -122,11 +122,11 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 public virtual void ShouldBeAbleToAppendAfterSkip()
 		 {
 			  int term = 0;
-			  _raftLog.append( new RaftLogEntry( term, valueOf( 10 ) ) );
+			  _raftLog.append( new RaftLogEntry( term, ValueOf( 10 ) ) );
 
 			  int newTerm = 3;
 			  _raftLog.skip( 5, newTerm );
-			  RaftLogEntry newEntry = new RaftLogEntry( newTerm, valueOf( 20 ) );
+			  RaftLogEntry newEntry = new RaftLogEntry( newTerm, ValueOf( 20 ) );
 			  _raftLog.append( newEntry ); // this will be logIndex 6
 
 			  assertEquals( newEntry, RaftLogHelper.ReadLogEntry( _raftLog, 6 ) );

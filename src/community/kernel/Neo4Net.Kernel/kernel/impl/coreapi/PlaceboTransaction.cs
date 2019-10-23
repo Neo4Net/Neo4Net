@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 
 	using Lock = Neo4Net.GraphDb.Lock;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 

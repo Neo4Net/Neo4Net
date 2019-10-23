@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -149,10 +149,10 @@ namespace Neo4Net.Kernel
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private void buildRecovery(final org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.Neo4Net.kernel.recovery.LogTailScanner tailScanner, org.Neo4Net.kernel.recovery.RecoveryMonitor recoveryMonitor, org.Neo4Net.kernel.recovery.RecoveryStartInformationProvider.Monitor positionMonitor, final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, org.Neo4Net.storageengine.api.StorageEngine storageEngine, org.Neo4Net.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore, org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository logVersionRepository)
+//ORIGINAL LINE: private void buildRecovery(final org.Neo4Net.io.fs.FileSystemAbstraction fileSystemAbstraction, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore transactionIdStore, org.Neo4Net.kernel.recovery.LogTailScanner tailScanner, org.Neo4Net.kernel.recovery.RecoveryMonitor recoveryMonitor, org.Neo4Net.kernel.recovery.RecoveryStartInformationProvider.Monitor positionMonitor, final org.Neo4Net.kernel.impl.transaction.log.files.LogFiles logFiles, org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine storageEngine, org.Neo4Net.kernel.impl.transaction.log.LogicalTransactionStore logicalTransactionStore, org.Neo4Net.kernel.impl.transaction.log.LogVersionRepository logVersionRepository)
 		 private void BuildRecovery( FileSystemAbstraction fileSystemAbstraction, TransactionIdStore transactionIdStore, LogTailScanner tailScanner, RecoveryMonitor recoveryMonitor, RecoveryStartInformationProvider.Monitor positionMonitor, LogFiles logFiles, StorageEngine storageEngine, LogicalTransactionStore logicalTransactionStore, LogVersionRepository logVersionRepository )
 		 {
 			  RecoveryService recoveryService = new DefaultRecoveryService( storageEngine, tailScanner, transactionIdStore, logicalTransactionStore, logVersionRepository, positionMonitor );
@@ -707,7 +707,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.storageengine.api.StoreFileMetadata> listStoreFiles(boolean includeLogs) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.ResourceIterator<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> listStoreFiles(boolean includeLogs) throws java.io.IOException
 		 public virtual ResourceIterator<StoreFileMetadata> ListStoreFiles( bool includeLogs )
 		 {
 			  NeoStoreFileListing.StoreFileListingBuilder fileListingBuilder = NeoStoreFileListing.builder();

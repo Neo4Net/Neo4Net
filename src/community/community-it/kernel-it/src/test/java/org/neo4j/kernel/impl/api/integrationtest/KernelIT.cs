@@ -25,13 +25,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  ExecuteDummyTxs( Db, 42 );
 
-			  Neo4Net.Internal.Kernel.Api.Transaction tx = NewTransaction( AUTH_DISABLED );
+			  Neo4Net.Kernel.Api.Internal.Transaction tx = NewTransaction( AUTH_DISABLED );
 			  tx.DataWrite().nodeCreate();
 			  tx.Success();
 
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  ExecuteDummyTxs( Db, 42 );
 
-			  Neo4Net.Internal.Kernel.Api.Transaction tx = NewTransaction( AUTH_DISABLED );
+			  Neo4Net.Kernel.Api.Internal.Transaction tx = NewTransaction( AUTH_DISABLED );
 			  tx.DataWrite().nodeCreate();
 			  tx.Failure();
 
@@ -163,7 +163,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  ExecuteDummyTxs( Db, 42 );
 
-			  Neo4Net.Internal.Kernel.Api.Transaction tx = NewTransaction( AUTH_DISABLED );
+			  Neo4Net.Kernel.Api.Internal.Transaction tx = NewTransaction( AUTH_DISABLED );
 			  tx.DataWrite().nodeCreate();
 			  tx.MarkForTermination( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.Terminated );
 
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  ExecuteDummyTxs( Db, 42 );
 
-			  Neo4Net.Internal.Kernel.Api.Transaction tx = NewTransaction( AUTH_DISABLED );
+			  Neo4Net.Kernel.Api.Internal.Transaction tx = NewTransaction( AUTH_DISABLED );
 			  tx.DataWrite().nodeCreate();
 			  tx.Failure();
 			  tx.MarkForTermination( Neo4Net.Kernel.Api.Exceptions.Status_Transaction.Terminated );
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 {
 			  ExecuteDummyTxs( Db, 42 );
 
-			  Neo4Net.Internal.Kernel.Api.Transaction tx = NewTransaction();
+			  Neo4Net.Kernel.Api.Internal.Transaction tx = NewTransaction();
 			  using ( NodeCursor node = tx.Cursors().allocateNodeCursor() )
 			  {
 					tx.DataRead().singleNode(1, node);
@@ -225,8 +225,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createIndex(org.Neo4Net.internal.kernel.api.Transaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException, org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
-		 private IndexReference CreateIndex( Neo4Net.Internal.Kernel.Api.Transaction transaction )
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createIndex(org.Neo4Net.Kernel.Api.Internal.Transaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
+		 private IndexReference CreateIndex( Neo4Net.Kernel.Api.Internal.Transaction transaction )
 		 {
 			  TokenWrite tokenWrite = transaction.TokenWrite();
 			  SchemaWrite schemaWrite = transaction.SchemaWrite();

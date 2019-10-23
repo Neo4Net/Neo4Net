@@ -46,8 +46,8 @@ namespace Neo4Net.Kernel
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using Neo4Net.Helpers.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using ByteUnit = Neo4Net.Io.ByteUnit;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -96,10 +96,10 @@ namespace Neo4Net.Kernel
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using ThreadPoolJobScheduler = Neo4Net.Scheduler.ThreadPoolJobScheduler;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using AdversarialPageCacheGraphDatabaseFactory = Neo4Net.Test.AdversarialPageCacheGraphDatabaseFactory;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestGraphDatabaseFactoryState = Neo4Net.Test.TestGraphDatabaseFactoryState;
@@ -952,7 +952,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 			  public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 			  {
 					IndexAccessor actualAccessor = Actual.getOnlineAccessor( descriptor, samplingConfig );
@@ -960,7 +960,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			  public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 			  {
 					return Actual.getPopulationFailure( descriptor );
@@ -1058,7 +1058,7 @@ namespace Neo4Net.Kernel
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor propertyAccessor )
 			  {
 					Actual.verifyDeferredConstraints( propertyAccessor );

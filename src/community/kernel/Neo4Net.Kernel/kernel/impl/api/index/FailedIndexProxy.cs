@@ -23,12 +23,12 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.GraphDb;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

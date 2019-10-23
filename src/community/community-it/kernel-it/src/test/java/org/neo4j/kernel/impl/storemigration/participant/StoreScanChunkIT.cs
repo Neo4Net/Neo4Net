@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using InputEntityVisitor = Neo4Net.@unsafe.Impl.Batchimport.input.InputEntityVisitor;

@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.transport.configuration
 	using EventLoopGroup = io.netty.channel.EventLoopGroup;
 	using ServerChannel = io.netty.channel.ServerChannel;
 
-	public interface ServerConfigurationProvider
+	public interface IServerConfigurationProvider
 	{
 		 EventLoopGroup CreateEventLoopGroup( int numberOfThreads, ThreadFactory threadFactory );
 

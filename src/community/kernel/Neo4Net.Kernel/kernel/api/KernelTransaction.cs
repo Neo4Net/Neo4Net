@@ -23,21 +23,21 @@ namespace Neo4Net.Kernel.api
 {
 
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 	/// <summary>
-	/// Extends the outwards-facing <seealso cref="org.Neo4Net.internal.kernel.api.Transaction"/> with additional functionality
+	/// Extends the outwards-facing <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/> with additional functionality
 	/// that is used inside the kernel (and in some other places, ahum). Please do not rely on this class unless you
 	/// have to.
 	/// </summary>
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="provider"> index provider identifier </param>
 		 /// <returns> IndexDescriptor for the index to be created. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
 		 IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider );
 
 		 /// <returns> the security context this transaction is currently executing in. </returns>
@@ -76,11 +76,11 @@ namespace Neo4Net.Kernel.api
 		 long LastTransactionIdWhenStarted();
 
 		 /// <returns> start time of this transaction, i.e. basically <seealso cref="System.currentTimeMillis()"/> when user called
-		 /// <seealso cref="Kernel.beginTransaction(Type, LoginContext)"/>. </returns>
+		 /// <seealso cref="Kernel.BeginTransaction(Type, LoginContext)"/>. </returns>
 		 long StartTime();
 
 		 /// <returns> start time of this transaction, i.e. basically <seealso cref="System.nanoTime()"/> when user called
-		 /// <seealso cref="org.Neo4Net.internal.kernel.api.Session.beginTransaction(Type)"/>. </returns>
+		 /// <seealso cref="org.Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(Type)"/>. </returns>
 		 long StartTimeNanos();
 
 		 /// <summary>

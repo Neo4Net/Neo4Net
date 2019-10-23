@@ -33,8 +33,8 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using FlushableChannel = Neo4Net.Kernel.impl.transaction.log.FlushableChannel;
 	using PhysicalFlushableChannel = Neo4Net.Kernel.impl.transaction.log.PhysicalFlushableChannel;
 	using Neo4Net.Kernel.impl.transaction.log;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -463,7 +463,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpMerge(Dumper dumper, byte type, org.Neo4Net.storageengine.api.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
+//ORIGINAL LINE: private static void dumpMerge(Dumper dumper, byte type, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
 		 private static void DumpMerge( Dumper dumper, sbyte type, ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush )
 		 {
 			  long existingBits = channel.Long;
@@ -475,7 +475,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void dumpPrepare(Dumper dumper, byte type, org.Neo4Net.storageengine.api.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
+//ORIGINAL LINE: private static void dumpPrepare(Dumper dumper, byte type, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush) throws java.io.IOException
 		 private static void DumpPrepare( Dumper dumper, sbyte type, ReadableChannel channel, long range, int labelId, TxFilter txFilter, long session, long flush )
 		 {
 			  long txId = channel.Long;

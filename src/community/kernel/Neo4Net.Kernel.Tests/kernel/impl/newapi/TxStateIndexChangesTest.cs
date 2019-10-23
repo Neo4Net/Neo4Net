@@ -34,17 +34,17 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Mockito = org.mockito.Mockito;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using AddedAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedAndRemoved;
 	using AddedWithValuesAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedWithValuesAndRemoved;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using OnHeapCollectionsFactory = Neo4Net.Kernel.impl.util.collection.OnHeapCollectionsFactory;
 	using MutableLongDiffSetsImpl = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSetsImpl;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual void ShouldComputeIndexUpdatesForScanOnAnEmptyTxState()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState.class);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 			  ReadableTransactionState state = Mockito.mock( typeof( ReadableTransactionState ) );
 
 			  // WHEN
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 			  // WHEN
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(40L, "Aaron").withAdded(41L, "Agatha").withAdded(42L, "Andreas").withAdded(43L, "Barbarella").withAdded(44L, "Andrea").withAdded(45L, "Aristotle").withAdded(46L, "Barbara").withAdded(47L, "Cinderella").build();
 
 			  // WHEN
@@ -167,7 +167,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 {
 			  // GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 			  // WHEN
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 internal virtual ICollection<DynamicTest> RangeTests()
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
 			  ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, 510).withAdded(43L, 520).withAdded(44L, 550).withAdded(45L, 500).withAdded(46L, 530).withAdded(47L, 560).withAdded(48L, 540).build();
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -243,7 +243,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "foo").withAdded(43L, "bar").build();
 					ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "foo").withAdded(43L, "bar").build();
 
 					// WHEN
@@ -415,7 +415,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = new TxStateBuilder().withAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
 					ReadableTransactionState state = ( new TxStateBuilder() ).WithAdded(42L, "barry").withAdded(44L, 101L).withAdded(43L, "bar").build();
 
 					// WHEN
@@ -446,7 +446,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  {
 					// GIVEN
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState.class);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 					ReadableTransactionState state = Mockito.mock( typeof( ReadableTransactionState ) );
 
 					// WHEN
@@ -635,7 +635,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  internal virtual ReadableTransactionState Build()
 			  {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.txstate.ReadableTransactionState mock = org.mockito.Mockito.mock(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState.class);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState mock = org.mockito.Mockito.mock(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState.class);
 					ReadableTransactionState mock = Mockito.mock( typeof( ReadableTransactionState ) );
 					doReturn( new UnmodifiableMap<>( Updates ) ).when( mock ).getIndexUpdates( any( typeof( SchemaDescriptor ) ) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

@@ -23,8 +23,8 @@ namespace Neo4Net.GraphDb.factory.module
 	using Neo4Net.Functions;
 	using ProcedureGDBFacadeSPI = Neo4Net.GraphDb.facade.spi.ProcedureGDBFacadeSPI;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Context = Neo4Net.Kernel.api.proc.Context;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -52,7 +52,7 @@ namespace Neo4Net.GraphDb.factory.module
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.GraphDatabaseService apply(org.Neo4Net.kernel.api.proc.Context context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.graphdb.GraphDatabaseService apply(org.Neo4Net.kernel.api.proc.Context context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override IGraphDatabaseService Apply( Context context )
 		 {
 			  KernelTransaction tx = context.GetOrElse( Neo4Net.Kernel.api.proc.Context_Fields.KernelTransaction, null );

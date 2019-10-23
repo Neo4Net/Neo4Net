@@ -54,7 +54,7 @@ namespace Neo4Net.com
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.DechunkingChannelBuffer.assertSameProtocolVersion;
@@ -90,7 +90,7 @@ namespace Neo4Net.com
 		 private readonly LogProvider _logProvider;
 		 private ScheduledExecutorService _silentChannelExecutor;
 
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  long OldChannelThreshold { get; }
 

@@ -19,13 +19,13 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 
-	public interface SchemaWriteGuard
+	public interface ISchemaWriteGuard
 	{
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void assertSchemaWritesAllowed() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException;
+//ORIGINAL LINE: void assertSchemaWritesAllowed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 		 void AssertSchemaWritesAllowed();
 	}
 

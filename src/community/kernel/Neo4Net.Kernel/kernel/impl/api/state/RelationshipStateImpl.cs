@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using IntSets = org.eclipse.collections.impl.factory.primitive.IntSets;
 
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
-	using Neo4Net.Storageengine.Api;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using RelationshipState = Neo4Net.Storageengine.Api.txstate.RelationshipState;
+	using Neo4Net.Kernel.Api.StorageEngine;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using RelationshipState = Neo4Net.Kernel.Api.StorageEngine.TxState.RelationshipState;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class RelationshipStateImpl : IPropertyContainerStateImpl, RelationshipState
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <EX extends Exception> boolean accept(org.Neo4Net.storageengine.api.RelationshipVisitor<EX> visitor) throws EX
+//ORIGINAL LINE: public <EX extends Exception> boolean accept(org.Neo4Net.Kernel.Api.StorageEngine.RelationshipVisitor<EX> visitor) throws EX
 		 public override bool Accept<EX>( RelationshipVisitor<EX> visitor ) where EX : Exception
 		 {
 			  if ( _type != -1 )

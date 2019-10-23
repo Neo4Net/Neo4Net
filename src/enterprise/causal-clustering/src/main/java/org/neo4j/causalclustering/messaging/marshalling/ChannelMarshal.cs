@@ -24,24 +24,24 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 {
 
 	using Neo4Net.causalclustering.core.state.storage;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Implementations of this class perform marshalling (encoding/decoding) of <seealso cref="STATE"/>
 	/// into/from a <seealso cref="WritableChannel"/> and a <seealso cref="ReadableChannel"/> respectively.
 	/// 
 	/// N.B.: Implementations should prefer to extend <seealso cref="SafeChannelMarshal"/> to handle
-	/// <seealso cref="org.Neo4Net.storageengine.api.ReadPastEndException"/> correctly.
+	/// <seealso cref="org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException"/> correctly.
 	/// </summary>
 	/// @param <STATE> The class of objects supported by this marshal </param>
-	public interface ChannelMarshal<STATE>
+	public interface IChannelMarshal<STATE>
 	{
 		 /// <summary>
 		 /// Marshals the state into the channel.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void marshal(STATE state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException;
+//ORIGINAL LINE: void marshal(STATE state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException;
 		 void Marshal( STATE state, WritableChannel channel );
 
 		 /// <summary>
@@ -49,14 +49,14 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 /// to fully read an instance then an <seealso cref="EndOfStreamException"/> must be thrown.
 		 /// 
 		 /// N.B: The ReadableChannel is sort of broken in its implementation and throws
-		 /// <seealso cref="org.Neo4Net.storageengine.api.ReadPastEndException"/> which is a subclass of IOException
+		 /// <seealso cref="org.Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException"/> which is a subclass of IOException
 		 /// and that is problematic since usually the case of reaching the end of a stream actually
 		 /// requires handling distinct from that of arbitrary IOExceptions. Although it was possible
 		 /// to catch that particular exception explicitly, you would not get compiler/IDE support
 		 /// for making that apparent.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: STATE unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
+//ORIGINAL LINE: STATE unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException;
 		 STATE Unmarshal( ReadableChannel channel );
 	}
 

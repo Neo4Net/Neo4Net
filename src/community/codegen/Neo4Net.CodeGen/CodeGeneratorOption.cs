@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.CodeGen
 {
-	public interface CodeGeneratorOption
+	public interface ICodeGeneratorOption
 	{
 		 void ApplyTo( object target );
 	}

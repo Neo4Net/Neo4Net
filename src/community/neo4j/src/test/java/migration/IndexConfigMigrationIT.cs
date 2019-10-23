@@ -35,12 +35,12 @@ namespace Migration
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using ZipUtils = Neo4Net.Io.compress.ZipUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -208,7 +208,7 @@ namespace Migration
 				 return nameValue;
 			 }
 
-			 public static MinMaxSetting valueOf( string name )
+			 public static MinMaxSetting ValueOf( string name )
 			 {
 				 foreach ( MinMaxSetting enumInstance in MinMaxSetting.valueList )
 				 {
@@ -325,7 +325,7 @@ namespace Migration
 				 return nameValue;
 			 }
 
-			 public static FulltextIndexDescription valueOf( string name )
+			 public static FulltextIndexDescription ValueOf( string name )
 			 {
 				 foreach ( FulltextIndexDescription enumInstance in FulltextIndexDescription.valueList )
 				 {
@@ -379,7 +379,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void shouldHaveCorrectDataAndIndexConfiguration() throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test void shouldHaveCorrectDataAndIndexConfiguration() throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void ShouldHaveCorrectDataAndIndexConfiguration()
 		 {
@@ -415,7 +415,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private static void AssertIndexConfiguration( GraphDatabaseAPI db )
 		 {
 			  foreach ( Label label in _labels )
@@ -435,7 +435,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void assertFulltextIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static void assertFulltextIndexConfiguration(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private static void AssertFulltextIndexConfiguration( GraphDatabaseAPI db )
 		 {
 			  foreach ( FulltextIndexDescription fulltextIndex in FulltextIndexDescription.values() )
@@ -450,7 +450,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.Map<String,org.Neo4Net.values.storable.Value> getFulltextIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, String indexName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.Map<String,org.Neo4Net.values.storable.Value> getFulltextIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, String indexName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private static IDictionary<string, Value> GetFulltextIndexConfig( GraphDatabaseAPI db, string indexName )
 		 {
 			  IndexingService indexingService = GetIndexingService( db );
@@ -460,7 +460,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static java.util.Map<String,org.Neo4Net.values.storable.Value> getIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, String propKey) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @SuppressWarnings("SameParameterValue") private static java.util.Map<String,org.Neo4Net.values.storable.Value> getIndexConfig(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, String propKey) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private static IDictionary<string, Value> GetIndexConfig( GraphDatabaseAPI db, Label label, string propKey )
 		 {

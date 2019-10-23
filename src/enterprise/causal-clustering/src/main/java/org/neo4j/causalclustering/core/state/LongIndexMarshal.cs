@@ -24,8 +24,8 @@ namespace Neo4Net.causalclustering.core.state
 {
 
 	using Neo4Net.causalclustering.core.state.storage;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// A marshal for an index that starts with -1 at the empty slot before the first real entry at 0.
@@ -43,14 +43,14 @@ namespace Neo4Net.causalclustering.core.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(System.Nullable<long> index, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(System.Nullable<long> index, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Marshal( long? index, WritableChannel channel )
 		 {
 			  channel.PutLong( index.Value );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected System.Nullable<long> unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected System.Nullable<long> unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 protected internal override long? Unmarshal0( ReadableChannel channel )
 		 {
 			  return channel.Long;

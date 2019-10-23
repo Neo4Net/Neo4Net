@@ -25,19 +25,19 @@ namespace Neo4Net.Consistency.checking
 	using IndexAccessors = Neo4Net.Consistency.checking.index.IndexAccessors;
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
-	using MalformedSchemaRuleException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MalformedSchemaRuleException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using RelationTypeSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
 	using SchemaRuleAccess = Neo4Net.Kernel.impl.store.SchemaRuleAccess;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using LabelTokenRecord = Neo4Net.Kernel.Impl.Store.Records.LabelTokenRecord;
 	using PropertyKeyTokenRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyKeyTokenRecord;
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Note that this class builds up an in-memory representation of the complete schema store by being used in
@@ -183,7 +183,7 @@ namespace Neo4Net.Consistency.checking
 						 {
 							  if ( rule.OwningConstraint != null ) // we only expect a pointer if we have an owner
 							  {
-									engine.Report().missingObligation(Neo4Net.Storageengine.Api.schema.SchemaRule_Kind.UniquenessConstraint);
+									engine.Report().missingObligation(Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind.UniquenessConstraint);
 							  }
 						 }
 						 else
@@ -208,7 +208,7 @@ namespace Neo4Net.Consistency.checking
 						 DynamicRecord obligation = outerInstance.constraintObligations[rule.Id];
 						 if ( obligation == null )
 						 {
-							  engine.Report().missingObligation(Neo4Net.Storageengine.Api.schema.SchemaRule_Kind.ConstraintIndexRule);
+							  engine.Report().missingObligation(Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind.ConstraintIndexRule);
 						 }
 						 else
 						 {

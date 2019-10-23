@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
    /// guaranteed. Instead, the automatically generated documentation derived from this class and available in the Neo4Net
    /// manual should be considered a user-level API.
    /// </summary>
-   public interface Status
+   public interface IStatus
    {
       /*
 
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Network valueOf(string name)
+      public static Status_Network ValueOf(string name)
       {
          foreach (Status_Network enumInstance in Status_Network.valueList)
          {
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Request valueOf(string name)
+      public static Status_Request ValueOf(string name)
       {
          foreach (Status_Request enumInstance in Status_Request.valueList)
          {
@@ -362,7 +362,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Transaction valueOf(string name)
+      public static Status_Transaction ValueOf(string name)
       {
          foreach (Status_Transaction enumInstance in Status_Transaction.valueList)
          {
@@ -529,7 +529,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Statement valueOf(string name)
+      public static Status_Statement ValueOf(string name)
       {
          foreach (Status_Statement enumInstance in Status_Statement.valueList)
          {
@@ -667,7 +667,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Schema valueOf(string name)
+      public static Status_Schema ValueOf(string name)
       {
          foreach (Status_Schema enumInstance in Status_Schema.valueList)
          {
@@ -732,7 +732,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_LegacyIndex valueOf(string name)
+      public static Status_LegacyIndex ValueOf(string name)
       {
          foreach (Status_LegacyIndex enumInstance in Status_LegacyIndex.valueList)
          {
@@ -812,7 +812,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Procedure valueOf(string name)
+      public static Status_Procedure ValueOf(string name)
       {
          foreach (Status_Procedure enumInstance in Status_Procedure.valueList)
          {
@@ -903,7 +903,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Security valueOf(string name)
+      public static Status_Security ValueOf(string name)
       {
          foreach (Status_Security enumInstance in Status_Security.valueList)
          {
@@ -999,7 +999,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_General valueOf(string name)
+      public static Status_General ValueOf(string name)
       {
          foreach (Status_General enumInstance in Status_General.valueList)
          {
@@ -1073,7 +1073,7 @@ namespace Neo4Net.Kernel.Api.Exceptions
          return nameValue;
       }
 
-      public static Status_Cluster valueOf(string name)
+      public static Status_Cluster ValueOf(string name)
       {
          foreach (Status_Cluster enumInstance in Status_Cluster.valueList)
          {
@@ -1204,7 +1204,7 @@ public enum Status_Classification
    //	  }
 }
 
-public interface Status_HasStatus
+public interface IStatus_HasStatus
 {
    Status Status();
 }

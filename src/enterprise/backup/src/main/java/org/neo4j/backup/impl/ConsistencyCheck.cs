@@ -32,7 +32,7 @@ namespace Neo4Net.backup.impl
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
-	public interface ConsistencyCheck
+	public interface IConsistencyCheck
 	{
 	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
 	//	 ConsistencyCheck NONE = new ConsistencyCheck()

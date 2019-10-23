@@ -29,10 +29,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Neo4Net.Internal.Kernel.Api;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Neo4Net.Kernel.Api.Internal;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;

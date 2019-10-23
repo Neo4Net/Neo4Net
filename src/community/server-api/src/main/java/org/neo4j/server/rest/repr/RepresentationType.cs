@@ -28,9 +28,9 @@ namespace Neo4Net.Server.rest.repr
 	using Path = Neo4Net.GraphDb.Path;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
 
 	public sealed class RepresentationType

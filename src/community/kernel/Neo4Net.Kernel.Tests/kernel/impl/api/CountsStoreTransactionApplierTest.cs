@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using CountsTracker = Neo4Net.Kernel.impl.store.counts.CountsTracker;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.anyLong;
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  CountsAccessor_Updater updater = mock( typeof( CountsAccessor_Updater ) );
 			  when( tracker.Apply( anyLong() ) ).thenReturn(updater);
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier(tracker, org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL);
+//ORIGINAL LINE: final CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier(tracker, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL);
 			  CountsStoreBatchTransactionApplier applier = new CountsStoreBatchTransactionApplier( tracker, TransactionApplicationMode.INTERNAL );
 
 			  // WHEN

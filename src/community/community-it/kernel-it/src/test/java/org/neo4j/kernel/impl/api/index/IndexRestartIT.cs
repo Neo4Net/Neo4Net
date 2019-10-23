@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
@@ -49,9 +49,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.factory.GraphDatabaseSettings.default_schema_provider;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.SchemaIndexTestHelper.singleInstanceIndexProviderFactory;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  StartDb();
 
 			  // Then
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Online ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Online ) ) );
 			  assertEquals( 1, _provider.populatorCallCount.get() );
 			  assertEquals( 2, _provider.writerCallCount.get() );
 		 }
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // When
 			  StartDb();
 
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, not( haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Failed ) ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, not( haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Failed ) ) ) );
 			  assertEquals( 2, _provider.populatorCallCount.get() );
 		 }
 

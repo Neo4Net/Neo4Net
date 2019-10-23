@@ -23,8 +23,8 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using Predicates = Neo4Net.Functions.Predicates;
 	using IdContextFactory = Neo4Net.GraphDb.factory.module.id.IdContextFactory;
 	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -205,7 +205,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  // Community does not add any extra procedures

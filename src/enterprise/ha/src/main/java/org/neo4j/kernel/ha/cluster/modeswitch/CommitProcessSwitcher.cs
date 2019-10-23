@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
 	using IntegrityValidator = Neo4Net.Kernel.impl.transaction.state.IntegrityValidator;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 	public class CommitProcessSwitcher : AbstractComponentSwitcher<TransactionCommitProcess>
 	{

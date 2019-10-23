@@ -40,7 +40,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 	/// <summary>
 	/// User controlled configuration for a <seealso cref="BatchImporter"/>.
 	/// </summary>
-	public interface Configuration
+	public interface IConfiguration
 	{
 		 /// <summary>
 		 /// File name in which bad entries from the import will end up. This file will be created in the

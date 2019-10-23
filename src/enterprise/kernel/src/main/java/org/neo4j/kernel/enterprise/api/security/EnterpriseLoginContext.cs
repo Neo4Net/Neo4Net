@@ -25,8 +25,8 @@
 namespace Neo4Net.Kernel.enterprise.api.security
 {
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 	public interface EnterpriseLoginContext : LoginContext
 	{

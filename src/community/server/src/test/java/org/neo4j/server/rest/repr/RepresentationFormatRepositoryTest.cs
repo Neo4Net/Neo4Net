@@ -58,14 +58,14 @@ namespace Neo4Net.Server.rest.repr
 //ORIGINAL LINE: @Test public void canProvideJsonFormat()
 		 public virtual void CanProvideJsonFormat()
 		 {
-			  assertNotNull( _repository.inputFormat( MediaType.valueOf( "application/json" ) ) );
+			  assertNotNull( _repository.inputFormat( MediaType.ValueOf( "application/json" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void canProvideUTF8EncodedJsonFormat()
 		 public virtual void CanProvideUTF8EncodedJsonFormat()
 		 {
-			  assertNotNull( _repository.inputFormat( MediaType.valueOf( "application/json;charset=UTF-8" ) ) );
+			  assertNotNull( _repository.inputFormat( MediaType.ValueOf( "application/json;charset=UTF-8" ) ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

@@ -720,7 +720,7 @@ namespace Neo4Net.Values.Storable
 				 return nameValue;
 			 }
 
-			 public static TemporalFields valueOf( string name )
+			 public static TemporalFields ValueOf( string name )
 			 {
 				 foreach ( TemporalFields enumInstance in TemporalFields.valueList )
 				 {

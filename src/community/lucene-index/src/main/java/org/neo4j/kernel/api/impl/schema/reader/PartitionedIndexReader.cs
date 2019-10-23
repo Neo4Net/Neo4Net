@@ -26,20 +26,20 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using AggregatingIndexSampler = Neo4Net.Kernel.Api.Impl.Index.sampler.AggregatingIndexSampler;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using AbstractIndexReader = Neo4Net.Storageengine.Api.schema.AbstractIndexReader;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using AbstractIndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.AbstractIndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 public override PrimitiveLongResourceIterator Query( params IndexQuery[] predicates )
 		 {
 			  try
@@ -75,8 +75,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void query(org.Neo4Net.storageengine.api.schema.IndexProgressor_NodeValueClient client, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.internal.kernel.api.IndexQuery... query) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
-		 public override void Query( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
+//ORIGINAL LINE: public void query(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
+		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		 {
 			  try
 			  {
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 			  return false;
 		 }
 
-		 public override void DistinctValues( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
+		 public override void DistinctValues( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
 		 {
 			  BridgingIndexProgressor bridgingIndexProgressor = new BridgingIndexProgressor( client, Descriptor.schema().PropertyIds );
 			  _indexReaders.ForEach( reader => reader.distinctValues( bridgingIndexProgressor, propertyAccessor, needsValues ) );

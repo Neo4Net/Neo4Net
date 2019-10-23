@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.MessageUtils.messageFor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.TestMessageBuilders.appendEntriesResponse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -106,7 +106,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 
 		 private LogProvider _logProvider = NullLogProvider.Instance;
 
-		 private static readonly ReplicatedString _content = ReplicatedString.valueOf( "some-content-to-raft" );
+		 private static readonly ReplicatedString _content = ReplicatedString.ValueOf( "some-content-to-raft" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void leaderShouldNotRespondToSuccessResponseFromFollowerThatWillSoonUpToDateViaInFlightMessages() throws Exception
@@ -318,7 +318,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  RaftLog log = new InMemoryRaftLog();
 			  for ( int i = 0; i <= 100; i++ )
 			  {
-					log.Append( new RaftLogEntry( 0, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( 0, ValueOf( i ) ) );
 			  }
 
 			  when( state.CommitIndex() ).thenReturn(-1L);
@@ -544,7 +544,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  Leader leader = new Leader();
 
 			  const int batchSize = 3;
-			  Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest batchRequest = new Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest( new IList<Neo4Net.causalclustering.core.replication.ReplicatedContent> { valueOf( 0 ), valueOf( 1 ), valueOf( 2 ) } );
+			  Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest batchRequest = new Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_BatchRequest( new IList<Neo4Net.causalclustering.core.replication.ReplicatedContent> { ValueOf( 0 ), ValueOf( 1 ), ValueOf( 2 ) } );
 
 			  // when
 			  Outcome outcome = leader.Handle( batchRequest, state, Log() );
@@ -563,9 +563,9 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 
 			  assertEquals(shipCommand, new ShipCommand.NewEntries(-1, -1, new RaftLogEntry[]
 			  {
-				  new RaftLogEntry( 0, valueOf( 0 ) ),
-				  new RaftLogEntry( 0, valueOf( 1 ) ),
-				  new RaftLogEntry( 0, valueOf( 2 ) )
+				  new RaftLogEntry( 0, ValueOf( 0 ) ),
+				  new RaftLogEntry( 0, ValueOf( 1 ) ),
+				  new RaftLogEntry( 0, ValueOf( 2 ) )
 			  }));
 		 }
 
@@ -721,7 +721,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  long leaderCommitIndex = 10;
 			  long rivalTerm = leaderTerm - 1;
 			  long logIndex = 20;
-			  RaftLogEntry[] entries = new RaftLogEntry[] { new RaftLogEntry( rivalTerm, ReplicatedInteger.valueOf( 99 ) ) };
+			  RaftLogEntry[] entries = new RaftLogEntry[] { new RaftLogEntry( rivalTerm, ReplicatedInteger.ValueOf( 99 ) ) };
 
 			  Leader leader = new Leader();
 			  RaftState state = raftState().term(leaderTerm).commitIndex(leaderCommitIndex).build();
@@ -750,7 +750,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  long leaderCommitIndex = 10;
 			  long rivalTerm = leaderTerm + 1;
 			  long logIndex = 20;
-			  RaftLogEntry[] entries = new RaftLogEntry[] { new RaftLogEntry( rivalTerm, ReplicatedInteger.valueOf( 99 ) ) };
+			  RaftLogEntry[] entries = new RaftLogEntry[] { new RaftLogEntry( rivalTerm, ReplicatedInteger.ValueOf( 99 ) ) };
 
 			  Leader leader = new Leader();
 			  RaftState state = raftState().term(leaderTerm).commitIndex(leaderCommitIndex).build();

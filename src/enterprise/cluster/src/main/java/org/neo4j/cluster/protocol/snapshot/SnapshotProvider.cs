@@ -26,7 +26,7 @@ namespace Neo4Net.cluster.protocol.snapshot
 	/// <summary>
 	/// Handle snapshot data for cluster state.
 	/// </summary>
-	public interface SnapshotProvider
+	public interface ISnapshotProvider
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void getState(java.io.ObjectOutputStream output) throws java.io.IOException;

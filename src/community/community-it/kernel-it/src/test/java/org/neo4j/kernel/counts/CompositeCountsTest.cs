@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.counts
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
@@ -414,7 +414,7 @@ namespace Neo4Net.Kernel.counts
 					}
 					else
 					{
-						 if ( Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN == ( startId = tokenRead.NodeLabel( start.Name() ) ) )
+						 if ( Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN == ( startId = tokenRead.NodeLabel( start.Name() ) ) )
 						 {
 							  return 0;
 						 }
@@ -422,11 +422,11 @@ namespace Neo4Net.Kernel.counts
 					// type
 					if ( type == null )
 					{
-						 typeId = Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN;
+						 typeId = Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 					}
 					else
 					{
-						 if ( Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN == ( typeId = tokenRead.RelationshipType( type.Name() ) ) )
+						 if ( Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN == ( typeId = tokenRead.RelationshipType( type.Name() ) ) )
 						 {
 							  return 0;
 						 }
@@ -438,7 +438,7 @@ namespace Neo4Net.Kernel.counts
 					}
 					else
 					{
-						 if ( Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN == ( endId = tokenRead.NodeLabel( end.Name() ) ) )
+						 if ( Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN == ( endId = tokenRead.NodeLabel( end.Name() ) ) )
 						 {
 							  return 0;
 						 }

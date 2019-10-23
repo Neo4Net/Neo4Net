@@ -349,7 +349,7 @@ namespace Neo4Net.GraphDb.factory
 
 		  // @see Status.Transaction#TransactionTimedOut
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("The maximum time interval of a transaction within which it should be completed.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_timeout = setting("dbms.transaction.timeout", DURATION, String.valueOf(UNSPECIFIED_TIMEOUT));
+//ORIGINAL LINE: @Description("The maximum time interval of a transaction within which it should be completed.") @Dynamic public static final org.Neo4Net.graphdb.config.Setting<java.time.Duration> transaction_timeout = setting("dbms.transaction.timeout", DURATION, String.ValueOf(UNSPECIFIED_TIMEOUT));
 		 [Description("The maximum time interval of a transaction within which it should be completed.")]
 		 public static readonly Setting<Duration> TransactionTimeout = setting( "dbms.transaction.timeout", DURATION, UNSPECIFIED_TIMEOUT.ToString() );
 
@@ -555,7 +555,7 @@ namespace Neo4Net.GraphDb.factory
 				 return nameValue;
 			 }
 
-			 public static SchemaIndex valueOf( string name )
+			 public static SchemaIndex ValueOf( string name )
 			 {
 				 foreach ( SchemaIndex enumInstance in SchemaIndex.valueList )
 				 {
@@ -807,12 +807,12 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<bool> BoltOutboundBufferThrottle = setting( "unsupported.dbms.bolt.outbound_buffer_throttle", BOOLEAN, TRUE );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, String.valueOf(org.Neo4Net.io.ByteUnit.kibiBytes(512))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(64), Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, String.ValueOf(org.Neo4Net.io.ByteUnit.kibiBytes(512))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(64), Integer.MAX_VALUE)).build();
 		 [Description("When the size (in bytes) of outbound network buffers, used by bolt's network layer, " + "grows beyond this value bolt channel will advertise itself as unwritable and will block " + "related processing thread until it becomes writable again.")]
 		 public static readonly Setting<int> BoltOutboundBufferThrottleHighWaterMark = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.high_watermark", INTEGER, ByteUnit.kibiBytes( 512 ).ToString() ).constraint(range((int) ByteUnit.kibiBytes(64), int.MaxValue)).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, String.valueOf(org.Neo4Net.io.ByteUnit.kibiBytes(128))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(16), Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_outbound_buffer_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, String.ValueOf(org.Neo4Net.io.ByteUnit.kibiBytes(128))).constraint(range((int) org.Neo4Net.io.ByteUnit.kibiBytes(16), Integer.MAX_VALUE)).build();
 		 [Description("When the size (in bytes) of outbound network buffers, previously advertised as unwritable, " + "gets below this value bolt channel will re-advertise itself as writable and blocked processing " + "thread will resume execution.")]
 		 public static readonly Setting<int> BoltOutboundBufferThrottleLowWaterMark = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.low_watermark", INTEGER, ByteUnit.kibiBytes( 128 ).ToString() ).constraint(range((int) ByteUnit.kibiBytes(16), int.MaxValue)).build();
 
@@ -822,12 +822,12 @@ namespace Neo4Net.GraphDb.factory
 		 public static readonly Setting<Duration> BoltOutboundBufferThrottleMaxDuration = buildSetting( "unsupported.dbms.bolt.outbound_buffer_throttle.max_duration", DURATION, "15m" ).constraint( min( Duration.ofSeconds( 30 ) ) ).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, String.valueOf(300)).constraint(range(1, Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_high_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, String.ValueOf(300)).constraint(range(1, Integer.MAX_VALUE)).build();
 		 [Description("When the number of queued inbound messages grows beyond this value, reading from underlying " + "channel will be paused (no more inbound messages will be available) until queued number of " + "messages drops below the configured low watermark value.")]
 		 public static readonly Setting<int> BoltInboundMessageThrottleHighWaterMark = buildSetting( "unsupported.dbms.bolt.inbound_message_throttle.high_watermark", INTEGER, 300.ToString() ).constraint(range(1, int.MaxValue)).build();
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, String.valueOf(100)).constraint(range(1, Integer.MAX_VALUE)).build();
+//ORIGINAL LINE: @Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.") @Internal public static final org.Neo4Net.graphdb.config.Setting<int> bolt_inbound_message_throttle_low_water_mark = buildSetting("unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, String.ValueOf(100)).constraint(range(1, Integer.MAX_VALUE)).build();
 		 [Description("When the number of queued inbound messages, previously reached configured high watermark value, " + "drops below this value, reading from underlying channel will be enabled and any pending messages " + "will start queuing again.")]
 		 public static readonly Setting<int> BoltInboundMessageThrottleLowWaterMark = buildSetting( "unsupported.dbms.bolt.inbound_message_throttle.low_watermark", INTEGER, 100.ToString() ).constraint(range(1, int.MaxValue)).build();
 

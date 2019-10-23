@@ -38,7 +38,7 @@ namespace Neo4Net.Bolt
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConnectorPortRegister = Neo4Net.Kernel.configuration.ConnectorPortRegister;
@@ -50,8 +50,8 @@ namespace Neo4Net.Bolt
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -137,7 +137,7 @@ namespace Neo4Net.Bolt
 		 {
 			  using ( Session session = driver.session() )
 			  {
-					using ( Transaction tx = session.beginTransaction() )
+					using ( Transaction tx = session.BeginTransaction() )
 					{
 						 tx.run( "CREATE ()" );
 						 tx.success();
@@ -195,7 +195,7 @@ namespace Neo4Net.Bolt
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void applyToStore(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void applyToStore(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  protected internal override void ApplyToStore( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 			  {
 					CommitBlocker.blockWhileWritingToStoreIfNeeded();

@@ -27,7 +27,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using PrincipalCollection = org.apache.shiro.subject.PrincipalCollection;
 	using DelegatingSubject = org.apache.shiro.subject.support.DelegatingSubject;
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 
 	public class ShiroSubject : DelegatingSubject
 	{

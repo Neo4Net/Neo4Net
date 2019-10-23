@@ -439,7 +439,7 @@ namespace Neo4Net.cluster.protocol.cluster
 			  }
 		 }
 
-		 public interface ClusterTestScript
+		 public interface IClusterTestScript
 		 {
 			  int Rounds();
 

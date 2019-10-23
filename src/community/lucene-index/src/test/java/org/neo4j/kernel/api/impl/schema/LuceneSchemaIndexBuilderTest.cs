@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;

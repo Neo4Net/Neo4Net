@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;

@@ -40,8 +40,8 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using StorageCommandSerializer = Neo4Net.Kernel.impl.transaction.log.entry.StorageCommandSerializer;
 	using Neo4Net.Kernel.impl.transaction.log.entry;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class ReplicatedTransactionFactory
 	{
@@ -159,7 +159,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void write(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: void write(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  internal virtual void Write( WritableChannel channel )
 			  {
 					NextJob.accept( channel );

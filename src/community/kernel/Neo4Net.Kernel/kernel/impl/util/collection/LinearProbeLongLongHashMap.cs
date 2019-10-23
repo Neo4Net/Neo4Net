@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 
 		 public override long GetIfAbsentPutWithKey( long key, LongToLongFunction function )
 		 {
-			  return getIfAbsentPut( key, () => function.valueOf(key) );
+			  return getIfAbsentPut( key, () => function.ValueOf(key) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: There is no .NET equivalent to the Java 'super' constraint:

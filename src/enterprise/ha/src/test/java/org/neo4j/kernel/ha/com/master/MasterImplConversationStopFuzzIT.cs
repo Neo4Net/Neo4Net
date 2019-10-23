@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using TransactionNotPresentOnMasterException = Neo4Net.com.TransactionNotPresentOnMasterException;
 	using Neo4Net.com;
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConversationSPI = Neo4Net.Kernel.ha.cluster.ConversationSPI;
 	using DefaultConversationSPI = Neo4Net.Kernel.ha.cluster.DefaultConversationSPI;
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
 	using Clocks = Neo4Net.Time.Clocks;
 
@@ -191,9 +191,9 @@ namespace Neo4Net.Kernel.ha.com.master
 			  internal abstract class State
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//               UNINITIALIZED { State next(SlaveEmulatorWorker worker) { HandshakeResult handshake = worker.master.handshake(worker.lastTx, org.Neo4Net.storageengine.api.StoreId).response(); worker.epoch = handshake.epoch(); return IDLE; } },
+//               UNINITIALIZED { State next(SlaveEmulatorWorker worker) { HandshakeResult handshake = worker.master.handshake(worker.lastTx, org.Neo4Net.Kernel.Api.StorageEngine.StoreId).response(); worker.epoch = handshake.epoch(); return IDLE; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//               IDLE { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else if(lowProbabilityEvent(worker)) { return commit(worker, new org.Neo4Net.com.RequestContext(worker.epoch, worker.machineId, -1, worker.lastTx, 0)); } else { try { worker.master.newLockSession(worker.newRequestContext()); return IN_SESSION; } catch(org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException e) { if(e.getCause() instanceof org.Neo4Net.kernel.impl.util.collection.ConcurrentAccessException) { executionStatistic.reportAlreadyInUseError(); return IDLE; } else { throw e; } } } } },
+//               IDLE { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else if(lowProbabilityEvent(worker)) { return commit(worker, new org.Neo4Net.com.RequestContext(worker.epoch, worker.machineId, -1, worker.lastTx, 0)); } else { try { worker.master.newLockSession(worker.newRequestContext()); return IN_SESSION; } catch(org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException e) { if(e.getCause() instanceof org.Neo4Net.kernel.impl.util.collection.ConcurrentAccessException) { executionStatistic.reportAlreadyInUseError(); return IDLE; } else { throw e; } } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //               IN_SESSION { State next(SlaveEmulatorWorker worker) throws Exception { if(lowProbabilityEvent(worker)) { return UNINITIALIZED; } else { int i = worker.random.nextInt(10); if(i >= 5) { return commit(worker, worker.requestContext); } else if(i >= 4) { worker.master.acquireExclusiveLock(worker.requestContext, org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else if(i >= 1) { worker.master.acquireSharedLock(worker.requestContext, org.Neo4Net.kernel.impl.locking.ResourceTypes.NODE, randomResource(worker)); return IN_SESSION; } else { endLockSession(worker); return IDLE; } } } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
@@ -234,7 +234,7 @@ namespace Neo4Net.Kernel.ha.com.master
 					internal abstract State next( SlaveEmulatorWorker worker );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected State commit(SlaveEmulatorWorker worker, org.Neo4Net.com.RequestContext requestContext) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected State commit(SlaveEmulatorWorker worker, org.Neo4Net.com.RequestContext requestContext) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 					protected internal State Commit( SlaveEmulatorWorker worker, Neo4Net.com.RequestContext requestContext )
 					{
 						 try
@@ -265,7 +265,7 @@ namespace Neo4Net.Kernel.ha.com.master
 					  return nameValue;
 				  }
 
-				  public static State valueOf( string name )
+				  public static State ValueOf( string name )
 				  {
 					  foreach ( State enumInstance in State.valueList )
 					  {

@@ -33,7 +33,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 	/// Implements the following interface:
 	/// (since the code is generated it does not actually need to declare it with implements)
 	/// 
-	/// public interface SortTable<T extends Comparable<?>>
+	/// public interface ISortTable<T extends Comparable<?>>
 	/// {
 	///     boolean add( T e );
 	/// 

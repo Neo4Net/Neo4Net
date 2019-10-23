@@ -36,18 +36,18 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using UniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.UniqueIndexSampler;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Preconditions = Neo4Net.Utils.Preconditions;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.index.Internal.gbptree.GBPTree.NO_HEADER_WRITER;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.GENERAL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.UNIQUE;
 
 	/// <summary>
 	/// <seealso cref="IndexPopulator"/> backed by a <seealso cref="GBPTree"/>.
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		public abstract void PutAllNoOverwrite( IDictionary<string, Value> target, IDictionary<string, Value> source );
 		public abstract IDictionary<string, Value> IndexConfig();
 		public abstract void ScanCompleted( Neo4Net.Kernel.Impl.Api.index.PhaseTracker phaseTracker );
-		public abstract Neo4Net.Storageengine.Api.schema.PopulationProgress Progress( Neo4Net.Storageengine.Api.schema.PopulationProgress scanProgress );
+		public abstract Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress Progress( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress scanProgress );
 		 public const sbyte BYTE_FAILED = 0;
 		 internal const sbyte BYTE_ONLINE = 1;
 		 internal const sbyte BYTE_POPULATING = 2;
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  // No-op, uniqueness is checked for each update in add(IndexEntryUpdate)

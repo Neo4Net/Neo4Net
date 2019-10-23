@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.outcome
 {
-	public interface ConsensusOutcome
+	public interface IConsensusOutcome
 	{
 		 bool NeedsFreshSnapshot();
 

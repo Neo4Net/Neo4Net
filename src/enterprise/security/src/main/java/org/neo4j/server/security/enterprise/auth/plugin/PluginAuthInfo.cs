@@ -30,7 +30,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using ByteSource = org.apache.shiro.util.ByteSource;
 
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using AuthInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.AuthInfo;
 	using CacheableAuthInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.CacheableAuthInfo;
 

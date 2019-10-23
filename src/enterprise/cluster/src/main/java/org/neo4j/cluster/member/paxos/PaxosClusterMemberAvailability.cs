@@ -34,7 +34,7 @@ namespace Neo4Net.cluster.member.paxos
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// Paxos based implementation of <seealso cref="org.Neo4Net.cluster.member.ClusterMemberAvailability"/>

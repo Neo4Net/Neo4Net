@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.explorer.ClusterSafetyViolations.inconsistentCommittedLogEntries;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -54,11 +54,11 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 			  // given
 			  ClusterState clusterState = new ClusterState( asSet( member( 0 ), member( 1 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 2 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, valueOf( 3 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 3 ) ) );
 
 			  Commit( clusterState, member( 0 ), 0 );
 			  Commit( clusterState, member( 1 ), 0 );
@@ -82,11 +82,11 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 			  // given
 			  ClusterState clusterState = new ClusterState( asSet( member( 0 ), member( 1 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 2 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 2, valueOf( 2 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 2, ValueOf( 2 ) ) );
 
 			  Commit( clusterState, member( 0 ), 0 );
 			  Commit( clusterState, member( 1 ), 0 );
@@ -110,13 +110,13 @@ namespace Neo4Net.causalclustering.core.consensus.explorer
 			  // given
 			  ClusterState clusterState = new ClusterState( asSet( member( 0 ), member( 1 ), member( 2 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
-			  clusterState.States[member( 2 )].entryLog.append( new RaftLogEntry( 1, valueOf( 1 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
+			  clusterState.States[member( 2 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 1 ) ) );
 
-			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, valueOf( 2 ) ) );
-			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, valueOf( 2 ) ) );
-			  clusterState.States[member( 2 )].entryLog.append( new RaftLogEntry( 2, valueOf( 2 ) ) );
+			  clusterState.States[member( 0 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
+			  clusterState.States[member( 1 )].entryLog.append( new RaftLogEntry( 1, ValueOf( 2 ) ) );
+			  clusterState.States[member( 2 )].entryLog.append( new RaftLogEntry( 2, ValueOf( 2 ) ) );
 
 			  Commit( clusterState, member( 0 ), 0 );
 			  Commit( clusterState, member( 1 ), 0 );

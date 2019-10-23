@@ -41,11 +41,11 @@ namespace Neo4Net.Test.rule
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -54,7 +54,7 @@ namespace Neo4Net.Test.rule
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.stringMap;
@@ -220,12 +220,12 @@ namespace Neo4Net.Test.rule
 
 		 public override InternalTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext )
 		 {
-			  return GraphDatabaseAPI.beginTransaction( type, loginContext );
+			  return GraphDatabaseAPI.BeginTransaction( type, loginContext );
 		 }
 
 		 public override InternalTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout, TimeUnit unit )
 		 {
-			  return GraphDatabaseAPI.beginTransaction( type, loginContext, timeout, unit );
+			  return GraphDatabaseAPI.BeginTransaction( type, loginContext, timeout, unit );
 		 }
 
 		 public override Transaction BeginTx()

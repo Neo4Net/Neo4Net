@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.api
 {
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
 	using CallableUserAggregationFunction = Neo4Net.Kernel.api.proc.CallableUserAggregationFunction;
 	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.api
 	/// and write operations are supported as well as creating transactions.
 	/// 
 	/// Changes to the graph (i.e. write operations) are performed via a
-	/// <seealso cref="beginTransaction(Transaction.Type, LoginContext)"/>  transaction context} where changes done
+	/// <seealso cref="BeginTransaction(Transaction.Type, LoginContext)"/>  transaction context} where changes done
 	/// inside the transaction are visible in read operations for <seealso cref="Statement statements"/>
 	/// executed within that transaction context.
 	/// </summary>
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api
 		 /// <param name="loginContext"> transaction login context </param>
 		 /// <param name="timeout"> transaction timeout in milliseconds </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: KernelTransaction beginTransaction(KernelTransaction.Type type, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext, long timeout) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: KernelTransaction BeginTransaction(KernelTransaction.Type type, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext, long timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
 		 /// <summary>
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="procedure"> procedure to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterProcedure( CallableProcedure procedure );
 
 		 /// <summary>
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterUserFunction( CallableUserFunction function );
 
 		 /// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Kernel.api
 		 /// </summary>
 		 /// <param name="function"> function to register </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 void RegisterUserAggregationFunction( CallableUserAggregationFunction function );
 	}
 

@@ -369,7 +369,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static ShortArray valueOf( string name )
+		public static ShortArray ValueOf( string name )
 		{
 			foreach ( ShortArray enumInstance in ShortArray.valueList )
 			{

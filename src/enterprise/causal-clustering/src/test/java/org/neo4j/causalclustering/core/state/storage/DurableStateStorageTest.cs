@@ -33,8 +33,8 @@ namespace Neo4Net.causalclustering.core.state.storage
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Lifespan = Neo4Net.Kernel.Lifecycle.Lifespan;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
@@ -197,14 +197,14 @@ namespace Neo4Net.causalclustering.core.state.storage
 		 private class AtomicIntegerMarshal : SafeStateMarshal<AtomicInteger>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(java.util.concurrent.atomic.AtomicInteger state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(java.util.concurrent.atomic.AtomicInteger state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Marshal( AtomicInteger state, WritableChannel channel )
 			  {
 					channel.PutInt( state.intValue() );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.concurrent.atomic.AtomicInteger unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public java.util.concurrent.atomic.AtomicInteger unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  public override AtomicInteger Unmarshal0( ReadableChannel channel )
 			  {
 					return new AtomicInteger( channel.Int );

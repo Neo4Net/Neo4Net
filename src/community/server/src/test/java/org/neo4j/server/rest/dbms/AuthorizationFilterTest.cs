@@ -26,8 +26,8 @@ namespace Neo4Net.Server.rest.dbms
 	using Test = org.junit.Test;
 
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using BasicAuthManager = Neo4Net.Server.Security.Auth.BasicAuthManager;
 	using BasicLoginContext = Neo4Net.Server.Security.Auth.BasicLoginContext;
@@ -51,7 +51,7 @@ namespace Neo4Net.Server.rest.dbms
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

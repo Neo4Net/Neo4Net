@@ -22,7 +22,7 @@
 namespace Neo4Net.Server.Security.Auth
 {
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using User = Neo4Net.Kernel.impl.security.User;
 

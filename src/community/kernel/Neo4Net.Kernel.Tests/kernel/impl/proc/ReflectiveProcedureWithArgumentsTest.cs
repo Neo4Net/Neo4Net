@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.impl.proc
 
 
 	using Neo4Net.Collections;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	public class ReflectiveProcedureWithArgumentsTest
 	{
@@ -225,7 +225,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableProcedure> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableProcedure> Compile( Type clazz )
 		 {
 			  return ( new ReflectiveProcedureCompiler( new TypeMappers(), new ComponentRegistry(), new ComponentRegistry(), NullLog.Instance, ProcedureConfig.Default ) ).compileProcedure(clazz, null, true);

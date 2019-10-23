@@ -45,7 +45,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using Neo4Net.GraphDb.index;
 	using QueryContext = Neo4Net.Index.lucene.QueryContext;
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using ExplicitIndex = Neo4Net.Kernel.api.ExplicitIndex;
 	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
 	using DocValuesCollector = Neo4Net.Kernel.Api.Impl.Index.collector.DocValuesCollector;
@@ -106,7 +106,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// <param name="value"> the value in the key/value pair to associate with the
 		 /// IEntity. </param>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addNode(long IEntityId, String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void addNode(long IEntityId, String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override void AddNode( long IEntityId, string key, object value )
 		 {
 			  AssertValidKey( key );
@@ -195,7 +195,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits get(String key, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits get(String key, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndexHits Get( string key, object value )
 		 {
 			  return Query( Type.get( key, value ), key, value, null );
@@ -215,7 +215,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// <seealso cref="QueryContext.tradeCorrectnessForSpeed()"/>.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(String key, Object queryOrQueryObject) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(String key, Object queryOrQueryObject) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndexHits Query( string key, object queryOrQueryObject )
 		 {
 			  QueryContext context = queryOrQueryObject is QueryContext ? ( QueryContext ) queryOrQueryObject : null;
@@ -227,14 +227,14 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 /// </summary>
 		 /// <seealso cref= #query(String, Object) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(Object queryOrQueryObject) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(Object queryOrQueryObject) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 public override ExplicitIndexHits Query( object queryOrQueryObject )
 		 {
 			  return Query( null, queryOrQueryObject );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.kernel.api.ExplicitIndexHits query(org.apache.lucene.search.Query query, String keyForDirectLookup, Object valueForDirectLookup, org.Neo4Net.index.lucene.QueryContext additionalParametersOrNull) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: protected org.Neo4Net.kernel.api.ExplicitIndexHits query(org.apache.lucene.search.Query query, String keyForDirectLookup, Object valueForDirectLookup, org.Neo4Net.index.lucene.QueryContext additionalParametersOrNull) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 protected internal virtual ExplicitIndexHits Query( Query query, string keyForDirectLookup, object valueForDirectLookup, QueryContext additionalParametersOrNull )
 		 {
 			  IList<EntityId> simpleTransactionStateIds = new List<EntityId>();
@@ -447,7 +447,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void addRelationship(long IEntityId, String key, Object value, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public void addRelationship(long IEntityId, String key, Object value, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			  public override void AddRelationship( long IEntityId, string key, object value, long startNode, long endNode )
 			  {
 					AssertValidKey( key );
@@ -463,7 +463,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits get(String key, Object valueOrNull, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits get(String key, Object valueOrNull, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			  public override ExplicitIndexHits Get( string key, object valueOrNull, long startNode, long endNode )
 			  {
 					BooleanQuery.Builder builder = new BooleanQuery.Builder();
@@ -482,7 +482,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(String key, Object queryOrQueryObjectOrNull, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(String key, Object queryOrQueryObjectOrNull, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			  public override ExplicitIndexHits Query( string key, object queryOrQueryObjectOrNull, long startNode, long endNode )
 			  {
 					QueryContext context = queryOrQueryObjectOrNull != null && queryOrQueryObjectOrNull is QueryContext ? ( QueryContext ) queryOrQueryObjectOrNull : null;
@@ -533,7 +533,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(Object queryOrQueryObjectOrNull, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.ExplicitIndexHits query(Object queryOrQueryObjectOrNull, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 			  public override ExplicitIndexHits Query( object queryOrQueryObjectOrNull, long startNode, long endNode )
 			  {
 					return Query( null, queryOrQueryObjectOrNull, startNode, endNode );

@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 	using NeoStoreFileListing = Neo4Net.Kernel.impl.transaction.state.NeoStoreFileListing;
 	using Group = Neo4Net.Scheduler.Group;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.pagecache.PagedFile_Fields.PF_NO_FAULT;
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.pagecache
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public synchronized org.Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<org.Neo4Net.storageengine.api.StoreFileMetadata> coll) throws java.io.IOException
+//ORIGINAL LINE: public synchronized org.Neo4Net.graphdb.Resource addFilesTo(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> coll) throws java.io.IOException
 		 public override Resource AddFilesTo( ICollection<StoreFileMetadata> coll )
 		 {
 			 lock ( this )

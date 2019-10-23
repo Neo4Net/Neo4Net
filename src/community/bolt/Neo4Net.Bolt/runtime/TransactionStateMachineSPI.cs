@@ -22,15 +22,15 @@
 namespace Neo4Net.Bolt.runtime
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	public interface TransactionStateMachineSPI
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void AwaitUpToDate( long oldestAcceptableTxId );
 
 		 long NewestEncounteredTxId();

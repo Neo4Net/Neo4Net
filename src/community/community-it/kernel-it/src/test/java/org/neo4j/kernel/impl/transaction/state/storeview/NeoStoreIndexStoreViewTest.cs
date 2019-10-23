@@ -36,10 +36,10 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Neo4Net.Helpers.Collections;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.api.schema.RelationTypeSchemaDescriptor;
@@ -53,9 +53,9 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 private StorageReader _reader;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void before() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Before public void before() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Before()
 		 {
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReadProperties() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldReadProperties() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReadProperties()
 		 {
@@ -383,7 +383,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void getOrCreateIds() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void getOrCreateIds() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void getOrCreateIds()
 		 {
 			  using ( Transaction tx = _graphDb.beginTx() )

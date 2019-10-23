@@ -36,7 +36,7 @@ namespace Neo4Net.GraphDb
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

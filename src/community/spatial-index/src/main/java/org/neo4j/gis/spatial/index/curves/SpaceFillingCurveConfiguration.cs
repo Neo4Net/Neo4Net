@@ -26,7 +26,7 @@ namespace Neo4Net.Gis.Spatial.Index.curves
 	/// The ideal performance depends on the behaviour of the underlying 1D index, whether it costs more to have more 1D searches,
 	/// or have more false positives for post filtering.
 	/// </summary>
-	public interface SpaceFillingCurveConfiguration
+	public interface ISpaceFillingCurveConfiguration
 	{
 		 /// <summary>
 		 /// Decides whether to stop at this depth or recurse deeper.

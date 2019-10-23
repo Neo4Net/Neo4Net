@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
 	using Label = Neo4Net.GraphDb.Label;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 
 	public class NodePropertyExistenceConstraintDefinition : NodeConstraintDefinition
 	{

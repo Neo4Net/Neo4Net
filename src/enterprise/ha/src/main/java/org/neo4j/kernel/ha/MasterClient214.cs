@@ -52,8 +52,8 @@ namespace Neo4Net.Kernel.ha
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using ByteCounterMonitor = Neo4Net.Kernel.monitoring.ByteCounterMonitor;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.com.Protocol.EMPTY_SERIALIZER;
@@ -237,7 +237,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.com.master.HandshakeResult> handshake(final long txId, org.Neo4Net.storageengine.api.StoreId storeId)
+//ORIGINAL LINE: public org.Neo4Net.com.Response<org.Neo4Net.kernel.ha.com.master.HandshakeResult> handshake(final long txId, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
 		 public override Response<HandshakeResult> Handshake( long txId, StoreId storeId )
 		 {
 			  Serializer serializer = buffer => buffer.writeLong( txId );

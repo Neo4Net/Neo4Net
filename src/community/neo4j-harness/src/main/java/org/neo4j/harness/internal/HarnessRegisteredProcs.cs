@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Harness.Internal
 {
 
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 
 	public class HarnessRegisteredProcs
@@ -48,7 +48,7 @@ namespace Neo4Net.Harness.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("deprecation") public void applyTo(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @SuppressWarnings("deprecation") public void applyTo(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ApplyTo( Procedures procedures )
 		 {

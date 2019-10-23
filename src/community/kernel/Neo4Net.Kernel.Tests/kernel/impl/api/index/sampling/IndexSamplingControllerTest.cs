@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 
 	using Predicates = Neo4Net.Functions.Predicates;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -44,11 +44,11 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.FAILED;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.FAILED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingMode.TRIGGER_REBUILD_UPDATED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class IndexSamplingControllerTest
 	{

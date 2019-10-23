@@ -33,40 +33,40 @@ namespace Neo4Net.Kernel.impl.core
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipGroupCursor = Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
-	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
-	using TooManyLabelsException = Neo4Net.Internal.Kernel.Api.exceptions.schema.TooManyLabelsException;
-	using Nodes = Neo4Net.Internal.Kernel.Api.helpers.Nodes;
-	using Neo4Net.Internal.Kernel.Api.helpers;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipGroupCursor = Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using LabelNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+	using Nodes = Neo4Net.Kernel.Api.Internal.Helpers.Nodes;
+	using Neo4Net.Kernel.Api.Internal.Helpers;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.allIterator;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.allIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.incomingIterator;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.incomingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.RelationshipSelections.outgoingIterator;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections.outgoingIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -328,7 +328,7 @@ namespace Neo4Net.Kernel.impl.core
 			  NodeCursor nodes = transaction.AmbientNodeCursor();
 			  PropertyCursor properties = transaction.AmbientPropertyCursor();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return defaultValue;
 			  }
@@ -458,7 +458,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					throw new NotFoundException( format( "No such property, '%s'.", key ) );
 			  }
@@ -491,7 +491,7 @@ namespace Neo4Net.Kernel.impl.core
 
 			  KernelTransaction transaction = SafeAcquireTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return false;
 			  }
@@ -618,7 +618,7 @@ namespace Neo4Net.Kernel.impl.core
 					  using ( Statement ignore = transaction.AcquireStatement() )
 					  {
 						int labelId = transaction.TokenRead().nodeLabel(label.Name());
-						if ( labelId != Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+						if ( labelId != Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 						{
 							 transaction.DataWrite().nodeRemoveLabel(Id, labelId);
 						}
@@ -843,7 +843,7 @@ namespace Neo4Net.Kernel.impl.core
 			  transaction.DataRead().singleNode(_nodeId, nodes);
 			  if ( !nodes.Next() )
 			  {
-					throw new NotFoundException( new IEntityNotFoundException( IEntityType.NODE, _nodeId ) );
+					throw new NotFoundException( new IEntityNotFoundException( EntityType.NODE, _nodeId ) );
 			  }
 		 }
 

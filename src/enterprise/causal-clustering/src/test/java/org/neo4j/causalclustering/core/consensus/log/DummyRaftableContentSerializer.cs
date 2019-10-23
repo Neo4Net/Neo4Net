@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.core.consensus.log
 	using ReplicatedContent = Neo4Net.causalclustering.core.replication.ReplicatedContent;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using Neo4Net.causalclustering.core.state.storage;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class DummyRaftableContentSerializer : SafeChannelMarshal<ReplicatedContent>
 	{
@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 private const int REPLICATED_STRING_TYPE = 1;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Marshal( ReplicatedContent content, WritableChannel channel )
 		 {
 			  if ( content is ReplicatedInteger )
@@ -58,19 +58,19 @@ namespace Neo4Net.causalclustering.core.consensus.log
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 protected internal override ReplicatedContent Unmarshal0( ReadableChannel channel )
 		 {
 			  sbyte type = channel.Get();
 			  switch ( type )
 			  {
 			  case REPLICATED_INTEGER_TYPE:
-					return ReplicatedInteger.valueOf( channel.Int );
+					return ReplicatedInteger.ValueOf( channel.Int );
 			  case REPLICATED_STRING_TYPE:
 					int length = channel.Int;
 					sbyte[] bytes = new sbyte[length];
 					channel.Get( bytes, length );
-					return ReplicatedString.valueOf( StringHelper.NewString( bytes ) );
+					return ReplicatedString.ValueOf( StringHelper.NewString( bytes ) );
 			  default:
 					throw new System.ArgumentException( "Unknown content type: " + type );
 			  }

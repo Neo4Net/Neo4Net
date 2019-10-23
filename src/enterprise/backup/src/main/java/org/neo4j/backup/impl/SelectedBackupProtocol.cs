@@ -92,7 +92,7 @@ namespace Neo4Net.backup.impl
 			return nameValue;
 		}
 
-		public static SelectedBackupProtocol valueOf( string name )
+		public static SelectedBackupProtocol ValueOf( string name )
 		{
 			foreach ( SelectedBackupProtocol enumInstance in SelectedBackupProtocol.valueList )
 			{

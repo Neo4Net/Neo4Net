@@ -24,20 +24,20 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Token = Neo4Net.Internal.Kernel.Api.Token;
-	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
-	using TooManyLabelsException = Neo4Net.Internal.Kernel.Api.exceptions.schema.TooManyLabelsException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Token = Neo4Net.Kernel.Api.Internal.Token;
+	using LabelNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using RelationshipTypeIdNotFoundKernelException = Neo4Net.Kernel.Api.Exceptions.RelationshipTypeIdNotFoundKernelException;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using TokenNotFoundException = Neo4Net.Kernel.impl.core.TokenNotFoundException;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 	public class KernelToken : Token
 	{
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int labelGetOrCreateForName(String labelName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: public int labelGetOrCreateForName(String labelName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 public override int LabelGetOrCreateForName( string labelName )
 		 {
 			  try
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void labelGetOrCreateForNames(String[] labelNames, int[] labelIds) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: public void labelGetOrCreateForNames(String[] labelNames, int[] labelIds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 public override void LabelGetOrCreateForNames( string[] labelNames, int[] labelIds )
 		 {
 			  try
@@ -93,7 +93,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int labelCreateForName(String labelName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: public int labelCreateForName(String labelName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 public override int LabelCreateForName( string labelName )
 		 {
 			  _ktx.assertOpen();
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int relationshipTypeCreateForName(String relationshipTypeName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public int relationshipTypeCreateForName(String relationshipTypeName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override int RelationshipTypeCreateForName( string relationshipTypeName )
 		 {
 			  _ktx.assertOpen();
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int propertyKeyCreateForName(String propertyKeyName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public int propertyKeyCreateForName(String propertyKeyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override int PropertyKeyCreateForName( string propertyKeyName )
 		 {
 			  _ktx.assertOpen();
@@ -123,35 +123,35 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int propertyKeyGetOrCreateForName(String propertyKeyName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public int propertyKeyGetOrCreateForName(String propertyKeyName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override int PropertyKeyGetOrCreateForName( string propertyKeyName )
 		 {
 			  return GetOrCreateForName( _tokenHolders.propertyKeyTokens(), propertyKeyName );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void propertyKeyGetOrCreateForNames(String[] propertyKeys, int[] ids) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public void propertyKeyGetOrCreateForNames(String[] propertyKeys, int[] ids) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override void PropertyKeyGetOrCreateForNames( string[] propertyKeys, int[] ids )
 		 {
 			  GetOrCreateForNames( _tokenHolders.propertyKeyTokens(), propertyKeys, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public int relationshipTypeGetOrCreateForName(String relationshipTypeName) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public int relationshipTypeGetOrCreateForName(String relationshipTypeName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override int RelationshipTypeGetOrCreateForName( string relationshipTypeName )
 		 {
 			  return GetOrCreateForName( _tokenHolders.relationshipTypeTokens(), relationshipTypeName );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void relationshipTypeGetOrCreateForNames(String[] relationshipTypes, int[] ids) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: public void relationshipTypeGetOrCreateForNames(String[] relationshipTypes, int[] ids) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 public override void RelationshipTypeGetOrCreateForNames( string[] relationshipTypes, int[] ids )
 		 {
 			  GetOrCreateForNames( _tokenHolders.relationshipTypeTokens(), relationshipTypes, ids );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String nodeLabelName(int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.LabelNotFoundKernelException
+//ORIGINAL LINE: public String nodeLabelName(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException
 		 public override string NodeLabelName( int labelId )
 		 {
 			  _ktx.assertOpen();
@@ -199,7 +199,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String propertyKeyName(int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.PropertyKeyIdNotFoundKernelException
+//ORIGINAL LINE: public String propertyKeyName(int propertyKeyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException
 		 public override string PropertyKeyName( int propertyKeyId )
 		 {
 			  _ktx.assertOpen();
@@ -251,7 +251,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String checkValidTokenName(String name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: private String checkValidTokenName(String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 private string CheckValidTokenName( string name )
 		 {
 			  if ( string.ReferenceEquals( name, null ) || name.Length == 0 )
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getOrCreateForName(org.Neo4Net.kernel.impl.core.TokenHolder tokens, String name) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: private int getOrCreateForName(org.Neo4Net.kernel.impl.core.TokenHolder tokens, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 private int GetOrCreateForName( TokenHolder tokens, string name )
 		 {
 			  _ktx.assertOpen();
@@ -277,7 +277,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void getOrCreateForNames(org.Neo4Net.kernel.impl.core.TokenHolder tokenHolder, String[] names, int[] ids) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: private void getOrCreateForNames(org.Neo4Net.kernel.impl.core.TokenHolder tokenHolder, String[] names, int[] ids) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 private void GetOrCreateForNames( TokenHolder tokenHolder, string[] names, int[] ids )
 		 {
 			  _ktx.assertOpen();

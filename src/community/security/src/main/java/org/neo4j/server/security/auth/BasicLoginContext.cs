@@ -20,19 +20,19 @@
 namespace Neo4Net.Server.Security.Auth
 {
 
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using User = Neo4Net.Kernel.impl.security.User;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.FAILURE;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.SUCCESS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
 
 	public class BasicLoginContext : LoginContext
 	{
@@ -46,13 +46,13 @@ namespace Neo4Net.Server.Security.Auth
 			  switch ( authenticationResult )
 			  {
 			  case AuthenticationResult.SUCCESS:
-					_accessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full;
+					_accessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full;
 					break;
 			  case AuthenticationResult.PASSWORD_CHANGE_REQUIRED:
-					_accessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.CredentialsExpired;
+					_accessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.CredentialsExpired;
 					break;
 			  default:
-					_accessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.None;
+					_accessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.None;
 				break;
 			  }
 		 }
@@ -91,7 +91,7 @@ namespace Neo4Net.Server.Security.Auth
 					if ( AuthenticationResultConflict == PASSWORD_CHANGE_REQUIRED )
 					{
 						 AuthenticationResultConflict = SUCCESS;
-						 outerInstance.accessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full;
+						 outerInstance.accessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full;
 					}
 			  }
 

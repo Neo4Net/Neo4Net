@@ -33,9 +33,9 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using Neo4Net.Collections;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
 	using Context = Neo4Net.Kernel.api.proc.Context;

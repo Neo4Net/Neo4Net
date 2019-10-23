@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Read_Fields.ANY_RELATIONSHIP_TYPE;
+//	import static org.Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_RELATIONSHIP_TYPE;
 
 	public class RecordRelationshipScanCursorTest
 	{

@@ -25,7 +25,7 @@ namespace Neo4Net.Consistency.checking.full
 	using IndexAccessors = Neo4Net.Consistency.checking.index.IndexAccessors;
 	using ConsistencyReporter = Neo4Net.Consistency.report.ConsistencyReporter;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	public class RelationshipIndexProcessor : RecordProcessor_Adapter<RelationshipRecord>
 	{

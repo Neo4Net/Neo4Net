@@ -42,10 +42,10 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using LuceneDocumentStructure = Neo4Net.Kernel.Api.Impl.Schema.LuceneDocumentStructure;
 	using LuceneSchemaIndexBuilder = Neo4Net.Kernel.Api.Impl.Schema.LuceneSchemaIndexBuilder;
 	using SchemaIndex = Neo4Net.Kernel.Api.Impl.Schema.SchemaIndex;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;

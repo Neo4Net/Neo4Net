@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	/// <seealso cref="InputChunk"/> that gets data from <seealso cref="Chunker"/>. Making it explicit in the interface simplifies implementation
 	/// where there are different types of <seealso cref="Chunker"/> for different scenarios.
 	/// </summary>
-	public interface CsvInputChunk : InputChunk
+	public interface ICsvInputChunk : InputChunk
 	{
 		 /// <summary>
 		 /// Fills this <seealso cref="InputChunk"/> from the given <seealso cref="Chunker"/>.

@@ -219,7 +219,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  BoltStateMachineState newState = _state.process( new RunMessage( "BEGIN", EMPTY_MAP ), _context );
 			  assertEquals( _streamingState, newState );
-			  verify( _statementProcessor ).beginTransaction( null );
+			  verify( _statementProcessor ).BeginTransaction( null );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -231,7 +231,7 @@ namespace Neo4Net.Bolt.v1.runtime
 
 			  BoltStateMachineState newState = _state.process( new RunMessage( "BEGIN", asMapValue( @params ) ), _context );
 			  assertEquals( _streamingState, newState );
-			  verify( _statementProcessor ).beginTransaction( new Bookmark( 15 ) );
+			  verify( _statementProcessor ).BeginTransaction( new Bookmark( 15 ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -243,7 +243,7 @@ namespace Neo4Net.Bolt.v1.runtime
 
 			  BoltStateMachineState newState = _state.process( new RunMessage( "BEGIN", asMapValue( @params ) ), _context );
 			  assertEquals( _streamingState, newState );
-			  verify( _statementProcessor ).beginTransaction( new Bookmark( 92 ) );
+			  verify( _statementProcessor ).BeginTransaction( new Bookmark( 92 ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -253,7 +253,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 {
 			  BoltStateMachineState newState = _state.process( new RunMessage( statement ), _context );
 			  assertEquals( _streamingState, newState );
-			  verify( _statementProcessor ).beginTransaction( any() );
+			  verify( _statementProcessor ).BeginTransaction( any() );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

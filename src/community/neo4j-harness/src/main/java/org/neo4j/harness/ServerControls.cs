@@ -26,7 +26,7 @@ namespace Neo4Net.Harness
 	/// <summary>
 	/// Control panel for a Neo4Net test instance.
 	/// </summary>
-	public interface ServerControls : IDisposable
+	public interface IServerControls : IDisposable
 	{
 		 /// <summary>
 		 /// Returns the URI to the Bolt Protocol connector of the instance. </summary>

@@ -25,10 +25,10 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 
 	using Neo4Net.Helpers.Collections;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using Neo4Net.Kernel.Api.Index;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;

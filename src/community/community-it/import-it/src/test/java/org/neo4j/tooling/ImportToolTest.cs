@@ -416,7 +416,7 @@ namespace Neo4Net.Tooling
 
 			  // Expected value for floating point types
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
-			  string fExpected = java.util.values.Select( string.Trim ).Select( double?.valueOf ).Select( string.valueOf ).collect( joining( ", ", "[", "]" ) );
+			  string fExpected = java.util.values.Select( string.Trim ).Select( double?.ValueOf ).Select( string.ValueOf ).collect( joining( ", ", "[", "]" ) );
 
 			  int nodeCount = 0;
 			  using ( Transaction tx = DbRule.beginTx() )

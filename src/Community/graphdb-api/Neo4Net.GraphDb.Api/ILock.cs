@@ -17,27 +17,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
-	/// <summary>
-	/// An acquired lock on an IEntity for a transaction, acquired from
-	/// <seealso cref="ITransaction.acquireWriteLock(PropertyContainer)"/> or
-	/// <seealso cref="ITransaction.acquireReadLock(PropertyContainer)"/> this lock
-	/// can be released manually using <seealso cref="release()"/>. If not released
-	/// manually it will be automatically released when the transaction owning
-	/// it finishes.
-	/// 
-	/// @author Mattias Persson
-	/// </summary>
-	public interface ILock
-	{
-		 /// <summary>
-		 /// Releases this lock before the transaction finishes. It is an optional
-		 /// operation and if not called, this lock will be released when the owning
-		 /// transaction finishes.
-		 /// </summary>
-		 /// <exception cref="IllegalStateException"> if this lock has already been released. </exception>
-		 void Release();
-	}
-
+   /// <summary>
+   /// An acquired lock on an IEntity for a transaction, acquired from
+   /// <seealso cref="ITransaction.acquireWriteLock(PropertyContainer)"/> or
+   /// <seealso cref="ITransaction.acquireReadLock(PropertyContainer)"/> this lock
+   /// can be released manually using <seealso cref="release()"/>. If not released
+   /// manually it will be automatically released when the transaction owning
+   /// it finishes.
+   ///
+   /// @author Mattias Persson
+   /// </summary>
+   public interface ILock
+   {
+      /// <summary>
+      /// Releases this lock before the transaction finishes. It is an optional
+      /// operation and if not called, this lock will be released when the owning
+      /// transaction finishes.
+      /// </summary>
+      /// <exception cref="IllegalStateException"> if this lock has already been released. </exception>
+      void Release();
+   }
 }

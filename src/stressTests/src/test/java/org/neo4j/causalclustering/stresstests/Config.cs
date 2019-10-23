@@ -142,7 +142,7 @@ namespace Neo4Net.causalclustering.stresstests
 			  string[] split = value.Split( ",", true );
 			  foreach ( string workloadString in split )
 			  {
-					workloads.Add( T.valueOf( type, workloadString ) );
+					workloads.Add( T.ValueOf( type, workloadString ) );
 			  }
 			  return workloads;
 		 }

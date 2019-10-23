@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.Api.Exceptions.index
 {
 	using Test = org.junit.Test;
 
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;

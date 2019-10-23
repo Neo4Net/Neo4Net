@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using BatchTransactionApplier = Neo4Net.Kernel.Impl.Api.BatchTransactionApplier;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	public class HighIdBatchTransactionApplier : Neo4Net.Kernel.Impl.Api.BatchTransactionApplier_Adapter
 	{

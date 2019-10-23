@@ -106,7 +106,7 @@ namespace Neo4Net.causalclustering.helper
 				 return nameValue;
 			 }
 
-			 public static LifeCycleState valueOf( string name )
+			 public static LifeCycleState ValueOf( string name )
 			 {
 				 foreach ( LifeCycleState enumInstance in LifeCycleState.valueList )
 				 {
@@ -180,7 +180,7 @@ namespace Neo4Net.causalclustering.helper
 				 return nameValue;
 			 }
 
-			 public static SuspendedState valueOf( string name )
+			 public static SuspendedState ValueOf( string name )
 			 {
 				 foreach ( SuspendedState enumInstance in SuspendedState.valueList )
 				 {

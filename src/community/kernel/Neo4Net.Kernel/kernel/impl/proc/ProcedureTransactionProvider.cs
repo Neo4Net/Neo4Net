@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.proc
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using Context = Neo4Net.Kernel.api.proc.Context;
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.proc
 	public class ProcedureTransactionProvider : ComponentRegistry.Provider<ProcedureTransaction>
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.procedure.ProcedureTransaction apply(org.Neo4Net.kernel.api.proc.Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.procedure.ProcedureTransaction apply(org.Neo4Net.kernel.api.proc.Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override ProcedureTransaction Apply( Context ctx )
 		 {
 			  KernelTransaction ktx = ctx.Get( KERNEL_TRANSACTION );

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

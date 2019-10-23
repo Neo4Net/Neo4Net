@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.helper
 {
-	public interface Suspendable
+	public interface ISuspendable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void enable() throws Throwable;

@@ -43,32 +43,32 @@ namespace Neo4Net.Kernel.impl.factory
 	using KernelEventHandler = Neo4Net.GraphDb.Events.KernelEventHandler;
 	using Neo4Net.GraphDb.Events;
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
 	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
 	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using NodeIndexCursor = Neo4Net.Internal.Kernel.Api.NodeIndexCursor;
-	using NodeLabelIndexCursor = Neo4Net.Internal.Kernel.Api.NodeLabelIndexCursor;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using NodeIndexCursor = Neo4Net.Kernel.Api.Internal.NodeIndexCursor;
+	using NodeLabelIndexCursor = Neo4Net.Kernel.Api.Internal.NodeLabelIndexCursor;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -104,8 +104,8 @@ namespace Neo4Net.Kernel.impl.factory
 	using MonoDirectionalTraversalDescription = Neo4Net.Kernel.impl.traversal.MonoDirectionalTraversalDescription;
 	using ValueUtils = Neo4Net.Kernel.impl.util.ValueUtils;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using Values = Neo4Net.Values.Storable.Values;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
@@ -114,7 +114,7 @@ namespace Neo4Net.Kernel.impl.factory
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.emptyResourceIterator;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.api.explicitindex.InternalAutoIndexing.NODE_AUTO_INDEX;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 /// alternate <seealso cref="org.Neo4Net.graphdb.GraphDatabaseService"/> instances without having to re-implement this whole API
 		 /// implementation.
 		 /// </summary>
-		 public interface SPI
+		 public interface ISPI
 		 {
 			  /// <summary>
 			  /// Check if database is available, waiting up to {@code timeout} if it isn't. If the timeout expires before
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  /// Begin a new kernel transaction with specified timeout in milliseconds.
 			  /// </summary>
 			  /// <exception cref="org.Neo4Net.graphdb.TransactionFailureException"> if unable to begin, or a transaction already exists. </exception>
-			  /// <seealso cref= GraphDatabaseAPI#beginTransaction(KernelTransaction.Type, LoginContext) </seealso>
+			  /// <seealso cref= GraphDatabaseAPI#BeginTransaction(KernelTransaction.Type, LoginContext) </seealso>
 			  KernelTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout );
 
 			  /// <summary>
@@ -292,7 +292,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 {
 			  if ( id < 0 )
 			  {
-					throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( IEntityType.NODE, id ) );
+					throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( EntityType.NODE, id ) );
 			  }
 
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -301,7 +301,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  {
 					if ( !ktx.DataRead().nodeExists(id) )
 					{
-						 throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( IEntityType.NODE, id ) );
+						 throw new NotFoundException( format( "Node %d not found", id ), new IEntityNotFoundException( EntityType.NODE, id ) );
 					}
 					return NewNodeProxy( id );
 			  }
@@ -311,7 +311,7 @@ namespace Neo4Net.Kernel.impl.factory
 		 {
 			  if ( id < 0 )
 			  {
-					throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( IEntityType.RELATIONSHIP, id ) );
+					throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( EntityType.RELATIONSHIP, id ) );
 			  }
 
 			  KernelTransaction ktx = _statementContext.getKernelTransactionBoundToThisThread( true );
@@ -320,7 +320,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  {
 					if ( !ktx.DataRead().relationshipExists(id) )
 					{
-						 throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( IEntityType.RELATIONSHIP, id ) );
+						 throw new NotFoundException( format( "Relationship %d not found", id ), new IEntityNotFoundException( EntityType.RELATIONSHIP, id ) );
 					}
 					return NewRelationshipProxy( id );
 			  }
@@ -698,7 +698,7 @@ namespace Neo4Net.Kernel.impl.factory
 					// FIXME: perhaps we should check that the new type and access mode are compatible with the current tx
 					return new PlaceboTransaction( _statementContext.getKernelTransactionBoundToThisThread( true ) );
 			  }
-			  return new TopLevelTransaction( _spi.beginTransaction( type, loginContext, timeoutMillis ) );
+			  return new TopLevelTransaction( _spi.BeginTransaction( type, loginContext, timeoutMillis ) );
 		 }
 
 		 private ResourceIterator<Node> NodesByLabelAndProperty( KernelTransaction transaction, int labelId, IndexQuery query )
@@ -706,7 +706,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  Statement statement = transaction.AcquireStatement();
 			  Read read = transaction.DataRead();
 
-			  if ( query.PropertyKeyId() == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN || labelId == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( query.PropertyKeyId() == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN || labelId == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					statement.Close();
 					return emptyResourceIterator();
@@ -833,11 +833,11 @@ namespace Neo4Net.Kernel.impl.factory
 
 		 private static bool IsInvalidQuery( int labelId, IndexQuery[] queries )
 		 {
-			  bool invalidQuery = labelId == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN;
+			  bool invalidQuery = labelId == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 			  foreach ( IndexQuery query in queries )
 			  {
 					int propertyKeyId = query.PropertyKeyId();
-					invalidQuery = invalidQuery || propertyKeyId == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN;
+					invalidQuery = invalidQuery || propertyKeyId == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 			  }
 			  return invalidQuery;
 		 }
@@ -878,7 +878,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  Statement statement = ktx.AcquireStatement();
 
 			  int labelId = ktx.TokenRead().nodeLabel(myLabel.Name());
-			  if ( labelId == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( labelId == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					statement.Close();
 					return Iterators.emptyResourceIterator();
@@ -1080,7 +1080,7 @@ namespace Neo4Net.Kernel.impl.factory
 			  }
 		 }
 
-		 private sealed class NodeCursorResourceIterator<CURSOR> : PrefetchingNodeResourceIterator where CURSOR : Neo4Net.Internal.Kernel.Api.NodeIndexCursor
+		 private sealed class NodeCursorResourceIterator<CURSOR> : PrefetchingNodeResourceIterator where CURSOR : Neo4Net.Kernel.Api.Internal.NodeIndexCursor
 		 {
 			  internal readonly CURSOR Cursor;
 

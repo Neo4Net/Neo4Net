@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Race = Neo4Net.Test.Race;
 	using ThreadingRule = Neo4Net.Test.rule.concurrent.ThreadingRule;

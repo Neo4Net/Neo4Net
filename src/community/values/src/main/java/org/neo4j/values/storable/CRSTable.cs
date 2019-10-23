@@ -121,7 +121,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static CRSTable valueOf( string name )
+		public static CRSTable ValueOf( string name )
 		{
 			foreach ( CRSTable enumInstance in CRSTable.valueList )
 			{

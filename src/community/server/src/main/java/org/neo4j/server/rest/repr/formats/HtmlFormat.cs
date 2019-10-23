@@ -113,7 +113,7 @@ namespace Neo4Net.Server.rest.repr.formats
 				 return nameValue;
 			 }
 
-			 public static MappingTemplate valueOf( string name )
+			 public static MappingTemplate ValueOf( string name )
 			 {
 				 foreach ( MappingTemplate enumInstance in MappingTemplate.valueList )
 				 {
@@ -176,7 +176,7 @@ namespace Neo4Net.Server.rest.repr.formats
 				 return nameValue;
 			 }
 
-			 public static ListTemplate valueOf( string name )
+			 public static ListTemplate ValueOf( string name )
 			 {
 				 foreach ( ListTemplate enumInstance in ListTemplate.valueList )
 				 {

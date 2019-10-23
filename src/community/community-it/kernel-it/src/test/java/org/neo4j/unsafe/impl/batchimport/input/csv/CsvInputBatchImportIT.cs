@@ -34,7 +34,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using StatementConstants = Neo4Net.Kernel.api.StatementConstants;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;

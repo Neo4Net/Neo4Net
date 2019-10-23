@@ -25,7 +25,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Result = Neo4Net.GraphDb.Result;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;

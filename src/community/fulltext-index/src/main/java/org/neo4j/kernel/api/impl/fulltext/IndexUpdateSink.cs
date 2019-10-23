@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using Group = Neo4Net.Scheduler.Group;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 	/// <summary>
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  _updateQueueLimit = new Semaphore( eventuallyConsistentUpdateQueueLimit );
 		 }
 
-		 public virtual void EnqueueUpdate<T1, T2>( DatabaseIndex<T1> index, IndexUpdater indexUpdater, IndexEntryUpdate<T2> update ) where T1 : Neo4Net.Storageengine.Api.schema.IndexReader
+		 public virtual void EnqueueUpdate<T1, T2>( DatabaseIndex<T1> index, IndexUpdater indexUpdater, IndexEntryUpdate<T2> update ) where T1 : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 		 {
 			  _updateQueueLimit.acquireUninterruptibly();
 			  ThreadStart eventualUpdate = () =>
@@ -76,7 +76,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 		 }
 
-		 private static void MarkAsFailed<T1>( DatabaseIndex<T1> index, IndexEntryConflictException conflict ) where T1 : Neo4Net.Storageengine.Api.schema.IndexReader
+		 private static void MarkAsFailed<T1>( DatabaseIndex<T1> index, IndexEntryConflictException conflict ) where T1 : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 		 {
 			  try
 			  {
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  }
 		 }
 
-		 public virtual void CloseUpdater<T1>( DatabaseIndex<T1> index, IndexUpdater indexUpdater ) where T1 : Neo4Net.Storageengine.Api.schema.IndexReader
+		 public virtual void CloseUpdater<T1>( DatabaseIndex<T1> index, IndexUpdater indexUpdater ) where T1 : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 		 {
 			  _scheduler.schedule(Group.INDEX_UPDATING, () =>
 			  {

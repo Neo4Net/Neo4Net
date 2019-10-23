@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.info
 			return nameValue;
 		}
 
-		public static SystemDiagnostics valueOf( string name )
+		public static SystemDiagnostics ValueOf( string name )
 		{
 			foreach ( SystemDiagnostics enumInstance in SystemDiagnostics.valueList )
 			{

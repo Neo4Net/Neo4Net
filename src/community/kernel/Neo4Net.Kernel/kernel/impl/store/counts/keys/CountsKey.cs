@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 {
 	using CountsVisitor = Neo4Net.Kernel.Impl.Api.CountsVisitor;
 
-	public interface CountsKey : IComparable<CountsKey>
+	public interface ICountsKey : IComparable<CountsKey>
 	{
 		 CountsKeyType RecordType();
 

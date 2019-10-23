@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using RelationshipStore = Neo4Net.Kernel.impl.store.RelationshipStore;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
 			  StoreIndexDescriptor indexRule = indexRule( 1, 42, 42, _indexDescriptor );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -179,7 +179,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 {
 			  // Given
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor indexRule = indexRule(1, 42, 42, INDEX_DESCRIPTOR);
 			  StoreIndexDescriptor indexRule = indexRule( 1, 42, 42, _indexDescriptor );
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

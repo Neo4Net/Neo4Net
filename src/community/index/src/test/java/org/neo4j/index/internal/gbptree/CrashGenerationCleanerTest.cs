@@ -363,7 +363,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static PageType valueOf( string name )
+			 public static PageType ValueOf( string name )
 			 {
 				 foreach ( PageType enumInstance in PageType.valueList )
 				 {

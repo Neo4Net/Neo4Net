@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 					  return nameValue;
 				  }
 
-				  public static Outcome valueOf( string name )
+				  public static Outcome ValueOf( string name )
 				  {
 					  foreach ( Outcome enumInstance in Outcome.valueList )
 					  {

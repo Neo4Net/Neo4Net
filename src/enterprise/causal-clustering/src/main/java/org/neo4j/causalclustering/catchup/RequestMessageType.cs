@@ -111,7 +111,7 @@ namespace Neo4Net.causalclustering.catchup
 			return ordinalValue;
 		}
 
-		public static RequestMessageType valueOf( string name )
+		public static RequestMessageType ValueOf( string name )
 		{
 			foreach ( RequestMessageType enumInstance in RequestMessageType.valueList )
 			{

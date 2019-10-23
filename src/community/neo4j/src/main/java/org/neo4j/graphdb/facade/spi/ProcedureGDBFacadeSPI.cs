@@ -25,10 +25,10 @@ namespace Neo4Net.GraphDb.facade.spi
 	using Neo4Net.GraphDb.Events;
 	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -38,7 +38,7 @@ namespace Neo4Net.GraphDb.facade.spi
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	public class ProcedureGDBFacadeSPI : GraphDatabaseFacade.SPI
@@ -152,7 +152,7 @@ namespace Neo4Net.GraphDb.facade.spi
 			  try
 			  {
 					_availability.assertDatabaseAvailable();
-					KernelTransaction kernelTx = _sourceModule.kernelAPI.get().beginTransaction(type, this._securityContext, timeout);
+					KernelTransaction kernelTx = _sourceModule.kernelAPI.get().BeginTransaction(type, this._securityContext, timeout);
 					kernelTx.RegisterCloseListener( txId => _threadToTransactionBridge.unbindTransactionFromCurrentThread() );
 					_threadToTransactionBridge.bindTransactionToCurrentThread( kernelTx );
 					return kernelTx;

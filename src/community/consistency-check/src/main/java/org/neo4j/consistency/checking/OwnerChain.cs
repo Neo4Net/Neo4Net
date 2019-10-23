@@ -138,7 +138,7 @@ namespace Neo4Net.Consistency.checking
 			return nameValue;
 		}
 
-		public static OwnerChain valueOf( string name )
+		public static OwnerChain ValueOf( string name )
 		{
 			foreach ( OwnerChain enumInstance in OwnerChain.valueList )
 			{

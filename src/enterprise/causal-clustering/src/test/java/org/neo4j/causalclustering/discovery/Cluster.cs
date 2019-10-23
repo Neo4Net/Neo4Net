@@ -49,7 +49,7 @@ namespace Neo4Net.causalclustering.discovery
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
 	using DbRepresentation = Neo4Net.Test.DbRepresentation;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -506,7 +506,7 @@ namespace Neo4Net.causalclustering.discovery
 
 		 private static bool IsLockExpired( Exception e )
 		 {
-			  return e is TransactionFailureException && e.InnerException is Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException && ( ( Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException ) e.InnerException ).Status() == LockSessionExpired;
+			  return e is TransactionFailureException && e.InnerException is Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException && ( ( Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException ) e.InnerException ).Status() == LockSessionExpired;
 		 }
 
 		 private IList<AdvertisedSocketAddress> ExtractInitialHosts( IDictionary<int, CoreClusterMember> coreMembers )

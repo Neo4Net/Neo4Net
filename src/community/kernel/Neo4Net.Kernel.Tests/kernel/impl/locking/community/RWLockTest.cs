@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -108,7 +108,7 @@ namespace Neo4Net.causalclustering.stresstests
 			return nameValue;
 		}
 
-		public static Workloads valueOf( string name )
+		public static Workloads ValueOf( string name )
 		{
 			foreach ( Workloads enumInstance in Workloads.valueList )
 			{

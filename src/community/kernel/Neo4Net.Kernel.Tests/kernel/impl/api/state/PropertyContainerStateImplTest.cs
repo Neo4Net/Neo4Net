@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using OnHeapCollectionsFactory = Neo4Net.Kernel.impl.util.collection.OnHeapCollectionsFactory;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

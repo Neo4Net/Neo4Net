@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel
 	using Node = Neo4Net.GraphDb.Node;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using HaSettings = Neo4Net.Kernel.ha.HaSettings;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ManagedCluster = Neo4Net.Kernel.impl.ha.ClusterManager.ManagedCluster;
@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class HACountsPropagationIT
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel
 		 public ClusterRule ClusterRule = new ClusterRule().withSharedSetting(HaSettings.pull_interval, PULL_INTERVAL + "ms");
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPropagateNodeCountsInHA() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldPropagateNodeCountsInHA() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPropagateNodeCountsInHA()
 		 {
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel
 
 			  foreach ( HighlyAvailableGraphDatabase db in cluster.AllMembers )
 			  {
-					using ( Neo4Net.Internal.Kernel.Api.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+					using ( Neo4Net.Kernel.Api.Internal.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 					{
 						 assertEquals( 2, tx.dataRead().countsForNode(-1) );
 						 assertEquals( 1, tx.dataRead().countsForNode(0) );
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldPropagateRelationshipCountsInHA() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void shouldPropagateRelationshipCountsInHA() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldPropagateRelationshipCountsInHA()
 		 {
@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel
 
 			  foreach ( HighlyAvailableGraphDatabase db in cluster.AllMembers )
 			  {
-					using ( Neo4Net.Internal.Kernel.Api.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+					using ( Neo4Net.Kernel.Api.Internal.Transaction tx = Db.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 					{
 						 assertEquals( 1, tx.dataRead().countsForRelationship(-1, -1, -1) );
 						 assertEquals( 1, tx.dataRead().countsForRelationship(-1, -1, 0) );

@@ -80,7 +80,7 @@ namespace Neo4Net.Dbms.archive
 			return nameValue;
 		}
 
-		public static CompressionFormat valueOf( string name )
+		public static CompressionFormat ValueOf( string name )
 		{
 			foreach ( CompressionFormat enumInstance in CompressionFormat.valueList )
 			{

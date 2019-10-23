@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.internal.kernel.api.IndexOrder indexOrder;
+//ORIGINAL LINE: @Parameterized.Parameter public org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder;
 		 public IndexOrder IndexOrder;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

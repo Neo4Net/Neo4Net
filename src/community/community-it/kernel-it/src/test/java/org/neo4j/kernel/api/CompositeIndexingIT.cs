@@ -36,17 +36,17 @@ namespace Neo4Net.Kernel.api
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.UNIQUE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.UNIQUE;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class CompositeIndexingIT
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNode()
 		 {
 			  long nodeID;
@@ -359,7 +359,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.NodeValueIndexCursor seek(KernelTransaction transaction) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor seek(KernelTransaction transaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private NodeValueIndexCursor Seek( KernelTransaction transaction )
 		 {
 			  NodeValueIndexCursor cursor = transaction.Cursors().allocateNodeValueIndexCursor();

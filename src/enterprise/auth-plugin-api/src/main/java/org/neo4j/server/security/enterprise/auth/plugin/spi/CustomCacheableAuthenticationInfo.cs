@@ -45,7 +45,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	/// </summary>
 	/// <seealso cref= AuthenticationPlugin#authenticate(AuthToken) </seealso>
 	/// <seealso cref= AuthProviderOperations#setAuthenticationCachingEnabled(boolean) </seealso>
-	public interface CustomCacheableAuthenticationInfo : AuthenticationInfo
+	public interface ICustomCacheableAuthenticationInfo : AuthenticationInfo
 	{
 
 		 /// <summary>
@@ -80,7 +80,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	//	 }
 	}
 
-	 public interface CustomCacheableAuthenticationInfo_CredentialsMatcher
+	 public interface ICustomCacheableAuthenticationInfo_CredentialsMatcher
 	 {
 		  /// <summary>
 		  /// Returns true if the credentials of the given <seealso cref="AuthToken"/> matches the credentials of the cached

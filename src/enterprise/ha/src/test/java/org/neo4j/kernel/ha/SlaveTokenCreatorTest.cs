@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.ha
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class SlaveTokenCreatorTest
 	public class SlaveTokenCreatorTest
 	{
-		 public interface SlaveTokenCreatorFixture
+		 public interface ISlaveTokenCreatorFixture
 		 {
 			  AbstractTokenCreator Build( Master master, RequestContextFactory requestContextFactory );
 			  Response<int> CallMasterMethod( Master master, RequestContext ctx, string name );

@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.util
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Values;

@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.api.txtracking
 	using Test = org.junit.Test;
 
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;

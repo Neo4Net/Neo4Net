@@ -120,7 +120,7 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 			return nameValue;
 		}
 
-		public static ProcedureNames valueOf( string name )
+		public static ProcedureNames ValueOf( string name )
 		{
 			foreach ( ProcedureNames enumInstance in ProcedureNames.valueList )
 			{

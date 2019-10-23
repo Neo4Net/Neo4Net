@@ -19,12 +19,12 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipDataAccessor = Neo4Net.Internal.Kernel.Api.RelationshipDataAccessor;
-	using StorageRelationshipCursor = Neo4Net.Storageengine.Api.StorageRelationshipCursor;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipDataAccessor = Neo4Net.Kernel.Api.Internal.RelationshipDataAccessor;
+	using StorageRelationshipCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipCursor;
 
-	internal abstract class DefaultRelationshipCursor<STORECURSOR> : RelationshipDataAccessor where STORECURSOR : Neo4Net.Storageengine.Api.StorageRelationshipCursor
+	internal abstract class DefaultRelationshipCursor<STORECURSOR> : RelationshipDataAccessor where STORECURSOR : Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipCursor
 	{
 		 private bool _hasChanges;
 		 private bool _checkHasChanges;

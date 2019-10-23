@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.config
 			  _specificIndexConfigCache.forEach( visitor.visit );
 		 }
 
-		 public interface SettingVisitor
+		 public interface ISettingVisitor
 		 {
 			  void Count( int count );
 

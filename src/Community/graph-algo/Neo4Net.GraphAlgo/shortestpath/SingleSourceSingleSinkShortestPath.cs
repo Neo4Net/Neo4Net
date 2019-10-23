@@ -35,7 +35,7 @@ namespace Neo4Net.GraphAlgo.ShortestPath
 	/// @author Patrik Larsson </summary>
 	/// @param <CostType>
 	///            The datatype the edge weights are represented by. </param>
-	public interface SingleSourceSingleSinkShortestPath<CostType>
+	public interface ISingleSourceSingleSinkShortestPath<CostType>
 	{
 		 /// <summary>
 		 /// This resets the calculation if we for some reason would like to redo it.

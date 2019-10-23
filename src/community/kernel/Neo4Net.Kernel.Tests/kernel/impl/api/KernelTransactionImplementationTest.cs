@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using DefaultPageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.DefaultPageCursorTracer;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
@@ -48,10 +48,10 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -95,7 +95,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_COMMIT_TIMESTAMP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -139,7 +139,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void emptyMetadataReturnedWhenMetadataIsNotSet() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void emptyMetadataReturnedWhenMetadataIsNotSet() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void EmptyMetadataReturnedWhenMetadataIsNotSet()
 		 {
@@ -151,7 +151,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void accessSpecifiedTransactionMetadata() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void accessSpecifiedTransactionMetadata() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void AccessSpecifiedTransactionMetadata()
 		 {
@@ -507,7 +507,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void successfulTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void successfulTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SuccessfulTxShouldNotifyKernelTransactionsThatItIsClosed()
 		 {
@@ -520,7 +520,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void failedTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void failedTxShouldNotifyKernelTransactionsThatItIsClosed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void FailedTxShouldNotifyKernelTransactionsThatItIsClosed()
 		 {
@@ -600,7 +600,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void terminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void terminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TerminatedTxMarkedNeitherSuccessNorFailureClosesWithoutThrowing()
 		 {
@@ -637,7 +637,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void terminatedTxMarkedForFailureClosesWithoutThrowing() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void terminatedTxMarkedForFailureClosesWithoutThrowing() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void TerminatedTxMarkedForFailureClosesWithoutThrowing()
 		 {
@@ -827,7 +827,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void closeClosedTransactionIsNotAllowed() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void closeClosedTransactionIsNotAllowed() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CloseClosedTransactionIsNotAllowed()
 		 {
@@ -840,7 +840,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void resetTransactionStatisticsOnRelease() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void resetTransactionStatisticsOnRelease() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ResetTransactionStatisticsOnRelease()
 		 {

@@ -33,19 +33,19 @@ namespace Neo4Net.Kernel.builtinprocs
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Label = Neo4Net.GraphDb.Label;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 public static string ExpectedSuccessfulCreationStatus;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void createIndexWithGivenProvider() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void createIndexWithGivenProvider() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CreateIndexWithGivenProvider()
 		 {
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void createIndexWithGivenProviderComposite() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void createIndexWithGivenProviderComposite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CreateIndexWithGivenProviderComposite()
 		 {
@@ -139,8 +139,8 @@ namespace Neo4Net.Kernel.builtinprocs
 			  string label = "MyLabel";
 			  string propKey = "myKey";
 			  Transaction transaction = NewTransaction( AnonymousContext.read() );
-			  assertEquals( "label token should not exist", Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().nodeLabel(label) );
-			  assertEquals( "property token should not exist", Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().propertyKey(propKey) );
+			  assertEquals( "label token should not exist", Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().nodeLabel(label) );
+			  assertEquals( "property token should not exist", Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().propertyKey(propKey) );
 			  Commit();
 
 			  // when
@@ -150,8 +150,8 @@ namespace Neo4Net.Kernel.builtinprocs
 
 			  // then
 			  transaction = NewTransaction( AnonymousContext.read() );
-			  assertNotEquals( "label token should exist", Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().nodeLabel(label) );
-			  assertNotEquals( "property token should exist", Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().propertyKey(propKey) );
+			  assertNotEquals( "label token should exist", Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().nodeLabel(label) );
+			  assertNotEquals( "property token should exist", Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN, transaction.TokenRead().propertyKey(propKey) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int[] createProperties(org.Neo4Net.internal.kernel.api.Transaction transaction, String... properties) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException
+//ORIGINAL LINE: private int[] createProperties(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String... properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException
 		 private int[] CreateProperties( Transaction transaction, params string[] properties )
 		 {
 			  int[] propertyKeyIds = new int[properties.Length];
@@ -244,7 +244,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNodeWithPropertiesAndLabel(org.Neo4Net.internal.kernel.api.Transaction transaction, int labelId, int[] propertyKeyIds, org.Neo4Net.values.storable.TextValue value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNodeWithPropertiesAndLabel(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, int labelId, int[] propertyKeyIds, org.Neo4Net.values.storable.TextValue value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNodeWithPropertiesAndLabel( Transaction transaction, int labelId, int[] propertyKeyIds, TextValue value )
 		 {
 			  long node = transaction.DataWrite().nodeCreate();
@@ -267,7 +267,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> callIndexProcedure(String pattern, String specifiedProvider) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException, org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> callIndexProcedure(String pattern, String specifiedProvider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private RawIterator<object[], ProcedureException> CallIndexProcedure( string pattern, string specifiedProvider )
 		 {
 			  return ProcsSchema().procedureCallSchema(ProcedureSignature.procedureName("db", IndexProcedureName), new object[] { pattern, specifiedProvider }, ProcedureCallContext.EMPTY);
@@ -283,7 +283,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void testCreateIndexWithGivenProvider(String label, String... properties) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void testCreateIndexWithGivenProvider(String label, String... properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void TestCreateIndexWithGivenProvider( string label, params string[] properties )
 		 {
 			  // given
@@ -314,7 +314,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexData(org.Neo4Net.internal.kernel.api.Transaction transaction, int[] propertyKeyIds, org.Neo4Net.values.storable.TextValue value, long node, org.Neo4Net.internal.kernel.api.IndexReference index) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void assertIndexData(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, int[] propertyKeyIds, org.Neo4Net.values.storable.TextValue value, long node, org.Neo4Net.Kernel.Api.Internal.IndexReference index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void AssertIndexData( Transaction transaction, int[] propertyKeyIds, TextValue value, long node, IndexReference index )
 		 {
 			  using ( NodeValueIndexCursor indexCursor = transaction.Cursors().allocateNodeValueIndexCursor() )
@@ -452,7 +452,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createConstraint(String label, String... properties) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private void createConstraint(String label, String... properties) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private void CreateConstraint( string label, params string[] properties )
 		 {
 			  NewTransaction( AnonymousContext.full() );

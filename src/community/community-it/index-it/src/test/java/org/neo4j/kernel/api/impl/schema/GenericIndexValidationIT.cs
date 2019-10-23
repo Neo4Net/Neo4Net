@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
 	using Neo4Net.Index.Internal.gbptree;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -557,7 +557,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 				 return nameValue;
 			 }
 
-			 public static NamedDynamicValueGenerator valueOf( string name )
+			 public static NamedDynamicValueGenerator ValueOf( string name )
 			 {
 				 foreach ( NamedDynamicValueGenerator enumInstance in NamedDynamicValueGenerator.valueList )
 				 {

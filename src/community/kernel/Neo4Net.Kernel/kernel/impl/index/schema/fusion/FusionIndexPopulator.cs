@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -87,7 +87,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  // Manual loop due do multiple exception types

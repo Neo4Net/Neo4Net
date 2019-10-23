@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using SpaceFillingCurveSettings = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettings;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -105,7 +105,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  foreach ( IndexPopulator part in this )
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					SpatialVerifyDeferredConstraint.Verify( nodePropertyAccessor, layout, tree, descriptor );

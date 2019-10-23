@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.messaging.marshalling
 {
 
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 
 	public class InputStreamReadableChannel : ReadableChannel
 	{

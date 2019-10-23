@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 
 	using ReplicatedContentHandler = Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class ByteArrayReplicatedTransaction : ReplicatedTransaction
 	{
@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public override void Marshal( WritableChannel channel )
 		 {
 			  ReplicatedTransactionSerializer.Marshal( channel, this );

@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest
 
 	using Neo4Net.Functions;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using GraphDescription = Neo4Net.Test.GraphDescription;

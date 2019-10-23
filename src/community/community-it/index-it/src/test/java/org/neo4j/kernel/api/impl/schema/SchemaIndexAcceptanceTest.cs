@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using UncloseableDelegatingFileSystemAbstraction = Neo4Net.GraphDb.mockfs.UncloseableDelegatingFileSystemAbstraction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema_IndexState = Neo4Net.GraphDb.schema.Schema_IndexState;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema_IndexState = Neo4Net.GraphDb.Schema.Schema_IndexState;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 

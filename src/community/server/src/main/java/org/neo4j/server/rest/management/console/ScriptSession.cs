@@ -21,7 +21,7 @@ namespace Neo4Net.Server.rest.management.console
 {
 	using Neo4Net.Helpers.Collections;
 
-	public interface ScriptSession
+	public interface IScriptSession
 	{
 		 /// <returns> <seealso cref="Pair"/> of (result,next prompt). </returns>
 		 Pair<string, string> Evaluate( string script );

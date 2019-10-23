@@ -21,24 +21,24 @@ namespace Neo4Net.Kernel.api.txstate
 {
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
 	using CountsRecordState = Neo4Net.Kernel.Impl.Api.CountsRecordState;
 	using DegreeVisitor = Neo4Net.Kernel.Impl.Api.DegreeVisitor;
 	using RelationshipDataExtractor = Neo4Net.Kernel.Impl.Api.RelationshipDataExtractor;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StorageRelationshipGroupCursor = Neo4Net.Storageengine.Api.StorageRelationshipGroupCursor;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StorageRelationshipGroupCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipGroupCursor;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.ANY_RELATIONSHIP_TYPE;
 
-	public class TransactionCountingStateVisitor : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Delegator
+	public class TransactionCountingStateVisitor : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Delegator
 	{
 		 private readonly RelationshipDataExtractor _edge = new RelationshipDataExtractor();
 		 private readonly StorageReader _storageReader;
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitCreatedRelationship(long id, int type, long startNode, long endNode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
 		 public override void VisitCreatedRelationship( long id, int type, long startNode, long endNode )
 		 {
 			  UpdateRelationshipCount( startNode, type, endNode, 1 );
@@ -119,7 +119,7 @@ namespace Neo4Net.Kernel.api.txstate
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: public void visitNodeLabelChanges(long id, final org.eclipse.collections.api.set.primitive.LongSet added, final org.eclipse.collections.api.set.primitive.LongSet removed) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 public override void VisitNodeLabelChanges( long id, LongSet added, LongSet removed )
 		 {

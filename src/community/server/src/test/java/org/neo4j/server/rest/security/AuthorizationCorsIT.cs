@@ -176,7 +176,7 @@ namespace Neo4Net.Server.rest.security
 
 			  assertEquals( OK.StatusCode, response.Status() );
 			  AssertCorsHeaderEquals( response, origin );
-			  assertEquals( method, HttpMethod.valueOf( response.Header( ACCESS_CONTROL_ALLOW_METHODS ) ) );
+			  assertEquals( method, HttpMethod.ValueOf( response.Header( ACCESS_CONTROL_ALLOW_METHODS ) ) );
 		 }
 
 		 private HTTP.Response ChangePassword( string username, string oldPassword, string newPassword )

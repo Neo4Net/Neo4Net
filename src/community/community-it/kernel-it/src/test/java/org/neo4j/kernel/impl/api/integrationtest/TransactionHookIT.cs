@@ -23,13 +23,13 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
 	using Test = org.junit.Test;
 
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Neo4Net.Kernel.api;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;

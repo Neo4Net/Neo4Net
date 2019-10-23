@@ -26,7 +26,7 @@ namespace Neo4Net.Bolt.v3.runtime
 	using StatementProcessor = Neo4Net.Bolt.runtime.StatementProcessor;
 	using BeginMessage = Neo4Net.Bolt.v3.messaging.request.BeginMessage;
 	using RunMessage = Neo4Net.Bolt.v3.messaging.request.RunMessage;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -87,7 +87,7 @@ namespace Neo4Net.Bolt.v3.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processRunMessage(org.Neo4Net.bolt.v3.messaging.request.RunMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private org.Neo4Net.bolt.runtime.BoltStateMachineState processRunMessage(org.Neo4Net.bolt.v3.messaging.request.RunMessage message, org.Neo4Net.bolt.runtime.StateMachineContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private BoltStateMachineState ProcessRunMessage( RunMessage message, StateMachineContext context )
 		 {
 			  long start = context.Clock().millis();

@@ -171,7 +171,7 @@ namespace Neo4Net.Consistency.checking.full
 			return nameValue;
 		}
 
-		public static MultiPassStore valueOf( string name )
+		public static MultiPassStore ValueOf( string name )
 		{
 			foreach ( MultiPassStore enumInstance in MultiPassStore.valueList )
 			{

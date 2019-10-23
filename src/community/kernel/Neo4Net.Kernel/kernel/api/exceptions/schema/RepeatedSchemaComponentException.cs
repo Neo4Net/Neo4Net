@@ -21,10 +21,10 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 
 	public abstract class RepeatedSchemaComponentException : SchemaKernelException
 	{
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 				 return nameValue;
 			 }
 
-			 public static SchemaComponent valueOf( string name )
+			 public static SchemaComponent ValueOf( string name )
 			 {
 				 foreach ( SchemaComponent enumInstance in SchemaComponent.valueList )
 				 {

@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using CommandIndexTracker = Neo4Net.causalclustering.core.state.machines.id.CommandIndexTracker;
 	using ReplicatedLockTokenRequest = Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest;
 	using ReplicatedLockTokenStateMachine = Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenStateMachine;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -175,7 +175,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: @Test public void raftIndexIsRecorded() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void RaftIndexIsRecorded()
 		 {
@@ -210,7 +210,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.api.TransactionCommitProcess createFakeTransactionCommitProcess(long txId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private TransactionCommitProcess CreateFakeTransactionCommitProcess( long txId )
 		 {
 			  TransactionCommitProcess localCommitProcess = mock( typeof( TransactionCommitProcess ) );

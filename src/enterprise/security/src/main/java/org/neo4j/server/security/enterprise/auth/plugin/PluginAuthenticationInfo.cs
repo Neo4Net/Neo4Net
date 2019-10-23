@@ -25,7 +25,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using SimpleHash = org.apache.shiro.crypto.hash.SimpleHash;
 	using ByteSource = org.apache.shiro.util.ByteSource;
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using AuthenticationInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.AuthenticationInfo;
 	using CacheableAuthenticationInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.CacheableAuthenticationInfo;
 	using CustomCacheableAuthenticationInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.CustomCacheableAuthenticationInfo;

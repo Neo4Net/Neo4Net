@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using ReporterFactories = Neo4Net.Kernel.Impl.Annotations.ReporterFactories;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using Value = Neo4Net.Values.Storable.Value;
 

@@ -55,7 +55,7 @@ namespace Neo4Net.tools.dump
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

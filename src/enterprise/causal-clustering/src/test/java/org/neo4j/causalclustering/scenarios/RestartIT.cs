@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.scenarios
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -22,17 +22,17 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using Neo4Net.Index.Internal.gbptree;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexLimitation = Neo4Net.Internal.Kernel.Api.IndexLimitation;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexLimitation = Neo4Net.Kernel.Api.Internal.IndexLimitation;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	/// <summary>
@@ -84,9 +84,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					if ( Support( valueCategories ) )
 					{
-						 return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderBoth;
+						 return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderBoth;
 					}
-					return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderNone;
+					return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderNone;
 			  }
 
 			  public override IndexValueCapability ValueCapability( params ValueCategory[] valueCategories )

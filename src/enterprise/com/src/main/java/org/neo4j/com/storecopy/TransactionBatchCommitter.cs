@@ -26,7 +26,7 @@ namespace Neo4Net.com.storecopy
 {
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using KernelTransactions = Neo4Net.Kernel.Impl.Api.KernelTransactions;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionQueue = Neo4Net.Kernel.Impl.Api.TransactionQueue;
@@ -40,7 +40,7 @@ namespace Neo4Net.com.storecopy
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.Format.time;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	internal class TransactionBatchCommitter : TransactionQueue.Applier
 	{
@@ -113,7 +113,7 @@ namespace Neo4Net.com.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long commit(org.Neo4Net.kernel.impl.api.TransactionToApply first) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private long commit(org.Neo4Net.kernel.impl.api.TransactionToApply first) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private long Commit( TransactionToApply first )
 		 {
 			  return _commitProcess.commit( first, CommitEvent.NULL, EXTERNAL );

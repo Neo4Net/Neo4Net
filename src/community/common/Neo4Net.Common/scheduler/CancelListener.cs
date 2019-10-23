@@ -23,7 +23,7 @@ namespace Neo4Net.Scheduler
    /// <summary>
    /// Gets notified about calls to <seealso cref="JobHandle.cancel(bool)"/>.
    /// </summary>
-   public interface CancelListener
+   public interface ICancelListener
    {
       /// <summary>
       /// Notification that <seealso cref="JobHandle.cancel(bool)"/> was called.

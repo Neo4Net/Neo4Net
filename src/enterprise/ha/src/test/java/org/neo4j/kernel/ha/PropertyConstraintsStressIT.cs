@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.ha
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using IGraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
 	using Neo4Net.Test.OtherThreadExecutor;

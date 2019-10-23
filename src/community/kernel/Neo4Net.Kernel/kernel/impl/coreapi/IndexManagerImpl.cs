@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.impl.coreapi
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using RelationshipAutoIndexer = Neo4Net.GraphDb.index.RelationshipAutoIndexer;
 	using RelationshipIndex = Neo4Net.GraphDb.index.RelationshipIndex;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 	using InternalAutoIndexing = Neo4Net.Kernel.Impl.Api.explicitindex.InternalAutoIndexing;
 
 	public class IndexManagerImpl : IndexManager

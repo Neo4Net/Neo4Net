@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using DatabaseTransactionStats = Neo4Net.Kernel.impl.transaction.stats.DatabaseTransactionStats;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore_Fields.BASE_TX_ID;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.storageengine.api.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
+//ORIGINAL LINE: void checkDataConsistency(org.Neo4Net.kernel.ha.com.slave.MasterClient masterClient, org.Neo4Net.kernel.impl.transaction.log.TransactionIdStore txIdStore, org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId, java.net.URI masterUri, java.net.URI me, org.Neo4Net.helpers.CancellationRequest cancellationRequest) throws Throwable
 		 internal override void CheckDataConsistency( MasterClient masterClient, TransactionIdStore txIdStore, StoreId storeId, URI masterUri, URI me, CancellationRequest cancellationRequest )
 		 {
 			  try

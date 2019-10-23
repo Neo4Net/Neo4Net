@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 		 /// <summary>
 		 /// Tx id counting starting from this value (this value means no transaction ever committed).
 		 /// 
-		 /// Note that a read only transaction will get txId = 0, see <seealso cref="org.Neo4Net.internal.kernel.api.Transaction"/>.
+		 /// Note that a read only transaction will get txId = 0, see <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/>.
 		 /// </summary>
 
 		 /// <summary>

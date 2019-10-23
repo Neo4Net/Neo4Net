@@ -73,7 +73,7 @@ namespace Neo4Net.Consistency.repair
 			return nameValue;
 		}
 
-		public static RelationshipNodeField valueOf( string name )
+		public static RelationshipNodeField ValueOf( string name )
 		{
 			foreach ( RelationshipNodeField enumInstance in RelationshipNodeField.valueList )
 			{

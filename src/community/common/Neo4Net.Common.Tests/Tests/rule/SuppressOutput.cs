@@ -137,7 +137,7 @@ namespace Neo4Net.Test.rule
             return nameValue;
          }
 
-         public static System valueOf(string name)
+         public static System ValueOf(string name)
          {
             foreach (System enumInstance in System.valueList)
             {
@@ -330,7 +330,7 @@ namespace Neo4Net.Test.rule
          }
       }
 
-      public interface Suppressible
+      public interface ISuppressible
       {
          Voice Suppress();
       }

@@ -38,9 +38,9 @@ namespace Neo4Net.Kernel.ha.@lock
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -203,7 +203,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void takeExclusiveLockOnSameNodeAfterSwitch(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase master, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private void takeExclusiveLockOnSameNodeAfterSwitch(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase master, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 private void TakeExclusiveLockOnSameNodeAfterSwitch( Label testLabel, HighlyAvailableGraphDatabase master, HighlyAvailableGraphDatabase db )
 		 {
 			  using ( Transaction transaction = Db.beginTx() )
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.ha.ClusterManager.RepairKit takeExclusiveLockAndKillSlave(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.ha.ClusterManager.RepairKit takeExclusiveLockAndKillSlave(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 private ClusterManager.RepairKit TakeExclusiveLockAndKillSlave( Label testLabel, HighlyAvailableGraphDatabase db )
 		 {
 			  TakeExclusiveLock( testLabel, db );
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Transaction takeExclusiveLock(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Transaction takeExclusiveLock(org.Neo4Net.graphdb.Label testLabel, org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 private Transaction TakeExclusiveLock( Label testLabel, HighlyAvailableGraphDatabase db )
 		 {
 			  Transaction transaction = Db.beginTx();
@@ -245,7 +245,7 @@ namespace Neo4Net.Kernel.ha.@lock
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db, org.Neo4Net.graphdb.Label testLabel) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: private org.Neo4Net.graphdb.Node getNode(org.Neo4Net.kernel.ha.HighlyAvailableGraphDatabase db, org.Neo4Net.graphdb.Label testLabel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 private Node GetNode( HighlyAvailableGraphDatabase db, Label testLabel )
 		 {
 			  using ( ResourceIterator<Node> nodes = Db.findNodes( testLabel ) )

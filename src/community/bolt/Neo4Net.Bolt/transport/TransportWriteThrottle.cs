@@ -39,8 +39,8 @@ namespace Neo4Net.Bolt.transport
 	/// </summary>
 	public class TransportWriteThrottle : TransportThrottle
 	{
-		 internal static readonly AttributeKey<ThrottleLock> LockKey = AttributeKey.valueOf( "BOLT.WRITE_THROTTLE.LOCK" );
-		 internal static readonly AttributeKey<bool> MaxDurationExceededKey = AttributeKey.valueOf( "BOLT.WRITE_THROTTLE.MAX_DURATION_EXCEEDED" );
+		 internal static readonly AttributeKey<ThrottleLock> LockKey = AttributeKey.ValueOf( "BOLT.WRITE_THROTTLE.LOCK" );
+		 internal static readonly AttributeKey<bool> MaxDurationExceededKey = AttributeKey.ValueOf( "BOLT.WRITE_THROTTLE.MAX_DURATION_EXCEEDED" );
 		 private readonly int _lowWaterMark;
 		 private readonly int _highWaterMark;
 		 private readonly Clock _clock;

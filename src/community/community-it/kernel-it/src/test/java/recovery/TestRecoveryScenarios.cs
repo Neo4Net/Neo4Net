@@ -35,8 +35,8 @@ namespace Recovery
 	using NotFoundException = Neo4Net.GraphDb.NotFoundException;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -45,7 +45,7 @@ namespace Recovery
 	using CheckPointer = Neo4Net.Kernel.impl.transaction.log.checkpoint.CheckPointer;
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 
@@ -56,7 +56,7 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 
 	/// <summary>
 	/// Arbitrary recovery scenarios boiled down to as small tests as possible
@@ -212,7 +212,7 @@ namespace Recovery
 
 			  // THEN
 			  // -- really the problem was that recovery threw exception, so mostly assert that.
-			  using ( Neo4Net.Internal.Kernel.Api.Transaction tx = _db.DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, LoginContext.AUTH_DISABLED ) )
+			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = _db.DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, LoginContext.AUTH_DISABLED ) )
 			  {
 					assertEquals( 0, tx.DataRead().countsForNode(-1) );
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
@@ -306,7 +306,7 @@ namespace Recovery
 		 public abstract class FlushStrategy
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORCE_EVERYTHING { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) { org.Neo4Net.io.pagecache.IOLimiter limiter = org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(org.Neo4Net.storageengine.api.StorageEngine.class).flushAndForce(limiter); } },
+//           FORCE_EVERYTHING { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) { org.Neo4Net.io.pagecache.IOLimiter limiter = org.Neo4Net.io.pagecache.IOLimiter_Fields.UNLIMITED; db.getDependencyResolver().resolveDependency(org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine.class).flushAndForce(limiter); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //           FLUSH_PAGE_CACHE { void flush(org.Neo4Net.kernel.internal.GraphDatabaseAPI db) throws java.io.IOException { db.getDependencyResolver().resolveDependency(org.Neo4Net.io.pagecache.PageCache.class).flushAndForce(); } };
 
@@ -356,7 +356,7 @@ namespace Recovery
 				 return nameValue;
 			 }
 
-			 public static FlushStrategy valueOf( string name )
+			 public static FlushStrategy ValueOf( string name )
 			 {
 				 foreach ( FlushStrategy enumInstance in FlushStrategy.valueList )
 				 {

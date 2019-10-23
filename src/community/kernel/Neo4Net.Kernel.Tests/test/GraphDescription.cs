@@ -262,7 +262,7 @@ namespace Neo4Net.Test
 				 return nameValue;
 			 }
 
-			 public static PropType valueOf( string name )
+			 public static PropType ValueOf( string name )
 			 {
 				 foreach ( PropType enumInstance in PropType.valueList )
 				 {

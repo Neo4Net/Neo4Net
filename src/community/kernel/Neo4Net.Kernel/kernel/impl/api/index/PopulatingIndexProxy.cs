@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.GraphDb;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -137,7 +137,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader newReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader NewReader()
 		 {
 			  throw new IndexNotFoundKernelException( "Index is still populating: " + _job );

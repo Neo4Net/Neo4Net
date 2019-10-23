@@ -24,14 +24,14 @@ namespace Neo4Net.Kernel.impl.util
 {
 
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 	using UTF8 = Neo4Net.Strings.UTF8;
 
 	public abstract class IoPrimitiveUtils
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String readString(org.Neo4Net.storageengine.api.ReadableChannel channel, int length) throws java.io.IOException
+//ORIGINAL LINE: public static String readString(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel, int length) throws java.io.IOException
 		 public static string ReadString( ReadableChannel channel, int length )
 		 {
 			  Debug.Assert( length >= 0, "invalid array length " + length );
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void write3bLengthAndString(org.Neo4Net.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
+//ORIGINAL LINE: public static void write3bLengthAndString(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, String string) throws java.io.IOException
 		 public static void Write3bLengthAndString( WritableChannel channel, string @string )
 		 {
 			  sbyte[] chars = UTF8.encode( @string );
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String read3bLengthAndString(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static String read3bLengthAndString(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static string Read3bLengthAndString( ReadableChannel channel )
 		 {
 			  short lengthShort = channel.Short;
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void write2bLengthAndString(org.Neo4Net.storageengine.api.WritableChannel channel, String string) throws java.io.IOException
+//ORIGINAL LINE: public static void write2bLengthAndString(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, String string) throws java.io.IOException
 		 public static void Write2bLengthAndString( WritableChannel channel, string @string )
 		 {
 			  sbyte[] chars = UTF8.encode( @string );
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static String read2bLengthAndString(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static String read2bLengthAndString(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static string Read2bLengthAndString( ReadableChannel channel )
 		 {
 			  short length = channel.Short;
@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.util
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static java.util.Map<String, String> read2bMap(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static java.util.Map<String, String> read2bMap(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static IDictionary<string, string> Read2bMap( ReadableChannel channel )
 		 {
 			  short size = channel.Short;

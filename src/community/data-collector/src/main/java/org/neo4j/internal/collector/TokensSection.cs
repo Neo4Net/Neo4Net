@@ -22,11 +22,11 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 	/// <summary>
 	/// Data collector section that simply return all tokens (propertyKeys, labels and relationship types) that
@@ -39,10 +39,10 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.internal.kernel.api.Kernel kernel) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel )
 		 {
-			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
+			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
 			  {
 					TokenRead tokens = tx.TokenRead();
 
@@ -64,10 +64,10 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static void putTokenCounts(java.util.Map<String,Object> metaData, org.Neo4Net.internal.kernel.api.Kernel kernel) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: static void putTokenCounts(java.util.Map<String,Object> metaData, org.Neo4Net.Kernel.Api.Internal.Kernel kernel) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal static void PutTokenCounts( IDictionary<string, object> metaData, Kernel kernel )
 		 {
-			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
+			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
 			  {
 					TokenRead tokens = tx.TokenRead();
 					metaData["labelCount"] = tokens.LabelCount();

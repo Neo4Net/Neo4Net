@@ -22,23 +22,23 @@ namespace Neo4Net.GraphDb.Traversal
 	using Neo4Net.GraphDb;
 
 	/// <summary>
-	/// Selects <seealso cref="TraversalBranch"/>s according to postorder depth first pattern,
+	/// Selects <seealso cref="ITraversalBranch"/>s according to postorder depth first pattern,
 	/// see http://en.wikipedia.org/wiki/Depth-first_search
 	/// </summary>
 	internal class PostorderDepthFirstSelector : BranchSelector
 	{
-		 private TraversalBranch _current;
+		 private ITraversalBranch _current;
 		 private readonly IPathExpander _expander;
 
-		 internal PostorderDepthFirstSelector( TraversalBranch startSource, IPathExpander expander )
+		 internal PostorderDepthFirstSelector( ITraversalBranch startSource, IPathExpander expander )
 		 {
-			  this._current = startSource;
-			  this._expander = expander;
+			  _current = startSource;
+			  _expander = expander;
 		 }
 
-		 public override TraversalBranch Next( TraversalContext metadata )
+		 public override ITraversalBranch Next( TraversalContext metadata )
 		 {
-			  TraversalBranch result = null;
+			  ITraversalBranch result = null;
 			  while ( result == null )
 			  {
 					if ( _current == null )
@@ -46,7 +46,7 @@ namespace Neo4Net.GraphDb.Traversal
 						 return null;
 					}
 
-					TraversalBranch next = _current.next( _expander, metadata );
+					ITraversalBranch next = _current.next( _expander, metadata );
 					if ( next != null )
 					{
 						 _current = next;

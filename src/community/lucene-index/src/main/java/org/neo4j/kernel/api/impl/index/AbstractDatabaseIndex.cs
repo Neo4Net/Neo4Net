@@ -23,13 +23,13 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 {
 
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 	/// <summary>
 	/// This class collects the common features of <seealso cref="ReadOnlyAbstractDatabaseIndex"/> and <seealso cref="WritableAbstractDatabaseIndex"/>.
 	/// </summary>
-	internal abstract class AbstractDatabaseIndex<INDEX, READER> : DatabaseIndex<READER> where INDEX : AbstractLuceneIndex<READER> where READER : Neo4Net.Storageengine.Api.schema.IndexReader
+	internal abstract class AbstractDatabaseIndex<INDEX, READER> : DatabaseIndex<READER> where INDEX : AbstractLuceneIndex<READER> where READER : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 	{
 		public abstract void MarkAsOnline();
 		public abstract Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter IndexWriter { get; }

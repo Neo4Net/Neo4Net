@@ -682,7 +682,7 @@ namespace Neo4Net.net
 				 return nameValue;
 			 }
 
-			 public static TestConnector valueOf( string name )
+			 public static TestConnector ValueOf( string name )
 			 {
 				 foreach ( TestConnector enumInstance in TestConnector.valueList )
 				 {

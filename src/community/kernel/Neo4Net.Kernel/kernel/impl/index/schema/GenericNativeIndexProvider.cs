@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Index.Internal.gbptree;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexLimitation = Neo4Net.Internal.Kernel.Api.IndexLimitation;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexLimitation = Neo4Net.Kernel.Api.Internal.IndexLimitation;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using SpaceFillingCurveSettings = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettings;
 	using SpaceFillingCurveSettingsReader = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
@@ -180,9 +180,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					if ( SupportOrdering( valueCategories ) )
 					{
-						 return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderBoth;
+						 return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderBoth;
 					}
-					return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderNone;
+					return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderNone;
 			  }
 
 			  public override IndexValueCapability ValueCapability( params ValueCategory[] valueCategories )

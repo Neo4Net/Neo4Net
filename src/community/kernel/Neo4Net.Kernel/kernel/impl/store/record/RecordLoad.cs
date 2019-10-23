@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.Impl.Store.Records
 			return nameValue;
 		}
 
-		public static RecordLoad valueOf( string name )
+		public static RecordLoad ValueOf( string name )
 		{
 			foreach ( RecordLoad enumInstance in RecordLoad.valueList )
 			{

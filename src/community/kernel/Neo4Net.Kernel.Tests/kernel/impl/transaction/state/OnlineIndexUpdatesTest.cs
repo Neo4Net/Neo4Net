@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using Test = org.junit.Test;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
 	using Neo4Net.@unsafe.Batchinsert.Internal;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -94,11 +94,11 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.EntityType.RELATIONSHIP;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class OnlineIndexUpdatesTest
 	{

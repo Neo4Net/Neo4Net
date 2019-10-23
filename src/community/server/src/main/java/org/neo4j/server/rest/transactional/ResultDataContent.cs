@@ -67,19 +67,19 @@ namespace Neo4Net.Server.rest.transactional
 			 {
 				 Object contentName = name.next(); if (contentName instanceof String)
 				 {
-					 try { result[i] = valueOf( ( ( String ) contentName ).toLowerCase() ); } catch (IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); }
+					 try { result[i] = ValueOf( ( ( String ) contentName ).toLowerCase() ); } catch (IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); }
 				 }
 				 else { throw new IllegalArgumentException( "Invalid result data content specifier: " + contentName ); }
 			 }
 			 return result;
 		 }
-		 = new ResultDataContent("public static ResultDataContent[] fromNames(java.util.List<JavaToDotNetGenericWildcard> names) { if(names == null || names.isEmpty()) { return null; } ResultDataContent[] result = new ResultDataContent[names.size()]; java.util.Iterator<JavaToDotNetGenericWildcard> name = names.iterator(); for(int i = 0; i < result.length; i++) { Object contentName = name.next(); if(contentName instanceof String) { try { result[i] = valueOf(((String) contentName).toLowerCase()); } catch(IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); } } else { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); } } return result; }", InnerEnum.public static ResultDataContent[] fromNames(java.util.List<JavaToDotNetGenericWildcard> names)
+		 = new ResultDataContent("public static ResultDataContent[] fromNames(java.util.List<JavaToDotNetGenericWildcard> names) { if(names == null || names.isEmpty()) { return null; } ResultDataContent[] result = new ResultDataContent[names.size()]; java.util.Iterator<JavaToDotNetGenericWildcard> name = names.iterator(); for(int i = 0; i < result.length; i++) { Object contentName = name.next(); if(contentName instanceof String) { try { result[i] = ValueOf(((String) contentName).toLowerCase()); } catch(IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); } } else { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); } } return result; }", InnerEnum.public static ResultDataContent[] fromNames(java.util.List<JavaToDotNetGenericWildcard> names)
 		 {
 			 if ( names == null || names.isEmpty() ) { return null; } ResultDataContent[] result = new ResultDataContent[names.size()]; java.util.Iterator<JavaToDotNetGenericWildcard> name = names.iterator(); for (int i = 0; i < result.length; i++)
 			 {
 				 Object contentName = name.next(); if (contentName instanceof String)
 				 {
-					 try { result[i] = valueOf( ( ( String ) contentName ).toLowerCase() ); } catch (IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); }
+					 try { result[i] = ValueOf( ( ( String ) contentName ).toLowerCase() ); } catch (IllegalArgumentException e) { throw new IllegalArgumentException("Invalid result data content specifier: " + contentName); }
 				 }
 				 else { throw new IllegalArgumentException( "Invalid result data content specifier: " + contentName ); }
 			 }
@@ -101,7 +101,7 @@ namespace Neo4Net.Server.rest.transactional
 			return nameValue;
 		}
 
-		public static ResultDataContent valueOf( string name )
+		public static ResultDataContent ValueOf( string name )
 		{
 			foreach ( ResultDataContent enumInstance in ResultDataContent.valueList )
 			{

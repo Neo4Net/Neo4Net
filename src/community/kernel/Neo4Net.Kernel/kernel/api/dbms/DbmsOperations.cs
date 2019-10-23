@@ -21,10 +21,10 @@
 namespace Neo4Net.Kernel.api.dbms
 {
    using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-   using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-   using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-   using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
-   using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+   using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+   using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+   using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
+   using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 
    /// <summary>
    /// Defines all types of system-oriented operations - i.e. those which do not read from or
@@ -36,13 +36,13 @@ namespace Neo4Net.Kernel.api.dbms
       /// <summary>
       /// Invoke a DBMS procedure by name </summary>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(org.Neo4Net.internal.kernel.api.procs.QualifiedName name, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallDbms(org.Neo4Net.Kernel.Api.Internal.procs.QualifiedName name, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallDbms(QualifiedName name, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext context);
 
       /// <summary>
       /// Invoke a DBMS procedure by id </summary>
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.internal.kernel.api.procs.ProcedureCallContext context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+      //ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> procedureCallDbms(int id, Object[] input, org.Neo4Net.graphdb.DependencyResolver dependencyResolver, org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext, org.Neo4Net.kernel.api.ResourceTracker resourceTracker, org.Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
       RawIterator<object[], ProcedureException> ProcedureCallDbms(int id, object[] input, DependencyResolver dependencyResolver, SecurityContext securityContext, ResourceTracker resourceTracker, ProcedureCallContext context);
    }
 }

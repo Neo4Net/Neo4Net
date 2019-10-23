@@ -23,7 +23,7 @@ namespace Neo4Net.Csv.Reader
 	/// <summary>
 	/// Source of data chunks to read.
 	/// </summary>
-	public interface Source : System.IDisposable
+	public interface ISource : System.IDisposable
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: Source_Chunk nextChunk(int seekStartPos) throws java.io.IOException;
@@ -91,7 +91,7 @@ namespace Neo4Net.Csv.Reader
 	//	 }
 	}
 
-	 public interface Source_Chunk
+	 public interface ISource_Chunk
 	 {
 		  /// <returns> character data to read </returns>
 		  char[] Data();

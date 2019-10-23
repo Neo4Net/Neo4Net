@@ -36,7 +36,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using EnterpriseAuthManager = Neo4Net.Kernel.enterprise.api.security.EnterpriseAuthManager;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -60,7 +60,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.security.auth.BasicAuthManagerTest.password;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -596,7 +596,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 		 private void Execute( LoginContext subject, string query, IDictionary<string, object> @params, System.Action<Result> consumer )
 		 {
 			  Result result;
-			  using ( InternalTransaction tx = _db.beginTransaction( @explicit, subject ) )
+			  using ( InternalTransaction tx = _db.BeginTransaction( @explicit, subject ) )
 			  {
 					result = _db.execute( tx, query, ValueUtils.asMapValue( @params ) );
 					consumer( result );
@@ -608,7 +608,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 		 private Result Execute( LoginContext subject, string query, IDictionary<string, object> @params )
 		 {
 			  Result result;
-			  using ( InternalTransaction tx = _db.beginTransaction( @explicit, subject ) )
+			  using ( InternalTransaction tx = _db.BeginTransaction( @explicit, subject ) )
 			  {
 					result = _db.execute( tx, query, ValueUtils.asMapValue( @params ) );
 					result.ResultAsString();

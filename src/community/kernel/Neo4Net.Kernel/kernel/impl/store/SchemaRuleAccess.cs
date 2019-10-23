@@ -19,13 +19,13 @@
  */
 namespace Neo4Net.Kernel.impl.store
 {
-	using MalformedSchemaRuleException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MalformedSchemaRuleException;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
-	public interface SchemaRuleAccess
+	public interface ISchemaRuleAccess
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.storageengine.api.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule loadSingleSchemaRule(long ruleId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
 		 SchemaRule LoadSingleSchemaRule( long ruleId );
 	}
 

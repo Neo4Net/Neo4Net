@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using ResponsePacker = Neo4Net.com.storecopy.ResponsePacker;
 	using StoreCopyServer = Neo4Net.com.storecopy.StoreCopyServer;
 	using StoreWriter = Neo4Net.com.storecopy.StoreWriter;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using MasterImpl = Neo4Net.Kernel.ha.com.master.MasterImpl;
 	using IdAllocation = Neo4Net.Kernel.ha.id.IdAllocation;
@@ -47,8 +47,8 @@ namespace Neo4Net.Kernel.ha.cluster
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	public class DefaultMasterImplSPI : MasterImpl.SPI
 	{
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.ha.cluster
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long applyPreparedTransaction(org.Neo4Net.kernel.impl.transaction.TransactionRepresentation preparedTransaction) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long ApplyPreparedTransaction( TransactionRepresentation preparedTransaction )
 		 {
 			  return _transactionCommitProcess.commit( new TransactionToApply( preparedTransaction ), CommitEvent.NULL, TransactionApplicationMode.EXTERNAL );

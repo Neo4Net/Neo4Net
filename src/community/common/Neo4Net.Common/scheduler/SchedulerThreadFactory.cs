@@ -24,7 +24,7 @@ namespace Neo4Net.Scheduler
    /// Thread factories used by the <seealso cref="JobScheduler"/> need to be able to create both normal threads, and <seealso cref="ForkJoinWorkerThread"/>s.
    /// This interface collects the capabilities of both types of thread factories.
    /// </summary>
-   public interface SchedulerThreadFactory : ThreadFactory, ForkJoinPool.ForkJoinWorkerThreadFactory
+   public interface ISchedulerThreadFactory : ThreadFactory, ForkJoinPool.ForkJoinWorkerThreadFactory
    {
    }
 }

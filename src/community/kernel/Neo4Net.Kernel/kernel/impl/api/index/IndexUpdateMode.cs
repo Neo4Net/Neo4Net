@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			return nameValue;
 		}
 
-		public static IndexUpdateMode valueOf( string name )
+		public static IndexUpdateMode ValueOf( string name )
 		{
 			foreach ( IndexUpdateMode enumInstance in IndexUpdateMode.valueList )
 			{

@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.api.schema.constraints
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using RelationTypeSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.RelationTypeSchemaDescriptor;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using RelationTypeSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.RelationTypeSchemaDescriptor;
 
 	public class RelExistenceConstraintDescriptor : ConstraintDescriptor
 	{
 		 private readonly RelationTypeSchemaDescriptor _schema;
 
-		 internal RelExistenceConstraintDescriptor( RelationTypeSchemaDescriptor schema ) : base( org.Neo4Net.Internal.kernel.api.schema.constraints.ConstraintDescriptor_Type.Exists )
+		 internal RelExistenceConstraintDescriptor( RelationTypeSchemaDescriptor schema ) : base( org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.Exists )
 		 {
 			  this._schema = schema;
 		 }

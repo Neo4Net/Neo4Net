@@ -32,8 +32,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using UnsafeDirectByteBufferAllocator = Neo4Net.Kernel.Impl.Index.Schema.UnsafeDirectByteBufferAllocator;
 	using GlobalMemoryTracker = Neo4Net.Memory.GlobalMemoryTracker;
 	using ThreadSafePeakIMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakIMemoryAllocationTracker;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Runnables = Neo4Net.Utils.Concurrent.Runnables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  if ( _storeScan == null )
 			  {
 					// indexing hasn't begun yet
-					return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.None;
+					return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.None;
 			  }
 			  PopulationProgress storeScanProgress = _storeScan.Progress;
 			  return indexPopulation.Progress( storeScanProgress );

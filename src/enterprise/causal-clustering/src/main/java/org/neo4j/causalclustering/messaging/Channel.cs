@@ -23,7 +23,7 @@
 namespace Neo4Net.causalclustering.messaging
 {
 
-	public interface Channel
+	public interface IChannel
 	{
 		 void Dispose();
 

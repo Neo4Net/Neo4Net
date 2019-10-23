@@ -46,8 +46,8 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using RecoveryMonitor = Neo4Net.Kernel.recovery.RecoveryMonitor;
 	using RecoveryService = Neo4Net.Kernel.recovery.RecoveryService;
 	using RecoveryStartInformation = Neo4Net.Kernel.recovery.RecoveryStartInformation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
 

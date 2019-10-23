@@ -23,7 +23,7 @@
 namespace Neo4Net.Test
 {
 	using Neo4Net.com;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class IntegerResponse : Response<int>
 	{

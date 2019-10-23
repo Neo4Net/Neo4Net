@@ -26,7 +26,7 @@ namespace Recovery
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using CountsVisitor = Neo4Net.Kernel.Impl.Api.CountsVisitor;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
@@ -43,11 +43,11 @@ namespace Recovery
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class CountsStoreRecoveryTest
 	{
@@ -85,7 +85,7 @@ namespace Recovery
 			  CrashAndRestart();
 
 			  // then
-			  using ( Neo4Net.Internal.Kernel.Api.Transaction tx = ( ( GraphDatabaseAPI ) _db ).DependencyResolver.resolveDependency( typeof( Kernel ) ).beginTransaction( @explicit, AUTH_DISABLED ) )
+			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = ( ( GraphDatabaseAPI ) _db ).DependencyResolver.resolveDependency( typeof( Kernel ) ).BeginTransaction( @explicit, AUTH_DISABLED ) )
 			  {
 					assertEquals( 1, tx.DataRead().countsForNode(tx.TokenRead().nodeLabel("A")) );
 					assertEquals( 1, tx.DataRead().countsForNode(tx.TokenRead().nodeLabel("B")) );

@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.ha.cluster
 			return nameValue;
 		}
 
-		public static HighAvailabilityMemberState valueOf( string name )
+		public static HighAvailabilityMemberState ValueOf( string name )
 		{
 			foreach ( HighAvailabilityMemberState enumInstance in HighAvailabilityMemberState.valueList )
 			{

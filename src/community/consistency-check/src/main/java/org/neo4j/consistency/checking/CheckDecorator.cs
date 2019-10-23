@@ -36,7 +36,7 @@ namespace Neo4Net.Consistency.checking
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 
-	public interface CheckDecorator
+	public interface ICheckDecorator
 	{
 		 /// <summary>
 		 /// Called before each pass over the store(s) to check.

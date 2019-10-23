@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.store
 {
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 
-	public interface StoreHeaderFormat<HEADER> where HEADER : StoreHeader
+	public interface IStoreHeaderFormat<HEADER> where HEADER : StoreHeader
 	{
 		 int NumberOfReservedRecords();
 

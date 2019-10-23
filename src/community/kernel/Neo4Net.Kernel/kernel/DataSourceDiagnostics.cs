@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel
 			return nameValue;
 		}
 
-		public static DataSourceDiagnostics valueOf( string name )
+		public static DataSourceDiagnostics ValueOf( string name )
 		{
 			foreach ( DataSourceDiagnostics enumInstance in DataSourceDiagnostics.valueList )
 			{

@@ -107,7 +107,7 @@ namespace Neo4Net.Kernel
 			return nameValue;
 		}
 
-		public static NeoStoresDiagnostics valueOf( string name )
+		public static NeoStoresDiagnostics ValueOf( string name )
 		{
 			foreach ( NeoStoresDiagnostics enumInstance in NeoStoresDiagnostics.valueList )
 			{

@@ -26,7 +26,7 @@ namespace Neo4Net.Jmx.impl
 	using LogVersionRepository = Neo4Net.Kernel.impl.transaction.log.LogVersionRepository;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
 	using KernelData = Neo4Net.Kernel.Internal.KernelData;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	[Obsolete]
 	public class KernelBean : Neo4NetMBean, Kernel

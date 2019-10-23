@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Consistency.store.synthetic
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Synthetic record type that stands in for a real record to fit in conveniently

@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 
 		 private StoreId GetStoreIdFromKernelStoreId( GraphDatabaseAPI graphDb )
 		 {
-			  Neo4Net.Storageengine.Api.StoreId storeId = graphDb.StoreId();
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = graphDb.StoreId();
 			  return new StoreId( storeId.CreationTime, storeId.RandomId, storeId.UpgradeTime, storeId.UpgradeId );
 		 }
 

@@ -155,7 +155,7 @@ namespace Neo4Net.Kernel.impl.store.format
 			return nameValue;
 		}
 
-		public static Capability valueOf( string name )
+		public static Capability ValueOf( string name )
 		{
 			foreach ( Capability enumInstance in Capability.valueList )
 			{

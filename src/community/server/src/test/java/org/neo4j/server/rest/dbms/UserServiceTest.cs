@@ -24,8 +24,8 @@ namespace Neo4Net.Server.rest.dbms
 	using Test = org.junit.Test;
 
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;

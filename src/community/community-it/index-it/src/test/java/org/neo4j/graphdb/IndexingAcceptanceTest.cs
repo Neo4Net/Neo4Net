@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb
 	using Test = org.junit.Test;
 	using TestName = org.junit.rules.TestName;
 
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 	using SpatialMocks = Neo4Net.Test.mockito.mock.SpatialMocks;

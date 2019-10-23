@@ -22,7 +22,7 @@
 namespace Neo4Net.Jmx
 {
 	[ManagementInterface(name : StoreSize_Fields.NAME), Description("Information about the disk space used by different parts of the Neo4Net graph store"), Obsolete]
-	public interface StoreSize
+	public interface IStoreSize
 	{
 
 		 [Description("Disk space used by the transaction logs, in bytes.")]

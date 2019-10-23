@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
@@ -39,10 +39,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;

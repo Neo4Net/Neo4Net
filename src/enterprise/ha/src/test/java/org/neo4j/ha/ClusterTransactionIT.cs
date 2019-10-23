@@ -30,7 +30,7 @@ namespace Neo4Net.ha
 
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using AvailabilityListener = Neo4Net.Kernel.availability.AvailabilityListener;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Settings = Neo4Net.Kernel.configuration.Settings;

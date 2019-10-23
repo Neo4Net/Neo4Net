@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 {
 	using Neo4Net.causalclustering.messaging.marshalling;
 
-	public interface StateMarshal<STATE> : ChannelMarshal<STATE>
+	public interface IStateMarshal<STATE> : ChannelMarshal<STATE>
 	{
 		 STATE StartState();
 

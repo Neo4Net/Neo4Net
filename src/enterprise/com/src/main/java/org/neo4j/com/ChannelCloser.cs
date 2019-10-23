@@ -24,7 +24,7 @@ namespace Neo4Net.com
 {
 	using Channel = org.jboss.netty.channel.Channel;
 
-	public interface ChannelCloser
+	public interface IChannelCloser
 	{
 		 void TryToCloseChannel( Channel channel );
 	}

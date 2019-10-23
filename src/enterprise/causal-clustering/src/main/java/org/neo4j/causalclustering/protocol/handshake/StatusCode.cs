@@ -100,7 +100,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			return nameValue;
 		}
 
-		public static StatusCode valueOf( string name )
+		public static StatusCode ValueOf( string name )
 		{
 			foreach ( StatusCode enumInstance in StatusCode.valueList )
 			{

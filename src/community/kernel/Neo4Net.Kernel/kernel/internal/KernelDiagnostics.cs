@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Internal
 	using DatabaseInfo = Neo4Net.Kernel.impl.factory.DatabaseInfo;
 	using StoreType = Neo4Net.Kernel.impl.store.StoreType;
 	using Logger = Neo4Net.Logging.Logger;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public abstract class KernelDiagnostics : DiagnosticsProvider
 	{

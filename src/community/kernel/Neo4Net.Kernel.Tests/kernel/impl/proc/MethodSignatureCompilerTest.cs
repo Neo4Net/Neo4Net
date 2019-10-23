@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.impl.proc
 	using ExpectedException = org.junit.rules.ExpectedException;
 
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
 

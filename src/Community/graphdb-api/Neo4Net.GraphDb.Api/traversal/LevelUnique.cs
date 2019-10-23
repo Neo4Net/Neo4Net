@@ -32,9 +32,9 @@ namespace Neo4Net.GraphDb.Traversal
 		 {
 		 }
 
-		 public override bool Check( TraversalBranch branch )
+		 public override bool Check( ITraversalBranch branch )
 		 {
-			  int level = branch.Length();
+			  int level = branch.Length;
 			  MutableLongSet levelIds = _idsPerLevel.get( level );
 			  if ( levelIds == null )
 			  {

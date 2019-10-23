@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
 	using Test = org.junit.Test;
 
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

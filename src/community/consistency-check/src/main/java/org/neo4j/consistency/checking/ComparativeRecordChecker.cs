@@ -23,7 +23,7 @@ namespace Neo4Net.Consistency.checking
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
 
-	public interface ComparativeRecordChecker<RECORD, REFERRED, REPORT> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REFERRED : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
+	public interface IComparativeRecordChecker<RECORD, REFERRED, REPORT> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REFERRED : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport
 	{
 		 void CheckReference( RECORD record, REFERRED referred, CheckerEngine<RECORD, REPORT> engine, RecordAccess records );
 	}

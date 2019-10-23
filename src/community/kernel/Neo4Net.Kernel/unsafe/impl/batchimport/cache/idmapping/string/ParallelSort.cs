@@ -198,7 +198,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 /// <summary>
 		 /// Pluggable comparator for the comparisons that quick-sort needs in order to function.
 		 /// </summary>
-		 public interface Comparator
+		 public interface IComparator
 		 {
 			  /// <returns> {@code true} if {@code left} is less than {@code pivot}. </returns>
 			  bool Lt( long left, long pivot );

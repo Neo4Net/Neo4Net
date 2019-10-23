@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.store
 {
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class MismatchingStoreIdException : StoreFailureException
 	{

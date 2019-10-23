@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	public interface SchemaState
+	public interface ISchemaState
 	{
 		 V get<K, V>( K key );
 

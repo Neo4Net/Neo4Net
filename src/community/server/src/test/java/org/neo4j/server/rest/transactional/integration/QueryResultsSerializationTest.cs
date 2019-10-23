@@ -31,7 +31,7 @@ namespace Neo4Net.Server.rest.transactional.integration
 	using Node = Neo4Net.GraphDb.Node;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using GeometryType = Neo4Net.Kernel.impl.store.GeometryType;

@@ -143,7 +143,7 @@ namespace Neo4Net.Bolt.messaging
 			return nameValue;
 		}
 
-		public static StructType valueOf( string name )
+		public static StructType ValueOf( string name )
 		{
 			foreach ( StructType enumInstance in StructType.valueList )
 			{

@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.replication
 {
 
 	using DummyRequest = Neo4Net.causalclustering.core.state.machines.dummy.DummyRequest;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using Log = Neo4Net.Logging.Log;
 	using Admin = Neo4Net.Procedure.Admin;
 	using Context = Neo4Net.Procedure.Context;
@@ -50,7 +50,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 public Replicator Replicator;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

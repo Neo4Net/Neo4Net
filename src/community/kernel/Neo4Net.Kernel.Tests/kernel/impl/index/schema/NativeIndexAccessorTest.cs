@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using StandardConfiguration = Neo4Net.Gis.Spatial.Index.curves.StandardConfiguration;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using ValueType = Neo4Net.Values.Storable.ValueType;
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly IndexCapability _indexCapability;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") public NativeIndexAccessorTest(String name, AccessorFactory<KEY,VALUE> accessorFactory, org.Neo4Net.values.storable.ValueType[] supportedTypes, IndexLayoutFactory<KEY,VALUE> indexLayoutFactory, org.Neo4Net.internal.kernel.api.IndexCapability indexCapability)
+//ORIGINAL LINE: @SuppressWarnings("unused") public NativeIndexAccessorTest(String name, AccessorFactory<KEY,VALUE> accessorFactory, org.Neo4Net.values.storable.ValueType[] supportedTypes, IndexLayoutFactory<KEY,VALUE> indexLayoutFactory, org.Neo4Net.Kernel.Api.Internal.IndexCapability indexCapability)
 		 public NativeIndexAccessorTest( string name, AccessorFactory<KEY, VALUE> accessorFactory, ValueType[] supportedTypes, IndexLayoutFactory<KEY, VALUE> indexLayoutFactory, IndexCapability indexCapability )
 		 {
 			  this._accessorFactory = accessorFactory;
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private interface AccessorFactory<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: NativeIndexAccessor<KEY,VALUE> create(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.api.index.IndexDirectoryStructure directory, boolean readOnly) throws java.io.IOException;
+//ORIGINAL LINE: NativeIndexAccessor<KEY,VALUE> create(org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, java.io.File storeFile, IndexLayout<KEY,VALUE> layout, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.api.index.IndexDirectoryStructure directory, boolean readOnly) throws java.io.IOException;
 			  NativeIndexAccessor<KEY, VALUE> Create( PageCache pageCache, FileSystemAbstraction fs, File storeFile, IndexLayout<KEY, VALUE> layout, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IndexProvider.Monitor monitor, StoreIndexDescriptor descriptor, IndexDirectoryStructure directory, bool readOnly );
 		 }
 	}

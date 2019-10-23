@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.metrics.source.server
 {
-	public interface ServerThreadViewSetter
+	public interface IServerThreadViewSetter
 	{
 		 void Set( ServerThreadView serverThreadView );
 	}

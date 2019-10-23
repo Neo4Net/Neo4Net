@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using NeoCommandType = Neo4Net.Kernel.impl.transaction.command.NeoCommandType;
-	using CommandReaderFactory = Neo4Net.Storageengine.Api.CommandReaderFactory;
+	using CommandReaderFactory = Neo4Net.Kernel.Api.StorageEngine.CommandReaderFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

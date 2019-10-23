@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	/// An interface for dealing with commands, either reading or writing them. See also <seealso cref="TransactionApplier"/>. The
 	/// methods in this class should almost always return false, unless something went wrong.
 	/// </summary>
-	public interface CommandVisitor
+	public interface ICommandVisitor
 	{
 		 // Store commands
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

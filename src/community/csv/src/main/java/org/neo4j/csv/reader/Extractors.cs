@@ -79,7 +79,7 @@ namespace Neo4Net.Csv.Reader
 	/// </pre>
 	/// 
 	/// ... even <seealso cref="Extractors.add(Extractor) added"/> to an <seealso cref="Extractors"/> instance, where its
-	/// <seealso cref="Extractor.toString() toString"/> value is used as key for lookup in <seealso cref="valueOf(string)"/>.
+	/// <seealso cref="Extractor.toString() toString"/> value is used as key for lookup in <seealso cref="ValueOf(string)"/>.
 	/// </summary>
 	public class Extractors
 	{
@@ -126,7 +126,7 @@ namespace Neo4Net.Csv.Reader
 		 /// <summary>
 		 /// Why do we have a public constructor here and why isn't this class an enum?
 		 /// It's because the array extractors can be configured with an array delimiter,
-		 /// something that would be impossible otherwise. There's an equivalent <seealso cref="valueOf(string)"/>
+		 /// something that would be impossible otherwise. There's an equivalent <seealso cref="ValueOf(string)"/>
 		 /// method to keep the feel of an enum.
 		 /// </summary>
 		 public Extractors( char arrayDelimiter, bool emptyStringsAsNull, bool trimStrings, System.Func<ZoneId> defaultTimeZone )
@@ -184,7 +184,7 @@ namespace Neo4Net.Csv.Reader
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: public Extractor<?> valueOf(String name)
+//ORIGINAL LINE: public Extractor<?> ValueOf(String name)
 		 public virtual Extractor<object> ValueOf( string name )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -666,11 +666,11 @@ namespace Neo4Net.Csv.Reader
 					{
 						 // TODO Figure out a way to do this conversion without round tripping to String
 						 // parseFloat automatically handles leading/trailing whitespace so no need for us to do it
-						 ValueConflict = float.Parse( string.valueOf( data, offset, length ) );
+						 ValueConflict = float.Parse( string.ValueOf( data, offset, length ) );
 					}
 					catch ( System.FormatException )
 					{
-						 throw new System.FormatException( "Not a number: \"" + string.valueOf( data, offset, length ) + "\"" );
+						 throw new System.FormatException( "Not a number: \"" + string.ValueOf( data, offset, length ) + "\"" );
 					}
 					return true;
 			  }
@@ -706,11 +706,11 @@ namespace Neo4Net.Csv.Reader
 					{
 						 // TODO Figure out a way to do this conversion without round tripping to String
 						 // parseDouble automatically handles leading/trailing whitespace so no need for us to do it
-						 ValueConflict = double.Parse( string.valueOf( data, offset, length ) );
+						 ValueConflict = double.Parse( string.ValueOf( data, offset, length ) );
 					}
 					catch ( System.FormatException )
 					{
-						 throw new System.FormatException( "Not a number: \"" + string.valueOf( data, offset, length ) + "\"" );
+						 throw new System.FormatException( "Not a number: \"" + string.ValueOf( data, offset, length ) + "\"" );
 					}
 					return true;
 			  }
@@ -917,7 +917,7 @@ namespace Neo4Net.Csv.Reader
 						 int numberOfChars = CharsToNextDelimiter( data, offset + charIndex, length - charIndex );
 						 // TODO Figure out a way to do this conversion without round tripping to String
 						 // parseFloat automatically handles leading/trailing whitespace so no need for us to do it
-						 ValueConflict[arrayIndex] = float.Parse( string.valueOf( data, offset + charIndex, numberOfChars ) );
+						 ValueConflict[arrayIndex] = float.Parse( string.ValueOf( data, offset + charIndex, numberOfChars ) );
 						 charIndex += numberOfChars;
 					}
 			  }
@@ -940,7 +940,7 @@ namespace Neo4Net.Csv.Reader
 						 int numberOfChars = CharsToNextDelimiter( data, offset + charIndex, length - charIndex );
 						 // TODO Figure out a way to do this conversion without round tripping to String
 						 // parseDouble automatically handles leading/trailing whitespace so no need for us to do it
-						 ValueConflict[arrayIndex] = double.Parse( string.valueOf( data, offset + charIndex, numberOfChars ) );
+						 ValueConflict[arrayIndex] = double.Parse( string.ValueOf( data, offset + charIndex, numberOfChars ) );
 						 charIndex += numberOfChars;
 					}
 			  }
@@ -1143,7 +1143,7 @@ namespace Neo4Net.Csv.Reader
 
 			  if ( length < 1 )
 			  {
-					throw new System.FormatException( "Not an integer: \"" + string.valueOf( data, originalOffset, fullLength ) + "\"" );
+					throw new System.FormatException( "Not an integer: \"" + string.ValueOf( data, originalOffset, fullLength ) + "\"" );
 			  }
 
 			  try
@@ -1155,7 +1155,7 @@ namespace Neo4Net.Csv.Reader
 			  }
 			  catch ( System.FormatException )
 			  {
-					throw new System.FormatException( "Not an integer: \"" + string.valueOf( data, originalOffset, fullLength ) + "\"" );
+					throw new System.FormatException( "Not an integer: \"" + string.ValueOf( data, originalOffset, fullLength ) + "\"" );
 			  }
 
 			  return negate ? -result : result;

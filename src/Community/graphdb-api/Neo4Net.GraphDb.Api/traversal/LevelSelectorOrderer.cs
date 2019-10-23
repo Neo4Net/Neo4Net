@@ -30,8 +30,8 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 public LevelSelectorOrderer( BranchSelector startSelector, BranchSelector endSelector, bool stopDescentOnResult, int maxDepth ) : base( startSelector, endSelector )
 		 {
-			  this._stopDescentOnResult = stopDescentOnResult;
-			  this._maxDepth = maxDepth;
+			  _stopDescentOnResult = stopDescentOnResult;
+			  _maxDepth = maxDepth;
 		 }
 
 		 protected internal override Entry InitialState()
@@ -39,19 +39,19 @@ namespace Neo4Net.GraphDb.Traversal
 			  return new Entry();
 		 }
 
-		 public override TraversalBranch Next( TraversalContext metadata )
+		 public override ITraversalBranch Next( TraversalContext metadata )
 		 {
-			  TraversalBranch branch = NextBranchFromCurrentSelector( metadata, false );
+			  ITraversalBranch branch = NextBranchFromCurrentSelector( metadata, false );
 			  Entry state = StateForCurrentSelector;
 			  AtomicInteger previousDepth = state.Depth;
-			  if ( branch != null && branch.Length() == previousDepth.get() )
+			  if ( branch != null && branch.Length== previousDepth.get() )
 			  { // Same depth as previous branch returned from this side.
 					return branch;
 			  }
 
 			  if ( branch != null )
 			  {
-					_totalDepth.set( CurrentSide(), branch.Length() );
+					_totalDepth.set( CurrentSide(), branch.Length);
 			  }
 			  if ( ( _stopDescentOnResult && ( metadata.NumberOfPathsReturned > 0 ) ) || ( _totalDepth.get() > (_maxDepth + 1) ) )
 			  {
@@ -61,12 +61,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			  if ( branch != null )
 			  {
-					previousDepth.set( branch.Length() );
+					previousDepth.set( branch.Length);
 					state.Branch = branch;
 			  }
 			  BranchSelector otherSelector = NextSelector();
 			  Entry otherState = StateForCurrentSelector;
-			  TraversalBranch otherBranch = otherState.Branch;
+			  ITraversalBranch otherBranch = otherState.Branch;
 			  if ( otherBranch != null )
 			  {
 					otherState.Branch = null;
@@ -87,7 +87,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 internal class Entry
 		 {
 			  internal readonly AtomicInteger Depth = new AtomicInteger();
-			  internal TraversalBranch Branch;
+			  internal ITraversalBranch Branch;
 		 }
 
 		 private class TotalDepth
@@ -97,7 +97,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 			  internal virtual void Set( Direction side, int depth )
 			  {
-					switch ( side.innerEnumValue )
+					switch ( side._innerEnumValue )
 					{
 					case Direction.InnerEnum.OUTGOING:
 						 Out = depth;

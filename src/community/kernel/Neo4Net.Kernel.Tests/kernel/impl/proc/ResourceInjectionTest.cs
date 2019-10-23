@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.proc
 
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;

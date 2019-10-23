@@ -23,7 +23,7 @@ namespace Neo4Net.Values
 	using InvalidValuesArgumentException = Neo4Net.Values.utils.InvalidValuesArgumentException;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
-	public interface StructureBuilder<Input, Result>
+	public interface IStructureBuilder<Input, Result>
 	{
 		 StructureBuilder<Input, Result> Add( string field, Input value );
 

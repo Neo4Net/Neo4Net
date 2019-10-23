@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
 	using Clocks = Neo4Net.Time.Clocks;
 	using FakeClock = Neo4Net.Time.FakeClock;

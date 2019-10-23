@@ -26,15 +26,15 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
-	using StubPropertyCursor = Neo4Net.Internal.Kernel.Api.helpers.StubPropertyCursor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
+	using StubPropertyCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubPropertyCursor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_NodeValueClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_NodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using Value = Neo4Net.Values.Storable.Value;
 

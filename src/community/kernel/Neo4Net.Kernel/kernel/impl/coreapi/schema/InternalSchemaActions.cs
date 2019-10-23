@@ -22,9 +22,9 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 
 	using Label = Neo4Net.GraphDb.Label;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 	/// <summary>
 	/// Implementations are used to configure <seealso cref="IndexCreatorImpl"/> and <seealso cref="BaseNodeConstraintCreator"/> for re-use

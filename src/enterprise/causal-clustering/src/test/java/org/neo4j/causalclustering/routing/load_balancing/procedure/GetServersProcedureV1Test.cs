@@ -39,9 +39,9 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 	using ClusterId = Neo4Net.causalclustering.identity.ClusterId;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 
@@ -72,11 +72,11 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTList;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.NullLogProvider.getInstance;
 
@@ -408,7 +408,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.procedure
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private ClusterView run(LegacyGetServersProcedure proc) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private ClusterView run(LegacyGetServersProcedure proc) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private ClusterView Run( LegacyGetServersProcedure proc )
 		 {

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;
 

@@ -107,7 +107,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.stats
 			return nameValue;
 		}
 
-		public static Keys valueOf( string name )
+		public static Keys ValueOf( string name )
 		{
 			foreach ( Keys enumInstance in Keys.valueList )
 			{

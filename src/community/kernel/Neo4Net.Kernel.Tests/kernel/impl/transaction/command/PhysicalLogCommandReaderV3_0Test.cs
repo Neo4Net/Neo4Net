@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using InMemoryClosableChannel = Neo4Net.Kernel.impl.transaction.log.InMemoryClosableChannel;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

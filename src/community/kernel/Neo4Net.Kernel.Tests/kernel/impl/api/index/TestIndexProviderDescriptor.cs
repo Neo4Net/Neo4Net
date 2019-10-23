@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index
 {
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 
 	public class TestIndexProviderDescriptor
 	{

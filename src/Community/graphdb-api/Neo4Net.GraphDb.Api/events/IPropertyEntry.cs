@@ -35,19 +35,19 @@ namespace Neo4Net.GraphDb.Events
    public interface IPropertyEntry<T> where T : Neo4Net.GraphDb.IPropertyContainer
    {
       /// <summary>
-      /// Get the IEntity that this property was modified on. The IEntity is either a
+      /// Get the Entity that this property was modified on. The Entity is either a
       /// <seealso cref="INode"/> or a <seealso cref="IRelationship"/>, depending on the generic type of
       /// this instance.
       /// </summary>
       /// <returns> the <seealso cref="INode"/> or <seealso cref="IRelationship"/> that the property was
       ///         modified on. </returns>
-      T IEntity();
+      T Entity { get; }
 
       /// <summary>
       /// Get the key of the modified property.
       /// </summary>
       /// <returns> the key of the modified property. </returns>
-      string Key();
+      string Key { get; }
 
       /// <summary>
       /// Get the value of the modified property as it was before the transaction
@@ -66,7 +66,7 @@ namespace Neo4Net.GraphDb.Events
       /// </summary>
       /// <returns> The value of the property as it was before the transaction
       /// started. </returns>
-      object PreviouslyCommitedValue();
+      object PreviouslyCommitedValue { get; }
 
       /// <summary>
       /// Get the value of the modified property. If this <seealso cref="PropertyEntry"/>
@@ -82,6 +82,6 @@ namespace Neo4Net.GraphDb.Events
       /// <returns> The value of the modified property. </returns>
       /// <exception cref="IllegalStateException"> if this method is called where this
       /// instance represents a removed property. </exception>
-      object Value();
+      object Value { get; }
    }
 }

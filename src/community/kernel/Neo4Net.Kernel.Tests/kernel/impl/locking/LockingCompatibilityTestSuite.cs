@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.impl.locking
 
 
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Neo4Net.Test;
 	using WaitDetails = Neo4Net.Test.OtherThreadExecutor.WaitDetails;
 	using Neo4Net.Test.OtherThreadExecutor;
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.locking
 					}
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void doWork(Locks_Client client) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException;
+//ORIGINAL LINE: abstract void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException;
 					internal abstract void DoWork( Locks_Client client );
 
 					public virtual Locks_Client Client()
@@ -182,7 +182,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand acquireExclusive(final Locks_Client client, final org.Neo4Net.storageengine.api.lock.LockTracer tracer, final org.Neo4Net.storageengine.api.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand acquireExclusive(final Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand AcquireExclusive( Locks_Client client, LockTracer tracer, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass( this, ClientToThreadMap[client], client, tracer, resourceType, key );
@@ -207,7 +207,7 @@ namespace Neo4Net.Kernel.impl.locking
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 				  public override void doWork( Locks_Client client )
 				  {
 						client.AcquireExclusive( _tracer, _resourceType, _key );
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand acquireShared(Locks_Client client, final org.Neo4Net.storageengine.api.lock.LockTracer tracer, final org.Neo4Net.storageengine.api.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand acquireShared(Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand AcquireShared( Locks_Client client, LockTracer tracer, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass2( this, ClientToThreadMap[client], client, tracer, resourceType, key );
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.locking
 				  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void doWork(Locks_Client client) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 				  public override void doWork( Locks_Client client )
 				  {
 						client.AcquireShared( _tracer, _resourceType, _key );
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: protected LockCommand release(final Locks_Client client, final org.Neo4Net.storageengine.api.lock.ResourceType resourceType, final long key)
+//ORIGINAL LINE: protected LockCommand release(final Locks_Client client, final org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, final long key)
 			  protected internal virtual LockCommand Release( Locks_Client client, ResourceType resourceType, long key )
 			  {
 					return new LockCommandAnonymousInnerClass3( this, ClientToThreadMap[client], client, resourceType, key );

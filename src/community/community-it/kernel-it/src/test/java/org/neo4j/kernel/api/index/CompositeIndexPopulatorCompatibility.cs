@@ -24,15 +24,15 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using QueryResultComparingIndexReader = Neo4Net.Storageengine.Api.schema.QueryResultComparingIndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using QueryResultComparingIndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.QueryResultComparingIndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 	using Values = Neo4Net.Values.Storable.Values;

@@ -108,7 +108,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 		 {
 			  // GIVEN
 			  IdMapper idMapper = Mapper( new StringEncoder(), Radix.String, NO_MONITOR );
-			  System.Func<long, object> inputIdLookup = string.valueOf;
+			  System.Func<long, object> inputIdLookup = string.ValueOf;
 			  int count = 300_000;
 
 			  // WHEN
@@ -561,7 +561,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 			  AtomicLong highNodeId = new AtomicLong();
 			  int batchSize = 1234;
 			  Race race = new Race();
-			  System.Func<long, object> inputIdLookup = string.valueOf;
+			  System.Func<long, object> inputIdLookup = string.ValueOf;
 			  int countPerThread = 30_000;
 			  race.AddContestants(_processors, () =>
 			  {
@@ -662,7 +662,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //           LONGS { Encoder encoder() { return new LongEncoder(); } IFactory<Radix> radix() { return Radix.LONG; } IFactory<Object> data(final java.util.Random random) { return() -> random.nextInt(1_000_000_000); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           LONGS_AS_STRINGS { Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return() -> String.valueOf(random.nextInt(1_000_000_000)); } },
+//           LONGS_AS_STRINGS { Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return() -> String.ValueOf(random.nextInt(1_000_000_000)); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
 //           VERY_LONG_STRINGS { char[] CHARS = "½!\"#¤%&/()=?`´;:,._-<>".toCharArray(); Encoder encoder() { return new StringEncoder(); } IFactory<Radix> radix() { return Radix.STRING; } IFactory<Object> data(final java.util.Random random) { return new org.Neo4Net.function.Factory<Object>() { public Object newInstance() { int length = 1500; for(int i = 0; i < 4; i++) { length = random.nextInt(length) + 20; } char[] chars = new char[length]; for(int i = 0; i < length; i++) { char ch; if(random.nextBoolean()) { ch = randomLetter(random); } else { ch = CHARS[random.nextInt(CHARS.length)]; } chars[i] = ch; } return new String(chars); } private char randomLetter(java.util.Random random) { int super; if(random.nextBoolean()) { super = 'a'; } else { super = 'A'; } int size = 'z' - 'a'; return(char)(super + random.nextInt(size)); } }; } };
 
@@ -715,7 +715,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 				 return nameValue;
 			 }
 
-			 public static ValueType valueOf( string name )
+			 public static ValueType ValueOf( string name )
 			 {
 				 foreach ( ValueType enumInstance in ValueType.valueList )
 				 {

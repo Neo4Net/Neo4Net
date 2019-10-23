@@ -88,7 +88,7 @@ namespace Neo4Net.Consistency.repair
 			return nameValue;
 		}
 
-		public static RelationshipChainDirection valueOf( string name )
+		public static RelationshipChainDirection ValueOf( string name )
 		{
 			foreach ( RelationshipChainDirection enumInstance in RelationshipChainDirection.valueList )
 			{

@@ -24,10 +24,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.Functions;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class IndexMapReference : IndexMapSnapshotProvider
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IndexProxy getIndexProxy(long indexId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public IndexProxy getIndexProxy(long indexId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public virtual IndexProxy GetIndexProxy( long indexId )
 		 {
 			  IndexProxy proxy = _indexMap.getIndexProxy( indexId );
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public IndexProxy getIndexProxy(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public IndexProxy getIndexProxy(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public virtual IndexProxy GetIndexProxy( SchemaDescriptor descriptor )
 		 {
 			  IndexProxy proxy = _indexMap.getIndexProxy( descriptor );
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getIndexId(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public long getIndexId(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public virtual long GetIndexId( SchemaDescriptor descriptor )
 		 {
 			  IndexProxy proxy = _indexMap.getIndexProxy( descriptor );
@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long getOnlineIndexId(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public long getOnlineIndexId(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public virtual long GetOnlineIndexId( SchemaDescriptor descriptor )
 		 {
 			  IndexProxy proxy = GetIndexProxy( descriptor );
@@ -119,24 +119,24 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			 }
 		 }
 
-		 public virtual ICollection<SchemaDescriptor> GetRelatedIndexes( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, IEntityType IEntityType )
+		 public virtual ICollection<SchemaDescriptor> GetRelatedIndexes( long[] changedEntityTokens, long[] unchangedEntityTokens, int[] sortedProperties, bool propertyListIsComplete, EntityType EntityType )
 		 {
-			  return _indexMap.getRelatedIndexes( changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete, IEntityType );
+			  return _indexMap.getRelatedIndexes( changedEntityTokens, unchangedEntityTokens, sortedProperties, propertyListIsComplete, EntityType );
 		 }
 
-		 public virtual ICollection<IndexBackedConstraintDescriptor> GetRelatedConstraints( long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete, IEntityType IEntityType )
+		 public virtual ICollection<IndexBackedConstraintDescriptor> GetRelatedConstraints( long[] changedLabels, long[] unchangedLabels, int[] sortedProperties, bool propertyListIsComplete, EntityType EntityType )
 		 {
-			  return _indexMap.getRelatedConstraints( changedLabels, unchangedLabels, sortedProperties, propertyListIsComplete, IEntityType );
+			  return _indexMap.getRelatedConstraints( changedLabels, unchangedLabels, sortedProperties, propertyListIsComplete, EntityType );
 		 }
 
-		 public virtual bool HasRelatedSchema( long[] labels, int propertyKey, IEntityType IEntityType )
+		 public virtual bool HasRelatedSchema( long[] labels, int propertyKey, EntityType EntityType )
 		 {
-			  return _indexMap.hasRelatedSchema( labels, propertyKey, IEntityType );
+			  return _indexMap.hasRelatedSchema( labels, propertyKey, EntityType );
 		 }
 
-		 public virtual bool HasRelatedSchema( int label, IEntityType IEntityType )
+		 public virtual bool HasRelatedSchema( int label, EntityType EntityType )
 		 {
-			  return _indexMap.hasRelatedSchema( label, IEntityType );
+			  return _indexMap.hasRelatedSchema( label, EntityType );
 		 }
 
 		 public virtual IndexUpdaterMap CreateIndexUpdaterMap( IndexUpdateMode mode )

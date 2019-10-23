@@ -271,7 +271,7 @@ namespace Neo4Net.Scheduler
          return nameValue;
       }
 
-      public static Group valueOf(string name)
+      public static Group ValueOf(string name)
       {
          foreach (Group enumInstance in Group.valueList)
          {

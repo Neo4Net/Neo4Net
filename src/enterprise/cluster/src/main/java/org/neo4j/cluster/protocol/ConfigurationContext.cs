@@ -25,7 +25,7 @@
 namespace Neo4Net.cluster.protocol
 {
 
-	public interface ConfigurationContext
+	public interface IConfigurationContext
 	{
 		 InstanceId MyId { get; }
 

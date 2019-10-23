@@ -24,7 +24,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.cache.idmapping.@string
 	/// Stores collision values efficiently for retrieval later. The idea is that there's a single thread <seealso cref="add(object) adding"/>
 	/// ids, each gets assigned an offset, and later use those offsets to get back the added ids.
 	/// </summary>
-	public interface CollisionValues : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, IDisposable
+	public interface ICollisionValues : Neo4Net.@unsafe.Impl.Batchimport.cache.MemoryStatsVisitor_Visitable, IDisposable
 	{
 		 long Add( object id );
 

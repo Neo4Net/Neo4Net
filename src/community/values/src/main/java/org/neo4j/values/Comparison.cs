@@ -128,7 +128,7 @@ namespace Neo4Net.Values
 			return nameValue;
 		}
 
-		public static Comparison valueOf( string name )
+		public static Comparison ValueOf( string name )
 		{
 			foreach ( Comparison enumInstance in Comparison.valueList )
 			{

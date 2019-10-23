@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
-	internal abstract class IndexCursor<T> where T : Neo4Net.Storageengine.Api.schema.IndexProgressor
+	internal abstract class IndexCursor<T> where T : Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor
 	{
 		 private T _progressor;
 

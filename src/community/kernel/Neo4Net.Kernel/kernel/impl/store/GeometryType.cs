@@ -312,7 +312,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static GeometryType valueOf( string name )
+		public static GeometryType ValueOf( string name )
 		{
 			foreach ( GeometryType enumInstance in GeometryType.valueList )
 			{

@@ -23,7 +23,7 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -54,11 +54,11 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Neo4Net.Kernel.impl.transaction.state;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using IntCounter = Neo4Net.Kernel.impl.util.statistics.IntCounter;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> commands) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void ExtractCommands( ICollection<StorageCommand> commands )
 		 {
 			  Debug.Assert( !_prepared, "Transaction has already been prepared" );
@@ -278,7 +278,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final void addFiltered(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> target, org.Neo4Net.kernel.impl.transaction.command.Command.Mode mode, org.Neo4Net.kernel.impl.transaction.command.Command[]... commands)
+//ORIGINAL LINE: @SafeVarargs private final void addFiltered(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target, org.Neo4Net.kernel.impl.transaction.command.Command.Mode mode, org.Neo4Net.kernel.impl.transaction.command.Command[]... commands)
 		 private void AddFiltered( ICollection<StorageCommand> target, Command.Mode mode, params Command[][] commands )
 		 {
 			  foreach ( Command[] c in commands )
@@ -577,7 +577,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  ChangeSchemaRule( storeIndex, updatedStoreIndex );
 		 }
 
-		 public interface PropertyReceiver<P> where P : Neo4Net.Storageengine.Api.StorageProperty
+		 public interface PropertyReceiver<P> where P : Neo4Net.Kernel.Api.StorageEngine.StorageProperty
 		 {
 			  void Receive( P property, long propertyRecordId );
 		 }

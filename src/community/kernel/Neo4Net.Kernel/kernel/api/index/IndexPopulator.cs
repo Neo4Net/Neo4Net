@@ -22,15 +22,15 @@
 namespace Neo4Net.Kernel.Api.Index
 {
 
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
 	using SwallowingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.SwallowingIndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Used for initial population of an index.
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <exception cref="IndexEntryConflictException"> for first detected uniqueness conflict, if any. </exception>
 		 /// <exception cref="UncheckedIOException"> on error reading from source files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor );
 
 		 /// <summary>
@@ -147,7 +147,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <param name="scanProgress"> progress of the scan. </param>
 		 /// <returns> progress of the population of this index as a whole. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.Neo4Net.storageengine.api.schema.PopulationProgress progress(org.Neo4Net.storageengine.api.schema.PopulationProgress scanProgress)
+//		 default org.Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress progress(org.Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress scanProgress)
 	//	 {
 	//		  return scanProgress;
 	//	 }
@@ -204,7 +204,7 @@ namespace Neo4Net.Kernel.Api.Index
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		  {
 		  }

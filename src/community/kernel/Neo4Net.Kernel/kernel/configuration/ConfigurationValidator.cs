@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.configuration
 	/// <summary>
 	/// Responsible for validating part of a configuration.
 	/// </summary>
-	public interface ConfigurationValidator
+	public interface IConfigurationValidator
 	{
 		 /// <param name="config"> to validated. </param>
 		 /// <param name="log"> for logging with messages. </param>

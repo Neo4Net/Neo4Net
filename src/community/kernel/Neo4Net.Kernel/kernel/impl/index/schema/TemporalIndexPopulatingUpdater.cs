@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 	public class TemporalIndexPopulatingUpdater : TemporalIndexCache<IndexUpdater>, IndexUpdater

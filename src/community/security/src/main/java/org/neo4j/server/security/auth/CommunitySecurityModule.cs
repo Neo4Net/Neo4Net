@@ -23,7 +23,7 @@ namespace Neo4Net.Server.Security.Auth
 	using DatabaseManagementSystemSettings = Neo4Net.Dbms.DatabaseManagementSystemSettings;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Service = Neo4Net.Helpers.Service;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using PasswordPolicy = Neo4Net.Kernel.api.security.PasswordPolicy;
@@ -48,7 +48,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void setup(Dependencies dependencies) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void Setup( Dependencies dependencies )
 		 {
 			  Config config = dependencies.Config();

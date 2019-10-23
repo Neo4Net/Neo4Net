@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using KernelAPIReadTestSupport = Neo4Net.Internal.Kernel.Api.KernelAPIReadTestSupport;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using KernelAPIReadTestSupport = Neo4Net.Kernel.Api.Internal.KernelAPIReadTestSupport;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 

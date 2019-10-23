@@ -94,7 +94,7 @@ namespace Neo4Net.causalclustering.discovery
 			return nameValue;
 		}
 
-		public static IpFamily valueOf( string name )
+		public static IpFamily ValueOf( string name )
 		{
 			foreach ( IpFamily enumInstance in IpFamily.valueList )
 			{

@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using PropertyKeyValue = Neo4Net.Kernel.api.properties.PropertyKeyValue;
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using IPropertyContainerState = Neo4Net.Storageengine.Api.txstate.PropertyContainerState;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using IPropertyContainerState = Neo4Net.Kernel.Api.StorageEngine.TxState.PropertyContainerState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

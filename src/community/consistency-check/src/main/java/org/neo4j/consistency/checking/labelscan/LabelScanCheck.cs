@@ -28,7 +28,7 @@ namespace Neo4Net.Consistency.checking.labelscan
 	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 
 	public class LabelScanCheck : RecordCheck<LabelScanDocument, Neo4Net.Consistency.report.ConsistencyReport_LabelScanConsistencyReport>
 	{

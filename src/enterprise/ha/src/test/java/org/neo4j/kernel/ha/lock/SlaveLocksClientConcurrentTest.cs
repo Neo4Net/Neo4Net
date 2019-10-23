@@ -45,8 +45,8 @@ namespace Neo4Net.Kernel.ha.@lock
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using Log = Neo4Net.Logging.Log;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

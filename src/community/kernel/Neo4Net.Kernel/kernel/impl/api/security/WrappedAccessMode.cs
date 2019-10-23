@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Impl.Api.security
 {
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 
 	/// <summary>
 	/// Access mode that wraps an access mode with a wrapping access mode. The resulting access mode allows things based

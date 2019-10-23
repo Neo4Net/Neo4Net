@@ -323,7 +323,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static ValueType valueOf( string name )
+		public static ValueType ValueOf( string name )
 		{
 			foreach ( ValueType enumInstance in ValueType.valueList )
 			{

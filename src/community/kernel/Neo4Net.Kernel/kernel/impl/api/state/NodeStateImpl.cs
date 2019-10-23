@@ -31,10 +31,10 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using CollectionsFactory = Neo4Net.Kernel.impl.util.collection.CollectionsFactory;
 	using MutableLongDiffSets = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSets;
 	using MutableLongDiffSetsImpl = Neo4Net.Kernel.impl.util.diffsets.MutableLongDiffSetsImpl;
-	using RelationshipDirection = Neo4Net.Storageengine.Api.RelationshipDirection;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using LongDiffSets = Neo4Net.Storageengine.Api.txstate.LongDiffSets;
-	using NodeState = Neo4Net.Storageengine.Api.txstate.NodeState;
+	using RelationshipDirection = Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using LongDiffSets = Neo4Net.Kernel.Api.StorageEngine.TxState.LongDiffSets;
+	using NodeState = Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class NodeStateImpl : IPropertyContainerStateImpl, NodeState

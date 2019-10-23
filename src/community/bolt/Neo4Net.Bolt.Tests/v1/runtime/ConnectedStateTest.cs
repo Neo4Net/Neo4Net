@@ -39,7 +39,7 @@ namespace Neo4Net.Bolt.v1.runtime
 	using PullAllMessage = Neo4Net.Bolt.v1.messaging.request.PullAllMessage;
 	using ResetMessage = Neo4Net.Bolt.v1.messaging.request.ResetMessage;
 	using RunMessage = Neo4Net.Bolt.v1.messaging.request.RunMessage;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

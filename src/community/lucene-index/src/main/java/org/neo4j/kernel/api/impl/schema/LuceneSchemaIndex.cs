@@ -35,10 +35,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using PartitionedUniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.PartitionedUniquenessVerifier;
 	using SimpleUniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.SimpleUniquenessVerifier;
 	using UniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.UniquenessVerifier;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= UniquenessVerifier#verify(NodePropertyAccessor, int[]) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public virtual void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds )
 		 {
 			  Flush( true );
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 /// <exception cref="IOException"> </exception>
 		 /// <seealso cref= UniquenessVerifier#verify(NodePropertyAccessor, int[], List) </seealso>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyUniqueness(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor, int[] propertyKeyIds, java.util.List<org.Neo4Net.values.storable.Value[]> updatedValueTuples) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public virtual void VerifyUniqueness( NodePropertyAccessor accessor, int[] propertyKeyIds, IList<Value[]> updatedValueTuples )
 		 {
 			  using ( UniquenessVerifier verifier = CreateUniquenessVerifier() )

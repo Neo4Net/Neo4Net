@@ -20,12 +20,12 @@
 namespace Neo4Net.Kernel.Api.Impl.Fulltext
 {
 
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using Neo4Net.Internal.Kernel.Api.schema;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using Neo4Net.Kernel.Api.Internal.schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	internal class FulltextSchemaDescriptor : SchemaDescriptor
 	{
@@ -92,12 +92,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  return _schema.keyType();
 		 }
 
-		 public override IEntityType IEntityType()
+		 public override EntityType EntityType()
 		 {
 			  return _schema.entityType();
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
+		 public override Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
 		 {
 			  return _schema.propertySchemaType();
 		 }

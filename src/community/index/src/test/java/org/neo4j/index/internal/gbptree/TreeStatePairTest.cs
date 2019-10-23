@@ -171,7 +171,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static SelectionUseCase valueOf( string name )
+			 public static SelectionUseCase ValueOf( string name )
 			 {
 				 foreach ( SelectionUseCase enumInstance in SelectionUseCase.valueList )
 				 {
@@ -266,7 +266,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static State valueOf( string name )
+			 public static State ValueOf( string name )
 			 {
 				 foreach ( State enumInstance in State.valueList )
 				 {
@@ -333,7 +333,7 @@ namespace Neo4Net.Index.Internal.gbptree
 				 return nameValue;
 			 }
 
-			 public static Selected valueOf( string name )
+			 public static Selected ValueOf( string name )
 			 {
 				 foreach ( Selected enumInstance in Selected.valueList )
 				 {

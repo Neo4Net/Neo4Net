@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.metrics.source.server
 {
-	public interface ServerThreadView
+	public interface IServerThreadView
 	{
 		 int AllThreads();
 		 int IdleThreads();

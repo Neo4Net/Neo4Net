@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 					return null;
 			  }
 
-			  return MigrationStatus.valueOf( data.First() );
+			  return MigrationStatus.ValueOf( data.First() );
 		 }
 
 		 private static Neo4Net.Helpers.Collections.Pair<string, string> ReadFromFile( Neo4Net.Io.fs.FileSystemAbstraction fs, java.io.File file, MigrationStatus expectedSate )
@@ -157,7 +157,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 			return nameValue;
 		}
 
-		public static MigrationStatus valueOf( string name )
+		public static MigrationStatus ValueOf( string name )
 		{
 			foreach ( MigrationStatus enumInstance in MigrationStatus.valueList )
 			{

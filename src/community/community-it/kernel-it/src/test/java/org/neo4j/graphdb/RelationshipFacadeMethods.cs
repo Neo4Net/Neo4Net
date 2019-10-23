@@ -123,7 +123,7 @@ namespace Neo4Net.GraphDb
 			return ordinalValue;
 		}
 
-		public static RelationshipFacadeMethods valueOf( string name )
+		public static RelationshipFacadeMethods ValueOf( string name )
 		{
 			foreach ( RelationshipFacadeMethods enumInstance in RelationshipFacadeMethods.valueList )
 			{

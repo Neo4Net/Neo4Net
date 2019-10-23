@@ -22,7 +22,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.stats
 	/// <summary>
 	/// Statistic about a particular thing.
 	/// </summary>
-	public interface Stat
+	public interface IStat
 	{
 		 DetailLevel DetailLevel();
 

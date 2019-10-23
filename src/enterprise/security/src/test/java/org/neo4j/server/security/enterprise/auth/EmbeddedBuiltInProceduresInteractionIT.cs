@@ -30,8 +30,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
 	using Result = Neo4Net.GraphDb.Result;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;

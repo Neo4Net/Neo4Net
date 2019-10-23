@@ -23,9 +23,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.GraphDb;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class RecoveringIndexProxy : AbstractSwallowingIndexProxy

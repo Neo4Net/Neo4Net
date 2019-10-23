@@ -44,7 +44,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using SimpleLogService = Neo4Net.Logging.Internal.SimpleLogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;
@@ -591,7 +591,7 @@ namespace Neo4Net.Kernel.ha.cluster.modeswitch
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public static System.Func<org.Neo4Net.storageengine.api.StoreId> storeSupplierMock()
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public static System.Func<org.Neo4Net.Kernel.Api.StorageEngine.StoreId> storeSupplierMock()
 		 public static System.Func<StoreId> StoreSupplierMock()
 		 {
 			  System.Func<StoreId> supplier = mock( typeof( System.Func ) );

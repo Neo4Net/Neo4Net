@@ -153,7 +153,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static ValueGroup valueOf( string name )
+		public static ValueGroup ValueOf( string name )
 		{
 			foreach ( ValueGroup enumInstance in ValueGroup.valueList )
 			{

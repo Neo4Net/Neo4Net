@@ -26,14 +26,14 @@ namespace Neo4Net.Kernel.ha
 	using RequestContext = Neo4Net.com.RequestContext;
 	using Neo4Net.com;
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using RequestContextFactory = Neo4Net.Kernel.ha.com.RequestContextFactory;
 	using Master = Neo4Net.Kernel.ha.com.master.Master;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	/// <summary>
 	/// Commit process on slaves in HA. Transactions aren't committed here, but sent to the master, committed
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {
 			  if ( batch.Next() != null )

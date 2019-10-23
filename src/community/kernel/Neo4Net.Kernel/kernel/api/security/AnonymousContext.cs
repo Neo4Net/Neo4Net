@@ -20,10 +20,10 @@
 namespace Neo4Net.Kernel.api.security
 {
 
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 
 	/// <summary>
 	/// Controls the capabilities of a KernelTransaction. </summary>
@@ -38,32 +38,32 @@ namespace Neo4Net.Kernel.api.security
 
 		 public static AnonymousContext None()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.None );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.None );
 		 }
 
 		 public static AnonymousContext Read()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read );
 		 }
 
 		 public static AnonymousContext Write()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Write );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Write );
 		 }
 
 		 public static AnonymousContext WriteToken()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.TokenWrite );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.TokenWrite );
 		 }
 
 		 public static AnonymousContext WriteOnly()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.WriteOnly );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.WriteOnly );
 		 }
 
 		 public static AnonymousContext Full()
 		 {
-			  return new AnonymousContext( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full );
+			  return new AnonymousContext( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full );
 		 }
 
 		 public override AuthSubject Subject()

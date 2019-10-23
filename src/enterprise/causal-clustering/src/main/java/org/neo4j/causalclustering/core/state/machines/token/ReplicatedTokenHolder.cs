@@ -28,22 +28,22 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 
 	using ReplicationFailureException = Neo4Net.causalclustering.core.replication.ReplicationFailureException;
 	using Replicator = Neo4Net.causalclustering.core.replication.Replicator;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using TxState = Neo4Net.Kernel.Impl.Api.state.TxState;
 	using AbstractTokenHolderBase = Neo4Net.Kernel.impl.core.AbstractTokenHolderBase;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.txstate.TxStateVisitor_Fields.NO_DECORATION;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
 
 	public class ReplicatedTokenHolder : AbstractTokenHolderBase
 	{
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 			  {
 					  using ( StorageReader statement = storageEngine.NewReader() )
 					  {
-						storageEngine.CreateCommands( commands, txState, statement, Neo4Net.Storageengine.Api.@lock.ResourceLocker_Fields.None, long.MaxValue, NO_DECORATION );
+						storageEngine.CreateCommands( commands, txState, statement, Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker_Fields.None, long.MaxValue, NO_DECORATION );
 					  }
 			  }
 			  catch ( Exception e ) when ( e is CreateConstraintFailureException || e is TransactionFailureException || e is ConstraintValidationException )

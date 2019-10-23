@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -127,7 +127,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyUpdates(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates) throws java.io.IOException
+//ORIGINAL LINE: void verifyUpdates(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws java.io.IOException
 		 internal virtual void VerifyUpdates( IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  Hit<KEY, VALUE>[] expectedHits = ConvertToHits( updates, Layout );

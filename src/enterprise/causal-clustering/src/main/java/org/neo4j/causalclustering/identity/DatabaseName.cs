@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.identity
 	using CausalClusteringSettings = Neo4Net.causalclustering.core.CausalClusteringSettings;
 	using Neo4Net.causalclustering.core.state.storage;
 	using StringMarshal = Neo4Net.causalclustering.messaging.marshalling.StringMarshal;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Simple wrapper class for database name strings. These values are provided using the
@@ -69,14 +69,14 @@ namespace Neo4Net.causalclustering.identity
 		 public class Marshal : SafeStateMarshal<DatabaseName>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected DatabaseName unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected DatabaseName unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  protected internal override DatabaseName Unmarshal0( ReadableChannel channel )
 			  {
 					return new DatabaseName( StringMarshal.unmarshal( channel ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(DatabaseName databaseName, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(DatabaseName databaseName, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( DatabaseName databaseName, WritableChannel channel )
 			  {

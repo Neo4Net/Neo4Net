@@ -22,13 +22,13 @@
  */
 namespace Neo4Net.Kernel.ha
 {
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using TransactionPropagator = Neo4Net.Kernel.ha.transaction.TransactionPropagator;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using IntegrityValidator = Neo4Net.Kernel.impl.transaction.state.IntegrityValidator;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	/// <summary>
 	/// Commit process on the master side in HA, where transactions either comes in from slaves committing,
@@ -56,7 +56,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long commit(org.Neo4Net.kernel.impl.api.TransactionToApply batch, org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent commitEvent, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long Commit( TransactionToApply batch, CommitEvent commitEvent, TransactionApplicationMode mode )
 		 {
 			  Validate( batch );
@@ -74,7 +74,7 @@ namespace Neo4Net.Kernel.ha
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void validate(org.Neo4Net.kernel.impl.api.TransactionToApply batch) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void validate(org.Neo4Net.kernel.impl.api.TransactionToApply batch) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void Validate( TransactionToApply batch )
 		 {
 			  while ( batch != null )

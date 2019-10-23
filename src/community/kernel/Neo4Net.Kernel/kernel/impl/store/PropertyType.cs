@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static PropertyType valueOf( string name )
+		public static PropertyType ValueOf( string name )
 		{
 			foreach ( PropertyType enumInstance in PropertyType.valueList )
 			{

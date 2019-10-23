@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.locking
 	using Ignore = org.junit.Ignore;
 	using Test = org.junit.Test;
 
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

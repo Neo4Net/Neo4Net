@@ -26,10 +26,10 @@ namespace Neo4Net.GraphDb.Traversal
 		 {
 		 }
 
-		 public override bool Check( TraversalBranch source )
+		 public override bool Check( ITraversalBranch source )
 		 {
 			  long idToCompare = Type.getId( source );
-			  while ( source.Length() > 0 )
+			  while ( source.Length> 0 )
 			  {
 					source = source.Parent();
 					if ( Type.idEquals( source, idToCompare ) )

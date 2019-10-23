@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
-	public interface CoreLogPruningStrategy
+	public interface ICoreLogPruningStrategy
 	{
 		 /// <summary>
 		 /// Returns the index to keep depending on the configuration strategy.

@@ -25,9 +25,9 @@ namespace Neo4Net.GraphDb.facade.spi
 	using DataSourceModule = Neo4Net.GraphDb.factory.module.DataSourceModule;
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -39,7 +39,7 @@ namespace Neo4Net.GraphDb.facade.spi
 	using TransactionalContext = Neo4Net.Kernel.impl.query.TransactionalContext;
 	using LifecycleException = Neo4Net.Kernel.Lifecycle.LifecycleException;
 	using Logger = Neo4Net.Logging.Logger;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 	/// <summary>
@@ -164,7 +164,7 @@ namespace Neo4Net.GraphDb.facade.spi
 			  try
 			  {
 					_availability.assertDatabaseAvailable();
-					KernelTransaction kernelTx = _dataSource.kernelAPI.get().beginTransaction(type, loginContext, timeout);
+					KernelTransaction kernelTx = _dataSource.kernelAPI.get().BeginTransaction(type, loginContext, timeout);
 					kernelTx.RegisterCloseListener( txId => _threadToTransactionBridge.unbindTransactionFromCurrentThread() );
 					_threadToTransactionBridge.bindTransactionToCurrentThread( kernelTx );
 					return kernelTx;

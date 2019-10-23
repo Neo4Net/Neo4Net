@@ -34,13 +34,13 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -190,8 +190,8 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 						assertTrue( indexes.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						IndexDefinition index = indexes.next();
-						Neo4Net.GraphDb.schema.Schema_IndexState indexState = Db.schema().getIndexState(index);
-						assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Failed, indexState );
+						Neo4Net.GraphDb.Schema.Schema_IndexState indexState = Db.schema().getIndexState(index);
+						assertEquals( Neo4Net.GraphDb.Schema.Schema_IndexState.Failed, indexState );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 						assertFalse( indexes.hasNext() );
 						tx.Success();

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 
 	public class OnlineIndexSamplingJobFactory : IndexSamplingJobFactory

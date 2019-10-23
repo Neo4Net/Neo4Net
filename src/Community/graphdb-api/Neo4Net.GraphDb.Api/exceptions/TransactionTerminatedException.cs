@@ -35,7 +35,7 @@ namespace Neo4Net.GraphDb.Exceptions
 
 		 protected internal TransactionTerminatedException( Status status, string additionalInfo ) : base( "The transaction has been terminated. Retry your operation in a new transaction, " + "and you should see a successful result. " + status.Code().description() + " " + additionalInfo )
 		 {
-			  this._status = status;
+			  _status = status;
 		 }
 
 		 public override Status Status()

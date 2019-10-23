@@ -29,7 +29,7 @@ namespace Neo4Net.GraphDb.security
 
 		 public WriteOperationsNotAllowedException( string msg, Status statusCode ) : base( msg )
 		 {
-			  this._statusCode = statusCode;
+			  _statusCode = statusCode;
 		 }
 
 		 /// <summary>

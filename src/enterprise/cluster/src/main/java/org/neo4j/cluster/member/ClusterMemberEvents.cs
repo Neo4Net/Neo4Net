@@ -26,7 +26,7 @@ namespace Neo4Net.cluster.member
 	/// Register listeners here to get callbacks when important cluster events happen, such as elections,
 	/// availability/unavailability of a member as a particular role, and member failure/recovery.
 	/// </summary>
-	public interface ClusterMemberEvents
+	public interface IClusterMemberEvents
 	{
 		 void AddClusterMemberListener( ClusterMemberListener listener );
 

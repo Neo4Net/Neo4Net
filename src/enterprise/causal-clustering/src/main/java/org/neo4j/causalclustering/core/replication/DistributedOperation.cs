@@ -29,8 +29,8 @@ namespace Neo4Net.causalclustering.core.replication
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using Neo4Net.causalclustering.messaging.marshalling;
 	using ReplicatedContentHandler = Neo4Net.causalclustering.messaging.marshalling.ReplicatedContentHandler;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// A uniquely identifiable operation.
@@ -80,7 +80,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 /// This this consumer ignores the content which is handles by its own serializer.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshalMetaData(org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshalMetaData(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public virtual void MarshalMetaData( WritableChannel channel )
 		 {
 			  channel.PutLong( GlobalSession().sessionId().MostSignificantBits );
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.causalclustering.messaging.marshalling.ContentBuilder<ReplicatedContent> deserialize(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static org.Neo4Net.causalclustering.messaging.marshalling.ContentBuilder<ReplicatedContent> deserialize(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static ContentBuilder<ReplicatedContent> Deserialize( ReadableChannel channel )
 		 {
 			  long mostSigBits = channel.Long;

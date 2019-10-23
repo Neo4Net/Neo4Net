@@ -33,9 +33,9 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using ActiveLock = Neo4Net.Kernel.impl.locking.ActiveLock;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.exceptions.Status_Cluster.NoLeaderAvailable;
@@ -213,14 +213,14 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					LocalClient.acquireShared( tracer, resourceType, resourceId );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceId) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceId )
 			  {
 					EnsureHoldingToken();

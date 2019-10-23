@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using Exceptions = Neo4Net.Helpers.Exceptions;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
 
 	public abstract class IndexPopulationFailure

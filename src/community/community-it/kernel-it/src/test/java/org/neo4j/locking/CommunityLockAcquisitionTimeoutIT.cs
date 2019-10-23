@@ -49,7 +49,7 @@ namespace Neo4Net.Locking
 	using CommunityLockClient = Neo4Net.Kernel.impl.locking.community.CommunityLockClient;
 	using CommunityLockManger = Neo4Net.Kernel.impl.locking.community.CommunityLockManger;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using Neo4Net.Test;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using Neo4Net.Test.mockito.matcher;

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.security
 {
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 
 	/// <summary>
 	/// Access mode that restricts the original access mode with the restricting mode. Allows things that both the

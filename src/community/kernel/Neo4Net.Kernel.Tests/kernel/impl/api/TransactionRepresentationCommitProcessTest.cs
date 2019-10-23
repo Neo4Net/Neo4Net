@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using FakeCommitment = Neo4Net.Kernel.impl.transaction.log.FakeCommitment;
 	using PhysicalTransactionRepresentation = Neo4Net.Kernel.impl.transaction.log.PhysicalTransactionRepresentation;
@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
 	using LogAppendEvent = Neo4Net.Kernel.impl.transaction.tracing.LogAppendEvent;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.CoreMatchers.containsString;
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.Exceptions.contains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL;
 
 	public class TransactionRepresentationCommitProcessTest
 	{

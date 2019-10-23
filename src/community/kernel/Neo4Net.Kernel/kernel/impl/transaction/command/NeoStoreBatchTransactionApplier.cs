@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using LockGroup = Neo4Net.Kernel.impl.locking.LockGroup;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
-	using CommandVersion = Neo4Net.Storageengine.Api.CommandVersion;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandVersion = Neo4Net.Kernel.Api.StorageEngine.CommandVersion;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	/// <summary>
 	/// Visits commands targeted towards the <seealso cref="NeoStores"/> and update corresponding stores. What happens in here is what

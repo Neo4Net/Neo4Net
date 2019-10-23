@@ -22,9 +22,9 @@
 namespace Neo4Net.Server.Security.Auth
 {
 
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
@@ -115,7 +115,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.security.LoginContext login(java.util.Map<String,Object> authToken) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 public override LoginContext Login( IDictionary<string, object> authToken )
 		 {
 			  try

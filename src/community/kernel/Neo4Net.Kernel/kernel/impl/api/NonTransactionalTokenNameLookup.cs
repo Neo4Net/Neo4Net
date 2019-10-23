@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using TokenNotFoundException = Neo4Net.Kernel.impl.core.TokenNotFoundException;

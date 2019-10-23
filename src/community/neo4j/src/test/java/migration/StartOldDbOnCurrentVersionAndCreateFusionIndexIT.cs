@@ -35,16 +35,16 @@ namespace Migration
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseFactory = Neo4Net.GraphDb.factory.GraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using ZipUtils = Neo4Net.Io.compress.ZipUtils;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileUtils = Neo4Net.Io.fs.FileUtils;
@@ -58,8 +58,8 @@ namespace Migration
 	using GenericNativeIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProvider;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -126,7 +126,7 @@ namespace Migration
 			  internal Private readonly;
 			  internal Private readonly;
 
-			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor descriptor )
+			  internal Provider( string name, InnerEnum innerEnum, string labelName, Neo4Net.GraphDb.factory.GraphDatabaseSettings.SchemaIndex setting, Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor descriptor )
 			  {
 					this._label = Label.label( labelName );
 					this._setting = setting;
@@ -152,7 +152,7 @@ namespace Migration
 				 return nameValue;
 			 }
 
-			 public static Provider valueOf( string name )
+			 public static Provider ValueOf( string name )
 			 {
 				 foreach ( Provider enumInstance in Provider.valueList )
 				 {
@@ -338,7 +338,7 @@ namespace Migration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void verifyExpectedProvider(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor expectedDescriptor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static void verifyExpectedProvider(org.Neo4Net.kernel.internal.GraphDatabaseAPI db, org.Neo4Net.graphdb.Label label, org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor expectedDescriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private static void VerifyExpectedProvider( GraphDatabaseAPI db, Label label, IndexProviderDescriptor expectedDescriptor )
 		 {
 			  using ( Transaction tx = Db.beginTx(), KernelTransaction kernelTransaction = Db.DependencyResolver.resolveDependency(typeof(ThreadToStatementContextBridge)).getKernelTransactionBoundToThisThread(true) )

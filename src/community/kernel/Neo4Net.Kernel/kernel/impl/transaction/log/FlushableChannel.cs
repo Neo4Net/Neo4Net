@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.transaction.log
 {
 
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Provides flush semantics over a <seealso cref="WritableChannel"/>. Essentially, this interface implies the existence of a

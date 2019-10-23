@@ -122,7 +122,7 @@ namespace Neo4Net.Test.rule
 				 return nameValue;
 			 }
 
-			 public static InitialLifecycle valueOf( string name )
+			 public static InitialLifecycle ValueOf( string name )
 			 {
 				 foreach ( InitialLifecycle enumInstance in InitialLifecycle.valueList )
 				 {

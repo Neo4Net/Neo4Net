@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Api
 {
 
 	using LockGroup = Neo4Net.Kernel.impl.locking.LockGroup;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	/// <summary>
 	/// This class wraps several <seealso cref="BatchTransactionApplier"/>s which will do their work sequentially. See also {@link
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction) throws java.io.IOException
+//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
 		 public override TransactionApplier StartTx( CommandsToApply transaction )
 		 {
 			  TransactionApplier[] txAppliers = new TransactionApplier[_appliers.Length];
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
+//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
 		 public override TransactionApplier StartTx( CommandsToApply transaction, LockGroup lockGroup )
 		 {
 			  TransactionApplier[] txAppliers = new TransactionApplier[_appliers.Length];

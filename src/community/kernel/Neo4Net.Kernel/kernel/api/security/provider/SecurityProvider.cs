@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.api.security.provider
 {
 
-	public interface SecurityProvider
+	public interface ISecurityProvider
 	{
 		 AuthManager AuthManager();
 

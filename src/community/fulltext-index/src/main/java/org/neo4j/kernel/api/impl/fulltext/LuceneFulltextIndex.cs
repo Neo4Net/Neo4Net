@@ -24,20 +24,20 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
 
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using IndexPartitionFactory = Neo4Net.Kernel.Api.Impl.Index.partition.IndexPartitionFactory;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	public class LuceneFulltextIndex : AbstractLuceneIndex<FulltextIndexReader>, System.IDisposable
 	{
 		 private readonly Analyzer _analyzer;
 		 private readonly string _identifier;
-		 private readonly IEntityType _type;
+		 private readonly EntityType _type;
 		 private readonly ICollection<string> _properties;
 		 private readonly TokenHolder _propertyKeyTokenHolder;
 		 private readonly File _transactionsFolder;

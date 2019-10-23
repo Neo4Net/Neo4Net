@@ -22,8 +22,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Test = org.junit.Test;
 
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;

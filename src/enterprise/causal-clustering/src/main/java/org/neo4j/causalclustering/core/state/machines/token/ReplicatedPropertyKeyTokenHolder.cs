@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
 	using IdGeneratorFactory = Neo4Net.Kernel.impl.store.id.IdGeneratorFactory;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 	public class ReplicatedPropertyKeyTokenHolder : ReplicatedTokenHolder
 	{

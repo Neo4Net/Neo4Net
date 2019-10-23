@@ -48,11 +48,11 @@ namespace Neo4Net.Consistency.checking.full
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -98,8 +98,8 @@ namespace Neo4Net.Consistency.checking.full
 	using Bits = Neo4Net.Kernel.impl.util.Bits;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using UTF8 = Neo4Net.Strings.UTF8;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -172,9 +172,9 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.util.Bits.bits;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.Property.property;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -888,7 +888,7 @@ namespace Neo4Net.Consistency.checking.full
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord>,java.util.List<int>> chainOfDynamicRecordsWithLabelsForANode(int labelCount) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.helpers.collection.Pair<java.util.List<org.Neo4Net.kernel.impl.store.record.DynamicRecord>,java.util.List<int>> chainOfDynamicRecordsWithLabelsForANode(int labelCount) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private Pair<IList<DynamicRecord>, IList<int>> ChainOfDynamicRecordsWithLabelsForANode( int labelCount )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':

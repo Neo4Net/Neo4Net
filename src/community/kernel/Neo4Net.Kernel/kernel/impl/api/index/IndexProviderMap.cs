@@ -20,11 +20,11 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Contains mapping from <seealso cref="IndexProviderDescriptor"/> or provider name to <seealso cref="IndexProvider"/>.
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// <returns> the <seealso cref="IndexProvider"/> with the given <seealso cref="IndexProviderDescriptor"/>. </returns>
 		 /// <exception cref="IndexProviderNotFoundException"> if no such <seealso cref="IndexProvider"/> was found. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexProvider lookup(org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor providerDescriptor) throws IndexProviderNotFoundException;
+//ORIGINAL LINE: org.Neo4Net.kernel.api.index.IndexProvider lookup(org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor providerDescriptor) throws IndexProviderNotFoundException;
 		 IndexProvider Lookup( IndexProviderDescriptor providerDescriptor );
 
 		 /// <summary>
@@ -70,7 +70,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// </summary>
 		 /// <returns> a CapableIndexDescriptor. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.Neo4Net.storageengine.api.schema.CapableIndexDescriptor withCapabilities(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor)
+//		 default org.Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor withCapabilities(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor)
 	//	 {
 	//		  IndexProviderDescriptor providerDescriptor = descriptor.providerDescriptor();
 	//		  IndexCapability capability = lookup(providerDescriptor).getCapability(descriptor);

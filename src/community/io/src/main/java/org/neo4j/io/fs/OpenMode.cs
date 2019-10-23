@@ -110,7 +110,7 @@ namespace Neo4Net.Io.fs
 			return nameValue;
 		}
 
-		public static OpenMode valueOf( string name )
+		public static OpenMode ValueOf( string name )
 		{
 			foreach ( OpenMode enumInstance in OpenMode.valueList )
 			{

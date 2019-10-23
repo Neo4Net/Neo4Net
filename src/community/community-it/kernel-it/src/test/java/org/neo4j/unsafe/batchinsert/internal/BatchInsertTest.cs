@@ -42,14 +42,14 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
@@ -75,12 +75,12 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -1459,7 +1459,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.Neo4Net.kernel.extension.KernelExtensionFactory<?> provider, org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor providerDescriptor) throws Exception
+//ORIGINAL LINE: private org.Neo4Net.unsafe.batchinsert.BatchInserter newBatchInserterWithIndexProvider(org.Neo4Net.kernel.extension.KernelExtensionFactory<?> provider, org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor providerDescriptor) throws Exception
 		 private BatchInserter NewBatchInserterWithIndexProvider<T1>( KernelExtensionFactory<T1> provider, IndexProviderDescriptor providerDescriptor )
 		 {
 			  IDictionary<string, string> configuration = configuration();

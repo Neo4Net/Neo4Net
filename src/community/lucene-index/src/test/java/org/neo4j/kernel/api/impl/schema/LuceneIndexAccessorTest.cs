@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 
 	using ReporterFactories = Neo4Net.Kernel.Impl.Annotations.ReporterFactories;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 //ORIGINAL LINE: @Mock private SchemaIndex schemaIndex;
 		 private SchemaIndex _schemaIndex;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Mock private org.Neo4Net.storageengine.api.schema.IndexDescriptor schemaIndexDescriptor;
+//ORIGINAL LINE: @Mock private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor schemaIndexDescriptor;
 		 private IndexDescriptor _schemaIndexDescriptor;
 		 private LuceneIndexAccessor _accessor;
 

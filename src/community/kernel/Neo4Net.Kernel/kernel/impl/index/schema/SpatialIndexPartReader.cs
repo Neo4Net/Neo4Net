@@ -28,15 +28,15 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using ExactPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate;
-	using GeometryRangePredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.GeometryRangePredicate;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using ExactPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate;
+	using GeometryRangePredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.GeometryRangePredicate;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using BridgingIndexProgressor = Neo4Net.Kernel.Impl.Api.schema.BridgingIndexProgressor;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  throw new System.NotSupportedException( "Cannot initialize 1D range in multidimensional spatial index reader" );
 		 }
 
-		 public override void Query( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
+		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
 		 {
 			  // Spatial does not support providing values
 			  if ( needsValues )
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 public override void DistinctValues( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
+		 public override void DistinctValues( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
 		 {
 			  // This is basically a version of the basic implementation, but with added consulting of the PropertyAccessor
 			  // since these are lossy spatial values.
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			 private NodePropertyAccessor _propertyAccessor;
 
-			 public NativeDistinctValuesProgressorAnonymousInnerClass( SpatialIndexPartReader<VALUE> outerInstance, IRawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, UnknownType openSeekers, UnknownType layout, IComparer<SpatialIndexKey> comparator, NodePropertyAccessor propertyAccessor ) : base( seeker, client, openSeekers, layout, comparator )
+			 public NativeDistinctValuesProgressorAnonymousInnerClass( SpatialIndexPartReader<VALUE> outerInstance, IRawCursor<Hit<SpatialIndexKey, VALUE>, IOException> seeker, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, UnknownType openSeekers, UnknownType layout, IComparer<SpatialIndexKey> comparator, NodePropertyAccessor propertyAccessor ) : base( seeker, client, openSeekers, layout, comparator )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._propertyAccessor = propertyAccessor;
@@ -151,21 +151,21 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 }
 		 }
 
-		 private void StartSeekForExists( SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, params IndexQuery[] predicates )
+		 private void StartSeekForExists( SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, params IndexQuery[] predicates )
 		 {
 			  treeKeyFrom.InitValueAsLowest( ValueGroup.GEOMETRY );
 			  treeKeyTo.InitValueAsHighest( ValueGroup.GEOMETRY );
 			  StartSeekForInitializedRange( client, treeKeyFrom, treeKeyTo, predicates, IndexOrder.NONE, false, false );
 		 }
 
-		 private void StartSeekForExact( SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, Value value, params IndexQuery[] predicates )
+		 private void StartSeekForExact( SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, Value value, params IndexQuery[] predicates )
 		 {
 			  treeKeyFrom.From( value );
 			  treeKeyTo.From( value );
 			  StartSeekForInitializedRange( client, treeKeyFrom, treeKeyTo, predicates, IndexOrder.NONE, false, false );
 		 }
 
-		 private void StartSeekForRange( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, IndexQuery.GeometryRangePredicate rangePredicate, IndexQuery[] query )
+		 private void StartSeekForRange( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, IndexQuery.GeometryRangePredicate rangePredicate, IndexQuery[] query )
 		 {
 			  try
 			  {
@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 		 }
 
-		 internal override void StartSeekForInitializedRange( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, IndexQuery[] query, IndexOrder indexOrder, bool needFilter, bool needsValues )
+		 internal override void StartSeekForInitializedRange( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, SpatialIndexKey treeKeyFrom, SpatialIndexKey treeKeyTo, IndexQuery[] query, IndexOrder indexOrder, bool needFilter, bool needsValues )
 		 {
 			  // Spatial does not support providing values
 			  Debug.Assert( !needsValues );

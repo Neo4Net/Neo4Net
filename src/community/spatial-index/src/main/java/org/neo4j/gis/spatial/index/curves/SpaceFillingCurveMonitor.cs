@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Gis.Spatial.Index.curves
 {
-	public interface SpaceFillingCurveMonitor
+	public interface ISpaceFillingCurveMonitor
 	{
 		 /// <summary>
 		 /// Tells the monitor that a range was added at a certain depth in the space filling curve.

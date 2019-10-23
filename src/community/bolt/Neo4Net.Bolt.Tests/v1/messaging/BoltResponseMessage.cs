@@ -111,7 +111,7 @@ namespace Neo4Net.Bolt.v1.messaging
 			return nameValue;
 		}
 
-		public static BoltResponseMessage valueOf( string name )
+		public static BoltResponseMessage ValueOf( string name )
 		{
 			foreach ( BoltResponseMessage enumInstance in BoltResponseMessage.valueList )
 			{

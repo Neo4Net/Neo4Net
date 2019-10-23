@@ -23,13 +23,13 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.GraphDb;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using SwallowingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.SwallowingIndexUpdater;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -124,7 +124,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			 get
 			 {
-				  return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.None;
+				  return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.None;
 			 }
 		 }
 	}

@@ -31,13 +31,13 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using Lock = Neo4Net.Kernel.impl.locking.Lock;
-	using StorageEntityScanCursor = Neo4Net.Storageengine.Api.StorageEntityScanCursor;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using StorageEntityScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageEntityScanCursor;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 
-	public abstract class PropertyAwareEntityStoreScan<CURSOR, FAILURE> : StoreScan<FAILURE> where CURSOR : Neo4Net.Storageengine.Api.StorageEntityScanCursor where FAILURE : Exception
+	public abstract class PropertyAwareEntityStoreScan<CURSOR, FAILURE> : StoreScan<FAILURE> where CURSOR : Neo4Net.Kernel.Api.StorageEngine.StorageEntityScanCursor where FAILURE : Exception
 	{
 		 internal readonly CURSOR IEntityCursor;
 		 private readonly StoragePropertyCursor _propertyCursor;
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 				  }
    
 				  // nothing to do 100% completed
-				  return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done;
+				  return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done;
 			 }
 		 }
 

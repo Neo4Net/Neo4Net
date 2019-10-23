@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.impl.locking
 
 
 	using Neo4Net.Helpers.Collections;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 	using static Neo4Net.Kernel.impl.locking.Locks_Client;

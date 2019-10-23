@@ -23,16 +23,16 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
 	/// A <seealso cref="IndexProgressor"/> + <seealso cref="IndexProgressor.NodeValueClient"/> combo presented as a <seealso cref="LongIterator"/>.
 	/// </summary>
-	public class NodeValueIterator : PrimitiveLongCollections.PrimitiveLongBaseIterator, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient, PrimitiveLongResourceIterator
+	public class NodeValueIterator : PrimitiveLongCollections.PrimitiveLongBaseIterator, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient, PrimitiveLongResourceIterator
 	{
 		 private bool _closed;
 		 private IndexProgressor _progressor;

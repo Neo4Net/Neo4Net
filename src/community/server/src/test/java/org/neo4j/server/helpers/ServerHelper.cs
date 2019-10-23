@@ -29,8 +29,8 @@ namespace Neo4Net.Server.helpers
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 

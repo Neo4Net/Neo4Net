@@ -20,10 +20,10 @@
 namespace Neo4Net.GraphDb.Traversal
 {
 	/// <summary>
-	/// Provides a context for <seealso cref="TraversalBranch"/>es which they need to
+	/// Provides a context for <seealso cref="ITraversalBranch"/>es which they need to
 	/// move further and report their progress.
 	/// </summary>
-	public interface TraversalContext : TraversalMetadata
+	public interface TraversalContext : ITraversalMetadata
 	{
 		 /// <summary>
 		 /// Reports that one more relationship has been traversed in this
@@ -40,29 +40,29 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <summary>
 		 /// Used for start branches to check adherence to the traversal uniqueness.
 		 /// </summary>
-		 /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for uniqueness. </param>
+		 /// <param name="branch"> the <seealso cref="ITraversalBranch"/> to check for uniqueness. </param>
 		 /// <returns> {@code true} if the branch is considered unique and is
 		 /// allowed to progress in this traversal. </returns>
-		 bool IsUniqueFirst( TraversalBranch branch );
+		 bool IsUniqueFirst( ITraversalBranch branch );
 
 		 /// <summary>
 		 /// Used for all except branches to check adherence to the traversal
 		 /// uniqueness.
 		 /// </summary>
-		 /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for uniqueness. </param>
+		 /// <param name="branch"> the <seealso cref="ITraversalBranch"/> to check for uniqueness. </param>
 		 /// <returns> {@code true} if the branch is considered unique and is
 		 /// allowed to progress in this traversal. </returns>
-		 bool IsUnique( TraversalBranch branch );
+		 bool IsUnique( ITraversalBranch branch );
 
 		 /// <summary>
-		 /// Evaluates a <seealso cref="TraversalBranch"/> whether or not to include it in the
+		 /// Evaluates a <seealso cref="ITraversalBranch"/> whether or not to include it in the
 		 /// result and whether or not to continue further down this branch or not.
 		 /// </summary>
-		 /// <param name="branch"> the <seealso cref="TraversalBranch"/> to evaluate. </param>
+		 /// <param name="branch"> the <seealso cref="ITraversalBranch"/> to evaluate. </param>
 		 /// <param name="state"> the <seealso cref="BranchState"/> for the branch. </param>
 		 /// @param <STATE> the type of the state object. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> of the branch in this traversal. </returns>
-		 Evaluation evaluate<STATE>( TraversalBranch branch, BranchState<STATE> state );
+		 Evaluation evaluate<STATE>( ITraversalBranch branch, IBranchState<STATE> state );
 	}
 
 }

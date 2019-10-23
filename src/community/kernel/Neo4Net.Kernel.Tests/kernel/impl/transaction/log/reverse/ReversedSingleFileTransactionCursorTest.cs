@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.reverse
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

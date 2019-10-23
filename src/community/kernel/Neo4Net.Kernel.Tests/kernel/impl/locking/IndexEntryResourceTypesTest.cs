@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.locking
 
 
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using ExactPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate;
+	using ExactPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.locking
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.array;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 
 	public class IndexEntryResourceTypesTest
 	{

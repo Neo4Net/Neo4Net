@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
 
 	public class MandatoryTransactionsForConstraintDefinitionTest : AbstractMandatoryTransactionsTest<ConstraintDefinition>
 	{

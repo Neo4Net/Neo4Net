@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 	using Test = org.junit.Test;
 
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using MockedNeoStores = Neo4Net.Test.MockedNeoStores;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

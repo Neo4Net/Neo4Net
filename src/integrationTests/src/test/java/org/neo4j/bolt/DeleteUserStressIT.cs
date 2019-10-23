@@ -63,7 +63,7 @@ namespace Neo4Net.Bolt
 		 public virtual void Setup()
 		 {
 			  _adminDriver = GraphDatabase.driver( Db.boltURI(), basic("Neo4Net", "Neo4Net") );
-			  using ( Session session = _adminDriver.session(), Transaction tx = session.beginTransaction() )
+			  using ( Session session = _adminDriver.session(), Transaction tx = session.BeginTransaction() )
 			  {
 					tx.run( "CALL dbms.changePassword('abc')" ).consume();
 					tx.success();
@@ -100,7 +100,7 @@ namespace Neo4Net.Bolt
 					using ( Driver driver = GraphDatabase.driver( Db.boltURI(), basic("pontus", "sutnop") ) )
 					{
    
-						 using ( Session session = driver.session(), Transaction tx = session.beginTransaction() )
+						 using ( Session session = driver.session(), Transaction tx = session.BeginTransaction() )
 						 {
 							  tx.run( "UNWIND range(1, 100000) AS n RETURN n" ).consume();
 							  tx.success();
@@ -126,7 +126,7 @@ namespace Neo4Net.Bolt
 		  {
 				try
 				{
-					using ( Session session = _adminDriver.session(), Transaction tx = session.beginTransaction() )
+					using ( Session session = _adminDriver.session(), Transaction tx = session.BeginTransaction() )
 					{
 						 tx.run( "CALL dbms.security.deleteUser('pontus')" ).consume();
 						 tx.success();
@@ -150,7 +150,7 @@ namespace Neo4Net.Bolt
 		  {
 				try
 				{
-					using ( Session session = _adminDriver.session(), Transaction tx = session.beginTransaction() )
+					using ( Session session = _adminDriver.session(), Transaction tx = session.BeginTransaction() )
 					{
 						 tx.run( "CALL dbms.security.createUser('pontus', 'sutnop', false)" ).consume();
 						 tx.success();

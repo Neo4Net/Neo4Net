@@ -20,18 +20,18 @@
 namespace Neo4Net.Cypher.Internal.codegen
 {
 	using Direction = Neo4Net.GraphDb.Direction;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using RelationshipSelectionCursor = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using RelationshipSelectionCursor = Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countAll;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countAll;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countIncoming;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countIncoming;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.helpers.Nodes.countOutgoing;
+//	import static org.Neo4Net.Kernel.Api.Internal.Helpers.Nodes.countOutgoing;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unused") public abstract class CompiledExpandUtils
@@ -45,7 +45,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  int fromDegree = NodeGetDegreeIfDense( read, fromNode, nodeCursor, cursors, direction );
 			  if ( fromDegree == 0 )
 			  {
-					return Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor_EMPTY;
+					return Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor_EMPTY;
 			  }
 			  bool fromNodeIsDense = fromDegree != NOT_DENSE_DEGREE;
 
@@ -53,7 +53,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  read.SingleNode( toNode, nodeCursor );
 			  if ( !nodeCursor.Next() )
 			  {
-					return Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor_EMPTY;
+					return Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor_EMPTY;
 			  }
 			  bool toNodeIsDense = nodeCursor.Dense;
 
@@ -96,7 +96,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  int fromDegree = CalculateTotalDegreeIfDense( read, fromNode, nodeCursor, direction, relTypes, cursors );
 			  if ( fromDegree == 0 )
 			  {
-					return Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor_EMPTY;
+					return Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor_EMPTY;
 			  }
 			  bool fromNodeIsDense = fromDegree != NOT_DENSE_DEGREE;
 
@@ -104,7 +104,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 			  read.SingleNode( toNode, nodeCursor );
 			  if ( !nodeCursor.Next() )
 			  {
-					return Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor_EMPTY;
+					return Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor_EMPTY;
 			  }
 			  bool toNodeIsDense = nodeCursor.Dense;
 
@@ -227,7 +227,7 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private static org.Neo4Net.internal.kernel.api.helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final org.Neo4Net.internal.kernel.api.helpers.RelationshipSelectionCursor allRelationships, final long toNode)
+//ORIGINAL LINE: private static org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor connectingRelationshipsIterator(final org.Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor allRelationships, final long toNode)
 		 private static RelationshipSelectionCursor ConnectingRelationshipsIterator( RelationshipSelectionCursor allRelationships, long toNode )
 		 {
 			  return new RelationshipSelectionCursorAnonymousInnerClass( allRelationships, toNode );

@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 {
 
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.min;

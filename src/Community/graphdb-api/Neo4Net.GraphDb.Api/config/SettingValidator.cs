@@ -25,7 +25,7 @@
 
 ////////////	/// @deprecated The settings API will be completely rewritten in 4.0 
 ////////////	[Obsolete("The settings API will be completely rewritten in 4.0")]
-////////////	public interface SettingValidator
+////////////	public interface ISettingValidator
 ////////////	{
 ////////////		 /// <summary>
 ////////////		 /// Validate one or several setting values, throwing on invalid values.

@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.locking
 {
 
 	using Config = Neo4Net.Kernel.configuration.Config;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public interface LocksFactory
 	{

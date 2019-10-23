@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using RelationshipExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.RelationshipExplicitIndexCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_ExplicitClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_ExplicitClient;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using RelationshipExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_ExplicitClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using CursorException = Neo4Net.Io.pagecache.CursorException;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 
 	internal class ReadableChannelPageCursor : PageCursor
 	{

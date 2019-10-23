@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using ExplicitIndexHits = Neo4Net.Kernel.api.ExplicitIndexHits;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 	public class ExplicitIndexProgressor : IndexProgressor
 	{
-		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_ExplicitClient _client;
+		 private readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient _client;
 		 private readonly ExplicitIndexHits _hits;
 
-		 internal ExplicitIndexProgressor( ExplicitIndexHits hits, Neo4Net.Storageengine.Api.schema.IndexProgressor_ExplicitClient client )
+		 internal ExplicitIndexProgressor( ExplicitIndexHits hits, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient client )
 		 {
 			  this._hits = hits;
 			  this._client = client;

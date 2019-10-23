@@ -26,7 +26,7 @@ namespace Neo4Net.Cypher.operations
 
 
 	using DbAccess = Neo4Net.Cypher.Internal.runtime.DbAccess;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using AnyValue = Neo4Net.Values.AnyValue;
 	using SequenceValue = Neo4Net.Values.SequenceValue;
 	using Neo4Net.Values;
@@ -54,41 +54,41 @@ namespace Neo4Net.Cypher.operations
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTAny;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTAny;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTBoolean;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTBoolean;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDate;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTDate;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDateTime;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTDuration;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTDuration;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTFloat;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTFloat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTGeometry;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTGeometry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTInteger;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTInteger;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalDateTime;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTLocalDateTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTLocalTime;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTLocalTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTMap;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTMap;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNode;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNumber;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNumber;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPath;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPoint;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTRelationship;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTString;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTString;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTTime;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTTime;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.SequenceValue_IterationPreference.RANDOM_ACCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

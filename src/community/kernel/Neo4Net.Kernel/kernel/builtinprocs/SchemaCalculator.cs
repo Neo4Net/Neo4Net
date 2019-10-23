@@ -28,14 +28,14 @@ namespace Neo4Net.Kernel.builtinprocs
 
 
 	using Neo4Net.Helpers.Collections;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class SchemaCalculator

@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using IdType = Neo4Net.Kernel.impl.store.id.IdType;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class ReplicatedIdAllocationRequestSerializer
 	{
@@ -37,7 +37,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(ReplicatedIdAllocationRequest idRangeRequest, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(ReplicatedIdAllocationRequest idRangeRequest, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public static void Marshal( ReplicatedIdAllocationRequest idRangeRequest, WritableChannel channel )
 		 {
 			  ( new MemberId.Marshal() ).marshal(idRangeRequest.Owner(), channel);
@@ -47,7 +47,7 @@ namespace Neo4Net.causalclustering.core.state.machines.id
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static ReplicatedIdAllocationRequest unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static ReplicatedIdAllocationRequest unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static ReplicatedIdAllocationRequest Unmarshal( ReadableChannel channel )
 		 {
 			  MemberId owner = ( new MemberId.Marshal() ).unmarshal(channel);

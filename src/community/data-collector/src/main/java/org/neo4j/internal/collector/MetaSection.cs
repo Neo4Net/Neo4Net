@@ -22,8 +22,8 @@
 namespace Neo4Net.Internal.Collector
 {
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using OsBeanUtil = Neo4Net.Io.os.OsBeanUtil;
 
 	/// <summary>
@@ -37,7 +37,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(String graphToken, org.Neo4Net.internal.kernel.api.Kernel kernel, long numSilentQueryDrops) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(String graphToken, org.Neo4Net.Kernel.Api.Internal.Kernel kernel, long numSilentQueryDrops) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 internal static Stream<RetrieveResult> Retrieve( string graphToken, Kernel kernel, long numSilentQueryDrops )
 		 {
 			  IDictionary<string, object> systemData = new Dictionary<string, object>();

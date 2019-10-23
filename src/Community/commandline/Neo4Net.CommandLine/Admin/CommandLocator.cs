@@ -29,7 +29,7 @@ namespace Neo4Net.CommandLine.Admin
 	/// The CommandLocator locates named commands for the AdminTool, or supplies the set of available commands for printing
 	/// help output.
 	/// </summary>
-	public interface CommandLocator
+	public interface ICommandLocator
 	{
 		 /// <summary>
 		 /// Find a command provider that matches the given key or name, or throws <seealso cref="NoSuchElementException"/> if no

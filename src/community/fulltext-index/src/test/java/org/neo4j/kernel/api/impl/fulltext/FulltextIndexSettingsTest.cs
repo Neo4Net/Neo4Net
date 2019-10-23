@@ -23,15 +23,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenRegistry = Neo4Net.Kernel.impl.core.TokenRegistry;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
@@ -40,11 +40,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.IndexProviderDescriptor.UNDECIDED;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor.UNDECIDED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.impl.fulltext.FulltextIndexSettings.readOrInitializeDescriptor;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptor.Type.GENERAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor.Type.GENERAL;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @ExtendWith({TestDirectoryExtension.class, DefaultFileSystemExtension.class}) class FulltextIndexSettingsTest
@@ -68,7 +68,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  string eventuallyConsistency = "true";
 			  string defaultAnalyzer = "defaultAnalyzer";
 			  int[] propertyIds = new int[] { 1, 2, 3 };
-			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( new int[]{ 1, 2 }, IEntityType.NODE, propertyIds );
+			  MultiTokenSchemaDescriptor schema = SchemaDescriptorFactory.multiToken( new int[]{ 1, 2 }, EntityType.NODE, propertyIds );
 
 			  // A fulltext index descriptor with configurations
 			  Properties properties = properties( analyzerName, eventuallyConsistency );

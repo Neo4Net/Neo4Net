@@ -23,10 +23,10 @@ namespace Neo4Net.GraphDb
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
@@ -290,7 +290,7 @@ namespace Neo4Net.GraphDb
 					_db.schema().awaitIndexOnline(index, 1L, TimeUnit.MINUTES);
 
 					// THEN
-					assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
+					assertEquals( Neo4Net.GraphDb.Schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
 			  }
 		 }
 
@@ -311,7 +311,7 @@ namespace Neo4Net.GraphDb
 					_db.schema().awaitIndexesOnline(1L, TimeUnit.MINUTES);
 
 					// THEN
-					assertEquals( Neo4Net.GraphDb.schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
+					assertEquals( Neo4Net.GraphDb.Schema.Schema_IndexState.Online, _db.schema().getIndexState(index) );
 			  }
 		 }
 
@@ -524,8 +524,8 @@ namespace Neo4Net.GraphDb
 					IndexDefinition indexC = _db.schema().indexFor(_label).on("c").create();
 					// THEN
 					assertThat( count( _db.schema().getIndexes(_label) ), @is(3L) );
-					assertThat( _db.schema().getIndexState(indexA), @is(Neo4Net.GraphDb.schema.Schema_IndexState.Online) );
-					assertThat( _db.schema().getIndexState(indexC), @is(Neo4Net.GraphDb.schema.Schema_IndexState.Populating) );
+					assertThat( _db.schema().getIndexState(indexA), @is(Neo4Net.GraphDb.Schema.Schema_IndexState.Online) );
+					assertThat( _db.schema().getIndexState(indexC), @is(Neo4Net.GraphDb.Schema.Schema_IndexState.Populating) );
 			  }
 		 }
 

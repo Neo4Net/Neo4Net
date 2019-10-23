@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Analyzer = org.apache.lucene.analysis.Analyzer;
 
 
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	internal class FulltextIndexDescriptor : StoreIndexDescriptor
 	{

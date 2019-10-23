@@ -21,8 +21,8 @@
  */
 namespace Neo4Net.Kernel.api
 {
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 
 	/// <summary>
 	/// A mechanism to augment and monitor transactions before and after commit/rollback.

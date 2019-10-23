@@ -23,13 +23,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 	internal class IndexIdentifier
 	{
-		 internal readonly IndexEntityType IEntityType;
+		 internal readonly IndexEntityType EntityType;
 		 internal readonly string IndexName;
 		 private readonly int _hashCode;
 
-		 internal IndexIdentifier( IndexEntityType IEntityType, string indexName )
+		 internal IndexIdentifier( IndexEntityType EntityType, string indexName )
 		 {
-			  this.EntityType = IEntityType;
+			  this.EntityType = EntityType;
 			  this.IndexName = indexName;
 			  this._hashCode = CalculateHashCode();
 		 }
@@ -41,13 +41,13 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 					return false;
 			  }
 			  IndexIdentifier i = ( IndexIdentifier ) o;
-			  return IEntityType == i.EntityType && IndexName.Equals( i.IndexName );
+			  return EntityType == i.EntityType && IndexName.Equals( i.IndexName );
 		 }
 
 		 private int CalculateHashCode()
 		 {
 			  int code = 17;
-			  code += 7 * IEntityType.GetHashCode();
+			  code += 7 * EntityType.GetHashCode();
 			  code += 7 * IndexName.GetHashCode();
 			  return code;
 		 }
@@ -59,7 +59,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 
 		 public override string ToString()
 		 {
-			  return "Index[" + IndexName + "," + IEntityType.nameToLowerCase() + "]";
+			  return "Index[" + IndexName + "," + EntityType.nameToLowerCase() + "]";
 		 }
 	}
 

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.security
 {
-	public interface Credential
+	public interface ICredential
 	{
 		 bool MatchesPassword( sbyte[] password );
 

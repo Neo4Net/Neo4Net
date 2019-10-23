@@ -27,9 +27,9 @@ namespace Neo4Net.causalclustering.routing.multi_cluster.procedure
 	using Test = org.junit.Test;
 
 
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Config = Neo4Net.Kernel.configuration.Config;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using IndexConfigStore = Neo4Net.Kernel.impl.index.IndexConfigStore;
 	using IdOrderingQueue = Neo4Net.Kernel.impl.util.IdOrderingQueue;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	/// <summary>
 	/// This class reuses the same <seealso cref="ExplicitIndexTransactionApplier"/> for all transactions in the batch for performance
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction) throws java.io.IOException
+//ORIGINAL LINE: public TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
 		 public override TransactionApplier StartTx( CommandsToApply transaction )
 		 {
 			  long activeTransactionId = transaction.TransactionId();

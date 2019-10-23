@@ -21,8 +21,8 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.state
 {
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using IndexPopulationFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.IndexPopulationFailedKernelException;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	/// <summary>
 	/// Validates data integrity during the prepare phase of <seealso cref="TransactionRecordState"/>.
@@ -50,7 +50,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateNodeRecord(org.Neo4Net.kernel.impl.store.record.NodeRecord record) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateNodeRecord(org.Neo4Net.kernel.impl.store.record.NodeRecord record) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void ValidateNodeRecord( NodeRecord record )
 		 {
 			  if ( !record.InUse() && record.NextRel != Record.NO_NEXT_RELATIONSHIP.intValue() )
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateTransactionStartKnowledge(long lastCommittedTxWhenTransactionStarted) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateTransactionStartKnowledge(long lastCommittedTxWhenTransactionStarted) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void ValidateTransactionStartKnowledge( long lastCommittedTxWhenTransactionStarted )
 		 {
 			  long latestConstraintIntroducingTx = _neoStores.MetaDataStore.LatestConstraintIntroducingTx;
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateSchemaRule(org.Neo4Net.storageengine.api.schema.SchemaRule schemaRule) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void validateSchemaRule(org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule schemaRule) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void ValidateSchemaRule( SchemaRule schemaRule )
 		 {
 			  if ( schemaRule is ConstraintRule )

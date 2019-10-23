@@ -25,12 +25,12 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Label = Neo4Net.GraphDb.Label;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;
@@ -257,7 +257,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 {
 			 get
 			 {
-				  return _indexReference == null ? Neo4Net.Internal.Kernel.Api.IndexReference_Fields.UNNAMED_INDEX : _indexReference.name();
+				  return _indexReference == null ? Neo4Net.Kernel.Api.Internal.IndexReference_Fields.UNNAMED_INDEX : _indexReference.name();
 			 }
 		 }
 

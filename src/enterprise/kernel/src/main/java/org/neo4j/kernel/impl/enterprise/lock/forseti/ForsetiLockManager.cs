@@ -33,9 +33,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using SimpleBitSet = Neo4Net.Kernel.impl.util.collection.SimpleBitSet;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 
 	/// <summary>
 	/// <h1>Forseti, the Nordic god of justice</h1>
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 private volatile bool _closed;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") public ForsetiLockManager(org.Neo4Net.kernel.configuration.Config config, java.time.Clock clock, org.Neo4Net.storageengine.api.lock.ResourceType... resourceTypes)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") public ForsetiLockManager(org.Neo4Net.kernel.configuration.Config config, java.time.Clock clock, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType... resourceTypes)
 		 public ForsetiLockManager( Config config, Clock clock, params ResourceType[] resourceTypes )
 		 {
 			  int maxResourceId = FindMaxResourceId( resourceTypes );

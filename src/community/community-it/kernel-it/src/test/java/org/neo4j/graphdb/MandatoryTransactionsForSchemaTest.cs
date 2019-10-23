@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb
 {
 	using Test = org.junit.Test;
 
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 
 	public class MandatoryTransactionsForSchemaTest : AbstractMandatoryTransactionsTest<Schema>
 	{

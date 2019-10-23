@@ -17,42 +17,41 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.Traversal
 {
-	/// <summary>
-	/// Accessor for a state associated with a <seealso cref="TraversalBranch"/> during a
-	/// traversal. A <seealso cref="TraversalBranch"/> can have an associated state which
-	/// follows down the branch as the traversal goes. If the state is modified
-	/// with <seealso cref="setState(object)"/> it means that branches further down
-	/// will have the newly set state, until it potentially gets overridden
-	/// again. The state returned from <seealso cref="getState()"/> represents the state
-	/// associated with the parent branch, which by this point has followed down
-	/// to the branch calling <seealso cref="getState()"/>.
-	/// </summary>
-	/// @param <STATE> the type of object the state is. </param>
-	public interface BranchState<STATE>
-	{
-		 /// <returns> the associated state for a <seealso cref="TraversalBranch"/>. </returns>
-		 STATE State { get;set; }
+   /// <summary>
+   /// Accessor for a state associated with a <seealso cref="ITraversalBranch"/> during a
+   /// traversal. A <seealso cref="ITraversalBranch"/> can have an associated state which
+   /// follows down the branch as the traversal goes. If the state is modified
+   /// with <seealso cref="setState(object)"/> it means that branches further down
+   /// will have the newly set state, until it potentially gets overridden
+   /// again. The state returned from <seealso cref="getState()"/> represents the state
+   /// associated with the parent branch, which by this point has followed down
+   /// to the branch calling <seealso cref="getState()"/>.
+   /// </summary>
+   /// @param <STATE> the type of object the state is. </param>
+   public interface IBranchState<STATE>
+   {
+      /// <returns> the associated state for a <seealso cref="ITraversalBranch"/>. </returns>
+      STATE State { get; set; }
 
-
-		 /// <summary>
-		 /// Instance representing no state, usage resulting in
-		 /// <seealso cref="System.InvalidOperationException"/> being thrown.
-		 /// </summary>
-	//JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
-	//	 BranchState NO_STATE = new BranchState()
-	//	 {
-	//		  @@Override public Object getState()
-	//		  {
-	//				throw new IllegalStateException("Branch state disabled, pass in an initial state to enable it");
-	//		  }
-	//
-	//		  @@Override public void setState(Object state)
-	//		  {
-	//				throw new IllegalStateException("Branch state disabled, pass in an initial state to enable it");
-	//		  }
-	//	 };
-	}
-
+      /// <summary>
+      /// Instance representing no state, usage resulting in
+      /// <seealso cref="System.InvalidOperationException"/> being thrown.
+      /// </summary>
+      //JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
+      //	 BranchState NO_STATE = new BranchState()
+      //	 {
+      //		  @@Override public Object getState()
+      //		  {
+      //				throw new IllegalStateException("Branch state disabled, pass in an initial state to enable it");
+      //		  }
+      //
+      //		  @@Override public void setState(Object state)
+      //		  {
+      //				throw new IllegalStateException("Branch state disabled, pass in an initial state to enable it");
+      //		  }
+      //	 };
+   }
 }

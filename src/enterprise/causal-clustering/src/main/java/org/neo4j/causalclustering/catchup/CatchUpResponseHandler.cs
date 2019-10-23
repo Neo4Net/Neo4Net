@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.catchup
 	using TxStreamFinishedResponse = Neo4Net.causalclustering.catchup.tx.TxStreamFinishedResponse;
 	using CoreSnapshot = Neo4Net.causalclustering.core.state.snapshot.CoreSnapshot;
 
-	public interface CatchUpResponseHandler
+	public interface ICatchUpResponseHandler
 	{
 		 void OnFileHeader( FileHeader fileHeader );
 

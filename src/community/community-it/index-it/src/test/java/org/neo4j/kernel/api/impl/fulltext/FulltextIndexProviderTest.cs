@@ -36,20 +36,20 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using KernelImpl = Neo4Net.Kernel.Impl.Api.KernelImpl;
 	using KernelTransactionImplementation = Neo4Net.Kernel.Impl.Api.KernelTransactionImplementation;
 	using IndexProviderMap = Neo4Net.Kernel.Impl.Api.index.IndexProviderMap;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using VerboseTimeout = Neo4Net.Test.rule.VerboseTimeout;
@@ -153,7 +153,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  IndexReference indexReference;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, IEntityType.RELATIONSHIP, 0, 1, 2, 3 );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, EntityType.RELATIONSHIP, 0, 1, 2, 3 );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					indexReference = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), "fulltext");
 					transaction.Success();
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  IndexReference indexReference;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, IEntityType.RELATIONSHIP, 0, 1, 2, 3 );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( new int[]{ 0, 1, 2 }, EntityType.RELATIONSHIP, 0, 1, 2, 3 );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					indexReference = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), "fulltext");
 					transaction.Success();
@@ -377,7 +377,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			 {
 				  try
 				  {
-						return ( KernelTransactionImplementation ) Db.resolveDependency( typeof( KernelImpl ) ).beginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED );
+						return ( KernelTransactionImplementation ) Db.resolveDependency( typeof( KernelImpl ) ).BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED );
 				  }
 				  catch ( TransactionFailureException )
 				  {
@@ -387,14 +387,14 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.IndexReference createIndex(int[] IEntityTokens, int[] propertyIds) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.IndexReference createIndex(int[] IEntityTokens, int[] propertyIds) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
 		 private IndexReference CreateIndex( int[] IEntityTokens, int[] propertyIds )
 
 		 {
 			  IndexReference fulltext;
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
 			  {
-					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( IEntityTokens, IEntityType.NODE, propertyIds );
+					MultiTokenSchemaDescriptor multiTokenSchemaDescriptor = multiToken( IEntityTokens, EntityType.NODE, propertyIds );
 					FulltextSchemaDescriptor schema = new FulltextSchemaDescriptor( multiTokenSchemaDescriptor, new Properties() );
 					fulltext = transaction.SchemaWrite().indexCreate(schema, DESCRIPTOR.name(), NAME);
 					transaction.Success();
@@ -403,7 +403,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(org.Neo4Net.internal.kernel.api.IndexReference fulltextIndexDescriptor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void verifyThatFulltextIndexIsPresent(org.Neo4Net.Kernel.Api.Internal.IndexReference fulltextIndexDescriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void VerifyThatFulltextIndexIsPresent( IndexReference fulltextIndexDescriptor )
 		 {
 			  using ( KernelTransactionImplementation transaction = KernelTransaction )
@@ -509,7 +509,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void await(org.Neo4Net.internal.kernel.api.IndexReference descriptor) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void await(org.Neo4Net.Kernel.Api.Internal.IndexReference descriptor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private void Await( IndexReference descriptor )
 		 {
 			  try

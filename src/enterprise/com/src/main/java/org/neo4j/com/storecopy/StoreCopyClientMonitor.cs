@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.com.storecopy
 {
-	public interface StoreCopyClientMonitor
+	public interface IStoreCopyClientMonitor
 	{
 		 void StartReceivingStoreFiles();
 

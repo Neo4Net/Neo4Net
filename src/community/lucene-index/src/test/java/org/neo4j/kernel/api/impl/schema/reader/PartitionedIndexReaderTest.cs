@@ -31,14 +31,14 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -123,7 +123,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 			  PartitionedIndexReader indexReader = CreatePartitionedReaderFromReaders();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> query = org.Neo4Net.internal.kernel.api.IndexQuery.range(1, 1, true, 2, true);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> query = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(1, 1, true, 2, true);
 			  IndexQuery.RangePredicate<object> query = IndexQuery.range( 1, 1, true, 2, true );
 			  when( _indexReader1.query( query ) ).thenReturn( PrimitiveLongResourceCollections.iterator( null, 1 ) );
 			  when( _indexReader2.query( query ) ).thenReturn( PrimitiveLongResourceCollections.iterator( null, 2 ) );
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 			  PartitionedIndexReader indexReader = CreatePartitionedReaderFromReaders();
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> query = org.Neo4Net.internal.kernel.api.IndexQuery.range(1, "a", false, "b", true);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> query = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(1, "a", false, "b", true);
 			  IndexQuery.RangePredicate<object> query = IndexQuery.range( 1, "a", false, "b", true );
 			  when( _indexReader1.query( query ) ).thenReturn( PrimitiveLongResourceCollections.iterator( null, 1 ) );
 			  when( _indexReader2.query( query ) ).thenReturn( PrimitiveLongResourceCollections.iterator( null, 2 ) );
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void samplingOverPartitions() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void samplingOverPartitions() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SamplingOverPartitions()
 		 {

@@ -26,7 +26,7 @@ namespace Neo4Net.cluster.statemachine
 	/// Listener API for StateMachine transitions. Emitted on each
 	/// message handled by the state machine.
 	/// </summary>
-	public interface StateTransitionListener
+	public interface IStateTransitionListener
 	{
 		 void StateTransition( StateTransition transition );
 	}

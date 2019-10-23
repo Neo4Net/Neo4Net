@@ -30,7 +30,7 @@ namespace Neo4Net.Test
 	/// </summary>
 	public class StreamConsumer : ThreadStart
 	{
-		 public interface StreamExceptionHandler
+		 public interface IStreamExceptionHandler
 		 {
 			  void Handle( IOException failure );
 		 }

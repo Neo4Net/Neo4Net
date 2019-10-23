@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
 	using Group = Neo4Net.Scheduler.Group;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

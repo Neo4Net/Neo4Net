@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus
 {
-	public interface CoreMetaData
+	public interface ICoreMetaData
 	{
 		 bool Leader { get; }
 	}

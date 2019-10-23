@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index.sampling
 {
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	/// <summary>
 	/// Builds index sample.

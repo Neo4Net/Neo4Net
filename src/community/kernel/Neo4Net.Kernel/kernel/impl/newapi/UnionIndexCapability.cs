@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexLimitation = Neo4Net.Internal.Kernel.Api.IndexLimitation;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexLimitation = Neo4Net.Kernel.Api.Internal.IndexLimitation;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	/// <summary>

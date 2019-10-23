@@ -52,11 +52,11 @@ namespace Neo4Net.Server.rest.web
 	using Neo4Net.GraphDb.index;
 	using Neo4Net.GraphDb.index;
 	using Neo4Net.GraphDb.index.UniqueFactory;
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Neo4Net.GraphDb.Traversal;
 	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 	using Neo4Net.Helpers.Collections;
@@ -582,7 +582,7 @@ namespace Neo4Net.Server.rest.web
 				 return nameValue;
 			 }
 
-			 public static RelationshipDirection valueOf( string name )
+			 public static RelationshipDirection ValueOf( string name )
 			 {
 				 foreach ( RelationshipDirection enumInstance in RelationshipDirection.valueList )
 				 {
@@ -1452,7 +1452,7 @@ namespace Neo4Net.Server.rest.web
 				 return nameValue;
 			 }
 
-			 public static IndexResultOrder valueOf( string name )
+			 public static IndexResultOrder ValueOf( string name )
 			 {
 				 foreach ( IndexResultOrder enumInstance in IndexResultOrder.valueList )
 				 {
@@ -1702,35 +1702,35 @@ namespace Neo4Net.Server.rest.web
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.schema.ConstraintDefinition> filteredNodeConstraints(String labelName, final org.Neo4Net.graphdb.schema.ConstraintType type)
+//ORIGINAL LINE: private Iterable<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> filteredNodeConstraints(String labelName, final org.Neo4Net.GraphDb.Schema.ConstraintType type)
 		 private IEnumerable<ConstraintDefinition> FilteredNodeConstraints( string labelName, ConstraintType type )
 		 {
 			  return filter( item => item.isConstraintType( type ), _graphDb.schema().getConstraints(label(labelName)) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private Iterable<org.Neo4Net.graphdb.schema.ConstraintDefinition> filteredRelationshipConstraints(String typeName, final org.Neo4Net.graphdb.schema.ConstraintType type)
+//ORIGINAL LINE: private Iterable<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> filteredRelationshipConstraints(String typeName, final org.Neo4Net.GraphDb.Schema.ConstraintType type)
 		 private IEnumerable<ConstraintDefinition> FilteredRelationshipConstraints( string typeName, ConstraintType type )
 		 {
 			  return filter( item => item.isConstraintType( type ), _graphDb.schema().getConstraints(RelationshipType.withName(typeName)) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> propertyUniquenessFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> propertyUniquenessFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> PropertyUniquenessFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.UNIQUENESS ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> nodePropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> nodePropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> NodePropertyExistenceFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.NODE_PROPERTY_EXISTENCE ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private System.Predicate<org.Neo4Net.graphdb.schema.ConstraintDefinition> relationshipPropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
+//ORIGINAL LINE: private System.Predicate<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> relationshipPropertyExistenceFilter(final java.util.Set<String> propertyKeysSet)
 		 private System.Predicate<ConstraintDefinition> RelationshipPropertyExistenceFilter( ISet<string> propertyKeysSet )
 		 {
 			  return item => item.isConstraintType( ConstraintType.RELATIONSHIP_PROPERTY_EXISTENCE ) && propertyKeysSet.SetEquals( Iterables.asSet( item.PropertyKeys ) );

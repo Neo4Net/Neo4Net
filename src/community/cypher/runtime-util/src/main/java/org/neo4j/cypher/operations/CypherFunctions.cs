@@ -80,8 +80,8 @@ namespace Neo4Net.Cypher.operations
 //ORIGINAL LINE: @SuppressWarnings("unused") public final class CypherFunctions
 	public sealed class CypherFunctions
 	{
-		 private static readonly decimal _maxLong = decimal.valueOf( long.MaxValue );
-		 private static readonly decimal _minLong = decimal.valueOf( long.MinValue );
+		 private static readonly decimal _maxLong = decimal.ValueOf( long.MaxValue );
+		 private static readonly decimal _minLong = decimal.ValueOf( long.MinValue );
 		 private static string[] _pointKeys = new string[]{ "crs", "x", "y", "z", "longitude", "latitude", "height", "srid" };
 
 		 private CypherFunctions()

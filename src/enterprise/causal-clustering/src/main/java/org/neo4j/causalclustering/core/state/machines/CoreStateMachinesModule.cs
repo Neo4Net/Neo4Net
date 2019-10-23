@@ -70,7 +70,7 @@ namespace Neo4Net.causalclustering.core.state.machines
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.CausalClusteringSettings.array_block_id_allocation_size;

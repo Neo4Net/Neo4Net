@@ -37,7 +37,7 @@
 
 ////////////////		 public override void WithScope( System.Func<string, string> scopingRule )
 ////////////////		 {
-////////////////			  this._scopingRule = scopingRule;
+////////////////			  _scopingRule = scopingRule;
 ////////////////		 }
 ////////////////	}
 

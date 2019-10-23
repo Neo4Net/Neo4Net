@@ -36,14 +36,14 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
-	using TooManyLabelsException = Neo4Net.Internal.Kernel.Api.exceptions.schema.TooManyLabelsException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
+	using TooManyLabelsException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
@@ -58,11 +58,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using LogMatcherBuilder = Neo4Net.Logging.AssertableLogProvider.LogMatcherBuilder;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 	using Neo4Net.Test;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
@@ -115,9 +115,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.index.IndexEntryUpdate.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -159,7 +159,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  _stateHolder = new DatabaseSchemaState( NullLogProvider.Instance );
 			  _indexStoreView = _indexStoreView();
 
-			  using ( Transaction tx = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
+			  using ( Transaction tx = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )
 			  {
 					_labelId = tx.TokenWrite().labelGetOrCreateForName(_first.name());
 					tx.TokenWrite().labelGetOrCreateForName(_second.name());
@@ -184,7 +184,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long nodeId = CreateNode( map( _name, value ), _first );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  LabelSchemaDescriptor descriptor = SchemaDescriptorFactory.forLabel( 0, 0 );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
 
 			  // WHEN
 			  job.Run();
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long relationship = CreateRelationship( map( _name, _age ), _likes, nodeId, nodeId );
 			  IndexDescriptor descriptor = IndexDescriptorFactory.forSchema( SchemaDescriptorFactory.forRelType( 0, 0 ) );
 			  IndexPopulator populator = spy( IndexPopulator( descriptor ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.RELATIONSHIP, descriptor );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.RELATIONSHIP, descriptor );
 
 			  // WHEN
 			  job.Run();
@@ -239,7 +239,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  CreateNode( map( _name, value ), _first );
 			  _stateHolder.put( "key", "original_value" );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
 
 			  // WHEN
 			  job.Run();
@@ -262,7 +262,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long node4 = CreateNode( map( _age, 35, _name, value ), _first );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  LabelSchemaDescriptor descriptor = SchemaDescriptorFactory.forLabel( 0, 0 );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptorFactory.forSchema(descriptor) );
 
 			  // WHEN
 			  job.Run();
@@ -302,7 +302,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  IndexDescriptor descriptor = IndexDescriptorFactory.forSchema( SchemaDescriptorFactory.forRelType( 0, 0 ) );
 			  IndexPopulator populator = spy( IndexPopulator( descriptor ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.RELATIONSHIP, descriptor );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.RELATIONSHIP, descriptor );
 
 			  // WHEN
 			  job.Run();
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long changeNode = node1;
 			  int propertyKeyId = GetPropertyKeyForName( _name );
 			  NodeChangingWriter populator = new NodeChangingWriter( this, changeNode, propertyKeyId, value1, changedValue, _labelId );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
 			  populator.Job = job;
 
 			  // WHEN
@@ -366,7 +366,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  long node3 = CreateNode( map( _name, value3 ), _first );
 			  int propertyKeyId = GetPropertyKeyForName( _name );
 			  NodeDeletingWriter populator = new NodeDeletingWriter( this, node2, propertyKeyId, value2, _labelId );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), IEntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, new FlippableIndexProxy(), EntityType.NODE, IndexDescriptor(_first, _name, false) );
 			  populator.Job = job;
 
 			  // WHEN
@@ -391,7 +391,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  FlippableIndexProxy index = new FlippableIndexProxy();
 
 			  CreateNode( map( _name, "Taylor" ), _first );
-			  IndexPopulationJob job = NewIndexPopulationJob( failingPopulator, index, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( failingPopulator, index, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  // WHEN
 			  job.Run();
@@ -414,8 +414,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  when( storeView.VisitNodes( any( typeof( int[] ) ), any( typeof( System.Func<int, bool> ) ), ArgumentMatchers.any(), ArgumentMatchers.any<Visitor<NodeLabelUpdate, Exception>>(), anyBoolean() ) ).thenReturn(storeScan);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.storageengine.api.EntityType.NODE, indexDescriptor(FIRST, name, false));
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, storeView, NullLogProvider.Instance, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
+//ORIGINAL LINE: final IndexPopulationJob job = newIndexPopulationJob(populator, index, storeView, org.Neo4Net.logging.NullLogProvider.getInstance(), org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE, indexDescriptor(FIRST, name, false));
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, storeView, NullLogProvider.Instance, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  OtherThreadExecutor<Void> populationJobRunner = Cleanup.add( new OtherThreadExecutor<Void>( "Population job test runner", null ) );
 			  Future<Void> runFuture = populationJobRunner.ExecuteDontWait(state =>
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  try
 			  {
-					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
+					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 					// When
 					job.Run();
@@ -477,7 +477,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
 			  try
 			  {
-					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, true ) );
+					IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, true ) );
 
 					// When
 					job.Run();
@@ -502,7 +502,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  AssertableLogProvider logProvider = new AssertableLogProvider();
 			  FlippableIndexProxy index = mock( typeof( FlippableIndexProxy ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  Exception failure = new System.InvalidOperationException( "not successful" );
 			  doThrow( failure ).when( populator ).create();
@@ -523,7 +523,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // Given
 			  FailedIndexProxyFactory failureDelegateFactory = mock( typeof( FailedIndexProxyFactory ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( failureDelegateFactory, populator, new FlippableIndexProxy(), _indexStoreView, NullLogProvider.Instance, IEntityType.NODE, IndexDescriptor(_first, _name, false) );
+			  IndexPopulationJob job = NewIndexPopulationJob( failureDelegateFactory, populator, new FlippableIndexProxy(), _indexStoreView, NullLogProvider.Instance, EntityType.NODE, IndexDescriptor(_first, _name, false) );
 
 			  System.InvalidOperationException failure = new System.InvalidOperationException( "not successful" );
 			  doThrow( failure ).when( populator ).close( true );
@@ -544,7 +544,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  LogProvider logProvider = NullLogProvider.Instance;
 			  FlippableIndexProxy index = mock( typeof( FlippableIndexProxy ) );
 			  IndexPopulator populator = spy( IndexPopulator( false ) );
-			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, IEntityType.NODE, IndexDescriptor( _first, _name, false ) );
+			  IndexPopulationJob job = NewIndexPopulationJob( populator, index, _indexStoreView, logProvider, EntityType.NODE, IndexDescriptor( _first, _name, false ) );
 
 			  string failureMessage = "not successful";
 			  System.InvalidOperationException failure = new System.InvalidOperationException( failureMessage );
@@ -563,7 +563,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  // given
 			  NullLogProvider logProvider = NullLogProvider.Instance;
-			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( IndexStoreView_Fields.Empty, logProvider, IEntityType.NODE, new DatabaseSchemaState( logProvider ) );
+			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( IndexStoreView_Fields.Empty, logProvider, EntityType.NODE, new DatabaseSchemaState( logProvider ) );
 			  IndexPopulationJob populationJob = new IndexPopulationJob( populator, NO_MONITOR, false );
 
 			  // when
@@ -580,7 +580,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  // given
 			  NullLogProvider logProvider = NullLogProvider.Instance;
 			  IndexStoreView failingStoreView = new IndexStoreView_AdaptorAnonymousInnerClass( this );
-			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( failingStoreView, logProvider, IEntityType.NODE, new DatabaseSchemaState( logProvider ) );
+			  TrackingMultipleIndexPopulator populator = new TrackingMultipleIndexPopulator( failingStoreView, logProvider, EntityType.NODE, new DatabaseSchemaState( logProvider ) );
 			  IndexPopulationJob populationJob = new IndexPopulationJob( populator, NO_MONITOR, false );
 
 			  // when
@@ -828,7 +828,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexPopulator indexPopulator(boolean constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 private IndexPopulator IndexPopulator( bool constraint )
 		 {
 			  IndexDescriptor descriptor = IndexDescriptor( _first, _name, constraint );
@@ -842,17 +842,17 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  return indexProvider.GetPopulator( descriptor.WithId( 21 ), samplingConfig, heapBufferFactory( 1024 ) );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IEntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, EntityType type, IndexDescriptor descriptor )
 		 {
 			  return NewIndexPopulationJob( populator, flipper, _indexStoreView, NullLogProvider.Instance, type, descriptor );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, IEntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, EntityType type, IndexDescriptor descriptor )
 		 {
 			  return NewIndexPopulationJob( mock( typeof( FailedIndexProxyFactory ) ), populator, flipper, storeView, logProvider, type, descriptor );
 		 }
 
-		 private IndexPopulationJob NewIndexPopulationJob( FailedIndexProxyFactory failureDelegateFactory, IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, IEntityType type, IndexDescriptor descriptor )
+		 private IndexPopulationJob NewIndexPopulationJob( FailedIndexProxyFactory failureDelegateFactory, IndexPopulator populator, FlippableIndexProxy flipper, IndexStoreView storeView, LogProvider logProvider, EntityType type, IndexDescriptor descriptor )
 		 {
 			  long indexId = 0;
 			  flipper.FlipTarget = mock( typeof( IndexProxyFactory ) );
@@ -864,10 +864,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.storageengine.api.schema.IndexDescriptor indexDescriptor(org.Neo4Net.graphdb.Label label, String propertyKey, boolean constraint) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IllegalTokenNameException, org.Neo4Net.internal.kernel.api.exceptions.schema.TooManyLabelsException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexDescriptor(org.Neo4Net.graphdb.Label label, String propertyKey, boolean constraint) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.TooManyLabelsException
 		 private IndexDescriptor IndexDescriptor( Label label, string propertyKey, bool constraint )
 		 {
-			  using ( Transaction tx = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
+			  using ( Transaction tx = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )
 			  {
 					int labelId = tx.TokenWrite().labelGetOrCreateForName(label.Name());
 					int propertyKeyId = tx.TokenWrite().propertyKeyGetOrCreateForName(propertyKey);
@@ -909,10 +909,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private int getPropertyKeyForName(String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private int GetPropertyKeyForName( string name )
 		 {
-			  using ( Transaction tx = _kernel.beginTransaction( @implicit, AUTH_DISABLED ) )
+			  using ( Transaction tx = _kernel.BeginTransaction( @implicit, AUTH_DISABLED ) )
 			  {
 					int result = tx.TokenRead().propertyKey(name);
 					tx.Success();
@@ -929,7 +929,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			  internal volatile bool Closed;
 
-			  internal TrackingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
+			  internal TrackingMultipleIndexPopulator( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState ) : base( storeView, logProvider, type, schemaState )
 			  {
 			  }
 

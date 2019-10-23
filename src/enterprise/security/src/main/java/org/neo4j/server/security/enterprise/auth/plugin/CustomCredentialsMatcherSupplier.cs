@@ -24,7 +24,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin
 {
 	using CustomCacheableAuthenticationInfo = Neo4Net.Server.security.enterprise.auth.plugin.spi.CustomCacheableAuthenticationInfo;
 
-	public interface CustomCredentialsMatcherSupplier
+	public interface ICustomCredentialsMatcherSupplier
 	{
 		 Neo4Net.Server.security.enterprise.auth.plugin.spi.CustomCacheableAuthenticationInfo_CredentialsMatcher CredentialsMatcher { get; }
 	}

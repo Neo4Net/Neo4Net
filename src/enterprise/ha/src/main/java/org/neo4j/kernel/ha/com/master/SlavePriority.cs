@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.Kernel.ha.com.master
 {
-	public interface SlavePriority
+	public interface ISlavePriority
 	{
 		 IEnumerable<Slave> Prioritize( IEnumerable<Slave> slaves );
 	}

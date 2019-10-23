@@ -23,7 +23,7 @@ namespace Neo4Net.Bolt.runtime
 	/// Metadata that becomes available as soon as a statement is started, and is sent to the client before the result
 	/// stream is sent.
 	/// </summary>
-	public interface StatementMetadata
+	public interface IStatementMetadata
 	{
 		 string[] FieldNames();
 

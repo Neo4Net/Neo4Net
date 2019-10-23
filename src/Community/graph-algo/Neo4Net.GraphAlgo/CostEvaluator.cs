@@ -35,7 +35,7 @@ namespace Neo4Net.GraphAlgo
 	/// 
 	/// @author Patrik Larsson </summary>
 	/// @param <T> The data type the edge weights are represented by. </param>
-	public interface CostEvaluator<T>
+	public interface ICostEvaluator<T>
 	{
 		 /// <summary>
 		 /// This is the general method for looking up costs for relationships. This

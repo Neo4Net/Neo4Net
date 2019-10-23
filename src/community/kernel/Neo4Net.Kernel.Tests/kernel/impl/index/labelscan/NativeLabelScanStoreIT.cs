@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

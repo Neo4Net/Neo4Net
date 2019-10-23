@@ -284,7 +284,7 @@ namespace Neo4Net.Bolt
 			  }
 			  else
 			  {
-					using ( Transaction tx = session.beginTransaction() )
+					using ( Transaction tx = session.BeginTransaction() )
 					{
 						 tx.run( query );
 						 tx.success();

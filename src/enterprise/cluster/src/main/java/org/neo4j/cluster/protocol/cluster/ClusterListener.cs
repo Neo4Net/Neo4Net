@@ -27,7 +27,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	/// Listener interface for cluster configuration changes. Register instances
 	/// of this interface with <seealso cref="Cluster"/>
 	/// </summary>
-	public interface ClusterListener
+	public interface IClusterListener
 	{
 		 /// <summary>
 		 /// When I enter the cluster as a member, this callback notifies me

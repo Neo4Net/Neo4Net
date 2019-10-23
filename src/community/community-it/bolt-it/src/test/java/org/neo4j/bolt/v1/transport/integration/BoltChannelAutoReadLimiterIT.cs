@@ -40,9 +40,9 @@ namespace Neo4Net.Bolt.v1.transport.integration
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
@@ -63,7 +63,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.bolt.v1.messaging.util.MessageMatchers.msgSuccess;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	public class BoltChannelAutoReadLimiterIT
 	{
@@ -161,7 +161,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void installSleepProcedure(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private static void installSleepProcedure(org.Neo4Net.graphdb.GraphDatabaseService db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private static void InstallSleepProcedure( IGraphDatabaseService db )
 		 {
 			  GraphDatabaseAPI dbApi = ( GraphDatabaseAPI ) db;
@@ -176,7 +176,7 @@ namespace Neo4Net.Bolt.v1.transport.integration
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context context, Object[] objects, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(org.Neo4Net.kernel.api.proc.Context context, Object[] objects, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			 public override RawIterator<object[], ProcedureException> apply( Context context, object[] objects, ResourceTracker resourceTracker )
 			 {
 				  try

@@ -320,7 +320,7 @@ namespace Neo4Net.Kernel.impl.store.format.highlimit
 			return nameValue;
 		}
 
-		public static Reference valueOf( string name )
+		public static Reference ValueOf( string name )
 		{
 			foreach ( Reference enumInstance in Reference.valueList )
 			{

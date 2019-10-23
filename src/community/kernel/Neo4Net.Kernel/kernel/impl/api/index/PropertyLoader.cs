@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -36,10 +36,10 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// IEntity has P, the onProperty methods will be called on the sink, with the correct value, and P will be removed
 		 /// from propertyIds. If the IEntity lacks P no action will be taken. </summary>
 		 /// <param name="entityId"> id of the IEntity to be loaded </param>
-		 /// <param name="type"> IEntityType of the IEntity to load properties from </param>
+		 /// <param name="type"> EntityType of the IEntity to load properties from </param>
 		 /// <param name="propertyIds"> set of target property ids to load. Loaded properties are remove from this set. </param>
 		 /// <param name="sink"> sink that will receive successfully loaded values for the target properties </param>
-		 void LoadProperties( long IEntityId, IEntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink );
+		 void LoadProperties( long IEntityId, EntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink );
 	}
 
 	 public interface PropertyLoader_PropertyLoadSink

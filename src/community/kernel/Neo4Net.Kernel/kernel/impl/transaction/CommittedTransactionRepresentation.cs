@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction
 	using LogicalTransactionStore = Neo4Net.Kernel.impl.transaction.log.LogicalTransactionStore;
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using LogEntryStart = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryStart;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// This class represents the concept of a TransactionRepresentation that has been
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.impl.transaction
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.storageengine.api.StorageCommand, java.io.IOException> visitor) throws java.io.IOException
+//ORIGINAL LINE: public void accept(org.Neo4Net.helpers.collection.Visitor<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand, java.io.IOException> visitor) throws java.io.IOException
 		 public virtual void Accept( Visitor<StorageCommand, IOException> visitor )
 		 {
 			  _transactionRepresentation.accept( visitor );

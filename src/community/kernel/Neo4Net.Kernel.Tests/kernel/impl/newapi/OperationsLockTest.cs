@@ -30,18 +30,18 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
-	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
-	using TestRelationshipChain = Neo4Net.Internal.Kernel.Api.helpers.TestRelationshipChain;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
+	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
+	using TestRelationshipChain = Neo4Net.Kernel.Api.Internal.Helpers.TestRelationshipChain;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using AlreadyConstrainedException = Neo4Net.Kernel.Api.Exceptions.schema.AlreadyConstrainedException;
 	using AutoIndexOperations = Neo4Net.Kernel.api.explicitindex.AutoIndexOperations;
 	using AutoIndexing = Neo4Net.Kernel.api.explicitindex.AutoIndexing;
@@ -68,11 +68,11 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using SimpleStatementLocks = Neo4Net.Kernel.impl.locking.SimpleStatementLocks;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StorageSchemaReader = Neo4Net.Storageengine.Api.StorageSchemaReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StorageSchemaReader = Neo4Net.Kernel.Api.StorageEngine.StorageSchemaReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -144,7 +144,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private TokenHolders _tokenHolders;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {
@@ -449,7 +449,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAcquireEntityWriteLockBeforeDeletingNode() throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: @Test public void shouldAcquireEntityWriteLockBeforeDeletingNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAcquireEntityWriteLockBeforeDeletingNode()
 		 {
@@ -858,7 +858,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void detachDeleteNodeWithoutRelationshipsExclusivelyLockNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void detachDeleteNodeWithoutRelationshipsExclusivelyLockNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DetachDeleteNodeWithoutRelationshipsExclusivelyLockNode()
 		 {
@@ -878,7 +878,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void detachDeleteNodeExclusivelyLockNodes() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void detachDeleteNodeExclusivelyLockNodes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void DetachDeleteNodeExclusivelyLockNodes()
 		 {
@@ -899,7 +899,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenDeletingNode() throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException
+//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenDeletingNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAcquiredSharedLabelLocksWhenDeletingNode()
 		 {
@@ -923,7 +923,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenDetachDeletingNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenDetachDeletingNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAcquiredSharedLabelLocksWhenDetachDeletingNode()
 		 {
@@ -950,7 +950,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenRemovingNodeLabel() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenRemovingNodeLabel() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAcquiredSharedLabelLocksWhenRemovingNodeLabel()
 		 {
@@ -971,7 +971,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenRemovingNodeProperty() throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException, org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldAcquiredSharedLabelLocksWhenRemovingNodeProperty() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException, org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldAcquiredSharedLabelLocksWhenRemovingNodeProperty()
 		 {

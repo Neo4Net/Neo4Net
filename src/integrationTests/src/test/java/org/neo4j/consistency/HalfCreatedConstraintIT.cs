@@ -35,7 +35,7 @@ namespace Neo4Net.Consistency
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using EnterpriseGraphDatabaseFactory = Neo4Net.GraphDb.factory.EnterpriseGraphDatabaseFactory;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using LabelSchemaDescriptor = Neo4Net.Kernel.api.schema.LabelSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
@@ -105,7 +105,7 @@ namespace Neo4Net.Consistency
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void addIndex(org.Neo4Net.graphdb.GraphDatabaseService database) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: private static void addIndex(org.Neo4Net.graphdb.GraphDatabaseService database) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
 		 private static void AddIndex( IGraphDatabaseService database )
 		 {
 			  using ( Transaction transaction = database.BeginTx() )

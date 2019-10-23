@@ -27,7 +27,7 @@ namespace Neo4Net.Consistency.checking.full
 
 
 	using Neo4Net.Helpers.Collections;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
 	using PropertyStore = Neo4Net.Kernel.impl.store.PropertyStore;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;

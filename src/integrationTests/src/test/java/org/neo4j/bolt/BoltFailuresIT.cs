@@ -182,7 +182,7 @@ namespace Neo4Net.Bolt
 					_driver = GraphDatabase.driver( "bolt://localhost:" + getBoltPort( _db ), Config.build().withoutEncryption().toConfig() );
 					if ( shouldBeAbleToBeginTransaction )
 					{
-						 using ( Session session = _driver.session(), Transaction tx = session.beginTransaction() )
+						 using ( Session session = _driver.session(), Transaction tx = session.BeginTransaction() )
 						 {
 							  tx.run( "CREATE ()" ).consume();
 						 }
@@ -209,7 +209,7 @@ namespace Neo4Net.Bolt
 			  // open a session and start a transaction, this will force driver to obtain
 			  // a network connection and bind it to the transaction
 			  Session session = _driver.session();
-			  Transaction tx = session.beginTransaction();
+			  Transaction tx = session.BeginTransaction();
 
 			  // at this point driver holds a valid initialize connection
 			  // setup monitor to throw before running the query to make processing of the RUN message fail

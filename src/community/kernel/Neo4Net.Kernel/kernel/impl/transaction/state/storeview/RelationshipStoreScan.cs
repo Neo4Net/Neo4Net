@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using Neo4Net.Helpers.Collections;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
 
 	public class RelationshipStoreScan<FAILURE> : PropertyAwareEntityStoreScan<StorageRelationshipScanCursor, FAILURE> where FAILURE : Exception
 	{
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected boolean process(org.Neo4Net.storageengine.api.StorageRelationshipScanCursor cursor) throws FAILURE
+//ORIGINAL LINE: protected boolean process(org.Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor cursor) throws FAILURE
 		 protected internal override bool Process( StorageRelationshipScanCursor cursor )
 		 {
 			  int reltype = cursor.Type();

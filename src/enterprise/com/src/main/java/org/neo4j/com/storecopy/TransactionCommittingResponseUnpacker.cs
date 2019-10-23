@@ -40,7 +40,7 @@ namespace Neo4Net.com.storecopy
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
 	using Log = Neo4Net.Logging.Log;
 	using LogService = Neo4Net.Logging.Internal.LogService;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 	/// <summary>
 	/// Receives and unpacks <seealso cref="Response responses"/>.

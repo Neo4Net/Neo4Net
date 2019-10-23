@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.ha.cluster.member
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using HighAvailabilityModeSwitcher = Neo4Net.Kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class ClusterMember
 	{

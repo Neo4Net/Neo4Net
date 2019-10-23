@@ -19,9 +19,9 @@
  */
 namespace Neo4Net.Kernel.api.proc
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using UserAggregator = Neo4Net.Internal.Kernel.Api.procs.UserAggregator;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	public class FailedLoadAggregatedFunction : CallableUserAggregationFunction_BasicUserAggregationFunction
@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.api.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override UserAggregator Create( Context ctx )
 		 {
 			  throw new ProcedureException( Neo4Net.Kernel.Api.Exceptions.Status_Procedure.ProcedureRegistrationFailed, Signature().description().orElse("Failed to load " + Signature().name()) );

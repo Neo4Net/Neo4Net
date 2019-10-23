@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 
 	using Neo4Net.Helpers.Collections;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using FlipFailedKernelException = Neo4Net.Kernel.Api.Exceptions.index.FlipFailedKernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using IndexPopulation = Neo4Net.Kernel.Impl.Api.index.MultipleIndexPopulator.IndexPopulation;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
@@ -546,7 +546,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor schemaDescriptor)
+//ORIGINAL LINE: private org.Neo4Net.kernel.api.index.IndexEntryUpdate<?> createIndexEntryUpdate(org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor schemaDescriptor)
 		 private IndexEntryUpdate<object> CreateIndexEntryUpdate( LabelSchemaDescriptor schemaDescriptor )
 		 {
 			  return add( 1, schemaDescriptor, "theValue" );

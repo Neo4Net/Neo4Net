@@ -28,7 +28,7 @@ namespace Neo4Net.Consistency.checking.full
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccessStub = Neo4Net.Consistency.store.RecordAccessStub;
 	using LabelScanDocument = Neo4Net.Consistency.store.synthetic.LabelScanDocument;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using DynamicArrayStore = Neo4Net.Kernel.impl.store.DynamicArrayStore;
 	using InlineNodeLabels = Neo4Net.Kernel.impl.store.InlineNodeLabels;
 	using ReusableRecordsAllocator = Neo4Net.Kernel.Impl.Store.Allocators.ReusableRecordsAllocator;
@@ -48,7 +48,7 @@ namespace Neo4Net.Consistency.checking.full
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.consistency.checking.RecordCheckTestBase.notInUse;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.COMPLETE_ALL_TOKENS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.DynamicNodeLabels.dynamicPointer;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

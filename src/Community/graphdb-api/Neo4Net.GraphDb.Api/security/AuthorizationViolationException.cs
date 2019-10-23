@@ -36,7 +36,7 @@ namespace Neo4Net.GraphDb.security
 
 		 public AuthorizationViolationException( string msg, Status statusCode ) : base( msg )
 		 {
-			  this._statusCode = statusCode;
+			  _statusCode = statusCode;
 		 }
 
 		 public AuthorizationViolationException( string msg ) : base( msg )

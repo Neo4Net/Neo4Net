@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 
 	public class RepeatedPropertyInSchemaException : RepeatedSchemaComponentException
 	{

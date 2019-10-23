@@ -22,7 +22,7 @@ namespace Neo4Net.GraphDb.Traversal
 	/// <summary>
 	/// A factory for <seealso cref="SideSelector"/>s. Used during bidirectional traversals.
 	/// </summary>
-	public interface SideSelectorPolicy
+	public interface ISideSelectorPolicy
 	{
 		 /// <summary>
 		 /// Creates a new <seealso cref="SideSelector"/> given the {@code start}/{@code end}

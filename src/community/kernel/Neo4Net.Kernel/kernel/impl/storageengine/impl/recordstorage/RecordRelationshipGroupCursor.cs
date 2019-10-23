@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
-	using StorageRelationshipGroupCursor = Neo4Net.Storageengine.Api.StorageRelationshipGroupCursor;
+	using StorageRelationshipGroupCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipGroupCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.newapi.References.clearEncoding;

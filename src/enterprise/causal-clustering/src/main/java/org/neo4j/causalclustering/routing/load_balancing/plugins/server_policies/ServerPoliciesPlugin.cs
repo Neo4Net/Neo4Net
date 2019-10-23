@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using InvalidSettingException = Neo4Net.GraphDb.config.InvalidSettingException;
 	using Service = Neo4Net.Helpers.Service;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
@@ -96,7 +96,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing.plugins.server_policie
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override Neo4Net.causalclustering.routing.load_balancing.LoadBalancingProcessor_Result Run( IDictionary<string, string> context )
 		 {
 			  Policy policy = _policies.selectFor( context );

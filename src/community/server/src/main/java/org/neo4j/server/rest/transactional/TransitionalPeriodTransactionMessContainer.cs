@@ -22,8 +22,8 @@
 namespace Neo4Net.Server.rest.transactional
 {
 
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

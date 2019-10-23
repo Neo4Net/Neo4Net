@@ -21,8 +21,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using Test = org.junit.Test;
 
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using IndexPopulator = Neo4Net.Kernel.Api.Index.IndexPopulator;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.AssertableLogProvider.inLog;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 
 	public class FailedIndexProxyTest
 	{

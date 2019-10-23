@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.ha
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using PhysicalTransactionRepresentation = Neo4Net.Kernel.impl.transaction.log.PhysicalTransactionRepresentation;
 	using CommitEvent = Neo4Net.Kernel.impl.transaction.tracing.CommitEvent;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using ConstantRequestContextFactory = Neo4Net.Test.ConstantRequestContextFactory;
 	using LongResponse = Neo4Net.Test.LongResponse;
 

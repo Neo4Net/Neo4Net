@@ -29,7 +29,7 @@ namespace Neo4Net.GraphDb.Exceptions
 
 		 public TransactionGuardException( Status status, string message, Exception cause ) : base( message, cause )
 		 {
-			  this._status = status;
+			  _status = status;
 		 }
 
 		 public override Status Status()

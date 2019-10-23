@@ -747,7 +747,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static LongerShortString valueOf( string name )
+		public static LongerShortString ValueOf( string name )
 		{
 			foreach ( LongerShortString enumInstance in LongerShortString.valueList )
 			{

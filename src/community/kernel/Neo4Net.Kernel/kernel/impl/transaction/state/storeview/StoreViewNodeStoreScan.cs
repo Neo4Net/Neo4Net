@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
 	using LockService = Neo4Net.Kernel.impl.locking.LockService;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.collection.PrimitiveLongCollections.EMPTY_LONG_ARRAY;
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean process(org.Neo4Net.storageengine.api.StorageNodeCursor cursor) throws FAILURE
+//ORIGINAL LINE: public boolean process(org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor cursor) throws FAILURE
 		 public override bool Process( StorageNodeCursor cursor )
 		 {
 			  long[] labels = cursor.Labels();

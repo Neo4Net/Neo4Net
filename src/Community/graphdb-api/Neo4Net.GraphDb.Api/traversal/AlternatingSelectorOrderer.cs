@@ -32,11 +32,11 @@ namespace Neo4Net.GraphDb.Traversal
 			  return 0;
 		 }
 
-		 public override TraversalBranch Next( TraversalContext metadata )
+		 public override ITraversalBranch Next( TraversalContext metadata )
 		 {
-			  TraversalBranch branch = NextBranchFromNextSelector( metadata, true );
+			  ITraversalBranch branch = NextBranchFromNextSelector( metadata, true );
 			  int? previousDepth = StateForCurrentSelector;
-			  if ( branch != null && branch.Length() == previousDepth.Value )
+			  if ( branch != null && branch.Length== previousDepth.Value )
 			  {
 					return branch;
 			  }
@@ -44,7 +44,7 @@ namespace Neo4Net.GraphDb.Traversal
 			  {
 					if ( branch != null )
 					{
-						 StateForCurrentSelector = branch.Length();
+						 StateForCurrentSelector = branch.Length;
 					}
 			  }
 			  return branch;

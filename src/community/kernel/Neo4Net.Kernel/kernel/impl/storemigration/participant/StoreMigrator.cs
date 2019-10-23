@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
 	using AdditionalInitialIds = Neo4Net.@unsafe.Impl.Batchimport.AdditionalInitialIds;
 	using BatchImporter = Neo4Net.@unsafe.Impl.Batchimport.BatchImporter;
 	using BatchImporterFactory = Neo4Net.@unsafe.Impl.Batchimport.BatchImporterFactory;

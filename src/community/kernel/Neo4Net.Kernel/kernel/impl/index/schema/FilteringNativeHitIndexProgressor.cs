@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class FilteringNativeHitIndexProgressor<KEY, VALUE> : NativeHitIndexProgressor<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue

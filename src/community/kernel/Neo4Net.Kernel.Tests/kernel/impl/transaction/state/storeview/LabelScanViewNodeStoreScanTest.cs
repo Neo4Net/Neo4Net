@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;

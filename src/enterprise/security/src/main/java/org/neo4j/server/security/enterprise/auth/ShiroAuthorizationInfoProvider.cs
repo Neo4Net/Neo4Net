@@ -25,7 +25,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using AuthorizationInfo = org.apache.shiro.authz.AuthorizationInfo;
 	using PrincipalCollection = org.apache.shiro.subject.PrincipalCollection;
 
-	public interface ShiroAuthorizationInfoProvider
+	public interface IShiroAuthorizationInfoProvider
 	{
 		 AuthorizationInfo GetAuthorizationInfoSnapshot( PrincipalCollection principal );
 	}

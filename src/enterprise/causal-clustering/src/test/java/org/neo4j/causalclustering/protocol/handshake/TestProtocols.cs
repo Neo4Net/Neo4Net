@@ -138,7 +138,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			 return nameValue;
 		 }
 
-		 public static TestProtocols_TestApplicationProtocols valueOf( string name )
+		 public static TestProtocols_TestApplicationProtocols ValueOf( string name )
 		 {
 			 foreach ( TestProtocols_TestApplicationProtocols enumInstance in TestProtocols_TestApplicationProtocols.valueList )
 			 {
@@ -249,7 +249,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 			 return nameValue;
 		 }
 
-		 public static TestProtocols_TestModifierProtocols valueOf( string name )
+		 public static TestProtocols_TestModifierProtocols ValueOf( string name )
 		 {
 			 foreach ( TestProtocols_TestModifierProtocols enumInstance in TestProtocols_TestModifierProtocols.valueList )
 			 {

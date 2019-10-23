@@ -32,7 +32,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index.verification
 	using LuceneDocumentStructure = Neo4Net.Kernel.Api.Impl.Schema.LuceneDocumentStructure;
 	using DuplicateCheckingCollector = Neo4Net.Kernel.Api.Impl.Schema.verification.DuplicateCheckingCollector;
 	using PartitionedUniquenessVerifier = Neo4Net.Kernel.Api.Impl.Schema.verification.PartitionedUniquenessVerifier;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

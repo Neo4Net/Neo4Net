@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using IndexCommand = Neo4Net.Kernel.impl.index.IndexCommand;
 	using IndexDefineCommand = Neo4Net.Kernel.impl.index.IndexDefineCommand;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// Wraps several <seealso cref="TransactionApplier"/>s. In this case, each individual visit-call will delegate to {@link
@@ -54,7 +54,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.storageengine.api.StorageCommand element) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand element) throws java.io.IOException
 		 public override bool Visit( StorageCommand element )
 		 {
 			  foreach ( TransactionApplier applier in Appliers )

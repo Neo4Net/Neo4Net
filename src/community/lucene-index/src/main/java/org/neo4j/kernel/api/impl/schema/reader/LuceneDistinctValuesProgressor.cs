@@ -23,18 +23,18 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using BytesRef = org.apache.lucene.util.BytesRef;
 
 
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class LuceneDistinctValuesProgressor : IndexProgressor
 	{
 		 private readonly TermsEnum _terms;
-		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient _client;
+		 private readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient _client;
 		 private readonly System.Func<BytesRef, Value> _valueMaterializer;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: LuceneDistinctValuesProgressor(org.apache.lucene.index.TermsEnum terms, org.Neo4Net.storageengine.api.schema.IndexProgressor_NodeValueClient client, System.Func<org.apache.lucene.util.BytesRef,org.Neo4Net.values.storable.Value> valueMaterializer) throws java.io.IOException
-		 internal LuceneDistinctValuesProgressor( TermsEnum terms, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, System.Func<BytesRef, Value> valueMaterializer )
+//ORIGINAL LINE: LuceneDistinctValuesProgressor(org.apache.lucene.index.TermsEnum terms, org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, System.Func<org.apache.lucene.util.BytesRef,org.Neo4Net.values.storable.Value> valueMaterializer) throws java.io.IOException
+		 internal LuceneDistinctValuesProgressor( TermsEnum terms, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, System.Func<BytesRef, Value> valueMaterializer )
 		 {
 			  this._terms = terms;
 			  this._client = client;

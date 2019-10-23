@@ -32,11 +32,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using MisconfiguredIndexException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MisconfiguredIndexException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using MisconfiguredIndexException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -56,9 +56,9 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using SimpleTriggerInfo = Neo4Net.Kernel.impl.transaction.log.checkpoint.SimpleTriggerInfo;
 	using LogRotation = Neo4Net.Kernel.impl.transaction.log.rotation.LogRotation;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using EphemeralFileSystemRule = Neo4Net.Test.rule.fs.EphemeralFileSystemRule;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -268,7 +268,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Populating ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Populating ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  verify( _mockedIndexProvider, never() ).getOnlineAccessor(any(typeof(StoreIndexDescriptor)), any(typeof(IndexSamplingConfig)));
 			  latch.Signal();
@@ -300,7 +300,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Populating ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Populating ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  verify( _mockedIndexProvider, never() ).getOnlineAccessor(any(typeof(StoreIndexDescriptor)), any(typeof(IndexSamplingConfig)));
 			  latch.Signal();
@@ -339,7 +339,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Online ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Online ) ) );
 			  verify( _mockedIndexProvider, times( 1 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 			  int onlineAccessorInvocationCount = 2; // once when we create the index, and once when we restart the db
 			  verify( _mockedIndexProvider, times( onlineAccessorInvocationCount ) ).getOnlineAccessor( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ) );
@@ -369,7 +369,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 			  // Then
 			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, hasSize( 1 ) ) );
-			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.schema.Schema_IndexState.Failed ) ) );
+			  assertThat( getIndexes( _db, _myLabel ), inTx( _db, haveState( _db, Neo4Net.GraphDb.Schema.Schema_IndexState.Failed ) ) );
 			  verify( _mockedIndexProvider, times( 2 ) ).getPopulator( any( typeof( StoreIndexDescriptor ) ), any( typeof( IndexSamplingConfig ) ), any() );
 		 }
 
@@ -385,7 +385,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 private readonly Label _myLabel = label( "MyLabel" );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.internal.kernel.api.exceptions.schema.MisconfiguredIndexException
+//ORIGINAL LINE: @Before public void setUp() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MisconfiguredIndexException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void SetUp()
 		 {

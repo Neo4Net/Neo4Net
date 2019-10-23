@@ -21,9 +21,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using SpaceFillingCurve = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurve;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
-	using Neo4Net.Internal.Kernel.Api;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
+	using Neo4Net.Kernel.Api.Internal;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;

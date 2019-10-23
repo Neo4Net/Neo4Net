@@ -33,8 +33,8 @@ namespace Neo4Net.Consistency
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using Race = Neo4Net.Test.Race;
 	using TestLabels = Neo4Net.Test.TestLabels;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;

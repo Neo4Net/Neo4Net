@@ -151,7 +151,7 @@ namespace Neo4Net.Consistency.checking
 				 return nameValue;
 			 }
 
-			 public static PropertyField valueOf( string name )
+			 public static PropertyField ValueOf( string name )
 			 {
 				 foreach ( PropertyField enumInstance in PropertyField.valueList )
 				 {

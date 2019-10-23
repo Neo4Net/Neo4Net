@@ -28,7 +28,7 @@ namespace Neo4Net.tools.dump
 	using Test = org.junit.Test;
 
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using LabelTokenStore = Neo4Net.Kernel.impl.store.LabelTokenStore;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
@@ -40,8 +40,8 @@ namespace Neo4Net.tools.dump
 	using Headers = Neo4Net.Kernel.impl.store.kvstore.Headers;
 	using ReadableBuffer = Neo4Net.Kernel.impl.store.kvstore.ReadableBuffer;
 	using WritableBuffer = Neo4Net.Kernel.impl.store.kvstore.WritableBuffer;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

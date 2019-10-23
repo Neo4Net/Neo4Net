@@ -21,14 +21,14 @@
  */
 namespace Neo4Net.Kernel.Impl.Api.index
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using IndexSamplingController = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingController;
 	using IndexSamplingControllerFactory = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingControllerFactory;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	/// <summary>
 	/// Factory to create <seealso cref="IndexingService"/>

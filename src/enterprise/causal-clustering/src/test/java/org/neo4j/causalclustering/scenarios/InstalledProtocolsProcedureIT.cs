@@ -35,11 +35,11 @@ namespace Neo4Net.causalclustering.scenarios
 	using InstalledProtocolsProcedure = Neo4Net.causalclustering.discovery.procedures.InstalledProtocolsProcedure;
 	using InstalledProtocolsProcedureTest = Neo4Net.causalclustering.discovery.procedures.InstalledProtocolsProcedureTest;
 	using Neo4Net.Collections;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using ClusterRule = Neo4Net.Test.causalclustering.ClusterRule;
@@ -59,7 +59,7 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.protocol.ProtocolInstaller_Orientation_Server_Fields.INBOUND;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
@@ -105,12 +105,12 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<ProtocolInfo> installedProtocols(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db, String wantedOrientation) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private java.util.List<ProtocolInfo> installedProtocols(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db, String wantedOrientation) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private IList<ProtocolInfo> InstalledProtocols( GraphDatabaseFacade db, string wantedOrientation )
 		 {
 			  IList<ProtocolInfo> infos = new LinkedList<ProtocolInfo>();
 			  Kernel kernel = Db.DependencyResolver.resolveDependency( typeof( Kernel ) );
-			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Implicit, AnonymousContext.read() ) )
+			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Implicit, AnonymousContext.read() ) )
 			  {
 					RawIterator<object[], ProcedureException> itr = tx.Procedures().procedureCallRead(procedureName("dbms", "cluster", InstalledProtocolsProcedure.PROCEDURE_NAME), null, ProcedureCallContext.EMPTY);
 

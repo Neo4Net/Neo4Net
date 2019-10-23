@@ -38,7 +38,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <summary>
 		 /// Provides hooks to help build a string representation of a <seealso cref="org.Neo4Net.graphdb.Path"/>. </summary>
 		 /// @param <T> the type of <seealso cref="org.Neo4Net.graphdb.Path"/>. </param>
-		 public interface PathDescriptor<T> where T : Neo4Net.GraphDb.IPath
+		 public interface IPathDescriptor<T> where T : Neo4Net.GraphDb.IPath
 		 {
 			  /// <summary>
 			  /// Returns a string representation of a <seealso cref="org.Neo4Net.graphdb.Node"/>. </summary>
@@ -63,9 +63,9 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// The default <seealso cref="PathDescriptor"/> used in common toString()
 		 /// representations in classes implementing <seealso cref="IPath"/>. </summary>
 		 /// @param <T> the type of <seealso cref="IPath"/>. </param>
-		 public class DefaultPathDescriptor<T> : PathDescriptor<T> where T : Neo4Net.GraphDb.IPath
+		 public class DefaultPathDescriptor<T> : IPathDescriptor<T> where T : Neo4Net.GraphDb.IPath
 		 {
-			  public override string NodeRepresentation( IPath path, INode node )
+			  public string NodeRepresentation( IPath path, INode node )
 			  {
 					return "(" + node.Id + ")";
 			  }
@@ -94,11 +94,11 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <param name="builder"> the <seealso cref="PathDescriptor"/> to get
 		 /// <seealso cref="INode"/> and <seealso cref="IRelationship"/> representations from. </param>
 		 /// <returns> a string representation of a <seealso cref="IPath"/>. </returns>
-		 public static string PathToString<T>( T path, PathDescriptor<T> builder ) where T : Neo4Net.GraphDb.IPath
+		 public static string PathToString<T>( T path, IPathDescriptor<T> builder ) where T : Neo4Net.GraphDb.IPath
 		 {
-			  INode current = path.StartNode();
+			  INode current = path.StartNode;
 			  StringBuilder result = new StringBuilder();
-			  foreach ( IRelationship rel in path.Relationships() )
+			  foreach ( IRelationship rel in path.Relationships)
 			  {
 					result.Append( builder.NodeRepresentation( path, current ) );
 					result.Append( builder.RelationshipRepresentation( path, current, rel ) );
@@ -139,7 +139,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public DefaultPathDescriptorAnonymousInnerClass( IPath path )
 			 {
-				 this._path = path;
+				 _path = path;
 			 }
 
 			 public override string relationshipRepresentation( IPath path, INode from, IRelationship relationship )
@@ -171,8 +171,8 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public DefaultPathDescriptorAnonymousInnerClass2( IPath path, string nodePropertyKey )
 			 {
-				 this._path = path;
-				 this._nodePropertyKey = nodePropertyKey;
+				 _path = path;
+				 _nodePropertyKey = nodePropertyKey;
 			 }
 
 			 public override string nodeRepresentation( IPath path, INode node )
@@ -196,12 +196,12 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// <returns>                  a new <seealso cref="Paths.PathDescriptor"/> </returns>
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: public static <T extends org.Neo4Net.graphdb.Path> PathDescriptor<T> descriptorForIdAndProperties(final boolean nodeId, final boolean relId, final String... propertyKeys)
-		 public static PathDescriptor<T> DescriptorForIdAndProperties<T>( bool nodeId, bool relId, params string[] propertyKeys ) where T : Neo4Net.GraphDb.IPath
+		 public static IPathDescriptor<T> DescriptorForIdAndProperties<T>( bool nodeId, bool relId, params string[] propertyKeys ) where T : Neo4Net.GraphDb.IPath
 		 {
 			  return new PathDescriptorAnonymousInnerClass( nodeId, relId, propertyKeys );
 		 }
 
-		 private class PathDescriptorAnonymousInnerClass : Paths.PathDescriptor<T>
+		 private class PathDescriptorAnonymousInnerClass : Paths.IPathDescriptor<T>
 		 {
 			 private bool _nodeId;
 			 private bool _relId;
@@ -209,9 +209,9 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathDescriptorAnonymousInnerClass( bool nodeId, bool relId, string[] propertyKeys )
 			 {
-				 this._nodeId = nodeId;
-				 this._relId = relId;
-				 this._propertyKeys = propertyKeys;
+				 _nodeId = nodeId;
+				 _relId = relId;
+				 _propertyKeys = propertyKeys;
 			 }
 
 			 public string nodeRepresentation( T path, INode node )
@@ -277,47 +277,23 @@ namespace Neo4Net.GraphDb.Traversal
 					this.Node = node;
 			  }
 
-			  public override INode StartNode()
-			  {
-					return Node;
-			  }
+         public override INode StartNode => Node;
 
-			  public override INode EndNode()
-			  {
-					return Node;
-			  }
+         public override INode EndNode => Node;
 
-			  public override IRelationship LastRelationship()
-			  {
-					return null;
-			  }
+         public override IRelationship LastRelationship => null;
 
-			  public override IEnumerable<IRelationship> Relationships()
-			  {
-					return Collections.emptyList();
-			  }
+         public override IEnumerable<IRelationship> Relationships => Collections.emptyList();
 
-			  public override IEnumerable<IRelationship> ReverseRelationships()
-			  {
-					return Relationships();
-			  }
+         public override IEnumerable<IRelationship> ReverseRelationships => Relationships;
 
-			  public override IEnumerable<INode> Nodes()
-			  {
-					return Arrays.asList( Node );
-			  }
+         public override IEnumerable<INode> Nodes => Arrays.asList(Node);
 
-			  public override IEnumerable<INode> ReverseNodes()
-			  {
-					return Nodes();
-			  }
+         public override IEnumerable<INode> ReverseNodes => Nodes;
 
-			  public override int Length()
-			  {
-					return 0;
-			  }
+         public override int Length => 0;
 
-			  public override IEnumerator<PropertyContainer> Iterator()
+         public override IEnumerator<PropertyContainer> Iterator()
 			  {
 					return Arrays.asList<PropertyContainer>( Node ).GetEnumerator();
 			  }
@@ -336,7 +312,7 @@ namespace Neo4Net.GraphDb.Traversal
 					// back to noting the relationship type id.
 			  }
 			  StringBuilder sb = new StringBuilder();
-			  foreach ( IRelationship rel in path.Relationships() )
+			  foreach ( IRelationship rel in path.Relationships)
 			  {
 					if ( sb.Length == 0 )
 					{

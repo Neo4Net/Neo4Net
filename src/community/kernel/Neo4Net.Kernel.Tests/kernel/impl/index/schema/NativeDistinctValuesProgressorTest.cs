@@ -28,8 +28,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;

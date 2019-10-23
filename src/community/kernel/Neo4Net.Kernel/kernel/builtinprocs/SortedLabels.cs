@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.builtinprocs
 {
 
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
 
 	public class SortedLabels
 	{

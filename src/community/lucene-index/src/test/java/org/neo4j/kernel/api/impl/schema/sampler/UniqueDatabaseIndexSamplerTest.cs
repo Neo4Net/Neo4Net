@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 	using Mockito = org.mockito.Mockito;
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 		 private readonly TaskCoordinator _taskControl = new TaskCoordinator( 0, TimeUnit.MILLISECONDS );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test void uniqueSamplingUseDocumentsNumber() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test void uniqueSamplingUseDocumentsNumber() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 internal virtual void UniqueSamplingUseDocumentsNumber()
 		 {

@@ -25,7 +25,7 @@ namespace Neo4Net.management.impl
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using Service = Neo4Net.Helpers.Service;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using ManagementBeanProvider = Neo4Net.Jmx.impl.ManagementBeanProvider;
 	using ManagementData = Neo4Net.Jmx.impl.ManagementData;
 	using Neo4NetMBean = Neo4Net.Jmx.impl.Neo4NetMBean;
@@ -35,10 +35,10 @@ namespace Neo4Net.management.impl
 	using IndexSamplingMode = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingMode;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
 	using DataSourceManager = Neo4Net.Kernel.impl.transaction.state.DataSourceManager;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.TokenRead_Fields.NO_TOKEN;
+//	import static org.Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Service.Implementation(ManagementBeanProvider.class) public final class IndexSamplingManagerBean extends org.Neo4Net.jmx.impl.ManagementBeanProvider

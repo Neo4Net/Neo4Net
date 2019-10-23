@@ -30,10 +30,10 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GenericNativeIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.GenericNativeIndexProvider;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 public GraphDatabaseSettings.SchemaIndex Provider;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldUseConfiguredIndexProvider() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Test public void shouldUseConfiguredIndexProvider() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldUseConfiguredIndexProvider()
 		 {
@@ -88,7 +88,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIndexProvider(org.Neo4Net.graphdb.GraphDatabaseService db, String expectedProviderIdentifier) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void assertIndexProvider(org.Neo4Net.graphdb.GraphDatabaseService db, String expectedProviderIdentifier) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private void AssertIndexProvider( IGraphDatabaseService db, string expectedProviderIdentifier )
 		 {
 			  GraphDatabaseAPI graphDatabaseAPI = ( GraphDatabaseAPI ) db;

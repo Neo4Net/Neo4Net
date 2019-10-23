@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.transaction.log.entry
 {
 	using PhysicalLogCommandReaderV3_0_2 = Neo4Net.Kernel.impl.transaction.command.PhysicalLogCommandReaderV3_0_2;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Main entry point into log entry versions and parsers and all that. A <seealso cref="LogEntryVersion"/> can be retrieved
@@ -240,7 +240,7 @@ namespace Neo4Net.Kernel.impl.transaction.log.entry
 			return nameValue;
 		}
 
-		public static LogEntryVersion valueOf( string name )
+		public static LogEntryVersion ValueOf( string name )
 		{
 			foreach ( LogEntryVersion enumInstance in LogEntryVersion.valueList )
 			{

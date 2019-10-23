@@ -29,13 +29,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using Parameterized = org.junit.runners.Parameterized;
 
 
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using Value = Neo4Net.Values.Storable.Value;
 

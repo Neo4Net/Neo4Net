@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using PageCursor = Neo4Net.Io.pagecache.PageCursor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointArray = Neo4Net.Values.Storable.PointArray;

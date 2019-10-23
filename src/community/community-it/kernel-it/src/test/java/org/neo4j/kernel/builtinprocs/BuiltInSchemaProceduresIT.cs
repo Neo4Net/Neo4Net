@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.builtinprocs
 
 
 	using Neo4Net.Collections;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -46,7 +46,7 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 	public class BuiltInSchemaProceduresIT : KernelIntegrationTest
 	{
@@ -622,7 +622,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		   This method can be used to print to result stream to System.out -> Useful for debugging
 		  */
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> stream) throws Throwable
+//ORIGINAL LINE: @SuppressWarnings("unused") private void printStream(org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> stream) throws Throwable
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void PrintStream( RawIterator<object[], ProcedureException> stream )
 		 {

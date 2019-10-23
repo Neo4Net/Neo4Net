@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 	using Neo4Net.Kernel.Api.Index;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
-	public interface StoreScan<FAILURE> where FAILURE : Exception
+	public interface IStoreScan<FAILURE> where FAILURE : Exception
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void run() throws FAILURE;

@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.core.state.snapshot
 {
-	public interface CoreSnapshotListener
+	public interface ICoreSnapshotListener
 	{
 		 void OnSnapshotReceived( CoreSnapshot snapshot );
 	}

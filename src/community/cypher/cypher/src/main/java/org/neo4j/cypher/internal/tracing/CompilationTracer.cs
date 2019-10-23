@@ -21,7 +21,7 @@ namespace Neo4Net.Cypher.Internal.Tracing
 {
 	using CompilationPhaseTracer = Neo4Net.Cypher.Internal.v3_5.frontend.phases.CompilationPhaseTracer;
 
-	public interface CompilationTracer
+	public interface ICompilationTracer
 	{
 		 CompilationTracer_QueryCompilationEvent CompileQuery( string query );
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Cypher.Internal.Tracing
 	//	 };
 	}
 
-	 public interface CompilationTracer_QueryCompilationEvent : IDisposable, CompilationPhaseTracer
+	 public interface ICompilationTracer_QueryCompilationEvent : IDisposable, CompilationPhaseTracer
 	 {
 		  void Close();
 	 }

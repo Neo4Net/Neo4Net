@@ -35,17 +35,17 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Neo4Net.Helpers.Collections;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using NodeExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.NodeExplicitIndexCursor;
-	using RelationshipExplicitIndexCursor = Neo4Net.Internal.Kernel.Api.RelationshipExplicitIndexCursor;
-	using SchemaReadCore = Neo4Net.Internal.Kernel.Api.SchemaReadCore;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using NodeExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor;
+	using RelationshipExplicitIndexCursor = Neo4Net.Kernel.Api.Internal.RelationshipExplicitIndexCursor;
+	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -58,8 +58,8 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Mode = Neo4Net.Procedure.Mode;
 	using Name = Neo4Net.Procedure.Name;
 	using Procedure = Neo4Net.Procedure.Procedure;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<IndexResult> listIndexes() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<IndexResult> listIndexes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 [Description("List all indexes in the database."), Procedure(name : "db.indexes", mode : READ)]
 		 public virtual Stream<IndexResult> ListIndexes()
 		 {
@@ -175,7 +175,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Wait for an index to come online (for example: CALL db.awaitIndex(\":Person(name)\")).") @Procedure(name = "db.awaitIndex", mode = READ) public void awaitIndex(@Name("index") String index, @Name(value = "timeOutSeconds", defaultValue = "300") long timeout) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Wait for an index to come online (for example: CALL db.awaitIndex(\":Person(name)\")).") @Procedure(name = "db.awaitIndex", mode = READ) public void awaitIndex(@Name("index") String index, @Name(value = "timeOutSeconds", defaultValue = "300") long timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Wait for an index to come online (for example: CALL db.awaitIndex(\":Person(name)\"))."), Procedure(name : "db.awaitIndex", mode : READ)]
 		 public virtual void AwaitIndex( string index, long timeout )
@@ -195,7 +195,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Schedule resampling of an index (for example: CALL db.resampleIndex(\":Person(name)\")).") @Procedure(name = "db.resampleIndex", mode = READ) public void resampleIndex(@Name("index") String index) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Schedule resampling of an index (for example: CALL db.resampleIndex(\":Person(name)\")).") @Procedure(name = "db.resampleIndex", mode = READ) public void resampleIndex(@Name("index") String index) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Schedule resampling of an index (for example: CALL db.resampleIndex(\":Person(name)\"))."), Procedure(name : "db.resampleIndex", mode : READ)]
 		 public virtual void ResampleIndex( string index )
@@ -251,7 +251,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a schema index with specified index provider (for example: CALL db.createIndex(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createIndex", mode = SCHEMA) public java.util.stream.Stream<SchemaIndexInfo> createIndex(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Create a schema index with specified index provider (for example: CALL db.createIndex(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createIndex", mode = SCHEMA) public java.util.stream.Stream<SchemaIndexInfo> createIndex(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a schema index with specified index provider (for example: CALL db.createIndex(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status"), Procedure(name : "db.createIndex", mode : SCHEMA)]
 		 public virtual Stream<SchemaIndexInfo> CreateIndex( string index, string providerName )
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Description("Create a unique property constraint with index backed by specified index provider " + "(for example: CALL db.createUniquePropertyConstraint(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createUniquePropertyConstraint", mode = SCHEMA) public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createUniquePropertyConstraint(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Description("Create a unique property constraint with index backed by specified index provider " + "(for example: CALL db.createUniquePropertyConstraint(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status") @Procedure(name = "db.createUniquePropertyConstraint", mode = SCHEMA) public java.util.stream.Stream<BuiltInProcedures.SchemaIndexInfo> createUniquePropertyConstraint(@Name("index") String index, @Name("providerName") String providerName) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Description("Create a unique property constraint with index backed by specified index provider " + "(for example: CALL db.createUniquePropertyConstraint(\":Person(name)\", \"lucene+native-2.0\")) - " + "YIELD index, providerName, status"), Procedure(name : "db.createUniquePropertyConstraint", mode : SCHEMA)]
 		 public virtual Stream<BuiltInProcedures.SchemaIndexInfo> CreateUniquePropertyConstraint( string index, string providerName )
@@ -275,7 +275,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Get node from explicit index. Replaces `START n=node:nodes(key = 'A')`") @Procedure(name = "db.index.explicit.seekNodes", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<NodeResult> nodeManualIndexSeek(@Name("indexName") String explicitIndexName, @Name("key") String key, @Name("value") Object value) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Get node from explicit index. Replaces `START n=node:nodes(key = 'A')`") @Procedure(name = "db.index.explicit.seekNodes", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<NodeResult> nodeManualIndexSeek(@Name("indexName") String explicitIndexName, @Name("key") String key, @Name("value") Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Get node from explicit index. Replaces `START n=node:nodes(key = 'A')`"), Procedure(name : "db.index.explicit.seekNodes", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<NodeResult> NodeManualIndexSeek( string explicitIndexName, string key, object value )
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Search nodes in explicit index. Replaces `START n=node:nodes('key:foo*')`") @Procedure(name = "db.index.explicit.searchNodes", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedNodeResult> nodeManualIndexSearch(@Name("indexName") String manualIndexName, @Name("query") Object query) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Search nodes in explicit index. Replaces `START n=node:nodes('key:foo*')`") @Procedure(name = "db.index.explicit.searchNodes", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedNodeResult> nodeManualIndexSearch(@Name("indexName") String manualIndexName, @Name("query") Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Search nodes in explicit index. Replaces `START n=node:nodes('key:foo*')`"), Procedure(name : "db.index.explicit.searchNodes", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<WeightedNodeResult> NodeManualIndexSearch( string manualIndexName, object query )
@@ -319,7 +319,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Get relationship from explicit index. Replaces `START r=relationship:relIndex(key = 'A')`") @Procedure(name = "db.index.explicit.seekRelationships", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<RelationshipResult> relationshipManualIndexSeek(@Name("indexName") String manualIndexName, @Name("key") String key, @Name("value") Object value) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Get relationship from explicit index. Replaces `START r=relationship:relIndex(key = 'A')`") @Procedure(name = "db.index.explicit.seekRelationships", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<RelationshipResult> relationshipManualIndexSeek(@Name("indexName") String manualIndexName, @Name("key") String key, @Name("value") Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Get relationship from explicit index. Replaces `START r=relationship:relIndex(key = 'A')`"), Procedure(name : "db.index.explicit.seekRelationships", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<RelationshipResult> RelationshipManualIndexSeek( string manualIndexName, string key, object value )
@@ -340,7 +340,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index. Replaces `START r=relationship:relIndex('key:foo*')`") @Procedure(name = "db.index.explicit.searchRelationships", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearch(@Name("indexName") String manualIndexName, @Name("query") Object query) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index. Replaces `START r=relationship:relIndex('key:foo*')`") @Procedure(name = "db.index.explicit.searchRelationships", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearch(@Name("indexName") String manualIndexName, @Name("query") Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Search relationship in explicit index. Replaces `START r=relationship:relIndex('key:foo*')`"), Procedure(name : "db.index.explicit.searchRelationships", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<WeightedRelationshipResult> RelationshipManualIndexSearch( string manualIndexName, object query )
@@ -361,7 +361,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, starting at the node 'in'.") @Procedure(name = "db.index.explicit.searchRelationshipsIn", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundStartNode(@Name("indexName") String indexName, @Name("in") org.Neo4Net.graphdb.Node in, @Name("query") Object query) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, starting at the node 'in'.") @Procedure(name = "db.index.explicit.searchRelationshipsIn", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundStartNode(@Name("indexName") String indexName, @Name("in") org.Neo4Net.graphdb.Node in, @Name("query") Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Search relationship in explicit index, starting at the node 'in'."), Procedure(name : "db.index.explicit.searchRelationshipsIn", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<WeightedRelationshipResult> RelationshipManualIndexSearchWithBoundStartNode( string indexName, Node @in, object query )
@@ -383,7 +383,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, ending at the node 'out'.") @Procedure(name = "db.index.explicit.searchRelationshipsOut", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundEndNode(@Name("indexName") String indexName, @Name("out") org.Neo4Net.graphdb.Node out, @Name("query") Object query) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, ending at the node 'out'.") @Procedure(name = "db.index.explicit.searchRelationshipsOut", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundEndNode(@Name("indexName") String indexName, @Name("out") org.Neo4Net.graphdb.Node out, @Name("query") Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Search relationship in explicit index, ending at the node 'out'."), Procedure(name : "db.index.explicit.searchRelationshipsOut", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<WeightedRelationshipResult> RelationshipManualIndexSearchWithBoundEndNode( string indexName, Node @out, object query )
@@ -404,7 +404,7 @@ namespace Neo4Net.Kernel.builtinprocs
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, starting at the node 'in' and ending at 'out'.") @Procedure(name = "db.index.explicit.searchRelationshipsBetween", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundNodes(@Name("indexName") String indexName, @Name("in") org.Neo4Net.graphdb.Node in, @Name("out") org.Neo4Net.graphdb.Node out, @Name("query") Object query) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Deprecated @Description("Search relationship in explicit index, starting at the node 'in' and ending at 'out'.") @Procedure(name = "db.index.explicit.searchRelationshipsBetween", mode = READ, deprecatedBy = EXPLICIT_INDEX_DEPRECATION) public java.util.stream.Stream<WeightedRelationshipResult> relationshipManualIndexSearchWithBoundNodes(@Name("indexName") String indexName, @Name("in") org.Neo4Net.graphdb.Node in, @Name("out") org.Neo4Net.graphdb.Node out, @Name("query") Object query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 [Obsolete, Description("Search relationship in explicit index, starting at the node 'in' and ending at 'out'."), Procedure(name : "db.index.explicit.searchRelationshipsBetween", mode : READ, deprecatedBy : EXPLICIT_INDEX_DEPRECATION)]
 		 public virtual Stream<WeightedRelationshipResult> RelationshipManualIndexSearchWithBoundNodes( string indexName, Node @in, Node @out, object query )
@@ -1063,11 +1063,11 @@ namespace Neo4Net.Kernel.builtinprocs
 				  innerEnumValue = innerEnum;
 			  }
 
-			  internal static IndexType GetIndexTypeOf( Neo4Net.Internal.Kernel.Api.IndexReference index )
+			  internal static IndexType GetIndexTypeOf( Neo4Net.Kernel.Api.Internal.IndexReference index )
 			  {
 					if ( index.FulltextIndex )
 					{
-						 if ( index.Schema().entityType() == IEntityType.NODE )
+						 if ( index.Schema().entityType() == EntityType.NODE )
 						 {
 							  return IndexType.NodeFulltext;
 						 }
@@ -1084,7 +1084,7 @@ namespace Neo4Net.Kernel.builtinprocs
 						 }
 						 else
 						 {
-							  if ( index.Schema().entityType() == IEntityType.NODE )
+							  if ( index.Schema().entityType() == EntityType.NODE )
 							  {
 									return IndexType.NodeLabelProperty;
 							  }
@@ -1116,7 +1116,7 @@ namespace Neo4Net.Kernel.builtinprocs
 				 return nameValue;
 			 }
 
-			 public static IndexType valueOf( string name )
+			 public static IndexType ValueOf( string name )
 			 {
 				 foreach ( IndexType enumInstance in IndexType.valueList )
 				 {

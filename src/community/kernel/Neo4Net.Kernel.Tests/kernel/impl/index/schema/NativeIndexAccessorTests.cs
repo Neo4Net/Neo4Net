@@ -32,22 +32,22 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using Neo4Net.GraphDb;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
-	using SimpleNodeValueClient = Neo4Net.Storageengine.Api.schema.SimpleNodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
+	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
@@ -418,7 +418,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void shouldReturnMatchingEntriesForRangePredicateWithInclusiveStartAndInclusiveEnd(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: void shouldReturnMatchingEntriesForRangePredicateWithInclusiveStartAndInclusiveEnd(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 internal virtual void ShouldReturnMatchingEntriesForRangePredicateWithInclusiveStartAndInclusiveEnd( IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  ProcessAll( updates );
@@ -489,7 +489,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void mustHandleNestedQueries(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: void mustHandleNestedQueries(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 internal virtual void MustHandleNestedQueries( IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  ProcessAll( updates );
@@ -526,7 +526,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void mustHandleMultipleNestedQueries(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: void mustHandleMultipleNestedQueries(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 internal virtual void MustHandleMultipleNestedQueries( IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  ProcessAll( updates );
@@ -796,7 +796,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  NodeValueIterator iter = new NodeValueIterator();
 			  IndexQuery.ExactPredicate filter = IndexQuery.exact( 0, ValueOf( updates[1] ) );
 			  IndexQuery rangeQuery = valueCreatorUtil.rangeQuery( ValueOf( updates[0] ), true, ValueOf( updates[2] ), true );
-			  Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient filterClient = filterClient( iter, filter );
+			  Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient filterClient = filterClient( iter, filter );
 			  reader.Query( filterClient, IndexOrder.NONE, false, rangeQuery );
 
 			  // then
@@ -831,7 +831,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  {
 					ValueGroup valueGroup = random.among( allValues ).valueGroup();
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> supportedQuery = org.Neo4Net.internal.kernel.api.IndexQuery.range(0, valueGroup);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> supportedQuery = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(0, valueGroup);
 					IndexQuery.RangePredicate<object> supportedQuery = IndexQuery.range( 0, valueGroup );
 
 					IndexOrder[] supportedOrders = IndexCapability().orderCapability(valueGroup.category());
@@ -886,7 +886,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void getValues() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void getValues() throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void getValues()
 		 {
@@ -915,7 +915,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> supportedQuery;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> supportedQuery;
 			  IndexQuery.RangePredicate<object> supportedQuery;
 			  IList<Value> expectedValues;
 			  if ( Values.isGeometryValue( value ) )
@@ -975,13 +975,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: private org.Neo4Net.storageengine.api.schema.IndexProgressor_NodeValueClient filterClient(final NodeValueIterator iter, final org.Neo4Net.internal.kernel.api.IndexQuery filter)
-		 private Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient FilterClient( NodeValueIterator iter, IndexQuery filter )
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient filterClient(final NodeValueIterator iter, final org.Neo4Net.Kernel.Api.Internal.IndexQuery filter)
+		 private Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient FilterClient( NodeValueIterator iter, IndexQuery filter )
 		 {
 			  return new IndexProgressor_NodeValueClientAnonymousInnerClass( this, iter, filter );
 		 }
 
-		 private class IndexProgressor_NodeValueClientAnonymousInnerClass : Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient
+		 private class IndexProgressor_NodeValueClientAnonymousInnerClass : Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient
 		 {
 			 private readonly NativeIndexAccessorTests<KEY, VALUE> _outerInstance;
 
@@ -1017,7 +1017,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.eclipse.collections.api.iterator.LongIterator query(org.Neo4Net.storageengine.api.schema.IndexReader reader, org.Neo4Net.internal.kernel.api.IndexQuery query) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private org.eclipse.collections.api.iterator.LongIterator query(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader reader, org.Neo4Net.Kernel.Api.Internal.IndexQuery query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 private LongIterator Query( IndexReader reader, IndexQuery query )
 		 {
 			  NodeValueIterator client = new NodeValueIterator();
@@ -1101,7 +1101,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private IndexEntryUpdate<IndexDescriptor>[] GenerateRandomUpdates( ISet<IndexEntryUpdate<IndexDescriptor>> expectedData, IEnumerator<IndexEntryUpdate<IndexDescriptor>> newDataGenerator, int count, float removeFactor )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates = new org.Neo4Net.kernel.api.index.IndexEntryUpdate[count];
+//ORIGINAL LINE: @SuppressWarnings("unchecked") org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates = new org.Neo4Net.kernel.api.index.IndexEntryUpdate[count];
 			  IndexEntryUpdate<IndexDescriptor>[] updates = new IndexEntryUpdate[count];
 			  float addChangeRatio = 0.5f;
 			  for ( int i = 0; i < count; i++ )
@@ -1133,14 +1133,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor> selectRandomItem(java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>> expectedData)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor> selectRandomItem(java.util.Set<org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>> expectedData)
 		 private IndexEntryUpdate<IndexDescriptor> SelectRandomItem( ISet<IndexEntryUpdate<IndexDescriptor>> expectedData )
 		 {
 			  return expectedData.toArray( new IndexEntryUpdate[0] )[random.Next( expectedData.Count )];
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SafeVarargs private final void processAll(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>... updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: @SafeVarargs private final void processAll(org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>... updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private void ProcessAll( params IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
@@ -1160,7 +1160,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void processAll(org.Neo4Net.kernel.api.index.IndexUpdater updater, org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.storageengine.api.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void processAll(org.Neo4Net.kernel.api.index.IndexUpdater updater, org.Neo4Net.kernel.api.index.IndexEntryUpdate<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor>[] updates) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void ProcessAll( IndexUpdater updater, IndexEntryUpdate<IndexDescriptor>[] updates )
 		 {
 			  foreach ( IndexEntryUpdate<IndexDescriptor> update in updates )

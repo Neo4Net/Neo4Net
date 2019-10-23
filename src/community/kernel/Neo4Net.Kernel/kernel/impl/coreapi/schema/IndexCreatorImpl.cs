@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Label = Neo4Net.GraphDb.Label;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 
 	public class IndexCreatorImpl : IndexCreator
 	{
@@ -61,7 +61,7 @@ namespace Neo4Net.Kernel.impl.coreapi.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.graphdb.schema.IndexDefinition create() throws org.Neo4Net.graphdb.ConstraintViolationException
+//ORIGINAL LINE: public org.Neo4Net.GraphDb.Schema.IndexDefinition create() throws org.Neo4Net.graphdb.ConstraintViolationException
 		 public override IndexDefinition Create()
 		 {
 			  AssertInUnterminatedTransaction();

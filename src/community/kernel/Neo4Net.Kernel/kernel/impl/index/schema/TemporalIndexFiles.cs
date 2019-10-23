@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 
 	internal class TemporalIndexFiles

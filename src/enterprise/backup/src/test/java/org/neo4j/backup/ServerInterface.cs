@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.backup
 {
-	public interface ServerInterface
+	public interface IServerInterface
 	{
 		 void Shutdown();
 

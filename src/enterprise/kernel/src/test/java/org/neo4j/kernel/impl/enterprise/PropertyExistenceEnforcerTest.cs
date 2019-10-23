@@ -28,12 +28,12 @@ namespace Neo4Net.Kernel.impl.enterprise
 	using Mockito = org.mockito.Mockito;
 
 
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using NodeKeyConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.NodeKeyConstraintDescriptor;
 	using RelExistenceConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.RelExistenceConstraintDescriptor;
 	using UniquenessConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.UniquenessConstraintDescriptor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertArrayEquals;
@@ -65,7 +65,7 @@ namespace Neo4Net.Kernel.impl.enterprise
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.storageengine.api.StorageReader prepareStorageReaderMock(java.util.List<org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor> descriptors)
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private org.Neo4Net.Kernel.Api.StorageEngine.StorageReader prepareStorageReaderMock(java.util.List<org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor> descriptors)
 		 private StorageReader PrepareStorageReaderMock( IList<ConstraintDescriptor> descriptors )
 		 {
 			  StorageReader storageReader = Mockito.mock( typeof( StorageReader ) );

@@ -32,9 +32,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using GatheringNodeValueClient = Neo4Net.Kernel.Impl.Index.Schema.GatheringNodeValueClient;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

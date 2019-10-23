@@ -44,8 +44,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurveSettings = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettings;
 	using SpaceFillingCurveSettingsFactory = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsFactory;
 	using SpatialIndexSettings = Neo4Net.Kernel.Impl.Index.Schema.config.SpatialIndexSettings;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -216,7 +216,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addUpdates(SpatialIndexProvider provider, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor schemaIndexDescriptor, ValueCreatorUtil<SpatialIndexKey,NativeIndexValue> layoutUtil) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void addUpdates(SpatialIndexProvider provider, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor schemaIndexDescriptor, ValueCreatorUtil<SpatialIndexKey,NativeIndexValue> layoutUtil) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void AddUpdates( SpatialIndexProvider provider, StoreIndexDescriptor schemaIndexDescriptor, ValueCreatorUtil<SpatialIndexKey, NativeIndexValue> layoutUtil )
 		 {
 			  IndexAccessor accessor = provider.GetOnlineAccessor( schemaIndexDescriptor, SamplingConfig() );
@@ -254,7 +254,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createEmptyIndex(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor schemaIndexDescriptor, org.Neo4Net.kernel.impl.index.schema.config.ConfiguredSpaceFillingCurveSettingsCache configuredSettings) throws java.io.IOException
+//ORIGINAL LINE: private void createEmptyIndex(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor schemaIndexDescriptor, org.Neo4Net.kernel.impl.index.schema.config.ConfiguredSpaceFillingCurveSettingsCache configuredSettings) throws java.io.IOException
 		 private void CreateEmptyIndex( StoreIndexDescriptor schemaIndexDescriptor, ConfiguredSpaceFillingCurveSettingsCache configuredSettings )
 		 {
 			  SpatialIndexFiles.SpatialFileLayout fileLayout = MakeIndexFile( schemaIndexDescriptor.Id, configuredSettings ).LayoutForNewIndex;
@@ -264,7 +264,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void createEmptyIndex(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor schemaIndexDescriptor, SpatialIndexProvider provider) throws java.io.IOException
+//ORIGINAL LINE: private void createEmptyIndex(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor schemaIndexDescriptor, SpatialIndexProvider provider) throws java.io.IOException
 		 private void CreateEmptyIndex( StoreIndexDescriptor schemaIndexDescriptor, SpatialIndexProvider provider )
 		 {
 			  IndexPopulator populator = provider.GetPopulator( schemaIndexDescriptor, SamplingConfig(), heapBufferFactory(1024) );

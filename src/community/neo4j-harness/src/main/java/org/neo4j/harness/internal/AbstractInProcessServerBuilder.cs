@@ -287,7 +287,7 @@ namespace Neo4Net.Harness.Internal
 		 private static ZoneId LogZoneIdFrom( IDictionary<string, string> config )
 		 {
 			  string dbTimeZone = config.getOrDefault( db_timezone.name(), db_timezone.DefaultValue );
-			  return LogTimeZone.valueOf( dbTimeZone ).ZoneId;
+			  return LogTimeZone.ValueOf( dbTimeZone ).ZoneId;
 		 }
 
 		 /// <summary>

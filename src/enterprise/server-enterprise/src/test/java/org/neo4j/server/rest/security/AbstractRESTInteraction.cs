@@ -36,7 +36,7 @@ namespace Neo4Net.Server.rest.security
 	using Neo4Net.GraphDb;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -146,7 +146,7 @@ namespace Neo4Net.Server.rest.security
 		 public override InternalTransaction BeginLocalTransactionAsUser( RESTSubject subject, KernelTransaction.Type txType )
 		 {
 			  LoginContext loginContext = _authManager.login( newBasicAuthToken( subject.Username, subject.Password ) );
-			  return LocalGraph.beginTransaction( txType, loginContext );
+			  return LocalGraph.BeginTransaction( txType, loginContext );
 		 }
 
 		 public override string ExecuteQuery( RESTSubject subject, string call, IDictionary<string, object> @params, System.Action<ResourceIterator<IDictionary<string, object>>> resultConsumer )

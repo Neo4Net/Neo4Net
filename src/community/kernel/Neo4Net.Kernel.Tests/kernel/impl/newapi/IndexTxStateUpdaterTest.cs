@@ -25,15 +25,15 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
-	using StubPropertyCursor = Neo4Net.Internal.Kernel.Api.helpers.StubPropertyCursor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
+	using StubPropertyCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubPropertyCursor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using IndexProxy = Neo4Net.Kernel.Impl.Api.index.IndexProxy;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -106,7 +106,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 private StubPropertyCursor _propertyCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: @Before public void setup() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void Setup()
 		 {

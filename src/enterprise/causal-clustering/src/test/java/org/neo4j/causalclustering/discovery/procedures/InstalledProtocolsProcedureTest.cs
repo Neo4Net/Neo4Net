@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using AdvertisedSocketAddress = Neo4Net.Helpers.AdvertisedSocketAddress;
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
 	using Neo4Net.Helpers.Collections;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.asList;

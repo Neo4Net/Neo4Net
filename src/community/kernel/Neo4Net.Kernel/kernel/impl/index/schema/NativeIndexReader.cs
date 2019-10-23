@@ -26,14 +26,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IOUtils = Neo4Net.Io.IOUtils;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using IndexSampler = Neo4Net.Storageengine.Api.schema.IndexSampler;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using IndexSampler = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSampler;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return nodeValueIterator;
 		 }
 
-		 public override void Query( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
+		 public override void Query( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient cursor, IndexOrder indexOrder, bool needsValues, params IndexQuery[] predicates )
 		 {
 			  ValidateQuery( indexOrder, predicates );
 
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 		 public override abstract bool HasFullValuePrecision( params IndexQuery[] predicates );
 
-		 public override void DistinctValues( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
+		 public override void DistinctValues( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, NodePropertyAccessor propertyAccessor, bool needsValues )
 		 {
 			  KEY lowest = Layout.newKey();
 			  lowest.initialize( long.MinValue );
@@ -156,7 +156,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 /// <returns> true if query results from seek will need to be filtered through the predicates, else false </returns>
 		 internal abstract bool InitializeRangeForQuery( KEY treeKeyFrom, KEY treeKeyTo, IndexQuery[] predicates );
 
-		 internal virtual void StartSeekForInitializedRange( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, KEY treeKeyFrom, KEY treeKeyTo, IndexQuery[] query, IndexOrder indexOrder, bool needFilter, bool needsValues )
+		 internal virtual void StartSeekForInitializedRange( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, KEY treeKeyFrom, KEY treeKeyTo, IndexQuery[] query, IndexOrder indexOrder, bool needFilter, bool needsValues )
 		 {
 			  if ( IsEmptyRange( treeKeyFrom, treeKeyTo ) )
 			  {
@@ -176,7 +176,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> makeIndexSeeker(KEY treeKeyFrom, KEY treeKeyTo, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder) throws java.io.IOException
+//ORIGINAL LINE: org.Neo4Net.cursor.RawCursor<org.Neo4Net.index.internal.gbptree.Hit<KEY,VALUE>,java.io.IOException> makeIndexSeeker(KEY treeKeyFrom, KEY treeKeyTo, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder) throws java.io.IOException
 		 internal virtual IRawCursor<Hit<KEY, VALUE>, IOException> MakeIndexSeeker( KEY treeKeyFrom, KEY treeKeyTo, IndexOrder indexOrder )
 		 {
 			  if ( indexOrder == IndexOrder.DESCENDING )
@@ -190,7 +190,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  return seeker;
 		 }
 
-		 private IndexProgressor GetIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, bool needFilter, IndexQuery[] query )
+		 private IndexProgressor GetIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, bool needFilter, IndexQuery[] query )
 		 {
 			  return needFilter ? new FilteringNativeHitIndexProgressor<>( seeker, client, OpenSeekers, query ) : new NativeHitIndexProgressor<>( seeker, client, OpenSeekers );
 		 }

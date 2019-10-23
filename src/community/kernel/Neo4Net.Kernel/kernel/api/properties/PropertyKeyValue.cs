@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.Kernel.api.properties
 {
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

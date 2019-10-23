@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 	using TransactionTracer = Neo4Net.Kernel.impl.transaction.tracing.TransactionTracer;
 	using Log = Neo4Net.Logging.Log;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 	/// <summary>
@@ -73,7 +73,7 @@ namespace Neo4Net.Kernel.monitoring.tracing
 		 /// <param name="jobScheduler"> a scheduler for async jobs </param>
 		 /// <returns> The created instance. </returns>
 //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java default interface methods:
-//		 default org.Neo4Net.storageengine.api.@lock.LockTracer createLockTracer(org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.scheduler.JobScheduler jobScheduler)
+//		 default org.Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer createLockTracer(org.Neo4Net.kernel.monitoring.Monitors monitors, org.Neo4Net.scheduler.JobScheduler jobScheduler)
 	//	 {
 	//		  return LockTracer.NONE;
 	//	 }

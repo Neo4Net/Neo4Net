@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.factory
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionRepresentationCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionRepresentationCommitProcess;
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 	public class CommunityCommitProcessFactory : CommitProcessFactory
 	{

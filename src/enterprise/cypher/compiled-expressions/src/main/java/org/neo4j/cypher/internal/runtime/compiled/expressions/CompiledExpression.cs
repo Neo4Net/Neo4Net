@@ -29,7 +29,7 @@ namespace Neo4Net.Cypher.Internal.runtime.compiled.expressions
 	/// <summary>
 	/// Interface implemented by compiled expressions.
 	/// </summary>
-	public interface CompiledExpression
+	public interface ICompiledExpression
 	{
 		 /// <summary>
 		 /// Evaluates the result of an expression

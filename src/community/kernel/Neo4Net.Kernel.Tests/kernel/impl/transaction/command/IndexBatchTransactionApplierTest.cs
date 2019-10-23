@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using LabelScanWriter = Neo4Net.Kernel.api.labelscan.LabelScanWriter;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.Record.NO_NEXT_RELATIONSHIP;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class IndexBatchTransactionApplierTest
 	{

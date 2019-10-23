@@ -55,7 +55,7 @@ namespace Neo4Net.GraphDb
       /// <returns> the resolved dependency for the given type. </returns>
       /// <exception cref="IllegalArgumentException"> if no matching dependency was found. </exception>
 
-      T ResolveDependency<T>(Type type, DependencyResolver_SelectionStrategy selector);
+      T ResolveDependency<T>(Type type, IDependencyResolver_SelectionStrategy selector);
 
       /// <summary>
       /// Tries to resolve a dependencies that matches a given class.
@@ -69,7 +69,7 @@ namespace Neo4Net.GraphDb
       //		  throw new UnsupportedOperationException("not implemented");
       //	 }
 
-      System.Func<T> ProvideDependency<T>(Type type, DependencyResolver_SelectionStrategy selector);
+      System.Func<T> ProvideDependency<T>(Type type, IDependencyResolver_SelectionStrategy selector);
 
       System.Func<T> provideDependency<T>(Type type);
 
@@ -84,7 +84,7 @@ namespace Neo4Net.GraphDb
       /// @deprecated in next major version default selection strategy will be changed to more strict <seealso cref="IDependencyResolver.SelectionStrategy.ONLY"/>
    }
 
-   public interface DependencyResolver_SelectionStrategy
+   public interface IDependencyResolver_SelectionStrategy
    {
       /// <summary>
       /// Given a set of candidates, select an appropriate one. Even if there are candidates this
@@ -96,10 +96,10 @@ namespace Neo4Net.GraphDb
       /// @param <T> the type of items </param>
       /// <returns> a suitable candidate among all available. </returns>
       /// <exception cref="IllegalArgumentException"> if no suitable candidate was found. </exception>
-      //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
+
       //ORIGINAL LINE: <T> T select(Class<T> type, Iterable<? extends T> candidates) throws IllegalArgumentException;
       //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-      T select<T, T1>(Type type, IEnumerable<T1> candidates);
+      T Select<T, T1>(Type type, IEnumerable<T1> candidates);
 
       //JAVA TO C# CONVERTER TODO TASK: The following anonymous inner class could not be converted:
       //	  DependencyResolver.SelectionStrategy FIRST = new DependencyResolver.SelectionStrategy()
@@ -149,7 +149,7 @@ namespace Neo4Net.GraphDb
       //ORIGINAL LINE: public abstract Iterable<JavaToDotNetGenericWildcard extends T> resolveTypeDependencies(Class<T> type);
       public abstract IEnumerable<T> ResolveTypeDependencies(Type type);
 
-      public abstract T ResolveDependency(Type type, DependencyResolver_SelectionStrategy selector);
+      public abstract T ResolveDependency(Type type, IDependencyResolver_SelectionStrategy selector);
 
       //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
       //ORIGINAL LINE: public <T> T resolveDependency(Class<T> type) throws IllegalArgumentException
@@ -161,7 +161,7 @@ namespace Neo4Net.GraphDb
 
       //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
       //ORIGINAL LINE: public <T> System.Func<T> provideDependency(final Class<T> type, final DependencyResolver_SelectionStrategy selector)
-      public override System.Func<T> ProvideDependency<T>(Type type, DependencyResolver_SelectionStrategy selector)
+      public override System.Func<T> ProvideDependency<T>(Type type, IDependencyResolver_SelectionStrategy selector)
       {
          type = typeof(T);
          return () => ResolveDependency(type, selector);

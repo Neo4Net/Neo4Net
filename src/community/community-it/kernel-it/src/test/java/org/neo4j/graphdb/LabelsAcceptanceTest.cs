@@ -34,9 +34,9 @@ namespace Neo4Net.GraphDb
 	using CommunityEditionModule = Neo4Net.GraphDb.factory.module.edition.CommunityEditionModule;
 	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;

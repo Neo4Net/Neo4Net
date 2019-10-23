@@ -33,7 +33,7 @@ namespace Neo4Net.Cypher
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;

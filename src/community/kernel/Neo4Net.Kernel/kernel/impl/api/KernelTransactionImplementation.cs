@@ -28,29 +28,29 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Neo4Net.Collections.Pooling;
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
-	using ExplicitIndexRead = Neo4Net.Internal.Kernel.Api.ExplicitIndexRead;
-	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using Token = Neo4Net.Internal.Kernel.Api.Token;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
+	using ExplicitIndexRead = Neo4Net.Kernel.Api.Internal.ExplicitIndexRead;
+	using ExplicitIndexWrite = Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using Token = Neo4Net.Kernel.Api.Internal.Token;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
@@ -94,16 +94,16 @@ namespace Neo4Net.Kernel.Impl.Api
 	using CollectionsFactorySupplier = Neo4Net.Kernel.impl.util.collection.CollectionsFactorySupplier;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.INTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.INTERNAL;
 
 	/// <summary>
 	/// This class should replace the <seealso cref="org.Neo4Net.kernel.api.KernelTransaction"/> interface, and take its name, as soon
@@ -169,7 +169,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 private volatile long _lastTransactionTimestampWhenStarted;
 		 private readonly Statistics _statistics;
 		 private TransactionEvent _transactionEvent;
-		 private Neo4Net.Internal.Kernel.Api.Transaction_Type _type;
+		 private Neo4Net.Kernel.Api.Internal.Transaction_Type _type;
 		 private long _transactionId;
 		 private long _commitTime;
 		 private volatile int _reuseCount;
@@ -215,7 +215,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// <summary>
 		 /// Reset this transaction to a vanilla state, turning it into a logically new transaction.
 		 /// </summary>
-		 public virtual KernelTransactionImplementation Initialize( long lastCommittedTx, long lastTimeStamp, StatementLocks statementLocks, Neo4Net.Internal.Kernel.Api.Transaction_Type type, SecurityContext frozenSecurityContext, long transactionTimeout, long userTransactionId )
+		 public virtual KernelTransactionImplementation Initialize( long lastCommittedTx, long lastTimeStamp, StatementLocks statementLocks, Neo4Net.Kernel.Api.Internal.Transaction_Type type, SecurityContext frozenSecurityContext, long transactionTimeout, long userTransactionId )
 		 {
 			  this._type = type;
 			  this._statementLocks = statementLocks;
@@ -232,7 +232,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  this._timeoutMillis = transactionTimeout;
 			  this._lastTransactionIdWhenStarted = lastCommittedTx;
 			  this._lastTransactionTimestampWhenStarted = lastTimeStamp;
-			  this._transactionEvent = _transactionTracer.beginTransaction();
+			  this._transactionEvent = _transactionTracer.BeginTransaction();
 			  Debug.Assert( _transactionEvent != null, "transactionEvent was null!" );
 			  this._securityContext = frozenSecurityContext;
 			  this._transactionId = NOT_COMMITTED_TRANSACTION_ID;
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.internal.kernel.api.exceptions.schema.SchemaKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor indexUniqueCreate(org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor schema, String provider) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException
 		 public override IndexDescriptor IndexUniqueCreate( SchemaDescriptor schema, string provider )
 		 {
 			  return _operations.indexUniqueCreate( schema, provider );
@@ -421,14 +421,14 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void upgradeToDataWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: void upgradeToDataWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 internal virtual void UpgradeToDataWrites()
 		 {
 			  _writeState = _writeState.upgradeToDataWrites();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void upgradeToSchemaWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: void upgradeToSchemaWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 internal virtual void UpgradeToSchemaWrites()
 		 {
 			  _schemaWriteGuard.assertSchemaWritesAllowed();
@@ -436,7 +436,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void dropCreatedConstraintIndexes() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void dropCreatedConstraintIndexes() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void DropCreatedConstraintIndexes()
 		 {
 			  if ( HasTxStateWithChanges() )
@@ -552,7 +552,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long closeTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public long closeTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override long CloseTransaction()
 		 {
 			  AssertTransactionOpen();
@@ -564,7 +564,7 @@ namespace Neo4Net.Kernel.Impl.Api
 					{
 						 Rollback();
 						 FailOnNonExplicitRollbackIfNeeded();
-						 return Neo4Net.Internal.Kernel.Api.Transaction_Fields.ROLLBACK;
+						 return Neo4Net.Kernel.Api.Internal.Transaction_Fields.ROLLBACK;
 					}
 					else
 					{
@@ -615,7 +615,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 /// <exception cref="TransactionFailureException"> when execution failed </exception>
 		 /// <exception cref="TransactionTerminatedException"> when transaction was terminated </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void failOnNonExplicitRollbackIfNeeded() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void failOnNonExplicitRollbackIfNeeded() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void FailOnNonExplicitRollbackIfNeeded()
 		 {
 			  if ( _success && Terminated )
@@ -633,11 +633,11 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long commit() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private long commit() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private long Commit()
 		 {
 			  bool success = false;
-			  long txId = Neo4Net.Internal.Kernel.Api.Transaction_Fields.READ_ONLY;
+			  long txId = Neo4Net.Kernel.Api.Internal.Transaction_Fields.READ_ONLY;
 
 			  try
 			  {
@@ -723,7 +723,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void rollback() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void rollback() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void Rollback()
 		 {
 			  try
@@ -756,7 +756,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 		 }
 
-		 private class TxStateVisitor_AdapterAnonymousInnerClass : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+		 private class TxStateVisitor_AdapterAnonymousInnerClass : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 		 {
 			 private readonly KernelTransactionImplementation _outerInstance;
 
@@ -784,7 +784,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.Write dataWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.Write dataWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 public override Write DataWrite()
 		 {
 			  _accessCapability.assertCanWrite();
@@ -822,7 +822,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.ExplicitIndexWrite indexWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite indexWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 public override ExplicitIndexWrite IndexWrite()
 		 {
 			  _accessCapability.assertCanWrite();
@@ -841,7 +841,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.internal.kernel.api.SchemaWrite schemaWrite() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.Internal.SchemaWrite schemaWrite() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 		 public override SchemaWrite SchemaWrite()
 		 {
 			  _accessCapability.assertCanWrite();
@@ -852,7 +852,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  return _operations;
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.Locks Locks()
+		 public override Neo4Net.Kernel.Api.Internal.Locks Locks()
 		 {
 			 return _operations.locks();
 		 }
@@ -868,7 +868,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  return _operations.cursors();
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.Procedures Procedures()
+		 public override Neo4Net.Kernel.Api.Internal.Procedures Procedures()
 		 {
 			  return _operations.procedures();
 		 }
@@ -912,7 +912,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  try
 			  {
-					MarkAsClosed( Neo4Net.Internal.Kernel.Api.Transaction_Fields.ROLLBACK );
+					MarkAsClosed( Neo4Net.Kernel.Api.Internal.Transaction_Fields.ROLLBACK );
 					if ( _beforeHookInvoked )
 					{
 						 _hooks.afterRollback( _txState, this, _hooksState );
@@ -1009,7 +1009,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  _closeListeners.Add( listener );
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.Transaction_Type TransactionType()
+		 public override Neo4Net.Kernel.Api.Internal.Transaction_Type TransactionType()
 		 {
 			  return _type;
 		 }
@@ -1244,9 +1244,9 @@ namespace Neo4Net.Kernel.Impl.Api
 		 {
 			  public static readonly TransactionWriteState None = new TransactionWriteState( "None", InnerEnum.None );
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           DATA { TransactionWriteState upgradeToSchemaWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException { throw new org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException("Cannot perform schema updates in a transaction that has performed data updates."); } },
+//           DATA { TransactionWriteState upgradeToSchemaWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException { throw new org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException("Cannot perform schema updates in a transaction that has performed data updates."); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SCHEMA { TransactionWriteState upgradeToDataWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException { throw new org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException("Cannot perform data updates in a transaction that has performed schema updates."); } };
+//           SCHEMA { TransactionWriteState upgradeToDataWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException { throw new org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException("Cannot perform data updates in a transaction that has performed schema updates."); } };
 
 			  private static readonly IList<TransactionWriteState> valueList = new List<TransactionWriteState>();
 
@@ -1277,14 +1277,14 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionWriteState upgradeToDataWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: TransactionWriteState upgradeToDataWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  internal TransactionWriteState UpgradeToDataWrites()
 			  {
 					return DATA;
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: TransactionWriteState upgradeToSchemaWrites() throws org.Neo4Net.internal.kernel.api.exceptions.InvalidTransactionTypeKernelException
+//ORIGINAL LINE: TransactionWriteState upgradeToSchemaWrites() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException
 			  internal TransactionWriteState UpgradeToSchemaWrites()
 			  {
 					return SCHEMA;
@@ -1305,7 +1305,7 @@ namespace Neo4Net.Kernel.Impl.Api
 				 return nameValue;
 			 }
 
-			 public static TransactionWriteState valueOf( string name )
+			 public static TransactionWriteState ValueOf( string name )
 			 {
 				 foreach ( TransactionWriteState enumInstance in TransactionWriteState.valueList )
 				 {

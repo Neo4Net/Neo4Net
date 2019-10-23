@@ -25,8 +25,8 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class ReplicatedLockTokenSerializer
 	{
@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(ReplicatedLockTokenRequest tokenRequest, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(ReplicatedLockTokenRequest tokenRequest, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 		 public static void Marshal( ReplicatedLockTokenRequest tokenRequest, WritableChannel channel )
 		 {
 			  channel.PutInt( tokenRequest.Id() );
@@ -44,7 +44,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static ReplicatedLockTokenRequest unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public static ReplicatedLockTokenRequest unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 public static ReplicatedLockTokenRequest Unmarshal( ReadableChannel channel )
 		 {
 			  int candidateId = channel.Int;

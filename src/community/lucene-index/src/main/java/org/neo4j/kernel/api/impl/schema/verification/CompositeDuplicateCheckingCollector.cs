@@ -21,9 +21,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 {
 	using Document = org.apache.lucene.document.Document;
 
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class CompositeDuplicateCheckingCollector : DuplicateCheckingCollector
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.verification
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void doCollect(int doc) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.KernelException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: protected void doCollect(int doc) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 protected internal override void DoCollect( int doc )
 		 {
 			  Document document = Reader.document( doc );

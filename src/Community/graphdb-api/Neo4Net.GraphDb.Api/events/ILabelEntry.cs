@@ -29,12 +29,12 @@ namespace Neo4Net.GraphDb.Events
       /// This is the label that has been added or removed.
       /// </summary>
       /// <returns> the label. </returns>
-      ILabel Label();
+      ILabel Label { get; }
 
       /// <summary>
       /// This is the node which has had the label added or removed.
       /// </summary>
       /// <returns> the node that has been modified. </returns>
-      INode Node();
+      INode Node { get; }
    }
 }

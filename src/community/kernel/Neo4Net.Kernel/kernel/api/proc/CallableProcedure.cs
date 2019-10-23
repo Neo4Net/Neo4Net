@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.api.proc
 {
 	using Neo4Net.Collections;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 
-	public interface CallableProcedure
+	public interface ICallableProcedure
 	{
 		 ProcedureSignature Signature();
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker );
 	}
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.proc
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> apply(Context ctx, Object[] input, org.Neo4Net.kernel.api.ResourceTracker resourceTracker) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		  public override abstract RawIterator<object[], ProcedureException> Apply( Context ctx, object[] input, ResourceTracker resourceTracker );
 	 }
 

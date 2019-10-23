@@ -258,7 +258,7 @@ namespace Neo4Net.Kernel.Api.Index
 				 return nameValue;
 			 }
 
-			 public static TestValue valueOf( string name )
+			 public static TestValue ValueOf( string name )
 			 {
 				 foreach ( TestValue enumInstance in TestValue.valueList )
 				 {

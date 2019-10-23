@@ -309,7 +309,7 @@ namespace Neo4Net.Io
 			return nameValue;
 		}
 
-		public static ByteUnit valueOf( string name )
+		public static ByteUnit ValueOf( string name )
 		{
 			foreach ( ByteUnit enumInstance in ByteUnit.valueList )
 			{

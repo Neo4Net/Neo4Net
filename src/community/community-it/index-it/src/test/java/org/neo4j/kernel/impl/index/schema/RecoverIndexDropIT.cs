@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using OpenMode = Neo4Net.Io.fs.OpenMode;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using IndexMap = Neo4Net.Kernel.Impl.Api.index.IndexMap;

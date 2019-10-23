@@ -19,16 +19,16 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.security
 {
-	/// <summary>
-	/// An access validation error indicating why a URL cannot be accessed by a Neo4Net graph database instance.
-	/// </summary>
-	public class URLAccessValidationError : Exception
-	{
-		 public URLAccessValidationError( string message ) : base( message )
-		 {
-		 }
-	}
-
+   /// <summary>
+   /// An access validation error indicating why a URL cannot be accessed by a Neo4Net graph database instance.
+   /// </summary>
+   public class URLAccessValidationError : Exception
+   {
+      public URLAccessValidationError(string message) : base(message)
+      {
+      }
+   }
 }

@@ -25,7 +25,7 @@ namespace Neo4Net.Server.plugins
 
 	/// @deprecated Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead. 
 	[Obsolete("Server plugins are deprecated for removal in the next major release. Please use unmanaged extensions instead.")]
-	public interface SPIPluginLifecycle : PluginLifecycle
+	public interface ISPIPluginLifecycle : PluginLifecycle
 	{
 
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:

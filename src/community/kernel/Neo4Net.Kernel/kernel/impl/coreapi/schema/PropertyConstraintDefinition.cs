@@ -21,8 +21,8 @@
  */
 namespace Neo4Net.Kernel.impl.coreapi.schema
 {
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
 
 	internal abstract class PropertyConstraintDefinition : ConstraintDefinition
 	{

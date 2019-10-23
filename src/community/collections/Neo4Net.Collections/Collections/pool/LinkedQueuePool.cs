@@ -68,7 +68,7 @@ namespace Neo4Net.Collections.Pooling
             }
         }
 
-        public interface CheckStrategy
+        public interface ICheckStrategy
         {
             bool ShouldCheck();
         }

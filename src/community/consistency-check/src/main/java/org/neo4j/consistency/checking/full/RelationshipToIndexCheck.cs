@@ -30,12 +30,12 @@ namespace Neo4Net.Consistency.checking.full
 	using IndexAccessors = Neo4Net.Consistency.checking.index.IndexAccessors;
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using PropertyBlock = Neo4Net.Kernel.Impl.Store.Records.PropertyBlock;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

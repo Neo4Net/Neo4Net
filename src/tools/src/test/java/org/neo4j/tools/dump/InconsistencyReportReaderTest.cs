@@ -28,14 +28,14 @@ namespace Neo4Net.tools.dump
 	using RecordType = Neo4Net.Consistency.RecordType;
 	using InconsistencyMessageLogger = Neo4Net.Consistency.report.InconsistencyMessageLogger;
 	using IndexEntry = Neo4Net.Consistency.store.synthetic.IndexEntry;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using FormattedLog = Neo4Net.Logging.FormattedLog;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
 	using ReportInconsistencies = Neo4Net.tools.dump.inconsistency.ReportInconsistencies;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -45,7 +45,7 @@ namespace Neo4Net.tools.dump
 
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaUtil.idTokenNameLookup;
 
 
 	public class InconsistencyReportReaderTest

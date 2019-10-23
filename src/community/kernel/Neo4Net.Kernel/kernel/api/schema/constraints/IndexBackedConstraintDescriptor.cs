@@ -19,18 +19,18 @@
  */
 namespace Neo4Net.Kernel.api.schema.constraints
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using LabelSchemaSupplier = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaSupplier;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using LabelSchemaSupplier = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaSupplier;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
 
 	public abstract class IndexBackedConstraintDescriptor : ConstraintDescriptor, LabelSchemaSupplier
 	{
 		 private readonly LabelSchemaDescriptor _schema;
 
-		 internal IndexBackedConstraintDescriptor( Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor_Type type, LabelSchemaDescriptor schema ) : base( type )
+		 internal IndexBackedConstraintDescriptor( Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type type, LabelSchemaDescriptor schema ) : base( type )
 		 {
 			  this._schema = schema;
 		 }

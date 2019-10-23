@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha
 	using AvailabilityListener = Neo4Net.Kernel.availability.AvailabilityListener;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// This class logs whenever important cluster or high availability events

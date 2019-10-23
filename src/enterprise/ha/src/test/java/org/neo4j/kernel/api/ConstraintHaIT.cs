@@ -36,12 +36,12 @@ namespace Neo4Net.Kernel.api
 	using QueryExecutionException = Neo4Net.GraphDb.QueryExecutionException;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using ConstraintType = Neo4Net.GraphDb.schema.ConstraintType;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using ConstraintType = Neo4Net.GraphDb.Schema.ConstraintType;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
 	using NodePropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.NodePropertyExistenceConstraintHaIT;
 	using RelationshipPropertyExistenceConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.RelationshipPropertyExistenceConstraintHaIT;
 	using UniquenessConstraintHaIT = Neo4Net.Kernel.api.ConstraintHaIT.UniquenessConstraintHaIT;

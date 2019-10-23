@@ -115,7 +115,7 @@ namespace Neo4Net.Server.rest.web
 
 		 private void AddAllowedMethodIfValid( string methodName, HttpServletResponse response )
 		 {
-			  HttpMethod method = HttpMethod.valueOfOrNull( methodName );
+			  HttpMethod method = HttpMethod.ValueOfOrNull( methodName );
 			  if ( method != null )
 			  {
 					response.addHeader( ACCESS_CONTROL_ALLOW_METHODS, methodName );

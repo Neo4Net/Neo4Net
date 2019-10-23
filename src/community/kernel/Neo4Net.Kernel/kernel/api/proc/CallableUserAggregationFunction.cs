@@ -19,15 +19,15 @@
  */
 namespace Neo4Net.Kernel.api.proc
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using UserAggregator = Neo4Net.Internal.Kernel.Api.procs.UserAggregator;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using UserAggregator = Neo4Net.Kernel.Api.Internal.procs.UserAggregator;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 
-	public interface CallableUserAggregationFunction
+	public interface ICallableUserAggregationFunction
 	{
 		 UserFunctionSignature Signature();
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 UserAggregator Create( Context ctx );
 	}
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.proc
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.internal.kernel.api.procs.UserAggregator create(Context ctx) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.Kernel.Api.Internal.procs.UserAggregator create(Context ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		  public override abstract UserAggregator Create( Context ctx );
 	 }
 

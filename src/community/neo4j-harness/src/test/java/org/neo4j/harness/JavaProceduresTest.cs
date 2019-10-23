@@ -26,7 +26,7 @@ namespace Neo4Net.Harness
 	using Test = org.junit.Test;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Context = Neo4Net.Procedure.Context;
 	using Mode = Neo4Net.Procedure.Mode;
 	using Name = Neo4Net.Procedure.Name;
@@ -108,7 +108,7 @@ namespace Neo4Net.Harness
 			  public MyCoreAPI MyCoreAPI;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Procedure(value = "makeNode", mode = org.Neo4Net.procedure.Mode.WRITE) public java.util.stream.Stream<LongResult> makeNode(@Name("label") String label) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @Procedure(value = "makeNode", mode = org.Neo4Net.procedure.Mode.WRITE) public java.util.stream.Stream<LongResult> makeNode(@Name("label") String label) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 			  [Procedure(value : "makeNode", mode : Neo4Net.Procedure.Mode.WRITE)]
 			  public virtual Stream<LongResult> MakeNode( string label )
@@ -119,7 +119,7 @@ namespace Neo4Net.Harness
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.stream.Stream<LongResult> willFail() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.stream.Stream<LongResult> willFail() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  [Procedure(value : "willFail", mode : Neo4Net.Procedure.Mode.READ)]
 			  public virtual Stream<LongResult> WillFail()
 			  {

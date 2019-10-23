@@ -362,7 +362,7 @@ namespace Neo4Net.Tooling
 				 return nameValue;
 			 }
 
-			 public static Options valueOf( string name )
+			 public static Options ValueOf( string name )
 			 {
 				 foreach ( Options enumInstance in Options.valueList )
 				 {
@@ -1015,7 +1015,7 @@ namespace Neo4Net.Tooling
 			 }
 		 }
 
-		 private static readonly System.Func<string, IdType> _toIdType = from => IdType.valueOf( from.ToUpper() );
+		 private static readonly System.Func<string, IdType> _toIdType = from => IdType.ValueOf( from.ToUpper() );
 
 		 private static readonly System.Func<string, char> _characterConverter = new CharacterConverter();
 
@@ -1072,7 +1072,7 @@ namespace Neo4Net.Tooling
 				 return nameValue;
 			 }
 
-			 public static ManualPage valueOf( string name )
+			 public static ManualPage ValueOf( string name )
 			 {
 				 foreach ( ManualPage enumInstance in ManualPage.valueList )
 				 {
@@ -1135,7 +1135,7 @@ namespace Neo4Net.Tooling
 				 return nameValue;
 			 }
 
-			 public static Anchor valueOf( string name )
+			 public static Anchor ValueOf( string name )
 			 {
 				 foreach ( Anchor enumInstance in Anchor.valueList )
 				 {

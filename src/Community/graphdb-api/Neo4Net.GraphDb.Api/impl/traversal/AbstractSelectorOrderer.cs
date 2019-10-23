@@ -17,88 +17,89 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb.impl.traversal
 {
-	using BranchSelector = Neo4Net.GraphDb.Traversal.BranchSelector;
-	using SideSelector = Neo4Net.GraphDb.Traversal.SideSelector;
-	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
+   using BranchSelector = Neo4Net.GraphDb.Traversal.BranchSelector;
+   using SideSelector = Neo4Net.GraphDb.Traversal.SideSelector;
+   using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
+   using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
 
-	public abstract class AbstractSelectorOrderer<T> : SideSelector
-	{
-		public abstract TraversalBranch Next( TraversalContext metadata );
-		 private static readonly BranchSelector _emptySelector = metadata => null;
+   public abstract class AbstractSelectorOrderer<T> : SideSelector
+   {
+      public abstract ITraversalBranch Next(TraversalContext metadata);
 
-		 private readonly BranchSelector[] _selectors;
-//JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private final T[] states = (T[]) new Object[2];
-		 private readonly T[] _states = ( T[] ) new object[2];
-		 private int _selectorIndex;
+      private static readonly BranchSelector _emptySelector = metadata => null;
 
-		 public AbstractSelectorOrderer( BranchSelector startSelector, BranchSelector endSelector )
-		 {
-			  _selectors = new BranchSelector[] { startSelector, endSelector };
-			  _states[0] = InitialState();
-			  _states[1] = InitialState();
-		 }
+      private readonly BranchSelector[] _selectors;
 
-		 protected internal virtual T InitialState()
-		 {
-			  return default( T );
-		 }
+      //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
+      //ORIGINAL LINE: @SuppressWarnings("unchecked") private final T[] states = (T[]) new Object[2];
+      private readonly T[] _states = (T[])new object[2];
 
-		 protected internal virtual T StateForCurrentSelector
-		 {
-			 set
-			 {
-				  _states[_selectorIndex] = value;
-			 }
-			 get
-			 {
-				  return _states[_selectorIndex];
-			 }
-		 }
+      private int _selectorIndex;
 
+      public AbstractSelectorOrderer(BranchSelector startSelector, BranchSelector endSelector)
+      {
+         _selectors = new BranchSelector[] { startSelector, endSelector };
+         _states[0] = InitialState();
+         _states[1] = InitialState();
+      }
 
-		 protected internal virtual TraversalBranch NextBranchFromCurrentSelector( TraversalContext metadata, bool switchIfExhausted )
-		 {
-			  return NextBranchFromSelector( metadata, _selectors[_selectorIndex], switchIfExhausted );
-		 }
+      protected internal virtual T InitialState()
+      {
+         return default(T);
+      }
 
-		 protected internal virtual TraversalBranch NextBranchFromNextSelector( TraversalContext metadata, bool switchIfExhausted )
-		 {
-			  return NextBranchFromSelector( metadata, NextSelector(), switchIfExhausted );
-		 }
+      protected internal virtual T StateForCurrentSelector
+      {
+         set
+         {
+            _states[_selectorIndex] = value;
+         }
+         get
+         {
+            return _states[_selectorIndex];
+         }
+      }
 
-		 private TraversalBranch NextBranchFromSelector( TraversalContext metadata, BranchSelector selector, bool switchIfExhausted )
-		 {
-			  TraversalBranch result = selector.Next( metadata );
-			  if ( result == null )
-			  {
-					_selectors[_selectorIndex] = _emptySelector;
-					if ( switchIfExhausted )
-					{
-						 result = NextSelector().next(metadata);
-						 if ( result == null )
-						 {
-							  _selectors[_selectorIndex] = _emptySelector;
-						 }
-					}
-			  }
-			  return result;
-		 }
+      protected internal virtual ITraversalBranch NextBranchFromCurrentSelector(TraversalContext metadata, bool switchIfExhausted)
+      {
+         return NextBranchFromSelector(metadata, _selectors[_selectorIndex], switchIfExhausted);
+      }
 
-		 protected internal virtual BranchSelector NextSelector()
-		 {
-			  _selectorIndex = ( _selectorIndex + 1 ) % 2;
-			  return _selectors[_selectorIndex];
-		 }
+      protected internal virtual ITraversalBranch NextBranchFromNextSelector(TraversalContext metadata, bool switchIfExhausted)
+      {
+         return NextBranchFromSelector(metadata, NextSelector(), switchIfExhausted);
+      }
 
-		 public override Direction CurrentSide()
-		 {
-			  return _selectorIndex == 0 ? Direction.OUTGOING : Direction.INCOMING;
-		 }
+      private ITraversalBranch NextBranchFromSelector(TraversalContext metadata, BranchSelector selector, bool switchIfExhausted)
+      {
+         ITraversalBranch result = selector.Next(metadata);
+         if (result == null)
+         {
+            _selectors[_selectorIndex] = _emptySelector;
+            if (switchIfExhausted)
+            {
+               result = NextSelector().next(metadata);
+               if (result == null)
+               {
+                  _selectors[_selectorIndex] = _emptySelector;
+               }
+            }
+         }
+         return result;
+      }
 
-	}
+      protected internal virtual BranchSelector NextSelector()
+      {
+         _selectorIndex = (_selectorIndex + 1) % 2;
+         return _selectors[_selectorIndex];
+      }
 
+      public override Direction CurrentSide()
+      {
+         return _selectorIndex == 0 ? Direction.OUTGOING : Direction.INCOMING;
+      }
+   }
 }

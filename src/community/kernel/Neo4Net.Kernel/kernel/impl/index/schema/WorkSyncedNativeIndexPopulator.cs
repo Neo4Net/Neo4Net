@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using PhaseTracker = Neo4Net.Kernel.Impl.Api.index.PhaseTracker;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using Neo4Net.Utils.Concurrent;
 	using Neo4Net.Utils.Concurrent;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  _actual.verifyDeferredConstraints( nodePropertyAccessor );

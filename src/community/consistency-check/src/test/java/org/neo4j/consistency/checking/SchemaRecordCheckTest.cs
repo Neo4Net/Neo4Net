@@ -24,15 +24,15 @@ namespace Neo4Net.Consistency.checking
 	using IndexAccessors = Neo4Net.Consistency.checking.index.IndexAccessors;
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccessStub = Neo4Net.Consistency.store.RecordAccessStub;
-	using MalformedSchemaRuleException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MalformedSchemaRuleException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using LabelTokenRecord = Neo4Net.Kernel.Impl.Store.Records.LabelTokenRecord;
 	using PropertyKeyTokenRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyKeyTokenRecord;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -261,7 +261,7 @@ namespace Neo4Net.Consistency.checking
 			  Neo4Net.Consistency.report.ConsistencyReport_SchemaConsistencyReport report = Check( obligationChecker, record );
 
 			  // then
-			  verify( report ).missingObligation( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind.ConstraintIndexRule );
+			  verify( report ).missingObligation( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind.ConstraintIndexRule );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -354,7 +354,7 @@ namespace Neo4Net.Consistency.checking
 			  Neo4Net.Consistency.report.ConsistencyReport_SchemaConsistencyReport report = Check( obligationChecker, record );
 
 			  // then
-			  verify( report ).missingObligation( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind.UniquenessConstraint );
+			  verify( report ).missingObligation( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind.UniquenessConstraint );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

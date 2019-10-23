@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.api.proc
 {
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	/// <summary>
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.api.proc
 		 private readonly IDictionary<string, object> _values = new Dictionary<string, object>();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public <T> T get(Key<T> key) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public <T> T get(Key<T> key) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override T Get<T>( Key<T> key )
 		 {
 			  object o = _values[key.Name()];

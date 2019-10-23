@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.impl.transaction.command
 {
 
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using DynamicNodeLabels = Neo4Net.Kernel.impl.store.DynamicNodeLabels;
 	using PropertyStore = Neo4Net.Kernel.impl.store.PropertyStore;
 	using PropertyType = Neo4Net.Kernel.impl.store.PropertyType;
@@ -47,9 +47,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using RelationshipTypeTokenCommand = Neo4Net.Kernel.impl.transaction.command.Command.RelationshipTypeTokenCommand;
 	using SchemaRuleCommand = Neo4Net.Kernel.impl.transaction.command.Command.SchemaRuleCommand;
 	using PhysicalTransactionRepresentation = Neo4Net.Kernel.impl.transaction.log.PhysicalTransactionRepresentation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 	using Values = Neo4Net.Values.Storable.Values;
 
 	public class Commands

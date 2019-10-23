@@ -27,8 +27,8 @@ namespace Neo4Net.Kernel.impl.locking.community
 
 	using MathUtil = Neo4Net.Helpers.MathUtil;
 	using Logger = Neo4Net.Logging.Logger;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using LockWaitEvent = Neo4Net.Storageengine.Api.@lock.LockWaitEvent;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using LockWaitEvent = Neo4Net.Kernel.Api.StorageEngine.@lock.LockWaitEvent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Thread.currentThread;
@@ -206,7 +206,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 /// <returns> true is lock was acquired, false otherwise </returns>
 		 /// <exception cref="DeadlockDetectedException"> if a deadlock is detected </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized boolean acquireReadLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
+//ORIGINAL LINE: synchronized boolean acquireReadLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
 		 internal virtual bool AcquireReadLock( LockTracer tracer, object tx )
 		 {
 			 lock ( this )
@@ -407,7 +407,7 @@ namespace Neo4Net.Kernel.impl.locking.community
 		 /// <returns> true is lock was acquired, false otherwise </returns>
 		 /// <exception cref="DeadlockDetectedException"> if a deadlock is detected </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: synchronized boolean acquireWriteLock(org.Neo4Net.storageengine.api.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
+//ORIGINAL LINE: synchronized boolean acquireWriteLock(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, Object tx) throws org.Neo4Net.kernel.DeadlockDetectedException
 		 internal virtual bool AcquireWriteLock( LockTracer tracer, object tx )
 		 {
 			 lock ( this )

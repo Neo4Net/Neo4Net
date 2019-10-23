@@ -33,12 +33,12 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using Resource = Neo4Net.GraphDb.Resource;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-	using ProcedureHandle = Neo4Net.Internal.Kernel.Api.procs.ProcedureHandle;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+	using ProcedureHandle = Neo4Net.Kernel.Api.Internal.procs.ProcedureHandle;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using StubResourceManager = Neo4Net.Kernel.api.StubResourceManager;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
@@ -66,9 +66,9 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 

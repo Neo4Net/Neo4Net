@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Parameterized = org.junit.runners.Parameterized;
 
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -35,9 +35,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.ONLINE;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.InternalIndexState.POPULATING;
+//	import static org.Neo4Net.Kernel.Api.Internal.InternalIndexState.POPULATING;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @RunWith(Parameterized.class) public class NativeIndexProviderTest extends NativeIndexProviderTests
@@ -77,7 +77,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 public ProviderFactory ProviderFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Parameterized.Parameter(2) public org.Neo4Net.internal.kernel.api.InternalIndexState expectedStateOnNonExistingSubIndex;
+//ORIGINAL LINE: @Parameterized.Parameter(2) public org.Neo4Net.Kernel.Api.Internal.InternalIndexState expectedStateOnNonExistingSubIndex;
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
 		 public InternalIndexState ExpectedStateOnNonExistingSubIndexConflict;
 

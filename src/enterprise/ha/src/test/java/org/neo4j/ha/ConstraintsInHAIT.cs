@@ -27,7 +27,7 @@ namespace Neo4Net.ha
 
 	using ConstraintViolationException = Neo4Net.GraphDb.ConstraintViolationException;
 	using Label = Neo4Net.GraphDb.Label;
-	using ConstraintCreator = Neo4Net.GraphDb.schema.ConstraintCreator;
+	using ConstraintCreator = Neo4Net.GraphDb.Schema.ConstraintCreator;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;

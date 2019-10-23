@@ -97,7 +97,7 @@ namespace Neo4Net.Kernel.impl.store.counts.keys
 			return nameValue;
 		}
 
-		public static CountsKeyType valueOf( string name )
+		public static CountsKeyType ValueOf( string name )
 		{
 			foreach ( CountsKeyType enumInstance in CountsKeyType.valueList )
 			{

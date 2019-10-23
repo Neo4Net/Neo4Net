@@ -27,16 +27,16 @@ namespace Neo4Net.Kernel.Api.Index
 	using Before = org.junit.Before;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ReporterFactories = Neo4Net.Kernel.Impl.Annotations.ReporterFactories;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using SimpleNodeValueClient = Neo4Net.Storageengine.Api.schema.SimpleNodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
@@ -110,7 +110,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.util.List<long> query(org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected java.util.List<long> query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 protected internal virtual IList<long> Query( params IndexQuery[] predicates )
 		 {
 			  using ( IndexReader reader = Accessor.newReader(), )
@@ -132,7 +132,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected IDisposable query(org.Neo4Net.storageengine.api.schema.SimpleNodeValueClient client, org.Neo4Net.internal.kernel.api.IndexOrder order, org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: protected IDisposable query(org.Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder order, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 protected internal virtual IDisposable Query( SimpleNodeValueClient client, IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IndexReader reader = Accessor.newReader();
@@ -141,7 +141,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: java.util.List<long> assertInOrder(org.Neo4Net.internal.kernel.api.IndexOrder order, org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws Exception
+//ORIGINAL LINE: java.util.List<long> assertInOrder(org.Neo4Net.Kernel.Api.Internal.IndexOrder order, org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws Exception
 		 internal virtual IList<long> AssertInOrder( IndexOrder order, params IndexQuery[] predicates )
 		 {
 			  IList<long> actualIds;

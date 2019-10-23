@@ -155,7 +155,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 public virtual StoreId ReadStoreId( DatabaseLayout databaseLayout )
 		 {
 			  File neoStoreFile = databaseLayout.MetadataStore();
-			  Neo4Net.Storageengine.Api.StoreId kernelStoreId = MetaDataStore.getStoreId( _pageCache, neoStoreFile );
+			  Neo4Net.Kernel.Api.StorageEngine.StoreId kernelStoreId = MetaDataStore.getStoreId( _pageCache, neoStoreFile );
 			  return new StoreId( kernelStoreId.CreationTime, kernelStoreId.RandomId, kernelStoreId.UpgradeTime, kernelStoreId.UpgradeId );
 		 }
 	}

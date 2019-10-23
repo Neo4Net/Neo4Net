@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using LongSet = org.eclipse.collections.api.set.primitive.LongSet;
 
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
 
 	public class Labels : LabelSet
 	{

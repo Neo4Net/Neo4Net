@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -97,27 +97,27 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using IndexImplementation = Neo4Net.Kernel.spi.explicitindex.IndexImplementation;
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using CommandReaderFactory = Neo4Net.Storageengine.Api.CommandReaderFactory;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using CommandReaderFactory = Neo4Net.Kernel.Api.StorageEngine.CommandReaderFactory;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Neo4Net.Utils.Concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.locking.LockService.NO_LOCK_SERVICE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.RECOVERY;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.RECOVERY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.REVERSE_RECOVERY;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.REVERSE_RECOVERY;
 
 	public class RecordStorageEngine : StorageEngine, Lifecycle
 	{
@@ -212,9 +212,9 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> commands, org.Neo4Net.storageengine.api.txstate.ReadableTransactionState txState, org.Neo4Net.storageengine.api.StorageReader storageReader, org.Neo4Net.storageengine.api.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.storageengine.api.txstate.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.CreateConstraintFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException
+//ORIGINAL LINE: @SuppressWarnings("resource") @Override public void createCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState txState, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader storageReader, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceLocker locks, long lastTransactionIdWhenStarted, org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-		 public override void CreateCommands( ICollection<StorageCommand> commands, ReadableTransactionState txState, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Decorator additionalTxStateVisitor )
+		 public override void CreateCommands( ICollection<StorageCommand> commands, ReadableTransactionState txState, StorageReader storageReader, ResourceLocker locks, long lastTransactionIdWhenStarted, Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Decorator additionalTxStateVisitor )
 		 {
 			  if ( txState != null )
 			  {
@@ -241,7 +241,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void apply(org.Neo4Net.storageengine.api.CommandsToApply batch, org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public void apply(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply batch, org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
 		 public override void Apply( CommandsToApply batch, TransactionApplicationMode mode )
 		 {
 			  // Have these command appliers as separate try-with-resource to have better control over

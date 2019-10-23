@@ -25,8 +25,8 @@ namespace Neo4Net.Server.rest.transactional
 
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
@@ -124,7 +124,7 @@ namespace Neo4Net.Server.rest.transactional
 
 		 private InternalTransaction StartTransaction()
 		 {
-			  return _customTransactionTimeout > GraphDatabaseSettings.UNSPECIFIED_TIMEOUT ? _db.beginTransaction( _type, _loginContext, _customTransactionTimeout, TimeUnit.MILLISECONDS ) : _db.beginTransaction( _type, _loginContext );
+			  return _customTransactionTimeout > GraphDatabaseSettings.UNSPECIFIED_TIMEOUT ? _db.BeginTransaction( _type, _loginContext, _customTransactionTimeout, TimeUnit.MILLISECONDS ) : _db.BeginTransaction( _type, _loginContext );
 		 }
 	}
 

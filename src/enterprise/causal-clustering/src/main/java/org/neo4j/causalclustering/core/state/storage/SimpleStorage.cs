@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.core.state.storage
 
 	using Neo4Net.Functions;
 
-	public interface SimpleStorage<T>
+	public interface ISimpleStorage<T>
 	{
 		 bool Exists();
 

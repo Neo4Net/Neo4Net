@@ -29,7 +29,7 @@
 ////////	/// </summary>
 ////////	/// @deprecated The settings API will be completely rewritten in 4.0 
 ////////	[Obsolete("The settings API will be completely rewritten in 4.0")]
-////////	public interface SettingGroup<T> : SettingValidator
+////////	public interface ISettingGroup<T> : SettingValidator
 ////////	{
 ////////		 /// <summary>
 ////////		 /// Apply this setting group to the config and return all of its configured keys and their corresponding values.

@@ -22,11 +22,11 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdates = Neo4Net.Kernel.impl.transaction.state.IndexUpdates;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	public interface IndexingUpdateService
 	{
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 /// application of the updates to the indexes, so that the properties reflect the exact state of the
 		 /// transaction.
 		 /// </summary>
-		 IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, IEntityType type );
+		 IEnumerable<IndexEntryUpdate<SchemaDescriptor>> ConvertToIndexUpdates( IEntityUpdates IEntityUpdates, EntityType type );
 	}
 
 }

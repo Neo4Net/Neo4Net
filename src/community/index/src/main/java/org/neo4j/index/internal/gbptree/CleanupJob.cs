@@ -28,7 +28,7 @@ namespace Neo4Net.Index.Internal.gbptree
 	/// Report state of cleaning progress.
 	/// </para>
 	/// </summary>
-	public interface CleanupJob
+	public interface ICleanupJob
 	{
 		 /// <returns> {@code true} if gbptree still needs cleaning, meaning job is not yet finished or has not started at all.
 		 /// {@code false} if gbptree does not need cleaning, meaning job has finished or it was never needed in the first place. </returns>

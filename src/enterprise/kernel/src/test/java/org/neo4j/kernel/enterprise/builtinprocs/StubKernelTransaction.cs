@@ -23,31 +23,31 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 {
 
 	using Answers = org.mockito.Answers;
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
-	using ExplicitIndexRead = Neo4Net.Internal.Kernel.Api.ExplicitIndexRead;
-	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
-	using Locks = Neo4Net.Internal.Kernel.Api.Locks;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Procedures = Neo4Net.Internal.Kernel.Api.Procedures;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using Token = Neo4Net.Internal.Kernel.Api.Token;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
+	using ExplicitIndexRead = Neo4Net.Kernel.Api.Internal.ExplicitIndexRead;
+	using ExplicitIndexWrite = Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite;
+	using Locks = Neo4Net.Kernel.Api.Internal.Locks;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Procedures = Neo4Net.Kernel.Api.Internal.Procedures;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using Token = Neo4Net.Kernel.Api.Internal.Token;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using StubStatement = Neo4Net.Kernel.builtinprocs.StubStatement;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.mock;
@@ -231,7 +231,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 {
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.Transaction_Type TransactionType()
+		 public override Neo4Net.Kernel.Api.Internal.Transaction_Type TransactionType()
 		 {
 			  return null;
 		 }

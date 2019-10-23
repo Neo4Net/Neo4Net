@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.catchup
 	/// <summary>
 	/// Address provider for catchup client.
 	/// </summary>
-	public interface CatchupAddressProvider
+	public interface ICatchupAddressProvider
 	{
 		 /// <returns> The address to the primary location where up to date requests are required. For a cluster aware provider the obvious choice would be the
 		 /// leader address. </returns>

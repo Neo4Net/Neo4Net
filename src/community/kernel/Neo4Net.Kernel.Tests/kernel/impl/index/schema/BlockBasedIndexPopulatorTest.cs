@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
 	using LocalMemoryTracker = Neo4Net.Memory.LocalMemoryTracker;
 	using ThreadSafePeakIMemoryAllocationTracker = Neo4Net.Memory.ThreadSafePeakIMemoryAllocationTracker;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Barrier = Neo4Net.Test.Barrier;
 	using Race = Neo4Net.Test.Race;
 	using PageCacheAndDependenciesRule = Neo4Net.Test.rule.PageCacheAndDependenciesRule;
@@ -195,13 +195,13 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 					// and waiting for merge to get going
 					monitor.Barrier.awaitUninterruptibly();
 					// this is a bit fuzzy, but what we want is to assert that the scan doesn't represent 100% of the work
-					assertEquals( 0.5f, populator.Progress( Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done ).Progress, 0.1f );
+					assertEquals( 0.5f, populator.Progress( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done ).Progress, 0.1f );
 					monitor.Barrier.release();
 					monitor.MergeFinishedBarrier.awaitUninterruptibly();
-					assertEquals( 0.7f, populator.Progress( Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done ).Progress, 0.1f );
+					assertEquals( 0.7f, populator.Progress( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done ).Progress, 0.1f );
 					monitor.MergeFinishedBarrier.release();
 					mergeFuture.get();
-					assertEquals( 1f, populator.Progress( Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done ).Progress, 0f );
+					assertEquals( 1f, populator.Progress( Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done ).Progress, 0f );
 			  }
 			  finally
 			  {

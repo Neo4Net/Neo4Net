@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
 
 	public class RecordNodeCursor : NodeRecord, StorageNodeCursor
 	{

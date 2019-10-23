@@ -235,9 +235,9 @@ namespace Neo4Net.Kernel.impl.util.collection
 			  assertEquals( 12, _map.getIfAbsentPutWithKey( 2, function ) );
 			  assertEquals( 12, _map.getIfAbsentPutWithKey( 2, function ) );
 
-			  verify( function ).valueOf( eq( 0L ) );
-			  verify( function ).valueOf( eq( 1L ) );
-			  verify( function ).valueOf( eq( 2L ) );
+			  verify( function ).ValueOf( eq( 0L ) );
+			  verify( function ).ValueOf( eq( 1L ) );
+			  verify( function ).ValueOf( eq( 2L ) );
 			  verifyNoMoreInteractions( function );
 		 }
 
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 				 this.outerInstance = outerInstance;
 			 }
 
-			 public override long valueOf( long x )
+			 public override long ValueOf( long x )
 			 {
 				  return 10 + x;
 			 }

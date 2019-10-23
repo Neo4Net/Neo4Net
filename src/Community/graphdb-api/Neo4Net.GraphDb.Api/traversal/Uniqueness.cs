@@ -157,7 +157,7 @@ namespace Neo4Net.GraphDb.Traversal
 			return nameValue;
 		}
 
-		public static Uniqueness valueOf( string name )
+		public static Uniqueness ValueOf( string name )
 		{
 			foreach ( Uniqueness enumInstance in Uniqueness.valueList )
 			{

@@ -22,18 +22,18 @@
 namespace Neo4Net.Kernel.Impl.Api.schema
 {
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
 	/// Combine multiple progressor to act like one single logical progressor seen from client's perspective.
 	/// </summary>
-	public class BridgingIndexProgressor : Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient, IndexProgressor
+	public class BridgingIndexProgressor : Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient, IndexProgressor
 	{
-		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient _client;
+		 private readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient _client;
 		 private readonly int[] _keys;
 		 // This is a thread-safe queue because it can be used in parallel scenarios.
 		 // The overhead of a concurrent queue in this case is negligible since typically there will be two or a very few number
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.Impl.Api.schema
 		 private readonly LinkedList<IndexProgressor> _progressors = new ConcurrentLinkedQueue<IndexProgressor>();
 		 private IndexProgressor _current;
 
-		 public BridgingIndexProgressor( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, int[] keys )
+		 public BridgingIndexProgressor( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, int[] keys )
 		 {
 			  this._client = client;
 			  this._keys = keys;

@@ -23,15 +23,15 @@
 namespace Neo4Net.causalclustering.discovery.procedures
 {
 	using Neo4Net.Collections;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 	using ResourceTracker = Neo4Net.Kernel.api.ResourceTracker;
 	using CallableProcedure = Neo4Net.Kernel.api.proc.CallableProcedure;
 	using Context = Neo4Net.Kernel.api.proc.Context;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureSignature;
 
 	internal abstract class RoleProcedure : Neo4Net.Kernel.api.proc.CallableProcedure_BasicProcedure
 	{

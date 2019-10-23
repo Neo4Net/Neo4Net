@@ -31,7 +31,7 @@ namespace Neo4Net.Index
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Neo4NetMatchers = Neo4Net.Test.mockito.matcher.Neo4NetMatchers;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 

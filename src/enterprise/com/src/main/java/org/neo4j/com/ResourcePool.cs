@@ -75,7 +75,7 @@ namespace Neo4Net.com
 				}
 		  }
 
-		 public interface CheckStrategy
+		 public interface ICheckStrategy
 		 {
 			  bool ShouldCheck();
 		 }

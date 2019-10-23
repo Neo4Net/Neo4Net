@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.ha.com.slave
 {
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public interface MasterClientFactory
 	{

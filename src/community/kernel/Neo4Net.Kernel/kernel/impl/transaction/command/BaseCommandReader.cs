@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using LogPositionMarker = Neo4Net.Kernel.impl.transaction.log.LogPositionMarker;
 	using PositionAwareChannel = Neo4Net.Kernel.impl.transaction.log.PositionAwareChannel;
 	using ReadableClosableChannel = Neo4Net.Kernel.impl.transaction.log.ReadableClosableChannel;
-	using CommandReader = Neo4Net.Storageengine.Api.CommandReader;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
+	using CommandReader = Neo4Net.Kernel.Api.StorageEngine.CommandReader;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
 
 	/// <summary>
 	/// Basic functionality for <seealso cref="CommandReader"/> for <seealso cref="RecordStorageEngine"/>.
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 /// Handles format back to 1.9 where the command format didn't have a version.
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public final Command read(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public final Command read(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public override Command Read( ReadableChannel channel )
 		 {
 			  sbyte commandType;
@@ -56,11 +56,11 @@ namespace Neo4Net.Kernel.impl.transaction.command
 		 /// <returns> <seealso cref="Command"/> or {@code null} if end reached. </returns>
 		 /// <exception cref="IOException"> if channel throws exception. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract Command read(byte commandType, org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract Command read(byte commandType, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException;
 		 protected internal abstract Command Read( sbyte commandType, ReadableChannel channel );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected java.io.IOException unknownCommandType(byte commandType, org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected java.io.IOException unknownCommandType(byte commandType, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 protected internal virtual IOException UnknownCommandType( sbyte commandType, ReadableChannel channel )
 		 {
 			  string message = "Unknown command type[" + commandType + "]";

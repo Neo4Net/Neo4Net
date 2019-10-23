@@ -28,7 +28,7 @@ namespace Neo4Net.Index
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;

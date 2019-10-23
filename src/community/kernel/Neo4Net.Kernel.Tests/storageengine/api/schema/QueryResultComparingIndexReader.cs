@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Storageengine.Api.schema
+namespace Neo4Net.Kernel.Api.StorageEngine.schema
 {
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using NodeValueIterator = Neo4Net.Kernel.Impl.Index.Schema.NodeValueIterator;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -53,7 +53,7 @@ namespace Neo4Net.Storageengine.Api.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.internal.kernel.api.IndexQuery... predicates) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public org.Neo4Net.collection.PrimitiveLongResourceIterator query(org.Neo4Net.Kernel.Api.Internal.IndexQuery... predicates) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 public override PrimitiveLongResourceIterator Query( params IndexQuery[] predicates )
 		 {
 			  PrimitiveLongResourceIterator mainResult = _actual.query( predicates );
@@ -109,7 +109,7 @@ namespace Neo4Net.Storageengine.Api.schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void query(IndexProgressor_NodeValueClient client, org.Neo4Net.internal.kernel.api.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.internal.kernel.api.IndexQuery... query) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: public void query(IndexProgressor_NodeValueClient client, org.Neo4Net.Kernel.Api.Internal.IndexOrder indexOrder, boolean needsValues, org.Neo4Net.Kernel.Api.Internal.IndexQuery... query) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 public override void Query( IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, params IndexQuery[] query )
 		 {
 			  // Also call the other query method and bake comparison from it into a wrapped version of this iterator
@@ -127,13 +127,13 @@ namespace Neo4Net.Storageengine.Api.schema
 		 {
 			 private readonly QueryResultComparingIndexReader _outerInstance;
 
-			 private Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient _client;
+			 private Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient _client;
 			 private IndexOrder _indexOrder;
 			 private bool _needsValues;
 			 private IndexQuery[] _query;
 			 private PrimitiveLongResourceIterator _otherResult;
 
-			 public IndexProgressor_NodeValueClientAnonymousInnerClass( QueryResultComparingIndexReader outerInstance, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, IndexQuery[] query, PrimitiveLongResourceIterator otherResult )
+			 public IndexProgressor_NodeValueClientAnonymousInnerClass( QueryResultComparingIndexReader outerInstance, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, IndexOrder indexOrder, bool needsValues, IndexQuery[] query, PrimitiveLongResourceIterator otherResult )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._client = client;
@@ -156,9 +156,9 @@ namespace Neo4Net.Storageengine.Api.schema
 			 {
 				 private readonly IndexProgressor_NodeValueClientAnonymousInnerClass _outerInstance;
 
-				 private Neo4Net.Storageengine.Api.schema.IndexProgressor _progressor;
+				 private Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor _progressor;
 
-				 public IndexProgressorAnonymousInnerClass( IndexProgressor_NodeValueClientAnonymousInnerClass outerInstance, Neo4Net.Storageengine.Api.schema.IndexProgressor progressor )
+				 public IndexProgressorAnonymousInnerClass( IndexProgressor_NodeValueClientAnonymousInnerClass outerInstance, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor progressor )
 				 {
 					 this.outerInstance = outerInstance;
 					 this._progressor = progressor;

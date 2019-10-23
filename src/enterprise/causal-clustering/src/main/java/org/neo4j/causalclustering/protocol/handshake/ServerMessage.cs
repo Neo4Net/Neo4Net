@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 	/// <summary>
 	/// Messages to the server, generally requests.
 	/// </summary>
-	public interface ServerMessage
+	public interface IServerMessage
 	{
 		 void Dispatch( ServerMessageHandler handler );
 	}

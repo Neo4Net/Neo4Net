@@ -23,7 +23,7 @@
 namespace Neo4Net.com.storecopy
 {
 
-	public interface StoreWriter : System.IDisposable
+	public interface IStoreWriter : System.IDisposable
 	{
 		 /// <summary>
 		 /// Pipe the data from the given <seealso cref="ReadableByteChannel"/> to a location given by the {@code path}, using the

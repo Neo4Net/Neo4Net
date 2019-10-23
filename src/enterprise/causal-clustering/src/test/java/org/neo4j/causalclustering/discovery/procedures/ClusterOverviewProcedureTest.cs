@@ -33,7 +33,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using Neo4Net.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
+//ORIGINAL LINE: final org.Neo4Net.collection.RawIterator<Object[],org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> members = procedure.apply(null, new Object[0], null);
 			  RawIterator<object[], ProcedureException> members = procedure.Apply( null, new object[0], null );
 
 			  assertThat( members.Next(), new IsRecord(this, theLeader.Uuid, 5000, RoleInfo.LEADER, asSet("core", "core0")) );

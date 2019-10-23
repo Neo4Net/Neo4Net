@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.api
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using LabelNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.LabelNotFoundKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using LabelNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.LabelNotFoundKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 
 	/// <summary>
 	/// Instances allow looking up ids back to their names.

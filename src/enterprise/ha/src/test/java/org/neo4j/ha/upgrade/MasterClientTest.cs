@@ -68,8 +68,8 @@ namespace Neo4Net.ha.upgrade
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using NullLogService = Neo4Net.Logging.Internal.NullLogService;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

@@ -61,9 +61,9 @@ namespace Neo4Net.Kernel.ha.factory
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
 	using NamedThreadFactory = Neo4Net.Helpers.NamedThreadFactory;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.ha.factory
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using UsageData = Neo4Net.Udc.UsageData;
 	using UsageDataKeys = Neo4Net.Udc.UsageDataKeys;
 
@@ -470,7 +470,7 @@ namespace Neo4Net.Kernel.ha.factory
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );

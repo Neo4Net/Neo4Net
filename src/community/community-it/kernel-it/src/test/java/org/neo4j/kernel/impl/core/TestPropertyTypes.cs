@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel.impl.core
 
 
 	using Node = Neo4Net.GraphDb.Node;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using ArrayUtil = Neo4Net.Helpers.ArrayUtil;
 	using Strings = Neo4Net.Helpers.Strings;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;

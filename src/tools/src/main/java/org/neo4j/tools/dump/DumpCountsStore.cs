@@ -27,8 +27,8 @@ using System.Text;
 namespace Neo4Net.tools.dump
 {
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
@@ -52,8 +52,8 @@ namespace Neo4Net.tools.dump
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.io.pagecache.impl.muninn.StandalonePageCacheFactory.createPageCache;
@@ -172,7 +172,7 @@ namespace Neo4Net.tools.dump
 					tokenIds = RelationshipTypes( Schema.EntityTokenIds );
 					break;
 			  default:
-					throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + Schema.entityType() );
+					throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + Schema.entityType() );
 			  }
 			  @out.printf( "\tIndexStatistics[(%s {%s})]:\tupdates=%d, size=%d%n", tokenIds, PropertyKeys( Schema.PropertyIds ), updates, size );
 		 }
@@ -190,7 +190,7 @@ namespace Neo4Net.tools.dump
 					tokenIds = RelationshipTypes( Schema.EntityTokenIds );
 					break;
 			  default:
-					throw new System.InvalidOperationException( "Indexing is not supported for IEntityType: " + Schema.entityType() );
+					throw new System.InvalidOperationException( "Indexing is not supported for EntityType: " + Schema.entityType() );
 			  }
 			  @out.printf( "\tIndexSample[(%s {%s})]:\tunique=%d, size=%d%n", tokenIds, PropertyKeys( Schema.PropertyIds ), unique, size );
 		 }

@@ -77,7 +77,7 @@ namespace Neo4Net.com.storecopy
 		 /// This is built as a pluggable interface to allow backup and HA to use this code independently of each other,
 		 /// each implements it's own version of how to copy a store from a remote location.
 		 /// </summary>
-		 public interface StoreCopyRequester
+		 public interface IStoreCopyRequester
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: org.Neo4Net.com.Response<?> copyStore(StoreWriter writer);

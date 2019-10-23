@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

@@ -25,13 +25,13 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 	using ArgumentCaptor = org.mockito.ArgumentCaptor;
 
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using UniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.UniqueIndexSampler;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -273,7 +273,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.populator
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.internal.kernel.api.schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private void verifyVerifyUniqueness(org.Neo4Net.kernel.api.impl.schema.SchemaIndex index, org.Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor descriptor, Object... values) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private void VerifyVerifyUniqueness( SchemaIndex index, SchemaDescriptor descriptor, params object[] values )
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

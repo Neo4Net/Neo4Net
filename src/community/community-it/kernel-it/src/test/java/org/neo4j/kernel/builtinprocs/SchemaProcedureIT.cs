@@ -30,11 +30,11 @@ namespace Neo4Net.Kernel.builtinprocs
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using Procedures = Neo4Net.Internal.Kernel.Api.Procedures;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
+	using Procedures = Neo4Net.Kernel.Api.Internal.Procedures;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using KernelIntegrationTest = Neo4Net.Kernel.Impl.Api.integrationtest.KernelIntegrationTest;
@@ -51,7 +51,7 @@ namespace Neo4Net.Kernel.builtinprocs
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asList;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 
 	public class SchemaProcedureIT : KernelIntegrationTest
 	{

@@ -21,7 +21,7 @@ namespace Neo4Net.Server.rest.transactional
 {
 	using Test = org.junit.Test;
 
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
@@ -50,7 +50,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			  managementKernelTransaction.ReopenAfterPeriodicCommit();
 
-			  verify( _databaseFacade, times( 2 ) ).beginTransaction( _type, _loginContext, 10, TimeUnit.MILLISECONDS );
+			  verify( _databaseFacade, times( 2 ) ).BeginTransaction( _type, _loginContext, 10, TimeUnit.MILLISECONDS );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -61,7 +61,7 @@ namespace Neo4Net.Server.rest.transactional
 
 			  managementKernelTransaction.ReopenAfterPeriodicCommit();
 
-			  verify( _databaseFacade, times( 2 ) ).beginTransaction( _type, _loginContext );
+			  verify( _databaseFacade, times( 2 ) ).BeginTransaction( _type, _loginContext );
 		 }
 	}
 

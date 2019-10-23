@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using ClientConnectionInfo = Neo4Net.Kernel.impl.query.clientconnection.ClientConnectionInfo;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Clocks = Neo4Net.Time.Clocks;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;
 

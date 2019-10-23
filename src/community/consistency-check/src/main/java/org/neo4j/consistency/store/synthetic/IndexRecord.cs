@@ -20,7 +20,7 @@
 namespace Neo4Net.Consistency.store.synthetic
 {
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	public class IndexRecord : AbstractBaseRecord
 	{

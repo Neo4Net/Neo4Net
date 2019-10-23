@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha.cluster
 	using OnlineBackupKernelExtension = Neo4Net.backup.OnlineBackupKernelExtension;
 	using InstanceId = Neo4Net.cluster.InstanceId;
 	using MemberIsAvailable = Neo4Net.cluster.member.paxos.MemberIsAvailable;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueType = Neo4Net.Values.Storable.ValueType;
@@ -164,7 +164,7 @@ namespace Neo4Net.Kernel.Api.Index
 
 					// Expected result based on query
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> predicate = org.Neo4Net.internal.kernel.api.IndexQuery.range(0, from, fromInclusive, to, toInclusive);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> predicate = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(0, from, fromInclusive, to, toInclusive);
 					IndexQuery.RangePredicate<object> predicate = IndexQuery.range( 0, from, fromInclusive, to, toInclusive );
 					IList<long> expectedIds = expectedIds( sortedValues, from, to, fromInclusive, toInclusive );
 

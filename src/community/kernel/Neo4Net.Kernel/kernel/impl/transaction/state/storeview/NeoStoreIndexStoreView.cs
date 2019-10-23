@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 
 	using Neo4Net.Helpers.Collections;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using CountsAccessor = Neo4Net.Kernel.Impl.Api.CountsAccessor;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using PropertyRecord = Neo4Net.Kernel.Impl.Store.Records.PropertyRecord;
 	using Record = Neo4Net.Kernel.Impl.Store.Records.Record;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -145,13 +145,13 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: public org.Neo4Net.values.storable.Value getNodePropertyValue(long nodeId, int propertyKeyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 		 public override Value GetNodePropertyValue( long nodeId, int propertyKeyId )
 		 {
 			  NodeRecord node = NodeStore.getRecord( nodeId, NodeStore.newRecord(), FORCE );
 			  if ( !node.InUse() )
 			  {
-					throw new IEntityNotFoundException( IEntityType.NODE, nodeId );
+					throw new IEntityNotFoundException( EntityType.NODE, nodeId );
 			  }
 			  long firstPropertyId = node.NextProp;
 			  if ( firstPropertyId == Record.NO_NEXT_PROPERTY.intValue() )
@@ -169,10 +169,10 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 			  return Values.NO_VALUE;
 		 }
 
-		 public override void LoadProperties( long IEntityId, IEntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
+		 public override void LoadProperties( long IEntityId, EntityType type, MutableIntSet propertyIds, PropertyLoadSink sink )
 		 {
 			  PrimitiveRecord IEntity;
-			  if ( type == IEntityType.NODE )
+			  if ( type == EntityType.NODE )
 			  {
 					entity = NodeStore.getRecord( IEntityId, NodeStore.newRecord(), FORCE );
 			  }

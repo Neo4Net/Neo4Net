@@ -25,7 +25,7 @@ namespace Neo4Net.Values
 	using MethodSource = org.junit.jupiter.@params.provider.MethodSource;
 
 
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 	using MapValueBuilder = Neo4Net.Values.@virtual.MapValueBuilder;
@@ -154,8 +154,8 @@ namespace Neo4Net.Values
 			  if ( obj is IList<object> )
 			  {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: return fromList(((java.util.List<?>) obj).stream().map(ValueMapperTest::valueOf).collect(toList()));
-					return fromList( ( ( IList<object> ) obj ).Select( ValueMapperTest.valueOf ).ToList() );
+//ORIGINAL LINE: return fromList(((java.util.List<?>) obj).stream().map(ValueMapperTest::ValueOf).collect(toList()));
+					return fromList( ( ( IList<object> ) obj ).Select( ValueMapperTest.ValueOf ).ToList() );
 			  }
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: if (obj instanceof java.util.Map<?,?>)

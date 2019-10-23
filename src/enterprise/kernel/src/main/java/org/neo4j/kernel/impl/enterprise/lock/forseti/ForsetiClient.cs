@@ -45,11 +45,11 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using SimpleBitSet = Neo4Net.Kernel.impl.util.collection.SimpleBitSet;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using LockWaitEvent = Neo4Net.Storageengine.Api.@lock.LockWaitEvent;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using LockWaitEvent = Neo4Net.Kernel.Api.StorageEngine.@lock.LockWaitEvent;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 	using UnsafeUtil = Neo4Net.@unsafe.Impl.Internal.Dragons.UnsafeUtil;
 
 	// Please note. Except separate test cases for particular classes related to community locking
@@ -183,7 +183,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  _hasLocks = true;
@@ -858,7 +858,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// 
 		 /// </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.LockWaitEvent waitEvent, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeSharedToExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent waitEvent, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, java.util.concurrent.ConcurrentMap<long,ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeSharedToExclusive( LockTracer tracer, LockWaitEvent waitEvent, ResourceType resourceType, ConcurrentMap<long, ForsetiLockManager.Lock> lockMap, long resourceId, SharedLock sharedLock, long waitStartMillis )
 		 {
 			  int tries = 0;
@@ -899,7 +899,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 /// <summary>
 		 /// Attempt to upgrade a share lock that we hold to an exclusive lock. </summary>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.LockWaitEvent priorEvent, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: private boolean tryUpgradeToExclusiveWithShareLockHeld(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.LockWaitEvent priorEvent, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 private bool TryUpgradeToExclusiveWithShareLockHeld( LockTracer tracer, LockWaitEvent priorEvent, ResourceType resourceType, long resourceId, SharedLock sharedLock, int tries, long waitStartMillis )
 		 {
 			  if ( sharedLock.TryAcquireUpdateLock( this ) )

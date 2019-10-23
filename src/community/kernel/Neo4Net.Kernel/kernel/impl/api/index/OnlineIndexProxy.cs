@@ -24,16 +24,16 @@ namespace Neo4Net.Kernel.Impl.Api.index
 {
 
 	using Neo4Net.GraphDb;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using UpdateCountingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.UpdateCountingIndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using CapableIndexDescriptor = Neo4Net.Storageengine.Api.schema.CapableIndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using CapableIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.CapableIndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	public class OnlineIndexProxy : IndexProxy
@@ -194,7 +194,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 			 get
 			 {
-				  return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.Done;
+				  return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.Done;
 			 }
 		 }
 
@@ -214,7 +214,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 			  Accessor.verifyDeferredConstraints( nodePropertyAccessor );

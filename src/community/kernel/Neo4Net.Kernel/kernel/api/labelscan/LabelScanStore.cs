@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.api.labelscan
 	using ConsistencyCheckable = Neo4Net.Kernel.Impl.Index.Schema.ConsistencyCheckable;
 	using UnderlyingStorageException = Neo4Net.Kernel.impl.store.UnderlyingStorageException;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 	/// <summary>
 	/// Stores label-->nodes mappings. It receives updates in the form of condensed label->node transaction data

@@ -23,7 +23,7 @@ namespace Neo4Net.Server.modules
 	/// An interface which the NeoServer uses to initialise server modules (e.g.
 	/// JAX-RS, static content, webadmin)
 	/// </summary>
-	public interface ServerModule
+	public interface IServerModule
 	{
 		 void Start();
 

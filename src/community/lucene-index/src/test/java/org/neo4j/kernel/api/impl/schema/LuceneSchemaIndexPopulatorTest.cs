@@ -34,7 +34,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using ExtendWith = org.junit.jupiter.api.extension.ExtendWith;
 
 
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using DirectoryFactory = Neo4Net.Kernel.Api.Impl.Index.storage.DirectoryFactory;
@@ -47,9 +47,9 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using IndexStoreView = Neo4Net.Kernel.Impl.Api.index.IndexStoreView;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using OperationalMode = Neo4Net.Kernel.impl.factory.OperationalMode;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DefaultFileSystemExtension = Neo4Net.Test.extension.DefaultFileSystemExtension;
 	using Inject = Neo4Net.Test.extension.Inject;
 	using TestDirectoryExtension = Neo4Net.Test.extension.TestDirectoryExtension;
@@ -317,7 +317,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void updatePopulator(org.Neo4Net.kernel.api.index.IndexPopulator populator, Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates, org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: private static void updatePopulator(org.Neo4Net.kernel.api.index.IndexPopulator populator, Iterable<org.Neo4Net.kernel.api.index.IndexEntryUpdate<?>> updates, org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws java.io.IOException, org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 private static void UpdatePopulator<T1>( IndexPopulator populator, IEnumerable<T1> updates, NodePropertyAccessor accessor )
 		 {
 			  using ( IndexUpdater updater = populator.NewPopulatingUpdater( accessor ) )

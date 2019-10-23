@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 
-	public interface ConsistencyCheckable
+	public interface IConsistencyCheckable
 	{
 		 bool ConsistencyCheck( ReporterFactory reporterFactory );
 	}

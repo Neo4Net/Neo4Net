@@ -36,7 +36,7 @@ namespace Neo4Net.Index
 	using ValueContext = Neo4Net.Index.lucene.ValueContext;
 	using MyRelTypes = Neo4Net.Kernel.impl.MyRelTypes;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 
@@ -49,11 +49,11 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AccessMode_Static.READ;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.READ;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthSubject.ANONYMOUS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthSubject.ANONYMOUS;
 
 	public class ExplicitIndexTest
 	{
@@ -486,7 +486,7 @@ namespace Neo4Net.Index
 			  }
 
 			  // when
-			  using ( Transaction tx = Db.beginTransaction( @explicit, new SecurityContext( ANONYMOUS, READ ) ) )
+			  using ( Transaction tx = Db.BeginTransaction( @explicit, new SecurityContext( ANONYMOUS, READ ) ) )
 			  {
 					IndexHits<Node> hits = nodeIndex.get( key, value );
 					// then
@@ -520,7 +520,7 @@ namespace Neo4Net.Index
 			  }
 
 			  // when
-			  using ( Transaction tx = Db.beginTransaction( @explicit, new SecurityContext( ANONYMOUS, READ ) ) )
+			  using ( Transaction tx = Db.BeginTransaction( @explicit, new SecurityContext( ANONYMOUS, READ ) ) )
 			  {
 					IndexHits<Relationship> hits = relationshipIndex.get( key, value );
 					// then

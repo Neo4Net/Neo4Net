@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.discovery
 {
-	public interface ClientConnector
+	public interface IClientConnector
 	{
 		 ClientConnectorAddresses Connectors();
 	}

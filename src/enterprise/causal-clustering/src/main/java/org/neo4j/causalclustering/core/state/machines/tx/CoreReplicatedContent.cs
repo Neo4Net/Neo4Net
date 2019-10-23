@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 
 	using ReplicatedContent = Neo4Net.causalclustering.core.replication.ReplicatedContent;
 
-	public interface CoreReplicatedContent : ReplicatedContent
+	public interface ICoreReplicatedContent : ReplicatedContent
 	{
 		 void Dispatch( CommandDispatcher commandDispatcher, long commandIndex, System.Action<Result> callback );
 	}

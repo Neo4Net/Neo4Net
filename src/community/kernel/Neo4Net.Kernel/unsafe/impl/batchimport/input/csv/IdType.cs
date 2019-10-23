@@ -100,7 +100,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.input.csv
 			return nameValue;
 		}
 
-		public static IdType valueOf( string name )
+		public static IdType ValueOf( string name )
 		{
 			foreach ( IdType enumInstance in IdType.valueList )
 			{

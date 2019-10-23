@@ -48,7 +48,7 @@ namespace Neo4Net.Test.ha
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.ha.cluster.modeswitch.HighAvailabilityModeSwitcher.SLAVE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.StoreId.DEFAULT;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
 
 	public class ClusterMembersSnapshotTest
 	{

@@ -27,9 +27,9 @@ namespace Neo4Net.Kernel.impl.locking
 	using MutableInt = org.apache.commons.lang3.mutable.MutableInt;
 
 
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class DeferringLockClient : Locks_Client
 	{
@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireShared( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  AssertNotStopped();
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 		 public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 		 {
 			  AssertNotStopped();

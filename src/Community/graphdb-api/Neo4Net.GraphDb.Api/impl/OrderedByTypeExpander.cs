@@ -39,7 +39,7 @@ namespace Neo4Net.GraphDb.impl
 
 		 private OrderedByTypeExpander( ICollection<Pair<IRelationshipType, Direction>> orderedTypes ) : base( Collections.emptyMap() )
 		 {
-			  this._orderedTypes = orderedTypes;
+			  _orderedTypes = orderedTypes;
 		 }
 
 		 public override StandardExpander Add( IRelationshipType type, Direction direction )
@@ -84,11 +84,11 @@ namespace Neo4Net.GraphDb.impl
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 //ORIGINAL LINE: ResourceIterator<org.Neo4Net.graphdb.Relationship> doExpand(final org.Neo4Net.graphdb.Path path, org.Neo4Net.graphdb.traversal.BranchState state)
-		 internal override ResourceIterator<IRelationship> DoExpand( IPath path, BranchState state )
+		 internal override ResourceIterator<IRelationship> DoExpand( IPath path, IBranchState state )
 		 {
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
 //ORIGINAL LINE: final org.Neo4Net.graphdb.Node node = path.endNode();
-			  INode node = path.EndNode();
+			  INode node = path.EndNode;
 			  return new NestingResourceIteratorAnonymousInnerClass( this, _orderedTypes.GetEnumerator(), node );
 		 }
 
@@ -101,7 +101,7 @@ namespace Neo4Net.GraphDb.impl
 			 public NestingResourceIteratorAnonymousInnerClass( OrderedByTypeExpander outerInstance, UnknownType iterator, INode node ) : base( iterator )
 			 {
 				 this.outerInstance = outerInstance;
-				 this._node = node;
+				 _node = node;
 			 }
 
 			 protected internal override ResourceIterator<IRelationship> createNestedIterator( Pair<IRelationshipType, Direction> entry )

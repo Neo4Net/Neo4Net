@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using CountsTracker = Neo4Net.Kernel.impl.store.counts.CountsTracker;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using SchemaRuleCommand = Neo4Net.Kernel.impl.transaction.command.Command.SchemaRuleCommand;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 	public class CountsStoreTransactionApplier : TransactionApplier_Adapter
 	{

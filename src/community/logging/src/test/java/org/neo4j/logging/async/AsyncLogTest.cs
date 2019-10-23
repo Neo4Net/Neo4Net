@@ -139,7 +139,7 @@ namespace Neo4Net.Logging.async
 				 return nameValue;
 			 }
 
-			 public static Invocation valueOf( string name )
+			 public static Invocation ValueOf( string name )
 			 {
 				 foreach ( Invocation enumInstance in Invocation.valueList )
 				 {
@@ -210,7 +210,7 @@ namespace Neo4Net.Logging.async
 				 return nameValue;
 			 }
 
-			 public static Level valueOf( string name )
+			 public static Level ValueOf( string name )
 			 {
 				 foreach ( Level enumInstance in Level.valueList )
 				 {
@@ -277,7 +277,7 @@ namespace Neo4Net.Logging.async
 				 return nameValue;
 			 }
 
-			 public static Style valueOf( string name )
+			 public static Style ValueOf( string name )
 			 {
 				 foreach ( Style enumInstance in Style.valueList )
 				 {

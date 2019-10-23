@@ -25,7 +25,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 	using Test = org.junit.Test;
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using Config = Neo4Net.Kernel.configuration.Config;

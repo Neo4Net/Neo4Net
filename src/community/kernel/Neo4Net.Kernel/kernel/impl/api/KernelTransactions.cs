@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Neo4Net.Functions;
 	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
@@ -60,7 +60,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Tracers = Neo4Net.Kernel.monitoring.tracing.Tracers;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 
 

@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.CodeGen
 {
-	public interface ClassEmitter
+	public interface IClassEmitter
 	{
 		 MethodEmitter Method( MethodDeclaration method );
 

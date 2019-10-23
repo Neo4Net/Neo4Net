@@ -26,7 +26,7 @@ namespace Neo4Net.management
 	using ManagementInterface = Neo4Net.Jmx.ManagementInterface;
 
 	[ManagementInterface(name : CausalClustering_Fields.NAME), Description("Information about an instance participating in a causal cluster")]
-	public interface CausalClustering
+	public interface ICausalClustering
 	{
 
 		 [Description("The current role this member has in the cluster")]

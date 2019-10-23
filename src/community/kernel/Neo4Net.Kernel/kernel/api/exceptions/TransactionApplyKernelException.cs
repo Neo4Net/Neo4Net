@@ -21,10 +21,10 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 
 	/// <summary>
-	/// A <seealso cref="KernelException"/> thrown by a <seealso cref="org.Neo4Net.storageengine.api.StorageEngine"/> if it failed to apply a
+	/// A <seealso cref="KernelException"/> thrown by a <seealso cref="org.Neo4Net.Kernel.Api.StorageEngine.StorageEngine"/> if it failed to apply a
 	/// transaction.
 	/// </summary>
 	public class TransactionApplyKernelException : KernelException

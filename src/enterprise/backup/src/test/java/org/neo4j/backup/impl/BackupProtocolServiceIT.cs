@@ -87,8 +87,8 @@ namespace Neo4Net.backup.impl
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 	using Barrier = Neo4Net.Test.Barrier;
 	using DbRepresentation = Neo4Net.Test.DbRepresentation;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;

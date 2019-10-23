@@ -38,7 +38,7 @@ namespace Neo4Net.Consistency.checking.full
 	using Neo4Net.Helpers.Collections;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using ProgressMonitorFactory = Neo4Net.Helpers.progress.ProgressMonitorFactory;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using LabelScanStore = Neo4Net.Kernel.api.labelscan.LabelScanStore;
 	using NonTransactionalTokenNameLookup = Neo4Net.Kernel.Impl.Api.NonTransactionalTokenNameLookup;
 	using TokenHolders = Neo4Net.Kernel.impl.core.TokenHolders;
@@ -48,8 +48,8 @@ namespace Neo4Net.Consistency.checking.full
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using StoreAccess = Neo4Net.Kernel.impl.store.StoreAccess;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.consistency.checking.full.MultiPassStore.ARRAYS;
@@ -137,7 +137,7 @@ namespace Neo4Net.Consistency.checking.full
 					tasks.Add( RecordScanner( CheckStage.Stage8PSProps.name(), new IterableStore<>(_nativeStores.NodeStore, true), new PropertyAndNode2LabelIndexProcessor(_reporter, checkIndexes ? _indexes : null, propertyReader, _cacheAccess, mandatoryProperties.ForNodes(_reporter)), CheckStage.Stage8PSProps, ROUND_ROBIN, new IterableStore<>(_nativeStores.PropertyStore, true) ) );
 
 					// Checking that relationships are in their expected relationship indexes.
-					IList<StoreIndexDescriptor> relationshipIndexes = Iterables.stream( _indexes.onlineRules() ).filter(rule => rule.schema().entityType() == IEntityType.RELATIONSHIP).collect(Collectors.toList());
+					IList<StoreIndexDescriptor> relationshipIndexes = Iterables.stream( _indexes.onlineRules() ).filter(rule => rule.schema().entityType() == EntityType.RELATIONSHIP).collect(Collectors.toList());
 					if ( checkIndexes && relationshipIndexes.Count > 0 )
 					{
 						 tasks.Add( RecordScanner( CheckStage.Stage9RSIndexes.name(), new IterableStore<>(_nativeStores.RelationshipStore, true), new RelationshipIndexProcessor(_reporter, _indexes, propertyReader, relationshipIndexes), CheckStage.Stage9RSIndexes, ROUND_ROBIN, new IterableStore<>(_nativeStores.PropertyStore, true) ) );

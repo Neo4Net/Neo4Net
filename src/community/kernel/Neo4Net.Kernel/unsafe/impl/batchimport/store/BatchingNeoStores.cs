@@ -280,7 +280,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.store
 
 		 private static Config GetNeo4NetConfig( Configuration config, Config dbConfig )
 		 {
-			  dbConfig.Augment( stringMap( dense_node_threshold.name(), valueOf(config.DenseNodeThreshold()), pagecache_memory.name(), valueOf(config.PageCacheMemory()) ) );
+			  dbConfig.Augment( stringMap( dense_node_threshold.name(), ValueOf(config.DenseNodeThreshold()), pagecache_memory.name(), ValueOf(config.PageCacheMemory()) ) );
 			  return dbConfig;
 		 }
 

@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.schema
+namespace Neo4Net.GraphDb.Schema
 {
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
@@ -28,8 +28,8 @@ namespace Neo4Net.GraphDb.schema
 	using SchemaStore = Neo4Net.Kernel.impl.store.SchemaStore;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 

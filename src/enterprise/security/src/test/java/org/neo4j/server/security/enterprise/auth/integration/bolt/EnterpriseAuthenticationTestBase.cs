@@ -46,7 +46,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 	using ServiceUnavailableException = Neo4Net.driver.v1.exceptions.ServiceUnavailableException;
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;

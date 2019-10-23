@@ -23,10 +23,10 @@ namespace Neo4Net.Server.rest.repr
 {
 
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Server.helpers;
 

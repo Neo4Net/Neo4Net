@@ -41,8 +41,8 @@
 //////////////////////			  {
 //////////////////////					throw new System.ArgumentException( "Invalid progress specified: " + completed + "/" + total );
 //////////////////////			  }
-//////////////////////			  this._completedCount = completed;
-//////////////////////			  this._totalCount = total;
+//////////////////////			  _completedCount = completed;
+//////////////////////			  _totalCount = total;
 //////////////////////		 }
 
 //////////////////////		 /// <returns> percentage (from 0 to 100) of totalCount items which have been indexed. If totalCount is 0, returns 0. </returns>

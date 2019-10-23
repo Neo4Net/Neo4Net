@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
 	using PageCursorTracer = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracer;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
@@ -42,8 +42,8 @@ namespace Neo4Net.Kernel.Impl.Api
 	using TxStateHolder = Neo4Net.Kernel.api.txstate.TxStateHolder;
 	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
 	using StatementLocks = Neo4Net.Kernel.impl.locking.StatementLocks;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.util.FeatureToggles.flag;

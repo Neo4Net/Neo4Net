@@ -28,7 +28,7 @@ namespace Neo4Net.causalclustering.discovery
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 
-	public interface ClusterMember<T> where T : Neo4Net.Kernel.Internal.GraphDatabaseAPI
+	public interface IClusterMember<T> where T : Neo4Net.Kernel.Internal.GraphDatabaseAPI
 	{
 		 void Start();
 

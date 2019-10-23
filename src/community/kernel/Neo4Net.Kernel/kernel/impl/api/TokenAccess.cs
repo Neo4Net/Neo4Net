@@ -28,9 +28,9 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Resource = Neo4Net.GraphDb.Resource;
 	using Neo4Net.GraphDb;
 	using Neo4Net.Helpers.Collections;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using SchemaReadCore = Neo4Net.Internal.Kernel.Api.SchemaReadCore;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using SchemaReadCore = Neo4Net.Kernel.Api.Internal.SchemaReadCore;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 

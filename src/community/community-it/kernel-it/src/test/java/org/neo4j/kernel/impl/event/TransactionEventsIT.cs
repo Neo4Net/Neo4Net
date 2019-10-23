@@ -37,10 +37,10 @@ namespace Neo4Net.Kernel.Impl.@event
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using TransactionData = Neo4Net.GraphDb.Events.TransactionData;
 	using Neo4Net.GraphDb.Events;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Impl.@event
 
 			 public SecurityContext authorize( System.Func<string, int> propertyIdLookup, string dbName )
 			 {
-				  return new SecurityContext( _subject, Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Write );
+				  return new SecurityContext( _subject, Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Write );
 			 }
 		 }
 
@@ -385,7 +385,7 @@ namespace Neo4Net.Kernel.Impl.@event
 
 		 private void RunTransaction( LoginContext loginContext, IDictionary<string, object> metaData )
 		 {
-			  using ( Transaction transaction = _db.beginTransaction( KernelTransaction.Type.@explicit, loginContext ), Statement statement = _db.DependencyResolver.resolveDependency( typeof( ThreadToStatementContextBridge ) ).get() )
+			  using ( Transaction transaction = _db.BeginTransaction( KernelTransaction.Type.@explicit, loginContext ), Statement statement = _db.DependencyResolver.resolveDependency( typeof( ThreadToStatementContextBridge ) ).get() )
 			  {
 					statement.QueryRegistration().MetaData = metaData;
 					_db.createNode();
@@ -479,7 +479,7 @@ namespace Neo4Net.Kernel.Impl.@event
 				 return nameValue;
 			 }
 
-			 public static Operation valueOf( string name )
+			 public static Operation ValueOf( string name )
 			 {
 				 foreach ( Operation enumInstance in Operation.valueList )
 				 {

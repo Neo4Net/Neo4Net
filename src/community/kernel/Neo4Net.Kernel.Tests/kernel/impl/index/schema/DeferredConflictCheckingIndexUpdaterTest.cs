@@ -24,14 +24,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Test = org.junit.Test;
 
 
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using UpdateMode = Neo4Net.Kernel.Impl.Api.index.UpdateMode;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

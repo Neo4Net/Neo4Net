@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.builtinprocs
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using OnlineBackupSettings = Neo4Net.Kernel.impl.enterprise.configuration.OnlineBackupSettings;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;

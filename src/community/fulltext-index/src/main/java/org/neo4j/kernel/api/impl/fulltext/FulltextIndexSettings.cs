@@ -26,12 +26,12 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 
 
 	using AnalyzerProvider = Neo4Net.GraphDb.index.fulltext.AnalyzerProvider;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using StoreChannel = Neo4Net.Io.fs.StoreChannel;
 	using TokenHolder = Neo4Net.Kernel.impl.core.TokenHolder;
 	using TokenNotFoundException = Neo4Net.Kernel.impl.core.TokenNotFoundException;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	public class FulltextIndexSettings
 	{

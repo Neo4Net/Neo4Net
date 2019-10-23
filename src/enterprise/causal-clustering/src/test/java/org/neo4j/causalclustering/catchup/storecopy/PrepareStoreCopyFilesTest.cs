@@ -39,7 +39,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using NeoStoreDataSource = Neo4Net.Kernel.NeoStoreDataSource;
 	using NeoStoreFileIndexListing = Neo4Net.Kernel.impl.transaction.state.NeoStoreFileIndexListing;
 	using NeoStoreFileListing = Neo4Net.Kernel.impl.transaction.state.NeoStoreFileListing;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -117,7 +117,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setExpectedFiles(org.Neo4Net.storageengine.api.StoreFileMetadata[] expectedFiles) throws java.io.IOException
+//ORIGINAL LINE: private void setExpectedFiles(org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata[] expectedFiles) throws java.io.IOException
 		 private StoreFileMetadata[] ExpectedFiles
 		 {
 			 set

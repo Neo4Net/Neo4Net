@@ -136,7 +136,7 @@ namespace Neo4Net.Values.Storable
 			return nameValue;
 		}
 
-		public static PointFields valueOf( string name )
+		public static PointFields ValueOf( string name )
 		{
 			foreach ( PointFields enumInstance in PointFields.valueList )
 			{

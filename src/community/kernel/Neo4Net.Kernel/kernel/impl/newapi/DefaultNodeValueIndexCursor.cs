@@ -29,16 +29,16 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 
 	using Resource = Neo4Net.GraphDb.Resource;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
 	using TransactionState = Neo4Net.Kernel.api.txstate.TransactionState;
 	using AddedAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedAndRemoved;
 	using AddedWithValuesAndRemoved = Neo4Net.Kernel.Impl.Newapi.TxStateIndexChanges.AddedWithValuesAndRemoved;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_NodeValueClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_NodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

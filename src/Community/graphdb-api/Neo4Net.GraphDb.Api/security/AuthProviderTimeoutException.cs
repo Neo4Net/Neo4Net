@@ -40,7 +40,7 @@ namespace Neo4Net.GraphDb.security
 
 		 /// <summary>
 		 /// The Neo4Net status code associated with this exception type. </summary>
-		 public override Status Status()
+		 public Status Status()
 		 {
 			  return STATUS_CODE;
 		 }

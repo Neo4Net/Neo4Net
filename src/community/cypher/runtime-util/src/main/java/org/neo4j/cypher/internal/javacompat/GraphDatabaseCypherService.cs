@@ -23,7 +23,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using DbmsOperations = Neo4Net.Kernel.api.dbms.DbmsOperations;
@@ -51,12 +51,12 @@ namespace Neo4Net.Cypher.Internal.javacompat
 
 		 public override InternalTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext )
 		 {
-			  return _graph.beginTransaction( type, loginContext );
+			  return _graph.BeginTransaction( type, loginContext );
 		 }
 
 		 public override InternalTransaction BeginTransaction( KernelTransaction.Type type, LoginContext loginContext, long timeout, TimeUnit unit )
 		 {
-			  return _graph.beginTransaction( type, loginContext, timeout, unit );
+			  return _graph.BeginTransaction( type, loginContext, timeout, unit );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:

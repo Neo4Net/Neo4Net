@@ -80,7 +80,7 @@ namespace Neo4Net.GraphDb.Traversal
 			return nameValue;
 		}
 
-		public static PrimitiveTypeFetcher valueOf( string name )
+		public static PrimitiveTypeFetcher ValueOf( string name )
 		{
 			foreach ( PrimitiveTypeFetcher enumInstance in PrimitiveTypeFetcher.valueList )
 			{

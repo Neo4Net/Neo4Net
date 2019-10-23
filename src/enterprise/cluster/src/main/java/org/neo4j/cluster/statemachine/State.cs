@@ -34,7 +34,7 @@ namespace Neo4Net.cluster.statemachine
 	/// A state is guaranteed to only have one handle at a time, i.e. access is serialized.
 	/// </para>
 	/// </summary>
-	public interface State<CONTEXT, MESSAGETYPE> where MESSAGETYPE : Neo4Net.cluster.com.message.MessageType
+	public interface IState<CONTEXT, MESSAGETYPE> where MESSAGETYPE : Neo4Net.cluster.com.message.MessageType
 	{
 		 /// <summary>
 		 /// Handle a message. The state can use context for state storage/retrieval and it will also act

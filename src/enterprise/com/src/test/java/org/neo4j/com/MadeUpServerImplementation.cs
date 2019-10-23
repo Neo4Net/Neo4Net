@@ -34,8 +34,8 @@ namespace Neo4Net.com
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using LogEntryStart = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryStart;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class MadeUpServerImplementation : MadeUpCommunicationInterface
 	{

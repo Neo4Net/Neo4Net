@@ -29,11 +29,11 @@ namespace Neo4Net.Kernel.Api.Index
 	using Test = org.junit.Test;
 
 
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using SimpleNodeValueClient = Neo4Net.Storageengine.Api.schema.SimpleNodeValueClient;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using SimpleNodeValueClient = Neo4Net.Kernel.Api.StorageEngine.schema.SimpleNodeValueClient;
 	using ArrayValue = Neo4Net.Values.Storable.ArrayValue;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using DateTimeValue = Neo4Net.Values.Storable.DateTimeValue;
@@ -59,17 +59,17 @@ namespace Neo4Net.Kernel.Api.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exists;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exists;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.range;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringContains;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.stringContains;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringPrefix;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.stringPrefix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.stringSuffix;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.stringSuffix;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.index.IndexQueryHelper.add;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -936,7 +936,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldRangeSeekInOrder(org.Neo4Net.internal.kernel.api.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
+//ORIGINAL LINE: private void shouldRangeSeekInOrder(org.Neo4Net.Kernel.Api.Internal.IndexOrder order, Object o0, Object o1, Object o2, Object o3, Object o4, Object o5) throws Exception
 		 private void ShouldRangeSeekInOrder( IndexOrder order, object o0, object o1, object o2, object o3, object o4, object o5 )
 		 {
 			  IndexQuery range = range( 100, Values.of( o0 ), true, Values.of( o5 ), true );

@@ -87,7 +87,7 @@ namespace Neo4Net.causalclustering.readreplica
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using DefaultEditionModule = Neo4Net.GraphDb.factory.module.edition.DefaultEditionModule;
 	using IdContextFactoryBuilder = Neo4Net.GraphDb.factory.module.id.IdContextFactoryBuilder;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -130,7 +130,7 @@ namespace Neo4Net.causalclustering.readreplica
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using LogService = Neo4Net.Logging.Internal.LogService;
 	using Group = Neo4Net.Scheduler.Group;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 	using Clocks = Neo4Net.Time.Clocks;
 	using UsageData = Neo4Net.Udc.UsageData;
 
@@ -335,7 +335,7 @@ namespace Neo4Net.causalclustering.readreplica
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RegisterEditionSpecificProcedures( Procedures procedures )
 		 {
 			  procedures.RegisterProcedure( typeof( EnterpriseBuiltInDbmsProcedures ), true );

@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.ha
 	using Master = Neo4Net.Kernel.ha.com.master.Master;
 	using LockResult = Neo4Net.Kernel.ha.@lock.LockResult;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	internal abstract class AcquireLockCall : TargetCaller<Master, LockResult>
 	{

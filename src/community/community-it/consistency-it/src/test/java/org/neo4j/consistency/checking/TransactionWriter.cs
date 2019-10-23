@@ -38,8 +38,8 @@ namespace Neo4Net.Consistency.checking
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using PhysicalTransactionRepresentation = Neo4Net.Kernel.impl.transaction.log.PhysicalTransactionRepresentation;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.TokenStore.NAME_STORE_BLOCK_SIZE;

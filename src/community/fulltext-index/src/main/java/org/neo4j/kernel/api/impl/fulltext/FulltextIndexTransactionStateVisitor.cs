@@ -27,15 +27,15 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using IntIntHashMap = org.eclipse.collections.impl.map.mutable.primitive.IntIntHashMap;
 
 
-	using LabelSet = Neo4Net.Internal.Kernel.Api.LabelSet;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using LabelSet = Neo4Net.Kernel.Api.Internal.LabelSet;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using AllStoreHolder = Neo4Net.Kernel.Impl.Newapi.AllStoreHolder;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	/// A <seealso cref="TxStateVisitor"/> that adds all entities to a <seealso cref="TransactionStateLuceneIndexWriter"/>, that matches the index according to the
 	/// <seealso cref="FulltextIndexDescriptor"/>.
 	/// </summary>
-	internal class FulltextIndexTransactionStateVisitor : Neo4Net.Storageengine.Api.txstate.TxStateVisitor_Adapter
+	internal class FulltextIndexTransactionStateVisitor : Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Adapter
 	{
 		 private readonly FulltextIndexDescriptor _descriptor;
 		 private readonly SchemaDescriptor _schema;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 			  this._schema = descriptor.Schema();
 			  this._modifiedEntityIdsInThisTransaction = modifiedEntityIdsInThisTransaction;
 			  this._writer = writer;
-			  this._visitingNodes = _schema.entityType() == IEntityType.NODE;
+			  this._visitingNodes = _schema.entityType() == EntityType.NODE;
 			  _entityTokenIds = _schema.EntityTokenIds;
 			  int[] propertyIds = _schema.PropertyIds;
 			  _propertyValues = new Value[propertyIds.Length];

@@ -19,111 +19,116 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
-	/// <summary>
-	/// Defines relationship directions used when getting relationships from a node
-	/// or when creating traversers.
-	/// <para>
-	/// A relationship has a direction from a node's point of view. If a node is the
-	/// start node of a relationship it will be an <seealso cref="OUTGOING"/> relationship
-	/// from that node's point of view. If a node is the end node of a relationship
-	/// it will be an <seealso cref="INCOMING"/> relationship from that node's point of view.
-	/// The <seealso cref="BOTH"/> direction is used when direction is of no importance, such
-	/// as "give me all" or "traverse all" relationships that are either
-	/// <seealso cref="OUTGOING"/> or <seealso cref="INCOMING"/>.
-	/// </para>
-	/// </summary>
-	public sealed class Direction
-	{
-		 /// <summary>
-		 /// Defines outgoing relationships.
-		 /// </summary>
-		 public static readonly Direction Outgoing = new Direction( "Outgoing", InnerEnum.Outgoing );
-		 /// <summary>
-		 /// Defines incoming relationships.
-		 /// </summary>
-		 public static readonly Direction Incoming = new Direction( "Incoming", InnerEnum.Incoming );
-		 /// <summary>
-		 /// Defines both incoming and outgoing relationships.
-		 /// </summary>
-		 public static readonly Direction Both = new Direction( "Both", InnerEnum.Both );
+   /// <summary>
+   /// Defines relationship directions used when getting relationships from a node
+   /// or when creating traversers.
+   /// <para>
+   /// A relationship has a direction from a node's point of view. If a node is the
+   /// start node of a relationship it will be an <seealso cref="OUTGOING"/> relationship
+   /// from that node's point of view. If a node is the end node of a relationship
+   /// it will be an <seealso cref="INCOMING"/> relationship from that node's point of view.
+   /// The <seealso cref="BOTH"/> direction is used when direction is of no importance, such
+   /// as "give me all" or "traverse all" relationships that are either
+   /// <seealso cref="OUTGOING"/> or <seealso cref="INCOMING"/>.
+   /// </para>
+   /// </summary>
+   public sealed class Direction
+   {
+      /// <summary>
+      /// Defines outgoing relationships.
+      /// </summary>
+      public static readonly Direction Outgoing = new Direction("Outgoing", InnerEnum.Outgoing);
 
-		 private static readonly IList<Direction> valueList = new List<Direction>();
+      /// <summary>
+      /// Defines incoming relationships.
+      /// </summary>
+      public static readonly Direction Incoming = new Direction("Incoming", InnerEnum.Incoming);
 
-		 static Direction()
-		 {
-			 valueList.Add( Outgoing );
-			 valueList.Add( Incoming );
-			 valueList.Add( Both );
-		 }
+      /// <summary>
+      /// Defines both incoming and outgoing relationships.
+      /// </summary>
+      public static readonly Direction Both = new Direction("Both", InnerEnum.Both);
 
-		 public enum InnerEnum
-		 {
-			 Outgoing,
-			 Incoming,
-			 Both
-		 }
+      private static readonly IList<Direction> valueList = new List<Direction>();
 
-		 public readonly InnerEnum innerEnumValue;
-		 private readonly string nameValue;
-		 private readonly int ordinalValue;
-		 private static int nextOrdinal = 0;
+      static Direction()
+      {
+         valueList.Add(Outgoing);
+         valueList.Add(Incoming);
+         valueList.Add(Both);
+      }
 
-		 private Direction( string name, InnerEnum innerEnum )
-		 {
-			 nameValue = name;
-			 ordinalValue = nextOrdinal++;
-			 innerEnumValue = innerEnum;
-		 }
+      public enum InnerEnum
+      {
+         Outgoing,
+         Incoming,
+         Both
+      }
 
-		 /// <summary>
-		 /// Reverses the direction returning <seealso cref="INCOMING"/> if this equals
-		 /// <seealso cref="OUTGOING"/>, <seealso cref="OUTGOING"/> if this equals <seealso cref="INCOMING"/> or
-		 /// <seealso cref="BOTH"/> if this equals <seealso cref="BOTH"/>.
-		 /// </summary>
-		 /// <returns> The reversed direction. </returns>
-		 public Direction Reverse()
-		 {
-			  switch ( this )
-			  {
-					case OUTGOING:
-						 return INCOMING;
-					case INCOMING:
-						 return OUTGOING;
-					case BOTH:
-						 return BOTH;
-					default:
-						 throw new System.InvalidOperationException( "Unknown Direction " + "enum: " + this );
-			  }
-		 }
+      public readonly InnerEnum _innerEnumValue;
+      private readonly string _nameValue;
+      private readonly int _ordinalValue;
+      private static int _nextOrdinal = 0;
 
-		public static IList<Direction> values()
-		{
-			return valueList;
-		}
+      private Direction(string name, InnerEnum innerEnum)
+      {
+         _nameValue = name;
+         _ordinalValue = _nextOrdinal++;
+         _innerEnumValue = innerEnum;
+      }
 
-		public int ordinal()
-		{
-			return ordinalValue;
-		}
+      /// <summary>
+      /// Reverses the direction returning <seealso cref="INCOMING"/> if this equals
+      /// <seealso cref="OUTGOING"/>, <seealso cref="OUTGOING"/> if this equals <seealso cref="INCOMING"/> or
+      /// <seealso cref="BOTH"/> if this equals <seealso cref="BOTH"/>.
+      /// </summary>
+      /// <returns> The reversed direction. </returns>
+      public Direction Reverse
+      {
+         get
+         {
+            switch (this)
+            {
+               case OUTGOING:
+                  return INCOMING;
 
-		public override string ToString()
-		{
-			return nameValue;
-		}
+               case INCOMING:
+                  return OUTGOING;
 
-		public static Direction valueOf( string name )
-		{
-			foreach ( Direction enumInstance in Direction.valueList )
-			{
-				if ( enumInstance.nameValue == name )
-				{
-					return enumInstance;
-				}
-			}
-			throw new System.ArgumentException( name );
-		}
-	}
+               case BOTH:
+                  return BOTH;
 
+               default:
+                  throw new System.InvalidOperationException("Unknown Direction " + "enum: " + this);
+            }
+         }
+      }
+
+      public static IList<Direction> values()
+      {
+         return valueList;
+      }
+
+      public int Ordinal => _ordinalValue;
+
+      public override string ToString()
+      {
+         return _nameValue;
+      }
+
+      public static Direction ValueOf(string name)
+      {
+         foreach (Direction enumInstance in Direction.valueList)
+         {
+            if (enumInstance._nameValue == name)
+            {
+               return enumInstance;
+            }
+         }
+         throw new System.ArgumentException(name);
+      }
+   }
 }

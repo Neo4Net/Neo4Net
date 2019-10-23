@@ -201,7 +201,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 {
 
 			  Optional<MultiClusterRoutingResult> routingResult = null;
-			  using ( InternalTransaction tx = Db.beginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ), Result result = Db.execute( tx, "CALL " + procedure.callName(), ValueUtils.asMapValue(@params) ) )
+			  using ( InternalTransaction tx = Db.BeginTransaction( KernelTransaction.Type.@explicit, EnterpriseLoginContext.AUTH_DISABLED ), Result result = Db.execute( tx, "CALL " + procedure.callName(), ValueUtils.asMapValue(@params) ) )
 			  {
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					if ( result.HasNext() )

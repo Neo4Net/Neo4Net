@@ -37,7 +37,7 @@ namespace Neo4Net.GraphDb.Traversal
 			  _recentlyVisited = new LruCache<long, object>( "Recently visited", ( ( Number ) parameter ).intValue() );
 		 }
 
-		 public override bool Check( TraversalBranch branch )
+		 public override bool Check( ITraversalBranch branch )
 		 {
 			  long id = Type.getId( branch );
 			  bool add = _recentlyVisited.get( id ) == null;

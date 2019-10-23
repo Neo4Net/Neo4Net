@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling.v2
 			return nameValue;
 		}
 
-		public static ContentType valueOf( string name )
+		public static ContentType ValueOf( string name )
 		{
 			foreach ( ContentType enumInstance in ContentType.valueList )
 			{

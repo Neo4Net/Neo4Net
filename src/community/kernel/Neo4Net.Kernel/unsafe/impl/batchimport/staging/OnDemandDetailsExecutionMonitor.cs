@@ -230,7 +230,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 					PrintValue( @out, IoThroughput, "I/O throughput", value => bytes( value ) + "/s" );
 					PrintValue( @out, StageVmPauseTime, "VM stop-the-world time", Format.duration );
 					PrintValue( @out, TotalTimeMillis, "Duration", Format.duration );
-					PrintValue( @out, DoneBatches, "Done batches", string.valueOf );
+					PrintValue( @out, DoneBatches, "Done batches", string.ValueOf );
 
 					@out.println();
 			  }

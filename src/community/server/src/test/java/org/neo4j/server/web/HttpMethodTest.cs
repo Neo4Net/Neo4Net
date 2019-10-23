@@ -34,7 +34,7 @@ namespace Neo4Net.Server.web
 		 {
 			  foreach ( HttpMethod method in HttpMethod.values() )
 			  {
-					assertEquals( method, HttpMethod.valueOfOrNull( method.ToString() ) );
+					assertEquals( method, HttpMethod.ValueOfOrNull( method.ToString() ) );
 			  }
 		 }
 
@@ -42,18 +42,18 @@ namespace Neo4Net.Server.web
 //ORIGINAL LINE: @Test public void shouldLookupNonExistingMethodByName()
 		 public virtual void ShouldLookupNonExistingMethodByName()
 		 {
-			  assertNull( HttpMethod.valueOfOrNull( "get" ) );
-			  assertNull( HttpMethod.valueOfOrNull( "post" ) );
-			  assertNull( HttpMethod.valueOfOrNull( "PoSt" ) );
-			  assertNull( HttpMethod.valueOfOrNull( "WRONG" ) );
-			  assertNull( HttpMethod.valueOfOrNull( "" ) );
+			  assertNull( HttpMethod.ValueOfOrNull( "get" ) );
+			  assertNull( HttpMethod.ValueOfOrNull( "post" ) );
+			  assertNull( HttpMethod.ValueOfOrNull( "PoSt" ) );
+			  assertNull( HttpMethod.ValueOfOrNull( "WRONG" ) );
+			  assertNull( HttpMethod.ValueOfOrNull( "" ) );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Test public void shouldLookupNothingByNull()
 		 public virtual void ShouldLookupNothingByNull()
 		 {
-			  assertNull( HttpMethod.valueOfOrNull( null ) );
+			  assertNull( HttpMethod.ValueOfOrNull( null ) );
 		 }
 	}
 

@@ -25,7 +25,7 @@ namespace Neo4Net.Values.Storable
 	/// Values that have been assigned in the header act as default values and
 	/// can be overridden in individual rows.
 	/// </summary>
-	public interface CSVHeaderInformation
+	public interface ICSVHeaderInformation
 	{
 		 void Assign( string key, object value );
 	}

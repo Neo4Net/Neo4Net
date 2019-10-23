@@ -22,8 +22,8 @@
 namespace Neo4Net.Kernel.api.explicitindex
 {
 
-	using ExplicitIndexWrite = Neo4Net.Internal.Kernel.Api.ExplicitIndexWrite;
-	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
+	using ExplicitIndexWrite = Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite;
+	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	/// <summary>
@@ -39,19 +39,19 @@ namespace Neo4Net.Kernel.api.explicitindex
 	public interface AutoIndexOperations
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyAdded(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: void propertyAdded(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 		 void PropertyAdded( ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyChanged(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value oldValue, org.Neo4Net.values.storable.Value newValue) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: void propertyChanged(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite write, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value oldValue, org.Neo4Net.values.storable.Value newValue) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 		 void PropertyChanged( ExplicitIndexWrite write, long IEntityId, int propertyKeyId, Value oldValue, Value newValue );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void propertyRemoved(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId, int propertyKey) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: void propertyRemoved(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite write, long IEntityId, int propertyKey) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 		 void PropertyRemoved( ExplicitIndexWrite write, long IEntityId, int propertyKey );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void IEntityRemoved(org.Neo4Net.internal.kernel.api.ExplicitIndexWrite write, long IEntityId) throws org.Neo4Net.internal.kernel.api.exceptions.explicitindex.AutoIndexingKernelException;
+//ORIGINAL LINE: void IEntityRemoved(org.Neo4Net.Kernel.Api.Internal.ExplicitIndexWrite write, long IEntityId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
 		 void IEntityRemoved( ExplicitIndexWrite write, long IEntityId );
 
 		 bool Enabled();

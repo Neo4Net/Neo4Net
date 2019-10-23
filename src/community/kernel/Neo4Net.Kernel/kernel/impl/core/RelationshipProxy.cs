@@ -31,19 +31,19 @@ namespace Neo4Net.Kernel.impl.core
 	using NotInTransactionException = Neo4Net.GraphDb.NotInTransactionException;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using RelationshipScanCursor = Neo4Net.Internal.Kernel.Api.RelationshipScanCursor;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using InvalidTransactionTypeKernelException = Neo4Net.Internal.Kernel.Api.exceptions.InvalidTransactionTypeKernelException;
-	using PropertyKeyIdNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.PropertyKeyIdNotFoundKernelException;
-	using AutoIndexingKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.AutoIndexingKernelException;
-	using IllegalTokenNameException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IllegalTokenNameException;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using RelationshipScanCursor = Neo4Net.Kernel.Api.Internal.RelationshipScanCursor;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using InvalidTransactionTypeKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.InvalidTransactionTypeKernelException;
+	using PropertyKeyIdNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.PropertyKeyIdNotFoundKernelException;
+	using AutoIndexingKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.AutoIndexingKernelException;
+	using IllegalTokenNameException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IllegalTokenNameException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using Neo4Net.Storageengine.Api;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using Neo4Net.Kernel.Api.StorageEngine;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -352,7 +352,7 @@ namespace Neo4Net.Kernel.impl.core
 			  }
 			  KernelTransaction transaction = _spi.kernelTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					throw new NotFoundException( format( "No such property, '%s'.", key ) );
 			  }
@@ -386,7 +386,7 @@ namespace Neo4Net.Kernel.impl.core
 			  RelationshipScanCursor relationships = transaction.AmbientRelationshipCursor();
 			  PropertyCursor properties = transaction.AmbientPropertyCursor();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return defaultValue;
 			  }
@@ -412,7 +412,7 @@ namespace Neo4Net.Kernel.impl.core
 
 			  KernelTransaction transaction = _spi.kernelTransaction();
 			  int propertyKey = transaction.TokenRead().propertyKey(key);
-			  if ( propertyKey == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN )
+			  if ( propertyKey == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN )
 			  {
 					return false;
 			  }
@@ -546,7 +546,7 @@ namespace Neo4Net.Kernel.impl.core
 			  transaction.DataRead().singleRelationship(_id, relationships);
 			  if ( !relationships.Next() )
 			  {
-					throw new NotFoundException( new IEntityNotFoundException( IEntityType.RELATIONSHIP, _id ) );
+					throw new NotFoundException( new IEntityNotFoundException( EntityType.RELATIONSHIP, _id ) );
 			  }
 		 }
 	}

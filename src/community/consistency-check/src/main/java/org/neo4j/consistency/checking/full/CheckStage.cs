@@ -144,7 +144,7 @@ namespace Neo4Net.Consistency.checking.full
 			return nameValue;
 		}
 
-		public static CheckStage valueOf( string name )
+		public static CheckStage ValueOf( string name )
 		{
 			foreach ( CheckStage enumInstance in CheckStage.valueList )
 			{

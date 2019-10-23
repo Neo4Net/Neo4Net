@@ -41,9 +41,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using SpaceFillingCurveSettings = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettings;
 	using Neo4Net.Kernel.Impl.Index.Schema.fusion;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using Value = Neo4Net.Values.Storable.Value;
 
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 private readonly StoreIndexDescriptor _descriptor;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: SpatialIndexAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, org.Neo4Net.gis.spatial.index.curves.SpaceFillingCurveConfiguration searchConfiguration, boolean readOnly) throws java.io.IOException
+//ORIGINAL LINE: SpatialIndexAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.io.pagecache.PageCache pageCache, org.Neo4Net.io.fs.FileSystemAbstraction fs, org.Neo4Net.index.internal.gbptree.RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, org.Neo4Net.kernel.api.index.IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, org.Neo4Net.gis.spatial.index.curves.SpaceFillingCurveConfiguration searchConfiguration, boolean readOnly) throws java.io.IOException
 		 internal SpatialIndexAccessor( StoreIndexDescriptor descriptor, PageCache pageCache, FileSystemAbstraction fs, RecoveryCleanupWorkCollector recoveryCleanupWorkCollector, IndexProvider.Monitor monitor, SpatialIndexFiles spatialIndexFiles, SpaceFillingCurveConfiguration searchConfiguration, bool readOnly ) : base( new PartFactory( pageCache, fs, recoveryCleanupWorkCollector, monitor, descriptor, spatialIndexFiles, searchConfiguration, readOnly ) )
 		 {
 			  this._descriptor = descriptor;
@@ -178,7 +178,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
@@ -228,7 +228,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					SpatialVerifyDeferredConstraint.Verify( nodePropertyAccessor, Layout, tree, Descriptor );

@@ -27,10 +27,10 @@ namespace Neo4Net.Kernel.api.query
 		 private readonly string _index;
 		 private readonly string _entityType;
 
-		 public ExplicitIndexUsage( string identifier, string index, string IEntityType ) : base( identifier )
+		 public ExplicitIndexUsage( string identifier, string index, string EntityType ) : base( identifier )
 		 {
 			  this._index = index;
-			  this._entityType = IEntityType;
+			  this._entityType = EntityType;
 		 }
 
 		 public override IDictionary<string, string> AsMap()

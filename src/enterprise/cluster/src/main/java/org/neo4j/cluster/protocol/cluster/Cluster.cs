@@ -28,7 +28,7 @@ namespace Neo4Net.cluster.protocol.cluster
 	/// </summary>
 	/// <seealso cref= ClusterState </seealso>
 	/// <seealso cref= ClusterMessage </seealso>
-	public interface Cluster
+	public interface ICluster
 	{
 		 void Create( string clusterName );
 

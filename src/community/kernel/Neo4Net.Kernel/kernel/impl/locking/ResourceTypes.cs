@@ -26,10 +26,10 @@ namespace Neo4Net.Kernel.impl.locking
 
 	using IHashFunction = Neo4Net.Hashing.HashFunction;
 	using Strings = Neo4Net.Helpers.Strings;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using LockWaitStrategies = Neo4Net.Kernel.impl.util.concurrent.LockWaitStrategies;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -89,7 +89,7 @@ namespace Neo4Net.Kernel.impl.locking
 
 		 internal Private readonly;
 
-		 internal ResourceTypes( string name, InnerEnum innerEnum, int typeId, Neo4Net.Storageengine.Api.@lock.WaitStrategy waitStrategy )
+		 internal ResourceTypes( string name, InnerEnum innerEnum, int typeId, Neo4Net.Kernel.Api.StorageEngine.@lock.WaitStrategy waitStrategy )
 		 {
 			  this._typeId = typeId;
 			  this._waitStrategy = waitStrategy;
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  return _typeId;
 		 }
 
-		 public Neo4Net.Storageengine.Api.@lock.WaitStrategy WaitStrategy()
+		 public Neo4Net.Kernel.Api.StorageEngine.@lock.WaitStrategy WaitStrategy()
 		 {
 			  return _waitStrategy;
 		 }
@@ -126,7 +126,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 /// locks on the cluster leader.
 		 /// </para>
 		 /// </summary>
-		 public static long IndexEntryResourceId( long labelId, params Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate[] predicates )
+		 public static long IndexEntryResourceId( long labelId, params Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates )
 		 {
 			  if ( !_useStrongHashing )
 			  {
@@ -140,12 +140,12 @@ namespace Neo4Net.Kernel.impl.locking
 			  }
 		 }
 
-		 internal static long IndexEntryResourceId_2_2_0( long labelId, Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate[] predicates )
+		 internal static long IndexEntryResourceId_2_2_0( long labelId, Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates )
 		 {
 			  return IndexEntryResourceId_2_2_0( labelId, predicates, 0 );
 		 }
 
-		 private static long IndexEntryResourceId_2_2_0( long labelId, Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate[] predicates, int i )
+		 private static long IndexEntryResourceId_2_2_0( long labelId, Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates, int i )
 		 {
 			  int propertyKeyId = predicates[i].PropertyKeyId();
 			  Value value = predicates[i].Value();
@@ -186,7 +186,7 @@ namespace Neo4Net.Kernel.impl.locking
 			  return 0L;
 		 }
 
-		 public static Neo4Net.Storageengine.Api.@lock.ResourceType FromId( int typeId )
+		 public static Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType FromId( int typeId )
 		 {
 			  return _idToType.get( typeId );
 		 }
@@ -197,7 +197,7 @@ namespace Neo4Net.Kernel.impl.locking
 		 /// name suffix, but any version where the HA protocol version changes anyway would be just as good an opportunity.
 		 /// </summary>
 		 /// <seealso cref= HashFunctionHelper#IncrementalXXH64() </seealso>
-		 internal static long IndexEntryResourceId_4X( long labelId, Neo4Net.Internal.Kernel.Api.IndexQuery.ExactPredicate[] predicates )
+		 internal static long IndexEntryResourceId_4X( long labelId, Neo4Net.Kernel.Api.Internal.IndexQuery.ExactPredicate[] predicates )
 		 {
 			  long hash = _indexEntryHash_4X.initialise( 0x0123456789abcdefL );
 
@@ -229,7 +229,7 @@ namespace Neo4Net.Kernel.impl.locking
 			return nameValue;
 		}
 
-		public static ResourceTypes valueOf( string name )
+		public static ResourceTypes ValueOf( string name )
 		{
 			foreach ( ResourceTypes enumInstance in ResourceTypes.valueList )
 			{

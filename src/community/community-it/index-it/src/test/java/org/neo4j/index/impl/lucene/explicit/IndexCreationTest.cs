@@ -49,7 +49,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogRotation = Neo4Net.Kernel.impl.transaction.log.rotation.LogRotation;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 

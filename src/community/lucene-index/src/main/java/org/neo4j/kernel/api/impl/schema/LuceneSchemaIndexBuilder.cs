@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using PartitionedIndexStorage = Neo4Net.Kernel.Api.Impl.Index.storage.PartitionedIndexStorage;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 	/// <summary>
 	/// Helper builder class to simplify construction and instantiation of lucene schema indexes.

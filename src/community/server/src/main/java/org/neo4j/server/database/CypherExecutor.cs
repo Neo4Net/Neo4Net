@@ -38,7 +38,7 @@ namespace Neo4Net.Server.database
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.web.HttpHeaderUtils.getTransactionTimeout;
 
@@ -94,12 +94,12 @@ namespace Neo4Net.Server.database
 
 		 private InternalTransaction BeginCustomTransaction( long customTimeout )
 		 {
-			  return _service.beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, customTimeout, TimeUnit.MILLISECONDS );
+			  return _service.BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED, customTimeout, TimeUnit.MILLISECONDS );
 		 }
 
 		 private InternalTransaction BeginDefaultTransaction()
 		 {
-			  return _service.beginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
+			  return _service.BeginTransaction( KernelTransaction.Type.@implicit, AUTH_DISABLED );
 		 }
 	}
 

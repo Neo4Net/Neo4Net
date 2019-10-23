@@ -23,11 +23,11 @@ namespace Neo4Net.Kernel.Internal
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using URLAccessValidationError = Neo4Net.GraphDb.security.URLAccessValidationError;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InternalTransaction = Neo4Net.Kernel.impl.coreapi.InternalTransaction;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// This API can be used to get access to services.

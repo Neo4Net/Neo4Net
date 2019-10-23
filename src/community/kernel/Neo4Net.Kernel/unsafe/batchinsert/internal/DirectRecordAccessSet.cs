@@ -35,7 +35,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using SchemaRecord = Neo4Net.Kernel.Impl.Store.Records.SchemaRecord;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using RecordAccessSet = Neo4Net.Kernel.impl.transaction.state.RecordAccessSet;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	public class DirectRecordAccessSet : RecordAccessSet
 	{

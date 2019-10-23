@@ -32,8 +32,8 @@ namespace Neo4Net.causalclustering.discovery
 	using SocketAddressParser = Neo4Net.Helpers.SocketAddressParser;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Encryption = Neo4Net.Kernel.configuration.HttpConnector.Encryption;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.discovery.ClientConnectorAddresses.Scheme.bolt;
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.discovery
 		 public class Marshal : SafeChannelMarshal<ClientConnectorAddresses>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected ClientConnectorAddresses unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: protected ClientConnectorAddresses unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  protected internal override ClientConnectorAddresses Unmarshal0( ReadableChannel channel )
 			  {
 					int size = channel.Int;
@@ -198,7 +198,7 @@ namespace Neo4Net.causalclustering.discovery
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(ClientConnectorAddresses connectorUris, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(ClientConnectorAddresses connectorUris, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( ClientConnectorAddresses connectorUris, WritableChannel channel )
 			  {

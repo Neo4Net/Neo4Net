@@ -29,7 +29,7 @@ namespace Neo4Net.Kernel
 	using Label = Neo4Net.GraphDb.Label;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using HighlyAvailableGraphDatabase = Neo4Net.Kernel.ha.HighlyAvailableGraphDatabase;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using ClusterManager = Neo4Net.Kernel.impl.ha.ClusterManager;

@@ -30,16 +30,16 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Node = Neo4Net.GraphDb.Node;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ClockContext = Neo4Net.Kernel.Impl.Api.ClockContext;
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -117,7 +117,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected String relationshipType(int id) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: protected String relationshipType(int id) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 protected internal virtual string RelationshipType( int id )
 		 {
 			  using ( Transaction tx = Db.beginTx() )

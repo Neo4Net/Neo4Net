@@ -24,8 +24,8 @@ namespace Neo4Net.Server.Security.Auth
 	using Test = org.junit.Test;
 
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using OverriddenAccessMode = Neo4Net.Kernel.Impl.Api.security.OverriddenAccessMode;
 	using RestrictedAccessMode = Neo4Net.Kernel.Impl.Api.security.RestrictedAccessMode;
@@ -77,7 +77,7 @@ namespace Neo4Net.Server.Security.Auth
 //ORIGINAL LINE: @Test public void shouldMakeNiceDescriptionWithMode()
 		 public virtual void ShouldMakeNiceDescriptionWithMode()
 		 {
-			  SecurityContext modified = _context.withMode( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Write );
+			  SecurityContext modified = _context.withMode( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Write );
 			  assertThat( modified.Description(), equalTo("user 'johan' with WRITE") );
 		 }
 
@@ -85,7 +85,7 @@ namespace Neo4Net.Server.Security.Auth
 //ORIGINAL LINE: @Test public void shouldMakeNiceDescriptionRestricted()
 		 public virtual void ShouldMakeNiceDescriptionRestricted()
 		 {
-			  SecurityContext restricted = _context.withMode( new RestrictedAccessMode( _context.mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  SecurityContext restricted = _context.withMode( new RestrictedAccessMode( _context.mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( restricted.Description(), equalTo("user 'johan' with FULL restricted to READ") );
 		 }
 
@@ -93,7 +93,7 @@ namespace Neo4Net.Server.Security.Auth
 //ORIGINAL LINE: @Test public void shouldMakeNiceDescriptionOverridden()
 		 public virtual void ShouldMakeNiceDescriptionOverridden()
 		 {
-			  SecurityContext overridden = _context.withMode( new OverriddenAccessMode( _context.mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  SecurityContext overridden = _context.withMode( new OverriddenAccessMode( _context.mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( overridden.Description(), equalTo("user 'johan' with FULL overridden by READ") );
 		 }
 
@@ -110,7 +110,7 @@ namespace Neo4Net.Server.Security.Auth
 		 public virtual void ShouldMakeNiceDescriptionAuthDisabledAndRestricted()
 		 {
 			  SecurityContext disabled = SecurityContext.AUTH_DISABLED;
-			  SecurityContext restricted = disabled.WithMode( new RestrictedAccessMode( disabled.Mode(), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Read ) );
+			  SecurityContext restricted = disabled.WithMode( new RestrictedAccessMode( disabled.Mode(), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Read ) );
 			  assertThat( restricted.Description(), equalTo("AUTH_DISABLED with FULL restricted to READ") );
 		 }
 

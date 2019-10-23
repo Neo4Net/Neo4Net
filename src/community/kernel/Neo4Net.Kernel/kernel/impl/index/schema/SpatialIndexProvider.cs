@@ -26,11 +26,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using SpaceFillingCurveConfiguration = Neo4Net.Gis.Spatial.Index.curves.SpaceFillingCurveConfiguration;
 	using MetadataMismatchException = Neo4Net.Index.Internal.gbptree.MetadataMismatchException;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexValueCapability = Neo4Net.Internal.Kernel.Api.IndexValueCapability;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexValueCapability = Neo4Net.Kernel.Api.Internal.IndexValueCapability;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using ConfiguredSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.ConfiguredSpaceFillingCurveSettingsCache;
 	using SpaceFillingCurveSettingsFactory = Neo4Net.Kernel.Impl.Index.Schema.config.SpaceFillingCurveSettingsFactory;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using ValueCategory = Neo4Net.Values.Storable.ValueCategory;
 
 	public class SpatialIndexProvider : IndexProvider
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  SpatialIndexFiles files = new SpatialIndexFiles( DirectoryStructure(), descriptor.Id, _fs, _configuredSettings );
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  SpatialIndexFiles spatialIndexFiles = new SpatialIndexFiles( DirectoryStructure(), descriptor.Id, _fs, _configuredSettings );
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 {
 			  public override IndexOrder[] OrderCapability( params ValueCategory[] valueCategories )
 			  {
-					return Neo4Net.Internal.Kernel.Api.IndexCapability_Fields.OrderNone;
+					return Neo4Net.Kernel.Api.Internal.IndexCapability_Fields.OrderNone;
 			  }
 
 			  public override IndexValueCapability ValueCapability( params ValueCategory[] valueCategories )

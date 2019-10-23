@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport.staging
 	/// Represents a means to control and coordinate lifecycle matters about a <seealso cref="Stage"/> and all its
 	/// <seealso cref="Step steps"/>.
 	/// </summary>
-	public interface StageControl
+	public interface IStageControl
 	{
 		 void Panic( Exception cause );
 

@@ -467,7 +467,7 @@ namespace Neo4Net.Kernel.impl.store
 			return nameValue;
 		}
 
-		public static TemporalType valueOf( string name )
+		public static TemporalType ValueOf( string name )
 		{
 			foreach ( TemporalType enumInstance in TemporalType.valueList )
 			{

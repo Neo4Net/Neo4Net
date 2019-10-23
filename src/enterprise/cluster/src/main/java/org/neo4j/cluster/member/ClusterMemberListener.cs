@@ -23,7 +23,7 @@
 namespace Neo4Net.cluster.member
 {
 
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// A ClusterMemberListener is listening for events from elections and availability state.
@@ -31,7 +31,7 @@ namespace Neo4Net.cluster.member
 	/// These are invoked by translating atomic broadcast messages to methods on this interface.
 	/// </para>
 	/// </summary>
-	public interface ClusterMemberListener
+	public interface IClusterMemberListener
 	{
 		 /// <summary>
 		 /// Called when new coordinator has been elected.

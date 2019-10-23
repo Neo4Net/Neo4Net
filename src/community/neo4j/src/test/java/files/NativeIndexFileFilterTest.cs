@@ -24,7 +24,7 @@ namespace Files
 	using Test = org.junit.Test;
 
 
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using LuceneIndexProviderFactory = Neo4Net.Kernel.Api.Impl.Schema.LuceneIndexProviderFactory;
 	using NumberIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.NumberIndexProvider;
 	using SpatialIndexProvider = Neo4Net.Kernel.Impl.Index.Schema.SpatialIndexProvider;
@@ -132,7 +132,7 @@ namespace Files
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void shouldAcceptNativeIndexFileFromFusionProvider(org.Neo4Net.internal.kernel.api.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
+//ORIGINAL LINE: private void shouldAcceptNativeIndexFileFromFusionProvider(org.Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor descriptor) throws java.io.IOException
 		 private void ShouldAcceptNativeIndexFileFromFusionProvider( IndexProviderDescriptor descriptor )
 		 {
 			  // given

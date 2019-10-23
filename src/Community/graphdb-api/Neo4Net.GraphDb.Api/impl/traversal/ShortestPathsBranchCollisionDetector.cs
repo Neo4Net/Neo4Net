@@ -21,7 +21,7 @@ namespace Neo4Net.GraphDb.impl.traversal
 {
 
 	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
-	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using ITraversalBranch = Neo4Net.GraphDb.Traversal.ITraversalBranch;
 
 	public class ShortestPathsBranchCollisionDetector : StandardBranchCollisionDetector
 	{
@@ -31,7 +31,7 @@ namespace Neo4Net.GraphDb.impl.traversal
 		 {
 		 }
 
-		 protected internal override bool IncludePath( IPath path, TraversalBranch startBranch, TraversalBranch endBranch )
+		 protected internal override bool IncludePath( IPath path, ITraversalBranch startBranch, ITraversalBranch endBranch )
 		 {
 			  if ( !base.IncludePath( path, startBranch, endBranch ) )
 			  {
@@ -40,10 +40,10 @@ namespace Neo4Net.GraphDb.impl.traversal
 
 			  if ( _depth == -1 )
 			  {
-					_depth = path.Length();
+					_depth = path.Length;
 					return true;
 			  }
-			  return path.Length() == _depth;
+			  return path.Length== _depth;
 		 }
 	}
 

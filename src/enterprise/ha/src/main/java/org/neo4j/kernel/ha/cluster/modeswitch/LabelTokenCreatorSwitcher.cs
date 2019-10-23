@@ -23,7 +23,7 @@
 namespace Neo4Net.Kernel.ha.cluster.modeswitch
 {
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Neo4Net.Kernel.ha;
 	using RequestContextFactory = Neo4Net.Kernel.ha.com.RequestContextFactory;
 	using Master = Neo4Net.Kernel.ha.com.master.Master;

@@ -75,7 +75,7 @@ namespace Neo4Net.@unsafe.Impl.Batchimport
 		 {
 			  // GIVEN
 			  long overridden = parseLongWithUnit( "10m" );
-			  Config dbConfig = Config.defaults( pagecache_memory, valueOf( overridden ) );
+			  Config dbConfig = Config.defaults( pagecache_memory, ValueOf( overridden ) );
 			  Configuration config = new Configuration_Overridden( dbConfig );
 
 			  // WHEN

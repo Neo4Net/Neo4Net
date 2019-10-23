@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	public class DuplicateSchemaRuleException : SchemaRuleException
 	{
 		 private const string NOT_FOUND_MESSAGE_TEMPLATE = "Multiple %ss found for %s.";
 
-		 public DuplicateSchemaRuleException( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.SchemaRuleDuplicateFound, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
+		 public DuplicateSchemaRuleException( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.SchemaRuleDuplicateFound, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
 		 {
 		 }
 	}

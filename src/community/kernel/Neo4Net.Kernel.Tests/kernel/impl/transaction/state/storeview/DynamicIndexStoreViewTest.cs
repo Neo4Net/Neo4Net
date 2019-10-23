@@ -43,7 +43,7 @@ namespace Neo4Net.Kernel.impl.transaction.state.storeview
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using Register = Neo4Net.Register.Register;
 	using Registers = Neo4Net.Register.Registers;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.ArgumentMatchers.any;

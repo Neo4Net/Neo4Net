@@ -38,13 +38,13 @@ namespace Schema
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
 	using Neo4Net.Helpers.Collections;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -77,12 +77,12 @@ namespace Schema
 	using NeoStoreIndexStoreView = Neo4Net.Kernel.impl.transaction.state.storeview.NeoStoreIndexStoreView;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -281,7 +281,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private void checkIndexIsOnline(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private void CheckIndexIsOnline( int labelId )
 		 {
 			  IndexProxy indexProxy = _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, _propertyId ) );
@@ -294,7 +294,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.storageengine.api.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader getIndexReader(int propertyId, System.Nullable<int> countryLabelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private IndexReader GetIndexReader( int propertyId, int? countryLabelId )
 		 {
 			  return _indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( countryLabelId.Value, propertyId ) ).newReader();
@@ -335,7 +335,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitAndActivateIndexes(java.util.Map<String,int> labelsIds, int propertyId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitAndActivateIndexes( IDictionary<string, int> labelsIds, int propertyId )
 		 {
 			  using ( Transaction ignored = EmbeddedDatabase.beginTx() )
@@ -370,7 +370,7 @@ namespace Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void waitIndexOnline(org.Neo4Net.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
+//ORIGINAL LINE: private void waitIndexOnline(org.Neo4Net.kernel.impl.api.index.IndexingService indexService, int propertyId, int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException, org.Neo4Net.kernel.api.exceptions.index.IndexPopulationFailedKernelException, InterruptedException, org.Neo4Net.kernel.api.exceptions.index.IndexActivationFailedKernelException
 		 private void WaitIndexOnline( IndexingService indexService, int propertyId, int labelId )
 		 {
 			  IndexProxy indexProxy = indexService.getIndexProxy( SchemaDescriptorFactory.forLabel( labelId, propertyId ) );
@@ -638,7 +638,7 @@ namespace Schema
 						 {
 							  foreach ( IEntityUpdates update in Updates )
 							  {
-									IEnumerable<IndexEntryUpdate<SchemaDescriptor>> entryUpdates = outerInstance.indexService.ConvertToIndexUpdates( update, IEntityType.NODE );
+									IEnumerable<IndexEntryUpdate<SchemaDescriptor>> entryUpdates = outerInstance.indexService.ConvertToIndexUpdates( update, EntityType.NODE );
 									DirectIndexUpdates directIndexUpdates = new DirectIndexUpdates( entryUpdates );
 									outerInstance.indexService.Apply( directIndexUpdates );
 							  }

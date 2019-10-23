@@ -32,7 +32,7 @@ namespace Neo4Net.Csv.Reader
 	/// Also took the opportunity to let <seealso cref="CharReadable"/> extends <seealso cref="System.IDisposable"/>, something that
 	/// <seealso cref="Readable"/> doesn't.
 	/// </summary>
-	public interface CharReadable : System.IDisposable, SourceTraceability
+	public interface ICharReadable : System.IDisposable, SourceTraceability
 	{
 		 /// <summary>
 		 /// Reads characters into the <seealso cref="SectionedCharBuffer buffer"/>.

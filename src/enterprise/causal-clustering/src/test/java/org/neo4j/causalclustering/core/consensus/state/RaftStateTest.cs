@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.core.consensus.state
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertNull;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.roles.Role.CANDIDATE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -82,7 +82,7 @@ namespace Neo4Net.causalclustering.core.consensus.state
 			  assertNotNull( cache.Get( 1L ) );
 			  assertNotNull( cache.Get( 2L ) );
 			  assertNotNull( cache.Get( 3L ) );
-			  assertEquals( valueOf( 5 ), cache.Get( 3L ).content() );
+			  assertEquals( ValueOf( 5 ), cache.Get( 3L ).content() );
 			  assertNull( cache.Get( 4L ) );
 		 }
 
@@ -94,12 +94,12 @@ namespace Neo4Net.causalclustering.core.consensus.state
 			 {
 				 this.outerInstance = outerInstance;
 
-				 this.add( new AppendLogEntry( 1, new RaftLogEntry( 0L, valueOf( 0 ) ) ) );
-				 this.add( new AppendLogEntry( 2, new RaftLogEntry( 0L, valueOf( 1 ) ) ) );
-				 this.add( new AppendLogEntry( 3, new RaftLogEntry( 0L, valueOf( 2 ) ) ) );
-				 this.add( new AppendLogEntry( 4, new RaftLogEntry( 0L, valueOf( 4 ) ) ) );
+				 this.add( new AppendLogEntry( 1, new RaftLogEntry( 0L, ValueOf( 0 ) ) ) );
+				 this.add( new AppendLogEntry( 2, new RaftLogEntry( 0L, ValueOf( 1 ) ) ) );
+				 this.add( new AppendLogEntry( 3, new RaftLogEntry( 0L, ValueOf( 2 ) ) ) );
+				 this.add( new AppendLogEntry( 4, new RaftLogEntry( 0L, ValueOf( 4 ) ) ) );
 				 this.add( new TruncateLogCommand( 3 ) );
-				 this.add( new AppendLogEntry( 3, new RaftLogEntry( 0L, valueOf( 5 ) ) ) );
+				 this.add( new AppendLogEntry( 3, new RaftLogEntry( 0L, ValueOf( 5 ) ) ) );
 			 }
 
 		 }

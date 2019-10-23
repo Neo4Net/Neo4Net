@@ -64,8 +64,8 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 	using Clocks = Neo4Net.Time.Clocks;
 	using SystemNanoClock = Neo4Net.Time.SystemNanoClock;
 	using VirtualValues = Neo4Net.Values.@virtual.VirtualValues;

@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.Impl.Newapi
 {
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using IndexProgressor_ExplicitClient = Neo4Net.Storageengine.Api.schema.IndexProgressor_ExplicitClient;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using IndexProgressor_ExplicitClient = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_ExplicitClient;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.AbstractBaseRecord.NO_ID;
 
-	internal class DefaultNodeExplicitIndexCursor : IndexCursor<IndexProgressor>, Neo4Net.Internal.Kernel.Api.NodeExplicitIndexCursor, IndexProgressor_ExplicitClient
+	internal class DefaultNodeExplicitIndexCursor : IndexCursor<IndexProgressor>, Neo4Net.Kernel.Api.Internal.NodeExplicitIndexCursor, IndexProgressor_ExplicitClient
 	{
 		 private Read _read;
 		 private int _expectedSize;

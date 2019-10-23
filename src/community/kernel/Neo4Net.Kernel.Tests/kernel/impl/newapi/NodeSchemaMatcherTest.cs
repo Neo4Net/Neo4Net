@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using Test = org.junit.Test;
 
 
-	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 			  // when
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.List<org.Neo4Net.storageengine.api.schema.IndexDescriptor> matched = new java.util.ArrayList<>();
+//ORIGINAL LINE: final java.util.List<org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor> matched = new java.util.ArrayList<>();
 			  IList<IndexDescriptor> matched = new List<IndexDescriptor>();
 			  NodeSchemaMatcher.OnMatchingSchema( indexes.GetEnumerator(), UN_INDEXED_PROP_ID, _props, matched.add );
 

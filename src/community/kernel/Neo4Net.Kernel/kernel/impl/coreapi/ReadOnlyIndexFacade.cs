@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.coreapi
 			 }
 		 }
 
-		 public override Type<T> IEntityType
+		 public override Type<T> EntityType
 		 {
 			 get
 			 {

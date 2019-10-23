@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.storemigration
 	using UnsatisfiedDependencyException = Neo4Net.Kernel.impl.util.UnsatisfiedDependencyException;
 	using ProgressReporter = Neo4Net.Kernel.impl.util.monitoring.ProgressReporter;
 
-	public interface StoreMigrationParticipant
+	public interface IStoreMigrationParticipant
 	{
 		 /// <summary>
 		 /// Default empty implementation of StoreMigrationParticipant

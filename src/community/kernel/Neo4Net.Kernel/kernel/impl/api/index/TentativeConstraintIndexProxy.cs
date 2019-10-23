@@ -22,19 +22,19 @@
 namespace Neo4Net.Kernel.Impl.Api.index
 {
 
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
 	using DelegatingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.DelegatingIndexUpdater;
 	using DeferredConflictCheckingIndexUpdater = Neo4Net.Kernel.Impl.Index.Schema.DeferredConflictCheckingIndexUpdater;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 	/// <summary>
 	/// What is a tentative constraint index proxy? Well, the way we build uniqueness constraints is as follows:
@@ -131,7 +131,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.storageengine.api.schema.IndexReader newReader() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: public org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader newReader() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 public override IndexReader NewReader()
 		 {
 			  throw new IndexNotFoundKernelException( Descriptor + " is still populating" );
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor accessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException, java.io.IOException
 		 public override void VerifyDeferredConstraints( NodePropertyAccessor accessor )
 		 {
 			  // If we've seen constraint violation failures in here when updates came in then fail immediately with those

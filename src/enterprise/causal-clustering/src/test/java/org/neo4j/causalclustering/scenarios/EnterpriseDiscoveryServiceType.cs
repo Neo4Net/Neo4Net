@@ -84,7 +84,7 @@ namespace Neo4Net.causalclustering.scenarios
 			return nameValue;
 		}
 
-		public static EnterpriseDiscoveryServiceType valueOf( string name )
+		public static EnterpriseDiscoveryServiceType ValueOf( string name )
 		{
 			foreach ( EnterpriseDiscoveryServiceType enumInstance in EnterpriseDiscoveryServiceType.valueList )
 			{

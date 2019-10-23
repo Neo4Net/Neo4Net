@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			return nameValue;
 		}
 
-		public static DbStructureLargeOptionalMatchStructure valueOf( string name )
+		public static DbStructureLargeOptionalMatchStructure ValueOf( string name )
 		{
 			foreach ( DbStructureLargeOptionalMatchStructure enumInstance in DbStructureLargeOptionalMatchStructure.valueList )
 			{

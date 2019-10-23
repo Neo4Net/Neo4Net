@@ -22,7 +22,7 @@
 namespace Neo4Net.Bolt.runtime
 {
 
-	public interface StateMachineContext
+	public interface IStateMachineContext
 	{
 		 void AuthenticatedAsUser( string username, string userAgent );
 

@@ -24,7 +24,7 @@ namespace Neo4Net.Server.rest.management.console
 	using LogProvider = Neo4Net.Logging.LogProvider;
 	using Database = Neo4Net.Server.database.Database;
 
-	public interface ConsoleSessionFactory
+	public interface IConsoleSessionFactory
 	{
 		 ScriptSession CreateSession( string engineName, Database database, LogProvider logProvider );
 		 IEnumerable<string> SupportedEngines();

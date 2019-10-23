@@ -23,7 +23,7 @@
 namespace Neo4Net.Kernel.impl.locking
 {
 
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 	/// <summary>
 	/// A <seealso cref="StatementLocks"/> implementation that defers <seealso cref="optimistic() optimistic"/>

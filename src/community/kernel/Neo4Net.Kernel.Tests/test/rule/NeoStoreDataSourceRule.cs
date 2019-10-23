@@ -27,7 +27,7 @@ namespace Neo4Net.Test.rule
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
 	using DiagnosticsManager = Neo4Net.Internal.Diagnostics.DiagnosticsManager;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;

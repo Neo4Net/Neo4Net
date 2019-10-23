@@ -34,12 +34,12 @@ namespace Neo4Net.Kernel.impl.store
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Label = Neo4Net.GraphDb.Label;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using SchemaDescriptorPredicates = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptorPredicates;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using SchemaDescriptorPredicates = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptorPredicates;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using DuplicateSchemaRuleException = Neo4Net.Kernel.Api.Exceptions.schema.DuplicateSchemaRuleException;
 	using SchemaRuleNotFoundException = Neo4Net.Kernel.Api.Exceptions.schema.SchemaRuleNotFoundException;
@@ -48,8 +48,8 @@ namespace Neo4Net.Kernel.impl.store
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using RecordStorageEngine = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using IGraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;
 	using Neo4Net.Test.mockito.matcher;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -76,9 +76,9 @@ namespace Neo4Net.Kernel.impl.store
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.forSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.forSchema;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.schema.IndexDescriptorFactory.uniqueForSchema;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory.uniqueForSchema;
 
 	public class SchemaStorageTest
 	{
@@ -250,7 +250,7 @@ namespace Neo4Net.Kernel.impl.store
 
 			  // Then
 			  assertNotNull( rule );
-			  AssertRule( rule, LABEL1, PROP1, Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor_Type.Unique );
+			  AssertRule( rule, LABEL1, PROP1, Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type.Unique );
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -341,7 +341,7 @@ namespace Neo4Net.Kernel.impl.store
 			  assertEquals( type, rule.Type() );
 		 }
 
-		 private void AssertRule( ConstraintRule rule, string label, string propertyKey, Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor_Type type )
+		 private void AssertRule( ConstraintRule rule, string label, string propertyKey, Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor_Type type )
 		 {
 			  assertTrue( SchemaDescriptorPredicates.hasLabel( rule, LabelId( label ) ) );
 			  assertTrue( SchemaDescriptorPredicates.hasProperty( rule, PropId( propertyKey ) ) );

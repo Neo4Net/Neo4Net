@@ -26,7 +26,7 @@ namespace Neo4Net.Server.rest.repr
 	using Test = org.junit.Test;
 
 
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using JsonHelper = Neo4Net.Server.rest.domain.JsonHelper;
 	using JsonParseException = Neo4Net.Server.rest.domain.JsonParseException;
 	using MapWrappingWriter = Neo4Net.Server.rest.repr.formats.MapWrappingWriter;

@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
 	using DocValuesCollector = Neo4Net.Kernel.Api.Impl.Index.collector.DocValuesCollector;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using NonUniqueLuceneIndexSampler = Neo4Net.Kernel.Api.Impl.Schema.sampler.NonUniqueLuceneIndexSampler;
@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -55,7 +55,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.reader
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.range;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.range;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.Values.stringValue;
 

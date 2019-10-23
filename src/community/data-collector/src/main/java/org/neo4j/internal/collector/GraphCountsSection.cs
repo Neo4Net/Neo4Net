@@ -23,21 +23,21 @@ namespace Neo4Net.Internal.Collector
 {
 
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Register = Neo4Net.Register.Register;
 	using Registers = Neo4Net.Register.Registers;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	/// <summary>
 	/// The Graph Counts section holds all data that is available form the counts store, plus metadata
@@ -52,10 +52,10 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.internal.kernel.api.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: static java.util.stream.Stream<RetrieveResult> retrieve(org.Neo4Net.Kernel.Api.Internal.Kernel kernel, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 internal static Stream<RetrieveResult> Retrieve( Kernel kernel, Anonymizer anonymizer )
 		 {
-			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
+			  using ( Transaction tx = kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Explicit, LoginContext.AUTH_DISABLED ) )
 			  {
 					TokenRead tokens = tx.TokenRead();
 					Read read = tx.DataRead();
@@ -133,7 +133,7 @@ namespace Neo4Net.Internal.Collector
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.internal.kernel.api.TokenRead tokens, org.Neo4Net.internal.kernel.api.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotFoundKernelException
+//ORIGINAL LINE: private static java.util.List<java.util.Map<String,Object>> indexes(org.Neo4Net.Kernel.Api.Internal.TokenRead tokens, org.Neo4Net.Kernel.Api.Internal.SchemaRead schemaRead, Anonymizer anonymizer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException
 		 private static IList<IDictionary<string, object>> Indexes( TokenRead tokens, SchemaRead schemaRead, Anonymizer anonymizer )
 		 {
 			  IList<IDictionary<string, object>> indexes = new List<IDictionary<string, object>>();
@@ -173,20 +173,20 @@ namespace Neo4Net.Internal.Collector
 			  while ( iterator.MoveNext() )
 			  {
 					ConstraintDescriptor constraint = iterator.Current;
-					EntityType IEntityType = constraint.Schema().entityType();
+					EntityType EntityType = constraint.Schema().entityType();
 					IDictionary<string, object> data = new Dictionary<string, object>();
 
 					data["properties"] = Map( constraint.Schema().PropertyIds, id => anonymizer.PropertyKey(tokenLookup.PropertyKeyGetName(id), id) );
 					data["type"] = ConstraintType( constraint );
 					int IEntityTokenId = constraint.Schema().EntityTokenIds[0];
 
-					switch ( IEntityType.innerEnumValue )
+					switch ( EntityType.innerEnumValue )
 					{
-					case IEntityType.InnerEnum.NODE:
+					case EntityType.InnerEnum.NODE:
 						 data["label"] = anonymizer.Label( tokenLookup.LabelGetName( IEntityTokenId ), IEntityTokenId );
 						 constraints.Add( data );
 						 break;
-					case IEntityType.InnerEnum.RELATIONSHIP:
+					case EntityType.InnerEnum.RELATIONSHIP:
 						 data["relationshipType"] = anonymizer.RelationshipType( tokenLookup.RelationshipTypeGetName( IEntityTokenId ), IEntityTokenId );
 						 constraints.Add( data );
 						 break;

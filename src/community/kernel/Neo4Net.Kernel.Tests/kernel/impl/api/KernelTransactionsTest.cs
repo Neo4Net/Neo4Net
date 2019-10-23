@@ -31,8 +31,8 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using AuthorizationExpiredException = Neo4Net.GraphDb.security.AuthorizationExpiredException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
@@ -70,13 +70,13 @@ namespace Neo4Net.Kernel.Impl.Api
 	using CpuClock = Neo4Net.Resources.CpuClock;
 	using HeapAllocation = Neo4Net.Resources.HeapAllocation;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
-	using TxStateVisitor = Neo4Net.Storageengine.Api.txstate.TxStateVisitor;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
+	using TxStateVisitor = Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor;
 	using Neo4Net.Test;
 	using Race = Neo4Net.Test.Race;
 	using Neo4Net.Test.rule.concurrent;
@@ -126,9 +126,9 @@ namespace Neo4Net.Kernel.Impl.Api
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.TransactionHeaderInformationFactory.DEFAULT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -608,14 +608,14 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(TransactionCommitProcess commitProcess, org.Neo4Net.storageengine.api.StorageReader firstReader, org.Neo4Net.storageengine.api.StorageReader... otherReaders) throws Throwable
+//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(TransactionCommitProcess commitProcess, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
 		 private static KernelTransactions NewKernelTransactions( TransactionCommitProcess commitProcess, StorageReader firstReader, params StorageReader[] otherReaders )
 		 {
 			  return NewKernelTransactions( false, commitProcess, firstReader, otherReaders );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(boolean testKernelTransactions, TransactionCommitProcess commitProcess, org.Neo4Net.storageengine.api.StorageReader firstReader, org.Neo4Net.storageengine.api.StorageReader... otherReaders) throws Throwable
+//ORIGINAL LINE: private static KernelTransactions newKernelTransactions(boolean testKernelTransactions, TransactionCommitProcess commitProcess, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader firstReader, org.Neo4Net.Kernel.Api.StorageEngine.StorageReader... otherReaders) throws Throwable
 		 private static KernelTransactions NewKernelTransactions( bool testKernelTransactions, TransactionCommitProcess commitProcess, StorageReader firstReader, params StorageReader[] otherReaders )
 		 {
 			  Locks locks = mock( typeof( Locks ) );
@@ -670,7 +670,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static TransactionCommitProcess newRememberingCommitProcess(final org.Neo4Net.kernel.impl.transaction.TransactionRepresentation[] slot) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static TransactionCommitProcess newRememberingCommitProcess(final org.Neo4Net.kernel.impl.transaction.TransactionRepresentation[] slot) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 private static TransactionCommitProcess NewRememberingCommitProcess( TransactionRepresentation[] slot )
 		 {

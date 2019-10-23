@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Values
 {
 
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using BooleanArray = Neo4Net.Values.Storable.BooleanArray;
 	using BooleanValue = Neo4Net.Values.Storable.BooleanValue;
 	using ByteArray = Neo4Net.Values.Storable.ByteArray;

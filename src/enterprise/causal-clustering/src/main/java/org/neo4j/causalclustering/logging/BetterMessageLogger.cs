@@ -85,7 +85,7 @@ namespace Neo4Net.causalclustering.logging
 				 return nameValue;
 			 }
 
-			 public static Direction valueOf( string name )
+			 public static Direction ValueOf( string name )
 			 {
 				 foreach ( Direction enumInstance in Direction.valueList )
 				 {
@@ -117,12 +117,12 @@ namespace Neo4Net.causalclustering.logging
 
 		 public override void LogOutbound<M>( MEMBER me, M message, MEMBER remote ) where M : Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage
 		 {
-			  Log( me, Direction.Outbound, remote, NullSafeMessageType( message ), valueOf( message ) );
+			  Log( me, Direction.Outbound, remote, NullSafeMessageType( message ), ValueOf( message ) );
 		 }
 
 		 public override void LogInbound<M>( MEMBER remote, M message, MEMBER me ) where M : Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage
 		 {
-			  Log( me, Direction.Inbound, remote, NullSafeMessageType( message ), valueOf( message ) );
+			  Log( me, Direction.Inbound, remote, NullSafeMessageType( message ), ValueOf( message ) );
 		 }
 
 		 private string NullSafeMessageType<M>( M message ) where M : Neo4Net.causalclustering.core.consensus.RaftMessages_RaftMessage

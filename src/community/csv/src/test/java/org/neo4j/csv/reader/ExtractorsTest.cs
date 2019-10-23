@@ -49,7 +49,7 @@ namespace Neo4Net.Csv.Reader
 
 			  // WHEN
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Extractor<String[]> extractor = (Extractor<String[]>) extractors.valueOf("STRING[]");
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Extractor<String[]> extractor = (Extractor<String[]>) extractors.ValueOf("STRING[]");
 			  Extractor<string[]> extractor = ( Extractor<string[]> ) extractors.ValueOf( "STRING[]" );
 			  extractor.Extract( data.ToCharArray(), 0, data.Length, false );
 
@@ -68,7 +68,7 @@ namespace Neo4Net.Csv.Reader
 
 			  // WHEN
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") Extractor<long[]> extractor = (Extractor<long[]>) extractors.valueOf("long[]");
+//ORIGINAL LINE: @SuppressWarnings("unchecked") Extractor<long[]> extractor = (Extractor<long[]>) extractors.ValueOf("long[]");
 			  Extractor<long[]> extractor = ( Extractor<long[]> ) extractors.ValueOf( "long[]" );
 			  extractor.Extract( data.ToCharArray(), 0, data.Length, false );
 

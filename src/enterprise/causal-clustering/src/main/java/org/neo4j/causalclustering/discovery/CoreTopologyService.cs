@@ -30,7 +30,7 @@ namespace Neo4Net.causalclustering.discovery
 	/// Extends upon the topology service with a few extra services, connected to
 	/// the underlying discovery service.
 	/// </summary>
-	public interface CoreTopologyService : TopologyService
+	public interface ICoreTopologyService : TopologyService
 	{
 		 void AddLocalCoreTopologyListener( CoreTopologyService_Listener listener );
 
@@ -68,7 +68,7 @@ namespace Neo4Net.causalclustering.discovery
 		 void HandleStepDown( long term, string dbName );
 	}
 
-	 public interface CoreTopologyService_Listener
+	 public interface ICoreTopologyService_Listener
 	 {
 		  void OnCoreTopologyChange( CoreTopology coreTopology );
 		  string DbName();

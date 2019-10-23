@@ -510,7 +510,7 @@ namespace Neo4Net.causalclustering.scenarios
 			  {
 					string bookmark = InExpirableSession(driver, Driver.session, session =>
 					{
-					 using ( Transaction tx = session.beginTransaction() )
+					 using ( Transaction tx = session.BeginTransaction() )
 					 {
 						  tx.run( "CREATE (p:Person {name: {name} })", Values.parameters( "name", "Alistair" ) );
 						  tx.success();
@@ -521,7 +521,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 					assertNotNull( bookmark );
 
-					using ( Session session = driver.session( bookmark ), Transaction tx = session.beginTransaction() )
+					using ( Session session = driver.session( bookmark ), Transaction tx = session.BeginTransaction() )
 					{
 						 Record record = tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 						 assertEquals( 1, record.get( "count" ).asInt() );
@@ -551,7 +551,7 @@ namespace Neo4Net.causalclustering.scenarios
 					string bookmark;
 					using ( Session session = driver.session( AccessMode.READ ) )
 					{
-						 using ( Transaction tx = session.beginTransaction() )
+						 using ( Transaction tx = session.BeginTransaction() )
 						 {
 							  tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 							  tx.success();
@@ -564,7 +564,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 					InExpirableSession(driver, d => d.session(AccessMode.WRITE, bookmark), session =>
 					{
-					 using ( Transaction tx = session.beginTransaction() )
+					 using ( Transaction tx = session.BeginTransaction() )
 					 {
 						  tx.run( "CREATE (p:Person {name: {name} })", Values.parameters( "name", "Alistair" ) );
 						  tx.success();
@@ -599,7 +599,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  string bookmark = InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
 			  {
-				using ( Transaction tx = session.beginTransaction() )
+				using ( Transaction tx = session.BeginTransaction() )
 				{
 					 tx.run( "CREATE (p:Person {name: {name} })", Values.parameters( "name", "Jim" ) );
 					 tx.run( "CREATE (p:Person {name: {name} })", Values.parameters( "name", "Alistair" ) );
@@ -618,7 +618,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  using ( Session session = driver.session( AccessMode.READ, bookmark ) )
 			  {
-					using ( Transaction tx = session.beginTransaction() )
+					using ( Transaction tx = session.BeginTransaction() )
 					{
 						 Record record = tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 						 tx.success();
@@ -641,7 +641,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 			  string bookmark = InExpirableSession(driver, d => d.session(AccessMode.WRITE), session =>
 			  {
-				using ( Transaction tx = session.beginTransaction() )
+				using ( Transaction tx = session.BeginTransaction() )
 				{
 					 tx.run( "CREATE (p:Person {name: {name} })", Values.parameters( "name", "Jim" ) );
 					 tx.success();
@@ -716,7 +716,7 @@ namespace Neo4Net.causalclustering.scenarios
 					{
 						 try
 						 {
-								 using ( Transaction tx = session.beginTransaction() )
+								 using ( Transaction tx = session.BeginTransaction() )
 								 {
 								  SwitchLeader( leader );
       
@@ -732,7 +732,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 					string bookmark = InExpirableSession(driver, Driver.session, s =>
 					{
-					 using ( Transaction tx = s.beginTransaction() )
+					 using ( Transaction tx = s.BeginTransaction() )
 					 {
 						  tx.run( "CREATE (person:Person {name: {name}, title: {title}})", parameters( "name", "Webber", "title", "Mr" ) );
 						  tx.success();
@@ -743,7 +743,7 @@ namespace Neo4Net.causalclustering.scenarios
 					// then
 					using ( Session session = driver.session( AccessMode.READ, bookmark ) )
 					{
-						 using ( Transaction tx = session.beginTransaction() )
+						 using ( Transaction tx = session.BeginTransaction() )
 						 {
 							  Record record = tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 							  tx.success();
@@ -828,7 +828,7 @@ namespace Neo4Net.causalclustering.scenarios
 
 		 private static void ExecuteReadQuery( Session session )
 		 {
-			  using ( Transaction tx = session.beginTransaction() )
+			  using ( Transaction tx = session.BeginTransaction() )
 			  {
 					Record record = tx.run( "MATCH (n:Person) RETURN COUNT(*) AS count" ).next();
 					assertEquals( 1, record.get( "count" ).asInt() );

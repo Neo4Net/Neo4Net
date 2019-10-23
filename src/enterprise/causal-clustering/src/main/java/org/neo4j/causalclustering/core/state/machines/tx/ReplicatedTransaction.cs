@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 
 
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public interface ReplicatedTransaction : CoreReplicatedContent
 	{
@@ -52,7 +52,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 ChunkedInput<ByteBuf> Encode();
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void marshal(org.Neo4Net.storageengine.api.WritableChannel writableChannel) throws java.io.IOException;
+//ORIGINAL LINE: void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel) throws java.io.IOException;
 		 void Marshal( WritableChannel writableChannel );
 
 		 TransactionRepresentation Extract( TransactionRepresentationExtractor extractor );

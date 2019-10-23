@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.Kernel.impl.locking
 {
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	/// <summary>
 	/// Description of a lock that was deferred to commit time.

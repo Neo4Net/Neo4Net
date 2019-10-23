@@ -25,7 +25,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Log = Neo4Net.Logging.Log;

@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 	using Neo4Net.Kernel.Api.Impl.Index;
 	using Neo4Net.Kernel.Api.Index;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 	/// <summary>
 	/// An implementation of <seealso cref="IndexUpdateSink"/> that does not actually do anything.
@@ -35,11 +35,11 @@ namespace Neo4Net.Kernel.Api.Impl.Fulltext
 		 {
 		 }
 
-		 public override void EnqueueUpdate<T1, T2>( DatabaseIndex<T1> index, IndexUpdater indexUpdater, IndexEntryUpdate<T2> update ) where T1 : Neo4Net.Storageengine.Api.schema.IndexReader
+		 public override void EnqueueUpdate<T1, T2>( DatabaseIndex<T1> index, IndexUpdater indexUpdater, IndexEntryUpdate<T2> update ) where T1 : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 		 {
 		 }
 
-		 public override void CloseUpdater<T1>( DatabaseIndex<T1> index, IndexUpdater indexUpdater ) where T1 : Neo4Net.Storageengine.Api.schema.IndexReader
+		 public override void CloseUpdater<T1>( DatabaseIndex<T1> index, IndexUpdater indexUpdater ) where T1 : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 		 {
 		 }
 

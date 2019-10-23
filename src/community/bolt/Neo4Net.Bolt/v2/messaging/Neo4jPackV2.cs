@@ -268,7 +268,7 @@ namespace Neo4Net.Bolt.v2.messaging
 					}
 					catch ( Exception ex )
 					{
-						 StructType type = StructType.valueOf( signature );
+						 StructType type = StructType.ValueOf( signature );
 						 if ( type != null )
 						 {
 							  throw new BoltIOException( Neo4Net.Kernel.Api.Exceptions.Status_Statement.TypeError, string.Format( "Unable to construct {0} value: `{1}`", type.description(), ex.Message ), ex );

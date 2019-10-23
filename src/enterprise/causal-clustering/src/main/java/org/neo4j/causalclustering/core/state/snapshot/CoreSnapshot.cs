@@ -27,8 +27,8 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 
 	using Neo4Net.causalclustering.core.state.storage;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class CoreSnapshot
 	{
@@ -76,7 +76,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 		 public class Marshal : SafeChannelMarshal<CoreSnapshot>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(CoreSnapshot coreSnapshot, org.Neo4Net.storageengine.api.WritableChannel buffer) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(CoreSnapshot coreSnapshot, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel buffer) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( CoreSnapshot coreSnapshot, WritableChannel buffer )
 			  {
@@ -92,7 +92,7 @@ namespace Neo4Net.causalclustering.core.state.snapshot
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public CoreSnapshot unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public CoreSnapshot unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override CoreSnapshot Unmarshal0( ReadableChannel channel )
 			  {
 					long prevIndex = channel.Long;

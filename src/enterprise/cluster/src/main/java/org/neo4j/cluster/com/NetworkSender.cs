@@ -75,7 +75,7 @@ namespace Neo4Net.cluster.com
 			  void SentMessage( Message message );
 		 }
 
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  int DefaultPort(); // This is the default port to try to connect to
 

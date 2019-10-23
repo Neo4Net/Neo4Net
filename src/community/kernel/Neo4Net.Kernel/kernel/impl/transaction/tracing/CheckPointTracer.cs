@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.tracing
 {
-	public interface CheckPointTracer
+	public interface ICheckPointTracer
 	{
 
 		 /// <summary>

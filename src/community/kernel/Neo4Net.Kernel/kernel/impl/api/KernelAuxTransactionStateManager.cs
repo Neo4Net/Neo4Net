@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.Impl.Api
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using IOUtils = Neo4Net.Io.IOUtils;
 	using AuxiliaryTransactionState = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionState;
 	using AuxiliaryTransactionStateCloseException = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateCloseException;
@@ -30,7 +30,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using AuxiliaryTransactionStateManager = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateManager;
 	using AuxiliaryTransactionStateProvider = Neo4Net.Kernel.api.txstate.auxiliary.AuxiliaryTransactionStateProvider;
 	using Neo4Net.Kernel.impl.util;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	public class KernelAuxTransactionStateManager : AuxiliaryTransactionStateManager
 	{
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.Impl.Api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> extractedCommands) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> extractedCommands) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  public override void ExtractCommands( ICollection<StorageCommand> extractedCommands )
 			  {
 					foreach ( AuxiliaryTransactionState state in OpenedStates.Values )

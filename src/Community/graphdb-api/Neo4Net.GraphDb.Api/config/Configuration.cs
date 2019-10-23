@@ -25,7 +25,7 @@
 ////////////	/// Provide the basic operation that one could perform on a set of configurations. </summary>
 ////////////	/// @deprecated The settings API will be completely rewritten in 4.0 
 ////////////	[Obsolete("The settings API will be completely rewritten in 4.0")]
-////////////	public interface Configuration
+////////////	public interface IConfiguration
 ////////////	{
 ////////////		 /// <summary>
 ////////////		 /// Retrieve the value of a configuration <seealso cref="Setting"/>.

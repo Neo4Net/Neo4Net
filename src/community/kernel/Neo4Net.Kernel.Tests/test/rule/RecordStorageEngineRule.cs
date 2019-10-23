@@ -23,7 +23,7 @@ namespace Neo4Net.Test.rule
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -63,7 +63,7 @@ namespace Neo4Net.Test.rule
 	using NullLog = Neo4Net.Logging.NullLog;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
 	using IJobScheduler = Neo4Net.Scheduler.JobScheduler;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using EphemeralIdGenerator = Neo4Net.Test.impl.EphemeralIdGenerator;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

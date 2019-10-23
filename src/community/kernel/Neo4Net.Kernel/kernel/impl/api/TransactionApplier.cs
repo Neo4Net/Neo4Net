@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api
 
 	using Neo4Net.Helpers.Collections;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// Responsible for a single transaction. See also <seealso cref="BatchTransactionApplier"/> which returns an implementation of
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.Impl.Api
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public boolean visit(org.Neo4Net.storageengine.api.StorageCommand element) throws java.io.IOException
+//ORIGINAL LINE: public boolean visit(org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand element) throws java.io.IOException
 		  public override bool Visit( StorageCommand element )
 		  {
 				return ( ( Command )element ).handle( this );

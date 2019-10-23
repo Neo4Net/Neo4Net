@@ -22,7 +22,7 @@ namespace Neo4Net.Consistency.checking.full
 	/// <summary>
 	/// Represents a <seealso cref="Stage"/> in the consistency check. A consistency check goes through multiple stages.
 	/// </summary>
-	public interface Stage
+	public interface IStage
 	{
 		 bool Parallel { get; }
 

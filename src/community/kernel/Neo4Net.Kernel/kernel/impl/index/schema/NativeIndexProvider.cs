@@ -26,8 +26,8 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 	using MetadataMismatchException = Neo4Net.Index.Internal.gbptree.MetadataMismatchException;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexAccessor = Neo4Net.Kernel.Api.Index.IndexAccessor;
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 	/// <summary>
 	/// Base class for native indexes on top of <seealso cref="GBPTree"/>.
@@ -84,7 +84,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 protected internal abstract IndexPopulator NewIndexPopulator( File storeFile, LAYOUT layout, StoreIndexDescriptor descriptor, ByteBufferFactory bufferFactory );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 		 public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 		 {
 			  File storeFile = NativeIndexFileFromIndexId( descriptor.Id );
@@ -92,11 +92,11 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract org.Neo4Net.kernel.api.index.IndexAccessor newIndexAccessor(java.io.File storeFile, LAYOUT layout, org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, boolean readOnly) throws java.io.IOException;
+//ORIGINAL LINE: protected abstract org.Neo4Net.kernel.api.index.IndexAccessor newIndexAccessor(java.io.File storeFile, LAYOUT layout, org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, boolean readOnly) throws java.io.IOException;
 		 protected internal abstract IndexAccessor NewIndexAccessor( File storeFile, LAYOUT layout, StoreIndexDescriptor descriptor, bool readOnly );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 		 public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 		 {
 			  try

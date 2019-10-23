@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.protocol.handshake
 {
-	public interface ClientMessageHandler
+	public interface IClientMessageHandler
 	{
 		 void Handle( InitialMagicMessage magicMessage );
 

@@ -58,8 +58,8 @@ namespace Neo4Net.causalclustering.core.replication
 
 		private void InitializeInstanceFields()
 		{
-			_operationA = new DistributedOperation( ReplicatedInteger.valueOf( 0 ), _session, new LocalOperationId( 0, 0 ) );
-			_operationB = new DistributedOperation( ReplicatedInteger.valueOf( 1 ), _session, new LocalOperationId( 1, 0 ) );
+			_operationA = new DistributedOperation( ReplicatedInteger.ValueOf( 0 ), _session, new LocalOperationId( 0, 0 ) );
+			_operationB = new DistributedOperation( ReplicatedInteger.ValueOf( 1 ), _session, new LocalOperationId( 1, 0 ) );
 			_tracker = new ProgressTrackerImpl( _session );
 		}
 
@@ -193,7 +193,7 @@ namespace Neo4Net.causalclustering.core.replication
 		 {
 			  // given
 			  GlobalSession sessionB = new GlobalSession( System.Guid.randomUUID(), null );
-			  DistributedOperation aliasUnderSessionB = new DistributedOperation( ReplicatedInteger.valueOf( 0 ), sessionB, new LocalOperationId( _operationA.operationId().localSessionId(), _operationA.operationId().sequenceNumber() ) );
+			  DistributedOperation aliasUnderSessionB = new DistributedOperation( ReplicatedInteger.ValueOf( 0 ), sessionB, new LocalOperationId( _operationA.operationId().localSessionId(), _operationA.operationId().sequenceNumber() ) );
 
 			  Progress progressA = _tracker.start( _operationA );
 

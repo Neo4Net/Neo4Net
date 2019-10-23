@@ -25,8 +25,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RenewableBatchIdSequences = Neo4Net.Kernel.impl.store.id.RenewableBatchIdSequences;
 	using IntegrityValidator = Neo4Net.Kernel.impl.transaction.state.IntegrityValidator;
 	using RecordChangeSet = Neo4Net.Kernel.impl.transaction.state.RecordChangeSet;
-	using CommandCreationContext = Neo4Net.Storageengine.Api.CommandCreationContext;
-	using ResourceLocker = Neo4Net.Storageengine.Api.@lock.ResourceLocker;
+	using CommandCreationContext = Neo4Net.Kernel.Api.StorageEngine.CommandCreationContext;
+	using ResourceLocker = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceLocker;
 
 	/// <summary>
 	/// Holds commit data structures for creating records in a <seealso cref="NeoStores"/>.

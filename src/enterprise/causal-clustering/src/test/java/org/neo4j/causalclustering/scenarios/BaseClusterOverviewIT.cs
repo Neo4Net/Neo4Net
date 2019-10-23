@@ -44,13 +44,13 @@ namespace Neo4Net.causalclustering.scenarios
 	using RoleInfo = Neo4Net.causalclustering.discovery.RoleInfo;
 	using ClusterOverviewProcedure = Neo4Net.causalclustering.discovery.procedures.ClusterOverviewProcedure;
 	using Neo4Net.Collections;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Transaction_Type = Neo4Net.Internal.Kernel.Api.Transaction_Type;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Transaction_Type = Neo4Net.Kernel.Api.Internal.Transaction_Type;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using Settings = Neo4Net.Kernel.configuration.Settings;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
@@ -73,7 +73,7 @@ namespace Neo4Net.causalclustering.scenarios
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.ProcedureSignature.procedureName;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature.procedureName;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.test.assertion.Assert.assertEventually;
 
@@ -298,14 +298,14 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private void AssertAllEventualOverviews<T1>( Cluster<T1> cluster, Matcher<IList<MemberInfo>> expected )
 		 {
 			  AssertAllEventualOverviews( cluster, expected, Collections.emptySet(), Collections.emptySet() );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, java.util.Set<int> excludedCores, java.util.Set<int> excludedRRs) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertAllEventualOverviews(org.Neo4Net.causalclustering.discovery.Cluster<?> cluster, org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, java.util.Set<int> excludedCores, java.util.Set<int> excludedRRs) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private void AssertAllEventualOverviews<T1>( Cluster<T1> cluster, Matcher<IList<MemberInfo>> expected, ISet<int> excludedCores, ISet<int> excludedRRs )
 		 {
 			  foreach ( CoreClusterMember core in cluster.CoreMembers() )
@@ -327,7 +327,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertEventualOverview(org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, org.Neo4Net.causalclustering.discovery.ClusterMember<? extends org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade> member, String role) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException, InterruptedException
+//ORIGINAL LINE: private void assertEventualOverview(org.hamcrest.Matcher<java.util.List<MemberInfo>> expected, org.Neo4Net.causalclustering.discovery.ClusterMember<? extends org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade> member, String role) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException, InterruptedException
 		 private void AssertEventualOverview<T1>( Matcher<IList<MemberInfo>> expected, ClusterMember<T1> member, string role ) where T1 : Neo4Net.Kernel.impl.factory.GraphDatabaseFacade
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
@@ -410,7 +410,7 @@ namespace Neo4Net.causalclustering.scenarios
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<MemberInfo> clusterOverview(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException, org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: @SuppressWarnings("unchecked") private java.util.List<MemberInfo> clusterOverview(org.Neo4Net.kernel.impl.factory.GraphDatabaseFacade db) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException, org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 private IList<MemberInfo> ClusterOverview( GraphDatabaseFacade db )
 		 {

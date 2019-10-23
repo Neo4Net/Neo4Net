@@ -32,12 +32,12 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using RunWith = org.junit.runner.RunWith;
 	using Parameterized = org.junit.runners.Parameterized;
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using UniquePropertyValueValidationException = Neo4Net.Kernel.Api.Exceptions.schema.UniquePropertyValueValidationException;
 	using ConstraintDescriptorFactory = Neo4Net.Kernel.api.schema.constraints.ConstraintDescriptorFactory;
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  _transaction.schemaWrite().constraintDrop(ConstraintDescriptorFactory.uniqueForLabel(LABEL, PropertyIds()));
 			  Commit();
 
-			  using ( Transaction tx = Kernel.beginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type.Implicit, LoginContext.AUTH_DISABLED ), NodeCursor node = tx.Cursors().allocateNodeCursor() )
+			  using ( Transaction tx = Kernel.BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type.Implicit, LoginContext.AUTH_DISABLED ), NodeCursor node = tx.Cursors().allocateNodeCursor() )
 			  {
 					tx.DataRead().allNodesScan(node);
 					while ( node.Next() )
@@ -329,18 +329,18 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void newTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void newTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void NewTransaction()
 		 {
 			  if ( _transaction != null )
 			  {
 					fail( "tx already opened" );
 			  }
-			  _transaction = Kernel.beginTransaction( KernelTransaction.Type.@implicit, LoginContext.AUTH_DISABLED );
+			  _transaction = Kernel.BeginTransaction( KernelTransaction.Type.@implicit, LoginContext.AUTH_DISABLED );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected void commit() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: protected void commit() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 protected internal virtual void Commit()
 		 {
 			  _transaction.success();
@@ -355,7 +355,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createLabeledNode(int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createLabeledNode(int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateLabeledNode( int labelId )
 		 {
 			  long node = _transaction.dataWrite().nodeCreate();
@@ -364,28 +364,28 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void addLabel(long nodeId, int labelId) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void addLabel(long nodeId, int labelId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void AddLabel( long nodeId, int labelId )
 		 {
 			  _transaction.dataWrite().nodeAddLabel(nodeId, labelId);
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setProperty(long nodeId, int propertyId, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void setProperty(long nodeId, int propertyId, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void SetProperty( long nodeId, int propertyId, object value )
 		 {
 			  _transaction.dataWrite().nodeSetProperty(nodeId, propertyId, Values.of(value));
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNode() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNode() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNode()
 		 {
 			  return _transaction.dataWrite().nodeCreate();
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private long createNodeWithLabelAndProps(int labelId, Object[] propertyValues) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private long createNodeWithLabelAndProps(int labelId, Object[] propertyValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private long CreateNodeWithLabelAndProps( int labelId, object[] propertyValues )
 		 {
 			  NewTransaction();
@@ -400,7 +400,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void setProperties(long nodeId, Object[] propertyValues) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private void setProperties(long nodeId, Object[] propertyValues) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private void SetProperties( long nodeId, object[] propertyValues )
 		 {
 			  for ( int prop = 0; prop < propertyValues.Length; prop++ )

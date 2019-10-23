@@ -19,15 +19,15 @@
  */
 namespace Neo4Net.Kernel.api.proc
 {
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using AnyValue = Neo4Net.Values.AnyValue;
 
-	public interface CallableUserFunction
+	public interface ICallableUserFunction
 	{
 		 UserFunctionSignature Signature();
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: org.Neo4Net.values.AnyValue apply(Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: org.Neo4Net.values.AnyValue apply(Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 AnyValue Apply( Context ctx, AnyValue[] input );
 	}
 
@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.api.proc
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract org.Neo4Net.values.AnyValue apply(Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: public abstract org.Neo4Net.values.AnyValue apply(Context ctx, org.Neo4Net.values.AnyValue[] input) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		  public override abstract AnyValue Apply( Context ctx, AnyValue[] input );
 	 }
 

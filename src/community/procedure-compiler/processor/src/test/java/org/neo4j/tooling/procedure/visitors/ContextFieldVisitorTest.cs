@@ -26,7 +26,7 @@ namespace Neo4Net.Tooling.procedure.visitors
 
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using Log = Neo4Net.Logging.Log;
 	using ProcedureTransaction = Neo4Net.Procedure.ProcedureTransaction;
 	using TerminationGuard = Neo4Net.Procedure.TerminationGuard;

@@ -23,7 +23,7 @@ using System.Threading;
 namespace Neo4Net.Kernel.api.txtracking
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AvailabilityGuard = Neo4Net.Kernel.availability.AvailabilityGuard;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
@@ -71,7 +71,7 @@ namespace Neo4Net.Kernel.api.txtracking
 		 /// <param name="timeout"> maximum duration to wait for OAT to be applied </param>
 		 /// <exception cref="TransactionFailureException"> when OAT did not get applied within the given duration </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId, java.time.Duration timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public virtual void AwaitUpToDate( long oldestAcceptableTxId, Duration timeout )
 		 {
 			  if ( oldestAcceptableTxId <= BASE_TX_ID )

@@ -104,10 +104,10 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 
 		 private RaftLogShipper _logShipper;
 
-		 private RaftLogEntry _entry0 = new RaftLogEntry( 0, ReplicatedInteger.valueOf( 1000 ) );
-		 private RaftLogEntry _entry1 = new RaftLogEntry( 0, ReplicatedString.valueOf( "kedha" ) );
-		 private RaftLogEntry _entry2 = new RaftLogEntry( 0, ReplicatedInteger.valueOf( 2000 ) );
-		 private RaftLogEntry _entry3 = new RaftLogEntry( 0, ReplicatedString.valueOf( "chupchick" ) );
+		 private RaftLogEntry _entry0 = new RaftLogEntry( 0, ReplicatedInteger.ValueOf( 1000 ) );
+		 private RaftLogEntry _entry1 = new RaftLogEntry( 0, ReplicatedString.ValueOf( "kedha" ) );
+		 private RaftLogEntry _entry2 = new RaftLogEntry( 0, ReplicatedInteger.ValueOf( 2000 ) );
+		 private RaftLogEntry _entry3 = new RaftLogEntry( 0, ReplicatedString.ValueOf( "chupchick" ) );
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Before public void setup()
@@ -303,7 +303,7 @@ namespace Neo4Net.causalclustering.core.consensus.shipping
 			  ICollection<RaftLogEntry> entries = new List<RaftLogEntry>();
 			  for ( int i = 0; i < entryCount; i++ )
 			  {
-					entries.Add( new RaftLogEntry( 0, ReplicatedInteger.valueOf( i ) ) );
+					entries.Add( new RaftLogEntry( 0, ReplicatedInteger.ValueOf( i ) ) );
 			  }
 
 			  foreach ( RaftLogEntry entry in entries )

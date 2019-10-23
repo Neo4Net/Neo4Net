@@ -208,7 +208,7 @@ namespace Neo4Net.Pushtocloud
 			  }
 		 }
 
-		 public interface Copier
+		 public interface ICopier
 		 {
 			  /// <summary>
 			  /// Authenticates user by name and password.

@@ -26,8 +26,8 @@ namespace Neo4Net.causalclustering.identity
 {
 
 	using Neo4Net.causalclustering.core.state.storage;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	[Serializable]
 	public class MemberId
@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.identity
 		 public class Marshal : SafeStateMarshal<MemberId>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(MemberId memberId, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(MemberId memberId, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( MemberId memberId, WritableChannel channel )
 			  {
@@ -105,7 +105,7 @@ namespace Neo4Net.causalclustering.identity
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public MemberId unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public MemberId unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			  public override MemberId Unmarshal0( ReadableChannel channel )
 			  {
 					sbyte nullMarker = channel.Get();

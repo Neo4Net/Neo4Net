@@ -25,28 +25,28 @@ namespace Neo4Net.GraphDb.Traversal
 	using Neo4Net.GraphDb;
 
 	/// <summary>
-	/// Selects <seealso cref="TraversalBranch"/>s according to breadth first
+	/// Selects <seealso cref="ITraversalBranch"/>s according to breadth first
 	/// pattern, the most natural ordering in a breadth first search, see
 	/// http://en.wikipedia.org/wiki/Breadth-first_search
 	/// </summary>
 	internal class PreorderBreadthFirstSelector : BranchSelector
 	{
-		 private readonly LinkedList<TraversalBranch> _queue = new LinkedList<TraversalBranch>();
-		 private TraversalBranch _current;
+		 private readonly LinkedList<ITraversalBranch> _queue = new LinkedList<ITraversalBranch>();
+		 private ITraversalBranch _current;
 		 private readonly IPathExpander _expander;
 
-		 internal PreorderBreadthFirstSelector( TraversalBranch startSource, IPathExpander expander )
+		 internal PreorderBreadthFirstSelector( ITraversalBranch startSource, IPathExpander expander )
 		 {
-			  this._current = startSource;
-			  this._expander = expander;
+			  _current = startSource;
+			  _expander = expander;
 		 }
 
-		 public override TraversalBranch Next( TraversalContext metadata )
+		 public override ITraversalBranch Next( TraversalContext metadata )
 		 {
-			  TraversalBranch result = null;
+			  ITraversalBranch result = null;
 			  while ( result == null )
 			  {
-					TraversalBranch next = _current.next( _expander, metadata );
+					ITraversalBranch next = _current.next( _expander, metadata );
 					if ( next != null )
 					{
 						 _queue.AddLast( next );

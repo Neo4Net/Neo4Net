@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.identity.RaftTestMember.member;
 
@@ -66,7 +66,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  MembershipWaiter waiter = new MembershipWaiter( member( 0 ), jobScheduler, () => _dbHealth, 500, NullLogProvider.Instance, new Monitors() );
 
 			  InMemoryRaftLog raftLog = new InMemoryRaftLog();
-			  raftLog.Append( new RaftLogEntry( 0, valueOf( 0 ) ) );
+			  raftLog.Append( new RaftLogEntry( 0, ValueOf( 0 ) ) );
 			  ExposedRaftState raftState = RaftStateBuilder.raftState().votingMembers(member(0)).leaderCommit(0).entryLog(raftLog).commitIndex(0L).build().copy();
 
 			  RaftMachine raft = mock( typeof( RaftMachine ) );
@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  MembershipWaiter waiter = new MembershipWaiter( member( 0 ), jobScheduler, () => _dbHealth, 500, NullLogProvider.Instance, new Monitors() );
 
 			  InMemoryRaftLog raftLog = new InMemoryRaftLog();
-			  raftLog.Append( new RaftLogEntry( 0, valueOf( 0 ) ) );
+			  raftLog.Append( new RaftLogEntry( 0, ValueOf( 0 ) ) );
 			  ExposedRaftState raftState = RaftStateBuilder.raftState().votingMembers(member(0)).leaderCommit(0).entryLog(raftLog).commitIndex(0L).build().copy();
 
 			  RaftMachine raft = mock( typeof( RaftMachine ) );

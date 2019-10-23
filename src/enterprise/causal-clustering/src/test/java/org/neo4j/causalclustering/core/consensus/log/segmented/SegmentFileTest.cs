@@ -56,7 +56,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.when;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedString.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedString.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.segmented.SegmentFile.create;
 
@@ -89,10 +89,10 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 private readonly SegmentHeader _segmentHeader = new SegmentHeader( -1, 0, -1, -1 );
 
 		 // various constants used throughout tests
-		 private readonly RaftLogEntry _entry1 = new RaftLogEntry( 30, valueOf( "contentA" ) );
-		 private readonly RaftLogEntry _entry2 = new RaftLogEntry( 31, valueOf( "contentB" ) );
-		 private readonly RaftLogEntry _entry3 = new RaftLogEntry( 32, valueOf( "contentC" ) );
-		 private readonly RaftLogEntry _entry4 = new RaftLogEntry( 33, valueOf( "contentD" ) );
+		 private readonly RaftLogEntry _entry1 = new RaftLogEntry( 30, ValueOf( "contentA" ) );
+		 private readonly RaftLogEntry _entry2 = new RaftLogEntry( 31, ValueOf( "contentB" ) );
+		 private readonly RaftLogEntry _entry3 = new RaftLogEntry( 32, ValueOf( "contentC" ) );
+		 private readonly RaftLogEntry _entry4 = new RaftLogEntry( 33, ValueOf( "contentD" ) );
 		 private readonly int _version = 0;
 
 		 private ReaderPool _readerPool;

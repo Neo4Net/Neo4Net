@@ -22,9 +22,9 @@
 namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 {
 
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	/// <summary>
 	/// Keeper of state that is about to be committed. That state can be <seealso cref="extractCommands(System.Collections.ICollection) extracted"/>
@@ -41,7 +41,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 /// <param name="target"> list that commands will be added into. </param>
 		 /// <exception cref="TransactionFailureException"> if the state is invalid or not applicable. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> target) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: void extractCommands(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> target) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 		 void ExtractCommands( ICollection<StorageCommand> target );
 	}
 

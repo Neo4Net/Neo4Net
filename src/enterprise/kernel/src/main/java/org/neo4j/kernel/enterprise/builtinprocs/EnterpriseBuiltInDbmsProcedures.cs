@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
 	using Neo4Net.Helpers.Collections;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using KernelTransactionHandle = Neo4Net.Kernel.api.KernelTransactionHandle;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -83,7 +83,7 @@ namespace Neo4Net.Kernel.enterprise.builtinprocs
 		 public GraphDatabaseAPI Graph;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

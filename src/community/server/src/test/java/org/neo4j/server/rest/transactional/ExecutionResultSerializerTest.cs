@@ -37,7 +37,7 @@ namespace Neo4Net.Server.rest.transactional
 	using Relationship = Neo4Net.GraphDb.Relationship;
 	using Result = Neo4Net.GraphDb.Result;
 	using NotificationCode = Neo4Net.GraphDb.impl.notification.NotificationCode;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;

@@ -58,7 +58,7 @@ namespace Neo4Net.com.storecopy
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
@@ -546,7 +546,7 @@ namespace Neo4Net.com.storecopy
 					RequestContext requestContext = ( new StoreCopyServer( neoStoreDataSource, checkPointer, Fs, OriginalDir, ( new Monitors() ).newMonitor(typeof(StoreCopyServer.Monitor)) ) ).flushStoresAndStreamStoreFiles("test", writer, IncludeLogs);
 
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.storageengine.api.StoreId storeId = original.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).getStoreId();
+//ORIGINAL LINE: final org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId = original.getDependencyResolver().resolveDependency(org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageEngine.class).getStoreId();
 					StoreId storeId = Original.DependencyResolver.resolveDependency( typeof( RecordStorageEngine ) ).StoreId;
 
 					ResponsePacker responsePacker = new ResponsePacker( logicalTransactionStore, transactionIdStore, () => storeId );

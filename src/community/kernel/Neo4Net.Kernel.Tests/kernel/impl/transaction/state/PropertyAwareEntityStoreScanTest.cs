@@ -34,9 +34,9 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using NodeRecord = Neo4Net.Kernel.Impl.Store.Records.NodeRecord;
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 	using Neo4Net.Kernel.impl.transaction.state.storeview;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -85,7 +85,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 //ORIGINAL LINE: final PercentageSupplier percentageSupplier = new PercentageSupplier();
 			  PercentageSupplier percentageSupplier = new PercentageSupplier();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.storageengine.api.StorageNodeCursor,RuntimeException> scan = new org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.storageengine.api.StorageNodeCursor,RuntimeException>(new org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageReader(neoStores), total, org.eclipse.collections.impl.block.factory.primitive.IntPredicates.alwaysTrue(), id -> locks.acquireNodeLock(id, org.Neo4Net.kernel.impl.locking.LockService_LockType.READ_LOCK))
+//ORIGINAL LINE: final org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException> scan = new org.Neo4Net.kernel.impl.transaction.state.storeview.PropertyAwareEntityStoreScan<org.Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor,RuntimeException>(new org.Neo4Net.kernel.impl.storageengine.impl.recordstorage.RecordStorageReader(neoStores), total, org.eclipse.collections.impl.block.factory.primitive.IntPredicates.alwaysTrue(), id -> locks.acquireNodeLock(id, org.Neo4Net.kernel.impl.locking.LockService_LockType.READ_LOCK))
 			  PropertyAwareEntityStoreScan<StorageNodeCursor, Exception> scan = new PropertyAwareEntityStoreScanAnonymousInnerClass( this, total, IntPredicates.alwaysTrue(), percentageSupplier );
 			  percentageSupplier.StoreScan = scan;
 

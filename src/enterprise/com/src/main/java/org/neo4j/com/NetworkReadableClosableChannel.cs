@@ -27,7 +27,7 @@ namespace Neo4Net.com
 
 	using LogPositionMarker = Neo4Net.Kernel.impl.transaction.log.LogPositionMarker;
 	using ReadableClosablePositionAwareChannel = Neo4Net.Kernel.impl.transaction.log.ReadableClosablePositionAwareChannel;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
 
 	public class NetworkReadableClosableChannel : ReadableClosablePositionAwareChannel
 	{

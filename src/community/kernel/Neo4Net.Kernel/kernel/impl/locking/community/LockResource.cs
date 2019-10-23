@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.impl.locking.community
 {
 	using MathUtil = Neo4Net.Helpers.MathUtil;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class LockResource
 	{

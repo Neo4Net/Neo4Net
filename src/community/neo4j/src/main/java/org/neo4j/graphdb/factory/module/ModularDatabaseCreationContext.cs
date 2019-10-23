@@ -25,7 +25,7 @@ namespace Neo4Net.GraphDb.factory.module
 	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
 	using DatabaseIdContext = Neo4Net.GraphDb.factory.module.id.DatabaseIdContext;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;

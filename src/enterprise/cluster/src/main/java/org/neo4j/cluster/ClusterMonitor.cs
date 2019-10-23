@@ -37,7 +37,7 @@ namespace Neo4Net.cluster
 	/// 
 	/// @author Mattias Persson
 	/// </summary>
-	public interface ClusterMonitor : BindingNotifier, Heartbeat
+	public interface IClusterMonitor : BindingNotifier, Heartbeat
 	{
 		 void AddClusterListener( ClusterListener listener );
 

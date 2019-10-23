@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.transaction.state
 {
 
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using Neo4Net.Kernel.Api.Index;
 	using Neo4Net.Kernel.Impl.Api.index;
 	using IEntityUpdates = Neo4Net.Kernel.Impl.Api.index.EntityUpdates;
@@ -37,7 +37,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
 	using PropertyCommand = Neo4Net.Kernel.impl.transaction.command.Command.PropertyCommand;
 	using RelationshipCommand = Neo4Net.Kernel.impl.transaction.command.Command.RelationshipCommand;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.NodeLabelsField.parseLabelsField;
@@ -103,7 +103,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  IEntityUpdates IEntityUpdates = nodePropertyUpdate.Build();
 			  // we need to materialize the IndexEntryUpdates here, because when we
 			  // consume (later in separate thread) the store might have changed.
-			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, IEntityType.NODE ) )
+			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, EntityType.NODE ) )
 			  {
 					_updates.Add( update );
 			  }
@@ -116,7 +116,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  IEntityUpdates IEntityUpdates = relationshipPropertyUpdate.Build();
 			  // we need to materialize the IndexEntryUpdates here, because when we
 			  // consume (later in separate thread) the store might have changed.
-			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, IEntityType.RELATIONSHIP ) )
+			  foreach ( IndexEntryUpdate<SchemaDescriptor> update in _updateService.convertToIndexUpdates( IEntityUpdates, EntityType.RELATIONSHIP ) )
 			  {
 					_updates.Add( update );
 			  }

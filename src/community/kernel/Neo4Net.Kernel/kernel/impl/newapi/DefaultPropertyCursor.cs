@@ -24,11 +24,11 @@ using System.Diagnostics;
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
 	using AssertOpen = Neo4Net.Kernel.api.AssertOpen;
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
-	using IPropertyContainerState = Neo4Net.Storageengine.Api.txstate.PropertyContainerState;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
+	using IPropertyContainerState = Neo4Net.Kernel.Api.StorageEngine.TxState.PropertyContainerState;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueGroup = Neo4Net.Values.Storable.ValueGroup;
 	using Neo4Net.Values.Storable;

@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using Command = Neo4Net.Kernel.impl.transaction.command.Command;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
 	using Registers = Neo4Net.Register.Registers;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.ANY_LABEL;

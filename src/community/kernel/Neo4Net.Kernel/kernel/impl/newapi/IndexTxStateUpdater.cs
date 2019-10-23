@@ -26,9 +26,9 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using MutableIntObjectMap = org.eclipse.collections.api.map.primitive.MutableIntObjectMap;
 	using IntObjectMaps = org.eclipse.collections.impl.factory.primitive.IntObjectMaps;
 
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using PropertyCursor = Neo4Net.Internal.Kernel.Api.PropertyCursor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using PropertyCursor = Neo4Net.Kernel.Api.Internal.PropertyCursor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using IndexingService = Neo4Net.Kernel.Impl.Api.index.IndexingService;
 	using Value = Neo4Net.Values.Storable.Value;
 	using ValueTuple = Neo4Net.Values.Storable.ValueTuple;
@@ -36,7 +36,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_PROPERTY_KEY;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.EntityType.NODE;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.EntityType.NODE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.values.storable.Values.NO_VALUE;
 

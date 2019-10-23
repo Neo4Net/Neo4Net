@@ -21,13 +21,13 @@ namespace Neo4Net.Kernel.impl.locking
 {
 
 	using KernelStatement = Neo4Net.Kernel.Impl.Api.KernelStatement;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 	/// <summary>
 	/// Component used by <seealso cref="KernelStatement"/> to acquire <seealso cref="pessimistic() pessimistic"/> and
 	/// <seealso cref="optimistic() optimistic"/> locks.
 	/// </summary>
-	public interface StatementLocks : IDisposable
+	public interface IStatementLocks : IDisposable
 	{
 		 /// <summary>
 		 /// Get <seealso cref="Locks.Client"/> responsible for pessimistic locks. Such locks will be grabbed right away.

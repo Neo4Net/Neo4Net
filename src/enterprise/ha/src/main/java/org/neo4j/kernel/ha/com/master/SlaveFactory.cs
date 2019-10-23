@@ -24,9 +24,9 @@ namespace Neo4Net.Kernel.ha.com.master
 {
 	using ClusterMember = Neo4Net.Kernel.ha.cluster.member.ClusterMember;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
-	public interface SlaveFactory
+	public interface ISlaveFactory
 	{
 		 Slave NewSlave( LifeSupport life, ClusterMember clusterMember, string originHostNameOrIp, int originPort );
 

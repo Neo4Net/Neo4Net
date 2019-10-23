@@ -227,8 +227,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					return existing;
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = function.valueOf(key);
-			  Value value = function.valueOf( key );
+//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = function.ValueOf(key);
+			  Value value = function.ValueOf( key );
 			  Put( key, value );
 			  return value;
 		 }
@@ -245,8 +245,8 @@ namespace Neo4Net.Kernel.Impl.Api.state
 					return existing;
 			  }
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = function.valueOf(parameter);
-			  Value value = function.valueOf( parameter );
+//ORIGINAL LINE: final org.Neo4Net.values.storable.Value value = function.ValueOf(parameter);
+			  Value value = function.ValueOf( parameter );
 			  Put( key, value );
 			  return value;
 		 }

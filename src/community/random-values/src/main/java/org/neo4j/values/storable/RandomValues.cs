@@ -76,7 +76,7 @@ namespace Neo4Net.Values.Storable
 	/// </summary>
 	public class RandomValues
 	{
-		 public interface Configuration
+		 public interface IConfiguration
 		 {
 			  int StringMinLength();
 

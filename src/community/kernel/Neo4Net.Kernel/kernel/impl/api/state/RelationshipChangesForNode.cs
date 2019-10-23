@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
-	using RelationshipDirection = Neo4Net.Storageengine.Api.RelationshipDirection;
+	using RelationshipDirection = Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Math.toIntExact;
@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.Impl.Api.state
 				 return nameValue;
 			 }
 
-			 public static DiffStrategy valueOf( string name )
+			 public static DiffStrategy ValueOf( string name )
 			 {
 				 foreach ( DiffStrategy enumInstance in DiffStrategy.valueList )
 				 {

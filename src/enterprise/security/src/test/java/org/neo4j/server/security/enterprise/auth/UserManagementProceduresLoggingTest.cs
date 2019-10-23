@@ -30,9 +30,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 	using Neo4Net.Functions;
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
@@ -78,8 +78,8 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  AuthProcedures.securityLog = securityLog;
 
 			  _generalUserManager = UserManager;
-			  EnterpriseSecurityContext adminContext = new EnterpriseSecurityContext( new MockAuthSubject( "admin" ), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full, Collections.emptySet(), true );
-			  _matsContext = new EnterpriseSecurityContext( new MockAuthSubject( "mats" ), Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.None, Collections.emptySet(), false );
+			  EnterpriseSecurityContext adminContext = new EnterpriseSecurityContext( new MockAuthSubject( "admin" ), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full, Collections.emptySet(), true );
+			  _matsContext = new EnterpriseSecurityContext( new MockAuthSubject( "mats" ), Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.None, Collections.emptySet(), false );
 
 			  Subject = adminContext;
 			  _log.clear();

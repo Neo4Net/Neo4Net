@@ -19,10 +19,10 @@
  */
 namespace Neo4Net.Kernel.impl.core
 {
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
-	public interface CacheAccessBackDoor
+	public interface ICacheAccessBackDoor
 	{
 		 void AddSchemaRule( SchemaRule schemaRule );
 

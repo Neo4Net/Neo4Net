@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 	using Neo4Net.Cursors;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertTrue;
@@ -52,7 +52,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor = mock( typeof( RawCursor ) );
 			  when( cursor.Next() ).thenReturn(false);
 			  ICollection<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>> toRemoveFrom = new HashSet<RawCursor<Hit<LabelScanKey, LabelScanValue>, IOException>>();
-			  LabelScanValueIndexProgressor iterator = new LabelScanValueIndexProgressor( cursor, toRemoveFrom, mock( typeof( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient ) ) );
+			  LabelScanValueIndexProgressor iterator = new LabelScanValueIndexProgressor( cursor, toRemoveFrom, mock( typeof( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient ) ) );
 			  verify( cursor, never() ).close();
 
 			  // WHEN

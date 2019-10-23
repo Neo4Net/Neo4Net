@@ -96,7 +96,7 @@ namespace Neo4Net.Kernel.impl.index
 			return nameValue;
 		}
 
-		public static IndexEntityType valueOf( string name )
+		public static IndexEntityType ValueOf( string name )
 		{
 			foreach ( IndexEntityType enumInstance in IndexEntityType.valueList )
 			{

@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 
 
 	using DatabaseManager = Neo4Net.Dbms.database.DatabaseManager;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using CommandVisitor = Neo4Net.Kernel.Impl.Api.CommandVisitor;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
@@ -49,8 +49,8 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RecordChangeSet = Neo4Net.Kernel.impl.transaction.state.RecordChangeSet;
 	using Neo4Net.Kernel.impl.transaction.state;
 	using Neo4Net.Kernel.impl.transaction.state.RecordChanges;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertFalse;
@@ -113,7 +113,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private org.Neo4Net.kernel.impl.transaction.log.PhysicalTransactionRepresentation transactionRepresentationOf(TransactionRecordState tx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private PhysicalTransactionRepresentation TransactionRepresentationOf( TransactionRecordState tx )
 		 {
 			  IList<StorageCommand> commands = new List<StorageCommand>();

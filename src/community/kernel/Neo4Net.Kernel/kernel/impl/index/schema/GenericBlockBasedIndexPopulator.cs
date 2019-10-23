@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using IndexDirectoryStructure = Neo4Net.Kernel.Api.Index.IndexDirectoryStructure;
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexSpecificSpaceFillingCurveSettingsCache = Neo4Net.Kernel.Impl.Index.Schema.config.IndexSpecificSpaceFillingCurveSettingsCache;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 
 	internal class GenericBlockBasedIndexPopulator : BlockBasedIndexPopulator<GenericKey, NativeIndexValue>

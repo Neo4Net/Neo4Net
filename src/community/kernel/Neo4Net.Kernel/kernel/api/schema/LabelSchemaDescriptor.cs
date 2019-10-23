@@ -21,15 +21,15 @@ namespace Neo4Net.Kernel.api.schema
 {
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using Neo4Net.Internal.Kernel.Api.schema;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using Neo4Net.Kernel.Api.Internal.schema;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
-	public class LabelSchemaDescriptor : Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor
+	public class LabelSchemaDescriptor : Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor
 	{
 		 private readonly int _labelId;
 		 private readonly int[] _propertyIds;
@@ -78,9 +78,9 @@ namespace Neo4Net.Kernel.api.schema
 			  return ResourceTypes.LABEL;
 		 }
 
-		 public override IEntityType IEntityType()
+		 public override EntityType EntityType()
 		 {
-			  return IEntityType.NODE;
+			  return EntityType.NODE;
 		 }
 
 		 public override PropertySchemaType PropertySchemaType()

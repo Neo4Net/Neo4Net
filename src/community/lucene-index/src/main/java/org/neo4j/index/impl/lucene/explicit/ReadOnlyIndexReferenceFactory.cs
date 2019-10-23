@@ -24,7 +24,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 	using IndexSearcher = org.apache.lucene.search.IndexSearcher;
 
 
-	using ExplicitIndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
+	using ExplicitIndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException;
 
 	public class ReadOnlyIndexReferenceFactory : IndexReferenceFactory
 	{
@@ -33,7 +33,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: IndexReference createIndexReference(IndexIdentifier identifier) throws java.io.IOException, org.Neo4Net.internal.kernel.api.exceptions.explicitindex.ExplicitIndexNotFoundKernelException
+//ORIGINAL LINE: IndexReference createIndexReference(IndexIdentifier identifier) throws java.io.IOException, org.Neo4Net.Kernel.Api.Internal.Exceptions.explicitindex.ExplicitIndexNotFoundKernelException
 		 internal override IndexReference CreateIndexReference( IndexIdentifier identifier )
 		 {
 			  IndexReader reader = DirectoryReader.open( GetIndexDirectory( identifier ) );

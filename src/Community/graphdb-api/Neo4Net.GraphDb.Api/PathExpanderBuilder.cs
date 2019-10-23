@@ -157,7 +157,7 @@ namespace Neo4Net.GraphDb
 
 		 private PathExpanderBuilder( StandardExpander expander )
 		 {
-			  this._expander = expander;
+			  _expander = expander;
 		 }
 	}
 

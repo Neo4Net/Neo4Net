@@ -28,10 +28,10 @@ namespace Neo4Net.Kernel.api
 	/// then close all resources at statement close.
 	/// 
 	/// Note that Statement used to be the access-point for all kernel reads and writes before 3.4. For
-	/// accessing the graph now, see <seealso cref="org.Neo4Net.internal.kernel.api.Transaction"/>. The only remainder
+	/// accessing the graph now, see <seealso cref="org.Neo4Net.Kernel.Api.Internal.Transaction"/>. The only remainder
 	/// the QueryRegistryOperations, which will eventually also move from here.
 	/// </summary>
-	public interface Statement : Resource, ResourceManager
+	public interface IStatement : Resource, ResourceManager
 	{
 		 /// <returns> interface exposing operations for associating metadata with this statement </returns>
 		 QueryRegistryOperations QueryRegistration();

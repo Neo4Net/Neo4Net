@@ -22,7 +22,7 @@
 namespace Neo4Net.Harness
 {
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -44,13 +44,13 @@ namespace Neo4Net.Harness
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long makeNode(String label) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public long makeNode(String label) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual long MakeNode( string label )
 		 {
 			  long result;
 			  try
 			  {
-					  using ( Transaction tx = _graph.beginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.write() ) )
+					  using ( Transaction tx = _graph.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.write() ) )
 					  {
 						KernelTransaction ktx = _txBridge.getKernelTransactionBoundToThisThread( true );
 						long nodeId = ktx.DataWrite().nodeCreate();
@@ -71,7 +71,7 @@ namespace Neo4Net.Harness
 		 public virtual long CountNodes()
 		 {
 			  long result;
-			  using ( Transaction tx = _graph.beginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.read() ) )
+			  using ( Transaction tx = _graph.BeginTransaction( KernelTransaction.Type.@explicit, AnonymousContext.read() ) )
 			  {
 					KernelTransaction kernelTransaction = this._txBridge.getKernelTransactionBoundToThisThread( true );
 					result = kernelTransaction.DataRead().countsForNode(-1);

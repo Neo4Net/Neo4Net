@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.impl.query
 			return nameValue;
 		}
 
-		public static NoQueryEngine valueOf( string name )
+		public static NoQueryEngine ValueOf( string name )
 		{
 			foreach ( NoQueryEngine enumInstance in NoQueryEngine.valueList )
 			{

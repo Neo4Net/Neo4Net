@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.query
 {
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;

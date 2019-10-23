@@ -20,14 +20,14 @@
 namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
 
 	internal class NodeLabelIndexProgressor : IndexProgressor
 	{
 		 private readonly PrimitiveLongResourceIterator _iterator;
-		 private readonly Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient _client;
+		 private readonly Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient _client;
 
-		 internal NodeLabelIndexProgressor( PrimitiveLongResourceIterator iterator, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client )
+		 internal NodeLabelIndexProgressor( PrimitiveLongResourceIterator iterator, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient client )
 		 {
 			  this._iterator = iterator;
 			  this._client = client;

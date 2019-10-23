@@ -39,7 +39,7 @@ namespace Neo4Net.Kernel.ha.@lock
 	using TransactionStream = Neo4Net.com.TransactionStream;
 	using Neo4Net.com;
 	using TransientFailureException = Neo4Net.GraphDb.TransientFailureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using DatabaseAvailabilityGuard = Neo4Net.Kernel.availability.DatabaseAvailabilityGuard;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -50,8 +50,8 @@ namespace Neo4Net.Kernel.ha.@lock
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
 	using CommunityLockManger = Neo4Net.Kernel.impl.locking.community.CommunityLockManger;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Clocks = Neo4Net.Time.Clocks;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -99,7 +99,7 @@ namespace Neo4Net.Kernel.ha.@lock
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.logging.NullLog.getInstance;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.StoreId.DEFAULT;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.StoreId.DEFAULT;
 
 	public class SlaveLocksClientTest
 	{

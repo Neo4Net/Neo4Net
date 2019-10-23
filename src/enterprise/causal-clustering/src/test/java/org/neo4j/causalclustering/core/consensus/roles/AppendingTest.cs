@@ -81,7 +81,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 
 			  // when
 			  // the leader asks to append after the commit index an entry that mismatches on term
-			  Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, appendIndex - 2, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.valueOf( 2 ) ) }, appendIndex + 3 ), NullLog.Instance );
+			  Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, appendIndex - 2, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.ValueOf( 2 ) ) }, appendIndex + 3 ), NullLog.Instance );
 
 			  // then
 			  // we must produce a TruncateLogCommand at the earliest mismatching index
@@ -109,7 +109,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  // when - then
 			  try
 			  {
-					Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, commitIndex - 1, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.valueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
+					Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, commitIndex - 1, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.ValueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
 					fail( "Appending should not allow truncation at or before the commit index" );
 			  }
 			  catch ( System.InvalidOperationException )
@@ -139,7 +139,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  // when - then
 			  try
 			  {
-					Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, commitIndex - 2, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.valueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
+					Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, localTermForAllEntries, commitIndex - 2, localTermForAllEntries, new RaftLogEntry[]{ new RaftLogEntry( localTermForAllEntries + 1, ReplicatedInteger.ValueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
 					fail( "Appending should not allow truncation at or before the commit index" );
 			  }
 			  catch ( System.InvalidOperationException )
@@ -174,7 +174,7 @@ namespace Neo4Net.causalclustering.core.consensus.roles
 			  // when
 			  // an appendEntriesRequest arrives for appending entries before the prevIndex (for whatever reason)
 			  Outcome outcome = mock( typeof( Outcome ) );
-			  Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, prevTerm, prevIndex - 2, prevTerm, new RaftLogEntry[]{ new RaftLogEntry( prevTerm, ReplicatedInteger.valueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
+			  Appending.HandleAppendEntriesRequest( state, outcome, new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( _aMember, prevTerm, prevIndex - 2, prevTerm, new RaftLogEntry[]{ new RaftLogEntry( prevTerm, ReplicatedInteger.ValueOf( 2 ) ) }, commitIndex + 3 ), NullLog.Instance );
 
 			  // then
 			  // there should be no truncate commands. Actually, the whole thing should be a no op

@@ -24,7 +24,7 @@ namespace Neo4Net.com
 {
 
 	using TransactionObligationFulfiller = Neo4Net.com.storecopy.TransactionObligationFulfiller;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// <seealso cref="Response"/> that carries transaction obligation as a side-effect.

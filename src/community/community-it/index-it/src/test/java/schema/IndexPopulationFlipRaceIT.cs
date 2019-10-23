@@ -26,8 +26,8 @@ namespace Schema
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using Neo4Net.Helpers.Collections;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -40,7 +40,7 @@ namespace Schema
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.Label.label;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class IndexPopulationFlipRaceIT
 	{
@@ -144,7 +144,7 @@ namespace Schema
 		 private void VerifyThatThereAreExactlyOneIndexEntryPerNodeInTheIndexes( int i, Pair<long[], long[]> data )
 		 {
 			  Kernel kernel = Db.DependencyResolver.resolveDependency( typeof( Kernel ) );
-			  using ( Neo4Net.Internal.Kernel.Api.Transaction tx = kernel.BeginTransaction( @implicit, AnonymousContext.read() ) )
+			  using ( Neo4Net.Kernel.Api.Internal.Transaction tx = kernel.BeginTransaction( @implicit, AnonymousContext.read() ) )
 			  {
 					int labelAId = tx.TokenRead().nodeLabel(LabelA(i).name());
 					int keyAId = tx.TokenRead().propertyKey(KeyA(i));

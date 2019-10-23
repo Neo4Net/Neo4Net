@@ -42,7 +42,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
 
 	public class LocalDatabase : Lifecycle
 	{

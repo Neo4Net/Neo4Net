@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.impl.util
 {
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
 
 	public class IdPrettyPrinter
 	{
@@ -30,17 +30,17 @@ namespace Neo4Net.Kernel.impl.util
 
 		 public static string Label( int id )
 		 {
-			  return id == Neo4Net.Internal.Kernel.Api.Read_Fields.ANY_LABEL ? "" : ( ":label=" + id );
+			  return id == Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_LABEL ? "" : ( ":label=" + id );
 		 }
 
 		 public static string PropertyKey( int id )
 		 {
-			  return id == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN ? "" : ( ":propertyKey=" + id );
+			  return id == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN ? "" : ( ":propertyKey=" + id );
 		 }
 
 		 public static string RelationshipType( int id )
 		 {
-			  return id == Neo4Net.Internal.Kernel.Api.TokenRead_Fields.NO_TOKEN ? "" : ( "[:type=" + id + "]" );
+			  return id == Neo4Net.Kernel.Api.Internal.TokenRead_Fields.NO_TOKEN ? "" : ( "[:type=" + id + "]" );
 		 }
 	}
 

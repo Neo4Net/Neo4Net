@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.proc
 {
 	using Test = org.junit.Test;
 
-	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
+	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.equalTo;

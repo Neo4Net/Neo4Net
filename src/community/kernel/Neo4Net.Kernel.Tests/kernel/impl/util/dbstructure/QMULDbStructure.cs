@@ -115,7 +115,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			return nameValue;
 		}
 
-		public static QMULDbStructure valueOf( string name )
+		public static QMULDbStructure ValueOf( string name )
 		{
 			foreach ( QMULDbStructure enumInstance in QMULDbStructure.valueList )
 			{

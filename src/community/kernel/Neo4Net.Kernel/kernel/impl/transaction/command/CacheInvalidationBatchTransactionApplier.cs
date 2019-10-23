@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using CacheAccessBackDoor = Neo4Net.Kernel.impl.core.CacheAccessBackDoor;
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	public class CacheInvalidationBatchTransactionApplier : Neo4Net.Kernel.Impl.Api.BatchTransactionApplier_Adapter
 	{

@@ -32,10 +32,10 @@ namespace Neo4Net.Server.rest.transactional
 	using Path = Neo4Net.GraphDb.Path;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Relationship = Neo4Net.GraphDb.Relationship;
-	using CRS = Neo4Net.GraphDb.spatial.CRS;
-	using Coordinate = Neo4Net.GraphDb.spatial.Coordinate;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using CRS = Neo4Net.GraphDb.Spatial.CRS;
+	using Coordinate = Neo4Net.GraphDb.Spatial.Coordinate;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.genericMap;
@@ -120,7 +120,7 @@ namespace Neo4Net.Server.rest.transactional
 				 return nameValue;
 			 }
 
-			 public static Neo4NetJsonMetaType valueOf( string name )
+			 public static Neo4NetJsonMetaType ValueOf( string name )
 			 {
 				 foreach ( Neo4NetJsonMetaType enumInstance in Neo4NetJsonMetaType.valueList )
 				 {
@@ -401,7 +401,7 @@ namespace Neo4Net.Server.rest.transactional
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Neo4NetJsonMetaType parseGeometryType(org.Neo4Net.graphdb.spatial.Geometry value) throws java.io.IOException
+//ORIGINAL LINE: private Neo4NetJsonMetaType parseGeometryType(org.Neo4Net.GraphDb.Spatial.Geometry value) throws java.io.IOException
 		 private Neo4NetJsonMetaType ParseGeometryType( Geometry value )
 		 {
 			  Neo4NetJsonMetaType type = null;

@@ -103,7 +103,7 @@ namespace Neo4Net.Ssl
 				 return nameValue;
 			 }
 
-			 public static VerificationAlgorithm valueOf( string name )
+			 public static VerificationAlgorithm ValueOf( string name )
 			 {
 				 foreach ( VerificationAlgorithm enumInstance in VerificationAlgorithm.valueList )
 				 {

@@ -21,7 +21,7 @@ namespace Neo4Net.Kernel.impl.transaction
 {
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using TransactionAppender = Neo4Net.Kernel.impl.transaction.log.TransactionAppender;
-	using CommandStream = Neo4Net.Storageengine.Api.CommandStream;
+	using CommandStream = Neo4Net.Kernel.Api.StorageEngine.CommandStream;
 
 	/// <summary>
 	/// Representation of a transaction that can be written to a <seealso cref="TransactionAppender"/> and read back later.

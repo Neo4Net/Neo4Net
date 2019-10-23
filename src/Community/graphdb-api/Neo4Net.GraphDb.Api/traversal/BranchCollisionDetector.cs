@@ -37,14 +37,14 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// this branch resulted in a collision with other previously registered branches,
 		 /// or {@code null} if this branch didn't result in any collision.
 		 /// </summary>
-		 /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for collision with other
+		 /// <param name="branch"> the <seealso cref="ITraversalBranch"/> to check for collision with other
 		 /// previously registered branches. </param>
 		 /// <param name="direction"> <seealso cref="Direction.OUTGOING"/> if this branch represents a branch
 		 /// from the start side of this bidirectional traversal, or <seealso cref="Direction.INCOMING"/>
 		 /// for the end side. </param>
 		 /// <returns> new paths formed if this branch collided with other branches,
 		 /// or {@code null} if no collision occurred. </returns>
-		 IEnumerable<IPath> Evaluate( TraversalBranch branch, Direction direction );
+		 IEnumerable<IPath> Evaluate( ITraversalBranch branch, Direction direction );
 	}
 
 }

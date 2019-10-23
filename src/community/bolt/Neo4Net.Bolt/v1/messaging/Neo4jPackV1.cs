@@ -551,7 +551,7 @@ namespace Neo4Net.Bolt.v1.messaging
 //ORIGINAL LINE: protected org.Neo4Net.values.AnyValue unpackStruct(char signature, long size) throws java.io.IOException
 			  protected internal virtual AnyValue UnpackStruct( char signature, long size )
 			  {
-					StructType structType = StructType.valueOf( signature );
+					StructType structType = StructType.ValueOf( signature );
 					if ( structType == null )
 					{
 						 throw new BoltIOException( Neo4Net.Kernel.Api.Exceptions.Status_Request.InvalidFormat, string.Format( "Struct types of 0x{0} are not recognized.", signature.ToString( "x" ) ) );

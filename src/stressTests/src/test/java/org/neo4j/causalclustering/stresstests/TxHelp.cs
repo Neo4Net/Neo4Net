@@ -29,7 +29,7 @@ namespace Neo4Net.causalclustering.stresstests
 	using DatabaseShutdownException = Neo4Net.GraphDb.DatabaseShutdownException;
 	using TransactionFailureException = Neo4Net.GraphDb.TransactionFailureException;
 	using TransientTransactionFailureException = Neo4Net.GraphDb.TransientTransactionFailureException;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
 
 	internal class TxHelp
 	{

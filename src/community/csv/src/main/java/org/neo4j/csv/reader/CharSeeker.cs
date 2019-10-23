@@ -48,7 +48,7 @@ namespace Neo4Net.Csv.Reader
 	/// 
 	/// @author Mattias Persson
 	/// </summary>
-	public interface CharSeeker : System.IDisposable, SourceTraceability
+	public interface ICharSeeker : System.IDisposable, SourceTraceability
 	{
 		 /// <summary>
 		 /// Seeks the next occurrence of any of the characters in {@code untilOneOfChars}, or if end-of-line,

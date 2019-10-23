@@ -30,9 +30,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
-	using QualifiedName = Neo4Net.Internal.Kernel.Api.procs.QualifiedName;
-	using UserFunctionSignature = Neo4Net.Internal.Kernel.Api.procs.UserFunctionSignature;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
+	using QualifiedName = Neo4Net.Kernel.Api.Internal.procs.QualifiedName;
+	using UserFunctionSignature = Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
 	using SecuritySettings = Neo4Net.Server.security.enterprise.configuration.SecuritySettings;
 

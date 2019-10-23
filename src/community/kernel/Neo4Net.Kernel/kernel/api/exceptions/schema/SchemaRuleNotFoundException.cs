@@ -19,14 +19,14 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	public class SchemaRuleNotFoundException : SchemaRuleException
 	{
 		 private const string NOT_FOUND_MESSAGE_TEMPLATE = "No %s was found for %s.";
 
-		 public SchemaRuleNotFoundException( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.SchemaRuleAccessFailed, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
+		 public SchemaRuleNotFoundException( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( org.Neo4Net.kernel.api.exceptions.Status_Schema.SchemaRuleAccessFailed, NOT_FOUND_MESSAGE_TEMPLATE, kind, descriptor )
 		 {
 		 }
 	}

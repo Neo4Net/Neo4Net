@@ -20,7 +20,7 @@
 namespace Neo4Net.Server.rest.security
 {
 
-	public interface SecurityRule
+	public interface ISecurityRule
 	{
 		 /// <param name="request"> The HTTP request currently under consideration. </param>
 		 /// <returns> <code>true</code> if the rule passes, <code>false</code> if the

@@ -185,7 +185,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 
 					using ( Session session = driver.session() )
 					{
-						 using ( Transaction tx = session.beginTransaction() )
+						 using ( Transaction tx = session.BeginTransaction() )
 						 {
 							  tx.run( "CALL dbms.security.clearAuthCache()" );
 							  assertThat( tx.run( "MATCH (n) RETURN count(n)" ).single().get(0).asInt(), greaterThanOrEqualTo(0) );
@@ -226,7 +226,7 @@ namespace Neo4Net.Server.security.enterprise.auth.integration.bolt
 			  {
 				try
 				{
-					 using ( Driver driver = ConnectDriver( username, "abc123" ), Session session = driver.session(), Transaction tx = session.beginTransaction() )
+					 using ( Driver driver = ConnectDriver( username, "abc123" ), Session session = driver.session(), Transaction tx = session.BeginTransaction() )
 					 {
 						  assertion( tx );
 						  latch.StartAndWaitForAllToStart();

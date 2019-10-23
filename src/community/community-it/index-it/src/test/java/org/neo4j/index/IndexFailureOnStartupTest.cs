@@ -30,8 +30,8 @@ namespace Neo4Net.Index
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using EmbeddedDatabaseRule = Neo4Net.Test.rule.EmbeddedDatabaseRule;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
@@ -51,7 +51,7 @@ namespace Neo4Net.Index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertThat;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.graphdb.schema.Schema_IndexState.ONLINE;
+//	import static org.Neo4Net.GraphDb.Schema.Schema_IndexState.ONLINE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.index.SabotageNativeIndex.nativeIndexDirectoryStructure;
 
@@ -183,7 +183,7 @@ namespace Neo4Net.Index
 			  }
 		 }
 
-		 private void IndexStateShouldBe( Matcher<Neo4Net.GraphDb.schema.Schema_IndexState> matchesExpectation )
+		 private void IndexStateShouldBe( Matcher<Neo4Net.GraphDb.Schema.Schema_IndexState> matchesExpectation )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
 			  {

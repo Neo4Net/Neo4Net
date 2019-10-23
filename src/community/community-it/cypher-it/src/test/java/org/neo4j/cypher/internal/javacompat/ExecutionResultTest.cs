@@ -29,7 +29,7 @@ namespace Neo4Net.Cypher.Internal.javacompat
 	using Neo4Net.GraphDb;
 	using Result = Neo4Net.GraphDb.Result;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using ThreadToStatementContextBridge = Neo4Net.Kernel.impl.core.ThreadToStatementContextBridge;
 	using TopLevelTransaction = Neo4Net.Kernel.impl.coreapi.TopLevelTransaction;

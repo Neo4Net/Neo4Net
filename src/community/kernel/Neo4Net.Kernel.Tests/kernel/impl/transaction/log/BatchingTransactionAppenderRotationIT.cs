@@ -47,7 +47,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using NullLog = Neo4Net.Logging.NullLog;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
 

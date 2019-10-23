@@ -608,7 +608,7 @@ namespace Neo4Net.Kernel.impl.core
 				 return nameValue;
 			 }
 
-			 public static RelType valueOf( string name )
+			 public static RelType ValueOf( string name )
 			 {
 				 foreach ( RelType enumInstance in RelType.valueList )
 				 {

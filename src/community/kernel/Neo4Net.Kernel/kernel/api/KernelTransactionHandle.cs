@@ -22,10 +22,10 @@
 namespace Neo4Net.Kernel.api
 {
 
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using ExecutingQuery = Neo4Net.Kernel.api.query.ExecutingQuery;
 	using TransactionExecutionStatistic = Neo4Net.Kernel.Impl.Api.TransactionExecutionStatistic;
@@ -50,14 +50,14 @@ namespace Neo4Net.Kernel.api
 
 		 /// <summary>
 		 /// The start time of the underlying transaction. I.e. basically <seealso cref="System.currentTimeMillis()"/> when user
-		 /// called <seealso cref="Kernel.beginTransaction(Transaction.Type, LoginContext)"/>.
+		 /// called <seealso cref="Kernel.BeginTransaction(Transaction.Type, LoginContext)"/>.
 		 /// </summary>
 		 /// <returns> the transaction start time. </returns>
 		 long StartTime();
 
 		 /// <summary>
 		 /// The start time of the underlying transaction. I.e. basically <seealso cref="System.nanoTime()"/> ()} when user
-		 /// called <seealso cref="org.Neo4Net.internal.kernel.api.Session.beginTransaction(KernelTransaction.Type)"/>.
+		 /// called <seealso cref="org.Neo4Net.Kernel.Api.Internal.Session.BeginTransaction(KernelTransaction.Type)"/>.
 		 /// 
 		 /// This can be used to measure elapsed time in a safe way that is not affected by system time changes.
 		 /// </summary>

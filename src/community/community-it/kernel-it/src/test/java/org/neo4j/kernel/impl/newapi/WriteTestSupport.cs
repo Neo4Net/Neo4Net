@@ -24,8 +24,8 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using KernelAPIWriteTestSupport = Neo4Net.Internal.Kernel.Api.KernelAPIWriteTestSupport;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using KernelAPIWriteTestSupport = Neo4Net.Kernel.Api.Internal.KernelAPIWriteTestSupport;
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using IGraphDatabaseServiceCleaner = Neo4Net.Test.GraphDatabaseServiceCleaner;

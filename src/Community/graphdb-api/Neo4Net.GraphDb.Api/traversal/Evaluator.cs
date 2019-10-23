@@ -61,7 +61,7 @@ namespace Neo4Net.GraphDb.Traversal
 				this.Evaluator = evaluator;
 		  }
 
-		  public override Evaluation Evaluate( IPath path, BranchState<STATE> state )
+		  public override Evaluation Evaluate( IPath path, IBranchState<STATE> state )
 		  {
 				return Evaluator.evaluate( path );
 		  }

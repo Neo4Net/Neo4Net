@@ -24,9 +24,9 @@ using System.Reflection;
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 
@@ -63,7 +63,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public Object[] apply(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public Object[] apply(Object record) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  public virtual object[] Apply( object record )
 			  {
 					object[] output = new object[FieldMappers.Length];
@@ -104,7 +104,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: Object apply(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: Object apply(Object record) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  internal virtual object Apply( object record )
 			  {
 					object invoke = GetValue( record );
@@ -112,7 +112,7 @@ namespace Neo4Net.Kernel.impl.proc
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object getValue(Object record) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private Object getValue(Object record) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  internal virtual object GetValue( object record )
 			  {
 					try
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 /// <returns> an output mapper for the return type of the method. </returns>
 		 /// <exception cref="ProcedureException"> </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OutputMapper mapper(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public OutputMapper mapper(Method method) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual OutputMapper Mapper( System.Reflection.MethodInfo method )
 		 {
 			  Type cls = method.ReturnType;
@@ -172,7 +172,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public OutputMapper mapper(Class userClass) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public OutputMapper mapper(Class userClass) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual OutputMapper Mapper( Type userClass )
 		 {
 			  AssertIsValidRecordClass( userClass );
@@ -212,7 +212,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertIsValidRecordClass(Class userClass) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private void assertIsValidRecordClass(Class userClass) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private void AssertIsValidRecordClass( Type userClass )
 		 {
 			  if ( userClass.IsPrimitive || userClass.IsArray || userClass.Assembly != null && userClass.Assembly.GetName().Name.StartsWith("java.") )

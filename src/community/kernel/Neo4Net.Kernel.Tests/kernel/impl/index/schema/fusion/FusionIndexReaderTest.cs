@@ -33,14 +33,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 	using PrimitiveLongCollections = Neo4Net.Collections.PrimitiveLongCollections;
 	using PrimitiveLongResourceCollections = Neo4Net.Collections.PrimitiveLongResourceCollections;
 	using PrimitiveLongResourceIterator = Neo4Net.Collections.PrimitiveLongResourceIterator;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using StringContainsPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.StringContainsPredicate;
-	using StringPrefixPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.StringPrefixPredicate;
-	using StringSuffixPredicate = Neo4Net.Internal.Kernel.Api.IndexQuery.StringSuffixPredicate;
-	using IndexNotApplicableKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotApplicableKernelException;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using StringContainsPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringContainsPredicate;
+	using StringPrefixPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringPrefixPredicate;
+	using StringSuffixPredicate = Neo4Net.Kernel.Api.Internal.IndexQuery.StringSuffixPredicate;
+	using IndexNotApplicableKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException;
 	using TestIndexDescriptorFactory = Neo4Net.Kernel.api.schema.index.TestIndexDescriptorFactory;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using CoordinateReferenceSystem = Neo4Net.Values.Storable.CoordinateReferenceSystem;
 	using PointValue = Neo4Net.Values.Storable.PointValue;
 	using Value = Neo4Net.Values.Storable.Value;
@@ -333,7 +333,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> stringRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, "abc", true, "def", false);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> stringRange = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(PROP_KEY, "abc", true, "def", false);
 			  IndexQuery.RangePredicate<object> stringRange = IndexQuery.range( PROP_KEY, "abc", true, "def", false );
 
 			  // then
@@ -347,7 +347,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 {
 			  // given
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> numberRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, 0, true, 1, false);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> numberRange = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(PROP_KEY, 0, true, 1, false);
 			  IndexQuery.RangePredicate<object> numberRange = IndexQuery.range( PROP_KEY, 0, true, 1, false );
 
 			  // then
@@ -364,7 +364,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 			  PointValue from = Values.pointValue( CoordinateReferenceSystem.Cartesian, 1.0, 1.0 );
 			  PointValue to = Values.pointValue( CoordinateReferenceSystem.Cartesian, 2.0, 2.0 );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: org.Neo4Net.internal.kernel.api.IndexQuery.RangePredicate<?> geometryRange = org.Neo4Net.internal.kernel.api.IndexQuery.range(PROP_KEY, from, true, to, false);
+//ORIGINAL LINE: org.Neo4Net.Kernel.Api.Internal.IndexQuery.RangePredicate<?> geometryRange = org.Neo4Net.Kernel.Api.Internal.IndexQuery.range(PROP_KEY, from, true, to, false);
 			  IndexQuery.RangePredicate<object> geometryRange = IndexQuery.range( PROP_KEY, from, true, to, false );
 
 			  // then
@@ -433,7 +433,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: @Test public void shouldInstantiatePartLazilyForSpecificValueGroupQuery() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInstantiatePartLazilyForSpecificValueGroupQuery()
 		 {
@@ -468,7 +468,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema.fusion
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.Neo4Net.storageengine.api.schema.IndexReader expectedReader, org.Neo4Net.internal.kernel.api.IndexQuery... indexQuery) throws org.Neo4Net.internal.kernel.api.exceptions.schema.IndexNotApplicableKernelException
+//ORIGINAL LINE: private void verifyQueryWithCorrectReader(org.Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader expectedReader, org.Neo4Net.Kernel.Api.Internal.IndexQuery... indexQuery) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotApplicableKernelException
 		 private void VerifyQueryWithCorrectReader( IndexReader expectedReader, params IndexQuery[] indexQuery )
 		 {
 			  // when

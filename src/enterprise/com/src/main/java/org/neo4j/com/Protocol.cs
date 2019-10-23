@@ -42,8 +42,8 @@ namespace Neo4Net.com
 	using LogEntryCommand = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommand;
 	using Neo4Net.Kernel.impl.transaction.log.entry;
 	using LogEntryWriter = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryWriter;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	/// <summary>
 	/// Contains the logic for serializing requests and deserializing responses. Still missing the inverse, serializing

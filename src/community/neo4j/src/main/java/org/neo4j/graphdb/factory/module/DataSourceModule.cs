@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb.factory.module
 	using CoreAPIAvailabilityGuard = Neo4Net.Kernel.impl.coreapi.CoreAPIAvailabilityGuard;
 	using GraphDatabaseFacade = Neo4Net.Kernel.impl.factory.GraphDatabaseFacade;
 	using Procedures = Neo4Net.Kernel.impl.proc.Procedures;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class DataSourceModule
 	{

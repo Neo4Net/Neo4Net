@@ -38,7 +38,7 @@ namespace Neo4Net.Kernel.ha.com.master
 	using Neo4Net.com;
 	using TransactionNotPresentOnMasterException = Neo4Net.com.TransactionNotPresentOnMasterException;
 	using Neo4Net.com;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using DefaultConversationSPI = Neo4Net.Kernel.ha.cluster.DefaultConversationSPI;
 	using Monitor = Neo4Net.Kernel.ha.com.master.MasterImpl.Monitor;
@@ -50,9 +50,9 @@ namespace Neo4Net.Kernel.ha.com.master
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using NoSuchEntryException = Neo4Net.Kernel.impl.util.collection.NoSuchEntryException;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 	using Neo4Net.Test.rule.concurrent;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -560,7 +560,7 @@ namespace Neo4Net.Kernel.ha.com.master
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.Neo4Net.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final org.Neo4Net.storageengine.api.StoreId storeId)
+//ORIGINAL LINE: public static org.Neo4Net.kernel.ha.com.master.MasterImpl.SPI mockedSpi(final org.Neo4Net.Kernel.Api.StorageEngine.StoreId storeId)
 		 public static SPI MockedSpi( StoreId storeId )
 		 {
 			  MasterImpl.SPI mock = mock( typeof( MasterImpl.SPI ) );

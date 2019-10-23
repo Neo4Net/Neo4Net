@@ -25,7 +25,7 @@ namespace Neo4Net.Kernel.Impl.Api.index.sampling
 	using MutableObjectLongMap = org.eclipse.collections.api.map.primitive.MutableObjectLongMap;
 	using ObjectLongHashMap = org.eclipse.collections.impl.map.mutable.primitive.ObjectLongHashMap;
 
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	public class DefaultNonUniqueIndexSampler : NonUniqueIndexSampler
 	{

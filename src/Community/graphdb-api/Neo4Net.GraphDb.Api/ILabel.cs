@@ -17,101 +17,101 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 namespace Neo4Net.GraphDb
 {
-	/// <summary>
-	/// A label is a grouping facility for <seealso cref="INode"/> where all nodes having a label
-	/// are part of the same group. Labels on nodes are optional and any node can
-	/// have an arbitrary number of labels attached to it.
-	/// 
-	/// Objects of classes implementing this interface can be used as label
-	/// representations in your code.
-	/// 
-	/// It's very important to note that a label is uniquely identified
-	/// by its name, not by any particular instance that implements this interface.
-	/// This means that the proper way to check if two labels are equal
-	/// is by invoking <code>equals()</code> on their <seealso cref="name() names"/>, NOT by
-	/// using Java's identity operator (<code>==</code>) or <code>equals()</code> on
-	/// the <seealso cref="ILabel"/> instances. A consequence of this is that you can NOT
-	/// use <seealso cref="ILabel"/> instances in hashed collections such as
-	/// <seealso cref="System.Collections.Hashtable HashMap"/> and <seealso cref="System.Collections.Generic.HashSet<object> HashSet"/>.
-	/// <para>
-	/// However, you usually want to check whether a specific node
-	/// <i>instance</i> has a certain label. That is best achieved with the
-	/// <seealso cref="INode.hasLabel(ILabel)"/> method.
-	/// 
-	/// For labels that your application know up front you should specify using an enum,
-	/// and since the name is accessed using the <seealso cref="name()"/> method it fits nicely.
-	/// <code>
-	/// public enum MyLabels implements Label
-	/// {
-	///     PERSON,
-	///     RESTAURANT;
-	/// }
-	/// </code>
-	/// 
-	/// For labels that your application don't know up front you can make use of
-	/// <seealso cref="label(string)"/>, or your own implementation of this interface,
-	/// as it's just the name that matters.
-	/// 
-	/// </para>
-	/// </summary>
-	/// <seealso cref= INode </seealso>
-	public interface ILabel
-	{
-		 /// <summary>
-		 /// Returns the name of the label. The name uniquely identifies a
-		 /// label, i.e. two different Label instances with different object identifiers
-		 /// (and possibly even different classes) are semantically equivalent if they
-		 /// have <seealso cref="String.equals(object) equal"/> names.
-		 /// </summary>
-		 /// <returns> the name of the label </returns>
-		 string Name();
+   /// <summary>
+   /// A label is a grouping facility for <seealso cref="INode"/> where all nodes having a label
+   /// are part of the same group. Labels on nodes are optional and any node can
+   /// have an arbitrary number of labels attached to it.
+   ///
+   /// Objects of classes implementing this interface can be used as label
+   /// representations in your code.
+   ///
+   /// It's very important to note that a label is uniquely identified
+   /// by its name, not by any particular instance that implements this interface.
+   /// This means that the proper way to check if two labels are equal
+   /// is by invoking <code>equals()</code> on their <seealso cref="name() names"/>, NOT by
+   /// using Java's identity operator (<code>==</code>) or <code>equals()</code> on
+   /// the <seealso cref="ILabel"/> instances. A consequence of this is that you can NOT
+   /// use <seealso cref="ILabel"/> instances in hashed collections such as
+   /// <seealso cref="System.Collections.Hashtable HashMap"/> and <seealso cref="System.Collections.Generic.HashSet<object> HashSet"/>.
+   /// <para>
+   /// However, you usually want to check whether a specific node
+   /// <i>instance</i> has a certain label. That is best achieved with the
+   /// <seealso cref="INode.hasLabel(ILabel)"/> method.
+   ///
+   /// For labels that your application know up front you should specify using an enum,
+   /// and since the name is accessed using the <seealso cref="name()"/> method it fits nicely.
+   /// <code>
+   /// public enum MyLabels implements Label
+   /// {
+   ///     PERSON,
+   ///     RESTAURANT;
+   /// }
+   /// </code>
+   ///
+   /// For labels that your application don't know up front you can make use of
+   /// <seealso cref="label(string)"/>, or your own implementation of this interface,
+   /// as it's just the name that matters.
+   ///
+   /// </para>
+   /// </summary>
+   /// <seealso cref= INode </seealso>
+   public interface ILabel
+   {
+      /// <summary>
+      /// Returns the name of the label. The name uniquely identifies a
+      /// label, i.e. two different Label instances with different object identifiers
+      /// (and possibly even different classes) are semantically equivalent if they
+      /// have <seealso cref="String.equals(object) equal"/> names.
+      /// </summary>
+      /// <returns> the name of the label </returns>
+      string Name { get; }
 
-		 /// <summary>
-		 /// Instantiates a new <seealso cref="ILabel"/> with the given name.
-		 /// </summary>
-		 /// <param name="name"> the name of the label </param>
-		 /// <returns> a <seealso cref="ILabel"/> instance for the given name </returns>
-		 /// <exception cref="IllegalArgumentException"> if name is {@code null} </exception>
-//JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
-//		 static Label label(String name)
-	//	 {
-	//		  if (name == null)
-	//		  {
-	//				throw new IllegalArgumentException("A label cannot have a null name");
-	//		  }
-	//		  return new Label()
-	//		  {
-	//				@@Override public String name()
-	//				{
-	//					 return name;
-	//				}
-	//
-	//				@@Override public String toString()
-	//				{
-	//					 return name;
-	//				}
-	//
-	//				@@Override public boolean equals(Object that)
-	//				{
-	//					 if (this == that)
-	//					 {
-	//						  return true;
-	//					 }
-	//					 if (that == null || that.getClass() != getClass())
-	//					 {
-	//						  return false;
-	//					 }
-	//					 return name.equals(((Label) that).name());
-	//				}
-	//
-	//				@@Override public int hashCode()
-	//				{
-	//					 return name.hashCode();
-	//				}
-	//		  };
-	//	 }
-	}
-
+      /// <summary>
+      /// Instantiates a new <seealso cref="ILabel"/> with the given name.
+      /// </summary>
+      /// <param name="name"> the name of the label </param>
+      /// <returns> a <seealso cref="ILabel"/> instance for the given name </returns>
+      /// <exception cref="IllegalArgumentException"> if name is {@code null} </exception>
+      //JAVA TO C# CONVERTER TODO TASK: There is no equivalent in C# to Java static interface methods:
+      //		 static Label label(String name)
+      //	 {
+      //		  if (name == null)
+      //		  {
+      //				throw new IllegalArgumentException("A label cannot have a null name");
+      //		  }
+      //		  return new Label()
+      //		  {
+      //				@@Override public String name()
+      //				{
+      //					 return name;
+      //				}
+      //
+      //				@@Override public String toString()
+      //				{
+      //					 return name;
+      //				}
+      //
+      //				@@Override public boolean equals(Object that)
+      //				{
+      //					 if (this == that)
+      //					 {
+      //						  return true;
+      //					 }
+      //					 if (that == null || that.getClass() != getClass())
+      //					 {
+      //						  return false;
+      //					 }
+      //					 return name.equals(((Label) that).name());
+      //				}
+      //
+      //				@@Override public int hashCode()
+      //				{
+      //					 return name.hashCode();
+      //				}
+      //		  };
+      //	 }
+   }
 }

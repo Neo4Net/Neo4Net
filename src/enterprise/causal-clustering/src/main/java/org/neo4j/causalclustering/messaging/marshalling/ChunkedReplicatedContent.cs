@@ -32,7 +32,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using ChunkedInput = io.netty.handler.stream.ChunkedInput;
 
 	using Neo4Net.Functions;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class ChunkedReplicatedContent : ChunkedInput<ByteBuf>
 	{

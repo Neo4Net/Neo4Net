@@ -39,7 +39,7 @@
 
 ////////////////		 /// <returns> the type of entities are managed by this index. </returns>
 ////////////////		 [Obsolete]
-////////////////		 Type<T> IEntityType { get; }
+////////////////		 Type<T> EntityType { get; }
 
 ////////////////		 /// <summary>
 ////////////////		 /// Returns exact matches from this index, given the key/value pair. Matches

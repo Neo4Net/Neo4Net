@@ -23,7 +23,7 @@ namespace Neo4Net.Consistency.statistics
 	/// Top level interface for managing statistics. The statistics are for human eyes, and so there's basically
 	/// only a <seealso cref="print(string)"/> method.
 	/// </summary>
-	public interface Statistics
+	public interface IStatistics
 	{
 		 void Print( string name );
 

@@ -34,10 +34,10 @@ namespace Neo4Net.Test.mockito.matcher
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexCreator = Neo4Net.GraphDb.schema.IndexCreator;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexCreator = Neo4Net.GraphDb.Schema.IndexCreator;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -398,7 +398,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.graphdb.schema.IndexDefinition> getIndexes(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.IndexDefinition> getIndexes(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
 		 public static Deferred<IndexDefinition> GetIndexes( IGraphDatabaseService db, Label label )
 		 {
 			  return new DeferredAnonymousInnerClass2( db, label );
@@ -444,7 +444,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.graphdb.schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
+//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.Label label)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db, Label label )
 		 {
 			  return new DeferredAnonymousInnerClass4( db, label );
@@ -468,7 +468,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.graphdb.schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.RelationshipType type)
+//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.RelationshipType type)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db, RelationshipType type )
 		 {
 			  return new DeferredAnonymousInnerClass5( db, type );
@@ -492,7 +492,7 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static Deferred<org.Neo4Net.graphdb.schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db)
+//ORIGINAL LINE: public static Deferred<org.Neo4Net.GraphDb.Schema.ConstraintDefinition> getConstraints(final org.Neo4Net.graphdb.GraphDatabaseService db)
 		 public static Deferred<ConstraintDefinition> GetConstraints( IGraphDatabaseService db )
 		 {
 			  return new DeferredAnonymousInnerClass6( db );
@@ -614,8 +614,8 @@ namespace Neo4Net.Test.mockito.matcher
 		 }
 
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
-//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<org.Neo4Net.graphdb.schema.IndexDefinition>> haveState(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.graphdb.schema.Schema_IndexState expectedState)
-		 public static TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<IndexDefinition>> HaveState( IGraphDatabaseService db, Neo4Net.GraphDb.schema.Schema_IndexState expectedState )
+//ORIGINAL LINE: public static org.hamcrest.TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<org.Neo4Net.GraphDb.Schema.IndexDefinition>> haveState(final org.Neo4Net.graphdb.GraphDatabaseService db, final org.Neo4Net.GraphDb.Schema.Schema_IndexState expectedState)
+		 public static TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<IndexDefinition>> HaveState( IGraphDatabaseService db, Neo4Net.GraphDb.Schema.Schema_IndexState expectedState )
 		 {
 			  return new TypeSafeDiagnosingMatcherAnonymousInnerClass3( db, expectedState );
 		 }
@@ -623,9 +623,9 @@ namespace Neo4Net.Test.mockito.matcher
 		 private class TypeSafeDiagnosingMatcherAnonymousInnerClass3 : TypeSafeDiagnosingMatcher<Neo4NetMatchers.Deferred<IndexDefinition>>
 		 {
 			 private IGraphDatabaseService _db;
-			 private Neo4Net.GraphDb.schema.Schema_IndexState _expectedState;
+			 private Neo4Net.GraphDb.Schema.Schema_IndexState _expectedState;
 
-			 public TypeSafeDiagnosingMatcherAnonymousInnerClass3( IGraphDatabaseService db, Neo4Net.GraphDb.schema.Schema_IndexState expectedState )
+			 public TypeSafeDiagnosingMatcherAnonymousInnerClass3( IGraphDatabaseService db, Neo4Net.GraphDb.Schema.Schema_IndexState expectedState )
 			 {
 				 this._db = db;
 				 this._expectedState = expectedState;
@@ -635,7 +635,7 @@ namespace Neo4Net.Test.mockito.matcher
 			 {
 				  foreach ( IndexDefinition current in indexes.Collection() )
 				  {
-						Neo4Net.GraphDb.schema.Schema_IndexState currentState = _db.schema().getIndexState(current);
+						Neo4Net.GraphDb.Schema.Schema_IndexState currentState = _db.schema().getIndexState(current);
 						if ( !currentState.Equals( _expectedState ) )
 						{
 							 description.appendValue( current ).appendText( " has state " ).appendValue( currentState );

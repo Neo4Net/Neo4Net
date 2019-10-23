@@ -34,9 +34,9 @@ namespace Neo4Net.Bolt.v1.runtime
 	using InvalidSemanticsException = Neo4Net.Cypher.InvalidSemanticsException;
 	using Neo4Net.Functions;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using QueryExecutionKernelException = Neo4Net.Kernel.impl.query.QueryExecutionKernelException;
@@ -72,14 +72,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void beginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void BeginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void BeginTransaction( Bookmark bookmark )
 		 {
 			  BeginTransaction( bookmark, null, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void beginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void BeginTransaction(org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void BeginTransaction( Bookmark bookmark, Duration txTimeout, IDictionary<string, object> txMetadata )
 		 {
 			  Before();
@@ -87,7 +87,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  {
 					EnsureNoPendingTerminationNotice();
 
-					StateConflict = StateConflict.beginTransaction( Ctx, Spi, bookmark, txTimeout, txMetadata );
+					StateConflict = StateConflict.BeginTransaction( Ctx, Spi, bookmark, txTimeout, txMetadata );
 			  }
 			  finally
 			  {
@@ -96,14 +96,14 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override StatementMetadata Run( string statement, MapValue @params )
 		 {
 			  return Run( statement, @params, null, null, null );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetaData) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.StatementMetadata run(String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetaData) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override StatementMetadata Run( string statement, MapValue @params, Bookmark bookmark, Duration txTimeout, IDictionary<string, object> txMetaData )
 		 {
 			  Before();
@@ -139,7 +139,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark commitTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark commitTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override Bookmark CommitTransaction()
 		 {
 			  Before();
@@ -162,7 +162,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void rollbackTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void rollbackTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void RollbackTransaction()
 		 {
 			  Before();
@@ -192,7 +192,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 /// </summary>
 		 /// <exception cref="TransactionFailureException"> when transaction fails to close. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void reset() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void reset() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void Reset()
 		 {
 			  StateConflict.terminateQueryAndRollbackTransaction( Ctx );
@@ -214,7 +214,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void validateTransaction() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void validateTransaction() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public override void ValidateTransaction()
 		 {
 			  KernelTransaction tx = Ctx.currentTransaction;
@@ -255,9 +255,9 @@ namespace Neo4Net.Bolt.v1.runtime
 		 internal abstract class State
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           AUTO_COMMIT { State beginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { waitForBookmark(spi, bookmark); ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; ctx.currentTransaction = spi.beginTransaction(ctx.loginContext, txTimeout, txMetadata); return EXPLICIT_TRANSACTION; } State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { statement = parseStatement(ctx, statement); waitForBookmark(spi, bookmark); execute(ctx, spi, statement, params, spi.isPeriodicCommit(statement), txTimeout, txMetadata); return AUTO_COMMIT; } private String parseStatement(MutableTransactionState ctx, String statement) { if(statement.isEmpty()) { statement = ctx.lastStatement; } else { ctx.lastStatement = statement; } return statement; } void execute(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, boolean isPeriodicCommit, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { if(!isPeriodicCommit) { ctx.currentTransaction = spi.beginTransaction(ctx.loginContext, txTimeout, txMetadata); } boolean failed = true; try { org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle = spi.executeQuery(ctx.loginContext, statement, params, txTimeout, txMetadata); startExecution(ctx, resultHandle); failed = false; } finally { if(!isPeriodicCommit) { if(failed) { closeTransaction(ctx, false); } } else { ctx.currentTransaction = spi.beginTransaction(ctx.loginContext, txTimeout, txMetadata); } } } Bookmark streamResult(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.bolt.runtime.BoltResult, Exception> resultConsumer) throws Exception { assert ctx.currentResult != null; try { consumeResult(ctx, resultConsumer); closeTransaction(ctx, true); return newestBookmark(spi); } finally { closeTransaction(ctx, false); } } State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("No current transaction to commit.")); } State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) { ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; return AUTO_COMMIT; } },
+//           AUTO_COMMIT { State BeginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { waitForBookmark(spi, bookmark); ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; ctx.currentTransaction = spi.BeginTransaction(ctx.loginContext, txTimeout, txMetadata); return EXPLICIT_TRANSACTION; } State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { statement = parseStatement(ctx, statement); waitForBookmark(spi, bookmark); execute(ctx, spi, statement, params, spi.isPeriodicCommit(statement), txTimeout, txMetadata); return AUTO_COMMIT; } private String parseStatement(MutableTransactionState ctx, String statement) { if(statement.isEmpty()) { statement = ctx.lastStatement; } else { ctx.lastStatement = statement; } return statement; } void execute(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, boolean isPeriodicCommit, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { if(!isPeriodicCommit) { ctx.currentTransaction = spi.BeginTransaction(ctx.loginContext, txTimeout, txMetadata); } boolean failed = true; try { org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle = spi.executeQuery(ctx.loginContext, statement, params, txTimeout, txMetadata); startExecution(ctx, resultHandle); failed = false; } finally { if(!isPeriodicCommit) { if(failed) { closeTransaction(ctx, false); } } else { ctx.currentTransaction = spi.BeginTransaction(ctx.loginContext, txTimeout, txMetadata); } } } Bookmark streamResult(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.bolt.runtime.BoltResult, Exception> resultConsumer) throws Exception { assert ctx.currentResult != null; try { consumeResult(ctx, resultConsumer); closeTransaction(ctx, true); return newestBookmark(spi); } finally { closeTransaction(ctx, false); } } State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("No current transaction to commit.")); } State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) { ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; return AUTO_COMMIT; } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXPLICIT_TRANSACTION { State beginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("Nested transactions are not supported.")); } State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration ignored1, java.util.Map<String, Object> ignored2) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { checkState(ignored1 == null, "Explicit Transaction should not run with tx_timeout"); checkState(ignored2 == null, "Explicit Transaction should not run with tx_metadata"); if(statement.isEmpty()) { statement = ctx.lastStatement; } else { ctx.lastStatement = statement; } if(spi.isPeriodicCommit(statement)) { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("Executing queries that use periodic commit in an " + "open transaction is not possible.")); } else { org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle = spi.executeQuery(ctx.loginContext, statement, params, null, null); startExecution(ctx, resultHandle); return EXPLICIT_TRANSACTION; } } Bookmark streamResult(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.bolt.runtime.BoltResult, Exception> resultConsumer) throws Exception { assert ctx.currentResult != null; consumeResult(ctx, resultConsumer); return null; } State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { closeTransaction(ctx, true); org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark = newestBookmark(spi); ctx.currentResult = new org.Neo4Net.bolt.v1.runtime.spi.BookmarkResult(bookmark); return AUTO_COMMIT; } State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException { closeTransaction(ctx, false); ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; return AUTO_COMMIT; } };
+//           EXPLICIT_TRANSACTION { State BeginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String, Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("Nested transactions are not supported.")); } State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration ignored1, java.util.Map<String, Object> ignored2) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { checkState(ignored1 == null, "Explicit Transaction should not run with tx_timeout"); checkState(ignored2 == null, "Explicit Transaction should not run with tx_metadata"); if(statement.isEmpty()) { statement = ctx.lastStatement; } else { ctx.lastStatement = statement; } if(spi.isPeriodicCommit(statement)) { throw new org.Neo4Net.kernel.impl.query.QueryExecutionKernelException(new org.Neo4Net.cypher.InvalidSemanticsException("Executing queries that use periodic commit in an " + "open transaction is not possible.")); } else { org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle = spi.executeQuery(ctx.loginContext, statement, params, null, null); startExecution(ctx, resultHandle); return EXPLICIT_TRANSACTION; } } Bookmark streamResult(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.function.ThrowingConsumer<org.Neo4Net.bolt.runtime.BoltResult, Exception> resultConsumer) throws Exception { assert ctx.currentResult != null; consumeResult(ctx, resultConsumer); return null; } State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { closeTransaction(ctx, true); org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark = newestBookmark(spi); ctx.currentResult = new org.Neo4Net.bolt.v1.runtime.spi.BookmarkResult(bookmark); return AUTO_COMMIT; } State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException { closeTransaction(ctx, false); ctx.currentResult = org.Neo4Net.bolt.runtime.BoltResult.EMPTY; return AUTO_COMMIT; } };
 
 			  private static readonly IList<State> valueList = new List<State>();
 
@@ -286,11 +286,11 @@ namespace Neo4Net.Bolt.v1.runtime
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract State beginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
-			  internal abstract State beginTransaction( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi, Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, IDictionary<string, object> txMetadata );
+//ORIGINAL LINE: abstract State BeginTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+			  internal abstract State BeginTransaction( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi, Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, IDictionary<string, object> txMetadata );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: abstract State run(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, String statement, org.Neo4Net.values.virtual.MapValue params, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, java.util.Map<String,Object> txMetadata) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract State run( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi, string statement, Neo4Net.Values.@virtual.MapValue @params, Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark bookmark, java.time.Duration txTimeout, IDictionary<string, object> txMetadata );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -298,15 +298,15 @@ namespace Neo4Net.Bolt.v1.runtime
 			  internal abstract Neo4Net.Bolt.v1.runtime.bookmarking.Bookmark streamResult( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi, Neo4Net.Functions.ThrowingConsumer<Neo4Net.Bolt.runtime.BoltResult, Exception> resultConsumer );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: abstract State commitTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract State commitTransaction( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: abstract State rollbackTransaction(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract State rollbackTransaction( MutableTransactionState ctx, Neo4Net.Bolt.runtime.TransactionStateMachineSPI spi );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void terminateQueryAndRollbackTransaction(MutableTransactionState ctx) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: void terminateQueryAndRollbackTransaction(MutableTransactionState ctx) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  internal void TerminateQueryAndRollbackTransaction( MutableTransactionState ctx )
 			  {
 					if ( ctx.CurrentResultHandle != null )
@@ -328,7 +328,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			   * reset can cause ctx.currentTransaction to be null we store in local variable.
 			   */
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void closeTransaction(MutableTransactionState ctx, boolean success) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: void closeTransaction(MutableTransactionState ctx, boolean success) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  internal void CloseTransaction( MutableTransactionState ctx, bool success )
 			  {
 					KernelTransaction tx = ctx.CurrentTransaction;
@@ -382,7 +382,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void startExecution(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: void startExecution(MutableTransactionState ctx, org.Neo4Net.bolt.runtime.BoltResultHandle resultHandle) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal void StartExecution( MutableTransactionState ctx, Neo4Net.Bolt.runtime.BoltResultHandle resultHandle )
 			  {
 					ctx.CurrentResultHandle = resultHandle;
@@ -414,7 +414,7 @@ namespace Neo4Net.Bolt.v1.runtime
 				 return nameValue;
 			 }
 
-			 public static State valueOf( string name )
+			 public static State ValueOf( string name )
 			 {
 				 foreach ( State enumInstance in State.valueList )
 				 {
@@ -428,7 +428,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void waitForBookmark(org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private static void waitForBookmark(org.Neo4Net.bolt.runtime.TransactionStateMachineSPI spi, org.Neo4Net.bolt.v1.runtime.bookmarking.Bookmark bookmark) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private static void WaitForBookmark( TransactionStateMachineSPI spi, Bookmark bookmark )
 		 {
 			  if ( bookmark != null )

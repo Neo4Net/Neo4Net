@@ -211,7 +211,7 @@ namespace Neo4Net.Server.plugins
 					  return nameValue;
 				  }
 
-				  public static MatchType valueOf( string name )
+				  public static MatchType ValueOf( string name )
 				  {
 					  foreach ( MatchType enumInstance in MatchType.valueList )
 					  {

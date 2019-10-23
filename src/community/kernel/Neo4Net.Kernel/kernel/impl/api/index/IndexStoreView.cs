@@ -25,11 +25,11 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Kernel.Api.Index;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using NodeLabelUpdate = Neo4Net.Kernel.api.labelscan.NodeLabelUpdate;
 	using Register_DoubleLongRegister = Neo4Net.Register.Register_DoubleLongRegister;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using VisibleForTesting = Neo4Net.Utils.VisibleForTesting;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
@@ -109,7 +109,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 	 public class IndexStoreView_Adaptor : IndexStoreView
 	 {
-		  public override void LoadProperties( long nodeId, IEntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink )
+		  public override void LoadProperties( long nodeId, EntityType type, MutableIntSet propertyIds, PropertyLoader_PropertyLoadSink sink )
 		  {
 		  }
 

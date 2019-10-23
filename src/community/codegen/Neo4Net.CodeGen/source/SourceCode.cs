@@ -236,7 +236,7 @@ namespace Neo4Net.CodeGen.Source
 			return nameValue;
 		}
 
-		public static SourceCode valueOf( string name )
+		public static SourceCode ValueOf( string name )
 		{
 			foreach ( SourceCode enumInstance in SourceCode.valueList )
 			{

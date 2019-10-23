@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.impl.proc
 
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
 	using BasicContext = Neo4Net.Kernel.api.proc.BasicContext;
 	using CallableUserFunction = Neo4Net.Kernel.api.proc.CallableUserFunction;
 	using Config = Neo4Net.Kernel.configuration.Config;
@@ -66,7 +66,7 @@ namespace Neo4Net.Kernel.impl.proc
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.mockito.Mockito.verifyNoMoreInteractions;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.UserFunctionSignature.functionSignature;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.UserFunctionSignature.functionSignature;
 
 	public class ReflectiveUserFunctionTest
 	{
@@ -86,7 +86,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void shouldInjectLogging() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldInjectLogging()
 		 {
@@ -525,7 +525,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableUserFunction> compile(Class clazz) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private java.util.List<org.Neo4Net.kernel.api.proc.CallableUserFunction> compile(Class clazz) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private IList<CallableUserFunction> Compile( Type clazz )
 		 {
 			  return _procedureCompiler.compileFunction( clazz );

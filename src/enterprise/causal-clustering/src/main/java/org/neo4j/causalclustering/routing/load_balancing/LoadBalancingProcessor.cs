@@ -25,7 +25,7 @@
 namespace Neo4Net.causalclustering.routing.load_balancing
 {
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 
 	public interface LoadBalancingProcessor
 	{
@@ -36,7 +36,7 @@ namespace Neo4Net.causalclustering.routing.load_balancing
 		 /// <param name="context"> The client supplied context. </param>
 		 /// <returns> The result of invoking the procedure. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException;
+//ORIGINAL LINE: LoadBalancingProcessor_Result run(java.util.Map<String,String> context) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 		 LoadBalancingProcessor_Result Run( IDictionary<string, string> context );
 	}
 

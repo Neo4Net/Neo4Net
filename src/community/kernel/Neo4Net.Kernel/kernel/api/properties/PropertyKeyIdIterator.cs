@@ -23,15 +23,15 @@ namespace Neo4Net.Kernel.api.properties
 {
 	using IntIterator = org.eclipse.collections.api.iterator.IntIterator;
 
-	using StorageProperty = Neo4Net.Storageengine.Api.StorageProperty;
+	using StorageProperty = Neo4Net.Kernel.Api.StorageEngine.StorageProperty;
 
 	public class PropertyKeyIdIterator : IntIterator
 	{
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
-//ORIGINAL LINE: private final java.util.Iterator<? extends org.Neo4Net.storageengine.api.StorageProperty> properties;
+//ORIGINAL LINE: private final java.util.Iterator<? extends org.Neo4Net.Kernel.Api.StorageEngine.StorageProperty> properties;
 		 private readonly IEnumerator<StorageProperty> _properties;
 
-		 public PropertyKeyIdIterator<T1>( IEnumerator<T1> properties ) where T1 : Neo4Net.Storageengine.Api.StorageProperty
+		 public PropertyKeyIdIterator<T1>( IEnumerator<T1> properties ) where T1 : Neo4Net.Kernel.Api.StorageEngine.StorageProperty
 		 {
 			  this._properties = properties;
 		 }

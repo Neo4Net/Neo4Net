@@ -29,8 +29,8 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using LifecycleAdapter = Neo4Net.Kernel.Lifecycle.LifecycleAdapter;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Represents the current state of membership in RAFT and exposes operations
@@ -215,7 +215,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(RaftMembershipState state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(RaftMembershipState state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( RaftMembershipState state, WritableChannel channel )
 			  {
@@ -225,7 +225,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RaftMembershipState unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public RaftMembershipState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override RaftMembershipState Unmarshal0( ReadableChannel channel )
 			  {
 					long ordinal = channel.Long;

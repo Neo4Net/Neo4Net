@@ -20,7 +20,7 @@
 namespace Neo4Net.Tooling.procedure.messages
 {
 
-	public interface CompilationMessage
+	public interface ICompilationMessage
 	{
 		 Element Element { get; }
 

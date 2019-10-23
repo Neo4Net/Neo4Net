@@ -30,17 +30,17 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Node = Neo4Net.GraphDb.Node;
 	using Neo4Net.GraphDb;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using CreateConstraintFailureException = Neo4Net.Internal.Kernel.Api.exceptions.schema.CreateConstraintFailureException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using CreateConstraintFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.CreateConstraintFailureException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using DropConstraintFailureException = Neo4Net.Kernel.Api.Exceptions.schema.DropConstraintFailureException;
 	using NoSuchConstraintException = Neo4Net.Kernel.Api.Exceptions.schema.NoSuchConstraintException;
@@ -53,8 +53,8 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using NeoStores = Neo4Net.Kernel.impl.store.NeoStores;
 	using SchemaStorage = Neo4Net.Kernel.impl.store.SchemaStorage;
 	using ConstraintRule = Neo4Net.Kernel.Impl.Store.Records.ConstraintRule;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -78,14 +78,14 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 private IndexDescriptor _uniqueIndex;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int initializeLabelOrRelType(org.Neo4Net.internal.kernel.api.TokenWrite tokenWrite, String name) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: int initializeLabelOrRelType(org.Neo4Net.Kernel.Api.Internal.TokenWrite tokenWrite, String name) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 internal override int InitializeLabelOrRelType( TokenWrite tokenWrite, string name )
 		 {
 			  return tokenWrite.LabelGetOrCreateForName( KEY );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, org.Neo4Net.internal.kernel.api.schema.LabelSchemaDescriptor descriptor) throws Exception
+//ORIGINAL LINE: ConstraintDescriptor createConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor descriptor) throws Exception
 		 internal override ConstraintDescriptor CreateConstraint( SchemaWrite writeOps, LabelSchemaDescriptor descriptor )
 		 {
 			  return writeOps.UniquePropertyConstraintCreate( descriptor );
@@ -102,7 +102,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void dropConstraint(org.Neo4Net.internal.kernel.api.SchemaWrite writeOps, org.Neo4Net.internal.kernel.api.schema.constraints.ConstraintDescriptor constraint) throws Exception
+//ORIGINAL LINE: void dropConstraint(org.Neo4Net.Kernel.Api.Internal.SchemaWrite writeOps, org.Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor constraint) throws Exception
 		 internal override void DropConstraint( SchemaWrite writeOps, ConstraintDescriptor constraint )
 		 {
 			  writeOps.ConstraintDrop( constraint );
@@ -296,7 +296,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private String userMessage(org.Neo4Net.internal.kernel.api.exceptions.schema.ConstraintValidationException cause) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private String userMessage(org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException cause) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private string UserMessage( ConstraintValidationException cause )
 		 {
 			  using ( Transaction tx = newTransaction() )

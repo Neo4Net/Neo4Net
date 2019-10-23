@@ -34,7 +34,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.valueOf;
+//	import static org.Neo4Net.causalclustering.core.consensus.ReplicatedInteger.ValueOf;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.consensus.log.RaftLog_Fields.RAFT_LOG_DIRECTORY_NAME;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 			  long term = 0;
 			  for ( int i = 0; i < 10; i++ )
 			  {
-					log.Append( new RaftLogEntry( term, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( term, ValueOf( i ) ) );
 			  }
 
 			  assertEquals( -1, log.PrevIndex() );
@@ -113,7 +113,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 			  long term = 0;
 			  for ( int i = 0; i < 10; i++ )
 			  {
-					log.Append( new RaftLogEntry( term, valueOf( i ) ) );
+					log.Append( new RaftLogEntry( term, ValueOf( i ) ) );
 			  }
 
 			  log.Truncate( 9 );

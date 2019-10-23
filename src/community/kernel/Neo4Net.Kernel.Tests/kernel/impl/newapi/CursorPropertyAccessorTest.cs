@@ -21,10 +21,10 @@ namespace Neo4Net.Kernel.Impl.Newapi
 {
 	using Test = org.junit.Test;
 
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
-	using StubNodeCursor = Neo4Net.Internal.Kernel.Api.helpers.StubNodeCursor;
-	using StubPropertyCursor = Neo4Net.Internal.Kernel.Api.helpers.StubPropertyCursor;
-	using StubRead = Neo4Net.Internal.Kernel.Api.helpers.StubRead;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
+	using StubNodeCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubNodeCursor;
+	using StubPropertyCursor = Neo4Net.Kernel.Api.Internal.Helpers.StubPropertyCursor;
+	using StubRead = Neo4Net.Kernel.Api.Internal.Helpers.StubRead;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -40,7 +40,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	public class CursorPropertyAccessorTest
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldLookupProperty() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldLookupProperty() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldLookupProperty()
 		 {
@@ -59,7 +59,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void shouldReturnNoValueOnMissingProperty() throws org.Neo4Net.internal.kernel.api.exceptions.EntityNotFoundException
+//ORIGINAL LINE: @Test public void shouldReturnNoValueOnMissingProperty() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void ShouldReturnNoValueOnMissingProperty()
 		 {

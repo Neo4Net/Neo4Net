@@ -31,12 +31,12 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using ConstraintViolationTransactionFailureException = Neo4Net.Kernel.Api.Exceptions.ConstraintViolationTransactionFailureException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public class NodeKeyConstraintValidationIT : NodePropertyExistenceConstraintValidationIT
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override void CreateConstraint( string key, string property )
 			  {
 					TokenWrite tokenWrite = TokenWriteInNewTransaction();
@@ -136,7 +136,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override void CreateConstraint( string key, string property )
 			  {
 					TokenWrite tokenWrite = TokenWriteInNewTransaction();
@@ -150,7 +150,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string type )
 			  {
 					long node = transaction.DataWrite().nodeCreate();
@@ -160,7 +160,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String property, String value) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String property, String value) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string property, string value )
 			  {
 					long node = transaction.DataWrite().nodeCreate();
@@ -170,7 +170,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type, String property, String value) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type, String property, String value) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string type, string property, string value )
 			  {
 					long node = CreateEntity( transaction, type );
@@ -197,21 +197,21 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception
+//ORIGINAL LINE: void setProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception
 			  internal override void SetProperty( Write writeOps, long IEntityId, int propertyKeyId, Value value )
 			  {
 					writeOps.NodeSetProperty( IEntityId, propertyKeyId, value );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void removeProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKey) throws Exception
+//ORIGINAL LINE: void removeProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKey) throws Exception
 			  internal override void RemoveProperty( Write writeOps, long IEntityId, int propertyKey )
 			  {
 					writeOps.NodeRemoveProperty( IEntityId, propertyKey );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int IEntityCount() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: int IEntityCount() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  internal override int IEntityCount()
 			  {
 				  Transaction transaction = NewTransaction();
@@ -224,7 +224,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public class RelationshipPropertyExistenceConstraintValidationIT : AbstractPropertyExistenceConstraintValidationIT
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: void createConstraint(String key, String property) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  internal override void CreateConstraint( string key, string property )
 			  {
 					TokenWrite tokenWrite = TokenWriteInNewTransaction();
@@ -238,7 +238,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string type )
 			  {
 					long start = transaction.DataWrite().nodeCreate();
@@ -248,7 +248,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String property, String value) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String property, String value) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string property, string value )
 			  {
 					long start = transaction.DataWrite().nodeCreate();
@@ -263,7 +263,7 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type, String property, String value) throws Exception
+//ORIGINAL LINE: long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type, String property, String value) throws Exception
 			  internal override long CreateEntity( Transaction transaction, string type, string property, string value )
 			  {
 					long relationship = CreateEntity( transaction, type );
@@ -291,21 +291,21 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void setProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception
+//ORIGINAL LINE: void setProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception
 			  internal override void SetProperty( Write writeOps, long IEntityId, int propertyKeyId, Value value )
 			  {
 					writeOps.RelationshipSetProperty( IEntityId, propertyKeyId, value );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void removeProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKey) throws Exception
+//ORIGINAL LINE: void removeProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKey) throws Exception
 			  internal override void RemoveProperty( Write writeOps, long IEntityId, int propertyKey )
 			  {
 					writeOps.RelationshipRemoveProperty( IEntityId, propertyKey );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: int IEntityCount() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: int IEntityCount() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 			  internal override int IEntityCount()
 			  {
 					Transaction transaction = NewTransaction();
@@ -318,19 +318,19 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 		 public abstract class AbstractPropertyExistenceConstraintValidationIT : KernelIntegrationTest
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void createConstraint(String key, String property) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: abstract void createConstraint(String key, String property) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 			  internal abstract void CreateConstraint( string key, string property );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type) throws Exception;
+//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type) throws Exception;
 			  internal abstract long CreateEntity( Transaction transaction, string type );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String property, String value) throws Exception;
+//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String property, String value) throws Exception;
 			  internal abstract long CreateEntity( Transaction transaction, string property, string value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.internal.kernel.api.Transaction transaction, String type, String property, String value) throws Exception;
+//ORIGINAL LINE: abstract long createEntity(org.Neo4Net.Kernel.Api.Internal.Transaction transaction, String type, String property, String value) throws Exception;
 			  internal abstract long CreateEntity( Transaction transaction, string type, string property, string value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
@@ -338,15 +338,15 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 			  internal abstract long CreateConstraintAndEntity( string type, string property, string value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void setProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception;
+//ORIGINAL LINE: abstract void setProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKeyId, org.Neo4Net.values.storable.Value value) throws Exception;
 			  internal abstract void SetProperty( Write writeOps, long IEntityId, int propertyKeyId, Value value );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract void removeProperty(org.Neo4Net.internal.kernel.api.Write writeOps, long IEntityId, int propertyKey) throws Exception;
+//ORIGINAL LINE: abstract void removeProperty(org.Neo4Net.Kernel.Api.Internal.Write writeOps, long IEntityId, int propertyKey) throws Exception;
 			  internal abstract void RemoveProperty( Write writeOps, long IEntityId, int propertyKey );
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: abstract int IEntityCount() throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException;
+//ORIGINAL LINE: abstract int IEntityCount() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 			  internal abstract int IEntityCount();
 
 			  protected internal override IGraphDatabaseService CreateGraphDatabase()

@@ -25,13 +25,13 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using Neo4Net.GraphDb;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 	/// <summary>
 	/// Writable lucene index representation that wraps provided index implementation and
 	/// allow read only operations only on top of it. </summary>
 	/// @param <INDEX> - particular index implementation </param>
-	public class WritableAbstractDatabaseIndex<INDEX, READER> : AbstractDatabaseIndex<INDEX, READER> where INDEX : AbstractLuceneIndex<READER> where READER : Neo4Net.Storageengine.Api.schema.IndexReader
+	public class WritableAbstractDatabaseIndex<INDEX, READER> : AbstractDatabaseIndex<INDEX, READER> where INDEX : AbstractLuceneIndex<READER> where READER : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 	{
 		 // lock used to guard commits and close of lucene indexes from separate threads
 		 private readonly ReentrantLock _commitCloseLock = new ReentrantLock();

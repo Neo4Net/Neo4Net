@@ -66,8 +66,8 @@ namespace Neo4Net.Kernel
 	using Recovery = Neo4Net.Kernel.recovery.Recovery;
 	using RecoveryApplier = Neo4Net.Kernel.recovery.RecoveryApplier;
 	using RecoveryMonitor = Neo4Net.Kernel.recovery.RecoveryMonitor;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
 
@@ -218,7 +218,7 @@ namespace Neo4Net.Kernel
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.recovery.RecoveryApplier getRecoveryApplier(org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public org.Neo4Net.kernel.recovery.RecoveryApplier getRecoveryApplier(org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
 			 public override RecoveryApplier getRecoveryApplier( TransactionApplicationMode mode )
 			 {
 				  RecoveryApplier actual = base.getRecoveryApplier( mode );

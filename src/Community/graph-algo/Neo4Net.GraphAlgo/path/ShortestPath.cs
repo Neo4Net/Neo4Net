@@ -69,7 +69,7 @@ namespace Neo4Net.GraphAlgo.Path
 		 private ShortestPathPredicate _predicate;
 		 private DataMonitor _dataMonitor;
 
-		 public interface ShortestPathPredicate
+		 public interface IShortestPathPredicate
 		 {
 			  bool Test( Path path );
 		 }

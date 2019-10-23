@@ -23,14 +23,14 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using LongHashSet = org.eclipse.collections.impl.set.mutable.primitive.LongHashSet;
 
 	using Neo4Net.Functions;
-	using NodeCursor = Neo4Net.Internal.Kernel.Api.NodeCursor;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using RelationshipSelectionCursor = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelectionCursor;
-	using RelationshipSelections = Neo4Net.Internal.Kernel.Api.helpers.RelationshipSelections;
+	using NodeCursor = Neo4Net.Kernel.Api.Internal.NodeCursor;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using RelationshipSelectionCursor = Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelectionCursor;
+	using RelationshipSelections = Neo4Net.Kernel.Api.Internal.Helpers.RelationshipSelections;
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.StatementConstants.NO_SUCH_RELATIONSHIP;
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void lockAllNodesAndConsumeRelationships(long nodeId, final org.Neo4Net.internal.kernel.api.Transaction transaction, org.Neo4Net.internal.kernel.api.NodeCursor nodes) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: void lockAllNodesAndConsumeRelationships(long nodeId, final org.Neo4Net.Kernel.Api.Internal.Transaction transaction, org.Neo4Net.Kernel.Api.Internal.NodeCursor nodes) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
 		 internal virtual void LockAllNodesAndConsumeRelationships( long nodeId, Transaction transaction, NodeCursor nodes )
 		 {
@@ -69,7 +69,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 
 					// perform the action on each relationship, we will retry if the the relationship iterator contains
 					// new relationships
-					Neo4Net.Internal.Kernel.Api.Read read = transaction.DataRead();
+					Neo4Net.Kernel.Api.Internal.Read read = transaction.DataRead();
 					read.SingleNode( nodeId, nodes );
 					//if the node is not there, someone else probably deleted it, just ignore
 					if ( nodes.Next() )
@@ -94,7 +94,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  MutableLongSet nodeIdSet = new LongHashSet();
 			  nodeIdSet.add( nodeId );
 
-			  Neo4Net.Internal.Kernel.Api.Read read = transaction.DataRead();
+			  Neo4Net.Kernel.Api.Internal.Read read = transaction.DataRead();
 			  read.SingleNode( nodeId, nodes );
 			  if ( !nodes.Next() )
 			  {
@@ -129,7 +129,7 @@ namespace Neo4Net.Kernel.Impl.Newapi
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private boolean performAction(long rel, boolean first) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: private boolean performAction(long rel, boolean first) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 private bool PerformAction( long rel, bool first )
 		 {
 			  if ( first )

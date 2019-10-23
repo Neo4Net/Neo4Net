@@ -30,12 +30,12 @@ namespace Neo4Net.Kernel.builtinprocs
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
 	using Neo4Net.GraphDb;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using TokenRead = Neo4Net.Internal.Kernel.Api.TokenRead;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using TokenRead = Neo4Net.Kernel.Api.Internal.TokenRead;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SilentTokenNameLookup = Neo4Net.Kernel.api.SilentTokenNameLookup;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -130,11 +130,11 @@ namespace Neo4Net.Kernel.builtinprocs
 											  VirtualNodeHack node = GetOrCreateLabel( labelName, properties, nodes );
 											  int labelId = tokenRead.NodeLabel( labelName );
 
-											  if ( dataRead.CountsForRelationship( labelId, relId, Neo4Net.Internal.Kernel.Api.Read_Fields.ANY_LABEL ) > 0 )
+											  if ( dataRead.CountsForRelationship( labelId, relId, Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_LABEL ) > 0 )
 											  {
 													startNodes.Add( node );
 											  }
-											  if ( dataRead.CountsForRelationship( Neo4Net.Internal.Kernel.Api.Read_Fields.ANY_LABEL, relId, labelId ) > 0 )
+											  if ( dataRead.CountsForRelationship( Neo4Net.Kernel.Api.Internal.Read_Fields.ANY_LABEL, relId, labelId ) > 0 )
 											  {
 													endNodes.Add( node );
 											  }

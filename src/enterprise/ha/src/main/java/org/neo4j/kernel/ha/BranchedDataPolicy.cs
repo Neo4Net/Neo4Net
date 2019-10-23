@@ -98,7 +98,7 @@ namespace Neo4Net.Kernel.ha
 			return nameValue;
 		}
 
-		public static BranchedDataPolicy valueOf( string name )
+		public static BranchedDataPolicy ValueOf( string name )
 		{
 			foreach ( BranchedDataPolicy enumInstance in BranchedDataPolicy.valueList )
 			{

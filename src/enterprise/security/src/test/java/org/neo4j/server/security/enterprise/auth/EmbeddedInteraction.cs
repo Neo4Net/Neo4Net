@@ -31,7 +31,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
 	using HostnamePort = Neo4Net.Helpers.HostnamePort;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using BoltConnector = Neo4Net.Kernel.configuration.BoltConnector;
@@ -136,14 +136,14 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 		 public override InternalTransaction BeginLocalTransactionAsUser( EnterpriseLoginContext loginContext, KernelTransaction.Type txType )
 		 {
-			  return Db.beginTransaction( txType, loginContext );
+			  return Db.BeginTransaction( txType, loginContext );
 		 }
 
 		 public override string ExecuteQuery( EnterpriseLoginContext loginContext, string call, IDictionary<string, object> @params, System.Action<ResourceIterator<IDictionary<string, object>>> resultConsumer )
 		 {
 			  try
 			  {
-					  using ( InternalTransaction tx = Db.beginTransaction( KernelTransaction.Type.@implicit, loginContext ) )
+					  using ( InternalTransaction tx = Db.BeginTransaction( KernelTransaction.Type.@implicit, loginContext ) )
 					  {
 						IDictionary<string, object> p = ( @params == null ) ? Collections.emptyMap() : @params;
 						resultConsumer( Db.execute( call, p ) );

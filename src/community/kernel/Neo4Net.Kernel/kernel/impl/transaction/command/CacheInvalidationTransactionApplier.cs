@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.transaction.command
 {
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using CacheAccessBackDoor = Neo4Net.Kernel.impl.core.CacheAccessBackDoor;
 	using LabelTokenStore = Neo4Net.Kernel.impl.store.LabelTokenStore;

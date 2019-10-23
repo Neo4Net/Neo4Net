@@ -30,13 +30,13 @@ namespace Neo4Net.GraphDb.facade
 	using PlatformModule = Neo4Net.GraphDb.factory.module.PlatformModule;
 	using AbstractEditionModule = Neo4Net.GraphDb.factory.module.edition.AbstractEditionModule;
 	using URLAccessRule = Neo4Net.GraphDb.security.URLAccessRule;
-	using Geometry = Neo4Net.GraphDb.spatial.Geometry;
-	using Point = Neo4Net.GraphDb.spatial.Point;
+	using Geometry = Neo4Net.GraphDb.Spatial.Geometry;
+	using Point = Neo4Net.GraphDb.Spatial.Point;
 	using Neo4Net.Helpers.Collections;
 	using DataCollectorManager = Neo4Net.Internal.DataCollectorManager;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using ProcedureCallContext = Neo4Net.Internal.Kernel.Api.procs.ProcedureCallContext;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using ProcedureCallContext = Neo4Net.Kernel.Api.Internal.procs.ProcedureCallContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using SecurityProvider = Neo4Net.Kernel.api.security.provider.SecurityProvider;
 	using AvailabilityGuardInstaller = Neo4Net.Kernel.availability.AvailabilityGuardInstaller;
@@ -65,15 +65,15 @@ namespace Neo4Net.GraphDb.facade
 	using Group = Neo4Net.Scheduler.Group;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTGeometry;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTGeometry;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTNode;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTNode;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPath;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPath;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTPoint;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTPoint;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.Neo4NetTypes.NTRelationship;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.NTRelationship;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.proc.Context_Fields.DATABASE_API;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

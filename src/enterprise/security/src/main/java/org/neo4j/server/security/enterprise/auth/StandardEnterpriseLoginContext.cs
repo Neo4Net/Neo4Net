@@ -30,9 +30,9 @@ namespace Neo4Net.Server.security.enterprise.auth
 
 
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 	using EnterpriseLoginContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseLoginContext;
 	using EnterpriseSecurityContext = Neo4Net.Kernel.enterprise.api.security.EnterpriseSecurityContext;
 
@@ -165,7 +165,7 @@ namespace Neo4Net.Server.security.enterprise.auth
 			  {
 					if ( PasswordChangeRequired )
 					{
-						 return Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.CredentialsExpired.onViolation( msg );
+						 return Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.CredentialsExpired.onViolation( msg );
 					}
 					else
 					{

@@ -27,7 +27,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 	using RaftMachine = Neo4Net.causalclustering.core.consensus.RaftMachine;
 	using Neo4Net.Collections;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -90,7 +90,7 @@ namespace Neo4Net.causalclustering.discovery.procedures
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private Object[] single(org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.internal.kernel.api.exceptions.ProcedureException> result) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: private Object[] single(org.Neo4Net.collection.RawIterator<Object[], org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException> result) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 private object[] Single( RawIterator<object[], ProcedureException> result )
 		 {
 			  return Iterators.single( asList( result ).GetEnumerator() );

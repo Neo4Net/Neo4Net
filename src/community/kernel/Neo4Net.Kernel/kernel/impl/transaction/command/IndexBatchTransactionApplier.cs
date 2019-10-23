@@ -39,9 +39,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using PropertyCommand = Neo4Net.Kernel.impl.transaction.command.Command.PropertyCommand;
 	using IndexUpdates = Neo4Net.Kernel.impl.transaction.state.IndexUpdates;
 	using OnlineIndexUpdates = Neo4Net.Kernel.impl.transaction.state.OnlineIndexUpdates;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using AsyncApply = Neo4Net.Utils.Concurrent.AsyncApply;
 	using Neo4Net.Utils.Concurrent;
 

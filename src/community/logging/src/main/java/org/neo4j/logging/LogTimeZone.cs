@@ -72,7 +72,7 @@ namespace Neo4Net.Logging
 			return nameValue;
 		}
 
-		public static LogTimeZone valueOf( string name )
+		public static LogTimeZone ValueOf( string name )
 		{
 			foreach ( LogTimeZone enumInstance in LogTimeZone.valueList )
 			{

@@ -22,7 +22,7 @@
  */
 namespace Neo4Net.causalclustering.protocol.handshake
 {
-	public interface ClientHandshakeFinishedEvent
+	public interface IClientHandshakeFinishedEvent
 	{
 	}
 

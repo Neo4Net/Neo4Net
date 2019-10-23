@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.util.collection
 	/// The purpose of this factory is the ability to switch between multiple collection implementations used in <seealso cref="TxState"/> (e.g. on- or off-heap),
 	/// keeping track of underlying memory allocations.
 	/// </summary>
-	public interface CollectionsFactory
+	public interface ICollectionsFactory
 	{
 		 MutableLongSet NewLongSet();
 

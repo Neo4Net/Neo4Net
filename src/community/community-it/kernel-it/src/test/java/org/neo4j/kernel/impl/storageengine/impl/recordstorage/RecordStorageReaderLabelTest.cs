@@ -26,7 +26,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using Label = Neo4Net.GraphDb.Label;
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using StorageNodeCursor = Neo4Net.Storageengine.Api.StorageNodeCursor;
+	using StorageNodeCursor = Neo4Net.Kernel.Api.StorageEngine.StorageNodeCursor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.eclipse.collections.impl.set.mutable.primitive.LongHashSet.newSetWith;

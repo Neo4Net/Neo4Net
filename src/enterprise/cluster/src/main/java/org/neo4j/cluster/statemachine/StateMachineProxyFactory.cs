@@ -88,7 +88,7 @@ namespace Neo4Net.cluster.statemachine
 
 			  try
 			  {
-					MessageType typeAsEnum = ( MessageType ) Enum.valueOf( stateMachine.MessageType, method.Name );
+					MessageType typeAsEnum = ( MessageType ) Enum.ValueOf( stateMachine.MessageType, method.Name );
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: org.Neo4Net.cluster.com.message.Message<?> message = org.Neo4Net.cluster.com.message.Message.internal(typeAsEnum, arg);
 					Message<object> message = Message.Internal( typeAsEnum, arg );
@@ -162,7 +162,7 @@ namespace Neo4Net.cluster.statemachine
 
 						 try
 						 {
-							  Enum.valueOf( stateMachine.MessageType, method.Name );
+							  Enum.ValueOf( stateMachine.MessageType, method.Name );
 
 							  // Ok!
 							  foundMatch = true;

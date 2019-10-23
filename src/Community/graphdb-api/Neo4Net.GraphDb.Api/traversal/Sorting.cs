@@ -59,7 +59,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public EndNodeComparatorAnonymousInnerClass( string propertyKey )
 			 {
-				 this._propertyKey = propertyKey;
+				 _propertyKey = propertyKey;
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
@@ -109,7 +109,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public EndNodeComparatorAnonymousInnerClass2( IPathExpander expander )
 			 {
-				 this._expander = expander;
+				 _expander = expander;
 			 }
 
 			 protected internal override int compareNodes( INode endNode1, INode endNode2 )
@@ -123,7 +123,7 @@ namespace Neo4Net.GraphDb.Traversal
 			 {
 //JAVA TO C# CONVERTER WARNING: Java wildcard generics have no direct equivalent in .NET:
 //ORIGINAL LINE: java.util.Iterator<?> expand = expander.expand(singleNodePath(node), BranchState.NO_STATE).iterator();
-				  IEnumerator<object> expand = expander.expand( singleNodePath( node ), BranchState.NO_STATE ).GetEnumerator();
+				  IEnumerator<object> expand = expander.expand( singleNodePath( node ), IBranchState.NO_STATE ).GetEnumerator();
 				  int count = 0;
 				  while ( expand.MoveNext() )
 				  {
@@ -140,7 +140,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 {
 			  public override int Compare( IPath p1, IPath p2 )
 			  {
-					return CompareNodes( p1.EndNode(), p2.EndNode() );
+					return CompareNodes( p1.EndNode, p2.EndNode);
 			  }
 
 			  protected internal abstract int CompareNodes( INode endNode1, INode endNode2 );

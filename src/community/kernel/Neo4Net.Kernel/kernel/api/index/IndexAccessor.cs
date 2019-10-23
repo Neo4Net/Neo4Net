@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Api.Index
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
 	using SwallowingIndexUpdater = Neo4Net.Kernel.Impl.Api.index.updater.SwallowingIndexUpdater;
 	using ConsistencyCheckable = Neo4Net.Kernel.Impl.Index.Schema.ConsistencyCheckable;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.Api.Index
 		 /// <exception cref="IndexEntryConflictException"> for first detected uniqueness conflict, if any. </exception>
 		 /// <exception cref="UncheckedIOException"> on error reading from source files. </exception>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor );
 
 		 /// <returns> true if index was not shutdown properly and its internal state is dirty, false otherwise </returns>
@@ -269,7 +269,7 @@ namespace Neo4Net.Kernel.Api.Index
 		  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 		  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 		  {
 				Delegate.verifyDeferredConstraints( nodePropertyAccessor );

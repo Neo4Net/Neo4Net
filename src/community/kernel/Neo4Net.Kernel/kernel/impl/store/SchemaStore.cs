@@ -23,7 +23,7 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using MalformedSchemaRuleException = Neo4Net.Internal.Kernel.Api.exceptions.schema.MalformedSchemaRuleException;
+	using MalformedSchemaRuleException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ReusableRecordsCompositeAllocator = Neo4Net.Kernel.Impl.Store.Allocators.ReusableRecordsCompositeAllocator;
@@ -33,7 +33,7 @@ namespace Neo4Net.Kernel.impl.store
 	using DynamicRecord = Neo4Net.Kernel.Impl.Store.Records.DynamicRecord;
 	using SchemaRuleSerialization = Neo4Net.Kernel.Impl.Store.Records.SchemaRuleSerialization;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.store.record.RecordLoad.CHECK;
@@ -75,7 +75,7 @@ namespace Neo4Net.Kernel.impl.store
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: static org.Neo4Net.storageengine.api.schema.SchemaRule readSchemaRule(long id, java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> records, byte[] buffer) throws org.Neo4Net.internal.kernel.api.exceptions.schema.MalformedSchemaRuleException
+//ORIGINAL LINE: static org.Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule readSchemaRule(long id, java.util.Collection<org.Neo4Net.kernel.impl.store.record.DynamicRecord> records, byte[] buffer) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.schema.MalformedSchemaRuleException
 		 internal static SchemaRule ReadSchemaRule( long id, ICollection<DynamicRecord> records, sbyte[] buffer )
 		 {
 			  ByteBuffer scratchBuffer = ConcatData( records, buffer );

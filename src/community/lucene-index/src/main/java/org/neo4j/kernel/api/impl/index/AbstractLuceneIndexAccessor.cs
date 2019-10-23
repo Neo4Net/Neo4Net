@@ -37,12 +37,12 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using ReporterFactory = Neo4Net.Kernel.Impl.Annotations.ReporterFactory;
 	using IndexUpdateMode = Neo4Net.Kernel.Impl.Api.index.IndexUpdateMode;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using Value = Neo4Net.Values.Storable.Value;
 
-	public abstract class AbstractLuceneIndexAccessor<READER, INDEX> : IndexAccessor where READER : Neo4Net.Storageengine.Api.schema.IndexReader where INDEX : DatabaseIndex<READER>
+	public abstract class AbstractLuceneIndexAccessor<READER, INDEX> : IndexAccessor where READER : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader where INDEX : DatabaseIndex<READER>
 	{
 		public abstract void PutAllNoOverwrite( IDictionary<string, Value> target, IDictionary<string, Value> source );
 		public abstract IDictionary<string, Value> IndexConfig();
@@ -146,7 +146,7 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public abstract void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
+//ORIGINAL LINE: public abstract void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor propertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException;
 		 public override abstract void VerifyDeferredConstraints( NodePropertyAccessor propertyAccessor );
 
 		 public virtual bool Dirty

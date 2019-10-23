@@ -298,7 +298,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 				 return nameValue;
 			 }
 
-			 public static Factory valueOf( string name )
+			 public static Factory ValueOf( string name )
 			 {
 				 foreach ( Factory enumInstance in Factory.valueList )
 				 {

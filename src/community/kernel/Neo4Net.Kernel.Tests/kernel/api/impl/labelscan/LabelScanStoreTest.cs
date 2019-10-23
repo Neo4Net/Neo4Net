@@ -49,7 +49,7 @@ namespace Neo4Net.Kernel.api.impl.labelscan
 	using FullStoreChangeStream = Neo4Net.Kernel.Impl.Api.scan.FullStoreChangeStream;
 	using LifeSupport = Neo4Net.Kernel.Lifecycle.LifeSupport;
 	using LifecycleException = Neo4Net.Kernel.Lifecycle.LifecycleException;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 	using RandomRule = Neo4Net.Test.rule.RandomRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;

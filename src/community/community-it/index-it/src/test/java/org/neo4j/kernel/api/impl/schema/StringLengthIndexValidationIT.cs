@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema = Neo4Net.GraphDb.schema.Schema;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema = Neo4Net.GraphDb.Schema.Schema;
 	using Neo4Net.Index.Internal.gbptree;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
@@ -148,7 +148,7 @@ namespace Neo4Net.Kernel.Api.Impl.Schema
 					assertTrue( iterator.hasNext() );
 //JAVA TO C# CONVERTER TODO TASK: Java iterators are only converted within the context of 'while' and 'for' loops:
 					IndexDefinition next = iterator.next();
-					assertEquals( "state is FAILED", Neo4Net.GraphDb.schema.Schema_IndexState.Failed, Db.schema().getIndexState(next) );
+					assertEquals( "state is FAILED", Neo4Net.GraphDb.Schema.Schema_IndexState.Failed, Db.schema().getIndexState(next) );
 					assertThat( Db.schema().getIndexFailure(next), Matchers.containsString("Index key-value size it to large. Please see index documentation for limitations.") );
 					tx.Success();
 			  }

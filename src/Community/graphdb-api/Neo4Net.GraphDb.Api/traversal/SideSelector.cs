@@ -25,7 +25,7 @@ namespace Neo4Net.GraphDb.Traversal
 	/// the next step for. For example an alternating side selector will return alternating
 	/// start side and end side as long as each side hasn't reached it's end.
 	/// </summary>
-	public interface SideSelector : BranchSelector
+	public interface ISideSelector : BranchSelector
 	{
 		 /// <returns> the side to traverse next on, <seealso cref="Direction.OUTGOING"/> for start side
 		 /// and <seealso cref="Direction.INCOMING"/> for end side. </returns>

@@ -37,9 +37,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 	using Locks = Neo4Net.Kernel.impl.locking.Locks;
 	using CommunityLockManger = Neo4Net.Kernel.impl.locking.community.CommunityLockManger;
 	using LockWaitStrategies = Neo4Net.Kernel.impl.util.concurrent.LockWaitStrategies;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using Neo4Net.Storageengine.Api.@lock;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using Neo4Net.Kernel.Api.StorageEngine.@lock;
 	using BinaryLatch = Neo4Net.Utils.Concurrent.BinaryLatch;
 
 	internal class ForsetiFalseDeadlockTest
@@ -350,9 +350,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 public abstract class LockType
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           EXCLUSIVE { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, int resource) { client.acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, int resource) { client.releaseExclusive(resourceType, resource); } },
+//           EXCLUSIVE { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseExclusive(resourceType, resource); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           SHARED { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, int resource) { client.acquireShared(org.Neo4Net.storageengine.api.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, int resource) { client.releaseShared(resourceType, resource); } };
+//           SHARED { public void acquire(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.acquireShared(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer.NONE, resourceType, resource); } public void release(org.Neo4Net.kernel.impl.locking.Locks_Client client, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, int resource) { client.releaseShared(resourceType, resource); } };
 
 			  private static readonly IList<LockType> valueList = new List<LockType>();
 
@@ -380,9 +380,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 				  innerEnumValue = innerEnum;
 			  }
 
-			  public abstract void acquire( Neo4Net.Kernel.impl.locking.Locks_Client client, Neo4Net.Storageengine.Api.@lock.ResourceType resourceType, int resource );
+			  public abstract void acquire( Neo4Net.Kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, int resource );
 
-			  public abstract void release( Neo4Net.Kernel.impl.locking.Locks_Client client, Neo4Net.Storageengine.Api.@lock.ResourceType resourceType, int resource );
+			  public abstract void release( Neo4Net.Kernel.impl.locking.Locks_Client client, Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType, int resource );
 
 			 public static IList<LockType> values()
 			 {
@@ -399,7 +399,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 				 return nameValue;
 			 }
 
-			 public static LockType valueOf( string name )
+			 public static LockType ValueOf( string name )
 			 {
 				 foreach ( LockType enumInstance in LockType.valueList )
 				 {
@@ -415,9 +415,9 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 		 public abstract class LockManager
 		 {
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           COMMUNITY { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.storageengine.api.lock.ResourceType resourceType) { return new org.Neo4Net.kernel.impl.locking.community.CommunityLockManger(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone()); } },
+//           COMMUNITY { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new org.Neo4Net.kernel.impl.locking.community.CommunityLockManger(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone()); } },
 //JAVA TO C# CONVERTER TODO TASK: Enum value-specific class bodies are not converted by Java to C# Converter:
-//           FORSETI { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.storageengine.api.lock.ResourceType resourceType) { return new ForsetiLockManager(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone(), resourceType); } };
+//           FORSETI { public org.Neo4Net.kernel.impl.locking.Locks create(org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType) { return new ForsetiLockManager(org.Neo4Net.kernel.configuration.Config.defaults(), java.time.Clock.systemDefaultZone(), resourceType); } };
 
 			  private static readonly IList<LockManager> valueList = new List<LockManager>();
 
@@ -445,7 +445,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 				  innerEnumValue = innerEnum;
 			  }
 
-			  public abstract Neo4Net.Kernel.impl.locking.Locks create( Neo4Net.Storageengine.Api.@lock.ResourceType resourceType );
+			  public abstract Neo4Net.Kernel.impl.locking.Locks create( Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType resourceType );
 
 			 public static IList<LockManager> values()
 			 {
@@ -462,7 +462,7 @@ namespace Neo4Net.Kernel.impl.enterprise.@lock.forseti
 				 return nameValue;
 			 }
 
-			 public static LockManager valueOf( string name )
+			 public static LockManager ValueOf( string name )
 			 {
 				 foreach ( LockManager enumInstance in LockManager.valueList )
 				 {

@@ -61,7 +61,7 @@ namespace Neo4Net.Server.rest
 		 }
 
 		 private int _expectedResponseStatus = -1;
-		 private MediaType _expectedMediaType = MediaType.valueOf( "application/json; charset=UTF-8" );
+		 private MediaType _expectedMediaType = MediaType.ValueOf( "application/json; charset=UTF-8" );
 		 private MediaType _payloadMediaType = MediaType.APPLICATION_JSON_TYPE;
 		 private readonly IList<Pair<string, System.Predicate<string>>> _expectedHeaderFields = new List<Pair<string, System.Predicate<string>>>();
 		 private string _payload;

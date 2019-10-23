@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.net
 	using ChannelInitializer = io.netty.channel.ChannelInitializer;
 	using SocketChannel = io.netty.channel.socket.SocketChannel;
 
-	public interface ChildInitializer
+	public interface IChildInitializer
 	{
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 //ORIGINAL LINE: void initChannel(io.netty.channel.socket.SocketChannel channel) throws Exception;

@@ -27,8 +27,8 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
 	using Neo4Net.causalclustering.core.state.storage;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.state.machines.locks.ReplicatedLockTokenRequest.INVALID_REPLICATED_LOCK_TOKEN_REQUEST;
@@ -103,7 +103,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(ReplicatedLockTokenState state, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(ReplicatedLockTokenState state, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( ReplicatedLockTokenState state, WritableChannel channel )
 			  {
@@ -113,7 +113,7 @@ namespace Neo4Net.causalclustering.core.state.machines.locks
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public ReplicatedLockTokenState unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: public ReplicatedLockTokenState unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  public override ReplicatedLockTokenState Unmarshal0( ReadableChannel channel )
 			  {
 					long logIndex = channel.Long;

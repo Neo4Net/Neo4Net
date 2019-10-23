@@ -28,20 +28,20 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 
 	using Label = Neo4Net.GraphDb.Label;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using Iterators = Neo4Net.Helpers.Collections.Iterators;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using SchemaRead = Neo4Net.Internal.Kernel.Api.SchemaRead;
-	using SchemaWrite = Neo4Net.Internal.Kernel.Api.SchemaWrite;
-	using TokenWrite = Neo4Net.Internal.Kernel.Api.TokenWrite;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using SchemaRead = Neo4Net.Kernel.Api.Internal.SchemaRead;
+	using SchemaWrite = Neo4Net.Kernel.Api.Internal.SchemaWrite;
+	using TokenWrite = Neo4Net.Kernel.Api.Internal.TokenWrite;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using MultiTokenSchemaDescriptor = Neo4Net.Kernel.api.schema.MultiTokenSchemaDescriptor;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using IndexBackedConstraintDescriptor = Neo4Net.Kernel.api.schema.constraints.IndexBackedConstraintDescriptor;
@@ -50,8 +50,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using ConstraintIndexCreator = Neo4Net.Kernel.Impl.Api.state.ConstraintIndexCreator;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using AssertableLogProvider = Neo4Net.Logging.AssertableLogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.MatcherAssert.assertThat;
@@ -78,7 +78,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.Iterators.asSet;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.LoginContext.AUTH_DISABLED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.LoginContext.AUTH_DISABLED;
 
 	public class IndexIT : KernelIntegrationTest
 	{
@@ -125,7 +125,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Test public void createIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: @Test public void createIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
 		 public virtual void CreateIndexForAnotherLabelWhileHoldingSharedLockOnOtherLabel()
 		 {
@@ -349,7 +349,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual void ShouldListMultiTokenIndexesInTheCoreAPI()
 		 {
 			  Transaction transaction = NewTransaction( AUTH_DISABLED );
-			  MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _labelId, _labelId2 }, IEntityType.NODE, _propertyKeyId );
+			  MultiTokenSchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _labelId, _labelId2 }, EntityType.NODE, _propertyKeyId );
 			  transaction.SchemaWrite().indexCreate(descriptor);
 			  Commit();
 
@@ -492,7 +492,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 public virtual void ShouldListCompositeMultiTokenRelationshipIndexesInTheCoreAPI()
 		 {
 			  Transaction transaction = NewTransaction( AUTH_DISABLED );
-			  SchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _relType, _relType2 }, IEntityType.RELATIONSHIP, _propertyKeyId, _propertyKeyId2 );
+			  SchemaDescriptor descriptor = SchemaDescriptorFactory.multiToken( new int[]{ _relType, _relType2 }, EntityType.RELATIONSHIP, _propertyKeyId, _propertyKeyId2 );
 			  transaction.SchemaWrite().indexCreate(descriptor);
 			  Commit();
 

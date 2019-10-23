@@ -26,8 +26,8 @@ namespace Neo4Net.GraphDb
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using IndexDefinitionImpl = Neo4Net.Kernel.impl.coreapi.schema.IndexDefinitionImpl;
 	using InternalSchemaActions = Neo4Net.Kernel.impl.coreapi.schema.InternalSchemaActions;
 	using NodeKeyConstraintDefinition = Neo4Net.Kernel.impl.coreapi.schema.NodeKeyConstraintDefinition;

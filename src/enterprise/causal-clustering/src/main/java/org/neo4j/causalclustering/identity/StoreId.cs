@@ -25,7 +25,7 @@ namespace Neo4Net.causalclustering.identity
 
 	public sealed class StoreId
 	{
-		 public static readonly StoreId Default = new StoreId( Neo4Net.Storageengine.Api.StoreId.Default.CreationTime, Neo4Net.Storageengine.Api.StoreId.Default.RandomId, Neo4Net.Storageengine.Api.StoreId.Default.UpgradeTime, Neo4Net.Storageengine.Api.StoreId.Default.UpgradeId );
+		 public static readonly StoreId Default = new StoreId( Neo4Net.Kernel.Api.StorageEngine.StoreId.Default.CreationTime, Neo4Net.Kernel.Api.StorageEngine.StoreId.Default.RandomId, Neo4Net.Kernel.Api.StorageEngine.StoreId.Default.UpgradeTime, Neo4Net.Kernel.Api.StorageEngine.StoreId.Default.UpgradeId );
 
 		 public static bool IsDefault( StoreId storeId )
 		 {
@@ -77,7 +77,7 @@ namespace Neo4Net.causalclustering.identity
 			 }
 		 }
 
-		 public bool EqualToKernelStoreId( Neo4Net.Storageengine.Api.StoreId kernelStoreId )
+		 public bool EqualToKernelStoreId( Neo4Net.Kernel.Api.StorageEngine.StoreId kernelStoreId )
 		 {
 			  return _creationTime == kernelStoreId.CreationTime && _randomId == kernelStoreId.RandomId && _upgradeTime == kernelStoreId.UpgradeTime && _upgradeId == kernelStoreId.UpgradeId;
 		 }

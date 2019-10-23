@@ -3,16 +3,13 @@
     "",
     "\\src",
     "\\src\\Community",
-    "\\src\\Community\\common",
+    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations",
+    "\\src\\Community\\annotation-processors\\Neo4Net.Kernel.Impl.Annotations\\Kernel",
     "\\src\\Community\\common\\Neo4Net.Common",
-    "\\src\\Community\\common\\Neo4Net.Common.Tests",
-    "\\src\\Community\\concurrent",
-    "\\src\\integrationTests\\src",
-    "\\src\\integrationTests\\src\\test",
-    "\\src\\integrationTests\\src\\test\\java",
-    "\\src\\integrationTests\\src\\test\\java\\org",
-    "\\src\\integrationTests\\src\\test\\java\\org\\Neo4Net"
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api",
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\impl",
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api.Tests\\index",
+    "\\src\\Community\\graphdb-api\\Neo4Net.GraphDb.Api\\impl\\traversal"
   ],
-  "SelectedNode": "\\src\\Community\\common\\Neo4Net.Common.Tests",
   "PreviewInSolutionExplorer": false
 }

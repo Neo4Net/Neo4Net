@@ -25,7 +25,7 @@ namespace Neo4Net.Harness
 	using Rule = org.junit.Rule;
 	using Test = org.junit.Test;
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
 	using Context = Neo4Net.Procedure.Context;
 	using UserFunction = Neo4Net.Procedure.UserFunction;
 	using SuppressOutput = Neo4Net.Test.rule.SuppressOutput;
@@ -90,7 +90,7 @@ namespace Neo4Net.Harness
 			  public MyCoreAPI MyCoreAPI;
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public long willFail() throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public long willFail() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 			  [UserFunction(value : "my.willFail")]
 			  public virtual long WillFail()
 			  {

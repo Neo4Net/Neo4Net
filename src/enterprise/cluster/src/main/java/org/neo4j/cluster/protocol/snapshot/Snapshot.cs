@@ -27,7 +27,7 @@ namespace Neo4Net.cluster.protocol.snapshot
 	/// Mainly used when a new instance joins, and wants to catch up without having
 	/// to re-read all previous messages.
 	/// </summary>
-	public interface Snapshot
+	public interface ISnapshot
 	{
 		 SnapshotProvider SnapshotProvider { set; }
 

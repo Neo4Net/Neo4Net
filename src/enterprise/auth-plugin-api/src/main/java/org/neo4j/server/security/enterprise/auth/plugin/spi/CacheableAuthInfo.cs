@@ -54,7 +54,7 @@ namespace Neo4Net.Server.security.enterprise.auth.plugin.spi
 	/// <seealso cref= AuthenticationPlugin </seealso>
 	/// <seealso cref= AuthorizationPlugin </seealso>
 	/// <seealso cref= CustomCacheableAuthenticationInfo </seealso>
-	public interface CacheableAuthInfo : AuthInfo
+	public interface ICacheableAuthInfo : AuthInfo
 	{
 		 /// <summary>
 		 /// Should return a principal that uniquely identifies the authenticated subject within this auth provider.

@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 {
 
 	using Neo4Net.Helpers.Collections;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 
 	public class CommandExtractor : Visitor<StorageCommand, IOException>
 	{

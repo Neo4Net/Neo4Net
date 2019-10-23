@@ -35,7 +35,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 	using Iterables = Neo4Net.Helpers.Collections.Iterables;
 	using PageCursorTracerSupplier = Neo4Net.Io.pagecache.tracing.cursor.PageCursorTracerSupplier;
 	using EmptyVersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.EmptyVersionContextSupplier;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using CommittedTransactionRepresentation = Neo4Net.Kernel.impl.transaction.CommittedTransactionRepresentation;
@@ -60,7 +60,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.tracing.CommitEvent.NULL;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.TransactionApplicationMode.EXTERNAL;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode.EXTERNAL;
 
 	public class BatchingTxApplierTest
 	{
@@ -222,7 +222,7 @@ namespace Neo4Net.causalclustering.catchup.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertTransactionsCommitted(long startTxId, long expectedCount) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: private void assertTransactionsCommitted(long startTxId, long expectedCount) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 private void AssertTransactionsCommitted( long startTxId, long expectedCount )
 		 {
 			  ArgumentCaptor<TransactionToApply> batchCaptor = ArgumentCaptor.forClass( typeof( TransactionToApply ) );

@@ -25,9 +25,9 @@
 namespace Neo4Net.Kernel.enterprise.api.security
 {
 
-	using AccessMode = Neo4Net.Internal.Kernel.Api.security.AccessMode;
-	using AuthSubject = Neo4Net.Internal.Kernel.Api.security.AuthSubject;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using AccessMode = Neo4Net.Kernel.Api.Internal.security.AccessMode;
+	using AuthSubject = Neo4Net.Kernel.Api.Internal.security.AuthSubject;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 
 	/// <summary>
 	/// A logged in and authorized user.
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.enterprise.api.security
 		 /// <summary>
 		 /// Allows all operations. </summary>
 //JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-		 public new static readonly EnterpriseSecurityContext AuthDisabledConflict = AuthDisabled( Neo4Net.Internal.Kernel.Api.security.AccessMode_Static.Full );
+		 public new static readonly EnterpriseSecurityContext AuthDisabledConflict = AuthDisabled( Neo4Net.Kernel.Api.Internal.security.AccessMode_Static.Full );
 
 		 private static EnterpriseSecurityContext AuthDisabled( AccessMode mode )
 		 {

@@ -38,9 +38,9 @@ namespace Neo4Net.causalclustering.messaging
 	using Neo4Net.causalclustering.messaging.marshalling;
 	using RaftMessageDecoder = Neo4Net.causalclustering.messaging.marshalling.v1.RaftMessageDecoder;
 	using RaftMessageEncoder = Neo4Net.causalclustering.messaging.marshalling.v1.RaftMessageEncoder;
-	using ReadPastEndException = Neo4Net.Storageengine.Api.ReadPastEndException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadPastEndException = Neo4Net.Kernel.Api.StorageEngine.ReadPastEndException;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;
@@ -54,7 +54,7 @@ namespace Neo4Net.causalclustering.messaging
 		 private class SafeChannelMarshalAnonymousInnerClass : SafeChannelMarshal<ReplicatedContent>
 		 {
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent content, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			 public override void marshal( ReplicatedContent content, WritableChannel channel )
 			 {
 				  if ( content is ReplicatedInteger )
@@ -69,7 +69,7 @@ namespace Neo4Net.causalclustering.messaging
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 			 public override ReplicatedContent unmarshal0( ReadableChannel channel )
 			 {
 				  sbyte type = channel.Get();
@@ -79,7 +79,7 @@ namespace Neo4Net.causalclustering.messaging
 				  switch ( type )
 				  {
 						case 1:
-							 content = ReplicatedInteger.valueOf( channel.Int );
+							 content = ReplicatedInteger.ValueOf( channel.Int );
 							 break;
 						default:
 							 throw new System.ArgumentException( string.Format( "Unknown content type 0x{0:x}", type ) );
@@ -147,7 +147,7 @@ namespace Neo4Net.causalclustering.messaging
 		 {
 			  // given
 			  MemberId member = new MemberId( System.Guid.randomUUID() );
-			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) );
+			  RaftLogEntry logEntry = new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) );
 			  Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request request = new Neo4Net.causalclustering.core.consensus.RaftMessages_AppendEntries_Request( member, 1, 1, 99, new RaftLogEntry[] { logEntry }, 1 );
 
 			  // when
@@ -182,7 +182,7 @@ namespace Neo4Net.causalclustering.messaging
 		 {
 			  // given
 			  MemberId member = new MemberId( System.Guid.randomUUID() );
-			  Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request = new Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request( member, ReplicatedInteger.valueOf( 12 ) );
+			  Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request request = new Neo4Net.causalclustering.core.consensus.RaftMessages_NewEntry_Request( member, ReplicatedInteger.ValueOf( 12 ) );
 
 			  // when
 			  _channel.writeOutbound( request );

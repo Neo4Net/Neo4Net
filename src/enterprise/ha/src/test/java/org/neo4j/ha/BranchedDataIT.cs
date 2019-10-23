@@ -54,7 +54,7 @@ namespace Neo4Net.ha
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
 	using Monitors = Neo4Net.Kernel.monitoring.Monitors;
 	using PortAuthority = Neo4Net.Ports.Allocation.PortAuthority;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
 	using TestGraphDatabaseFactory = Neo4Net.Test.TestGraphDatabaseFactory;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;

@@ -24,7 +24,7 @@
  */
 namespace Neo4Net.causalclustering.core.consensus.log.segmented
 {
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 
 	// TODO: Should this really be a KernelException?

@@ -30,9 +30,9 @@ namespace Neo4Net.Kernel.impl.query
 
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using TransactionTerminatedException = Neo4Net.GraphDb.TransactionTerminatedException;
-	using ExecutionStatistics = Neo4Net.Internal.Kernel.Api.ExecutionStatistics;
-	using Kernel = Neo4Net.Internal.Kernel.Api.Kernel;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using ExecutionStatistics = Neo4Net.Kernel.Api.Internal.ExecutionStatistics;
+	using Kernel = Neo4Net.Kernel.Api.Internal.Kernel;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using QueryRegistryOperations = Neo4Net.Kernel.api.QueryRegistryOperations;
 	using Statement = Neo4Net.Kernel.api.Statement;
@@ -130,7 +130,7 @@ namespace Neo4Net.Kernel.impl.query
 			  when( executingQuery.QueryText() ).thenReturn("X");
 			  when( executingQuery.QueryParameters() ).thenReturn(EMPTY_MAP);
 			  when( _initialStatement.queryRegistration() ).thenReturn(initialQueryRegistry);
-			  when( _queryService.beginTransaction( transactionType, securityContext ) ).thenReturn( secondTransaction );
+			  when( _queryService.BeginTransaction( transactionType, securityContext ) ).thenReturn( secondTransaction );
 			  when( txBridge.GetKernelTransactionBoundToThisThread( true ) ).thenReturn( initialKTX, initialKTX, secondKTX );
 			  when( secondStatement.QueryRegistration() ).thenReturn(secondQueryRegistry);
 
@@ -457,7 +457,7 @@ namespace Neo4Net.Kernel.impl.query
 			  when( _initialStatement.queryRegistration() ).thenReturn(queryRegistryOperations);
 			  when( _queryService.DependencyResolver ).thenReturn( resolver );
 			  when( resolver.ResolveDependency( typeof( ThreadToStatementContextBridge ) ) ).thenReturn( _txBridge );
-			  when( _queryService.beginTransaction( any(), any() ) ).thenReturn(internalTransaction);
+			  when( _queryService.BeginTransaction( any(), any() ) ).thenReturn(internalTransaction);
 
 			  KernelTransaction mockTransaction = mockTransaction( _initialStatement );
 			  when( _txBridge.get() ).thenReturn(_initialStatement);

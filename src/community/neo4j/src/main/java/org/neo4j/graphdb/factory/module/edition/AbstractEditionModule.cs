@@ -28,7 +28,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 	using GraphDatabaseFacadeFactory = Neo4Net.GraphDb.facade.GraphDatabaseFacadeFactory;
 	using DatabaseEditionContext = Neo4Net.GraphDb.factory.module.edition.context.DatabaseEditionContext;
 	using Service = Neo4Net.Helpers.Service;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using RestartableFileSystemWatcher = Neo4Net.Io.fs.watcher.RestartableFileSystemWatcher;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
@@ -120,7 +120,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public void registerProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures, org.Neo4Net.kernel.impl.proc.ProcedureConfig procedureConfig) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public virtual void RegisterProcedures( Procedures procedures, ProcedureConfig procedureConfig )
 		 {
 			  procedures.RegisterProcedure( typeof( Neo4Net.Kernel.builtinprocs.BuiltInProcedures ) );
@@ -133,7 +133,7 @@ namespace Neo4Net.GraphDb.factory.module.edition
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException;
+//ORIGINAL LINE: protected abstract void registerEditionSpecificProcedures(org.Neo4Net.kernel.impl.proc.Procedures procedures) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 		 protected internal abstract void RegisterEditionSpecificProcedures( Procedures procedures );
 
 		 protected internal virtual void PublishEditionInfo( UsageData sysInfo, DatabaseInfo databaseInfo, Config config )

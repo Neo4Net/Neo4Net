@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using TransactionApplier = Neo4Net.Kernel.Impl.Api.TransactionApplier;
 	using TransactionToApply = Neo4Net.Kernel.Impl.Api.TransactionToApply;
 	using LockGroup = Neo4Net.Kernel.impl.locking.LockGroup;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
 
 	/// <summary>
 	/// Serves as executor of transactions, i.e. the visit... methods and will invoke the other lifecycle methods like {@link

@@ -24,7 +24,7 @@ namespace Neo4Net.causalclustering.protocol.handshake
 {
 	using SocketAddress = Neo4Net.Helpers.SocketAddress;
 
-	public interface ServerHandshakeFinishedEvent
+	public interface IServerHandshakeFinishedEvent
 	{
 	}
 

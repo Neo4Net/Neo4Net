@@ -19,10 +19,10 @@
  */
 namespace Neo4Net.Kernel.Impl.Api
 {
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InwardKernel = Neo4Net.Kernel.api.InwardKernel;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Neo4Net.Kernel.api;
@@ -72,8 +72,8 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.KernelTransaction beginTransaction(org.Neo4Net.internal.kernel.api.Transaction_Type type, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
-		 public override KernelTransaction BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type type, LoginContext loginContext )
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.KernelTransaction BeginTransaction(org.Neo4Net.Kernel.Api.Internal.Transaction_Type type, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+		 public override KernelTransaction BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type type, LoginContext loginContext )
 		 {
 			  if ( !_isRunning )
 			  {
@@ -83,8 +83,8 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.KernelTransaction beginTransaction(org.Neo4Net.internal.kernel.api.Transaction_Type type, org.Neo4Net.internal.kernel.api.security.LoginContext loginContext, long timeout) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
-		 public override KernelTransaction BeginTransaction( Neo4Net.Internal.Kernel.Api.Transaction_Type type, LoginContext loginContext, long timeout )
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.KernelTransaction BeginTransaction(org.Neo4Net.Kernel.Api.Internal.Transaction_Type type, org.Neo4Net.Kernel.Api.Internal.security.LoginContext loginContext, long timeout) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
+		 public override KernelTransaction BeginTransaction( Neo4Net.Kernel.Api.Internal.Transaction_Type type, LoginContext loginContext, long timeout )
 		 {
 			  _health.assertHealthy( typeof( TransactionFailureException ) );
 			  KernelTransaction transaction = _transactions.newInstance( type, loginContext, timeout );
@@ -98,21 +98,21 @@ namespace Neo4Net.Kernel.Impl.Api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public void registerProcedure(org.Neo4Net.kernel.api.proc.CallableProcedure procedure) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override void RegisterProcedure( CallableProcedure procedure )
 		 {
 			  _procedures.register( procedure );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public void registerUserFunction(org.Neo4Net.kernel.api.proc.CallableUserFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override void RegisterUserFunction( CallableUserFunction function )
 		 {
 			  _procedures.register( function );
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public void registerUserAggregationFunction(org.Neo4Net.kernel.api.proc.CallableUserAggregationFunction function) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public override void RegisterUserAggregationFunction( CallableUserAggregationFunction function )
 		 {
 			  _procedures.register( function );

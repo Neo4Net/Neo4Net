@@ -30,8 +30,8 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 	using ByteArrayChunkedEncoder = Neo4Net.causalclustering.messaging.marshalling.ByteArrayChunkedEncoder;
 	using OutputStreamWritableChannel = Neo4Net.causalclustering.messaging.marshalling.OutputStreamWritableChannel;
 	using TransactionRepresentation = Neo4Net.Kernel.impl.transaction.TransactionRepresentation;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransactionFactory.transactionalRepresentationWriter;
@@ -51,7 +51,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static ReplicatedTransaction unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static ReplicatedTransaction unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static ReplicatedTransaction Unmarshal( ReadableChannel channel )
 		 {
 			  int txBytesLength = channel.Int;
@@ -61,7 +61,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(org.Neo4Net.storageengine.api.WritableChannel writableChannel, ByteArrayReplicatedTransaction replicatedTransaction) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel, ByteArrayReplicatedTransaction replicatedTransaction) throws java.io.IOException
 		 public static void Marshal( WritableChannel writableChannel, ByteArrayReplicatedTransaction replicatedTransaction )
 		 {
 			  int length = replicatedTransaction.TxBytes.Length;
@@ -70,7 +70,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(org.Neo4Net.storageengine.api.WritableChannel writableChannel, TransactionRepresentationReplicatedTransaction replicatedTransaction) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel, TransactionRepresentationReplicatedTransaction replicatedTransaction) throws java.io.IOException
 		 public static void Marshal( WritableChannel writableChannel, TransactionRepresentationReplicatedTransaction replicatedTransaction )
 		 {
 			  if ( writableChannel is ByteBufBacked )
@@ -104,7 +104,7 @@ namespace Neo4Net.causalclustering.core.state.machines.tx
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void writeTx(org.Neo4Net.storageengine.api.WritableChannel writableChannel, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation tx) throws java.io.IOException
+//ORIGINAL LINE: private static void writeTx(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel writableChannel, org.Neo4Net.kernel.impl.transaction.TransactionRepresentation tx) throws java.io.IOException
 		 private static void WriteTx( WritableChannel writableChannel, TransactionRepresentation tx )
 		 {
 			  ReplicatedTransactionFactory.TransactionRepresentationWriter txWriter = transactionalRepresentationWriter( tx );

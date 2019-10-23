@@ -208,7 +208,7 @@ namespace Neo4Net.causalclustering.core.consensus
 			  return this;
 		 }
 
-		 public interface CommitListener
+		 public interface ICommitListener
 		 {
 			  /// <summary>
 			  /// Called when the highest committed index increases.

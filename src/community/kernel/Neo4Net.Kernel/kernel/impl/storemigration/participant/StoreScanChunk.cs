@@ -21,12 +21,12 @@ namespace Neo4Net.Kernel.impl.storemigration.participant
 {
 
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
-	using StorageEntityCursor = Neo4Net.Storageengine.Api.StorageEntityCursor;
-	using StoragePropertyCursor = Neo4Net.Storageengine.Api.StoragePropertyCursor;
+	using StorageEntityCursor = Neo4Net.Kernel.Api.StorageEngine.StorageEntityCursor;
+	using StoragePropertyCursor = Neo4Net.Kernel.Api.StorageEngine.StoragePropertyCursor;
 	using InputChunk = Neo4Net.@unsafe.Impl.Batchimport.input.InputChunk;
 	using InputEntityVisitor = Neo4Net.@unsafe.Impl.Batchimport.input.InputEntityVisitor;
 
-	internal abstract class StoreScanChunk<T> : InputChunk where T : Neo4Net.Storageengine.Api.StorageEntityCursor
+	internal abstract class StoreScanChunk<T> : InputChunk where T : Neo4Net.Kernel.Api.StorageEngine.StorageEntityCursor
 	{
 		 protected internal readonly StoragePropertyCursor StorePropertyCursor;
 		 protected internal readonly T Cursor;

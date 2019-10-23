@@ -22,7 +22,7 @@
 namespace Neo4Net.Kernel.impl.store
 {
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using Neo4Net.Kernel.impl.store.format;

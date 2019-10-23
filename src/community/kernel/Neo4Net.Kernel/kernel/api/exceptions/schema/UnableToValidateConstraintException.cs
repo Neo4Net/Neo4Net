@@ -21,10 +21,10 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using ConstraintValidationException = Neo4Net.Internal.Kernel.Api.exceptions.schema.ConstraintValidationException;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
-	using ConstraintDescriptor = Neo4Net.Internal.Kernel.Api.schema.constraints.ConstraintDescriptor;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using ConstraintValidationException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.ConstraintValidationException;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using ConstraintDescriptor = Neo4Net.Kernel.Api.Internal.schema.constraints.ConstraintDescriptor;
 
 	/// <summary>
 	/// Attempting to validate constraints but the apparatus for validation was not available. For example,

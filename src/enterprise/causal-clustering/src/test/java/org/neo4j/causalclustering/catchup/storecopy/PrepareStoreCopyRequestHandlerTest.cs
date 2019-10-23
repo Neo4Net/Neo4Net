@@ -153,7 +153,7 @@ namespace Neo4Net.causalclustering.catchup.storecopy
 			  _catchupServerProtocol = new CatchupServerProtocol();
 			  _catchupServerProtocol.expect( CatchupServerProtocol.State.PREPARE_STORE_COPY );
 			  System.Func<NeoStoreDataSource> dataSourceSupplier = () => _neoStoreDataSource;
-			  when( _neoStoreDataSource.StoreId ).thenReturn( new Neo4Net.Storageengine.Api.StoreId( 1, 2, 5, 3, 4 ) );
+			  when( _neoStoreDataSource.StoreId ).thenReturn( new Neo4Net.Kernel.Api.StorageEngine.StoreId( 1, 2, 5, 3, 4 ) );
 
 			  PrepareStoreCopyFilesProvider prepareStoreCopyFilesProvider = mock( typeof( PrepareStoreCopyFilesProvider ) );
 			  when( prepareStoreCopyFilesProvider.PrepareStoreCopyFiles( any() ) ).thenReturn(_prepareStoreCopyFiles);

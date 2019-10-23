@@ -30,8 +30,8 @@ namespace Neo4Net.Kernel.recovery
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using LogEntryStart = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryStart;
-	using StorageEngine = Neo4Net.Storageengine.Api.StorageEngine;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageEngine = Neo4Net.Kernel.Api.StorageEngine.StorageEngine;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
@@ -72,7 +72,7 @@ namespace Neo4Net.Kernel.recovery
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public RecoveryApplier getRecoveryApplier(org.Neo4Net.storageengine.api.TransactionApplicationMode mode) throws Exception
+//ORIGINAL LINE: public RecoveryApplier getRecoveryApplier(org.Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode mode) throws Exception
 		 public override RecoveryApplier GetRecoveryApplier( TransactionApplicationMode mode )
 		 {
 			  return new RecoveryVisitor( _storageEngine, mode );

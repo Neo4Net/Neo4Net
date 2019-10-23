@@ -20,7 +20,7 @@
 namespace Neo4Net.Kernel.Api.Impl.Index
 {
 	using Documented = Neo4Net.Kernel.Impl.Annotations.Documented;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
 
 	public interface LuceneIndexConsistencyCheckVisitor
 	{

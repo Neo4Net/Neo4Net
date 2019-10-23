@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.Kernel.impl.store.stats
 {
-	public interface StoreEntityCounters
+	public interface IStoreEntityCounters
 	{
 		 long Nodes();
 

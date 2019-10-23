@@ -22,17 +22,17 @@
 namespace Neo4Net.Kernel.impl.proc
 {
 
-	using ProcedureException = Neo4Net.Internal.Kernel.Api.exceptions.ProcedureException;
-	using DefaultParameterValue = Neo4Net.Internal.Kernel.Api.procs.DefaultParameterValue;
-	using FieldSignature = Neo4Net.Internal.Kernel.Api.procs.FieldSignature;
-	using Neo4NetTypes = Neo4Net.Internal.Kernel.Api.procs.Neo4NetTypes;
-	using ProcedureSignature = Neo4Net.Internal.Kernel.Api.procs.ProcedureSignature;
+	using ProcedureException = Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException;
+	using DefaultParameterValue = Neo4Net.Kernel.Api.Internal.procs.DefaultParameterValue;
+	using FieldSignature = Neo4Net.Kernel.Api.Internal.procs.FieldSignature;
+	using Neo4NetTypes = Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes;
+	using ProcedureSignature = Neo4Net.Kernel.Api.Internal.procs.ProcedureSignature;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using DefaultValueConverter = Neo4Net.Kernel.impl.proc.TypeMappers.DefaultValueConverter;
 	using Name = Neo4Net.Procedure.Name;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.procs.FieldSignature.inputField;
+//	import static org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature.inputField;
 
 	/// <summary>
 	/// Given a java method, figures out a valid <seealso cref="ProcedureSignature"/> field signature.
@@ -48,7 +48,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.internal.kernel.api.procs.Neo4NetTypes.AnyType> inputTypesFor(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.Kernel.Api.Internal.procs.Neo4NetTypes.AnyType> inputTypesFor(Method method) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual IList<Neo4NetTypes.AnyType> InputTypesFor( System.Reflection.MethodInfo method )
 		 {
 			  Type[] types = method.GenericParameterTypes;
@@ -62,7 +62,7 @@ namespace Neo4Net.Kernel.impl.proc
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public java.util.List<org.Neo4Net.internal.kernel.api.procs.FieldSignature> signatureFor(Method method) throws org.Neo4Net.internal.kernel.api.exceptions.ProcedureException
+//ORIGINAL LINE: public java.util.List<org.Neo4Net.Kernel.Api.Internal.procs.FieldSignature> signatureFor(Method method) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.ProcedureException
 		 public virtual IList<FieldSignature> SignatureFor( System.Reflection.MethodInfo method )
 		 {
 			  Parameter[] @params = method.Parameters;

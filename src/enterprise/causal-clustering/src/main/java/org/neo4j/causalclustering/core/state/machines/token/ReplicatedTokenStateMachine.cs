@@ -27,8 +27,8 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 {
 
 	using Neo4Net.causalclustering.core.state.machines;
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
 	using VersionContext = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContext;
 	using VersionContextSupplier = Neo4Net.Io.pagecache.tracing.cursor.context.VersionContextSupplier;
 	using TransactionCommitProcess = Neo4Net.Kernel.Impl.Api.TransactionCommitProcess;
@@ -42,8 +42,8 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 	using NoSuchEntryException = Neo4Net.Kernel.impl.util.collection.NoSuchEntryException;
 	using Log = Neo4Net.Logging.Log;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.causalclustering.core.state.machines.tx.LogIndexTxHeaderEncoding.encodeLogIndexAsTxHeader;
@@ -106,7 +106,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int applyToStore(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> commands, long logIndex) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
+//ORIGINAL LINE: private int applyToStore(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands, long logIndex) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
 		 private int ApplyToStore( ICollection<StorageCommand> commands, long logIndex )
 		 {
 			  int tokenId = ExtractTokenId( commands );
@@ -130,7 +130,7 @@ namespace Neo4Net.causalclustering.core.state.machines.token
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private int extractTokenId(java.util.Collection<org.Neo4Net.storageengine.api.StorageCommand> commands) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
+//ORIGINAL LINE: private int extractTokenId(java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StorageCommand> commands) throws org.Neo4Net.kernel.impl.util.collection.NoSuchEntryException
 		 private int ExtractTokenId( ICollection<StorageCommand> commands )
 		 {
 			  foreach ( StorageCommand command in commands )

@@ -198,7 +198,7 @@ namespace Neo4Net.Kernel.impl.util.dbstructure
 			return nameValue;
 		}
 
-		public static CineastsDbStructure valueOf( string name )
+		public static CineastsDbStructure ValueOf( string name )
 		{
 			foreach ( CineastsDbStructure enumInstance in CineastsDbStructure.valueList )
 			{

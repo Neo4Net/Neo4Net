@@ -97,7 +97,7 @@ namespace Neo4Net.metrics
 				 return nameValue;
 			 }
 
-			 public static GaugeField valueOf( string name )
+			 public static GaugeField ValueOf( string name )
 			 {
 				 foreach ( GaugeField enumInstance in GaugeField.valueList )
 				 {
@@ -209,7 +209,7 @@ namespace Neo4Net.metrics
 				 return nameValue;
 			 }
 
-			 public static TimerField valueOf( string name )
+			 public static TimerField ValueOf( string name )
 			 {
 				 foreach ( TimerField enumInstance in TimerField.valueList )
 				 {

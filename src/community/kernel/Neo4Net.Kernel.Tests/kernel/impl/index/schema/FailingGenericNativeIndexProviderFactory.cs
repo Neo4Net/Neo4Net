@@ -23,8 +23,8 @@ using System.Collections.Generic;
 namespace Neo4Net.Kernel.Impl.Index.Schema
 {
 
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using IndexEntryConflictException = Neo4Net.Kernel.Api.Exceptions.index.IndexEntryConflictException;
@@ -40,9 +40,9 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static Arrays.copyOfRange;
@@ -101,7 +101,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 			 private IndexProvider _actualProvider;
 
-			 public IndexProviderAnonymousInnerClass( FailingGenericNativeIndexProviderFactory outerInstance, Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor getProviderDescriptor, IndexDirectoryStructure.Factory given, IndexProvider actualProvider ) : base( getProviderDescriptor, given )
+			 public IndexProviderAnonymousInnerClass( FailingGenericNativeIndexProviderFactory outerInstance, Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor getProviderDescriptor, IndexDirectoryStructure.Factory given, IndexProvider actualProvider ) : base( getProviderDescriptor, given )
 			 {
 				 this.outerInstance = outerInstance;
 				 this._actualProvider = actualProvider;
@@ -145,7 +145,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 				 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 				 public void verifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 				 {
 					  _actualPopulator.verifyDeferredConstraints( nodePropertyAccessor );
@@ -178,14 +178,14 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 			 public override IndexAccessor getOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 			 {
 				  return _actualProvider.getOnlineAccessor( descriptor, samplingConfig );
 			 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			 public override string getPopulationFailure( StoreIndexDescriptor descriptor )
 			 {
 				  return outerInstance.failureTypes.contains( FailureType.InitialState ) ? INITIAL_STATE_FAILURE_MESSAGE : _actualProvider.getPopulationFailure( descriptor );

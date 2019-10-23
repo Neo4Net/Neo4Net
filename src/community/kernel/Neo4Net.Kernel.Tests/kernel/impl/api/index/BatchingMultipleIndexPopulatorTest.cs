@@ -39,8 +39,8 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
 	using NeoStoreIndexStoreView = Neo4Net.Kernel.impl.transaction.state.storeview.NeoStoreIndexStoreView;
 	using NullLogProvider = Neo4Net.Logging.NullLogProvider;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using PopulationProgress = Neo4Net.Storageengine.Api.schema.PopulationProgress;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using PopulationProgress = Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress;
 	using FeatureToggles = Neo4Net.Utils.FeatureToggles;
 	using Values = Neo4Net.Values.Storable.Values;
 
@@ -476,7 +476,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 			  {
 				  get
 				  {
-						return Neo4Net.Storageengine.Api.schema.PopulationProgress_Fields.None;
+						return Neo4Net.Kernel.Api.StorageEngine.schema.PopulationProgress_Fields.None;
 				  }
 			  }
 		 }

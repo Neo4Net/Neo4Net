@@ -23,7 +23,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using RelationshipStore = Neo4Net.Kernel.impl.store.RelationshipStore;
 	using RecordLoad = Neo4Net.Kernel.Impl.Store.Records.RecordLoad;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
-	using StorageRelationshipScanCursor = Neo4Net.Storageengine.Api.StorageRelationshipScanCursor;
+	using StorageRelationshipScanCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipScanCursor;
 
 	internal class RecordRelationshipScanCursor : RecordRelationshipCursor, StorageRelationshipScanCursor
 	{

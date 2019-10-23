@@ -106,7 +106,7 @@ namespace Neo4Net.Consistency.checking
 			return nameValue;
 		}
 
-		public static DynamicStore valueOf( string name )
+		public static DynamicStore ValueOf( string name )
 		{
 			foreach ( DynamicStore enumInstance in DynamicStore.valueList )
 			{

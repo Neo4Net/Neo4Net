@@ -43,7 +43,7 @@ namespace Neo4Net.tools.txlog
 	using LogEntryCommit = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommit;
 	using LogFiles = Neo4Net.Kernel.impl.transaction.log.files.LogFiles;
 	using LogFilesBuilder = Neo4Net.Kernel.impl.transaction.log.files.LogFilesBuilder;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using Neo4Net.tools.txlog.checktypes;
 	using CheckTypes = Neo4Net.tools.txlog.checktypes.CheckTypes;
 

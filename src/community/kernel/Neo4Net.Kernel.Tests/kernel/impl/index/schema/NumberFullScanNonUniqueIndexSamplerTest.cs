@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
 	using IOLimiter = Neo4Net.Io.pagecache.IOLimiter;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using NumberValue = Neo4Net.Values.Storable.NumberValue;
 	using RandomValues = Neo4Net.Values.Storable.RandomValues;
 	using Value = Neo4Net.Values.Storable.Value;

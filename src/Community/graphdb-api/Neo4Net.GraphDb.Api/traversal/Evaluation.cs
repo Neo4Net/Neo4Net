@@ -24,8 +24,8 @@ namespace Neo4Net.GraphDb.Traversal
 	/// <summary>
 	/// Outcome of <seealso cref="Evaluator.evaluate(org.Neo4Net.graphdb.Path)"/>. An evaluation
 	/// can tell the traversal whether or not to continue down that
-	/// <seealso cref="TraversalBranch"/> and whether or not to include a
-	/// <seealso cref="TraversalBranch"/> in the result of a traversal.
+	/// <seealso cref="ITraversalBranch"/> and whether or not to include a
+	/// <seealso cref="ITraversalBranch"/> in the result of a traversal.
 	/// 
 	/// @author Mattias Persson </summary>
 	/// <seealso cref= Evaluator </seealso>
@@ -64,23 +64,23 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 internal Evaluation( string name, InnerEnum innerEnum, bool includes, bool continues )
 		 {
-			  this._includes = includes;
-			  this._continues = continues;
+			  _includes = includes;
+			  _continues = continues;
 
 			 nameValue = name;
 			 ordinalValue = nextOrdinal++;
 			 innerEnumValue = innerEnum;
 		 }
 
-		 /// <returns> whether or not the <seealso cref="TraversalBranch"/> this outcome was
+		 /// <returns> whether or not the <seealso cref="ITraversalBranch"/> this outcome was
 		 /// generated for should be included in the traversal result. </returns>
 		 public bool Includes()
 		 {
-			  return this._includes;
+			  return _includes;
 		 }
 
 		 /// <returns> whether or not the traversal should continue down the
-		 /// <seealso cref="TraversalBranch"/> this outcome was generator for. </returns>
+		 /// <seealso cref="ITraversalBranch"/> this outcome was generator for. </returns>
 		 public bool Continues()
 		 {
 			  return _continues;
@@ -90,10 +90,10 @@ namespace Neo4Net.GraphDb.Traversal
 		 /// Returns an <seealso cref="Evaluation"/> for the given {@code includes} and
 		 /// {@code continues}.
 		 /// </summary>
-		 /// <param name="includes"> whether or not to include the <seealso cref="TraversalBranch"/>
+		 /// <param name="includes"> whether or not to include the <seealso cref="ITraversalBranch"/>
 		 /// in the traversal result. </param>
 		 /// <param name="continues"> whether or not to continue down the
-		 /// <seealso cref="TraversalBranch"/>. </param>
+		 /// <seealso cref="ITraversalBranch"/>. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> representing {@code includes}
 		 /// and {@code continues}. </returns>
 		 public static Evaluation Of( bool includes, bool continues )
@@ -103,14 +103,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 /// <summary>
 		 /// Returns an <seealso cref="Evaluation"/> for the given {@code includes}, meaning
-		 /// whether or not to include a <seealso cref="TraversalBranch"/> in the traversal
+		 /// whether or not to include a <seealso cref="ITraversalBranch"/> in the traversal
 		 /// result or not. The returned evaluation will always return true
 		 /// for <seealso cref="Evaluation.continues()"/>.
 		 /// </summary>
-		 /// <param name="includes"> whether or not to include a <seealso cref="TraversalBranch"/>
+		 /// <param name="includes"> whether or not to include a <seealso cref="ITraversalBranch"/>
 		 /// in the traversal result. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> representing whether or not to include
-		 /// a <seealso cref="TraversalBranch"/> in the traversal result. </returns>
+		 /// a <seealso cref="ITraversalBranch"/> in the traversal result. </returns>
 		 public static Evaluation OfIncludes( bool includes )
 		 {
 			  return includes ? INCLUDE_AND_CONTINUE : EXCLUDE_AND_CONTINUE;
@@ -118,14 +118,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 /// <summary>
 		 /// Returns an <seealso cref="Evaluation"/> for the given {@code continues}, meaning
-		 /// whether or not to continue further down a <seealso cref="TraversalBranch"/> in the
+		 /// whether or not to continue further down a <seealso cref="ITraversalBranch"/> in the
 		 /// traversal. The returned evaluation will always return true for
 		 /// <seealso cref="Evaluation.includes()"/>.
 		 /// </summary>
 		 /// <param name="continues"> whether or not to continue further down a
-		 ///            <seealso cref="TraversalBranch"/> in the traversal. </param>
+		 ///            <seealso cref="ITraversalBranch"/> in the traversal. </param>
 		 /// <returns> an <seealso cref="Evaluation"/> representing whether or not to continue
-		 ///         further down a <seealso cref="TraversalBranch"/> in the traversal. </returns>
+		 ///         further down a <seealso cref="ITraversalBranch"/> in the traversal. </returns>
 		 public static Evaluation OfContinues( bool continues )
 		 {
 			  return continues ? INCLUDE_AND_CONTINUE : INCLUDE_AND_PRUNE;
@@ -146,7 +146,7 @@ namespace Neo4Net.GraphDb.Traversal
 			return nameValue;
 		}
 
-		public static Evaluation valueOf( string name )
+		public static Evaluation ValueOf( string name )
 		{
 			foreach ( Evaluation enumInstance in Evaluation.valueList )
 			{

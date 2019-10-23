@@ -284,7 +284,7 @@ namespace Neo4Net.tools.rebuild
 				 return nameValue;
 			 }
 
-			 public static Transaction valueOf( string name )
+			 public static Transaction ValueOf( string name )
 			 {
 				 foreach ( Transaction enumInstance in Transaction.valueList )
 				 {

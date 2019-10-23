@@ -108,7 +108,7 @@ namespace Neo4Net.Ssl
 				 return nameValue;
 			 }
 
-			 public static SignedBy valueOf( string name )
+			 public static SignedBy ValueOf( string name )
 			 {
 				 foreach ( SignedBy enumInstance in SignedBy.valueList )
 				 {

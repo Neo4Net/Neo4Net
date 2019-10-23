@@ -28,9 +28,9 @@ namespace Neo4Net.Bolt.v1.runtime
 	using TransactionStateMachineSPI = Neo4Net.Bolt.runtime.TransactionStateMachineSPI;
 	using QueryResultProvider = Neo4Net.Cypher.Internal.javacompat.QueryResultProvider;
 	using Result = Neo4Net.GraphDb.Result;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
-	using TransactionFailureException = Neo4Net.Internal.Kernel.Api.exceptions.TransactionFailureException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
+	using TransactionFailureException = Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using GraphDatabaseQueryService = Neo4Net.Kernel.GraphDatabaseQueryService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using TransactionIdTracker = Neo4Net.Kernel.api.txtracking.TransactionIdTracker;
@@ -49,9 +49,9 @@ namespace Neo4Net.Bolt.v1.runtime
 	using MapValue = Neo4Net.Values.@virtual.MapValue;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@explicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@explicit;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.Transaction_Type.@implicit;
+//	import static org.Neo4Net.Kernel.Api.Internal.Transaction_Type.@implicit;
 
 	public class TransactionStateMachineV1SPI : TransactionStateMachineSPI
 	{
@@ -79,7 +79,7 @@ namespace Neo4Net.Bolt.v1.runtime
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.internal.kernel.api.exceptions.TransactionFailureException
+//ORIGINAL LINE: public void awaitUpToDate(long oldestAcceptableTxId) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.TransactionFailureException
 		 public override void AwaitUpToDate( long oldestAcceptableTxId )
 		 {
 			  _transactionIdTracker.awaitUpToDate( oldestAcceptableTxId, _txAwaitDuration );
@@ -128,11 +128,11 @@ namespace Neo4Net.Bolt.v1.runtime
 			  InternalTransaction tx;
 			  if ( txTimeout == null )
 			  {
-					tx = _db.beginTransaction( type, loginContext );
+					tx = _db.BeginTransaction( type, loginContext );
 			  }
 			  else
 			  {
-					tx = _db.beginTransaction( type, loginContext, txTimeout.toMillis(), TimeUnit.MILLISECONDS );
+					tx = _db.BeginTransaction( type, loginContext, txTimeout.toMillis(), TimeUnit.MILLISECONDS );
 			  }
 
 			  if ( txMetadata != null )
@@ -178,7 +178,7 @@ namespace Neo4Net.Bolt.v1.runtime
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltResult start() throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public org.Neo4Net.bolt.runtime.BoltResult start() throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 			  public override BoltResult Start()
 			  {
 					try

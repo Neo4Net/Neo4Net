@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.configuration
 
 	using Log = Neo4Net.Logging.Log;
 
-	public interface ConfigurationMigrator
+	public interface IConfigurationMigrator
 	{
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @Nonnull Map<String,String> apply(@Nonnull Map<String,String> rawConfiguration, @Nonnull Log log);

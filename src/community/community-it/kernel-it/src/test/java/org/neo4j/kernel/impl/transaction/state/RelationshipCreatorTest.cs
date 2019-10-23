@@ -47,10 +47,10 @@ namespace Neo4Net.Kernel.impl.transaction.state
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
 	using SchemaRecord = Neo4Net.Kernel.Impl.Store.Records.SchemaRecord;
-	using AcquireLockTimeoutException = Neo4Net.Storageengine.Api.@lock.AcquireLockTimeoutException;
-	using LockTracer = Neo4Net.Storageengine.Api.@lock.LockTracer;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using AcquireLockTimeoutException = Neo4Net.Kernel.Api.StorageEngine.@lock.AcquireLockTimeoutException;
+	using LockTracer = Neo4Net.Kernel.Api.StorageEngine.@lock.LockTracer;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 	using DatabaseRule = Neo4Net.Test.rule.DatabaseRule;
 	using ImpermanentDatabaseRule = Neo4Net.Test.rule.ImpermanentDatabaseRule;
 	using DirectRecordAccessSet = Neo4Net.@unsafe.Batchinsert.Internal.DirectRecordAccessSet;
@@ -67,7 +67,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 
 		 private const int DENSE_NODE_THRESHOLD = 5;
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.valueOf(DENSE_NODE_THRESHOLD));
+//ORIGINAL LINE: @Rule public final org.Neo4Net.test.rule.DatabaseRule dbRule = new org.Neo4Net.test.rule.ImpermanentDatabaseRule().withSetting(org.Neo4Net.graphdb.factory.GraphDatabaseSettings.dense_node_threshold, String.ValueOf(DENSE_NODE_THRESHOLD));
 		 public readonly DatabaseRule DbRule = new ImpermanentDatabaseRule().withSetting(GraphDatabaseSettings.dense_node_threshold, DENSE_NODE_THRESHOLD.ToString());
 		 private IdGeneratorFactory _idGeneratorFactory;
 
@@ -133,7 +133,7 @@ namespace Neo4Net.Kernel.impl.transaction.state
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.storageengine.api.lock.LockTracer tracer, org.Neo4Net.storageengine.api.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.storageengine.api.lock.AcquireLockTimeoutException
+//ORIGINAL LINE: public void acquireExclusive(org.Neo4Net.Kernel.Api.StorageEngine.lock.LockTracer tracer, org.Neo4Net.Kernel.Api.StorageEngine.lock.ResourceType resourceType, long... resourceIds) throws org.Neo4Net.Kernel.Api.StorageEngine.lock.AcquireLockTimeoutException
 			  public override void AcquireExclusive( LockTracer tracer, ResourceType resourceType, params long[] resourceIds )
 			  {
 					assertEquals( ResourceTypes.RELATIONSHIP, resourceType );

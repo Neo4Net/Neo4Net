@@ -25,7 +25,7 @@ namespace Neo4Net.com
 	using ChannelBuffer = org.jboss.netty.buffer.ChannelBuffer;
 
 
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class Protocol214 : Protocol
 	{

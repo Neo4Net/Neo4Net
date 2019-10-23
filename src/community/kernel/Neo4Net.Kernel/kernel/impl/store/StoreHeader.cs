@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.impl.store
 	/// <summary>
 	/// Information extracted from the header of a store.
 	/// </summary>
-	public interface StoreHeader
+	public interface IStoreHeader
 	{
 	}
 

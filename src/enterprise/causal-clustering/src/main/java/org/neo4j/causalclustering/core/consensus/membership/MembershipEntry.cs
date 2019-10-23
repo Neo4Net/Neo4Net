@@ -28,8 +28,8 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 	using Neo4Net.causalclustering.core.state.storage;
 	using MemberId = Neo4Net.causalclustering.identity.MemberId;
 	using EndOfStreamException = Neo4Net.causalclustering.messaging.EndOfStreamException;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	/// <summary>
 	/// Represents a membership entry in the RAFT log.
@@ -97,7 +97,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(MembershipEntry entry, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(MembershipEntry entry, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 //JAVA TO C# CONVERTER NOTE: Members cannot have the same name as their enclosing type:
 			  public override void MarshalConflict( MembershipEntry entry, WritableChannel channel )
 			  {
@@ -120,7 +120,7 @@ namespace Neo4Net.causalclustering.core.consensus.membership
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected MembershipEntry unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: protected MembershipEntry unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  protected internal override MembershipEntry Unmarshal0( ReadableChannel channel )
 			  {
 					int hasEntry = channel.Int;

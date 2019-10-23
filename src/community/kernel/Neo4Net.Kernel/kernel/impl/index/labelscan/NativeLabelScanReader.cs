@@ -29,8 +29,8 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 	using Neo4Net.GraphDb.index;
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
-	using IndexProgressor = Neo4Net.Storageengine.Api.schema.IndexProgressor;
-	using LabelScanReader = Neo4Net.Storageengine.Api.schema.LabelScanReader;
+	using IndexProgressor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor;
+	using LabelScanReader = Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.index.labelscan.NativeLabelScanWriter.rangeOf;
@@ -91,7 +91,7 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 					throw new UncheckedIOException( e );
 			  }
 
-			  return new LabelScanValueIterator( cursor, _openCursors, Neo4Net.Storageengine.Api.schema.LabelScanReader_Fields.NO_ID );
+			  return new LabelScanValueIterator( cursor, _openCursors, Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader_Fields.NO_ID );
 		 }
 
 		 public override PrimitiveLongResourceIterator NodesWithAnyOfLabels( long fromId, params int[] labelIds )
@@ -102,11 +102,11 @@ namespace Neo4Net.Kernel.impl.index.labelscan
 
 		 public override PrimitiveLongResourceIterator NodesWithAllLabels( params int[] labelIds )
 		 {
-			  IList<PrimitiveLongResourceIterator> iterators = IteratorsForLabels( Neo4Net.Storageengine.Api.schema.LabelScanReader_Fields.NO_ID, labelIds );
+			  IList<PrimitiveLongResourceIterator> iterators = IteratorsForLabels( Neo4Net.Kernel.Api.StorageEngine.schema.LabelScanReader_Fields.NO_ID, labelIds );
 			  return new CompositeLabelScanValueIterator( iterators, true );
 		 }
 
-		 public override void NodesWithLabel( Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeLabelClient client, int labelId )
+		 public override void NodesWithLabel( Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeLabelClient client, int labelId )
 		 {
 			  IRawCursor<Hit<LabelScanKey, LabelScanValue>, IOException> cursor;
 			  try

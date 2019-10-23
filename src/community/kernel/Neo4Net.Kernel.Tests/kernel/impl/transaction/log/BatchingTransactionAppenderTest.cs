@@ -42,7 +42,7 @@ namespace Neo4Net.Kernel.impl.transaction.log
 	using LogCheckPointEvent = Neo4Net.Kernel.impl.transaction.tracing.LogCheckPointEvent;
 	using DatabaseHealth = Neo4Net.Kernel.Internal.DatabaseHealth;
 	using LifeRule = Neo4Net.Kernel.Lifecycle.LifeRule;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using CleanupRule = Neo4Net.Test.rule.CleanupRule;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

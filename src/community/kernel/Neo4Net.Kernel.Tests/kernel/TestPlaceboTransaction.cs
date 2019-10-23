@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel
 
 	using Node = Neo4Net.GraphDb.Node;
 	using Transaction = Neo4Net.GraphDb.Transaction;
-	using Locks = Neo4Net.Internal.Kernel.Api.Locks;
+	using Locks = Neo4Net.Kernel.Api.Internal.Locks;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using Statement = Neo4Net.Kernel.api.Statement;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;

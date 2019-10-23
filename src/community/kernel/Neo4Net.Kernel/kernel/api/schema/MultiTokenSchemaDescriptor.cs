@@ -22,25 +22,25 @@ namespace Neo4Net.Kernel.api.schema
 	using ArrayUtils = org.apache.commons.lang3.ArrayUtils;
 
 
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using Neo4Net.Internal.Kernel.Api.schema;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaProcessor = Neo4Net.Internal.Kernel.Api.schema.SchemaProcessor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using Neo4Net.Kernel.Api.Internal.schema;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaProcessor = Neo4Net.Kernel.Api.Internal.schema.SchemaProcessor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
 	using ResourceTypes = Neo4Net.Kernel.impl.locking.ResourceTypes;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
-	using ResourceType = Neo4Net.Storageengine.Api.@lock.ResourceType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
+	using ResourceType = Neo4Net.Kernel.Api.StorageEngine.@lock.ResourceType;
 
 	public class MultiTokenSchemaDescriptor : SchemaDescriptor
 	{
 		 private readonly int[] _entityTokens;
-		 private readonly IEntityType _entityType;
+		 private readonly EntityType _entityType;
 		 private readonly int[] _propertyIds;
 
-		 internal MultiTokenSchemaDescriptor( int[] IEntityTokens, IEntityType IEntityType, int[] propertyIds )
+		 internal MultiTokenSchemaDescriptor( int[] IEntityTokens, EntityType EntityType, int[] propertyIds )
 		 {
 			  this._entityTokens = IEntityTokens;
-			  this._entityType = IEntityType;
+			  this._entityType = EntityType;
 			  this._propertyIds = propertyIds;
 		 }
 
@@ -99,17 +99,17 @@ namespace Neo4Net.Kernel.api.schema
 
 		 public override ResourceType KeyType()
 		 {
-			  return _entityType == IEntityType.NODE ? ResourceTypes.LABEL : ResourceTypes.RELATIONSHIP_TYPE;
+			  return _entityType == EntityType.NODE ? ResourceTypes.LABEL : ResourceTypes.RELATIONSHIP_TYPE;
 		 }
 
-		 public override IEntityType IEntityType()
+		 public override EntityType EntityType()
 		 {
 			  return _entityType;
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
+		 public override Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType PropertySchemaType()
 		 {
-			  return Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken;
+			  return Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken;
 		 }
 
 		 public override SchemaDescriptor Schema()

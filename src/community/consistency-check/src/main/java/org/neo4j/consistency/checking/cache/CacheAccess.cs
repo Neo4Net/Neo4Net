@@ -40,7 +40,7 @@ namespace Neo4Net.Consistency.checking.cache
 	/// The cache is a compact representation of records, tied to an id, for example nodeId. There can be multiple
 	/// cached values per id, selected by {@code slot}.
 	/// </summary>
-	public interface CacheAccess
+	public interface ICacheAccess
 	{
 		 /// <summary>
 		 /// Client per thread for accessing cache and counts for statistics
@@ -150,7 +150,7 @@ namespace Neo4Net.Consistency.checking.cache
 	//	 };
 	}
 
-	 public interface CacheAccess_Client
+	 public interface ICacheAccess_Client
 	 {
 		  /// <summary>
 		  /// Gets a cached value, put there with <seealso cref="putToCache(long, long...)"/> or

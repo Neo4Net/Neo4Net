@@ -29,15 +29,15 @@ namespace Neo4Net.GraphDb.Traversal
 	{
 		 /// <summary>
 		 /// Decides the next position ("where to go from here") from the current
-		 /// position, based on the {@code rules}. Since <seealso cref="TraversalBranch"/>
-		 /// has the <seealso cref="TraversalBranch.endNode()"/> of the position and the
-		 /// <seealso cref="TraversalBranch.lastRelationship()"/> to how it got there, decisions
+		 /// position, based on the {@code rules}. Since <seealso cref="ITraversalBranch"/>
+		 /// has the <seealso cref="ITraversalBranch.endNode()"/> of the position and the
+		 /// <seealso cref="ITraversalBranch.lastRelationship()"/> to how it got there, decisions
 		 /// can be based on the current expansion source and the given rules.
 		 /// </summary>
 		 /// <param name="metadata"> the context for the traversal </param>
 		 /// <returns> the next position based on the current position and the
 		 /// {@code rules} of the traversal. </returns>
-		 TraversalBranch Next( TraversalContext metadata );
+		 ITraversalBranch Next( TraversalContext metadata );
 	}
 
 }

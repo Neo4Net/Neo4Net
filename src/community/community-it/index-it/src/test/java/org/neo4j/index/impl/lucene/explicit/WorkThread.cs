@@ -69,7 +69,7 @@ namespace Neo4Net.Index.impl.lucene.@explicit
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void beginTransaction() throws Exception
+//ORIGINAL LINE: public void BeginTransaction() throws Exception
 		 public virtual void BeginTransaction()
 		 {
 			  Debug.Assert( !_txOngoing );

@@ -19,8 +19,8 @@
  */
 namespace Neo4Net.Kernel.Api.Index
 {
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using Value = Neo4Net.Values.Storable.Value;
 	using Values = Neo4Net.Values.Storable.Values;
 

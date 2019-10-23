@@ -43,7 +43,7 @@ namespace Neo4Net.GraphDb.Traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass : PathEvaluator_Adapter
 		 {
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
 				  return INCLUDE_AND_CONTINUE;
 			 }
@@ -88,12 +88,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass2( int depth )
 			 {
-				 this._depth = depth;
+				 _depth = depth;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  int pathLength = path.Length();
+				  int pathLength = path.Length;
 				  return Evaluation.of( pathLength <= _depth, pathLength < _depth );
 			 }
 		 }
@@ -119,12 +119,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass3( int depth )
 			 {
-				 this._depth = depth;
+				 _depth = depth;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  return Evaluation.ofIncludes( path.Length() >= _depth );
+				  return Evaluation.ofIncludes( path.Length>= _depth );
 			 }
 		 }
 
@@ -149,12 +149,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass4( int depth )
 			 {
-				 this._depth = depth;
+				 _depth = depth;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  return path.Length() == _depth ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndContinue;
+				  return path.Length== _depth ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndContinue;
 			 }
 		 }
 
@@ -183,13 +183,13 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass5( int minDepth, int maxDepth )
 			 {
-				 this._minDepth = minDepth;
-				 this._maxDepth = maxDepth;
+				 _minDepth = minDepth;
+				 _maxDepth = maxDepth;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  int length = path.Length();
+				  int length = path.Length;
 				  return Evaluation.of( length >= _minDepth && length <= _maxDepth, length < _maxDepth );
 			 }
 		 }
@@ -241,14 +241,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass6( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, IRelationshipType type )
 			 {
-				 this._evaluationIfMatch = evaluationIfMatch;
-				 this._evaluationIfNoMatch = evaluationIfNoMatch;
-				 this._type = type;
+				 _evaluationIfMatch = evaluationIfMatch;
+				 _evaluationIfNoMatch = evaluationIfNoMatch;
+				 _type = type;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  IRelationship rel = path.LastRelationship();
+				  IRelationship rel = path.LastRelationship;
 				  return rel != null && rel.IsType( _type ) ? _evaluationIfMatch : _evaluationIfNoMatch;
 			 }
 		 }
@@ -261,14 +261,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass7( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, ISet<string> expectedTypes )
 			 {
-				 this._evaluationIfMatch = evaluationIfMatch;
-				 this._evaluationIfNoMatch = evaluationIfNoMatch;
-				 this._expectedTypes = expectedTypes;
+				 _evaluationIfMatch = evaluationIfMatch;
+				 _evaluationIfNoMatch = evaluationIfNoMatch;
+				 _expectedTypes = expectedTypes;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  IRelationship lastRelationship = path.LastRelationship();
+				  IRelationship lastRelationship = path.LastRelationship;
 				  if ( lastRelationship == null )
 				  {
 						return _evaluationIfNoMatch;
@@ -347,14 +347,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass8( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, INode target )
 			 {
-				 this._evaluationIfMatch = evaluationIfMatch;
-				 this._evaluationIfNoMatch = evaluationIfNoMatch;
-				 this._target = target;
+				 _evaluationIfMatch = evaluationIfMatch;
+				 _evaluationIfNoMatch = evaluationIfNoMatch;
+				 _target = target;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  return _target.Equals( path.EndNode() ) ? _evaluationIfMatch : _evaluationIfNoMatch;
+				  return _target.Equals( path.EndNode) ? _evaluationIfMatch : _evaluationIfNoMatch;
 			 }
 		 }
 
@@ -366,14 +366,14 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass9( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, ISet<INode> endNodes )
 			 {
-				 this._evaluationIfMatch = evaluationIfMatch;
-				 this._evaluationIfNoMatch = evaluationIfNoMatch;
-				 this._endNodes = endNodes;
+				 _evaluationIfMatch = evaluationIfMatch;
+				 _evaluationIfNoMatch = evaluationIfNoMatch;
+				 _endNodes = endNodes;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  return _endNodes.Contains( path.EndNode() ) ? _evaluationIfMatch : _evaluationIfNoMatch;
+				  return _endNodes.Contains( path.EndNode) ? _evaluationIfMatch : _evaluationIfNoMatch;
 			 }
 		 }
 
@@ -428,12 +428,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass10( INode[] nodes )
 			 {
-				 this._nodes = nodes;
+				 _nodes = nodes;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  foreach ( INode node in path.ReverseNodes() )
+				  foreach ( INode node in path.ReverseNodes)
 				  {
 						if ( node.Equals( _nodes[0] ) )
 						{
@@ -450,13 +450,13 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass11( ISet<INode> fullSet )
 			 {
-				 this._fullSet = fullSet;
+				 _fullSet = fullSet;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
 				  ISet<INode> set = new HashSet<INode>( _fullSet );
-				  foreach ( INode node in path.ReverseNodes() )
+				  foreach ( INode node in path.ReverseNodes)
 				  {
 						if ( set.remove( node ) && set.Count == 0 )
 						{
@@ -489,12 +489,12 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass12( PathEvaluator[] evaluators )
 			 {
-				 this._evaluators = evaluators;
+				 _evaluators = evaluators;
 			 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
 //ORIGINAL LINE: @SuppressWarnings("unchecked") @Override public Evaluation evaluate(org.Neo4Net.graphdb.Path path, BranchState state)
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
 				  foreach ( PathEvaluator evaluator in _evaluators )
 				  {
@@ -529,10 +529,10 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass13( Neo4Net.GraphDb.Traversal.Evaluator[] evaluators )
 			 {
-				 this._evaluators = evaluators;
+				 _evaluators = evaluators;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
 				  foreach ( Evaluator evaluator in _evaluators )
 				  {
@@ -578,15 +578,15 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass14( int depth, INode target )
 			 {
-				 this._depth = depth;
-				 this._target = target;
+				 _depth = depth;
+				 _target = target;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  if ( path.Length() == _depth )
+				  if ( path.Length== _depth )
 				  {
-						return _target.Equals( path.EndNode() ) ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndPrune;
+						return _target.Equals( path.EndNode) ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndPrune;
 				  }
 				  return Evaluation.ExcludeAndContinue;
 			 }
@@ -599,15 +599,15 @@ namespace Neo4Net.GraphDb.Traversal
 
 			 public PathEvaluator_AdapterAnonymousInnerClass15( int depth, ISet<INode> endNodes )
 			 {
-				 this._depth = depth;
-				 this._endNodes = endNodes;
+				 _depth = depth;
+				 _endNodes = endNodes;
 			 }
 
-			 public override Evaluation evaluate( IPath path, BranchState state )
+			 public override Evaluation evaluate( IPath path, IBranchState state )
 			 {
-				  if ( path.Length() == _depth )
+				  if ( path.Length== _depth )
 				  {
-						return _endNodes.Contains( path.EndNode() ) ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndPrune;
+						return _endNodes.Contains( path.EndNode) ? Evaluation.IncludeAndPrune : Evaluation.ExcludeAndPrune;
 				  }
 				  return Evaluation.ExcludeAndContinue;
 			 }

@@ -19,11 +19,11 @@
  */
 namespace Neo4Net.Kernel.Api.Exceptions.schema
 {
-	using TokenNameLookup = Neo4Net.Internal.Kernel.Api.TokenNameLookup;
-	using SchemaKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.SchemaKernelException;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
-	using SchemaUtil = Neo4Net.Internal.Kernel.Api.schema.SchemaUtil;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
+	using TokenNameLookup = Neo4Net.Kernel.Api.Internal.TokenNameLookup;
+	using SchemaKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.SchemaKernelException;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
+	using SchemaUtil = Neo4Net.Kernel.Api.Internal.schema.SchemaUtil;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
 
 	/// <summary>
 	/// Represent something gone wrong related to SchemaRules
@@ -32,11 +32,11 @@ namespace Neo4Net.Kernel.Api.Exceptions.schema
 	{
 		 protected internal readonly SchemaDescriptor Descriptor;
 		 protected internal readonly string MessageTemplate;
-		 protected internal readonly Neo4Net.Storageengine.Api.schema.SchemaRule_Kind Kind;
+		 protected internal readonly Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind Kind;
 
 		 /// <param name="messageTemplate"> Template for String.format. Must match two strings representing the schema kind and the
 		 ///                        descriptor </param>
-		 protected internal SchemaRuleException( Status status, string messageTemplate, Neo4Net.Storageengine.Api.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( status, format( messageTemplate, kind.userString().ToLower(), descriptor.UserDescription(SchemaUtil.idTokenNameLookup) ) )
+		 protected internal SchemaRuleException( Status status, string messageTemplate, Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind kind, SchemaDescriptor descriptor ) : base( status, format( messageTemplate, kind.userString().ToLower(), descriptor.UserDescription(SchemaUtil.idTokenNameLookup) ) )
 		 {
 			  this.Descriptor = descriptor;
 			  this.MessageTemplate = messageTemplate;

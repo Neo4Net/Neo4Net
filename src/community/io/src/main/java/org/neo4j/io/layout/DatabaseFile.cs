@@ -202,7 +202,7 @@ namespace Neo4Net.Io.layout
 			return nameValue;
 		}
 
-		public static DatabaseFile valueOf( string name )
+		public static DatabaseFile ValueOf( string name )
 		{
 			foreach ( DatabaseFile enumInstance in DatabaseFile.valueList )
 			{

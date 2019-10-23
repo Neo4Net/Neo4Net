@@ -21,19 +21,19 @@
  */
 namespace Neo4Net.Cypher.Internal.codegen
 {
-	using CursorFactory = Neo4Net.Internal.Kernel.Api.CursorFactory;
-	using IndexOrder = Neo4Net.Internal.Kernel.Api.IndexOrder;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using IndexReference = Neo4Net.Internal.Kernel.Api.IndexReference;
-	using NodeValueIndexCursor = Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor;
-	using Read = Neo4Net.Internal.Kernel.Api.Read;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using CursorFactory = Neo4Net.Kernel.Api.Internal.CursorFactory;
+	using IndexOrder = Neo4Net.Kernel.Api.Internal.IndexOrder;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using IndexReference = Neo4Net.Kernel.Api.Internal.IndexReference;
+	using NodeValueIndexCursor = Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor;
+	using Read = Neo4Net.Kernel.Api.Internal.Read;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.cypher.Internal.codegen.CompiledConversionUtils.makeValueNeoSafe;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.IndexQuery.exact;
+//	import static org.Neo4Net.Kernel.Api.Internal.IndexQuery.exact;
 
 	/// <summary>
 	/// Utility for dealing with indexes from compiled code
@@ -57,13 +57,13 @@ namespace Neo4Net.Cypher.Internal.codegen
 		 /// <param name="value"> The value to seek for </param>
 		 /// <returns> A cursor positioned at the data found in index. </returns>
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static org.Neo4Net.internal.kernel.api.NodeValueIndexCursor indexSeek(org.Neo4Net.internal.kernel.api.Read read, org.Neo4Net.internal.kernel.api.CursorFactory cursors, org.Neo4Net.internal.kernel.api.IndexReference index, Object value) throws org.Neo4Net.internal.kernel.api.exceptions.KernelException
+//ORIGINAL LINE: public static org.Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor indexSeek(org.Neo4Net.Kernel.Api.Internal.Read read, org.Neo4Net.Kernel.Api.Internal.CursorFactory cursors, org.Neo4Net.Kernel.Api.Internal.IndexReference index, Object value) throws org.Neo4Net.Kernel.Api.Internal.Exceptions.KernelException
 		 public static NodeValueIndexCursor IndexSeek( Read read, CursorFactory cursors, IndexReference index, object value )
 		 {
 			  Debug.Assert( index.Properties().Length == 1 );
 			  if ( value == Values.NO_VALUE || value == null )
 			  {
-					return Neo4Net.Internal.Kernel.Api.NodeValueIndexCursor_Fields.Empty;
+					return Neo4Net.Kernel.Api.Internal.NodeValueIndexCursor_Fields.Empty;
 			  }
 			  else
 			  {

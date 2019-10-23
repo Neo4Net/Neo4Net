@@ -266,7 +266,7 @@ namespace Neo4Net.GraphDb.impl.notification
 			return nameValue;
 		}
 
-		public static NotificationCode valueOf( string name )
+		public static NotificationCode ValueOf( string name )
 		{
 			foreach ( NotificationCode enumInstance in NotificationCode.valueList )
 			{

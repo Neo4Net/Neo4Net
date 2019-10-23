@@ -25,7 +25,7 @@ namespace Neo4Net.com
 	using MetaDataStore = Neo4Net.Kernel.impl.store.MetaDataStore;
 	using RecordFormatSelector = Neo4Net.Kernel.impl.store.format.RecordFormatSelector;
 	using RecordFormats = Neo4Net.Kernel.impl.store.format.RecordFormats;
-	using StoreId = Neo4Net.Storageengine.Api.StoreId;
+	using StoreId = Neo4Net.Kernel.Api.StorageEngine.StoreId;
 
 	public class StoreIdTestFactory
 	{

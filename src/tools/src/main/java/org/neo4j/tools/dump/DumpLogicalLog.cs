@@ -40,7 +40,7 @@ namespace Neo4Net.tools.dump
 	using LogEntryCommand = Neo4Net.Kernel.impl.transaction.log.entry.LogEntryCommand;
 	using LogHeader = Neo4Net.Kernel.impl.transaction.log.entry.LogHeader;
 	using LogHeaderReader = Neo4Net.Kernel.impl.transaction.log.entry.LogHeaderReader;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
 	using Monitor = Neo4Net.tools.dump.TransactionLogAnalyzer.Monitor;
 	using ReportInconsistencies = Neo4Net.tools.dump.inconsistency.ReportInconsistencies;
 

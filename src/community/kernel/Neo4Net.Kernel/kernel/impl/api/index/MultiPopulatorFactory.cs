@@ -22,7 +22,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using LogProvider = Neo4Net.Logging.LogProvider;
-	using IEntityType = Neo4Net.Storageengine.Api.EntityType;
+	using EntityType = Neo4Net.Kernel.Api.StorageEngine.EntityType;
 
 	/// <summary>
 	/// Factory that is able to create either <seealso cref="MultipleIndexPopulator"/> or <seealso cref="BatchingMultipleIndexPopulator"/>
@@ -35,7 +35,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 		 {
 		 }
 
-		 public abstract MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState );
+		 public abstract MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState );
 
 		 public static MultiPopulatorFactory ForConfig( Config config )
 		 {
@@ -45,7 +45,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private class SingleThreadedPopulatorFactory : MultiPopulatorFactory
 		 {
-			  public override MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState )
+			  public override MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState )
 			  {
 					return new MultipleIndexPopulator( storeView, logProvider, type, schemaState );
 			  }
@@ -53,7 +53,7 @@ namespace Neo4Net.Kernel.Impl.Api.index
 
 		 private class MultiThreadedPopulatorFactory : MultiPopulatorFactory
 		 {
-			  public override MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, IEntityType type, SchemaState schemaState )
+			  public override MultipleIndexPopulator Create( IndexStoreView storeView, LogProvider logProvider, EntityType type, SchemaState schemaState )
 			  {
 					return new BatchingMultipleIndexPopulator( storeView, logProvider, type, schemaState );
 			  }

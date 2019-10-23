@@ -91,9 +91,9 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 {
 			  //given
 			  SegmentedRaftLog segmentedRaftLog = CreateRaftLog( 1 );
-			  segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) ) );
-			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.valueOf( 2 ) ) );
-			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.valueOf( 3 ) ) );
+			  segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) ) );
+			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.ValueOf( 2 ) ) );
+			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.ValueOf( 3 ) ) );
 
 			  //when
 			  bool next;
@@ -113,9 +113,9 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 {
 			  //given
 			  SegmentedRaftLog segmentedRaftLog = CreateRaftLog( 1 );
-			  segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) ) );
-			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.valueOf( 2 ) ) );
-			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.valueOf( 3 ) ) );
+			  segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) ) );
+			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.ValueOf( 2 ) ) );
+			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.ValueOf( 3 ) ) );
 
 			  //when
 			  bool next;
@@ -135,9 +135,9 @@ namespace Neo4Net.causalclustering.core.consensus.log.segmented
 		 {
 			  //given
 			  SegmentedRaftLog segmentedRaftLog = CreateRaftLog( 1, "keep_none" );
-			  long firstIndex = segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.valueOf( 1 ) ) );
-			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.valueOf( 2 ) ) );
-			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.valueOf( 3 ) ) );
+			  long firstIndex = segmentedRaftLog.Append( new RaftLogEntry( 1, ReplicatedInteger.ValueOf( 1 ) ) );
+			  segmentedRaftLog.Append( new RaftLogEntry( 2, ReplicatedInteger.ValueOf( 2 ) ) );
+			  long lastIndex = segmentedRaftLog.Append( new RaftLogEntry( 3, ReplicatedInteger.ValueOf( 3 ) ) );
 
 			  //when
 			  segmentedRaftLog.Prune( firstIndex );

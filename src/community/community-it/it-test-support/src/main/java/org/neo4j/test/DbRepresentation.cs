@@ -33,8 +33,8 @@ namespace Neo4Net.Test
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using Neo4Net.GraphDb.index;
 	using Neo4Net.GraphDb.index;
-	using ConstraintDefinition = Neo4Net.GraphDb.schema.ConstraintDefinition;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
+	using ConstraintDefinition = Neo4Net.GraphDb.Schema.ConstraintDefinition;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IoPrimitiveUtils = Neo4Net.Kernel.impl.util.IoPrimitiveUtils;
 

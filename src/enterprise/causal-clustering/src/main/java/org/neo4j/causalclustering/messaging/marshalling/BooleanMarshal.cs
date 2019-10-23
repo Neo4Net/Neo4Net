@@ -23,8 +23,8 @@
 namespace Neo4Net.causalclustering.messaging.marshalling
 {
 
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class BooleanMarshal
 	{
@@ -33,14 +33,14 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static boolean unmarshal(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public static boolean unmarshal(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException
 		 public static bool Unmarshal( ReadableChannel channel )
 		 {
 			  return channel.Get() != 0;
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public static void marshal(org.Neo4Net.storageengine.api.WritableChannel channel, boolean value) throws java.io.IOException
+//ORIGINAL LINE: public static void marshal(org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel, boolean value) throws java.io.IOException
 		 public static void Marshal( WritableChannel channel, bool value )
 		 {
 			  channel.Put( ( sbyte )( value ? 1 : 0 ) );

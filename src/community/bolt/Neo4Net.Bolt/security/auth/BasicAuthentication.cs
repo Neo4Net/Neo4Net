@@ -24,7 +24,7 @@ namespace Neo4Net.Bolt.security.auth
 {
 
 	using AuthorizationViolationException = Neo4Net.GraphDb.security.AuthorizationViolationException;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using Status = Neo4Net.Kernel.Api.Exceptions.Status;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;

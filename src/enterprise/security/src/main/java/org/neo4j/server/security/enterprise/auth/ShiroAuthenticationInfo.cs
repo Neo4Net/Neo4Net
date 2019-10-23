@@ -30,16 +30,16 @@ namespace Neo4Net.Server.security.enterprise.auth
 	using ByteSource = org.apache.shiro.util.ByteSource;
 
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.FAILURE;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.SUCCESS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
 
 	public class ShiroAuthenticationInfo : SimpleAuthenticationInfo
 	{

@@ -34,14 +34,14 @@ namespace Neo4Net.Kernel.Api.Impl.Schema.sampler
 
 	using TaskCoordinator = Neo4Net.Helpers.TaskCoordinator;
 	using MapUtil = Neo4Net.Helpers.Collections.MapUtil;
-	using IndexNotFoundKernelException = Neo4Net.Internal.Kernel.Api.exceptions.schema.IndexNotFoundKernelException;
+	using IndexNotFoundKernelException = Neo4Net.Kernel.Api.Internal.Exceptions.schema.IndexNotFoundKernelException;
 	using IndexReaderStub = Neo4Net.Kernel.Api.Impl.Index.IndexReaderStub;
 	using IndexWriterConfigs = Neo4Net.Kernel.Api.Impl.Index.IndexWriterConfigs;
 	using PartitionSearcher = Neo4Net.Kernel.Api.Impl.Index.partition.PartitionSearcher;
 	using WritableIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.WritableIndexPartition;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using IndexSamplingConfig = Neo4Net.Kernel.Impl.Api.index.sampling.IndexSamplingConfig;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 	using Values = Neo4Net.Values.Storable.Values;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:

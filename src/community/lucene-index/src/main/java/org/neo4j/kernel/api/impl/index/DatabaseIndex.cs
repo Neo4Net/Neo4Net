@@ -26,14 +26,14 @@ namespace Neo4Net.Kernel.Api.Impl.Index
 	using WritableIndexSnapshotFileIterator = Neo4Net.Kernel.Api.Impl.Index.backup.WritableIndexSnapshotFileIterator;
 	using AbstractIndexPartition = Neo4Net.Kernel.Api.Impl.Index.partition.AbstractIndexPartition;
 	using LuceneIndexWriter = Neo4Net.Kernel.Api.Impl.Schema.writer.LuceneIndexWriter;
-	using IndexDescriptor = Neo4Net.Storageengine.Api.schema.IndexDescriptor;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using IndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptor;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 
 	/// <summary>
 	/// Lucene index that may consist of one or multiple separate lucene indexes that are represented as independent
 	/// <seealso cref="AbstractIndexPartition partitions"/>.
 	/// </summary>
-	public interface DatabaseIndex<READER> : System.IDisposable where READER : Neo4Net.Storageengine.Api.schema.IndexReader
+	public interface DatabaseIndex<READER> : System.IDisposable where READER : Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader
 	{
 		 /// <summary>
 		 /// Creates new index.

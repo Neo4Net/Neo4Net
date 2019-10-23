@@ -28,7 +28,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 
 	public class NativeHitIndexProgressor<KEY, VALUE> : NativeIndexProgressor<KEY, VALUE> where KEY : NativeIndexKey<KEY> where VALUE : NativeIndexValue
 	{
-		 internal NativeHitIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Storageengine.Api.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose ) : base( seeker, client, toRemoveFromOnClose )
+		 internal NativeHitIndexProgressor( IRawCursor<Hit<KEY, VALUE>, IOException> seeker, Neo4Net.Kernel.Api.StorageEngine.schema.IndexProgressor_NodeValueClient client, ICollection<RawCursor<Hit<KEY, VALUE>, IOException>> toRemoveFromOnClose ) : base( seeker, client, toRemoveFromOnClose )
 		 {
 		 }
 

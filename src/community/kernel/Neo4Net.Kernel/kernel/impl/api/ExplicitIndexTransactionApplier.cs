@@ -27,7 +27,7 @@ namespace Neo4Net.Kernel.Impl.Api
 	using IndexDefineCommand = Neo4Net.Kernel.impl.index.IndexDefineCommand;
 	using IndexEntityType = Neo4Net.Kernel.impl.index.IndexEntityType;
 	using IdOrderingQueue = Neo4Net.Kernel.impl.util.IdOrderingQueue;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.graphdb.index.IndexManager_Fields.PROVIDER;
@@ -87,8 +87,8 @@ namespace Neo4Net.Kernel.Impl.Api
 			  if ( applier == null )
 			  {
 					// We don't. Have we got an applier for the provider of this index?
-					IndexEntityType IEntityType = IndexEntityType.byId( command.EntityType );
-					IDictionary<string, string> config = _indexConfigStore.get( IEntityType.entityClass(), indexName );
+					IndexEntityType EntityType = IndexEntityType.byId( command.EntityType );
+					IDictionary<string, string> config = _indexConfigStore.get( EntityType.entityClass(), indexName );
 					if ( config == null )
 					{
 						 // This provider doesn't even exist, return an EMPTY handler, i.e. ignore these changes.

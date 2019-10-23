@@ -22,7 +22,7 @@ namespace Neo4Net.Csv.Reader
 	/// <summary>
 	/// Configuration options around reading CSV data, or similar.
 	/// </summary>
-	public interface Configuration
+	public interface IConfiguration
 	{
 		 /// <summary>
 		 /// TODO: Our intention is to flip this to false (which means to comply with RFC4180) at some point

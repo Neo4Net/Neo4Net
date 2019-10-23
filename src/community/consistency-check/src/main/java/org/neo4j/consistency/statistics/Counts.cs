@@ -22,7 +22,7 @@ namespace Neo4Net.Consistency.statistics
 	/// <summary>
 	/// Increments counts of different types, per thread. Able to sum a count for all threads as well.
 	/// </summary>
-	public interface Counts
+	public interface ICounts
 	{
 
 		 void IncAndGet( Counts_Type type, int threadIndex );

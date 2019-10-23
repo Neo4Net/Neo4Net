@@ -47,7 +47,7 @@
 
 ////////////		 public override bool Deprecated()
 ////////////		 {
-////////////			  return this._deprecated;
+////////////			  return _deprecated;
 ////////////		 }
 
 //////////////JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
@@ -56,13 +56,13 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._deprecated = value;
+////////////				  _deprecated = value;
 ////////////			 }
 ////////////		 }
 
 ////////////		 public override Optional<string> Replacement()
 ////////////		 {
-////////////			  return Optional.ofNullable( this._replacement );
+////////////			  return Optional.ofNullable( _replacement );
 ////////////		 }
 
 //////////////JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
@@ -71,7 +71,7 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._replacement = value;
+////////////				  _replacement = value;
 ////////////			 }
 ////////////		 }
 
@@ -92,7 +92,7 @@
 
 ////////////		 public override bool Secret()
 ////////////		 {
-////////////			  return this._secret;
+////////////			  return _secret;
 ////////////		 }
 
 //////////////JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
@@ -101,13 +101,13 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._secret = value;
+////////////				  _secret = value;
 ////////////			 }
 ////////////		 }
 
 ////////////		 public override Optional<string> DocumentedDefaultValue()
 ////////////		 {
-////////////			  return Optional.ofNullable( this._documentedDefaultValue );
+////////////			  return Optional.ofNullable( _documentedDefaultValue );
 ////////////		 }
 
 //////////////JAVA TO C# CONVERTER WARNING: 'final' parameters are ignored unless the option to convert to C# 7.2 'in' parameters is selected:
@@ -116,7 +116,7 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._documentedDefaultValue = value;
+////////////				  _documentedDefaultValue = value;
 ////////////			 }
 ////////////		 }
 
@@ -131,7 +131,7 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._description = value;
+////////////				  _description = value;
 ////////////			 }
 ////////////		 }
 
@@ -154,7 +154,7 @@
 ////////////		 {
 ////////////			 set
 ////////////			 {
-////////////				  this._dynamic = value;
+////////////				  _dynamic = value;
 ////////////			 }
 ////////////		 }
 ////////////	}

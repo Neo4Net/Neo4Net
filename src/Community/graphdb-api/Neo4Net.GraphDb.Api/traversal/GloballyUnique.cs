@@ -30,7 +30,7 @@ namespace Neo4Net.GraphDb.Traversal
 		 {
 		 }
 
-		 public override bool Check( TraversalBranch branch )
+		 public override bool Check( ITraversalBranch branch )
 		 {
 			  return _visited.add( Type.getId( branch ) );
 		 }

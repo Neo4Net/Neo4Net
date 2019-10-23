@@ -42,8 +42,8 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 	using ReplicatedTransaction = Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransaction;
 	using ReplicatedTransactionSerializer = Neo4Net.causalclustering.core.state.machines.tx.ReplicatedTransactionSerializer;
 	using Neo4Net.causalclustering.core.state.storage;
-	using ReadableChannel = Neo4Net.Storageengine.Api.ReadableChannel;
-	using WritableChannel = Neo4Net.Storageengine.Api.WritableChannel;
+	using ReadableChannel = Neo4Net.Kernel.Api.StorageEngine.ReadableChannel;
+	using WritableChannel = Neo4Net.Kernel.Api.StorageEngine.WritableChannel;
 
 	public class CoreReplicatedContentMarshal
 	{
@@ -88,7 +88,7 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private ContentBuilder<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> unmarshal(byte contentType, org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: private ContentBuilder<org.Neo4Net.causalclustering.core.replication.ReplicatedContent> unmarshal(byte contentType, org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 		 private ContentBuilder<ReplicatedContent> Unmarshal( sbyte contentType, ReadableChannel channel )
 		 {
 			  switch ( contentType )
@@ -150,14 +150,14 @@ namespace Neo4Net.causalclustering.messaging.marshalling
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent replicatedContent, org.Neo4Net.storageengine.api.WritableChannel channel) throws java.io.IOException
+//ORIGINAL LINE: public void marshal(org.Neo4Net.causalclustering.core.replication.ReplicatedContent replicatedContent, org.Neo4Net.Kernel.Api.StorageEngine.WritableChannel channel) throws java.io.IOException
 			  public override void Marshal( ReplicatedContent replicatedContent, WritableChannel channel )
 			  {
 					replicatedContent.Handle( new MarshallingHandlerReplicated( channel ) );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: protected org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.storageengine.api.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
+//ORIGINAL LINE: protected org.Neo4Net.causalclustering.core.replication.ReplicatedContent unmarshal0(org.Neo4Net.Kernel.Api.StorageEngine.ReadableChannel channel) throws java.io.IOException, org.Neo4Net.causalclustering.messaging.EndOfStreamException
 			  protected internal override ReplicatedContent Unmarshal0( ReadableChannel channel )
 			  {
 					sbyte type = channel.Get();

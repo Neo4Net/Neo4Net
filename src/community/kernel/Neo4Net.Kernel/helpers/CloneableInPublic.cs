@@ -22,7 +22,7 @@
 namespace Neo4Net.Helpers
 {
 	[Obsolete]
-	public interface CloneableInPublic : ICloneable
+	public interface ICloneableInPublic : ICloneable
 	{
 		 object Clone();
 	}

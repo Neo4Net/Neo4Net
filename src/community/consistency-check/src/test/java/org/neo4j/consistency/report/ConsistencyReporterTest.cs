@@ -47,8 +47,8 @@ namespace Neo4Net.Consistency.report
 	using CountsEntry = Neo4Net.Consistency.store.synthetic.CountsEntry;
 	using IndexEntry = Neo4Net.Consistency.store.synthetic.IndexEntry;
 	using LabelScanDocument = Neo4Net.Consistency.store.synthetic.LabelScanDocument;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using NodeLabelRange = Neo4Net.Kernel.api.labelscan.NodeLabelRange;
 	using SchemaDescriptorFactory = Neo4Net.Kernel.api.schema.SchemaDescriptorFactory;
 	using AbstractBaseRecord = Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord;
@@ -62,9 +62,9 @@ namespace Neo4Net.Consistency.report
 	using RelationshipGroupRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipGroupRecord;
 	using RelationshipRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipRecord;
 	using RelationshipTypeTokenRecord = Neo4Net.Kernel.Impl.Store.Records.RelationshipTypeTokenRecord;
-	using IndexDescriptorFactory = Neo4Net.Storageengine.Api.schema.IndexDescriptorFactory;
-	using SchemaRule = Neo4Net.Storageengine.Api.schema.SchemaRule;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexDescriptorFactory = Neo4Net.Kernel.Api.StorageEngine.schema.IndexDescriptorFactory;
+	using SchemaRule = Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.hamcrest.Matchers.containsString;
@@ -93,7 +93,7 @@ namespace Neo4Net.Consistency.report
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.consistency.report.ConsistencyReporter.NO_MONITOR;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.schema.SchemaUtil.idTokenNameLookup;
+//	import static org.Neo4Net.Kernel.Api.Internal.schema.SchemaUtil.idTokenNameLookup;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.schema.SchemaDescriptorFactory.forLabel;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -404,9 +404,9 @@ namespace Neo4Net.Consistency.report
 					{
 						 return new CountsEntry( nodeKey( 7 ), 42 );
 					}
-					if ( type == typeof( Neo4Net.Storageengine.Api.schema.SchemaRule_Kind ) )
+					if ( type == typeof( Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind ) )
 					{
-						 return Neo4Net.Storageengine.Api.schema.SchemaRule_Kind.IndexRule;
+						 return Neo4Net.Kernel.Api.StorageEngine.schema.SchemaRule_Kind.IndexRule;
 					}
 					if ( type == typeof( StoreIndexDescriptor ) )
 					{

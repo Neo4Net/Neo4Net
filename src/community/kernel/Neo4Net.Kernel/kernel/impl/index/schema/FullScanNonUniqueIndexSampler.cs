@@ -24,7 +24,7 @@ namespace Neo4Net.Kernel.Impl.Index.Schema
 	using Neo4Net.Index.Internal.gbptree;
 	using Neo4Net.Index.Internal.gbptree;
 	using NonUniqueIndexSampler = Neo4Net.Kernel.Impl.Api.index.sampling.NonUniqueIndexSampler;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
 
 	/// <summary>
 	/// <seealso cref="NonUniqueIndexSampler"/> which performs a full scans of a <seealso cref="GBPTree"/> in <seealso cref="result()"/>.

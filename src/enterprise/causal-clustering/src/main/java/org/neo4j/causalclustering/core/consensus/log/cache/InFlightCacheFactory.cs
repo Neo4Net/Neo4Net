@@ -93,7 +93,7 @@ namespace Neo4Net.causalclustering.core.consensus.log.cache
 				 return nameValue;
 			 }
 
-			 public static Type valueOf( string name )
+			 public static Type ValueOf( string name )
 			 {
 				 foreach ( Type enumInstance in Type.valueList )
 				 {

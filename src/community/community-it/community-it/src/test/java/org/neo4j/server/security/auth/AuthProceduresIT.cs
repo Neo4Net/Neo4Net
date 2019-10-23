@@ -34,7 +34,7 @@ namespace Neo4Net.Server.Security.Auth
 	using Neo4Net.GraphDb.config;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using EphemeralFileSystemAbstraction = Neo4Net.GraphDb.mockfs.EphemeralFileSystemAbstraction;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using InvalidAuthTokenException = Neo4Net.Kernel.api.security.exception.InvalidAuthTokenException;
@@ -60,7 +60,7 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.api.security.AuthToken.newBasicAuthToken;
 
@@ -305,7 +305,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private org.Neo4Net.internal.kernel.api.security.LoginContext login(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private org.Neo4Net.Kernel.Api.Internal.security.LoginContext login(String username, String password) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private LoginContext Login( string username, string password )
 		 {
 			  return _authManager.login( newBasicAuthToken( username, password ) );
@@ -336,7 +336,7 @@ namespace Neo4Net.Server.Security.Auth
 		 {
 			  try
 			  {
-					  using ( Transaction tx = Db.beginTransaction( KernelTransaction.Type.@implicit, subject ) )
+					  using ( Transaction tx = Db.BeginTransaction( KernelTransaction.Type.@implicit, subject ) )
 					  {
 						resultConsumer( Db.execute( query ) );
 						tx.Success();

@@ -22,7 +22,7 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 	using DependencyResolver = Neo4Net.GraphDb.DependencyResolver;
 	using IGraphDatabaseService = Neo4Net.GraphDb.GraphDatabaseService;
 	using KernelTransaction = Neo4Net.Kernel.api.KernelTransaction;
-	using SecurityContext = Neo4Net.Internal.Kernel.Api.security.SecurityContext;
+	using SecurityContext = Neo4Net.Kernel.Api.Internal.security.SecurityContext;
 	using UserManager = Neo4Net.Kernel.api.security.UserManager;
 	using GraphDatabaseAPI = Neo4Net.Kernel.Internal.GraphDatabaseAPI;
 	using Log = Neo4Net.Logging.Log;
@@ -48,7 +48,7 @@ namespace Neo4Net.Tooling.procedure.visitors.examples
 		 public TerminationGuard TerminationGuard;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Context public org.Neo4Net.internal.kernel.api.security.SecurityContext securityContext;
+//ORIGINAL LINE: @Context public org.Neo4Net.Kernel.Api.Internal.security.SecurityContext securityContext;
 		 public SecurityContext SecurityContext;
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:

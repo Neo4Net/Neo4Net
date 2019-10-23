@@ -26,7 +26,7 @@ namespace Neo4Net.@unsafe.Batchinsert.Internal
 	using Neo4Net.Helpers.Collections;
 	using RecordNodeCursor = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordNodeCursor;
 	using RecordStorageReader = Neo4Net.Kernel.impl.storageengine.impl.recordstorage.RecordStorageReader;
-	using StorageRelationshipTraversalCursor = Neo4Net.Storageengine.Api.StorageRelationshipTraversalCursor;
+	using StorageRelationshipTraversalCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipTraversalCursor;
 
 	internal abstract class BatchRelationshipIterable<T> : IEnumerable<T>
 	{

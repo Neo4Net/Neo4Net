@@ -31,9 +31,9 @@ namespace Neo4Net.Kernel.impl.transaction.command
 
 	using Neo4Net.Helpers.Collections;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexQuery = Neo4Net.Internal.Kernel.Api.IndexQuery;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using LabelSchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.LabelSchemaDescriptor;
+	using IndexQuery = Neo4Net.Kernel.Api.Internal.IndexQuery;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using LabelSchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.LabelSchemaDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
 	using NativeLuceneFusionIndexProviderFactory20 = Neo4Net.Kernel.Api.Impl.Schema.NativeLuceneFusionIndexProviderFactory20;
@@ -53,11 +53,11 @@ namespace Neo4Net.Kernel.impl.transaction.command
 	using NodeStore = Neo4Net.Kernel.impl.store.NodeStore;
 	using NodeCommand = Neo4Net.Kernel.impl.transaction.command.Command.NodeCommand;
 	using Dependencies = Neo4Net.Kernel.impl.util.Dependencies;
-	using CommandCreationContext = Neo4Net.Storageengine.Api.CommandCreationContext;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
-	using IndexReader = Neo4Net.Storageengine.Api.schema.IndexReader;
+	using CommandCreationContext = Neo4Net.Kernel.Api.StorageEngine.CommandCreationContext;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
+	using IndexReader = Neo4Net.Kernel.Api.StorageEngine.schema.IndexReader;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RecordStorageEngineRule = Neo4Net.Test.rule.RecordStorageEngineRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -81,7 +81,7 @@ namespace Neo4Net.Kernel.impl.transaction.command
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.transaction.log.Commitment.NO_COMMITMENT;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.storageengine.api.txstate.TxStateVisitor_Fields.NO_DECORATION;
+//	import static org.Neo4Net.Kernel.Api.StorageEngine.TxState.TxStateVisitor_Fields.NO_DECORATION;
 
 	public class IndexWorkSyncTransactionApplicationStressIT
 	{

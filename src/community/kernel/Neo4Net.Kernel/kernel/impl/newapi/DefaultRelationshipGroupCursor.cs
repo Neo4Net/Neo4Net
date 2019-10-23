@@ -24,12 +24,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 	using MutableIntSet = org.eclipse.collections.api.set.primitive.MutableIntSet;
 	using IntHashSet = org.eclipse.collections.impl.set.mutable.primitive.IntHashSet;
 
-	using RelationshipGroupCursor = Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor;
-	using RelationshipTraversalCursor = Neo4Net.Internal.Kernel.Api.RelationshipTraversalCursor;
-	using RelationshipDirection = Neo4Net.Storageengine.Api.RelationshipDirection;
-	using StorageRelationshipGroupCursor = Neo4Net.Storageengine.Api.StorageRelationshipGroupCursor;
-	using NodeState = Neo4Net.Storageengine.Api.txstate.NodeState;
-	using RelationshipState = Neo4Net.Storageengine.Api.txstate.RelationshipState;
+	using RelationshipGroupCursor = Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor;
+	using RelationshipTraversalCursor = Neo4Net.Kernel.Api.Internal.RelationshipTraversalCursor;
+	using RelationshipDirection = Neo4Net.Kernel.Api.StorageEngine.RelationshipDirection;
+	using StorageRelationshipGroupCursor = Neo4Net.Kernel.Api.StorageEngine.StorageRelationshipGroupCursor;
+	using NodeState = Neo4Net.Kernel.Api.StorageEngine.TxState.NodeState;
+	using RelationshipState = Neo4Net.Kernel.Api.StorageEngine.TxState.RelationshipState;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.kernel.impl.newapi.RelationshipReferenceEncoding.encodeNoIncomingRels;
@@ -65,12 +65,12 @@ namespace Neo4Net.Kernel.Impl.Newapi
 			  this._read = read;
 		 }
 
-		 public override Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor_Position Suspend()
+		 public override Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor_Position Suspend()
 		 {
 			  throw new System.NotSupportedException( "not implemented" );
 		 }
 
-		 public override void Resume( Neo4Net.Internal.Kernel.Api.RelationshipGroupCursor_Position position )
+		 public override void Resume( Neo4Net.Kernel.Api.Internal.RelationshipGroupCursor_Position position )
 		 {
 			  throw new System.NotSupportedException( "not implemented" );
 		 }

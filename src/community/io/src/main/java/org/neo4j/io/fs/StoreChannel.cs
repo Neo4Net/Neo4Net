@@ -20,7 +20,7 @@
 namespace Neo4Net.Io.fs
 {
 
-	public interface StoreChannel : Flushable, SeekableByteChannel, GatheringByteChannel, ScatteringByteChannel, InterruptibleChannel
+	public interface IStoreChannel : Flushable, SeekableByteChannel, GatheringByteChannel, ScatteringByteChannel, InterruptibleChannel
 	{
 		 /// <summary>
 		 /// Attempts to acquire an exclusive lock on this channel's file. </summary>

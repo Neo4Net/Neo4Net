@@ -35,8 +35,8 @@ namespace Neo4Net.Kernel.Internal
 	using EmbeddedProxySPI = Neo4Net.Kernel.impl.core.EmbeddedProxySPI;
 	using TxStateTransactionDataSnapshot = Neo4Net.Kernel.impl.coreapi.TxStateTransactionDataSnapshot;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
-	using StorageReader = Neo4Net.Storageengine.Api.StorageReader;
-	using ReadableTransactionState = Neo4Net.Storageengine.Api.txstate.ReadableTransactionState;
+	using StorageReader = Neo4Net.Kernel.Api.StorageEngine.StorageReader;
+	using ReadableTransactionState = Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState;
 
 	/// <summary>
 	/// Handle the collection of transaction event handlers, and fire events as needed.
@@ -121,7 +121,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterCommit(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterCommit( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )
@@ -138,7 +138,7 @@ namespace Neo4Net.Kernel.Internal
 		 }
 
 //JAVA TO C# CONVERTER TODO TASK: Most Java annotations will not have direct .NET equivalent attributes:
-//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.storageengine.api.txstate.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
+//ORIGINAL LINE: @Override @SuppressWarnings("unchecked") public void afterRollback(org.Neo4Net.Kernel.Api.StorageEngine.TxState.ReadableTransactionState state, org.Neo4Net.kernel.api.KernelTransaction transaction, TransactionHandlerState handlerState)
 		 public override void AfterRollback( ReadableTransactionState state, KernelTransaction transaction, TransactionHandlerState handlerState )
 		 {
 			  if ( handlerState == null )

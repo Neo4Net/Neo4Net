@@ -23,10 +23,10 @@ namespace Neo4Net.Kernel.Impl.Api.integrationtest
 {
 	using Test = org.junit.Test;
 
-	using NamedToken = Neo4Net.Internal.Kernel.Api.NamedToken;
-	using Transaction = Neo4Net.Internal.Kernel.Api.Transaction;
-	using Write = Neo4Net.Internal.Kernel.Api.Write;
-	using IEntityNotFoundException = Neo4Net.Internal.Kernel.Api.exceptions.EntityNotFoundException;
+	using NamedToken = Neo4Net.Kernel.Api.Internal.NamedToken;
+	using Transaction = Neo4Net.Kernel.Api.Internal.Transaction;
+	using Write = Neo4Net.Kernel.Api.Internal.Write;
+	using IEntityNotFoundException = Neo4Net.Kernel.Api.Internal.Exceptions.EntityNotFoundException;
 	using AnonymousContext = Neo4Net.Kernel.api.security.AnonymousContext;
 	using Values = Neo4Net.Values.Storable.Values;
 

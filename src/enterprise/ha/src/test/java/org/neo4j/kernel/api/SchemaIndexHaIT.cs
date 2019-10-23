@@ -41,12 +41,12 @@ namespace Neo4Net.Kernel.api
 	using GraphDatabaseBuilder = Neo4Net.GraphDb.factory.GraphDatabaseBuilder;
 	using GraphDatabaseSettings = Neo4Net.GraphDb.factory.GraphDatabaseSettings;
 	using TestHighlyAvailableGraphDatabaseFactory = Neo4Net.GraphDb.factory.TestHighlyAvailableGraphDatabaseFactory;
-	using IndexDefinition = Neo4Net.GraphDb.schema.IndexDefinition;
-	using Schema_IndexState = Neo4Net.GraphDb.schema.Schema_IndexState;
+	using IndexDefinition = Neo4Net.GraphDb.Schema.IndexDefinition;
+	using Schema_IndexState = Neo4Net.GraphDb.Schema.Schema_IndexState;
 	using RecoveryCleanupWorkCollector = Neo4Net.Index.Internal.gbptree.RecoveryCleanupWorkCollector;
-	using IndexCapability = Neo4Net.Internal.Kernel.Api.IndexCapability;
-	using InternalIndexState = Neo4Net.Internal.Kernel.Api.InternalIndexState;
-	using IndexProviderDescriptor = Neo4Net.Internal.Kernel.Api.schema.IndexProviderDescriptor;
+	using IndexCapability = Neo4Net.Kernel.Api.Internal.IndexCapability;
+	using InternalIndexState = Neo4Net.Kernel.Api.Internal.InternalIndexState;
+	using IndexProviderDescriptor = Neo4Net.Kernel.Api.Internal.schema.IndexProviderDescriptor;
 	using DefaultFileSystemAbstraction = Neo4Net.Io.fs.DefaultFileSystemAbstraction;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using PageCache = Neo4Net.Io.pagecache.PageCache;
@@ -58,7 +58,7 @@ namespace Neo4Net.Kernel.api
 	using IndexProvider = Neo4Net.Kernel.Api.Index.IndexProvider;
 	using IndexUpdater = Neo4Net.Kernel.Api.Index.IndexUpdater;
 	using ByteBufferFactory = Neo4Net.Kernel.Impl.Index.Schema.ByteBufferFactory;
-	using NodePropertyAccessor = Neo4Net.Storageengine.Api.NodePropertyAccessor;
+	using NodePropertyAccessor = Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor;
 	using Config = Neo4Net.Kernel.configuration.Config;
 	using ExtensionType = Neo4Net.Kernel.extension.ExtensionType;
 	using Neo4Net.Kernel.extension;
@@ -73,8 +73,8 @@ namespace Neo4Net.Kernel.api
 	using KernelContext = Neo4Net.Kernel.impl.spi.KernelContext;
 	using StoreMigrationParticipant = Neo4Net.Kernel.impl.storemigration.StoreMigrationParticipant;
 	using Lifecycle = Neo4Net.Kernel.Lifecycle.Lifecycle;
-	using IndexSample = Neo4Net.Storageengine.Api.schema.IndexSample;
-	using StoreIndexDescriptor = Neo4Net.Storageengine.Api.schema.StoreIndexDescriptor;
+	using IndexSample = Neo4Net.Kernel.Api.StorageEngine.schema.IndexSample;
+	using StoreIndexDescriptor = Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor;
 	using DoubleLatch = Neo4Net.Test.DoubleLatch;
 	using ClusterRule = Neo4Net.Test.ha.ClusterRule;
 	using DefaultFileSystemRule = Neo4Net.Test.rule.fs.DefaultFileSystemRule;
@@ -389,7 +389,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.graphdb.schema.IndexDefinition index, org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedDdata) throws InterruptedException
+//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.GraphDb.Schema.IndexDefinition index, org.Neo4Net.kernel.impl.ha.ClusterManager.ManagedCluster cluster, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedDdata) throws InterruptedException
 		 private static void AwaitIndexOnline( IndexDefinition index, ClusterManager.ManagedCluster cluster, IDictionary<object, Node> expectedDdata )
 		 {
 			  foreach ( IGraphDatabaseService db in cluster.AllMembers )
@@ -411,7 +411,7 @@ namespace Neo4Net.Kernel.api
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.graphdb.schema.IndexDefinition requestedIndex, org.Neo4Net.graphdb.GraphDatabaseService db, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedData) throws InterruptedException
+//ORIGINAL LINE: private static void awaitIndexOnline(org.Neo4Net.GraphDb.Schema.IndexDefinition requestedIndex, org.Neo4Net.graphdb.GraphDatabaseService db, java.util.Map<Object,org.Neo4Net.graphdb.Node> expectedData) throws InterruptedException
 		 private static void AwaitIndexOnline( IndexDefinition requestedIndex, IGraphDatabaseService db, IDictionary<object, Node> expectedData )
 		 {
 			  using ( Transaction tx = Db.beginTx() )
@@ -483,7 +483,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.storageengine.api.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
+//ORIGINAL LINE: public void verifyDeferredConstraints(org.Neo4Net.Kernel.Api.StorageEngine.NodePropertyAccessor nodePropertyAccessor) throws org.Neo4Net.kernel.api.exceptions.index.IndexEntryConflictException
 			  public override void VerifyDeferredConstraints( NodePropertyAccessor nodePropertyAccessor )
 			  {
 					Delegate.verifyDeferredConstraints( nodePropertyAccessor );
@@ -534,7 +534,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.api.index.IndexAccessor getOnlineAccessor(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor, org.Neo4Net.kernel.impl.api.index.sampling.IndexSamplingConfig samplingConfig) throws java.io.IOException
 			  public override IndexAccessor GetOnlineAccessor( StoreIndexDescriptor descriptor, IndexSamplingConfig samplingConfig )
 			  {
 					return Delegate.getOnlineAccessor( descriptor, samplingConfig );
@@ -556,7 +556,7 @@ namespace Neo4Net.Kernel.api
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.storageengine.api.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
+//ORIGINAL LINE: public String getPopulationFailure(org.Neo4Net.Kernel.Api.StorageEngine.schema.StoreIndexDescriptor descriptor) throws IllegalStateException
 			  public override string GetPopulationFailure( StoreIndexDescriptor descriptor )
 			  {
 					return Delegate.getPopulationFailure( descriptor );

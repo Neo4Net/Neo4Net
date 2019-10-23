@@ -28,7 +28,7 @@ namespace Neo4Net.Consistency.checking.full
 	using ConsistencyReport = Neo4Net.Consistency.report.ConsistencyReport;
 	using RecordAccess = Neo4Net.Consistency.store.RecordAccess;
 	using Neo4Net.Consistency.store;
-	using SchemaDescriptor = Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor;
+	using SchemaDescriptor = Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor;
 	using DynamicNodeLabels = Neo4Net.Kernel.impl.store.DynamicNodeLabels;
 	using NodeLabels = Neo4Net.Kernel.impl.store.NodeLabels;
 	using NodeLabelsField = Neo4Net.Kernel.impl.store.NodeLabelsField;
@@ -39,10 +39,10 @@ namespace Neo4Net.Consistency.checking.full
 	public class NodeInUseWithCorrectLabelsCheck <RECORD, REPORT> : ComparativeRecordChecker<RECORD, NodeRecord, REPORT> where RECORD : Neo4Net.Kernel.Impl.Store.Records.AbstractBaseRecord where REPORT : Neo4Net.Consistency.report.ConsistencyReport_NodeInUseWithCorrectLabelsReport
 	{
 		 private readonly long[] _indexLabels;
-		 private readonly Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType _propertySchemaType;
+		 private readonly Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType _propertySchemaType;
 		 private readonly bool _checkStoreToIndex;
 
-		 public NodeInUseWithCorrectLabelsCheck( long[] expectedEntityTokenIds, Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType propertySchemaType, bool checkStoreToIndex )
+		 public NodeInUseWithCorrectLabelsCheck( long[] expectedEntityTokenIds, Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType propertySchemaType, bool checkStoreToIndex )
 		 {
 			  this._propertySchemaType = propertySchemaType;
 			  this._checkStoreToIndex = checkStoreToIndex;
@@ -91,7 +91,7 @@ namespace Neo4Net.Consistency.checking.full
 		 {
 			  storeLabels = SortAndDeduplicate( storeLabels );
 
-			  if ( _propertySchemaType == Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType.CompleteAllTokens )
+			  if ( _propertySchemaType == Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.CompleteAllTokens )
 			  {
 					// The node must have all of the labels specified by the index.
 					int indexLabelsCursor = 0;
@@ -128,7 +128,7 @@ namespace Neo4Net.Consistency.checking.full
 						 storeLabelsCursor++;
 					}
 			  }
-			  else if ( _propertySchemaType == Neo4Net.Internal.Kernel.Api.schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken )
+			  else if ( _propertySchemaType == Neo4Net.Kernel.Api.Internal.schema.SchemaDescriptor_PropertySchemaType.PartialAnyToken )
 			  {
 					// The node must have at least one label in the index.
 					foreach ( long storeLabel in storeLabels )

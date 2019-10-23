@@ -108,7 +108,7 @@ namespace Neo4Net.Kernel.impl.store.format
 			return nameValue;
 		}
 
-		public static StoreVersion valueOf( string name )
+		public static StoreVersion ValueOf( string name )
 		{
 			foreach ( StoreVersion enumInstance in StoreVersion.valueList )
 			{

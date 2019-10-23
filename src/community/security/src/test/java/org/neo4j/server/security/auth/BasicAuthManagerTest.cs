@@ -29,8 +29,8 @@ namespace Neo4Net.Server.Security.Auth
 	using Test = org.junit.Test;
 
 
-	using AuthenticationResult = Neo4Net.Internal.Kernel.Api.security.AuthenticationResult;
-	using LoginContext = Neo4Net.Internal.Kernel.Api.security.LoginContext;
+	using AuthenticationResult = Neo4Net.Kernel.Api.Internal.security.AuthenticationResult;
+	using LoginContext = Neo4Net.Kernel.Api.Internal.security.LoginContext;
 	using InvalidArgumentsException = Neo4Net.Kernel.Api.Exceptions.InvalidArgumentsException;
 	using AuthManager = Neo4Net.Kernel.api.security.AuthManager;
 	using AuthToken = Neo4Net.Kernel.api.security.AuthToken;
@@ -63,13 +63,13 @@ namespace Neo4Net.Server.Security.Auth
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.helpers.collection.MapUtil.map;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.FAILURE;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.FAILURE;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.PASSWORD_CHANGE_REQUIRED;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.SUCCESS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.SUCCESS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
-//	import static org.Neo4Net.Internal.kernel.api.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
+//	import static org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult.TOO_MANY_ATTEMPTS;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.Neo4Net.server.security.auth.SecurityTestUtils.authToken;
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -426,7 +426,7 @@ namespace Neo4Net.Server.Security.Auth
 		 }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: private void assertLoginGivesResult(String username, String password, org.Neo4Net.internal.kernel.api.security.AuthenticationResult expectedResult) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
+//ORIGINAL LINE: private void assertLoginGivesResult(String username, String password, org.Neo4Net.Kernel.Api.Internal.security.AuthenticationResult expectedResult) throws org.Neo4Net.kernel.api.security.exception.InvalidAuthTokenException
 		 private void AssertLoginGivesResult( string username, string password, AuthenticationResult expectedResult )
 		 {
 			  LoginContext securityContext = _manager.login( authToken( username, password ) );

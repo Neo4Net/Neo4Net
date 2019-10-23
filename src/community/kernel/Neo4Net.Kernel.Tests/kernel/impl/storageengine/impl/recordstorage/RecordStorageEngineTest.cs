@@ -31,7 +31,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 
 	using Exceptions = Neo4Net.Helpers.Exceptions;
 	using Neo4Net.Helpers.Collections;
-	using KernelException = Neo4Net.Internal.Kernel.Api.exceptions.KernelException;
+	using KernelException = Neo4Net.Kernel.Api.Internal.Exceptions.KernelException;
 	using FileSystemAbstraction = Neo4Net.Io.fs.FileSystemAbstraction;
 	using DatabaseLayout = Neo4Net.Io.layout.DatabaseLayout;
 	using DelegatingPageCache = Neo4Net.Io.pagecache.DelegatingPageCache;
@@ -55,10 +55,10 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 	using FakeCommitment = Neo4Net.Kernel.impl.transaction.log.FakeCommitment;
 	using TransactionIdStore = Neo4Net.Kernel.impl.transaction.log.TransactionIdStore;
 	using DatabaseHealth = Neo4Net.Kernel.Internal.DatabaseHealth;
-	using CommandsToApply = Neo4Net.Storageengine.Api.CommandsToApply;
-	using StorageCommand = Neo4Net.Storageengine.Api.StorageCommand;
-	using StoreFileMetadata = Neo4Net.Storageengine.Api.StoreFileMetadata;
-	using TransactionApplicationMode = Neo4Net.Storageengine.Api.TransactionApplicationMode;
+	using CommandsToApply = Neo4Net.Kernel.Api.StorageEngine.CommandsToApply;
+	using StorageCommand = Neo4Net.Kernel.Api.StorageEngine.StorageCommand;
+	using StoreFileMetadata = Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata;
+	using TransactionApplicationMode = Neo4Net.Kernel.Api.StorageEngine.TransactionApplicationMode;
 	using PageCacheRule = Neo4Net.Test.rule.PageCacheRule;
 	using RecordStorageEngineRule = Neo4Net.Test.rule.RecordStorageEngineRule;
 	using TestDirectory = Neo4Net.Test.rule.TestDirectory;
@@ -245,7 +245,7 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 		 {
 			  RecordStorageEngine engine = BuildRecordStorageEngine();
 //JAVA TO C# CONVERTER WARNING: The original Java variable was marked 'final':
-//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.storageengine.api.StoreFileMetadata> files = engine.listStorageFiles();
+//ORIGINAL LINE: final java.util.Collection<org.Neo4Net.Kernel.Api.StorageEngine.StoreFileMetadata> files = engine.listStorageFiles();
 			  ICollection<StoreFileMetadata> files = engine.ListStorageFiles();
 //JAVA TO C# CONVERTER TODO TASK: Method reference arbitrary object instance method syntax is not converted by Java to C# Converter:
 //JAVA TO C# CONVERTER TODO TASK: Most Java stream collectors are not converted by Java to C# Converter:
@@ -376,14 +376,14 @@ namespace Neo4Net.Kernel.impl.storageengine.impl.recordstorage
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction) throws java.io.IOException
 			  public override TransactionApplier StartTx( CommandsToApply transaction )
 			  {
 					return Actual.startTx( transaction );
 			  }
 
 //JAVA TO C# CONVERTER WARNING: Method 'throws' clauses are not available in C#:
-//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.storageengine.api.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
+//ORIGINAL LINE: public org.Neo4Net.kernel.impl.api.TransactionApplier startTx(org.Neo4Net.Kernel.Api.StorageEngine.CommandsToApply transaction, org.Neo4Net.kernel.impl.locking.LockGroup lockGroup) throws java.io.IOException
 			  public override TransactionApplier StartTx( CommandsToApply transaction, LockGroup lockGroup )
 			  {
 					return Actual.startTx( transaction, lockGroup );
