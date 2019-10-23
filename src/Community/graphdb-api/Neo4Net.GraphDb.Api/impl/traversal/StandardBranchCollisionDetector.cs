@@ -24,10 +24,10 @@ namespace Neo4Net.GraphDb.impl.traversal
 {
 
 	using Predicates = Neo4Net.Functions.Predicates;
-	using BranchCollisionDetector = Neo4Net.GraphDb.traversal.BranchCollisionDetector;
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using BranchCollisionDetector = Neo4Net.GraphDb.Traversal.BranchCollisionDetector;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 
 	public class StandardBranchCollisionDetector : BranchCollisionDetector
 	{

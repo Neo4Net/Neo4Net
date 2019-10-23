@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
 	/// <summary>
 	/// Decides "where to go next" in a traversal. It keeps state itself, f.ex. its

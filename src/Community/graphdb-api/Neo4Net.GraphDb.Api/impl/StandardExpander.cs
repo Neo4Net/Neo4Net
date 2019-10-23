@@ -27,7 +27,7 @@ namespace Neo4Net.GraphDb.impl
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
 	using Neo4Net.GraphDb;
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;
 	using Neo4Net.Helpers.Collections;

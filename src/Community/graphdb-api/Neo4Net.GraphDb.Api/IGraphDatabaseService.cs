@@ -27,8 +27,8 @@ namespace Neo4Net.GraphDb
 	using Neo4Net.GraphDb.Events;
 	using IndexManager = Neo4Net.GraphDb.index.IndexManager;
 	using Schema = Neo4Net.GraphDb.schema.Schema;
-	using BidirectionalTraversalDescription = Neo4Net.GraphDb.traversal.BidirectionalTraversalDescription;
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using BidirectionalTraversalDescription = Neo4Net.GraphDb.Traversal.BidirectionalTraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 
 	/// <summary>
 	/// The main access point to a running Neo4Net instance. The most common way to instantiate a <seealso cref="GraphDatabaseService"/>

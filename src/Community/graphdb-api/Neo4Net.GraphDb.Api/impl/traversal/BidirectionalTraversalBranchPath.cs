@@ -22,8 +22,8 @@
 namespace Neo4Net.GraphDb.impl.traversal
 {
 
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 
 	internal class BidirectionalTraversalBranchPath : IPath
 	{

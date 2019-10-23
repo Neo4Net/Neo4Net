@@ -19,7 +19,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
 
 
@@ -235,11 +235,11 @@ namespace Neo4Net.GraphDb.traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass6 : PathEvaluator_Adapter<STATE>
 		 {
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfMatch;
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfNoMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfNoMatch;
 			 private IRelationshipType _type;
 
-			 public PathEvaluator_AdapterAnonymousInnerClass6( Neo4Net.GraphDb.traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.traversal.Evaluation evaluationIfNoMatch, IRelationshipType type )
+			 public PathEvaluator_AdapterAnonymousInnerClass6( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, IRelationshipType type )
 			 {
 				 this._evaluationIfMatch = evaluationIfMatch;
 				 this._evaluationIfNoMatch = evaluationIfNoMatch;
@@ -255,11 +255,11 @@ namespace Neo4Net.GraphDb.traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass7 : PathEvaluator_Adapter<STATE>
 		 {
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfMatch;
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfNoMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfNoMatch;
 			 private ISet<string> _expectedTypes;
 
-			 public PathEvaluator_AdapterAnonymousInnerClass7( Neo4Net.GraphDb.traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.traversal.Evaluation evaluationIfNoMatch, ISet<string> expectedTypes )
+			 public PathEvaluator_AdapterAnonymousInnerClass7( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, ISet<string> expectedTypes )
 			 {
 				 this._evaluationIfMatch = evaluationIfMatch;
 				 this._evaluationIfNoMatch = evaluationIfNoMatch;
@@ -341,11 +341,11 @@ namespace Neo4Net.GraphDb.traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass8 : PathEvaluator_Adapter<STATE>
 		 {
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfMatch;
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfNoMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfNoMatch;
 			 private INode _target;
 
-			 public PathEvaluator_AdapterAnonymousInnerClass8( Neo4Net.GraphDb.traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.traversal.Evaluation evaluationIfNoMatch, INode target )
+			 public PathEvaluator_AdapterAnonymousInnerClass8( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, INode target )
 			 {
 				 this._evaluationIfMatch = evaluationIfMatch;
 				 this._evaluationIfNoMatch = evaluationIfNoMatch;
@@ -360,11 +360,11 @@ namespace Neo4Net.GraphDb.traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass9 : PathEvaluator_Adapter<STATE>
 		 {
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfMatch;
-			 private Neo4Net.GraphDb.traversal.Evaluation _evaluationIfNoMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfMatch;
+			 private Neo4Net.GraphDb.Traversal.Evaluation _evaluationIfNoMatch;
 			 private ISet<INode> _endNodes;
 
-			 public PathEvaluator_AdapterAnonymousInnerClass9( Neo4Net.GraphDb.traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.traversal.Evaluation evaluationIfNoMatch, ISet<INode> endNodes )
+			 public PathEvaluator_AdapterAnonymousInnerClass9( Neo4Net.GraphDb.Traversal.Evaluation evaluationIfMatch, Neo4Net.GraphDb.Traversal.Evaluation evaluationIfNoMatch, ISet<INode> endNodes )
 			 {
 				 this._evaluationIfMatch = evaluationIfMatch;
 				 this._evaluationIfNoMatch = evaluationIfNoMatch;
@@ -525,9 +525,9 @@ namespace Neo4Net.GraphDb.traversal
 
 		 private class PathEvaluator_AdapterAnonymousInnerClass13 : PathEvaluator_Adapter<STATE>
 		 {
-			 private Neo4Net.GraphDb.traversal.Evaluator[] _evaluators;
+			 private Neo4Net.GraphDb.Traversal.Evaluator[] _evaluators;
 
-			 public PathEvaluator_AdapterAnonymousInnerClass13( Neo4Net.GraphDb.traversal.Evaluator[] evaluators )
+			 public PathEvaluator_AdapterAnonymousInnerClass13( Neo4Net.GraphDb.Traversal.Evaluator[] evaluators )
 			 {
 				 this._evaluators = evaluators;
 			 }

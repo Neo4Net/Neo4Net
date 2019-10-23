@@ -19,7 +19,7 @@
  */
 namespace Neo4Net.GraphDb
 {
-	using TraversalDescription = Neo4Net.GraphDb.traversal.TraversalDescription;
+	using TraversalDescription = Neo4Net.GraphDb.Traversal.TraversalDescription;
 
 	/// <summary>
 	/// A relationship type is mandatory on all relationships and is used to navigate

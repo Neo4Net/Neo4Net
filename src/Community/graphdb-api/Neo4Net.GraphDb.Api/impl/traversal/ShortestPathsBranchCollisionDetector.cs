@@ -20,8 +20,8 @@
 namespace Neo4Net.GraphDb.impl.traversal
 {
 
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 
 	public class ShortestPathsBranchCollisionDetector : StandardBranchCollisionDetector
 	{

@@ -17,33 +17,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
-	/// <summary>
-	/// Interface for filters preventing the traversal from visiting already seen parts of the graph. Implementations can
-	/// allow for different heuristics to use to determine what may be re-visited.
-	/// </summary>
-	public interface UniquenessFilter
-	{
-		 /// <summary>
-		 /// The check whether or not to expand the first branch is a separate
-		 /// method because it may contain checks which would be unnecessary for
-		 /// all other checks. So it's purely an optimization.
-		 /// </summary>
-		 /// <param name="branch"> the first branch to check, i.e. the branch representing
-		 ///               the start node in the traversal. </param>
-		 /// <returns> whether or not {@code branch} is unique, and hence can be
-		 ///         visited in this traversal. </returns>
-		 bool CheckFirst( TraversalBranch branch );
+    /// <summary>
+    /// Interface for filters preventing the traversal from visiting already seen parts of the graph. Implementations can
+    /// allow for different heuristics to use to determine what may be re-visited.
+    /// </summary>
+    public interface IUniquenessFilter
+    {
+        /// <summary>
+        /// The check whether or not to expand the first branch is a separate
+        /// method because it may contain checks which would be unnecessary for
+        /// all other checks. So it's purely an optimization.
+        /// </summary>
+        /// <param name="branch"> the first branch to check, i.e. the branch representing
+        ///               the start node in the traversal. </param>
+        /// <returns> whether or not {@code branch} is unique, and hence can be
+        ///         visited in this traversal. </returns>
+        bool CheckFirst(TraversalBranch branch);
 
-		 /// <summary>
-		 /// Checks whether or not {@code branch} is unique, and hence can be
-		 /// visited in this traversal.
-		 /// </summary>
-		 /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for uniqueness. </param>
-		 /// <returns> whether or not {@code branch} is unique, and hence can be
-		 ///         visited in this traversal. </returns>
-		 bool Check( TraversalBranch branch );
-	}
-
+        /// <summary>
+        /// Checks whether or not {@code branch} is unique, and hence can be
+        /// visited in this traversal.
+        /// </summary>
+        /// <param name="branch"> the <seealso cref="TraversalBranch"/> to check for uniqueness. </param>
+        /// <returns> whether or not {@code branch} is unique, and hence can be
+        ///         visited in this traversal. </returns>
+        bool Check(TraversalBranch branch);
+    }
 }

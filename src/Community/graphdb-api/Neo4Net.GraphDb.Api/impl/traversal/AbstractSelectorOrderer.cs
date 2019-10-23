@@ -19,10 +19,10 @@
  */
 namespace Neo4Net.GraphDb.impl.traversal
 {
-	using BranchSelector = Neo4Net.GraphDb.traversal.BranchSelector;
-	using SideSelector = Neo4Net.GraphDb.traversal.SideSelector;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
-	using TraversalContext = Neo4Net.GraphDb.traversal.TraversalContext;
+	using BranchSelector = Neo4Net.GraphDb.Traversal.BranchSelector;
+	using SideSelector = Neo4Net.GraphDb.Traversal.SideSelector;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
+	using TraversalContext = Neo4Net.GraphDb.Traversal.TraversalContext;
 
 	public abstract class AbstractSelectorOrderer<T> : SideSelector
 	{

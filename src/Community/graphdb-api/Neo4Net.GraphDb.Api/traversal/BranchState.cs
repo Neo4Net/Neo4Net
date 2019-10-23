@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
 	/// <summary>
 	/// Accessor for a state associated with a <seealso cref="TraversalBranch"/> during a

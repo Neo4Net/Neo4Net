@@ -27,9 +27,9 @@ namespace Neo4Net.GraphDb.impl.traversal
 	using Answer = org.mockito.stubbing.Answer;
 
 
-	using Evaluation = Neo4Net.GraphDb.traversal.Evaluation;
-	using Evaluator = Neo4Net.GraphDb.traversal.Evaluator;
-	using TraversalBranch = Neo4Net.GraphDb.traversal.TraversalBranch;
+	using Evaluation = Neo4Net.GraphDb.Traversal.Evaluation;
+	using Evaluator = Neo4Net.GraphDb.Traversal.Evaluator;
+	using TraversalBranch = Neo4Net.GraphDb.Traversal.TraversalBranch;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
 //	import static org.junit.Assert.assertEquals;

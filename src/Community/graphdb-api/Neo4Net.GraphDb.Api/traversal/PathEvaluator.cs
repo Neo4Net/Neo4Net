@@ -17,7 +17,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
 
 	/// <summary>
@@ -31,7 +31,7 @@ namespace Neo4Net.GraphDb.traversal
 	/// <seealso cref= Evaluation </seealso>
 	/// <seealso cref= Evaluators </seealso>
 	/// <seealso cref= TraversalDescription#evaluator(PathEvaluator) </seealso>
-	public interface PathEvaluator<STATE> : Evaluator
+	public interface IPathEvaluator<STATE> : Evaluator
 	{
 		 /// <summary>
 		 /// Evaluates a <seealso cref="IPath"/> and returns an <seealso cref="Evaluation"/> containing

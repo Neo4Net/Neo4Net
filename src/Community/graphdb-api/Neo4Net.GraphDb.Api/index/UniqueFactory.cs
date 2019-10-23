@@ -42,7 +42,7 @@
 ////////////////////		 public class UniqueEntity<T> where T : Neo4Net.GraphDb.PropertyContainer
 ////////////////////		 {
 //////////////////////JAVA TO C# CONVERTER NOTE: Fields cannot have the same name as methods:
-////////////////////			  internal readonly T IEntityConflict;
+////////////////////			  internal readonly T EntityConflict;
 ////////////////////			  internal readonly bool Created;
 
 ////////////////////			  internal UniqueEntity( T IEntity, bool created )

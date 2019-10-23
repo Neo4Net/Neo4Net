@@ -21,7 +21,7 @@
  */
 namespace Neo4Net.GraphDb
 {
-	using Neo4Net.GraphDb.traversal;
+	using Neo4Net.GraphDb.Traversal;
 
 	/// <summary>
 	/// An expander of relationships. It's a flexible way of getting relationships

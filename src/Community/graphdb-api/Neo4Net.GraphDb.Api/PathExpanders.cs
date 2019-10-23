@@ -24,8 +24,8 @@ namespace Neo4Net.GraphDb
 {
 
 	using StandardExpander = Neo4Net.GraphDb.impl.StandardExpander;
-	using Neo4Net.GraphDb.traversal;
-	using Paths = Neo4Net.GraphDb.traversal.Paths;
+	using Neo4Net.GraphDb.Traversal;
+	using Paths = Neo4Net.GraphDb.Traversal.Paths;
 
 	/// <summary>
 	/// A catalog of convenient <seealso cref="PathExpander"/> factory methods.

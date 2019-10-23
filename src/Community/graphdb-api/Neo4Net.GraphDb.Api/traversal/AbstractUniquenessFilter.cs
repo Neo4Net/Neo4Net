@@ -17,23 +17,22 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.GraphDb.traversal
+namespace Neo4Net.GraphDb.Traversal
 {
-	internal abstract class AbstractUniquenessFilter : BidirectionalUniquenessFilter
-	{
-		public abstract bool Check( TraversalBranch branch );
-		public abstract bool CheckFull( Neo4Net.GraphDb.IPath path );
-		 internal readonly PrimitiveTypeFetcher Type;
+    internal abstract class AbstractUniquenessFilter : BidirectionalUniquenessFilter
+    {
+        public abstract bool Check(TraversalBranch branch);
+        public abstract bool CheckFull(Neo4Net.GraphDb.IPath path);
+        internal readonly PrimitiveTypeFetcher Type;
 
-		 internal AbstractUniquenessFilter( PrimitiveTypeFetcher type )
-		 {
-			  this.Type = type;
-		 }
+        internal AbstractUniquenessFilter(PrimitiveTypeFetcher type)
+        {
+            this.Type = type;
+        }
 
-		 public override bool CheckFirst( TraversalBranch branch )
-		 {
-			  return Type == PrimitiveTypeFetcher.Relationship || Check( branch );
-		 }
-	}
-
+        public override bool CheckFirst(TraversalBranch branch)
+        {
+            return Type == PrimitiveTypeFetcher.Relationship || Check(branch);
+        }
+    }
 }
