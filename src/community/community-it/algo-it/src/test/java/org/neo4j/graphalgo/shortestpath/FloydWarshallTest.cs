@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.shortestpath
+namespace Neo4Net.GraphAlgo.shortestpath
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphalgo.impl.shortestpath;
+	using Neo4Net.GraphAlgo.ShortestPath;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 
@@ -48,7 +48,7 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  Graph.makeEdge( "c", "d", "cost", ( sbyte ) 1 );
 			  Graph.makeEdge( "d", "e", "cost", ( short ) 1 );
 			  Graph.makeEdge( "e", "b", "cost", ( sbyte ) 1 );
-			  FloydWarshall<double> floydWarshall = new FloydWarshall<double>( 0.0, double.MaxValue, Direction.OUTGOING, CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges );
+			  FloydWarshall<double> floydWarshall = new FloydWarshall<double>( 0.0, double.MaxValue, Direction.OUTGOING, CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges );
 			  assertEquals( 0.0, floydWarshall.GetCost( Graph.getNode( "a" ), Graph.getNode( "a" ) ), 0.0 );
 			  assertEquals( 1.0, floydWarshall.GetCost( Graph.getNode( "a" ), Graph.getNode( "b" ) ), 0.0 );
 			  assertEquals( floydWarshall.GetCost( Graph.getNode( "b" ), Graph.getNode( "a" ) ), double.MaxValue, 0.0 );
@@ -66,7 +66,7 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  Graph.makeEdge( "c", "d", "cost", 1 );
 			  Graph.makeEdge( "d", "e", "cost", ( long ) 1 );
 			  Graph.makeEdge( "e", "f", "cost", ( sbyte ) 1 );
-			  FloydWarshall<double> floydWarshall = new FloydWarshall<double>( 0.0, double.MaxValue, Direction.OUTGOING, CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges );
+			  FloydWarshall<double> floydWarshall = new FloydWarshall<double>( 0.0, double.MaxValue, Direction.OUTGOING, CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges );
 			  IList<Node> path = floydWarshall.GetPath( Graph.getNode( "a" ), Graph.getNode( "f" ) );
 			  assertEquals( 6, path.Count );
 			  assertEquals( path[0], Graph.getNode( "a" ) );
@@ -93,12 +93,12 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  {
 			  assertEquals( Direction.OUTGOING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges)).calculate();
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges)).calculate();
 			  (new FloydWarshall<>(0.0, double.MaxValue, Direction.INCOMING, (relationship, direction) =>
 			  {
 			  assertEquals( Direction.INCOMING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges)).calculate();
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Graph.AllNodes, Graph.AllEdges)).calculate();
 		 }
 	}
 

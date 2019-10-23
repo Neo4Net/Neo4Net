@@ -19,12 +19,12 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.shortestpath
+namespace Neo4Net.GraphAlgo.shortestpath
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphalgo.impl.shortestpath;
+	using Neo4Net.GraphAlgo.ShortestPath;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using IPropertyContainer = Neo4Net.GraphDb.PropertyContainer;

@@ -19,13 +19,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.shortestpath
+namespace Neo4Net.GraphAlgo.shortestpath
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphalgo;
-	using Neo4Net.Graphalgo.impl.shortestpath;
+	using Neo4Net.GraphAlgo;
+	using Neo4Net.GraphAlgo.ShortestPath;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Relationship = Neo4Net.GraphDb.Relationship;
 
@@ -48,13 +48,13 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  {
 			  assertEquals( Direction.OUTGOING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.OUTGOING, MyRelTypes.R1);
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.OUTGOING, MyRelTypes.R1);
 			  dijkstra.Cost;
 			  dijkstra = new Dijkstra<double>((double) 0, Graph.getNode("s"), Graph.getNode("e"), (relationship, direction) =>
 			  {
 			  assertEquals( Direction.INCOMING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.INCOMING, MyRelTypes.R1);
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.INCOMING, MyRelTypes.R1);
 			  dijkstra.Cost;
 		 }
 
@@ -74,13 +74,13 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  {
 			  assertEquals( Direction.OUTGOING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.OUTGOING, MyRelTypes.R1);
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.OUTGOING, MyRelTypes.R1);
 			  dijkstra.Cost;
 			  dijkstra = new Dijkstra<double>((double) 0, Graph.getNode("s"), Graph.getNode("e"), (relationship, direction) =>
 			  {
 			  assertEquals( Direction.INCOMING, direction );
 			  return 1.0;
-			  }, new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.INCOMING, MyRelTypes.R1);
+			  }, new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.INCOMING, MyRelTypes.R1);
 			  dijkstra.Cost;
 		 }
 
@@ -119,7 +119,7 @@ namespace Neo4Net.Graphalgo.shortestpath
 			  Relationship r6 = Graph.makeEdge( "g", "f" );
 			  Relationship r7 = Graph.makeEdge( "g", "end" );
 			  Dictionary<Relationship, Direction> dirs = new Dictionary<Relationship, Direction>();
-			  Dijkstra<double> dijkstra = new Dijkstra<double>( ( double ) 0, Graph.getNode( "start" ), Graph.getNode( "end" ), new directionSavingCostEvaluator( this, dirs ), new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.BOTH, MyRelTypes.R1 );
+			  Dijkstra<double> dijkstra = new Dijkstra<double>( ( double ) 0, Graph.getNode( "start" ), Graph.getNode( "end" ), new directionSavingCostEvaluator( this, dirs ), new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.BOTH, MyRelTypes.R1 );
 			  dijkstra.Cost;
 			  assertEquals( Direction.OUTGOING, dirs[r1] );
 			  assertEquals( Direction.INCOMING, dirs[r2] );

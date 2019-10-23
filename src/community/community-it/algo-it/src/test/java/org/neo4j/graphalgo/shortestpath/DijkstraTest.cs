@@ -17,13 +17,13 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.shortestpath
+namespace Neo4Net.GraphAlgo.shortestpath
 {
 	using Neo4NetAlgoTestCase = Common.Neo4NetAlgoTestCase;
 	using SimpleGraphBuilder = Common.SimpleGraphBuilder;
 	using Test = org.junit.Test;
 
-	using Neo4Net.Graphalgo.impl.shortestpath;
+	using Neo4Net.GraphAlgo.ShortestPath;
 	using Direction = Neo4Net.GraphDb.Direction;
 
 //JAVA TO C# CONVERTER TODO TASK: This Java 'import static' statement cannot be converted to C#:
@@ -35,7 +35,7 @@ namespace Neo4Net.Graphalgo.shortestpath
 	{
 		 protected internal virtual Dijkstra<double> GetDijkstra( SimpleGraphBuilder graph, double? startCost, string startNode, string endNode )
 		 {
-			  return new Dijkstra<double>( startCost, graph.GetNode( startNode ), graph.GetNode( endNode ), CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.Graphalgo.impl.util.DoubleAdder(), double?.compareTo, Direction.BOTH, MyRelTypes.R1 );
+			  return new Dijkstra<double>( startCost, graph.GetNode( startNode ), graph.GetNode( endNode ), CommonEvaluators.doubleCostEvaluator( "cost" ), new Neo4Net.GraphAlgo.Utils.DoubleAdder(), double?.compareTo, Direction.BOTH, MyRelTypes.R1 );
 		 }
 
 		 /// <summary>

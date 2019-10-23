@@ -17,11 +17,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-namespace Neo4Net.Graphalgo.shortestpath
+namespace Neo4Net.GraphAlgo.shortestpath
 {
-	using Neo4Net.Graphalgo.impl.shortestpath;
-	using Neo4Net.Graphalgo.impl.shortestpath;
-	using IntegerAdder = Neo4Net.Graphalgo.impl.util.IntegerAdder;
+	using Neo4Net.GraphAlgo.ShortestPath;
+	using Neo4Net.GraphAlgo.ShortestPath;
+	using IntegerAdder = Neo4Net.GraphAlgo.Utils.IntegerAdder;
 	using Direction = Neo4Net.GraphDb.Direction;
 	using Node = Neo4Net.GraphDb.Node;
 	using RelationshipType = Neo4Net.GraphDb.RelationshipType;
